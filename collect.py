@@ -45,19 +45,25 @@ class Graph:
     def get(self, path, params):
         query = urllib.parse.urlencode({**params, "access_token": self.token})
         url = f"{self.base}/{path}?{query}"
-        self.calls += 1
-        try:
-            with urllib.request.urlopen(url, timeout=30) as resp:
-                return json.load(resp)
-        except urllib.error.HTTPError as e:
+        # 해시태그 인기 게시물 조회는 응답이 1분 넘게 걸리기도 해서, 넉넉히 기다리고 두 번까지 다시 시도한다
+        for attempt in range(3):
+            self.calls += 1
             try:
-                err = json.loads(e.read() or b"{}").get("error", {})
-            except json.JSONDecodeError:
-                err = {}
-            code = err.get("code", e.code)
-            if code in RATE_LIMIT_CODES:
-                raise RateLimited(err.get("message", "호출 한도 초과"))
-            raise ApiError(code, err.get("message", str(e)))
+                with urllib.request.urlopen(url, timeout=90) as resp:
+                    return json.load(resp)
+            except urllib.error.HTTPError as e:
+                try:
+                    err = json.loads(e.read() or b"{}").get("error", {})
+                except json.JSONDecodeError:
+                    err = {}
+                code = err.get("code", e.code)
+                if code in RATE_LIMIT_CODES:
+                    raise RateLimited(err.get("message", "호출 한도 초과"))
+                raise ApiError(code, err.get("message", str(e)))
+            except (TimeoutError, urllib.error.URLError, ConnectionError) as e:
+                if attempt == 2:
+                    raise ApiError("timeout", f"응답 지연으로 실패 ({e})")
+                time.sleep(5 * (attempt + 1))
 
 
 def fetch_account(graph, username, max_posts, with_views):
