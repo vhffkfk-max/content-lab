@@ -27,6 +27,15 @@ Claude에게 "연구소 사이트 갱신해줘" 하면 그 파일들을 사이�
 insights, topics, patterns, accounts, top_posts)
 기본은 비공개예요. 팀원에게 보여주려면 사이트 오른쪽 위 공유 메뉴에서 직접 공유하세요.
 
+## 독립 사이트 (GitHub Pages, 매일 자동)
+`.github/workflows/daily.yml` 이 매일 06:00(한국시간)에
+수집 → 분석 → 기획안(Claude API, `generate_drafts.py`) → `build_site.py` → GitHub Pages 배포를 한다.
+- 저장소 Secrets: `IG_ACCESS_TOKEN`, `IG_USER_ID` (`python push_secrets.py`), `ANTHROPIC_API_KEY` (`gh secret set ANTHROPIC_API_KEY`)
+- 인스타 토큰은 `make_page_token.py` 로 만든 **만료 없는 페이지 토큰** (페이스북 비밀번호를 바꾸면 다시 발급)
+- 기획안 작성이 실패해도 지난 기획안으로 사이트는 배포된다
+- 로컬 미리보기: `python build_site.py` 후 `public/index.html` 열기
+- 공개 사이트라 주소를 아는 누구나 볼 수 있다
+
 ## API 연결 전에 미리 보기
 ```
 python demo_data.py
