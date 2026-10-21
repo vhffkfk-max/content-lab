@@ -1,0 +1,462 @@
+<style>
+.lab{display:grid;gap:var(--cds-gap-xl);font-family:var(--font-anthropic-sans);max-width:1180px;margin-inline:auto;padding-block:var(--cds-pad-md)}
+.lab h1,.lab h2,.lab h3,.lab h4{margin:0;text-wrap:balance}
+.lab-head{display:grid;gap:var(--cds-gap-xs)}
+.lab-title{font-family:var(--font-anthropic-serif);font-weight:400;font-size:var(--cds-font-size-title)}
+.lab-take{font-size:var(--cds-font-size-body);margin:0}
+.lab-take b{font-weight:600}
+.lab-meta,.lab-note{color:var(--color-fg-muted);font-size:var(--cds-font-size-caption);margin:0}
+.lab-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,10rem),1fr));gap:var(--cds-gap-md)}
+.lab-tile,.lab-card{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:var(--cds-radius);padding:var(--cds-pad-lg);min-width:0}
+.lab-tile{display:grid;gap:var(--cds-gap-xs)}
+.lab-tile span{color:var(--color-fg-muted);font-size:var(--cds-font-size-caption)}
+.lab-tile b{font-family:var(--font-anthropic-serif);font-weight:400;font-size:var(--cds-font-size-title);font-variant-numeric:tabular-nums}
+.lab-sec{display:grid;gap:var(--cds-gap-md)}
+.lab-sec>h2{font-size:var(--cds-font-size-heading);font-weight:var(--cds-font-weight-medium)}
+.lab-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr));gap:var(--cds-gap-md)}
+.lab-card>h3{font-size:var(--cds-font-size-body);font-weight:var(--cds-font-weight-medium)}
+.lab-card>.lab-note{margin-top:var(--cds-gap-xs)}
+.lab-how{display:grid;gap:var(--cds-gap-sm);font-size:var(--cds-font-size-body)}
+.lab-how p{margin:0;max-width:70ch}
+.lab-recs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,26rem),1fr));gap:var(--cds-gap-md)}
+.lab-rec{display:grid;gap:var(--cds-gap-sm);align-content:start}
+.lab-rec-top{display:flex;flex-wrap:wrap;align-items:center;gap:var(--cds-gap-sm);font-size:var(--cds-font-size-caption)}
+.lab-rank{font-family:var(--font-anthropic-serif);font-size:var(--cds-font-size-heading);font-variant-numeric:tabular-nums}
+.lab-kind{border:1px solid var(--color-border-line);border-radius:999px;padding:2px var(--cds-pad-sm)}
+.lab-conf{color:var(--color-fg-muted);margin-left:auto}
+.lab .lab-conf b{font-weight:600;color:var(--color-fg)}
+.lab .lab-conf b.hi{color:var(--color-ok)}.lab .lab-conf b.lo{color:var(--color-warn)}
+.lab-rec h3{font-family:var(--font-anthropic-serif);font-weight:400;font-size:var(--cds-font-size-heading)}
+.lab-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,9rem),1fr));gap:var(--cds-gap-xs) var(--cds-gap-md);margin:0}
+.lab-facts div{display:grid}
+.lab-facts dt{color:var(--color-fg-muted);font-size:var(--cds-font-size-caption)}
+.lab-facts dd{margin:0;font-size:var(--cds-font-size-body)}
+.lab-rec h4{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);font-weight:var(--cds-font-weight-medium)}
+.lab-rec ul{margin:0;padding-left:1.1em;display:grid;gap:var(--cds-gap-xs);font-size:var(--cds-font-size-body)}
+.lab-ex{display:grid;gap:var(--cds-gap-xs);border-top:1px solid var(--color-border-line);padding-top:var(--cds-pad-sm);font-size:var(--cds-font-size-caption)}
+.lab-ex a{color:inherit;text-decoration:none;display:block;overflow-wrap:anywhere}
+.lab-ex a:hover .lab-ex-cap{text-decoration:underline}
+.lab-ex-cap{color:var(--color-fg-muted)}
+.lab-plan{border-top:1px solid var(--color-border-line);padding-top:var(--cds-pad-sm)}
+.lab-plan summary{cursor:pointer;font-weight:var(--cds-font-weight-medium);font-size:var(--cds-font-size-body)}
+.lab-plan summary:focus-visible{outline:2px solid var(--color-fg);outline-offset:2px}
+.lab-plan-body{display:grid;gap:var(--cds-gap-md);margin-top:var(--cds-gap-sm)}
+.lab-plan-body h5{margin:0 0 var(--cds-gap-xs);font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);font-weight:var(--cds-font-weight-medium)}
+.lab-steps{display:grid;grid-template-columns:auto 1fr;gap:var(--cds-gap-xs) var(--cds-gap-md);margin:0;font-size:var(--cds-font-size-body)}
+.lab-steps dt{color:var(--color-fg-muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.lab-steps dd{margin:0}
+.lab-copybox{position:relative;background:var(--color-bg);border-radius:var(--cds-radius);padding:var(--cds-pad-sm);white-space:pre-wrap;font-size:var(--cds-font-size-body);overflow-wrap:anywhere}
+.lab-copy{font:inherit;font-size:var(--cds-font-size-caption);cursor:pointer;background:var(--color-panel);color:var(--color-fg);border:1px solid var(--color-border-line);border-radius:999px;padding:2px var(--cds-pad-sm);margin-top:var(--cds-gap-xs)}
+.lab-copy:hover{background:var(--color-bg)}
+.lab-copy:focus-visible{outline:2px solid var(--color-fg)}
+.lab-insights{margin:0;padding-left:1.1em;display:grid;gap:var(--cds-gap-xs);font-size:var(--cds-font-size-body)}
+.lab-legend{display:flex;flex-wrap:wrap;gap:var(--cds-gap-md);font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
+.lab-legend i{display:inline-block;width:.7rem;height:.7rem;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.lab-bars{position:relative;display:grid;gap:var(--cds-gap-sm);margin-top:var(--cds-gap-sm);min-height:6rem}
+.lab-row{display:grid;grid-template-columns:minmax(5.5rem,9rem) 1fr;gap:var(--cds-gap-sm);align-items:center}
+.lab-row>span{font-size:var(--cds-font-size-caption);overflow-wrap:anywhere}
+.lab-track{position:relative;display:grid;gap:3px}
+.lab-ref{position:absolute;top:-4px;bottom:-4px;border-left:1px dashed var(--cds-chart-reference)}
+.lab-bar{display:flex;align-items:center;gap:6px;font-size:var(--cds-font-size-caption);font-variant-numeric:tabular-nums;color:var(--color-fg-muted);min-height:14px}
+.lab-bar i{display:block;height:12px;border-radius:4px;min-width:2px}
+.lab-tip{position:absolute;z-index:2;pointer-events:none;background:var(--cds-surface-popover);border:1px solid var(--cds-border);border-radius:var(--cds-radius);box-shadow:var(--cds-shadow-popover);padding:var(--cds-pad-xs) var(--cds-pad-sm);font-size:var(--cds-font-size-caption);white-space:nowrap}
+.lab-tip b{display:block;color:var(--cds-text-secondary);font-weight:400}
+.lab-scroll{overflow:auto;max-height:34rem;margin-top:var(--cds-gap-sm)}
+.lab-tbl{width:100%;border-collapse:collapse;font-size:var(--cds-font-size-caption);font-variant-numeric:tabular-nums}
+.lab-tbl th,.lab-tbl td{padding:var(--cds-pad-xs) var(--cds-pad-sm);border-bottom:1px solid var(--color-border-line);text-align:left;vertical-align:top}
+.lab-tbl th{position:sticky;top:0;background:var(--color-panel);color:var(--color-fg-muted);font-weight:var(--cds-font-weight-medium);white-space:nowrap}
+.lab-tbl th button{all:unset;cursor:pointer}
+.lab-tbl th button:focus-visible{outline:2px solid var(--color-fg)}
+.lab-tbl .num{text-align:right;white-space:nowrap}
+.lab-tbl td a{color:inherit}
+.lab-tbl td.cap{min-width:14rem}
+.lab-fail{display:flex;align-items:center;justify-content:center;gap:8px;min-height:4rem;color:var(--color-fg-muted);font-size:var(--cds-font-size-caption)}
+.lab-fail i{width:.375rem;height:.375rem;border-radius:50%;background:var(--color-bad)}
+.lab [data-dash-source-state=empty]{color:transparent}
+.lab [data-dash-source-state=refreshing]{opacity:.5;transition:opacity var(--cds-dur-slow)}
+@media (max-width:640px){.lab-hide-sm{display:none}}
+</style>
+
+<div class="lab">
+  <header class="lab-head" id="top">
+    <h1 class="lab-title">말희아빠 &amp; 파로파트너스 컨텐츠 연구소</h1>
+    <p class="lab-take">이번 1순위 추천: <b data-source="recs" data-field="title_idea" data-where="rank=1" class="dash-skeleton">—</b></p>
+    <p class="lab-meta"><span data-source="summary" data-field="generated_at" data-row="0" class="dash-skeleton">—</span> 수집 기준 · 최근 <span data-source="summary" data-field="days" data-row="0">—</span>일 게시물 분석 · 인스타그램 공식 API</p>
+  </header>
+
+  <section class="lab-tiles" aria-label="수집 현황">
+    <div class="lab-tile"><span>한국 계정</span><b data-source="summary" data-field="accounts_kr" data-row="0" class="dash-skeleton">—</b></div>
+    <div class="lab-tile"><span>해외 계정</span><b data-source="summary" data-field="accounts_foreign" data-row="0" class="dash-skeleton">—</b></div>
+    <div class="lab-tile"><span>분석한 게시물 (최근 기간)</span><b data-source="summary" data-field="recent_posts" data-row="0" class="dash-skeleton">—</b></div>
+    <div class="lab-tile"><span>해시태그 인기 게시물</span><b data-source="summary" data-field="hashtag_posts" data-row="0" class="dash-skeleton">—</b></div>
+  </section>
+
+  <section class="lab-sec" id="recommend">
+    <h2>추천 콘텐츠</h2>
+    <p class="lab-note">순위는 반응 강도 × 게시물 수 × 최근 2주 증가세로 매겨요. 카드마다 추천 근거와, 바로 만들 수 있는 기획안(제목·구성·캡션·해시태그)이 있어요.</p>
+    <div class="lab-recs" id="rec-list"></div>
+  </section>
+
+  <section class="lab-sec" id="how">
+    <h2>숫자 읽는 법</h2>
+    <div class="lab-card lab-how">
+      <p><b>평소 대비 ○배</b> = 게시물 반응(좋아요 + 댓글×3) ÷ 그 계정 게시물 반응의 중앙값. 팔로워 100만 계정과 1만 계정을 같은 기준으로 비교하려고 이렇게 계산해요.</p>
+      <p>1.0배는 평소만큼, 2.0배는 평소의 두 배로 반응이 터진 게시물이에요. 댓글은 좋아요보다 강한 관심 신호라 3배로 셉니다.</p>
+      <p>추천 유형: <b>국내 검증</b>은 한국 팔로워에게 이미 통하는 주제, <b>해외 선행</b>은 해외에선 터지는데 한국엔 아직 드문 주제, <b>해외 벤치마킹</b>은 한국도 다루지만 반응이 약해서 해외 방식을 따라 해볼 주제예요.</p>
+    </div>
+  </section>
+
+  <section class="lab-sec" id="insights">
+    <h2>핵심 인사이트</h2>
+    <div class="lab-card"><ul class="lab-insights" id="insight-list" data-source="insights"></ul></div>
+  </section>
+
+  <section class="lab-sec" id="topics">
+    <h2>주제별 반응: 한국 vs 해외</h2>
+    <div class="lab-card">
+      <h3>주제별 평소 대비 반응</h3>
+      <p class="lab-note">점선이 평소(1.0배). 해외 막대가 길고 한국 게시물 수가 적은 주제가 선점 기회예요.</p>
+      <div class="lab-legend" id="topic-legend"></div>
+      <div class="lab-bars" id="topic-chart" data-source="topics"></div>
+    </div>
+  </section>
+
+  <section class="lab-sec" id="patterns">
+    <h2>형식 · 첫 문장 · 업로드 시간</h2>
+    <div class="lab-grid" id="pattern-grid" data-source="patterns"></div>
+  </section>
+
+  <section class="lab-sec" id="accounts">
+    <h2>계정 활성도</h2>
+    <div class="lab-card">
+      <h3>수집한 계정</h3>
+      <p class="lab-note">참여율 = 최근 4주 게시물 반응 중앙값 ÷ 팔로워. 팔로워 변화는 여러 날 수집해야 보여요. 머리글을 누르면 정렬돼요.</p>
+      <div class="lab-scroll">
+        <table class="lab-tbl" id="acc-table" data-source="accounts" data-row-key="username">
+          <thead><tr>
+            <th data-field="username"><button type="button">계정</button></th>
+            <th data-field="region"><button type="button">지역</button></th>
+            <th data-field="category" class="lab-hide-sm"><button type="button">분야</button></th>
+            <th data-field="followers" class="num"><button type="button">팔로워</button></th>
+            <th data-field="growth_pct" class="num lab-hide-sm"><button type="button">팔로워 변화</button></th>
+            <th data-field="posts_per_week" class="num"><button type="button">주간 게시</button></th>
+            <th data-field="er" class="num"><button type="button">참여율</button></th>
+            <th data-field="top_outlier" class="num"><button type="button">최고 게시물</button></th>
+            <th data-field="top_caption" class="lab-hide-sm"><button type="button">최고 게시물 캡션</button></th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="lab-sec" id="posts">
+    <h2>최근 반응 TOP 게시물</h2>
+    <div class="lab-card">
+      <h3>평소 대비 반응이 가장 컸던 게시물</h3>
+      <p class="lab-note">캡션을 누르면 인스타그램 원본이 새 탭에서 열려요.</p>
+      <div class="lab-scroll">
+        <table class="lab-tbl" id="post-table" data-source="top_posts" data-row-key="rank">
+          <thead><tr>
+            <th data-field="rank" class="num">순위</th>
+            <th data-field="username">계정</th>
+            <th data-field="region">지역</th>
+            <th data-field="outlier" class="num">평소 대비</th>
+            <th data-field="topics" class="lab-hide-sm">주제</th>
+            <th data-field="format">형식</th>
+            <th data-field="hook" class="lab-hide-sm">첫 문장</th>
+            <th data-field="date" class="lab-hide-sm">게시(한국시간)</th>
+            <th data-field="caption">캡션</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+(() => {
+  const fmtN = d3.format(',');
+  const fmtX = v => v == null ? '–' : `${(+v).toFixed(1)}배`;
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+  const mark = (e, src, field, where) => { e.dataset.source = src; if (field) e.dataset.field = field; if (where) e.dataset.where = where; return e; };
+  const enc = v => encodeURIComponent(String(v));
+  const ok = (...ids) => ids.every(id => dash.data(id).status === 'ok');
+  const bad = (...ids) => ids.some(id => ['error', 'connect'].includes(dash.data(id).status));
+  const failLine = box => { const f = el('div', 'lab-fail'); f.append(el('i'), el('span', null, '불러오지 못했어요')); box.replaceChildren(f); };
+  const safeLink = u => /^https:\/\/(www\.)?instagram\.com\//.test(u || '') ? u : null;
+
+  function fillSimple() {
+    document.querySelectorAll('.lab [data-source="summary"], .lab-take [data-source="recs"]').forEach(n => {
+      const st = dash.data(n.dataset.source);
+      if (st.status !== 'ok') { n.textContent = '—'; if (st.status !== 'loading') n.classList.remove('dash-skeleton'); return; }
+      const row = n.dataset.where ? st.data.find(r => String(r.rank) === '1') : st.data[+n.dataset.row];
+      const v = row ? row[n.dataset.field] : null;
+      n.textContent = v == null ? '—' : typeof v === 'number' ? fmtN(v) : v;
+      n.classList.remove('dash-skeleton');
+    });
+  }
+
+  // 복사 버튼: 클릭 안에서 clipboard 호출, 거절되면 텍스트를 선택해 둔다
+  function copyButton(target, label) {
+    const b = el('button', 'lab-copy', label); b.type = 'button';
+    b.addEventListener('click', () => {
+      const done = () => { b.textContent = '복사했어요'; setTimeout(() => { b.textContent = label; }, 1500); };
+      const fallback = () => { const s = getSelection(); const rg = document.createRange(); rg.selectNodeContents(target); s.removeAllRanges(); s.addRange(rg); b.textContent = '선택됨, Ctrl+C로 복사'; };
+      try { navigator.clipboard.writeText(target.textContent).then(done, fallback); } catch (e) { fallback(); }
+    });
+    return b;
+  }
+
+  const openPlans = new Set();
+  function planBlock(topic, plan) {
+    const d = el('details', 'lab-plan');
+    d.open = openPlans.has(topic);
+    d.addEventListener('toggle', () => { d.open ? openPlans.add(topic) : openPlans.delete(topic); });
+    d.append(el('summary', null, '콘텐츠 기획안 보기'));
+    const body = el('div', 'lab-plan-body');
+    const w = x => `topic=${enc(x.topic)}&part=${enc(x.part)}&n=${enc(x.n)}`;
+    const part = p => plan.filter(x => x.part === p).sort((a, b) => a.n - b.n);
+    const titles = part('title');
+    if (titles.length) {
+      const s = el('div'); s.append(el('h5', null, '제목 후보'));
+      const ul = el('ul'); titles.forEach(x => ul.append(mark(el('li', null, x.text), 'drafts', 'text', w(x)))); s.append(ul); body.append(s);
+    }
+    const steps = part('structure');
+    if (steps.length) {
+      const s = el('div'); s.append(el('h5', null, '구성'));
+      const dl = el('dl', 'lab-steps');
+      steps.forEach(x => dl.append(mark(el('dt', null, x.label), 'drafts', 'label', w(x)), mark(el('dd', null, x.text), 'drafts', 'text', w(x))));
+      s.append(dl); body.append(s);
+    }
+    [['caption', '캡션', '캡션 복사'], ['hashtags', '해시태그', '해시태그 복사']].forEach(([p, h, btn]) => {
+      part(p).forEach(x => {
+        const s = el('div'); s.append(el('h5', null, h));
+        const box = mark(el('div', 'lab-copybox', x.text), 'drafts', 'text', w(x));
+        s.append(box, copyButton(box, btn)); body.append(s);
+      });
+    });
+    const checks = part('check');
+    if (checks.length) {
+      const s = el('div'); s.append(el('h5', null, '올리기 전 확인'));
+      const ul = el('ul'); checks.forEach(x => ul.append(mark(el('li', null, x.text), 'drafts', 'text', w(x)))); s.append(ul); body.append(s);
+    }
+    d.append(body);
+    return d;
+  }
+
+  function recCard(r, reasons, examples, plan) {
+    const w = `rank=${enc(r.rank)}`;
+    const card = el('article', 'lab-card lab-rec'); card.id = `rec-${r.rank}`;
+    const top = el('div', 'lab-rec-top');
+    top.append(mark(el('span', 'lab-rank', String(r.rank)), 'recs', 'rank', w), mark(el('span', 'lab-kind', r.kind), 'recs', 'kind', w));
+    const conf = el('span', 'lab-conf', '신뢰도 ');
+    const cb = mark(el('b', r.confidence === '높음' ? 'hi' : r.confidence === '낮음' ? 'lo' : '', r.confidence), 'recs', 'confidence', w);
+    conf.append(cb); top.append(conf);
+    const facts = el('dl', 'lab-facts');
+    [['주제', 'topic'], ['추천 형식', 'format'], ['첫 문장 스타일', 'hook'], ['업로드 시간', 'slot']].forEach(([label, f]) => {
+      if (!r[f]) return;
+      const d = el('div'); d.append(el('dt', null, label), mark(el('dd', null, r[f]), 'recs', f, w)); facts.append(d);
+    });
+    const why = el('div'); why.append(el('h4', null, '왜 이걸 추천하나요?'));
+    const ul = el('ul');
+    reasons.forEach(x => ul.append(mark(el('li', null, x.reason), 'rec_reasons', 'reason', `rank=${enc(x.rank)}&n=${enc(x.n)}`)));
+    why.append(ul);
+    card.append(top, mark(el('h3', null, r.title_idea), 'recs', 'title_idea', w), facts, why);
+    if (plan.length) card.append(planBlock(r.topic, plan));
+    if (examples.length) {
+      const ex = el('div', 'lab-ex'); ex.append(el('h4', null, '참고할 게시물'));
+      examples.forEach(e => {
+        const ew = `rank=${enc(e.rank)}&n=${enc(e.n)}`;
+        const link = safeLink(e.permalink);
+        const a = el(link ? 'a' : 'div'); if (link) { a.href = link; a.target = '_blank'; a.rel = 'noopener'; }
+        a.append(mark(el('span', null, `@${e.username}`), 'rec_examples', 'username', ew), ' · ',
+          mark(el('span', null, e.region), 'rec_examples', 'region', ew), ' · ',
+          mark(el('span', null, fmtX(e.outlier)), 'rec_examples', 'outlier', ew), ' · ',
+          mark(el('span', null, e.format), 'rec_examples', 'format', ew), ' ',
+          mark(el('span', 'lab-ex-cap', e.caption ? `“${e.caption}”` : ''), 'rec_examples', 'caption', ew));
+        ex.append(a);
+      });
+      card.append(ex);
+    }
+    return card;
+  }
+
+  function drawRecs() {
+    const box = document.getElementById('rec-list');
+    if (bad('recs', 'rec_reasons', 'rec_examples')) return failLine(box);
+    if (!ok('recs', 'rec_reasons', 'rec_examples')) { box.replaceChildren(el('div', 'lab-card dash-skeleton')); return; }
+    const R = dash.data('recs').data, RR = dash.data('rec_reasons').data, RE = dash.data('rec_examples').data;
+    const D = dash.data('drafts').status === 'ok' ? dash.data('drafts').data : [];
+    if (!R.length) { box.replaceChildren(el('p', 'lab-note', '아직 추천할 만큼 데이터가 쌓이지 않았어요. 계정을 늘리거나 수집을 몇 번 더 돌리면 나타나요.')); return; }
+    box.replaceChildren(...R.map(r => recCard(r,
+      RR.filter(x => +x.rank === +r.rank).sort((a, b) => a.n - b.n),
+      RE.filter(x => +x.rank === +r.rank).sort((a, b) => a.n - b.n),
+      D.filter(x => x.topic === r.topic))));
+  }
+
+  function drawInsights() {
+    const ul = document.getElementById('insight-list');
+    if (bad('insights')) return failLine(ul);
+    if (!ok('insights')) { ul.replaceChildren(el('li', 'dash-skeleton')); return; }
+    ul.replaceChildren(...dash.data('insights').data.map(r => el('li', null, r.text)));
+  }
+
+  // 막대 한 줄: 값 라벨까지. 축 상한은 차트 안에서 공유.
+  function barRow(track, value, n, color, max) {
+    const b = el('div', 'lab-bar');
+    const i = el('i'); i.style.width = value == null ? '0' : `calc(${Math.min(value / max, 1) * 100}% - 4.5rem)`; i.style.background = color;
+    b.append(i, el('span', null, value == null ? '–' : `${fmtX(value)} · ${n}개`));
+    track.append(b);
+  }
+
+  function tooltipFor(box) {
+    let tip = box.querySelector('.lab-tip');
+    if (!tip) { tip = el('div', 'lab-tip'); tip.hidden = true; box.append(tip); }
+    return (row, lines) => {
+      row.addEventListener('mousemove', ev => {
+        tip.replaceChildren(...lines.map((t, k) => k ? el('div', null, t) : el('b', null, t)));
+        tip.hidden = false;
+        const r = box.getBoundingClientRect();
+        const x = Math.min(ev.clientX - r.left + 12, r.width - tip.offsetWidth - 4);
+        tip.style.left = `${Math.max(0, x)}px`; tip.style.top = `${ev.clientY - r.top + 12}px`;
+      });
+      row.addEventListener('mouseleave', () => { tip.hidden = true; });
+    };
+  }
+
+  function drawTopics() {
+    const box = document.getElementById('topic-chart');
+    const legend = document.getElementById('topic-legend');
+    legend.replaceChildren(...[['한국', dash.colors[0]], ['해외', 'var(--cds-chart-muted)']].map(([t, c]) => {
+      const s = el('span'); const i = el('i'); i.style.background = c; s.append(i, t); return s;
+    }));
+    if (bad('topics')) return failLine(box);
+    if (!ok('topics')) { box.replaceChildren(); box.classList.add('dash-skeleton'); return; }
+    box.classList.remove('dash-skeleton');
+    const rows = dash.data('topics').data;
+    const max = Math.max(2, ...rows.flatMap(r => [r.kr_avg || 0, r.foreign_avg || 0]));
+    box.replaceChildren();
+    const hover = tooltipFor(box);
+    rows.forEach(r => {
+      const row = el('div', 'lab-row'); row.id = `topic-${r.topic}`;
+      const track = el('div', 'lab-track');
+      const ref = el('div', 'lab-ref'); ref.style.left = `calc(${1 / max * 100}% - ${1 / max * 4.5}rem)`; track.append(ref);
+      barRow(track, r.kr_avg, r.kr_n, dash.colors[0], max);
+      barRow(track, r.foreign_avg, r.foreign_n, 'var(--cds-chart-muted)', max);
+      row.append(el('span', null, r.topic), track);
+      hover(row, [r.topic, `한국 ${fmtX(r.kr_avg)} (${r.kr_n}개)`, `해외 ${fmtX(r.foreign_avg)} (${r.foreign_n}개)`, `해시태그 인기 게시물 ${r.hashtag_hits}개`]);
+      box.append(row);
+    });
+  }
+
+  function drawPatterns() {
+    const grid = document.getElementById('pattern-grid');
+    if (bad('patterns')) return failLine(grid);
+    if (!ok('patterns')) { grid.replaceChildren(el('div', 'lab-card dash-skeleton')); return; }
+    const rows = dash.data('patterns').data;
+    const groups = [['형식', '한국'], ['형식', '해외'], ['첫 문장', '한국'], ['첫 문장', '해외'], ['시간대', '한국']];
+    const notes = { '형식': '릴스·캐러셀(카드뉴스)·이미지별 평균', '첫 문장': '캡션 첫 줄 스타일별 평균', '시간대': '한국 계정, 한국시간 기준' };
+    grid.replaceChildren();
+    groups.forEach(([g, region], gi) => {
+      let items = rows.filter(r => r.group === g && r.region === region);
+      if (!items.length) return;
+      if (g !== '시간대') items = items.slice().sort((a, b) => b.avg - a.avg);
+      const max = Math.max(2, ...items.map(r => r.avg || 0));
+      const card = el('div', 'lab-card'); card.id = `pattern-${gi}`;
+      card.append(el('h3', null, `${g} (${region})`), el('p', 'lab-note', notes[g]));
+      const bars = el('div', 'lab-bars'); bars.style.minHeight = '0';
+      const hover = tooltipFor(bars);
+      items.forEach(r => {
+        const row = el('div', 'lab-row');
+        const track = el('div', 'lab-track');
+        const ref = el('div', 'lab-ref'); ref.style.left = `calc(${1 / max * 100}% - ${1 / max * 4.5}rem)`; track.append(ref);
+        barRow(track, r.avg, r.n, region === '한국' ? dash.colors[0] : 'var(--cds-chart-muted)', max);
+        row.append(el('span', null, r.key), track);
+        hover(row, [`${g} · ${region}`, `${r.key}: 평소 대비 ${fmtX(r.avg)}`, `게시물 ${r.n}개`]);
+        bars.append(row);
+      });
+      card.append(bars);
+      grid.append(card);
+    });
+  }
+
+  // 표: 머리글 클릭 정렬. 숫자는 숫자로 비교.
+  const sortState = {};
+  function makeTable(id, src, cells) {
+    const table = document.getElementById(id), body = table.querySelector('tbody');
+    const st = dash.data(src);
+    if (['error', 'connect'].includes(st.status)) { const tr = el('tr'); const td = el('td'); td.colSpan = cells.length; failLine(td); tr.append(td); body.replaceChildren(tr); return; }
+    if (st.status !== 'ok') { body.replaceChildren(); return; }
+    let rows = st.data.slice();
+    const s = sortState[id];
+    if (s) rows.sort((a, b) => {
+      const x = a[s.f], y = b[s.f];
+      const c = (typeof x === 'number' || typeof y === 'number') ? (x ?? -Infinity) - (y ?? -Infinity) : String(x ?? '').localeCompare(String(y ?? ''), 'ko');
+      return s.dir * c;
+    });
+    body.replaceChildren(...rows.map(r => {
+      const tr = el('tr');
+      cells.forEach(c => { const td = el('td', c.cls || null); c.fill(td, r); tr.append(td); });
+      return tr;
+    }));
+    table.querySelectorAll('th').forEach(th => {
+      const f = th.dataset.field;
+      th.setAttribute('aria-sort', s && s.f === f ? (s.dir > 0 ? 'ascending' : 'descending') : 'none');
+      const btn = th.querySelector('button');
+      if (btn && !btn.dataset.bound) {
+        btn.dataset.bound = '1';
+        btn.addEventListener('click', () => {
+          const cur = sortState[id];
+          sortState[id] = { f, dir: cur && cur.f === f ? -cur.dir : -1 };
+          draw();
+        });
+      }
+    });
+  }
+
+  const txt = (f, fmt) => (td, r) => { td.textContent = fmt ? fmt(r[f], r) : (r[f] ?? '–'); };
+  const linkCell = (f) => (td, r) => {
+    const u = safeLink(r.permalink || r.top_link);
+    if (u) { const a = el('a', null, r[f] || '(캡션 없음)'); a.href = u; a.target = '_blank'; a.rel = 'noopener'; td.append(a); }
+    else td.textContent = r[f] || '–';
+  };
+
+  function drawTables() {
+    makeTable('acc-table', 'accounts', [
+      { fill: txt('username') },
+      { fill: txt('region') },
+      { cls: 'lab-hide-sm', fill: txt('category') },
+      { cls: 'num', fill: txt('followers', v => v == null ? '–' : fmtN(v)) },
+      { cls: 'num lab-hide-sm', fill: txt('growth_pct', v => v == null ? '수집 2회부터' : `${v > 0 ? '+' : ''}${v.toFixed(1)}%`) },
+      { cls: 'num', fill: txt('posts_per_week', v => v == null ? '–' : `${v}회`) },
+      { cls: 'num', fill: txt('er', (v, r) => v == null ? '–' : `${v.toFixed(2)}%${r.likes_hidden ? ' (좋아요 숨김)' : ''}`) },
+      { cls: 'num', fill: txt('top_outlier', fmtX) },
+      { cls: 'lab-hide-sm cap', fill: linkCell('top_caption') },
+    ]);
+    makeTable('post-table', 'top_posts', [
+      { cls: 'num', fill: txt('rank') },
+      { fill: txt('username') },
+      { fill: txt('region') },
+      { cls: 'num', fill: txt('outlier', fmtX) },
+      { cls: 'lab-hide-sm', fill: txt('topics') },
+      { fill: txt('format') },
+      { cls: 'lab-hide-sm', fill: txt('hook') },
+      { cls: 'lab-hide-sm', fill: txt('date') },
+      { cls: 'cap', fill: linkCell('caption') },
+    ]);
+  }
+
+  function draw() { fillSimple(); drawRecs(); drawInsights(); drawTopics(); drawPatterns(); drawTables(); }
+  let linked = false;
+  dash.onData(() => {
+    draw();
+    if (!linked && ok('recs')) {
+      linked = true;
+      const named = document.getElementById(location.hash.slice(1));
+      if (named) { named.scrollIntoView(); dash.setLink(named.id); }
+    }
+  });
+})();
+</script>

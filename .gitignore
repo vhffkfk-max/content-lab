@@ -1,0 +1,9 @@
+# 비밀값 — 절대 올리지 않음
+.env
+# 로컬 전용
+data/demo.db
+output/report.html
+output/report.json
+output/validated.csv
+public/
+__pycache__/

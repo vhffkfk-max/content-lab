@@ -1,0 +1,71 @@
+# 매일 06:00(한국시간) 수집 → 분석 → 기획안 → 사이트 배포. Actions 탭에서 'Run workflow'로 바로 돌릴 수도 있다.
+name: daily-research
+
+on:
+  schedule:
+    - cron: "0 21 * * *"   # UTC 21:00 = 한국시간 06:00
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: daily-research
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install anthropic pydantic
+
+      - name: 수집·분석
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: |
+          python collect.py --max-posts 60
+          python analyze.py --no-open
+          python export_site.py
+
+      - name: 기획안 작성 (Claude)
+        continue-on-error: true   # 실패해도 지난 기획안으로 사이트는 배포
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python generate_drafts.py
+
+      - name: 사이트 만들기
+        run: python build_site.py
+
+      - name: 수집 데이터 저장 (팔로워 추이용)
+        run: |
+          git config user.name "content-lab-bot"
+          git config user.email "content-lab-bot@users.noreply.github.com"
+          git add data/insta.db output/site
+          git commit -m "data: $(date -u +%Y-%m-%d) 자동 수집" || echo "변경 없음"
+          git push
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

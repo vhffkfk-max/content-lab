@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>말희아빠 &amp; 파로파트너스 컨텐츠 연구소</title>
+<meta name="description" content="한국·해외 경제 인스타그램 계정의 반응을 분석해 다음 콘텐츠를 추천합니다.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600&display=swap">
+<style>
+/* 대시보드 화면이 쓰는 토큰을 독립 사이트에서 직접 정의한다 (밝은 화면 / 어두운 화면) */
+:root{
+  --color-bg:#f4f5f2;--color-panel:#ffffff;--color-fg:#1b1f1d;--color-fg-muted:#5f6862;
+  --color-border-line:#e1e4df;--color-ok:#1d7a4f;--color-warn:#a8590b;--color-bad:#c0392b;
+  --series-1:#1f6f5c;--cds-chart-muted:#b9bfba;--cds-chart-reference:#7d857f;
+  --cds-surface-popover:#ffffff;--cds-border:#d5d9d4;--cds-shadow-popover:0 6px 20px rgba(20,30,25,.14);--cds-text-secondary:#5f6862;
+  --font-anthropic-sans:"Pretendard Variable",Pretendard,"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;
+  --font-anthropic-serif:"Noto Serif KR","Nanum Myeongjo",serif;
+  --cds-font-size-caption:13px;--cds-font-size-body:15px;--cds-font-size-heading:19px;--cds-font-size-title:30px;
+  --cds-font-weight-medium:600;
+  --cds-gap-xs:4px;--cds-gap-sm:8px;--cds-gap-md:14px;--cds-gap-lg:22px;--cds-gap-xl:40px;
+  --cds-pad-xs:4px;--cds-pad-sm:8px;--cds-pad-md:14px;--cds-pad-lg:20px;
+  --cds-radius:10px;--cds-dur-slow:.3s;color-scheme:light
+}
+@media (prefers-color-scheme:dark){:root{
+  --color-bg:#121513;--color-panel:#1a1e1c;--color-fg:#e8ece9;--color-fg-muted:#9aa39d;
+  --color-border-line:#2b312e;--color-ok:#4fc58e;--color-warn:#e9a04e;--color-bad:#ec6b5e;
+  --series-1:#5cc3a7;--cds-chart-muted:#4a524d;--cds-chart-reference:#8b948e;
+  --cds-surface-popover:#222725;--cds-border:#343b37;--cds-shadow-popover:0 6px 20px rgba(0,0,0,.5);--cds-text-secondary:#9aa39d;color-scheme:dark}}
+html,body{margin:0;background:var(--color-bg);color:var(--color-fg);font-family:var(--font-anthropic-sans);line-height:1.55}
+#dash-root{padding-inline:max(16px,4vw);padding-block:12px 64px}
+.dash-skeleton{color:transparent!important;background:var(--color-border-line);border-radius:6px;min-height:1em}
+.lab-foot{max-width:1180px;margin:48px auto 0;color:var(--color-fg-muted);font-size:13px}
+</style>
+</head>
+<body>
+<div id="dash-root">
+<!--BODY-->
+<p class="lab-foot">데이터: 인스타그램 공식 Graph API(Business Discovery·해시태그 검색)로 공개 계정의 공개 게시물만 수집 · 기획안: Claude가 분석 결과를 바탕으로 작성 · 매일 자동 갱신</p>
+</div>
+<script>
+// 대시보드 화면 코드가 쓰는 dash/d3 기능만 작게 흉내 낸다. 데이터는 빌드할 때 아래에 그대로 들어간다.
+window.LAB_DATA = /*DATA*/{};
+(() => {
+  const data = window.LAB_DATA, subs = [];
+  const series = getComputedStyle(document.documentElement).getPropertyValue('--series-1').trim() || '#1f6f5c';
+  window.d3 = { format: () => v => Number(v).toLocaleString('en-US') };
+  window.dash = {
+    data: id => data[id] ? { status: 'ok', data: data[id] } : { status: 'missing', data: [] },
+    onData: fn => { subs.push(fn); fn(); },
+    colors: ['var(--series-1)', series],
+    setLink: id => { try { history.replaceState(null, '', '#' + id); } catch (e) {} },
+  };
+  let t; addEventListener('resize', () => { clearTimeout(t); t = setTimeout(() => subs.forEach(f => f()), 150); });
+})();
+</script>
+<!--SCRIPT-->
+</body>
+</html>
