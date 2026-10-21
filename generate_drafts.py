@@ -8,6 +8,7 @@ API 호출이 실패하거나 거절되면 기존 drafts.json 을 그대로 둔�
 import argparse
 import collections
 import json
+import os
 import re
 import sys
 from typing import List
@@ -82,6 +83,10 @@ def main():
     prompt = build_prompt(report, top_hashtags(args.db))
     if args.dry_run:
         print(SYSTEM, "\n\n", prompt)
+        return
+
+    if not os.environ.get("ANTHROPIC_API_KEY"):
+        print("ANTHROPIC_API_KEY 가 없어 기획안 작성을 건너뛰어요 — 지난 기획안을 유지해요.")
         return
 
     import anthropic
