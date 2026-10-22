@@ -31,7 +31,38 @@ HOOKS = {
     "경고·실수형": [r"주의", r"경고", r"절대", r"하지\s*마", r"실수", r"손해", r"stop\b", r"mistake", r"warning", r"don't", r"never"],
     "속보·뉴스형": [r"속보", r"긴급", r"방금", r"breaking", r"just in", r"오늘"],
     "정리·요약형": [r"정리", r"총정리", r"요약", r"한눈에", r"explained", r"summary", r"guide"],
+    "숫자 강조형": [r"\d[\d,.]*\s*(억|만|조|%|원|배|달러|bp)", r"\$\d"],
+    "대비형": [r"인데", r"는데도", r"반면", r"\bvs\b", r"했지만"],
+    "1인칭 경험형": [r"^(제가|저는|내가|나는)", r"^(i |i'm|my )"],
+    "인용형": [r"^[\"“”'‘’]"],
 }
+
+# 캡션 속 행동 유도(CTA). 좋아요·댓글만 보이므로 '댓글 유도' 외에는 효과를 직접 잴 수 없다
+CTAS = {
+    "댓글 유도": [r"댓글", r"여러분은", r"여러분의", r"알려주세요", r"comment", r"let me know"],
+    "저장 유도": [r"저장", r"나중에 (보|꺼내)", r"\bsave\b"],
+    "공유 유도": [r"공유", r"태그해", r"친구에게", r"짝꿍에게", r"\bshare\b", r"\btag\b"],
+    "링크·DM 유도": [r"프로필 링크", r"링크 클릭", r"\bdm\b", r"link in bio", r"오픈채팅"],
+}
+_CTA_PATS = {name: [re.compile(p, re.I) for p in pats] for name, pats in CTAS.items()}
+
+
+def cta_of(caption):
+    text = (caption or "")
+    for name, pats in _CTA_PATS.items():
+        if any(p.search(text) for p in pats):
+            return name
+    return "행동 유도 없음"
+
+
+def length_of(caption):
+    n = len((caption or "").strip())
+    return "100자 이하" if n <= 100 else "101~300자" if n <= 300 else "301~800자" if n <= 800 else "800자 초과"
+
+
+def tagcount_of(caption):
+    n = len(re.findall(r"#[\w가-힣]+", caption or ""))
+    return "해시태그 0개" if n == 0 else "1~3개" if n <= 3 else "4~8개" if n <= 8 else "9개 이상"
 
 # 경품·이벤트·광고성 게시물은 반응이 인위적으로 커서 분석에서 뺀다
 PROMO_PATS = [re.compile(p, re.I) for p in [r"#event", r"이벤트", r"경품", r"추첨", r"당첨", r"giveaway", r"에어드랍", r"선착순", r"응모"]]
@@ -72,7 +103,7 @@ def hook_of(caption):
     for name, pats in _HOOK_PATS.items():
         if any(p.search(first) for p in pats):
             return name
-    return "일반 서술형"
+    return "짧은 한 줄" if len(first) < 20 else "일반 서술형"
 
 
 def format_of(media_type, product_type):

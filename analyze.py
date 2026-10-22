@@ -10,12 +10,12 @@ import json
 import math
 import statistics
 import webbrowser
-from collections import defaultdict
+from collections import Counter, defaultdict
 from datetime import datetime, timedelta, timezone
 
 import report
 from common import DEFAULT_DB, OUTPUT_DIR, connect
-from topics import format_of, hook_of, is_promo, topics_of
+from topics import cta_of, format_of, hook_of, is_promo, length_of, tagcount_of, topics_of
 
 KST = timezone(timedelta(hours=9))
 COMMENT_WEIGHT = 3        # 댓글은 좋아요보다 강한 신호라 3배로 계산
@@ -27,12 +27,18 @@ KR, FOREIGN = "한국", "해외"
 
 TITLE_TEMPLATES = {
     "숫자·리스트형": "{t}, 지금 꼭 알아야 할 3가지",
-    "질문형": "{t}, 지금 들어가도 될까?",
+    "질문형": "{t}, 지금 꼭 알아야 할 것은?",
     "경고·실수형": "{t} 투자할 때 절대 하면 안 되는 실수",
     "속보·뉴스형": "[오늘] {t}에 무슨 일이? 1분 요약",
     "정리·요약형": "{t} 한 장으로 총정리",
-    "일반 서술형": "요즘 {t} 이야기, 제 생각은 이렇습니다",
+    "일반 서술형": "요즘 {t} 이야기, 핵심만 정리했어요",
+    "숫자 강조형": "숫자 하나로 보는 {t}",
+    "대비형": "{t}, 기대와 현실은 이렇게 달라요",
+    "1인칭 경험형": "제가 {t}를 볼 때 꼭 확인하는 것",
+    "인용형": "\"{t}, 이것만 알면 돼요\"",
+    "짧은 한 줄": "{t}, 한 줄 정리",
 }
+MIN_FORMAT_N = 4          # 형식·첫 문장 판단에 필요한 최소 게시물 수
 
 
 def parse_ts(s):
@@ -73,6 +79,9 @@ def load_posts(conn):
         p["slot"] = slot_of(p["dt"])
         p["weekday"] = WEEKDAYS[p["dt"].astimezone(KST).weekday()]
         p["promo"] = is_promo(p["caption"])
+        p["cta"] = cta_of(p["caption"])
+        p["length"] = length_of(p["caption"])
+        p["tagcount"] = tagcount_of(p["caption"])
         posts.append(p)
 
     # 계정별 '평소 반응'(중앙값) 대비 몇 배인지 → 팔로워 규모가 다른 계정끼리 공정 비교
@@ -193,19 +202,23 @@ def build_recommendations(recent, posts, now, days, tag_hits, top_n):
 
         # 해외에서 배워야 하는 주제는 해외 게시물 기준으로 형식·첫 문장을 고른다
         learn_from = [p for p in in_t if p["region"] == FOREIGN] if (fo_lead or kr_weak) else in_t
-        fmt, fmt_s = best_of(group_stats(learn_from, "format"), 2)
+        fmt, fmt_s = best_of(group_stats(learn_from, "format"), MIN_FORMAT_N)
         if not fmt:
             fmt, fmt_s = best_of(kr_fmt, 3)
-        hook, hook_s = best_of(group_stats(learn_from, "hook"), 2, exclude={"일반 서술형"})
+        hook, hook_s = best_of(group_stats(learn_from, "hook"), MIN_FORMAT_N, exclude={"일반 서술형"})
         if not hook:
             hook, hook_s = best_of(kr_hook, 3, exclude={"일반 서술형"})
         where = "해외 계정의 " if learn_from is not in_t else ""
 
         reasons = []
+        kr_acc = len({p["username"] for p in in_t if p["region"] == KR})
+        fo_acc = len({p["username"] for p in in_t if p["region"] == FOREIGN})
         if fo_strong or kr_weak:
-            reasons.append(f"해외 계정의 '{t}' 게시물은 각 계정 평소 반응 대비 평균 {fo['avg']:.1f}배를 기록했어요 (최근 {days}일, {fo['n']}개).")
+            reasons.append(f"해외 계정의 '{t}' 게시물은 각 계정 평소 반응 대비 평균 {fo['avg']:.1f}배를 기록했어요 (최근 {days}일, {fo_acc}개 계정 {fo['n']}개 게시물).")
         if kr_proven:
-            reasons.append(f"한국 계정{'에서도' if fo_strong else '에서'} '{t}' 게시물은 평소 대비 평균 {kr['avg']:.1f}배 반응을 얻었어요 ({kr['n']}개) — 국내 팔로워에게 이미 통하는 주제예요.")
+            reasons.append(f"한국 계정{'에서도' if fo_strong else '에서'} '{t}' 게시물은 평소 대비 평균 {kr['avg']:.1f}배 반응을 얻었어요 ({kr_acc}개 계정 {kr['n']}개 게시물) — 국내 팔로워에게 이미 통하는 주제예요.")
+            if kr_acc == 1:
+                reasons.append("다만 한 계정이 몰아 올린 결과라, 다른 계정에서도 통하는지는 아직 몰라요.")
             if fo["n"] >= 3 and not fo_strong:
                 reasons.append(f"해외에서는 평범한 반응({fo['avg']:.1f}배)이라, 한국 투자자 특유의 관심사로 보여요.")
         elif fo_lead:
@@ -215,7 +228,7 @@ def build_recommendations(recent, posts, now, days, tag_hits, top_n):
         elif kr_weak:
             reasons.append(f"한국 계정도 이 주제를 {kr['n']}개 올렸지만 평균 {kr['avg']:.1f}배로 평소보다 반응이 낮았어요. 주제가 아니라 '전달 방식'이 문제일 가능성이 커요 — 해외 계정 방식을 따라 해볼 만해요.")
         if momentum >= 1.3:
-            reasons.append(f"최근 2주 동안 이 주제 게시물이 그 전 2주보다 {momentum:.1f}배 많아졌어요 — 관심이 커지는 중이에요.")
+            reasons.append(f"최근 2주 동안 이 주제 게시물이 {prev2}개 → {last2}개로 늘었어요 — 관심이 커지는 중이에요.")
         if tag_hits.get(t):
             reasons.append(f"해시태그 인기 게시물 중 {tag_hits[t]}개가 이 주제를 다루고 있어요.")
         if fmt:
@@ -231,7 +244,7 @@ def build_recommendations(recent, posts, now, days, tag_hits, top_n):
             "topic": t, "kind": kind, "score": round(score, 2), "confidence": confidence,
             "title_idea": TITLE_TEMPLATES.get(hook or "일반 서술형", TITLE_TEMPLATES["일반 서술형"]).format(t=t),
             "format": fmt, "hook": hook, "slot": best_slot,
-            "kr": kr, "foreign": fo, "momentum": momentum,
+            "kr": kr, "foreign": fo, "momentum": momentum, "last2": last2, "prev2": prev2,
             "reasons": reasons, "examples": [post_brief(p) for p in examples],
         })
     recs.sort(key=lambda r: r["score"], reverse=True)
@@ -258,6 +271,46 @@ def build_insights(recent):
     if day:
         out.append(f"한국 계정은 {day}요일 게시물이 평균 {ds['avg']:.1f}배로 반응이 가장 좋아요.")
     return out
+
+
+def build_calendar(recs, recent, now):
+    """추천을 앞으로 7일에 하루 하나씩 배치. 반응 좋은 요일에 순위 높은 추천을, 시간은 그 형식이 잘 되는 시간대로."""
+    kr = [p for p in recent if p["region"] == KR]
+    day_stats = group_stats(kr, "weekday")
+    slot_overall, _ = best_of(group_stats(kr, "slot"), 3)
+    today = now.astimezone(KST).date()
+    days = [today + timedelta(days=i) for i in range(1, 8)]
+    shrink = lambda s: (s["avg"] * s["n"] + 5) / (s["n"] + 5) if s and s["avg"] is not None else 1.0
+    days.sort(key=lambda d: shrink(day_stats.get(WEEKDAYS[d.weekday()])), reverse=True)
+    plan = []
+    for r, d in zip(recs, days):
+        fmt_posts = [p for p in kr if p["format"] == r["format"]]
+        slot, slot_s = best_of(group_stats(fmt_posts, "slot"), 3)
+        wd = WEEKDAYS[d.weekday()]
+        ds = day_stats.get(wd) or {"avg": None, "n": 0}
+        plan.append({
+            "date": d.isoformat(), "weekday": wd, "slot": slot or slot_overall or "",
+            "slot_basis": f"{r['format']} {slot_s['n']}개 기준 {slot_s['avg']:.1f}배" if slot else "전체 게시물 기준",
+            "day_avg": ds["avg"], "day_n": ds["n"],
+            "topic": r["topic"], "title": r["title_idea"], "format": r["format"] or "",
+            "confidence": r["confidence"],
+        })
+    plan.sort(key=lambda x: x["date"])
+    return plan
+
+
+def build_this_week(posts, now):
+    week = [p for p in posts if p["dt"] >= now - timedelta(days=7) and not p["promo"]]
+    hot = sorted([p for p in week if (p["outlier"] or 0) >= 2], key=lambda p: p["outlier"], reverse=True)[:12]
+    per_acc = defaultdict(list)
+    for p in week:
+        per_acc[p["username"]].append(p)
+    accounts = sorted(({
+        "username": u, "region": ps[0]["region"], "posts": len(ps),
+        "top_outlier": max((p["outlier"] or 0) for p in ps),
+        "topics": ", ".join(t for t, _ in Counter(t for p in ps for t in p["topics"] if t != "기타").most_common(3)),
+    } for u, ps in per_acc.items()), key=lambda a: a["posts"], reverse=True)
+    return [dict(post_brief(p), rank=i) for i, p in enumerate(hot, 1)], accounts
 
 
 def to_rows(stats):
@@ -301,11 +354,16 @@ def main():
         ],
         "formats": {r: to_rows(group_stats([p for p in recent if p["region"] == r], "format")) for r in (KR, FOREIGN)},
         "hooks": {r: to_rows(group_stats([p for p in recent if p["region"] == r], "hook")) for r in (KR, FOREIGN)},
+        "ctas": {r: to_rows(group_stats([p for p in recent if p["region"] == r], "cta")) for r in (KR, FOREIGN)},
+        "lengths": {r: to_rows(group_stats([p for p in recent if p["region"] == r], "length")) for r in (KR, FOREIGN)},
+        "tagcounts": {r: to_rows(group_stats([p for p in recent if p["region"] == r], "tagcount")) for r in (KR, FOREIGN)},
         "slots_kr": [{"key": name, **summarize([p for p in recent if p["region"] == KR and p["slot"] == name])}
                      for _, _, name in SLOTS],
         "accounts": account_stats(conn, accounts, by_acc, now),
         "top_posts": [post_brief(p) for p in sorted(recent, key=lambda p: p["outlier"] or 0, reverse=True)[:20]],
     }
+    data["calendar"] = build_calendar(data["recommendations"], recent, now)
+    data["this_week"], data["this_week_accounts"] = build_this_week(posts, now)
     data["topics"].sort(key=lambda r: max(r["kr"]["avg"] or 0, r["foreign"]["avg"] or 0), reverse=True)
 
     OUTPUT_DIR.mkdir(exist_ok=True)

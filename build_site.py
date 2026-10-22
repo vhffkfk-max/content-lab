@@ -8,7 +8,7 @@ import re
 from common import OUTPUT_DIR, ROOT
 
 DATASETS = ["summary", "recs", "rec_reasons", "rec_examples", "insights", "topics",
-            "patterns", "accounts", "top_posts", "drafts"]
+            "patterns", "accounts", "top_posts", "drafts", "calendar", "this_week", "this_week_accounts"]
 
 
 def main():

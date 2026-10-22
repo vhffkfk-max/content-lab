@@ -52,7 +52,6 @@ window.LAB_DATA = /*DATA*/{};
     colors: ['var(--series-1)', series],
     setLink: id => { try { history.replaceState(null, '', '#' + id); } catch (e) {} },
   };
-  let t; addEventListener('resize', () => { clearTimeout(t); t = setTimeout(() => subs.forEach(f => f()), 150); });
 })();
 </script>
 <!--SCRIPT-->

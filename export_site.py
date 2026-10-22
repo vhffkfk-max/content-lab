@@ -44,7 +44,8 @@ def main():
                       "hashtag_hits": t["hashtag_hits"]} for t in d["topics"] if t["topic"] != "기타"])
 
     patterns = []
-    for group, by_region in (("형식", d["formats"]), ("첫 문장", d["hooks"])):
+    for group, by_region in (("형식", d["formats"]), ("첫 문장", d["hooks"]), ("행동 유도", d["ctas"]),
+                             ("캡션 길이", d["lengths"]), ("해시태그 개수", d["tagcounts"])):
         for region, rows in by_region.items():
             patterns += [{"group": group, "region": region, "key": r["key"], "avg": r["avg"], "n": r["n"]}
                          for r in rows if r["n"]]
@@ -68,6 +69,9 @@ def main():
         "date": p["date"], "caption": p["caption"], "permalink": p["permalink"] or "",
         "likes": p["likes"], "comments": p["comments"],
     } for i, p in enumerate(d["top_posts"], 1)])
+    write("calendar", d["calendar"])
+    write("this_week", [{k: (", ".join(v) if isinstance(v, list) else v) for k, v in p.items()} for p in d["this_week"]])
+    write("this_week_accounts", d["this_week_accounts"])
     print(f"✅ 사이트 데이터 → {SITE}")
 
 
