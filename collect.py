@@ -158,6 +158,9 @@ def main():
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
 
     accounts = [] if args.hashtags_only else read_csv("accounts.csv")
+    # 호출 한도에 걸려 중간에 멈춰도 매번 같은 계정만 빠지지 않게, 가장 오래전에 수집한 계정부터
+    last = {r["username"].lower(): r["last_collected"] or "" for r in conn.execute("SELECT username, last_collected FROM accounts")}
+    accounts.sort(key=lambda a: last.get(a["username"].strip().lstrip("@").lower(), ""))
     if args.only:
         wanted = {u.strip().lstrip("@").lower() for u in args.only.split(",")}
         accounts = [a for a in accounts if a["username"].strip().lstrip("@").lower() in wanted]
