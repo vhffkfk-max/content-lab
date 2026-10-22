@@ -10,7 +10,7 @@ from common import OUTPUT_DIR, ROOT
 DATASETS = ["summary", "recs", "rec_reasons", "rec_examples", "insights", "topics",
             "patterns", "accounts", "top_posts", "drafts", "calendar", "this_week", "this_week_accounts",
             "google_meta", "google_topics", "google_headlines", "google_trends", "google_opportunities",
-            "press_headlines", "press_popular"]
+            "press_headlines", "press_popular", "threads_meta", "threads_topics", "threads_posts"]
 
 
 def main():
@@ -32,6 +32,12 @@ def main():
     out.mkdir(exist_ok=True)
     (out / "index.html").write_text(html, encoding="utf-8")
     (out / ".nojekyll").write_text("", encoding="utf-8")
+    # 개인정보처리방침·데이터 삭제 안내·쓰레드 콜백 페이지 (메타 앱 심사에 필요한 공개 주소)
+    cfg_path = ROOT / "site" / "site_config.json"
+    cfg = json.loads(cfg_path.read_text(encoding="utf-8")) if cfg_path.exists() else {}
+    contact = cfg.get("contact_email") or "운영팀 문의 메일 (등록 예정)"
+    for page in (ROOT / "site" / "pages").glob("*.html"):
+        (out / page.name).write_text(page.read_text(encoding="utf-8").replace("CONTACT_EMAIL", contact), encoding="utf-8")
     print(f"✅ 사이트 생성: {out / 'index.html'} ({len(html.encode()) // 1024}KB)")
 
 

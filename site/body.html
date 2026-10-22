@@ -217,7 +217,7 @@ a.row:hover .row-main{text-decoration:underline}
             <li><a href="#g-news">주제별 기사</a></li>
           </ul></li>
         <li><button type="button" data-ch="youtube"><i class="dot" style="background:var(--ch-youtube)"></i>유튜브<span class="soon">준비 중</span></button></li>
-        <li><button type="button" data-ch="threads"><i class="dot" style="background:var(--ch-threads)"></i>쓰레드<span class="soon">준비 중</span></button></li>
+        <li><button type="button" data-ch="threads"><i class="dot" style="background:var(--ch-threads)"></i>쓰레드<span class="soon" id="th-badge">심사 중</span></button></li>
       </ul>
     </nav>
     <p class="side-foot" id="side-foot">매일 06:00 자동 갱신</p>
@@ -341,11 +341,17 @@ a.row:hover .row-main{text-decoration:underline}
         <div class="empty">준비 중이에요. 다음 단계에서 공식 YouTube Data API로 연결해요.</div>
       </div>
       <div class="view" data-view="threads" hidden>
-        <div class="title-row"><div><h1>쓰레드</h1><p>경제 쓰레드 계정의 반응 좋은 글과 짧은 문장 패턴을 분석할 예정이에요.</p></div></div>
-        <div class="empty">준비 중이에요. 지금은 인스타 추천 카드의 기획안에서 "쓰레드" 탭으로 글을 바로 쓸 수 있어요.</div>
+        <div class="title-row"><div><h1>쓰레드</h1><p id="th-sub">공식 Threads API 키워드 검색으로 경제 키워드의 공개 글을 모아요.</p></div></div>
+        <div class="kpis" id="th-kpis"></div>
+        <div class="grid">
+          <section class="sec"><h2>주제별 글 수</h2><p class="note">최근 7일, 경제 키워드 검색에 걸린 쓰레드 글을 주제별로 셌어요.</p>
+            <div class="card"><div class="legend" id="legend-th"></div><div class="bars" id="th-topics"></div></div></section>
+          <section class="sec"><h2>최신 쓰레드 글</h2><p class="note">누르면 쓰레드 원문이 새 탭에서 열려요.</p>
+            <div class="card"><div class="rows" id="th-posts"></div></div></section>
+        </div>
       </div>
 
-      <p class="note" style="margin-top:12px">데이터: 인스타그램 공식 Graph API(공개 계정의 공개 게시물), 구글 뉴스·구글 트렌드 RSS · 기획안: Claude가 분석 결과를 바탕으로 작성 · 매일 06:00 자동 갱신</p>
+      <p class="note" style="margin-top:12px">데이터: 인스타그램 공식 Graph API(공개 계정의 공개 게시물), 구글 뉴스·구글 트렌드 RSS · 기획안: Claude가 분석 결과를 바탕으로 작성 · 매일 06:00 자동 갱신 · <a href="privacy.html" style="color:inherit">개인정보처리방침</a> · <a href="data-deletion.html" style="color:inherit">데이터 삭제 안내</a></p>
     </div></main>
   </div>
 </div>
@@ -787,6 +793,27 @@ a.row:hover .row-main{text-decoration:underline}
     }, 12);
   }
 
+  // ── 쓰레드 ──
+  function drawThreads() {
+    const M = (rows('threads_meta') || [])[0], T = rows('threads_topics') || [], P = rows('threads_posts') || [];
+    const kb = document.getElementById('th-kpis'), tb = document.getElementById('th-topics'), pb = document.getElementById('th-posts');
+    legend('legend-th', ['최근 24시간', '최근 7일']);
+    if (!M) {
+      kb.replaceChildren(kpi('수집한 글', '–', '쓰레드 연결 전'), kpi('작성자', '–', ''), kpi('가장 많은 주제', '–', ''), kpi('상태', '연결 전', 'THREADS_SETUP.md 참고'));
+      empty(tb, '쓰레드 계정을 연결하면 매일 06:00에 경제 키워드 글을 모아요.'); empty(pb, '아직 수집한 쓰레드 글이 없어요.'); return;
+    }
+    document.getElementById('th-badge').textContent = M.own_only ? '심사 중' : '연결됨';
+    document.getElementById('th-sub').textContent = M.own_only
+      ? '지금은 메타 심사 전이라 연결한 내 계정 글만 보여요. 키워드 검색 권한이 승인되면 다른 사람의 공개 글이 함께 모여요.'
+      : '공식 Threads API 키워드 검색으로 경제 키워드의 공개 글을 모아요.';
+    kb.replaceChildren(kpi('수집한 글', fmtN(M.posts), '최근 90일 보관'), kpi('작성자', `${fmtN(M.authors)}명`, M.own_only ? '심사 전: 내 계정만' : '공개 글 작성자'),
+      kpi('가장 많은 주제', T[0] ? T[0].topic : '–', T[0] ? `최근 7일 ${T[0].n_7d}건` : ''), kpi('상태', M.own_only ? '심사 중' : '수집 중', '매일 06:00'));
+    if (!T.length) empty(tb, '경제 주제로 분류된 글이 아직 없어요.');
+    else { const max = Math.max(...T.map(t => t.n_7d)); tb.replaceChildren(...T.map(t => pairRow(t.topic, null, t.n_24h, null, t.n_7d, null, max, { noRef: true, unit: v => `${fmtN(v)}건` }))); }
+    if (!P.length) empty(pb, '아직 수집한 쓰레드 글이 없어요.');
+    else listWithMore(pb, P, p => rowLink(p.text || '(내용 없음)', `@${p.username} · ${p.time} · 키워드 ${p.keyword}${p.topics ? ' · ' + p.topics : ''}`, p.permalink, webLink), 10);
+  }
+
   // ── 채널 전환 · 메뉴 ──
   const side = document.getElementById('side'), menuBtn = document.getElementById('menu-btn');
   const closeMenu = () => { side.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); };
@@ -829,7 +856,7 @@ a.row:hover .row-main{text-decoration:underline}
   dash.onData(() => {
     const recs = grouped();
     drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors();
-    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs);
+    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads();
     const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/);
     setChannel(ch ? ch[1] : 'instagram');
     if (m) openPlan(+m[1]);

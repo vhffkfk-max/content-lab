@@ -361,6 +361,39 @@ def google_section(conn, recent, now):
             "headlines": headlines, "trends": trends, "opportunities": opportunities, "press": press, "popular": popular}
 
 
+def threads_section(conn, now):
+    """쓰레드 키워드 검색 결과 요약. 수집 전이면 빈 값."""
+    tables = {r[0] for r in conn.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+    if "threads_posts" not in tables:
+        return {"meta": [], "topics": [], "posts": []}
+    rows = [dict(r) for r in conn.execute("SELECT * FROM threads_posts")]
+    def ts(r):
+        try:
+            return datetime.fromisoformat((r["timestamp"] or "").replace("+0000", "+00:00"))
+        except ValueError:
+            return None
+    day, week = now - timedelta(hours=24), now - timedelta(days=7)
+    t24, t7 = Counter(), Counter()
+    for r in rows:
+        d = ts(r)
+        for t in (r["topics"] or "").split(", "):
+            if t and d:
+                if d >= day:
+                    t24[t] += 1
+                if d >= week:
+                    t7[t] += 1
+    authors = {r["username"] for r in rows if r["username"]}
+    recent = sorted((r for r in rows if ts(r)), key=ts, reverse=True)[:40]
+    return {
+        "meta": [{"posts": len(rows), "authors": len(authors), "own_only": len(authors) <= 1,
+                  "collected": max((r["collected_at"] for r in rows), default=None)}],
+        "topics": [{"topic": t, "n_24h": t24.get(t, 0), "n_7d": n} for t, n in t7.most_common()],
+        "posts": [{"username": r["username"], "keyword": r["keyword"], "text": (r["text"] or "")[:140],
+                   "permalink": r["permalink"], "topics": r["topics"] or "",
+                   "time": ts(r).astimezone(KST).strftime("%m/%d %H:%M")} for r in recent],
+    }
+
+
 def build_calendar(recs, recent, now):
     """추천을 앞으로 7일에 하루 하나씩 배치. 반응 좋은 요일에 순위 높은 추천을, 시간은 그 형식이 잘 되는 시간대로."""
     kr = [p for p in recent if p["region"] == KR]
@@ -455,6 +488,7 @@ def main():
         "accounts": account_stats(conn, accounts, by_acc, now),
         "top_posts": [post_brief(p) for p in sorted(recent, key=lambda p: p["outlier"] or 0, reverse=True)[:20]],
     }
+    data["threads"] = threads_section(conn, now)
     data["calendar"] = build_calendar(data["recommendations"], recent, now)
     data["this_week"], data["this_week_accounts"] = build_this_week(posts, now)
     data["topics"].sort(key=lambda r: max(r["kr"]["avg"] or 0, r["foreign"]["avg"] or 0), reverse=True)

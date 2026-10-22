@@ -34,10 +34,12 @@ jobs:
         env:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
         run: |
           python collect.py --max-posts 60
           python google_collect.py
           python press_collect.py
+          python threads_collect.py
           python analyze.py --no-open
           python export_site.py
 
