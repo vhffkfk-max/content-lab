@@ -4,53 +4,61 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>말희아빠 &amp; 파로파트너스 컨텐츠 연구소</title>
-<meta name="description" content="한국·해외 경제 인스타그램 계정의 반응을 분석해 다음 콘텐츠를 추천합니다.">
+<meta name="description" content="한국·해외 경제 인스타그램과 구글 뉴스를 분석해 오늘 올릴 콘텐츠를 추천합니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600&display=swap">
 <style>
-/* 대시보드 화면이 쓰는 토큰을 독립 사이트에서 직접 정의한다 (밝은 화면 / 어두운 화면) */
+/* 디자인 스킬(design-taste-frontend) 앱 스타일 'accent-ladder': 라즈베리 한 가지 색.
+   진한 색은 작은 표시(버튼·데이터·선택된 메뉴)에만, 넓은 면은 그 색의 연한 톤으로. */
 :root{
-  --color-bg:#f4f5f2;--color-panel:#ffffff;--color-fg:#1b1f1d;--color-fg-muted:#5f6862;
-  --color-border-line:#e1e4df;--color-ok:#1d7a4f;--color-warn:#a8590b;--color-bad:#c0392b;
-  --series-1:#1f6f5c;--cds-chart-muted:#b9bfba;--cds-chart-reference:#7d857f;
-  --cds-surface-popover:#ffffff;--cds-border:#d5d9d4;--cds-shadow-popover:0 6px 20px rgba(20,30,25,.14);--cds-text-secondary:#5f6862;
-  --font-anthropic-sans:"Pretendard Variable",Pretendard,"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;
-  --font-anthropic-serif:"Noto Serif KR","Nanum Myeongjo",serif;
-  --cds-font-size-caption:13px;--cds-font-size-body:15px;--cds-font-size-heading:19px;--cds-font-size-title:30px;
-  --cds-font-weight-medium:600;
-  --cds-gap-xs:4px;--cds-gap-sm:8px;--cds-gap-md:14px;--cds-gap-lg:22px;--cds-gap-xl:40px;
-  --cds-pad-xs:4px;--cds-pad-sm:8px;--cds-pad-md:14px;--cds-pad-lg:20px;
-  --cds-radius:10px;--cds-dur-slow:.3s;color-scheme:light
+  --ground:#fbf7f8; --surface:#ffffff; --raised:#f5f0f2; --border:#ece4e7; --rule:#f3edf0; --control:#d9cfd3;
+  --text:#18131a; --muted:#5f5860; --faint:#6e676f;
+  --accent:#b8336a; --accent-soft:#fdf2f7; --accent-track:#f8dbe8; --accent-ink:#6b1d3e;
+  --positive:#247b50; --negative:#c4242a; --warning:#92400e;
+  --pill-positive-bg:#dcfce7; --pill-positive-ink:#14532d;
+  --pill-negative-bg:#ffedea; --pill-negative-ink:#831c1e;
+  --pill-warning-bg:#fff4dc; --pill-warning-ink:#92400e;
+  --pill-neutral-bg:#f1ecee; --pill-neutral-ink:#3b3438;
+  --pill-accent-bg:#fdf2f7; --pill-accent-ink:#6b1d3e;
+  --chart-1:#b8336a; --chart-2:#b9b0b4;
+  /* 채널 표시는 작은 점에만 */
+  --ch-instagram:#b8336a; --ch-youtube:#d92d20; --ch-google:#2f6fdb; --ch-threads:#18131a;
+  --radius-card:8px; --radius-control:6px; --gap:24px; --pad:24px;
+  --fs-title:28px; --fs-section:18px; --fs-kpi:24px; --fs-body:15px; --fs-small:13px;
+  --font:"DM Sans","Pretendard Variable",Pretendard,"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;
+  --t-ui:180ms; --ease-out:cubic-bezier(.22,1,.36,1);
+  color-scheme:light;
 }
 @media (prefers-color-scheme:dark){:root{
-  --color-bg:#121513;--color-panel:#1a1e1c;--color-fg:#e8ece9;--color-fg-muted:#9aa39d;
-  --color-border-line:#2b312e;--color-ok:#4fc58e;--color-warn:#e9a04e;--color-bad:#ec6b5e;
-  --series-1:#5cc3a7;--cds-chart-muted:#4a524d;--cds-chart-reference:#8b948e;
-  --cds-surface-popover:#222725;--cds-border:#343b37;--cds-shadow-popover:0 6px 20px rgba(0,0,0,.5);--cds-text-secondary:#9aa39d;color-scheme:dark}}
-html,body{margin:0;background:var(--color-bg);color:var(--color-fg);font-family:var(--font-anthropic-sans);line-height:1.55}
-#dash-root{padding-inline:max(16px,4vw);padding-block:12px 64px}
-.dash-skeleton{color:transparent!important;background:var(--color-border-line);border-radius:6px;min-height:1em}
-.lab-foot{max-width:1180px;margin:48px auto 0;color:var(--color-fg-muted);font-size:13px}
+  --ground:#141012; --surface:#1c1719; --raised:#262023; --border:#342a2e; --rule:#2a2226; --control:#4a3d42;
+  --text:#f4eef1; --muted:#b9adb2; --faint:#a89ca1;
+  --accent:#e2719d; --accent-soft:#2b1a22; --accent-track:#4c2536; --accent-ink:#f7c6da;
+  --positive:#4fc58e; --negative:#f07067; --warning:#e9a04e;
+  --pill-positive-bg:#16291e; --pill-positive-ink:#6fdba5;
+  --pill-negative-bg:#2e1818; --pill-negative-ink:#f59b94;
+  --pill-warning-bg:#2d2213; --pill-warning-ink:#f0b86a;
+  --pill-neutral-bg:#2a2326; --pill-neutral-ink:#d6cbd0;
+  --pill-accent-bg:#2b1a22; --pill-accent-ink:#f7c6da;
+  --chart-1:#e2719d; --chart-2:#5a4f54;
+  --ch-instagram:#e2719d; --ch-youtube:#f0645a; --ch-google:#6c9cf5; --ch-threads:#e8e1e4;
+  color-scheme:dark}}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--ground);color:var(--text);font-family:var(--font);font-size:var(--fs-body);line-height:1.55;
+  word-break:keep-all;overflow-wrap:anywhere;-webkit-text-size-adjust:100%}
+[hidden]{display:none!important}
 </style>
 </head>
 <body>
-<div id="dash-root">
 <!--BODY-->
-<p class="lab-foot">데이터: 인스타그램 공식 Graph API(Business Discovery·해시태그 검색)로 공개 계정의 공개 게시물만 수집 · 기획안: Claude가 분석 결과를 바탕으로 작성 · 매일 자동 갱신</p>
-</div>
 <script>
-// 대시보드 화면 코드가 쓰는 dash/d3 기능만 작게 흉내 낸다. 데이터는 빌드할 때 아래에 그대로 들어간다.
+// 화면 코드가 쓰는 dash 기능만 작게 흉내 낸다. 데이터는 빌드할 때 아래에 그대로 들어간다.
 window.LAB_DATA = /*DATA*/{};
 (() => {
-  const data = window.LAB_DATA, subs = [];
-  const series = getComputedStyle(document.documentElement).getPropertyValue('--series-1').trim() || '#1f6f5c';
-  window.d3 = { format: () => v => Number(v).toLocaleString('en-US') };
+  const data = window.LAB_DATA;
   window.dash = {
     data: id => data[id] ? { status: 'ok', data: data[id] } : { status: 'missing', data: [] },
-    onData: fn => { subs.push(fn); fn(); },
-    colors: ['var(--series-1)', series],
-    setLink: id => { try { history.replaceState(null, '', '#' + id); } catch (e) {} },
+    onData: fn => fn(),
   };
 })();
 </script>

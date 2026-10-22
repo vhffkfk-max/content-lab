@@ -1,282 +1,341 @@
 <style>
-/* 글자 단계: 24 페이지 제목 / 22 섹션 / 20 카드 제목 / 15 본문 / 13 보조 설명 */
-.lab{--fs-page:24px;--fs-sec:22px;--fs-card:20px;--fs-body:15px;--fs-note:13px;
-  display:grid;gap:56px;max-width:880px;margin-inline:auto;font-family:var(--font-anthropic-sans);font-size:var(--fs-body);word-break:keep-all;overflow-wrap:anywhere}
-.lab h1,.lab h2,.lab h3,.lab h4,.lab p{margin:0}
-.lab h1,.lab h2,.lab h3{text-wrap:balance}
-.lab a{color:inherit}
-.lab-note{color:var(--color-fg-muted);font-size:var(--fs-note)}
-.lab-sec{display:grid;gap:14px;scroll-margin-top:64px}
-.lab-sec>h2{font-size:var(--fs-sec);font-weight:600}
-.lab-panel{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:var(--cds-radius);padding:20px;min-width:0}
+/* 틀: 왼쪽 메뉴(230px) + 작업 화면. 작업 화면은 본문 열 + 오른쪽 384px 보조 열, 간격 24px 하나로 통일 */
+.app{display:grid;grid-template-columns:230px minmax(0,1fr);min-height:100dvh}
+.side{position:sticky;top:0;height:100dvh;overflow-y:auto;padding:24px 12px;display:flex;flex-direction:column;gap:22px;border-right:1px solid var(--border)}
+.brand{display:flex;gap:10px;align-items:center;padding:0 8px}
+.brand-mark{width:30px;height:30px;border-radius:7px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;font-size:13px;line-height:1;flex:none}
+.brand b{display:block;font-size:14px;line-height:1.3}
+.brand span{display:block;font-size:12px;color:var(--muted);line-height:1.3}
+.nav-label{font-size:12px;color:var(--muted);padding:0 10px;margin:0 0 4px}
+.nav{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.nav button,.nav a{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:10px;width:100%;min-height:34px;padding:6px 10px;border-radius:var(--radius-control);cursor:pointer;color:var(--text);font-size:14px}
+.nav button:hover,.nav a:hover{background:var(--raised)}
+.nav button[aria-current="true"]{background:var(--accent-soft);color:var(--accent-ink);font-weight:600}
+.nav button:focus-visible,.nav a:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.dot{width:8px;height:8px;border-radius:50%;flex:none}
+.soon{margin-left:auto;font-size:11px;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:0 7px;line-height:18px}
+.subnav{list-style:none;margin:2px 0 6px 18px;padding:0 0 0 10px;border-left:1px solid var(--border);display:grid;gap:0}
+.subnav a{min-height:30px;font-size:13px;color:var(--muted)}
+.subnav a[aria-current="true"]{color:var(--accent-ink);font-weight:600}
+.side-foot{margin-top:auto;font-size:12px;color:var(--muted);padding:0 10px;line-height:1.6}
+.topbar{display:none}
 
-/* 상단 고정 메뉴 */
-.lab-nav{position:sticky;top:0;z-index:5;background:var(--color-bg);border-bottom:1px solid var(--color-border-line);margin-inline:calc(-1 * max(16px,4vw));padding-inline:max(16px,4vw)}
-.lab-nav ul[hidden]{display:none}
-.lab-nav ul{display:flex;gap:20px;overflow-x:auto;scrollbar-width:none;list-style:none;margin:0 auto;padding:0;max-width:880px;height:44px;align-items:stretch}
-.lab-nav ul::-webkit-scrollbar{display:none}
-.lab-nav a{display:flex;align-items:center;white-space:nowrap;text-decoration:none;color:var(--color-fg-muted);border-bottom:2px solid transparent;font-size:var(--fs-body)}
-.lab-nav a[aria-current="true"]{color:var(--color-fg);border-bottom-color:var(--color-fg);font-weight:600}
-.lab-nav a:focus-visible,.lab button:focus-visible,.lab summary:focus-visible,.lab a:focus-visible{outline:2px solid var(--color-fg);outline-offset:2px}
+.canvas{min-width:0;padding:32px var(--pad) 80px}
+.page{max-width:1240px;margin:0 auto;display:grid;gap:var(--gap)}
+.view{display:grid;gap:var(--gap)}
+.title-row{display:flex;gap:16px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap}
+.title-row h1{margin:0;font-size:var(--fs-title);font-weight:700;letter-spacing:-.01em;line-height:1.25}
+.title-row p{margin:4px 0 0;color:var(--muted)}
+.title-row p b{color:var(--text);font-weight:600}
 
-/* 채널 탭 */
-.lab-channels{display:flex;gap:6px;max-width:880px;margin:0 auto;padding-top:10px;overflow-x:auto;scrollbar-width:none}
-.lab-channels::-webkit-scrollbar{display:none}
-.lab-channels button{flex:none;min-height:40px;padding-inline:16px;border-radius:8px;border:1px solid var(--color-border-line);background:var(--color-panel);color:var(--color-fg-muted);font:inherit;font-weight:600;cursor:pointer}
-.lab-channels button[aria-selected="true"]{background:var(--color-fg);color:var(--color-bg);border-color:var(--color-fg)}
-.lab-view{display:grid;gap:56px}
-.lab-view[hidden]{display:none}
-.lab-tag{display:inline-block;font-size:12px;border:1px solid var(--color-border-line);border-radius:999px;padding:0 8px;margin-left:6px;color:var(--color-fg-muted);vertical-align:1px}
-.lab-groups .lab-panel h3{margin-bottom:4px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:36px;padding:0 14px;border-radius:var(--radius-control);border:1px solid var(--control);background:var(--surface);color:var(--text);font:inherit;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;white-space:nowrap;transition:background var(--t-ui) var(--ease-out)}
+.btn:hover{background:var(--raised)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.primary:hover{background:var(--accent-ink);border-color:var(--accent-ink)}
+.btn.small{min-height:32px;padding:0 12px;font-size:13px;font-weight:500}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn:active{transform:translateY(1px)}
 
-/* 첫 화면 */
-.lab-head{display:grid;gap:6px;padding-top:20px}
-.lab-title{font-size:var(--fs-page);font-weight:700;letter-spacing:-.01em}
-.lab-hero{display:grid;gap:12px;padding:24px;border-radius:var(--cds-radius);background:var(--color-panel);border:1px solid var(--color-border-line)}
-.lab-hero-label{font-size:var(--fs-note);color:var(--color-fg-muted)}
-.lab-hero h2{font-family:var(--font-anthropic-serif);font-weight:600;font-size:22px;line-height:1.35}
-.lab-hero .lab-why1{font-weight:600}
-.lab-next{display:grid;gap:6px;border-top:1px solid var(--color-border-line);padding-top:12px}
-.lab-next a{display:flex;gap:10px;text-decoration:none;padding-block:4px}
-.lab-next a span:first-child{color:var(--color-fg-muted);font-variant-numeric:tabular-nums;min-width:1.2em}
-.lab-next a:hover span:nth-child(2){text-decoration:underline}
-.lab-next a span:last-child{white-space:nowrap;margin-left:auto}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-card)}
+.kpi{padding:16px 20px;min-width:0}
+.kpi+.kpi{border-left:1px solid var(--border)}
+.kpi-label{font-size:13px;color:var(--muted)}
+.kpi-value{font-size:var(--fs-kpi);font-weight:600;margin-top:2px;line-height:1.3;font-variant-numeric:tabular-nums;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.kpi-cap{font-size:12px;color:var(--muted);margin-top:2px}
 
-/* 버튼 */
-.lab-btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:44px;border:1px solid var(--color-border-line);border-radius:8px;background:var(--color-panel);color:var(--color-fg);font:inherit;font-weight:600;cursor:pointer;text-decoration:none;box-sizing:border-box}
-.lab-btn:hover{background:var(--color-bg)}
-.lab-btn.primary{background:var(--color-fg);color:var(--color-bg);border-color:var(--color-fg)}
-.lab-btn.primary:hover{opacity:.9;background:var(--color-fg)}
-.lab-copy{min-height:40px;width:auto;padding-inline:16px;margin-top:8px;font-weight:500}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 384px;gap:var(--gap);align-items:start}
+.col{display:grid;gap:var(--gap);min-width:0}
+.sec{display:grid;gap:10px;scroll-margin-top:24px;min-width:0}
+.sec>h2{margin:0;font-size:var(--fs-section);font-weight:600}
+.sec>.note{margin:-4px 0 0}
+.note{color:var(--muted);font-size:var(--fs-small);margin:0}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-card);padding:20px;min-width:0}
+.card h3{margin:0;font-size:16px;font-weight:600}
 
-/* 주간 캘린더 */
-.lab-cal{display:grid;gap:8px}
-.lab-day{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:start;padding:14px 16px;background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:var(--cds-radius);text-decoration:none}
-.lab-day:hover{border-color:var(--color-fg-muted)}
-.lab-day-date{display:grid;font-variant-numeric:tabular-nums}
-.lab-day-date b{font-size:var(--fs-card);font-weight:700;white-space:nowrap}
-.lab-day-date span{font-size:var(--fs-note);color:var(--color-fg-muted)}
-.lab-day-body{display:grid;gap:2px;min-width:0}
-.lab-day-body strong{font-weight:600}
-.lab-day.low{opacity:.62}
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;line-height:22px;padding:0 9px;border-radius:999px;white-space:nowrap}
+.pill.accent{background:var(--pill-accent-bg);color:var(--pill-accent-ink)}
+.pill.positive{background:var(--pill-positive-bg);color:var(--pill-positive-ink)}
+.pill.warning{background:var(--pill-warning-bg);color:var(--pill-warning-ink)}
+.pill.negative{background:var(--pill-negative-bg);color:var(--pill-negative-ink)}
+.pill.neutral{background:var(--pill-neutral-bg);color:var(--pill-neutral-ink)}
+.conf{display:inline-flex;align-items:center;gap:3px;font-size:12px;color:var(--muted)}
+.conf i{width:7px;height:7px;border-radius:50%;background:var(--accent-track)}
+.conf i.on{background:var(--accent)}
+
+/* 오늘 할 일 */
+.today{background:var(--accent-soft);border:1px solid var(--accent-track);border-radius:var(--radius-card);padding:22px;display:grid;gap:12px}
+.today-top{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.today h2{margin:0;font-size:22px;font-weight:700;line-height:1.35}
+.today .meta{color:var(--accent-ink);font-weight:500}
+.today .why{margin:0}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
 
 /* 추천 카드 */
-.lab-recs{display:grid;gap:16px}
-.lab-rec{display:grid;gap:10px;scroll-margin-top:64px}
-.lab-rec-head{display:flex;gap:12px;align-items:baseline}
-.lab-rank{font-size:var(--fs-card);font-weight:700;color:var(--color-fg-muted);font-variant-numeric:tabular-nums}
-.lab-rec h3{font-family:var(--font-anthropic-serif);font-weight:600;font-size:var(--fs-card);line-height:1.4}
-.lab-sub{font-size:var(--fs-note);color:var(--color-fg-muted)}
-.lab .lab-sub b{color:var(--color-fg);font-weight:700}
-.lab-meta-line{color:var(--color-fg-muted)}
-.lab-why1{font-weight:600}
-.lab-more>summary,.lab-plan>summary{list-style:none;cursor:pointer}
-.lab-more>summary::-webkit-details-marker,.lab-plan>summary::-webkit-details-marker{display:none}
-.lab-more>summary{color:var(--color-fg-muted);font-size:var(--fs-note);text-decoration:underline;text-underline-offset:3px;width:max-content;padding-block:4px}
-.lab-more[open]>summary{margin-bottom:8px}
-.lab ul.lab-list{margin:0;padding-left:1.1em;display:grid;gap:6px}
-.lab-ex{display:grid;gap:8px;margin-top:10px}
-.lab-ex a{display:grid;gap:2px;text-decoration:none}
-.lab-ex a:hover .lab-ex-cap{text-decoration:underline}
-.lab-ex-cap{overflow-wrap:anywhere}
-.lab-plan>summary{display:flex}
-.lab-plan[open]>summary{margin-bottom:14px}
-.lab-plan-body{display:grid;gap:18px}
-.lab-plan-body h4{font-size:var(--fs-note);color:var(--color-fg-muted);font-weight:600;margin-bottom:6px}
-.lab-steps{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0}
-.lab-steps dt{color:var(--color-fg-muted);white-space:nowrap;font-variant-numeric:tabular-nums}
-.lab-steps dd{margin:0;white-space:pre-line}
-.lab-box{background:var(--color-bg);border-radius:8px;padding:12px 14px;white-space:pre-wrap;overflow-wrap:anywhere}
-.lab-variant{display:grid;gap:12px}
-.lab-thread{display:grid;gap:4px}
-.lab-thread .lab-copy{margin-top:0;justify-self:start}
-.lab-box[hidden]{display:none}
-.lab-warn{border-left:3px solid var(--color-warn);padding:8px 12px;background:var(--color-bg);border-radius:0 8px 8px 0}
-.lab-warn b{color:var(--color-warn)}
-.lab-check{display:grid;gap:8px}
-.lab-check label{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
-.lab-check input{width:18px;height:18px;margin-top:2px;flex:none}
+.recs{display:grid;gap:12px}
+.rec{display:grid;gap:10px;scroll-margin-top:24px}
+.rec-head{display:flex;gap:12px;align-items:flex-start}
+.rank{flex:none;width:28px;height:28px;border-radius:7px;background:var(--raised);display:grid;place-items:center;font-weight:700;font-size:14px;font-variant-numeric:tabular-nums}
+.rec:first-child .rank{background:var(--accent);color:#fff}
+.rec-title{margin:0;font-size:17px;font-weight:600;line-height:1.4}
+.chips{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.meta-line{color:var(--muted);font-size:14px;margin:0}
+.why1{margin:0;font-weight:500}
+details>summary{list-style:none;cursor:pointer}
+details>summary::-webkit-details-marker{display:none}
+.more>summary{color:var(--muted);font-size:13px;text-decoration:underline;text-underline-offset:3px;width:max-content;padding:2px 0}
+.more[open]>summary{margin-bottom:8px}
+ul.list{margin:0;padding-left:1.1em;display:grid;gap:5px}
+.ex{display:grid;gap:8px;margin-top:10px}
+.ex a{display:grid;gap:1px;text-decoration:none;color:inherit}
+.ex a:hover .cap{text-decoration:underline}
+.sub{font-size:13px;color:var(--muted)}
 
-/* 막대 (한국 = 강조색, 해외 = 회색) */
-.lab-legend{display:flex;gap:16px;font-size:var(--fs-note);color:var(--color-fg-muted)}
-.lab-legend i{display:inline-block;width:12px;height:10px;border-radius:3px;margin-right:6px;vertical-align:0}
-.lab-bars{display:grid;gap:18px;margin-top:12px}
-.lab-item{display:grid;grid-template-columns:minmax(6rem,9.5rem) 1fr;gap:12px;align-items:center}
-.lab-item-name{overflow-wrap:anywhere}
-.lab-item-name small{display:block;color:var(--color-fg-muted);font-size:var(--fs-note)}
-.lab-track{position:relative;display:grid;gap:2px;padding-top:2px}
-.lab-ref{position:absolute;top:-6px;bottom:-2px;border-left:1px dashed var(--cds-chart-reference)}
-.lab-ref span{position:absolute;top:-14px;left:3px;font-size:11px;color:var(--color-fg-muted);white-space:nowrap}
-.lab-bar{display:flex;align-items:center;gap:8px;font-size:var(--fs-note);font-variant-numeric:tabular-nums;min-height:14px}
-.lab-bar i{display:block;height:10px;border-radius:4px;min-width:2px;flex:none}
-.lab-bar.kr span{color:var(--color-fg);font-weight:600}
-.lab-bar.fo span{color:var(--color-fg-muted)}
-.lab-bars .lab-item:first-child .lab-ref span{display:inline}
-.lab-bars .lab-item:not(:first-child) .lab-ref span{display:none}
-.lab-groups{display:grid;gap:16px}
-.lab-groups .lab-panel h3{font-size:var(--fs-body);font-weight:600}
+/* 기획안 탭 */
+.plan{border-top:1px solid var(--rule);padding-top:14px;display:grid;gap:14px}
+.titles{display:grid;gap:6px;margin:0;padding:0;list-style:none}
+.titles li{display:flex;gap:8px;align-items:baseline}
+.titles li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none;transform:translateY(-2px)}
+.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--border)}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{all:unset;cursor:pointer;padding:8px 12px;font-size:14px;color:var(--muted);border-bottom:2px solid transparent;white-space:nowrap;margin-bottom:-1px}
+.tabs button[aria-selected="true"]{color:var(--accent-ink);border-bottom-color:var(--accent);font-weight:600}
+.tabs button:focus-visible{outline:2px solid var(--accent)}
+.panel{display:grid;gap:10px}
+.steps{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;margin:0}
+.steps dt{color:var(--accent-ink);font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.steps dd{margin:0;white-space:pre-line}
+.box{background:var(--raised);border-radius:var(--radius-control);padding:12px 14px;white-space:pre-wrap}
+.thread{display:grid;gap:4px}
+.thread-n{font-size:12px;font-weight:600;color:var(--accent-ink)}
+.warn{background:var(--pill-warning-bg);color:var(--pill-warning-ink);border-radius:var(--radius-control);padding:10px 12px;font-size:14px}
+.checks{display:grid;gap:8px}
+.checks label{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.checks input{width:18px;height:18px;margin-top:2px;flex:none;accent-color:var(--accent)}
 
-/* 목록 (게시물·계정) */
-.lab-rows{display:grid}
-.lab-row{display:grid;gap:3px;padding:12px 0;border-bottom:1px solid var(--color-border-line);text-decoration:none}
-.lab-row:last-child{border-bottom:0}
-.lab-row-main{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
-a.lab-row:hover .lab-row-main{text-decoration:underline}
-.lab-row-sub{font-size:var(--fs-note);color:var(--color-fg-muted);font-variant-numeric:tabular-nums}
-.lab-sort{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
-.lab-sort button{min-height:40px;padding-inline:14px;border-radius:8px;border:1px solid var(--color-border-line);background:var(--color-panel);color:var(--color-fg-muted);font:inherit;cursor:pointer}
-.lab-sort button[aria-pressed="true"]{color:var(--color-fg);border-color:var(--color-fg);font-weight:600}
-.lab-morebtn{margin-top:8px}
+/* 이번 주 상태판 */
+.board{display:grid;gap:8px}
+.day{display:grid;grid-template-columns:54px 1fr;gap:12px;padding:12px 14px;border-radius:var(--radius-card);background:var(--surface);border:1px solid var(--border)}
+.day.today-row{border-color:var(--accent);background:var(--accent-soft)}
+.day.done{opacity:.6}
+.day-date b{display:block;font-size:16px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.2}
+.day-date span{font-size:12px;color:var(--muted)}
+.day-body{display:grid;gap:4px;min-width:0}
+.day-title{all:unset;cursor:pointer;font-weight:600;line-height:1.4}
+.day-title:hover{text-decoration:underline}
+.day-title:focus-visible{outline:2px solid var(--accent)}
+.day-ctrl{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.state{all:unset;cursor:pointer;font-size:12px;font-weight:600;line-height:22px;padding:0 9px;border-radius:999px;border:1px solid var(--control);color:var(--muted)}
+.state[data-s="doing"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.state[data-s="done"]{background:var(--pill-positive-bg);border-color:transparent;color:var(--pill-positive-ink)}
+.chan{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-size:12px;line-height:22px;padding:0 8px;border-radius:999px;border:1px solid var(--border);color:var(--muted)}
+.chan[aria-pressed="true"]{color:var(--text);border-color:var(--control);font-weight:600}
+.chan .dot{opacity:.35}
+.chan[aria-pressed="true"] .dot{opacity:1}
+.state:focus-visible,.chan:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 
-/* 상태 */
-.lab-empty{padding:18px 20px;border-radius:var(--cds-radius);background:var(--color-panel);border:1px dashed var(--color-border-line);color:var(--color-fg-muted)}
-.lab-how{display:grid;gap:10px}
-.lab-how p{max-width:68ch}
+/* 목록 */
+.rows{display:grid}
+.row{display:grid;gap:2px;padding:11px 0;border-bottom:1px solid var(--rule);text-decoration:none;color:inherit}
+.row:last-child{border-bottom:0}
+.row-main{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+a.row:hover .row-main{text-decoration:underline}
+.row-sub{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.x{color:var(--accent-ink);font-weight:600}
 
-@media (max-width:640px){
-  .lab{gap:44px}
-  .lab-item{grid-template-columns:1fr;gap:6px}
-  .lab-hero{padding:18px}
-  .lab-panel{padding:16px}
-  .lab-day{grid-template-columns:84px 1fr;padding:12px 14px}
-  .lab-day-date b{font-size:var(--fs-body)}
+/* 막대 (한국 = 진한 강조색, 해외/미국 = 회색) */
+.legend{display:flex;gap:14px;font-size:12px;color:var(--muted)}
+.legend i{display:inline-block;width:12px;height:8px;border-radius:2px;margin-right:6px}
+.bars{display:grid;gap:16px;margin-top:12px}
+.item{display:grid;grid-template-columns:minmax(6rem,9rem) 1fr;gap:12px;align-items:center}
+.item small{display:block;color:var(--muted);font-size:12px}
+.track{position:relative;display:grid;gap:2px}
+.ref{position:absolute;top:-4px;bottom:-2px;border-left:1px dashed var(--control)}
+.ref span{position:absolute;top:-15px;left:3px;font-size:11px;color:var(--muted);white-space:nowrap}
+.bars .item:not(:first-child) .ref span{display:none}
+.bar{display:flex;align-items:center;gap:8px;font-size:12px;font-variant-numeric:tabular-nums;min-height:13px}
+.bar i{display:block;height:9px;border-radius:3px;min-width:2px;flex:none}
+.bar.kr span{color:var(--text);font-weight:600}
+.bar.fo span{color:var(--muted)}
+.groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap)}
+
+.analysis>summary{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.learn{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.learn li{display:flex;gap:10px}
+.learn li b{flex:none;width:22px;height:22px;border-radius:6px;background:var(--accent-soft);color:var(--accent-ink);display:grid;place-items:center;font-size:12px}
+.empty{padding:16px 18px;border-radius:var(--radius-card);border:1px dashed var(--control);color:var(--muted);background:var(--surface)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--text);color:var(--surface);padding:10px 16px;border-radius:8px;font-size:14px;z-index:30;box-shadow:0 6px 20px rgba(0,0,0,.18)} /* taste-skill-ignore: 잠깐 떠 있는 복사 알림 */
+.how p{margin:0 0 8px;max-width:72ch}
+
+@media (max-width:1100px){.grid{grid-template-columns:minmax(0,1fr)}.groups{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:860px){
+  .app{grid-template-columns:minmax(0,1fr)}
+  .side{position:fixed;inset:0;z-index:40;width:auto;height:auto;background:var(--ground);transform:translateX(-100%);transition:transform var(--t-ui) var(--ease-out);padding-top:calc(16px + env(safe-area-inset-top,0px))}
+  .side.open{transform:none}
+  .topbar{display:flex;position:sticky;top:0;z-index:20;height:48px;align-items:center;gap:10px;padding:0 max(16px,env(safe-area-inset-left,0px));background:var(--ground);border-bottom:1px solid var(--border)}
+  .topbar b{font-size:15px}
+  .menu-btn{all:unset;cursor:pointer;width:36px;height:36px;display:grid;place-items:center;border-radius:6px}
+  .menu-btn:focus-visible{outline:2px solid var(--accent)}
+  .menu-btn span,.menu-btn span::before,.menu-btn span::after{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;position:relative}
+  .menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0}
+  .menu-btn span::before{top:-6px}.menu-btn span::after{top:6px}
+  .side-close{display:flex!important}
+  .canvas{padding:20px max(16px,env(safe-area-inset-left,0px)) 64px}
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kpi:nth-child(3){border-left:0}
+  .kpi:nth-child(n+3){border-top:1px solid var(--border)}
+  .title-row h1{font-size:24px}
+  .item{grid-template-columns:minmax(0,1fr);gap:4px}
 }
+.side-close{display:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
-<nav class="lab-nav" aria-label="채널과 섹션">
-<div class="lab-channels" role="tablist" aria-label="채널">
-  <button type="button" role="tab" data-ch="instagram" aria-selected="true">인스타그램</button>
-  <button type="button" role="tab" data-ch="youtube" aria-selected="false">유튜브</button>
-  <button type="button" role="tab" data-ch="google" aria-selected="false">구글 뉴스·정보</button>
-  <button type="button" role="tab" data-ch="threads" aria-selected="false">쓰레드</button>
-</div>
-<ul id="lab-nav">
-  <li><a href="#week">이번 주 계획</a></li>
-  <li><a href="#recommend">추천</a></li>
-  <li><a href="#competitors">경쟁 동향</a></li>
-  <li><a href="#patterns">패턴</a></li>
-  <li><a href="#topics">주제</a></li>
-  <li><a href="#posts">게시물</a></li>
-  <li><a href="#accounts">계정</a></li>
-  <li><a href="#how">읽는 법</a></li>
-</ul>
-<ul id="g-nav" hidden>
-  <li><a href="#g-opps">덜 다룬 화제</a></li>
-  <li><a href="#g-trends">급상승 검색어</a></li>
-  <li><a href="#g-heat">주제별 뉴스량</a></li>
-  <li><a href="#g-news">최신 기사</a></li>
-</ul></nav>
-
-<div class="lab">
-  <header class="lab-head" id="top">
-    <h1 class="lab-title">말희아빠 &amp; 파로파트너스 컨텐츠 연구소</h1>
-    <p class="lab-note" id="meta">—</p>
-  </header>
-
-  <div class="lab-view" data-view="instagram">
-  <section class="lab-hero" id="hero" aria-label="이번 1순위 추천"></section>
-
-  <section class="lab-sec" id="week">
-    <h2>이번 주 업로드 계획</h2>
-    <p class="lab-note">추천을 하루에 하나씩 나눴어요. 반응 좋은 요일에 순위 높은 추천을, 시간은 그 형식이 잘 되는 시간대로 골랐어요. 흐린 칸은 표본이 적은 참고용이에요.</p>
-    <div class="lab-cal" id="calendar"></div>
-  </section>
-
-  <section class="lab-sec" id="recommend">
-    <h2>추천 콘텐츠</h2>
-    <p class="lab-note">순위는 반응 강도, 게시물 수, 최근 2주 증가세로 매겨요. 카드마다 이유와 바로 만들 수 있는 기획안이 있어요.</p>
-    <div class="lab-recs" id="rec-list"></div>
-  </section>
-
-  <section class="lab-sec" id="insights">
-    <h2>핵심 인사이트</h2>
-    <div class="lab-panel"><ul class="lab-list" id="insight-list"></ul></div>
-  </section>
-
-  <section class="lab-sec" id="competitors">
-    <h2>이번 주 경쟁 계정 동향</h2>
-    <p class="lab-note">최근 7일 동안 평소보다 2배 넘게 반응이 터진 게시물과, 계정별 업로드 수예요. 남이 이미 많이 다룬 주제는 피하고 빈자리를 먼저 잡는 데 써요.</p>
-    <div class="lab-panel"><h3 style="font-size:var(--fs-body);font-weight:600">이번 주 터진 게시물</h3><div class="lab-rows" id="week-hot"></div></div>
-    <div class="lab-panel"><h3 style="font-size:var(--fs-body);font-weight:600">계정별 이번 주 업로드</h3><div class="lab-rows" id="week-acc"></div></div>
-  </section>
-
-  <section class="lab-sec" id="patterns">
-    <h2>무엇이 반응을 만들까</h2>
-    <div class="lab-legend" id="legend-patterns"></div>
-    <div class="lab-groups" id="pattern-groups"></div>
-  </section>
-
-  <section class="lab-sec" id="topics">
-    <h2>주제별 반응: 한국 vs 해외</h2>
-    <p class="lab-note">선점 기회가 큰 순서예요. 해외 막대가 길고 한국 막대가 짧거나 없는 주제가 위에 와요.</p>
-    <div class="lab-panel">
-      <div class="lab-legend" id="legend-topics"></div>
-      <div class="lab-bars" id="topic-chart"></div>
+<div class="app">
+  <aside class="side" id="side" aria-label="메뉴">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">핫</span>
+      <div><b>컨텐츠 연구소</b><span>말희아빠 &amp; 파로파트너스</span></div>
+      <button type="button" class="btn small side-close" id="side-close" style="margin-left:auto">닫기</button>
     </div>
-  </section>
+    <nav>
+      <p class="nav-label">채널</p>
+      <ul class="nav" id="channel-nav">
+        <li><button type="button" data-ch="instagram"><i class="dot" style="background:var(--ch-instagram)"></i>인스타그램</button>
+          <ul class="subnav" data-for="instagram">
+            <li><a href="#today">오늘 할 일</a></li>
+            <li><a href="#recommend">추천 콘텐츠</a></li>
+            <li><a href="#week">이번 주 계획</a></li>
+            <li><a href="#competitors">경쟁 동향</a></li>
+            <li><a href="#analysis">주간 분석</a></li>
+          </ul></li>
+        <li><button type="button" data-ch="google"><i class="dot" style="background:var(--ch-google)"></i>구글 뉴스·정보</button>
+          <ul class="subnav" data-for="google">
+            <li><a href="#g-opps">덜 다룬 화제</a></li>
+            <li><a href="#g-trends">급상승 검색어</a></li>
+            <li><a href="#g-heat">주제별 뉴스량</a></li>
+            <li><a href="#g-news">최신 기사</a></li>
+          </ul></li>
+        <li><button type="button" data-ch="youtube"><i class="dot" style="background:var(--ch-youtube)"></i>유튜브<span class="soon">준비 중</span></button></li>
+        <li><button type="button" data-ch="threads"><i class="dot" style="background:var(--ch-threads)"></i>쓰레드<span class="soon">준비 중</span></button></li>
+      </ul>
+    </nav>
+    <p class="side-foot" id="side-foot">매일 06:00 자동 갱신</p>
+  </aside>
 
-  <section class="lab-sec" id="posts">
-    <h2>최근 반응 TOP 게시물</h2>
-    <p class="lab-note">누르면 인스타그램 원본이 새 탭에서 열려요.</p>
-    <div class="lab-panel"><div class="lab-rows" id="post-list"></div></div>
-  </section>
+  <div>
+    <header class="topbar">
+      <button type="button" class="menu-btn" id="menu-btn" aria-label="메뉴 열기" aria-controls="side" aria-expanded="false"><span></span></button>
+      <b id="topbar-title">컨텐츠 연구소</b>
+    </header>
 
-  <section class="lab-sec" id="accounts">
-    <h2>계정 활성도</h2>
-    <p class="lab-note">참여율은 최근 4주 반응 중앙값을 팔로워 수로 나눈 값이에요. 팔로워 변화는 매일 수집이 쌓이면 보여요.</p>
-    <div class="lab-panel">
-      <div class="lab-sort" id="acc-sort" role="group" aria-label="정렬">
-        <button type="button" data-k="er" aria-pressed="true">참여율 순</button>
-        <button type="button" data-k="followers" aria-pressed="false">팔로워 순</button>
-        <button type="button" data-k="top_outlier" aria-pressed="false">최고 게시물 순</button>
-        <button type="button" data-k="growth_pct" aria-pressed="false">팔로워 증가 순</button>
+    <main class="canvas"><div class="page">
+
+      <!-- 인스타그램 -->
+      <div class="view" data-view="instagram">
+        <div class="title-row">
+          <div><h1>인스타그램 리서치</h1><p id="ig-sub">—</p></div>
+          <button type="button" class="btn primary" id="copy-brief">단톡방 요약 복사</button>
+        </div>
+        <div class="kpis" id="ig-kpis"></div>
+        <div class="grid">
+          <div class="col">
+            <section class="sec" id="today" aria-label="오늘 할 일"><div class="today" id="today-box"></div></section>
+            <section class="sec" id="recommend">
+              <h2>추천 콘텐츠</h2>
+              <p class="note">순위는 반응 강도, 게시물 수, 최근 2주 증가세, 구글 뉴스 화제도로 매겨요. 카드를 열면 바로 만들 수 있는 기획안이 있어요.</p>
+              <div class="recs" id="rec-list"></div>
+            </section>
+          </div>
+          <div class="col">
+            <section class="sec" id="week">
+              <h2>이번 주 계획</h2>
+              <p class="note">하루 하나씩 나눴어요. 상태와 올린 채널을 눌러 표시하면 이 기기에 저장돼요.</p>
+              <div class="board" id="board"></div>
+            </section>
+            <section class="sec" id="competitors">
+              <h2>이번 주 터진 경쟁 게시물</h2>
+              <p class="note">최근 7일, 평소보다 2배 넘게 반응이 나온 게시물이에요.</p>
+              <div class="card"><div class="rows" id="week-hot"></div></div>
+            </section>
+          </div>
+        </div>
+
+        <section class="sec" id="analysis">
+          <h2>주간 분석</h2>
+          <div class="card">
+            <h3>이번 주 배울 것</h3>
+            <ul class="learn" id="learn" style="margin-top:10px"></ul>
+          </div>
+          <details class="card analysis" id="analysis-more">
+            <summary><h3>자세한 분석 펼치기</h3><span class="note">무엇이 반응을 만들까 · 주제별 반응 · TOP 게시물 · 계정 · 읽는 법</span></summary>
+            <div style="display:grid;gap:28px;margin-top:18px">
+              <div class="sec"><h2>무엇이 반응을 만들까</h2><div class="legend" id="legend-patterns"></div><div class="groups" id="pattern-groups"></div></div>
+              <div class="sec"><h2>주제별 반응: 한국 vs 해외</h2><p class="note">선점 기회가 큰 순서예요. 해외 막대가 길고 한국 막대가 짧은 주제가 위에 와요.</p><div class="legend" id="legend-topics"></div><div class="bars" id="topic-chart"></div></div>
+              <div class="sec"><h2>최근 반응 TOP 게시물</h2><div class="rows" id="post-list"></div></div>
+              <div class="sec"><h2>계정 활성도</h2>
+                <div class="actions" id="acc-sort" role="group" aria-label="정렬">
+                  <button type="button" class="btn small" data-k="er" aria-pressed="true">참여율 순</button>
+                  <button type="button" class="btn small" data-k="followers" aria-pressed="false">팔로워 순</button>
+                  <button type="button" class="btn small" data-k="top_outlier" aria-pressed="false">최고 게시물 순</button>
+                  <button type="button" class="btn small" data-k="growth_pct" aria-pressed="false">팔로워 증가 순</button>
+                </div>
+                <div class="rows" id="acc-list"></div></div>
+              <div class="sec how"><h2>숫자 읽는 법</h2>
+                <p><b>평소 대비 ○배</b>는 게시물 반응(좋아요 + 댓글×3)을 그 계정의 평소 반응(중앙값)으로 나눈 값이에요. 팔로워 규모가 달라도 같은 기준으로 비교하려고 이렇게 계산해요.</p>
+                <p>좋아요를 숨긴 글이 많은 계정은 댓글만으로 비교해요. 경품 이벤트와 "댓글에 ‘무료’ 남기면 자료 드려요" 같은 자료 나눔형 글은 반응이 부풀려져서 추천과 순위에서 뺐어요 (행동 유도 분석에서는 따로 보여줘요).</p>
+                <p>공식 API로는 다른 계정의 저장·공유·조회수를 볼 수 없어요. 그래서 저장·공유 유도의 효과는 좋아요·댓글로만 짐작한 값이에요.</p>
+              </div>
+            </div>
+          </details>
+        </section>
       </div>
-      <div class="lab-rows" id="acc-list"></div>
-    </div>
-  </section>
 
-  <section class="lab-sec" id="how">
-    <h2>숫자 읽는 법</h2>
-    <div class="lab-panel lab-how">
-      <p><b>평소 대비 ○배</b>는 게시물 반응(좋아요 + 댓글×3)을 그 계정 게시물 반응의 중앙값으로 나눈 값이에요. 팔로워 100만 계정과 1만 계정을 같은 기준으로 비교하려고 이렇게 계산해요.</p>
-      <p>1.0배는 평소만큼, 2.0배는 평소의 두 배로 반응이 터진 게시물이에요. 댓글은 좋아요보다 강한 관심 신호라 3배로 셉니다.</p>
-      <p><b>추천 유형</b>: 국내 검증은 한국 팔로워에게 이미 통하는 주제, 해외 선행은 해외에선 터지는데 한국엔 아직 드문 주제, 해외 벤치마킹은 한국도 다루지만 반응이 약해서 해외 방식을 따라 해볼 주제예요.</p>
-      <p><b>한계</b>: 공식 API로는 다른 계정의 저장·공유·조회수를 볼 수 없어요. 그래서 저장 유도나 공유 유도 문구의 효과는 좋아요·댓글로만 짐작한 값이에요. 경품·이벤트 게시물은 반응이 부풀려져 분석에서 뺐어요.</p>
-    </div>
-  </section>
-  </div>
+      <!-- 구글 -->
+      <div class="view" data-view="google" hidden>
+        <div class="title-row">
+          <div><h1>구글 뉴스·정보</h1><p id="g-sub">—</p></div>
+          <button type="button" class="btn primary" id="copy-news">오늘 뉴스 화제 복사</button>
+        </div>
+        <div class="kpis" id="g-kpis"></div>
+        <div class="grid">
+          <div class="col">
+            <section class="sec" id="g-opps">
+              <h2>인스타에서 아직 덜 다룬 뉴스 화제</h2>
+              <p class="note">뉴스 기사량 순위는 높은데 한국 경제 인스타 계정들의 게시물 순위는 한참 낮은 주제예요.</p>
+              <div class="recs" id="g-opp-list"></div>
+            </section>
+            <section class="sec" id="g-heat">
+              <h2>주제별 뉴스량: 한국 vs 미국</h2>
+              <p class="note" id="g-heat-note">최근 24시간 기사 속도(하루 추정 기사 수)예요.</p>
+              <div class="card"><div class="legend" id="legend-news"></div><div class="bars" id="g-heat-chart"></div></div>
+            </section>
+          </div>
+          <div class="col">
+            <section class="sec" id="g-trends">
+              <h2>지금 구글 급상승 검색어</h2>
+              <div class="card"><h3>한국</h3><div class="rows" id="g-trend-kr"></div></div>
+              <div class="card"><h3>미국</h3><div class="rows" id="g-trend-us"></div></div>
+            </section>
+          </div>
+        </div>
+        <section class="sec" id="g-news">
+          <h2>주제별 최신 기사</h2>
+          <p class="note">누르면 기사 원문이 새 탭에서 열려요. 콘텐츠의 수치 출처로 쓰기 좋아요.</p>
+          <div class="groups" id="g-news-list"></div>
+        </section>
+      </div>
 
-  <div class="lab-view" data-view="google" hidden>
-    <section class="lab-sec" id="g-opps">
-      <h2>인스타에서 아직 덜 다룬 뉴스 화제</h2>
-      <p class="lab-note">구글 뉴스 기사량 순위는 높은데, 한국 경제 인스타 계정들의 게시물 순위는 한참 낮은 주제예요. 사람들은 찾아보는데 인스타엔 아직 적은 빈자리예요.</p>
-      <div class="lab-recs" id="g-opp-list"></div>
-    </section>
-    <section class="lab-sec" id="g-trends">
-      <h2>지금 구글 급상승 검색어</h2>
-      <p class="lab-note">구글 트렌드의 실시간 급상승 검색어예요. 경제 주제와 연결된 검색어를 위에 모았어요. 숫자는 대략적인 검색량이에요.</p>
-      <div class="lab-groups"><div class="lab-panel"><h3>한국</h3><div class="lab-rows" id="g-trend-kr"></div></div>
-      <div class="lab-panel"><h3>미국</h3><div class="lab-rows" id="g-trend-us"></div></div></div>
-    </section>
-    <section class="lab-sec" id="g-heat">
-      <h2>주제별 뉴스량: 한국 vs 미국</h2>
-      <p class="lab-note" id="g-heat-note">구글 뉴스에서 최근 24시간 동안 나온 기사 속도(하루 추정 기사 수)예요.</p>
-      <div class="lab-panel"><div class="lab-legend" id="legend-news"></div><div class="lab-bars" id="g-heat-chart"></div></div>
-    </section>
-    <section class="lab-sec" id="g-news">
-      <h2>주제별 최신 기사</h2>
-      <p class="lab-note">누르면 기사 원문이 새 탭에서 열려요. 콘텐츠를 만들 때 수치 출처로 쓰기 좋아요.</p>
-      <div class="lab-groups" id="g-news-list"></div>
-    </section>
-  </div>
+      <div class="view" data-view="youtube" hidden>
+        <div class="title-row"><div><h1>유튜브</h1><p>경제 유튜브 채널의 인기 영상과 제목·썸네일 문구 패턴을 분석할 예정이에요.</p></div></div>
+        <div class="empty">준비 중이에요. 다음 단계에서 공식 YouTube Data API로 연결해요.</div>
+      </div>
+      <div class="view" data-view="threads" hidden>
+        <div class="title-row"><div><h1>쓰레드</h1><p>경제 쓰레드 계정의 반응 좋은 글과 짧은 문장 패턴을 분석할 예정이에요.</p></div></div>
+        <div class="empty">준비 중이에요. 지금은 인스타 추천 카드의 기획안에서 "쓰레드" 탭으로 글을 바로 쓸 수 있어요.</div>
+      </div>
 
-  <div class="lab-view" data-view="youtube" hidden>
-    <section class="lab-sec"><h2>유튜브</h2>
-      <div class="lab-empty">준비 중이에요. 경제 유튜브 채널의 인기 영상, 조회수가 평소보다 터진 영상, 제목·썸네일 문구 패턴을 분석해서 인스타 추천과 연결할 예정이에요.</div></section>
-  </div>
-  <div class="lab-view" data-view="threads" hidden>
-    <section class="lab-sec"><h2>쓰레드</h2>
-      <div class="lab-empty">준비 중이에요. 경제 쓰레드 계정의 반응 좋은 글과 짧은 문장 패턴을 분석할 예정이에요.</div></section>
+      <p class="note" style="margin-top:12px">데이터: 인스타그램 공식 Graph API(공개 계정의 공개 게시물), 구글 뉴스·구글 트렌드 RSS · 기획안: Claude가 분석 결과를 바탕으로 작성 · 매일 06:00 자동 갱신</p>
+    </div></main>
   </div>
 </div>
 
@@ -284,151 +343,227 @@ a.lab-row:hover .lab-row-main{text-decoration:underline}
 (() => {
   const fmtN = v => v == null ? '–' : Number(v).toLocaleString('en-US');
   const fmtX = v => v == null ? '–' : `${(+v).toFixed(1)}배`;
-  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+  // 다른 계정 캡션에 섞인 이모지는 화면에서만 걷어낸다 (디자인 규칙: 이모지 없음)
+  const noEmoji = t => String(t).replace(/[\p{Extended_Pictographic}\u{1F1E6}-\u{1F1FF}️‍⃣]/gu, '').replace(/ {2,}/g, ' ').trim();
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = noEmoji(text); return e; };
   const rows = id => { const d = dash.data(id); return d.status === 'ok' ? d.data : null; };
-  const empty = (box, msg) => box.replaceChildren(el('div', 'lab-empty', msg || '아직 수집 전이에요. 매일 새벽 6시에 자동 갱신되니 내일 다시 확인해 주세요.'));
-  const safeLink = u => /^https:\/\/(www\.)?instagram\.com\//.test(u || '') ? u : null;
-  const KR = 'var(--series-1)', FO = 'var(--cds-chart-muted)';
-  const md = s => { const d = new Date(s + 'T00:00:00'); return `${d.getMonth() + 1}/${d.getDate()}`; };
-  const confText = c => c === '높음' ? '신뢰도 높음' : c === '낮음' ? '신뢰도 낮음 · 참고용' : '신뢰도 보통';
+  const empty = (box, msg) => box.replaceChildren(el('div', 'empty', msg || '아직 수집 전이에요. 매일 06:00에 자동 갱신돼요.'));
+  const igLink = u => /^https:\/\/(www\.)?instagram\.com\//.test(u || '') ? u : null;
+  const webLink = u => /^https:\/\//.test(u || '') ? u : null;
+  const KR = 'var(--chart-1)', FO = 'var(--chart-2)';
+  const store = { get: k => { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} } };
+  const kst = () => new Date(Date.now() + (new Date().getTimezoneOffset() + 540) * 60000);
+  const isoDay = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  const md = s => { const [, m, d] = s.split('-'); return `${+m}/${+d}`; };
+  const pageUrl = () => location.href.split('#')[0];
 
-  function legend(id, names = ['한국', '해외']) {
-    const box = document.getElementById(id);
-    box.replaceChildren(...[[names[0], KR], [names[1], FO]].map(([t, c]) => { const s = el('span'); const i = el('i'); i.style.background = c; s.append(i, t); return s; }));
+  function toast(msg) {
+    const t = el('div', 'toast', msg); t.setAttribute('role', 'status'); document.body.append(t);
+    setTimeout(() => t.remove(), 1800);
+  }
+  async function copyText(text, done = '복사했어요') {
+    try { await navigator.clipboard.writeText(text); toast(done); }
+    catch (e) {
+      const ta = el('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.append(ta); ta.select();
+      try { document.execCommand('copy'); toast(done); } catch (_) { toast('복사가 막혀 있어요. 길게 눌러 직접 복사해 주세요.'); }
+      ta.remove();
+    }
+  }
+  const copyBtn = (label, getText, cls = 'btn small') => { const b = el('button', cls, label); b.type = 'button'; b.addEventListener('click', () => copyText(typeof getText === 'function' ? getText() : getText)); return b; };
+
+  // 추천 유형 → 의미 색 (보라·남색은 쓰지 않음)
+  const KIND = {
+    '국내·해외 모두 강세': ['accent', '국내·해외 강세'],
+    '국내 검증 주제': ['positive', '국내 검증'],
+    '해외 선행 주제 (선점 기회)': ['accent', '선점 기회'],
+    '해외 벤치마킹 주제 (방식 바꾸면 기회)': ['warning', '해외 벤치마킹'],
+  };
+  const kindPill = k => { const [c, t] = KIND[k] || ['neutral', k]; return el('span', `pill ${c}`, t); };
+  function confDots(c) {
+    const n = c === '높음' ? 3 : c === '보통' ? 2 : 1;
+    const w = el('span', 'conf'); w.title = `신뢰도 ${c}`;
+    for (let i = 0; i < 3; i++) w.append(el('i', i < n ? 'on' : ''));
+    w.append(` 신뢰도 ${c}${c === '낮음' ? ' · 참고용' : ''}`);
+    return w;
   }
 
-  function fillMeta() {
-    const s = rows('summary'), box = document.getElementById('meta');
-    if (!s || !s[0]) { box.textContent = '아직 수집 전이에요.'; return; }
-    const r = s[0];
-    box.textContent = `${r.generated_at} 기준 · 한국 ${r.accounts_kr} · 해외 ${r.accounts_foreign}개 계정 · 최근 ${r.days}일 게시물 ${fmtN(r.recent_posts)}개 · 매일 06:00 자동 갱신`;
-  }
-
-  // 근거를 카드에 넣기 위해 추천 순위별로 묶어 둔다
   function grouped() {
     const R = rows('recs') || [], RR = rows('rec_reasons') || [], RE = rows('rec_examples') || [], D = rows('drafts') || [];
-    return R.map(r => ({
-      ...r,
-      reasons: RR.filter(x => +x.rank === +r.rank).sort((a, b) => a.n - b.n).map(x => x.reason),
-      examples: RE.filter(x => +x.rank === +r.rank).sort((a, b) => a.n - b.n),
-      plan: D.filter(x => x.topic === r.topic),
-    })).map(r => ({ ...r, title: (r.plan.find(x => x.part === 'title' && +x.n === 0) || {}).text || r.title_idea }));
+    return R.map(r => {
+      const plan = D.filter(x => x.topic === r.topic);
+      return {
+        ...r, plan,
+        reasons: RR.filter(x => +x.rank === +r.rank).sort((a, b) => a.n - b.n).map(x => x.reason),
+        examples: RE.filter(x => +x.rank === +r.rank).sort((a, b) => a.n - b.n),
+        // 큰 제목에는 [ ] 빈칸이 없는 제목 후보를 먼저 쓴다
+        title: (plan.filter(x => x.part === 'title').sort((a, b) => a.n - b.n).find(x => !x.text.includes('[')) || plan.find(x => x.part === 'title') || {}).text || r.title_idea,
+      };
+    });
   }
+  const part = (r, p) => r.plan.filter(x => x.part === p).sort((a, b) => a.n - b.n);
 
   function openPlan(rank) {
-    const card = document.getElementById(`rec-${rank}`);
-    if (!card) return;
-    const d = card.querySelector('.lab-plan'); if (d) d.open = true;
+    setChannel('instagram');
+    const card = document.getElementById(`rec-${rank}`); if (!card) return;
+    const d = card.querySelector('details.plan-wrap'); if (d) d.open = true;
     card.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   }
 
-  function drawHero(recs) {
-    const box = document.getElementById('hero');
-    if (!recs.length) { box.replaceChildren(el('p', 'lab-note', '아직 추천할 만큼 데이터가 쌓이지 않았어요. 매일 자동 갱신되니 내일 다시 확인해 주세요.')); return; }
-    const r = recs[0];
-    const btn = el('button', 'lab-btn primary', '1순위 기획안 보기'); btn.type = 'button';
-    btn.addEventListener('click', () => openPlan(r.rank));
-    const next = el('div', 'lab-next');
-    recs.slice(1, 3).forEach(x => {
-      const a = el('a'); a.href = `#rec-${x.rank}`;
-      a.append(el('span', null, String(x.rank)), el('span', null, x.title), el('span', 'lab-sub', x.kind.replace(/ \(.+\)/, '')));
-      a.addEventListener('click', e => { e.preventDefault(); openPlan(x.rank); });
-      next.append(a);
-    });
-    box.replaceChildren(
-      el('p', 'lab-hero-label', `이번 1순위 추천 · ${r.kind} · ${confText(r.confidence)}`),
-      el('h2', null, r.title),
-      el('p', 'lab-meta-line', [r.format, r.hook, r.slot].filter(Boolean).join(' · ')),
-      el('p', 'lab-why1', r.reasons[0] || ''),
-      btn, next);
+  // ── 오늘 할 일 ──
+  function todayEntry(recs) {
+    const C = rows('calendar') || [];
+    const today = isoDay(kst());
+    const c = C.find(x => x.date === today) || C.find(x => x.date > today) || C[0];
+    if (!c) return null;
+    const rec = recs.find(r => r.topic === c.topic) || recs[0];
+    return { c, rec, isToday: c.date === today };
+  }
+  function slotHours(slot) { const m = (slot || '').match(/(\d+)~(\d+)시/); return m ? [+m[1], +m[2]] : null; }
+  function countdown(c, isToday) {
+    const h = slotHours(c.slot); if (!h || !isToday) return null;
+    const now = kst(), cur = now.getHours() + now.getMinutes() / 60;
+    if (cur < h[0]) { const left = h[0] - cur; return { text: `업로드까지 ${Math.floor(left)}시간 ${Math.round((left % 1) * 60)}분`, urgent: left <= 3 }; }
+    if (cur < h[1]) return { text: '지금이 업로드 시간대예요', urgent: true };
+    return { text: '오늘 추천 시간대가 지났어요', urgent: false };
+  }
+  function drawToday(recs) {
+    const box = document.getElementById('today-box'), t = todayEntry(recs);
+    if (!t) return box.replaceChildren(el('p', 'note', '아직 추천할 만큼 데이터가 쌓이지 않았어요. 매일 06:00에 자동 갱신돼요.'));
+    const { c, rec, isToday } = t, cd = countdown(c, isToday);
+    const top = el('div', 'today-top');
+    top.append(el('span', 'pill accent', isToday ? `오늘 ${md(c.date)} ${c.weekday}` : `다음 계획 ${md(c.date)} ${c.weekday}`), kindPill(rec.kind), confDots(rec.confidence));
+    if (cd) top.append(el('span', `pill ${cd.urgent ? 'negative' : 'neutral'}`, cd.text));
+    const open = el('button', 'btn primary', '기획안 열기'); open.type = 'button'; open.addEventListener('click', () => openPlan(rec.rank));
+    const cap = (part(rec, 'caption')[0] || {}).text, tags = (part(rec, 'hashtags')[0] || {}).text;
+    const actions = el('div', 'actions');
+    actions.append(open);
+    if (cap) actions.append(copyBtn('캡션 복사', `${cap}${tags ? '\n\n' + tags : ''}`, 'btn'));
+    actions.append(copyBtn('단톡방 요약 복사', () => briefText(recs), 'btn'));
+    box.replaceChildren(top, el('h2', null, rec.title),
+      el('p', 'meta', [c.format, c.slot, rec.topic].filter(Boolean).join(' · ')),
+      el('p', 'why', rec.reasons[0] || ''), actions);
   }
 
-  function drawCalendar(recs) {
-    const box = document.getElementById('calendar'), C = rows('calendar');
-    if (!C || !C.length) return empty(box);
-    const recOf = t => recs.find(r => r.topic === t) || {};
-    const rankOf = t => recOf(t).rank;
-    box.replaceChildren(...C.map(c => {
-      const a = el('a', 'lab-day' + (c.confidence === '낮음' ? ' low' : ''));
-      const rank = rankOf(c.topic); a.href = `#rec-${rank}`;
-      a.addEventListener('click', e => { e.preventDefault(); openPlan(rank); });
-      const date = el('div', 'lab-day-date'); date.append(el('b', null, `${md(c.date)} ${c.weekday}`), el('span', null, c.slot.replace(/\(.+\)/, '')), el('span', null, c.slot.match(/\((.+)\)/)?.[1] || ''));
-      const body = el('div', 'lab-day-body');
-      body.append(el('strong', null, recOf(c.topic).title || c.title), el('span', 'lab-sub', `${c.format} · ${c.topic} · ${confText(c.confidence)}`), el('span', 'lab-sub', `시간 근거: ${c.slot_basis}`));
-      a.append(date, body);
-      return a;
-    }));
+  function briefText(recs) {
+    const t = todayEntry(recs), C = rows('calendar') || [], O = rows('google_opportunities') || [], H = rows('this_week') || [];
+    const lines = [`[컨텐츠 연구소] ${md(isoDay(kst()))} 오늘 할 일`];
+    if (t) {
+      lines.push(`· 주제: ${t.rec.topic} — ${t.rec.title}`, `· 형식/시간: ${t.c.format} · ${t.c.slot}`);
+      if (t.rec.reasons[0]) lines.push(`· 이유: ${t.rec.reasons[0]}`);
+      lines.push(`· 기획안: ${pageUrl()}#rec-${t.rec.rank}`);
+    }
+    if (C.length) { lines.push('', '이번 주 계획'); C.forEach(c => lines.push(`${md(c.date)} ${c.weekday} ${c.slot.replace(/\(.+\)/, '')} · ${c.topic} (${c.format})`)); }
+    if (O.length) lines.push('', `구글 뉴스엔 많은데 인스타엔 적은 화제: ${O.map(o => o.topic).join(', ')}`);
+    if (H.length) lines.push(`이번 주 경쟁 계정 최고 반응: @${H[0].username} ${fmtX(H[0].outlier)} "${H[0].caption.slice(0, 30)}"`);
+    return lines.join('\n');
   }
 
-  function copyBtn(target, label) {
-    const b = el('button', 'lab-btn lab-copy', label); b.type = 'button';
-    b.addEventListener('click', () => {
-      const done = () => { b.textContent = '복사했어요'; setTimeout(() => { b.textContent = label; }, 2000); };
-      const fallback = () => { const s = getSelection(); const rg = document.createRange(); rg.selectNodeContents(target); s.removeAllRanges(); s.addRange(rg); b.textContent = '선택됨 · Ctrl+C로 복사'; };
-      try { navigator.clipboard.writeText(target.textContent).then(done, fallback); } catch (e) { fallback(); }
-    });
-    return b;
+  // ── KPI ──
+  function kpi(label, value, cap) { const k = el('div', 'kpi'); k.append(el('div', 'kpi-label', label), el('div', 'kpi-value', value), el('div', 'kpi-cap', cap)); return k; }
+  function drawIgHead(recs) {
+    const S = (rows('summary') || [])[0], t = todayEntry(recs), H = rows('this_week') || [], O = rows('google_opportunities') || [];
+    const firstDay = (rows('calendar') || []).find(c => recs[0] && c.topic === recs[0].topic);
+    const sub = [];
+    if (t) sub.push(t.isToday ? '오늘은 ' : '다음 계획은 ', el('b', null, `${t.rec.topic} ${t.c.format}`), ` · ${t.c.slot}`);
+    if (recs[0] && (!t || t.rec.rank !== recs[0].rank)) sub.push(` · 1순위 ${recs[0].topic}는 ${firstDay ? `${md(firstDay.date)}(${firstDay.weekday}) 배정` : '추천 목록 맨 위'}`);
+    document.getElementById('ig-sub').replaceChildren(...(sub.length ? sub : ['아직 추천이 없어요']));
+    document.getElementById('side-foot').textContent = S ? `${S.generated_at} 갱신 · 매일 06:00 자동` : '매일 06:00 자동 갱신';
+    document.getElementById('ig-kpis').replaceChildren(
+      kpi('오늘 올릴 주제', t ? t.rec.topic : '–', t ? `${t.c.format} · ${t.c.slot.replace(/\(.+\)/, '')}` : '계획 없음'),
+      kpi('이번 주 터진 경쟁 게시물', `${H.length}개`, '최근 7일 · 평소의 2배 이상'),
+      kpi('뉴스엔 많고 인스타엔 적은 화제', `${O.length}개`, O.length ? O.slice(0, 2).map(o => o.topic).join(', ') : '구글 뉴스 기준'),
+      kpi('분석한 게시물', S ? fmtN(S.recent_posts) : '–', S ? `최근 ${S.days}일 · 계정 ${S.accounts_kr + S.accounts_foreign}개` : ''));
   }
 
+  // ── 추천 카드 + 기획안 탭 ──
   const FIXED_CHECKS = ['[ ] 빈칸을 최신 수치로 다 채웠다', '수치마다 출처와 기준일을 적었다', '캡션 끝에 "투자 권유 아님" 문구가 있다',
     '광고·협찬이면 캡션 첫 줄에 광고라고 적었다', '추천 업로드 시간에 예약했다', '올린 뒤 첫 1시간 댓글에 답할 사람을 정했다'];
 
+  function planTabs(r) {
+    const tabs = [];
+    const steps = part(r, 'structure');
+    if (steps.length) tabs.push(['구성', () => { const dl = el('dl', 'steps'); steps.forEach(x => dl.append(el('dt', null, x.label), el('dd', null, x.text))); return [dl, copyBtn('구성 복사', steps.map(x => `${x.label} ${x.text}`).join('\n'))]; }]);
+    const cap = part(r, 'caption')[0], tags = part(r, 'hashtags')[0];
+    if (cap || tags) tabs.push(['캡션·해시태그', () => {
+      const out = [];
+      if (cap) out.push(el('div', 'box', cap.text), copyBtn('캡션 복사', cap.text));
+      if (tags) out.push(el('div', 'box', tags.text), copyBtn('해시태그 복사', tags.text));
+      if (cap && tags) out.push(copyBtn('캡션 + 해시태그 한 번에 복사', `${cap.text}\n\n${tags.text}`));
+      return out;
+    }]);
+    const th = part(r, 'threads');
+    if (th.length) tabs.push(['쓰레드', () => {
+      const out = th.map(x => { const w = el('div', 'thread'); w.append(el('span', 'thread-n', x.label), el('div', 'box', x.text), copyBtn('이 글 복사', x.text)); return w; });
+      out.push(copyBtn('쓰레드 전체 복사', th.map(x => x.text).join('\n\n'), 'btn'));
+      return out;
+    }]);
+    const cs = part(r, 'carousel');
+    if (cs.length) tabs.push(['카드뉴스', () => {
+      const dl = el('dl', 'steps');
+      cs.forEach(x => { const [title, ...body] = x.text.split('\n'); const dd = el('dd'); dd.append(el('b', null, title)); if (body.length) dd.append(el('br'), body.join('\n')); dl.append(el('dt', null, x.label), dd); });
+      return [dl, copyBtn('카드뉴스 문구 전체 복사', cs.map(x => `[${x.label}]\n${x.text}`).join('\n\n'), 'btn')];
+    }]);
+    tabs.push(['체크리스트', () => {
+      const items = [...part(r, 'check').map(x => x.text), ...FIXED_CHECKS];
+      const box = el('div', 'checks');
+      items.forEach((t, i) => {
+        const key = `lab-chk-${r.topic}-${i}`, l = el('label'), c = el('input'); c.type = 'checkbox'; c.id = `chk-${r.rank}-${i}`;
+        c.checked = store.get(key) === '1'; c.addEventListener('change', () => store.set(key, c.checked ? '1' : '0'));
+        l.append(c, el('span', null, t)); box.append(l);
+      });
+      const out = [box, el('p', 'note', '체크 표시는 이 기기에만 저장돼요.')];
+      part(r, 'differ').forEach(x => out.unshift(el('p', 'note', `참고 게시물과 다르게: ${x.text}`)));
+      return out;
+    }]);
+    return tabs;
+  }
+
   function planBlock(r) {
-    const d = el('details', 'lab-plan');
-    const s = el('summary', 'lab-btn', '콘텐츠 기획안 보기');
-    d.append(s);
-    d.addEventListener('toggle', () => { s.textContent = d.open ? '기획안 접기' : '콘텐츠 기획안 보기'; });
-    const body = el('div', 'lab-plan-body');
-    const part = p => r.plan.filter(x => x.part === p).sort((a, b) => a.n - b.n);
-    const sec = (title, ...kids) => { const w = el('div'); w.append(el('h4', null, title), ...kids); body.append(w); };
-    part('warning').forEach(x => { const w = el('div', 'lab-warn'); w.append(el('b', null, '규제 주의 '), x.text); body.append(w); });
-    const titles = part('title');
-    if (titles.length) { const ul = el('ul', 'lab-list'); titles.forEach(x => ul.append(el('li', null, x.text))); sec('제목 후보', ul); }
-    const steps = part('structure');
-    if (steps.length) { const dl = el('dl', 'lab-steps'); steps.forEach(x => dl.append(el('dt', null, x.label), el('dd', null, x.text))); sec('구성', dl); }
-    part('caption').forEach(x => { const b = el('div', 'lab-box', x.text); sec('캡션', b, copyBtn(b, '캡션 복사')); });
-    part('hashtags').forEach(x => { const b = el('div', 'lab-box', x.text); sec('해시태그', b, copyBtn(b, '해시태그 복사')); });
-    part('differ').forEach(x => sec('참고 게시물과 다르게 할 점', el('p', null, x.text)));
-    const threads = part('threads');
-    if (threads.length) {
-      const wrap = el('div', 'lab-variant');
-      threads.forEach(x => { const b = el('div', 'lab-box', x.text); const row = el('div', 'lab-thread'); row.append(el('span', 'lab-sub', x.label), b, copyBtn(b, '이 글 복사')); wrap.append(row); });
-      const all = el('div', 'lab-box', threads.map(x => x.text).join('\n\n')); all.hidden = true;
-      sec('쓰레드 버전', wrap, all, copyBtn(all, '쓰레드 전체 복사'));
-    }
-    const slides = part('carousel');
-    if (slides.length) {
-      const dl = el('dl', 'lab-steps');
-      slides.forEach(x => { const [title, ...body] = x.text.split('\n'); const dd = el('dd'); dd.append(el('b', null, title)); if (body.length) dd.append(el('br'), body.join('\n')); dl.append(el('dt', null, x.label), dd); });
-      const all = el('div', 'lab-box', slides.map(x => `[${x.label}]\n${x.text}`).join('\n\n')); all.hidden = true;
-      sec('카드뉴스 버전', dl, all, copyBtn(all, '카드뉴스 문구 전체 복사'));
-    }
-    const checks = [...part('check').map(x => x.text), ...FIXED_CHECKS];
-    const box = el('div', 'lab-check');
-    checks.forEach((t, i) => { const l = el('label'); const c = el('input'); c.type = 'checkbox'; c.id = `chk-${r.rank}-${i}`; l.append(c, el('span', null, t)); box.append(l); });
-    sec('올리기 전 체크리스트', box, el('p', 'lab-note', '체크 표시는 이 화면에서만 보여요. 새로고침하면 지워져요.'));
-    if (!r.plan.length) body.replaceChildren(el('p', 'lab-note', '이 추천의 기획안은 다음 자동 갱신(매일 06:00) 때 작성돼요.'));
-    d.append(body);
+    const d = el('details', 'plan-wrap');
+    const s = el('summary'); const sb = el('span', 'btn', '기획안 열기'); s.append(sb); d.append(s);
+    d.addEventListener('toggle', () => { sb.textContent = d.open ? '기획안 접기' : '기획안 열기'; });
+    const plan = el('div', 'plan');
+    if (!r.plan.length) { plan.append(el('p', 'note', '이 추천의 기획안은 다음 자동 갱신(매일 06:00) 때 작성돼요.')); d.append(plan); return d; }
+    part(r, 'warning').forEach(x => plan.append(el('div', 'warn', `규제 주의 · ${x.text}`)));
+    const titles = part(r, 'title');
+    if (titles.length) { const ul = el('ul', 'titles'); titles.forEach(x => ul.append(el('li', null, x.text))); plan.append(el('p', 'sub', '제목 후보'), ul); }
+    const tabs = planTabs(r), bar = el('div', 'tabs'), panel = el('div', 'panel');
+    bar.setAttribute('role', 'tablist');
+    const show = i => {
+      [...bar.children].forEach((b, j) => b.setAttribute('aria-selected', String(i === j)));
+      panel.replaceChildren(...tabs[i][1]());
+    };
+    tabs.forEach(([name], i) => { const b = el('button', null, name); b.type = 'button'; b.setAttribute('role', 'tab'); b.addEventListener('click', () => show(i)); bar.append(b); });
+    plan.append(bar, panel); show(0);
+    d.append(plan);
     return d;
   }
 
   function recCard(r) {
-    const card = el('article', 'lab-panel lab-rec'); card.id = `rec-${r.rank}`;
-    const head = el('div', 'lab-rec-head'); head.append(el('span', 'lab-rank', String(r.rank)), el('h3', null, r.title));
-    const sub = el('p', 'lab-sub'); sub.append(`${r.kind} · `, r.confidence === '높음' ? el('b', null, '신뢰도 높음') : confText(r.confidence));
-    const more = el('details', 'lab-more'); more.append(el('summary', null, '근거 더 보기'));
-    const ul = el('ul', 'lab-list'); r.reasons.slice(1).forEach(x => ul.append(el('li', null, x))); more.append(ul);
+    const card = el('article', 'card rec'); card.id = `rec-${r.rank}`;
+    const head = el('div', 'rec-head'), txt = el('div');
+    const chips = el('div', 'chips'); chips.append(kindPill(r.kind), confDots(r.confidence));
+    txt.append(el('h3', 'rec-title', r.title), chips);
+    txt.style.display = 'grid'; txt.style.gap = '6px';
+    head.append(el('span', 'rank', String(r.rank)), txt);
+    const more = el('details', 'more'); more.append(el('summary', null, '근거 더 보기'));
+    const ul = el('ul', 'list'); r.reasons.slice(1).forEach(x => ul.append(el('li', null, x))); more.append(ul);
     if (r.examples.length) {
-      const ex = el('div', 'lab-ex'); ex.append(el('p', 'lab-sub', '참고할 게시물'));
+      const ex = el('div', 'ex'); ex.append(el('p', 'sub', '참고할 게시물'));
       r.examples.forEach(e => {
-        const link = safeLink(e.permalink); const a = el(link ? 'a' : 'div');
+        const link = igLink(e.permalink), a = el(link ? 'a' : 'div');
         if (link) { a.href = link; a.target = '_blank'; a.rel = 'noopener'; }
-        a.append(el('span', 'lab-ex-cap', e.caption || '(캡션 없음)'), el('span', 'lab-sub', `@${e.username} · ${e.region} · ${fmtX(e.outlier)} · ${e.format}`));
+        a.append(el('span', 'cap', e.caption || '(캡션 없음)'), el('span', 'sub', `@${e.username} · ${e.region} · ${fmtX(e.outlier)} · ${e.format}`));
         ex.append(a);
       });
       more.append(ex);
     }
-    card.append(head, sub, el('p', 'lab-meta-line', [r.topic, r.format, r.hook, r.slot].filter(Boolean).join(' · ')), el('p', 'lab-why1', r.reasons[0] || ''), more, planBlock(r));
+    const actions = el('div', 'actions');
+    actions.append(planBlock(r), copyBtn('링크 복사', () => `${pageUrl()}#rec-${r.rank}`));
+    card.append(head, el('p', 'meta-line', [r.topic, r.format, r.hook, r.slot].filter(Boolean).join(' · ')), el('p', 'why1', r.reasons[0] || ''), more, actions);
+    // 기획안을 펼치면 카드 폭 전체를 쓰도록 액션 줄 밖으로 꺼낸다
+    const d = actions.querySelector('details');
+    d.addEventListener('toggle', () => { if (d.open) card.append(d); else actions.prepend(d); });
     return card;
   }
 
@@ -436,108 +571,114 @@ a.lab-row:hover .lab-row-main{text-decoration:underline}
     const box = document.getElementById('rec-list');
     if (!rows('recs')) return empty(box);
     if (!recs.length) return empty(box, '아직 추천할 만큼 데이터가 쌓이지 않았어요.');
-    const open = new Set([...box.querySelectorAll('.lab-plan[open]')].map(d => d.closest('.lab-rec').id));
     box.replaceChildren(...recs.map(recCard));
-    open.forEach(id => { const d = document.querySelector(`#${id} .lab-plan`); if (d) d.open = true; });
   }
 
-  function drawInsights() {
-    const ul = document.getElementById('insight-list'), I = rows('insights');
-    if (!I || !I.length) return ul.replaceChildren(el('li', 'lab-note', '아직 인사이트가 없어요.'));
-    ul.replaceChildren(...I.map(r => el('li', null, r.text)));
+  // ── 이번 주 상태판 (이 기기에 저장) ──
+  const STATES = [['todo', '예정'], ['doing', '진행 중'], ['done', '완료']];
+  function drawBoard(recs) {
+    const box = document.getElementById('board'), C = rows('calendar');
+    if (!C || !C.length) return empty(box);
+    const today = isoDay(kst());
+    box.replaceChildren(...C.map(c => {
+      const key = `lab-st-${c.date}-${c.topic}`, rec = recs.find(r => r.topic === c.topic) || {};
+      const row = el('div', 'day' + (c.date === today ? ' today-row' : '')); row.id = `day-${c.date}`;
+      const date = el('div', 'day-date'); date.append(el('b', null, md(c.date)), el('span', null, `${c.weekday}요일`));
+      const body = el('div', 'day-body');
+      const title = el('button', 'day-title', rec.title || c.title); title.type = 'button'; title.addEventListener('click', () => openPlan(rec.rank));
+      const ctrl = el('div', 'day-ctrl');
+      const st = el('button', 'state'); st.type = 'button';
+      const paint = () => { const s = store.get(key) || 'todo'; st.dataset.s = s; st.textContent = STATES.find(x => x[0] === s)[1]; row.classList.toggle('done', s === 'done'); };
+      st.addEventListener('click', () => { const i = STATES.findIndex(x => x[0] === (store.get(key) || 'todo')); store.set(key, STATES[(i + 1) % 3][0]); paint(); });
+      paint();
+      ctrl.append(st);
+      [['instagram', '인스타'], ['threads', '쓰레드']].forEach(([ch, name]) => {
+        const k = `${key}-${ch}`, b = el('button', 'chan'); b.type = 'button';
+        const dot = el('i', 'dot'); dot.style.background = `var(--ch-${ch})`; b.append(dot, `${name} 올림`);
+        const p = () => b.setAttribute('aria-pressed', String(store.get(k) === '1'));
+        b.addEventListener('click', () => { store.set(k, store.get(k) === '1' ? '0' : '1'); p(); }); p();
+        ctrl.append(b);
+      });
+      body.append(title, el('span', 'sub', `${c.format} · ${c.slot}${c.confidence === '낮음' ? ' · 참고용' : ''}`), ctrl);
+      row.append(date, body);
+      return row;
+    }));
   }
 
-  function rowLink(main, sub, href) {
-    const link = safeLink(href); const a = el(link ? 'a' : 'div', 'lab-row');
+  // ── 목록 ──
+  function rowLink(main, sub, href, linkFn = igLink) {
+    const link = linkFn(href), a = el(link ? 'a' : 'div', 'row');
     if (link) { a.href = link; a.target = '_blank'; a.rel = 'noopener'; }
-    a.append(el('span', 'lab-row-main', main), el('span', 'lab-row-sub', sub));
+    const m = el('span', 'row-main'); m.append(...[].concat(main).map(x => typeof x === 'string' ? noEmoji(x) : x)); a.append(m, el('span', 'row-sub', sub));
     return a;
   }
-
-  function listWithMore(box, items, render, first = 10) {
+  function listWithMore(box, items, render, first = 5) {
     let shown = first;
     const paint = () => {
       box.replaceChildren(...items.slice(0, shown).map(render));
-      if (items.length > shown) {
-        const b = el('button', 'lab-btn lab-morebtn', `더 보기 (${items.length - shown}개 더)`); b.type = 'button';
-        b.addEventListener('click', () => { shown = items.length; paint(); }); box.append(b);
-      }
+      if (items.length > shown) { const b = el('button', 'btn small', `더 보기 (${items.length - shown}개)`); b.type = 'button'; b.style.marginTop = '8px'; b.addEventListener('click', () => { shown = items.length; paint(); }); box.append(b); }
     };
     paint();
   }
-
   function drawCompetitors() {
-    const hot = rows('this_week'), acc = rows('this_week_accounts');
-    const hb = document.getElementById('week-hot'), ab = document.getElementById('week-acc');
-    if (!hot) empty(hb); else if (!hot.length) empty(hb, '이번 주에는 평소의 2배를 넘은 게시물이 없어요.');
-    else listWithMore(hb, hot, p => rowLink(p.caption || '(캡션 없음)', `${fmtX(p.outlier)} · @${p.username} · ${p.region} · ${p.format} · ${p.topics} · ${p.date}`, p.permalink), 6);
-    if (!acc) empty(ab); else if (!acc.length) empty(ab, '이번 주 올라온 게시물이 아직 없어요.');
-    else listWithMore(ab, acc, a => rowLink(`@${a.username} · ${a.region}`, `이번 주 ${a.posts}개 · 최고 ${fmtX(a.top_outlier)}${a.topics ? ' · 주로 ' + a.topics : ''}`), 8);
+    const box = document.getElementById('week-hot'), H = rows('this_week');
+    if (!H) return empty(box); if (!H.length) return empty(box, '이번 주에는 평소의 2배를 넘은 게시물이 없어요.');
+    listWithMore(box, H, p => rowLink(p.caption || '(캡션 없음)', `${fmtX(p.outlier)} · @${p.username} · ${p.format} · ${p.topics}`, p.permalink));
   }
 
-  function bar(track, v, n, cls, color, max) {
-    const b = el('div', `lab-bar ${cls}`), i = el('i');
-    i.style.width = v == null ? '0' : `calc(${Math.min(v / max, 1) * 100}% - 5rem)`; i.style.background = color;
-    b.append(i, el('span', null, v == null ? '없음' : `${fmtX(v)} · ${n}개`));
-    track.append(b);
+  // ── 주간 분석 ──
+  function drawLearn() {
+    const ul = document.getElementById('learn'), I = rows('insights');
+    if (!I || !I.length) return ul.replaceChildren(el('li', 'note', '아직 정리할 내용이 없어요.'));
+    ul.replaceChildren(...I.slice(0, 3).map((r, i) => { const li = el('li'); li.append(el('b', null, String(i + 1)), el('span', null, r.text)); return li; }));
   }
-
-  function pairRow(name, sub, kr, krn, fo, fon, max, showFo = true) {
-    const item = el('div', 'lab-item');
-    const nm = el('div', 'lab-item-name', name); if (sub) nm.append(el('small', null, sub));
-    const track = el('div', 'lab-track');
-    const ref = el('div', 'lab-ref'); ref.style.left = `calc(${1 / max * 100}% - ${5 / max}rem)`; ref.append(el('span', null, '평소')); track.append(ref);
-    bar(track, kr, krn, 'kr', KR, max);
-    if (showFo) bar(track, fo, fon, 'fo', FO, max);
-    item.append(nm, track);
-    return item;
+  function legend(id, names = ['한국', '해외']) {
+    document.getElementById(id).replaceChildren(...[[names[0], KR], [names[1], FO]].map(([t, c]) => { const s = el('span'); const i = el('i'); i.style.background = c; s.append(i, t); return s; }));
   }
-
+  function bar(track, v, n, cls, color, max, unit) {
+    const b = el('div', `bar ${cls}`), i = el('i');
+    i.style.width = v == null ? '0' : `calc(${Math.min(v / max, 1) * 100}% - 6.5rem)`; i.style.background = color;
+    b.append(i, el('span', null, v == null ? '없음' : unit(v, n))); track.append(b);
+  }
+  function pairRow(name, sub, a, an, b, bn, max, opts = {}) {
+    const unit = opts.unit || ((v, n) => `${fmtX(v)} · ${n}개`);
+    const item = el('div', 'item'), nm = el('div', null, name); if (sub) nm.append(el('small', null, sub));
+    const track = el('div', 'track');
+    if (!opts.noRef) { const ref = el('div', 'ref'); ref.style.left = `calc(${1 / max * 100}% - ${6.5 / max}rem)`; ref.append(el('span', null, '평소')); track.append(ref); }
+    bar(track, a, an, 'kr', KR, max, unit);
+    if (opts.second !== false) bar(track, b, bn, 'fo', FO, max, unit);
+    item.append(nm, track); return item;
+  }
   function drawPatterns() {
     const box = document.getElementById('pattern-groups'), P = rows('patterns');
+    legend('legend-patterns');
     if (!P) return empty(box);
-    const groups = [
-      ['형식', '릴스·카드뉴스·이미지 중 무엇이 잘 되나'],
-      ['첫 문장', '캡션 첫 줄이 어떤 스타일일 때 잘 되나'],
-      ['행동 유도', '캡션에 넣은 부탁 문구별 반응 (저장·공유 효과는 직접 측정 불가)'],
-      ['캡션 길이', '캡션 글자 수별 반응'],
-      ['해시태그 개수', '게시물당 해시태그 수별 반응'],
-      ['시간대', '한국 계정, 한국시간 기준'],
-    ];
+    const groups = [['형식', '릴스·카드뉴스·이미지'], ['첫 문장', '캡션 첫 줄 스타일'], ['행동 유도', '캡션 속 부탁 문구 (저장·공유 효과는 직접 측정 불가)'],
+      ['캡션 길이', '캡션 글자 수'], ['해시태그 개수', '게시물당 해시태그 수'], ['시간대', '한국 계정 · 한국시간']];
     box.replaceChildren();
     groups.forEach(([g, note]) => {
-      const items = P.filter(r => r.group === g);
-      if (!items.length) return;
-      const keys = [...new Set(items.map(r => r.key))];
-      const get = (k, reg) => items.find(r => r.key === k && r.region === reg);
+      const items = P.filter(r => r.group === g); if (!items.length) return;
+      const keys = [...new Set(items.map(r => r.key))], get = (k, reg) => items.find(r => r.key === k && r.region === reg);
       if (g !== '시간대') keys.sort((a, b) => ((get(b, '한국') || {}).avg || 0) - ((get(a, '한국') || {}).avg || 0));
-      const max = Math.max(2, ...items.map(r => r.avg || 0));
-      const card = el('div', 'lab-panel'); card.id = `pattern-${g}`;
-      card.append(el('h3', null, g), el('p', 'lab-note', note));
-      const bars = el('div', 'lab-bars');
-      keys.forEach(k => {
-        const kr = get(k, '한국'), fo = get(k, '해외');
-        bars.append(pairRow(k, null, kr?.avg, kr?.n, fo?.avg, fo?.n, max, g !== '시간대'));
-      });
+      const max = Math.max(2, ...items.map(r => r.avg || 0)), card = el('div', 'card'), bars = el('div', 'bars');
+      card.append(el('h3', null, g), el('p', 'note', note));
+      keys.forEach(k => { const kr = get(k, '한국'), fo = get(k, '해외'); bars.append(pairRow(k, null, kr?.avg, kr?.n, fo?.avg, fo?.n, max, { second: g !== '시간대' })); });
       card.append(bars); box.append(card);
     });
   }
-
   function drawTopics() {
     const box = document.getElementById('topic-chart'), T = rows('topics');
+    legend('legend-topics');
     if (!T) return empty(box);
     const gap = r => (r.foreign_avg || 0) - (r.kr_avg || 0) + (r.kr_n ? 0 : 0.5);
-    const list = T.slice().sort((a, b) => gap(b) - gap(a));
-    const max = Math.max(2, ...list.flatMap(r => [r.kr_avg || 0, r.foreign_avg || 0]));
+    const list = T.slice().sort((a, b) => gap(b) - gap(a)), max = Math.max(2, ...list.flatMap(r => [r.kr_avg || 0, r.foreign_avg || 0]));
     box.replaceChildren(...list.map(r => pairRow(r.topic, r.hashtag_hits ? `해시태그 인기 게시물 ${r.hashtag_hits}개` : null, r.kr_avg, r.kr_n, r.foreign_avg, r.foreign_n, max)));
   }
-
   function drawPosts() {
     const box = document.getElementById('post-list'), P = rows('top_posts');
     if (!P) return empty(box); if (!P.length) return empty(box, '표시할 게시물이 아직 없어요.');
-    listWithMore(box, P, p => rowLink(p.caption || '(캡션 없음)', `${fmtX(p.outlier)} · @${p.username} · ${p.region} · ${p.format} · ${p.topics} · ${p.date}`, p.permalink));
+    listWithMore(box, P, p => rowLink(p.caption || '(캡션 없음)', `${fmtX(p.outlier)} · @${p.username} · ${p.region} · ${p.format} · ${p.topics} · ${p.date}`, p.permalink), 10);
   }
-
   let accKey = 'er';
   function drawAccounts() {
     const box = document.getElementById('acc-list'), A = rows('accounts');
@@ -545,146 +686,120 @@ a.lab-row:hover .lab-row-main{text-decoration:underline}
     const list = A.slice().sort((a, b) => (b[accKey] ?? -Infinity) - (a[accKey] ?? -Infinity));
     listWithMore(box, list, a => {
       const g = a.growth_pct == null ? '증가 추이는 수집이 쌓이면 표시' : `팔로워 ${a.growth_pct > 0 ? '+' : ''}${a.growth_pct.toFixed(1)}%`;
-      const er = a.er == null ? '–' : `${a.er.toFixed(2)}%${a.likes_hidden ? '(좋아요 숨김 · 댓글 기준)' : ''}`;
-      return rowLink(`@${a.username} · ${a.region}${a.category ? ' · ' + a.category : ''}`,
-        `팔로워 ${fmtN(a.followers)} · ${g} · 주 ${a.posts_per_week}회 · 참여율 ${er} · 최고 ${fmtX(a.top_outlier)}`, a.top_link);
-    });
+      const er = a.er == null ? '–' : `${a.er.toFixed(2)}%${a.likes_hidden ? ' (댓글 기준)' : ''}`;
+      return rowLink(`@${a.username} · ${a.region}${a.category ? ' · ' + a.category : ''}`, `팔로워 ${fmtN(a.followers)} · ${g} · 주 ${a.posts_per_week}회 · 참여율 ${er} · 최고 ${fmtX(a.top_outlier)}`, a.top_link);
+    }, 10);
   }
   document.querySelectorAll('#acc-sort button').forEach(b => b.addEventListener('click', () => {
-    accKey = b.dataset.k;
-    document.querySelectorAll('#acc-sort button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
-    drawAccounts();
+    accKey = b.dataset.k; document.querySelectorAll('#acc-sort button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    document.querySelectorAll('#acc-sort button').forEach(x => x.classList.toggle('primary', x === b)); drawAccounts();
   }));
+  document.querySelector('#acc-sort button').classList.add('primary');
 
-  // ── 구글 뉴스·정보 ──
-  const httpsLink = u => /^https:\/\//.test(u || '') ? u : null;
-
+  // ── 구글 ──
   function newsLink(h) {
-    const link = httpsLink(h.link);
-    const a = el(link ? 'a' : 'div'); if (link) { a.href = link; a.target = '_blank'; a.rel = 'noopener'; }
-    a.append(el('span', 'lab-ex-cap', h.title), el('span', 'lab-sub', `${h.source} · ${h.published}`));
-    return a;
+    const link = webLink(h.link), a = el(link ? 'a' : 'div'); if (link) { a.href = link; a.target = '_blank'; a.rel = 'noopener'; }
+    a.append(el('span', 'cap', h.title), el('span', 'sub', `${h.source} · ${h.published}`)); return a;
   }
+  function drawGoogle(recs) {
+    const O = rows('google_opportunities') || [], T = rows('google_trends') || [], G = rows('google_topics') || [], H = rows('google_headlines') || [], M = (rows('google_meta') || [])[0];
+    const econ = T.filter(t => t.econ && t.geo === 'KR'), topNews = G.slice().sort((a, b) => (b.kr_per_day || 0) - (a.kr_per_day || 0))[0];
+    document.getElementById('g-sub').textContent = M && M.date ? `${M.date} 기준 · 구글 뉴스 RSS와 구글 트렌드` : '아직 수집 전이에요';
+    document.getElementById('g-kpis').replaceChildren(
+      kpi('인스타에서 덜 다룬 화제', `${O.length}개`, O.slice(0, 2).map(o => o.topic).join(', ') || '없음'),
+      kpi('경제 관련 급상승 검색어', `${econ.length}개`, econ.slice(0, 2).map(t => t.term).join(', ') || '한국 기준'),
+      kpi('기사가 가장 많은 주제', topNews ? topNews.topic : '–', topNews ? `하루 약 ${fmtN(topNews.kr_per_day)}건 · 한국` : ''),
+      kpi('수집한 주제', `${G.length}개`, '한국·미국 뉴스'));
 
-  function drawGoogleOpps(recs) {
-    const box = document.getElementById('g-opp-list'), O = rows('google_opportunities'), H = rows('google_headlines') || [];
-    if (!O) return empty(box);
-    if (!O.length) return empty(box, '오늘은 뉴스와 인스타의 차이가 큰 주제가 없어요. 인스타 계정들이 뉴스 흐름을 잘 따라가고 있다는 뜻이에요.');
-    box.replaceChildren(...O.map(g => {
-      const card = el('article', 'lab-panel lab-rec');
-      card.append(el('h3', null, g.topic),
-        el('p', 'lab-why1', `구글 뉴스 하루 약 ${fmtN(g.kr_per_day)}건 (경제 주제 중 ${g.kr_rank}위) · 한국 인스타 게시물 ${g.ig_kr_posts}개 (${g.ig_rank}위)`),
-        el('p', 'lab-sub', g.trend_terms ? `연결된 급상승 검색어: ${g.trend_terms}` : '뉴스량은 많지만 인스타 경제 계정들은 아직 많이 다루지 않았어요.'));
+    const ob = document.getElementById('g-opp-list');
+    if (!rows('google_opportunities')) empty(ob);
+    else if (!O.length) empty(ob, '오늘은 뉴스와 인스타의 차이가 큰 주제가 없어요.');
+    else ob.replaceChildren(...O.map(g => {
+      const card = el('article', 'card rec'), chips = el('div', 'chips');
+      chips.append(el('span', 'pill accent', `뉴스 ${g.kr_rank}위 · 하루 약 ${fmtN(g.kr_per_day)}건`), el('span', 'pill neutral', `인스타 ${g.ig_rank}위 · ${g.ig_kr_posts}개`));
+      card.append(el('h3', 'rec-title', g.topic), chips, el('p', 'sub', g.trend_terms ? `연결된 급상승 검색어: ${g.trend_terms}` : '뉴스량은 많지만 인스타 경제 계정들은 아직 많이 다루지 않았어요.'));
       const hs = H.filter(h => h.topic === g.topic && h.region === 'KR').slice(0, 3);
-      if (hs.length) { const ex = el('div', 'lab-ex'); ex.append(el('p', 'lab-sub', '오늘 나온 기사')); hs.forEach(h => ex.append(newsLink(h))); card.append(ex); }
-      const rec = recs.find(r => r.topic === g.topic);
-      if (rec) {
-        const b = el('button', 'lab-btn', `인스타 추천 ${rec.rank}위 기획안 보기`); b.type = 'button';
-        b.addEventListener('click', () => { setChannel('instagram'); openPlan(rec.rank); });
-        card.append(b);
-      }
-      return card;
+      if (hs.length) { const ex = el('div', 'ex'); hs.forEach(h => ex.append(newsLink(h))); card.append(ex); }
+      const actions = el('div', 'actions'), rec = recs.find(r => r.topic === g.topic);
+      if (rec) { const b = el('button', 'btn primary', `인스타 추천 ${rec.rank}위 기획안 보기`); b.type = 'button'; b.addEventListener('click', () => openPlan(rec.rank)); actions.append(b); }
+      actions.append(copyBtn('기획 메모로 복사', () => [`[뉴스 화제] ${g.topic}`, `구글 뉴스 하루 약 ${g.kr_per_day}건(${g.kr_rank}위), 인스타 경제 계정 게시물 ${g.ig_kr_posts}개`, ...hs.map(h => `- ${h.title} (${h.source}) ${h.link}`)].join('\n'), 'btn'));
+      card.append(actions); return card;
     }));
-  }
 
-  function drawGoogleTrends() {
-    const T = rows('google_trends');
     [['KR', 'g-trend-kr'], ['US', 'g-trend-us']].forEach(([geo, id]) => {
-      const box = document.getElementById(id);
-      if (!T) return empty(box);
-      const list = T.filter(t => t.geo === geo).sort((a, b) => (b.econ - a.econ) || (b.traffic - a.traffic));
+      const box = document.getElementById(id), list = T.filter(t => t.geo === geo).sort((a, b) => (b.econ - a.econ) || (b.traffic - a.traffic));
       if (!list.length) return empty(box, '급상승 검색어를 아직 받지 못했어요.');
-      box.replaceChildren(...list.map(t => {
-        const main = el('span', 'lab-row-main', t.term); if (t.econ) main.append(el('span', 'lab-tag', t.topics));
-        const link = httpsLink(t.news_link);
-        const a = el(link ? 'a' : 'div', 'lab-row'); if (link) { a.href = link; a.target = '_blank'; a.rel = 'noopener'; }
-        a.append(main, el('span', 'lab-row-sub', `검색 ${fmtN(t.traffic)}+ · ${t.news_title || '관련 기사 없음'}`));
-        return a;
-      }));
+      listWithMore(box, list, t => {
+        const main = [t.term]; if (t.econ) main.push(' ', el('span', 'pill accent', t.topics));
+        return rowLink(main, `검색 ${fmtN(t.traffic)}+ · ${t.news_title || '관련 기사 없음'}`, t.news_link, webLink);
+      });
     });
-  }
 
-  function drawGoogleHeat() {
-    const box = document.getElementById('g-heat-chart'), G = rows('google_topics'), M = (rows('google_meta') || [])[0];
-    legend('legend-news', ['한국', '미국']);
-    if (!G || !G.length) return empty(box);
-    const days = Math.max(...G.map(g => g.history_days || 1));
-    document.getElementById('g-heat-note').textContent = `구글 뉴스에서 최근 24시간 동안 나온 기사 속도(하루 추정 기사 수)예요. ${M && M.date ? M.date + ' 기준. ' : ''}` +
-      (days >= 3 ? '괄호 안은 평소 대비 배수예요.' : `매일 기록이 쌓이면 '평소보다 늘었는지'도 보여요 (지금 ${days}일치).`);
-    const max = Math.max(...G.flatMap(g => [g.kr_per_day || 0, g.us_per_day || 0]));
-    const list = G.slice().sort((a, b) => (b.kr_per_day || 0) - (a.kr_per_day || 0));
-    box.replaceChildren(...list.map(g => {
-      const item = el('div', 'lab-item');
-      item.append(el('div', 'lab-item-name', g.topic));
-      const track = el('div', 'lab-track');
-      [[g.kr_per_day, g.kr_mom, 'kr', KR], [g.us_per_day, g.us_mom, 'fo', FO]].forEach(([v, m, cls, c]) => {
-        const b = el('div', `lab-bar ${cls}`), i = el('i');
-        i.style.width = v ? `calc(${v / max * 100}% - 7rem)` : '0'; i.style.background = c;
-        b.append(i, el('span', null, v == null ? '없음' : `하루 ${fmtN(v)}건${m ? ` (${m.toFixed(1)}배)` : ''}`));
-        track.append(b);
-      });
-      item.append(track);
-      return item;
-    }));
-  }
+    const hb = document.getElementById('g-heat-chart'); legend('legend-news', ['한국', '미국']);
+    if (!G.length) empty(hb);
+    else {
+      const days = Math.max(...G.map(g => g.history_days || 1));
+      document.getElementById('g-heat-note').textContent = `최근 24시간 기사 속도(하루 추정 기사 수)예요. ` + (days >= 3 ? '괄호 안은 평소 대비 배수예요.' : `매일 쌓이면 '평소보다 늘었는지'도 보여요 (지금 ${days}일치).`);
+      const max = Math.max(...G.flatMap(g => [g.kr_per_day || 0, g.us_per_day || 0]));
+      const unit = (v, m) => `하루 ${fmtN(v)}건${m ? ` (${(+m).toFixed(1)}배)` : ''}`;
+      hb.replaceChildren(...G.slice().sort((a, b) => (b.kr_per_day || 0) - (a.kr_per_day || 0)).map(g => pairRow(g.topic, null, g.kr_per_day, g.kr_mom, g.us_per_day, g.us_mom, max, { unit, noRef: true })));
+    }
 
-  function drawGoogleNews() {
-    const box = document.getElementById('g-news-list'), H = rows('google_headlines');
-    if (!H) return empty(box);
-    const topics = [...new Set(H.map(h => h.topic))];
-    if (!topics.length) return empty(box, '최근 기사가 아직 없어요.');
-    box.replaceChildren(...topics.map(t => {
-      const d = el('details', 'lab-panel lab-more');
-      d.append(el('summary', null, `${t} · 기사 ${H.filter(h => h.topic === t).length}건`));
-      [['KR', '한국'], ['US', '미국']].forEach(([r, label]) => {
-        const hs = H.filter(h => h.topic === t && h.region === r);
-        if (!hs.length) return;
-        const ex = el('div', 'lab-ex'); ex.append(el('p', 'lab-sub', label)); hs.forEach(h => ex.append(newsLink(h))); d.append(ex);
-      });
+    const nb = document.getElementById('g-news-list'), topics = [...new Set(H.map(h => h.topic))];
+    if (!topics.length) empty(nb, '최근 기사가 아직 없어요.');
+    else nb.replaceChildren(...topics.map(t => {
+      const d = el('details', 'card more'); d.append(el('summary', null, `${t} · 기사 ${H.filter(h => h.topic === t).length}건`));
+      [['KR', '한국'], ['US', '미국']].forEach(([r, label]) => { const hs = H.filter(h => h.topic === t && h.region === r); if (!hs.length) return; const ex = el('div', 'ex'); ex.append(el('p', 'sub', label)); hs.forEach(h => ex.append(newsLink(h))); d.append(ex); });
       return d;
     }));
   }
 
-  // ── 채널 전환 ──
-  const channelButtons = [...document.querySelectorAll('.lab-channels button')];
+  // ── 채널 전환 · 메뉴 ──
+  const side = document.getElementById('side'), menuBtn = document.getElementById('menu-btn');
+  const closeMenu = () => { side.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); };
+  menuBtn.addEventListener('click', () => { side.classList.add('open'); menuBtn.setAttribute('aria-expanded', 'true'); });
+  document.getElementById('side-close').addEventListener('click', closeMenu);
+  const NAMES = { instagram: '인스타그램', google: '구글 뉴스·정보', youtube: '유튜브', threads: '쓰레드' };
   function setChannel(ch) {
-    channelButtons.forEach(b => b.setAttribute('aria-selected', String(b.dataset.ch === ch)));
-    document.querySelectorAll('.lab-view').forEach(v => { v.hidden = v.dataset.view !== ch; });
-    document.getElementById('lab-nav').hidden = ch !== 'instagram';
-    document.getElementById('g-nav').hidden = ch !== 'google';
-    try { history.replaceState(null, '', ch === 'instagram' ? location.pathname : '#ch-' + ch); } catch (e) {}
+    document.querySelectorAll('#channel-nav > li > button').forEach(b => b.setAttribute('aria-current', String(b.dataset.ch === ch)));
+    document.querySelectorAll('.subnav').forEach(u => { u.hidden = u.dataset.for !== ch; });
+    document.querySelectorAll('.view').forEach(v => { v.hidden = v.dataset.view !== ch; });
+    document.getElementById('topbar-title').textContent = NAMES[ch];
     spy();
   }
-  channelButtons.forEach(b => b.addEventListener('click', () => { setChannel(b.dataset.ch); scrollTo({ top: 0 }); }));
-
-  // 상단 메뉴: 지금 보고 있는 섹션 표시
-  const spy = () => {
-    const links = [...document.querySelectorAll('.lab-nav ul:not([hidden]) a')];
+  document.querySelectorAll('#channel-nav > li > button').forEach(b => b.addEventListener('click', () => {
+    setChannel(b.dataset.ch); scrollTo({ top: 0 });
+    try { history.replaceState(null, '', b.dataset.ch === 'instagram' ? location.pathname : '#ch-' + b.dataset.ch); } catch (e) {}
+  }));
+  document.querySelectorAll('.subnav a').forEach(a => a.addEventListener('click', e => {
+    e.preventDefault(); closeMenu();
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t && t.id === 'analysis') document.getElementById('analysis-more').open = true;
+    if (t) t.scrollIntoView();
+  }));
+  function spy() {
+    const links = [...document.querySelectorAll('.subnav:not([hidden]) a')];
     const secs = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
-    if (!secs.length) return;
     let cur = secs[0];
     secs.forEach(s => { if (s.getBoundingClientRect().top < 140) cur = s; });
-    links.forEach(a => a.setAttribute('aria-current', String(a.getAttribute('href') === '#' + cur.id)));
-  };
+    links.forEach(a => a.setAttribute('aria-current', String(cur && a.getAttribute('href') === '#' + cur.id)));
+  }
   addEventListener('scroll', spy, { passive: true });
 
-  function draw() {
-    legend('legend-patterns'); legend('legend-topics');
-    const recs = grouped();
-    fillMeta(); drawHero(recs); drawCalendar(recs); drawRecs(recs); drawInsights(); drawCompetitors();
-    drawPatterns(); drawTopics(); drawPosts(); drawAccounts();
-    drawGoogleOpps(recs); drawGoogleTrends(); drawGoogleHeat(); drawGoogleNews(); spy();
-  }
-  let first = true;
+  document.getElementById('copy-brief').addEventListener('click', () => copyText(briefText(grouped()), '단톡방 요약을 복사했어요'));
+  document.getElementById('copy-news').addEventListener('click', () => {
+    const O = rows('google_opportunities') || [], T = (rows('google_trends') || []).filter(t => t.econ && t.geo === 'KR');
+    copyText([`[컨텐츠 연구소] ${md(isoDay(kst()))} 구글 뉴스 화제`, ...O.map(o => `· ${o.topic}: 뉴스 ${o.kr_rank}위(하루 약 ${o.kr_per_day}건), 인스타 게시물 ${o.ig_kr_posts}개`),
+      T.length ? `급상승 검색어: ${T.map(t => t.term).join(', ')}` : '', `${pageUrl()}#ch-google`].filter(Boolean).join('\n'), '뉴스 화제를 복사했어요');
+  });
+
   dash.onData(() => {
-    draw();
-    if (first) {
-      first = false;
-      const ch = location.hash.match(/^#ch-(\w+)$/);
-      const m = location.hash.match(/^#rec-(\d+)$/);
-      if (ch) setChannel(ch[1]);
-      else if (m) openPlan(+m[1]); else if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
-    }
+    const recs = grouped();
+    drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors();
+    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs);
+    const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/);
+    setChannel(ch ? ch[1] : 'instagram');
+    if (m) openPlan(+m[1]);
   });
 })();
 </script>

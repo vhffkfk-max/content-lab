@@ -346,7 +346,7 @@ def build_calendar(recs, recent, now):
     day_stats = group_stats(kr, "weekday")
     slot_overall, _ = best_of(group_stats(kr, "slot"), 3)
     today = now.astimezone(KST).date()
-    days = [today + timedelta(days=i) for i in range(1, 8)]
+    days = [today + timedelta(days=i) for i in range(0, 7)]   # 06:00 빌드 기준 오늘부터 7일
     shrink = lambda s: (s["avg"] * s["n"] + 5) / (s["n"] + 5) if s and s["avg"] is not None else 1.0
     days.sort(key=lambda d: shrink(day_stats.get(WEEKDAYS[d.weekday()])), reverse=True)
     plan = []
