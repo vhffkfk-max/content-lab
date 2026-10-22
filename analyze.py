@@ -250,6 +250,8 @@ def build_recommendations(recent, posts, now, days, tag_hits, top_n, google=None
         if g and g["kr_rank"] and g["kr_rank"] <= 5:
             mom = f", 평소보다 {g['kr_mom']:.1f}배" if g.get("kr_mom") else ""
             reasons.append(f"구글 뉴스에서도 지금 하루 약 {g['kr_per_day']}건 속도로 기사가 나와요 (경제 주제 중 {g['kr_rank']}위{mom}) — 사람들이 찾아볼 때 올리면 좋아요.")
+        if g and g.get("press_kr_24h", 0) >= 5:
+            reasons.append(f"경제 매체(인베스팅닷컴·연합·한경·매경 등)에도 최근 24시간 관련 기사가 {g['press_kr_24h']}건 나왔어요.")
         if g and g["trend_terms"]:
             reasons.append(f"구글 급상승 검색어 '{g['trend_terms'][0]}'와 연결된 주제예요.")
         confidence = "높음" if n_total >= 15 else "보통" if n_total >= 6 else "낮음"
@@ -336,8 +338,27 @@ def google_section(conn, recent, now):
     opportunities = sorted(
         (g for g in by_topic.values() if g["kr_rank"] and g["kr_rank"] <= 8 and g["ig_rank"] - g["kr_rank"] >= 4),
         key=lambda g: g["ig_rank"] - g["kr_rank"], reverse=True)
+    press, popular = [], []
+    if "press_news" in tables:
+        day_ago = (now - timedelta(hours=24)).isoformat(timespec="seconds")
+        counts = Counter()
+        for r in conn.execute("SELECT topics FROM press_news WHERE region='KR' AND published >= ?", (day_ago,)):
+            counts.update(t for t in (r["topics"] or "").split(", ") if t)
+        for t, g in by_topic.items():
+            g["press_kr_24h"] = counts.get(t, 0)
+        fmt = lambda r: {"source": r["source"], "section": r["section"], "region": r["region"], "title": r["title"],
+                         "link": r["link"], "topics": r["topics"] or "", "popular": "많이 본 기사" in (r["section"] or ""),
+                         "published": parse_ts(r["published"].replace("+00:00", "+0000")).astimezone(KST).strftime("%m/%d %H:%M")}
+        # 기사가 많은 매체가 화면을 다 차지하지 않게 매체마다 최신 8건씩
+        for (src,) in conn.execute("SELECT DISTINCT source FROM press_news"):
+            press += [fmt(r) for r in conn.execute(
+                "SELECT * FROM press_news WHERE source=? AND published >= ? ORDER BY published DESC LIMIT 8", (src, since))]
+        press.sort(key=lambda p: p["published"], reverse=True)
+        popular = [fmt(r) for r in conn.execute(
+            "SELECT * FROM press_news WHERE section LIKE '%많이 본 기사%' AND collected_at=(SELECT MAX(collected_at) FROM press_news) "
+            "ORDER BY published DESC LIMIT 10")]
     return {"date": latest, "by_topic": by_topic, "topics": sorted(by_topic.values(), key=lambda g: g["kr_rank"] or 99),
-            "headlines": headlines, "trends": trends, "opportunities": opportunities}
+            "headlines": headlines, "trends": trends, "opportunities": opportunities, "press": press, "popular": popular}
 
 
 def build_calendar(recs, recent, now):

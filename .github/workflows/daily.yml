@@ -37,6 +37,7 @@ jobs:
         run: |
           python collect.py --max-posts 60
           python google_collect.py
+          python press_collect.py
           python analyze.py --no-open
           python export_site.py
 
