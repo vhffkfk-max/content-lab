@@ -208,6 +208,11 @@ a.row:hover .row-main{text-decoration:underline}
             <li><a href="#competitors">경쟁 동향</a></li>
             <li><a href="#analysis">주간 분석</a></li>
           </ul></li>
+        <li><button type="button" data-ch="accounts"><i class="dot" style="background:var(--ch-instagram)"></i>계정 분석</button>
+          <ul class="subnav" data-for="accounts">
+            <li><a href="#my">내 계정</a></li>
+            <li><a href="#other">다른 계정 보기</a></li>
+          </ul></li>
         <li><button type="button" data-ch="google"><i class="dot" style="background:var(--ch-google)"></i>뉴스·정보</button>
           <ul class="subnav" data-for="google">
             <li><a href="#g-opps">덜 다룬 화제</a></li>
@@ -333,6 +338,26 @@ a.row:hover .row-main{text-decoration:underline}
           <h2>주제별 구글 뉴스 기사</h2>
           <p class="note">누르면 기사 원문이 새 탭에서 열려요. 콘텐츠의 수치 출처로 쓰기 좋아요.</p>
           <div class="groups" id="g-news-list"></div>
+        </section>
+      </div>
+
+      <div class="view" data-view="accounts" hidden>
+        <div class="title-row"><div><h1>계정 분석</h1><p>내 계정은 공식 인사이트(도달·저장·공유·조회수)로, 다른 계정은 공개 반응(좋아요·댓글)으로 분석해요.</p></div></div>
+        <section class="sec" id="my">
+          <h2>내 계정</h2>
+          <div class="kpis" id="my-kpis"></div>
+          <div class="grid">
+            <div class="card"><h3>최근 게시물 성과</h3><p class="note">저장률 = 저장 ÷ 도달. 저장과 공유가 많은 글이 알고리즘에 더 오래 노출돼요. "추천 주제" 표시는 연구소 추천과 같은 주제로 올린 글이에요.</p><div class="rows" id="my-posts"></div></div>
+            <div class="card"><h3>형식별 평균 도달</h3><div class="bars" id="my-formats"></div></div>
+          </div>
+        </section>
+        <section class="sec" id="other">
+          <h2>다른 계정 보기</h2>
+          <div class="actions">
+            <label for="acc-pick" class="note" style="align-self:center">계정</label>
+            <select id="acc-pick" class="btn" style="font-weight:500;max-width:100%"></select>
+          </div>
+          <div id="acc-detail" style="display:grid;gap:var(--gap)"></div>
         </section>
       </div>
 
@@ -814,12 +839,77 @@ a.row:hover .row-main{text-decoration:underline}
     else listWithMore(pb, P, p => rowLink(p.text || '(내용 없음)', `@${p.username} · ${p.time} · 키워드 ${p.keyword}${p.topics ? ' · ' + p.topics : ''}`, p.permalink, webLink), 10);
   }
 
+  // ── 계정 분석 ──
+  function drawMyAccount() {
+    const M = (rows('own_meta') || [])[0], P = rows('own_posts') || [], F = rows('own_formats') || [];
+    const kb = document.getElementById('my-kpis'), pb = document.getElementById('my-posts'), fb = document.getElementById('my-formats');
+    if (!M) { kb.replaceChildren(kpi('팔로워', '–', '연결 전'), kpi('평균 도달', '–', ''), kpi('평균 저장률', '–', ''), kpi('추천 주제로 올린 글', '–', '')); empty(pb); empty(fb, '게시물이 생기면 보여요.'); return; }
+    const ch = M.follower_change == null ? '매일 쌓이면 증감 표시' : `${M.since} 이후 ${M.follower_change >= 0 ? '+' : ''}${fmtN(M.follower_change)}`;
+    kb.replaceChildren(kpi(`팔로워 · @${M.username}`, fmtN(M.followers), ch), kpi('평균 도달', M.avg_reach == null ? '–' : fmtN(M.avg_reach), `최근 게시물 ${M.posts}개`),
+      kpi('평균 저장률', M.avg_save_rate == null ? '–' : `${M.avg_save_rate.toFixed(2)}%`, '저장 ÷ 도달'), kpi('추천 주제로 올린 글', `${M.recommended_posts}개`, '연구소 추천과 같은 주제'));
+    if (!P.length) {
+      empty(pb, `연결된 @${M.username} 계정에 아직 게시물이 없어요 (게시물 ${fmtN(M.media_count)}개). 실제로 운영하는 계정을 연결하면 매일 도달·저장·공유가 쌓여요.`);
+      empty(fb, '게시물이 생기면 보여요.'); return;
+    }
+    listWithMore(pb, P, p => {
+      const main = [p.caption || '(캡션 없음)']; if (p.recommended) main.push(' ', el('span', 'pill accent', '추천 주제'));
+      const parts = [p.date, p.format, `도달 ${fmtN(p.reach)}`, `저장 ${fmtN(p.saved)}`, `공유 ${fmtN(p.shares)}`];
+      if (p.views != null) parts.push(`조회 ${fmtN(p.views)}`); if (p.save_rate != null) parts.push(`저장률 ${p.save_rate.toFixed(2)}%`);
+      return rowLink(main, parts.join(' · '), p.permalink);
+    }, 8);
+    if (!F.length) empty(fb, '도달 데이터가 아직 없어요.');
+    else { const max = Math.max(...F.map(f => f.reach)); fb.replaceChildren(...F.map(f => pairRow(f.key, `저장률 ${f.save_rate.toFixed(2)}% · ${f.n}개`, f.reach, f.n, null, null, max, { noRef: true, second: false, unit: v => `도달 ${fmtN(v)}` }))); }
+  }
+
+  let accPick = store.get('lab-acc-pick');
+  function drawOtherAccount() {
+    const D = rows('acc_details') || [], sel = document.getElementById('acc-pick'), box = document.getElementById('acc-detail');
+    if (!D.length) { sel.replaceChildren(); return empty(box); }
+    if (!sel.options.length) {
+      [['한국', '한국 계정'], ['해외', '해외 계정']].forEach(([r, label]) => {
+        const g = document.createElement('optgroup'); g.label = label;
+        D.filter(a => a.region === r).sort((a, b) => b.followers - a.followers).forEach(a => { const o = el('option', null, `@${a.username} · ${a.name || a.category} · 팔로워 ${fmtN(a.followers)}`); o.value = a.username; g.append(o); });
+        sel.append(g);
+      });
+      sel.addEventListener('change', () => { accPick = sel.value; store.set('lab-acc-pick', accPick); drawOtherAccount(); });
+    }
+    if (!D.find(a => a.username === accPick)) accPick = D.slice().sort((a, b) => b.followers - a.followers)[0].username;
+    sel.value = accPick;
+    const a = D.find(x => x.username === accPick), P = (rows('acc_patterns') || []).filter(p => p.username === a.username), T = (rows('acc_tops') || []).filter(p => p.username === a.username);
+    const erCap = a.er == null ? '' : a.region_er == null ? '' : `${a.region} 계정 중앙값 ${a.region_er.toFixed(2)}%${a.likes_hidden ? ' · 댓글 기준' : ''}`;
+    const kpis = el('div', 'kpis');
+    kpis.append(kpi('팔로워', fmtN(a.followers), a.growth_pct == null ? '증감은 수집이 쌓이면 표시' : `${a.growth_pct > 0 ? '+' : ''}${a.growth_pct.toFixed(1)}%`),
+      kpi('업로드', `주 ${a.posts_per_week}회`, `최근 60일 ${a.posts_60d}개`), a.likes_hidden ? kpi('참여율', '비교 어려움', '좋아요를 숨긴 글이 많아 댓글로만 계산') : kpi('참여율', a.er == null ? '–' : `${a.er.toFixed(2)}%`, erCap),
+      kpi('자료 나눔형 비중', `${a.lead_share}%`, '댓글·DM 키워드로 자료 주는 글'));
+    const how = el('div', 'card'); how.append(el('h3', null, `@${a.username}가 잘 되는 법`));
+    const ul = el('ul', 'learn'); ul.style.marginTop = '10px';
+    [['형식', a.best_format], ['첫 문장', a.best_hook], ['시간대', a.best_slot], ['요일', a.best_weekday], ['많이 다루는 주제', a.main_topics], ['우리 추천과 겹치는 주제', a.rec_overlap]]
+      .filter(([, v]) => v).forEach(([k, v], i) => { const li = el('li'); li.append(el('b', null, String(i + 1)), el('span', null, `${k}: ${v}`)); ul.append(li); });
+    if (!ul.children.length) ul.append(el('li', 'note', '게시물이 적어 아직 패턴을 말하기 어려워요.'));
+    how.append(ul, el('p', 'note', '괄호 안은 이 계정의 평소 반응 대비 배수와 게시물 수예요 (최근 60일, 3개 이상일 때만).'));
+    const pat = el('div', 'card'); pat.append(el('h3', null, '항목별 반응'));
+    const groups = ['형식', '시간대', '요일', '주제', '첫 문장'].filter(g => P.some(p => p.group === g));
+    const bar = el('div', 'tabs'), panel = el('div', 'bars');
+    const show = g => {
+      [...bar.children].forEach(b => b.setAttribute('aria-selected', String(b.textContent === g)));
+      const items = P.filter(p => p.group === g).sort((x, y) => y.avg - x.avg), max = Math.max(2, ...items.map(i => i.avg));
+      panel.replaceChildren(...items.map(i => pairRow(i.key, null, i.avg, i.n, null, null, max, { second: false })));
+    };
+    groups.forEach(g => { const b = el('button', null, g); b.type = 'button'; b.addEventListener('click', () => show(g)); bar.append(b); });
+    pat.append(bar, panel); if (groups.length) show(groups[0]); else panel.append(el('p', 'note', '게시물이 적어 아직 비교할 항목이 없어요.'));
+    const tops = el('div', 'card'), tl = el('div', 'rows'); tops.append(el('h3', null, '반응 TOP 게시물 (최근 60일)'), tl);
+    if (!T.length) empty(tl, '최근 60일 게시물이 없어요.');
+    else tl.replaceChildren(...T.map(p => rowLink(p.caption || '(캡션 없음)', `${fmtX(p.outlier)} · ${p.format} · ${p.hook} · ${p.topics} · ${p.date}`, p.permalink)));
+    const grid = el('div', 'grid'), left = el('div', 'col'); left.append(how, tops); grid.append(left, pat);
+    box.replaceChildren(kpis, grid);
+  }
+
   // ── 채널 전환 · 메뉴 ──
   const side = document.getElementById('side'), menuBtn = document.getElementById('menu-btn');
   const closeMenu = () => { side.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); };
   menuBtn.addEventListener('click', () => { side.classList.add('open'); menuBtn.setAttribute('aria-expanded', 'true'); });
   document.getElementById('side-close').addEventListener('click', closeMenu);
-  const NAMES = { instagram: '인스타그램', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드' };
+  const NAMES = { instagram: '인스타그램', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드' };
   function setChannel(ch) {
     document.querySelectorAll('#channel-nav > li > button').forEach(b => b.setAttribute('aria-current', String(b.dataset.ch === ch)));
     document.querySelectorAll('.subnav').forEach(u => { u.hidden = u.dataset.for !== ch; });
@@ -856,7 +946,7 @@ a.row:hover .row-main{text-decoration:underline}
   dash.onData(() => {
     const recs = grouped();
     drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors();
-    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads();
+    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount();
     const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/);
     setChannel(ch ? ch[1] : 'instagram');
     if (m) openPlan(+m[1]);

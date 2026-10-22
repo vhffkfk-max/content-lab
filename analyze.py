@@ -361,6 +361,80 @@ def google_section(conn, recent, now):
             "headlines": headlines, "trends": trends, "opportunities": opportunities, "press": press, "popular": popular}
 
 
+def account_details(by_acc, acc_rows, now, rec_topics):
+    """계정 하나를 골라 볼 때 쓰는 상세 데이터: 잘 되는 형식·첫 문장·시간대·요일·주제와 TOP 게시물."""
+    since = now - timedelta(days=60)
+    region_er = defaultdict(list)
+    for a in acc_rows:
+        if a["er"] is not None:
+            region_er[a["region"]].append(a["er"])
+    region_avg = {r: round(statistics.median(v), 2) for r, v in region_er.items() if v}
+    details, patterns, tops = [], [], []
+    for a in acc_rows:
+        ps = [p for p in by_acc.get(a["username"], []) if p["dt"] >= since and not p["promo"] and not p["lead"]]
+        best = {}
+        for key, label in (("format", "형식"), ("hook", "첫 문장"), ("slot", "시간대"), ("weekday", "요일"), ("topics", "주제")):
+            stats = group_stats(ps, key)
+            for k, s in stats.items():
+                if s["n"] >= 2 and k != "기타":
+                    patterns.append({"username": a["username"], "group": label, "key": k, "avg": s["avg"], "n": s["n"]})
+            k, s = best_of(stats, 3, exclude={"기타", "일반 서술형"})
+            best[label] = f"{k} ({s['avg']:.1f}배, {s['n']}개)" if k else ""
+        topic_counts = Counter(t for p in ps for t in p["topics"] if t != "기타")
+        details.append({
+            "username": a["username"], "name": a["name"] or "", "region": a["region"], "category": a["category"] or "",
+            "followers": a["followers"], "posts_per_week": a["posts_per_week"], "er": a["er"],
+            "region_er": region_avg.get(a["region"]), "growth_pct": a["growth"]["pct"] if a["growth"] else None,
+            "likes_hidden": a["likes_hidden"], "posts_60d": len(ps),
+            "lead_share": round(sum(1 for p in by_acc.get(a["username"], []) if p["lead"]) / max(1, len(by_acc.get(a["username"], []))) * 100),
+            "best_format": best["형식"], "best_hook": best["첫 문장"], "best_slot": best["시간대"], "best_weekday": best["요일"],
+            "main_topics": ", ".join(t for t, _ in topic_counts.most_common(3)),
+            "rec_overlap": ", ".join(t for t in rec_topics if t in topic_counts),
+        })
+        for i, p in enumerate(sorted(ps, key=lambda p: p["outlier"] or 0, reverse=True)[:5], 1):
+            tops.append(dict(post_brief(p), rank=i, topics=", ".join(p["topics"])))
+    return details, patterns, tops
+
+
+def own_section(conn, rec_topics):
+    """연결된 내 계정의 인사이트(도달·저장·공유·조회수). 수집 전이면 빈 값."""
+    tables = {r[0] for r in conn.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+    if "own_posts" not in tables:
+        return {"meta": [], "posts": [], "formats": []}
+    snaps = [dict(r) for r in conn.execute("SELECT * FROM own_snapshots ORDER BY date")]
+    posts = []
+    for r in conn.execute("SELECT * FROM own_posts ORDER BY timestamp DESC"):
+        p = dict(r)
+        tps = topics_of(p["caption"])
+        reach = p["reach"] or 0
+        posts.append({
+            "caption": (p["caption"] or "").split("\n", 1)[0][:90], "permalink": p["permalink"],
+            "format": format_of(p["media_type"], p["product_type"]), "topics": ", ".join(t for t in tps if t != "기타"),
+            "date": parse_ts(p["timestamp"]).astimezone(KST).strftime("%m/%d %H:%M") if p["timestamp"] else "",
+            "likes": p["likes"], "comments": p["comments"], "reach": p["reach"], "saved": p["saved"],
+            "shares": p["shares"], "views": p["views"],
+            "save_rate": round((p["saved"] or 0) / reach * 100, 2) if reach else None,
+            "share_rate": round((p["shares"] or 0) / reach * 100, 2) if reach else None,
+            "recommended": any(t in rec_topics for t in tps),
+        })
+    with_reach = [p for p in posts if p["reach"]]
+    by_fmt = defaultdict(list)
+    for p in with_reach:
+        by_fmt[p["format"]].append(p)
+    formats = [{"key": k, "reach": round(statistics.mean(x["reach"] for x in v)), "n": len(v),
+                "save_rate": round(statistics.mean(x["save_rate"] or 0 for x in v), 2)} for k, v in by_fmt.items()]
+    last, first = (snaps[-1] if snaps else {}), (snaps[0] if snaps else {})
+    meta = [{
+        "username": last.get("username"), "followers": last.get("followers"), "media_count": last.get("media_count"),
+        "follower_change": (last.get("followers") or 0) - (first.get("followers") or 0) if len(snaps) >= 2 else None,
+        "since": first.get("date"), "posts": len(posts),
+        "avg_reach": round(statistics.mean(p["reach"] for p in with_reach)) if with_reach else None,
+        "avg_save_rate": round(statistics.mean(p["save_rate"] or 0 for p in with_reach), 2) if with_reach else None,
+        "recommended_posts": sum(p["recommended"] for p in posts),
+    }] if snaps else []
+    return {"meta": meta, "posts": posts[:30], "formats": sorted(formats, key=lambda f: -f["reach"])}
+
+
 def threads_section(conn, now):
     """쓰레드 키워드 검색 결과 요약. 수집 전이면 빈 값."""
     tables = {r[0] for r in conn.execute("SELECT name FROM sqlite_master WHERE type='table'")}
@@ -489,6 +563,9 @@ def main():
         "top_posts": [post_brief(p) for p in sorted(recent, key=lambda p: p["outlier"] or 0, reverse=True)[:20]],
     }
     data["threads"] = threads_section(conn, now)
+    rec_topics = [r["topic"] for r in data["recommendations"]]
+    data["acc_details"], data["acc_patterns"], data["acc_tops"] = account_details(by_acc, data["accounts"], now, rec_topics)
+    data["own"] = own_section(conn, rec_topics)
     data["calendar"] = build_calendar(data["recommendations"], recent, now)
     data["this_week"], data["this_week_accounts"] = build_this_week(posts, now)
     data["topics"].sort(key=lambda r: max(r["kr"]["avg"] or 0, r["foreign"]["avg"] or 0), reverse=True)

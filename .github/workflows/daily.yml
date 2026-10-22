@@ -36,6 +36,7 @@ jobs:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
         run: |
+          python own_collect.py
           python collect.py --max-posts 60
           python google_collect.py
           python press_collect.py

@@ -10,7 +10,8 @@ from common import OUTPUT_DIR, ROOT
 DATASETS = ["summary", "recs", "rec_reasons", "rec_examples", "insights", "topics",
             "patterns", "accounts", "top_posts", "drafts", "calendar", "this_week", "this_week_accounts",
             "google_meta", "google_topics", "google_headlines", "google_trends", "google_opportunities",
-            "press_headlines", "press_popular", "threads_meta", "threads_topics", "threads_posts"]
+            "press_headlines", "press_popular", "threads_meta", "threads_topics", "threads_posts",
+            "acc_details", "acc_patterns", "acc_tops", "own_meta", "own_posts", "own_formats"]
 
 
 def main():
