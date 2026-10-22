@@ -87,6 +87,10 @@
 .lab-steps dt{color:var(--color-fg-muted);white-space:nowrap;font-variant-numeric:tabular-nums}
 .lab-steps dd{margin:0;white-space:pre-line}
 .lab-box{background:var(--color-bg);border-radius:8px;padding:12px 14px;white-space:pre-wrap;overflow-wrap:anywhere}
+.lab-variant{display:grid;gap:12px}
+.lab-thread{display:grid;gap:4px}
+.lab-thread .lab-copy{margin-top:0;justify-self:start}
+.lab-box[hidden]{display:none}
 .lab-warn{border-left:3px solid var(--color-warn);padding:8px 12px;background:var(--color-bg);border-radius:0 8px 8px 0}
 .lab-warn b{color:var(--color-warn)}
 .lab-check{display:grid;gap:8px}
@@ -385,6 +389,20 @@ a.lab-row:hover .lab-row-main{text-decoration:underline}
     part('caption').forEach(x => { const b = el('div', 'lab-box', x.text); sec('캡션', b, copyBtn(b, '캡션 복사')); });
     part('hashtags').forEach(x => { const b = el('div', 'lab-box', x.text); sec('해시태그', b, copyBtn(b, '해시태그 복사')); });
     part('differ').forEach(x => sec('참고 게시물과 다르게 할 점', el('p', null, x.text)));
+    const threads = part('threads');
+    if (threads.length) {
+      const wrap = el('div', 'lab-variant');
+      threads.forEach(x => { const b = el('div', 'lab-box', x.text); const row = el('div', 'lab-thread'); row.append(el('span', 'lab-sub', x.label), b, copyBtn(b, '이 글 복사')); wrap.append(row); });
+      const all = el('div', 'lab-box', threads.map(x => x.text).join('\n\n')); all.hidden = true;
+      sec('쓰레드 버전', wrap, all, copyBtn(all, '쓰레드 전체 복사'));
+    }
+    const slides = part('carousel');
+    if (slides.length) {
+      const dl = el('dl', 'lab-steps');
+      slides.forEach(x => { const [title, ...body] = x.text.split('\n'); const dd = el('dd'); dd.append(el('b', null, title)); if (body.length) dd.append(el('br'), body.join('\n')); dl.append(el('dt', null, x.label), dd); });
+      const all = el('div', 'lab-box', slides.map(x => `[${x.label}]\n${x.text}`).join('\n\n')); all.hidden = true;
+      sec('카드뉴스 버전', dl, all, copyBtn(all, '카드뉴스 문구 전체 복사'));
+    }
     const checks = [...part('check').map(x => x.text), ...FIXED_CHECKS];
     const box = el('div', 'lab-check');
     checks.forEach((t, i) => { const l = el('label'); const c = el('input'); c.type = 'checkbox'; c.id = `chk-${r.rank}-${i}`; l.append(c, el('span', null, t)); box.append(l); });
@@ -527,7 +545,7 @@ a.lab-row:hover .lab-row-main{text-decoration:underline}
     const list = A.slice().sort((a, b) => (b[accKey] ?? -Infinity) - (a[accKey] ?? -Infinity));
     listWithMore(box, list, a => {
       const g = a.growth_pct == null ? '증가 추이는 수집이 쌓이면 표시' : `팔로워 ${a.growth_pct > 0 ? '+' : ''}${a.growth_pct.toFixed(1)}%`;
-      const er = a.er == null ? '–' : `${a.er.toFixed(2)}%${a.likes_hidden ? '(좋아요 숨김)' : ''}`;
+      const er = a.er == null ? '–' : `${a.er.toFixed(2)}%${a.likes_hidden ? '(좋아요 숨김 · 댓글 기준)' : ''}`;
       return rowLink(`@${a.username} · ${a.region}${a.category ? ' · ' + a.category : ''}`,
         `팔로워 ${fmtN(a.followers)} · ${g} · 주 ${a.posts_per_week}회 · 참여율 ${er} · 최고 ${fmtX(a.top_outlier)}`, a.top_link);
     });

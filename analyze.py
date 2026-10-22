@@ -15,7 +15,7 @@ from datetime import datetime, timedelta, timezone
 
 import report
 from common import DEFAULT_DB, OUTPUT_DIR, connect
-from topics import cta_of, format_of, hook_of, is_promo, length_of, tagcount_of, topics_of
+from topics import cta_of, format_of, hook_of, is_leadmagnet, is_promo, length_of, tagcount_of, topics_of
 
 KST = timezone(timedelta(hours=9))
 COMMENT_WEIGHT = 3        # 댓글은 좋아요보다 강한 신호라 3배로 계산
@@ -79,6 +79,7 @@ def load_posts(conn):
         p["slot"] = slot_of(p["dt"])
         p["weekday"] = WEEKDAYS[p["dt"].astimezone(KST).weekday()]
         p["promo"] = is_promo(p["caption"])
+        p["lead"] = is_leadmagnet(p["caption"])
         p["cta"] = cta_of(p["caption"])
         p["length"] = length_of(p["caption"])
         p["tagcount"] = tagcount_of(p["caption"])
@@ -89,7 +90,16 @@ def load_posts(conn):
     for p in posts:
         by_acc[p["username"]].append(p)
     for ps in by_acc.values():
-        base = statistics.median(p["eng"] for p in ps) if ps else 0
+        # 좋아요를 숨긴 게시물이 섞인 계정은 숨긴 글이 0에 가깝게 잡혀 기준이 무너진다 → 그 계정은 댓글만으로 비교
+        hidden_share = sum(p["likes"] is None for p in ps) / len(ps) if ps else 0
+        for p in ps:
+            p["comments_only"] = hidden_share >= 0.2
+            if p["comments_only"]:
+                p["eng"] = COMMENT_WEIGHT * (p["comments"] or 0)
+        # 자료 나눔형 글은 댓글이 부풀려져 있어 '평소 반응' 계산에서는 뺀다
+        normal = [p["eng"] for p in ps if not p["lead"]] or [p["eng"] for p in ps]
+        # 댓글이 거의 없는 계정은 중앙값이 0~1이라 몇 개만 달려도 수십 배로 튄다 → 기준에 최소치(댓글 2개분)를 둔다
+        base = max(statistics.median(normal), 2 * COMMENT_WEIGHT) if ps else 0
         for p in ps:
             p["outlier"] = round(p["eng"] / base, 2) if base > 0 else None
     return accounts, posts, by_acc
@@ -102,8 +112,9 @@ def account_stats(conn, accounts, by_acc, now):
     rows = []
     for username, acc in accounts.items():
         ps = by_acc.get(username, [])
-        last28 = [p for p in ps if p["dt"] >= now - timedelta(days=28)]
-        engs = [p["eng"] for p in last28] or [p["eng"] for p in ps]
+        normal = [p for p in ps if not p["lead"] and not p["promo"]] or ps
+        last28 = [p for p in normal if p["dt"] >= now - timedelta(days=28)]
+        engs = [p["eng"] for p in last28] or [p["eng"] for p in normal]
         followers = acc["followers"] or 0
         er = round(statistics.median(engs) / followers * 100, 2) if engs and followers else None
         growth = None
@@ -112,8 +123,8 @@ def account_stats(conn, accounts, by_acc, now):
             diff = s[-1]["followers"] - s[0]["followers"]
             growth = {"diff": diff, "pct": round(diff / s[0]["followers"] * 100, 2),
                       "since": s[0]["date"]}
-        top = max(last28 or ps, key=lambda p: p["outlier"] or 0, default=None)
-        likes_hidden = bool(ps) and all(p["likes"] is None for p in ps)
+        top = max(last28 or normal, key=lambda p: p["outlier"] or 0, default=None)
+        likes_hidden = bool(ps) and ps[0]["comments_only"]
         rows.append({
             "username": username, "name": acc["name"], "region": region_of(acc["region"]),
             "category": acc["category"], "followers": followers,
@@ -356,7 +367,7 @@ def build_calendar(recs, recent, now):
 
 
 def build_this_week(posts, now):
-    week = [p for p in posts if p["dt"] >= now - timedelta(days=7) and not p["promo"]]
+    week = [p for p in posts if p["dt"] >= now - timedelta(days=7) and not p["promo"] and not p["lead"]]
     hot = sorted([p for p in week if (p["outlier"] or 0) >= 2], key=lambda p: p["outlier"], reverse=True)[:12]
     per_acc = defaultdict(list)
     for p in week:
@@ -387,7 +398,9 @@ def main():
     accounts, posts, by_acc = load_posts(conn)
     if not posts:
         raise SystemExit("❌ 분석할 게시물이 없습니다. 먼저 collect.py 를 실행하세요 (테스트는 demo_data.py).")
-    recent = [p for p in posts if p["dt"] >= since and not p["promo"]]
+    # 추천·순위에는 경품 이벤트와 자료 나눔형 글을 빼고, 행동 유도 분석에만 자료 나눔형을 남긴다
+    recent_cta = [p for p in posts if p["dt"] >= since and not p["promo"]]
+    recent = [p for p in recent_cta if not p["lead"]]
 
     tag_hits = hashtag_topic_hits(conn, since)
     google = google_section(conn, recent, now)
@@ -412,7 +425,8 @@ def main():
         ],
         "formats": {r: to_rows(group_stats([p for p in recent if p["region"] == r], "format")) for r in (KR, FOREIGN)},
         "hooks": {r: to_rows(group_stats([p for p in recent if p["region"] == r], "hook")) for r in (KR, FOREIGN)},
-        "ctas": {r: to_rows(group_stats([p for p in recent if p["region"] == r], "cta")) for r in (KR, FOREIGN)},
+        "ctas": {r: to_rows(group_stats([p for p in recent_cta if p["region"] == r], "cta")) for r in (KR, FOREIGN)},
+        "lead_posts": sum(1 for p in recent_cta if p["lead"]),
         "lengths": {r: to_rows(group_stats([p for p in recent if p["region"] == r], "length")) for r in (KR, FOREIGN)},
         "tagcounts": {r: to_rows(group_stats([p for p in recent if p["region"] == r], "tagcount")) for r in (KR, FOREIGN)},
         "slots_kr": [{"key": name, **summarize([p for p in recent if p["region"] == KR and p["slot"] == name])}

@@ -40,7 +40,15 @@ SYSTEM = f"""당신은 한국 경제 인플루언서 @hotconomy(인스타그램)
 - 해시태그는 5~7개: 브랜드 태그 {BRAND_TAG} 1개 + 주제 태그 3~4개 + 대형 태그 1~2개. 다른 계정·매체·채널·회사 이름 태그(예: #조선비즈, #부읽남, #업비트)는 넣지 않습니다.
 - checks 에는 반드시 "수치 출처와 기준일 확인"과 "광고·협찬이면 첫 줄에 광고 표기"를 넣고, 그 외 1개까지 더합니다.
 - differ 에는 참고 게시물과 다르게 할 점을 한 줄로 씁니다(베끼기 방지).
-- 참고 게시물이 주제와 무관해 보이면(분류 오류) 무시하고 주제 자체로 기획합니다."""
+- 참고 게시물이 주제와 무관해 보이면(분류 오류) 무시하고 주제 자체로 기획합니다.
+
+같은 기획을 다른 채널로 바꾼 버전도 함께 씁니다 (내용·수치 빈칸은 본 기획과 같게, 말투와 구조만 채널에 맞게):
+- threads (쓰레드 버전): 이어지는 글 3~5개. 각 글은 300자 이내.
+  첫 글은 스크롤을 멈추게 하는 한두 줄 훅, 중간 글은 핵심 하나씩, 마지막 글은 의견을 묻는 질문 + 주의 문구.
+  인스타 캡션을 그대로 옮기지 말고 대화하듯 짧게 씁니다. 해시태그는 마지막 글에 주제 태그 1개만.
+- carousel (카드뉴스 버전): 6~8장. 각 장은 title(15자 이내 큰 글씨)과 body(2~3줄 작은 글씨).
+  1장은 표지(제목 + 궁금증을 만드는 부제), 2~(마지막-1)장은 한 장에 핵심 하나, 마지막 장은 저장하고 싶어지는 요약·체크리스트와 "저장해두고 다시 보세요".
+  본 기획의 형식이 이미 캐러셀이면, 카드뉴스 버전은 다른 각도(예: 초보 설명용, 체크리스트형)로 씁니다."""
 
 # 금융 광고·유사투자자문 규제에 걸릴 수 있는 표현 (법률 자문 아님, 올리기 전 사람이 판단)
 RISKY = [r"수익\s*보장", r"원금\s*보장", r"무조건", r"확정\s*수익", r"\d+\s*배\s*(간다|오른다|상승)", r"목표\s*가",
@@ -75,13 +83,13 @@ def pattern_lines(report):
     return "\n".join(out)
 
 
-def build_prompt(report, tags):
+def build_prompt(report, tags, picked):
     recs = [{
         "topic": r["topic"], "kind": r["kind"], "format": r["format"], "hook": r["hook"], "slot": r["slot"],
         "confidence": r["confidence"], "reasons": r["reasons"],
         "examples": [{"account": e["username"], "region": e["region"], "x": e["outlier"],
                       "format": e["format"], "caption": e["caption"]} for e in r["examples"]],
-    } for r in report["recommendations"]]
+    } for r in picked]
     return ("아래 추천 각각에 대해 기획안을 하나씩, 같은 순서로 써주세요. topic 값은 그대로 옮겨 적으세요.\n\n"
             f"추천 목록:\n{json.dumps(recs, ensure_ascii=False, indent=1)}\n\n"
             f"한국 경제 계정들의 캡션 패턴(평소 대비 반응):\n{pattern_lines(report)}\n\n"
@@ -102,7 +110,12 @@ def to_rows(plans):
         for i, c in enumerate(p.checks):
             add("check", i, "올리기 전 확인", c)
         add("differ", 0, "참고 게시물과 다르게", p.differ)
-        flagged = risky_phrases(" ".join([*p.titles, p.caption, *(x.text for x in p.structure)]))
+        for i, t in enumerate(p.threads):
+            add("threads", i, f"{i + 1}/{len(p.threads)}", t)
+        for i, c in enumerate(p.carousel):
+            add("carousel", i, "표지" if i == 0 else f"{i + 1}장", f"{c.title}\n{c.body}")
+        flagged = risky_phrases(" ".join([*p.titles, p.caption, *(x.text for x in p.structure), *p.threads,
+                                          *(f"{c.title} {c.body}" for c in p.carousel)]))
         if flagged:
             add("warning", 0, "규제 주의 표현", "다음 표현은 금융 광고·투자 권유로 보일 수 있어요: " + ", ".join(flagged))
     return rows
@@ -119,9 +132,12 @@ def main():
     if not report["recommendations"]:
         print("추천이 없어 기획안을 만들지 않았어요.")
         return
-    prompt = build_prompt(report, top_hashtags(args.db))
+    tags = top_hashtags(args.db)
+    recs = report["recommendations"]
+    # 채널별 버전까지 쓰면 글이 길어서 추천 4개씩 나눠 요청한다
+    chunks = [recs[i:i + 4] for i in range(0, len(recs), 4)]
     if args.dry_run:
-        print(SYSTEM, "\n\n", prompt)
+        print(SYSTEM, "\n\n", build_prompt(report, tags, chunks[0]))
         return
 
     if not os.environ.get("ANTHROPIC_API_KEY"):
@@ -135,6 +151,10 @@ def main():
         label: str
         text: str
 
+    class Slide(BaseModel):
+        title: str
+        body: str
+
     class Plan(BaseModel):
         topic: str
         titles: List[str]
@@ -143,34 +163,45 @@ def main():
         hashtags: List[str]
         checks: List[str]
         differ: str
+        threads: List[str]
+        carousel: List[Slide]
 
     class Plans(BaseModel):
         plans: List[Plan]
 
     client = anthropic.Anthropic()
-    try:
-        response = client.messages.parse(
-            model=MODEL,
-            max_tokens=16000,
-            system=SYSTEM,
-            messages=[{"role": "user", "content": prompt}],
-            output_format=Plans,
-        )
-    except anthropic.APIStatusError as e:
-        print(f"⚠️ Claude API 오류({e.status_code}): {e.message} — 지난 기획안을 유지해요.")
+    old = json.loads(DRAFTS.read_text(encoding="utf-8")) if DRAFTS.exists() else []
+    rows, done, used_in, used_out = [], set(), 0, 0
+    for chunk in chunks:
+        try:
+            response = client.messages.parse(
+                model=MODEL,
+                max_tokens=16000,
+                system=SYSTEM,
+                messages=[{"role": "user", "content": build_prompt(report, tags, chunk)}],
+                output_format=Plans,
+            )
+        except anthropic.APIStatusError as e:
+            print(f"⚠️ Claude API 오류({e.status_code}): {e.message} — 이 묶음은 지난 기획안을 유지해요.")
+            continue
+        except anthropic.APIConnectionError:
+            print("⚠️ Claude API 연결 실패 — 이 묶음은 지난 기획안을 유지해요.")
+            continue
+        if response.stop_reason != "end_turn" or response.parsed_output is None:
+            print(f"⚠️ 기획안을 받지 못했어요(stop_reason={response.stop_reason}) — 이 묶음은 지난 기획안을 유지해요.")
+            continue
+        rows += to_rows(response.parsed_output.plans)
+        done |= {pl.topic for pl in response.parsed_output.plans}
+        used_in += response.usage.input_tokens
+        used_out += response.usage.output_tokens
+    if not done:
         return
-    except anthropic.APIConnectionError:
-        print("⚠️ Claude API 연결 실패 — 지난 기획안을 유지해요.")
-        return
-    if response.stop_reason != "end_turn" or response.parsed_output is None:
-        print(f"⚠️ 기획안을 받지 못했어요(stop_reason={response.stop_reason}) — 지난 기획안을 유지해요.")
-        return
-
-    rows = to_rows(response.parsed_output.plans)
+    # 이번에 못 쓴 주제는 예전 기획안을 그대로 둔다
+    current = {r["topic"] for r in recs}
+    rows += [r for r in old if r["topic"] not in done and r["topic"] in current]
     DRAFTS.parent.mkdir(parents=True, exist_ok=True)
     DRAFTS.write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
-    u = response.usage
-    print(f"✅ 기획안 {len(response.parsed_output.plans)}개 작성 (입력 {u.input_tokens:,} / 출력 {u.output_tokens:,} 토큰)")
+    print(f"✅ 기획안 {len(done)}개 작성 (입력 {used_in:,} / 출력 {used_out:,} 토큰)")
 
 
 if __name__ == "__main__":

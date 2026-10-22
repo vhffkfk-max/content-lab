@@ -49,6 +49,8 @@ _CTA_PATS = {name: [re.compile(p, re.I) for p in pats] for name, pats in CTAS.it
 
 def cta_of(caption):
     text = (caption or "")
+    if is_leadmagnet(text):
+        return "자료 나눔형 (댓글·DM 키워드)"
     for name, pats in _CTA_PATS.items():
         if any(p.search(text) for p in pats):
             return name
@@ -66,6 +68,22 @@ def tagcount_of(caption):
 
 # 경품·이벤트·광고성 게시물은 반응이 인위적으로 커서 분석에서 뺀다
 PROMO_PATS = [re.compile(p, re.I) for p in [r"#event", r"이벤트", r"경품", r"추첨", r"당첨", r"giveaway", r"에어드랍", r"선착순", r"응모"]]
+
+
+# "댓글에 '무료' 남기면 자료 드려요", "DM으로 '실적' 보내주세요" 같은 자료 나눔형 게시물.
+# 댓글이 자료를 받으려고 달리는 거라 반응이 콘텐츠 자체보다 크게 부풀려진다
+LEAD_PATS = [re.compile(p, re.I) for p in [
+    r"댓글(에|로|창에)?\s*['‘’\"“”「『][^'‘’\"“”」』]{1,12}['‘’\"“”」』]\s*(을|를|이라고|라고)?\s*(남겨|적어|달아|써)",
+    r"(dm|디엠|DM)\s*(으로|로)?\s*['‘’\"“”][^'‘’\"“”]{1,12}['‘’\"“”]\s*(을|를|이라고|라고)?\s*(보내|남겨)",
+    r"(보고서|자료|리스트|pdf|PDF|전자책|템플릿)[^\n]{0,15}(보내|드리|드릴|드려|증정|공유해)",
+    r"comment\s+[\"“']?\w+[\"”']?\s+(and|to|for)",
+    r"\bdm\s+me\b",
+]]
+
+
+def is_leadmagnet(caption):
+    first = (caption or "")[:400]
+    return any(p.search(first) for p in LEAD_PATS)
 
 
 def is_promo(caption):
