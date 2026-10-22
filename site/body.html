@@ -848,7 +848,7 @@ a.row:hover .row-main{text-decoration:underline}
     kb.replaceChildren(kpi(`팔로워 · @${M.username}`, fmtN(M.followers), ch), kpi('평균 도달', M.avg_reach == null ? '–' : fmtN(M.avg_reach), `최근 게시물 ${M.posts}개`),
       kpi('평균 저장률', M.avg_save_rate == null ? '–' : `${M.avg_save_rate.toFixed(2)}%`, '저장 ÷ 도달'), kpi('추천 주제로 올린 글', `${M.recommended_posts}개`, '연구소 추천과 같은 주제'));
     if (!P.length) {
-      empty(pb, `연결된 @${M.username} 계정에 아직 게시물이 없어요 (게시물 ${fmtN(M.media_count)}개). 실제로 운영하는 계정을 연결하면 매일 도달·저장·공유가 쌓여요.`);
+      empty(pb, `@${M.username}는 이제 막 시작한 계정이라 아직 게시물이 없어요. 첫 게시물을 올리면 다음 날 06:00부터 도달·저장·공유·조회수가 매일 쌓여요. 인스타그램 탭의 "오늘 할 일" 기획안으로 첫 글을 시작해 보세요.`);
       empty(fb, '게시물이 생기면 보여요.'); return;
     }
     listWithMore(pb, P, p => {
