@@ -36,6 +36,7 @@ jobs:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
         run: |
           python collect.py --max-posts 60
+          python google_collect.py
           python analyze.py --no-open
           python export_site.py
 
@@ -49,11 +50,13 @@ jobs:
         run: python build_site.py
 
       - name: 수집 데이터 저장 (팔로워 추이용)
+        continue-on-error: true   # 저장이 실패해도 사이트 배포는 계속
         run: |
           git config user.name "content-lab-bot"
           git config user.email "content-lab-bot@users.noreply.github.com"
           git add data/insta.db output/site
           git commit -m "data: $(date -u +%Y-%m-%d) 자동 수집" || echo "변경 없음"
+          git pull --rebase --autostash || true   # 실행 중에 코드가 올라왔어도 충돌 없이 합치기
           git push
 
       - uses: actions/upload-pages-artifact@v3

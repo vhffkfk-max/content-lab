@@ -160,7 +160,7 @@ def hashtag_topic_hits(conn, since):
     return dict(hits)
 
 
-def build_recommendations(recent, posts, now, days, tag_hits, top_n):
+def build_recommendations(recent, posts, now, days, tag_hits, top_n, google=None):
     kr_recent = [p for p in recent if p["region"] == KR]
     fo_recent = [p for p in recent if p["region"] == FOREIGN]
     kr_accounts = len({p["username"] for p in posts if p["region"] == KR})
@@ -235,6 +235,12 @@ def build_recommendations(recent, posts, now, days, tag_hits, top_n):
             reasons.append(f"{where}이 주제 게시물은 '{fmt}' 형식이 평균 {fmt_s['avg']:.1f}배로 반응이 가장 좋았어요.")
         if hook and hook_s["avg"] >= 1.1:
             reasons.append(f"{where}첫 문장은 '{hook}' 스타일이 평균 {hook_s['avg']:.1f}배로 가장 잘 먹혔어요.")
+        g = (google or {}).get("by_topic", {}).get(t)
+        if g and g["kr_rank"] and g["kr_rank"] <= 5:
+            mom = f", 평소보다 {g['kr_mom']:.1f}배" if g.get("kr_mom") else ""
+            reasons.append(f"구글 뉴스에서도 지금 하루 약 {g['kr_per_day']}건 속도로 기사가 나와요 (경제 주제 중 {g['kr_rank']}위{mom}) — 사람들이 찾아볼 때 올리면 좋아요.")
+        if g and g["trend_terms"]:
+            reasons.append(f"구글 급상승 검색어 '{g['trend_terms'][0]}'와 연결된 주제예요.")
         confidence = "높음" if n_total >= 15 else "보통" if n_total >= 6 else "낮음"
         if confidence == "낮음":
             reasons.append("표본이 적어 참고용이에요. 수집을 몇 번 더 돌리면 정확해집니다.")
@@ -271,6 +277,56 @@ def build_insights(recent):
     if day:
         out.append(f"한국 계정은 {day}요일 게시물이 평균 {ds['avg']:.1f}배로 반응이 가장 좋아요.")
     return out
+
+
+def google_section(conn, recent, now):
+    """구글 뉴스 화제도·급상승 검색어. 구글 수집(google_collect.py)을 안 돌렸으면 빈 값."""
+    tables = {r[0] for r in conn.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+    if "google_daily" not in tables:
+        return {"by_topic": {}, "topics": [], "headlines": [], "trends": [], "opportunities": [], "date": None}
+    latest = conn.execute("SELECT MAX(date) FROM google_daily").fetchone()[0]
+    rows = [dict(r) for r in conn.execute("SELECT * FROM google_daily")]
+    ig_kr = Counter(t for p in recent if p["region"] == KR for t in p["topics"])
+    by_topic = {}
+    for region in ("KR", "US"):
+        today = sorted((r for r in rows if r["date"] == latest and r["region"] == region), key=lambda r: r["per_day"], reverse=True)
+        for rank, r in enumerate(today, 1):
+            past = [x["per_day"] for x in rows if x["topic"] == r["topic"] and x["region"] == region and x["date"] < latest]
+            mom = round(r["per_day"] / statistics.mean(past), 2) if len(past) >= 2 and statistics.mean(past) > 0 else None
+            g = by_topic.setdefault(r["topic"], {"topic": r["topic"], "trend_terms": [], "kr_rank": None, "kr_per_day": None,
+                                                 "kr_mom": None, "us_rank": None, "us_per_day": None, "us_mom": None,
+                                                 "ig_kr_posts": ig_kr.get(r["topic"], 0), "history_days": len(past) + 1})
+            key = region.lower()
+            g[f"{key}_rank"], g[f"{key}_per_day"], g[f"{key}_mom"] = rank, int(r["per_day"]), mom
+    last_trends = conn.execute("SELECT MAX(collected_at) FROM google_trends").fetchone()[0]
+    trends = []
+    for r in conn.execute("SELECT * FROM google_trends WHERE collected_at = ? ORDER BY geo, traffic DESC", (last_trends,)):
+        tps = [t for t in topics_of(f"{r['term']} {r['news_title'] or ''}") if t != "기타"]
+        trends.append({"geo": r["geo"], "term": r["term"], "traffic": r["traffic"], "topics": ", ".join(tps),
+                       "econ": bool(tps), "news_title": r["news_title"] or "", "news_link": r["news_link"] or ""})
+        for t in tps:
+            if t in by_topic and r["geo"] == "KR":
+                by_topic[t]["trend_terms"].append(r["term"])
+    since = (now - timedelta(hours=36)).isoformat(timespec="seconds")
+    headlines = []
+    for t in by_topic:
+        for region in ("KR", "US"):
+            for i, r in enumerate(conn.execute(
+                    "SELECT title, source, published, link FROM google_news WHERE topic=? AND region=? AND published>=? "
+                    "AND collected_at=(SELECT MAX(collected_at) FROM google_news WHERE topic=? AND region=?) "
+                    "ORDER BY published DESC LIMIT 4", (t, region, since, t, region))):
+                headlines.append({"topic": t, "region": region, "n": i, "title": r["title"], "source": r["source"],
+                                  "published": parse_ts(r["published"].replace("+00:00", "+0000")).astimezone(KST).strftime("%m/%d %H:%M"),
+                                  "link": r["link"]})
+    # 뉴스 순위는 높은데 한국 인스타 게시물 순위는 한참 낮은 주제 = 인스타에서 아직 덜 다룬 화제
+    ig_order = sorted(by_topic, key=lambda t: by_topic[t]["ig_kr_posts"], reverse=True)
+    for t, g in by_topic.items():
+        g["ig_rank"] = ig_order.index(t) + 1
+    opportunities = sorted(
+        (g for g in by_topic.values() if g["kr_rank"] and g["kr_rank"] <= 8 and g["ig_rank"] - g["kr_rank"] >= 4),
+        key=lambda g: g["ig_rank"] - g["kr_rank"], reverse=True)
+    return {"date": latest, "by_topic": by_topic, "topics": sorted(by_topic.values(), key=lambda g: g["kr_rank"] or 99),
+            "headlines": headlines, "trends": trends, "opportunities": opportunities}
 
 
 def build_calendar(recs, recent, now):
@@ -334,6 +390,7 @@ def main():
     recent = [p for p in posts if p["dt"] >= since and not p["promo"]]
 
     tag_hits = hashtag_topic_hits(conn, since)
+    google = google_section(conn, recent, now)
     data = {
         "generated_at": now.astimezone(KST).strftime("%Y-%m-%d %H:%M"),
         "days": args.days,
@@ -343,7 +400,8 @@ def main():
             "posts": len(posts), "recent_posts": len(recent),
             "hashtag_posts": conn.execute("SELECT COUNT(*) FROM hashtag_posts").fetchone()[0],
         },
-        "recommendations": build_recommendations(recent, posts, now, args.days, tag_hits, args.top),
+        "recommendations": build_recommendations(recent, posts, now, args.days, tag_hits, args.top, google),
+        "google": google,
         "insights": build_insights(recent),
         "topics": [
             {"topic": t,

@@ -70,6 +70,12 @@ def main():
         "likes": p["likes"], "comments": p["comments"],
     } for i, p in enumerate(d["top_posts"], 1)])
     write("calendar", d["calendar"])
+    g = d.get("google") or {}
+    write("google_meta", [{"date": g.get("date"), "topics": len(g.get("topics") or [])}])
+    write("google_topics", [{k: (", ".join(v) if isinstance(v, list) else v) for k, v in x.items()} for x in g.get("topics") or []])
+    write("google_headlines", g.get("headlines") or [])
+    write("google_trends", g.get("trends") or [])
+    write("google_opportunities", [{k: (", ".join(v) if isinstance(v, list) else v) for k, v in x.items()} for x in g.get("opportunities") or []])
     write("this_week", [{k: (", ".join(v) if isinstance(v, list) else v) for k, v in p.items()} for p in d["this_week"]])
     write("this_week_accounts", d["this_week_accounts"])
     print(f"✅ 사이트 데이터 → {SITE}")
