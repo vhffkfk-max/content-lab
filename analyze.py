@@ -396,6 +396,28 @@ def account_details(by_acc, acc_rows, now, rec_topics):
     return details, patterns, tops
 
 
+def foreign_section(posts, now):
+    """해외 계정만 따로: 최근 14일 터진 게시물, 해외에서 늘고 있는 주제와 한국 계정의 같은 주제 게시물 수."""
+    d14, d28 = now - timedelta(days=14), now - timedelta(days=28)
+    ok = [p for p in posts if not p["promo"] and not p["lead"]]
+    fo14 = [p for p in ok if p["region"] == FOREIGN and p["dt"] >= d14]
+    fo_prev = [p for p in ok if p["region"] == FOREIGN and d28 <= p["dt"] < d14]
+    kr14 = [p for p in ok if p["region"] == KR and p["dt"] >= d14]
+    hot = sorted((p for p in fo14 if (p["outlier"] or 0) >= 1.5), key=lambda p: p["outlier"], reverse=True)[:30]
+    full = {p["id"]: (p["caption"] or "").strip()[:600] for p in hot}
+    hot_rows = [dict(post_brief(p), rank=i, id=p["id"], topics=", ".join(p["topics"]), full=full[p["id"]])
+                for i, p in enumerate(hot, 1)]
+    cnt = lambda ps: Counter(t for p in ps for t in p["topics"] if t != "기타")
+    c14, cprev, ckr = cnt(fo14), cnt(fo_prev), cnt(kr14)
+    st = {t: summarize([p for p in fo14 if t in p["topics"]]) for t in c14}
+    topics = sorted(({"topic": t, "fo_14d": n, "fo_prev": cprev.get(t, 0), "fo_avg": st[t]["avg"],
+                      "kr_14d": ckr.get(t, 0)} for t, n in c14.items()),
+                    key=lambda r: (r["fo_avg"] or 0) * math.log2(1 + r["fo_14d"]) / (1 + r["kr_14d"] / 5), reverse=True)
+    return {"hot": hot_rows, "topics": topics,
+            "kr_lines": [(p["caption"] or "").strip().split("\n", 1)[0][:80] for p in sorted(kr14, key=lambda p: p["dt"], reverse=True)][:200],
+            "accounts": len({p["username"] for p in fo14})}
+
+
 def own_section(conn, rec_topics):
     """연결된 내 계정의 인사이트(도달·저장·공유·조회수). 수집 전이면 빈 값."""
     tables = {r[0] for r in conn.execute("SELECT name FROM sqlite_master WHERE type='table'")}
@@ -566,6 +588,7 @@ def main():
     rec_topics = [r["topic"] for r in data["recommendations"]]
     data["acc_details"], data["acc_patterns"], data["acc_tops"] = account_details(by_acc, data["accounts"], now, rec_topics)
     data["own"] = own_section(conn, rec_topics)
+    data["foreign"] = foreign_section(posts, now)
     data["calendar"] = build_calendar(data["recommendations"], recent, now)
     data["this_week"], data["this_week_accounts"] = build_this_week(posts, now)
     data["topics"].sort(key=lambda r: max(r["kr"]["avg"] or 0, r["foreign"]["avg"] or 0), reverse=True)

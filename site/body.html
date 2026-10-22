@@ -200,13 +200,19 @@ a.row:hover .row-main{text-decoration:underline}
     <nav>
       <p class="nav-label">채널</p>
       <ul class="nav" id="channel-nav">
-        <li><button type="button" data-ch="instagram"><i class="dot" style="background:var(--ch-instagram)"></i>인스타그램</button>
+        <li><button type="button" data-ch="instagram"><i class="dot" style="background:var(--ch-instagram)"></i>인스타 · 한국</button>
           <ul class="subnav" data-for="instagram">
             <li><a href="#today">오늘 할 일</a></li>
             <li><a href="#recommend">추천 콘텐츠</a></li>
             <li><a href="#week">이번 주 계획</a></li>
             <li><a href="#competitors">경쟁 동향</a></li>
             <li><a href="#analysis">주간 분석</a></li>
+          </ul></li>
+        <li><button type="button" data-ch="foreign"><i class="dot" style="background:var(--ch-instagram)"></i>인스타 · 해외</button>
+          <ul class="subnav" data-for="foreign">
+            <li><a href="#fo-ideas">한국에 안 풀린 콘텐츠</a></li>
+            <li><a href="#fo-hot">해외에서 터진 게시물</a></li>
+            <li><a href="#fo-topics">해외 주제 흐름</a></li>
           </ul></li>
         <li><button type="button" data-ch="accounts"><i class="dot" style="background:var(--ch-instagram)"></i>계정 분석</button>
           <ul class="subnav" data-for="accounts">
@@ -239,7 +245,7 @@ a.row:hover .row-main{text-decoration:underline}
       <!-- 인스타그램 -->
       <div class="view" data-view="instagram">
         <div class="title-row">
-          <div><h1>인스타그램 리서치</h1><p id="ig-sub">—</p></div>
+          <div><h1>인스타그램 · 한국</h1><p id="ig-sub">—</p></div>
           <button type="button" class="btn primary" id="copy-brief">단톡방 요약 복사</button>
         </div>
         <div class="kpis" id="ig-kpis"></div>
@@ -339,6 +345,39 @@ a.row:hover .row-main{text-decoration:underline}
           <p class="note">누르면 기사 원문이 새 탭에서 열려요. 콘텐츠의 수치 출처로 쓰기 좋아요.</p>
           <div class="groups" id="g-news-list"></div>
         </section>
+      </div>
+
+      <div class="view" data-view="foreign" hidden>
+        <div class="title-row">
+          <div><h1>인스타그램 · 해외</h1><p id="fo-sub">해외 경제 계정에서 터졌지만 한국에는 아직 안 풀린 콘텐츠를 찾아요.</p></div>
+          <button type="button" class="btn primary" id="copy-imports">해외 아이디어 복사</button>
+        </div>
+        <div class="kpis" id="fo-kpis"></div>
+        <div class="grid">
+          <div class="col">
+            <section class="sec" id="fo-ideas">
+              <h2>한국에 아직 안 풀린 해외 콘텐츠</h2>
+              <p class="note" id="fo-ideas-note">해외 계정의 최근 14일 반응 상위 게시물을, 같은 기간 한국 계정 게시물과 한국 경제 뉴스 제목에 대어 보고 Claude가 골랐어요.</p>
+              <div class="recs" id="fo-idea-list"></div>
+            </section>
+            <section class="sec" id="fo-hot">
+              <h2>해외에서 터진 게시물</h2>
+              <p class="note">최근 14일, 각 계정 평소보다 1.5배 넘게 반응이 나온 게시물이에요. 누르면 원문이 열려요.</p>
+              <div class="card"><div class="rows" id="fo-hot-list"></div></div>
+            </section>
+          </div>
+          <div class="col">
+            <section class="sec" id="fo-topics">
+              <h2>해외 주제 흐름</h2>
+              <p class="note">최근 14일 해외 게시물 수와, 같은 기간 한국 계정이 같은 주제로 올린 게시물 수예요. 한국 막대가 짧을수록 빈자리예요.</p>
+              <div class="card"><div class="legend" id="legend-fo"></div><div class="bars" id="fo-topic-chart"></div></div>
+            </section>
+            <section class="sec">
+              <h2>해외 계정이 잘 되는 방식</h2>
+              <div class="card"><ul class="learn" id="fo-how"></ul></div>
+            </section>
+          </div>
+        </div>
       </div>
 
       <div class="view" data-view="accounts" hidden>
@@ -839,6 +878,57 @@ a.row:hover .row-main{text-decoration:underline}
     else listWithMore(pb, P, p => rowLink(p.text || '(내용 없음)', `@${p.username} · ${p.time} · 키워드 ${p.keyword}${p.topics ? ' · ' + p.topics : ''}`, p.permalink, webLink), 10);
   }
 
+  // ── 인스타 · 해외 ──
+  function importMemo(i) {
+    return [`[해외에서 들여올 콘텐츠] ${i.title}`, `원 게시물: @${i.account} (평소의 ${(+i.x).toFixed(1)}배) ${i.permalink || ''}`, `무슨 내용: ${i.summary}`,
+      `한국에 없는 근거: ${i.why_new}`, `한국식으로 바꾸기: ${i.local_angle}`, `형식·첫 문장: ${i.format} · ${i.hook}`,
+      '구성:', ...i.structure.map((s, k) => `${k + 1}. ${s}`), `주의: ${i.caution}`].join('\n');
+  }
+  function drawForeign() {
+    const I = rows('imports') || [], H = rows('fo_hot') || [], T = rows('fo_topics') || [], P = rows('patterns') || [];
+    const accs = new Set(H.map(h => h.username)).size;
+    document.getElementById('fo-kpis').replaceChildren(
+      kpi('한국에 안 풀린 콘텐츠', `${I.length}개`, I[0] ? I[0].title.slice(0, 18) + '…' : '매일 06:00 갱신'),
+      kpi('해외에서 터진 게시물', `${H.length}개`, `최근 14일 · ${accs}개 계정`),
+      kpi('해외에서 뜨는 주제', T[0] ? T[0].topic : '–', T[0] ? `해외 ${T[0].fo_14d}개 · 한국 ${T[0].kr_14d}개` : ''),
+      kpi('해외 계정', `${(rows('acc_details') || []).filter(a => a.region === '해외').length}개`, '미국 중심'));
+    const ib = document.getElementById('fo-idea-list');
+    if (!I.length) empty(ib, '아직 찾은 아이디어가 없어요. 매일 06:00 자동 실행 때 Claude가 새로 골라요.');
+    else {
+      document.getElementById('fo-ideas-note').textContent = `해외 계정의 최근 14일 반응 상위 게시물을, 한국 계정 게시물 ${I[0].kr_checked}개와 한국 경제 뉴스 제목 ${I[0].news_checked}개에 대어 보고 Claude가 골랐어요. 근거는 이 자료 안에서만 판단한 거예요.`;
+      ib.replaceChildren(...I.map(i => {
+        const card = el('article', 'card rec'), chips = el('div', 'chips');
+        chips.append(el('span', 'pill accent', `원 게시물 평소의 ${(+i.x).toFixed(1)}배`), el('span', 'pill neutral', `@${i.account} · ${i.src_format}`), el('span', 'pill positive', `추천 형식 ${i.format}`));
+        const steps = el('dl', 'steps'); i.structure.forEach((s, k) => steps.append(el('dt', null, `${k + 1}`), el('dd', null, s)));
+        const actions = el('div', 'actions');
+        const link = igLink(i.permalink);
+        if (link) { const a = el('a', 'btn', '원 게시물 보기'); a.href = link; a.target = '_blank'; a.rel = 'noopener'; actions.append(a); }
+        actions.append(copyBtn('기획 메모 복사', () => importMemo(i), 'btn primary'));
+        card.append(el('h3', 'rec-title', i.title), chips, el('p', 'why1', i.summary),
+          el('p', 'sub', `한국에 없는 근거 · ${i.why_new}`), el('p', null, `한국식으로 바꾸기 · ${i.local_angle}`),
+          el('p', 'sub', `첫 문장 · ${i.hook}`), steps, el('div', 'warn', `주의 · ${i.caution}`), actions);
+        return card;
+      }));
+    }
+    const hb = document.getElementById('fo-hot-list');
+    if (!H.length) empty(hb, '최근 14일 해외에서 크게 터진 게시물이 없어요.');
+    else listWithMore(hb, H, h => rowLink(h.caption || '(캡션 없음)', `${fmtX(h.outlier)} · @${h.username} · ${h.format} · ${h.topics} · ${h.date}`, h.permalink), 8);
+    legend('legend-fo', ['해외 14일', '한국 같은 주제']);
+    const tb = document.getElementById('fo-topic-chart');
+    if (!T.length) empty(tb);
+    else { const max = Math.max(...T.flatMap(t => [t.fo_14d, t.kr_14d])); tb.replaceChildren(...T.map(t => pairRow(t.topic, t.fo_avg ? `해외 평균 ${fmtX(t.fo_avg)}` : null, t.fo_14d, null, t.kr_14d, null, max, { noRef: true, unit: v => `${fmtN(v)}개` }))); }
+    const how = document.getElementById('fo-how'), lines = [];
+    ['형식', '첫 문장', '행동 유도'].forEach(g => {
+      const best = P.filter(p => p.group === g && p.region === '해외' && p.n >= 3 && !['일반 서술형', '행동 유도 없음'].includes(p.key)).sort((a, b) => b.avg - a.avg)[0];
+      if (best) lines.push(`${g}: ${best.key} (평소의 ${fmtX(best.avg)}, ${best.n}개)`);
+    });
+    how.replaceChildren(...(lines.length ? lines : ['아직 패턴을 말할 만큼 게시물이 없어요.']).map((t, k) => { const li = el('li'); li.append(el('b', null, String(k + 1)), el('span', null, t)); return li; }));
+  }
+  document.getElementById('copy-imports').addEventListener('click', () => {
+    const I = rows('imports') || [];
+    copyText(I.length ? [`[컨텐츠 연구소] ${md(isoDay(kst()))} 한국에 안 풀린 해외 콘텐츠`, ...I.map(i => `· ${i.title} — @${i.account} ${i.permalink || ''}`), `${pageUrl()}#ch-foreign`].join('\n') : '아직 찾은 해외 아이디어가 없어요.', '해외 아이디어를 복사했어요');
+  });
+
   // ── 계정 분석 ──
   function drawMyAccount() {
     const M = (rows('own_meta') || [])[0], P = rows('own_posts') || [], F = rows('own_formats') || [];
@@ -909,7 +999,7 @@ a.row:hover .row-main{text-decoration:underline}
   const closeMenu = () => { side.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); };
   menuBtn.addEventListener('click', () => { side.classList.add('open'); menuBtn.setAttribute('aria-expanded', 'true'); });
   document.getElementById('side-close').addEventListener('click', closeMenu);
-  const NAMES = { instagram: '인스타그램', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드' };
+  const NAMES = { instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드' };
   function setChannel(ch) {
     document.querySelectorAll('#channel-nav > li > button').forEach(b => b.setAttribute('aria-current', String(b.dataset.ch === ch)));
     document.querySelectorAll('.subnav').forEach(u => { u.hidden = u.dataset.for !== ch; });
@@ -946,7 +1036,7 @@ a.row:hover .row-main{text-decoration:underline}
   dash.onData(() => {
     const recs = grouped();
     drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors();
-    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount();
+    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign();
     const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/);
     setChannel(ch ? ch[1] : 'instagram');
     if (m) openPlan(+m[1]);

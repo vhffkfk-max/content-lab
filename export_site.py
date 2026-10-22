@@ -75,6 +75,9 @@ def main():
     write("google_topics", [{k: (", ".join(v) if isinstance(v, list) else v) for k, v in x.items()} for x in g.get("topics") or []])
     write("google_headlines", g.get("headlines") or [])
     write("google_trends", g.get("trends") or [])
+    fo = d.get("foreign") or {}
+    write("fo_hot", [{k: v for k, v in p.items() if k != "full"} for p in fo.get("hot") or []])
+    write("fo_topics", fo.get("topics") or [])
     write("acc_details", d.get("acc_details") or [])
     write("acc_patterns", d.get("acc_patterns") or [])
     write("acc_tops", [{k: v for k, v in p.items()} for p in d.get("acc_tops") or []])

@@ -11,7 +11,8 @@ DATASETS = ["summary", "recs", "rec_reasons", "rec_examples", "insights", "topic
             "patterns", "accounts", "top_posts", "drafts", "calendar", "this_week", "this_week_accounts",
             "google_meta", "google_topics", "google_headlines", "google_trends", "google_opportunities",
             "press_headlines", "press_popular", "threads_meta", "threads_topics", "threads_posts",
-            "acc_details", "acc_patterns", "acc_tops", "own_meta", "own_posts", "own_formats"]
+            "acc_details", "acc_patterns", "acc_tops", "own_meta", "own_posts", "own_formats",
+            "fo_hot", "fo_topics", "imports"]
 
 
 def main():
