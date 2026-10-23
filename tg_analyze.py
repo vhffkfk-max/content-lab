@@ -92,7 +92,12 @@ def build(data, now):
                                            key=lambda t: t[1]["avg"] or 0)[0]})
     others = [m for m in msgs if m["role"] == "other"]
     week = [m for m in others if m["dt"] >= now - timedelta(days=7) and m["x"] is not None and m["text"]]
-    hot = sorted(week, key=lambda m: (min(m["x"], 10), m["score"]), reverse=True)[:30]
+    # 자동 공시봇처럼 글이 많은 방이 목록을 다 차지하지 않게 방마다 3개까지
+    hot, per_room = [], defaultdict(int)
+    for m in sorted(week, key=lambda m: (min(m["x"], 10), m["score"]), reverse=True):
+        if per_room[m["chat"]] < 3 and len(hot) < 30:
+            hot.append(m)
+            per_room[m["chat"]] += 1
     hours = [{"key": s, **summarize([m for m in others if slot_of(m["dt"]) == s])} for _, _, s in SLOTS]
     lengths = [{"key": k, **summarize([m for m in others if length_of(m["text"]) == k])}
                for k in ("짧음(~100자)", "보통(100~400자)", "김(400자~)")]
