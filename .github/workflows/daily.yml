@@ -41,6 +41,7 @@ jobs:
           python google_collect.py
           python press_collect.py
           python threads_collect.py
+          python threads_links.py
           python analyze.py --no-open
           python export_site.py
 
@@ -55,6 +56,12 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python import_ideas.py
+
+      - name: 팀이 모은 쓰레드 글 분석 (Claude)
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python threads_analyze.py
 
       - name: 사이트 만들기
         run: python build_site.py

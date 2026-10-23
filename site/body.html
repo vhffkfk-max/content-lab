@@ -228,7 +228,12 @@ a.row:hover .row-main{text-decoration:underline}
             <li><a href="#g-news">주제별 기사</a></li>
           </ul></li>
         <li><button type="button" data-ch="youtube"><i class="dot" style="background:var(--ch-youtube)"></i>유튜브<span class="soon">준비 중</span></button></li>
-        <li><button type="button" data-ch="threads"><i class="dot" style="background:var(--ch-threads)"></i>쓰레드<span class="soon" id="th-badge">심사 중</span></button></li>
+        <li><button type="button" data-ch="threads"><i class="dot" style="background:var(--ch-threads)"></i>쓰레드<span class="soon" id="th-badge">심사 중</span></button>
+          <ul class="subnav" data-for="threads">
+            <li><a href="#th-formulas">잘 되는 글 공식</a></li>
+            <li><a href="#th-saved">팀이 모은 글</a></li>
+            <li><a href="#th-search">키워드 검색</a></li>
+          </ul></li>
       </ul>
     </nav>
     <p class="side-foot" id="side-foot">매일 06:00 자동 갱신</p>
@@ -405,7 +410,23 @@ a.row:hover .row-main{text-decoration:underline}
         <div class="empty">준비 중이에요. 다음 단계에서 공식 YouTube Data API로 연결해요.</div>
       </div>
       <div class="view" data-view="threads" hidden>
-        <div class="title-row"><div><h1>쓰레드</h1><p id="th-sub">공식 Threads API 키워드 검색으로 경제 키워드의 공개 글을 모아요.</p></div></div>
+        <div class="title-row">
+          <div><h1>쓰레드</h1><p>팀이 고른 반응 좋은 쓰레드 글을 Claude가 매일 분석해요. 공식 키워드 검색은 메타 심사 후에 함께 모여요.</p></div>
+          <div class="actions" id="th-actions"></div>
+        </div>
+        <div class="kpis" id="ts-kpis"></div>
+        <section class="sec" id="th-formulas">
+          <h2>잘 되는 쓰레드 글 공식</h2>
+          <p class="note" id="ts-note">팀이 모은 글에서 Claude가 뽑은 공통점과 따라 쓸 수 있는 공식이에요.</p>
+          <div class="card"><h3>모은 글의 공통점</h3><ul class="learn" id="ts-summary" style="margin-top:10px"></ul></div>
+          <div class="groups" id="ts-formulas"></div>
+        </section>
+        <section class="sec" id="th-saved">
+          <h2>팀이 모은 글</h2>
+          <p class="note">글마다 왜 잘 됐는지와, 같은 구조로 우리 계정 주제에 맞게 다시 쓴 버전이에요. 원문을 베끼지 않고 구조만 빌렸어요.</p>
+          <div class="recs" id="ts-list"></div>
+        </section>
+        <section class="sec" id="th-search"><h2>키워드 검색 (메타 심사 후)</h2><p class="note" id="th-sub">공식 Threads API 키워드 검색으로 경제 키워드의 공개 글을 모아요.</p></section>
         <div class="kpis" id="th-kpis"></div>
         <div class="grid">
           <section class="sec"><h2>주제별 글 수</h2><p class="note">최근 7일, 경제 키워드 검색에 걸린 쓰레드 글을 주제별로 셌어요.</p>
@@ -857,6 +878,54 @@ a.row:hover .row-main{text-decoration:underline}
     }, 12);
   }
 
+  // ── 쓰레드: 팀이 모은 글 ──
+  function drawThreadsSaved() {
+    const cfg = (rows('site_config') || [])[0] || {}, S = rows('threads_saved') || [], ST = (rows('threads_saved_stats') || [])[0];
+    const AI = (() => { const d = dash.data('threads_ai'); return d.status === 'ok' && !Array.isArray(d.data) ? d.data : null; })();
+    const act = document.getElementById('th-actions'); act.replaceChildren();
+    if (webLink(cfg.threads_form_url)) { const a = el('a', 'btn primary', '쓰레드 글 모으기 (폼)'); a.href = cfg.threads_form_url; a.target = '_blank'; a.rel = 'noopener'; act.append(a); }
+    if (webLink(cfg.threads_sheet_view)) { const a = el('a', 'btn', '모은 글 시트 보기'); a.href = cfg.threads_sheet_view; a.target = '_blank'; a.rel = 'noopener'; act.append(a); }
+    document.getElementById('ts-kpis').replaceChildren(
+      kpi('팀이 모은 글', `${S.length}개`, ST ? `반응 수 적힌 글 ${ST.with_numbers}개` : '폼으로 링크와 본문을 모아요'),
+      kpi('평균 길이', ST ? `${fmtN(ST.avg_chars)}자` : '–', ST ? `줄 수 중앙값 ${ST.median_lines}줄` : ''),
+      kpi('질문으로 끝나는 글', ST ? `${ST.question_share}%` : '–', '마지막 문장이 질문'),
+      kpi('찾은 공식', AI ? `${AI.formulas.length}개` : '–', AI ? `${AI.count}개 글 분석 · 매일 06:00` : '글이 모이면 분석해요'));
+    const sumBox = document.getElementById('ts-summary'), fBox = document.getElementById('ts-formulas'), lBox = document.getElementById('ts-list');
+    if (!S.length) {
+      sumBox.replaceChildren(el('li', 'note', '아직 모은 글이 없어요. 쓰레드에서 반응 좋은 경제 글을 보면 링크와 본문을 폼에 붙여넣어 주세요.'));
+      fBox.replaceChildren(); empty(lBox, '쓰레드 앱에서 글의 ··· → 링크 복사, 글을 길게 눌러 본문 복사 후 폼에 붙여넣으면 다음 날 06:00에 분석돼요.'); return;
+    }
+    if (!AI) { sumBox.replaceChildren(el('li', 'note', '모은 글은 다음 06:00 자동 실행 때 Claude가 분석해요.')); fBox.replaceChildren(); }
+    else {
+      document.getElementById('ts-note').textContent = `팀이 모은 글 ${AI.count}개를 분석했어요. 새 글이 들어온 날만 다시 분석해요.`;
+      sumBox.replaceChildren(...AI.summary.map((t, i) => { const li = el('li'); li.append(el('b', null, String(i + 1)), el('span', null, t)); return li; }));
+      fBox.replaceChildren(...AI.formulas.map(f => {
+        const c = el('div', 'card'), box = el('div', 'box', f.example_hook);
+        c.append(el('h3', null, f.name), el('p', 'meta-line', f.pattern), el('p', 'sub', '첫 문장 예시'), box, el('p', 'sub', `언제 쓰나 · ${f.when} · 근거 글 ${f.sources.length}개`), copyBtn('첫 문장 복사', f.example_hook));
+        c.style.display = 'grid'; c.style.gap = '8px'; return c;
+      }));
+    }
+    const notes = AI ? Object.fromEntries(AI.posts.map(p => [p.id, p])) : {};
+    listWithMore(lBox, S, s => {
+      const n = notes[s.id], card = el('article', 'card rec'), chips = el('div', 'chips');
+      chips.append(el('span', 'pill neutral', s.author ? `@${s.author}` : '작성자 미상'));
+      if (s.likes != null) chips.append(el('span', 'pill accent', `좋아요 ${fmtN(s.likes)}`));
+      if (s.replies != null) chips.append(el('span', 'pill neutral', `답글 ${fmtN(s.replies)}`));
+      if (s.topics) chips.append(el('span', 'pill positive', s.topics));
+      if (n) chips.append(el('span', 'pill warning', n.hook_type));
+      const body = el('div', 'box', s.text);
+      card.append(chips, body);
+      if (s.memo) card.append(el('p', 'sub', `팀 메모 · ${s.memo}${s.submitter ? ' (' + s.submitter + ')' : ''}`));
+      if (n) {
+        card.append(el('p', 'why1', n.why), el('p', 'sub', `구조 · ${n.structure}`));
+        n.rewrite.forEach((t, i) => { const w = el('div', 'thread'); w.append(el('span', 'thread-n', `우리 버전 ${i + 1}/${n.rewrite.length}`), el('div', 'box', t)); card.append(w); });
+        card.append(copyBtn('우리 버전 전체 복사', n.rewrite.join('\n\n'), 'btn primary'));
+      } else card.append(el('p', 'note', '다음 06:00 자동 실행 때 분석돼요.'));
+      const link = webLink(s.link); if (link) { const a = el('a', 'btn small', '원문 보기'); a.href = link; a.target = '_blank'; a.rel = 'noopener'; card.append(a); }
+      card.style.gap = '10px'; return card;
+    }, 6);
+  }
+
   // ── 쓰레드 ──
   function drawThreads() {
     const M = (rows('threads_meta') || [])[0], T = rows('threads_topics') || [], P = rows('threads_posts') || [];
@@ -1036,7 +1105,7 @@ a.row:hover .row-main{text-decoration:underline}
   dash.onData(() => {
     const recs = grouped();
     drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors();
-    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign();
+    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved();
     const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/);
     setChannel(ch ? ch[1] : 'instagram');
     if (m) openPlan(+m[1]);

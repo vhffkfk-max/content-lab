@@ -12,7 +12,7 @@ DATASETS = ["summary", "recs", "rec_reasons", "rec_examples", "insights", "topic
             "google_meta", "google_topics", "google_headlines", "google_trends", "google_opportunities",
             "press_headlines", "press_popular", "threads_meta", "threads_topics", "threads_posts",
             "acc_details", "acc_patterns", "acc_tops", "own_meta", "own_posts", "own_formats",
-            "fo_hot", "fo_topics", "imports"]
+            "fo_hot", "fo_topics", "imports", "threads_saved", "threads_saved_stats", "threads_ai"]
 
 
 def main():
@@ -21,6 +21,8 @@ def main():
     for name in DATASETS:
         path = site / f"{name}.json"
         data[name] = json.loads(path.read_text(encoding="utf-8")) if path.exists() else []
+    cfg_path = ROOT / "site" / "site_config.json"
+    data["site_config"] = [json.loads(cfg_path.read_text(encoding="utf-8"))] if cfg_path.exists() else []
     body = (ROOT / "site" / "body.html").read_text(encoding="utf-8")
     m = re.search(r"<script>.*</script>", body, re.S)
     script, markup = m.group(0), body[:m.start()] + body[m.end():]

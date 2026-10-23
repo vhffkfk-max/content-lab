@@ -457,6 +457,26 @@ def own_section(conn, rec_topics):
     return {"meta": meta, "posts": posts[:30], "formats": sorted(formats, key=lambda f: -f["reach"])}
 
 
+def threads_saved_section(conn):
+    """팀이 모은 쓰레드 글: 목록과 간단한 통계."""
+    tables = {r[0] for r in conn.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+    if "threads_saved" not in tables:
+        return [], []
+    rows = [dict(r) for r in conn.execute("SELECT * FROM threads_saved ORDER BY first_seen DESC LIMIT 80")]
+    items = [{"id": r["id"], "link": r["link"], "author": r["author"], "text": r["text"][:400], "likes": r["likes"],
+              "replies": r["replies"], "reposts": r["reposts"], "memo": r["memo"] or "", "submitter": r["submitter"] or "",
+              "topics": r["topics"] or "", "chars": len(r["text"]), "lines": r["text"].count("\n") + 1,
+              "question": r["text"].rstrip().endswith(("?", "까요", "나요")),
+              "added": parse_ts(r["first_seen"].replace("+00:00", "+0000")).astimezone(KST).strftime("%m/%d")} for r in rows]
+    if not items:
+        return [], []
+    stats = [{"count": len(items), "avg_chars": round(statistics.mean(i["chars"] for i in items)),
+              "median_lines": statistics.median(i["lines"] for i in items),
+              "question_share": round(sum(i["question"] for i in items) / len(items) * 100),
+              "with_numbers": sum(1 for i in items if i["likes"] is not None)}]
+    return items, stats
+
+
 def threads_section(conn, now):
     """쓰레드 키워드 검색 결과 요약. 수집 전이면 빈 값."""
     tables = {r[0] for r in conn.execute("SELECT name FROM sqlite_master WHERE type='table'")}
@@ -585,6 +605,7 @@ def main():
         "top_posts": [post_brief(p) for p in sorted(recent, key=lambda p: p["outlier"] or 0, reverse=True)[:20]],
     }
     data["threads"] = threads_section(conn, now)
+    data["threads_saved"], data["threads_saved_stats"] = threads_saved_section(conn)
     rec_topics = [r["topic"] for r in data["recommendations"]]
     data["acc_details"], data["acc_patterns"], data["acc_tops"] = account_details(by_acc, data["accounts"], now, rec_topics)
     data["own"] = own_section(conn, rec_topics)
