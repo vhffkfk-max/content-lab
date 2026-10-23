@@ -5,9 +5,10 @@
     python tg_live.py --once --no-push --session telegram --dry-alert   # 시험: 한 바퀴만, 올리기·알림 보내기 없이
 
 하는 일:
-  - telegram_chats.csv 에 표시한 방의 새 글을 올라오는 즉시 저장 (data/telegram_live.db, 저장소에 안 올라감)
+  - telegram_chats.csv 에 표시한 방의 새 글을 올라오는 즉시 저장 (data/telegram_history.db 에 계속 쌓음, 저장소에 안 올라감)
+  - 구독자 수를 매일 기록 (내 채널은 10분마다, 다른 채널은 1시간마다 최신값)
   - 10분마다 최근 글의 조회수·반응을 새로 읽고, 평소의 3배 이상 반응이 나온 24시간 안 글을 내 텔레그램 '저장된 메시지'로 알림
-  - 30분마다 사이트용 통계(output/site/tg_*.json)를 만들어 저장소에 올림 → 서버가 사이트 다시 배포
+  - 30분마다 사이트용 통계·키우기 지표(output/site/tg_*.json, tg_metrics.py)를 만들어 저장소에 올림 → 서버가 사이트 다시 배포
 Claude 를 부르지 않아 토큰 비용이 없다 (오늘의 문구는 서버가 하루 한 번만 씀).
 """
 import argparse
@@ -25,21 +26,21 @@ from common import DATA_DIR, OUTPUT_DIR, ROOT, load_env
 from tg_collect import MIN_GROUP_CHARS, link_of, media_of
 from tg_login import CHATS
 import tg_analyze
+import tg_metrics
+from tg_history import SCHEMA as HISTORY_SCHEMA
 
-DB = DATA_DIR / "telegram_live.db"
+DB = DATA_DIR / "telegram_history.db"   # tg_history.py 와 같은 곳에 쌓음 (1년 치 + 실시간)
 LOG = DATA_DIR / "tg_live.log"
 SITE = OUTPUT_DIR / "site"
 KEEP_DAYS = 7
 REFRESH_MIN, PUSH_MIN = 10, 30
 ALERT_X, ALERT_HOURS, ALERT_MAX = 3.0, 24, 10
-SITE_FILES = ["tg_meta", "tg_chats", "tg_hot", "tg_mine", "tg_hours", "tg_lengths", "tg_media"]
+SITE_FILES = ["tg_meta", "tg_chats", "tg_hot", "tg_mine", "tg_hours", "tg_lengths", "tg_media",
+              "tg_growth", "tg_streak", "tg_slots", "tg_shared", "tg_rank"]
 
-SCHEMA = """
-CREATE TABLE IF NOT EXISTS msgs (
-    chat_id TEXT, id INTEGER, date TEXT, text TEXT, views INTEGER, forwards INTEGER, replies INTEGER,
-    reactions INTEGER, media TEXT, link TEXT, PRIMARY KEY (chat_id, id)
-);
+SCHEMA = HISTORY_SCHEMA + """
 CREATE TABLE IF NOT EXISTS alerted (chat_id TEXT, id INTEGER, PRIMARY KEY (chat_id, id));
+CREATE TABLE IF NOT EXISTS members (date TEXT, chat_id TEXT, count INTEGER, PRIMARY KEY (date, chat_id));
 """
 log = logging.getLogger("tg_live")
 
@@ -57,10 +58,11 @@ def save(conn, ch, m):
         return
     reactions = sum(r.count for r in m.reactions.results) if m.reactions else 0
     conn.execute(
-        "INSERT INTO msgs VALUES (?,?,?,?,?,?,?,?,?,?) ON CONFLICT(chat_id, id) DO UPDATE SET text=excluded.text, "
+        "INSERT INTO msgs VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(chat_id, id) DO UPDATE SET text=excluded.text, "
         "views=excluded.views, forwards=excluded.forwards, replies=excluded.replies, reactions=excluded.reactions",
-        (ch["id"], m.id, m.date.isoformat(), text[:1000], m.views, m.forwards, m.replies.replies if m.replies else 0,
-         reactions, media_of(m), link_of(ch, m.id)))
+        (ch["id"], m.id, m.date.isoformat(), text[:2000], m.views, m.forwards, m.replies.replies if m.replies else 0,
+         reactions, media_of(m), int("http" in text), int(m.fwd_from is not None), str(m.grouped_id or ""),
+         str(m.sender_id or "")))
 
 
 async def refresh(client, conn, chats, limit):
@@ -73,14 +75,31 @@ async def refresh(client, conn, chats, limit):
                 save(conn, ch, m)
         except Exception as e:  # 나간 방·권한 없는 방은 건너뛴다
             log.warning("%s: %s", ch["이름"], e)
-    conn.execute("DELETE FROM msgs WHERE date < ?", (since.isoformat(),))
+    conn.commit()
+
+
+async def record_members(client, conn, chats):
+    """구독자 수를 오늘 날짜로 기록 (하루 중 마지막 값이 남음)."""
+    from telethon.tl.functions.channels import GetFullChannelRequest
+    today = datetime.now(tg_analyze.KST).date().isoformat()
+    for ch in chats:
+        try:
+            full = await client(GetFullChannelRequest(int(ch["id"])))
+            conn.execute("INSERT OR REPLACE INTO members VALUES (?, ?, ?)", (today, ch["id"], full.full_chat.participants_count))
+        except Exception as e:
+            log.warning("구독자 수 %s: %s", ch["이름"], e)
     conn.commit()
 
 
 def snapshot(conn, chats):
     """tg_collect 와 같은 모양의 데이터 → tg_analyze.build 로 사이트 통계."""
-    cols = ["chat_id", "id", "date", "text", "views", "forwards", "replies", "reactions", "media", "link"]
-    msgs = [dict(zip(cols, r)) for r in conn.execute(f"SELECT {', '.join(cols)} FROM msgs")]
+    cols = ["chat_id", "id", "date", "text", "views", "forwards", "replies", "reactions", "media"]
+    since = (datetime.now(timezone.utc) - timedelta(days=KEEP_DAYS)).isoformat()
+    by_id = {c["id"]: c for c in chats}
+    msgs = [dict(zip(cols, r)) for r in conn.execute(f"SELECT {', '.join(cols)} FROM msgs WHERE date >= ?", (since,))
+            if r[0] in by_id]
+    for m in msgs:
+        m["link"] = link_of(by_id[m["chat_id"]], m["id"])
     return {"collected": datetime.now(timezone.utc).isoformat(timespec="seconds"), "days": KEEP_DAYS,
             "chats": [{"id": c["id"], "title": c["이름"], "username": c["아이디"], "kind": c["종류"], "members": c["인원"],
                        "role": "mine" if "내" in c["분석"] else "other"} for c in chats],
@@ -90,6 +109,7 @@ def snapshot(conn, chats):
 def write_site(conn, chats):
     import json
     out = tg_analyze.build(snapshot(conn, chats), datetime.now(timezone.utc))
+    out.update(tg_metrics.compute(conn, chats))
     SITE.mkdir(parents=True, exist_ok=True)
     for name in SITE_FILES:
         (SITE / f"{name}.json").write_text(json.dumps(out[name], ensure_ascii=False, indent=1), encoding="utf-8")
@@ -103,7 +123,9 @@ def alert_candidates(conn, chats, since_min=None):
     for ch in chats:
         if "내" in ch["분석"]:
             continue
-        rows = conn.execute("SELECT id, date, text, views, reactions, replies, link FROM msgs WHERE chat_id=?", (ch["id"],)).fetchall()
+        since = (now - timedelta(days=KEEP_DAYS)).isoformat()
+        rows = [(r[0], r[1], r[2], r[3], r[4], r[5], link_of(ch, r[0])) for r in conn.execute(
+            "SELECT id, date, text, views, reactions, replies FROM msgs WHERE chat_id=? AND date >= ?", (ch["id"], since))]
         scores = [tg_analyze.score({"views": r[3], "reactions": r[4], "replies": r[5]}, ch["종류"]) for r in rows]
         if len(scores) < 5:
             continue
@@ -183,8 +205,12 @@ async def run(args):
     await client.get_dialogs()  # 방 정보 캐시 (이벤트에서 방을 알아보려면 필요)
     conn = sqlite3.connect(DB)
     conn.executescript(SCHEMA)
-    first = conn.execute("SELECT COUNT(*) FROM msgs").fetchone()[0] == 0
+    for c in chats:
+        conn.execute("INSERT OR REPLACE INTO chats VALUES (?,?,?,?,?,?)", (c["id"], c["이름"], c["아이디"], c["종류"],
+                     int(c["인원"] or 0), "mine" if "내" in c["분석"] else "other"))
+    first = conn.execute("SELECT COUNT(*) FROM alerted").fetchone()[0] == 0   # 처음 켜는 것
     await refresh(client, conn, chats, 300 if first else 80)
+    await record_members(client, conn, chats)
     started = datetime.now(timezone.utc)
     if first:  # 처음 켤 때는 지난 글로 알림이 쏟아지지 않게, 최근 1시간 글만 알리고 나머지는 알린 것으로 표시
         await send_alerts(client, conn, chats, args.dry_alert, since_min=started - timedelta(hours=1))
@@ -209,12 +235,17 @@ async def run(args):
             conn.commit()
 
     async def loop():
-        last_push = datetime.now(timezone.utc)
+        last_push = last_members = datetime.now(timezone.utc)
+        mine = [c for c in chats if "내" in c["분석"]]
         while True:
             await asyncio.sleep(REFRESH_MIN * 60)
             try:
                 await refresh(client, conn, chats, 80)
                 await send_alerts(client, conn, chats, args.dry_alert)
+                hourly = datetime.now(timezone.utc) - last_members >= timedelta(minutes=59)
+                await record_members(client, conn, chats if hourly else mine)
+                if hourly:
+                    last_members = datetime.now(timezone.utc)
                 if datetime.now(timezone.utc) - last_push >= timedelta(minutes=PUSH_MIN - 1):
                     write_site(conn, chats)
                     if not args.no_push:

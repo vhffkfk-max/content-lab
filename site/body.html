@@ -160,6 +160,10 @@ a.row:hover .row-main{text-decoration:underline}
 
 .analysis>summary{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .learn{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.mini-bars{display:flex;align-items:flex-end;gap:3px;height:90px;margin-top:12px}
+.mini-bars i{flex:1;background:var(--accent);border-radius:3px 3px 0 0}
+.mini-bars i.zero{background:var(--border)}
+.mini-axis{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin-top:4px}
 .learn li{display:flex;gap:10px}
 .learn li b{flex:none;width:22px;height:22px;border-radius:6px;background:var(--accent-soft);color:var(--accent-ink);display:grid;place-items:center;font-size:12px}
 .empty{padding:16px 18px;border-radius:var(--radius-card);border:1px dashed var(--control);color:var(--muted);background:var(--surface)}
@@ -238,6 +242,7 @@ a.row:hover .row-main{text-decoration:underline}
         <li><button type="button" data-ch="telegram"><i class="dot" style="background:var(--ch-telegram)"></i>텔레그램<span class="soon" id="tg-badge">연결 전</span></button>
           <ul class="subnav" data-for="telegram">
             <li><a href="#tg-mine">내 채널 성과</a></li>
+            <li><a href="#tg-rank">경쟁 채널 순위</a></li>
             <li><a href="#tg-today">오늘 올릴 문구</a></li>
             <li><a href="#tg-formulas">잘 되는 글 공식</a></li>
             <li><a href="#tg-hot">다른 방 인기 글</a></li>
@@ -463,7 +468,21 @@ a.row:hover .row-main{text-decoration:underline}
           <p class="note">최근 7일 우리 채널 글과, 다른 방 데이터로 Claude가 뽑은 이번 주 키우는 법이에요.</p>
           <div class="kpis" id="tg-mine-kpis"></div>
           <div class="card"><h3>이번 주 해볼 것</h3><ul class="learn" id="tg-growth" style="margin-top:10px"></ul></div>
+          <div class="grid" style="margin-top:12px">
+            <div class="card"><h3>오늘 시간표 체크</h3><p class="sub" id="tg-slots-sub">하루 7개 중 올린 칸</p><div class="rows" id="tg-slots"></div></div>
+            <div class="card"><h3>최근 30일 하루 글 수</h3><p class="sub" id="tg-days-sub">막대 하나가 하루 · 빈 날은 회색</p>
+              <div class="mini-bars" id="tg-days"></div><div class="mini-axis"><span id="tg-days-from"></span><span>오늘</span></div></div>
+          </div>
+          <div class="grid" style="margin-top:12px">
+            <div class="card"><h3>구독자 수 기록</h3><p class="sub" id="tg-growth-sub">매일 기록해요 (2026-10-23부터)</p><div class="rows" id="tg-growth"></div></div>
+            <div class="card"><h3>이번 주 전달 많이 된 글 TOP 5</h3><p class="sub" id="tg-shared-sub">전달 = 다른 사람에게 퍼져서 새 구독자가 들어오는 길</p><div class="rows" id="tg-shared"></div></div>
+          </div>
           <div class="card" style="margin-top:12px"><h3>우리 채널 글 (반응 큰 순)</h3><div class="rows" id="tg-mine-list"></div></div>
+        </section>
+        <section class="sec" id="tg-rank">
+          <h2>경쟁 채널 순위</h2>
+          <p class="note">최근 30일 조회수 중앙값이 그 전 60일보다 몇 배인지(조회 추세) 순서예요. 구독 증감은 기록이 쌓이면 보여요.</p>
+          <div class="card"><div class="rows" id="tg-rank-list"></div></div>
         </section>
         <section class="sec" id="tg-today">
           <h2>오늘 우리 채널에 올릴 문구</h2>
@@ -1003,6 +1022,56 @@ a.row:hover .row-main{text-decoration:underline}
       `${p.time} · 조회 ${fmtN(p.views || 0)} · 반응 ${fmtN(p.reactions || 0)}${p.x != null ? ' · 평소의 ' + (+p.x).toFixed(1) + '배' : ''}`, p.link, webLink), 6);
   }
 
+  // ── 텔레그램: 내 채널 키우기 지표 ──
+  function drawTelegramMetrics() {
+    const G = rows('tg_growth') || [], S = (rows('tg_streak') || [])[0], T = rows('tg_slots') || [], F = rows('tg_shared') || [], R = rows('tg_rank') || [];
+    const C = (rows('tg_chats') || []).find(c => c.role === 'mine');
+    const last = G[G.length - 1], prev = G.length > 1 ? G[G.length - 2] : null, wk = G.length > 7 ? G[G.length - 8] : null;
+    if (C && (last || S)) {
+      const sign = n => (n > 0 ? '+' : '') + fmtN(n);
+      document.getElementById('tg-mine-kpis').replaceChildren(
+        kpi('구독자', last ? `${fmtN(last.members)}명` : (C.members ? `${fmtN(+C.members)}명` : '–'),
+          last && prev ? `어제보다 ${sign(last.members - prev.members)}${wk ? ' · 7일 ' + sign(last.members - wk.members) : ''}` : '매일 기록 시작'),
+        kpi('이번 달 올린 날', S ? `${S.month_days}일` : '–', S ? `${S.month_so_far}일 중 · 목표 매일` : ''),
+        kpi('연속으로 올린 날', S ? `${S.streak}일` : '–', S ? (S.posted_today ? '오늘도 올림' : '오늘 아직 안 올림') : ''),
+        kpi('조회수 중앙값', fmtN(C.median), `최근 7일 · 잘 되는 때 ${C.best_slot}`));
+    }
+    const sb = document.getElementById('tg-slots');
+    if (!T.length) empty(sb, '실시간 수집이 켜지면 오늘 올린 칸이 표시돼요.');
+    else {
+      document.getElementById('tg-slots-sub').textContent = `오늘 ${T.filter(t => t.done).length}/7칸 올림`;
+      sb.replaceChildren(...T.map(t => {
+        const r = el('div', 'row'), m = el('span', 'row-main');
+        m.append(el('span', t.done ? 'pill positive' : 'pill neutral', t.done ? '올림' : '아직'), ` ${t.at} ${t.slot}`);
+        r.append(m, el('span', 'row-sub', t.done ? `${t.first}에 올림${t.count > 1 ? ' · ' + t.count + '개' : ''}` : '이 시간대 글 없음'));
+        return r;
+      }));
+    }
+    const db = document.getElementById('tg-days');
+    if (!S) { db.replaceChildren(); }
+    else {
+      const max = Math.max(1, ...S.days.map(d => d.posts));
+      document.getElementById('tg-days-from').textContent = S.days[0].date.slice(5).replace('-', '/');
+      db.replaceChildren(...S.days.map(d => { const i = el('i', d.posts ? null : 'zero'); i.style.height = `${Math.max(4, d.posts / max * 100)}%`; i.title = `${d.date.slice(5)} · ${d.posts}개 · 조회 중앙값 ${fmtN(d.median_views)}`; return i; }));
+      const v = S.days.reduce((a, d) => a + d.views, 0), f = S.days.reduce((a, d) => a + d.forwards, 0), empties = S.days.filter(d => !d.posts).length;
+      document.getElementById('tg-days-sub').textContent = `30일 중 ${30 - empties}일 올림 · 조회 1천 회당 전달 ${v ? (f / v * 1000).toFixed(2) : '–'}회 (다른 채널 보통 2~3회)`;
+    }
+    const gb = document.getElementById('tg-growth');
+    if (!G.length) empty(gb, '실시간 수집이 켜진 날부터 매일 구독자 수가 쌓여요.');
+    else gb.replaceChildren(...[...G].reverse().slice(0, 14).map(g => rowLink(`${g.date.slice(5).replace('-', '/')} · ${fmtN(g.members)}명`,
+      g.delta == null ? '첫 기록' : `${g.delta > 0 ? '+' : ''}${fmtN(g.delta)}명`, null, () => null)));
+    const fb = document.getElementById('tg-shared');
+    if (!F.length) empty(fb, '이번 주 전달된 글이 아직 없어요. 800자 넘는 정리 글에 "필요한 분께 전달해 주세요"를 붙여 보세요.');
+    else fb.replaceChildren(...F.map(p => rowLink(p.text || '(사진·파일)', `${p.time} · 전달 ${fmtN(p.forwards)} · 조회 ${fmtN(p.views)} · ${fmtN(p.chars)}자`, p.link, webLink)));
+    const rb = document.getElementById('tg-rank-list');
+    if (!R.length) { empty(rb, '실시간 수집이 켜지면 채널 순위가 나와요.'); return; }
+    rb.replaceChildren(...R.map((r, i) => rowLink([el('b', null, `${i + 1}. `), `${r.mine ? '[내 채널] ' : ''}${r.title}`],
+      [`조회 추세 ${r.trend != null ? (r.trend >= 1 ? '▲ ' : '▼ ') + (+r.trend).toFixed(2) + '배' : '–'}`,
+       `구독 ${fmtN(r.members)}${r.members_7d != null ? ' (7일 ' + (r.members_7d > 0 ? '+' : '') + fmtN(r.members_7d) + ')' : ''}`,
+       r.view_rate != null ? `조회율 ${r.view_rate}%` : '', `이번 주 글 ${r.week_posts}개`, r.week_topics ? `주제 ${r.week_topics}` : ''].filter(Boolean).join(' · '),
+      r.username ? `https://t.me/${r.username}` : null, webLink)));
+  }
+
   // ── 쓰레드: Apify 자동 수집 ──
   function drawThreadsAuto() {
     const M = (rows('thx_meta') || [])[0], H = rows('thx_hot') || [], T = rows('thx_topics') || [];
@@ -1264,7 +1333,7 @@ a.row:hover .row-main{text-decoration:underline}
   dash.onData(() => {
     const recs = grouped();
     drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors();
-    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawTelegram(); drawTelegramMine();
+    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics();
     const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/);
     setChannel(ch ? ch[1] : 'instagram');
     if (m) openPlan(+m[1]);
