@@ -235,6 +235,14 @@ a.row:hover .row-main{text-decoration:underline}
             <li><a href="#th-saved">팀이 모은 글</a></li>
             <li><a href="#th-search">키워드 검색</a></li>
           </ul></li>
+        <li><button type="button" data-ch="telegram"><i class="dot" style="background:var(--ch-telegram)"></i>텔레그램<span class="soon" id="tg-badge">연결 전</span></button>
+          <ul class="subnav" data-for="telegram">
+            <li><a href="#tg-today">오늘 올릴 문구</a></li>
+            <li><a href="#tg-formulas">잘 되는 글 공식</a></li>
+            <li><a href="#tg-hot">다른 방 인기 글</a></li>
+            <li><a href="#tg-when">시간대·형식</a></li>
+            <li><a href="#tg-rooms">방별 현황</a></li>
+          </ul></li>
       </ul>
     </nav>
     <p class="side-foot" id="side-foot">매일 06:00 자동 갱신</p>
@@ -444,7 +452,35 @@ a.row:hover .row-main{text-decoration:underline}
         </div>
       </div>
 
-      <p class="note" style="margin-top:12px">데이터: 인스타그램 공식 Graph API(공개 계정의 공개 게시물), 구글 뉴스·구글 트렌드 RSS, 쓰레드 공개 글(Apify) · 기획안: Claude가 분석 결과를 바탕으로 작성 · 매일 06:00 자동 갱신 · <a href="privacy.html" style="color:inherit">개인정보처리방침</a> · <a href="data-deletion.html" style="color:inherit">데이터 삭제 안내</a></p>
+      <div class="view" data-view="telegram" hidden>
+        <div class="title-row">
+          <div><h1>텔레그램</h1><p>다른 업체 텔레그램 방(비공개 포함)에서 반응 큰 글을 찾고, 오늘 모은 뉴스로 우리 방에 올릴 문구를 Claude가 써요.</p></div>
+        </div>
+        <div class="kpis" id="tg-kpis"></div>
+        <section class="sec" id="tg-today">
+          <h2>오늘 우리 방에 올릴 문구</h2>
+          <p class="note" id="tg-today-note">다른 방에서 반응 좋은 구성 + 오늘 뉴스로 쓴 완성 문구예요. 복사해서 바로 붙여넣으면 돼요. 숫자는 [확인] 표시를 꼭 채워 주세요.</p>
+          <div class="recs" id="tg-today-list"></div>
+        </section>
+        <section class="sec" id="tg-formulas">
+          <h2>잘 되는 텔레그램 글 공식</h2>
+          <div class="card"><h3>다른 방들의 공통점</h3><ul class="learn" id="tg-summary" style="margin-top:10px"></ul></div>
+          <div class="groups" id="tg-formula-list"></div>
+        </section>
+        <section class="sec" id="tg-hot">
+          <h2>다른 방 반응 큰 글 (최근 7일)</h2>
+          <p class="note">그 방 평소(중앙값)보다 몇 배 반응이었는지 순서예요. 채널은 조회수, 그룹은 반응 + 3×답글로 쟀어요.</p>
+          <div class="recs" id="tg-hot-list"></div>
+        </section>
+        <div class="grid">
+          <section class="sec" id="tg-when"><h2>언제·어떤 글이 잘 되나</h2><p class="note">다른 방 글 전체, 평소 대비 평균 배수예요.</p>
+            <div class="card"><div class="rows" id="tg-patterns"></div></div></section>
+          <section class="sec" id="tg-rooms"><h2>방별 현황</h2><p class="note">분석 중인 방과 하루 글 수, 반응 중앙값, 잘 되는 시간대예요.</p>
+            <div class="card"><div class="rows" id="tg-chats"></div></div></section>
+        </div>
+      </div>
+
+      <p class="note" style="margin-top:12px">데이터: 인스타그램 공식 Graph API(공개 계정의 공개 게시물), 구글 뉴스·구글 트렌드 RSS, 쓰레드 공개 글(Apify), 텔레그램(운영자 계정이 가입한 방) · 기획안: Claude가 분석 결과를 바탕으로 작성 · 매일 06:00 자동 갱신 · <a href="privacy.html" style="color:inherit">개인정보처리방침</a> · <a href="data-deletion.html" style="color:inherit">데이터 삭제 안내</a></p>
     </div></main>
   </div>
 </div>
@@ -886,6 +922,60 @@ a.row:hover .row-main{text-decoration:underline}
     }, 12);
   }
 
+  // ── 텔레그램 ──
+  function drawTelegram() {
+    const M = (rows('tg_meta') || [])[0], C = rows('tg_chats') || [], H = rows('tg_hot') || [];
+    const AI = (() => { const d = dash.data('tg_ai'); return d.status === 'ok' && !Array.isArray(d.data) ? d.data : null; })();
+    const kb = document.getElementById('tg-kpis'), tl = document.getElementById('tg-today-list'), sb = document.getElementById('tg-summary'),
+      fb = document.getElementById('tg-formula-list'), hb = document.getElementById('tg-hot-list'), pb = document.getElementById('tg-patterns'), cb = document.getElementById('tg-chats');
+    if (!M) {
+      kb.replaceChildren(kpi('분석 중인 방', '연결 전', 'TELEGRAM_SETUP.md 참고'));
+      empty(tl, '텔레그램을 연결하면 매일 아침 오늘 올릴 문구가 여기에 나와요.'); sb.replaceChildren(); fb.replaceChildren();
+      empty(hb, '아직 모은 텔레그램 글이 없어요.'); empty(pb, '–'); empty(cb, '–'); return;
+    }
+    document.getElementById('tg-badge').textContent = '';
+    const best = (rows('tg_hours') || []).filter(h => h.avg != null).sort((a, b) => b.avg - a.avg)[0];
+    kb.replaceChildren(kpi('분석 중인 방', `${M.chats}개`, `다른 업체 ${M.others} · 내 방 ${M.mine}`), kpi('모은 글', fmtN(M.posts), `최근 7일 다른 방 ${fmtN(M.week)}개`),
+      kpi('잘 되는 시간대', best ? best.key : '–', best ? `평소의 ${best.avg.toFixed(1)}배 · ${best.n}개` : ''),
+      kpi('마지막 수집', M.collected ? M.collected.slice(5, 10).replace('-', '/') : '–', '내 PC에서 매일 아침'));
+    if (!AI) { empty(tl, '다음 수집 때 Claude가 오늘의 문구를 써요.'); sb.replaceChildren(); fb.replaceChildren(); }
+    else {
+      document.getElementById('tg-today-note').textContent = `${AI.analyzed_at.slice(5, 10).replace('-', '/')} 기준. 복사해서 바로 붙여넣으면 돼요. 숫자는 [확인] 표시를 꼭 채워 주세요.`;
+      tl.replaceChildren(...AI.today.map(t => {
+        const c = el('article', 'card rec'), chips = el('div', 'chips');
+        chips.append(el('span', 'pill accent', t.time), el('span', 'pill neutral', t.type));
+        c.append(chips, el('div', 'box', t.text), el('p', 'why1', t.why), el('p', 'sub', `근거 · ${t.based_on}`), copyBtn('문구 복사', t.text, 'btn primary'));
+        c.style.gap = '10px'; return c;
+      }));
+      sb.replaceChildren(...AI.summary.map((t, i) => { const li = el('li'); li.append(el('b', null, String(i + 1)), el('span', null, t)); return li; }));
+      fb.replaceChildren(...AI.formulas.map(f => {
+        const c = el('div', 'card');
+        c.append(el('h3', null, f.name), el('p', 'meta-line', f.pattern), el('p', 'sub', '예시'), el('div', 'box', f.example), el('p', 'sub', `언제 쓰나 · ${f.when}`), copyBtn('예시 복사', f.example));
+        c.style.display = 'grid'; c.style.gap = '8px'; return c;
+      }));
+    }
+    const notes = AI ? Object.fromEntries(AI.posts.map(p => [p.id, p])) : {};
+    if (!H.length) empty(hb, '최근 7일 다른 방 글이 아직 없어요.');
+    else listWithMore(hb, H, h => {
+      const n = notes[h.id], card = el('article', 'card rec'), chips = el('div', 'chips');
+      chips.append(el('span', 'pill neutral', h.chat));
+      if (h.x != null) chips.append(el('span', 'pill accent', `평소의 ${(+h.x).toFixed(1)}배`));
+      chips.append(el('span', 'pill neutral', h.kind === '채널' ? `조회 ${fmtN(h.views || 0)} · 반응 ${fmtN(h.reactions || 0)}` : `반응 ${fmtN(h.reactions || 0)} · 답글 ${fmtN(h.replies || 0)}`));
+      if (h.topics) chips.append(el('span', 'pill positive', h.topics));
+      if (n) chips.append(el('span', 'pill warning', n.hook));
+      card.append(chips, el('div', 'box', h.text), el('p', 'sub', `${h.time} · ${h.media}`));
+      if (n) card.append(el('p', 'why1', n.why));
+      const link = webLink(h.link); if (link) { const a = el('a', 'btn small', '원문 보기'); a.href = link; a.target = '_blank'; a.rel = 'noopener'; card.append(a); }
+      card.style.gap = '10px'; return card;
+    }, 6);
+    const pat = [...(rows('tg_hours') || []).map(r => ['시간대', r]), ...(rows('tg_lengths') || []).map(r => ['길이', r]), ...(rows('tg_media') || []).map(r => ['형식', r])].filter(([, r]) => r.n);
+    if (!pat.length) empty(pb, '글이 더 모이면 보여드려요.');
+    else pb.replaceChildren(...pat.map(([g, r]) => rowLink(`${g} · ${r.key}`, `${r.avg != null ? '평소의 ' + r.avg.toFixed(1) + '배' : '–'} · 글 ${fmtN(r.n)}개`, null, () => null)));
+    cb.replaceChildren(...C.map(c => rowLink(`${c.role === 'mine' ? '[내 방] ' : ''}${c.title}`,
+      `${c.kind}${c.members ? ' · ' + fmtN(+c.members) + '명' : ''} · 하루 ${c.per_day}개 · ${c.metric} 중앙값 ${fmtN(c.median)} · 잘 되는 때 ${c.best_slot}`,
+      c.username ? `https://t.me/${c.username}` : null, webLink)));
+  }
+
   // ── 쓰레드: Apify 자동 수집 ──
   function drawThreadsAuto() {
     const M = (rows('thx_meta') || [])[0], H = rows('thx_hot') || [], T = rows('thx_topics') || [];
@@ -1110,7 +1200,7 @@ a.row:hover .row-main{text-decoration:underline}
   const closeMenu = () => { side.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); };
   menuBtn.addEventListener('click', () => { side.classList.add('open'); menuBtn.setAttribute('aria-expanded', 'true'); });
   document.getElementById('side-close').addEventListener('click', closeMenu);
-  const NAMES = { instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드' };
+  const NAMES = { instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드', telegram: '텔레그램' };
   function setChannel(ch) {
     document.querySelectorAll('#channel-nav > li > button').forEach(b => b.setAttribute('aria-current', String(b.dataset.ch === ch)));
     document.querySelectorAll('.subnav').forEach(u => { u.hidden = u.dataset.for !== ch; });
@@ -1147,7 +1237,7 @@ a.row:hover .row-main{text-decoration:underline}
   dash.onData(() => {
     const recs = grouped();
     drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors();
-    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto();
+    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawTelegram();
     const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/);
     setChannel(ch ? ch[1] : 'instagram');
     if (m) openPlan(+m[1]);

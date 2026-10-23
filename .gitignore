@@ -7,3 +7,11 @@ output/report.json
 output/validated.csv
 public/
 __pycache__/
+
+# graft's local graph cache — regenerable, not committed (run `graft build`).
+/graft/
+
+# 텔레그램 로그인 정보(계정 전체 권한) — 절대 올리지 않음
+data/telegram.session*
+telegram_chats.csv
+data/tg_daily.log
