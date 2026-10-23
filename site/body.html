@@ -467,7 +467,7 @@ a.row:hover .row-main{text-decoration:underline}
         </section>
         <section class="sec" id="tg-today">
           <h2>오늘 우리 채널에 올릴 문구</h2>
-          <p class="note" id="tg-today-note">다른 방에서 반응 좋은 구성 + 오늘 뉴스로 쓴 완성 문구예요. 복사해서 바로 붙여넣으면 돼요. 숫자는 [확인] 표시를 꼭 채워 주세요.</p>
+          <p class="note" id="tg-today-note">하루 7개 시간표(07:30 아침 브리핑 · 08:50 장 시작 전 · 10:30·13:30 장중 · 15:40 장 마감 · 20:30 저녁 미장 · 21:30 공유용 분석)에 맞춘 완성 문구예요. 숫자는 [확인] 표시를 꼭 채워 주세요.</p>
           <div class="recs" id="tg-today-list"></div>
         </section>
         <section class="sec" id="tg-formulas">
@@ -948,7 +948,7 @@ a.row:hover .row-main{text-decoration:underline}
       kpi('마지막 수집', M.collected ? M.collected.slice(5, 10).replace('-', '/') : '–', '내 PC에서 매일 아침'));
     if (!AI) { empty(tl, '다음 수집 때 Claude가 오늘의 문구를 써요.'); sb.replaceChildren(); fb.replaceChildren(); }
     else {
-      document.getElementById('tg-today-note').textContent = `${AI.analyzed_at.slice(5, 10).replace('-', '/')} 기준. 복사해서 바로 붙여넣으면 돼요. 숫자는 [확인] 표시를 꼭 채워 주세요.`;
+      document.getElementById('tg-today-note').textContent = `${AI.analyzed_at.slice(5, 10).replace('-', '/')} 기준 · 하루 7개 시간표 순서예요. 시간에 맞춰 복사해 올리고, [확인] 표시는 꼭 채워 주세요.`;
       tl.replaceChildren(...AI.today.map(t => {
         const c = el('article', 'card rec'), chips = el('div', 'chips');
         chips.append(el('span', 'pill accent', t.time), el('span', 'pill neutral', t.type));
