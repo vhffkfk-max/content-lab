@@ -1,4 +1,4 @@
-"""팀이 모은 쓰레드 글을 Claude로 분석해 output/site/threads_ai.json 에 저장한다.
+"""팀이 모은 쓰레드 글과 자동 수집 인기 글을 Claude로 분석해 output/site/threads_ai.json 에 저장한다.
 
     python threads_analyze.py            # ANTHROPIC_API_KEY 필요
     python threads_analyze.py --dry-run  # API 호출 없이 프롬프트만 출력
@@ -18,7 +18,7 @@ MODEL = "claude-opus-5-5"
 OUT = OUTPUT_DIR / "site" / "threads_ai.json"
 
 SYSTEM = """당신은 한국 경제 크리에이터 @hotconomy 의 쓰레드(Threads) 전략가입니다.
-팀이 직접 골라 모은 '반응 좋은 쓰레드 글'을 분석해서, 왜 잘 됐는지와 우리 계정이 따라 쓸 수 있는 공식을 뽑습니다.
+팀이 직접 골라 모은 글과 자동 수집한 경제 키워드 인기 글(memo가 '자동 수집 인기 글')을 분석해서, 왜 잘 됐는지와 우리 계정이 따라 쓸 수 있는 공식을 뽑습니다.
 
 규칙:
 - 모두 한국어. 이모지 금지. 데이터에 없는 수치는 지어내지 말고 [확인]으로 비웁니다.
@@ -39,7 +39,17 @@ def load_posts(db):
         return []
     since = (datetime.now(timezone.utc) - timedelta(days=60)).isoformat(timespec="seconds")
     rows = [dict(r) for r in conn.execute(
-        "SELECT * FROM threads_saved WHERE first_seen >= ? ORDER BY first_seen DESC LIMIT 40", (since,))]
+        "SELECT * FROM threads_saved WHERE first_seen >= ? AND text != '' ORDER BY first_seen DESC LIMIT 25", (since,))]
+    if "threads_apify" in tables:
+        # 자동 수집 글 중 최근 7일 반응이 가장 큰 글도 함께 분석 (팀 링크로 이미 들어온 글은 빼고)
+        week = (datetime.now(timezone.utc) - timedelta(days=7)).isoformat(timespec="seconds")
+        seen = {r["link"].rstrip("/").rsplit("/", 1)[-1] for r in rows}
+        auto = conn.execute(
+            "SELECT * FROM threads_apify WHERE is_reply = 0 AND text != '' AND posted_at >= ? "
+            "ORDER BY likes + 3 * replies + 2 * reposts DESC LIMIT 15", (week,)).fetchall()
+        rows += [{"id": "a_" + r["post_id"], "link": r["url"], "author": r["username"], "text": r["text"],
+                  "likes": r["likes"], "replies": r["replies"], "reposts": r["reposts"], "memo": "자동 수집 인기 글"}
+                 for r in auto if r["code"] not in seen][:12]
     return rows
 
 

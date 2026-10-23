@@ -6,7 +6,7 @@
 열 이름은 자유롭게: '링크'·'본문(또는 내용)'·'좋아요'·'답글'·'리포스트'·'메모'·'이름' 이 들어간 열을 알아서 찾는다.
 
     python threads_links.py
-쓰레드 공식 임베드는 글 본문을 주지 않아서(버튼 틀만 옴), 본문은 사람이 붙여넣는다. 쓰레드 페이지를 긁지 않는다.
+쓰레드 공식 임베드는 글 본문을 주지 않아서(버튼 틀만 옴), 본문은 사람이 붙여넣거나, 비워 두면 apify_threads.py 가 채운다.
 """
 import csv
 import hashlib
@@ -76,14 +76,12 @@ def main():
             if not m:
                 continue
             body = pick(row, "본문", "내용", "text", "글")
-            if not body:
-                print(f"⚠️ 본문이 비어 있어 건너뛰어요: {raw[:60]} (글 내용을 붙여넣어 주세요)")
-                continue
+            # 본문이 비어 있으면 apify_threads.py 가 링크로 본문·숫자를 채운다
             pid = hashlib.sha1(m.group(2).encode()).hexdigest()[:16]
             exists = conn.execute("SELECT 1 FROM threads_saved WHERE id=?", (pid,)).fetchone()
             conn.execute(
                 "INSERT INTO threads_saved VALUES (?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET "
-                "text=excluded.text, likes=COALESCE(excluded.likes, likes), replies=COALESCE(excluded.replies, replies), "
+                "text=CASE WHEN excluded.text = '' THEN text ELSE excluded.text END, likes=COALESCE(excluded.likes, likes), replies=COALESCE(excluded.replies, replies), "
                 "reposts=COALESCE(excluded.reposts, reposts), memo=excluded.memo, updated_at=excluded.updated_at",
                 (pid, raw.split("?")[0], m.group(1) or "", body, num(pick(row, "좋아요", "like")),
                  num(pick(row, "답글", "댓글", "repl")), num(pick(row, "리포스트", "repost", "공유")),

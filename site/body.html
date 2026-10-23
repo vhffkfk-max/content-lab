@@ -230,6 +230,7 @@ a.row:hover .row-main{text-decoration:underline}
         <li><button type="button" data-ch="youtube"><i class="dot" style="background:var(--ch-youtube)"></i>유튜브<span class="soon">준비 중</span></button></li>
         <li><button type="button" data-ch="threads"><i class="dot" style="background:var(--ch-threads)"></i>쓰레드<span class="soon" id="th-badge">심사 중</span></button>
           <ul class="subnav" data-for="threads">
+            <li><a href="#th-auto">자동 수집 인기 글</a></li>
             <li><a href="#th-formulas">잘 되는 글 공식</a></li>
             <li><a href="#th-saved">팀이 모은 글</a></li>
             <li><a href="#th-search">키워드 검색</a></li>
@@ -411,10 +412,17 @@ a.row:hover .row-main{text-decoration:underline}
       </div>
       <div class="view" data-view="threads" hidden>
         <div class="title-row">
-          <div><h1>쓰레드</h1><p>팀이 고른 반응 좋은 쓰레드 글을 Claude가 매일 분석해요. 공식 키워드 검색은 메타 심사 후에 함께 모여요.</p></div>
+          <div><h1>쓰레드</h1><p>경제 키워드·계정의 쓰레드 글을 매일 자동으로 모으고, 팀이 고른 글과 함께 Claude가 분석해요.</p></div>
           <div class="actions" id="th-actions"></div>
         </div>
         <div class="kpis" id="ts-kpis"></div>
+        <section class="sec" id="th-auto">
+          <h2>자동 수집 인기 글 (최근 7일)</h2>
+          <p class="note" id="tx-note">경제 키워드 검색과 지정 계정에서 매일 06:00에 모은 글이에요. 같은 작성자 글이 3개 이상이면 평소 대비 몇 배 반응인지 보여줘요.</p>
+          <div class="kpis" id="tx-kpis"></div>
+          <div class="chips" id="tx-topics" style="margin:10px 0"></div>
+          <div class="recs" id="tx-list"></div>
+        </section>
         <section class="sec" id="th-formulas">
           <h2>잘 되는 쓰레드 글 공식</h2>
           <p class="note" id="ts-note">팀이 모은 글에서 Claude가 뽑은 공통점과 따라 쓸 수 있는 공식이에요.</p>
@@ -436,7 +444,7 @@ a.row:hover .row-main{text-decoration:underline}
         </div>
       </div>
 
-      <p class="note" style="margin-top:12px">데이터: 인스타그램 공식 Graph API(공개 계정의 공개 게시물), 구글 뉴스·구글 트렌드 RSS · 기획안: Claude가 분석 결과를 바탕으로 작성 · 매일 06:00 자동 갱신 · <a href="privacy.html" style="color:inherit">개인정보처리방침</a> · <a href="data-deletion.html" style="color:inherit">데이터 삭제 안내</a></p>
+      <p class="note" style="margin-top:12px">데이터: 인스타그램 공식 Graph API(공개 계정의 공개 게시물), 구글 뉴스·구글 트렌드 RSS, 쓰레드 공개 글(Apify) · 기획안: Claude가 분석 결과를 바탕으로 작성 · 매일 06:00 자동 갱신 · <a href="privacy.html" style="color:inherit">개인정보처리방침</a> · <a href="data-deletion.html" style="color:inherit">데이터 삭제 안내</a></p>
     </div></main>
   </div>
 </div>
@@ -878,6 +886,40 @@ a.row:hover .row-main{text-decoration:underline}
     }, 12);
   }
 
+  // ── 쓰레드: Apify 자동 수집 ──
+  function drawThreadsAuto() {
+    const M = (rows('thx_meta') || [])[0], H = rows('thx_hot') || [], T = rows('thx_topics') || [];
+    const AI = (() => { const d = dash.data('threads_ai'); return d.status === 'ok' && !Array.isArray(d.data) ? d.data : null; })();
+    const kb = document.getElementById('tx-kpis'), tb = document.getElementById('tx-topics'), lb = document.getElementById('tx-list');
+    if (!M) {
+      kb.replaceChildren(kpi('자동 수집', '연결 전', 'THREADS_APIFY.md 참고'));
+      tb.replaceChildren(); empty(lb, 'Apify 토큰을 등록하면 다음 06:00부터 경제 쓰레드 글이 좋아요·답글 수와 함께 모여요.'); return;
+    }
+    document.getElementById('th-badge').textContent = '자동 수집';
+    kb.replaceChildren(kpi('모은 글', fmtN(M.posts), `최근 7일 ${fmtN(M.week)}개`), kpi('작성자', `${fmtN(M.authors)}명`, `평소 대비 계산 ${fmtN(M.baselined)}명`),
+      kpi('반응 큰 주제', T[0] ? T[0].topic : '–', T[0] ? `글 ${T[0].n}개 · 반응 중앙값 ${fmtN(Math.round(T[0].median))}` : ''),
+      kpi('마지막 수집', M.collected ? M.collected.slice(5, 10).replace('-', '/') : '–', '매일 06:00'));
+    tb.replaceChildren(...T.slice(0, 8).map(t => el('span', 'pill neutral', `${t.topic} · ${t.n}개 · 중앙값 ${fmtN(Math.round(t.median))}`)));
+    const notes = AI ? Object.fromEntries(AI.posts.map(p => [p.id, p])) : {};
+    if (!H.length) { empty(lb, '최근 7일 모인 글이 아직 없어요.'); return; }
+    listWithMore(lb, H, h => {
+      const n = notes[h.id], card = el('article', 'card rec'), chips = el('div', 'chips');
+      chips.append(el('span', 'pill neutral', `@${h.username}`));
+      if (h.x != null) chips.append(el('span', 'pill accent', `평소의 ${(+h.x).toFixed(1)}배`));
+      chips.append(el('span', 'pill neutral', `좋아요 ${fmtN(h.likes || 0)} · 답글 ${fmtN(h.replies || 0)} · 리포스트 ${fmtN(h.reposts || 0)}`));
+      if (h.topics) chips.append(el('span', 'pill positive', h.topics));
+      if (n) chips.append(el('span', 'pill warning', n.hook_type));
+      card.append(chips, el('div', 'box', h.text || '(내용 없음)'), el('p', 'sub', `${h.time} · ${h.source}`));
+      if (n) {
+        card.append(el('p', 'why1', n.why), el('p', 'sub', `구조 · ${n.structure}`));
+        n.rewrite.forEach((t, i) => { const w = el('div', 'thread'); w.append(el('span', 'thread-n', `우리 버전 ${i + 1}/${n.rewrite.length}`), el('div', 'box', t)); card.append(w); });
+        card.append(copyBtn('우리 버전 전체 복사', n.rewrite.join('\n\n'), 'btn primary'));
+      }
+      const link = webLink(h.url); if (link) { const a = el('a', 'btn small', '원문 보기'); a.href = link; a.target = '_blank'; a.rel = 'noopener'; card.append(a); }
+      card.style.gap = '10px'; return card;
+    }, 6);
+  }
+
   // ── 쓰레드: 팀이 모은 글 ──
   function drawThreadsSaved() {
     const cfg = (rows('site_config') || [])[0] || {}, S = rows('threads_saved') || [], ST = (rows('threads_saved_stats') || [])[0];
@@ -893,7 +935,7 @@ a.row:hover .row-main{text-decoration:underline}
     const sumBox = document.getElementById('ts-summary'), fBox = document.getElementById('ts-formulas'), lBox = document.getElementById('ts-list');
     if (!S.length) {
       sumBox.replaceChildren(el('li', 'note', '아직 모은 글이 없어요. 쓰레드에서 반응 좋은 경제 글을 보면 링크와 본문을 폼에 붙여넣어 주세요.'));
-      fBox.replaceChildren(); empty(lBox, '쓰레드 앱에서 글의 ··· → 링크 복사, 글을 길게 눌러 본문 복사 후 폼에 붙여넣으면 다음 날 06:00에 분석돼요.'); return;
+      fBox.replaceChildren(); empty(lBox, '쓰레드 앱에서 글의 ··· → 링크 복사 후 폼에 붙여넣으면 다음 날 06:00에 본문·숫자를 채워 분석해요.'); return;
     }
     if (!AI) { sumBox.replaceChildren(el('li', 'note', '모은 글은 다음 06:00 자동 실행 때 Claude가 분석해요.')); fBox.replaceChildren(); }
     else {
@@ -1105,7 +1147,7 @@ a.row:hover .row-main{text-decoration:underline}
   dash.onData(() => {
     const recs = grouped();
     drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors();
-    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved();
+    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto();
     const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/);
     setChannel(ch ? ch[1] : 'instagram');
     if (m) openPlan(+m[1]);

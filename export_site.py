@@ -87,6 +87,9 @@ def main():
     write("own_formats", own.get("formats") or [])
     write("threads_saved", d.get("threads_saved") or [])
     write("threads_saved_stats", d.get("threads_saved_stats") or [])
+    tx = d.get("threads_auto") or {}
+    for k in ("meta", "hot", "topics", "authors"):
+        write(f"thx_{k}", tx.get(k) or [])
     th = d.get("threads") or {}
     write("threads_meta", th.get("meta") or [])
     write("threads_topics", th.get("topics") or [])

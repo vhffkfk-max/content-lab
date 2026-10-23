@@ -35,6 +35,7 @@ jobs:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
         run: |
           python own_collect.py
           python collect.py --max-posts 60
@@ -42,6 +43,7 @@ jobs:
           python press_collect.py
           python threads_collect.py
           python threads_links.py
+          python apify_threads.py
           python analyze.py --no-open
           python export_site.py
 
