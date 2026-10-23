@@ -4,7 +4,7 @@
     python tg_analyze.py --dry-run  # Claude 호출 없이 프롬프트만 출력
 '평소 대비 ○배' = 그 방 글들의 중앙값 대비. 채널은 조회수, 그룹은 반응 + 3×답글.
 Claude 는 다른 업체 방의 반응 큰 글 + 연구소가 모은 오늘의 뉴스로 '오늘 내 방에 올릴 문구'를 쓴다.
-같은 입력이면 다시 부르지 않는다 (비용 절약). 실패하면 지난 추천을 그대로 둔다.
+Claude 추천은 하루 한 번(07시 이후 첫 실행)만 쓴다 (비용 절약). 실패하면 지난 추천을 그대로 둔다.
 """
 import argparse
 import hashlib
@@ -129,17 +129,28 @@ def news_context():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--force", action="store_true", help="오늘 이미 썼어도 Claude 추천을 다시 씀")
     args = ap.parse_args()
     load_env()
-    if not SRC.exists():
-        print("data/telegram.json 이 없어요 — 텔레그램 분석을 건너뛰어요 (TELEGRAM_SETUP.md 참고).")
+    if SRC.exists():  # 내 PC에서 직접 모은 파일이 있으면 통계부터 새로 (서버에서는 tg_live.py 가 올린 통계를 그대로 씀)
+        out = build(json.loads(SRC.read_text(encoding="utf-8")), datetime.now(timezone.utc))
+        SITE.mkdir(parents=True, exist_ok=True)
+        for name, rows in out.items():
+            (SITE / f"{name}.json").write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(f"✅ 텔레그램 통계: 방 {out['tg_meta'][0]['chats']}개, 반응 큰 글 {len(out['tg_hot'])}개")
+    load = lambda n: json.loads((SITE / f"{n}.json").read_text(encoding="utf-8")) if (SITE / f"{n}.json").exists() else []
+    out = {n: load(n) for n in ("tg_hot", "tg_hours", "tg_lengths", "tg_mine")}
+    if not out["tg_hot"]:
+        print("텔레그램 통계가 아직 없어요 — 분석을 건너뛰어요 (TELEGRAM_SETUP.md 참고).")
         return
-    data = json.loads(SRC.read_text(encoding="utf-8"))
-    out = build(data, datetime.now(timezone.utc))
-    SITE.mkdir(parents=True, exist_ok=True)
-    for name, rows in out.items():
-        (SITE / f"{name}.json").write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"✅ 텔레그램 통계: 방 {out['tg_meta'][0]['chats']}개, 반응 큰 글 {len(out['tg_hot'])}개")
+    # 사이트는 30분마다 갱신되지만 Claude 추천은 하루 한 번: 07시(뉴스 수집 뒤) 이후 첫 갱신 때만
+    ai_path = SITE / "tg_ai.json"
+    last = json.loads(ai_path.read_text(encoding="utf-8") or "{}").get("analyzed_at", "") if ai_path.exists() else ""
+    today = datetime.now(KST)
+    done_today = bool(last) and datetime.fromisoformat(last).astimezone(KST).date() == today.date()
+    if not args.force and not args.dry_run and (done_today or today.hour < 7):
+        print("오늘의 텔레그램 추천은 하루 한 번(07시 이후)만 써요 — 이번엔 건너뛰어요.")
+        return
 
     hot = out["tg_hot"][:25]
     items = [{"no": i, "room": h["chat"], "x": h["x"], "views": h["views"], "reactions": h["reactions"], "replies": h["replies"],
@@ -151,7 +162,6 @@ def main():
     if args.dry_run:
         print(SYSTEM, "\n\n", prompt[:3000])
         return
-    ai_path = SITE / "tg_ai.json"
     digest = hashlib.sha1(prompt.encode()).hexdigest()
     if ai_path.exists() and json.loads(ai_path.read_text(encoding="utf-8") or "{}").get("digest") == digest:
         print("입력이 같아 지난 텔레그램 추천을 그대로 써요.")

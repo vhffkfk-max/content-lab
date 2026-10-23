@@ -15,3 +15,9 @@ __pycache__/
 data/telegram.session*
 telegram_chats.csv
 data/tg_daily.log
+# 회원 개인정보가 들어간 참여도 엑셀
+output/participation/
+# 실시간 수집 로컬 파일 (원문 포함, 저장소에 안 올림)
+data/telegram.json
+data/telegram_live.db
+data/tg_live.log

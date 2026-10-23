@@ -1,10 +1,12 @@
-# 내 PC가 텔레그램 글(data/telegram.json)을 올리면 → Claude 분석·오늘의 문구 → 사이트 다시 배포.
+# 내 PC(tg_live.py)가 30분마다 텔레그램 통계(output/site/tg_*.json)를 올리면 → 사이트 다시 배포.
+# Claude 오늘의 문구는 tg_analyze.py 가 하루 한 번(07시 이후 첫 실행)만 쓴다.
 name: telegram
 
 on:
   push:
     paths:
-      - data/telegram.json
+      - output/site/tg_hot.json
+      - output/site/tg_meta.json
   workflow_dispatch:
 
 permissions:
