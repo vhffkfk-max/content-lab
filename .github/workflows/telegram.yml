@@ -8,6 +8,11 @@ on:
       - output/site/tg_hot.json
       - output/site/tg_meta.json
   workflow_dispatch:
+    inputs:
+      force:
+        description: "오늘 이미 썼어도 Claude 추천을 다시 쓰기"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -37,7 +42,7 @@ jobs:
         continue-on-error: true   # 실패해도 지난 추천으로 사이트는 배포
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python tg_analyze.py
+        run: python tg_analyze.py ${{ inputs.force && '--force' || '' }}
 
       - name: 사이트 만들기
         run: python build_site.py

@@ -26,20 +26,22 @@ KST = timezone(timedelta(hours=9))
 SLOTS = [(5, 9, "아침 05-09"), (9, 12, "오전 09-12"), (12, 15, "점심 12-15"), (15, 18, "오후 15-18"),
          (18, 22, "저녁 18-22"), (22, 29, "밤 22-05")]
 
-SYSTEM = """당신은 한국 경제 크리에이터 @hotconomy 가 운영하는 경제 텔레그램 방의 콘텐츠 에디터입니다.
-다른 업체 텔레그램 방에서 반응(조회수·반응·답글)이 평소보다 컸던 글과, 오늘 모은 경제 뉴스·트렌드를 받아
-'왜 반응이 컸는지'와 '오늘 우리 방에 올릴 문구'를 씁니다.
+SYSTEM = """당신은 텔레그램 채널 '{room}' 을(를) 키우는 콘텐츠 에디터입니다. 목표는 이 채널의 구독자와 조회수를 늘리는 것.
+다른 업체 텔레그램 방에서 반응(조회수·반응·답글)이 평소보다 컸던 글, 우리 채널의 최근 글과 성과, 오늘 모은 경제 뉴스·트렌드를 받아
+'왜 반응이 컸는지'와 '오늘 우리 채널에 올릴 문구', '채널을 키울 방법'을 씁니다.
 
 규칙:
 - 모두 한국어. 텔레그램 말투(짧은 줄, 핵심 먼저, 필요하면 ▶ · ✔ 같은 기호)는 써도 되지만 이모지는 한 글에 2개 이하.
 - 데이터에 없는 숫자·사실은 지어내지 말고 [확인] 으로 비웁니다. 뉴스 제목에 있는 사실만 씁니다.
 - 다른 방 글을 베끼지 않습니다. 구성과 말투 방식만 빌려 새로 씁니다.
+- today 문구는 우리 채널 최근 글(my_recent_posts)의 말투·호칭·서명·자주 다루는 주제(차트 분석 등)를 따라 씁니다. 다른 방 이름이나 서명, 말투를 쓰지 않습니다.
 - 특정 종목 매수·매도 권유, 목표가, 수익 보장, '지금 사라' 같은 표현을 쓰지 않습니다(유사투자자문 문제).
   정보 정리·해설·질문 위주로 쓰고, 주식·코인 글 끝에는 '투자 판단은 본인 몫' 같은 한 줄을 넣습니다.
 - summary: 다른 방들의 반응 큰 글에서 보이는 공통점 3줄(각 60자 안팎).
 - formulas: 따라 쓸 수 있는 텔레그램 글 공식 3~5개. name, pattern(구성 한 줄), example(우리 방용 예시 문구 1~3줄), when(언제 쓰나).
 - today: 오늘 우리 방에 올릴 글 5개. time(추천 시간대, 반응 좋은 시간대 참고), type(아침 브리핑/속보 해설/3줄 요약/질문·투표/장 마감 정리 등),
   text(그대로 붙여넣을 완성 문구, 600자 이내), why(왜 오늘 이 글인지 한 줄), based_on(근거 뉴스·주제).
+- growth: 우리 채널을 키우기 위해 이번 주 해볼 것 3~5개. 다른 방 데이터와 우리 채널 성과(my_stats, my_top_posts)를 근거로, 무엇을·언제·어떻게를 근거 수치와 함께 한 줄씩.
 - posts: 받은 '반응 큰 글' 각각에 no(번호 그대로), why(왜 반응이 컸는지 1문장), hook(첫 줄 방식 짧게)."""
 
 
@@ -139,7 +141,7 @@ def main():
             (SITE / f"{name}.json").write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
         print(f"✅ 텔레그램 통계: 방 {out['tg_meta'][0]['chats']}개, 반응 큰 글 {len(out['tg_hot'])}개")
     load = lambda n: json.loads((SITE / f"{n}.json").read_text(encoding="utf-8")) if (SITE / f"{n}.json").exists() else []
-    out = {n: load(n) for n in ("tg_hot", "tg_hours", "tg_lengths", "tg_mine")}
+    out = {n: load(n) for n in ("tg_hot", "tg_hours", "tg_lengths", "tg_mine", "tg_chats")}
     if not out["tg_hot"]:
         print("텔레그램 통계가 아직 없어요 — 분석을 건너뛰어요 (TELEGRAM_SETUP.md 참고).")
         return
@@ -156,11 +158,15 @@ def main():
     items = [{"no": i, "room": h["chat"], "x": h["x"], "views": h["views"], "reactions": h["reactions"], "replies": h["replies"],
               "media": h["media"], "time": h["time"], "text": h["text"]} for i, h in enumerate(hot, 1)]
     ctx = {"hot_posts": items, "best_slots": out["tg_hours"], "lengths": out["tg_lengths"],
-           "my_recent_posts": [m["text"][:300] for m in out["tg_mine"][:5]], "today": news_context(),
+           "my_recent_posts": [m["text"][:400] for m in out["tg_mine"][:8]],
+           "my_top_posts": [{"x": m["x"], "views": m["views"], "reactions": m["reactions"], "time": m["time"], "text": m["text"][:300]}
+                            for m in sorted(out["tg_mine"], key=lambda m: -(m["x"] or 0))[:5]],
+           "my_stats": [c for c in out["tg_chats"] if c["role"] == "mine"], "today": news_context(),
            "date": datetime.now(KST).strftime("%Y-%m-%d (%a)")}
     prompt = "자료:\n" + json.dumps(ctx, ensure_ascii=False, indent=1)
+    room = next((c["title"] for c in out["tg_chats"] if c["role"] == "mine"), "우리 채널")
     if args.dry_run:
-        print(SYSTEM, "\n\n", prompt[:3000])
+        print(SYSTEM.format(room=room), "\n\n", prompt[:3000])
         return
     digest = hashlib.sha1(prompt.encode()).hexdigest()
     if ai_path.exists() and json.loads(ai_path.read_text(encoding="utf-8") or "{}").get("digest") == digest:
@@ -198,11 +204,12 @@ def main():
         summary: List[str]
         formulas: List[Formula]
         today: List[TodayPost]
+        growth: List[str]
         posts: List[PostNote]
 
     client = anthropic.Anthropic()
     try:
-        r = client.messages.parse(model=MODEL, max_tokens=16000, system=SYSTEM,
+        r = client.messages.parse(model=MODEL, max_tokens=16000, system=SYSTEM.format(room=room),
                                   messages=[{"role": "user", "content": prompt}], output_format=Analysis)
     except (anthropic.APIStatusError, anthropic.APIConnectionError) as e:
         print(f"⚠️ Claude API 오류: {e} — 지난 결과를 유지해요.")
@@ -214,7 +221,7 @@ def main():
     notes = [{**n.model_dump(), "id": hot[n.no - 1]["id"]} for n in a.posts if 1 <= n.no <= len(hot)]
     ai_path.write_text(json.dumps({"digest": digest, "analyzed_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                                    "summary": a.summary, "formulas": [f.model_dump() for f in a.formulas],
-                                   "today": [t.model_dump() for t in a.today], "posts": notes},
+                                   "today": [t.model_dump() for t in a.today], "growth": a.growth, "posts": notes, "room": room},
                                   ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"✅ 텔레그램 추천: 오늘 문구 {len(a.today)}개 · 공식 {len(a.formulas)}개 "
           f"(입력 {r.usage.input_tokens:,} / 출력 {r.usage.output_tokens:,} 토큰)")

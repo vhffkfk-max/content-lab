@@ -237,6 +237,7 @@ a.row:hover .row-main{text-decoration:underline}
           </ul></li>
         <li><button type="button" data-ch="telegram"><i class="dot" style="background:var(--ch-telegram)"></i>텔레그램<span class="soon" id="tg-badge">연결 전</span></button>
           <ul class="subnav" data-for="telegram">
+            <li><a href="#tg-mine">내 채널 성과</a></li>
             <li><a href="#tg-today">오늘 올릴 문구</a></li>
             <li><a href="#tg-formulas">잘 되는 글 공식</a></li>
             <li><a href="#tg-hot">다른 방 인기 글</a></li>
@@ -454,11 +455,18 @@ a.row:hover .row-main{text-decoration:underline}
 
       <div class="view" data-view="telegram" hidden>
         <div class="title-row">
-          <div><h1>텔레그램</h1><p>다른 업체 텔레그램 방(비공개 포함)에서 반응 큰 글을 찾고, 오늘 모은 뉴스로 우리 방에 올릴 문구를 Claude가 써요.</p></div>
+          <div><h1>텔레그램</h1><p>차트보는 말희아빠 채널을 키우기 위해, 다른 업체 방(비공개 포함)의 반응 큰 글과 오늘 뉴스로 Claude가 올릴 문구와 키우는 법을 써요.</p></div>
         </div>
         <div class="kpis" id="tg-kpis"></div>
+        <section class="sec" id="tg-mine">
+          <h2 id="tg-mine-title">내 채널 성과</h2>
+          <p class="note">최근 7일 우리 채널 글과, 다른 방 데이터로 Claude가 뽑은 이번 주 키우는 법이에요.</p>
+          <div class="kpis" id="tg-mine-kpis"></div>
+          <div class="card"><h3>이번 주 해볼 것</h3><ul class="learn" id="tg-growth" style="margin-top:10px"></ul></div>
+          <div class="card" style="margin-top:12px"><h3>우리 채널 글 (반응 큰 순)</h3><div class="rows" id="tg-mine-list"></div></div>
+        </section>
         <section class="sec" id="tg-today">
-          <h2>오늘 우리 방에 올릴 문구</h2>
+          <h2>오늘 우리 채널에 올릴 문구</h2>
           <p class="note" id="tg-today-note">다른 방에서 반응 좋은 구성 + 오늘 뉴스로 쓴 완성 문구예요. 복사해서 바로 붙여넣으면 돼요. 숫자는 [확인] 표시를 꼭 채워 주세요.</p>
           <div class="recs" id="tg-today-list"></div>
         </section>
@@ -976,6 +984,25 @@ a.row:hover .row-main{text-decoration:underline}
       c.username ? `https://t.me/${c.username}` : null, webLink)));
   }
 
+  // ── 텔레그램: 내 채널 ──
+  function drawTelegramMine() {
+    const C = (rows('tg_chats') || []).find(c => c.role === 'mine'), P = rows('tg_mine') || [];
+    const AI = (() => { const d = dash.data('tg_ai'); return d.status === 'ok' && !Array.isArray(d.data) ? d.data : null; })();
+    const h = document.getElementById('tg-mine-title'), kb = document.getElementById('tg-mine-kpis'), gb = document.getElementById('tg-growth'), lb = document.getElementById('tg-mine-list');
+    if (!C) { h.textContent = '내 채널 성과'; kb.replaceChildren(); gb.replaceChildren(); empty(lb, 'telegram_chats.csv 에서 내 채널을 내방 으로 표시하면 여기에 성과가 나와요.'); return; }
+    h.textContent = `${C.title} 성과와 키우는 법`;
+    const top = [...P].sort((a, b) => (b.x || 0) - (a.x || 0))[0];
+    kb.replaceChildren(kpi('구독자', C.members ? `${fmtN(+C.members)}명` : '–', C.username ? '@' + C.username : ''),
+      kpi('하루 글 수', `${C.per_day}개`, '최근 7일'), kpi('조회수 중앙값', fmtN(C.median), '글 하나당'),
+      kpi('잘 되는 시간대', C.best_slot, top && top.x ? `최고 평소의 ${(+top.x).toFixed(1)}배` : ''));
+    if (AI && AI.growth && AI.growth.length) {
+      gb.replaceChildren(...AI.growth.map((t, i) => { const li = el('li'); li.append(el('b', null, String(i + 1)), el('span', null, t)); return li; }));
+    } else gb.replaceChildren(el('li', 'note', '다음 Claude 추천 때 채널을 키울 방법을 써요.'));
+    if (!P.length) { empty(lb, '최근 7일 글이 없어요.'); return; }
+    listWithMore(lb, [...P].sort((a, b) => (b.x || 0) - (a.x || 0)), p => rowLink(p.text || '(사진·파일)',
+      `${p.time} · 조회 ${fmtN(p.views || 0)} · 반응 ${fmtN(p.reactions || 0)}${p.x != null ? ' · 평소의 ' + (+p.x).toFixed(1) + '배' : ''}`, p.link, webLink), 6);
+  }
+
   // ── 쓰레드: Apify 자동 수집 ──
   function drawThreadsAuto() {
     const M = (rows('thx_meta') || [])[0], H = rows('thx_hot') || [], T = rows('thx_topics') || [];
@@ -1237,7 +1264,7 @@ a.row:hover .row-main{text-decoration:underline}
   dash.onData(() => {
     const recs = grouped();
     drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors();
-    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawTelegram();
+    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawTelegram(); drawTelegramMine();
     const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/);
     setChannel(ch ? ch[1] : 'instagram');
     if (m) openPlan(+m[1]);
