@@ -18,7 +18,8 @@ MODEL = "claude-opus-5-5"
 OUT = OUTPUT_DIR / "site" / "threads_ai.json"
 
 SYSTEM = """당신은 한국 경제 크리에이터 @hotconomy 의 쓰레드(Threads) 전략가입니다.
-팀이 직접 골라 모은 글과 자동 수집한 경제 키워드 인기 글(memo가 '자동 수집 인기 글')을 분석해서, 왜 잘 됐는지와 우리 계정이 따라 쓸 수 있는 공식을 뽑습니다.
+팀이 직접 골라 모은 글과 자동 수집한 경제 키워드 인기 글(memo가 '자동 수집'으로 시작, 조회수·팔로워·확산배수·반응률 포함)을 분석해서, 왜 잘 됐는지와 우리 계정이 따라 쓸 수 있는 공식을 뽑습니다.
+확산배수(조회 ÷ 팔로워)가 높은 글은 팔로워 밖으로 퍼진 글이니 '왜 퍼졌나'를 우선 설명합니다.
 
 규칙:
 - 모두 한국어. 이모지 금지. 데이터에 없는 수치는 지어내지 말고 [확인]으로 비웁니다.
@@ -41,15 +42,20 @@ def load_posts(db):
     rows = [dict(r) for r in conn.execute(
         "SELECT * FROM threads_saved WHERE first_seen >= ? AND text != '' ORDER BY first_seen DESC LIMIT 25", (since,))]
     if "threads_apify" in tables:
-        # 자동 수집 글 중 최근 7일 반응이 가장 큰 글도 함께 분석 (팀 링크로 이미 들어온 글은 빼고)
-        week = (datetime.now(timezone.utc) - timedelta(days=7)).isoformat(timespec="seconds")
+        # 자동 수집 글: 이번 주 따라 할 글 TOP + 점수 상위 (조회수·확산배수 기준, 팀 링크로 이미 들어온 글은 빼고)
+        import threads_score
+        sec = threads_score.section(conn, datetime.now(timezone.utc))
         seen = {r["link"].rstrip("/").rsplit("/", 1)[-1] for r in rows}
-        auto = conn.execute(
-            "SELECT * FROM threads_apify WHERE is_reply = 0 AND text != '' AND posted_at >= ? "
-            "ORDER BY likes + 3 * replies + 2 * reposts DESC LIMIT 15", (week,)).fetchall()
-        rows += [{"id": "a_" + r["post_id"], "link": r["url"], "author": r["username"], "text": r["text"],
-                  "likes": r["likes"], "replies": r["replies"], "reposts": r["reposts"], "memo": "자동 수집 인기 글"}
-                 for r in auto if r["code"] not in seen][:12]
+        picked, ids = [], set()
+        for h in sec["top"] + sec["rising"][:5] + sec["hot"]:
+            if h["id"] in ids or h["url"].rstrip("/").rsplit("/", 1)[-1] in seen:
+                continue
+            ids.add(h["id"])
+            memo = (f"자동 수집 · 조회 {h['views']:,} · 팔로워 {h['followers'] or 0:,} · 확산 {h['spread']}배 · 반응률 {h['rate']}%"
+                    if h["views"] else "자동 수집 · 조회수 대기")
+            picked.append({"id": h["id"], "link": h["url"], "author": h["username"], "text": h["text"], "likes": h["likes"],
+                           "replies": h["replies"], "reposts": h["reposts"], "memo": memo})
+        rows += picked[:12]
     return rows
 
 

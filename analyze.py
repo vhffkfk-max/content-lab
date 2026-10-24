@@ -511,43 +511,9 @@ def threads_section(conn, now):
 
 
 def threads_auto_section(conn, now):
-    """Apify로 자동 수집한 쓰레드 글: 작성자 평소 대비 몇 배 반응이었는지와 주제별 반응."""
-    tables = {r[0] for r in conn.execute("SELECT name FROM sqlite_master WHERE type='table'")}
-    if "threads_apify" not in tables:
-        return {"meta": [], "hot": [], "topics": [], "authors": []}
-    rows = [dict(r) for r in conn.execute("SELECT * FROM threads_apify WHERE is_reply = 0")]
-    def ts(r):
-        try:
-            return datetime.fromisoformat((r["posted_at"] or "").replace("Z", "+00:00"))
-        except ValueError:
-            return None
-    score = lambda r: (r["likes"] or 0) + 3 * (r["replies"] or 0) + 2 * (r["reposts"] or 0) + 2 * (r["quotes"] or 0)
-    by_author = defaultdict(list)
-    for r in rows:
-        by_author[r["username"]].append(score(r))
-    # 같은 작성자 글이 3개 이상일 때만 '평소 대비'를 낸다 (검색에 한 번 걸린 작성자는 반응 수만)
-    base = {u: max(statistics.median(v), 6) for u, v in by_author.items() if len(v) >= 3}
-    week = [r for r in rows if ts(r) and ts(r) >= now - timedelta(days=7)]
-    for r in week:
-        r["x"] = round(score(r) / base[r["username"]], 1) if r["username"] in base else None
-    hot = sorted(week, key=lambda r: (min(r["x"], 10) if r["x"] else 0, score(r)), reverse=True)[:30]
-    tstat = defaultdict(list)
-    for r in week:
-        for t in (r["topics"] or "").split(", "):
-            if t:
-                tstat[t].append(score(r))
-    return {
-        "meta": [{"posts": len(rows), "week": len(week), "authors": len(by_author), "baselined": len(base),
-                  "collected": max((r["scraped_at"] for r in rows), default=None)}],
-        "hot": [{"id": "a_" + r["post_id"], "username": r["username"], "text": (r["text"] or "")[:500], "url": r["url"], "likes": r["likes"],
-                 "replies": r["replies"], "reposts": r["reposts"], "quotes": r["quotes"], "x": r["x"],
-                 "topics": r["topics"] or "", "source": r["source"],
-                 "time": ts(r).astimezone(KST).strftime("%m/%d %H:%M")} for r in hot],
-        "topics": sorted(({"topic": t, "n": len(v), "median": statistics.median(v)} for t, v in tstat.items()),
-                         key=lambda x: -x["median"]),
-        "authors": sorted(({"username": u, "posts": len(v), "median": statistics.median(v)} for u, v in by_author.items()
-                           if len(v) >= 3), key=lambda a: -a["median"])[:20],
-    }
+    """Apify로 자동 수집한 쓰레드 글: 조회수 기준 점수·등급 (threads_score.py)."""
+    import threads_score
+    return threads_score.section(conn, now)
 
 
 def build_calendar(recs, recent, now):

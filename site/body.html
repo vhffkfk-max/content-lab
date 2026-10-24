@@ -234,10 +234,14 @@ a.row:hover .row-main{text-decoration:underline}
         <li><button type="button" data-ch="youtube"><i class="dot" style="background:var(--ch-youtube)"></i>유튜브<span class="soon">준비 중</span></button></li>
         <li><button type="button" data-ch="threads"><i class="dot" style="background:var(--ch-threads)"></i>쓰레드<span class="soon" id="th-badge">심사 중</span></button>
           <ul class="subnav" data-for="threads">
-            <li><a href="#th-auto">자동 수집 인기 글</a></li>
-            <li><a href="#th-formulas">잘 되는 글 공식</a></li>
+            <li><a href="#th-top">따라 할 글 TOP 5</a></li>
+            <li><a href="#th-mine">우리 계정 성과</a></li>
+            <li><a href="#th-rising">지금 뜨는 글</a></li>
+            <li><a href="#th-topics">주제별 인기</a></li>
+            <li><a href="#th-formats">첫 줄·형식 분석</a></li>
             <li><a href="#th-saved">팀이 모은 글</a></li>
-            <li><a href="#th-search">키워드 검색</a></li>
+            <li><a href="#th-formulas">잘 되는 글 공식</a></li>
+            <li><a href="#th-accounts">참고 계정</a></li>
           </ul></li>
         <li><button type="button" data-ch="telegram"><i class="dot" style="background:var(--ch-telegram)"></i>텔레그램<span class="soon" id="tg-badge">연결 전</span></button>
           <ul class="subnav" data-for="telegram">
@@ -426,35 +430,63 @@ a.row:hover .row-main{text-decoration:underline}
       </div>
       <div class="view" data-view="threads" hidden>
         <div class="title-row">
-          <div><h1>쓰레드</h1><p>경제 키워드·계정의 쓰레드 글을 매일 자동으로 모으고, 팀이 고른 글과 함께 Claude가 분석해요.</p></div>
+          <div><h1>쓰레드</h1><p>경제 키워드·참고 계정의 쓰레드 글을 <b>조회수·팔로워 수</b>와 함께 매일 모아, 팔로워 밖으로 퍼진 글을 찾고 Claude가 우리 말투로 바꿔 써요.</p></div>
           <div class="actions" id="th-actions"></div>
         </div>
-        <div class="kpis" id="ts-kpis"></div>
-        <section class="sec" id="th-auto">
-          <h2>자동 수집 인기 글 (최근 7일)</h2>
-          <p class="note" id="tx-note">경제 키워드 검색과 지정 계정에서 매일 06:00에 모은 글이에요. 같은 작성자 글이 3개 이상이면 평소 대비 몇 배 반응인지 보여줘요.</p>
-          <div class="kpis" id="tx-kpis"></div>
-          <div class="chips" id="tx-topics" style="margin:10px 0"></div>
-          <div class="recs" id="tx-list"></div>
+        <div class="kpis" id="tx-kpis"></div>
+        <p class="note" id="tx-dropped"></p>
+        <details class="card" style="margin-top:8px"><summary><b>지표 읽는 법</b></summary>
+          <ul class="learn" style="margin-top:10px">
+            <li><b>1</b><span><b>확산배수</b> = 조회 ÷ 팔로워(최소 300). 1~2배 보통, 5배 이상이면 팔로워 밖으로 퍼진 바이럴 글</span></li>
+            <li><b>2</b><span><b>반응률</b> = (좋아요 + 2×답글 + 3×리포스트·인용·공유) ÷ 조회. 3% 이상 좋음, 6% 이상 매우 좋음</span></li>
+            <li><b>3</b><span><b>조회 속도</b> = 조회 ÷ 올린 지 몇 시간. 지금 뜨는 글을 빨리 찾는 데 써요</span></li>
+            <li><b>4</b><span><b>점수</b> = 같은 나이대 글끼리 비교한 순위(확산 45% · 반응률 35% · 속도 20%). 기준값은 추정치라 데이터가 쌓이면 다시 맞춰요</span></li>
+          </ul></details>
+        <section class="sec" id="th-top">
+          <h2>이번 주 따라 할 글 TOP 5</h2>
+          <p class="note">'바이럴'이나 '따라 할 가치' 등급을 받은 글만 골랐어요. 한 주제는 2개까지예요. 우리 말투 초안은 매일 아침 Claude가 써요.</p>
+          <div class="recs" id="tx-top"></div>
         </section>
-        <section class="sec" id="th-formulas">
-          <h2>잘 되는 쓰레드 글 공식</h2>
-          <p class="note" id="ts-note">팀이 모은 글에서 Claude가 뽑은 공통점과 따라 쓸 수 있는 공식이에요.</p>
-          <div class="card"><h3>모은 글의 공통점</h3><ul class="learn" id="ts-summary" style="margin-top:10px"></ul></div>
-          <div class="groups" id="ts-formulas"></div>
+        <section class="sec" id="th-mine">
+          <h2>우리 계정 성과</h2>
+          <div class="card" id="tx-mine"><p class="note">쓰레드 계정을 연결하면 글마다 조회수·반응률·확산배수와 1천 조회당 새 팔로워가 나와요. (공식 Threads API, 연결 전)</p></div>
+        </section>
+        <section class="sec" id="th-rising">
+          <h2>지금 뜨는 글 (48시간 안)</h2>
+          <p class="note">조회 속도가 빠른 순이에요. '조회 대기'는 조회수가 아직 공개되지 않았지만 팔로워 대비 반응이 큰 글이라 다음 날 다시 확인해요.</p>
+          <div class="card"><div class="rows" id="tx-rising"></div></div>
+        </section>
+        <section class="sec" id="th-topics">
+          <h2>주제별 인기</h2>
+          <p class="note">주제를 누르면 최근 7일 그 주제에서 점수가 높은 글이 나와요.</p>
+          <div class="chips" id="tx-topic-chips" style="margin:6px 0 12px"></div>
+          <div class="card"><div class="rows" id="tx-topic-list"></div></div>
+        </section>
+        <section class="sec" id="th-formats">
+          <h2>첫 줄·형식 분석</h2>
+          <p class="note">형식별 확산배수 중앙값이에요(큰 계정이 유리하지 않게 조회수 대신 확산배수로 비교). 글 10개 미만은 숨기고, 30개 미만은 '표본 적음'으로 표시해요.</p>
+          <div class="grid" id="tx-formats"></div>
         </section>
         <section class="sec" id="th-saved">
           <h2>팀이 모은 글</h2>
-          <p class="note">글마다 왜 잘 됐는지와, 같은 구조로 우리 계정 주제에 맞게 다시 쓴 버전이에요. 원문을 베끼지 않고 구조만 빌렸어요.</p>
+          <p class="note">폼에 링크만 넣으면 본문·숫자를 자동으로 채우고, 왜 잘 됐는지와 같은 구조로 우리 주제에 맞게 다시 쓴 버전을 보여줘요.</p>
+          <div class="kpis" id="ts-kpis"></div>
           <div class="recs" id="ts-list"></div>
         </section>
-        <section class="sec" id="th-search"><h2>키워드 검색 (메타 심사 후)</h2><p class="note" id="th-sub">공식 Threads API 키워드 검색으로 경제 키워드의 공개 글을 모아요.</p></section>
-        <div class="kpis" id="th-kpis"></div>
-        <div class="grid">
-          <section class="sec"><h2>주제별 글 수</h2><p class="note">최근 7일, 경제 키워드 검색에 걸린 쓰레드 글을 주제별로 셌어요.</p>
-            <div class="card"><div class="legend" id="legend-th"></div><div class="bars" id="th-topics"></div></div></section>
-          <section class="sec"><h2>최신 쓰레드 글</h2><p class="note">누르면 쓰레드 원문이 새 탭에서 열려요.</p>
-            <div class="card"><div class="rows" id="th-posts"></div></div></section>
+        <section class="sec" id="th-formulas">
+          <h2>잘 되는 쓰레드 글 공식</h2>
+          <p class="note" id="ts-note">팀이 모은 글과 이번 주 상위 글에서 Claude가 뽑은 공통점과 따라 쓸 수 있는 공식이에요.</p>
+          <div class="card"><h3>공통점</h3><ul class="learn" id="ts-summary" style="margin-top:10px"></ul></div>
+          <div class="groups" id="ts-formulas"></div>
+        </section>
+        <section class="sec" id="th-accounts">
+          <h2>참고 계정</h2>
+          <p class="note">threads_accounts.csv 의 계정들, 최근 7일 중앙 조회수 순이에요.</p>
+          <div class="card"><div class="rows" id="tx-accounts"></div></div>
+        </section>
+        <div hidden>
+          <p id="th-sub"></p><div class="kpis" id="th-kpis"></div><div class="legend" id="legend-th"></div><div class="bars" id="th-topics-old"></div><div class="rows" id="th-posts"></div>
+          <div id="tx-list"></div><div id="tx-topics"></div><p id="tx-note"></p>
         </div>
       </div>
 
@@ -1072,38 +1104,94 @@ a.row:hover .row-main{text-decoration:underline}
       r.username ? `https://t.me/${r.username}` : null, webLink)));
   }
 
-  // ── 쓰레드: Apify 자동 수집 ──
+  // ── 쓰레드: Apify 자동 수집 (조회수 기준) ──
+  function thStats(h) {
+    const s = [];
+    if (h.views != null) s.push(`조회 ${fmtN(h.views)}`); else s.push('조회 대기');
+    if (h.followers != null) s.push(`팔로워 ${fmtN(h.followers)}`);
+    if (h.spread != null) s.push(`확산 ${h.spread}배`);
+    if (h.rate != null) s.push(`반응률 ${h.rate}%`);
+    return s.join(' · ');
+  }
+  function thGradePill(g) {
+    return g === '바이럴' ? el('span', 'pill accent', '바이럴') : g === '따라 할 가치' ? el('span', 'pill positive', '따라 할 가치')
+      : g === '조회 대기' ? el('span', 'pill warning', '조회 대기') : null;
+  }
   function drawThreadsAuto() {
-    const M = (rows('thx_meta') || [])[0], H = rows('thx_hot') || [], T = rows('thx_topics') || [];
+    const M = (rows('thx_meta') || [])[0], TOP = rows('thx_top') || [], R = rows('thx_rising') || [], TP = rows('thx_topics') || [],
+      F = rows('thx_formats') || [], A = rows('thx_accounts') || [];
     const AI = (() => { const d = dash.data('threads_ai'); return d.status === 'ok' && !Array.isArray(d.data) ? d.data : null; })();
-    const kb = document.getElementById('tx-kpis'), tb = document.getElementById('tx-topics'), lb = document.getElementById('tx-list');
+    const notes = AI ? Object.fromEntries(AI.posts.map(p => [p.id, p])) : {};
+    const kb = document.getElementById('tx-kpis');
     if (!M) {
       kb.replaceChildren(kpi('자동 수집', '연결 전', 'THREADS_APIFY.md 참고'));
-      tb.replaceChildren(); empty(lb, 'Apify 토큰을 등록하면 다음 06:00부터 경제 쓰레드 글이 좋아요·답글 수와 함께 모여요.'); return;
+      ['tx-top', 'tx-rising', 'tx-topic-list', 'tx-accounts'].forEach(id => empty(document.getElementById(id), '다음 06:00 수집 뒤에 채워져요.'));
+      document.getElementById('tx-formats').replaceChildren(); return;
     }
     document.getElementById('th-badge').textContent = '자동 수집';
-    kb.replaceChildren(kpi('모은 글', fmtN(M.posts), `최근 7일 ${fmtN(M.week)}개`), kpi('작성자', `${fmtN(M.authors)}명`, `평소 대비 계산 ${fmtN(M.baselined)}명`),
-      kpi('반응 큰 주제', T[0] ? T[0].topic : '–', T[0] ? `글 ${T[0].n}개 · 반응 중앙값 ${fmtN(Math.round(T[0].median))}` : ''),
-      kpi('마지막 수집', M.collected ? M.collected.slice(5, 10).replace('-', '/') : '–', '매일 06:00'));
-    tb.replaceChildren(...T.slice(0, 8).map(t => el('span', 'pill neutral', `${t.topic} · ${t.n}개 · 중앙값 ${fmtN(Math.round(t.median))}`)));
-    const notes = AI ? Object.fromEntries(AI.posts.map(p => [p.id, p])) : {};
-    if (!H.length) { empty(lb, '최근 7일 모인 글이 아직 없어요.'); return; }
-    listWithMore(lb, H, h => {
-      const n = notes[h.id], card = el('article', 'card rec'), chips = el('div', 'chips');
+    kb.replaceChildren(
+      kpi('이번 주 글', `${fmtN(M.kept)}개`, `조회수 있는 글 ${fmtN(M.with_views)}개 · 마지막 수집 ${M.collected ? M.collected.slice(5, 10).replace('-', '/') : '–'}`),
+      kpi('바이럴', `${M.viral}개`, '조회 1만↑ · 확산 5배↑ · 반응률 2%↑'),
+      kpi('따라 할 가치', `${M.copy}개`, `점수 70↑ · 조회 2천↑ · 반응률 3%↑${M.pending ? ' · 조회 대기 ' + M.pending : ''}`),
+      kpi('이번 달 수집 비용', `$${(+M.month_cost).toFixed(2)}`, 'Apify · 1천 건당 2.5달러 · 월 25달러 안쪽'));
+    document.getElementById('tx-dropped').textContent = M.dropped ? `걸러낸 글: ${M.dropped} (언론 계정·광고·경제 아닌 글·중복은 목록에서 빼요)` : '';
+
+    const card = (h, withDraft) => {
+      const n = notes[h.id], c = el('article', 'card rec'), chips = el('div', 'chips'), g = thGradePill(h.grade);
+      if (g) chips.append(g);
       chips.append(el('span', 'pill neutral', `@${h.username}`));
-      if (h.x != null) chips.append(el('span', 'pill accent', `평소의 ${(+h.x).toFixed(1)}배`));
-      chips.append(el('span', 'pill neutral', `좋아요 ${fmtN(h.likes || 0)} · 답글 ${fmtN(h.replies || 0)} · 리포스트 ${fmtN(h.reposts || 0)}`));
+      if (h.score != null) chips.append(el('span', 'pill neutral', `점수 ${h.score}`));
+      chips.append(el('span', 'pill neutral', `${h.hook} · ${h.length} · ${h.media}`));
       if (h.topics) chips.append(el('span', 'pill positive', h.topics));
-      if (n) chips.append(el('span', 'pill warning', n.hook_type));
-      card.append(chips, el('div', 'box', h.text || '(내용 없음)'), el('p', 'sub', `${h.time} · ${h.source}`));
+      c.append(chips, el('p', 'meta-line', thStats(h)), el('div', 'box', h.text || '(내용 없음)'),
+        el('p', 'sub', `${h.time} 올림 (${h.age}) · 좋아요 ${fmtN(h.likes)} · 답글 ${fmtN(h.replies)} · 리포스트 ${fmtN(h.reposts)} · 인용 ${fmtN(h.quotes)}${h.shares ? ' · 공유 ' + fmtN(h.shares) : ''}`));
       if (n) {
-        card.append(el('p', 'why1', n.why), el('p', 'sub', `구조 · ${n.structure}`));
-        n.rewrite.forEach((t, i) => { const w = el('div', 'thread'); w.append(el('span', 'thread-n', `우리 버전 ${i + 1}/${n.rewrite.length}`), el('div', 'box', t)); card.append(w); });
-        card.append(copyBtn('우리 버전 전체 복사', n.rewrite.join('\n\n'), 'btn primary'));
-      }
-      const link = webLink(h.url); if (link) { const a = el('a', 'btn small', '원문 보기'); a.href = link; a.target = '_blank'; a.rel = 'noopener'; card.append(a); }
-      card.style.gap = '10px'; return card;
-    }, 6);
+        c.append(el('p', 'why1', n.why), el('p', 'sub', `구조 · ${n.structure}`));
+        if (withDraft) {
+          n.rewrite.forEach((t, i) => { const w = el('div', 'thread'); w.append(el('span', 'thread-n', `우리 버전 ${i + 1}/${n.rewrite.length}`), el('div', 'box', t)); c.append(w); });
+          c.append(copyBtn('우리 버전 전체 복사', n.rewrite.join('\n\n'), 'btn primary'));
+        }
+      } else if (withDraft) c.append(el('p', 'note', '우리 말투 초안은 다음 아침 Claude 분석 때 붙어요.'));
+      const link = webLink(h.url); if (link) { const a = el('a', 'btn small', '원문 보기'); a.href = link; a.target = '_blank'; a.rel = 'noopener'; c.append(a); }
+      c.style.gap = '10px'; return c;
+    };
+    const tb = document.getElementById('tx-top');
+    if (!TOP.length) empty(tb, '이번 주 기준을 넘은 글이 아직 없어요. 아래 \'지금 뜨는 글\'을 확인하세요.');
+    else tb.replaceChildren(...TOP.map(h => card(h, true)));
+
+    const rb = document.getElementById('tx-rising');
+    if (!R.length) empty(rb, '최근 48시간 안에 급상승한 글이 없어요.');
+    else listWithMore(rb, R, h => rowLink([h.grade === '조회 대기' ? el('span', 'pill warning', '조회 대기') : el('span', 'pill accent', `시간당 ${fmtN(h.velocity || 0)}`), ' ', h.text || '(내용 없음)'],
+      `@${h.username} · ${h.time} · ${thStats(h)}${h.topics ? ' · ' + h.topics : ''}`, h.url, webLink), 6);
+
+    const topics = [...new Set(TP.map(t => t.topic))], cb = document.getElementById('tx-topic-chips'), lb = document.getElementById('tx-topic-list');
+    const showTopic = t => {
+      cb.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.t === t)));
+      const ps = TP.filter(x => x.topic === t);
+      lb.replaceChildren(...ps.map(h => rowLink([thGradePill(h.grade) || '', h.grade ? ' ' : '', h.text || '(내용 없음)'], `@${h.username} · ${h.time} · ${thStats(h)}`, h.url, webLink)));
+    };
+    if (!topics.length) { cb.replaceChildren(); empty(lb, '이번 주 주제별로 기준을 넘은 글이 없어요.'); }
+    else {
+      cb.replaceChildren(...topics.map(t => { const b = el('button', 'btn small', `${t} ${TP.filter(x => x.topic === t).length}`); b.type = 'button'; b.dataset.t = t; b.addEventListener('click', () => showTopic(t)); return b; }));
+      showTopic(topics[0]);
+    }
+
+    const fb = document.getElementById('tx-formats');
+    const dims = [...new Set(F.map(f => f.dim))];
+    if (!dims.length) fb.replaceChildren(el('p', 'note', '형식별로 글이 10개 이상 모이면 보여드려요.'));
+    else fb.replaceChildren(...dims.map(d => {
+      const c = el('div', 'card'), list = el('div', 'rows');
+      c.append(el('h3', null, d));
+      list.append(...F.filter(f => f.dim === d).map(f => rowLink([f.key, f.small ? el('span', 'pill neutral', '표본 적음') : ''],
+        `확산 ${f.spread}배 (전체의 ${f.vs}배) · 반응률 ${f.rate}% · 글 ${f.n}개`, null, () => null)));
+      c.append(list); return c;
+    }));
+
+    const ab = document.getElementById('tx-accounts');
+    if (!A.length) empty(ab, '참고 계정 글은 이틀에 한 번 모아요.');
+    else ab.replaceChildren(...A.map(a => rowLink(`${a.name || a.username} (@${a.username})`,
+      `팔로워 ${fmtN(a.followers || 0)} · 중앙 조회 ${fmtN(a.median_views)} · 확산 ${a.median_spread}배 · 반응률 ${a.median_rate}% · 글 ${a.posts}개`,
+      `https://www.threads.com/@${a.username}`, webLink)));
   }
 
   // ── 쓰레드: 팀이 모은 글 ──
@@ -1157,7 +1245,7 @@ a.row:hover .row-main{text-decoration:underline}
   // ── 쓰레드 ──
   function drawThreads() {
     const M = (rows('threads_meta') || [])[0], T = rows('threads_topics') || [], P = rows('threads_posts') || [];
-    const kb = document.getElementById('th-kpis'), tb = document.getElementById('th-topics'), pb = document.getElementById('th-posts');
+    const kb = document.getElementById('th-kpis'), tb = document.getElementById('th-topics-old'), pb = document.getElementById('th-posts');
     legend('legend-th', ['최근 24시간', '최근 7일']);
     if (!M) {
       kb.replaceChildren(kpi('수집한 글', '–', '쓰레드 연결 전'), kpi('작성자', '–', ''), kpi('가장 많은 주제', '–', ''), kpi('상태', '연결 전', 'THREADS_SETUP.md 참고'));
