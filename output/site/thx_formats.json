@@ -1,1 +1,74 @@
-[]
+[
+ {
+  "dim": "길이",
+  "key": "100자 미만",
+  "n": 30,
+  "spread": 0.84,
+  "rate": 1.0,
+  "vs": 1.68,
+  "small": false
+ },
+ {
+  "dim": "길이",
+  "key": "100~300자",
+  "n": 42,
+  "spread": 0.69,
+  "rate": 1.6,
+  "vs": 1.4,
+  "small": false
+ },
+ {
+  "dim": "길이",
+  "key": "300~500자",
+  "n": 22,
+  "spread": 0.23,
+  "rate": 3.6,
+  "vs": 0.47,
+  "small": true
+ },
+ {
+  "dim": "미디어",
+  "key": "글만",
+  "n": 26,
+  "spread": 1.07,
+  "rate": 1.6,
+  "vs": 2.16,
+  "small": true
+ },
+ {
+  "dim": "미디어",
+  "key": "이미지·영상",
+  "n": 68,
+  "spread": 0.34,
+  "rate": 1.9,
+  "vs": 0.69,
+  "small": false
+ },
+ {
+  "dim": "첫 줄",
+  "key": "평서형",
+  "n": 61,
+  "spread": 0.61,
+  "rate": 1.8,
+  "vs": 1.23,
+  "small": false
+ },
+ {
+  "dim": "첫 줄",
+  "key": "숫자형",
+  "n": 13,
+  "spread": 0.41,
+  "rate": 2.2,
+  "vs": 0.82,
+  "small": true
+ },
+ {
+  "dim": "첫 줄",
+  "key": "질문형",
+  "n": 13,
+  "spread": 0.34,
+  "rate": 1.7,
+  "vs": 0.68,
+  "small": true
+ }
+]
