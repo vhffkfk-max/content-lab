@@ -6,7 +6,6 @@
 모으는 것 (월 약 22달러 안쪽, 1천 건당 2.5달러):
   - 경제 키워드 12개 × 최근 7일 인기 글 15개 (매일)
   - 참고 계정(threads_accounts.csv) 최근 글 5개씩 (이틀에 한 번)
-  - 조회수가 아직 안 나온 유망 글 + 24시간 안 된 상위 글을 다음 날 다시 읽어 조회수 채움 (하루 최대 30개)
   - 팀이 폼에 넣은 링크 → 본문·숫자·조회수를 자동으로 채움
 메타 공식 API가 아니라 공개 페이지를 읽는 외부 서비스다. 로그인·계정 연결은 하지 않는다.
 """
@@ -29,7 +28,7 @@ PRICE_PER_1K = 2.5
 THREADS_KEYWORDS = ["미국주식", "국내주식", "코인", "비트코인", "금리", "환율", "부동산", "ETF", "엔비디아", "삼성전자", "재테크", "배당"]
 PER_KEYWORD = 15
 PER_ACCOUNT = 5
-RECHECK_MAX = 30
+RECHECK_MAX = 0   # 링크 모드는 링크당 최소 10건(답글 포함) 과금이라 끔 — 인기 글은 다음 날 검색에 다시 걸리며 조회수가 갱신됨
 DEFAULT_ACCOUNTS = ["bullstory1", "heoyoopapa", "snowball_economy", "hibi_heebee", "syukaworld", "weolbu_official",
                     "buiknam", "bstory_economy", "chart_ddorai", "ekke.now"]
 
@@ -81,7 +80,7 @@ def team_links(conn):
     if "threads_saved" not in tables:
         return []
     # 숫자나 본문이 비어 있는 팀 링크만 채운다 (이미 채운 건 다시 사지 않음)
-    return [r[0] for r in conn.execute("SELECT link FROM threads_saved WHERE likes IS NULL OR text = '' LIMIT 20")]
+    return [r[0] for r in conn.execute("SELECT link FROM threads_saved WHERE likes IS NULL OR text = '' LIMIT 10")]
 
 
 def recheck_links(conn, now):
@@ -102,13 +101,15 @@ def save(conn, items, source, now):
         pid = str(p.get("post_code") or "")
         if not pid:
             continue
-        text = p.get("text") or ""
+        text = p.get("text_content") or p.get("text") or ""
         views = p.get("view_count") if p.get("view_count_status") == "available" else None
         conn.execute(
             "INSERT INTO threads_apify (post_id, code, url, username, text, posted_at, likes, replies, reposts, quotes, media_type, "
             "is_reply, source, topics, scraped_at, views, view_status, shares, followers, display_name, bio, verified, has_media, "
             "is_quote, views_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(post_id) DO UPDATE SET "
             "likes=excluded.likes, replies=excluded.replies, reposts=excluded.reposts, quotes=excluded.quotes, "
+            "text=CASE WHEN excluded.text != '' THEN excluded.text ELSE text END, "
+            "topics=CASE WHEN excluded.text != '' THEN excluded.topics ELSE topics END, "
             "shares=COALESCE(excluded.shares, shares), followers=COALESCE(excluded.followers, followers), scraped_at=excluded.scraped_at, "
             "views=COALESCE(excluded.views, views), view_status=excluded.view_status, "
             "views_at=CASE WHEN excluded.views IS NOT NULL THEN excluded.views_at ELSE views_at END, "
@@ -133,7 +134,7 @@ def fill_team_links(conn, items):
         p = by_code.get(m.group(1)) if m else None
         if not p:
             continue
-        text = p.get("text") or ""
+        text = p.get("text_content") or p.get("text") or ""
         conn.execute("UPDATE threads_saved SET likes=?, replies=?, reposts=?, author=COALESCE(NULLIF(author,''), ?), "
                      "text=CASE WHEN text='' THEN ? ELSE text END, "
                      "topics=CASE WHEN COALESCE(topics,'')='' THEN ? ELSE topics END WHERE link=?",
@@ -177,11 +178,11 @@ def main():
             total += save(conn, items, "계정", now)
             print(f"✅ 계정 {len(users[i:i + 20])}곳: {len(items)}개")
     for i in range(0, len(recheck), 20):
-        items = run_actor(token, {"mode": "post_link", "post_links": recheck[i:i + 20], "max_posts": 1})
+        items = run_actor(token, {"mode": "post_link", "post_links": recheck[i:i + 20], "max_posts": 10})
         total += save(conn, items, "다시 읽기", now)
         print(f"✅ 조회수 다시 읽기 {len(recheck[i:i + 20])}개: {len(items)}개")
     for i in range(0, len(links), 20):
-        items = run_actor(token, {"mode": "post_link", "post_links": links[i:i + 20], "max_posts": 1})
+        items = run_actor(token, {"mode": "post_link", "post_links": links[i:i + 20], "max_posts": 10})
         total += save(conn, items, "팀 링크", now)
         print(f"✅ 팀 링크 {len(links[i:i + 20])}개 중 {fill_team_links(conn, items)}개에 본문·숫자 채움")
     today = now_dt.date().isoformat()

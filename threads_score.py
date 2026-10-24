@@ -49,10 +49,13 @@ def length_of(text):
     return "100자 미만" if n < 100 else "100~300자" if n < 300 else "300~500자" if n < 500 else "500자 이상"
 
 
-def excluded_reason(r):
+def is_media(r):
     name = f"{r['username'] or ''} {r['display_name'] or ''}"
-    if MEDIA_NAME.search(name) or MEDIA_BIO.search(r["bio"] or ""):
-        return "언론 계정"
+    return bool(MEDIA_NAME.search(name) or MEDIA_BIO.search(r["bio"] or ""))
+
+
+def excluded_reason(r):
+    # 언론 계정도 경제 뉴스면 남긴다 (경제 뉴스로 조회수가 잘 나온 글도 참고 대상) — 대신 '언론' 표시
     text = r["text"] or ""
     if SPAM.search(text):
         return "광고·리딩방"
@@ -91,7 +94,7 @@ def score_posts(rows, now):
         followers = max(r["followers"] or 0, 300)
         weighted = (r["likes"] or 0) + 2 * (r["replies"] or 0) + 3 * (r["reposts"] or 0) + 3 * (r["quotes"] or 0) + 3 * (r["shares"] or 0)
         views = r["views"]
-        kept.append(dict(r, dt=dt, age_h=age_h, weighted=weighted,
+        kept.append(dict(r, dt=dt, media_acct=is_media(r), age_h=age_h, weighted=weighted,
                          rate=weighted / views if views else None, spread=views / followers if views else None,
                          velocity=views / max(age_h, 1) if views else None, pre=weighted / followers,
                          hook=hook_of(r["text"]), length=length_of(r["text"]),
@@ -124,7 +127,7 @@ def brief(p):
             "spread": round(p["spread"], 1) if p["spread"] is not None else None,
             "velocity": round(p["velocity"]) if p["velocity"] is not None else None, "score": p["score"], "grade": p["grade"],
             "hook": p["hook"], "length": p["length"], "media": "이미지·영상" if p["has_media"] else "글만",
-            "topics": p["topics"] or "", "source": p["source"], "age": p["bucket"],
+            "topics": p["topics"] or "", "source": p["source"], "age": p["bucket"], "press": p["media_acct"],
             "time": p["dt"].astimezone(KST).strftime("%m/%d %H:%M")}
 
 
@@ -150,7 +153,7 @@ def formats(kept):
 
 def section(conn, now):
     tables = {r[0] for r in conn.execute("SELECT name FROM sqlite_master WHERE type='table'")}
-    empty = {"meta": [], "top": [], "rising": [], "topics": [], "formats": [], "accounts": [], "hot": []}
+    empty = {"meta": [], "top": [], "rising": [], "topics": [], "formats": [], "accounts": [], "hot": [], "rank": []}
     if "threads_apify" not in tables:
         return empty
     cols = {r[1] for r in conn.execute("PRAGMA table_info(threads_apify)")}
@@ -189,8 +192,15 @@ def section(conn, now):
     results = conn.execute("SELECT COALESCE(SUM(results),0) FROM threads_cost WHERE date LIKE ?", (month + "%",)).fetchone()[0] \
         if "threads_cost" in tables else 0
     meta = [{"collected": max((r["scraped_at"] for r in rows), default=None), "posts": len(rows), "kept": len(kept),
-             "with_views": sum(1 for p in kept if p["views"]), "dropped": ", ".join(f"{k} {v}" for k, v in dropped.most_common()),
+             "with_views": sum(1 for p in kept if p["views"]), "dropped": ", ".join(f"{k} {v}" for k, v in dropped.most_common()), "press": sum(1 for p in kept if p["media_acct"]),
              "viral": sum(1 for p in kept if p["grade"] == "바이럴"), "copy": sum(1 for p in kept if p["grade"] == "따라 할 가치"),
              "pending": sum(1 for p in kept if p["grade"] == "조회 대기"), "month_cost": round(results * 2.5 / 1000, 2)}]
+    # 반응 랭킹: 조회수 / 퍼진 정도(리포스트+인용+공유) / 댓글 — 각 10개
+    def top_by(key, n=10):
+        return [brief(p) for p in sorted(kept, key=key, reverse=True)[:n] if key(p) > 0]
+    rank = {"views": top_by(lambda p: p["views"] or 0),
+            "shared": top_by(lambda p: (p["reposts"] or 0) + (p["quotes"] or 0) + (p["shares"] or 0)),
+            "replied": top_by(lambda p: p["replies"] or 0)}
     return {"meta": meta, "top": [brief(p) for p in top], "rising": [brief(p) for p in rising], "topics": topics,
-            "formats": formats(kept), "accounts": accounts, "hot": [brief(p) for p in ranked[:30]]}
+            "formats": formats(kept), "accounts": accounts, "hot": [brief(p) for p in ranked[:30]],
+            "rank": [dict(h, list=k) for k, hs in rank.items() for h in hs]}

@@ -235,7 +235,7 @@ a.row:hover .row-main{text-decoration:underline}
         <li><button type="button" data-ch="threads"><i class="dot" style="background:var(--ch-threads)"></i>쓰레드<span class="soon" id="th-badge">심사 중</span></button>
           <ul class="subnav" data-for="threads">
             <li><a href="#th-top">따라 할 글 TOP 5</a></li>
-            <li><a href="#th-mine">우리 계정 성과</a></li>
+            <li><a href="#th-rank">반응 랭킹·이유</a></li>
             <li><a href="#th-rising">지금 뜨는 글</a></li>
             <li><a href="#th-topics">주제별 인기</a></li>
             <li><a href="#th-formats">첫 줄·형식 분석</a></li>
@@ -447,9 +447,12 @@ a.row:hover .row-main{text-decoration:underline}
           <p class="note">'바이럴'이나 '따라 할 가치' 등급을 받은 글만 골랐어요. 한 주제는 2개까지예요. 우리 말투 초안은 매일 아침 Claude가 써요.</p>
           <div class="recs" id="tx-top"></div>
         </section>
-        <section class="sec" id="th-mine">
-          <h2>우리 계정 성과</h2>
-          <div class="card" id="tx-mine"><p class="note">쓰레드 계정을 연결하면 글마다 조회수·반응률·확산배수와 1천 조회당 새 팔로워가 나와요. (공식 Threads API, 연결 전)</p></div>
+        <section class="sec" id="th-rank">
+          <h2>반응 랭킹 — 왜 터졌나</h2>
+          <p class="note">최근 7일 경제 쓰레드 글(언론사 경제 뉴스 포함) 중 조회수·공유/리포스트·댓글이 가장 많은 글 10개씩이에요. 글마다 Claude가 왜 그렇게 반응했는지 분석해요.</p>
+          <div class="chips" id="tx-rank-tabs" style="margin:6px 0 12px"></div>
+          <div id="tx-rank-why" style="margin-bottom:12px"></div>
+          <div class="recs" id="tx-rank-list"></div>
         </section>
         <section class="sec" id="th-rising">
           <h2>지금 뜨는 글 (48시간 안)</h2>
@@ -1134,7 +1137,7 @@ a.row:hover .row-main{text-decoration:underline}
       kpi('바이럴', `${M.viral}개`, '조회 1만↑ · 확산 5배↑ · 반응률 2%↑'),
       kpi('따라 할 가치', `${M.copy}개`, `점수 70↑ · 조회 2천↑ · 반응률 3%↑${M.pending ? ' · 조회 대기 ' + M.pending : ''}`),
       kpi('이번 달 수집 비용', `$${(+M.month_cost).toFixed(2)}`, 'Apify · 1천 건당 2.5달러 · 월 25달러 안쪽'));
-    document.getElementById('tx-dropped').textContent = M.dropped ? `걸러낸 글: ${M.dropped} (언론 계정·광고·경제 아닌 글·중복은 목록에서 빼요)` : '';
+    document.getElementById('tx-dropped').textContent = M.dropped ? `걸러낸 글: ${M.dropped} (광고·리딩방·경제 아닌 글·중복은 빼고, 언론사 경제 뉴스는 '언론' 표시로 남겨요)` : '';
 
     const card = (h, withDraft) => {
       const n = notes[h.id], c = el('article', 'card rec'), chips = el('div', 'chips'), g = thGradePill(h.grade);
@@ -1192,6 +1195,46 @@ a.row:hover .row-main{text-decoration:underline}
     else ab.replaceChildren(...A.map(a => rowLink(`${a.name || a.username} (@${a.username})`,
       `팔로워 ${fmtN(a.followers || 0)} · 중앙 조회 ${fmtN(a.median_views)} · 확산 ${a.median_spread}배 · 반응률 ${a.median_rate}% · 글 ${a.posts}개`,
       `https://www.threads.com/@${a.username}`, webLink)));
+  }
+
+  // ── 쓰레드: 반응 랭킹 (조회수 / 공유·리포스트 / 댓글) + 이유 ──
+  function drawThreadsRank() {
+    const RK = rows('thx_rank') || [];
+    const AI = (() => { const d = dash.data('threads_ai'); return d.status === 'ok' && !Array.isArray(d.data) ? d.data : null; })();
+    const notes = AI ? Object.fromEntries(AI.posts.map(p => [p.id, p])) : {};
+    const tabs = [['views', '조회수 TOP', '조회수 TOP'], ['shared', '공유·리포스트 TOP', '공유·리포스트 TOP'], ['replied', '댓글 TOP', '댓글 TOP']];
+    const tb = document.getElementById('tx-rank-tabs'), pb = document.getElementById('tx-rank-why'), lb = document.getElementById('tx-rank-list');
+    if (!RK.length) { tb.replaceChildren(); pb.replaceChildren(); empty(lb, '다음 06:00 수집 뒤에 랭킹이 나와요.'); return; }
+    const show = key => {
+      tb.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.k === key)));
+      const tab = tabs.find(t => t[0] === key), pat = AI && AI.patterns ? AI.patterns.find(p => p.list === tab[2]) : null;
+      pb.replaceChildren();
+      if (pat) {
+        const c = el('div', 'card'), ul = el('ul', 'learn');
+        ul.style.marginTop = '10px';
+        ul.append(...pat.reasons.map((t, i) => { const li = el('li'); li.append(el('b', null, String(i + 1)), el('span', null, t)); return li; }));
+        c.append(el('h3', null, `${tab[1]} 글들이 잘 된 공통 이유`), ul); pb.append(c);
+      }
+      const hs = RK.filter(h => h.list === key);
+      lb.replaceChildren(...hs.map((h, i) => {
+        const n = notes[h.id], c = el('article', 'card rec'), chips = el('div', 'chips');
+        chips.append(el('span', 'pill accent', `${i + 1}위`), el('span', 'pill neutral', `@${h.username}`));
+        if (h.press) chips.append(el('span', 'pill neutral', '언론'));
+        if (n) chips.append(el('span', 'pill warning', n.trigger));
+        if (h.topics) chips.append(el('span', 'pill positive', h.topics));
+        const big = key === 'views' ? `조회 ${fmtN(h.views || 0)}` : key === 'shared' ? `리포스트 ${fmtN(h.reposts)} · 인용 ${fmtN(h.quotes)} · 공유 ${fmtN(h.shares)}` : `댓글 ${fmtN(h.replies)}`;
+        c.append(chips, el('p', 'meta-line', `${big}  |  ${thStats(h)}`), el('div', 'box', h.text || '(내용 없음)'),
+          el('p', 'sub', `${h.time} · 좋아요 ${fmtN(h.likes)} · 댓글 ${fmtN(h.replies)} · 리포스트 ${fmtN(h.reposts)} · 인용 ${fmtN(h.quotes)}${h.shares ? ' · 공유 ' + fmtN(h.shares) : ''}`));
+        c.append(n ? el('p', 'why1', n.why) : el('p', 'note', '이유 분석은 다음 아침 Claude 분석 때 붙어요.'));
+        if (n) c.append(el('p', 'sub', `첫 줄 · ${n.hook_type}  |  구조 · ${n.structure}`));
+        const link = webLink(h.url); if (link) { const a = el('a', 'btn small', '원문 보기'); a.href = link; a.target = '_blank'; a.rel = 'noopener'; c.append(a); }
+        c.style.gap = '10px'; return c;
+      }));
+    };
+    tb.replaceChildren(...tabs.filter(t => RK.some(h => h.list === t[0])).map(t => {
+      const b = el('button', 'btn small', t[1]); b.type = 'button'; b.dataset.k = t[0]; b.addEventListener('click', () => show(t[0])); return b;
+    }));
+    show(tabs.find(t => RK.some(h => h.list === t[0]))[0]);
   }
 
   // ── 쓰레드: 팀이 모은 글 ──
@@ -1421,7 +1464,7 @@ a.row:hover .row-main{text-decoration:underline}
   dash.onData(() => {
     const recs = grouped();
     drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors();
-    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics();
+    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics();
     const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/);
     setChannel(ch ? ch[1] : 'instagram');
     if (m) openPlan(+m[1]);

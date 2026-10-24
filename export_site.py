@@ -88,7 +88,7 @@ def main():
     write("threads_saved", d.get("threads_saved") or [])
     write("threads_saved_stats", d.get("threads_saved_stats") or [])
     tx = d.get("threads_auto") or {}
-    for k in ("meta", "hot", "top", "rising", "topics", "formats", "accounts"):
+    for k in ("meta", "hot", "top", "rising", "topics", "formats", "accounts", "rank"):
         write(f"thx_{k}", tx.get(k) or [])
     th = d.get("threads") or {}
     write("threads_meta", th.get("meta") or [])

@@ -1,0 +1,70 @@
+# 수집 없이 분석·Claude 쓰레드 분석·사이트만 다시 (수동 실행 전용 — 분석 방식을 바꿨을 때 바로 반영)
+name: reanalyze
+
+on:
+  workflow_dispatch:
+    inputs:
+      collect_threads:
+        description: "쓰레드도 다시 수집 (Apify 비용 약 0.5달러)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: daily-research
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install anthropic pydantic
+      - name: 쓰레드 수집 (선택)
+        if: ${{ inputs.collect_threads }}
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+        run: python apify_threads.py
+      - name: 분석
+        run: |
+          python analyze.py --no-open
+          python export_site.py
+      - name: 쓰레드 분석 (Claude)
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python threads_analyze.py
+      - name: 사이트 만들기
+        run: python build_site.py
+      - name: 결과 저장
+        continue-on-error: true
+        run: |
+          git config user.name "content-lab-bot"
+          git config user.email "content-lab-bot@users.noreply.github.com"
+          git add output/site data/insta.db
+          git commit -m "data: 다시 분석 $(date -u +%Y-%m-%d)" || echo "변경 없음"
+          git pull --rebase --autostash || true
+          git push
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
