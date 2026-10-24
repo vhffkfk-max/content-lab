@@ -168,6 +168,29 @@ async def send_alerts(client, conn, chats, dry, since_min=None):
         log.info("알림 %d개", sent)
 
 
+async def ig_alert(client, conn, dry):
+    """서버가 남긴 인스타 수집 상태(output/site/ig_health.json)가 '막힘'이면 내 텔레그램으로 한 번 알림."""
+    import json
+    path = OUTPUT_DIR / "site" / "ig_health.json"
+    if not path.exists():
+        return
+    h = json.loads(path.read_text(encoding="utf-8"))[0]
+    if h.get("status") != "blocked":
+        return
+    key = int(datetime.fromisoformat(h["checked"]).timestamp())
+    if conn.execute("SELECT 1 FROM alerted WHERE chat_id='ig_health' AND id=?", (key,)).fetchone():
+        return
+    text = ("⛔ 인스타그램 수집이 멈췄어요 (연구소 사이트)\n\n"
+            f"{h.get('message', '')[:200]}\n\n"
+            "developers.facebook.com 에 들어가 '계정 확인'이나 앱 경고를 처리한 뒤 Claude에게 '인스타 다시 연결해줘'라고 말해 주세요.")
+    if dry:
+        log.info("인스타 알림(시험) %s", text.replace("\n", " / "))
+    else:
+        await client.send_message("me", text, link_preview=False)
+    conn.execute("INSERT OR IGNORE INTO alerted VALUES ('ig_health', ?)", (key,))
+    conn.commit()
+
+
 def git(*args):
     r = subprocess.run(["git", *args], cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="ignore")
     return r.returncode, (r.stdout + r.stderr).strip()
@@ -250,6 +273,7 @@ async def run(args):
                     write_site(conn, chats)
                     if not args.no_push:
                         push()
+                    await ig_alert(client, conn, args.dry_alert)
                     last_push = datetime.now(timezone.utc)
             except Exception:
                 log.exception("갱신 중 오류 (다음 차례에 다시)")

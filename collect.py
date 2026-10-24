@@ -35,6 +35,23 @@ class ApiError(Exception):
         self.code = code
 
 
+class Blocked(Exception):
+    """토큰이 끊겼거나 메타가 앱·계정을 막음 — 더 부르면 의심만 커지니 바로 멈춘다."""
+
+
+BLOCK_HINTS = ("cannot call api", "api access blocked", "session has been invalidated", "error validating access token",
+               "has not authorized application", "password", "checkpoint")
+
+
+def write_health(status, message, ok=0, skipped=0, calls=0):
+    """수집 상태를 output/site/ig_health.json 에 남긴다 (사이트 경고, 워크플로 실패 알림, 텔레그램 알림에 씀)."""
+    out = ROOT / "output" / "site" / "ig_health.json"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps([{"checked": datetime.now(timezone.utc).isoformat(timespec="seconds"), "status": status,
+                                "message": message, "ok": ok, "skipped": skipped, "calls": calls}], ensure_ascii=False, indent=1),
+                   encoding="utf-8")
+
+
 class Graph:
     def __init__(self, token, ig_user_id, version):
         self.token = token
@@ -59,7 +76,10 @@ class Graph:
                 code = err.get("code", e.code)
                 if code in RATE_LIMIT_CODES:
                     raise RateLimited(err.get("message", "호출 한도 초과"))
-                raise ApiError(code, err.get("message", str(e)))
+                msg = err.get("message", str(e))
+                if code in (190, 102) or any(h in msg.lower() for h in BLOCK_HINTS):
+                    raise Blocked(f"[{code}] {msg}")
+                raise ApiError(code, msg)
             except (TimeoutError, urllib.error.URLError, ConnectionError) as e:
                 if attempt == 2:
                     raise ApiError("timeout", f"응답 지연으로 실패 ({e})")
@@ -199,6 +219,13 @@ def main():
                 time.sleep(DELAY_SEC)
     except RateLimited as e:
         print(f"\n⏸  API 호출 한도에 걸려 중단했습니다 ({e}). 1시간쯤 뒤 다시 실행하면 이어서 됩니다.")
+        write_health("rate_limited", str(e), ok, len(skipped), graph.calls)
+    except Blocked as e:
+        print(f"\n⛔ 인스타 연결이 끊겼거나 메타가 막았어요 — 바로 멈춰요: {e}")
+        print("   developers.facebook.com 에서 계정 확인·앱 상태를 확인하고 토큰을 다시 받아 주세요 (SETUP_GUIDE.md).")
+        write_health("blocked", str(e), ok, len(skipped), graph.calls)
+    else:
+        write_health("ok" if ok else "empty", f"계정 {ok}개 성공, {len(skipped)}개 건너뜀", ok, len(skipped), graph.calls)
 
     print(f"\n완료: 계정 {ok}개 성공, {len(skipped)}개 건너뜀, API 호출 {graph.calls}회")
     if skipped:

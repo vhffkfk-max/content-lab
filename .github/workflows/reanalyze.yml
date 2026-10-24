@@ -34,7 +34,7 @@ jobs:
         if: ${{ inputs.collect_threads }}
         env:
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
-        run: python apify_threads.py
+        run: python apify_threads.py --foreign
       - name: 분석
         run: |
           python analyze.py --no-open

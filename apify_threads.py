@@ -3,9 +3,10 @@
     python apify_threads.py           # APIFY_TOKEN 필요 (GitHub 비밀값 / .env)
     python apify_threads.py --dry-run # 호출 없이 무엇을 수집할지만 출력
 
-모으는 것 (월 약 22달러 안쪽, 1천 건당 2.5달러):
+모으는 것 (월 약 27달러 안쪽, 1천 건당 2.5달러):
   - 경제 키워드 12개 × 최근 7일 인기 글 15개 (매일)
   - 참고 계정(threads_accounts.csv) 최근 글 5개씩 (이틀에 한 번)
+  - 해외(영어·일본어·중국어) 경제 키워드 12개 × 10개 (이틀에 한 번, 참고 계정과 엇갈려서)
   - 팀이 폼에 넣은 링크 → 본문·숫자·조회수를 자동으로 채움
 메타 공식 API가 아니라 공개 페이지를 읽는 외부 서비스다. 로그인·계정 연결은 하지 않는다.
 """
@@ -27,6 +28,11 @@ API = f"https://api.apify.com/v2/acts/{ACTOR}/run-sync-get-dataset-items"
 PRICE_PER_1K = 2.5
 THREADS_KEYWORDS = ["미국주식", "국내주식", "코인", "비트코인", "금리", "환율", "부동산", "ETF", "엔비디아", "삼성전자", "재테크", "배당"]
 PER_KEYWORD = 15
+# 해외 쓰레드: 한국에 없는 형식을 찾으려고 (이틀에 한 번, 키워드당 10개)
+FOREIGN_KEYWORDS = {"english": ["stocks", "bitcoin", "investing", "personal finance"],
+                    "japanese": ["米国株", "新NISA", "ビットコイン", "投資"],
+                    "chinese": ["美股", "ETF", "比特幣", "理財"]}
+PER_FOREIGN = 10
 PER_ACCOUNT = 5
 RECHECK_MAX = 0   # 링크 모드는 링크당 최소 10건(답글 포함) 과금이라 끔 — 인기 글은 다음 날 검색에 다시 걸리며 조회수가 갱신됨
 DEFAULT_ACCOUNTS = ["bullstory1", "heoyoopapa", "snowball_economy", "hibi_heebee", "syukaworld", "weolbu_official",
@@ -147,6 +153,7 @@ def fill_team_links(conn, items):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--foreign", action="store_true", help="오늘이 해외 차례가 아니어도 해외 글 수집")
     args = ap.parse_args()
     load_env()
     conn = connect()
@@ -157,7 +164,8 @@ def main():
     users = accounts()
     account_day = now_dt.toordinal() % 2 == 0   # 참고 계정은 이틀에 한 번
     plan = (f"키워드 {len(THREADS_KEYWORDS)}개 × {PER_KEYWORD}개, 계정 {len(users)}곳 × {PER_ACCOUNT}개"
-            f"{'' if account_day else ' (오늘은 쉼)'}, 다시 읽기 {len(recheck)}개, 팀 링크 {len(links)}개")
+            f"{'' if account_day else ' (오늘은 쉼)'}, 해외 {sum(map(len, FOREIGN_KEYWORDS.values()))}개 × {PER_FOREIGN}개"
+            f"{' (오늘은 쉼)' if account_day else ''}, 다시 읽기 {len(recheck)}개, 팀 링크 {len(links)}개")
     if args.dry_run:
         print("수집 계획:", plan)
         return
@@ -172,6 +180,13 @@ def main():
                                   "max_posts": PER_KEYWORD})
         total += save(conn, items, f"검색:{q}", now)
         print(f"✅ 검색 '{q}': {len(items)}개")
+    if not account_day or args.foreign:   # 해외는 참고 계정과 엇갈린 날에 (이틀에 한 번)
+        for lang, kws in FOREIGN_KEYWORDS.items():
+            for q in kws:
+                items = run_actor(token, {"mode": "search", "keywords": [q], "search_filter": "top", "start_date": "7 days",
+                                          "search_language": lang, "max_posts": PER_FOREIGN})
+                total += save(conn, items, f"해외:{lang}:{q}", now)
+                print(f"✅ 해외 검색 '{q}' ({lang}): {len(items)}개")
     if account_day:
         for i in range(0, len(users), 20):
             items = run_actor(token, {"mode": "user", "usernames": users[i:i + 20], "max_posts": PER_ACCOUNT})

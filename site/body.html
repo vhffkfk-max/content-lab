@@ -236,6 +236,7 @@ a.row:hover .row-main{text-decoration:underline}
           <ul class="subnav" data-for="threads">
             <li><a href="#th-top">따라 할 글 TOP 5</a></li>
             <li><a href="#th-rank">반응 랭킹·이유</a></li>
+            <li><a href="#th-foreign">해외 쓰레드</a></li>
             <li><a href="#th-rising">지금 뜨는 글</a></li>
             <li><a href="#th-topics">주제별 인기</a></li>
             <li><a href="#th-formats">첫 줄·형식 분석</a></li>
@@ -265,6 +266,7 @@ a.row:hover .row-main{text-decoration:underline}
     </header>
 
     <main class="canvas"><div class="page">
+      <div class="card" id="ig-alert" hidden style="border-color:var(--pill-negative-ink);background:var(--pill-negative-bg);margin-bottom:12px"></div>
 
       <!-- 인스타그램 -->
       <div class="view" data-view="instagram">
@@ -449,10 +451,17 @@ a.row:hover .row-main{text-decoration:underline}
         </section>
         <section class="sec" id="th-rank">
           <h2>반응 랭킹 — 왜 터졌나</h2>
-          <p class="note">최근 7일 경제 쓰레드 글(언론사 경제 뉴스 포함) 중 조회수·공유/리포스트·댓글이 가장 많은 글 10개씩이에요. 글마다 Claude가 왜 그렇게 반응했는지 분석해요.</p>
+          <p class="note">최근 7일 한국어 경제 쓰레드 글(언론사 경제 뉴스 포함) 중 조회수·공유/리포스트·댓글이 가장 많은 글 10개씩이에요. 글마다 Claude가 왜 그렇게 반응했는지 분석해요.</p>
           <div class="chips" id="tx-rank-tabs" style="margin:6px 0 12px"></div>
           <div id="tx-rank-why" style="margin-bottom:12px"></div>
           <div class="recs" id="tx-rank-list"></div>
+        </section>
+        <section class="sec" id="th-foreign">
+          <h2>해외 쓰레드 — 한국에 없는 형식</h2>
+          <p class="note">영어·일본어·중국어 경제 쓰레드 중 조회수·공유·댓글이 많은 글이에요(이틀에 한 번 수집). Claude가 한국어로 요약하고, 왜 터졌는지와 한국에 들여올 방법을 써요.</p>
+          <div class="chips" id="tx-foreign-tabs" style="margin:6px 0 12px"></div>
+          <div id="tx-foreign-why" style="margin-bottom:12px"></div>
+          <div class="recs" id="tx-foreign-list"></div>
         </section>
         <section class="sec" id="th-rising">
           <h2>지금 뜨는 글 (48시간 안)</h2>
@@ -1107,6 +1116,15 @@ a.row:hover .row-main{text-decoration:underline}
       r.username ? `https://t.me/${r.username}` : null, webLink)));
   }
 
+  // ── 인스타 연결 상태 경고 ──
+  function drawIgHealth() {
+    const h = (rows('ig_health') || [])[0], box = document.getElementById('ig-alert');
+    if (!h || h.status !== 'blocked') { box.hidden = true; return; }
+    box.hidden = false;
+    box.replaceChildren(el('b', null, '인스타그램 수집이 멈췄어요'),
+      el('p', 'sub', `${h.checked.slice(5, 10).replace('-', '/')} 수집부터 메타가 연결을 막았어요. 인스타 숫자는 마지막으로 성공한 날 기준이에요. 쓰레드·텔레그램·뉴스는 정상이에요.`));
+  }
+
   // ── 쓰레드: Apify 자동 수집 (조회수 기준) ──
   function thStats(h) {
     const s = [];
@@ -1235,6 +1253,42 @@ a.row:hover .row-main{text-decoration:underline}
       const b = el('button', 'btn small', t[1]); b.type = 'button'; b.dataset.k = t[0]; b.addEventListener('click', () => show(t[0])); return b;
     }));
     show(tabs.find(t => RK.some(h => h.list === t[0]))[0]);
+  }
+
+  // ── 쓰레드: 해외 (영어·일본어·중국어) ──
+  function drawThreadsForeign() {
+    const FX = rows('thx_foreign') || [];
+    const AI = (() => { const d = dash.data('threads_ai'); return d.status === 'ok' && !Array.isArray(d.data) ? d.data : null; })();
+    const notes = AI ? Object.fromEntries(AI.posts.map(p => [p.id, p])) : {};
+    const tb = document.getElementById('tx-foreign-tabs'), pb = document.getElementById('tx-foreign-why'), lb = document.getElementById('tx-foreign-list');
+    const pat = AI && AI.patterns ? AI.patterns.find(p => p.list === '해외 TOP') : null;
+    pb.replaceChildren();
+    if (pat) {
+      const c = el('div', 'card'), ul = el('ul', 'learn');
+      ul.style.marginTop = '10px';
+      ul.append(...pat.reasons.map((t, i) => { const li = el('li'); li.append(el('b', null, String(i + 1)), el('span', null, t)); return li; }));
+      c.append(el('h3', null, '해외에서 잘 되는데 한국엔 없는 것'), ul); pb.append(c);
+    }
+    if (!FX.length) { tb.replaceChildren(); empty(lb, '해외 글은 이틀에 한 번 모아요. 다음 수집 뒤에 채워져요.'); return; }
+    const langs = [...new Set(FX.map(h => h.lang))];
+    const show = lang => {
+      tb.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.l === lang)));
+      lb.replaceChildren(...FX.filter(h => h.lang === lang).map(h => {
+        const n = notes[h.id], c = el('article', 'card rec'), chips = el('div', 'chips');
+        chips.append(el('span', 'pill neutral', h.lang), el('span', 'pill neutral', `@${h.username}`));
+        if (n && n.trigger) chips.append(el('span', 'pill warning', n.trigger));
+        c.append(chips, el('p', 'meta-line', `${thStats(h)} · 리포스트 ${fmtN(h.reposts)} · 공유 ${fmtN(h.shares)} · 댓글 ${fmtN(h.replies)}`));
+        if (n && n.summary_ko) c.append(el('div', 'box', n.summary_ko));
+        if (n) c.append(el('p', 'why1', n.why));
+        if (n && n.import_idea) c.append(el('p', 'sub', `한국에 들여오기 · ${n.import_idea}`));
+        if (!n) c.append(el('p', 'note', '한국어 요약과 이유는 다음 아침 Claude 분석 때 붙어요.'));
+        const orig = el('details'); orig.append(el('summary', null, '원문 보기'), el('div', 'box', h.text || '(내용 없음)')); c.append(orig);
+        const link = webLink(h.url); if (link) { const a = el('a', 'btn small', '쓰레드에서 열기'); a.href = link; a.target = '_blank'; a.rel = 'noopener'; c.append(a); }
+        c.style.gap = '10px'; return c;
+      }));
+    };
+    tb.replaceChildren(...langs.map(l => { const b = el('button', 'btn small', `${l} ${FX.filter(h => h.lang === l).length}`); b.type = 'button'; b.dataset.l = l; b.addEventListener('click', () => show(l)); return b; }));
+    show(langs[0]);
   }
 
   // ── 쓰레드: 팀이 모은 글 ──
@@ -1464,7 +1518,7 @@ a.row:hover .row-main{text-decoration:underline}
   dash.onData(() => {
     const recs = grouped();
     drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors();
-    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics();
+    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics();
     const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/);
     setChannel(ch ? ch[1] : 'instagram');
     if (m) openPlan(+m[1]);

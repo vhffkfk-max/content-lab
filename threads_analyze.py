@@ -19,7 +19,8 @@ from common import DEFAULT_DB, OUTPUT_DIR, connect, load_env
 
 MODEL = "claude-opus-5-5"
 OUT = OUTPUT_DIR / "site" / "threads_ai.json"
-LISTS = {"top": "따라 할 글 TOP", "views": "조회수 TOP", "shared": "공유·리포스트 TOP", "replied": "댓글 TOP", "team": "팀이 모은 글"}
+LISTS = {"top": "따라 할 글 TOP", "views": "조회수 TOP", "shared": "공유·리포스트 TOP", "replied": "댓글 TOP", "team": "팀이 모은 글",
+         "foreign": "해외 TOP"}
 
 SYSTEM = """당신은 한국 경제 크리에이터 @hotconomy 의 쓰레드(Threads) 전략가입니다.
 경제(주식·코인·금리·환율·부동산·경제 뉴스) 쓰레드 글 중 조회수, 공유·리포스트, 댓글이 많았던 글을 받아
@@ -29,6 +30,7 @@ SYSTEM = """당신은 한국 경제 크리에이터 @hotconomy 의 쓰레드(Thr
 - 조회수 TOP 글: 왜 많이 노출됐나 (주제의 시의성, 첫 줄, 팔로워 밖으로 퍼진 정도=확산배수)
 - 공유·리포스트 TOP 글: 왜 남에게 보내고 싶었나 (저장·전달할 정보, 정리형, 숫자, 남에게 알려주고 싶은 소식)
 - 댓글 TOP 글: 왜 말을 걸고 싶었나 (질문, 논쟁 거리, 의견이 갈리는 주장, 경험 공유 유도)
+- lists 에 '해외 TOP' 이 있으면 영어·일본어·중국어 해외 글입니다(lang). 한국에 아직 없는 형식·소재인지 봐 주세요.
 - press=true 는 언론사 계정입니다. 언론 글은 '소식 자체'의 힘인지 '전달 방식'의 힘인지 구분해 주세요.
 
 규칙:
@@ -36,11 +38,13 @@ SYSTEM = """당신은 한국 경제 크리에이터 @hotconomy 의 쓰레드(Thr
 - 원문을 그대로 베끼지 않습니다. rewrite 는 같은 '구조와 훅 방식'만 빌려 @hotconomy 의 경제 주제로 새로 씁니다.
 - 특정 종목 매수·매도 권유, 수익 보장, 매수 시점 암시를 쓰지 않습니다. 주식·코인·부동산 글 마지막에는 투자 권유가 아니라는 한 줄을 넣습니다.
 - summary: 받은 글 전체의 공통점 3줄 (각 60자 안팎).
-- patterns: 랭킹마다(조회수 TOP, 공유·리포스트 TOP, 댓글 TOP) 공통 이유 3줄씩. list 는 그 랭킹 이름 그대로.
+- patterns: 랭킹마다(조회수 TOP, 공유·리포스트 TOP, 댓글 TOP, 해외 TOP) 공통 이유 3줄씩. 해외 TOP 은 '한국에 없는 형식'이 무엇인지 중심으로. list 는 그 랭킹 이름 그대로.
 - formulas: 따라 쓸 수 있는 쓰레드 글 공식 3~5개. name, pattern(구조 한 줄, 예: '숫자 한 줄 → 이유 3개 → 질문'),
   example_hook(우리 계정용 첫 문장 예시), when(언제 쓰나), sources(근거 글 번호들).
 - posts: 받은 글 각각에 no(번호 그대로), hook_type(첫 문장 방식), trigger(반응을 끈 장치 10자 안팎, 예: '숫자 정리', '편 가르기 질문', '속보 요약'),
   why(왜 조회·공유·댓글이 많았는지 2~3문장, 그 글이 든 랭킹에 맞춰 구체적으로, 수치 근거 포함), structure(구조 한 줄),
+  summary_ko(해외 글만: 한국어로 무슨 내용인지 1~2문장, 한국 글이면 빈 문자열),
+  import_idea(해외 글만: 한국에 없는 형식이면 우리 계정에 어떻게 들여올지 1~2문장, 한국 글이면 빈 문자열),
   rewrite(draft=true 인 글만 우리 계정용 쓰레드 글 1~2개, 각 300자 이내. draft=false 면 빈 목록)."""
 
 
@@ -58,7 +62,8 @@ def load_posts(db):
         import threads_score
         sec = threads_score.section(conn, datetime.now(timezone.utc))
         by_code = {r["code"]: r for r in rows}
-        groups = [("top", sec["top"])] + [(k, [h for h in sec["rank"] if h["list"] == k]) for k in ("views", "shared", "replied")]
+        groups = ([("top", sec["top"])] + [(k, [h for h in sec["rank"] if h["list"] == k]) for k in ("views", "shared", "replied")]
+                  + [("foreign", sec["foreign"])])
         for key, hs in groups:
             for h in hs:
                 code = h["url"].rstrip("/").rsplit("/", 1)[-1]
@@ -68,12 +73,12 @@ def load_posts(db):
                     by_code[code]["draft"] = by_code[code]["draft"] or key == "top"
                     continue
                 row = {"id": h["id"], "code": code, "lists": [key], "draft": key == "top", "author": h["username"],
-                       "press": h.get("press", False), "text": h["text"], "followers": h["followers"], "views": h["views"],
+                       "press": h.get("press", False), "lang": h.get("lang"), "text": h["text"], "followers": h["followers"], "views": h["views"],
                        "spread": h["spread"], "rate": h["rate"], "likes": h["likes"], "replies": h["replies"], "reposts": h["reposts"],
                        "quotes": h["quotes"], "shares": h["shares"]}
                 rows.append(row)
                 by_code[code] = row
-    return rows[:45]
+    return rows[:60]
 
 
 def main():
@@ -86,7 +91,7 @@ def main():
     if not posts:
         print("분석할 쓰레드 글이 아직 없어요 — 분석을 건너뛰어요.")
         return
-    keys = ("author", "press", "followers", "views", "spread", "rate", "likes", "replies", "reposts", "quotes", "shares", "memo", "draft")
+    keys = ("author", "lang", "press", "followers", "views", "spread", "rate", "likes", "replies", "reposts", "quotes", "shares", "memo", "draft")
     items = [{"no": i, "lists": [LISTS[k] for k in p["lists"]], **{k: p[k] for k in keys if p.get(k) not in (None, "")},
               "text": p["text"][:1200]} for i, p in enumerate(posts, 1)]
     digest = hashlib.sha1(json.dumps(items, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
@@ -119,6 +124,8 @@ def main():
         no: int
         hook_type: str
         trigger: str
+        summary_ko: str
+        import_idea: str
         why: str
         structure: str
         rewrite: List[str]

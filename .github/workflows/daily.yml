@@ -5,6 +5,11 @@ on:
   schedule:
     - cron: "0 21 * * *"   # UTC 21:00 = 한국시간 06:00
   workflow_dispatch:
+    inputs:
+      instagram:
+        description: "인스타도 수집 (평소엔 끄기 — 하루 여러 번 부르면 메타가 비정상 활동으로 막을 수 있음)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -37,8 +42,13 @@ jobs:
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
         run: |
-          python own_collect.py
-          python collect.py --max-posts 60
+          # 인스타 API 는 하루 1번(06:00 정기 실행)만 부른다. 손으로 돌릴 땐 'instagram' 을 켰을 때만.
+          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.instagram }}" = "true" ]; then
+            python own_collect.py
+            python collect.py --max-posts 60
+          else
+            echo "수동 실행이라 인스타 수집은 건너뛰어요 (지난 데이터로 분석)"
+          fi
           python google_collect.py
           python press_collect.py
           python threads_collect.py
@@ -91,3 +101,24 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # 인스타 연결이 끊기면 이 단계가 실패 → GitHub 이 저장소 주인에게 메일로 알림 (사이트 배포는 이미 끝난 뒤)
+  instagram-health:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: 인스타 연결 확인
+        run: |
+          python3 - <<'EOF'
+          import json, os, sys
+          if not os.path.exists("output/site/ig_health.json"):
+              sys.exit(0)
+          h = json.load(open("output/site/ig_health.json", encoding="utf-8"))[0]
+          print(h)
+          if h["status"] == "blocked":
+              print("::error::인스타 연결이 끊겼어요: " + h["message"])
+              sys.exit(1)
+          EOF

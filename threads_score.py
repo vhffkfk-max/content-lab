@@ -54,15 +54,35 @@ def is_media(r):
     return bool(MEDIA_NAME.search(name) or MEDIA_BIO.search(r["bio"] or ""))
 
 
-def excluded_reason(r):
+LANG_NAMES = {"ko": "한국어", "en": "영어", "ja": "일본어", "zh": "중국어", "etc": "기타 언어"}
+
+
+def lang_of(text):
+    letters = re.findall(r"[^\W\d_]", text or "")
+    if not letters:
+        return "ko"
+    n = len(letters)
+    if len(re.findall(r"[가-힣]", text)) / n >= 0.3:
+        return "ko"
+    if re.search(r"[぀-ヿ]", text):
+        return "ja"
+    if len(re.findall(r"[一-鿿]", text)) / n >= 0.3:
+        return "zh"
+    if len(re.findall(r"[A-Za-z]", text)) / n >= 0.6:
+        return "en"
+    return "etc"
+
+
+def excluded_reason(r, foreign=False):
     # 언론 계정도 경제 뉴스면 남긴다 (경제 뉴스로 조회수가 잘 나온 글도 참고 대상) — 대신 '언론' 표시
     text = r["text"] or ""
     if SPAM.search(text):
         return "광고·리딩방"
     if len(text.strip()) < 15:
         return "너무 짧음"
-    letters = re.findall(r"[^\W\d_]", text)
-    if letters and len(re.findall(r"[가-힣]", text)) / len(letters) < 0.3:
+    if foreign:   # 해외 글은 경제 키워드로 찾은 글이라 주제 판정은 건너뜀 (주제 사전이 한국어라서)
+        return None
+    if lang_of(text) != "ko":
         return "한국어 아님"
     econ = [t for t in (r["topics"] or "").split(", ") if t and t not in ("기타", "정치·관세")]
     if not econ or (POLITICS.search(text[:200]) and len(econ) < 2):
@@ -77,7 +97,7 @@ def pct_rank(values):
     return [(sum(1 for v in order if v < x) + 0.5 * sum(1 for v in order if v == x)) / n if n else 0 for x in values]
 
 
-def score_posts(rows, now):
+def score_posts(rows, now, foreign=False):
     """rows: threads_apify 행(dict). 지표·점수·등급을 붙여 돌려준다 (거른 글은 excluded 사유)."""
     seen, kept, dropped = set(), [], Counter()
     for r in rows:
@@ -89,7 +109,7 @@ def score_posts(rows, now):
         if key in seen:
             continue
         seen.add(key)
-        why = excluded_reason(r)
+        why = excluded_reason(r, foreign)
         if why:
             dropped[why] += 1
             continue
@@ -100,7 +120,7 @@ def score_posts(rows, now):
         kept.append(dict(r, dt=dt, media_acct=is_media(r), age_h=age_h, weighted=weighted,
                          rate=weighted / views if views else None, spread=views / followers if views else None,
                          velocity=views / max(age_h, 1) if views else None, pre=weighted / followers,
-                         hook=hook_of(r["text"]), length=length_of(r["text"]),
+                         hook=hook_of(r["text"]), length=length_of(r["text"]), lang=lang_of(r["text"]),
                          bucket=next(name for a, b, name in AGE_BUCKETS if a <= age_h < b or name == "3~7일")))
     for _, _, name in AGE_BUCKETS:
         group = [p for p in kept if p["bucket"] == name and p["views"]]
@@ -131,6 +151,7 @@ def brief(p):
             "velocity": round(p["velocity"]) if p["velocity"] is not None else None, "score": p["score"], "grade": p["grade"],
             "hook": p["hook"], "length": p["length"], "media": "이미지·영상" if p["has_media"] else "글만",
             "topics": p["topics"] or "", "source": p["source"], "age": p["bucket"], "press": p["media_acct"],
+            "lang": LANG_NAMES.get(p["lang"], p["lang"]),
             "time": p["dt"].astimezone(KST).strftime("%m/%d %H:%M")}
 
 
@@ -156,7 +177,7 @@ def formats(kept):
 
 def section(conn, now):
     tables = {r[0] for r in conn.execute("SELECT name FROM sqlite_master WHERE type='table'")}
-    empty = {"meta": [], "top": [], "rising": [], "topics": [], "formats": [], "accounts": [], "hot": [], "rank": []}
+    empty = {"meta": [], "top": [], "rising": [], "topics": [], "formats": [], "accounts": [], "hot": [], "rank": [], "foreign": []}
     if "threads_apify" not in tables:
         return empty
     cols = {r[1] for r in conn.execute("PRAGMA table_info(threads_apify)")}
@@ -165,7 +186,20 @@ def section(conn, now):
     week = (now - timedelta(days=7)).isoformat()
     rows = [dict(r) for r in conn.execute(
         "SELECT * FROM threads_apify WHERE is_reply = 0 AND posted_at >= ? AND view_status IS NOT NULL", (week,))]
+    foreign_rows = [r for r in rows if (r["source"] or "").startswith("해외") or lang_of(r["text"]) not in ("ko",)]
+    rows = [r for r in rows if r not in foreign_rows]
     kept, dropped = score_posts(rows, now)
+    fkept, _ = score_posts(foreign_rows, now, foreign=True)
+    foreign = []
+    for lang in ("en", "ja", "zh"):
+        ps = [p for p in fkept if p["lang"] == lang and p["views"]]
+        picked, ids = [], set()
+        for key in (lambda p: p["views"], lambda p: (p["reposts"] or 0) + (p["quotes"] or 0) + (p["shares"] or 0), lambda p: p["replies"] or 0):
+            for p in sorted(ps, key=key, reverse=True)[:5]:
+                if p["post_id"] not in ids:
+                    ids.add(p["post_id"])
+                    picked.append(p)
+        foreign += [brief(p) for p in sorted(picked, key=lambda p: -p["views"])]
     ranked = sorted(kept, key=lambda p: (p["score"] or -1, p["views"] or 0), reverse=True)
     top, per_topic = [], Counter()
     for p in ranked:
@@ -206,4 +240,4 @@ def section(conn, now):
             "replied": top_by(lambda p: p["replies"] or 0)}
     return {"meta": meta, "top": [brief(p) for p in top], "rising": [brief(p) for p in rising], "topics": topics,
             "formats": formats(kept), "accounts": accounts, "hot": [brief(p) for p in ranked[:30]],
-            "rank": [dict(h, list=k) for k, hs in rank.items() for h in hs]}
+            "rank": [dict(h, list=k) for k, hs in rank.items() for h in hs], "foreign": foreign}
