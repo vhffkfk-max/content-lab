@@ -61,6 +61,9 @@ def excluded_reason(r):
         return "광고·리딩방"
     if len(text.strip()) < 15:
         return "너무 짧음"
+    letters = re.findall(r"[^\W\d_]", text)
+    if letters and len(re.findall(r"[가-힣]", text)) / len(letters) < 0.3:
+        return "한국어 아님"
     econ = [t for t in (r["topics"] or "").split(", ") if t and t not in ("기타", "정치·관세")]
     if not econ or (POLITICS.search(text[:200]) and len(econ) < 2):
         return "경제 주제 아님"
