@@ -43,13 +43,21 @@ BLOCK_HINTS = ("cannot call api", "api access blocked", "session has been invali
                "has not authorized application", "password", "checkpoint")
 
 
-def write_health(status, message, ok=0, skipped=0, calls=0):
+def write_health(status, message, ok=0, skipped=0, calls=0, peak=0):
     """수집 상태를 output/site/ig_health.json 에 남긴다 (사이트 경고, 워크플로 실패 알림, 텔레그램 알림에 씀)."""
     out = ROOT / "output" / "site" / "ig_health.json"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps([{"checked": datetime.now(timezone.utc).isoformat(timespec="seconds"), "status": status,
-                                "message": message, "ok": ok, "skipped": skipped, "calls": calls}], ensure_ascii=False, indent=1),
+                                "message": message, "ok": ok, "skipped": skipped, "calls": calls,
+                                "peak_usage": peak}], ensure_ascii=False, indent=1),
                    encoding="utf-8")
+
+
+# 메타는 응답 헤더(X-Business-Use-Case-Usage)로 '한도 중 몇 % 썼나'를 알려준다.
+# 그 값을 보며 천천히 부르고, 넘치기 전에 멈춘다 (넘치면 메타가 비정상 활동으로 볼 수 있음).
+SLOW_AT, STOP_AT = 50, 85          # 50% 넘으면 천천히(호출 사이 20초), 85% 넘으면 오늘은 그만
+SLOW_DELAY_SEC = 20
+MAX_WAIT_MIN = 20                  # 한도에 걸렸을 때 이 시간 안에 풀린다고 하면 기다렸다 이어서
 
 
 class Graph:
@@ -58,6 +66,35 @@ class Graph:
         self.ig_user_id = ig_user_id
         self.base = f"https://graph.facebook.com/{version}"
         self.calls = 0
+        self.usage = 0        # 가장 최근 응답이 알려준 사용률(%) — 1시간 창으로 움직임
+        self.peak = 0         # 이번 실행에서 본 가장 높은 사용률
+        self.regain_min = 0   # 한도에 걸렸을 때 풀리기까지 남은 분
+
+    def read_usage(self, headers):
+        """X-Business-Use-Case-Usage(인스타 사업용 한도)와 X-App-Usage(앱 한도: 호출 수·CPU·처리 시간 %)를 읽는다."""
+        if not headers:
+            return
+        data = {}
+        try:
+            data = json.loads(headers.get("X-Business-Use-Case-Usage") or "{}")
+            app = json.loads(headers.get("X-App-Usage") or "{}")
+        except json.JSONDecodeError:
+            return
+        if app:
+            data["app"] = [app]
+        now = [max(u.get("call_count", 0), u.get("total_cputime", 0), u.get("total_time", 0))
+               for items in data.values() for u in items]
+        if now:
+            self.usage = max(now)
+            self.peak = max(self.peak, self.usage)
+        self.regain_min = max([u.get("estimated_time_to_regain_access", 0) or 0 for items in data.values() for u in items] or [0])
+
+    def pace(self):
+        """다음 호출 전 쉬는 시간: 사용률이 높을수록 천천히."""
+        time.sleep(SLOW_DELAY_SEC if self.usage >= SLOW_AT else DELAY_SEC)
+
+    def near_limit(self):
+        return self.usage >= STOP_AT
 
     def get(self, path, params):
         query = urllib.parse.urlencode({**params, "access_token": self.token})
@@ -67,15 +104,23 @@ class Graph:
             self.calls += 1
             try:
                 with urllib.request.urlopen(url, timeout=90) as resp:
+                    self.read_usage(resp.headers)
                     return json.load(resp)
             except urllib.error.HTTPError as e:
+                self.read_usage(e.headers)
                 try:
                     err = json.loads(e.read() or b"{}").get("error", {})
                 except json.JSONDecodeError:
                     err = {}
                 code = err.get("code", e.code)
                 if code in RATE_LIMIT_CODES:
-                    raise RateLimited(err.get("message", "호출 한도 초과"))
+                    wait = self.regain_min or MAX_WAIT_MIN   # 앱 한도는 1시간 창이라 남은 시간을 안 알려줌 → 20분 쉬고 다시
+                    if wait <= MAX_WAIT_MIN and attempt < 2:
+                        print(f"   ⏳ 호출 한도(사용률 {self.usage}%) — {wait}분 쉬었다가 이어서 해요")
+                        time.sleep(wait * 60 + 30)
+                        self.regain_min = 0
+                        continue
+                    raise RateLimited(err.get("message", "호출 한도 초과") + (f" · {self.regain_min}분 뒤 풀림" if self.regain_min else ""))
                 msg = err.get("message", str(e))
                 if code in (190, 102) or any(h in msg.lower() for h in BLOCK_HINTS):
                     raise Blocked(f"[{code}] {msg}")
@@ -102,7 +147,7 @@ def fetch_account(graph, username, max_posts, with_views):
         cursor = media.get("paging", {}).get("cursors", {}).get("after")
         if not batch or not cursor:
             break
-        time.sleep(DELAY_SEC)
+        graph.pace()
     return info, posts
 
 
@@ -113,7 +158,7 @@ def fetch_hashtag(graph, tag):
     hashtag_id = found[0]["id"]
     # 인기 해시태그는 한 번에 많이 달라고 하면 '데이터를 줄여 달라'(code 1)며 거절해서 점점 줄여 재시도
     for limit in (50, 25, 10):
-        time.sleep(DELAY_SEC)
+        graph.pace()
         try:
             res = graph.get(f"{hashtag_id}/top_media",
                             {"user_id": graph.ig_user_id, "fields": HASHTAG_FIELDS, "limit": limit})
@@ -162,7 +207,8 @@ def save_hashtag(conn, row, posts, now):
 
 def main():
     ap = argparse.ArgumentParser(description="인스타그램 경제 계정 데이터 수집")
-    ap.add_argument("--max-posts", type=int, default=60, help="계정당 최근 게시물 수 (기본 60)")
+    ap.add_argument("--max-posts", type=int, default=25, help="계정당 최근 게시물 수 (기본 25 = 계정당 1번 호출, 옛 글은 DB에 남아 있음)")
+    ap.add_argument("--all-hashtags", action="store_true", help="해시태그를 반만이 아니라 전부")
     ap.add_argument("--only", help="쉼표로 구분한 아이디만 수집")
     ap.add_argument("--skip-hashtags", action="store_true")
     ap.add_argument("--hashtags-only", action="store_true", help="계정은 건너뛰고 해시태그만 수집")
@@ -188,6 +234,8 @@ def main():
     ok, skipped, with_views = 0, [], True
     try:
         for row in accounts:
+            if graph.near_limit():
+                raise RateLimited(f"사용률 {graph.usage}% — 넘치기 전에 오늘은 여기까지 (남은 계정은 다음 실행 때 먼저)")
             username = row["username"].strip().lstrip("@")
             try:
                 try:
@@ -205,10 +253,15 @@ def main():
             except ApiError as e:
                 skipped.append((username, str(e)))
                 print(f"⚠️  @{username} 건너뜀 — 개인 계정이거나 아이디가 틀렸을 수 있음 {e}")
-            time.sleep(DELAY_SEC)
+            graph.pace()
 
         if not args.skip_hashtags and not args.only:
-            for row in read_csv("hashtags.csv"):
+            # 해시태그는 반씩 번갈아 (하루에 절반) — 호출을 아끼려고
+            tags = read_csv("hashtags.csv")
+            half = datetime.now(timezone.utc).toordinal() % 2
+            for row in (tags if args.all_hashtags else tags[half::2]):
+                if graph.near_limit():
+                    raise RateLimited(f"사용률 {graph.usage}% — 넘치기 전에 해시태그는 여기까지")
                 tag = row["tag"].lstrip("#").strip()
                 try:
                     posts = fetch_hashtag(graph, tag)
@@ -216,18 +269,18 @@ def main():
                     print(f"✅ #{tag}: 인기 게시물 {len(posts)}개 수집")
                 except ApiError as e:
                     print(f"⚠️  #{tag} 건너뜀 {e}")
-                time.sleep(DELAY_SEC)
+                graph.pace()
     except RateLimited as e:
         print(f"\n⏸  API 호출 한도에 걸려 중단했습니다 ({e}). 1시간쯤 뒤 다시 실행하면 이어서 됩니다.")
-        write_health("rate_limited", str(e), ok, len(skipped), graph.calls)
+        write_health("rate_limited", str(e), ok, len(skipped), graph.calls, graph.peak)
     except Blocked as e:
         print(f"\n⛔ 인스타 연결이 끊겼거나 메타가 막았어요 — 바로 멈춰요: {e}")
         print("   developers.facebook.com 에서 계정 확인·앱 상태를 확인하고 토큰을 다시 받아 주세요 (SETUP_GUIDE.md).")
-        write_health("blocked", str(e), ok, len(skipped), graph.calls)
+        write_health("blocked", str(e), ok, len(skipped), graph.calls, graph.peak)
     else:
-        write_health("ok" if ok else "empty", f"계정 {ok}개 성공, {len(skipped)}개 건너뜀", ok, len(skipped), graph.calls)
+        write_health("ok" if ok else "empty", f"계정 {ok}개 성공, {len(skipped)}개 건너뜀", ok, len(skipped), graph.calls, graph.peak)
 
-    print(f"\n완료: 계정 {ok}개 성공, {len(skipped)}개 건너뜀, API 호출 {graph.calls}회")
+    print(f"\n완료: 계정 {ok}개 성공, {len(skipped)}개 건너뜀, API 호출 {graph.calls}회 (최고 사용률 {graph.peak}%)")
     if skipped:
         print("건너뛴 계정은 accounts.csv 에서 아이디를 확인하거나 지워주세요:")
         for u, msg in skipped:

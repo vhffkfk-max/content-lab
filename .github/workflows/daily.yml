@@ -45,7 +45,7 @@ jobs:
           # 인스타 API 는 하루 1번(06:00 정기 실행)만 부른다. 손으로 돌릴 땐 'instagram' 을 켰을 때만.
           if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.instagram }}" = "true" ]; then
             python own_collect.py
-            python collect.py --max-posts 60
+            python collect.py --max-posts 25   # 계정당 1번 호출 (옛 글은 DB에 쌓여 있음)
           else
             echo "수동 실행이라 인스타 수집은 건너뛰어요 (지난 데이터로 분석)"
           fi
