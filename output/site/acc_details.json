@@ -170,10 +170,10 @@
   "region_er": 0.14,
   "growth_pct": -0.02,
   "likes_hidden": false,
-  "posts_60d": 55,
+  "posts_60d": 54,
   "lead_share": 0,
   "best_format": "단일 이미지 (1.9배, 7개)",
-  "best_hook": "속보·뉴스형 (1.2배, 28개)",
+  "best_hook": "속보·뉴스형 (1.1배, 27개)",
   "best_slot": "새벽(0~6시) (1.3배, 26개)",
   "best_weekday": "토 (1.9배, 4개)",
   "main_topics": "비트코인, 테슬라, 급락·변동성",
@@ -210,9 +210,9 @@
   "region_er": 0.08,
   "growth_pct": null,
   "likes_hidden": false,
-  "posts_60d": 26,
+  "posts_60d": 25,
   "lead_share": 27,
-  "best_format": "캐러셀(카드뉴스) (1.3배, 9개)",
+  "best_format": "캐러셀(카드뉴스) (1.3배, 8개)",
   "best_hook": "질문형 (1.5배, 3개)",
   "best_slot": "밤(21~24시) (1.2배, 3개)",
   "best_weekday": "금 (1.2배, 6개)",
@@ -480,6 +480,26 @@
   "rec_overlap": "테슬라, AI·반도체, 물가·경기, 국내 대형주, 급락·변동성"
  },
  {
+  "username": "crypto.news.io",
+  "name": "Crypto News & Updates",
+  "region": "해외",
+  "category": "코인",
+  "followers": 254644,
+  "posts_per_week": 0.8,
+  "er": 0.08,
+  "region_er": 0.14,
+  "growth_pct": null,
+  "likes_hidden": false,
+  "posts_60d": 7,
+  "lead_share": 0,
+  "best_format": "단일 이미지 (0.8배, 5개)",
+  "best_hook": "짧은 한 줄 (0.7배, 3개)",
+  "best_slot": "새벽(0~6시) (0.8배, 4개)",
+  "best_weekday": "",
+  "main_topics": "비트코인, 알트코인, 정치·관세",
+  "rec_overlap": ""
+ },
+ {
   "username": "etfcom",
   "name": "etf.com",
   "region": "해외",
@@ -517,27 +537,7 @@
   "best_slot": "점심(12~14시) (4.7배, 8개)",
   "best_weekday": "수 (3.0배, 22개)",
   "main_topics": "국내 대형주, AI·반도체, 부동산",
-  "rec_overlap": "테슬라, AI·반도체, 물가·경기, 빅테크, 국내 대형주, 부동산, 급락·변동성, 초보·투자마인드"
- },
- {
-  "username": "crypto.news.io",
-  "name": "Crypto News & Updates",
-  "region": "해외",
-  "category": "코인",
-  "followers": 254644,
-  "posts_per_week": 1.0,
-  "er": 0.07,
-  "region_er": 0.14,
-  "growth_pct": null,
-  "likes_hidden": false,
-  "posts_60d": 7,
-  "lead_share": 0,
-  "best_format": "단일 이미지 (0.8배, 5개)",
-  "best_hook": "짧은 한 줄 (0.7배, 3개)",
-  "best_slot": "새벽(0~6시) (0.8배, 4개)",
-  "best_weekday": "",
-  "main_topics": "비트코인, 알트코인, 정치·관세",
-  "rec_overlap": ""
+  "rec_overlap": "테슬라, AI·반도체, 물가·경기, 국내 대형주, 빅테크, 부동산, 급락·변동성, 초보·투자마인드"
  },
  {
   "username": "nasdaq",
@@ -597,7 +597,7 @@
   "best_slot": "오전(9~12시) (2.2배, 30개)",
   "best_weekday": "일 (4.0배, 9개)",
   "main_topics": "부동산, 연금·절세, AI·반도체",
-  "rec_overlap": "테슬라, AI·반도체, 물가·경기, 빅테크, 국내 대형주, 부동산, 급락·변동성"
+  "rec_overlap": "테슬라, AI·반도체, 물가·경기, 국내 대형주, 빅테크, 부동산, 급락·변동성"
  },
  {
   "username": "coinone_official",
@@ -677,7 +677,7 @@
   "best_slot": "저녁(18~21시) (3.9배, 3개)",
   "best_weekday": "수 (2.2배, 13개)",
   "main_topics": "AI·반도체, 국내 대형주, 부동산",
-  "rec_overlap": "AI·반도체, 빅테크, 국내 대형주, 부동산, 급락·변동성"
+  "rec_overlap": "AI·반도체, 국내 대형주, 빅테크, 부동산, 급락·변동성"
  },
  {
   "username": "daishin_official",
@@ -830,14 +830,14 @@
   "region_er": 0.08,
   "growth_pct": null,
   "likes_hidden": false,
-  "posts_60d": 32,
+  "posts_60d": 31,
   "lead_share": 0,
   "best_format": "캐러셀(카드뉴스) (1.1배, 18개)",
-  "best_hook": "질문형 (1.1배, 8개)",
-  "best_slot": "점심(12~14시) (1.0배, 4개)",
-  "best_weekday": "화 (1.0배, 13개)",
+  "best_hook": "질문형 (1.2배, 7개)",
+  "best_slot": "오후(14~18시) (1.0배, 20개)",
+  "best_weekday": "화 (1.1배, 12개)",
   "main_topics": "ETF·지수투자, AI·반도체, 연금·절세",
-  "rec_overlap": "테슬라, AI·반도체, 물가·경기, 빅테크, 국내 대형주, 급락·변동성, 초보·투자마인드"
+  "rec_overlap": "테슬라, AI·반도체, 물가·경기, 국내 대형주, 빅테크, 급락·변동성, 초보·투자마인드"
  },
  {
   "username": "marketwatch",
@@ -890,7 +890,7 @@
   "region_er": 0.08,
   "growth_pct": null,
   "likes_hidden": false,
-  "posts_60d": 31,
+  "posts_60d": 30,
   "lead_share": 0,
   "best_format": "단일 이미지 (2.2배, 19개)",
   "best_hook": "짧은 한 줄 (1.7배, 7개)",
