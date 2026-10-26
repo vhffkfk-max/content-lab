@@ -73,12 +73,21 @@ def save_x(conn, items, groups, source, now):
             continue
         a = t.get("author") or {}
         user = a.get("userName") or ""
+        text = t.get("fullText") or t.get("text") or ""
+        card = t.get("card") or {}
+        # 링크만 있는 글(트럼프가 자주 씀)은 링크 미리보기 제목·설명이나 영상 여부를 붙여 무슨 내용인지 알 수 있게
+        extra = " / ".join(x for x in [card.get("title"), card.get("description")] if x) if isinstance(card, dict) else ""
+        if t.get("videos") or (t.get("extendedEntities") or {}).get("media"):
+            kinds = {m.get("type") for m in (t.get("extendedEntities") or {}).get("media", [])}
+            extra = (extra + " / " if extra else "") + ("[영상 첨부]" if "video" in kinds or t.get("videos") else "[이미지 첨부]")
+        if extra:
+            text = f"{text}\n[링크·첨부: {extra}]"
         conn.execute(
             "INSERT INTO x_posts VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET "
             "views=excluded.views, likes=excluded.likes, reposts=excluded.reposts, replies=excluded.replies, quotes=excluded.quotes, "
             "bookmarks=excluded.bookmarks, followers=excluded.followers, collected_at=excluded.collected_at",
             ("x:" + str(t["id"]), "X", user, a.get("name"), a.get("followers"), groups.get(user.lower(), "화제"),
-             t.get("fullText") or t.get("text") or "", x_time(t.get("createdAt")), t.get("viewCount"), t.get("likeCount"),
+             text, x_time(t.get("createdAt")), t.get("viewCount"), t.get("likeCount"),
              t.get("retweetCount"), t.get("replyCount"), t.get("quoteCount"), t.get("bookmarkCount"),
              t.get("url") or t.get("twitterUrl"), t.get("lang"), int(bool(t.get("isRetweet"))), source, now))
         n += 1
@@ -144,7 +153,7 @@ def main():
     xn += max(got, 50)
     print(f"✅ X 경제 키워드 화제: {got}개")
     items = run_actor(token, TRUTH_ACTOR, {"profiles": ["realDonaldTrump"], "resultsType": "posts", "maxPostsAndReplies": TRUTH_MAX,
-                                           "cleanContent": True, "postsNewerThan": since})
+                                           "cleanContent": True})   # 날짜 조건 없이 최근 20개 (이미 있는 글은 숫자만 갱신)
     tn = save_truth(conn, items, now)
     print(f"✅ 트루스소셜 트럼프: {tn}개")
     conn.execute("INSERT INTO x_cost VALUES (?,?,?) ON CONFLICT(date) DO UPDATE SET x_results = x_results + excluded.x_results, "
