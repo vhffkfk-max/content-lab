@@ -71,20 +71,6 @@
  },
  {
   "rank": 6,
-  "topic": "초보·투자마인드",
-  "kind": "국내·해외 모두 강세",
-  "confidence": "높음",
-  "title_idea": "초보·투자마인드, 한 줄 정리",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "짧은 한 줄",
-  "slot": "오후(14~18시)",
-  "kr_avg": 1.27,
-  "kr_n": 48,
-  "foreign_avg": 2.22,
-  "foreign_n": 14
- },
- {
-  "rank": 7,
   "topic": "급락·변동성",
   "kind": "국내 검증 주제",
   "confidence": "높음",
@@ -98,17 +84,31 @@
   "foreign_n": 7
  },
  {
-  "rank": 8,
-  "topic": "부동산",
-  "kind": "국내 검증 주제",
+  "rank": 7,
+  "topic": "초보·투자마인드",
+  "kind": "국내·해외 모두 강세",
   "confidence": "높음",
-  "title_idea": "숫자 하나로 보는 부동산",
+  "title_idea": "초보·투자마인드, 한 줄 정리",
   "format": "캐러셀(카드뉴스)",
-  "hook": "숫자 강조형",
+  "hook": "짧은 한 줄",
   "slot": "오후(14~18시)",
-  "kr_avg": 1.4,
-  "kr_n": 64,
-  "foreign_avg": 0.81,
-  "foreign_n": 3
+  "kr_avg": 1.27,
+  "kr_n": 48,
+  "foreign_avg": 2.22,
+  "foreign_n": 14
+ },
+ {
+  "rank": 8,
+  "topic": "정치·관세",
+  "kind": "해외 선행 주제 (선점 기회)",
+  "confidence": "높음",
+  "title_idea": "\"정치·관세, 이것만 알면 돼요\"",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "인용형",
+  "slot": "오후(14~18시)",
+  "kr_avg": 0.83,
+  "kr_n": 7,
+  "foreign_avg": 1.58,
+  "foreign_n": 14
  }
 ]

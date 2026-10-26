@@ -46,7 +46,7 @@
   "group": "형식",
   "key": "단일 이미지",
   "avg": 1.42,
-  "n": 27
+  "n": 26
  },
  {
   "username": "lssec_official",
@@ -80,8 +80,8 @@
   "username": "lssec_official",
   "group": "첫 문장",
   "key": "짧은 한 줄",
-  "avg": 0.81,
-  "n": 21
+  "avg": 0.79,
+  "n": 20
  },
  {
   "username": "lssec_official",
@@ -94,8 +94,8 @@
   "username": "lssec_official",
   "group": "시간대",
   "key": "오후(14~18시)",
-  "avg": 1.64,
-  "n": 24
+  "avg": 1.65,
+  "n": 23
  },
  {
   "username": "lssec_official",
@@ -115,8 +115,8 @@
   "username": "lssec_official",
   "group": "요일",
   "key": "목",
-  "avg": 1.45,
-  "n": 8
+  "avg": 1.48,
+  "n": 7
  },
  {
   "username": "lssec_official",
@@ -1603,97 +1603,6 @@
   "n": 2
  },
  {
-  "username": "upbit_official",
-  "group": "형식",
-  "key": "릴스",
-  "avg": 1.1,
-  "n": 17
- },
- {
-  "username": "upbit_official",
-  "group": "형식",
-  "key": "캐러셀(카드뉴스)",
-  "avg": 2.56,
-  "n": 6
- },
- {
-  "username": "upbit_official",
-  "group": "첫 문장",
-  "key": "일반 서술형",
-  "avg": 1.48,
-  "n": 18
- },
- {
-  "username": "upbit_official",
-  "group": "첫 문장",
-  "key": "짧은 한 줄",
-  "avg": 1.91,
-  "n": 3
- },
- {
-  "username": "upbit_official",
-  "group": "첫 문장",
-  "key": "질문형",
-  "avg": 0.89,
-  "n": 2
- },
- {
-  "username": "upbit_official",
-  "group": "시간대",
-  "key": "오후(14~18시)",
-  "avg": 1.13,
-  "n": 13
- },
- {
-  "username": "upbit_official",
-  "group": "시간대",
-  "key": "저녁(18~21시)",
-  "avg": 1.94,
-  "n": 10
- },
- {
-  "username": "upbit_official",
-  "group": "요일",
-  "key": "화",
-  "avg": 2.71,
-  "n": 5
- },
- {
-  "username": "upbit_official",
-  "group": "요일",
-  "key": "월",
-  "avg": 1.35,
-  "n": 6
- },
- {
-  "username": "upbit_official",
-  "group": "요일",
-  "key": "금",
-  "avg": 0.84,
-  "n": 4
- },
- {
-  "username": "upbit_official",
-  "group": "요일",
-  "key": "목",
-  "avg": 1.5,
-  "n": 3
- },
- {
-  "username": "upbit_official",
-  "group": "요일",
-  "key": "수",
-  "avg": 0.92,
-  "n": 5
- },
- {
-  "username": "upbit_official",
-  "group": "주제",
-  "key": "비트코인",
-  "avg": 1.66,
-  "n": 16
- },
- {
   "username": "mk.co.kr",
   "group": "형식",
   "key": "캐러셀(카드뉴스)",
@@ -2139,6 +2048,195 @@
   "group": "주제",
   "key": "환율·달러",
   "avg": 2.44,
+  "n": 2
+ },
+ {
+  "username": "upbit_official",
+  "group": "형식",
+  "key": "릴스",
+  "avg": 0.97,
+  "n": 16
+ },
+ {
+  "username": "upbit_official",
+  "group": "형식",
+  "key": "캐러셀(카드뉴스)",
+  "avg": 2.56,
+  "n": 6
+ },
+ {
+  "username": "upbit_official",
+  "group": "첫 문장",
+  "key": "일반 서술형",
+  "avg": 1.37,
+  "n": 17
+ },
+ {
+  "username": "upbit_official",
+  "group": "첫 문장",
+  "key": "짧은 한 줄",
+  "avg": 1.91,
+  "n": 3
+ },
+ {
+  "username": "upbit_official",
+  "group": "첫 문장",
+  "key": "질문형",
+  "avg": 0.89,
+  "n": 2
+ },
+ {
+  "username": "upbit_official",
+  "group": "시간대",
+  "key": "오후(14~18시)",
+  "avg": 0.96,
+  "n": 12
+ },
+ {
+  "username": "upbit_official",
+  "group": "시간대",
+  "key": "저녁(18~21시)",
+  "avg": 1.94,
+  "n": 10
+ },
+ {
+  "username": "upbit_official",
+  "group": "요일",
+  "key": "화",
+  "avg": 2.71,
+  "n": 5
+ },
+ {
+  "username": "upbit_official",
+  "group": "요일",
+  "key": "월",
+  "avg": 1.35,
+  "n": 6
+ },
+ {
+  "username": "upbit_official",
+  "group": "요일",
+  "key": "금",
+  "avg": 0.84,
+  "n": 4
+ },
+ {
+  "username": "upbit_official",
+  "group": "요일",
+  "key": "목",
+  "avg": 0.64,
+  "n": 2
+ },
+ {
+  "username": "upbit_official",
+  "group": "요일",
+  "key": "수",
+  "avg": 0.92,
+  "n": 5
+ },
+ {
+  "username": "upbit_official",
+  "group": "주제",
+  "key": "비트코인",
+  "avg": 1.55,
+  "n": 15
+ },
+ {
+  "username": "bithumb_official",
+  "group": "형식",
+  "key": "캐러셀(카드뉴스)",
+  "avg": 1.97,
+  "n": 10
+ },
+ {
+  "username": "bithumb_official",
+  "group": "형식",
+  "key": "릴스",
+  "avg": 2.04,
+  "n": 4
+ },
+ {
+  "username": "bithumb_official",
+  "group": "첫 문장",
+  "key": "숫자 강조형",
+  "avg": 0.5,
+  "n": 4
+ },
+ {
+  "username": "bithumb_official",
+  "group": "첫 문장",
+  "key": "일반 서술형",
+  "avg": 3.01,
+  "n": 5
+ },
+ {
+  "username": "bithumb_official",
+  "group": "첫 문장",
+  "key": "숫자·리스트형",
+  "avg": 2.83,
+  "n": 2
+ },
+ {
+  "username": "bithumb_official",
+  "group": "시간대",
+  "key": "저녁(18~21시)",
+  "avg": 1.19,
+  "n": 7
+ },
+ {
+  "username": "bithumb_official",
+  "group": "시간대",
+  "key": "오전(9~12시)",
+  "avg": 1.08,
+  "n": 2
+ },
+ {
+  "username": "bithumb_official",
+  "group": "시간대",
+  "key": "오후(14~18시)",
+  "avg": 3.48,
+  "n": 5
+ },
+ {
+  "username": "bithumb_official",
+  "group": "요일",
+  "key": "목",
+  "avg": 0.78,
+  "n": 4
+ },
+ {
+  "username": "bithumb_official",
+  "group": "요일",
+  "key": "금",
+  "avg": 3.18,
+  "n": 5
+ },
+ {
+  "username": "bithumb_official",
+  "group": "요일",
+  "key": "수",
+  "avg": 2.04,
+  "n": 2
+ },
+ {
+  "username": "bithumb_official",
+  "group": "요일",
+  "key": "화",
+  "avg": 2.39,
+  "n": 2
+ },
+ {
+  "username": "bithumb_official",
+  "group": "주제",
+  "key": "AI·반도체",
+  "avg": 1.39,
+  "n": 7
+ },
+ {
+  "username": "bithumb_official",
+  "group": "주제",
+  "key": "비트코인",
+  "avg": 3.31,
   "n": 2
  },
  {
@@ -2917,111 +3015,6 @@
   "key": "화",
   "avg": 2.32,
   "n": 5
- },
- {
-  "username": "bithumb_official",
-  "group": "형식",
-  "key": "캐러셀(카드뉴스)",
-  "avg": 1.97,
-  "n": 10
- },
- {
-  "username": "bithumb_official",
-  "group": "형식",
-  "key": "릴스",
-  "avg": 1.52,
-  "n": 6
- },
- {
-  "username": "bithumb_official",
-  "group": "첫 문장",
-  "key": "숫자 강조형",
-  "avg": 0.44,
-  "n": 5
- },
- {
-  "username": "bithumb_official",
-  "group": "첫 문장",
-  "key": "일반 서술형",
-  "avg": 2.63,
-  "n": 6
- },
- {
-  "username": "bithumb_official",
-  "group": "첫 문장",
-  "key": "숫자·리스트형",
-  "avg": 2.83,
-  "n": 2
- },
- {
-  "username": "bithumb_official",
-  "group": "시간대",
-  "key": "저녁(18~21시)",
-  "avg": 1.19,
-  "n": 7
- },
- {
-  "username": "bithumb_official",
-  "group": "시간대",
-  "key": "오후(14~18시)",
-  "avg": 2.62,
-  "n": 7
- },
- {
-  "username": "bithumb_official",
-  "group": "시간대",
-  "key": "오전(9~12시)",
-  "avg": 1.08,
-  "n": 2
- },
- {
-  "username": "bithumb_official",
-  "group": "요일",
-  "key": "목",
-  "avg": 0.68,
-  "n": 6
- },
- {
-  "username": "bithumb_official",
-  "group": "요일",
-  "key": "금",
-  "avg": 3.18,
-  "n": 5
- },
- {
-  "username": "bithumb_official",
-  "group": "요일",
-  "key": "수",
-  "avg": 2.04,
-  "n": 2
- },
- {
-  "username": "bithumb_official",
-  "group": "요일",
-  "key": "화",
-  "avg": 2.39,
-  "n": 2
- },
- {
-  "username": "bithumb_official",
-  "group": "주제",
-  "key": "AI·반도체",
-  "avg": 1.39,
-  "n": 7
- },
- {
-  "username": "bithumb_official",
-  "group": "주제",
-  "key": "부동산",
-  "avg": 3.22,
-  "n": 2
- },
- {
-  "username": "bithumb_official",
-  "group": "주제",
-  "key": "비트코인",
-  "avg": 2.26,
-  "n": 3
  },
  {
   "username": "cointelegraph",

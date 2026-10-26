@@ -70,11 +70,11 @@
   "region_er": 0.09,
   "growth_pct": -0.09,
   "likes_hidden": false,
-  "posts_60d": 43,
+  "posts_60d": 42,
   "lead_share": 0,
   "best_format": "캐러셀(카드뉴스) (2.1배, 4개)",
   "best_hook": "질문형 (1.3배, 5개)",
-  "best_slot": "오후(14~18시) (1.6배, 24개)",
+  "best_slot": "오후(14~18시) (1.6배, 23개)",
   "best_weekday": "화 (2.2배, 8개)",
   "main_topics": "AI·반도체, 금리·연준, 급락·변동성",
   "rec_overlap": "테슬라, AI·반도체, 물가·경기, 급락·변동성"
@@ -197,7 +197,7 @@
   "best_slot": "새벽(0~6시) (2.2배, 15개)",
   "best_weekday": "목 (3.4배, 5개)",
   "main_topics": "비트코인, 정치·관세, ETF·지수투자",
-  "rec_overlap": "AI·반도체, 물가·경기, 초보·투자마인드, 급락·변동성"
+  "rec_overlap": "AI·반도체, 물가·경기, 급락·변동성, 초보·투자마인드, 정치·관세"
  },
  {
   "username": "hanwhawm.official",
@@ -237,7 +237,7 @@
   "best_slot": "새벽(0~6시) (1.5배, 29개)",
   "best_weekday": "목 (2.2배, 7개)",
   "main_topics": "초보·투자마인드, 환율·달러, 부동산",
-  "rec_overlap": "초보·투자마인드, 부동산"
+  "rec_overlap": "초보·투자마인드"
  },
  {
   "username": "toss.im",
@@ -277,7 +277,7 @@
   "best_slot": "새벽(0~6시) (3.6배, 6개)",
   "best_weekday": "",
   "main_topics": "금리·연준, 물가·경기, 부동산",
-  "rec_overlap": "빅테크, AI·반도체, 물가·경기, 부동산"
+  "rec_overlap": "빅테크, AI·반도체, 물가·경기"
  },
  {
   "username": "nyse",
@@ -297,7 +297,7 @@
   "best_slot": "밤(21~24시) (2.8배, 11개)",
   "best_weekday": "토 (3.0배, 10개)",
   "main_topics": "정치·관세, ETF·지수투자, AI·반도체",
-  "rec_overlap": "AI·반도체"
+  "rec_overlap": "AI·반도체, 정치·관세"
  },
  {
   "username": "etf.investments",
@@ -377,7 +377,7 @@
   "best_slot": "밤(21~24시) (2.9배, 15개)",
   "best_weekday": "목 (3.4배, 6개)",
   "main_topics": "ETF·지수투자, 초보·투자마인드, 급락·변동성",
-  "rec_overlap": "AI·반도체, 초보·투자마인드, 급락·변동성"
+  "rec_overlap": "AI·반도체, 급락·변동성, 초보·투자마인드"
  },
  {
   "username": "moneytodaynews",
@@ -397,27 +397,7 @@
   "best_slot": "오전(9~12시) (2.2배, 27개)",
   "best_weekday": "월 (2.5배, 7개)",
   "main_topics": "부동산, 국내 대형주, 급락·변동성",
-  "rec_overlap": "테슬라, 국내 대형주, 급락·변동성, 부동산"
- },
- {
-  "username": "upbit_official",
-  "name": "업비트",
-  "region": "한국",
-  "category": "코인",
-  "followers": 11124,
-  "posts_per_week": 2.0,
-  "er": 0.13,
-  "region_er": 0.09,
-  "growth_pct": -0.13,
-  "likes_hidden": false,
-  "posts_60d": 23,
-  "lead_share": 0,
-  "best_format": "캐러셀(카드뉴스) (2.6배, 6개)",
-  "best_hook": "짧은 한 줄 (1.9배, 3개)",
-  "best_slot": "저녁(18~21시) (1.9배, 10개)",
-  "best_weekday": "화 (2.7배, 5개)",
-  "main_topics": "비트코인, AI·반도체",
-  "rec_overlap": "AI·반도체"
+  "rec_overlap": "테슬라, 국내 대형주, 급락·변동성"
  },
  {
   "username": "mk.co.kr",
@@ -437,7 +417,7 @@
   "best_slot": "오후(14~18시) (3.1배, 28개)",
   "best_weekday": "수 (3.2배, 12개)",
   "main_topics": "국내 대형주, AI·반도체, 부동산",
-  "rec_overlap": "테슬라, AI·반도체, 물가·경기, 국내 대형주, 초보·투자마인드, 급락·변동성, 부동산"
+  "rec_overlap": "테슬라, AI·반도체, 물가·경기, 국내 대형주, 급락·변동성, 초보·투자마인드"
  },
  {
   "username": "seoul_economic",
@@ -457,7 +437,47 @@
   "best_slot": "아침(6~9시) (2.3배, 7개)",
   "best_weekday": "금 (2.2배, 21개)",
   "main_topics": "부동산, AI·반도체, 연금·절세",
-  "rec_overlap": "테슬라, 빅테크, AI·반도체, 물가·경기, 국내 대형주, 급락·변동성, 부동산"
+  "rec_overlap": "테슬라, 빅테크, AI·반도체, 물가·경기, 국내 대형주, 급락·변동성, 정치·관세"
+ },
+ {
+  "username": "upbit_official",
+  "name": "업비트",
+  "region": "한국",
+  "category": "코인",
+  "followers": 11124,
+  "posts_per_week": 1.8,
+  "er": 0.12,
+  "region_er": 0.09,
+  "growth_pct": -0.13,
+  "likes_hidden": false,
+  "posts_60d": 22,
+  "lead_share": 0,
+  "best_format": "캐러셀(카드뉴스) (2.6배, 6개)",
+  "best_hook": "짧은 한 줄 (1.9배, 3개)",
+  "best_slot": "저녁(18~21시) (1.9배, 10개)",
+  "best_weekday": "화 (2.7배, 5개)",
+  "main_topics": "비트코인, AI·반도체",
+  "rec_overlap": "AI·반도체"
+ },
+ {
+  "username": "bithumb_official",
+  "name": "빗썸",
+  "region": "한국",
+  "category": "코인",
+  "followers": 7603,
+  "posts_per_week": 2.0,
+  "er": 0.12,
+  "region_er": 0.09,
+  "growth_pct": 0.32,
+  "likes_hidden": false,
+  "posts_60d": 14,
+  "lead_share": 0,
+  "best_format": "캐러셀(카드뉴스) (2.0배, 10개)",
+  "best_hook": "숫자 강조형 (0.5배, 4개)",
+  "best_slot": "오후(14~18시) (3.5배, 5개)",
+  "best_weekday": "금 (3.2배, 5개)",
+  "main_topics": "AI·반도체, 비트코인, 알트코인",
+  "rec_overlap": "AI·반도체"
  },
  {
   "username": "chosunbiz",
@@ -477,7 +497,7 @@
   "best_slot": "오전(9~12시) (2.4배, 28개)",
   "best_weekday": "토 (2.9배, 11개)",
   "main_topics": "국내 대형주, 부동산, 테슬라",
-  "rec_overlap": "테슬라, AI·반도체, 국내 대형주, 부동산"
+  "rec_overlap": "테슬라, AI·반도체, 국내 대형주"
  },
  {
   "username": "hankyungmedia_official",
@@ -497,7 +517,7 @@
   "best_slot": "점심(12~14시) (3.7배, 10개)",
   "best_weekday": "금 (3.1배, 21개)",
   "main_topics": "국내 대형주, AI·반도체, 부동산",
-  "rec_overlap": "테슬라, 빅테크, AI·반도체, 물가·경기, 국내 대형주, 초보·투자마인드, 급락·변동성, 부동산"
+  "rec_overlap": "테슬라, 빅테크, AI·반도체, 물가·경기, 국내 대형주, 급락·변동성, 초보·투자마인드, 정치·관세"
  },
  {
   "username": "heoyoopapa",
@@ -505,7 +525,7 @@
   "region": "한국",
   "category": "국내주식",
   "followers": 66600,
-  "posts_per_week": 7.8,
+  "posts_per_week": 7.5,
   "er": 0.09,
   "region_er": 0.09,
   "growth_pct": -0.05,
@@ -517,7 +537,7 @@
   "best_slot": "저녁(18~21시) (1.3배, 23개)",
   "best_weekday": "월 (1.1배, 15개)",
   "main_topics": "국내 대형주, AI·반도체, 금리·연준",
-  "rec_overlap": "테슬라, AI·반도체, 물가·경기, 국내 대형주, 급락·변동성"
+  "rec_overlap": "테슬라, AI·반도체, 물가·경기, 국내 대형주, 급락·변동성, 정치·관세"
  },
  {
   "username": "nasdaq",
@@ -580,26 +600,6 @@
   "rec_overlap": "AI·반도체, 국내 대형주, 급락·변동성"
  },
  {
-  "username": "bithumb_official",
-  "name": "빗썸",
-  "region": "한국",
-  "category": "코인",
-  "followers": 7603,
-  "posts_per_week": 2.2,
-  "er": 0.09,
-  "region_er": 0.09,
-  "growth_pct": 0.32,
-  "likes_hidden": false,
-  "posts_60d": 16,
-  "lead_share": 0,
-  "best_format": "캐러셀(카드뉴스) (2.0배, 10개)",
-  "best_hook": "숫자 강조형 (0.4배, 5개)",
-  "best_slot": "오후(14~18시) (2.6배, 7개)",
-  "best_weekday": "금 (3.2배, 5개)",
-  "main_topics": "AI·반도체, 비트코인, 부동산",
-  "rec_overlap": "AI·반도체, 부동산"
- },
- {
   "username": "cointelegraph",
   "name": "Cointelegraph",
   "region": "해외",
@@ -617,7 +617,7 @@
   "best_slot": "밤(21~24시) (1.7배, 16개)",
   "best_weekday": "월 (2.1배, 7개)",
   "main_topics": "비트코인, AI·반도체, 정치·관세",
-  "rec_overlap": "테슬라, AI·반도체, 초보·투자마인드, 부동산"
+  "rec_overlap": "테슬라, AI·반도체, 초보·투자마인드, 정치·관세"
  },
  {
   "username": "crypto.news.io",
@@ -637,7 +637,7 @@
   "best_slot": "새벽(0~6시) (0.8배, 4개)",
   "best_weekday": "",
   "main_topics": "비트코인, 알트코인, 정치·관세",
-  "rec_overlap": ""
+  "rec_overlap": "정치·관세"
  },
  {
   "username": "newneek.official",
@@ -657,7 +657,7 @@
   "best_slot": "저녁(18~21시) (3.9배, 3개)",
   "best_weekday": "금 (2.7배, 11개)",
   "main_topics": "AI·반도체, 국내 대형주, 부동산",
-  "rec_overlap": "빅테크, AI·반도체, 국내 대형주, 급락·변동성, 부동산"
+  "rec_overlap": "빅테크, AI·반도체, 국내 대형주, 급락·변동성"
  },
  {
   "username": "coinone_official",
@@ -725,7 +725,7 @@
   "region": "한국",
   "category": "국내주식",
   "followers": 80456,
-  "posts_per_week": 14.5,
+  "posts_per_week": 14.2,
   "er": 0.05,
   "region_er": 0.09,
   "growth_pct": -0.1,
@@ -777,7 +777,7 @@
   "best_slot": "오후(14~18시) (1.0배, 20개)",
   "best_weekday": "화 (1.1배, 12개)",
   "main_topics": "ETF·지수투자, AI·반도체, 연금·절세",
-  "rec_overlap": "테슬라, 빅테크, AI·반도체, 물가·경기, 국내 대형주, 초보·투자마인드, 급락·변동성"
+  "rec_overlap": "테슬라, 빅테크, AI·반도체, 물가·경기, 국내 대형주, 급락·변동성, 초보·투자마인드"
  },
  {
   "username": "weolbu_official",
@@ -785,7 +785,7 @@
   "region": "한국",
   "category": "경제일반",
   "followers": 417754,
-  "posts_per_week": 9.2,
+  "posts_per_week": 9.0,
   "er": 0.03,
   "region_er": 0.09,
   "growth_pct": 0.1,
@@ -797,7 +797,7 @@
   "best_slot": "밤(21~24시) (3.1배, 16개)",
   "best_weekday": "목 (3.4배, 12개)",
   "main_topics": "부동산, 초보·투자마인드, 금리·연준",
-  "rec_overlap": "AI·반도체, 국내 대형주, 초보·투자마인드, 급락·변동성, 부동산"
+  "rec_overlap": "AI·반도체, 국내 대형주, 급락·변동성, 초보·투자마인드"
  },
  {
   "username": "snowball_economy",
@@ -817,7 +817,7 @@
   "best_slot": "저녁(18~21시) (0.9배, 10개)",
   "best_weekday": "수 (1.2배, 5개)",
   "main_topics": "AI·반도체, 환율·달러, 정치·관세",
-  "rec_overlap": "테슬라, AI·반도체, 물가·경기, 국내 대형주, 급락·변동성, 부동산"
+  "rec_overlap": "테슬라, AI·반도체, 물가·경기, 국내 대형주, 급락·변동성, 정치·관세"
  },
  {
   "username": "cryptosrus",
@@ -837,7 +837,7 @@
   "best_slot": "새벽(0~6시) (1.7배, 25개)",
   "best_weekday": "수 (2.2배, 15개)",
   "main_topics": "비트코인, 알트코인, AI·반도체",
-  "rec_overlap": "테슬라, AI·반도체, 물가·경기, 국내 대형주, 초보·투자마인드, 급락·변동성"
+  "rec_overlap": "테슬라, AI·반도체, 물가·경기, 국내 대형주, 급락·변동성, 초보·투자마인드, 정치·관세"
  },
  {
   "username": "marketwatch",
@@ -857,7 +857,7 @@
   "best_slot": "아침(6~9시) (1.5배, 14개)",
   "best_weekday": "월 (1.6배, 7개)",
   "main_topics": "정치·관세, 물가·경기, 테슬라",
-  "rec_overlap": "테슬라, 빅테크, AI·반도체, 물가·경기, 초보·투자마인드, 급락·변동성, 부동산"
+  "rec_overlap": "테슬라, 빅테크, AI·반도체, 물가·경기, 급락·변동성, 초보·투자마인드, 정치·관세"
  },
  {
   "username": "ekke.now",
@@ -877,7 +877,7 @@
   "best_slot": "저녁(18~21시) (3.4배, 19개)",
   "best_weekday": "수 (3.8배, 14개)",
   "main_topics": "AI·반도체, 환율·달러, 실적발표",
-  "rec_overlap": "테슬라, 빅테크, AI·반도체, 물가·경기, 국내 대형주, 초보·투자마인드, 급락·변동성, 부동산"
+  "rec_overlap": "테슬라, 빅테크, AI·반도체, 물가·경기, 국내 대형주, 급락·변동성, 초보·투자마인드"
  },
  {
   "username": "samsung.securities",
@@ -917,7 +917,7 @@
   "best_slot": "오후(14~18시) (5.6배, 4개)",
   "best_weekday": "월 (3.9배, 7개)",
   "main_topics": "AI·반도체, 부동산, ETF·지수투자",
-  "rec_overlap": "테슬라, AI·반도체, 국내 대형주, 급락·변동성, 부동산"
+  "rec_overlap": "테슬라, AI·반도체, 국내 대형주, 급락·변동성"
  },
  {
   "username": "nhinvest_official",
@@ -945,7 +945,7 @@
   "region": "해외",
   "category": "코인",
   "followers": 883036,
-  "posts_per_week": 13.0,
+  "posts_per_week": 12.8,
   "er": 0.0,
   "region_er": 0.13,
   "growth_pct": -0.01,
@@ -957,6 +957,6 @@
   "best_slot": "오후(14~18시) (1.4배, 20개)",
   "best_weekday": "화 (1.4배, 18개)",
   "main_topics": "비트코인, 알트코인, AI·반도체",
-  "rec_overlap": "AI·반도체, 국내 대형주, 급락·변동성"
+  "rec_overlap": "AI·반도체, 국내 대형주, 급락·변동성, 정치·관세"
  }
 ]
