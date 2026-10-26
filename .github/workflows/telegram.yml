@@ -7,6 +7,7 @@ on:
     paths:
       - output/site/tg_hot.json
       - output/site/tg_meta.json
+      - output/site/tg_source.json
       - output/site/tg_streak.json
   workflow_dispatch:
     inputs:
@@ -57,6 +58,12 @@ jobs:
           else
             echo "이번엔 텔레그램 추천을 다시 쓸 차례가 아니에요"
           fi
+
+      - name: 시황 자동 변환 (Claude Opus, 새 아침·마감 시황이 있을 때만)
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python tg_rewrite.py
 
       - name: 사이트 만들기
         run: python build_site.py

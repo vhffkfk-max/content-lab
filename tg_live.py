@@ -16,6 +16,7 @@ import asyncio
 import csv
 import logging
 import os
+import re
 import sqlite3
 import statistics
 import subprocess
@@ -35,7 +36,11 @@ SITE = OUTPUT_DIR / "site"
 KEEP_DAYS = 7
 REFRESH_MIN, PUSH_MIN = 10, 30
 ALERT_X, ALERT_HOURS, ALERT_MAX = 3.0, 24, 10
-SITE_FILES = ["tg_meta", "tg_chats", "tg_hot", "tg_mine", "tg_hours", "tg_lengths", "tg_media",
+# 시황 원문으로 쓰는 채널: 아침('10월 26일 시황.')·마감('마감 시황.') 긴 글을 바로 올려 서버가 말희아빠 시황으로 변환 (tg_rewrite.py)
+SOURCE_USERS = {"shmstory"}
+MORNING_RE = re.compile(r"^\s*\d{1,2}월\s*\d{1,2}일\s*시황")
+CLOSE_RE = re.compile(r"^\s*마감\s*시황")
+SITE_FILES = ["tg_source", "tg_meta", "tg_chats", "tg_hot", "tg_mine", "tg_hours", "tg_lengths", "tg_media",
               "tg_growth", "tg_streak", "tg_slots", "tg_shared", "tg_rank"]
 
 SCHEMA = HISTORY_SCHEMA + """
@@ -106,10 +111,27 @@ def snapshot(conn, chats):
             "messages": msgs}
 
 
+def source_posts(conn, chats):
+    """시황 원문 채널의 최근 3일 긴 글 (아침·마감 시황 표시)."""
+    since = (datetime.now(timezone.utc) - timedelta(days=3)).isoformat()
+    out = []
+    for c in chats:
+        if (c["아이디"] or "").lower() not in SOURCE_USERS:
+            continue
+        for mid, date, text in conn.execute("SELECT id, date, text FROM msgs WHERE chat_id=? AND date >= ? AND length(text) >= 400 "
+                                            "ORDER BY date", (c["id"], since)):
+            kind = "아침" if MORNING_RE.match(text) else "마감" if CLOSE_RE.match(text) else "기타"
+            out.append({"id": f"{c['id']}_{mid}", "chat": c["이름"], "date": date, "kind": kind, "text": text,
+                        "time": datetime.fromisoformat(date).astimezone(tg_analyze.KST).strftime("%m/%d %H:%M"),
+                        "link": link_of(c, mid)})
+    return out
+
+
 def write_site(conn, chats):
     import json
     out = tg_analyze.build(snapshot(conn, chats), datetime.now(timezone.utc))
     out.update(tg_metrics.compute(conn, chats))
+    out["tg_source"] = source_posts(conn, chats)
     SITE.mkdir(parents=True, exist_ok=True)
     for name in SITE_FILES:
         (SITE / f"{name}.json").write_text(json.dumps(out[name], ensure_ascii=False, indent=1), encoding="utf-8")
@@ -166,6 +188,29 @@ async def send_alerts(client, conn, chats, dry, since_min=None):
     conn.commit()
     if sent:
         log.info("알림 %d개", sent)
+
+
+async def deliver_rewrites(client, conn, dry):
+    """서버가 변환한 말희아빠 시황(output/site/tg_rewrites.json)을 내 텔레그램 '저장된 메시지'로 한 번씩 보낸다."""
+    import json
+    git("pull", "--rebase", "--autostash")
+    path = OUTPUT_DIR / "site" / "tg_rewrites.json"
+    if not path.exists():
+        return
+    for r in json.loads(path.read_text(encoding="utf-8") or "[]"):
+        key = int(str(r["source_id"]).rsplit("_", 1)[-1])
+        if conn.execute("SELECT 1 FROM alerted WHERE chat_id='rewrite' AND id=?", (key,)).fetchone():
+            continue
+        head = f"🥛 {r['kind']}시황 변환 완료 (원문 {r['source_time']})"
+        checks = "\n".join(f"· {c}" for c in r.get("check") or [])
+        if dry:
+            log.info("시황 변환(시험) %s", head)
+        else:
+            await client.send_message("me", f"{head}\n올리기 전 확인:\n{checks}" if checks else head, link_preview=False)
+            await client.send_message("me", r["text"], link_preview=False)   # 이 메시지를 그대로 전달·복사해서 올리면 됨
+        conn.execute("INSERT OR IGNORE INTO alerted VALUES ('rewrite', ?)", (key,))
+        conn.commit()
+        log.info("시황 변환본 보냄: %s", head)
 
 
 async def ig_alert(client, conn, dry):
@@ -260,6 +305,7 @@ async def run(args):
     async def loop():
         last_push = last_members = datetime.now(timezone.utc)
         mine = [c for c in chats if "내" in c["분석"]]
+        last_source = max((s["id"] for s in source_posts(conn, chats) if s["kind"] != "기타"), default=None)
         while True:
             await asyncio.sleep(REFRESH_MIN * 60)
             try:
@@ -269,12 +315,19 @@ async def run(args):
                 await record_members(client, conn, chats if hourly else mine)
                 if hourly:
                     last_members = datetime.now(timezone.utc)
-                if datetime.now(timezone.utc) - last_push >= timedelta(minutes=PUSH_MIN - 1):
+                newest = max((s["id"] for s in source_posts(conn, chats) if s["kind"] != "기타"), default=None)
+                new_source = newest is not None and newest != last_source
+                if new_source:
+                    log.info("새 시황 원문 감지 → 바로 올림 (서버가 말희아빠 시황으로 변환)")
+                    last_source = newest
+                if new_source or datetime.now(timezone.utc) - last_push >= timedelta(minutes=PUSH_MIN - 1):
                     write_site(conn, chats)
                     if not args.no_push:
                         push()
                     await ig_alert(client, conn, args.dry_alert)
                     last_push = datetime.now(timezone.utc)
+                if not args.no_push:
+                    await deliver_rewrites(client, conn, args.dry_alert)
             except Exception:
                 log.exception("갱신 중 오류 (다음 차례에 다시)")
 
