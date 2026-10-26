@@ -25,7 +25,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: daily-research   # 매일 수집과 겹치지 않게 차례로
+  group: telegram-${{ github.event_name }}   # 손으로 돌린 실행은 30분마다 오는 자동 갱신에 밀려 취소되지 않게
   cancel-in-progress: false
 
 jobs:
