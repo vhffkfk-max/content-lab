@@ -39,6 +39,11 @@ SYSTEM = """당신은 텔레그램 채널 '{room}' 을(를) 키우는 콘텐츠 
   정보 정리·해설·질문 위주로 쓰고, 주식·코인 글 끝에는 '투자 판단은 본인 몫' 같은 한 줄을 넣습니다.
 - summary: 다른 방들의 반응 큰 글에서 보이는 공통점 3줄(각 60자 안팎).
 - formulas: 따라 쓸 수 있는 텔레그램 글 공식 3~5개. name, pattern(구성 한 줄), example(우리 방용 예시 문구 1~3줄), when(언제 쓰나).
+- 시장 분위기 먼저 판단: 오늘 헤드라인·X/트루스 브리핑·다른 방 글에 급락·약세·공포가 보이면 '하락장 모드'로 씁니다.
+  하락장 모드: 왜 빠지는지 원인 정리(뉴스 근거) → 숫자로 보는 현재 위치(과거 비슷한 하락과 비교, 근거 없는 수치는 [확인]) →
+  흔들리지 않게 체크리스트(현금 비중·분할·손절 기준 같은 일반 원칙, 특정 종목 권유 금지) → 반등 때 확인할 신호.
+  공포를 키우는 표현('폭락 온다', '끝났다')은 쓰지 않고, 차분하게 정리해 주는 채널이라는 인상을 줍니다.
+- now_kst(지금 시각) 이후 시간표 칸을 먼저 씁니다. 이미 지난 칸은 '오늘 장 정리'처럼 지금 올려도 되는 글로 바꾸고, 7개를 채웁니다.
 - today: 오늘 우리 채널에 올릴 글 7개를 아래 시간표 순서 그대로 (하루 6~8개를 매일 고르게 올리는 게 조회율이 가장 높았음).
   1) 07:30 아침 브리핑 — 밤사이 미국장·코인·환율 핵심 3줄
   2) 08:50 장 시작 전 — 오늘 볼 차트 1~2개와 확인할 가격대
@@ -138,14 +143,37 @@ def news_context():
     heads = [f"[{h['source']}] {h['title']}" for h in load("press_headlines")[:20]]
     topics = [f"{t['topic']} (하루 기사 {t.get('kr_per_day')}건)" for t in load("google_topics")[:8]]
     recs = [f"{r['topic']}: {r.get('title_idea', '')}" for r in load("recs")[:5]]
-    return {"headlines": heads, "news_topics": topics, "instagram_recommended": recs}
+    x = SITE / "x_ai.json"   # X·트루스소셜(트럼프·백악관·시장 속보) 오늘 브리핑
+    x_brief = (json.loads(x.read_text(encoding="utf-8") or "{}").get("briefing") or []) if x.exists() else []
+    return {"headlines": heads, "news_topics": topics, "instagram_recommended": recs, "x_truth_briefing": x_brief}
+
+
+REFRESH_HOURS = (7, 12, 18)   # 하루 3번 최신 뉴스로 다시 씀 (07시·12시·18시 이후 첫 갱신 때)
+
+
+def is_due(ai_path, now):
+    """마지막으로 쓴 뒤 07·12·18시 중 하나를 지났으면 다시 쓸 차례."""
+    passed = [h for h in REFRESH_HOURS if now.hour >= h]
+    if not passed:
+        return False
+    if not ai_path.exists():
+        return True
+    last = json.loads(ai_path.read_text(encoding="utf-8") or "{}").get("analyzed_at", "")
+    if not last:
+        return True
+    slot_start = now.replace(hour=passed[-1], minute=0, second=0, microsecond=0)
+    return datetime.fromisoformat(last).astimezone(KST) < slot_start
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
-    ap.add_argument("--force", action="store_true", help="오늘 이미 썼어도 Claude 추천을 다시 씀")
+    ap.add_argument("--force", action="store_true", help="차례가 아니어도 Claude 추천을 다시 씀")
+    ap.add_argument("--due", action="store_true", help="다시 쓸 차례면 0, 아니면 3 으로 끝냄 (워크플로가 뉴스부터 새로 받을지 정할 때)")
+    ap.add_argument("--focus", default=os.environ.get("TG_FOCUS", ""), help="이번에 특히 반영할 요청 (예: '지금 하락장')")
     args = ap.parse_args()
+    if args.due:
+        sys.exit(0 if is_due(SITE / "tg_ai.json", datetime.now(KST)) else 3)
     load_env()
     if SRC.exists():  # 내 PC에서 직접 모은 파일이 있으면 통계부터 새로 (서버에서는 tg_live.py 가 올린 통계를 그대로 씀)
         out = build(json.loads(SRC.read_text(encoding="utf-8")), datetime.now(timezone.utc))
@@ -158,13 +186,10 @@ def main():
     if not out["tg_hot"]:
         print("텔레그램 통계가 아직 없어요 — 분석을 건너뛰어요 (TELEGRAM_SETUP.md 참고).")
         return
-    # 사이트는 30분마다 갱신되지만 Claude 추천은 하루 한 번: 07시(뉴스 수집 뒤) 이후 첫 갱신 때만
+    # 사이트는 30분마다 갱신되고, Claude 추천은 하루 3번(07·12·18시 이후 첫 갱신) 최신 뉴스로 다시 쓴다
     ai_path = SITE / "tg_ai.json"
-    last = json.loads(ai_path.read_text(encoding="utf-8") or "{}").get("analyzed_at", "") if ai_path.exists() else ""
-    today = datetime.now(KST)
-    done_today = bool(last) and datetime.fromisoformat(last).astimezone(KST).date() == today.date()
-    if not args.force and not args.dry_run and (done_today or today.hour < 7):
-        print("오늘의 텔레그램 추천은 하루 한 번(07시 이후)만 써요 — 이번엔 건너뛰어요.")
+    if not args.force and not args.dry_run and not is_due(ai_path, datetime.now(KST)):
+        print("이번 차례 텔레그램 추천은 이미 썼어요 (07·12·18시에 다시 써요) — 건너뛰어요.")
         return
 
     hot = out["tg_hot"][:25]
@@ -175,10 +200,12 @@ def main():
            "my_top_posts": [{"x": m["x"], "views": m["views"], "reactions": m["reactions"], "time": m["time"], "text": m["text"][:300]}
                             for m in sorted(out["tg_mine"], key=lambda m: -(m["x"] or 0))[:5]],
            "my_stats": [c for c in out["tg_chats"] if c["role"] == "mine"], "today": news_context(),
-           "date": datetime.now(KST).strftime("%Y-%m-%d (%a)")}
+           "date": datetime.now(KST).strftime("%Y-%m-%d (%a)"), "now_kst": datetime.now(KST).strftime("%H:%M")}
     prompt = "자료:\n" + json.dumps(ctx, ensure_ascii=False, indent=1)
     from feedback import feedback_prompt
     prompt += feedback_prompt(["텔레그램", "텔레그램 문구"])   # 사이트에서 남긴 후기
+    if args.focus:
+        prompt += f"\n\n대표의 이번 요청 (가장 우선해서 반영): {args.focus}"
     room = next((c["title"] for c in out["tg_chats"] if c["role"] == "mine"), "우리 채널")
     if args.dry_run:
         print(SYSTEM.format(room=room), "\n\n", prompt[:3000])

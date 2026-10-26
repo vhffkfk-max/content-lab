@@ -11,9 +11,13 @@ on:
   workflow_dispatch:
     inputs:
       force:
-        description: "오늘 이미 썼어도 Claude 추천을 다시 쓰기"
+        description: "차례가 아니어도 Claude 추천을 다시 쓰기"
         type: boolean
         default: false
+      focus:
+        description: "이번에 특히 반영할 요청 (예: 지금 하락장이니 하락장 대응 문구)"
+        type: string
+        default: ""
 
 permissions:
   contents: write
@@ -39,11 +43,20 @@ jobs:
 
       - run: pip install anthropic pydantic
 
-      - name: 텔레그램 분석 (Claude)
+      - name: 텔레그램 분석 (Claude, 하루 3번 07·12·18시 — 그때는 뉴스부터 새로 받음)
         continue-on-error: true   # 실패해도 지난 추천으로 사이트는 배포
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python tg_analyze.py ${{ inputs.force && '--force' || '' }}
+          TG_FOCUS: ${{ inputs.focus }}
+        run: |
+          if [ "${{ inputs.force }}" = "true" ] || python tg_analyze.py --due; then
+            python press_collect.py || true
+            python google_collect.py || true
+            python analyze.py --no-open && python export_site.py
+            python tg_analyze.py --force
+          else
+            echo "이번엔 텔레그램 추천을 다시 쓸 차례가 아니에요"
+          fi
 
       - name: 사이트 만들기
         run: python build_site.py
