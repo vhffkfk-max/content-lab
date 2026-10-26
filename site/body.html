@@ -244,6 +244,14 @@ a.row:hover .row-main{text-decoration:underline}
             <li><a href="#th-formulas">잘 되는 글 공식</a></li>
             <li><a href="#th-accounts">참고 계정</a></li>
           </ul></li>
+        <li><button type="button" data-ch="x"><i class="dot" style="background:var(--ch-x)"></i>X · 트루스</button>
+          <ul class="subnav" data-for="x">
+            <li><a href="#x-brief">오늘의 브리핑</a></li>
+            <li><a href="#x-trump">트럼프 최신 글</a></li>
+            <li><a href="#x-rank">반응 랭킹</a></li>
+            <li><a href="#x-groups">묶음별 주요 글</a></li>
+            <li><a href="#x-accs">보는 계정</a></li>
+          </ul></li>
         <li><button type="button" data-ch="telegram"><i class="dot" style="background:var(--ch-telegram)"></i>텔레그램<span class="soon" id="tg-badge">연결 전</span></button>
           <ul class="subnav" data-for="telegram">
             <li><a href="#tg-mine">내 채널 성과</a></li>
@@ -502,6 +510,39 @@ a.row:hover .row-main{text-decoration:underline}
         </div>
       </div>
 
+      <div class="view" data-view="x" hidden>
+        <div class="title-row">
+          <div><h1>X · 트루스소셜</h1><p>트럼프·백악관·연준·시장 속보 계정과 크게 퍼진 경제 글을 <b>조회수</b>와 함께 매일 모으고, Claude가 한국어로 요약해 한국 투자자에게 무슨 의미인지 정리해요.</p></div>
+        </div>
+        <div class="kpis" id="x-kpis"></div>
+        <section class="sec" id="x-brief">
+          <h2>오늘의 X·트루스 경제 브리핑</h2>
+          <div class="card"><ul class="learn" id="x-briefing" style="margin-top:4px"></ul></div>
+        </section>
+        <section class="sec" id="x-trump">
+          <h2>트럼프 최신 글</h2>
+          <p class="note">트루스소셜(조회수 비공개)과 X 글을 시간순으로 모았어요. 중요도는 Claude가 한국 투자자 기준으로 매긴 1~5점이에요.</p>
+          <div class="recs" id="x-trump-list"></div>
+        </section>
+        <section class="sec" id="x-rank">
+          <h2>반응 랭킹 (최근 48시간)</h2>
+          <p class="note">조회수·리포스트(+인용)·답글이 가장 많은 글 10개씩이에요. 경제와 무관한 화제 글은 걸렀어요.</p>
+          <div class="chips" id="x-rank-tabs" style="margin:6px 0 12px"></div>
+          <div class="recs" id="x-rank-list"></div>
+        </section>
+        <section class="sec" id="x-groups">
+          <h2>묶음별 주요 글</h2>
+          <p class="note">정책·시장 속보·분석·인물·코인 계정 묶음별로 최근 48시간 조회수가 높은 글이에요.</p>
+          <div class="chips" id="x-group-tabs" style="margin:6px 0 12px"></div>
+          <div class="card"><div class="rows" id="x-group-list"></div></div>
+        </section>
+        <section class="sec" id="x-accs">
+          <h2>보는 계정</h2>
+          <p class="note">x_accounts.csv 의 계정들이에요. 최근 7일 글 수와 중앙 조회수 순이에요.</p>
+          <div class="card"><div class="rows" id="x-acc-list"></div></div>
+        </section>
+      </div>
+
       <div class="view" data-view="telegram" hidden>
         <div class="title-row">
           <div><h1>텔레그램</h1><p>차트보는 말희아빠 채널을 키우기 위해, 다른 업체 방(비공개 포함)의 반응 큰 글과 오늘 뉴스로 Claude가 올릴 문구와 키우는 법을 써요.</p></div>
@@ -551,7 +592,7 @@ a.row:hover .row-main{text-decoration:underline}
         </div>
       </div>
 
-      <p class="note" style="margin-top:12px">데이터: 인스타그램 공식 Graph API(공개 계정의 공개 게시물), 구글 뉴스·구글 트렌드 RSS, 쓰레드 공개 글(Apify), 텔레그램(운영자 계정이 가입한 방) · 기획안: Claude가 분석 결과를 바탕으로 작성 · 매일 06:00 자동 갱신 · <a href="privacy.html" style="color:inherit">개인정보처리방침</a> · <a href="data-deletion.html" style="color:inherit">데이터 삭제 안내</a></p>
+      <p class="note" style="margin-top:12px">데이터: 인스타그램 공식 Graph API(공개 계정의 공개 게시물), 구글 뉴스·구글 트렌드 RSS, 쓰레드·인스타·X·트루스소셜 공개 글(Apify), 텔레그램(운영자 계정이 가입한 방) · 기획안: Claude가 분석 결과를 바탕으로 작성 · 매일 06:00 자동 갱신 · <a href="privacy.html" style="color:inherit">개인정보처리방침</a> · <a href="data-deletion.html" style="color:inherit">데이터 삭제 안내</a></p>
     </div></main>
   </div>
 </div>
@@ -566,6 +607,7 @@ a.row:hover .row-main{text-decoration:underline}
   const rows = id => { const d = dash.data(id); return d.status === 'ok' ? d.data : null; };
   const empty = (box, msg) => box.replaceChildren(el('div', 'empty', msg || '아직 수집 전이에요. 매일 06:00에 자동 갱신돼요.'));
   const igLink = u => /^https:\/\/(www\.)?instagram\.com\//.test(u || '') ? u : null;
+  const igViews = p => (p.views ? ` · 조회 ${fmtN(p.views)}` : '');   // 릴스·영상만 조회수가 있음
   const webLink = u => /^https:\/\//.test(u || '') ? u : null;
   const KR = 'var(--chart-1)', FO = 'var(--chart-2)';
   const store = { get: k => { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} } };
@@ -770,7 +812,7 @@ a.row:hover .row-main{text-decoration:underline}
       r.examples.forEach(e => {
         const link = igLink(e.permalink), a = el(link ? 'a' : 'div');
         if (link) { a.href = link; a.target = '_blank'; a.rel = 'noopener'; }
-        a.append(el('span', 'cap', e.caption || '(캡션 없음)'), el('span', 'sub', `@${e.username} · ${e.region} · ${fmtX(e.outlier)} · ${e.format}`));
+        a.append(el('span', 'cap', e.caption || '(캡션 없음)'), el('span', 'sub', `@${e.username} · ${e.region} · ${fmtX(e.outlier)}${igViews(e)} · ${e.format}`));
         ex.append(a);
       });
       more.append(ex);
@@ -840,7 +882,7 @@ a.row:hover .row-main{text-decoration:underline}
   function drawCompetitors() {
     const box = document.getElementById('week-hot'), H = rows('this_week');
     if (!H) return empty(box); if (!H.length) return empty(box, '이번 주에는 평소의 2배를 넘은 게시물이 없어요.');
-    listWithMore(box, H, p => rowLink(p.caption || '(캡션 없음)', `${fmtX(p.outlier)} · @${p.username} · ${p.format} · ${p.topics}`, p.permalink));
+    listWithMore(box, H, p => rowLink(p.caption || '(캡션 없음)', `${fmtX(p.outlier)}${igViews(p)} · @${p.username} · ${p.format} · ${p.topics}`, p.permalink));
   }
 
   // ── 주간 분석 ──
@@ -894,7 +936,7 @@ a.row:hover .row-main{text-decoration:underline}
   function drawPosts() {
     const box = document.getElementById('post-list'), P = rows('top_posts');
     if (!P) return empty(box); if (!P.length) return empty(box, '표시할 게시물이 아직 없어요.');
-    listWithMore(box, P, p => rowLink(p.caption || '(캡션 없음)', `${fmtX(p.outlier)} · @${p.username} · ${p.region} · ${p.format} · ${p.topics} · ${p.date}`, p.permalink), 10);
+    listWithMore(box, P, p => rowLink(p.caption || '(캡션 없음)', `${fmtX(p.outlier)}${igViews(p)} · @${p.username} · ${p.region} · ${p.format} · ${p.topics} · ${p.date}`, p.permalink), 10);
   }
   let accKey = 'er';
   function drawAccounts() {
@@ -1114,6 +1156,60 @@ a.row:hover .row-main{text-decoration:underline}
        `구독 ${fmtN(r.members)}${r.members_7d != null ? ' (7일 ' + (r.members_7d > 0 ? '+' : '') + fmtN(r.members_7d) + ')' : ''}`,
        r.view_rate != null ? `조회율 ${r.view_rate}%` : '', `이번 주 글 ${r.week_posts}개`, r.week_topics ? `주제 ${r.week_topics}` : ''].filter(Boolean).join(' · '),
       r.username ? `https://t.me/${r.username}` : null, webLink)));
+  }
+
+  // ── X · 트루스소셜 ──
+  function drawX() {
+    const M = (rows('x_meta') || [])[0], T = rows('x_trump') || [], R = rows('x_rank') || [], G = rows('x_groups') || [], A = rows('x_accounts') || [];
+    const AI = (() => { const d = dash.data('x_ai'); return d.status === 'ok' && !Array.isArray(d.data) ? d.data : null; })();
+    const notes = AI ? Object.fromEntries(AI.posts.map(p => [p.id, p])) : {};
+    const kb = document.getElementById('x-kpis');
+    const stat = h => [h.views != null ? `조회 ${fmtN(h.views)}` : (h.platform === '트루스소셜' ? '조회 비공개' : ''), `좋아요 ${fmtN(h.likes)}`,
+      `리포스트 ${fmtN(h.reposts)}`, `답글 ${fmtN(h.replies)}`, h.followers ? `팔로워 ${fmtN(h.followers)}` : ''].filter(Boolean).join(' · ');
+    const card = h => {
+      const n = notes[h.id], c = el('article', 'card rec'), chips = el('div', 'chips');
+      chips.append(el('span', h.platform === 'X' ? 'pill neutral' : 'pill warning', h.platform), el('span', 'pill neutral', `@${h.username}`), el('span', 'pill neutral', h.group));
+      if (n && n.importance) chips.append(el('span', n.importance >= 4 ? 'pill accent' : 'pill neutral', `중요도 ${n.importance}`));
+      if (h.repost) chips.append(el('span', 'pill neutral', '리포스트'));
+      c.append(chips, el('p', 'meta-line', `${h.time} · ${stat(h)}`));
+      if (n) {
+        c.append(el('div', 'box', n.summary_ko));
+        if (n.impact) c.append(el('p', 'why1', `영향 · ${n.impact}`));
+        if (n.why) c.append(el('p', 'sub', `왜 퍼졌나 · ${n.why}`));
+        if (n.idea) c.append(el('p', 'sub', `우리 콘텐츠 각도 · ${n.idea}`));
+      } else c.append(el('p', 'note', '한국어 요약은 다음 아침 Claude 분석 때 붙어요.'));
+      const orig = el('details'); orig.append(el('summary', null, '원문 보기'), el('div', 'box', h.text || '(내용 없음)')); c.append(orig);
+      const link = webLink(h.url); if (link) { const a = el('a', 'btn small', '원문 열기'); a.href = link; a.target = '_blank'; a.rel = 'noopener'; c.append(a); }
+      c.style.gap = '10px'; return c;
+    };
+    if (!M) {
+      kb.replaceChildren(kpi('X·트루스 수집', '연결 전', '다음 06:00 수집 뒤에 채워져요'));
+      ['x-trump-list', 'x-rank-list', 'x-group-list', 'x-acc-list'].forEach(id => empty(document.getElementById(id), '다음 06:00 수집 뒤에 채워져요.'));
+      document.getElementById('x-briefing').replaceChildren(); return;
+    }
+    kb.replaceChildren(kpi('최근 48시간 글', `${fmtN(M.posts_48h)}개`, `7일 ${fmtN(M.posts_7d)}개 · 계정 ${M.accounts}곳`),
+      kpi('트럼프 글', `${M.trump_48h}개`, '최근 48시간 · X + 트루스소셜'),
+      kpi('마지막 수집', M.collected ? M.collected.slice(5, 10).replace('-', '/') : '–', '매일 06:00'),
+      kpi('이번 달 수집 비용', `$${(+M.month_cost).toFixed(2)}`, 'Apify · X 1천 개당 0.4달러'));
+    const bb = document.getElementById('x-briefing');
+    if (AI && AI.briefing) bb.replaceChildren(...AI.briefing.map((t, i) => { const li = el('li'); li.append(el('b', null, String(i + 1)), el('span', null, t)); return li; }));
+    else bb.replaceChildren(el('li', 'note', '다음 아침 Claude 분석 때 브리핑이 나와요.'));
+    const tl = document.getElementById('x-trump-list');
+    if (!T.length) empty(tl, '최근 7일 트럼프 글이 없어요.'); else listWithMore(tl, T, card, 5);
+    const tabs = [['views', '조회수 TOP'], ['reposts', '리포스트 TOP'], ['replies', '답글 TOP']], rt = document.getElementById('x-rank-tabs'), rl = document.getElementById('x-rank-list');
+    const showRank = k => { rt.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.k === k))); rl.replaceChildren(...R.filter(h => h.list === k).map(card)); };
+    rt.replaceChildren(...tabs.filter(t => R.some(h => h.list === t[0])).map(t => { const b = el('button', 'btn small', t[1]); b.type = 'button'; b.dataset.k = t[0]; b.addEventListener('click', () => showRank(t[0])); return b; }));
+    if (R.length) showRank(tabs.find(t => R.some(h => h.list === t[0]))[0]); else empty(rl, '최근 48시간 글이 없어요.');
+    const gt = document.getElementById('x-group-tabs'), gl = document.getElementById('x-group-list'), groups = [...new Set(G.map(h => h.group))];
+    const showGroup = g => { gt.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.g === g)));
+      gl.replaceChildren(...G.filter(h => h.group === g).map(h => rowLink((notes[h.id] && notes[h.id].summary_ko) || h.text || '(내용 없음)', `@${h.username} · ${h.time} · ${stat(h)}`, h.url, webLink))); };
+    gt.replaceChildren(...groups.map(g => { const b = el('button', 'btn small', `${g} ${G.filter(h => h.group === g).length}`); b.type = 'button'; b.dataset.g = g; b.addEventListener('click', () => showGroup(g)); return b; }));
+    if (groups.length) showGroup(groups[0]); else empty(gl, '최근 48시간 글이 없어요.');
+    const al = document.getElementById('x-acc-list');
+    if (!A.length) empty(al, '아직 수집한 계정이 없어요.');
+    else al.replaceChildren(...A.map(a => rowLink(`${a.name || a.username} (@${a.username}) · ${a.platform}`,
+      `${a.group} · 7일 글 ${a.posts_7d}개 · 중앙 조회 ${a.median_views != null ? fmtN(a.median_views) : '비공개'} · 최고 ${fmtN(a.top_views)}${a.followers ? ' · 팔로워 ' + fmtN(a.followers) : ''}`,
+      a.platform === 'X' ? `https://x.com/${a.username}` : `https://truthsocial.com/@${a.username}`, webLink)));
   }
 
   // ── 인스타 연결 상태 경고 ──
@@ -1394,7 +1490,7 @@ a.row:hover .row-main{text-decoration:underline}
     }
     const hb = document.getElementById('fo-hot-list');
     if (!H.length) empty(hb, '최근 14일 해외에서 크게 터진 게시물이 없어요.');
-    else listWithMore(hb, H, h => rowLink(h.caption || '(캡션 없음)', `${fmtX(h.outlier)} · @${h.username} · ${h.format} · ${h.topics} · ${h.date}`, h.permalink), 8);
+    else listWithMore(hb, H, h => rowLink(h.caption || '(캡션 없음)', `${fmtX(h.outlier)}${igViews(h)} · @${h.username} · ${h.format} · ${h.topics} · ${h.date}`, h.permalink), 8);
     legend('legend-fo', ['해외 14일', '한국 같은 주제']);
     const tb = document.getElementById('fo-topic-chart');
     if (!T.length) empty(tb);
@@ -1471,7 +1567,7 @@ a.row:hover .row-main{text-decoration:underline}
     pat.append(bar, panel); if (groups.length) show(groups[0]); else panel.append(el('p', 'note', '게시물이 적어 아직 비교할 항목이 없어요.'));
     const tops = el('div', 'card'), tl = el('div', 'rows'); tops.append(el('h3', null, '반응 TOP 게시물 (최근 60일)'), tl);
     if (!T.length) empty(tl, '최근 60일 게시물이 없어요.');
-    else tl.replaceChildren(...T.map(p => rowLink(p.caption || '(캡션 없음)', `${fmtX(p.outlier)} · ${p.format} · ${p.hook} · ${p.topics} · ${p.date}`, p.permalink)));
+    else tl.replaceChildren(...T.map(p => rowLink(p.caption || '(캡션 없음)', `${fmtX(p.outlier)}${igViews(p)} · ${p.format} · ${p.hook} · ${p.topics} · ${p.date}`, p.permalink)));
     const grid = el('div', 'grid'), left = el('div', 'col'); left.append(how, tops); grid.append(left, pat);
     box.replaceChildren(kpis, grid);
   }
@@ -1481,7 +1577,7 @@ a.row:hover .row-main{text-decoration:underline}
   const closeMenu = () => { side.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); };
   menuBtn.addEventListener('click', () => { side.classList.add('open'); menuBtn.setAttribute('aria-expanded', 'true'); });
   document.getElementById('side-close').addEventListener('click', closeMenu);
-  const NAMES = { instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드', telegram: '텔레그램' };
+  const NAMES = { instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드', x: 'X · 트루스소셜', telegram: '텔레그램' };
   function setChannel(ch) {
     document.querySelectorAll('#channel-nav > li > button').forEach(b => b.setAttribute('aria-current', String(b.dataset.ch === ch)));
     document.querySelectorAll('.subnav').forEach(u => { u.hidden = u.dataset.for !== ch; });
@@ -1518,7 +1614,7 @@ a.row:hover .row-main{text-decoration:underline}
   dash.onData(() => {
     const recs = grouped();
     drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors();
-    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics();
+    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawX(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics();
     const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/);
     setChannel(ch ? ch[1] : 'instagram');
     if (m) openPlan(+m[1]);

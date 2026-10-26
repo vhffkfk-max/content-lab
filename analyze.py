@@ -140,7 +140,7 @@ def account_stats(conn, accounts, by_acc, now):
 def post_brief(p):
     first = (p["caption"] or "").strip().split("\n", 1)[0]
     return {"username": p["username"], "region": p["region"], "outlier": p["outlier"],
-            "likes": p["likes"], "comments": p["comments"], "permalink": p["permalink"],
+            "likes": p["likes"], "comments": p["comments"], "views": p.get("views"), "permalink": p["permalink"],
             "format": p["format"], "hook": p["hook"], "topics": p["topics"],
             "date": p["dt"].astimezone(KST).strftime("%m/%d %H:%M"),
             "caption": first[:90] + ("…" if len(first) > 90 else "")}
@@ -612,6 +612,8 @@ def main():
     }
     data["threads"] = threads_section(conn, now)
     data["threads_auto"] = threads_auto_section(conn, now)
+    import x_score
+    data["x"] = x_score.section(conn, now)
     data["threads_saved"], data["threads_saved_stats"] = threads_saved_section(conn)
     rec_topics = [r["topic"] for r in data["recommendations"]]
     data["acc_details"], data["acc_patterns"], data["acc_tops"] = account_details(by_acc, data["accounts"], now, rec_topics)

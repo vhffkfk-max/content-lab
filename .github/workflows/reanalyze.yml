@@ -34,7 +34,9 @@ jobs:
         if: ${{ inputs.collect_threads }}
         env:
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
-        run: python apify_threads.py --foreign
+        run: |
+          python apify_threads.py --foreign
+          python x_collect.py
       - name: 분석
         run: |
           python analyze.py --no-open
@@ -43,7 +45,9 @@ jobs:
         continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python threads_analyze.py
+        run: |
+          python threads_analyze.py
+          python x_analyze.py
       - name: 사이트 만들기
         run: python build_site.py
       - name: 결과 저장

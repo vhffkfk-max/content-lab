@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       instagram:
-        description: "인스타도 수집 (평소엔 끄기 — 하루 여러 번 부르면 메타가 비정상 활동으로 막을 수 있음)"
+        description: "인스타도 수집 (Apify 비용 약 1달러 + 해시태그 공식 API — 평소엔 끄기)"
         type: boolean
         default: false
 
@@ -45,7 +45,8 @@ jobs:
           # 인스타 API 는 하루 1번(06:00 정기 실행)만 부른다. 손으로 돌릴 땐 'instagram' 을 켰을 때만.
           if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.instagram }}" = "true" ]; then
             python own_collect.py
-            python collect.py --max-posts 25   # 계정당 1번 호출 (옛 글은 DB에 쌓여 있음)
+            python apify_instagram.py           # 참고 계정 게시물·릴스 조회수 (Apify — 메타 API 안 씀)
+            python collect.py --hashtags-only   # 해시태그 인기 게시물만 공식 API로 (하루 6~7번 호출)
           else
             echo "수동 실행이라 인스타 수집은 건너뛰어요 (지난 데이터로 분석)"
           fi
@@ -54,6 +55,7 @@ jobs:
           python threads_collect.py
           python threads_links.py
           python apify_threads.py
+          python x_collect.py
           python analyze.py --no-open
           python export_site.py
 
@@ -74,6 +76,12 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python threads_analyze.py
+
+      - name: X·트루스 경제 글 분석 (Claude)
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python x_analyze.py
 
       - name: 사이트 만들기
         run: python build_site.py
