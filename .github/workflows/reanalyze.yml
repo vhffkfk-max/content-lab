@@ -48,6 +48,7 @@ jobs:
         run: |
           python threads_analyze.py
           python x_analyze.py
+          python threads_mine_analyze.py
       - name: 사이트 만들기
         run: python build_site.py
       - name: 결과 저장

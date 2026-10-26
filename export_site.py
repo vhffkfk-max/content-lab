@@ -87,6 +87,9 @@ def main():
     write("own_formats", own.get("formats") or [])
     write("threads_saved", d.get("threads_saved") or [])
     write("threads_saved_stats", d.get("threads_saved_stats") or [])
+    tm = d.get("thm") or {}
+    for k in ("meta", "posts", "feed"):
+        write(f"thm_{k}", tm.get(k) or [])
     xs = d.get("x") or {}
     for k in ("meta", "trump", "rank", "groups", "accounts"):
         write(f"x_{k}", xs.get(k) or [])

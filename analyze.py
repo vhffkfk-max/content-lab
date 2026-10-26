@@ -614,6 +614,9 @@ def main():
     data["threads_auto"] = threads_auto_section(conn, now)
     import x_score
     data["x"] = x_score.section(conn, now)
+    import threads_mine
+    from apify_threads import MY_ACCOUNTS
+    data["thm"] = threads_mine.section(conn, now, MY_ACCOUNTS)
     data["threads_saved"], data["threads_saved_stats"] = threads_saved_section(conn)
     rec_topics = [r["topic"] for r in data["recommendations"]]
     data["acc_details"], data["acc_patterns"], data["acc_tops"] = account_details(by_acc, data["accounts"], now, rec_topics)

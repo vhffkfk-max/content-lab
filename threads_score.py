@@ -188,6 +188,8 @@ def section(conn, now):
         "SELECT * FROM threads_apify WHERE is_reply = 0 AND posted_at >= ? AND view_status IS NOT NULL", (week,))]
     foreign_rows = [r for r in rows if (r["source"] or "").startswith("해외") or lang_of(r["text"]) not in ("ko",)]
     rows = [r for r in rows if r not in foreign_rows]
+    from apify_threads import MY_ACCOUNTS   # 우리 계정 글은 남의 글 랭킹에서 뺀다 (진단은 threads_mine.py)
+    rows = [r for r in rows if (r["username"] or "").lower() not in {u.lower() for u in MY_ACCOUNTS}]
     kept, dropped = score_posts(rows, now)
     fkept, _ = score_posts(foreign_rows, now, foreign=True)
     foreign = []

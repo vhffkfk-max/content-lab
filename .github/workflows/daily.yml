@@ -81,7 +81,9 @@ jobs:
         continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python x_analyze.py
+        run: |
+          python x_analyze.py
+          python threads_mine_analyze.py
 
       - name: 사이트 만들기
         run: python build_site.py

@@ -242,6 +242,7 @@ a.row:hover .row-main{text-decoration:underline}
         <li><button type="button" data-ch="youtube"><i class="dot" style="background:var(--ch-youtube)"></i>유튜브<span class="soon">준비 중</span></button></li>
         <li><button type="button" data-ch="threads"><i class="dot" style="background:var(--ch-threads)"></i>쓰레드<span class="soon" id="th-badge">심사 중</span></button>
           <ul class="subnav" data-for="threads">
+            <li><a href="#th-mine">황소개미 진단</a></li>
             <li><a href="#th-top">따라 할 글 TOP 5</a></li>
             <li><a href="#th-rank">반응 랭킹·이유</a></li>
             <li><a href="#th-foreign">해외 쓰레드</a></li>
@@ -483,6 +484,33 @@ a.row:hover .row-main{text-decoration:underline}
             <li><b>3</b><span><b>조회 속도</b> = 조회 ÷ 올린 지 몇 시간. 지금 뜨는 글을 빨리 찾는 데 써요</span></li>
             <li><b>4</b><span><b>점수</b> = 같은 나이대 글끼리 비교한 순위(확산 45% · 반응률 35% · 속도 20%). 기준값은 추정치라 데이터가 쌓이면 다시 맞춰요</span></li>
           </ul></details>
+        <section class="sec" id="th-mine">
+          <h2>황소개미 진단 — 팔로워 늘리기</h2>
+          <p class="note">@bullant_economy 최근 글을 매일 조회수와 함께 모아, AI 티·정보 품질·프로필 첫 화면·반응을 점검하고 해법과 일주일 계획을 써요. 기준값은 추정치라 2~4주 데이터가 쌓이면 다시 맞춰요.</p>
+          <div class="kpis" id="thm-kpis"></div>
+          <div class="card" id="thm-summary" style="margin-top:12px"></div>
+          <div class="grid" style="margin-top:12px">
+            <div class="card"><h3>지금 할 일 (우선순위)</h3><div class="rows" id="thm-solutions"></div></div>
+            <div class="card"><h3>프로필 첫 화면 (최근 12개)</h3><div class="rows" id="thm-feed"></div></div>
+          </div>
+          <h3 style="margin:16px 0 8px">바로 올릴 초안 3개 (오늘 뉴스 근거)</h3>
+          <div class="recs" id="thm-drafts"></div>
+          <div class="grid" style="margin-top:12px">
+            <div class="card"><h3>이번 주 계획</h3><div class="rows" id="thm-week"></div></div>
+            <div class="card"><h3>댓글로 노출 얻기</h3><p class="sub">조회 큰 경제 글에 올라온 지 1시간 안에 숫자·관점 한 줄 댓글 → 프로필 방문</p><div class="rows" id="thm-engage"></div></div>
+          </div>
+          <div class="grid" style="margin-top:12px">
+            <div class="card"><h3>AI 티 점검</h3><div class="rows" id="thm-ai"></div></div>
+            <div class="card"><h3>정보 품질이 약한 글</h3><div class="rows" id="thm-quality"></div></div>
+          </div>
+          <h3 style="margin:16px 0 8px">AI 티가 강한 글 → 사람 말투로</h3>
+          <div class="recs" id="thm-rewrites"></div>
+          <div class="grid" style="margin-top:12px">
+            <div class="card"><h3>반응 좋았던 글</h3><div class="rows" id="thm-top"></div></div>
+            <div class="card"><h3>반응 약했던 글</h3><div class="rows" id="thm-bottom"></div></div>
+          </div>
+          <div class="card" style="margin-top:12px"><h3>최근 글 (조회·반응)</h3><div class="rows" id="thm-posts"></div></div>
+        </section>
         <section class="sec" id="th-top">
           <h2>이번 주 따라 할 글 TOP 5</h2>
           <p class="note">'바이럴'이나 '따라 할 가치' 등급을 받은 글만 골랐어요. 한 주제는 2개까지예요. 우리 말투 초안은 매일 아침 Claude가 써요.</p>
@@ -1465,6 +1493,72 @@ a.row:hover .row-main{text-decoration:underline}
     }, 2);
   }
 
+  // ── 쓰레드: 황소개미 진단 ──
+  function drawThreadsMine() {
+    const M = (rows('thm_meta') || [])[0], P = rows('thm_posts') || [], F = (rows('thm_feed') || [])[0];
+    const A = (() => { const d = dash.data('thm_ai'); return d.status === 'ok' && !Array.isArray(d.data) ? d.data : null; })();
+    const $ = id => document.getElementById(id);
+    if (!M) {
+      $('thm-kpis').replaceChildren(kpi('황소개미', '수집 전', '다음 06:00 수집 뒤에 진단이 나와요'));
+      ['thm-solutions', 'thm-feed', 'thm-week', 'thm-engage', 'thm-ai', 'thm-quality', 'thm-top', 'thm-bottom', 'thm-posts'].forEach(id => empty($(id), '데이터가 모이면 채워져요.'));
+      ['thm-summary', 'thm-drafts', 'thm-rewrites'].forEach(id => $(id).replaceChildren()); return;
+    }
+    const vs = (a, b) => (a != null && b ? ` · 비교 기준 ${fmtN(b)}` : '');
+    $('thm-kpis').replaceChildren(
+      kpi('팔로워', M.followers != null ? `${fmtN(M.followers)}명` : '–', `글 ${M.posts_total}개 · 마지막 ${M.last_post}`),
+      kpi('최근 14일', `하루 ${M.per_day_14d}개`, `14일 중 ${M.active_days_14d}일 올림 · 목표 매일`),
+      kpi('조회 중앙값', M.median_views != null ? fmtN(M.median_views) : '–', `${M.trend != null ? (M.trend >= 1 ? '▲ ' : '▼ ') + M.trend + '배 (최근 7개 ÷ 그 전 7개)' : '추세 계산 중'}${vs(M.median_views, M.bench_views)}`),
+      kpi('등급 · AI 티 · 정보 품질', A ? `${A.overall_grade} · ${A.ai_score} · ${A.quality_score}` : '–', A ? 'AI 티는 낮을수록, 정보 품질은 높을수록 좋음(5점)' : '다음 아침 Claude 진단'));
+    const sm = $('thm-summary'); sm.replaceChildren();
+    if (A) {
+      sm.append(el('h3', null, `정체성 한 줄: ${A.identity_line}`), el('p', 'why1', A.grade_reason));
+      if (A.changes_since_last) sm.append(el('p', 'sub', `지난번 대비 · ${A.changes_since_last}`));
+      if (A.data_gaps && A.data_gaps.length) sm.append(el('p', 'note', `데이터 부족 · ${A.data_gaps.join(' · ')}`));
+    } else sm.append(el('p', 'note', '숫자는 아래에 먼저 나와요. Claude 진단(등급·해법·초안)은 다음 아침 실행 때 붙어요.'));
+    const sol = $('thm-solutions');
+    if (!A) empty(sol, '–'); else sol.replaceChildren(...[...A.solutions].sort((a, b) => a.priority - b.priority).map(s => {
+      const r = el('div', 'row'); r.append(el('span', 'row-main', `${s.priority}. ${s.what}`), el('span', 'row-sub', `왜 · ${s.why}`), el('span', 'row-sub', `어떻게 · ${s.how}`), el('span', 'row-sub', `성공 신호 · ${s.expected}`)); return r;
+    }));
+    const fd = $('thm-feed'); const lines = [];
+    (F && F.warnings || []).forEach(w => lines.push(rowLink([el('span', 'pill warning', '경고'), ' ', w], '자동 점검', null, () => null)));
+    (A && A.feed_issues || []).forEach(w => lines.push(rowLink([el('span', 'pill neutral', '진단'), ' ', w], 'Claude', null, () => null)));
+    if (A) A.format_mix.forEach(m => lines.push(rowLink(`형식 · ${m.key}`, `지금 ${m.share}% · 목표 ${m.target}%${m.share < m.target - 5 ? ' — 부족' : m.share > m.target + 10 ? ' — 많음' : ''}`, null, () => null)));
+    else if (F) F.mix.filter(m => m.dim !== '미디어').forEach(m => lines.push(rowLink(`${m.dim} · ${m.key}`, `${m.n}개 (${m.share}%)`, null, () => null)));
+    if (!lines.length) empty(fd, '–'); else fd.replaceChildren(...lines);
+    const dr = $('thm-drafts');
+    if (!A) dr.replaceChildren(); else dr.replaceChildren(...A.next_posts.map(d => {
+      const c = el('article', 'card rec'), chips = el('div', 'chips');
+      chips.append(el('span', 'pill accent', d.format), el('span', 'pill positive', d.topic));
+      c.append(chips, el('div', 'box', d.text), el('p', 'why1', d.why_now));
+      if (d.sources && d.sources.length) c.append(el('p', 'sub', `근거 · ${d.sources.join(' · ')}`));
+      c.append(copyBtn('초안 복사', d.text, 'btn primary'), fbBar({ id: `thm-draft:${d.text.slice(0, 30)}`, type: '황소개미 진단', title: d.text.slice(0, 80), url: '' }));
+      c.style.gap = '10px'; return c;
+    }));
+    const wk = $('thm-week');
+    if (!A) empty(wk, '–'); else wk.replaceChildren(...A.week_plan.map(w => rowLink(`${w.day} ${w.time} · ${w.format} · ${w.topic}`, `첫 줄 · ${w.hook}`, null, () => null)));
+    const en = $('thm-engage');
+    if (!A) empty(en, '–'); else en.replaceChildren(...A.engage.map(e => {
+      const r = rowLink(`${e.target}`, `댓글 예시 · ${e.comment}`, e.url, webLink); r.append(copyBtn('댓글 복사', e.comment, 'btn small')); return r;
+    }));
+    const ai = $('thm-ai');
+    if (!A) empty(ai, '–'); else ai.replaceChildren(...[...A.ai_signals].sort((a, b) => b.score - a.score).map(s => rowLink([el('span', s.score >= 4 ? 'pill warning' : 'pill neutral', `${s.score}점`), ` ${s.id}`], s.evidence, null, () => null)));
+    const ql = $('thm-quality');
+    if (!A) empty(ql, '–'); else if (!A.quality_low.length) empty(ql, '정보 품질이 약한 글이 없어요.');
+    else ql.replaceChildren(...A.quality_low.map(q => rowLink(`${q.score}점 · ${(P[q.no - 1] || {}).text?.slice(0, 50) || '글 ' + q.no}`, q.issue, (P[q.no - 1] || {}).url, webLink)));
+    const rw = $('thm-rewrites');
+    if (!A) rw.replaceChildren(); else rw.replaceChildren(...A.ai_worst.map(w => {
+      const c = el('article', 'card rec'), chips = el('div', 'chips');
+      chips.append(...w.signals.map(sg => el('span', 'pill warning', sg)));
+      c.append(chips, el('p', 'sub', `원래 글 · ${w.excerpt}`), el('div', 'box', w.rewrite), copyBtn('고친 글 복사', w.rewrite, 'btn'));
+      c.style.gap = '8px'; return c;
+    }));
+    const lst = (id, xs) => { const b = $(id); if (!A || !xs.length) { empty(b, '–'); return; } b.replaceChildren(...xs.map(x => rowLink(x.excerpt, x.why, x.url, webLink))); };
+    lst('thm-top', A ? A.top_posts : []); lst('thm-bottom', A ? A.bottom_posts : []);
+    const pl = $('thm-posts');
+    if (!P.length) empty(pl, '–');
+    else listWithMore(pl, P, p => rowLink(p.text || '(내용 없음)', `${p.time} · 조회 ${p.views != null ? fmtN(p.views) : '대기'} · 반응률 ${p.rate ?? '–'}% · 확산 ${p.spread ?? '–'}배 · 답글 ${fmtN(p.replies)} · 공유 ${fmtN(p.reposts + p.quotes + p.shares)} · ${p.hook} · ${p.length}${p.topics ? ' · ' + p.topics : ''}`, p.url, webLink), 8);
+  }
+
   // ── 인스타 연결 상태 경고 ──
   function drawIgHealth() {
     const h = (rows('ig_health') || [])[0], box = document.getElementById('ig-alert');
@@ -1874,7 +1968,7 @@ a.row:hover .row-main{text-decoration:underline}
     if (!setupRefresh.done) { setupRefresh(); setupRefresh.done = true; }
     const recs = grouped();
     drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors();
-    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawX(); drawFeedback(); drawRewrites(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics();
+    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawX(); drawFeedback(); drawRewrites(); drawThreadsMine(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics();
     const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/);
     setChannel(ch ? ch[1] : 'instagram');
     if (m) openPlan(+m[1]);

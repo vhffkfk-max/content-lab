@@ -34,6 +34,8 @@ FOREIGN_KEYWORDS = {"english": ["stocks", "bitcoin", "investing", "personal fina
                     "chinese": ["美股", "ETF", "比特幣", "理財"]}
 PER_FOREIGN = 10
 PER_ACCOUNT = 5
+MY_ACCOUNTS = ["bullant_economy"]   # 우리가 키우는 쓰레드 계정 (황소개미) — 매일 최근 40개, 진단용 (threads_mine.py)
+MY_POSTS = 40
 RECHECK_MAX = 0   # 링크 모드는 링크당 최소 10건(답글 포함) 과금이라 끔 — 인기 글은 다음 날 검색에 다시 걸리며 조회수가 갱신됨
 DEFAULT_ACCOUNTS = ["bullstory1", "heoyoopapa", "snowball_economy", "hibi_heebee", "syukaworld", "weolbu_official",
                     "buiknam", "bstory_economy", "chart_ddorai", "ekke.now"]
@@ -192,6 +194,9 @@ def main():
             items = run_actor(token, {"mode": "user", "usernames": users[i:i + 20], "max_posts": PER_ACCOUNT})
             total += save(conn, items, "계정", now)
             print(f"✅ 계정 {len(users[i:i + 20])}곳: {len(items)}개")
+    items = run_actor(token, {"mode": "user", "usernames": MY_ACCOUNTS, "max_posts": MY_POSTS})
+    total += save(conn, items, "내 계정", now)
+    print(f"✅ 우리 계정 {', '.join(MY_ACCOUNTS)}: {len(items)}개")
     for i in range(0, len(recheck), 20):
         items = run_actor(token, {"mode": "post_link", "post_links": recheck[i:i + 20], "max_posts": 10})
         total += save(conn, items, "다시 읽기", now)
