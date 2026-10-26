@@ -169,6 +169,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--force", action="store_true", help="차례가 아니어도 Claude 추천을 다시 씀")
+    ap.add_argument("--scheduled", action="store_true", help="정해진 시각(07·12·18시) 갱신: 뉴스·인기 글이 그대로면 다시 안 씀")
     ap.add_argument("--due", action="store_true", help="다시 쓸 차례면 0, 아니면 3 으로 끝냄 (워크플로가 뉴스부터 새로 받을지 정할 때)")
     ap.add_argument("--focus", default=os.environ.get("TG_FOCUS", ""), help="이번에 특히 반영할 요청 (예: '지금 하락장')")
     args = ap.parse_args()
@@ -188,7 +189,7 @@ def main():
         return
     # 사이트는 30분마다 갱신되고, Claude 추천은 하루 3번(07·12·18시 이후 첫 갱신) 최신 뉴스로 다시 쓴다
     ai_path = SITE / "tg_ai.json"
-    if not args.force and not args.dry_run and not is_due(ai_path, datetime.now(KST)):
+    if not args.force and not args.scheduled and not args.dry_run and not is_due(ai_path, datetime.now(KST)):
         print("이번 차례 텔레그램 추천은 이미 썼어요 (07·12·18시에 다시 써요) — 건너뛰어요.")
         return
 
@@ -207,6 +208,13 @@ def main():
     if args.focus:
         prompt += f"\n\n대표의 이번 요청 (가장 우선해서 반영): {args.focus}"
     room = next((c["title"] for c in out["tg_chats"] if c["role"] == "mine"), "우리 채널")
+    # 비용 절약: 정해진 시각 갱신인데 헤드라인·다른 방 인기 글이 지난번과 같으면 다시 쓰지 않음
+    news_key = hashlib.sha1(json.dumps([ctx["today"]["headlines"][:10], [h["text"][:60] for h in hot[:10]], args.focus],
+                                       ensure_ascii=False).encode()).hexdigest()
+    last_key = json.loads(ai_path.read_text(encoding="utf-8") or "{}").get("news_key") if ai_path.exists() else None
+    if args.scheduled and not args.force and last_key == news_key:
+        print("뉴스·인기 글이 지난번과 같아 텔레그램 추천을 다시 쓰지 않아요 (비용 절약).")
+        return
     if args.dry_run:
         print(SYSTEM.format(room=room), "\n\n", prompt[:3000])
         return
@@ -263,7 +271,7 @@ def main():
     notes = [{**n.model_dump(), "id": hot[n.no - 1]["id"]} for n in a.posts if 1 <= n.no <= len(hot)]
     ai_path.write_text(json.dumps({"digest": digest, "analyzed_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                                    "summary": a.summary, "formulas": [f.model_dump() for f in a.formulas],
-                                   "today": [t.model_dump() for t in a.today], "growth": a.growth, "posts": notes, "room": room},
+                                   "today": [t.model_dump() for t in a.today], "growth": a.growth, "posts": notes, "room": room, "news_key": news_key},
                                   ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"✅ 텔레그램 추천: 오늘 문구 {len(a.today)}개 · 공식 {len(a.formulas)}개 "
           f"(입력 {r.usage.input_tokens:,} / 출력 {r.usage.output_tokens:,} 토큰)")

@@ -95,7 +95,8 @@ def main():
 
     client = anthropic.Anthropic()
     try:
-        response = client.messages.parse(model=MODEL, max_tokens=16000, system=SYSTEM,
+        response = client.messages.parse(model=MODEL, max_tokens=16000, system=SYSTEM, output_config={"effort": "low"},   # 비용 절약
+                                        
                                          messages=[{"role": "user", "content": prompt}], output_format=Ideas)
     except anthropic.APIStatusError as e:
         print(f"⚠️ Claude API 오류({e.status_code}): {e.message} — 지난 결과를 유지해요.")

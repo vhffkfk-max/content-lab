@@ -141,7 +141,8 @@ def main():
     client = anthropic.Anthropic()
     try:
         # 출력이 길어(글 40여 개 분석) 스트리밍으로 받는다 — 비스트리밍은 10분 넘는 요청을 막음
-        with client.messages.stream(model=MODEL, max_tokens=32000, system=SYSTEM,
+        with client.messages.stream(model=MODEL, max_tokens=32000, system=SYSTEM, output_config={"effort": "low"},   # 비용 절약
+                                   
                                     messages=[{"role": "user", "content": prompt}], output_format=Analysis) as stream:
             response = stream.get_final_message()
     except anthropic.APIStatusError as e:

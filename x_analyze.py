@@ -84,7 +84,8 @@ def main():
 
     client = anthropic.Anthropic()
     try:
-        with client.messages.stream(model=MODEL, max_tokens=24000, system=SYSTEM,
+        with client.messages.stream(model=MODEL, max_tokens=24000, system=SYSTEM, output_config={"effort": "low"},   # 요약·번역이라 생각량 낮춤 (비용 절약)
+                                   
                                     messages=[{"role": "user", "content": prompt}], output_format=Analysis) as stream:
             r = stream.get_final_message()
     except (anthropic.APIStatusError, anthropic.APIConnectionError) as e:

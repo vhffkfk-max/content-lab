@@ -8,6 +8,7 @@ API 호출이 실패하거나 거절되면 기존 drafts.json 을 그대로 둔�
 import argparse
 import collections
 import json
+from datetime import datetime, timedelta, timezone
 import os
 import re
 import sys
@@ -16,6 +17,7 @@ from typing import List
 from common import DEFAULT_DB, OUTPUT_DIR, connect, load_env
 
 MODEL = "claude-opus-5-5"
+REUSE_DAYS = 3   # 같은 추천이면 3일 동안 기획안을 다시 쓰지 않음
 DRAFTS = OUTPUT_DIR / "site" / "drafts.json"
 
 BRAND_TAG = os.environ.get("BRAND_TAG", "#핫코노미")
@@ -138,12 +140,26 @@ def main():
         return
     tags = top_hashtags(args.db)
     recs = report["recommendations"]
+    # 비용 절약: 같은 추천(주제·제목 아이디어)이고 3일 안에 쓴 기획안이 있으면 다시 쓰지 않는다
+    old = json.loads(DRAFTS.read_text(encoding="utf-8")) if DRAFTS.exists() else []
+    made = {r["topic"]: (r.get("idea"), r.get("made", "")) for r in old if r.get("part") == "title"}
+    fresh_after = (datetime.now(timezone.utc) - timedelta(days=REUSE_DAYS)).isoformat()
+    reuse = {r["topic"] for r in recs if made.get(r["topic"], (None, ""))[0] == r.get("title_idea")
+             and made[r["topic"]][1] >= fresh_after}
+    todo = [r for r in recs if r["topic"] not in reuse]
+    if reuse:
+        print(f"♻️ 바뀌지 않은 추천 {len(reuse)}개는 지난 기획안을 그대로 써요 (비용 절약)")
     # 채널별 버전까지 쓰면 글이 길어서 추천 4개씩 나눠 요청한다
-    chunks = [recs[i:i + 4] for i in range(0, len(recs), 4)]
+    chunks = [todo[i:i + 4] for i in range(0, len(todo), 4)]
     if args.dry_run:
-        print(SYSTEM, "\n\n", build_prompt(report, tags, chunks[0]))
+        print(SYSTEM, "\n\n", build_prompt(report, tags, chunks[0]) if chunks else "(새로 쓸 기획안 없음)")
         return
 
+    if not chunks:
+        current = {r["topic"] for r in recs}
+        DRAFTS.write_text(json.dumps([r for r in old if r["topic"] in current], ensure_ascii=False, indent=1), encoding="utf-8")
+        print("새로 쓸 기획안이 없어요 — Claude 호출 없이 지난 기획안을 유지해요.")
+        return
     if not os.environ.get("ANTHROPIC_API_KEY"):
         print("ANTHROPIC_API_KEY 가 없어 기획안 작성을 건너뛰어요 — 지난 기획안을 유지해요.")
         return
@@ -174,8 +190,9 @@ def main():
         plans: List[Plan]
 
     client = anthropic.Anthropic()
-    old = json.loads(DRAFTS.read_text(encoding="utf-8")) if DRAFTS.exists() else []
     rows, done, used_in, used_out = [], set(), 0, 0
+    ideas = {r["topic"]: r.get("title_idea") for r in recs}
+    now_iso = datetime.now(timezone.utc).isoformat(timespec="seconds")
     for chunk in chunks:
         try:
             response = client.messages.parse(
@@ -194,11 +211,11 @@ def main():
         if response.stop_reason != "end_turn" or response.parsed_output is None:
             print(f"⚠️ 기획안을 받지 못했어요(stop_reason={response.stop_reason}) — 이 묶음은 지난 기획안을 유지해요.")
             continue
-        rows += to_rows(response.parsed_output.plans)
+        rows += [dict(r, idea=ideas.get(r["topic"]), made=now_iso) for r in to_rows(response.parsed_output.plans)]
         done |= {pl.topic for pl in response.parsed_output.plans}
         used_in += response.usage.input_tokens
         used_out += response.usage.output_tokens
-    if not done:
+    if not done and not reuse:
         return
     # 이번에 못 쓴 주제는 예전 기획안을 그대로 둔다
     current = {r["topic"] for r in recs}

@@ -53,7 +53,7 @@ jobs:
             python press_collect.py || true
             python google_collect.py || true
             python analyze.py --no-open && python export_site.py
-            python tg_analyze.py --force
+            python tg_analyze.py ${{ inputs.force && '--force' || '--scheduled' }}
           else
             echo "이번엔 텔레그램 추천을 다시 쓸 차례가 아니에요"
           fi
