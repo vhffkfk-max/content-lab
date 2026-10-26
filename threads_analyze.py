@@ -96,6 +96,8 @@ def main():
               "text": p["text"][:1200]} for i, p in enumerate(posts, 1)]
     digest = hashlib.sha1(json.dumps(items, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
     prompt = "분석할 쓰레드 글:\n" + json.dumps(items, ensure_ascii=False, indent=1)
+    from feedback import feedback_prompt
+    prompt += feedback_prompt(["쓰레드", "해외 쓰레드", "쓰레드(모은 글)"])   # 사이트에서 남긴 후기
     if args.dry_run:
         print(SYSTEM, "\n\n", prompt[:3000])
         return

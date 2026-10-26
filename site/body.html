@@ -160,6 +160,7 @@ a.row:hover .row-main{text-decoration:underline}
 
 .analysis>summary{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .learn{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.fb-bar{margin-top:4px;padding-top:10px;border-top:1px dashed var(--border);align-items:center}
 .mini-bars{display:flex;align-items:flex-end;gap:3px;height:90px;margin-top:12px}
 .mini-bars i{flex:1;background:var(--accent);border-radius:3px 3px 0 0}
 .mini-bars i.zero{background:var(--border)}
@@ -251,6 +252,12 @@ a.row:hover .row-main{text-decoration:underline}
             <li><a href="#x-rank">반응 랭킹</a></li>
             <li><a href="#x-groups">묶음별 주요 글</a></li>
             <li><a href="#x-accs">보는 계정</a></li>
+          </ul></li>
+        <li><button type="button" data-ch="feedback"><i class="dot" style="background:var(--accent)"></i>후기·기록</button>
+          <ul class="subnav" data-for="feedback">
+            <li><a href="#fb-done">만든 콘텐츠</a></li>
+            <li><a href="#fb-notes">남긴 후기</a></li>
+            <li><a href="#fb-store">저장 연결</a></li>
           </ul></li>
         <li><button type="button" data-ch="telegram"><i class="dot" style="background:var(--ch-telegram)"></i>텔레그램<span class="soon" id="tg-badge">연결 전</span></button>
           <ul class="subnav" data-for="telegram">
@@ -543,6 +550,17 @@ a.row:hover .row-main{text-decoration:underline}
         </section>
       </div>
 
+      <div class="view" data-view="feedback" hidden>
+        <div class="title-row">
+          <div><h1>후기·기록</h1><p>각 탭의 글 카드에서 누른 <b>도움됨 · 도움 안 됨 · 메모</b>와, <b>내가 만든 콘텐츠</b>를 모아 봐요. 남긴 후기는 다음 날 아침 Claude 추천에 반영돼요.</p></div>
+          <div class="actions"><button type="button" class="btn primary" id="fb-add">콘텐츠 기록하기</button></div>
+        </div>
+        <div class="kpis" id="fb-kpis"></div>
+        <section class="sec" id="fb-done"><h2>만든 콘텐츠</h2><p class="note">어떤 글을 참고해 무엇을 만들었고 반응이 어땠는지 적어 두면, 다음 추천이 그 결과를 보고 바뀌어요.</p><div class="recs" id="fb-contents"></div></section>
+        <section class="sec" id="fb-notes"><h2>남긴 후기</h2><div class="card"><div class="rows" id="fb-list"></div></div></section>
+        <section class="sec" id="fb-store"><h2>저장 연결</h2><div class="card" id="fb-connect"></div></section>
+      </div>
+
       <div class="view" data-view="telegram" hidden>
         <div class="title-row">
           <div><h1>텔레그램</h1><p>차트보는 말희아빠 채널을 키우기 위해, 다른 업체 방(비공개 포함)의 반응 큰 글과 오늘 뉴스로 Claude가 올릴 문구와 키우는 법을 써요.</p></div>
@@ -823,6 +841,7 @@ a.row:hover .row-main{text-decoration:underline}
     // 기획안을 펼치면 카드 폭 전체를 쓰도록 액션 줄 밖으로 꺼낸다
     const d = actions.querySelector('details');
     d.addEventListener('toggle', () => { if (d.open) card.append(d); else actions.prepend(d); });
+    card.append(fbBar({ id: `ig-rec:${r.topic}:${r.title_idea}`, type: '인스타 추천', title: r.title_idea || r.topic, url: '' }));
     return card;
   }
 
@@ -1058,6 +1077,7 @@ a.row:hover .row-main{text-decoration:underline}
         const c = el('article', 'card rec'), chips = el('div', 'chips');
         chips.append(el('span', 'pill accent', t.time), el('span', 'pill neutral', t.type));
         c.append(chips, el('div', 'box', t.text), el('p', 'why1', t.why), el('p', 'sub', `근거 · ${t.based_on}`), copyBtn('문구 복사', t.text, 'btn primary'));
+        c.append(fbBar({ id: `tg-today:${t.time}:${(t.text || '').slice(0, 24)}`, type: '텔레그램 문구', title: (t.text || '').slice(0, 80), url: '' }));
         c.style.gap = '10px'; return c;
       }));
       sb.replaceChildren(...AI.summary.map((t, i) => { const li = el('li'); li.append(el('b', null, String(i + 1)), el('span', null, t)); return li; }));
@@ -1079,6 +1099,7 @@ a.row:hover .row-main{text-decoration:underline}
       card.append(chips, el('div', 'box', h.text), el('p', 'sub', `${h.time} · ${h.media}`));
       if (n) card.append(el('p', 'why1', n.why));
       const link = webLink(h.link); if (link) { const a = el('a', 'btn small', '원문 보기'); a.href = link; a.target = '_blank'; a.rel = 'noopener'; card.append(a); }
+      card.append(fbBar({ id: h.id, type: '텔레그램', title: (h.text || '').slice(0, 80), url: h.link || '' }));
       card.style.gap = '10px'; return card;
     }, 6);
     const pat = [...(rows('tg_hours') || []).map(r => ['시간대', r]), ...(rows('tg_lengths') || []).map(r => ['길이', r]), ...(rows('tg_media') || []).map(r => ['형식', r])].filter(([, r]) => r.n);
@@ -1180,6 +1201,7 @@ a.row:hover .row-main{text-decoration:underline}
       } else c.append(el('p', 'note', '한국어 요약은 다음 아침 Claude 분석 때 붙어요.'));
       const orig = el('details'); orig.append(el('summary', null, '원문 보기'), el('div', 'box', h.text || '(내용 없음)')); c.append(orig);
       const link = webLink(h.url); if (link) { const a = el('a', 'btn small', '원문 열기'); a.href = link; a.target = '_blank'; a.rel = 'noopener'; c.append(a); }
+      c.append(fbBar({ id: h.id, type: h.platform === 'X' ? 'X' : '트루스소셜', title: (h.text || '').slice(0, 80), url: h.url || '' }));
       c.style.gap = '10px'; return c;
     };
     if (!M) {
@@ -1210,6 +1232,130 @@ a.row:hover .row-main{text-decoration:underline}
     else al.replaceChildren(...A.map(a => rowLink(`${a.name || a.username} (@${a.username}) · ${a.platform}`,
       `${a.group} · 7일 글 ${a.posts_7d}개 · 중앙 조회 ${a.median_views != null ? fmtN(a.median_views) : '비공개'} · 최고 ${fmtN(a.top_views)}${a.followers ? ' · 팔로워 ' + fmtN(a.followers) : ''}`,
       a.platform === 'X' ? `https://x.com/${a.username}` : `https://truthsocial.com/@${a.username}`, webLink)));
+  }
+
+  // ── 후기·기록: 글마다 도움됨/안 됨·메모·콘텐츠 씀 → 저장소 data/feedback.json 에 바로 저장 ──
+  // 깃허브 토큰(이 브라우저에만 저장)이 있으면 저장소에 저장 → 매일 Claude 추천에 반영. 없으면 이 브라우저에만 임시 저장.
+  const FB_REPO = 'vhffkfk-max/content-lab', FB_PATH = 'data/feedback.json';
+  const fb = { data: { items: {}, contents: [] }, token: store.get('gh_token') || '', listeners: [] };
+  function fbInit() {
+    const base = (rows('feedback') || [])[0];
+    if (base && base.items) fb.data = { items: base.items || {}, contents: base.contents || [] };
+    try { const local = JSON.parse(store.get('fb_pending') || 'null'); if (local) { Object.assign(fb.data.items, local.items || {}); fb.data.contents = mergeContents(fb.data.contents, local.contents || []); } } catch (e) {}
+    fbLoadRemote();
+  }
+  function mergeContents(a, b) { const m = new Map(); [...a, ...b].forEach(c => m.set(c.id, c)); return [...m.values()].sort((x, y) => (y.at || '').localeCompare(x.at || '')); }
+  const b64 = s => btoa(unescape(encodeURIComponent(s))), unb64 = s => decodeURIComponent(escape(atob(s.replace(/\n/g, ''))));
+  async function fbLoadRemote() {
+    if (!fb.token) return;
+    try {
+      const r = await fetch(`https://api.github.com/repos/${FB_REPO}/contents/${FB_PATH}`, { headers: { Authorization: `Bearer ${fb.token}`, Accept: 'application/vnd.github+json' }, cache: 'no-store' });
+      if (r.status === 404) return;
+      if (!r.ok) throw new Error(r.status);
+      const j = await r.json(), remote = JSON.parse(unb64(j.content));
+      fb.data = { items: Object.assign({}, remote.items || {}, fb.data.items), contents: mergeContents(remote.contents || [], fb.data.contents) };
+      fb.listeners.forEach(f => f());
+    } catch (e) { toast('저장소에서 후기를 불러오지 못했어요 — 토큰을 확인해 주세요'); }
+  }
+  let fbSaving = Promise.resolve();
+  function fbSave(msg) {
+    store.set('fb_pending', JSON.stringify(fb.data));
+    fb.listeners.forEach(f => f());
+    if (!fb.token) { toast('이 브라우저에만 저장했어요 · 후기·기록 탭에서 저장소를 연결하면 Claude 추천에 반영돼요'); return; }
+    fbSaving = fbSaving.then(async () => {
+      for (let attempt = 0; attempt < 3; attempt++) {
+        const h = { Authorization: `Bearer ${fb.token}`, Accept: 'application/vnd.github+json' };
+        const cur = await fetch(`https://api.github.com/repos/${FB_REPO}/contents/${FB_PATH}`, { headers: h, cache: 'no-store' });
+        let sha, remote = { items: {}, contents: [] };
+        if (cur.ok) { const j = await cur.json(); sha = j.sha; remote = JSON.parse(unb64(j.content)); }
+        const merged = { updated: new Date().toISOString(), items: Object.assign({}, remote.items || {}, fb.data.items), contents: mergeContents(remote.contents || [], fb.data.contents) };
+        for (const [k, v] of Object.entries(merged.items)) if (v && v.deleted) delete merged.items[k];
+        merged.contents = merged.contents.filter(c => !c.deleted);
+        const put = await fetch(`https://api.github.com/repos/${FB_REPO}/contents/${FB_PATH}`, { method: 'PUT', headers: h,
+          body: JSON.stringify({ message: `feedback: ${msg}`, content: b64(JSON.stringify(merged, null, 1)), sha }) });
+        if (put.ok) { fb.data = merged; store.set('fb_pending', ''); toast('저장했어요 · 내일 아침 추천에 반영돼요'); return; }
+        if (put.status !== 409 && put.status !== 422) { toast(`저장 실패(${put.status}) — 토큰 권한을 확인해 주세요`); return; }
+      }
+      toast('저장이 겹쳐서 실패했어요 — 다시 눌러 주세요');
+    }).catch(() => toast('저장 실패 — 인터넷 연결이나 토큰을 확인해 주세요'));
+  }
+  function fbBar(item) {
+    const bar = el('div', 'chips fb-bar');
+    const paint = () => {
+      const f = fb.data.items[item.id] || {}, done = fb.data.contents.filter(c => c.based_on_id === item.id);
+      bar.replaceChildren();
+      const mk = (label, on, fn) => { const b = el('button', 'btn small', label); b.type = 'button'; b.setAttribute('aria-pressed', String(!!on)); b.addEventListener('click', fn); return b; };
+      bar.append(mk('도움됨', f.verdict === 'helpful', () => setVerdict('helpful')), mk('도움 안 됨', f.verdict === 'not_helpful', () => setVerdict('not_helpful')),
+        mk(f.note ? '메모 고치기' : '메모', !!f.note, () => {
+          const t = prompt('이 글에 대한 후기·메모 (왜 도움 됐는지/안 됐는지)', f.note || '');
+          if (t === null) return;
+          fb.data.items[item.id] = { ...item, ...(fb.data.items[item.id] || {}), note: t.trim(), at: new Date().toISOString() }; fbSave('메모');
+        }),
+        mk(done.length ? `콘텐츠 씀 ${done.length}` : '이걸로 콘텐츠 씀', done.length > 0, () => openContentForm(item)));
+      if (f.note) bar.append(el('span', 'sub', `메모 · ${f.note}`));
+    };
+    const setVerdict = v => {
+      const cur = fb.data.items[item.id] || {};
+      fb.data.items[item.id] = { ...item, ...cur, verdict: cur.verdict === v ? '' : v, at: new Date().toISOString() };
+      fbSave(v === 'helpful' ? '도움됨' : '도움 안 됨');
+    };
+    fb.listeners.push(paint); paint();
+    return bar;
+  }
+  function openContentForm(item) {
+    const title = prompt('어떤 콘텐츠를 만들었나요? (제목 한 줄)', item ? item.title.slice(0, 40) : '');
+    if (!title) return;
+    const channel = prompt('어디에 올렸나요? (인스타 / 쓰레드 / 텔레그램 / 유튜브 / X / 기타)', '인스타') || '기타';
+    const url = prompt('올린 글 링크 (없으면 비워 두세요)', '') || '';
+    const note = prompt('후기 (반응이 어땠는지, 다음에 바꿀 점 등 — 나중에 고칠 수 있어요)', '') || '';
+    fb.data.contents = mergeContents(fb.data.contents, [{ id: 'c' + Date.now(), at: new Date().toISOString(), title: title.trim(), channel: channel.trim(), url: url.trim(),
+      note: note.trim(), based_on_id: item ? item.id : '', based_on_title: item ? item.title.slice(0, 80) : '', based_on_type: item ? item.type : '' }]);
+    fbSave('콘텐츠 기록');
+  }
+  function drawFeedback() {
+    const box = document.getElementById('fb-connect'), lb = document.getElementById('fb-list'), cb = document.getElementById('fb-contents'), kb = document.getElementById('fb-kpis');
+    const paint = () => {
+      const items = Object.values(fb.data.items).filter(i => i.verdict || i.note).sort((a, b) => (b.at || '').localeCompare(a.at || ''));
+      const good = items.filter(i => i.verdict === 'helpful').length, bad = items.filter(i => i.verdict === 'not_helpful').length;
+      kb.replaceChildren(kpi('도움됨', `${good}개`, '비슷한 글을 더 찾아요'), kpi('도움 안 됨', `${bad}개`, '비슷한 글은 덜 추천해요'),
+        kpi('만든 콘텐츠', `${fb.data.contents.length}개`, '후기와 함께 기록'), kpi('저장 위치', fb.token ? '저장소 연결됨' : '이 브라우저만', fb.token ? '매일 Claude 추천에 반영' : '아래에서 연결해 주세요'));
+      if (!items.length) empty(lb, '아직 남긴 후기가 없어요. 각 탭의 글 카드 밑에 있는 도움됨·도움 안 됨·메모 버튼을 눌러 보세요.');
+      else lb.replaceChildren(...items.map(i => rowLink([i.verdict === 'helpful' ? el('span', 'pill positive', '도움됨') : i.verdict === 'not_helpful' ? el('span', 'pill neutral', '도움 안 됨') : el('span', 'pill neutral', '메모'), ` [${i.type}] ${i.title || ''}`],
+        `${(i.at || '').slice(5, 10).replace('-', '/')}${i.note ? ' · ' + i.note : ''}`, i.url || null, webLink)));
+      if (!fb.data.contents.length) empty(cb, '아직 기록한 콘텐츠가 없어요. 글 카드의 \'이걸로 콘텐츠 씀\'이나 위 버튼으로 기록해요.');
+      else cb.replaceChildren(...fb.data.contents.map(c => {
+        const card = el('article', 'card rec'), chips = el('div', 'chips');
+        chips.append(el('span', 'pill accent', c.channel || '기타'), el('span', 'pill neutral', (c.at || '').slice(0, 10)));
+        if (c.based_on_type) chips.append(el('span', 'pill neutral', `참고: ${c.based_on_type}`));
+        card.append(chips, el('h3', null, c.title));
+        if (c.based_on_title) card.append(el('p', 'sub', `참고한 글 · ${c.based_on_title}`));
+        card.append(el('p', c.note ? 'why1' : 'note', c.note || '후기를 아직 안 남겼어요.'));
+        const row = el('div', 'chips');
+        const edit = el('button', 'btn small', '후기 고치기'); edit.type = 'button';
+        edit.addEventListener('click', () => { const t = prompt('후기 (반응·조회수·배운 점)', c.note || ''); if (t === null) return; c.note = t.trim(); c.at_note = new Date().toISOString(); fb.data.contents = mergeContents(fb.data.contents, [c]); fbSave('콘텐츠 후기'); });
+        const del = el('button', 'btn small', '지우기'); del.type = 'button';
+        del.addEventListener('click', () => { if (!confirm('이 기록을 지울까요?')) return; c.deleted = true; fb.data.contents = mergeContents(fb.data.contents, [c]); fbSave('콘텐츠 지움'); fb.data.contents = fb.data.contents.filter(x => !x.deleted); });
+        row.append(edit, del);
+        const link = webLink(c.url); if (link) { const a = el('a', 'btn small', '올린 글 보기'); a.href = link; a.target = '_blank'; a.rel = 'noopener'; row.append(a); }
+        card.append(row); card.style.gap = '8px'; return card;
+      }));
+      box.replaceChildren();
+      if (fb.token) {
+        const b = el('button', 'btn small', '저장소 연결 끊기'); b.type = 'button';
+        b.addEventListener('click', () => { if (confirm('이 브라우저에서 깃허브 토큰을 지울까요?')) { store.set('gh_token', ''); fb.token = ''; paint(); } });
+        box.append(el('p', 'sub', '저장소에 연결돼 있어요. 남긴 후기는 data/feedback.json 에 저장되고 매일 아침 추천에 반영돼요.'), b);
+      } else {
+        const b = el('button', 'btn primary', '저장소 연결 (깃허브 토큰 넣기)'); b.type = 'button';
+        b.addEventListener('click', () => {
+          const t = prompt('깃허브 토큰을 붙여넣어 주세요 (이 브라우저에만 저장돼요. 만드는 법은 아래 안내 참고)', '');
+          if (!t) return; store.set('gh_token', t.trim()); fb.token = t.trim(); fbLoadRemote().then(() => { if (Object.keys(fb.data.items).length || fb.data.contents.length) fbSave('연결'); }); paint();
+        });
+        box.append(el('p', 'sub', '지금은 이 브라우저에만 저장돼요. 저장소에 연결하면 다른 기기에서도 보이고 매일 Claude 추천에 반영돼요.'), b,
+          el('p', 'note', '토큰 만들기: github.com → Settings → Developer settings → Fine-grained tokens → Generate new token → Repository access: Only select → content-lab → Permissions: Contents = Read and write → Generate → 복사'));
+      }
+    };
+    document.getElementById('fb-add').onclick = () => openContentForm(null);
+    fb.listeners.push(paint); paint();
   }
 
   // ── 인스타 연결 상태 경고 ──
@@ -1270,6 +1416,7 @@ a.row:hover .row-main{text-decoration:underline}
         }
       } else if (withDraft) c.append(el('p', 'note', '우리 말투 초안은 다음 아침 Claude 분석 때 붙어요.'));
       const link = webLink(h.url); if (link) { const a = el('a', 'btn small', '원문 보기'); a.href = link; a.target = '_blank'; a.rel = 'noopener'; c.append(a); }
+      c.append(fbBar({ id: h.id, type: '쓰레드', title: (h.text || '').slice(0, 80), url: h.url || '' }));
       c.style.gap = '10px'; return c;
     };
     const tb = document.getElementById('tx-top');
@@ -1342,6 +1489,7 @@ a.row:hover .row-main{text-decoration:underline}
         c.append(n ? el('p', 'why1', n.why) : el('p', 'note', '이유 분석은 다음 아침 Claude 분석 때 붙어요.'));
         if (n) c.append(el('p', 'sub', `첫 줄 · ${n.hook_type}  |  구조 · ${n.structure}`));
         const link = webLink(h.url); if (link) { const a = el('a', 'btn small', '원문 보기'); a.href = link; a.target = '_blank'; a.rel = 'noopener'; c.append(a); }
+        c.append(fbBar({ id: h.id, type: '쓰레드', title: (h.text || '').slice(0, 80), url: h.url || '' }));
         c.style.gap = '10px'; return c;
       }));
     };
@@ -1380,6 +1528,7 @@ a.row:hover .row-main{text-decoration:underline}
         if (!n) c.append(el('p', 'note', '한국어 요약과 이유는 다음 아침 Claude 분석 때 붙어요.'));
         const orig = el('details'); orig.append(el('summary', null, '원문 보기'), el('div', 'box', h.text || '(내용 없음)')); c.append(orig);
         const link = webLink(h.url); if (link) { const a = el('a', 'btn small', '쓰레드에서 열기'); a.href = link; a.target = '_blank'; a.rel = 'noopener'; c.append(a); }
+        c.append(fbBar({ id: h.id, type: '해외 쓰레드', title: (h.text || '').slice(0, 80), url: h.url || '' }));
         c.style.gap = '10px'; return c;
       }));
     };
@@ -1431,6 +1580,7 @@ a.row:hover .row-main{text-decoration:underline}
         card.append(copyBtn('우리 버전 전체 복사', n.rewrite.join('\n\n'), 'btn primary'));
       } else card.append(el('p', 'note', '다음 06:00 자동 실행 때 분석돼요.'));
       const link = webLink(s.link); if (link) { const a = el('a', 'btn small', '원문 보기'); a.href = link; a.target = '_blank'; a.rel = 'noopener'; card.append(a); }
+      card.append(fbBar({ id: s.id, type: '쓰레드(모은 글)', title: (s.text || '').slice(0, 80), url: s.link || '' }));
       card.style.gap = '10px'; return card;
     }, 6);
   }
@@ -1485,6 +1635,7 @@ a.row:hover .row-main{text-decoration:underline}
         card.append(el('h3', 'rec-title', i.title), chips, el('p', 'why1', i.summary),
           el('p', 'sub', `한국에 없는 근거 · ${i.why_new}`), el('p', null, `한국식으로 바꾸기 · ${i.local_angle}`),
           el('p', 'sub', `첫 문장 · ${i.hook}`), steps, el('div', 'warn', `주의 · ${i.caution}`), actions);
+        card.append(fbBar({ id: `import:${i.title}`, type: '해외 인스타', title: i.title, url: i.permalink || '' }));
         return card;
       }));
     }
@@ -1577,7 +1728,7 @@ a.row:hover .row-main{text-decoration:underline}
   const closeMenu = () => { side.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); };
   menuBtn.addEventListener('click', () => { side.classList.add('open'); menuBtn.setAttribute('aria-expanded', 'true'); });
   document.getElementById('side-close').addEventListener('click', closeMenu);
-  const NAMES = { instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드', x: 'X · 트루스소셜', telegram: '텔레그램' };
+  const NAMES = { instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드', x: 'X · 트루스소셜', telegram: '텔레그램', feedback: '후기·기록' };
   function setChannel(ch) {
     document.querySelectorAll('#channel-nav > li > button').forEach(b => b.setAttribute('aria-current', String(b.dataset.ch === ch)));
     document.querySelectorAll('.subnav').forEach(u => { u.hidden = u.dataset.for !== ch; });
@@ -1612,9 +1763,10 @@ a.row:hover .row-main{text-decoration:underline}
   });
 
   dash.onData(() => {
+    fbInit();
     const recs = grouped();
     drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors();
-    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawX(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics();
+    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawX(); drawFeedback(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics();
     const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/);
     setChannel(ch ? ch[1] : 'instagram');
     if (m) openPlan(+m[1]);

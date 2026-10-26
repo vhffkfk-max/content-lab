@@ -67,6 +67,8 @@ def main():
         print("해외 상위 게시물이 없어 건너뛰어요.")
         return
     prompt = build_prompt(hot, kr_lines, news)
+    from feedback import feedback_prompt
+    prompt += feedback_prompt(["해외 인스타"])   # 사이트에서 남긴 후기
     if args.dry_run:
         print(SYSTEM, "\n\n", prompt[:3000], "\n…")
         return

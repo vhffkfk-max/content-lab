@@ -177,6 +177,8 @@ def main():
            "my_stats": [c for c in out["tg_chats"] if c["role"] == "mine"], "today": news_context(),
            "date": datetime.now(KST).strftime("%Y-%m-%d (%a)")}
     prompt = "자료:\n" + json.dumps(ctx, ensure_ascii=False, indent=1)
+    from feedback import feedback_prompt
+    prompt += feedback_prompt(["텔레그램", "텔레그램 문구"])   # 사이트에서 남긴 후기
     room = next((c["title"] for c in out["tg_chats"] if c["role"] == "mine"), "우리 채널")
     if args.dry_run:
         print(SYSTEM.format(room=room), "\n\n", prompt[:3000])

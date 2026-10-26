@@ -25,6 +25,8 @@ def main():
     for name in DATASETS:
         path = site / f"{name}.json"
         data[name] = json.loads(path.read_text(encoding="utf-8")) if path.exists() else []
+    fb_path = ROOT / "data" / "feedback.json"   # 사이트에서 남긴 후기·콘텐츠 기록
+    data["feedback"] = [json.loads(fb_path.read_text(encoding="utf-8"))] if fb_path.exists() else []
     cfg_path = ROOT / "site" / "site_config.json"
     data["site_config"] = [json.loads(cfg_path.read_text(encoding="utf-8"))] if cfg_path.exists() else []
     body = (ROOT / "site" / "body.html").read_text(encoding="utf-8")

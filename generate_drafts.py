@@ -83,6 +83,10 @@ def pattern_lines(report):
     return "\n".join(out)
 
 
+from feedback import feedback_prompt
+FEEDBACK = feedback_prompt(["인스타 추천", "해외 인스타"])   # 사이트에서 남긴 후기
+
+
 def build_prompt(report, tags, picked):
     recs = [{
         "topic": r["topic"], "kind": r["kind"], "format": r["format"], "hook": r["hook"], "slot": r["slot"],
@@ -178,7 +182,7 @@ def main():
                 model=MODEL,
                 max_tokens=16000,
                 system=SYSTEM,
-                messages=[{"role": "user", "content": build_prompt(report, tags, chunk)}],
+                messages=[{"role": "user", "content": build_prompt(report, tags, chunk) + FEEDBACK}],
                 output_format=Plans,
             )
         except anthropic.APIStatusError as e:
