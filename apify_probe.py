@@ -14,11 +14,13 @@ def run(actor, payload):
 
 since = (datetime.now(timezone.utc) - timedelta(days=2)).strftime("%Y-%m-%d")
 tests = [
-    ("apify~instagram-scraper", "인스타 프로필(details)", {"directUrls": ["https://www.instagram.com/syukaworld/", "https://www.instagram.com/bullstory1/"],
-                                                     "resultsType": "details", "resultsLimit": 12}),
-    ("apidojo~tweet-scraper", "X 계정 묶음 검색", {"searchTerms": [f"(from:realDonaldTrump OR from:elonmusk OR from:DeItaone OR from:KobeissiLetter) since:{since}"],
-                                              "sort": "Latest", "maxItems": 50}),
-    ("tri_angle~truth-scraper", "트루스소셜 트럼프", {"profiles": ["realDonaldTrump"], "maxPostsAndReplies": 5, "cleanContent": True}),
+    ("apify~instagram-scraper", "인스타 게시물(posts)", {"directUrls": ["https://www.instagram.com/syukaworld/", "https://www.instagram.com/bullstory1/"],
+                                                    "resultsType": "posts", "resultsLimit": 5}),
+    ("apidojo~tweet-scraper", "X 정책 계정", {"searchTerms": [f"(from:realDonaldTrump OR from:WhiteHouse OR from:SecScottBessent OR from:federalreserve) -filter:replies since:{since}"],
+                                          "sort": "Latest", "maxItems": 50}),
+    ("apidojo~tweet-scraper", "X 경제 키워드 화제", {"searchTerms": [f"(tariff OR Fed OR inflation OR bitcoin OR \"stock market\") min_faves:5000 lang:en -filter:replies since:{since}"],
+                                              "sort": "Top", "maxItems": 50}),
+    ("tri_angle~truth-scraper", "트루스소셜 트럼프 글", {"profiles": ["realDonaldTrump"], "resultsType": "posts", "maxPostsAndReplies": 5, "cleanContent": True}),
 ]
 for actor, name, payload in tests:
     try:
@@ -31,6 +33,11 @@ for actor, name, payload in tests:
         continue
     first = items[0]
     print("   keys:", sorted(first.keys()))
+    if "ownerUsername" in first:
+        for p in items[:6]:
+            print("     ", p.get("ownerUsername"), p.get("type"), p.get("productType"), "좋아요", p.get("likesCount"), "댓글", p.get("commentsCount"),
+                  "조회", p.get("videoViewCount"), "재생", p.get("videoPlayCount"), p.get("timestamp"))
+        continue
     if "latestPosts" in first:
         for prof in items:
             print("   프로필", prof.get("username"), "팔로워", prof.get("followersCount"), "글", len(prof.get("latestPosts") or []))
