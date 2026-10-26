@@ -156,7 +156,8 @@ def main():
         share: int
         target: int
 
-    class Audit(BaseModel):
+    # 결과 칸이 많으면 구조화 출력 문법이 너무 커져 거절되므로 두 번에 나눠 받는다: ① 점검 ② 해법
+    class Check(BaseModel):
         overall_grade: str
         grade_reason: str
         identity_line: str
@@ -170,32 +171,49 @@ def main():
         feed_issues: List[str]
         top_posts: List[PostWhy]
         bottom_posts: List[PostWhy]
+        data_gaps: List[str]
+
+    class Plan(BaseModel):
         solutions: List[Solution]
         next_posts: List[Draft]
         week_plan: List[PlanDay]
         engage: List[Engage]
         watch_items: List[str]
-        data_gaps: List[str]
 
     client = anthropic.Anthropic()
-    try:
-        with client.messages.stream(model=MODEL, max_tokens=24000, system=SYSTEM, output_config={"effort": "medium"},
-                                    messages=[{"role": "user", "content": prompt}], output_format=Audit) as stream:
-            r = stream.get_final_message()
-    except (anthropic.APIStatusError, anthropic.APIConnectionError) as e:
-        print(f"⚠️ Claude API 오류: {e} — 지난 진단을 유지해요.")
+    usage = [0, 0]
+
+    def ask(content, schema, task):
+        try:
+            with client.messages.stream(model=MODEL, max_tokens=16000, system=SYSTEM, output_config={"effort": "medium"},
+                                        messages=[{"role": "user", "content": content + f"\n\n이번 답변에서 할 일: {task}"}],
+                                        output_format=schema) as stream:
+                r = stream.get_final_message()
+        except (anthropic.APIStatusError, anthropic.APIConnectionError) as e:
+            print(f"⚠️ Claude API 오류: {e} — 지난 진단을 유지해요.")
+            return None
+        if r.stop_reason != "end_turn" or r.parsed_output is None:
+            print(f"⚠️ 진단 결과를 받지 못했어요({r.stop_reason}) — 지난 진단을 유지해요.")
+            return None
+        usage[0] += r.usage.input_tokens
+        usage[1] += r.usage.output_tokens
+        return r.parsed_output.model_dump()
+
+    check = ask(prompt, Check, "절차 1~4 (형식 믹스, AI 티, 정보 품질, 정체성·피드, 상위·하위 글)만.")
+    if check is None:
         return
-    if r.stop_reason != "end_turn" or r.parsed_output is None:
-        print(f"⚠️ 진단 결과를 받지 못했어요({r.stop_reason}) — 지난 진단을 유지해요.")
+    plan = ask(prompt + "\n\n앞 단계 점검 결과:\n" + json.dumps(check, ensure_ascii=False), Plan,
+               "절차 5~7 (해법 5개, 초안 3개, 일주일 계획, 댓글 노출 전략 3개, 내일 확인할 것)만. 점검 결과를 근거로.")
+    if plan is None:
         return
-    a = r.parsed_output.model_dump()
+    a = {**check, **plan}
     by_no = {i: p for i, p in enumerate(posts, 1)}
     for key in ("ai_worst", "top_posts", "bottom_posts"):
         for x in a[key]:
             x["url"] = (by_no.get(x["no"]) or {}).get("url", "")
     OUT.write_text(json.dumps({"digest": digest, "analyzed_at": datetime.now(timezone.utc).isoformat(timespec="seconds"), **a},
                               ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"✅ 황소개미 진단 (등급 {a['overall_grade']}, AI 티 {a['ai_score']}) · 입력 {r.usage.input_tokens:,} / 출력 {r.usage.output_tokens:,} 토큰")
+    print(f"✅ 황소개미 진단 (등급 {a['overall_grade']}, AI 티 {a['ai_score']}) · 입력 {usage[0]:,} / 출력 {usage[1]:,} 토큰")
 
 
 if __name__ == "__main__":
