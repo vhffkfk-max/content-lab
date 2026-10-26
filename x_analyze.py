@@ -14,7 +14,7 @@ from typing import List
 
 from common import DEFAULT_DB, OUTPUT_DIR, connect, load_env
 
-MODEL = "claude-opus-5-5"
+MODEL = "claude-haiku-5-5"   # 요약·번역이라 Haiku (비용 절약, 대표 결정 2026-10-26)
 OUT = OUTPUT_DIR / "site" / "x_ai.json"
 
 SYSTEM = """당신은 한국 경제 크리에이터 팀(@hotconomy, 차트보는 말희아빠)의 해외 시장 리서처입니다.

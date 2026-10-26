@@ -17,7 +17,7 @@ from typing import List
 
 from common import DEFAULT_DB, OUTPUT_DIR, connect, load_env
 
-MODEL = "claude-opus-5-5"
+MODEL = "claude-sonnet-5-5"   # 쓰레드 분석은 Sonnet (비용 절약, 대표 결정 2026-10-26)
 OUT = OUTPUT_DIR / "site" / "threads_ai.json"
 LISTS = {"top": "따라 할 글 TOP", "views": "조회수 TOP", "shared": "공유·리포스트 TOP", "replied": "댓글 TOP", "team": "팀이 모은 글",
          "foreign": "해외 TOP"}
