@@ -90,6 +90,7 @@ def main():
     tm = d.get("thm") or {}
     for k in ("meta", "posts", "feed"):
         write(f"thm_{k}", tm.get(k) or [])
+    write("ig_slides", d.get("carousel_slides") or [])
     xs = d.get("x") or {}
     for k in ("meta", "trump", "rank", "groups", "accounts"):
         write(f"x_{k}", xs.get(k) or [])

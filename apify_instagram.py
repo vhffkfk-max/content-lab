@@ -62,6 +62,11 @@ def save_profile(conn, row, prof, now):
                  (username, now[:10], prof.get("followersCount"), prof.get("postsCount")))
 
 
+def ensure_columns(conn):
+    if "slides" not in {r[1] for r in conn.execute("PRAGMA table_info(posts)")}:
+        conn.execute("ALTER TABLE posts ADD COLUMN slides INTEGER")   # 캐러셀 장수 (벤치마크용)
+
+
 def save_post(conn, p, now):
     code = p.get("shortCode")
     if not code or not p.get("ownerUsername"):
@@ -75,6 +80,8 @@ def save_post(conn, p, now):
                  (str(p.get("id")), p["ownerUsername"], p.get("caption") or "", TYPE.get(p.get("type"), p.get("type")), product,
                   graph_ts(p.get("timestamp")), p.get("url") or f"https://www.instagram.com/p/{code}/",
                   likes if (likes is not None and likes >= 0) else None, p.get("commentsCount"), views, now))
+    if p.get("type") == "Sidecar":
+        conn.execute("UPDATE posts SET slides=? WHERE id=?", (len(p.get("childPosts") or p.get("images") or []) or None, str(p.get("id"))))
     return True
 
 
@@ -99,6 +106,7 @@ def main():
         print("APIFY_TOKEN 이 없어 인스타 수집을 건너뛰어요.")
         return
     conn = connect()
+    ensure_columns(conn)
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     by_name = {r["username"].lower(): r for r in rows}
     profiles = posts = 0

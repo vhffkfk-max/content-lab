@@ -347,6 +347,7 @@ a.row:hover .row-main{text-decoration:underline}
           <details class="card analysis" id="analysis-more">
             <summary><h3>자세한 분석 펼치기</h3><span class="note">무엇이 반응을 만들까 · 주제별 반응 · TOP 게시물 · 계정 · 읽는 법</span></summary>
             <div style="display:grid;gap:28px;margin-top:18px">
+              <div class="sec"><h2>카드뉴스(캐러셀) 몇 장이 잘 됐나</h2><p class="note">참고 계정 캐러셀을 장수별로 묶어 '평소 대비' 중앙값을 냈어요(최근 60일). 캔바 초안 장수를 정할 때 써요.</p><div class="card"><div class="rows" id="ig-slides"></div></div></div>
               <div class="sec"><h2>무엇이 반응을 만들까</h2><div class="legend" id="legend-patterns"></div><div class="groups" id="pattern-groups"></div></div>
               <div class="sec"><h2>주제별 반응: 한국 vs 해외</h2><p class="note">선점 기회가 큰 순서예요. 해외 막대가 길고 한국 막대가 짧은 주제가 위에 와요.</p><div class="legend" id="legend-topics"></div><div class="bars" id="topic-chart"></div></div>
               <div class="sec"><h2>최근 반응 TOP 게시물</h2><div class="rows" id="post-list"></div></div>
@@ -1559,6 +1560,13 @@ a.row:hover .row-main{text-decoration:underline}
     else listWithMore(pl, P, p => rowLink(p.text || '(내용 없음)', `${p.time} · 조회 ${p.views != null ? fmtN(p.views) : '대기'} · 반응률 ${p.rate ?? '–'}% · 확산 ${p.spread ?? '–'}배 · 답글 ${fmtN(p.replies)} · 공유 ${fmtN(p.reposts + p.quotes + p.shares)} · ${p.hook} · ${p.length}${p.topics ? ' · ' + p.topics : ''}`, p.url, webLink), 8);
   }
 
+  // ── 인스타: 캐러셀 장수 벤치마크 ──
+  function drawSlides() {
+    const S = rows('ig_slides') || [], box = document.getElementById('ig-slides');
+    if (!S.length) { empty(box, '캐러셀 장수는 매일 06:00 인스타 수집부터 쌓여요.'); return; }
+    box.replaceChildren(...S.map(s => rowLink(`${s.region} · ${s.key}`, `평소 대비 중앙값 ${s.median != null ? s.median + '배' : '–'} · 평균 ${s.avg ?? '–'}배 · 게시물 ${s.posts}개${s.posts < 10 ? ' (표본 적음)' : ''}`, null, () => null)));
+  }
+
   // ── 인스타 연결 상태 경고 ──
   function drawIgHealth() {
     const h = (rows('ig_health') || [])[0], box = document.getElementById('ig-alert');
@@ -1968,7 +1976,7 @@ a.row:hover .row-main{text-decoration:underline}
     if (!setupRefresh.done) { setupRefresh(); setupRefresh.done = true; }
     const recs = grouped();
     drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors();
-    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawX(); drawFeedback(); drawRewrites(); drawThreadsMine(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics();
+    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawX(); drawFeedback(); drawRewrites(); drawThreadsMine(); drawSlides(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics();
     const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/);
     setChannel(ch ? ch[1] : 'instagram');
     if (m) openPlan(+m[1]);

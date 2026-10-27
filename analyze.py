@@ -556,6 +556,18 @@ def build_this_week(posts, now):
     return [dict(post_brief(p), rank=i) for i, p in enumerate(hot, 1)], accounts
 
 
+def carousel_slides(posts):
+    """남의 캐러셀(카드뉴스)이 몇 장일 때 반응이 좋았나 — 장수 구간별 '평소 대비' 중앙값 (최근 60일, 국내·해외)."""
+    out = []
+    for region in (KR, FOREIGN):
+        cs = [p for p in posts if p["region"] == region and p.get("slides")]
+        for lo, hi, label in ((2, 3, "2~3장"), (4, 5, "4~5장"), (6, 7, "6~7장"), (8, 10, "8~10장"), (11, 20, "11장 이상")):
+            g = [p for p in cs if lo <= p["slides"] <= hi]
+            if g:
+                out.append({"region": region, "key": label, **summarize(g), "posts": len(g)})
+    return out
+
+
 def to_rows(stats):
     return sorted(({"key": k, **s} for k, s in stats.items()), key=lambda r: r["avg"] or 0, reverse=True)
 
@@ -614,6 +626,7 @@ def main():
     data["threads_auto"] = threads_auto_section(conn, now)
     import x_score
     data["x"] = x_score.section(conn, now)
+    data["carousel_slides"] = carousel_slides([p for p in posts if p["dt"] >= now - timedelta(days=60)])
     import threads_mine
     from apify_threads import MY_ACCOUNTS
     data["thm"] = threads_mine.section(conn, now, MY_ACCOUNTS)

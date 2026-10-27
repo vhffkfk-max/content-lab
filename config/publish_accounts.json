@@ -1,0 +1,16 @@
+{
+  "accounts": [
+    {
+      "key": "hotconomy",
+      "name": "핫코노미",
+      "instagram": { "enabled": true, "ig_user_id_secret": "IG_USER_ID", "token_secret": "IG_ACCESS_TOKEN" },
+      "youtube": { "enabled": false, "refresh_token_secret": "YT_HOTCONOMY_REFRESH_TOKEN" },
+      "paid_service_linked": false,
+      "daily_post_limit": 2,
+      "carousel_max": 10,
+      "canva_folders": {}
+    }
+  ],
+  "disclaimer": "(정보 제공용이며 투자 권유가 아닙니다)",
+  "poll_interval_minutes": 15
+}
