@@ -1,0 +1,20 @@
+name: cardnews-bench
+# 카드뉴스 디자인 벤치마크 이미지 모으기 (손으로 실행, 결과는 아티팩트 — 저장소에 커밋하지 않음)
+on:
+  workflow_dispatch:
+jobs:
+  bench:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python cardnews_bench.py
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cardnews-bench
+          path: output/cardnews/bench/
+          retention-days: 7
