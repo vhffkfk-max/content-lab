@@ -1,0 +1,51 @@
+name: draft-create
+# 카드뉴스 초안 만들기 (작업지시서 Phase 4) — 실제 뉴스·시세로 폼을 골라 그리고, 텔레그램 봇으로 이미지·캡션을 보낸다.
+# 이미지는 아티팩트(14일), 큐(data/publish_queue.json)는 커밋. 발행은 하지 않음.
+on:
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: "주제 (비우면 추천 1위, 오늘 이미 만든 주제는 건너뜀)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-queue
+  cancel-in-progress: false
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install anthropic pydantic requests pillow
+      - name: 한글·이모지 글꼴
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-cjk fonts-noto-color-emoji
+      - name: 초안 만들기
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TOPIC: ${{ inputs.topic }}
+        run: python -m publish.draft_card ${TOPIC:+--topic "$TOPIC"}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cardnews-draft
+          path: output/cardnews/drafts/
+          retention-days: 14
+      - name: 큐 저장
+        run: |
+          git config user.name "content-lab-bot"
+          git config user.email "content-lab-bot@users.noreply.github.com"
+          git add data/publish_queue.json
+          git commit -m "data: 카드뉴스 초안 $(date -u +%Y-%m-%d)" || echo "변경 없음"
+          git pull --rebase --autostash && git push

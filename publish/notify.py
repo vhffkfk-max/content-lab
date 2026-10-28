@@ -26,3 +26,25 @@ def send(text, silent=False):
     except (urllib.error.URLError, TimeoutError) as e:
         print("⚠️ 텔레그램 알림 실패:", e)
         return False
+
+
+def send_photos(paths, caption=""):
+    """이미지 앨범(최대 10장) 보내기 — 카드뉴스 초안 확인용. 첫 장에 설명이 붙는다."""
+    import requests
+    token, chat = os.environ.get("TELEGRAM_BOT_TOKEN"), os.environ.get("TELEGRAM_CHAT_ID")
+    if not token or not chat:
+        print("[알림 미설정] 이미지", len(paths), "장:", caption)
+        return False
+    paths = list(paths)[:10]
+    media = [{"type": "photo", "media": f"attach://p{i}", **({"caption": caption[:1000]} if i == 0 else {})} for i in range(len(paths))]
+    files = {f"p{i}": open(p, "rb") for i, p in enumerate(paths)}
+    try:
+        r = requests.post(f"https://api.telegram.org/bot{token}/sendMediaGroup",
+                          data={"chat_id": chat, "media": json.dumps(media)}, files=files, timeout=60)
+        return r.json().get("ok", False)
+    except requests.RequestException as e:
+        print("⚠️ 텔레그램 이미지 보내기 실패:", e)
+        return False
+    finally:
+        for f in files.values():
+            f.close()

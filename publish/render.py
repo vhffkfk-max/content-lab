@@ -9,6 +9,7 @@ import os
 import pathlib
 import shutil
 import subprocess
+import sys
 import tempfile
 
 from PIL import Image
@@ -57,7 +58,8 @@ def render(slides, out_dir, name, css=""):
             html = pathlib.Path(tmp) / f"s{i}.html"
             html.write_text(page(body, css), encoding="utf-8")
             png = pathlib.Path(tmp) / f"s{i}.png"
-            subprocess.run([exe, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--force-device-scale-factor=1",
+            linux = ["--no-sandbox"] if sys.platform.startswith("linux") else []
+            subprocess.run([exe, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--force-device-scale-factor=1", *linux,
                             "--allow-file-access-from-files", "--virtual-time-budget=3000", f"--window-size={W},{H}",
                             f"--screenshot={png}", html.as_uri()], check=True, capture_output=True, timeout=90)
             jpg = out_dir / f"{name}-{i}.jpg"
