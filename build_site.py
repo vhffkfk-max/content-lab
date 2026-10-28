@@ -17,7 +17,7 @@ DATASETS = ["summary", "recs", "rec_reasons", "rec_examples", "insights", "topic
             "ig_slides", "thm_meta", "thm_posts", "thm_feed", "thm_ai",
             "x_meta", "x_trump", "x_rank", "x_groups", "x_accounts", "x_ai",
             "tg_meta", "tg_chats", "tg_hot", "tg_mine", "tg_hours", "tg_lengths", "tg_media", "tg_ai",
-            "tg_growth", "tg_streak", "tg_slots", "tg_shared", "tg_rank", "tg_rewrites"]
+            "tg_growth", "tg_streak", "tg_slots", "tg_shared", "tg_rank", "tg_rewrites", "trd_rooms"]
 
 
 def main():

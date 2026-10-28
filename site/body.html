@@ -17,6 +17,9 @@
 .subnav{list-style:none;margin:2px 0 6px 18px;padding:0 0 0 10px;border-left:1px solid var(--border);display:grid;gap:0}
 .subnav a{min-height:30px;font-size:13px;color:var(--muted)}
 .subnav a[aria-current="true"]{color:var(--accent-ink);font-weight:600}
+.subnav .sub-label{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.02em;padding:8px 0 2px}
+.trd-room h3{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.trd-room ol{margin:6px 0 0 18px;padding:0;display:grid;gap:4px}
 .side-foot{margin-top:auto;font-size:12px;color:var(--muted);padding:0 10px;line-height:1.6}
 .topbar{display:none}
 
@@ -269,6 +272,7 @@ a.row:hover .row-main{text-decoration:underline}
           </ul></li>
         <li><button type="button" data-ch="telegram"><i class="dot" style="background:var(--ch-telegram)"></i>텔레그램<span class="soon" id="tg-badge">연결 전</span></button>
           <ul class="subnav" data-for="telegram">
+            <li class="sub-label">말희아빠 채널</li>
             <li><a href="#tg-rw">시황 자동 변환</a></li>
             <li><a href="#tg-mine">내 채널 성과</a></li>
             <li><a href="#tg-rank">경쟁 채널 순위</a></li>
@@ -277,6 +281,9 @@ a.row:hover .row-main{text-decoration:underline}
             <li><a href="#tg-hot">다른 방 인기 글</a></li>
             <li><a href="#tg-when">시간대·형식</a></li>
             <li><a href="#tg-rooms">방별 현황</a></li>
+            <li class="sub-label">트레이더스 방</li>
+            <li><a href="#trd-awards">왕 선정 중간 체크</a></li>
+            <li><a href="#trd-rooms">방별 활성화 피드백</a></li>
           </ul></li>
       </ul>
     </nav>
@@ -616,7 +623,7 @@ a.row:hover .row-main{text-decoration:underline}
 
       <div class="view" data-view="telegram" hidden>
         <div class="title-row">
-          <div><h1>텔레그램</h1><p>차트보는 말희아빠 채널을 키우기 위해, 다른 업체 방(비공개 포함)의 반응 큰 글과 오늘 뉴스로 Claude가 올릴 문구와 키우는 법을 써요.</p></div>
+          <div><h1>텔레그램</h1><p>위쪽은 차트보는 말희아빠 채널 키우기(다른 업체 방의 반응 큰 글 + 오늘 뉴스로 올릴 문구), 아래쪽은 내가 운영하는 트레이더스 방 활성화예요.</p></div>
         </div>
         <div class="kpis" id="tg-kpis"></div>
         <section class="sec" id="tg-rw">
@@ -666,6 +673,19 @@ a.row:hover .row-main{text-decoration:underline}
           <section class="sec" id="tg-rooms"><h2>방별 현황</h2><p class="note">분석 중인 방과 하루 글 수, 반응 중앙값, 잘 되는 시간대예요.</p>
             <div class="card"><div class="rows" id="tg-chats"></div></div></section>
         </div>
+        <h2 style="margin-top:28px;font-size:22px">트레이더스 방</h2>
+        <section class="sec" id="trd-awards">
+          <h2>이달의 왕 선정 — 중간 체크</h2>
+          <p class="note" id="trd-awards-note">회원 이름이 들어간 순위표는 개인정보라 사이트에 올리지 않고 내 PC 엑셀(output/participation)에만 있어요. 여기엔 부문별 후보 수와 기준만 보여요.</p>
+          <div class="kpis" id="trd-kpis"></div>
+          <div class="grid" id="trd-award-list" style="margin-top:12px"></div>
+          <div class="card" style="margin-top:12px"><h3>남은 기간 경쟁 띄우는 법</h3><ul class="learn" id="trd-tips" style="margin-top:10px"></ul></div>
+        </section>
+        <section class="sec" id="trd-rooms">
+          <h2>방별 활성화 피드백</h2>
+          <div class="card"><h3>그룹 전체 진단</h3><ul class="learn" id="trd-summary" style="margin-top:10px"></ul></div>
+          <div class="recs" id="trd-room-list" style="margin-top:12px"></div>
+        </section>
       </div>
 
       <p class="note" style="margin-top:12px">데이터: 인스타그램 공식 Graph API(공개 계정의 공개 게시물), 구글 뉴스·구글 트렌드 RSS, 쓰레드·인스타·X·트루스소셜 공개 글(Apify), 텔레그램(운영자 계정이 가입한 방) · 기획안: Claude가 분석 결과를 바탕으로 작성 · 매일 06:00 자동 갱신 · <a href="privacy.html" style="color:inherit">개인정보처리방침</a> · <a href="data-deletion.html" style="color:inherit">데이터 삭제 안내</a></p>
@@ -1166,6 +1186,44 @@ a.row:hover .row-main{text-decoration:underline}
     cb.replaceChildren(...C.map(c => rowLink(`${c.role === 'mine' ? '[내 방] ' : ''}${c.title}`,
       `${c.kind}${c.members ? ' · ' + fmtN(+c.members) + '명' : ''} · 하루 ${c.per_day}개 · ${c.metric} 중앙값 ${fmtN(c.median)} · 잘 되는 때 ${c.best_slot}`,
       c.username ? `https://t.me/${c.username}` : null, webLink)));
+  }
+
+  // ── 텔레그램: 트레이더스 방 (내가 운영하는 그룹 — 이름 없이 통계·피드백만) ──
+  function drawTraders() {
+    const d = (() => { const x = dash.data('trd_rooms'); return x.status === 'ok' && !Array.isArray(x.data) ? x.data : null; })();
+    const kb = document.getElementById('trd-kpis'), ab = document.getElementById('trd-award-list'), tb = document.getElementById('trd-tips'),
+      sb = document.getElementById('trd-summary'), rb = document.getElementById('trd-room-list');
+    if (!d) { kb.replaceChildren(); ab.replaceChildren(); tb.replaceChildren(); sb.replaceChildren(); empty(rb, '내 PC에서 python tg_traders.py 를 실행하면 여기에 방별 통계와 피드백이 나와요.'); return; }
+    const T = d.totals || {};
+    document.getElementById('trd-awards-note').textContent = `${d.period} · ${(d.updated_at || '').slice(5, 16).replace('T', ' ')} 집계. 회원 이름이 들어간 순위표는 개인정보라 사이트에 올리지 않고 내 PC 엑셀(output/participation)에만 있어요.`;
+    kb.replaceChildren(kpi('지난 날', `${T.elapsed_days || '–'}일`, d.final ? '최종' : '중간 체크'), kpi('메시지', fmtN(T.messages || 0), '관리자 포함'),
+      kpi('글 쓴 회원', `${T.active_members || 0}명`, '관리자 제외'), kpi('후보 있는 부문', `${(d.awards || []).filter(a => a.candidates).length}/4`, '점수 1점 이상'));
+    ab.replaceChildren(...(d.awards || []).map(a => {
+      const c = el('div', 'card'); c.append(el('h3', null, `${a.icon} ${a.name}`), el('p', 'meta-line', `후보 ${a.candidates}명 · 1등 ${fmtN(a.top_score)}점`), el('p', 'sub', a.rule));
+      if (a.candidates < 6) c.append(el('p', 'sub', '후보가 적어요 — 이 부문을 공지로 한 번 더 띄워 주세요.'));
+      c.style.display = 'grid'; c.style.gap = '6px'; return c;
+    }));
+    const AI = d.ai, li = (t, i) => { const x = el('li'); x.append(el('b', null, String(i + 1)), el('span', null, t)); return x; };
+    tb.replaceChildren(...(AI && AI.award_tips ? AI.award_tips.map(li) : [el('li', 'note', '통계를 올리면 깃허브에서 Claude가 피드백을 써요 (몇 분).')]));
+    sb.replaceChildren(...(AI && AI.summary ? AI.summary.map(li) : [el('li', 'note', 'Claude 피드백을 기다리는 중이에요.')]));
+    const fb = Object.fromEntries(((AI && AI.rooms) || []).map(r => [r.title, r]));
+    rb.replaceChildren(...(d.rooms || []).map(r => {
+      const c = el('article', 'card rec trd-room'), f = fb[r.title], h = el('h3', null, r.title), chips = el('div', 'chips');
+      if (r.closed) h.append(el('span', 'pill neutral', '관리자만 글쓰기'));
+      if (f) h.append(el('span', 'pill accent', f.status));
+      chips.append(el('span', 'pill neutral', `글 ${fmtN(r.msgs)} · 하루 ${r.per_day}`), el('span', 'pill neutral', `글 쓴 회원 ${r.active_members}명`),
+        el('span', 'pill neutral', `최근 7일 ${r.last7}${r.trend != null ? ` (${r.trend > 0 ? '+' : ''}${r.trend}%)` : ''}`),
+        el('span', 'pill neutral', `많은 시각 ${(r.peak_hours || []).map(x => x + '시').join('·') || '–'}`),
+        el('span', 'pill neutral', `반응 평균 ${r.react_avg}`));
+      if (r.questions) chips.append(el('span', 'pill ' + (r.unanswered ? 'accent' : 'neutral'), `질문 ${r.questions} · 답장 없음 ${r.unanswered}`));
+      c.append(h, chips);
+      if (f) {
+        const ol = el('ol'); f.actions.forEach(a => ol.append(el('li', null, a)));
+        c.append(el('p', 'why1', f.problem), el('p', 'sub', '이번 주 할 일'), ol, el('p', 'sub', '올릴 글 예시'), el('div', 'box', f.post_example), copyBtn('예시 복사', f.post_example));
+        c.append(fbBar({ id: `trd:${r.title}`, type: '트레이더스', title: `${r.title} 피드백`, url: '' }));
+      }
+      c.style.gap = '10px'; return c;
+    }));
   }
 
   // ── 텔레그램: 내 채널 ──
@@ -1976,7 +2034,7 @@ a.row:hover .row-main{text-decoration:underline}
     if (!setupRefresh.done) { setupRefresh(); setupRefresh.done = true; }
     const recs = grouped();
     drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors();
-    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawX(); drawFeedback(); drawRewrites(); drawThreadsMine(); drawSlides(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics();
+    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawX(); drawFeedback(); drawRewrites(); drawThreadsMine(); drawSlides(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics(); drawTraders();
     const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/);
     setChannel(ch ? ch[1] : 'instagram');
     if (m) openPlan(+m[1]);
