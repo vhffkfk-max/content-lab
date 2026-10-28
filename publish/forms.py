@@ -58,7 +58,7 @@ def md(s):
 LOGO = asset_uri("brand/hotconomy_logo.png")
 
 CSS = """
-.s{position:relative;width:1080px;height:1350px;overflow:hidden;font-family:HSans;--bg:#0b0b0d;--fg:#fff;--sub:#a9a9b2;--ac:#e3262b;--hl:#ffc23a;background:var(--bg);color:var(--fg);word-break:keep-all}
+.s{position:relative;width:1080px;height:1350px;overflow:hidden;font-family:HSans,'Noto Sans CJK KR',sans-serif;--bg:#0b0b0d;--fg:#fff;--sub:#a9a9b2;--ac:#e3262b;--hl:#ffc23a;background:var(--bg);color:var(--fg);word-break:keep-all}
 .light{--bg:#f4efe7;--fg:#1d1a17;--sub:#6e665e;--ac:#d8262b;--hl:#d8262b}
 .white{--bg:#ffffff;--fg:#141414;--sub:#6b6b6b;--ac:#e3262b;--hl:#e3262b}
 .paper{--bg:#ececea;--fg:#151515;--sub:#555;--ac:#d8262b;--hl:#d8262b}
@@ -77,7 +77,7 @@ CSS = """
 .b-m{font-size:40px;font-weight:500;line-height:1.55;color:var(--sub)}
 .chip{display:inline-block;background:var(--ac);color:#fff;font-weight:800;font-size:32px;padding:10px 26px;border-radius:40px}
 .center{text-align:center}
-.serif{font-family:HSerif}
+.serif{font-family:HSerif,'Noto Serif CJK KR',serif}
 /* 속보 */
 .ticker{position:absolute;top:0;left:0;right:0;height:96px;background:linear-gradient(90deg,#ff1f4b,#e3262b);color:#fff;font-weight:900;font-size:54px;white-space:nowrap;line-height:96px;letter-spacing:1px;overflow:hidden}
 .pricebox{position:absolute;background:#fff;color:#1565c0;font-weight:700;font-size:40px;padding:10px 20px;border-radius:4px}
@@ -97,7 +97,7 @@ CSS = """
 .mascot{position:absolute;border-radius:50%}
 /* 신문 */
 .frame{position:absolute;inset:44px;border:3px solid #222;outline:1px solid #222;outline-offset:8px}
-.mast{display:inline-block;border:3px solid #222;padding:10px 40px;font-family:HSerif;font-weight:900;font-size:62px}
+.mast{display:inline-block;border:3px solid #222;padding:10px 40px;font-family:HSerif,'Noto Serif CJK KR',serif;font-weight:900;font-size:62px}
 .news{font-size:54px;font-weight:800;line-height:1.35;margin-bottom:34px}
 .news u{text-decoration:none;box-shadow:inset 0 -14px 0 #d8262b55}
 .term{font-size:40px;line-height:1.55;margin-bottom:26px}

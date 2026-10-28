@@ -3,7 +3,7 @@
     from publish.render import render
     render(["<div class=slide>...</div>", ...], out_dir, "name")   # → [name-1.jpg, ...]
 캔바로 가져가 내보내면 글자가 가끔 깨져서(2026-10-28 확인) 발행용 이미지는 여기서 만든다.
-글꼴: 내 PC는 윈도 Noto Sans/Serif KR, 깃허브(우분투)는 fonts-noto-cjk 의 Noto Sans/Serif CJK KR.
+글꼴: 내 PC는 윈도 Noto Sans/Serif KR 가변 글꼴, 깃허브(우분투)는 fonts-noto-cjk 의 Noto Sans/Serif CJK KR (CSS 대체 글꼴).
 """
 import os
 import pathlib
@@ -20,7 +20,6 @@ W, H = 1080, 1350
 BROWSERS = [r"C:\Program Files\Google\Chrome\Application\chrome.exe",
             r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe", "google-chrome", "chromium", "chromium-browser"]
 FONT_FILES = {"HSans": ["C:/Windows/Fonts/NotoSansKR-VF.ttf"], "HSerif": ["C:/Windows/Fonts/NotoSerifKR-VF.ttf"]}
-FONT_LOCAL = {"HSans": ["Noto Sans KR", "Noto Sans CJK KR"], "HSerif": ["Noto Serif KR", "Noto Serif CJK KR"]}
 ASSETS = ROOT / "assets"
 
 
@@ -35,7 +34,8 @@ def font_css():
     out = []
     for fam, files in FONT_FILES.items():
         srcs = [f"url('{pathlib.Path(f).as_uri()}')" for f in files if os.path.exists(f)]
-        srcs += [f"local('{n}')" for n in FONT_LOCAL[fam]]
+        if not srcs:
+            continue   # 우분투: local() 은 굵기 하나만 잡혀서 굵은 글씨가 사라짐 → 시스템 Noto CJK 로 넘긴다 (forms CSS 의 대체 글꼴)
         out.append(f"@font-face{{font-family:{fam};src:{','.join(srcs)};font-weight:100 900}}")
     return "\n".join(out)
 
