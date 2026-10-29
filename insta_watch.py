@@ -103,7 +103,7 @@ def profile(user):
 def scan_accounts(c, now):
     users = accounts()
     for u in users:
-        c.execute("INSERT OR IGNORE INTO ig_accounts VALUES (?, 0)", (u,))
+        c.execute("INSERT OR IGNORE INTO ig_accounts (username, last_scan) VALUES (?, 0)", (u,))
     pick = [r[0] for r in c.execute("SELECT username FROM ig_accounts WHERE username IN (%s) ORDER BY last_scan LIMIT ?"
                                     % ",".join("?" * len(users)), (*users, IG_ACCT))] if users else []
     new = 0
