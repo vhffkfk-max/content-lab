@@ -1,0 +1,49 @@
+# 내 PC(threads_watch.py)가 3시간마다 쓰레드 조회수 추적 결과(output/site/thx_live*.json)를 올리면 → 사이트만 다시 배포.
+# Claude·Apify 호출 없음 (비용 0).
+name: threads-live
+
+on:
+  push:
+    paths:
+      - output/site/thx_live.json
+      - output/site/thx_live_meta.json
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: threads-live
+  cancel-in-progress: true   # 새 결과가 오면 이전 배포는 건너뜀
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 사이트 만들기
+        run: python build_site.py
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
