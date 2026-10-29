@@ -7,7 +7,8 @@
   - 계정(accounts.csv): 5분마다 가장 오래전에 본 곳 IG_ACCT곳 → 최근 글 12개 주소만 얻음 (48곳이면 약 1시간 20분에 한 바퀴)
   - 글: 차례 된 것만 열어 좋아요·댓글·올린 시각을 잼. 어릴수록 자주 (3시간 안 30분 / 12시간 안 1시간 /
     24시간 안 2시간 / 72시간 안 6시간), 반응이 거의 없으면 12시간, 72시간 지나면 그만
-  - 릴스 조회수는 로그인 없이는 안 보여서, 매일 수집(data/insta.db)에 있으면 그 값을 붙임
+  - 릴스 조회수: 글 화면엔 없어서, 인스타가 다른 사이트용으로 공개한 '퍼가기(임베드)' 화면(/embed/captioned/)에서 읽음
+    (앱에 보이는 재생수와는 셈법이 달라 숫자가 다를 수 있음 → 크는 속도 비교용). 못 읽으면 매일 수집 값
   - 인스타가 빈 화면을 3번 연속 주면 1시간 쉼 (막히지 않게)
   → output/site/igx_live.json(+_meta) / 평소보다 훨씬 빨리 크는 글은 텔레그램 알림(글당 한 번)
 기록: data/threads_watch.db 의 ig_* 표 (PC에만)
@@ -55,6 +56,8 @@ def init(c):
                        CREATE TABLE IF NOT EXISTS ig_snaps (code TEXT, at INTEGER, likes INTEGER, comments INTEGER);
                        CREATE INDEX IF NOT EXISTS ig_snaps_code ON ig_snaps(code, at);
                        CREATE TABLE IF NOT EXISTS ig_accounts (username TEXT PRIMARY KEY, last_scan INTEGER);""")
+    if "views" not in {r[1] for r in c.execute("PRAGMA table_info(ig_snaps)")}:
+        c.execute("ALTER TABLE ig_snaps ADD COLUMN views INTEGER")
     c.commit()
 
 
@@ -128,6 +131,15 @@ def _find(o, code):
     return None
 
 
+def embed_views(url):
+    """공개 퍼가기 화면에서 영상 조회수만 읽는다."""
+    try:
+        m = re.search(r'video_view_count\\*":(\d+)', _dom(url + "embed/captioned/"))
+    except subprocess.TimeoutExpired:
+        return None
+    return int(m.group(1)) if m else None
+
+
 def read_post(url):
     code = url.rstrip("/").rsplit("/", 1)[-1]
     try:
@@ -144,7 +156,8 @@ def read_post(url):
                 return {"taken_at": m["taken_at"], "likes": m.get("like_count"), "comments": m.get("comment_count"),
                         "author": (m.get("user") or {}).get("username"), "kind": KIND.get(m.get("product_type"), m.get("product_type")),
                         "slides": m.get("carousel_media_count"), "text": (m.get("caption") or {}).get("text") or "",
-                        "hidden": m.get("like_and_view_counts_disabled")}
+                        "hidden": m.get("like_and_view_counts_disabled"),
+                        "views": embed_views(url) if m.get("media_type") == 2 else None}
     return None
 
 
@@ -180,7 +193,8 @@ def measure(c, now):
             if age_h >= WINDOW_H:               # 고정해 둔 옛 글 등 → 기록 없이 그만
                 c.execute("UPDATE ig_posts SET next_check=NULL WHERE code=?", (code,))
                 continue
-            c.execute("INSERT INTO ig_snaps VALUES (?,?,?,?)", (code, at, p["likes"], p["comments"]))
+            c.execute("INSERT INTO ig_snaps (code, at, likes, comments, views) VALUES (?,?,?,?,?)",
+                      (code, at, p["likes"], p["comments"], p["views"]))
             gap = next_gap(age_h, (p["likes"] or 0) / age_h)
             c.execute("UPDATE ig_posts SET next_check=? WHERE code=?", (at + gap if gap else None, code))
             ok += 1
@@ -216,10 +230,12 @@ def metrics(c, now):
     for code, url, acc, author, kind, slides, text, taken, topics, alerted in c.execute(
             "SELECT code, url, account, author, kind, slides, text, taken_at, topics, alerted FROM ig_posts WHERE taken_at >= ?",
             (now - WINDOW_H * 3600,)):
-        ss = c.execute("SELECT at, likes, comments FROM ig_snaps WHERE code=? ORDER BY at", (code,)).fetchall()
+        ss = c.execute("SELECT at, likes, comments, views FROM ig_snaps WHERE code=? ORDER BY at", (code,)).fetchall()
         if not ss:
             continue
-        at, likes, comments = ss[-1]
+        at, likes, comments, v = ss[-1]
+        vprev = next((s for s in reversed(ss[:-1]) if at - s[0] >= 900 and s[3] is not None), None)
+        vgrowth = round((v - vprev[3]) / ((at - vprev[0]) / 3600)) if vprev and v is not None else None
         age_h = max(0.25, (at - taken) / 3600)
         prev = next((s for s in reversed(ss[:-1]) if at - s[0] >= 900 and s[1] is not None), None)
         growth = round((likes - prev[1]) / ((at - prev[0]) / 3600)) if prev and likes is not None else None
@@ -227,7 +243,8 @@ def metrics(c, now):
         out.append({"code": code, "url": url, "username": author or acc, "account": acc, "kind": kind or "", "slides": slides,
                     "followers": followers.get(author) or followers.get(acc), "text": (text or "")[:300], "topics": topics or "",
                     "time": fmt_t(taken), "age_h": round(age_h, 1), "likes": likes, "comments": comments,
-                    "lph": round((likes or 0) / age_h), "growth": growth, "views": views.get(code),
+                    "lph": round((likes or 0) / age_h), "growth": growth, "views": v if v is not None else views.get(code),
+                    "vph": round(v / age_h) if v is not None else None, "vgrowth": vgrowth,
                     "x_usual": round(likes / base, 1) if base and likes is not None else None,
                     "checks": len(ss), "checked": fmt_t(at), "trend": [s[1] for s in ss if s[1] is not None][-8:], "alerted": alerted})
     out.sort(key=lambda r: -(r["growth"] if r["growth"] is not None else r["lph"]))

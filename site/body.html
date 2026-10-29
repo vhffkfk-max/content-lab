@@ -367,7 +367,7 @@ a.row:hover .row-main{text-decoration:underline}
             </section>
             <section class="sec" id="ig-live">
               <h2>지금 크는 글 (5분마다 조금씩 확인)</h2>
-              <p class="note">내 PC의 무료 크롤러가 참고 계정의 새 카드뉴스·릴스를 찾아, 올린 지 3일 안 된 글의 좋아요·댓글을 다시 재요(어릴수록 자주). '평소의 N배'는 그 계정 최근 60일 좋아요 중앙값과 비교한 값이에요. 릴스 조회수는 로그인 없이는 안 보여서 매일 수집에 있을 때만 붙여요.</p>
+              <p class="note">내 PC의 무료 크롤러가 참고 계정의 새 카드뉴스·릴스를 찾아, 올린 지 3일 안 된 글의 좋아요·댓글을 다시 재요(어릴수록 자주). '평소의 N배'는 그 계정 최근 60일 좋아요 중앙값과 비교한 값이에요. 릴스 조회수는 인스타가 공개한 '퍼가기' 화면에서 읽어요(앱의 재생수와 셈법이 달라 숫자가 다를 수 있어요 — 크는 속도 비교용).</p>
               <div class="kpis" id="il-kpis"></div>
               <div class="card"><div class="rows" id="il-list"></div></div>
             </section>
@@ -1819,7 +1819,7 @@ a.row:hover .row-main{text-decoration:underline}
         kpi('지켜보는 글', `${fmtN(IM.tracked)}개`, `참고 계정 ${IM.accounts}곳`), kpi('잰 글', `${fmtN(IM.measured)}개`, '최근 3일'),
         kpi('평소 2배+', `${IM.hot}개`, '좋아요 기준'));
       listWithMore(il, IL, h => rowLink([h.x_usual >= 0.1 ? el('span', h.x_usual >= 2 ? 'pill accent' : 'pill neutral', `평소의 ${h.x_usual}배`) : el('span', 'pill neutral', `시간당 좋아요 ${fmtN(h.growth != null ? h.growth : h.lph)}`), ' ', h.kind ? `[${h.kind}] ` : '', h.text || '(내용 없음)'],
-        `@${h.username}${h.followers ? ' · 팔로워 ' + fmtN(h.followers) : ''} · 올린 지 ${h.age_h}시간 · 좋아요 ${fmtN(h.likes || 0)} · 댓글 ${fmtN(h.comments || 0)}${h.views ? ' · 조회 ' + fmtN(h.views) : ''}${h.growth != null ? ' · 지금 시간당 좋아요 ' + fmtN(h.growth) : ''}${h.topics ? ' · ' + h.topics : ''}`, h.url, webLink), 8);
+        `@${h.username}${h.followers ? ' · 팔로워 ' + fmtN(h.followers) : ''} · 올린 지 ${h.age_h}시간 · 좋아요 ${fmtN(h.likes || 0)} · 댓글 ${fmtN(h.comments || 0)}${h.views ? ' · 조회 ' + fmtN(h.views) : ''}${h.vgrowth != null ? ' · 지금 시간당 조회 ' + fmtN(h.vgrowth) : h.vph ? ' · 평균 시간당 조회 ' + fmtN(h.vph) : ''}${h.growth != null ? ' · 지금 시간당 좋아요 ' + fmtN(h.growth) : ''}${h.topics ? ' · ' + h.topics : ''}`, h.url, webLink), 8);
     }
 
     const LM = (rows('thx_live_meta') || [])[0], L = rows('thx_live') || [];
