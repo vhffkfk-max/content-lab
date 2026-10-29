@@ -2,29 +2,32 @@
 
     python comment_bot.py                 # 봇 켜기 (여분 PC에서 계속 켜 두기: comment_bot_install.ps1)
     python comment_bot.py --test <링크>   # 텔레그램 없이 화면에 3안만 출력
-    python comment_bot.py --set-key       # Anthropic API 키를 .env 에 저장 (화면에 안 보이게 입력)
 
 봇: 연구소 알림 봇(TELEGRAM_BOT_TOKEN)을 같이 쓰고, TELEGRAM_CHAT_ID(대표 본인)가 보낸 메시지에만 반응한다.
 안전 규칙 (작업지시서): 댓글은 절대 자동으로 올리지 않는다(고르기·붙여 넣기는 사람) / 계정당 하루 15개 /
   같은 글에 다른 계정 두 개 금지 / 최근 고른 댓글 50개와 비슷하면 다시 만든다 / 키·토큰은 .env 에만.
+댓글 쓰기: 이 PC에 로그인된 Claude Code(대표 Max 구독)로 돌려서 API 토큰값이 따로 안 든다. API 키는 필요 없다.
 기록: data/comment_bot.db (PC에만, 저장소에 안 올림) — 날짜, 링크, 작성자, 추천 계정, 고른 유형, 댓글.
 """
 import argparse
 import difflib
-import getpass
 import json
 import os
+import shutil
 import sqlite3
+import subprocess
+import tempfile
 import sys
 import time
 from datetime import datetime, timedelta, timezone
+from pathlib import Path
 
 import requests
 
 from common import ROOT, load_env
 from post_reader import find_link, read
 
-MODEL = "claude-sonnet-5-5"
+MODEL = "sonnet"   # Claude Code 별칭 → 최신 Sonnet
 KST = timezone(timedelta(hours=9))
 DB = ROOT / "data" / "comment_bot.db"
 CFG = json.loads((ROOT / "config" / "comment_accounts.json").read_text(encoding="utf-8"))
@@ -100,18 +103,34 @@ def age(post):
     return post.get("date") or "?"
 
 
+OUT_SCHEMA = {"type": "object", "additionalProperties": False,
+              "properties": {k: {"type": "string"} for k in ("topic", "account", "A", "B", "C", "note")},
+              "required": ["topic", "account", "A", "B", "C", "note"]}
+
+
+def claude_cli():
+    return shutil.which("claude") or next((str(p) for p in [Path.home() / ".local/bin/claude.exe"] if p.exists()), None)
+
+
+def ask_claude(system, msg):
+    """Claude Code 를 도구 없이 한 번 불러 JSON 으로 받는다. ANTHROPIC_API_KEY 는 빼서 구독으로만 돈다."""
+    env = {k: v for k, v in os.environ.items() if k != "ANTHROPIC_API_KEY"}
+    cmd = [claude_cli(), "-p", "--model", MODEL, "--system-prompt", system, "--tools", "", "--strict-mcp-config",
+           "--setting-sources", "", "--no-session-persistence", "--output-format", "json",
+           "--json-schema", json.dumps(OUT_SCHEMA)]
+    with tempfile.TemporaryDirectory() as tmp:   # 프로젝트 설정·훅을 안 읽게 빈 폴더에서
+        r = subprocess.run(cmd, input=msg, capture_output=True, text=True, encoding="utf-8", env=env, cwd=tmp,
+                           timeout=240, creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
+    try:
+        d = json.loads(r.stdout)
+    except json.JSONDecodeError:
+        raise RuntimeError(f"Claude Code 응답 없음: {(r.stderr or r.stdout)[:300]}")
+    if d.get("is_error") or not d.get("structured_output"):
+        raise RuntimeError(f"Claude Code 오류: {str(d.get('result'))[:300]}")
+    return d["structured_output"]
+
+
 def generate(post, avoid=(), fixed_account=None):
-    import anthropic
-    from pydantic import BaseModel
-
-    class Out(BaseModel):
-        topic: str
-        account: str
-        A: str
-        B: str
-        C: str
-        note: str
-
     msg = (f"플랫폼: {post['platform']}\n작성자: @{post['author']}\n올린 지: {age(post)}\n"
            f"조회 {short_n(post.get('views'))} / 좋아요 {short_n(post.get('likes'))} / 답글 {short_n(post.get('replies'))}\n\n"
            f"[본문]\n{post['text'][:3000]}\n\n[이미 달린 상위 답글]\n" + ("\n".join(post.get("top_replies") or []) or "(없음)"))
@@ -119,9 +138,7 @@ def generate(post, avoid=(), fixed_account=None):
         msg += f"\n\n이 글에는 이미 '{fixed_account}' 계정으로 댓글을 골랐어요. account 는 반드시 '{fixed_account}' 로 하세요."
     if avoid:
         msg += "\n\n아래 문장들과 겹치지 않게, 완전히 다른 내용과 표현으로 쓰세요:\n" + "\n".join(f"- {a}" for a in avoid)
-    r = anthropic.Anthropic().messages.parse(model=MODEL, max_tokens=1500, system=system_prompt(),
-                                             messages=[{"role": "user", "content": msg}], output_format=Out)
-    out = r.parsed_output.model_dump()
+    out = ask_claude(system_prompt(), msg)
     names = [a["name"] for a in CFG["accounts"]]
     if fixed_account or out["account"] not in names:
         out["account"] = fixed_account or names[0]
@@ -282,27 +299,14 @@ def run():
 
 
 
-def set_key():
-    from get_token import set_env
-    key = getpass.getpass("Anthropic API 키를 붙여 넣고 Enter (화면에 안 보여요): ").strip()
-    if not key.startswith("sk-"):
-        print("키 모양이 아니에요. 다시 실행해 주세요.")
-        return 1
-    set_env({"ANTHROPIC_API_KEY": key})
-    print("✅ .env 에 저장했어요.")
-
-
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--test")
-    ap.add_argument("--set-key", action="store_true")
     a = ap.parse_args()
     sys.stdout.reconfigure(encoding="utf-8")
-    if a.set_key:
-        return set_key()
     load_env()
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        print("ANTHROPIC_API_KEY 가 없어요 — python comment_bot.py --set-key 로 먼저 넣어 주세요.")
+    if not claude_cli():
+        print("Claude Code 가 없어요 — 이 PC에 Claude Code 를 깔고 대표 계정으로 로그인해 주세요.")
         return 1
     if a.test:
         post = read(a.test)

@@ -3,7 +3,7 @@
     python comment_bot_pack.py            # 바탕화면에 만들기
     python comment_bot_pack.py --to E:\\   # USB에 바로 만들기
 
-.env 는 봇에 필요한 키만 골라 담는다 (인스타·캔바·Apify 키는 빼서 USB를 잃어버려도 덜 위험하게).
+.env 는 텔레그램 봇 키만 담는다 (인스타·캔바·Apify 키는 빼서 USB를 잃어버려도 덜 위험하게).
 값은 화면에 찍지 않는다.
 """
 import argparse
@@ -13,9 +13,9 @@ from pathlib import Path
 
 from common import ENV_PATH, ROOT
 
-FILES = ["comment_bot.py", "post_reader.py", "common.py", "get_token.py", "publish/__init__.py",
+FILES = ["comment_bot.py", "post_reader.py", "common.py", "publish/__init__.py",
          "publish/render.py", "config/comment_accounts.json", "comment_bot_install.ps1", "COMMENT_BOT.md"]
-KEYS = ("TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID", "ANTHROPIC_API_KEY")
+KEYS = ("TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID")   # 댓글은 Claude Code(Max 구독)로 써서 API 키 불필요
 NAME = "댓글봇_USB"
 
 
@@ -38,8 +38,6 @@ def main():
     found = sorted({l.split("=", 1)[0].strip() for l in keep})
     print(f"만들었어요: {out}")
     print("담은 키:", ", ".join(found) or "없음")
-    if "ANTHROPIC_API_KEY" not in found:
-        print("Anthropic 키는 없어요 → 여분 PC에서 설치할 때 한 번 물어봐요.")
 
 
 if __name__ == "__main__":

@@ -38,7 +38,7 @@ if "%NOINSTALL%"=="1" (
   exit /b 0
 )
 
-echo  [3/3] 봇 등록 - Anthropic 키를 물으면 붙여 넣고 Enter. 화면에 안 보여도 정상이에요.
+echo  [3/3] 봇 등록 - Claude 로그인 창이 뜨면 Max 계정으로 로그인해 주세요. 한 번만 하면 돼요.
 powershell -NoProfile -ExecutionPolicy Bypass -File "%DEST%\comment_bot_install.ps1" -Python "%PY%" -EnvFrom "%SRC%.env"
 echo.
 echo  끝났어요. 1분 안에 텔레그램에 "댓글 봇이 켜졌어요" 가 오면 성공이에요.
