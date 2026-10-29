@@ -113,6 +113,9 @@ class Canva:
             seen.append((url, data))
         raise CanvaError(f"{page}장째가 계속 다르게 나와요(글자 깨짐 의심) — 캔바에서 디자인을 한 번 열어 확인해 주세요.")
 
+    def move(self, item_id, folder_id):
+        self._call("POST", "folders/move", {"item_id": item_id, "to_folder_id": folder_id})
+
 
 def _same(a, b, limit=1.5):
     """두 JPG 가 사실상 같은 그림인지 (평균 밝기 차이)."""
@@ -121,6 +124,3 @@ def _same(a, b, limit=1.5):
     from PIL import Image, ImageChops, ImageStat
     x, y = (Image.open(io.BytesIO(v)).convert("L").resize((270, 338)) for v in (a, b))
     return ImageStat.Stat(ImageChops.difference(x, y)).mean[0] < limit
-
-    def move(self, item_id, folder_id):
-        self._call("POST", "folders/move", {"item_id": item_id, "to_folder_id": folder_id})
