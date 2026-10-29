@@ -16,6 +16,8 @@ import subprocess
 import sys
 import tempfile
 
+import requests
+
 from publish.render import browser
 
 THREADS = re.compile(r"https?://(?:www\.)?threads\.(?:net|com)/@?([\w.]+)/post/([\w-]+)")
@@ -95,8 +97,19 @@ def _insta(url, dom):
             "reposts": None, "top_replies": []}
 
 
+def _resolve(url):
+    """앱 '공유' 링크(threads.com/share/…, instagram.com/share/…)는 원래 글 주소로 넘어가는 주소라 따라가서 바꾼다."""
+    if THREADS.search(url) or INSTA.search(url):
+        return url
+    try:
+        r = requests.get(url, allow_redirects=True, timeout=15, headers={"User-Agent": "Mozilla/5.0"})
+        return r.url.split("?")[0]
+    except requests.RequestException:
+        return url
+
+
 def read(url, tries=2):
-    url = url.replace("threads.net", "threads.com")
+    url = _resolve(url.replace("threads.net", "threads.com"))
     parse = _threads if THREADS.search(url) else _insta if INSTA.search(url) else None
     if not parse:
         return None
