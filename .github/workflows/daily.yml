@@ -55,6 +55,7 @@ jobs:
           python threads_collect.py
           python threads_links.py
           python apify_threads.py
+          python threads_viral.py --export || true
           python x_collect.py
           python analyze.py --no-open
           python export_site.py

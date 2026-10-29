@@ -250,6 +250,7 @@ a.row:hover .row-main{text-decoration:underline}
             <li><a href="#th-rank">반응 랭킹·이유</a></li>
             <li><a href="#th-foreign">해외 쓰레드</a></li>
             <li><a href="#th-rising">지금 뜨는 글</a></li>
+            <li><a href="#th-viral">조회수 10만+ 모음</a></li>
             <li><a href="#th-topics">주제별 인기</a></li>
             <li><a href="#th-formats">첫 줄·형식 분석</a></li>
             <li><a href="#th-saved">팀이 모은 글</a></li>
@@ -542,6 +543,13 @@ a.row:hover .row-main{text-decoration:underline}
           <h2>지금 뜨는 글 (48시간 안)</h2>
           <p class="note">조회 속도가 빠른 순이에요. '조회 대기'는 조회수가 아직 공개되지 않았지만 팔로워 대비 반응이 큰 글이라 다음 날 다시 확인해요.</p>
           <div class="card"><div class="rows" id="tx-rising"></div></div>
+        </section>
+        <section class="sec" id="th-viral">
+          <h2>조회수 10만+ 경제 글 모음</h2>
+          <p class="note">한국어 경제 글 중 조회수 10만을 넘은 글만 모았어요(매일 수집 + 가끔 대량 수집). 위 숫자는 이 글들의 공통점이에요.</p>
+          <div class="kpis" id="tv-kpis"></div>
+          <div class="chips" id="tv-chips" style="margin:6px 0 12px"></div>
+          <div class="card"><div class="rows" id="tv-list"></div></div>
         </section>
         <section class="sec" id="th-topics">
           <h2>주제별 인기</h2>
@@ -1694,6 +1702,23 @@ a.row:hover .row-main{text-decoration:underline}
     if (!R.length) empty(rb, '최근 48시간 안에 급상승한 글이 없어요.');
     else listWithMore(rb, R, h => rowLink([h.grade === '조회 대기' ? el('span', 'pill warning', '조회 대기') : el('span', 'pill accent', `시간당 ${fmtN(h.velocity || 0)}`), ' ', h.text || '(내용 없음)'],
       `@${h.username} · ${h.time} · ${thStats(h)}${h.topics ? ' · ' + h.topics : ''}`, h.url, webLink), 6);
+
+    const VM = (rows('thx_viral_meta') || [])[0], V = rows('thx_viral') || [];
+    const vk = document.getElementById('tv-kpis'), vc = document.getElementById('tv-chips'), vl = document.getElementById('tv-list');
+    if (!V.length) { vk.replaceChildren(); vc.replaceChildren(); empty(vl, '대량 수집을 돌리면 채워져요.'); }
+    else {
+      vk.replaceChildren(kpi('모은 글', `${V.length}개`, '한국어 경제 글'), kpi('조회수 중앙값', fmtN(VM.median_views), ''), kpi('팔로워 5천 미만 계정', `${VM.small_acc}%`, `팔로워 중앙값 ${fmtN(VM.median_followers)}`),
+        kpi('글 길이 중앙값', `${VM.median_len}자`, `${VM.median_lines}줄`), kpi('첫 줄 길이 중앙값', `${VM.median_first}자`, ''),
+        kpi('첫 줄에 숫자', `${VM.number}%`, ''), kpi('첫 줄이 질문', `${VM.question}%`, ''), kpi('사진·영상 포함', `${VM.media}%`, ''));
+      const showV = t => {
+        vc.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.t === t)));
+        const ps = t === '전체' ? V : V.filter(p => p.topics.split(', ').includes(t));
+        listWithMore(vl, ps, h => rowLink([el('span', 'pill accent', `조회 ${fmtN(h.views)}`), ' ', h.text || '(내용 없음)'],
+          `@${h.username} · 팔로워 ${fmtN(h.followers)} · 확산 ${h.spread}배 · ${h.time} · 좋아요 ${fmtN(h.likes)} · 답글 ${fmtN(h.replies)} · ${h.topics}`, h.url, webLink), 8);
+      };
+      vc.replaceChildren(...['전체', ...VM.topics.map(t => t[0])].map(t => { const b = el('button', 'btn small', t === '전체' ? `전체 ${V.length}` : `${t} ${VM.topics.find(x => x[0] === t)[1]}`); b.type = 'button'; b.dataset.t = t; b.addEventListener('click', () => showV(t)); return b; }));
+      showV('전체');
+    }
 
     const topics = [...new Set(TP.map(t => t.topic))], cb = document.getElementById('tx-topic-chips'), lb = document.getElementById('tx-topic-list');
     const showTopic = t => {
