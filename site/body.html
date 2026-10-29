@@ -19,7 +19,7 @@
 .subnav a[aria-current="true"]{color:var(--accent-ink);font-weight:600}
 .subnav .sub-label{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.02em;padding:8px 0 2px}
 .trd-room h3{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.trd-room ol{margin:6px 0 0 18px;padding:0;display:grid;gap:4px}
+.trd-room ol,.trd-room ul{margin:6px 0 0 18px;padding:0;display:grid;gap:4px}
 .side-foot{margin-top:auto;font-size:12px;color:var(--muted);padding:0 10px;line-height:1.6}
 .topbar{display:none}
 
@@ -283,6 +283,7 @@ a.row:hover .row-main{text-decoration:underline}
             <li><a href="#tg-when">시간대·형식</a></li>
             <li><a href="#tg-rooms">방별 현황</a></li>
             <li class="sub-label">트레이더스 방</li>
+            <li><a href="#trd-posts">오늘 방별 올릴 글</a></li>
             <li><a href="#trd-awards">왕 선정 중간 체크</a></li>
             <li><a href="#trd-rooms">방별 활성화 피드백</a></li>
           </ul></li>
@@ -682,6 +683,12 @@ a.row:hover .row-main{text-decoration:underline}
             <div class="card"><div class="rows" id="tg-chats"></div></div></section>
         </div>
         <h2 style="margin-top:28px;font-size:22px">트레이더스 방</h2>
+        <section class="sec" id="trd-posts">
+          <h2>오늘 방별 올릴 글</h2>
+          <p class="note" id="trd-posts-note">매일 07시(하루 글 전부)·18시(저녁 글) Claude가 오늘 뉴스와 실제 시세로 방마다 올릴 글을 써요. [확인] 표시가 있으면 올리기 전에 채워 주세요.</p>
+          <div class="kpis" id="trd-market"></div>
+          <div class="recs" id="trd-post-list" style="margin-top:12px"></div>
+        </section>
         <section class="sec" id="trd-awards">
           <h2>이달의 왕 선정 — 중간 체크</h2>
           <p class="note" id="trd-awards-note">회원 이름이 들어간 순위표는 개인정보라 사이트에 올리지 않고 내 PC 엑셀(output/participation)에만 있어요. 여기엔 부문별 후보 수와 기준만 보여요.</p>
@@ -1251,6 +1258,26 @@ a.row:hover .row-main{text-decoration:underline}
     }));
   }
 
+  function drawTraderPosts() {
+    const d = (() => { const x = dash.data('trd_posts'); return x.status === 'ok' && !Array.isArray(x.data) ? x.data : null; })();
+    const mb = document.getElementById('trd-market'), lb = document.getElementById('trd-post-list');
+    if (!d) { mb.replaceChildren(); empty(lb, '다음 07시·18시 깃허브 실행 때 방별 글이 생겨요. 지금 바로 보려면 「데이터 새로 불러오기 → 트레이더스 방별 글 다시 쓰기」.'); return; }
+    document.getElementById('trd-posts-note').textContent = `${d.date} · ${(d.generated_at || '').slice(11, 16)} 작성 — ${d.theme || ''} · [확인] 표시가 있으면 올리기 전에 채워 주세요.`;
+    const M = d.market || {}, pct = v => v == null ? '' : `${v > 0 ? '+' : ''}${v}%`;
+    mb.replaceChildren(...['코스피', '나스닥', '원/달러 환율', '비트코인(업비트 원화)', '이더리움(달러)', '비트코인 김치프리미엄(%)'].filter(k => M[k]).map(k =>
+      kpi(k.replace('(%)', ''), k.includes('김치') ? `${M[k].close}%` : fmtN(M[k].close), M[k].d1 != null ? `하루 ${pct(M[k].d1)}` : '업비트 ÷ (달러가 × 환율)')));
+    const nowHm = new Date(Date.now() + 9 * 3600e3).toISOString().slice(11, 16), isToday = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10) === d.date;
+    lb.replaceChildren(...(d.posts || []).map(p => {
+      const c = el('article', 'card rec trd-room'), h = el('h3', null, `${p.time} · ${p.room}`);
+      h.append(el('span', 'pill ' + (isToday && p.time <= nowHm ? 'neutral' : 'accent'), isToday && p.time <= nowHm ? '시간 지남' : p.kind));
+      c.append(h, el('p', 'why1', p.title), el('div', 'box', p.text), copyBtn('글 복사', p.text));
+      if (p.check && p.check.length) { const ul = el('ul'); p.check.forEach(x => ul.append(el('li', null, x))); c.append(el('p', 'sub', '올리기 전 확인'), ul); }
+      if (p.based_on) c.append(el('p', 'sub', `재료: ${p.based_on}`));
+      c.append(fbBar({ id: `trdp:${d.date}:${p.time}:${p.room}`, type: '트레이더스 글', title: `${p.room} ${p.kind}: ${p.title}`, url: '' }));
+      c.style.gap = '10px'; return c;
+    }));
+  }
+
   // ── 텔레그램: 내 채널 ──
   function drawTelegramMine() {
     const C = (rows('tg_chats') || []).find(c => c.role === 'mine'), P = rows('tg_mine') || [];
@@ -1504,6 +1531,7 @@ a.row:hover .row-main{text-decoration:underline}
   // ── 데이터 새로 불러오기 (사이트에서 깃허브 실행 버튼 누르기) ──
   const RF_RUNS = [
     { key: 'tg', label: '텔레그램 오늘 문구 다시 쓰기', wf: 'telegram.yml', inputs: { force: 'true' }, cost: '약 0.3달러 · 3~5분', focus: true },
+    { key: 'trd', label: '트레이더스 방별 글 다시 쓰기', wf: 'telegram.yml', inputs: { traders: 'true' }, cost: '약 0.2~0.3달러 · 3~5분' },
     { key: 'social', label: '쓰레드·X·트루스 새로 수집 + 분석', wf: 'reanalyze.yml', inputs: { collect_threads: 'true' }, cost: '약 1~1.5달러 · 15~20분' },
     { key: 're', label: '수집 없이 분석·추천만 다시', wf: 'reanalyze.yml', inputs: {}, cost: '약 0.5달러 · 5~10분' },
     { key: 'all', label: '전체 새로 수집 (인스타·뉴스 포함)', wf: 'daily.yml', inputs: { instagram: 'true' }, cost: '약 3달러 · 30~40분 · 하루 1번 이상은 비추천' },
@@ -2077,7 +2105,7 @@ a.row:hover .row-main{text-decoration:underline}
     if (!setupRefresh.done) { setupRefresh(); setupRefresh.done = true; }
     const recs = grouped();
     drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors();
-    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawX(); drawFeedback(); drawRewrites(); drawThreadsMine(); drawSlides(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics(); drawTraders();
+    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawX(); drawFeedback(); drawRewrites(); drawThreadsMine(); drawSlides(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics(); drawTraders(); drawTraderPosts();
     const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/);
     setChannel(ch ? ch[1] : 'instagram');
     if (m) openPlan(+m[1]);

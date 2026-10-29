@@ -20,6 +20,10 @@ on:
         description: "이번에 특히 반영할 요청 (예: 지금 하락장이니 하락장 대응 문구)"
         type: string
         default: ""
+      traders:
+        description: "트레이더스 방별 올릴 글을 지금 다시 쓰기"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -72,6 +76,19 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python tg_traders.py --ai-only
 
+      - name: 트레이더스 방별 올릴 글 (Claude Opus, 하루 2번 07·18시 — 뉴스가 그대로면 건너뜀)
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ "${{ inputs.traders }}" = "true" ]; then
+            python trd_posts.py --force
+          elif python trd_posts.py --due; then
+            python trd_posts.py
+          else
+            echo "이번엔 트레이더스 글을 다시 쓸 차례가 아니에요"
+          fi
+
       - name: 사이트 만들기
         run: python build_site.py
 
@@ -80,7 +97,7 @@ jobs:
         run: |
           git config user.name "content-lab-bot"
           git config user.email "content-lab-bot@users.noreply.github.com"
-          git add output/site/tg_*.json output/site/trd_rooms.json   # 텔레그램 결과만 (다른 파일은 매일 수집이 관리)
+          git add output/site/tg_*.json output/site/trd_*.json   # 텔레그램 결과만 (다른 파일은 매일 수집이 관리)
           git commit -m "data: 텔레그램 분석 $(date -u +%Y-%m-%d)" || echo "변경 없음"
           git pull --rebase -X theirs --autostash || (git rebase --abort; git pull --no-rebase -X ours --no-edit) || true   # 겹치면 이번 실행 결과를 우선
           git push
