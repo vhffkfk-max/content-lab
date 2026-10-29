@@ -18,6 +18,7 @@ import os
 import secrets
 import subprocess
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -45,6 +46,9 @@ def token_request(params):
 
 
 def save_refresh(refresh):
+    # 지금 돌고 있는 프로그램에도 바로 반영 — 안 하면 같은 실행에서 Canva() 를 두 번 만들 때 쓴 토큰을 또 보내
+    # 캔바가 로그인 전체를 취소한다 (2026-10-29 실제로 겪음: "Refresh token used twice")
+    os.environ["CANVA_REFRESH_TOKEN"] = refresh
     set_env({"CANVA_REFRESH_TOKEN": refresh})
     for name in ("CANVA_CLIENT_ID", "CANVA_CLIENT_SECRET", "CANVA_REFRESH_TOKEN"):
         value = refresh if name == "CANVA_REFRESH_TOKEN" else os.environ[name]
@@ -53,10 +57,16 @@ def save_refresh(refresh):
     print("✅ .env 와 깃허브 Secrets 에 캔바 토큰 저장")
 
 
+_ACCESS = {}
+
+
 def refresh_access():
-    """저장된 refresh token → access token (새 refresh token 은 바로 저장)."""
+    """저장된 refresh token → access token (새 refresh token 은 바로 저장). 한 실행 안에서는 받은 access token 을 다시 씀."""
+    if _ACCESS.get("exp", 0) > time.time():
+        return _ACCESS["token"]
     t = token_request({"grant_type": "refresh_token", "refresh_token": os.environ["CANVA_REFRESH_TOKEN"]})
     save_refresh(t["refresh_token"])
+    _ACCESS.update(token=t["access_token"], exp=time.time() + int(t.get("expires_in", 3600)) - 300)
     return t["access_token"]
 
 

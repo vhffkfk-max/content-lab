@@ -3,6 +3,7 @@
     from publish.render import render
     render(["<div class=slide>...</div>", ...], out_dir, "name")   # → [name-1.jpg, ...]
 캔바로 가져가 내보내면 글자가 가끔 깨져서(2026-10-28 확인) 발행용 이미지는 여기서 만든다.
+캔바 수정용 사본은 publish/canva_copy.py (같은 HTML → 배경 그림 + 글상자 PPTX).
 글꼴: 내 PC는 윈도 Noto Sans/Serif KR 가변 글꼴, 깃허브(우분투)는 fonts-noto-cjk 의 Noto Sans/Serif CJK KR (CSS 대체 글꼴).
 """
 import os
@@ -49,19 +50,25 @@ html,body{{margin:0;padding:0;width:{W}px;height:{H}px;overflow:hidden}}
 </style></head><body>{body}</body></html>"""
 
 
+def chrome(html_text, tmp, *args):
+    """HTML 을 크롬(헤드리스)으로 열어 args(--screenshot=… / --dump-dom)대로 → 표준출력."""
+    html = pathlib.Path(tmp) / f"p{abs(hash(html_text))}.html"
+    html.write_text(html_text, encoding="utf-8")
+    linux = ["--no-sandbox"] if sys.platform.startswith("linux") else []
+    r = subprocess.run([browser(), "--headless=new", "--disable-gpu", "--hide-scrollbars", "--force-device-scale-factor=1", *linux,
+                        "--allow-file-access-from-files", "--virtual-time-budget=3000", f"--window-size={W},{H}",
+                        *args, html.as_uri()], check=True, capture_output=True, timeout=90)
+    return r.stdout.decode("utf-8", "ignore")
+
+
 def render(slides, out_dir, name, css=""):
     out_dir = pathlib.Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
-    exe, files = browser(), []
+    files = []
     with tempfile.TemporaryDirectory() as tmp:
         for i, body in enumerate(slides, 1):
-            html = pathlib.Path(tmp) / f"s{i}.html"
-            html.write_text(page(body, css), encoding="utf-8")
             png = pathlib.Path(tmp) / f"s{i}.png"
-            linux = ["--no-sandbox"] if sys.platform.startswith("linux") else []
-            subprocess.run([exe, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--force-device-scale-factor=1", *linux,
-                            "--allow-file-access-from-files", "--virtual-time-budget=3000", f"--window-size={W},{H}",
-                            f"--screenshot={png}", html.as_uri()], check=True, capture_output=True, timeout=90)
+            chrome(page(body, css), tmp, f"--screenshot={png}")
             jpg = out_dir / f"{name}-{i}.jpg"
             Image.open(png).convert("RGB").crop((0, 0, W, H)).save(jpg, "JPEG", quality=93)
             files.append(jpg)

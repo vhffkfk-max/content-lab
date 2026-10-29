@@ -4,11 +4,13 @@
     python -m publish.draft_card --topic 테슬라      # 주제 지정
     python -m publish.draft_card --dry-run          # Claude 호출 없이 프롬프트만 출력
     python -m publish.draft_card --no-send          # 텔레그램으로 안 보냄
+    python -m publish.draft_card --no-canva         # 캔바 사본 안 만듦
 
 숫자 원칙: 시세 숫자는 코드가 야후 차트에서 가져와 넣고, 사실은 모아 둔 뉴스 제목에 있는 것만 쓴다.
   Claude 는 폼을 고르고 글만 쓴다. 차트 자리는 {"ticker": "TSLA"} 로 남기면 코드가 실제 시세로 채운다.
 폼 돌려쓰기: 큐(data/publish_queue.json)에서 최근 3개 게시물에 쓴 폼은 후보에서 뺀다.
 결과: output/cardnews/drafts/<id>/ 에 JPG, 큐에 status=drafted 로 저장, 텔레그램 봇으로 앨범 + 캡션.
+  + 캔바 '핫코노미 · 발행 대기' 폴더에 고칠 수 있는 사본(publish/canva_copy.py), 편집 링크는 큐 canva.edit_url·텔레그램으로.
 """
 import argparse
 import json
@@ -240,6 +242,7 @@ def main():
     ap.add_argument("--topic")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--no-send", action="store_true")
+    ap.add_argument("--no-canva", action="store_true", help="캔바 사본 안 만듦")
     a = ap.parse_args()
     load_env()
     queue = load_queue()
@@ -263,12 +266,21 @@ def main():
     did = f"{now:%Y%m%d-%H%M}-{post['form']}"
     files = forms.make(post, OUT / did, did)
     (OUT / did / "post.json").write_text(json.dumps(post, ensure_ascii=False, indent=1), encoding="utf-8")
+    canva = {}
+    if not a.no_canva:
+        try:   # 캔바 '발행 대기' 폴더에 고칠 수 있는 사본 (실패해도 초안은 그대로 보냄)
+            from publish.canva_copy import to_canva
+            d = to_canva(forms.make_canva(post, OUT / did / f"{did}.pptx"), f"[초안] {post.get('title', topic)}"[:50])
+            canva = {"id": d["id"], "edit_url": d["urls"]["edit_url"]}
+            print("✅ 캔바 사본:", canva["edit_url"])
+        except Exception as e:
+            print("⚠️ 캔바 사본 실패 (초안은 그대로):", e)
     caption = post["caption"].rstrip() + "\n\n" + " ".join(post["hashtags"])
     queue["items"].append({"id": did, "account": "hotconomy", "type": "carousel", "topic": topic, "form": post["form"],
                            "title": post.get("title", topic), "caption": caption, "youtube": post.get("youtube", {}),
                            "files": [str(f.relative_to(ROOT)).replace("\\", "/") for f in files], "tickers": tickers,
                            "sources": post.get("sources", []), "warnings": warns, "status": "drafted", "risk": None,
-                           "published": {}, "created_at": now.isoformat(timespec="seconds")})
+                           "published": {}, "canva": canva, "created_at": now.isoformat(timespec="seconds")})
     QUEUE.parent.mkdir(parents=True, exist_ok=True)
     QUEUE.write_text(json.dumps(queue, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"✅ {forms.FORM_NAMES[post['form']]} {len(files)}장 → {OUT / did}")
@@ -279,6 +291,8 @@ def main():
         if warns:
             head += "\n⚠️ " + "\n⚠️ ".join(warns)
         notify.send_photos(files, head)
+        if canva:   # 주소가 길어서 사진 설명(1024자 제한) 대신 따로 보냄
+            notify.send("🎨 캔바에서 고치기 ('핫코노미 · 발행 대기' 폴더)\n" + canva["edit_url"])
         notify.send("캡션 초안\n\n" + caption + ("\n\n출처\n" + "\n".join(post.get("sources", [])[:5]) if post.get("sources") else ""))
 
 

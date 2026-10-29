@@ -332,6 +332,16 @@ def end_slide(e, n, theme):
 
 
 def make(post, out_dir, name, demo=False):
+    return render(slides_of(post, demo), out_dir, name, CSS)
+
+
+def make_canva(post, path):
+    """캔바 수정용 사본 PPTX (publish/canva_copy.py)."""
+    from publish.canva_copy import build_pptx
+    return build_pptx(slides_of(post), CSS, path)
+
+
+def slides_of(post, demo=False):
     fn, theme = FORMS[post["form"]]
     total = 1 + len(post.get("slides", [])) + 1
     tag = '<div class="demo">예시 · 발행 금지</div>' if demo else ""
@@ -339,7 +349,7 @@ def make(post, out_dir, name, demo=False):
     for i, s in enumerate(post.get("slides", []), 2):
         slides.append(f'<div class="s {theme}">{tag}{fn(post["cover"], s, i, total)}{foot(i, total)}</div>')
     slides.append(f'<div class="s {theme}">{tag}{end_slide(post.get("end", {}), total, theme)}</div>')
-    return render(slides, out_dir, name, CSS)
+    return slides
 
 
 # ── 예시 (발행 금지 표시가 붙음 — 숫자는 모양 확인용) ──
