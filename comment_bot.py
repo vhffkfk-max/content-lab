@@ -236,6 +236,10 @@ def run():
     bot, c, offset, waiting = Bot(), db(), None, None   # waiting: 본문 붙여 넣기를 기다리는 링크
     bot.call("deleteWebhook")
     log("댓글 봇 켜짐")
+    try:
+        bot.say("댓글 봇이 켜졌어요. 쓰레드·인스타 글 링크를 보내 주세요.")
+    except requests.RequestException:
+        pass
     while True:
         try:
             ups = bot.call("getUpdates", timeout=50, offset=offset, allowed_updates=["message", "callback_query"]).get("result", [])
