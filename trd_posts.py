@@ -149,10 +149,10 @@ def main():
     prompt += feedback_prompt(["트레이더스", "트레이더스 글"])
     if args.dry_run:
         return print(prompt[:6000])
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        return print("ANTHROPIC_API_KEY 가 없어 트레이더스 글을 건너뛰어요 — 지난 결과를 유지해요.")
+    if not __import__("llm").ready():
+        return print("Claude Code(Max) 가 없는 곳이라 트레이더스 글을 건너뛰어요 — 지난 결과를 유지해요.")
 
-    import anthropic
+    import llm as anthropic   # 내 PC Claude Code(Max 구독)로 실행 — API 요금 없음
     from pydantic import BaseModel
 
     class Post(BaseModel):

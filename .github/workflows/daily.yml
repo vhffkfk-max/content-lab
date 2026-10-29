@@ -33,7 +33,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - run: pip install anthropic pydantic
+      - run: pip install pydantic
 
       - name: 수집·분석
         env:
@@ -60,31 +60,8 @@ jobs:
           python analyze.py --no-open
           python export_site.py
 
-      - name: 기획안 작성 (Claude)
-        continue-on-error: true   # 실패해도 지난 기획안으로 사이트는 배포
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python generate_drafts.py
-
-      - name: 한국에 안 풀린 해외 콘텐츠 찾기 (Claude)
-        continue-on-error: true
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python import_ideas.py
-
-      - name: 팀이 모은 쓰레드 글 분석 (Claude)
-        continue-on-error: true
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python threads_analyze.py
-
-      - name: X·트루스 경제 글 분석 (Claude)
-        continue-on-error: true
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          python x_analyze.py
-          python threads_mine_analyze.py
+      - name: PC에 Claude 작업 요청 (기획안·해외 아이디어·쓰레드·X 분석은 내 PC가 Max 구독으로)
+        run: python ai_request.py daily
 
       - name: 사이트 만들기
         run: python build_site.py
@@ -94,7 +71,7 @@ jobs:
         run: |
           git config user.name "content-lab-bot"
           git config user.email "content-lab-bot@users.noreply.github.com"
-          git add data/insta.db output/site
+          git add data/insta.db output/site data/ai_requests.json
           git commit -m "data: $(date -u +%Y-%m-%d) 자동 수집" || echo "변경 없음"
           git pull --rebase -X theirs --autostash || (git rebase --abort; git pull --no-rebase -X ours --no-edit) || true   # 겹치면 이번 실행 결과를 우선
           git push

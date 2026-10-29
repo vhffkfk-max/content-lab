@@ -1,6 +1,6 @@
 name: draft-create
-# 카드뉴스 초안 만들기 (작업지시서 Phase 4) — 실제 뉴스·시세로 폼을 골라 그리고, 텔레그램 봇으로 이미지·캡션을 보낸다.
-# 이미지는 아티팩트(14일), 큐(data/publish_queue.json)는 커밋. 발행은 하지 않음.
+# 카드뉴스 초안 만들기 (작업지시서 Phase 4) — 내 PC(local_ai.py)가 Max 구독으로 글을 쓰고 그려서 텔레그램 봇으로 보낸다.
+# 여기서는 PC에 요청만 남긴다 (깃허브에서 Claude API 를 부르지 않음 — 요금 방지). 이미지는 PC의 output/cardnews/drafts/.
 on:
   workflow_dispatch:
     inputs:
@@ -19,33 +19,20 @@ concurrency:
 jobs:
   draft:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
-    env:
-      PYTHONIOENCODING: utf-8
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install anthropic pydantic requests pillow
-      - name: 한글·이모지 글꼴
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-cjk fonts-noto-color-emoji
-      - name: 초안 만들기
+      - name: PC에 카드뉴스 초안 요청
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TOPIC: ${{ inputs.topic }}
-        run: python -m publish.draft_card ${TOPIC:+--topic "$TOPIC"}
-      - uses: actions/upload-artifact@v4
-        with:
-          name: cardnews-draft
-          path: output/cardnews/drafts/
-          retention-days: 14
-      - name: 큐 저장
         run: |
           git config user.name "content-lab-bot"
           git config user.email "content-lab-bot@users.noreply.github.com"
-          git add data/publish_queue.json
-          git commit -m "data: 카드뉴스 초안 $(date -u +%Y-%m-%d)" || echo "변경 없음"
-          git pull --rebase --autostash && git push
+          python ai_request.py draft "topic=$TOPIC"
+          git add data/ai_requests.json
+          git commit -m "ai: PC에 Claude 작업 요청" || echo "변경 없음"
+          git pull --rebase -X theirs --autostash || (git rebase --abort; git pull --no-rebase -X ours --no-edit) || true
+          git push

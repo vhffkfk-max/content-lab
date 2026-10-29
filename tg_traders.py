@@ -239,10 +239,10 @@ def save_excel(people, title, start_s, end_s, totals):
 
 
 def feedback(rooms, totals, awards_summary, period):
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        print("ANTHROPIC_API_KEY 가 없어 방별 피드백을 건너뛰어요.")
+    if not __import__("llm").ready():
+        print("Claude Code(Max) 가 없는 곳이라 방별 피드백을 건너뛰어요.")
         return None
-    import anthropic
+    import llm as anthropic   # 내 PC Claude Code(Max 구독)로 실행 — API 요금 없음
     from pydantic import BaseModel
     from feedback import feedback_prompt
 

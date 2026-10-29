@@ -971,7 +971,7 @@ a.row:hover .row-main{text-decoration:underline}
     return card;
   }
 
-  // 카드뉴스 초안 만들기 → 깃허브 draft-create.yml 실행 (이미지·캡션은 텔레그램 봇으로 옴, 인스타 발행은 안 함)
+  // 카드뉴스 초안 만들기 → 깃허브 draft-create.yml 이 내 PC에 요청 → PC(Max 구독)가 만들어 텔레그램 봇으로 보냄 (인스타 발행은 안 함)
   function draftBtn(topic) {
     const label = '카드뉴스 초안 만들기', b = el('button', 'btn small', label); b.type = 'button';
     const fail = msg => { b.disabled = false; b.textContent = label; alert(msg); };
@@ -1592,11 +1592,11 @@ a.row:hover .row-main{text-decoration:underline}
 
   // ── 데이터 새로 불러오기 (사이트에서 깃허브 실행 버튼 누르기) ──
   const RF_RUNS = [
-    { key: 'tg', label: '텔레그램 오늘 문구 다시 쓰기', wf: 'telegram.yml', inputs: { force: 'true' }, cost: '약 0.3달러 · 3~5분', focus: true },
-    { key: 'trd', label: '트레이더스 방별 글 다시 쓰기', wf: 'telegram.yml', inputs: { traders: 'true' }, cost: '약 0.2~0.3달러 · 3~5분' },
-    { key: 'social', label: '쓰레드·X·트루스 새로 수집 + 분석', wf: 'reanalyze.yml', inputs: { collect_threads: 'true' }, cost: '약 1~1.5달러 · 15~20분' },
-    { key: 're', label: '수집 없이 분석·추천만 다시', wf: 'reanalyze.yml', inputs: {}, cost: '약 0.5달러 · 5~10분' },
-    { key: 'all', label: '전체 새로 수집 (인스타·뉴스 포함)', wf: 'daily.yml', inputs: { instagram: 'true' }, cost: '약 3달러 · 30~40분 · 하루 1번 이상은 비추천' },
+    { key: 'tg', label: '텔레그램 오늘 문구 다시 쓰기', wf: 'telegram.yml', inputs: { force: 'true' }, cost: 'Claude는 내 PC(Max 구독) · 5~10분 · PC가 켜져 있어야 해요', focus: true },
+    { key: 'trd', label: '트레이더스 방별 글 다시 쓰기', wf: 'telegram.yml', inputs: { traders: 'true' }, cost: 'Claude는 내 PC(Max 구독) · 5~10분' },
+    { key: 'social', label: '쓰레드·X·트루스 새로 수집 + 분석', wf: 'reanalyze.yml', inputs: { collect_threads: 'true' }, cost: '수집(Apify) 비용만 · 분석은 내 PC(Max) · 20~30분' },
+    { key: 're', label: '수집 없이 분석·추천만 다시', wf: 'reanalyze.yml', inputs: {}, cost: '추가 비용 없음 · 분석은 내 PC(Max) · 10~20분' },
+    { key: 'all', label: '전체 새로 수집 (인스타·뉴스 포함)', wf: 'daily.yml', inputs: { instagram: 'true' }, cost: '수집(Apify·인스타) 비용 · 30~40분 · 하루 1번 이상은 비추천' },
   ];
   function setupRefresh() {
     const dlg = document.getElementById('rf-dialog'), opts = document.getElementById('rf-options'), st = document.getElementById('rf-status');
@@ -1634,7 +1634,7 @@ a.row:hover .row-main{text-decoration:underline}
     }
     document.getElementById('rf-run').addEventListener('click', async () => {
       if (!fb.token) { dlg.close(); const ok = await connectGitHub(); dlg.showModal(); if (!ok) return; }
-      if (picked.key === 'all' && !confirm('전체 수집은 인스타까지 다시 사서 약 3달러가 들어요. 오늘 이미 돌았다면 내일 06:00를 기다리는 게 좋아요. 그래도 실행할까요?')) return;
+      if (picked.key === 'all' && !confirm('전체 수집은 인스타까지 다시 모아서 수집(Apify) 비용이 들어요. 오늘 이미 돌았다면 내일 06:00를 기다리는 게 좋아요. 그래도 실행할까요?')) return;
       const inputs = { ...picked.inputs };
       if (picked.focus) inputs.focus = document.getElementById('rf-focus').value.trim();
       const since = new Date(Date.now() - 5000).toISOString();

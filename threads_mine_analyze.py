@@ -1,6 +1,6 @@
 """황소개미(@bullant_economy) 쓰레드 계정 일일 진단 — AI 티 점검, 프로필 피드 점검, 솔루션·다음 글 초안 → output/site/thm_ai.json
 
-    python threads_mine_analyze.py            # ANTHROPIC_API_KEY 필요
+    python threads_mine_analyze.py            # 내 PC Claude Code(Max) 필요
     python threads_mine_analyze.py --dry-run  # 프롬프트만 출력
 진단 기준(AI 티 신호 S1~S10, 형식 믹스 목표 등)은 Social Media Strategist 에이전트가 설계한 것 (추정치 포함, 2~4주 뒤 보정).
 글이 그대로면 다시 부르지 않는다.
@@ -97,11 +97,11 @@ def main():
     if prev.get("digest") == digest:
         print("황소개미 글·숫자가 그대로라 지난 진단을 써요.")
         return
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        print("ANTHROPIC_API_KEY 가 없어 진단을 건너뛰어요.")
+    if not __import__("llm").ready():
+        print("Claude Code(Max) 가 없는 곳이라 진단을 건너뛰어요.")
         return
 
-    import anthropic
+    import llm as anthropic   # 내 PC Claude Code(Max 구독)로 실행 — API 요금 없음
     from pydantic import BaseModel
 
     class Signal(BaseModel):

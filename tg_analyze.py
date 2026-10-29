@@ -1,6 +1,6 @@
 """data/telegram.json(내 PC가 모은 텔레그램 글)을 분석해 사이트용 output/site/tg_*.json 을 만든다.
 
-    python tg_analyze.py            # 통계 + Claude 추천 (ANTHROPIC_API_KEY 없으면 통계만)
+    python tg_analyze.py            # 통계 + Claude 추천 (내 PC Claude Code(Max) 없으면 통계만)
     python tg_analyze.py --dry-run  # Claude 호출 없이 프롬프트만 출력
 '평소 대비 ○배' = 그 방 글들의 중앙값 대비. 채널은 조회수, 그룹은 반응 + 3×답글.
 Claude 는 다른 업체 방의 반응 큰 글 + 연구소가 모은 오늘의 뉴스로 '오늘 내 방에 올릴 문구'를 쓴다.
@@ -225,11 +225,11 @@ def main():
     if not hot:
         print("반응 큰 글이 아직 없어 Claude 추천을 건너뛰어요.")
         return
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        print("ANTHROPIC_API_KEY 가 없어 Claude 추천을 건너뛰어요 — 지난 결과를 유지해요.")
+    if not __import__("llm").ready():
+        print("Claude Code(Max) 가 없는 곳이라 Claude 추천을 건너뛰어요 — 지난 결과를 유지해요.")
         return
 
-    import anthropic
+    import llm as anthropic   # 내 PC Claude Code(Max 구독)로 실행 — API 요금 없음
     from pydantic import BaseModel
 
     class Formula(BaseModel):

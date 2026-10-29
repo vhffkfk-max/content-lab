@@ -1,6 +1,6 @@
 """시황맨(@shmstory) 아침·마감 시황을 '말희아빠 아침시황/마감시황' 스타일로 다시 써서 output/site/tg_rewrites.json 에 저장한다.
 
-    python tg_rewrite.py            # ANTHROPIC_API_KEY 필요 (텔레그램 워크플로가 갱신 때마다 부름)
+    python tg_rewrite.py            # 내 PC Claude Code(Max) 필요 (텔레그램 워크플로가 갱신 때마다 부름)
     python tg_rewrite.py --dry-run  # 무엇을 변환할지만 출력
 원문(output/site/tg_source.json)은 내 PC의 tg_live.py 가 새 시황이 올라오는 즉시 올린다.
 이미 변환한 글은 다시 부르지 않는다. 문체 예시는 tg_style_malhee.txt.
@@ -50,10 +50,10 @@ def main():
     print("변환할 시황:", ", ".join(f"{s['kind']} {s['time']}" for s in todo))
     if args.dry_run:
         return
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        print("ANTHROPIC_API_KEY 가 없어 시황 변환을 건너뛰어요.")
+    if not __import__("llm").ready():
+        print("Claude Code(Max) 가 없는 곳이라 시황 변환을 건너뛰어요.")
         return
-    import anthropic
+    import llm as anthropic   # 내 PC Claude Code(Max 구독)로 실행 — API 요금 없음
     from pydantic import BaseModel
 
     class Rewrite(BaseModel):

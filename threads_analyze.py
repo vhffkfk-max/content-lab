@@ -3,7 +3,7 @@
 대상: 이번 주 따라 할 글 TOP 5 + 조회수 TOP + 공유·리포스트 TOP + 댓글 TOP (threads_score.py) + 팀이 모은 글.
 글마다 '왜 조회·공유·댓글이 많았나'를 분석하고, 랭킹별 공통점, 따라 쓸 공식, (TOP·팀 글은) 우리 말투 초안을 쓴다.
 
-    python threads_analyze.py            # ANTHROPIC_API_KEY 필요
+    python threads_analyze.py            # 내 PC Claude Code(Max) 필요
     python threads_analyze.py --dry-run  # API 호출 없이 프롬프트만 출력
 입력이 같으면 다시 분석하지 않는다 (비용 절약). 실패하면 지난 결과를 그대로 둔다.
 """
@@ -104,11 +104,11 @@ def main():
     if OUT.exists() and json.loads(OUT.read_text(encoding="utf-8")).get("digest") == digest:
         print("새로 모은 쓰레드 글이 없어 지난 분석을 그대로 써요.")
         return
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        print("ANTHROPIC_API_KEY 가 없어 쓰레드 분석을 건너뛰어요 — 지난 결과를 유지해요.")
+    if not __import__("llm").ready():
+        print("Claude Code(Max) 가 없는 곳이라 쓰레드 분석을 건너뛰어요 — 지난 결과를 유지해요.")
         return
 
-    import anthropic
+    import llm as anthropic   # 내 PC Claude Code(Max 구독)로 실행 — API 요금 없음
     from pydantic import BaseModel
 
     class Formula(BaseModel):

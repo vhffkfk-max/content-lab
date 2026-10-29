@@ -1,6 +1,6 @@
 """X·트루스소셜 경제 관련 글을 Claude로 한국어 요약·영향 분석해 output/site/x_ai.json 에 저장한다.
 
-    python x_analyze.py            # ANTHROPIC_API_KEY 필요
+    python x_analyze.py            # 내 PC Claude Code(Max) 필요
     python x_analyze.py --dry-run  # API 호출 없이 프롬프트만 출력
 대상: 트럼프 최신 글 + 최근 48시간 조회수·리포스트·답글 TOP (x_score.py). 입력이 같으면 다시 부르지 않는다.
 """
@@ -63,11 +63,11 @@ def main():
     if OUT.exists() and json.loads(OUT.read_text(encoding="utf-8") or "{}").get("digest") == digest:
         print("새 X·트루스 글이 없어 지난 분석을 그대로 써요.")
         return
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        print("ANTHROPIC_API_KEY 가 없어 X 분석을 건너뛰어요 — 지난 결과를 유지해요.")
+    if not __import__("llm").ready():
+        print("Claude Code(Max) 가 없는 곳이라 X 분석을 건너뛰어요 — 지난 결과를 유지해요.")
         return
 
-    import anthropic
+    import llm as anthropic   # 내 PC Claude Code(Max 구독)로 실행 — API 요금 없음
     from pydantic import BaseModel
 
     class Note(BaseModel):

@@ -1,6 +1,6 @@
 """추천 결과(output/report.json)를 읽고 Claude API로 추천마다 콘텐츠 기획안을 써서 output/site/drafts.json 에 저장한다.
 
-    python generate_drafts.py            # ANTHROPIC_API_KEY 필요
+    python generate_drafts.py            # 내 PC Claude Code(Max) 필요
     python generate_drafts.py --dry-run  # API 호출 없이 프롬프트만 출력
 
 API 호출이 실패하거나 거절되면 기존 drafts.json 을 그대로 둔다 (사이트는 지난 기획안을 계속 보여준다).
@@ -160,11 +160,11 @@ def main():
         DRAFTS.write_text(json.dumps([r for r in old if r["topic"] in current], ensure_ascii=False, indent=1), encoding="utf-8")
         print("새로 쓸 기획안이 없어요 — Claude 호출 없이 지난 기획안을 유지해요.")
         return
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        print("ANTHROPIC_API_KEY 가 없어 기획안 작성을 건너뛰어요 — 지난 기획안을 유지해요.")
+    if not __import__("llm").ready():
+        print("Claude Code(Max) 가 없는 곳이라 기획안 작성을 건너뛰어요 — 지난 기획안을 유지해요.")
         return
 
-    import anthropic
+    import llm as anthropic   # 내 PC Claude Code(Max 구독)로 실행 — API 요금 없음
     from pydantic import BaseModel
 
     class Step(BaseModel):

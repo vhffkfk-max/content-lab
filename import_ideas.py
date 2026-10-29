@@ -1,6 +1,6 @@
 """해외 계정에서 터졌지만 한국에는 아직 안 풀린 콘텐츠를 Claude로 골라 output/site/imports.json 에 저장한다.
 
-    python import_ideas.py            # ANTHROPIC_API_KEY 필요
+    python import_ideas.py            # 내 PC Claude Code(Max) 필요
     python import_ideas.py --dry-run  # API 호출 없이 프롬프트만 출력
 
 근거 자료: 해외 계정의 최근 14일 반응 상위 게시물 / 같은 기간 한국 계정 게시물 첫 줄 / 한국 경제 매체·구글 뉴스 제목.
@@ -72,11 +72,11 @@ def main():
     if args.dry_run:
         print(SYSTEM, "\n\n", prompt[:3000], "\n…")
         return
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        print("ANTHROPIC_API_KEY 가 없어 해외 아이디어 찾기를 건너뛰어요 — 지난 결과를 유지해요.")
+    if not __import__("llm").ready():
+        print("Claude Code(Max) 가 없는 곳이라 해외 아이디어 찾기를 건너뛰어요 — 지난 결과를 유지해요.")
         return
 
-    import anthropic
+    import llm as anthropic   # 내 PC Claude Code(Max 구독)로 실행 — API 요금 없음
     from pydantic import BaseModel
 
     class Idea(BaseModel):

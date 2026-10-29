@@ -220,7 +220,7 @@ def hashtags(tags):
 
 
 def ask_claude(prompt):
-    import anthropic
+    import llm as anthropic   # 내 PC Claude Code(Max 구독)로 실행 — API 요금 없음
     client = anthropic.Anthropic()
     msgs = [{"role": "user", "content": prompt}]
     for _ in range(2):

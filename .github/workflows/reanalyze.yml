@@ -29,7 +29,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install anthropic pydantic
+      - run: pip install pydantic
       - name: 쓰레드 수집 (선택)
         if: ${{ inputs.collect_threads }}
         env:
@@ -41,14 +41,8 @@ jobs:
         run: |
           python analyze.py --no-open
           python export_site.py
-      - name: 쓰레드 분석 (Claude)
-        continue-on-error: true
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          python threads_analyze.py
-          python x_analyze.py
-          python threads_mine_analyze.py
+      - name: PC에 Claude 작업 요청 (쓰레드·X 분석은 내 PC가 Max 구독으로)
+        run: python ai_request.py social
       - name: 사이트 만들기
         run: python build_site.py
       - name: 결과 저장
@@ -56,7 +50,7 @@ jobs:
         run: |
           git config user.name "content-lab-bot"
           git config user.email "content-lab-bot@users.noreply.github.com"
-          git add output/site data/insta.db
+          git add output/site data/insta.db data/ai_requests.json
           git commit -m "data: 다시 분석 $(date -u +%Y-%m-%d)" || echo "변경 없음"
           git pull --rebase -X theirs --autostash || (git rebase --abort; git pull --no-rebase -X ours --no-edit) || true   # 겹치면 이번 실행 결과를 우선
           git push

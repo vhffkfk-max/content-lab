@@ -1,5 +1,5 @@
-# 내 PC(tg_live.py)가 30분마다 텔레그램 통계(output/site/tg_*.json)를 올리면 → 사이트 다시 배포.
-# Claude 오늘의 문구는 tg_analyze.py 가 하루 한 번(07시 이후 첫 실행)만 쓴다.
+# 내 PC가 텔레그램 통계(tg_live.py)나 Claude 결과(local_ai.py, Max 구독)를 올리면 → 사이트 다시 배포.
+# Claude 는 깃허브에서 부르지 않는다 (API 요금 방지). 사이트 버튼은 PC에 요청만 남긴다(ai_request.py).
 name: telegram
 
 on:
@@ -10,6 +10,14 @@ on:
       - output/site/tg_source.json
       - output/site/tg_streak.json
       - output/site/trd_rooms.json
+      - output/site/tg_ai.json
+      - output/site/tg_rewrites.json
+      - output/site/trd_posts.json
+      - output/site/drafts.json
+      - output/site/imports.json
+      - output/site/threads_ai.json
+      - output/site/x_ai.json
+      - output/site/thm_ai.json
   workflow_dispatch:
     inputs:
       force:
@@ -47,60 +55,23 @@ jobs:
         with:
           python-version: "3.12"
 
-      - run: pip install anthropic pydantic
-
-      - name: 텔레그램 분석 (Claude, 하루 3번 07·12·18시 — 그때는 뉴스부터 새로 받음)
-        continue-on-error: true   # 실패해도 지난 추천으로 사이트는 배포
+      - name: PC에 Claude 작업 요청 (사이트 버튼으로 실행했을 때)
+        if: ${{ github.event_name == 'workflow_dispatch' }}
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          TG_FOCUS: ${{ inputs.focus }}
+          FOCUS: ${{ inputs.focus }}
         run: |
-          if [ "${{ inputs.force }}" = "true" ] || python tg_analyze.py --due; then
-            python press_collect.py || true
-            python google_collect.py || true
-            python analyze.py --no-open && python export_site.py
-            python tg_analyze.py ${{ inputs.force && '--force' || '--scheduled' }}
-          else
-            echo "이번엔 텔레그램 추천을 다시 쓸 차례가 아니에요"
-          fi
-
-      - name: 시황 자동 변환 (Claude Opus, 새 아침·마감 시황이 있을 때만)
-        continue-on-error: true
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python tg_rewrite.py
-
-      - name: 트레이더스 방별 피드백 (Claude Opus, 내 PC가 올린 통계가 바뀌었을 때만)
-        continue-on-error: true
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python tg_traders.py --ai-only
-
-      - name: 트레이더스 방별 올릴 글 (Claude Opus, 하루 2번 07·18시 — 뉴스가 그대로면 건너뜀)
-        continue-on-error: true
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          if [ "${{ inputs.traders }}" = "true" ]; then
-            python trd_posts.py --force
-          elif python trd_posts.py --due; then
-            python trd_posts.py
-          else
-            echo "이번엔 트레이더스 글을 다시 쓸 차례가 아니에요"
-          fi
+          git config user.name "content-lab-bot"
+          git config user.email "content-lab-bot@users.noreply.github.com"
+          if [ "${{ inputs.force }}" = "true" ]; then python ai_request.py tg "focus=$FOCUS"; fi
+          if [ "${{ inputs.traders }}" = "true" ]; then python ai_request.py trd; fi
+          git add data/ai_requests.json
+          git commit -m "ai: PC에 Claude 작업 요청" || echo "변경 없음"
+          git pull --rebase -X theirs --autostash || (git rebase --abort; git pull --no-rebase -X ours --no-edit) || true
+          git push
 
       - name: 사이트 만들기
         run: python build_site.py
 
-      - name: 분석 결과 저장
-        continue-on-error: true
-        run: |
-          git config user.name "content-lab-bot"
-          git config user.email "content-lab-bot@users.noreply.github.com"
-          git add output/site/tg_*.json output/site/trd_*.json   # 텔레그램 결과만 (다른 파일은 매일 수집이 관리)
-          git commit -m "data: 텔레그램 분석 $(date -u +%Y-%m-%d)" || echo "변경 없음"
-          git pull --rebase -X theirs --autostash || (git rebase --abort; git pull --no-rebase -X ours --no-edit) || true   # 겹치면 이번 실행 결과를 우선
-          git push
 
       - uses: actions/upload-pages-artifact@v3
         with:
