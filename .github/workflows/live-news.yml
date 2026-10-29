@@ -1,0 +1,66 @@
+# 무료 자료(구글 뉴스·급상승 검색어·경제 매체 RSS)를 5분마다 새로 모아 사이트에 반영. Claude·Apify 안 씀 (비용 0).
+# 같은 기사는 한 번만(링크·제목 기준). 추천·기획안은 그대로 — 매일 06:00 daily.yml 이 맡는다.
+# DB(data/insta.db, 25MB)는 커밋하지 않고 사이트 표(json)만 커밋한다 — 저장소가 5분마다 25MB씩 불어나지 않게.
+name: live-news
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"   # 깃허브가 바쁘면 10~15분 간격으로 밀릴 수 있음
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: live-news
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      changed: ${{ steps.save.outputs.changed }}
+    env:
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pydantic
+      - name: 새 기사 모으기
+        run: python live_news.py
+      - name: 사이트 표 저장
+        id: save
+        run: |
+          git config user.name "content-lab-bot"
+          git config user.email "content-lab-bot@users.noreply.github.com"
+          git add output/site/google_*.json output/site/press_*.json output/site/live_meta.json
+          # 시각만 바뀐 경우(새 기사 0)는 커밋·배포 안 함
+          if git diff --cached --quiet -- output/site/google_*.json output/site/press_*.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"; echo "새 기사 없음"; exit 0
+          fi
+          git commit -q -m "data: 뉴스 $(TZ=Asia/Seoul date +%H:%M)"
+          for i in 1 2 3; do git pull -q --rebase -X theirs && git push -q && break; sleep 5; done
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      - name: 사이트 만들기
+        if: steps.save.outputs.changed == 'true'
+        run: python build_site.py
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.save.outputs.changed == 'true'
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    if: needs.build.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

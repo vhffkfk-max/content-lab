@@ -3,6 +3,7 @@
     python export_site.py   →  output/site/*.json
 """
 import json
+import re
 
 from common import OUTPUT_DIR
 
@@ -12,6 +13,29 @@ SITE = OUTPUT_DIR / "site"
 def write(name, rows):
     (SITE / f"{name}.json").write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"  {name}.json: {len(rows)}행")
+
+
+def dedupe(rows):
+    """같은 기사가 여러 매체·피드로 들어오면 제목(띄어쓰기·기호 무시)이 같은 것은 처음 한 번만 남긴다."""
+    seen, out = set(), []
+    for r in rows:
+        key = re.sub(r"[\W_]+", "", (r.get("title") or "").split(" - ")[0]).lower()
+        if key and key in seen:
+            continue
+        seen.add(key)
+        out.append(r)
+    return out
+
+
+def write_news(g):
+    """구글 뉴스·급상승 검색어·경제 매체 표. 매일 export 와 5분마다 도는 live_news.py 가 같이 쓴다."""
+    write("google_meta", [{"date": g.get("date"), "topics": len(g.get("topics") or [])}])
+    write("google_topics", [{k: (", ".join(v) if isinstance(v, list) else v) for k, v in x.items()} for x in g.get("topics") or []])
+    write("google_headlines", dedupe(g.get("headlines") or []))
+    write("google_trends", g.get("trends") or [])
+    write("press_headlines", dedupe(g.get("press") or []))
+    write("press_popular", dedupe(g.get("popular") or []))
+    write("google_opportunities", [{k: (", ".join(v) if isinstance(v, list) else v) for k, v in x.items()} for x in g.get("opportunities") or []])
 
 
 def main():
@@ -71,10 +95,7 @@ def main():
     } for i, p in enumerate(d["top_posts"], 1)])
     write("calendar", d["calendar"])
     g = d.get("google") or {}
-    write("google_meta", [{"date": g.get("date"), "topics": len(g.get("topics") or [])}])
-    write("google_topics", [{k: (", ".join(v) if isinstance(v, list) else v) for k, v in x.items()} for x in g.get("topics") or []])
-    write("google_headlines", g.get("headlines") or [])
-    write("google_trends", g.get("trends") or [])
+    write_news(g)
     fo = d.get("foreign") or {}
     write("fo_hot", [{k: v for k, v in p.items() if k != "full"} for p in fo.get("hot") or []])
     write("fo_topics", fo.get("topics") or [])
@@ -101,9 +122,6 @@ def main():
     write("threads_meta", th.get("meta") or [])
     write("threads_topics", th.get("topics") or [])
     write("threads_posts", th.get("posts") or [])
-    write("press_headlines", g.get("press") or [])
-    write("press_popular", g.get("popular") or [])
-    write("google_opportunities", [{k: (", ".join(v) if isinstance(v, list) else v) for k, v in x.items()} for x in g.get("opportunities") or []])
     write("this_week", [{k: (", ".join(v) if isinstance(v, list) else v) for k, v in p.items()} for p in d["this_week"]])
     write("this_week_accounts", d["this_week_accounts"])
     print(f"✅ 사이트 데이터 → {SITE}")

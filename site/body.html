@@ -362,7 +362,7 @@ a.row:hover .row-main{text-decoration:underline}
       <!-- 처음 화면: 오늘 할 일만 골라 보여 준다 -->
       <div class="view" data-view="home">
         <div class="title-row">
-          <div><h1>오늘 뭐 할까요?</h1><p id="home-sub">매일 06:00에 모은 자료에서 오늘 할 일만 골랐어요. 하나 골라서 버튼을 누르세요.</p></div>
+          <div><h1>오늘 뭐 할까요?</h1><p id="home-sub">오늘 할 일만 골랐어요. 하나 골라서 버튼을 누르세요.</p></div>
         </div>
         <section class="sec" id="home-jobs-sec" aria-label="오늘 할 일">
           <div class="home-jobs" id="home-jobs"></div>
@@ -1065,6 +1065,10 @@ a.row:hover .row-main{text-decoration:underline}
     const g = (rows('google_opportunities') || [])[0];
     if (g) job('google', '뉴스', `뉴스는 많은데 인스타엔 적은 주제 · ${g.topic}`, `뉴스 하루 약 ${fmtN(g.kr_per_day)}건 · 인스타 경제 계정 게시물 ${g.ig_kr_posts}개`,
       [goBtn('관련 기사 보기', 'google', 'g-opps', 'btn primary')]);
+    const L = (rows('live_meta') || [])[0], S = (rows('summary') || [])[0];
+    document.getElementById('home-sub').textContent = [
+      L ? `뉴스는 5분마다 새로 모아요 · 마지막 ${L.updated_at.slice(11)}${L.new_press + L.new_google ? ` · 새 기사 ${L.new_press + L.new_google}개` : ''}` : '',
+      S ? `추천·분석은 매일 06:00 (${S.generated_at.slice(5, 10).replace('-', '/')} 기준)` : ''].filter(Boolean).join(' · ') || '오늘 할 일만 골랐어요. 하나 골라서 버튼을 누르세요.';
     const box = document.getElementById('home-jobs');
     if (!jobs.length) empty(box, '다음 06:00 수집이 끝나면 오늘 할 일이 여기에 나와요.'); else box.replaceChildren(...jobs);
 
