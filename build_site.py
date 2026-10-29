@@ -13,7 +13,7 @@ DATASETS = ["summary", "recs", "rec_reasons", "rec_examples", "insights", "topic
             "press_headlines", "press_popular", "threads_meta", "threads_topics", "threads_posts",
             "acc_details", "acc_patterns", "acc_tops", "own_meta", "own_posts", "own_formats",
             "fo_hot", "fo_topics", "imports", "threads_saved", "threads_saved_stats", "threads_ai",
-            "thx_meta", "thx_hot", "thx_top", "thx_rising", "thx_topics", "thx_formats", "thx_accounts", "thx_rank", "thx_foreign", "thx_viral", "thx_viral_meta", "thx_live", "thx_live_meta", "ig_health",
+            "thx_meta", "thx_hot", "thx_top", "thx_rising", "thx_topics", "thx_formats", "thx_accounts", "thx_rank", "thx_foreign", "thx_viral", "thx_viral_meta", "thx_live", "thx_live_meta", "igx_live", "igx_live_meta", "ig_health",
             "ig_slides", "thm_meta", "thm_posts", "thm_feed", "thm_ai",
             "x_meta", "x_trump", "x_rank", "x_groups", "x_accounts", "x_ai",
             "tg_meta", "tg_chats", "tg_hot", "tg_mine", "tg_hours", "tg_lengths", "tg_media", "tg_ai",

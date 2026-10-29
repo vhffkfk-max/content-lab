@@ -221,6 +221,7 @@ a.row:hover .row-main{text-decoration:underline}
             <li><a href="#recommend">추천 콘텐츠</a></li>
             <li><a href="#week">이번 주 계획</a></li>
             <li><a href="#competitors">경쟁 동향</a></li>
+            <li><a href="#ig-live">지금 크는 글 (실시간)</a></li>
             <li><a href="#analysis">주간 분석</a></li>
           </ul></li>
         <li><button type="button" data-ch="foreign"><i class="dot" style="background:var(--ch-instagram)"></i>인스타 · 해외</button>
@@ -363,6 +364,12 @@ a.row:hover .row-main{text-decoration:underline}
               <h2>이번 주 터진 경쟁 게시물</h2>
               <p class="note">최근 7일, 평소보다 2배 넘게 반응이 나온 게시물이에요.</p>
               <div class="card"><div class="rows" id="week-hot"></div></div>
+            </section>
+            <section class="sec" id="ig-live">
+              <h2>지금 크는 글 (5분마다 조금씩 확인)</h2>
+              <p class="note">내 PC의 무료 크롤러가 참고 계정의 새 카드뉴스·릴스를 찾아, 올린 지 3일 안 된 글의 좋아요·댓글을 다시 재요(어릴수록 자주). '평소의 N배'는 그 계정 최근 60일 좋아요 중앙값과 비교한 값이에요. 릴스 조회수는 로그인 없이는 안 보여서 매일 수집에 있을 때만 붙여요.</p>
+              <div class="kpis" id="il-kpis"></div>
+              <div class="card"><div class="rows" id="il-list"></div></div>
             </section>
           </div>
         </div>
@@ -1803,6 +1810,17 @@ a.row:hover .row-main{text-decoration:underline}
     if (!R.length) empty(rb, '최근 48시간 안에 급상승한 글이 없어요.');
     else listWithMore(rb, R, h => rowLink([h.grade === '조회 대기' ? el('span', 'pill warning', '조회 대기') : el('span', 'pill accent', `시간당 ${fmtN(h.velocity || 0)}`), ' ', h.text || '(내용 없음)'],
       `@${h.username} · ${h.time} · ${thStats(h)}${h.topics ? ' · ' + h.topics : ''}`, h.url, webLink), 6);
+
+    const IM = (rows('igx_live_meta') || [])[0], IL = rows('igx_live') || [];
+    const ik = document.getElementById('il-kpis'), il = document.getElementById('il-list');
+    if (!IL.length || !IM) { ik.replaceChildren(); empty(il, '내 PC 크롤러가 몇 바퀴 돌면 채워져요.'); }
+    else {
+      ik.replaceChildren(kpi('마지막 확인', IM.updated, IM.paused ? `잠시 쉬는 중 (${IM.paused}까지)` : '5분마다'),
+        kpi('지켜보는 글', `${fmtN(IM.tracked)}개`, `참고 계정 ${IM.accounts}곳`), kpi('잰 글', `${fmtN(IM.measured)}개`, '최근 3일'),
+        kpi('평소 2배+', `${IM.hot}개`, '좋아요 기준'));
+      listWithMore(il, IL, h => rowLink([h.x_usual >= 0.1 ? el('span', h.x_usual >= 2 ? 'pill accent' : 'pill neutral', `평소의 ${h.x_usual}배`) : el('span', 'pill neutral', `시간당 좋아요 ${fmtN(h.growth != null ? h.growth : h.lph)}`), ' ', h.kind ? `[${h.kind}] ` : '', h.text || '(내용 없음)'],
+        `@${h.username}${h.followers ? ' · 팔로워 ' + fmtN(h.followers) : ''} · 올린 지 ${h.age_h}시간 · 좋아요 ${fmtN(h.likes || 0)} · 댓글 ${fmtN(h.comments || 0)}${h.views ? ' · 조회 ' + fmtN(h.views) : ''}${h.growth != null ? ' · 지금 시간당 좋아요 ' + fmtN(h.growth) : ''}${h.topics ? ' · ' + h.topics : ''}`, h.url, webLink), 8);
+    }
 
     const LM = (rows('thx_live_meta') || [])[0], L = rows('thx_live') || [];
     const lk = document.getElementById('tl-kpis'), ll = document.getElementById('tl-list');

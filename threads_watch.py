@@ -12,7 +12,8 @@
   - 글 다시 재기: 어릴수록 자주 (3시간 안 20분 / 12시간 안 45분 / 24시간 안 1.5시간 / 48시간 안 3시간),
     반응이 거의 없는 글은 6시간, 48시간이 지나면 그만
   - 매일 Apify 로 모은 경제 글은 1시간에 한 번 목록만 가져옴
-  → output/site/thx_live.json(+_meta), 30분마다 깃허브 / 빨리 크는 글은 텔레그램 알림(글당 한 번)
+  - 인스타도 같은 바퀴에서 조금씩 (insta_watch.py)
+  → output/site/thx_live.json(+_meta)·igx_live.json(+_meta), 30분마다 깃허브 / 빨리 크는 글은 텔레그램 알림(글당 한 번)
 기록: data/threads_watch.db (PC에만, 저장소에 안 올림)
 """
 import argparse
@@ -29,6 +30,7 @@ from datetime import datetime, timedelta, timezone
 
 import requests
 
+import insta_watch
 from common import DEFAULT_DB, OUTPUT_DIR, ROOT, load_env
 from post_reader import _dom, _threads, _walk
 from topics import topics_of
@@ -66,6 +68,7 @@ def db():
         c.execute("ALTER TABLE posts ADD COLUMN fails INTEGER DEFAULT 0")
         c.execute("ALTER TABLE posts ADD COLUMN likes_hint INTEGER")
         c.execute("UPDATE posts SET next_check=? WHERE taken_at >= ?", (int(time.time()), int(time.time()) - WINDOW_H * 3600))
+    insta_watch.init(c)
     c.execute("DELETE FROM snaps WHERE views IS NULL")   # 프로필에서 찍던 좋아요 기록은 likes_hint 로 대신
     c.commit()
     return c
@@ -282,8 +285,8 @@ def push(c, now, force=False):
     kv(c, "last_push", now)
     c.commit()
     git("pull", "--rebase", "--autostash")
-    git("add", "output/site/thx_live.json", "output/site/thx_live_meta.json")
-    if git("commit", "-m", f"data: 쓰레드 조회수 추적 {datetime.now(KST).strftime('%m/%d %H:%M')}")[0] != 0:
+    git("add", "output/site/thx_live.json", "output/site/thx_live_meta.json", "output/site/igx_live.json", "output/site/igx_live_meta.json")
+    if git("commit", "-m", f"data: 쓰레드·인스타 실시간 추적 {datetime.now(KST).strftime('%m/%d %H:%M')}")[0] != 0:
         return
     code, out = git("push")
     log.info("깃허브 올리기 %s", "완료" if code == 0 else f"실패: {out[-200:]}")
@@ -298,6 +301,10 @@ def tick(c, no_push=False):
     rows = export(c, now)
     sent = alert(c, rows)
     log.info("계정 %d곳(새 글 %d) · 매일수집 %d · 조회수 %d/%d · 알림 %d · %d초", na, new, imp, ok, nd, sent, time.time() - start)
+    try:
+        insta_watch.tick(c)
+    except Exception as e:   # 인스타가 실패해도 쓰레드는 계속
+        log.info("인스타 바퀴 실패: %r", e)
     if not no_push:
         push(c, now)
 
@@ -321,7 +328,7 @@ def main():
     if not a.loop:
         tick(c, a.no_push)
         return
-    log.info("쓰레드 크롤러 켜짐 (5분마다)")
+    log.info("쓰레드·인스타 크롤러 켜짐 (5분마다)")
     while True:
         t0 = time.time()
         try:
