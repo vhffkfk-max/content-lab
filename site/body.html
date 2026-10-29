@@ -561,8 +561,8 @@ a.row:hover .row-main{text-decoration:underline}
           <div class="recs" id="tx-foreign-list"></div>
         </section>
         <section class="sec" id="th-live">
-          <h2>지금 크는 글 (3시간마다 다시 확인)</h2>
-          <p class="note">무료 크롤러가 경제 계정과 매일 모은 글을 3시간마다 다시 열어 조회수를 재요. '지금 시간당'은 지난번 확인 뒤로 늘어난 속도, '평균 시간당'은 올린 뒤 평균이에요. 빨리 크는 글은 텔레그램으로도 알려 드려요.</p>
+          <h2>지금 크는 글 (5분마다 조금씩 확인)</h2>
+          <p class="note">무료 크롤러가 5분마다 확인할 차례가 된 계정과 글만 열어 조회수를 재요. 올린 지 얼마 안 된 글일수록 자주(20분~3시간) 다시 봐요. '지금 시간당'은 지난번 확인 뒤로 늘어난 속도, '평균 시간당'은 올린 뒤 평균이에요. 빨리 크는 글은 텔레그램으로도 알려 드려요.</p>
           <div class="kpis" id="tl-kpis"></div>
           <div class="card"><div class="rows" id="tl-list"></div></div>
         </section>
@@ -1808,7 +1808,7 @@ a.row:hover .row-main{text-decoration:underline}
     const lk = document.getElementById('tl-kpis'), ll = document.getElementById('tl-list');
     if (!L.length || !LM) { lk.replaceChildren(); empty(ll, '내 PC 크롤러가 한 번 돌면 채워져요.'); }
     else {
-      lk.replaceChildren(kpi('마지막 확인', LM.updated, '3시간마다'), kpi('지켜보는 글', `${fmtN(LM.tracked)}개`, `계정 ${LM.accounts}곳 + 매일 수집`),
+      lk.replaceChildren(kpi('마지막 확인', LM.updated, '5분마다'), kpi('지켜보는 글', `${fmtN(LM.tracked)}개`, `계정 ${LM.accounts}곳(약 1시간에 한 바퀴) + 매일 수집`),
         kpi('조회수 잰 글', `${fmtN(LM.measured)}개`, '최근 48시간'), kpi('시간당 1천+ 크는 중', `${LM.growing}개`, '지난번 확인 뒤'));
       listWithMore(ll, L, h => rowLink([h.growth != null ? el('span', 'pill accent', `지금 시간당 ${fmtN(h.growth)}`) : el('span', 'pill neutral', `평균 시간당 ${fmtN(h.vph)}`), ' ', h.text || '(내용 없음)'],
         `@${h.username}${h.followers ? ' · 팔로워 ' + fmtN(h.followers) : ''} · 올린 지 ${h.age_h}시간 · 조회 ${fmtN(h.views)}${h.spread ? ' · 확산 ' + h.spread + '배' : ''} · 좋아요 ${fmtN(h.likes || 0)} · 답글 ${fmtN(h.replies || 0)}${h.topics ? ' · ' + h.topics : ''}`, h.url, webLink), 8);
