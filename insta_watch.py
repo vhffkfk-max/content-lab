@@ -56,6 +56,8 @@ def init(c):
                        CREATE TABLE IF NOT EXISTS ig_snaps (code TEXT, at INTEGER, likes INTEGER, comments INTEGER);
                        CREATE INDEX IF NOT EXISTS ig_snaps_code ON ig_snaps(code, at);
                        CREATE TABLE IF NOT EXISTS ig_accounts (username TEXT PRIMARY KEY, last_scan INTEGER);""")
+    if "followers" not in {r[1] for r in c.execute("PRAGMA table_info(ig_accounts)")}:
+        c.execute("ALTER TABLE ig_accounts ADD COLUMN followers INTEGER")
     if "views" not in {r[1] for r in c.execute("PRAGMA table_info(ig_snaps)")}:
         c.execute("ALTER TABLE ig_snaps ADD COLUMN views INTEGER")
     c.commit()
@@ -93,8 +95,9 @@ def profile(user):
     try:
         dom = _dom(f"https://www.instagram.com/{user}/", wait_ms=10000, timeout=40)
     except subprocess.TimeoutExpired:
-        return user, []
-    return user, sorted(set(re.findall(r'/(p|reel)/([\w-]{8,})/', dom)))
+        return user, None, []
+    f = re.search(r'"follower_count":(\d+)', dom)
+    return user, int(f.group(1)) if f else None, sorted(set(re.findall(r'/(p|reel)/([\w-]{8,})/', dom)))
 
 
 def scan_accounts(c, now):
@@ -105,10 +108,10 @@ def scan_accounts(c, now):
                                     % ",".join("?" * len(users)), (*users, IG_ACCT))] if users else []
     new = 0
     with ThreadPoolExecutor(WORKERS) as ex:
-        for user, links in ex.map(profile, pick):
+        for user, followers, links in ex.map(profile, pick):
             if blocked(c, now, not links):
                 break
-            c.execute("UPDATE ig_accounts SET last_scan=? WHERE username=?", (now, user))
+            c.execute("UPDATE ig_accounts SET last_scan=?, followers=COALESCE(?, followers) WHERE username=?", (now, followers, user))
             for kind, code in links:
                 # 처음 보는 글만 넣는다 (올린 시각은 글을 열어야 알 수 있어서 바로 다음 차례에 한 번 연다)
                 new += c.execute("INSERT OR IGNORE INTO ig_posts (code, url, account, first_seen, next_check) VALUES (?,?,?,?,?)",
@@ -220,12 +223,17 @@ def daily_info():
     return usual, views, followers
 
 
+def live_followers(c):
+    return {u: f for u, f in c.execute("SELECT username, followers FROM ig_accounts WHERE followers IS NOT NULL")}
+
+
 def fmt_t(ts):
     return datetime.fromtimestamp(ts, KST).strftime("%m/%d %H:%M")
 
 
 def metrics(c, now):
     usual, views, followers = daily_info()
+    followers.update(live_followers(c))
     out = []
     for code, url, acc, author, kind, slides, text, taken, topics, alerted in c.execute(
             "SELECT code, url, account, author, kind, slides, text, taken_at, topics, alerted FROM ig_posts WHERE taken_at >= ?",

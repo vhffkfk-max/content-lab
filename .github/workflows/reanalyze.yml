@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       collect_threads:
-        description: "쓰레드도 다시 수집 (Apify 비용 약 0.5달러)"
+        description: "쓰레드·X 다시 반영 (무료)"
         type: boolean
         default: false
 
@@ -32,10 +32,8 @@ jobs:
       - run: pip install pydantic
       - name: 쓰레드 수집 (선택)
         if: ${{ inputs.collect_threads }}
-        env:
-          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
         run: |
-          python apify_threads.py --foreign
+          python free_import.py   # Apify 끔 — 쓰레드는 내 PC 무료 크롤러 결과
           python x_collect.py
       - name: 분석
         run: |

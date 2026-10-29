@@ -1594,7 +1594,7 @@ a.row:hover .row-main{text-decoration:underline}
   const RF_RUNS = [
     { key: 'tg', label: '텔레그램 오늘 문구 다시 쓰기', wf: 'telegram.yml', inputs: { force: 'true' }, cost: 'Claude는 내 PC(Max 구독) · 5~10분 · PC가 켜져 있어야 해요', focus: true },
     { key: 'trd', label: '트레이더스 방별 글 다시 쓰기', wf: 'telegram.yml', inputs: { traders: 'true' }, cost: 'Claude는 내 PC(Max 구독) · 5~10분' },
-    { key: 'social', label: '쓰레드·X·트루스 새로 수집 + 분석', wf: 'reanalyze.yml', inputs: { collect_threads: 'true' }, cost: '수집(Apify) 비용만 · 분석은 내 PC(Max) · 20~30분' },
+    { key: 'social', label: '쓰레드·X·트루스 새로 반영 + 분석', wf: 'reanalyze.yml', inputs: { collect_threads: 'true' }, cost: '무료(내 PC 크롤러 결과 반영) · 분석은 내 PC(Max) · 20~30분' },
     { key: 're', label: '수집 없이 분석·추천만 다시', wf: 'reanalyze.yml', inputs: {}, cost: '추가 비용 없음 · 분석은 내 PC(Max) · 10~20분' },
     { key: 'all', label: '전체 새로 수집 (인스타·뉴스 포함)', wf: 'daily.yml', inputs: { instagram: 'true' }, cost: '수집(Apify·인스타) 비용 · 30~40분 · 하루 1번 이상은 비추천' },
   ];

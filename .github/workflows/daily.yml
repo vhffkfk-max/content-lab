@@ -40,12 +40,10 @@ jobs:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
-          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
         run: |
           # 인스타 API 는 하루 1번(06:00 정기 실행)만 부른다. 손으로 돌릴 땐 'instagram' 을 켰을 때만.
           if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.instagram }}" = "true" ]; then
             python own_collect.py
-            python apify_instagram.py           # 참고 계정 게시물·릴스 조회수 (Apify — 메타 API 안 씀)
             python collect.py --hashtags-only   # 해시태그 인기 게시물만 공식 API로 (하루 6~7번 호출)
           else
             echo "수동 실행이라 인스타 수집은 건너뛰어요 (지난 데이터로 분석)"
@@ -54,7 +52,7 @@ jobs:
           python press_collect.py
           python threads_collect.py
           python threads_links.py
-          python apify_threads.py
+          python free_import.py               # 참고 계정 인스타·쓰레드 숫자는 내 PC 무료 크롤러가 모은 것 (Apify 끔)
           python threads_viral.py --export || true
           python x_collect.py
           python analyze.py --no-open

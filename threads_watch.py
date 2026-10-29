@@ -279,13 +279,42 @@ def git(*args):
     return r.returncode, (r.stdout + r.stderr).strip()
 
 
+FREE = ROOT / "data" / "free_crawl.json"
+FREE_DAYS = 7          # 매일 분석(free_import.py)에 넘기는 기간
+
+
+def free_export(c, now):
+    """유료 수집(Apify) 대신 — 최근 7일 글의 마지막 숫자를 data/free_crawl.json 으로 (깃허브가 아침에 insta.db 에 넣음)."""
+    since = now - FREE_DAYS * 86400
+    last = lambda t, cols, code: c.execute(f"SELECT {cols} FROM {t} WHERE code=? ORDER BY at DESC LIMIT 1", (code,)).fetchone()
+    th = []
+    for code, url, user, followers, text, taken in c.execute(
+            "SELECT code, url, username, followers, text, taken_at FROM posts WHERE taken_at >= ?", (since,)).fetchall():
+        s = last("snaps", "at, views, likes, replies, reposts", code)
+        if s:
+            th.append({"code": code, "url": url, "username": user, "followers": followers, "text": text or "", "taken_at": taken,
+                       "at": s[0], "views": s[1], "likes": s[2], "replies": s[3], "reposts": s[4]})
+    ig = []
+    for code, url, acc, author, kind, slides, text, taken in c.execute(
+            "SELECT code, url, account, author, kind, slides, text, taken_at FROM ig_posts WHERE taken_at >= ?", (since,)).fetchall():
+        s = last("ig_snaps", "at, likes, comments, views", code)
+        if s:
+            ig.append({"code": code, "url": url, "username": author or acc, "kind": kind, "slides": slides, "text": text or "",
+                       "taken_at": taken, "at": s[0], "likes": s[1], "comments": s[2], "views": s[3]})
+    accs = [{"username": u, "followers": f} for u, f in c.execute("SELECT username, followers FROM ig_accounts WHERE followers IS NOT NULL")]
+    FREE.write_text(json.dumps({"updated": now, "threads": th, "instagram": ig, "ig_accounts": accs}, ensure_ascii=False),
+                    encoding="utf-8")
+
+
 def push(c, now, force=False):
     if not force and now - kv(c, "last_push") < PUSH_EVERY_S:
         return
     kv(c, "last_push", now)
     c.commit()
+    free_export(c, now)
     git("pull", "--rebase", "--autostash")
-    git("add", "output/site/thx_live.json", "output/site/thx_live_meta.json", "output/site/igx_live.json", "output/site/igx_live_meta.json")
+    git("add", "output/site/thx_live.json", "output/site/thx_live_meta.json", "output/site/igx_live.json", "output/site/igx_live_meta.json",
+        "data/free_crawl.json")
     if git("commit", "-m", f"data: 쓰레드·인스타 실시간 추적 {datetime.now(KST).strftime('%m/%d %H:%M')}")[0] != 0:
         return
     code, out = git("push")

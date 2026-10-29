@@ -12,7 +12,7 @@ jobs:
           python-version: "3.12"
       - run: python cardnews_bench.py
         env:
-          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          PAID_OFF: "1"   # APIFY_TOKEN 뺌 — 2026-10-29 유료 수집(Apify) 끔. 다시 쓰려면 APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }} 로 되돌리기
       - uses: actions/upload-artifact@v4
         with:
           name: cardnews-bench
