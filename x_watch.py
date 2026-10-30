@@ -5,7 +5,9 @@
 
 크롤링 전용 계정으로 로그인한 크롬(logged_browser)으로 계정 화면·검색 화면을 열어, 화면이 불러온 글(조회수·좋아요·답글·
 리포스트·인용·북마크)을 읽는다. 유료 수집(Apify, x_collect.py)을 대신함.
-  - 계정: 5분마다 가장 오래전에 본 X_ACCT곳 (x_accounts.csv + 검색에서 자주 걸린 계정) → 최근 글 20여 개
+  - 핵심 인물(x_accounts.csv — 트럼프·백악관·재무장관·연준·머스크·속보 계정): 5분마다 VIP_PER_TICK곳씩 → 약 40분에 한 바퀴.
+    새 글이 보이면 바로 텔레그램 알림 (트럼프 트루스소셜은 자동 읽기를 막아 둬서, 몇 분 안에 'TRUMP:'로 옮기는 속보 계정으로 봄)
+  - 그 밖(검색에서 자주 걸린 계정·벤치마킹): 5분마다 OTHER_PER_TICK곳 → 최근 글 20여 개
   - 검색: 30분에 한 번 경제 키워드 하나('인기' 탭) → 한국어·영어 번갈아, 새 계정 찾기(x_found)
   - 같은 글을 다시 보면 숫자만 새로 고침 (중복 없음)
   → data/free_crawl.json 의 "x" 로 깃허브에 → free_import.py 가 insta.db 의 x_posts 에 넣음 → 분야별 계정 순위
@@ -13,16 +15,21 @@
 """
 import csv
 import logging
+import os
 import time
 from datetime import datetime, timezone
 from urllib.parse import quote
+
+import requests
 
 import account_rank
 import logged_browser as lb
 from common import ROOT
 
 ACCOUNTS = ROOT / "x_accounts.csv"
-X_ACCT = 2             # 한 바퀴에 훑는 계정 수
+VIP_PER_TICK = 2       # 핵심 인물 계정 (x_accounts.csv) — 한 바퀴에 2곳
+OTHER_PER_TICK = 1     # 그 밖 계정
+VIP_ALERT_H = 3        # 올린 지 이 시간 안의 새 글만 알림 (처음 볼 때 옛 글이 쏟아지지 않게)
 SEARCH_EVERY_S = 1800
 FOUND_MAX = 60
 KEEP_DAYS = 7          # 이만큼 지난 글은 기록에서 지움
@@ -47,14 +54,20 @@ def kv(c, k, v=None):
     c.execute("INSERT OR REPLACE INTO kv VALUES (?,?)", (k, v))
 
 
-def accounts(c):
-    mine = []
-    if ACCOUNTS.exists():
-        with open(ACCOUNTS, encoding="utf-8-sig") as f:
-            mine = [r["username"].strip().lstrip("@") for r in csv.DictReader(f) if (r.get("username") or "").strip()]
+def vips():
+    """핵심 인물 {아이디: (묶음, 메모)} — x_accounts.csv."""
+    if not ACCOUNTS.exists():
+        return {}
+    with open(ACCOUNTS, encoding="utf-8-sig") as f:
+        return {r["username"].strip().lstrip("@"): (r.get("group") or "", r.get("memo") or "")
+                for r in csv.DictReader(f) if (r.get("username") or "").strip()}
+
+
+def others(c):
     found = [r[0] for r in c.execute("SELECT username FROM x_found WHERE hits >= 2 OR best_likes >= 1000 "
                                      "ORDER BY best_likes DESC LIMIT ?", (FOUND_MAX,))]
-    return list(dict.fromkeys(mine + found + account_rank.bench_accounts("x")))
+    v = vips()
+    return [u for u in dict.fromkeys(found + account_rank.bench_accounts("x")) if u not in v]
 
 
 def _tweets(o, out):
@@ -112,23 +125,50 @@ def visit(url, scrolls=2):
     return list({p["id"]: p for p in posts}.values())
 
 
-def scan_accounts(c, now):
-    users = accounts(c)
+def oldest(c, users, n):
     for u in users:
         c.execute("INSERT OR IGNORE INTO x_accounts (username, last_scan) VALUES (?, 0)", (u,))
-    pick = [r[0] for r in c.execute("SELECT username FROM x_accounts WHERE username IN (%s) ORDER BY last_scan LIMIT ?"
-                                    % ",".join("?" * len(users)), (*users, X_ACCT))] if users else []
-    new = 0
+    return [r[0] for r in c.execute("SELECT username FROM x_accounts WHERE username IN (%s) ORDER BY last_scan LIMIT ?"
+                                    % ",".join("?" * len(users)), (*users, n))] if users else []
+
+
+def scan_accounts(c, now):
+    v = vips()
+    pick = oldest(c, list(v), VIP_PER_TICK) + oldest(c, others(c), OTHER_PER_TICK)
+    new, fresh = 0, []
     for user in pick:
         posts = visit(f"https://x.com/{user}")
         if posts is None:
             break
         mine = [p for p in posts if p["username"].lower() == user.lower()]   # 리포스트 원글 주인 글은 빼고
         fol = next((p["followers"] for p in mine if p["followers"]), None)
+        first = c.execute("SELECT last_scan FROM x_accounts WHERE username=?", (user,)).fetchone()[0] == 0
         c.execute("UPDATE x_accounts SET last_scan=?, followers=COALESCE(?, followers) WHERE username=?", (now, fol, user))
-        new += save(c, mine, "계정", now)
+        known = {r[0] for r in c.execute("SELECT id FROM x_live WHERE username=?", (user,))}
+        if user in v and not first:
+            fresh += [p for p in mine if p["id"] not in known and not p["is_repost"] and now - p["created_at"] <= VIP_ALERT_H * 3600]
+        new += save(c, mine, "핵심 인물" if user in v else "계정", now)
     c.commit()
+    alert(fresh, v)
     return len(pick), new
+
+
+def alert(posts, v):
+    """핵심 인물 새 글 → 텔레그램 (글마다 한 번 — 처음 본 글만 들어옴)."""
+    token, chat = os.environ.get("TELEGRAM_BOT_TOKEN"), os.environ.get("TELEGRAM_CHAT_ID")
+    if not (token and chat):
+        return
+    for p in sorted(posts, key=lambda p: p["created_at"])[:5]:
+        grp, memo = v.get(p["username"], ("", ""))
+        ago = max(1, round((time.time() - p["created_at"]) / 60))
+        text = "\n".join([f"🇺🇸 핵심 인물 새 글 · @{p['username']}" + (f" ({memo})" if memo else "") + f" · {ago}분 전",
+                          f"조회 {p['views'] or '-'} · 좋아요 {p['likes'] or 0}", "", p["text"][:700], "",
+                          f"https://x.com/{p['username']}/status/{p['id'].split(':', 1)[1]}"])
+        try:
+            requests.post(f"https://api.telegram.org/bot{token}/sendMessage", timeout=20,
+                          json={"chat_id": chat, "text": text, "disable_web_page_preview": True})
+        except requests.RequestException as e:
+            log.info("X 알림 실패: %s", e)
 
 
 def search_words():

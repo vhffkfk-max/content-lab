@@ -1,4 +1,4 @@
-# 내 PC(threads_watch.py)가 30분마다 쓰레드·인스타 추적 결과(output/site/thx_live*.json, igx_live*.json)를 올리면 → 사이트만 다시 배포.
+# 내 PC(threads_watch.py)가 30분마다 쓰레드·인스타 추적 결과·뉴스·'지금 발행할 거리'(hot_now.json)를 올리면 → 사이트만 다시 배포.
 # Claude·Apify 호출 없음 (비용 0).
 name: threads-live
 
@@ -9,6 +9,8 @@ on:
       - output/site/thx_live_meta.json
       - output/site/igx_live.json
       - output/site/igx_live_meta.json
+      - output/site/live_meta.json
+      - output/site/hot_now.json
   workflow_dispatch:
 
 permissions:

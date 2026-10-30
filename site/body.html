@@ -1057,6 +1057,14 @@ a.row:hover .row-main{text-decoration:underline}
       if (why) txt.append(el('p', 'job-why', why));
       a.append(...acts); card.append(txt, a); jobs.push(card);
     };
+    // 2시간마다 PC가 고른 '지금 발행할 거리' (hot_now.py) — 매일 아침 30일 통계 추천보다 먼저
+    const hn = (rows('hot_now') || [])[0];
+    if (hn) (hn.picks || []).forEach((p, i) => {
+      const ch = /쓰레드/.test(p.channel) ? 'threads' : /텔레그램/.test(p.channel) ? 'telegram' : /X/.test(p.channel) ? 'x' : 'instagram';
+      const src = (p.sources || [])[0], acts = [copyBtn('초안 복사', p.draft, 'btn primary')];
+      if (src && webLink(src)) { const a = el('a', 'btn small', '근거 보기'); a.href = src; a.target = '_blank'; a.rel = 'noopener'; acts.push(a); }
+      job(ch, `지금 발행할 거리 ${i + 1} · ${p.channel} · ${hn.time} 기준`, `${p.title}${p.follow_up ? ' (후속)' : ''}`, p.why_now, acts);
+    });
     const r = recs[0];
     if (r) {
       const plan = el('button', 'btn small', '기획안 보기'); plan.type = 'button'; plan.addEventListener('click', () => openPlan(r.rank));
@@ -1081,7 +1089,8 @@ a.row:hover .row-main{text-decoration:underline}
       [goBtn('관련 기사 보기', 'google', 'g-opps', 'btn primary')]);
     const L = (rows('live_meta') || [])[0], S = (rows('summary') || [])[0];
     document.getElementById('home-sub').textContent = [
-      L ? `뉴스는 5분마다 새로 모아요 · 마지막 ${L.updated_at.slice(11)}${L.new_press + L.new_google ? ` · 새 기사 ${L.new_press + L.new_google}개` : ''}` : '',
+      hn ? `지금 발행할 거리는 2시간마다(07~23시) · 마지막 ${hn.time.slice(6)}` : '',
+      L ? `뉴스는 30분마다 새로 모아요 · 마지막 ${L.updated_at.slice(11)}${L.new_press + L.new_google ? ` · 새 기사 ${L.new_press + L.new_google}개` : ''}` : '',
       S ? `추천·분석은 매일 06:00 (${S.generated_at.slice(5, 10).replace('-', '/')} 기준)` : ''].filter(Boolean).join(' · ') || '오늘 할 일만 골랐어요. 하나 골라서 버튼을 누르세요.';
     const box = document.getElementById('home-jobs');
     if (!jobs.length) empty(box, '다음 06:00 수집이 끝나면 오늘 할 일이 여기에 나와요.'); else box.replaceChildren(...jobs);

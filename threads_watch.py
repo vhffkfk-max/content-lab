@@ -14,7 +14,7 @@
     반응이 거의 없는 글은 6시간, 48시간이 지나면 그만
   - 매일 Apify 로 모은 경제 글은 1시간에 한 번 목록만 가져옴
   - 인스타도 같은 바퀴에서 조금씩 (insta_watch.py), X는 X 전용 계정 로그인이 있을 때 (x_watch.py)
-  → output/site/thx_live.json(+_meta)·igx_live.json(+_meta), 30분마다 깃허브 / 빨리 크는 글은 텔레그램 알림(글당 한 번)
+  → output/site/thx_live.json(+_meta)·igx_live.json(+_meta), 30분마다 깃허브 (그때 뉴스 새로 모으기 + 2시간마다 hot_now.py '지금 발행할 거리' 텔레그램) / 빨리 크는 글은 텔레그램 알림(글당 한 번)
 기록: data/threads_watch.db (PC에만, 저장소에 안 올림)
 """
 import argparse
@@ -362,15 +362,36 @@ def free_export(c, now):
                     encoding="utf-8")
 
 
+NEWS_FILES = ["output/site/google_headlines.json", "output/site/google_meta.json", "output/site/google_opportunities.json",
+              "output/site/google_topics.json", "output/site/google_trends.json", "output/site/press_headlines.json",
+              "output/site/press_popular.json", "output/site/live_meta.json"]
+
+
+def side_jobs():
+    """30분마다 같이: 뉴스 새로 모으기(깃허브 5분 예약은 실제로 몇 시간씩 밀려서 PC가 맡음) + 2시간마다 '지금 발행할 거리'."""
+    for args, limit in ((["live_news.py"], 300), (["hot_now.py"], 900)):
+        try:
+            r = subprocess.run([sys.executable, *args], cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace",
+                               timeout=limit, env={**os.environ, "PYTHONIOENCODING": "utf-8"})
+            out = [l for l in (r.stdout + r.stderr).splitlines() if l.strip()]
+            if out:
+                log.info("%s → %s", args[0], out[-1][:200])
+        except subprocess.TimeoutExpired:
+            log.info("%s 시간 초과", args[0])
+        if args[0] == "live_news.py":
+            git("checkout", "--", "data/insta.db")   # 뉴스 수집이 바꾼 DB는 버림 (DB는 깃허브가 매일 아침 만든 것을 씀 — 겹치면 받기가 막힘)
+
+
 def push(c, now, force=False):
     if not force and now - kv(c, "last_push") < PUSH_EVERY_S:
         return
     kv(c, "last_push", now)
     c.commit()
+    side_jobs()
     free_export(c, now)
     git("pull", "--rebase", "--autostash")
     git("add", "output/site/thx_live.json", "output/site/thx_live_meta.json", "output/site/igx_live.json", "output/site/igx_live_meta.json",
-        "data/free_crawl.json")
+        "data/free_crawl.json", *NEWS_FILES, "output/site/hot_now.json")
     if git("commit", "-m", f"data: 쓰레드·인스타 실시간 추적 {datetime.now(KST).strftime('%m/%d %H:%M')}")[0] != 0:
         return
     code, out = git("push")

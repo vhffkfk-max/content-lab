@@ -3,9 +3,9 @@
 # DB(data/insta.db, 25MB)는 커밋하지 않고 사이트 표(json)만 커밋한다 — 저장소가 5분마다 25MB씩 불어나지 않게.
 name: live-news
 
+# 2026-10-30: 깃허브 5분 예약이 실제로는 4~6시간에 한 번만 돌아서, 내 PC 크롤러(threads_watch.py)가 30분마다 대신 모아 올림.
+# 이 작업은 손으로만 (PC가 꺼졌을 때 비상용).
 on:
-  schedule:
-    - cron: "*/5 * * * *"   # 깃허브가 바쁘면 10~15분 간격으로 밀릴 수 있음
   workflow_dispatch:
 
 permissions:
