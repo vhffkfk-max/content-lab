@@ -5,7 +5,8 @@
     python threads_watch.py --no-push   # 깃허브에 안 올리고
     python threads_watch.py --export    # 크롤링 없이 사이트 파일만 다시
 
-로그인하지 않은 크롬(post_reader._dom)으로 공개 페이지만 읽는다. 쿠키·계정 저장 안 함. Apify 비용 없음.
+계정 화면·검색은 크롤링 전용 계정으로 로그인한 크롬(logged_browser, crawl_login.py)으로 → 계정당 글 40여 개 + 키워드 검색으로 새 계정 찾기.
+로그인이 없거나 풀리면 예전처럼 로그인 없는 크롬(post_reader._dom)으로 공개 페이지만. 글 조회수는 늘 로그인 없이 잼(계정 아끼려고).
 같은 걸 반복해서 긁지 않도록 '다음 확인 시각'을 따로 적어 두고 차례가 된 것만 연다.
   - 계정: 5분마다 마지막으로 본 지 가장 오래된 계정 ACCT_PER_TICK곳 → 76곳이면 약 1시간에 한 바퀴
   - 새 글: 계정에서 처음 보이면 바로 다음 차례에 조회수를 잰다
@@ -32,6 +33,7 @@ import requests
 
 import account_rank
 import insta_watch
+import logged_browser as lb
 from common import DEFAULT_DB, OUTPUT_DIR, ROOT, load_env
 from post_reader import _dom, _threads, _walk
 from topics import topics_of
@@ -46,6 +48,8 @@ ACCT_PER_TICK = 6      # 한 바퀴에 훑는 계정 수
 POSTS_PER_TICK = 20    # 한 바퀴에 조회수 재는 글 수
 WORKERS = 2            # 동시에 여는 페이지 (천천히)
 WINDOW_H = 48          # 이 시간 안에 올라온 글만 지켜봄
+SEARCH_EVERY_S = 1800  # 키워드 검색으로 새 계정 찾기 간격 (로그인 때만)
+FOUND_MAX = 80         # 검색으로 찾아 지켜보는 계정 최대 수
 IMPORT_EVERY_S = 3600  # 매일 수집 글 목록 가져오기 간격
 PUSH_EVERY_S = 1800    # 깃허브 올리는 간격
 ALERT_VPH = 3000       # 올린 지 24시간 안에 시간당 조회 이만큼이면 알림
@@ -62,7 +66,9 @@ def db():
                        CREATE TABLE IF NOT EXISTS snaps (code TEXT, at INTEGER, views INTEGER, likes INTEGER, replies INTEGER, reposts INTEGER);
                        CREATE INDEX IF NOT EXISTS snaps_code ON snaps(code, at);
                        CREATE TABLE IF NOT EXISTS accounts (username TEXT PRIMARY KEY, last_scan INTEGER, followers INTEGER);
-                       CREATE TABLE IF NOT EXISTS kv (k TEXT PRIMARY KEY, v INTEGER);""")
+                       CREATE TABLE IF NOT EXISTS kv (k TEXT PRIMARY KEY, v INTEGER);
+                       CREATE TABLE IF NOT EXISTS th_found (username TEXT PRIMARY KEY, hits INTEGER, best_likes INTEGER,
+                         keywords TEXT, first_seen INTEGER, last_seen INTEGER);""")
     cols = {r[1] for r in c.execute("PRAGMA table_info(posts)")}
     if "next_check" not in cols:   # 예전(3시간 일괄) 기록 → 차례표 붙이기
         c.execute("ALTER TABLE posts ADD COLUMN next_check INTEGER")
@@ -86,11 +92,13 @@ def korean(text):
     return len(re.findall(r"[가-힣]", text or "")) >= 10
 
 
-def accounts():
-    """지켜볼 계정 = config/threads_watch.txt + 점수 높은 벤치마킹 계정(account_rank.py)."""
+def accounts(c=None):
+    """지켜볼 계정 = config/threads_watch.txt + 점수 높은 벤치마킹 계정(account_rank.py) + 검색에서 두 번 넘게 걸린 경제 계정."""
     mine = [l.strip().lstrip("@") for l in WATCH.read_text(encoding="utf-8").splitlines()
             if l.strip() and not l.startswith("#")] if WATCH.exists() else []
-    return list(dict.fromkeys(mine + account_rank.bench_accounts("threads")))
+    found = [r[0] for r in c.execute("SELECT username FROM th_found WHERE hits >= 2 OR best_likes >= 300 "
+                                     "ORDER BY best_likes DESC LIMIT ?", (FOUND_MAX,))] if c else []
+    return list(dict.fromkeys(mine + account_rank.bench_accounts("threads") + found))
 
 
 def add_post(c, code, url, user, followers, text, taken_at, source, now, likes=None):
@@ -105,6 +113,11 @@ def add_post(c, code, url, user, followers, text, taken_at, source, now, likes=N
 
 # ── 계정 프로필 ──
 def profile(user):
+    if lb.ready("threads"):
+        html, bodies = lb.visit(f"https://www.threads.com/@{user}", scrolls=2)
+        if html:
+            f = re.search(r'"follower_count":(\d+)', html)
+            return user, int(f.group(1)) if f else None, lb.threads_posts(html, bodies)
     try:
         dom = _dom(f"https://www.threads.com/@{user}")
     except subprocess.TimeoutExpired:
@@ -121,7 +134,7 @@ def profile(user):
 
 
 def scan_accounts(c, now, n):
-    users = accounts()
+    users = accounts(c)
     for u in users:
         c.execute("INSERT OR IGNORE INTO accounts (username, last_scan) VALUES (?, 0)", (u,))
     # 벤치마킹 계정은 30분 먼저 차례가 와서 더 자주 봄
@@ -129,8 +142,9 @@ def scan_accounts(c, now, n):
     last = dict(c.execute("SELECT username, last_scan FROM accounts WHERE username IN (%s)" % ",".join("?" * len(users)), users)) if users else {}
     pick = sorted(users, key=lambda u: (last.get(u) or 0) - (1800 if u in bench else 0))[:n]
     new = 0
+    # 로그인 크롬은 한 곳에서 차례로만 쓸 수 있어서 그땐 동시에 열지 않음
     with ThreadPoolExecutor(WORKERS) as ex:
-        for user, followers, posts in ex.map(profile, pick):
+        for user, followers, posts in (map if lb.ready("threads") else ex.map)(profile, pick):
             c.execute("UPDATE accounts SET last_scan=?, followers=COALESCE(?, followers) WHERE username=?", (now, followers, user))
             for p in {p["code"]: p for p in posts}.values():
                 info = p.get("text_post_app_info") or {}
@@ -143,6 +157,41 @@ def scan_accounts(c, now, n):
                          (p.get("caption") or {}).get("text") or "", p["taken_at"], "계정", now, p.get("like_count"))
     c.commit()
     return len(pick), new
+
+
+# ── 키워드 검색으로 새 경제 계정 찾기 (로그인 때만, 30분에 한 번 키워드 하나) ──
+def search_words():
+    return [w for ws in account_rank.CATS.values() for w in ws if re.search(r"[가-힣]", w) and len(w) >= 2]
+
+
+def discover(c, now):
+    if not lb.ready("threads") or now - kv(c, "last_search") < SEARCH_EVERY_S:
+        return None, 0
+    words = search_words()
+    i = kv(c, "search_i") % len(words)
+    kv(c, "search_i", i + 1)
+    kv(c, "last_search", now)
+    word = words[i]
+    html, bodies = lb.visit(f"https://www.threads.com/search?q={requests.utils.quote(word)}&serp_type=default", scrolls=3)
+    users, new = set(), 0
+    for p in lb.threads_posts(html, bodies):
+        text = (p.get("caption") or {}).get("text") or ""
+        user = (p.get("user") or {}).get("username")
+        tp = topics_of(text)
+        if not user or not korean(text) or not tp or tp == ["기타"] or (p.get("text_post_app_info") or {}).get("is_reply"):
+            continue
+        likes = p.get("like_count") or 0
+        if user not in users:   # 한 검색에서 같은 계정은 한 번만 셈
+            users.add(user)
+            c.execute("INSERT INTO th_found VALUES (?,1,?,?,?,?) ON CONFLICT(username) DO UPDATE SET hits=hits+1, "
+                      "best_likes=MAX(best_likes, excluded.best_likes), last_seen=excluded.last_seen, "
+                      "keywords=CASE WHEN instr(keywords, excluded.keywords) > 0 THEN keywords ELSE keywords || ', ' || excluded.keywords END",
+                      (user, likes, word, now, now))
+        if p.get("taken_at") and now - p["taken_at"] <= WINDOW_H * 3600:
+            new += c.execute("SELECT 1 FROM posts WHERE code=?", (p["code"],)).fetchone() is None
+            add_post(c, p["code"], f"https://www.threads.com/@{user}/post/{p['code']}", user, None, text, p["taken_at"], "검색", now, likes)
+    c.commit()
+    return word, len(users)
 
 
 # ── 매일 Apify 로 모은 최근 글 (1시간에 한 번 목록만) ──
@@ -329,15 +378,20 @@ def tick(c, no_push=False):
     now = int(time.time())
     start = time.time()
     na, new = scan_accounts(c, now, ACCT_PER_TICK)
+    word, found = discover(c, now)
     imp = from_apify(c, now)
     nd, ok = measure(c, now, POSTS_PER_TICK)
     rows = export(c, now)
     sent = alert(c, rows)
-    log.info("계정 %d곳(새 글 %d) · 매일수집 %d · 조회수 %d/%d · 알림 %d · %d초", na, new, imp, ok, nd, sent, time.time() - start)
+    log.info("계정 %d곳(새 글 %d)%s%s · 매일수집 %d · 조회수 %d/%d · 알림 %d · %d초", na, new,
+             " · 로그인" if lb.ready("threads") else "", f" · 검색 '{word}' 계정 {found}곳" if word else "",
+             imp, ok, nd, sent, time.time() - start)
     try:
         insta_watch.tick(c)
     except Exception as e:   # 인스타가 실패해도 쓰레드는 계속
         log.info("인스타 바퀴 실패: %r", e)
+    finally:
+        lb.close()   # 한 바퀴 끝나면 로그인 크롬 닫기
     if not no_push:
         push(c, now)
 

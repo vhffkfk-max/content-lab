@@ -11,10 +11,12 @@
 """
 import html
 import json
+import pathlib
 import re
 import subprocess
 import sys
 import tempfile
+import threading
 
 import requests
 
@@ -30,12 +32,24 @@ def find_link(text):
     return m.group(0).rstrip(").,") if m else None
 
 
-def _dom(url, wait_ms=8000, timeout=25):
-    with tempfile.TemporaryDirectory() as prof:
-        r = subprocess.run([browser(), "--headless=new", "--disable-gpu", f"--user-data-dir={prof}", "--lang=ko-KR",
-                            f"--virtual-time-budget={wait_ms}", "--dump-dom", url],
-                           capture_output=True, timeout=timeout)
+LOGIN_PROFILE = pathlib.Path(__file__).resolve().parent / "data" / "crawl_chrome"   # crawl_login.py 로 로그인한 크롤링 전용 프로필
+_login_lock = threading.Lock()   # 같은 프로필은 크롬 하나만 열 수 있어서 한 번에 하나씩
+
+
+def _run(url, prof, wait_ms, timeout):
+    r = subprocess.run([browser(), "--headless=new", "--disable-gpu", f"--user-data-dir={prof}", "--lang=ko-KR",
+                        f"--virtual-time-budget={wait_ms}", "--dump-dom", url],
+                       capture_output=True, timeout=timeout)
     return r.stdout.decode("utf-8", "ignore")
+
+
+def _dom(url, wait_ms=8000, timeout=25, login=False):
+    """login=True 이고 크롤링 전용 프로필이 있으면 로그인된 화면, 아니면 매번 새 임시 프로필(로그인 없음)."""
+    if login and LOGIN_PROFILE.exists():
+        with _login_lock:
+            return _run(url, LOGIN_PROFILE, wait_ms, timeout)
+    with tempfile.TemporaryDirectory() as prof:
+        return _run(url, prof, wait_ms, timeout)
 
 
 def _walk(o, out):

@@ -3,7 +3,9 @@
     python insta_watch.py            # 한 번만 (계정 몇 곳 + 차례 된 글)
     python insta_watch.py --export   # 크롤링 없이 사이트 파일만 다시
 
-로그인하지 않은 크롬(post_reader._dom)으로 공개 페이지만 읽는다. 쿠키·계정 저장 안 함. Apify 비용 없음.
+크롤링 전용 계정으로 로그인한 크롬(logged_browser)이 있으면 계정 화면 + 릴스 탭을 열어 최근 글 12개의 좋아요·댓글·릴스 재생수를
+한 번에 읽고(글을 따로 안 열어도 됨), 인스타가 보여 주는 '비슷한 계정'으로 새 계정도 찾는다.
+로그인이 없거나 풀리면 예전처럼 로그인 없는 크롬(post_reader._dom)으로 공개 페이지만.
   - 계정(accounts.csv): 5분마다 가장 오래전에 본 곳 IG_ACCT곳 → 최근 글 12개 주소만 얻음 (48곳이면 약 1시간 20분에 한 바퀴)
   - 글: 차례 된 것만 열어 좋아요·댓글·올린 시각을 잼. 어릴수록 자주 (3시간 안 30분 / 12시간 안 1시간 /
     24시간 안 2시간 / 72시간 안 6시간), 반응이 거의 없으면 12시간, 72시간 지나면 그만
@@ -30,6 +32,7 @@ from datetime import datetime, timedelta, timezone
 import requests
 
 from common import DEFAULT_DB, OUTPUT_DIR, ROOT, load_env
+import logged_browser as lb
 from post_reader import _dom
 from topics import topics_of
 
@@ -40,6 +43,7 @@ IG_ACCT = 3            # 한 바퀴에 훑는 계정 수
 IG_POSTS = 8           # 한 바퀴에 여는 글 수
 WORKERS = 2
 WINDOW_H = 72          # 인스타는 오래 크니까 3일
+FOUND_MAX = 40        # '비슷한 계정'으로 찾아 지켜보는 계정 최대 수
 PAUSE_S = 3600         # 막힌 것 같으면 쉬는 시간
 ALERT_X = 3            # 평소 좋아요의 이만큼 배면 알림
 ALERT_MIN_LIKES = 300
@@ -55,7 +59,8 @@ def init(c):
                          fails INTEGER DEFAULT 0, alerted INTEGER DEFAULT 0);
                        CREATE TABLE IF NOT EXISTS ig_snaps (code TEXT, at INTEGER, likes INTEGER, comments INTEGER);
                        CREATE INDEX IF NOT EXISTS ig_snaps_code ON ig_snaps(code, at);
-                       CREATE TABLE IF NOT EXISTS ig_accounts (username TEXT PRIMARY KEY, last_scan INTEGER);""")
+                       CREATE TABLE IF NOT EXISTS ig_accounts (username TEXT PRIMARY KEY, last_scan INTEGER);
+                       CREATE TABLE IF NOT EXISTS ig_found (username TEXT PRIMARY KEY, hits INTEGER, via TEXT, first_seen INTEGER);""")
     if "followers" not in {r[1] for r in c.execute("PRAGMA table_info(ig_accounts)")}:
         c.execute("ALTER TABLE ig_accounts ADD COLUMN followers INTEGER")
     if "views" not in {r[1] for r in c.execute("PRAGMA table_info(ig_snaps)")}:
@@ -70,11 +75,15 @@ def kv(c, k, v=None):
     c.execute("INSERT OR REPLACE INTO kv VALUES (?,?)", (k, v))
 
 
-def accounts():
-    if not ACCOUNTS.exists():
-        return []
-    with open(ACCOUNTS, encoding="utf-8") as f:
-        return [r["username"].strip().lstrip("@") for r in csv.DictReader(f) if r.get("username")]
+def accounts(c=None):
+    """accounts.csv + 등록 계정 두 곳 넘게에서 '비슷한 계정'으로 뜬 계정."""
+    mine = []
+    if ACCOUNTS.exists():
+        with open(ACCOUNTS, encoding="utf-8") as f:
+            mine = [r["username"].strip().lstrip("@") for r in csv.DictReader(f) if r.get("username")]
+    found = [r[0] for r in c.execute("SELECT username FROM ig_found WHERE hits >= 2 ORDER BY hits DESC, first_seen LIMIT ?",
+                                     (FOUND_MAX,))] if c else []
+    return list(dict.fromkeys(mine + found))
 
 
 def blocked(c, now, empty):
@@ -90,8 +99,65 @@ def blocked(c, now, empty):
     return False
 
 
+def _with(o, key, out):
+    """JSON 안에서 code 와 key 가 같이 있는 덩어리."""
+    if isinstance(o, dict):
+        if o.get("code") and key in o:
+            out.append(o)
+        o = list(o.values())
+    if isinstance(o, list):
+        for v in o:
+            _with(v, key, out)
+    return out
+
+
+def _with_user(o, user, out):
+    if isinstance(o, dict):
+        if o.get("username") == user:
+            out.append(o)
+        o = list(o.values())
+    if isinstance(o, list):
+        for v in o:
+            _with_user(v, user, out)
+    return out
+
+
+def logged_profile(user):
+    """로그인 크롬: 계정 화면(최근 글) + 릴스 탭(재생수) → (팔로워, {code: 글 정보}, 비슷한 계정들)."""
+    html, bodies = lb.visit(f"https://www.instagram.com/{user}/", scrolls=0)
+    if html is None:
+        return None
+    me = [d for d in _with_user(bodies, user, []) if d.get("follower_count") is not None]
+    posts = {}
+    for conn in lb.find_key(bodies, "xdt_api__v1__feed__user_timeline_graphql_connection", []):
+        for e in conn.get("edges") or []:
+            m = e.get("node") or {}
+            if not m.get("code") or not m.get("taken_at"):
+                continue
+            posts[m["code"]] = {"taken_at": m["taken_at"], "likes": m.get("like_count"), "comments": m.get("comment_count"),
+                                "author": (m.get("user") or {}).get("username") or user,
+                                "kind": KIND.get(m.get("product_type"), m.get("product_type")),
+                                "slides": m.get("carousel_media_count"), "text": (m.get("caption") or {}).get("text") or "",
+                                "views": m.get("play_count") or m.get("ig_play_count") or m.get("view_count"),
+                                "path": "reel" if m.get("product_type") == "clips" else "p"}
+    similar = []
+    for ch in lb.find_key(bodies, "xdt_api__v1__discover__chaining", []):
+        for group in lb.find_key(ch, "users", []):
+            similar += [u.get("username") for u in group if isinstance(u, dict)] if isinstance(group, list) else []
+    if any(p["kind"] == "릴스" for p in posts.values()):
+        _, rb = lb.visit(f"https://www.instagram.com/{user}/reels/", scrolls=0)
+        for m in _with(rb, "play_count", []):
+            if m["code"] in posts and m.get("play_count"):
+                posts[m["code"]]["views"] = m["play_count"]
+    return (me[0]["follower_count"] if me else None), posts, [u for u in similar if u and u != user]
+
+
 # ── 계정 프로필: 최근 글 주소만 ──
 def profile(user):
+    if lb.ready("instagram"):
+        got = logged_profile(user)
+        if got:
+            return user, got[0], got
     try:
         dom = _dom(f"https://www.instagram.com/{user}/", wait_ms=10000, timeout=40)
     except subprocess.TimeoutExpired:
@@ -100,18 +166,42 @@ def profile(user):
     return user, int(f.group(1)) if f else None, sorted(set(re.findall(r'/(p|reel)/([\w-]{8,})/', dom)))
 
 
+def save_logged(c, user, now, posts, similar):
+    """로그인 화면에서 읽은 글은 바로 숫자까지 기록 (계정을 다시 볼 때마다 새로 잼 → 글을 따로 안 엶)."""
+    new = 0
+    for code, p in posts.items():
+        url = f"https://www.instagram.com/{p['path']}/{code}/"
+        new += c.execute("INSERT OR IGNORE INTO ig_posts (code, url, account, first_seen) VALUES (?,?,?,?)", (code, url, user, now)).rowcount
+        c.execute("UPDATE ig_posts SET author=?, kind=?, slides=?, taken_at=?, next_check=NULL, fails=0 WHERE code=?",
+                  (p["author"], p["kind"], p["slides"], p["taken_at"], code))
+        if p["text"]:
+            c.execute("UPDATE ig_posts SET text=?, topics=? WHERE code=? AND (text IS NULL OR text='')",
+                      (p["text"], ", ".join(topics_of(p["text"])), code))
+        if now - p["taken_at"] <= WINDOW_H * 3600:
+            c.execute("INSERT INTO ig_snaps (code, at, likes, comments, views) VALUES (?,?,?,?,?)",
+                      (code, now, p["likes"], p["comments"], p["views"]))
+    for u in similar:
+        c.execute("INSERT INTO ig_found VALUES (?,1,?,?) ON CONFLICT(username) DO UPDATE SET hits=hits+1, "
+                  "via=CASE WHEN instr(via, excluded.via) > 0 THEN via ELSE via || ', ' || excluded.via END", (u, user, now))
+    return new
+
+
 def scan_accounts(c, now):
-    users = accounts()
+    users = accounts(c)
     for u in users:
         c.execute("INSERT OR IGNORE INTO ig_accounts (username, last_scan) VALUES (?, 0)", (u,))
     pick = [r[0] for r in c.execute("SELECT username FROM ig_accounts WHERE username IN (%s) ORDER BY last_scan LIMIT ?"
                                     % ",".join("?" * len(users)), (*users, IG_ACCT))] if users else []
     new = 0
+    # 로그인 크롬은 한 곳에서 차례로만 쓸 수 있어서 그땐 동시에 열지 않음
     with ThreadPoolExecutor(WORKERS) as ex:
-        for user, followers, links in ex.map(profile, pick):
+        for user, followers, links in (map if lb.ready("instagram") else ex.map)(profile, pick):
             if blocked(c, now, not links):
                 break
             c.execute("UPDATE ig_accounts SET last_scan=?, followers=COALESCE(?, followers) WHERE username=?", (now, followers, user))
+            if isinstance(links, tuple):   # 로그인 화면
+                new += save_logged(c, user, now, links[1], links[2])
+                continue
             for kind, code in links:
                 # 처음 보는 글만 넣는다 (올린 시각은 글을 열어야 알 수 있어서 바로 다음 차례에 한 번 연다)
                 new += c.execute("INSERT OR IGNORE INTO ig_posts (code, url, account, first_seen, next_check) VALUES (?,?,?,?,?)",

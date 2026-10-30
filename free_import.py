@@ -34,6 +34,8 @@ def main():
         conn.execute("ALTER TABLE posts ADD COLUMN slides INTEGER")
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     for a in d.get("ig_accounts", []):
+        # 크롤러가 '비슷한 계정'으로 찾은 계정도 순위(account_rank)에 팔로워가 잡히게 줄을 만들어 둠
+        conn.execute("INSERT OR IGNORE INTO accounts (username, category) VALUES (?, '자동발견')", (a["username"],))
         conn.execute("UPDATE accounts SET followers=?, last_collected=? WHERE username=?", (a["followers"], iso(d["updated"]), a["username"]))
         conn.execute("INSERT OR REPLACE INTO account_snapshots VALUES (?,?,?,(SELECT media_count FROM accounts WHERE username=?))",
                      (a["username"], today, a["followers"], a["username"]))
