@@ -30,6 +30,7 @@ from datetime import datetime, timedelta, timezone
 
 import requests
 
+import account_rank
 import insta_watch
 from common import DEFAULT_DB, OUTPUT_DIR, ROOT, load_env
 from post_reader import _dom, _threads, _walk
@@ -86,9 +87,10 @@ def korean(text):
 
 
 def accounts():
-    if not WATCH.exists():
-        return []
-    return [l.strip().lstrip("@") for l in WATCH.read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("#")]
+    """지켜볼 계정 = config/threads_watch.txt + 점수 높은 벤치마킹 계정(account_rank.py)."""
+    mine = [l.strip().lstrip("@") for l in WATCH.read_text(encoding="utf-8").splitlines()
+            if l.strip() and not l.startswith("#")] if WATCH.exists() else []
+    return list(dict.fromkeys(mine + account_rank.bench_accounts("threads")))
 
 
 def add_post(c, code, url, user, followers, text, taken_at, source, now, likes=None):
@@ -122,8 +124,10 @@ def scan_accounts(c, now, n):
     users = accounts()
     for u in users:
         c.execute("INSERT OR IGNORE INTO accounts (username, last_scan) VALUES (?, 0)", (u,))
-    pick = [r[0] for r in c.execute("SELECT username FROM accounts WHERE username IN (%s) ORDER BY last_scan LIMIT ?"
-                                    % ",".join("?" * len(users)), (*users, n))] if users else []
+    # 벤치마킹 계정은 30분 먼저 차례가 와서 더 자주 봄
+    bench = set(account_rank.bench_accounts("threads"))
+    last = dict(c.execute("SELECT username, last_scan FROM accounts WHERE username IN (%s)" % ",".join("?" * len(users)), users)) if users else {}
+    pick = sorted(users, key=lambda u: (last.get(u) or 0) - (1800 if u in bench else 0))[:n]
     new = 0
     with ThreadPoolExecutor(WORKERS) as ex:
         for user, followers, posts in ex.map(profile, pick):

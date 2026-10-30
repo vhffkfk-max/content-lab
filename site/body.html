@@ -253,6 +253,7 @@ a.row:hover .row-main{text-decoration:underline}
           </ul></li>
         <li><button type="button" data-ch="accounts"><i class="dot" style="background:var(--ch-instagram)"></i>계정 분석</button>
           <ul class="subnav" data-for="accounts">
+            <li><a href="#acc-rank">분야별 계정 순위</a></li>
             <li><a href="#my">내 계정</a></li>
             <li><a href="#other">다른 계정 보기</a></li>
           </ul></li>
@@ -520,6 +521,15 @@ a.row:hover .row-main{text-decoration:underline}
 
       <div class="view" data-view="accounts" hidden>
         <div class="title-row"><div><h1>계정 분석</h1><p>내 계정은 공식 인사이트(도달·저장·공유·조회수)로, 다른 계정은 공개 반응(좋아요·댓글)으로 분석해요.</p></div></div>
+        <section class="sec" id="acc-rank">
+          <h2>분야별 계정 순위 (벤치마킹)</h2>
+          <p class="note" id="ar-note">인스타·쓰레드·X 계정을 최근 60일 글 내용으로 분야를 나누고 점수를 매겼어요. 점수(0~100)는 같은 채널 안에서 <b>글당 반응 크기 40%</b>(쓰레드는 반응 25% + 조회수 15%), <b>팔로워 대비 반응률 20%</b>, <b>채널 상위 20% 글을 낸 비율 25%</b>, <b>꾸준함 15%</b>로 비교한 값이에요. 글이 5개 미만이면 우연일 수 있어 조금 깎았어요. <b>벤치마킹</b> 표시는 분야별 한국 상위 S·A 계정으로, 내 PC 크롤러가 더 자주 찾아봐요.</p>
+          <div class="kpis" id="ar-kpis"></div>
+          <div class="chips" id="ar-plat" style="margin:6px 0 8px"></div>
+          <div class="chips" id="ar-cats" style="margin:0 0 8px"></div>
+          <div class="chips" id="ar-region" style="margin:0 0 12px"></div>
+          <div id="ar-list" style="display:grid;gap:var(--gap)"></div>
+        </section>
         <section class="sec" id="my">
           <h2>내 계정</h2>
           <div class="kpis" id="my-kpis"></div>
@@ -1154,6 +1164,54 @@ a.row:hover .row-main{text-decoration:underline}
     const paint = () => {
       box.replaceChildren(...items.slice(0, shown).map(render));
       if (items.length > shown) { const b = el('button', 'btn small', `더 보기 (${items.length - shown}개)`); b.type = 'button'; b.style.marginTop = '8px'; b.addEventListener('click', () => { shown = items.length; paint(); }); box.append(b); }
+    };
+    paint();
+  }
+  // ── 분야별 계정 순위 (account_rank.py) ──
+  function drawAccRank() {
+    const M = (rows('acc_rank_meta') || [])[0], R = rows('acc_rank') || [];
+    const kb = document.getElementById('ar-kpis'), pb = document.getElementById('ar-plat'), cb = document.getElementById('ar-cats'),
+      gb = document.getElementById('ar-region'), lb = document.getElementById('ar-list');
+    if (!M || !R.length) { [kb, pb, cb, gb].forEach(b => b.replaceChildren()); return empty(lb, '다음 아침 분석 뒤에 순위가 나와요.'); }
+    const PL = { instagram: '인스타', threads: '쓰레드', x: 'X', truth: '트루스' };
+    const st = { plat: 'threads', cat: '전체', region: '한국' };
+    const bench = Object.values(M.bench).reduce((n, v) => n + v.length, 0);
+    kb.replaceChildren(kpi('점수 매긴 계정', `${fmtN(R.length)}곳`, `최근 ${M.days}일 · ${M.updated}`),
+      ...['instagram', 'threads', 'x'].map(p => kpi(PL[p], `${fmtN(R.filter(r => r.platform === p).length)}곳`, `S등급 ${R.filter(r => r.platform === p && r.grade === 'S').length}곳`)),
+      kpi('벤치마킹 대상', `${bench}곳`, '크롤러가 더 자주 봄'));
+    const chipRow = (box, items, key) => {
+      box.replaceChildren(...items.map(([v, label]) => { const b = el('button', 'btn small', label); b.type = 'button'; b.dataset.v = v;
+        b.setAttribute('aria-pressed', String(st[key] === v)); b.addEventListener('click', () => { st[key] = v; paint(); }); return b; }));
+    };
+    const paint = () => {
+      const inPlat = R.filter(r => r.platform === st.plat || (st.plat === 'x' && r.platform === 'truth'));
+      const inReg = inPlat.filter(r => st.region === '전체' || r.region === st.region);
+      chipRow(pb, ['threads', 'instagram', 'x'].map(p => [p, `${PL[p]} ${R.filter(r => r.platform === p || (p === 'x' && r.platform === 'truth')).length}`]), 'plat');
+      chipRow(cb, [['전체', `전체 ${inReg.length}`], ...M.cats.map(c => [c, `${c} ${inReg.filter(r => r.category === c).length}`])], 'cat');
+      chipRow(gb, [['한국', `한국 ${inPlat.filter(r => r.region === '한국').length}`], ['해외', `해외 ${inPlat.filter(r => r.region === '해외').length}`], ['전체', '전체']], 'region');
+      const list = inReg.filter(r => st.cat === '전체' || r.category === st.cat);
+      if (!list.length) return empty(lb, '이 조건에 맞는 계정이 아직 없어요.');
+      listWithMore(lb, list, (r, i) => {
+        const c = el('article', 'card rec'), chips = el('div', 'chips');
+        chips.append(el('span', r.grade === 'S' ? 'pill accent' : r.grade === 'A' ? 'pill positive' : 'pill neutral', `${r.grade} · ${r.score}점`),
+          el('span', 'pill neutral', r.category));
+        if (r.bench) chips.append(el('span', 'pill warning', '벤치마킹'));
+        if (r.media) chips.append(el('span', 'pill neutral', '언론'));
+        const url = r.platform === 'instagram' ? `https://www.instagram.com/${r.username}/` : r.platform === 'threads' ? `https://www.threads.com/@${r.username}`
+          : r.platform === 'x' ? `https://x.com/${r.username}` : `https://truthsocial.com/@${r.username}`;
+        const head = el('a', null, `@${r.username}${r.name && r.name !== r.username ? ' · ' + r.name : ''}`); head.href = url; head.target = '_blank'; head.rel = 'noopener';
+        const h3 = el('h3'); h3.append(head);
+        const fm = Object.entries(r.formats || {}).map(([k, v]) => `${k} ${v}`).join(' · ');
+        c.append(chips, h3,
+          el('p', 'meta-line', `팔로워 ${fmtN(r.followers)} · 글 ${r.posts}개(주 ${r.per_week}회) · 글당 반응 ${fmtN(r.med_e)}${r.rate != null ? ' · 반응률 ' + r.rate + '%' : ''} · 히트율 ${r.hit}%${r.views_med ? ' · 조회 중앙값 ' + fmtN(r.views_med) : ''}`),
+          el('p', 'sub', `잘 되는 패턴 · 첫 줄 ${r.top_hook}${r.best_hour ? ' · 반응 좋은 시간 ' + r.best_hour : ''} · 평균 ${r.avg_len}자${fm && r.platform === 'instagram' ? ' · ' + fm : ''}${r.topics.length ? ' · 주제 ' + r.topics.join(', ') : ''}`),
+          el('p', 'sub', `분야 비율 · ${(r.mix || []).map(m => `${m.cat} ${m.share}%`).join(' · ') || '뚜렷한 분야 없음'} · 마지막 글 ${r.last}`));
+        const best = el('div', 'rows');
+        best.append(...(r.best || []).map(b => rowLink([el('span', 'pill neutral', `반응 ${fmtN(b.e)}`), ' ', b.text || '(내용 없음)'],
+          `${b.date}${b.views ? ' · 조회 ' + fmtN(b.views) : ''}${r.platform === 'instagram' ? ' · ' + b.fmt : ''}`, b.url, webLink)));
+        c.append(el('p', 'note', '가장 반응 좋았던 글'), best);
+        c.querySelectorAll('p').forEach(x => { x.style.margin = '0'; }); c.style.gap = '6px'; return c;
+      }, 10);
     };
     paint();
   }
@@ -2302,7 +2360,7 @@ a.row:hover .row-main{text-decoration:underline}
     fbInit();
     if (!setupRefresh.done) { setupRefresh(); setupRefresh.done = true; }
     const recs = grouped();
-    drawHome(recs); drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors();
+    drawHome(recs); drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors(); drawAccRank();
     drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawX(); drawFeedback(); drawRewrites(); drawThreadsMine(); drawSlides(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics(); drawTraders(); drawTraderPosts();
     const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/);
     setChannel(ch ? ch[1] : m ? 'instagram' : 'home');

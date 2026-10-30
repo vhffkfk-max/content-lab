@@ -57,6 +57,7 @@ jobs:
           python x_collect.py
           python analyze.py --no-open
           python export_site.py
+          python account_rank.py              # 계정 분야 분류·점수 → 벤치마킹 목록 (PC 크롤러가 더 자주 봄)
 
       - name: PC에 Claude 작업 요청 (기획안·해외 아이디어·쓰레드·X 분석은 내 PC가 Max 구독으로)
         run: python ai_request.py daily
