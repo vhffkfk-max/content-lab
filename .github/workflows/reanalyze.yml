@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       collect_threads:
-        description: "쓰레드·X 다시 반영 (무료)"
+        description: "PC 무료 크롤러 결과(쓰레드·인스타·X) 다시 반영"
         type: boolean
         default: false
 
@@ -33,8 +33,7 @@ jobs:
       - name: 쓰레드 수집 (선택)
         if: ${{ inputs.collect_threads }}
         run: |
-          python free_import.py   # Apify 끔 — 쓰레드는 내 PC 무료 크롤러 결과
-          python x_collect.py
+          python free_import.py   # Apify 끔 — 쓰레드·인스타·X 모두 내 PC 무료 크롤러 결과
       - name: 분석
         run: |
           python analyze.py --no-open
