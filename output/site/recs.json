@@ -8,38 +8,38 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "짧은 한 줄",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.84,
+  "kr_avg": 2.96,
   "kr_n": 24,
-  "foreign_avg": 2.47,
-  "foreign_n": 14
+  "foreign_avg": 2.23,
+  "foreign_n": 18
  },
  {
   "rank": 2,
   "topic": "AI·반도체",
   "kind": "국내 검증 주제",
   "confidence": "높음",
-  "title_idea": "숫자 하나로 보는 AI·반도체",
+  "title_idea": "\"AI·반도체, 이것만 알면 돼요\"",
   "format": "캐러셀(카드뉴스)",
-  "hook": "숫자 강조형",
+  "hook": "인용형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.51,
-  "kr_n": 148,
-  "foreign_avg": 0.92,
-  "foreign_n": 44
+  "kr_avg": 1.54,
+  "kr_n": 155,
+  "foreign_avg": 0.95,
+  "foreign_n": 74
  },
  {
   "rank": 3,
   "topic": "국내 대형주",
-  "kind": "국내·해외 모두 강세",
+  "kind": "국내 검증 주제",
   "confidence": "높음",
   "title_idea": "숫자 하나로 보는 국내 대형주",
   "format": "캐러셀(카드뉴스)",
   "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.7,
-  "kr_n": 100,
-  "foreign_avg": 1.45,
-  "foreign_n": 3
+  "kr_avg": 1.75,
+  "kr_n": 101,
+  "foreign_avg": 0.96,
+  "foreign_n": 12
  },
  {
   "rank": 4,
@@ -50,13 +50,27 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.31,
+  "kr_avg": 1.34,
   "kr_n": 10,
-  "foreign_avg": 1.24,
-  "foreign_n": 109
+  "foreign_avg": 1.32,
+  "foreign_n": 111
  },
  {
   "rank": 5,
+  "topic": "빅테크",
+  "kind": "국내·해외 모두 강세",
+  "confidence": "높음",
+  "title_idea": "숫자 하나로 보는 빅테크",
+  "format": "릴스",
+  "hook": "숫자 강조형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 2.07,
+  "kr_n": 20,
+  "foreign_avg": 2.28,
+  "foreign_n": 8
+ },
+ {
+  "rank": 6,
   "topic": "금리·연준",
   "kind": "국내 검증 주제",
   "confidence": "높음",
@@ -64,41 +78,13 @@
   "format": "릴스",
   "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.94,
-  "kr_n": 21,
-  "foreign_avg": 0.93,
-  "foreign_n": 11
- },
- {
-  "rank": 6,
-  "topic": "빅테크",
-  "kind": "국내·해외 모두 강세",
-  "confidence": "높음",
-  "title_idea": "숫자 하나로 보는 빅테크",
-  "format": "단일 이미지",
-  "hook": "숫자 강조형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 2.04,
-  "kr_n": 19,
-  "foreign_avg": 1.36,
-  "foreign_n": 5
+  "kr_avg": 2.0,
+  "kr_n": 20,
+  "foreign_avg": 0.86,
+  "foreign_n": 15
  },
  {
   "rank": 7,
-  "topic": "초보·투자마인드",
-  "kind": "국내·해외 모두 강세",
-  "confidence": "높음",
-  "title_idea": "초보·투자마인드, 한 줄 정리",
-  "format": "릴스",
-  "hook": "짧은 한 줄",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 1.27,
-  "kr_n": 52,
-  "foreign_avg": 2.66,
-  "foreign_n": 12
- },
- {
-  "rank": 8,
   "topic": "급락·변동성",
   "kind": "국내 검증 주제",
   "confidence": "높음",
@@ -106,9 +92,23 @@
   "format": "릴스",
   "hook": "질문형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.74,
+  "kr_avg": 1.83,
   "kr_n": 30,
-  "foreign_avg": 0.79,
-  "foreign_n": 8
+  "foreign_avg": 0.76,
+  "foreign_n": 7
+ },
+ {
+  "rank": 8,
+  "topic": "초보·투자마인드",
+  "kind": "국내·해외 모두 강세",
+  "confidence": "높음",
+  "title_idea": "초보·투자마인드, 한 줄 정리",
+  "format": "릴스",
+  "hook": "짧은 한 줄",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 1.28,
+  "kr_n": 51,
+  "foreign_avg": 2.53,
+  "foreign_n": 13
  }
 ]

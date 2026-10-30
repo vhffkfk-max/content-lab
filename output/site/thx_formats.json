@@ -2,64 +2,82 @@
  {
   "dim": "길이",
   "key": "100자 미만",
-  "n": 364,
-  "spread": 0.59,
+  "n": 419,
+  "spread": 0.52,
   "rate": 1.6,
-  "vs": 2.1,
+  "vs": 1.9,
   "small": false
  },
  {
   "dim": "길이",
   "key": "100~300자",
-  "n": 840,
-  "spread": 0.31,
-  "rate": 1.9,
-  "vs": 1.09,
+  "n": 890,
+  "spread": 0.29,
+  "rate": 2.0,
+  "vs": 1.07,
   "small": false
  },
  {
   "dim": "길이",
   "key": "300~500자",
-  "n": 534,
+  "n": 543,
   "spread": 0.15,
-  "rate": 2.3,
-  "vs": 0.55,
-  "small": false
- },
- {
-  "dim": "미디어",
-  "key": "이미지·영상",
-  "n": 741,
-  "spread": 0.28,
-  "rate": 1.8,
-  "vs": 0.99,
+  "rate": 2.1,
+  "vs": 0.56,
   "small": false
  },
  {
   "dim": "미디어",
   "key": "글만",
-  "n": 1001,
+  "n": 1148,
   "spread": 0.28,
   "rate": 2.0,
-  "vs": 1.0,
+  "vs": 1.01,
+  "small": false
+ },
+ {
+  "dim": "미디어",
+  "key": "이미지·영상",
+  "n": 708,
+  "spread": 0.27,
+  "rate": 1.8,
+  "vs": 0.99,
   "small": false
  },
  {
   "dim": "첫 줄",
+  "key": "반전형",
+  "n": 10,
+  "spread": 0.75,
+  "rate": 1.2,
+  "vs": 2.73,
+  "small": true
+ },
+ {
+  "dim": "첫 줄",
   "key": "속보형",
-  "n": 15,
-  "spread": 0.38,
+  "n": 17,
+  "spread": 0.59,
   "rate": 1.8,
-  "vs": 1.34,
+  "vs": 2.13,
   "small": true
  },
  {
   "dim": "첫 줄",
   "key": "평서형",
-  "n": 1122,
-  "spread": 0.33,
-  "rate": 1.9,
-  "vs": 1.18,
+  "n": 1224,
+  "spread": 0.31,
+  "rate": 2.0,
+  "vs": 1.13,
+  "small": false
+ },
+ {
+  "dim": "첫 줄",
+  "key": "숫자형",
+  "n": 312,
+  "spread": 0.25,
+  "rate": 1.8,
+  "vs": 0.9,
   "small": false
  },
  {
@@ -68,26 +86,8 @@
   "n": 26,
   "spread": 0.25,
   "rate": 2.0,
-  "vs": 0.88,
+  "vs": 0.93,
   "small": true
- },
- {
-  "dim": "첫 줄",
-  "key": "경험형",
-  "n": 54,
-  "spread": 0.24,
-  "rate": 2.8,
-  "vs": 0.84,
-  "small": false
- },
- {
-  "dim": "첫 줄",
-  "key": "숫자형",
-  "n": 307,
-  "spread": 0.23,
-  "rate": 1.8,
-  "vs": 0.83,
-  "small": false
  },
  {
   "dim": "첫 줄",
@@ -95,6 +95,15 @@
   "n": 209,
   "spread": 0.17,
   "rate": 1.7,
+  "vs": 0.63,
+  "small": false
+ },
+ {
+  "dim": "첫 줄",
+  "key": "경험형",
+  "n": 58,
+  "spread": 0.16,
+  "rate": 2.8,
   "vs": 0.6,
   "small": false
  }
