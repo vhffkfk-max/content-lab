@@ -5,14 +5,17 @@
 유료 수집(apify_instagram.py · apify_threads.py)을 대신한다 — 2026-10-29 대표 결정으로 Apify 끔.
   - 인스타: posts(같은 글은 주소로 찾아 숫자만 갱신), accounts·account_snapshots(팔로워)
   - 쓰레드: threads_apify (source '무료크롤러')
+  - X: x_posts (source '무료크롤러', X 전용 계정 로그인 크롤러 x_watch.py)
 릴스 조회수는 공개 '퍼가기' 화면 값이라 예전 Apify 재생수와 셈법이 다를 수 있다.
 """
+import csv
 import json
 import sys
 from datetime import datetime, timezone
 
 from common import ROOT, connect
 from topics import topics_of
+from x_collect import SCHEMA as X_SCHEMA
 
 FREE = ROOT / "data" / "free_crawl.json"
 KIND = {"릴스": ("VIDEO", "REELS"), "카드뉴스": ("CAROUSEL_ALBUM", "FEED"), "사진": ("IMAGE", "FEED")}
@@ -71,8 +74,23 @@ def main():
              p["replies"], p["reposts"], ", ".join(t for t in topics_of(p["text"]) if t != "기타"), at, p["views"],
              "available" if p["views"] is not None else None, p["followers"], at))
         th += 1
+    xs = d.get("x", [])
+    if xs:
+        conn.executescript(X_SCHEMA)
+        with open(ROOT / "x_accounts.csv", encoding="utf-8-sig") as f:
+            groups = {r["username"].strip().lstrip("@").lower(): r["group"] for r in csv.DictReader(f) if (r.get("username") or "").strip()}
+    for p in xs:
+        conn.execute(
+            "INSERT INTO x_posts VALUES (?,'X',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,'무료크롤러',?) ON CONFLICT(id) DO UPDATE SET "
+            "views=COALESCE(excluded.views, views), likes=excluded.likes, reposts=excluded.reposts, replies=excluded.replies, "
+            "quotes=excluded.quotes, bookmarks=excluded.bookmarks, followers=COALESCE(excluded.followers, followers), "
+            "collected_at=excluded.collected_at",
+            (p["id"], p["username"], p["name"], p["followers"], groups.get(p["username"].lower(), "화제"), p["text"],
+             iso(p["created_at"], "%Y-%m-%dT%H:%M:%S+00:00"), p["views"], p["likes"], p["reposts"], p["replies"], p["quotes"],
+             p["bookmarks"], f"https://x.com/{p['username']}/status/{p['id'].split(':', 1)[1]}", p["lang"], p["is_repost"],
+             iso(p["at"], "%Y-%m-%dT%H:%M:%S+00:00")))
     conn.commit()
-    print(f"무료 크롤러 → 인스타 글 {ig}개 · 쓰레드 글 {th}개 · 인스타 계정 팔로워 {len(d.get('ig_accounts', []))}곳"
+    print(f"무료 크롤러 → 인스타 글 {ig}개 · 쓰레드 글 {th}개 · X 글 {len(xs)}개 · 인스타 계정 팔로워 {len(d.get('ig_accounts', []))}곳"
           f" (PC가 {age_h:.1f}시간 전에 올림{' — PC 크롤러가 꺼져 있는지 확인' if age_h > 6 else ''})")
 
 

@@ -13,7 +13,7 @@
   - 글 다시 재기: 어릴수록 자주 (3시간 안 20분 / 12시간 안 45분 / 24시간 안 1.5시간 / 48시간 안 3시간),
     반응이 거의 없는 글은 6시간, 48시간이 지나면 그만
   - 매일 Apify 로 모은 경제 글은 1시간에 한 번 목록만 가져옴
-  - 인스타도 같은 바퀴에서 조금씩 (insta_watch.py)
+  - 인스타도 같은 바퀴에서 조금씩 (insta_watch.py), X는 X 전용 계정 로그인이 있을 때 (x_watch.py)
   → output/site/thx_live.json(+_meta)·igx_live.json(+_meta), 30분마다 깃허브 / 빨리 크는 글은 텔레그램 알림(글당 한 번)
 기록: data/threads_watch.db (PC에만, 저장소에 안 올림)
 """
@@ -34,6 +34,7 @@ import requests
 import account_rank
 import insta_watch
 import logged_browser as lb
+import x_watch
 from common import DEFAULT_DB, OUTPUT_DIR, ROOT, load_env
 from post_reader import _dom, _threads, _walk
 from topics import topics_of
@@ -355,7 +356,9 @@ def free_export(c, now):
             ig.append({"code": code, "url": url, "username": author or acc, "kind": kind, "slides": slides, "text": text or "",
                        "taken_at": taken, "at": s[0], "likes": s[1], "comments": s[2], "views": s[3]})
     accs = [{"username": u, "followers": f} for u, f in c.execute("SELECT username, followers FROM ig_accounts WHERE followers IS NOT NULL")]
-    FREE.write_text(json.dumps({"updated": now, "threads": th, "instagram": ig, "ig_accounts": accs}, ensure_ascii=False),
+    x_watch.init(c)
+    FREE.write_text(json.dumps({"updated": now, "threads": th, "instagram": ig, "ig_accounts": accs, "x": x_watch.export(c, now)},
+                               ensure_ascii=False),
                     encoding="utf-8")
 
 
@@ -390,6 +393,10 @@ def tick(c, no_push=False):
         insta_watch.tick(c)
     except Exception as e:   # 인스타가 실패해도 쓰레드는 계속
         log.info("인스타 바퀴 실패: %r", e)
+    try:
+        x_watch.tick(c)
+    except Exception as e:
+        log.info("X 바퀴 실패: %r", e)
     finally:
         lb.close()   # 한 바퀴 끝나면 로그인 크롬 닫기
     if not no_push:

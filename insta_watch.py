@@ -265,6 +265,9 @@ def next_gap(age_h, lph):
 def measure(c, now):
     if now < kv(c, "ig_pause_until"):
         return 0, 0
+    if lb.ready("instagram"):   # 로그인 땐 계정 화면을 다시 볼 때 숫자도 새로 잼 → 글을 따로 열지 않음 (로그인 없이 열면 빈 화면이 와서 쉬게 됨)
+        c.execute("UPDATE ig_posts SET next_check=NULL WHERE next_check IS NOT NULL")
+        return 0, 0
     due = c.execute("SELECT code, url FROM ig_posts WHERE next_check IS NOT NULL AND next_check <= ? ORDER BY next_check LIMIT ?",
                     (now, IG_POSTS)).fetchall()
     ok = 0

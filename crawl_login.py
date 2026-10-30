@@ -7,7 +7,7 @@
 - 로그인 정보(쿠키)는 이 PC의 data/crawl_chrome/ 에만 남는다. 깃허브에 안 올림(.gitignore).
 - 비밀번호는 창에 직접 입력. 프로그램·채팅에는 적지 않는다.
 - 우리 콘텐츠 계정이 아닌 **크롤링 전용 계정**으로만 로그인할 것 (막혀도 피해 없게).
-- 크롤러가 돌 때는 이 창을 닫아 둘 것 (같은 프로필을 동시에 못 씀).
+- 같은 프로필을 크롬 두 개가 동시에 못 써서, 창을 여는 동안 PC 크롤러(작업 content-lab-threads-watch)를 잠깐 멈췄다가 창을 닫으면 다시 켠다.
 """
 import argparse
 import re
@@ -20,6 +20,22 @@ from publish.render import browser
 PROFILE = ROOT / "data" / "crawl_chrome"
 META = ["https://www.instagram.com/accounts/login/", "https://www.threads.com/login"]
 X = ["https://x.com/i/flow/login"]
+TASK = "content-lab-threads-watch"
+
+
+def ps(cmd):
+    return subprocess.run(["powershell", "-NoProfile", "-Command", cmd], capture_output=True, text=True)
+
+
+def pause_crawler():
+    """크롤러와 그 크롬을 멈춤 → 켜져 있었으면 True."""
+    running = TASK in ps(f"(Get-ScheduledTask -TaskName '{TASK}' -ErrorAction SilentlyContinue | Where-Object State -eq 'Running').TaskName").stdout
+    ps(f"Stop-ScheduledTask -TaskName '{TASK}' -ErrorAction SilentlyContinue; "
+       "Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like '*threads_watch*' -and $_.Name -like 'python*' } | "
+       "ForEach-Object { Stop-Process -Id $_.ProcessId -Force }; Start-Sleep 2; "
+       "Get-CimInstance Win32_Process -Filter \"Name='chrome.exe'\" | Where-Object { $_.CommandLine -like '*crawl_chrome*' } | "
+       "ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }")
+    return running
 
 
 def logged_in():
@@ -46,9 +62,13 @@ def main():
             print(("✅" if v else "❌"), k, "로그인" + ("됨" if v else " 안 됨"))
         return
     PROFILE.mkdir(parents=True, exist_ok=True)
+    was = sys.platform == "win32" and pause_crawler()
     print("크롤링 전용 크롬 창을 열어요. 크롤링 전용 계정으로 로그인한 뒤 창을 닫아 주세요.")
     subprocess.run([browser(), f"--user-data-dir={PROFILE}", "--lang=ko-KR", "--no-first-run",
                     "--no-default-browser-check", *(X if a.x else META)])
+    if was:
+        ps(f"Start-ScheduledTask -TaskName '{TASK}'")
+        print("PC 크롤러를 다시 켰어요.")
     print("창이 닫혔어요. 확인: python crawl_login.py --check")
 
 
