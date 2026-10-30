@@ -12,7 +12,9 @@
   0.25 히트율    = 채널 상위 20% 반응을 낸 글 비율
   0.15 꾸준함    = 주당 글 수 (7개에서 끝)
 글이 5개 미만이면 우연일 수 있어 점수 ×0.85. 등급: S 85↑ / A 70↑ / B 50↑ / C. 글이 3개 미만이면 점수 안 매김.
-S·A 계정 중 분야별 상위 8곳은 무료 크롤러(threads_watch·insta_watch)가 더 자주 찾아본다 (bench 목록).
+순위: 채널 안 순위·상위 몇 %·분야 안 순위, 그리고 점수가 왜 나왔는지(항목별 점수 + 잘하는 점·약한 점) 글로 적음.
+벤치마킹: 채널마다 **상위 10%**(언론 빼고) → 무료 크롤러(threads_watch·insta_watch·x_watch)가 더 자주 찾아본다 (bench 목록).
+아이템 참고: 상위 10% 밖 계정이라도 평소의 3배 넘게 터진 최근 2주 글은 따로 모음 (meta["items"]) — 가끔 예외로 아이디어만 얻기.
 """
 import csv
 import json
@@ -30,7 +32,56 @@ SITE = OUTPUT_DIR / "site"
 OVERRIDE = ROOT / "config" / "account_categories.csv"
 DAYS = 60
 MIN_POSTS = 3
-BENCH_PER_CAT = 8
+BENCH_TOP = 0.10       # 채널 상위 10% = 벤치마킹
+ITEM_DAYS = 14         # 아이템 참고 글은 최근 2주
+ITEM_X = 3             # 그 계정 평소(글당 반응 중앙값)의 몇 배 넘게 터진 글
+ITEM_MAX = 30          # 채널마다
+PARTS = {"size": "반응 크기", "views": "조회수", "rate": "반응률", "hit": "터진 글 비율", "act": "꾸준함"}
+
+
+def fmt(n):
+    return f"{n / 10000:.1f}만".replace(".0만", "만") if n >= 10000 else f"{n:,}"
+
+
+def top_of(p):
+    """백분위 → '상위 n%'."""
+    return f"상위 {max(1, round(100 - p))}%"
+
+
+def reasons(r, n_plat):
+    """점수가 왜 나왔는지 쉬운 말로 — 항목별 점수 + 잘하는 점 + 약한 점."""
+    P = r["parts"]
+    good, weak = [], []
+    if P["size"] >= 80:
+        good.append(f"글 하나당 반응이 커요 (중앙값 {fmt(r['med_e'])}, 채널 {top_of(P['size'])})")
+    elif P["size"] <= 30:
+        weak.append(f"글당 반응이 작은 편 (중앙값 {fmt(r['med_e'])}, 채널 {top_of(P['size'])})")
+    if P["views"] is not None and r["views_med"]:
+        if P["views"] >= 80:
+            good.append(f"조회수가 많이 나와요 (중앙값 {fmt(r['views_med'])}, {top_of(P['views'])})")
+        elif P["views"] <= 30:
+            weak.append(f"조회수가 적은 편 (중앙값 {fmt(r['views_med'])})")
+    if P["rate"] is None:
+        weak.append("팔로워 수를 몰라 반응률은 중간값으로 셈")
+    elif P["rate"] >= 80:
+        small = r["followers"] and r["followers"] < 10000
+        good.append(f"팔로워에 비해 반응이 커요 (반응률 {r['rate']}%, {top_of(P['rate'])}){' — 작은 계정인데 잘 터짐' if small else ''}")
+    elif P["rate"] <= 30:
+        weak.append(f"팔로워에 비해 반응이 적어요 (반응률 {r['rate']}%)")
+    if P["hit"] >= 80 and r["hit"] > 0:
+        good.append(f"글 {r['posts']}개 중 {r['hit']}%가 채널 상위 20% 반응 — 자주 터져요")
+    elif r["hit"] == 0:
+        weak.append("채널 상위 20%에 든 글이 아직 없어요")
+    if r["per_week"] >= 5:
+        good.append(f"주 {r['per_week']}개로 꾸준히 올려요")
+    elif r["per_week"] < 1:
+        weak.append(f"주 {r['per_week']}개로 뜸하게 올려요")
+    if r["posts"] < 5:
+        weak.append(f"최근 글이 {r['posts']}개뿐이라 우연일 수 있어 점수를 15% 깎았어요")
+    why = (good or ["두드러지게 잘하는 항목은 없어요"])[0]
+    return {"summary": f"채널 {r['rank']}위/{n_plat}곳({r['top']}) — {why}" + (f". 다만 {weak[0]}" if weak else ""),
+            "good": good, "weak": weak,
+            "points": " + ".join(f"{PARTS[k]} {round(v)}" for k, v in r["contrib"].items() if v) + f" = {r['score']}점"}
 CATS = {
     "미국주식": ["미국주식", "미장", "미국 주식", "나스닥", "s&p", "다우", "뉴욕증시", "월가", "서학개미", "엔비디아", "테슬라", "애플",
              "마이크로소프트", "구글", "아마존", "팔란티어", "빅테크", "브로드컴", "qqq", "voo", "spy", "schd", "tqqq", "soxl",
@@ -201,7 +252,7 @@ def build(conn, now=None):
             "last": max(p["dt"] for p in posts).astimezone(KST).strftime("%m/%d"),
             "best": [{"url": p["url"], "text": re.sub(r"\s+", " ", p["text"])[:90], "e": p["e"], "views": p["views"], "fmt": p["fmt"],
                       "date": p["dt"].astimezone(KST).strftime("%m/%d")} for p in top],
-            "_es": es,
+            "_es": es, "_posts": posts,
         })
     # 채널 안에서 백분위로 점수
     for plat in {r["platform"] for r in rows}:
@@ -215,24 +266,53 @@ def build(conn, now=None):
         views = pct_rank([r["views_med"] for r in rs if r["views_med"]])
         has_views = sum(bool(r["views_med"]) for r in rs) >= len(rs) / 2    # 쓰레드처럼 조회수가 거의 다 보이면 크기에 조회도 반영
         for r in rs:
-            big = (0.25 * size(r["med_e"]) + 0.15 * (views(r["views_med"]) if r["views_med"] else 50)) if has_views else 0.40 * size(r["med_e"])
-            s = (big + 0.20 * (rate(r["rate"]) if r["rate"] is not None else 50) + 0.25 * hit(r["hit"])
-                 + 0.15 * act(min(r["per_week"], 7)))
-            r["score"] = round(s * (1 if r["posts"] >= 5 else 0.85))
+            P = {"size": size(r["med_e"]), "views": views(r["views_med"]) if r["views_med"] else None,
+                 "rate": rate(r["rate"]) if r["rate"] is not None else None, "hit": hit(r["hit"]), "act": act(min(r["per_week"], 7))}
+            w = {"size": 0.25 if has_views else 0.40, "views": 0.15 if has_views else 0, "rate": 0.20, "hit": 0.25, "act": 0.15}
+            k = 1 if r["posts"] >= 5 else 0.85
+            r["parts"] = {n: round(v) if v is not None else None for n, v in P.items()}
+            r["contrib"] = {n: round(w[n] * (P[n] if P[n] is not None else 50) * k, 1) for n in w}
+            r["score"] = round(sum(r["contrib"].values()))
             r["grade"] = "S" if r["score"] >= 85 else "A" if r["score"] >= 70 else "B" if r["score"] >= 50 else "C"
+    rows.sort(key=lambda r: r["score"], reverse=True)
+    # 채널 안 순위·상위 %·분야 안 순위 + 이유. 채널 상위 10%(언론 빼고) = 벤치마킹
+    bench, items = defaultdict(list), defaultdict(list)
+    recent = now - timedelta(days=ITEM_DAYS)
+    for plat in {r["platform"] for r in rows}:
+        rs = [r for r in rows if r["platform"] == plat]
+        cut = max(1, round(len(rs) * BENCH_TOP))
+        all_e = sorted(e for r in rs for e in r["_es"])
+        big_e = all_e[int(len(all_e) * 0.9)] if all_e else 0     # 아이템 참고 글은 채널 전체에서도 상위 10% 반응
+        cat_n = Counter()
+        for i, r in enumerate(rs, 1):
+            cat_n[r["category"]] += 1
+            r["rank"], r["top"], r["cat_rank"] = i, f"상위 {max(1, round(i / len(rs) * 100))}%", cat_n[r["category"]]
+            r["bench"] = i <= cut and not r["media"]
+            if r["bench"]:
+                bench[plat].append(r["username"])
+            r["why"] = reasons(r, len(rs))
+        for r in rs:
+            r["cat_of"] = cat_n[r["category"]]
+            if r["bench"]:
+                continue
+            # 상위 10% 밖이지만 평소보다 크게 터진 최근 글 → 가끔 아이템만 얻어 오기
+            usual = max(st.median(r["_es"]), 1)
+            for p in r["_posts"]:
+                econ = cats_of(p["text"]) or topics_of(p["text"]) not in ([], ["기타"])
+                if p["dt"] >= recent and p["e"] >= ITEM_X * usual and p["e"] >= max(big_e, 20) and econ:
+                    items[plat].append({
+                        "username": r["username"], "rank": r["rank"], "top": r["top"], "category": r["category"], "url": p["url"],
+                        "text": re.sub(r"\s+", " ", p["text"])[:140], "e": p["e"], "views": p["views"], "x": round(p["e"] / usual, 1),
+                        "fmt": p["fmt"], "date": p["dt"].astimezone(KST).strftime("%m/%d"),
+                        "why": f"채널 {r['rank']}위({r['top']}) 계정이 평소 글당 반응 {fmt(round(usual))}보다 {round(p['e'] / usual, 1)}배 터뜨린 글"})
+        items[plat] = sorted(items[plat], key=lambda x: -x["e"])[:ITEM_MAX]
     for r in rows:
         r.pop("_es")
-    rows.sort(key=lambda r: r["score"], reverse=True)
-    # 분야별 벤치마킹 대상 (한국 계정, 언론 빼고, S·A 중 상위)
-    bench = defaultdict(list)
-    for r in rows:
-        key = (r["platform"], r["category"])
-        if r["grade"] in ("S", "A") and r["region"] == "한국" and not r["media"] and len(bench[key]) < BENCH_PER_CAT:
-            bench[key].append(r["username"])
-            r["bench"] = True
-    meta = {"updated": now.astimezone(KST).strftime("%Y-%m-%d %H:%M"), "days": DAYS, "cats": CAT_NAMES,
+        r.pop("_posts")
+    meta = {"updated": now.astimezone(KST).strftime("%Y-%m-%d %H:%M"), "days": DAYS, "cats": CAT_NAMES, "bench_top": round(BENCH_TOP * 100),
             "counts": {p: dict(Counter(r["category"] for r in rows if r["platform"] == p)) for p in ("instagram", "threads", "x", "truth")},
-            "bench": {p: sorted({u for (pl, _), us in bench.items() if pl == p for u in us}) for p in ("instagram", "threads", "x", "truth")}}
+            "bench": {p: sorted(bench.get(p, [])) for p in ("instagram", "threads", "x", "truth")},
+            "items": {p: items.get(p, []) for p in ("instagram", "threads", "x", "truth")}}
     return rows, meta
 
 
@@ -252,7 +332,8 @@ def main():
     (SITE / "acc_rank_meta.json").write_text(json.dumps([meta], ensure_ascii=False, indent=1), encoding="utf-8")
     for p, c in meta["counts"].items():
         print(f"  {p}: {sum(c.values())}곳 {c}")
-    print(f"✅ 계정 순위: {len(rows)}곳, 벤치마킹 대상 {sum(len(v) for v in meta['bench'].values())}곳")
+    print(f"✅ 계정 순위: {len(rows)}곳, 벤치마킹(채널 상위 {meta['bench_top']}%) {sum(len(v) for v in meta['bench'].values())}곳, "
+          f"아이템 참고 글 {sum(len(v) for v in meta['items'].values())}개")
 
 
 if __name__ == "__main__":
