@@ -1,4 +1,4 @@
-"""핫코노미 카드뉴스 디자인 폼 11개 (벤치마크 45개 캐러셀 분석, 2026-10-28).
+"""핫코노미 카드뉴스 디자인 폼 12개 (벤치마크 45개 캐러셀 분석, 2026-10-28 + 배경 사진형 2026-11-01).
 
     from publish.forms import make, pick_form
     form = pick_form("속보", recent=["list", "bars"])     # 소재 종류 → 폼 (최근 3개에 쓴 폼은 피함)
@@ -30,14 +30,14 @@ KINDS = {
     "숫자": ["bignum", "bars", "breaking"], "실적": ["bignum", "bars", "photo"], "지표": ["bignum", "paper", "bars"],
     "순위": ["bars", "list", "bignum"], "비교": ["bars", "list", "editorial"],
     "정리": ["list", "hot", "paper"], "절약": ["list", "editorial", "steps"], "N가지": ["list", "steps", "hot"],
-    "이슈": ["photo", "breaking", "editorial"], "기업": ["photo", "bignum", "editorial"], "인물": ["photo", "quote", "story"],
+    "이슈": ["scene", "photo", "breaking"], "기업": ["scene", "photo", "bignum"], "인물": ["scene", "photo", "quote"],
     "썰": ["story", "editorial", "quote"], "입문": ["story", "hot", "steps"], "기초": ["hot", "story", "list"],
-    "트렌드": ["editorial", "photo", "bars"], "생활": ["editorial", "list", "steps"],
+    "트렌드": ["scene", "editorial", "photo"], "생활": ["scene", "editorial", "list"],
     "브리핑": ["paper", "breaking", "list"], "방법": ["steps", "list", "hot"], "격언": ["quote", "editorial", "story"],
 }
 FORM_NAMES = {"breaking": "속보형", "bignum": "숫자 한 방형", "bars": "막대 비교형", "list": "TOP N 리스트형",
               "photo": "사진+한 줄 자막형", "story": "캐릭터 썰형", "editorial": "밝은 에디토리얼형", "paper": "아침 경제신문형",
-              "steps": "단계별 따라하기형", "quote": "다크 인사이트형", "hot": "핫코노미 기본형"}
+              "steps": "단계별 따라하기형", "quote": "다크 인사이트형", "hot": "핫코노미 기본형", "scene": "배경 사진형"}
 
 
 def pick_form(kind, recent=()):
@@ -114,6 +114,13 @@ CSS = """
 .point{position:absolute;left:72px;right:72px;background:#2a0e10;border:3px solid var(--ac);border-radius:28px;padding:30px 40px}
 .point .k{font-size:30px;font-weight:800;color:#ff7a1a;margin-bottom:10px}
 .point .v{font-size:46px;font-weight:800;line-height:1.35}
+/* 배경 사진형: 장마다 글 내용에 맞는 사진을 전체 배경으로 */
+.bgph{position:absolute;left:0;top:0;width:1080px;height:1350px;object-fit:cover}
+.nophoto{position:absolute;inset:0;background:linear-gradient(160deg,#1c2a44,#0b0b0d)}
+.shade{position:absolute;inset:0;background:linear-gradient(180deg,#000000d0 0,#000000b0 26%,#00000050 42%,#00000070 58%,#000000e6 78%,#000000f0 100%)}
+.shade.cv{background:linear-gradient(180deg,#00000040 0,#00000000 35%,#000000b0 62%,#000000f0 100%)}
+.scene-t{text-shadow:0 2px 14px #000c}
+.credit{position:absolute;left:40px;bottom:14px;font-size:18px;color:#ffffffa0;max-width:1000px;white-space:nowrap;overflow:hidden}
 /* 마지막 */
 .btns{position:absolute;left:90px;right:90px;display:flex;gap:30px}
 .btn{flex:1;height:112px;border-radius:60px;display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:800}
@@ -239,6 +246,19 @@ def f_photo(c, s, n, t):
             f'<div class="pad center" style="top:{1020 if s is None else 1050}px;font-size:{size}px;font-weight:900;line-height:1.22;letter-spacing:-1px">{md(d.get("title") or d.get("text", ""))}</div>')
 
 
+def f_scene(c, s, n, t):
+    """표지 c: tag, title, bg. 본문 s: title, text, bg. 차트 칸 없음. 사진이 주인공이라 글은 짧게: title 20자 안쪽, text 60자 안쪽 한 메시지, 끝 문장은 다음 장이 궁금하게.
+    bg = 그 장 내용과 맞는 사진 영어 검색어 2~4단어, 글에 나온 고유한 제품, 회사, 장소 이름으로 (예: 'Tesla Model 3', 'Riga old town', 'silicon wafer'). 'city at night', 'car steering wheel' 같은 일반어는 엉뚱한 사진이 나오니 쓰지 않는다. 코드가 위키미디어에서 실제 사진을 찾아 넣는다. 인물 이름은 그 사람 이야기일 때만, 글자가 많을 만한 것(포스터, 도표, 발표 자료)은 피한다."""
+    d = c if s is None else s
+    bg = f'<img class="bgph" src="{html.escape(d["photo"])}">' if d.get("photo") else '<div class="nophoto"></div>'
+    credit = f'<div class="credit">{html.escape(d["credit"])}</div>' if d.get("credit") else ""
+    if s is None:
+        tag = f'<div class="pad" style="top:90px"><span class="chip">{html.escape(c.get("tag", ""))}</span></div>' if c.get("tag") else ""
+        return f'{bg}<div class="shade cv"></div>{tag}<div class="pad t-xl scene-t" style="bottom:190px;font-size:92px">{md(c["title"])}</div>{credit}'
+    return (f'{bg}<div class="shade"></div><div class="pad t-m scene-t" style="top:120px;font-size:68px">{md(s["title"])}</div>'
+            f'<div class="pad b-l scene-t" style="bottom:190px;font-weight:600">{md(s.get("text", ""))}</div>{credit}')
+
+
 def f_story(c, s, n, t):
     """표지 c: label, title. 본문 s: narration(상자), say(말풍선)."""
     m = f'<img class="mascot" src="{LOGO}" style="width:460px;height:460px;left:310px;top:760px">' if LOGO else ""
@@ -321,7 +341,7 @@ def f_hot(c, s, n, t):
 
 FORMS = {"breaking": (f_breaking, "brk"), "bignum": (f_bignum, ""), "bars": (f_bars, "navy"), "list": (f_list, ""),
          "photo": (f_photo, ""), "story": (f_story, "white"), "editorial": (f_editorial, "light"), "paper": (f_paper, "paper"),
-         "steps": (f_steps, "white"), "quote": (f_quote, ""), "hot": (f_hot, "")}
+         "steps": (f_steps, "white"), "quote": (f_quote, ""), "hot": (f_hot, ""), "scene": (f_scene, "")}
 
 
 def end_slide(e, n, theme):
@@ -422,6 +442,9 @@ DEMO = {
     "quote": {"cover": {"label": "투자 인사이트", "quote": "남들이 욕심낼 때\n두려워하고,\n**남들이 두려워할 때\n욕심내라**", "by": "— 워런 버핏"},
               "slides": [{"quote": "시장이 무너질 때\n**현금**은 가장 강한 무기가 된다."}],
               "end": {"title": "오늘의 질문", "checks": ["지금 내 현금 비중은?", "공포 때 살 목록은?", "분할 매수 계획은?"], "keyword": "버핏"}},
+    "scene": {"cover": {"tag": "테슬라", "title": "유럽에서 FSD 승인\n**10번째** 국가 나왔다"},
+              "slides": [{"title": "발트 3국이\n**모두** 들어갔다", "text": "라트비아가 승인하면서 발트 3국이 모두 포함됐다는 소식입니다. (예시)"}],
+              "end": {"title": "정리하면", "checks": ["사진 없으면 그라데이션", "글은 짧게", "장마다 다른 사진"], "keyword": "테슬라"}},
     "hot": {"cover": {"tag": "경제 기초", "title": "금리가 내리면\n내 돈은\n**어떻게 될까?**", "sub": "예금·대출·주식, 딱 3가지만"},
             "slides": [{"title": "예금·적금", "text": "새로 드는 예금 이자는\n낮아져요.", "point": "이미 든 고정금리 예금은 그대로!"},
                        {"title": "대출", "text": "변동금리 대출은\n이자 부담이 줄어요.", "point": "갈아타기 전 중도상환수수료 확인"}],

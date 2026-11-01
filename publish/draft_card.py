@@ -139,6 +139,7 @@ SYSTEM = """당신은 한국 경제 인스타그램 @hotconomy(핫코노미)의 
 
 폼 규칙:
 - [쓸 수 있는 폼] 중 소재에 가장 맞는 것 하나를 고르고, 그 폼의 필드 설명대로 cover/slides 를 채웁니다.
+- 배경 사진형(scene)은 차트 대신 장마다 bg(영어 사진 검색어)를 넣습니다. 글 내용과 바로 연결되는 사물, 장소로 씁니다.
 - 차트·이미지 자리(chart, image, line)에는 {"ticker": "시세 코드"} 만 넣습니다. 코드가 실제 시세로 그립니다. 사진 경로는 쓰지 않습니다.
 - 막대(bars)는 [시세]의 등락률로만 만듭니다: {"label","value"(숫자),"text"(표시값),"hi"(강조 여부)}.
 - end.keyword 는 댓글로 받을 짧은 단어 하나(예: '환율').
@@ -211,6 +212,24 @@ def fill_charts(post, mk):
         t = next(iter(used), None) or next(iter(mk))
         post["cover"]["chart"], post["cover"]["price"] = {"candles": mk[t]["ohlc"]}, f"{mk[t]['d1']:+.2f}%"
     return sorted(used)
+
+
+def fill_photos(post):
+    """배경 사진형: 장마다 bg 검색어로 실제 사진을 찾아 넣는다. 못 찾으면 그 장은 그라데이션 배경. → 출처 목록."""
+    if post["form"] != "scene":
+        return []
+    from publish.photos import find
+    used, credits = set(), []
+    for d in [post["cover"], *post.get("slides", [])]:
+        q = d.pop("bg", "")
+        p = find(q, used) if q else None
+        if p:
+            used.add(p["url"])
+            d["photo"], d["credit"] = p["uri"], p["credit"]
+            credits.append(f"{p['credit']} {p['page']}".strip())
+        else:
+            print("⚠️ 사진 못 찾음 (그라데이션 배경):", q)
+    return credits
 
 
 def tidy(s):
@@ -292,6 +311,7 @@ def main():
         post["form"] = forms.pick_form(post.get("kind", ""), recent)
     post["slides"] = post.get("slides", [])[:3 if a.short else MAX_SLIDES - 2]
     tickers = fill_charts(post, mk)
+    post["photo_credits"] = fill_photos(post)
     warns = check(post)
     post["hashtags"] = hashtags(post.get("hashtags", []))
     did = f"{now:%Y%m%d-%H%M}-{post['form']}"
@@ -310,7 +330,7 @@ def main():
     queue["items"].append({"id": did, "account": "hotconomy", "type": "carousel", "topic": topic, "form": post["form"],
                            "title": post.get("title", topic), "caption": caption, "youtube": post.get("youtube", {}),
                            "files": [str(f.relative_to(ROOT)).replace("\\", "/") for f in files], "tickers": tickers,
-                           "sources": post.get("sources", []), "warnings": warns, "status": "drafted", "risk": None,
+                           "sources": post.get("sources", []), "photo_credits": post.get("photo_credits", []), "warnings": warns, "status": "drafted", "risk": None,
                            "published": {}, "canva": canva, "created_at": now.isoformat(timespec="seconds"),
                            "series": "short" if a.short else "deep", "auto": a.auto, "hot_title": hot["title"] if hot else None})
     QUEUE.parent.mkdir(parents=True, exist_ok=True)
