@@ -235,10 +235,16 @@ a.row:hover .row-main{text-decoration:underline}
 .job-th-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
 .job-th-bar>span{font-size:13px;color:var(--muted);margin-right:4px}
 .job-th-st p{margin:0}
-.job-th-posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
+.job-th-posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:10px}
 .job-th-post{display:grid;gap:8px;align-content:start;border:1px solid var(--border);border-radius:var(--radius-control);padding:12px}
 .job-th-post .box{font-size:14px;line-height:1.55;margin:0}
 .job-th-post .sub{margin:0;font-size:12px}
+.job-th-part{display:grid;gap:6px}
+.job-th-part .btn{justify-self:start}
+.job-th-post details{display:grid;gap:8px}
+.job-th-post details[open]>summary{margin-bottom:8px}
+.job-th-post details>.job-th-part+.job-th-part{margin-top:8px}
+.job-th-post summary{cursor:pointer;font-size:13px;color:var(--muted)}
 .uc-strip{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:18px 32px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-card);padding:22px 24px}
 .uc-head p{margin:0}
 .uc-label{font-size:13px;color:var(--muted)}
@@ -1151,7 +1157,7 @@ a.row:hover .row-main{text-decoration:underline}
 
   // 쓰레드 콘텐츠 만들기 → 깃허브 thread-post.yml 이 내 PC에 요청 → PC(Max 구독, thread_post.py)가 황소개미 글을 써서 올림
   // → 결과 파일(thread_posts.json)을 15초마다 읽어 이 칸에 바로 띄움. 창을 닫아도 요청은 이 브라우저에 남아 다시 열면 이어서 기다림.
-  const TH_STYLES = { A: '짧은 줄 속보', B: '해석·의견', C: '질문·참여' }, TH_WAIT_MIN = 20, thLive = [];
+  const TH_STYLES = { A: '뜬글 지침', B: '불스토리', C: '바레이션 C' }, TH_WAIT_MIN = 20, thLive = [];
   const thPending = { get: () => { try { return JSON.parse(store.get('th_pending') || '[]').filter(q => Date.now() - q.t < TH_WAIT_MIN * 60000); } catch (e) { return []; } },
     set: list => store.set('th_pending', JSON.stringify(list)) };
   async function thFetch() {
@@ -1168,7 +1174,14 @@ a.row:hover .row-main{text-decoration:underline}
         const c = el('div', 'job-th-post'), chips = el('div', 'chips');
         chips.append(el('span', 'pill accent', `${x.style} · ${x.label || TH_STYLES[x.style] || ''}`), el('span', 'pill neutral', `${x.time} 만듦`));
         if (usedTitles.has(`${x.pick} (${x.style})`)) chips.append(el('span', 'pill positive', '올렸어요'));
-        c.append(chips, el('div', 'box', x.text), copyBtn('복사', x.text, 'btn small primary'));
+        const parts = x.parts && x.parts.length ? x.parts : [x.text];   // 칸마다 복사 + 전체 복사 (첫 칸만 보이고 나머지는 펼침)
+        const part = (t, i) => { const w = el('div', 'job-th-part'); w.append(el('div', 'box', t), copyBtn(parts.length > 1 ? `${i + 1}칸 복사` : '복사', t)); return w; };
+        c.append(chips, copyBtn(parts.length > 1 ? `전체 복사 · ${parts.length}칸` : '복사', x.text, 'btn small primary'), part(parts[0], 0));
+        if (parts.length > 1) {
+          const more = el('details'); more.open = thLive.includes(x);
+          more.append(el('summary', null, `나머지 ${parts.length - 1}칸 보기`), ...parts.slice(1).map((t, i) => part(t, i + 1))); c.append(more);
+        }
+        if (x.thin) c.append(el('p', 'warn', '기사 본문을 못 읽어서 제목과 요약만으로 썼어요. 숫자가 적으니 기사를 보고 보강해서 올리세요.'));
         if (x.check && x.check.length) c.append(el('p', 'sub', `올리기 전 확인 · ${x.check.join(' · ')}`));
         return c;
       }));
@@ -1190,7 +1203,7 @@ a.row:hover .row-main{text-decoration:underline}
             busy(false); show(`다 됐어요 — ${got.map(x => x.style).join('·')} 글을 복사해서 쓰레드에 붙여 넣으세요.`); draw(); return;
           }
         } catch (e) { /* 인터넷이 잠깐 끊겨도 다음 차례에 다시 */ }
-        show(`${q.styles.split('').join('·')} 글을 PC가 쓰는 중이에요 · ${mins}분째. PC가 5분마다 요청을 확인해서 보통 5분 안쪽에 여기 떠요. 창을 닫아도 계속 만들어져요.`);
+        show(`${q.styles.split('').join('·')} 글을 PC가 쓰는 중이에요 · ${mins}분째. PC가 5분마다 요청을 확인하고 글 쓰는 데 1~2분 걸려서, 보통 7분 안쪽에 여기 떠요. 창을 닫아도 계속 만들어져요.`);
         setTimeout(tick, 15000);
       };
       tick();

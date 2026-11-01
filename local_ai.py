@@ -112,7 +112,7 @@ def run_cycle():
     latest = {r["job"]: r for r in todo}   # 같은 일은 마지막 요청 하나만 (draft 는 주제별로 따로)
     did = []
 
-    posts = [r for r in todo if r["job"] == "thpost"][-6:]   # 사이트 '쓰레드 콘텐츠 만들기' 버튼 — 30초쯤이라 맨 먼저 (thread_post.py)
+    posts = [r for r in todo if r["job"] == "thpost"][-6:]   # 사이트 '쓰레드 콘텐츠 만들기' 버튼 — 1~2분이라 맨 먼저 (thread_post.py)
     for r in posts:
         a = r["args"]
         py("thread_post.py", "--idx", a.get("idx", "0"), "--styles", a.get("styles", "ABC"), "--slot", a.get("slot", ""),
