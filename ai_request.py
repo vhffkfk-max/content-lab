@@ -19,7 +19,7 @@ from datetime import datetime, timedelta, timezone
 from common import DATA_DIR
 
 PATH = DATA_DIR / "ai_requests.json"
-JOBS = ("daily", "social", "tg", "trd", "draft", "chart", "thpost", "publish")
+JOBS = ("daily", "social", "tg", "trd", "draft", "chart", "thpost", "publish", "refresh_canva")
 
 
 def load():

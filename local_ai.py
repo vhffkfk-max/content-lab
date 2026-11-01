@@ -165,6 +165,10 @@ def run_cycle():
     if gp.exists() and gp.stat().st_mtime != before:
         did.append("마케팅 코치")
 
+    if any(r["job"] == "refresh_canva" for r in todo):   # 배치를 고친 뒤 안 고친 초안의 캔바 사본을 새로 (publish/refresh_canva.py)
+        py("-m", "publish.refresh_canva", timeout=30 * 60)
+        did.append("캔바 사본 새 배치로")
+
     for r in [r for r in todo if r["job"] == "publish"]:   # 대표가 고른 초안 발행 (PC가 꺼져 있다 뒤늦게 올라가지 않게 6시간 지난 요청은 버림)
         if datetime.now(KST) - datetime.fromisoformat(r["at"]) > timedelta(hours=6):
             log("⏭ 오래된 발행 요청 건너뜀:", r["args"].get("id", ""))
