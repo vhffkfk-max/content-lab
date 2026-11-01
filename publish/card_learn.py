@@ -248,6 +248,13 @@ def learn_edits(queue, send=True):
             d = cv._call("GET", f"designs/{c['id']}")["design"]
         except CanvaError as e:
             print("⚠️", item["id"], e)
+            if "revoked" in str(e) or "invalid_grant" in str(e):   # 캔바 로그인 자체가 취소됨 → 대표가 다시 허용해야 함 (하루 한 번만 알림)
+                day = now().strftime("%Y-%m-%d")
+                if send and st.get("relogin_alert") != day:
+                    st["relogin_alert"] = day
+                    save(STYLE, st)
+                    notify.send("⚠️ 캔바 연결이 끊겼어요. PC에서 content-lab-ai 폴더의 'python -m publish.canva_auth' 를 실행해 다시 허용해 주세요.")
+                break
             continue
         upd = d.get("updated_at") or 0
         if upd - (d.get("created_at") or upd) < 120 or upd <= c.get("learned_at", 0) or time.time() - upd < SETTLE:
