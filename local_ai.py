@@ -6,7 +6,7 @@
 매번 하는 일
   1) 저장소 최신으로 맞춤 (작업 폴더라 로컬 변경은 버림)
   2) 깃허브가 남긴 요청(data/ai_requests.json) 처리: daily·social·tg·trd·draft
-  3) 정해진 시각 일: 텔레그램 문구(07·12·18시), 트레이더스 글(07·18시), 시황 변환, 트레이더스 피드백
+  3) 정해진 시각 일: 텔레그램 문구(07·12·18시), 트레이더스 글(07·18시), 카드뉴스 초안(07시), 시황 변환, 트레이더스 피드백
   4) 결과 파일만 커밋·푸시 → 깃허브가 사이트를 다시 배포
 로그: data/local_ai.log
 """
@@ -129,6 +129,9 @@ def run_cycle():
         topic = r["args"].get("topic", "")
         py("-m", "publish.draft_card", *(["--topic", topic] if topic else []))
         did.append(f"카드뉴스 초안 {topic}")
+    if not drafts and slot_once(state, "draft", (7,)):   # 매일 07시 추천 1위로 초안 하나 (2026-11-02 발행 시작) — 캔바 사본·봇 알림까지
+        py("-m", "publish.draft_card")
+        did.append("카드뉴스 초안(매일)")
 
     state["done"] = (state["done"] + [r["id"] for r in todo])[-200:]
     STATE.write_text(json.dumps(state), encoding="utf-8")
