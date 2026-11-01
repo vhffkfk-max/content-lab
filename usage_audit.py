@@ -81,13 +81,17 @@ def recs_from(name, d, day):
             out.append({"day": dd, "src": "코치 첫 줄 카피", "channel": h.get("channel", ""), "title": h.get("text", "")[:80], "text": h.get("text", "")})
         for c in d.get("calendar") or []:
             out.append({"day": dd, "src": "코치 7일 계획", "channel": c.get("channel", ""), "title": c.get("idea", "")[:80], "text": c.get("idea", "")})
+    elif name == "thread_posts":   # 사이트 '쓰레드 콘텐츠 만들기'로 만든 황소개미 글 (thread_post.py)
+        for x in d if isinstance(d, list) else []:
+            out.append({"day": (x.get("at") or day)[:10], "src": "쓰레드 글 만들기", "channel": "쓰레드",
+                        "title": f"{x.get('pick', '')} ({x.get('style', '')})", "text": (x.get("text") or "")[:160]})
     elif name == "thx_top":
         for r in (d if isinstance(d, list) else [])[:5]:
             out.append({"day": day, "src": "따라 할 쓰레드", "channel": "쓰레드", "title": first_line(r.get("text")), "text": (r.get("text") or "")[:160]})
     return out
 
 
-SOURCES = ["hot_now", "recs", "tg_ai", "trd_posts", "growth_plan", "thx_top"]
+SOURCES = ["hot_now", "recs", "tg_ai", "trd_posts", "growth_plan", "thx_top", "thread_posts"]
 
 
 def git(*args):

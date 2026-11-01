@@ -1,0 +1,53 @@
+name: thread-post
+# 쓰레드 콘텐츠 만들기 — 사이트 '지금 쓸 거리' 카드의 A·B·C 버튼. 내 PC(local_ai.py → thread_post.py)가 Max 구독으로 황소개미 글을 쓴다.
+# 여기서는 PC에 요청만 남긴다 (깃허브에서 Claude API 를 부르지 않음 — 요금 방지). 결과는 output/site/thread_posts.json → threads-live.yml 이 사이트 배포.
+on:
+  workflow_dispatch:
+    inputs:
+      idx:
+        description: "지금 쓸 거리 몇 번째 (0·1·2)"
+        required: false
+        default: "0"
+      styles:
+        description: "A·B·C 중 만들 것 (예: A, ABC)"
+        required: false
+        default: "ABC"
+      slot:
+        description: "지금 쓸 거리 시각 (예: 11/01 17:10) — 그 사이 새 거리가 나와도 누른 카드로 씀"
+        required: false
+        default: ""
+      rid:
+        description: "사이트가 결과를 찾을 요청 번호"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ai-request-thread-post
+  cancel-in-progress: false
+
+jobs:
+  request:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: PC에 쓰레드 글 요청
+        env:
+          IDX: ${{ inputs.idx }}
+          STYLES: ${{ inputs.styles }}
+          SLOT: ${{ inputs.slot }}
+          RID: ${{ inputs.rid }}
+        run: |
+          git config user.name "content-lab-bot"
+          git config user.email "content-lab-bot@users.noreply.github.com"
+          python ai_request.py thpost "idx=$IDX" "styles=$STYLES" "slot=$SLOT" "rid=$RID"
+          git add data/ai_requests.json
+          git commit -m "ai: PC에 쓰레드 글 요청" || echo "변경 없음"
+          git pull --rebase -X theirs --autostash || (git rebase --abort; git pull --no-rebase -X ours --no-edit) || true
+          git push

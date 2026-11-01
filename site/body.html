@@ -230,6 +230,15 @@ a.row:hover .row-main{text-decoration:underline}
 .clamp1{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;overflow:hidden;cursor:pointer}
 .job-why{color:var(--muted)!important}
 .job-ch .pill{margin-left:4px}
+/* 쓰레드 콘텐츠 만들기 (2026-11-01): 지금 쓸 거리마다 황소개미 쓰레드 글 A·B·C */
+.job-th{grid-column:1/-1;display:grid;gap:10px;border-top:1px solid var(--border);padding-top:14px}
+.job-th-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.job-th-bar>span{font-size:13px;color:var(--muted);margin-right:4px}
+.job-th-st p{margin:0}
+.job-th-posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
+.job-th-post{display:grid;gap:8px;align-content:start;border:1px solid var(--border);border-radius:var(--radius-control);padding:12px}
+.job-th-post .box{font-size:14px;line-height:1.55;margin:0}
+.job-th-post .sub{margin:0;font-size:12px}
 .uc-strip{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:18px 32px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-card);padding:22px 24px}
 .uc-head p{margin:0}
 .uc-label{font-size:13px;color:var(--muted)}
@@ -1129,6 +1138,77 @@ a.row:hover .row-main{text-decoration:underline}
     return b;
   }
 
+  // 쓰레드 콘텐츠 만들기 → 깃허브 thread-post.yml 이 내 PC에 요청 → PC(Max 구독, thread_post.py)가 황소개미 글을 써서 올림
+  // → 결과 파일(thread_posts.json)을 15초마다 읽어 이 칸에 바로 띄움. 창을 닫아도 요청은 이 브라우저에 남아 다시 열면 이어서 기다림.
+  const TH_STYLES = { A: '짧은 줄 속보', B: '해석·의견', C: '질문·참여' }, TH_WAIT_MIN = 20, thLive = [];
+  const thPending = { get: () => { try { return JSON.parse(store.get('th_pending') || '[]').filter(q => Date.now() - q.t < TH_WAIT_MIN * 60000); } catch (e) { return []; } },
+    set: list => store.set('th_pending', JSON.stringify(list)) };
+  async function thFetch() {
+    const r = await ghApi('contents/output/site/thread_posts.json?ref=main', { headers: { Accept: 'application/vnd.github.raw+json' } });
+    return r.status === 200 ? r.json() : [];
+  }
+  function threadBlock(p, idx, slot, usedTitles) {
+    const wrap = el('div', 'job-th'), bar = el('div', 'job-th-bar'), st = el('div', 'job-th-st'), list = el('div', 'job-th-posts');
+    const mine = x => x.slot === slot && x.idx === idx && x.pick === p.title;
+    const show = (msg, kind) => st.replaceChildren(...(msg ? [el('p', kind === 'err' ? 'warn' : 'sub', msg)] : []));
+    const draw = () => {
+      const seen = new Set(), made = [...thLive, ...(rows('thread_posts') || [])].filter(mine).filter(x => !seen.has(x.style) && seen.add(x.style));
+      list.replaceChildren(...made.sort((a, b) => a.style.localeCompare(b.style)).map(x => {
+        const c = el('div', 'job-th-post'), chips = el('div', 'chips');
+        chips.append(el('span', 'pill accent', `${x.style} · ${x.label || TH_STYLES[x.style] || ''}`), el('span', 'pill neutral', `${x.time} 만듦`));
+        if (usedTitles.has(`${x.pick} (${x.style})`)) chips.append(el('span', 'pill positive', '올렸어요'));
+        c.append(chips, el('div', 'box', x.text), copyBtn('복사', x.text, 'btn small primary'));
+        if (x.check && x.check.length) c.append(el('p', 'sub', `올리기 전 확인 · ${x.check.join(' · ')}`));
+        return c;
+      }));
+    };
+    const buttons = [];
+    const busy = on => buttons.forEach(b => { b.disabled = on; });
+    function watch(q) {
+      busy(true);
+      const tick = async () => {
+        const mins = Math.floor((Date.now() - q.t) / 60000);
+        if (mins >= TH_WAIT_MIN) {
+          thPending.set(thPending.get().filter(o => o.rid !== q.rid)); busy(false);
+          return show(`${TH_WAIT_MIN}분이 지나도 글이 안 왔어요. PC가 꺼져 있거나 Claude 사용량이 다 찼을 수 있어요. PC를 켠 뒤 다시 눌러 주세요.`, 'err');
+        }
+        try {
+          const got = (await thFetch()).filter(x => x.rid === q.rid);
+          if (got.length) {
+            thLive.unshift(...got); thPending.set(thPending.get().filter(o => o.rid !== q.rid));
+            busy(false); show(`다 됐어요 — ${got.map(x => x.style).join('·')} 글을 복사해서 쓰레드에 붙여 넣으세요.`); draw(); return;
+          }
+        } catch (e) { /* 인터넷이 잠깐 끊겨도 다음 차례에 다시 */ }
+        show(`${q.styles.split('').join('·')} 글을 PC가 쓰는 중이에요 · ${mins}분째. PC가 5분마다 요청을 확인해서 보통 5분 안쪽에 여기 떠요. 창을 닫아도 계속 만들어져요.`);
+        setTimeout(tick, 15000);
+      };
+      tick();
+    }
+    const ask = async styles => {
+      if (!fb.token && !(await connectGitHub())) return;
+      const q = { rid: Math.random().toString(36).slice(2, 12), idx, slot, title: p.title, styles, t: Date.now() };
+      busy(true); show('요청하는 중이에요…');
+      try {
+        const r = await ghApi('actions/workflows/thread-post.yml/dispatches', { method: 'POST',
+          body: JSON.stringify({ ref: 'main', inputs: { idx: String(idx), styles, slot, rid: q.rid } }) });
+        if (r.status === 204) { thPending.set([...thPending.get(), q]); watch(q); return; }
+        busy(false);
+        if (r.status === 401 || r.status === 403 || r.status === 404) {
+          store.set('gh_token', ''); fb.token = ''; show(`깃허브 연결이 끊겼거나 권한이 모자라요(${r.status}). 버튼을 다시 누르면 연결 창이 떠요.`, 'err');
+        } else show(`요청 실패 (${r.status})`, 'err');
+      } catch (e) { busy(false); show('요청 실패 — 인터넷 연결을 확인해 주세요', 'err'); }
+    };
+    bar.append(el('span', null, '쓰레드 콘텐츠 만들기'));
+    for (const s of ['A', 'B', 'C']) {
+      const b = el('button', 'btn small', `${s} ${TH_STYLES[s]}`); b.type = 'button'; b.addEventListener('click', () => ask(s)); buttons.push(b); bar.append(b);
+    }
+    const all = el('button', 'btn small primary', 'A·B·C 다 만들기'); all.type = 'button'; all.addEventListener('click', () => ask('ABC')); buttons.push(all); bar.append(all);
+    wrap.append(bar, st, list); draw();
+    const q = thPending.get().find(o => o.slot === slot && o.idx === idx && o.title === p.title);
+    if (q && fb.token) watch(q);
+    return wrap;
+  }
+
   // ── 처음 화면: 채널마다 오늘 할 일 하나 + 바로 가는 버튼, 그 밑에 메뉴 지도 ──
   function goTo(ch, id) {
     if (id && document.querySelector(`.subnav a[href="#${id}"]`)) return openFolder(id);   // 메뉴에 있는 자료면 그 폴더만
@@ -1145,7 +1225,7 @@ a.row:hover .row-main{text-decoration:underline}
     // 지금 쓸 거리: 2시간마다 PC가 고른 3개만 (hot_now.py). 설명은 한 줄만 보이고 눌러서 펼침
     const hn = (rows('hot_now') || [])[0], A = auditData();
     const usedTitles = new Set((A && A.matches || []).map(m => m.rec));
-    if (hn) (hn.picks || []).slice(0, 3).forEach(p => {
+    if (hn) (hn.picks || []).slice(0, 3).forEach((p, i) => {
       const ch = /쓰레드/.test(p.channel) ? 'threads' : /텔레그램/.test(p.channel) ? 'telegram' : /X/.test(p.channel) ? 'x' : 'instagram';
       const card = el('article', 'job'), txt = el('div'), meta = el('p', 'job-ch'), acts = el('div', 'job-acts');
       meta.append(dot(ch), `${p.channel} · ${hn.time.slice(6)} 기준`);
@@ -1156,7 +1236,7 @@ a.row:hover .row-main{text-decoration:underline}
       acts.append(copyBtn('초안 복사', p.draft, 'btn primary'));
       const src = (p.sources || [])[0];
       if (src && webLink(src)) { const l = el('a', 'btn small', '근거'); l.href = src; l.target = '_blank'; l.rel = 'noopener'; acts.append(l); }
-      card.append(txt, acts); jobs.push(card);
+      card.append(txt, acts, threadBlock(p, i, hn.time, usedTitles)); jobs.push(card);
     });
     // 채널별 다음 한 가지: 한 줄씩
     const row = (c, chName, title, sub, acts) => {

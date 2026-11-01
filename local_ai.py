@@ -5,7 +5,7 @@
 
 매번 하는 일
   1) 저장소 최신으로 맞춤 (작업 폴더라 로컬 변경은 버림)
-  2) 깃허브가 남긴 요청(data/ai_requests.json) 처리: daily·social·tg·trd·draft
+  2) 깃허브가 남긴 요청(data/ai_requests.json) 처리: daily·social·tg·trd·draft·thpost(쓰레드 글 A·B·C)
   3) 정해진 시각 일: 텔레그램 문구(07·12·18시), 트레이더스 글(07·18시), 카드뉴스 초안(07시), 시황 변환, 트레이더스 피드백
   4) 결과 파일만 커밋·푸시 → 깃허브가 사이트를 다시 배포
 로그: data/local_ai.log
@@ -25,7 +25,7 @@ LOCK = Path.home() / ".content-lab-ai" / "lock"
 LOG = ROOT / "data" / "local_ai.log"
 SITE = "output/site/"
 OUTPUTS = [SITE + f for f in ("tg_ai.json", "tg_rewrites.json", "trd_rooms.json", "trd_posts.json", "drafts.json",
-                               "imports.json", "threads_ai.json", "x_ai.json", "thm_ai.json", "growth_plan.json")] + ["data/publish_queue.json", "data/card_style.json", "data/form_stats.json"]
+                               "imports.json", "threads_ai.json", "x_ai.json", "thm_ai.json", "growth_plan.json", "thread_posts.json")] + ["data/publish_queue.json", "data/card_style.json", "data/form_stats.json"]
 ENV = {**os.environ, "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1"}
 
 
@@ -86,6 +86,13 @@ def run_cycle():
     todo = [r for r in reqs if r["id"] not in state["done"]]
     latest = {r["job"]: r for r in todo}   # 같은 일은 마지막 요청 하나만 (draft 는 주제별로 따로)
     did = []
+
+    posts = [r for r in todo if r["job"] == "thpost"][-6:]   # 사이트 '쓰레드 콘텐츠 만들기' 버튼 — 30초쯤이라 맨 먼저 (thread_post.py)
+    for r in posts:
+        a = r["args"]
+        py("thread_post.py", "--idx", a.get("idx", "0"), "--styles", a.get("styles", "ABC"), "--slot", a.get("slot", ""),
+           "--rid", a.get("rid", r["id"]), timeout=10 * 60)
+        did.append(f"쓰레드 글 {a.get('styles', 'ABC')}")
 
     if "daily" in latest:
         py("analyze.py", "--no-open")   # output/report.json 은 저장소에 없어서 PC에서 새로 만듦
