@@ -582,8 +582,16 @@ def load_reports():
 
 
 def save_reports(d, new):
-    keep = [x for x in d["items"] if not any(x["symbol"] == y["symbol"] and x.get("slot") == y.get("slot") for y in new)]
-    d["items"] = (new + keep)[:12]
+    # 종목당 최신 1개만 (이미지 파일을 종목별로 덮어쓰니 옛 카드를 두면 글과 그림이 어긋남). 어느 칸에 쓰였는지는 slots 로 이어 받는다
+    items = []
+    for x in new + d["items"]:
+        same = next((y for y in items if y["symbol"] == x["symbol"]), None)
+        slots = [s for s in [x.get("slot"), *x.get("slots", [])] if s]
+        if same:
+            same["slots"] = list(dict.fromkeys(same["slots"] + slots))[:10]
+        else:
+            items.append({**x, "slots": list(dict.fromkeys(slots))})
+    d["items"] = items[:12]
     d["updated_at"] = datetime.now(KST).isoformat(timespec="seconds")
     REPORTS.parent.mkdir(parents=True, exist_ok=True)
     REPORTS.write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -633,7 +641,7 @@ def from_tg(use_ai, notify=True, force=False):
     t, q = nxt[0] if nxt else posts[-1] if posts else ({"time": now, "type": "차트리포트"}, "비트코인")
     d = load_reports()
     slot = f"{ai.get('analyzed_at', '')}|{t['time']}"
-    if not force and slot in ({x.get("slot") for x in d["items"]} | set(d.get("failed", []))):
+    if not force and slot in ({s for x in d["items"] for s in x.get("slots", [])} | set(d.get("failed", []))):
         return print(f"이번 차트 글({t['time']} {q})은 이미 만들었어요.")
     mine = SITE / "tg_mine.json"
     style = "\n---\n".join(m["text"][:300] for m in json.loads(mine.read_text(encoding="utf-8"))[:5]) if mine.exists() else ""

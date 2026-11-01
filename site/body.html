@@ -1676,7 +1676,7 @@ a.row:hover .row-main{text-decoration:underline}
         const c = el('article', 'card rec'), chips = el('div', 'chips');
         chips.append(el('span', 'pill accent', t.time), el('span', 'pill neutral', t.type));
         c.append(chips, el('div', 'box', t.text), el('p', 'why1', t.why), el('p', 'sub', `근거 · ${t.based_on}`), copyBtn('문구 복사', t.text, 'btn primary'));
-        const cr = CR.find(r => r.slot === `${AI.analyzed_at}|${t.time}`);
+        const cr = CR.find(r => (r.slots || []).includes(`${AI.analyzed_at}|${t.time}`));
         if (cr) c.append(el('p', 'sub', '↓ 실제 시세로 채운 차트리포트 (이미지 + 본문)'), chartBlock(cr));
         c.append(fbBar({ id: `tg-today:${t.time}:${(t.text || '').slice(0, 24)}`, type: '텔레그램 문구', title: (t.text || '').slice(0, 80), url: '' }));
         c.style.gap = '10px'; return c;
