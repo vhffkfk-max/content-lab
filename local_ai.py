@@ -25,7 +25,7 @@ LOCK = Path.home() / ".content-lab-ai" / "lock"
 LOG = ROOT / "data" / "local_ai.log"
 SITE = "output/site/"
 OUTPUTS = [SITE + f for f in ("tg_ai.json", "tg_rewrites.json", "trd_rooms.json", "trd_posts.json", "drafts.json",
-                               "imports.json", "threads_ai.json", "x_ai.json", "thm_ai.json", "growth_plan.json")] + ["data/publish_queue.json"]
+                               "imports.json", "threads_ai.json", "x_ai.json", "thm_ai.json", "growth_plan.json")] + ["data/publish_queue.json", "data/card_style.json", "data/form_stats.json"]
 ENV = {**os.environ, "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1"}
 
 
@@ -132,6 +132,9 @@ def run_cycle():
     if not drafts and slot_once(state, "draft", (7,)):   # 매일 07시 추천 1위로 초안 하나 (2026-11-02 발행 시작) — 캔바 사본·봇 알림까지
         py("-m", "publish.draft_card")
         did.append("카드뉴스 초안(매일)")
+
+    if slot_once(state, "learn", tuple(range(8, 24))):   # 1시간마다: 캔바에서 고친 것·48시간 성적 배우기 (publish/card_learn.py)
+        py("-m", "publish.card_learn")
 
     state["done"] = (state["done"] + [r["id"] for r in todo])[-200:]
     STATE.write_text(json.dumps(state), encoding="utf-8")

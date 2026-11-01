@@ -9,6 +9,7 @@
 숫자 원칙: 시세 숫자는 코드가 야후 차트에서 가져와 넣고, 사실은 모아 둔 뉴스 제목에 있는 것만 쓴다.
   Claude 는 폼을 고르고 글만 쓴다. 차트 자리는 {"ticker": "TSLA"} 로 남기면 코드가 실제 시세로 채운다.
 폼 돌려쓰기: 큐(data/publish_queue.json)에서 최근 3개 게시물에 쓴 폼은 후보에서 뺀다.
+학습(publish/card_learn.py): 대표가 캔바에서 고친 습관 규칙과 폼별 48시간 성적이 프롬프트에 들어가고, 성적이 계속 나쁜 폼은 후보에서 빠진다.
 결과: output/cardnews/drafts/<id>/ 에 JPG, 큐에 status=drafted 로 저장, 텔레그램 봇으로 앨범 + 캡션.
   + 캔바 '핫코노미 · 발행 대기' 폴더에 고칠 수 있는 사본(publish/canva_copy.py), 편집 링크는 큐 canva.edit_url·텔레그램으로.
 """
@@ -22,7 +23,7 @@ from datetime import datetime, timedelta, timezone
 
 from common import OUTPUT_DIR, ROOT, load_env
 from generate_drafts import NOT_MINE, risky_phrases
-from publish import forms, notify
+from publish import card_learn, forms, notify
 
 MODEL = "claude-opus-5-5"
 KST = timezone(timedelta(hours=9))
@@ -147,7 +148,8 @@ def build_prompt(topic, news, mk, plan, allowed, today):
                        for t, v in mk.items())
     plan_txt = "\n".join(f"- {r['label']}: {r['text']}" for r in plan if r["part"] in ("structure", "carousel", "caption"))[:3000] or "- (없음)"
     return (f"오늘: {today}\n주제: {topic}\n\n[뉴스] (최근 수집, 이 안의 사실만 사용)\n{news_txt}\n\n[시세] (코드가 가져온 실제 값)\n{mk_txt}\n\n"
-            f"[연구소 기획안] (방향 참고용, [확인] 칸은 위 재료로 채울 수 있을 때만)\n{plan_txt}\n\n[쓸 수 있는 폼] (최근 게시물에 쓴 폼은 빠져 있음)\n{form_specs(allowed)}")
+            f"[연구소 기획안] (방향 참고용, [확인] 칸은 위 재료로 채울 수 있을 때만)\n{plan_txt}\n\n[쓸 수 있는 폼] (최근 게시물에 쓴 폼은 빠져 있음)\n{form_specs(allowed)}"
+            + (f"\n\n{learned}" if (learned := card_learn.prompt_notes(allowed)) else ""))
 
 
 # ── 결과 다듬기 ──
@@ -248,7 +250,7 @@ def main():
     queue = load_queue()
     topic = pick_topic(queue, a.topic)
     recent = [i["form"] for i in queue["items"] if i.get("form")][-3:]
-    allowed = [k for k in forms.FORMS if k not in recent]
+    allowed = card_learn.prune([k for k in forms.FORMS if k not in recent])   # 성적이 계속 나쁜 폼은 뺌
     now = datetime.now(KST)
     print(f"📰 주제: {topic} / 최근 폼 {recent or '없음'} 제외")
     mk, news = market(), headlines(topic)

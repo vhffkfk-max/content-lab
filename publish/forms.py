@@ -337,13 +337,21 @@ def end_slide(e, n, theme):
 
 
 def make(post, out_dir, name, demo=False):
-    return render(slides_of(post, demo), out_dir, name, CSS)
+    css, slides = _styled(post, demo)
+    return render(slides, out_dir, name, css)
+
+
+def _styled(post, demo=False):
+    """대표가 캔바에서 2번 넘게 똑같이 바꾼 색은 이 폼에 그대로 적용 (publish/card_learn.py)."""
+    from publish.card_learn import restyle
+    return restyle(post["form"], CSS, slides_of(post, demo))
 
 
 def make_canva(post, path):
     """캔바 수정용 사본 PPTX (publish/canva_copy.py)."""
     from publish.canva_copy import build_pptx
-    return build_pptx(slides_of(post), CSS, path)
+    css, slides = _styled(post)
+    return build_pptx(slides, css, path)
 
 
 def slides_of(post, demo=False):
