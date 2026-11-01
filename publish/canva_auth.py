@@ -8,7 +8,7 @@
    - Client ID / Generate secret 복사 → .env 에 CANVA_CLIENT_ID=..., CANVA_CLIENT_SECRET=... 저장
 3) python -m publish.canva_auth          # 로그인 + 시험
    python -m publish.canva_auth --test   # 저장된 토큰으로 시험만
-토큰 값은 화면에 출력하지 않는다. 캔바 refresh token 은 한 번 쓰면 새 것으로 바뀌므로 매번 .env/Secrets 를 갱신한다.
+토큰 값은 화면에 출력하지 않는다. refresh token 은 한 번 쓰면 바뀌므로 공용 파일 하나에만 두고 잠금 안에서만 갱신한다.
 """
 import base64
 import hashlib
@@ -23,9 +23,9 @@ import urllib.error
 import urllib.parse
 import urllib.request
 import webbrowser
+from pathlib import Path
 
 from common import ROOT, load_env
-from get_token import set_env
 
 API = "https://api.canva.com/rest/v1"
 PORT = 3001
@@ -45,29 +45,65 @@ def token_request(params):
         sys.exit(f"❌ 캔바 토큰 받기 실패({e.code}): {e.read()[:300].decode('utf-8', 'ignore')}")
 
 
-def save_refresh(refresh):
-    # 지금 돌고 있는 프로그램에도 바로 반영 — 안 하면 같은 실행에서 Canva() 를 두 번 만들 때 쓴 토큰을 또 보내
-    # 캔바가 로그인 전체를 취소한다 (2026-10-29 실제로 겪음: "Refresh token used twice")
-    os.environ["CANVA_REFRESH_TOKEN"] = refresh
-    set_env({"CANVA_REFRESH_TOKEN": refresh})
-    for name in ("CANVA_CLIENT_ID", "CANVA_CLIENT_SECRET", "CANVA_REFRESH_TOKEN"):
-        value = refresh if name == "CANVA_REFRESH_TOKEN" else os.environ[name]
-        subprocess.run(["gh", "secret", "set", name, "--repo", "vhffkfk-max/content-lab"], input=value, text=True, check=True,
-                       cwd=ROOT, stdout=subprocess.DEVNULL)
-    print("✅ .env 와 깃허브 Secrets 에 캔바 토큰 저장")
+# 캔바 토큰은 PC 한 곳(~/.content-lab-ai/canva_token.json)에만 둔다 (2026-11-01).
+# 예전엔 폴더마다 .env 에 따로 저장해서, 개발 폴더의 옛 refresh token 이 한 번 더 쓰이거나 두 프로그램이 동시에 갱신하면
+# 캔바가 "Refresh token used twice" 로 로그인 전체를 취소했다(10/29, 11/01 두 번). 이제는
+#  - 모든 폴더·프로그램이 같은 파일을 읽고, 갱신은 잠금(lock) 안에서 한 번에 하나만
+#  - 받은 access token(몇 시간 유효)을 파일에 같이 두고 끝나기 전까지는 갱신 자체를 안 함 → 갱신은 하루 몇 번뿐
+#  - .env·깃허브 Secrets 에는 refresh token 을 더 이상 쓰지 않음 (옛 값이 남아도 읽지 않음)
+STORE = Path.home() / ".content-lab-ai" / "canva_token.json"
+LOCKF = STORE.with_suffix(".lock")
 
 
-_ACCESS = {}
+class _Lock:
+    def __enter__(self):
+        STORE.parent.mkdir(parents=True, exist_ok=True)
+        for _ in range(240):   # 최대 2분 기다림
+            try:
+                self.fd = os.open(LOCKF, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+                return self
+            except FileExistsError:
+                if time.time() - LOCKF.stat().st_mtime > 180:   # 죽은 프로그램이 남긴 잠금
+                    LOCKF.unlink(missing_ok=True)
+                time.sleep(0.5)
+        sys.exit("❌ 캔바 토큰 잠금을 2분 넘게 못 얻었어요 — 다른 캔바 작업이 끝난 뒤 다시")
+
+    def __exit__(self, *a):
+        os.close(self.fd)
+        LOCKF.unlink(missing_ok=True)
+
+
+def _read():
+    try:
+        return json.loads(STORE.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+
+
+def save_tokens(t):
+    """캔바 토큰 응답 → 공용 파일 (잠금 안에서 부를 것)."""
+    d = {"refresh_token": t["refresh_token"], "access_token": t["access_token"],
+         "access_exp": time.time() + int(t.get("expires_in", 3600)) - 600, "saved_at": time.strftime("%Y-%m-%d %H:%M:%S")}
+    tmp = STORE.with_suffix(".tmp")
+    tmp.write_text(json.dumps(d), encoding="utf-8")
+    os.replace(tmp, STORE)
+    print("✅ 캔바 토큰 저장 (PC 공용 파일 하나)")
 
 
 def refresh_access():
-    """저장된 refresh token → access token (새 refresh token 은 바로 저장). 한 실행 안에서는 받은 access token 을 다시 씀."""
-    if _ACCESS.get("exp", 0) > time.time():
-        return _ACCESS["token"]
-    t = token_request({"grant_type": "refresh_token", "refresh_token": os.environ["CANVA_REFRESH_TOKEN"]})
-    save_refresh(t["refresh_token"])
-    _ACCESS.update(token=t["access_token"], exp=time.time() + int(t.get("expires_in", 3600)) - 300)
-    return t["access_token"]
+    """공용 파일의 access token 을 쓰고, 끝나 가면 잠금 안에서 한 번만 갱신."""
+    d = _read()
+    if d.get("access_exp", 0) > time.time():
+        return d["access_token"]
+    with _Lock():
+        d = _read()   # 기다리는 동안 다른 프로그램이 이미 갱신했을 수 있음
+        if d.get("access_exp", 0) > time.time():
+            return d["access_token"]
+        if not d.get("refresh_token"):
+            sys.exit("❌ 캔바 연결 정보가 없어요 — content-lab-ai 폴더에서 'python -m publish.canva_auth' 로 다시 허용해 주세요.")
+        t = token_request({"grant_type": "refresh_token", "refresh_token": d["refresh_token"]})
+        save_tokens(t)
+        return t["access_token"]
 
 
 def login():
@@ -102,7 +138,8 @@ def login():
     if got.get("state") != state:
         sys.exit("❌ 로그인 응답이 맞지 않아요(state 불일치). 다시 실행해 주세요.")
     t = token_request({"grant_type": "authorization_code", "code": got["code"], "code_verifier": verifier, "redirect_uri": REDIRECT})
-    save_refresh(t["refresh_token"])
+    with _Lock():
+        save_tokens(t)
     return t["access_token"]
 
 
