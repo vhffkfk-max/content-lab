@@ -13,7 +13,7 @@ REPO = "vhffkfk-max/content-lab"
 
 
 def _gh(*args):
-    return subprocess.run(["gh", *args, "--repo", REPO], capture_output=True, text=True, encoding="utf-8", errors="ignore")
+    return subprocess.run(["gh", *args, "--repo", REPO], capture_output=True, text=True, encoding="utf-8", errors="ignore", creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
 
 
 def upload(paths, tag):

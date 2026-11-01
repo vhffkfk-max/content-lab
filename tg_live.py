@@ -237,7 +237,7 @@ async def ig_alert(client, conn, dry):
 
 
 def git(*args):
-    r = subprocess.run(["git", *args], cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="ignore")
+    r = subprocess.run(["git", *args], cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="ignore", creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
     return r.returncode, (r.stdout + r.stderr).strip()
 
 
