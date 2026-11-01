@@ -38,7 +38,7 @@ def log(*a):
 
 def git(*a, check=True):
     ident = ["-c", "user.name=content-lab-bot", "-c", "user.email=content-lab-bot@users.noreply.github.com"]   # 작업 폴더엔 이름 설정이 없음
-    return subprocess.run(["git", *ident, *a], cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace", check=check)
+    return subprocess.run(["git", *ident, *a], cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace", check=check, creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
 
 
 def py(*a, timeout=40 * 60):

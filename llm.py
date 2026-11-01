@@ -69,7 +69,7 @@ def _run(model, system, messages, schema=None, effort=None):
         env = {k: v for k, v in os.environ.items() if k not in ("ANTHROPIC_API_KEY", "ANTHROPIC_AUTH_TOKEN")}   # API 요금 방지
         try:
             p = subprocess.run(cmd, input=_prompt(messages), capture_output=True, text=True, encoding="utf-8",
-                               errors="replace", timeout=TIMEOUT, cwd=tmp, env=env)
+                               errors="replace", timeout=TIMEOUT, cwd=tmp, env=env, creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
         except subprocess.TimeoutExpired:
             raise APIConnectionError(f"Claude Code 가 {TIMEOUT // 60}분 안에 끝나지 않았어요")
     try:
