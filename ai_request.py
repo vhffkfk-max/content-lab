@@ -7,6 +7,7 @@
   python ai_request.py draft topic="환율"      # 카드뉴스 초안
   python ai_request.py thpost idx=0 styles=ABC slot="11/01 17:10" rid=x  # 지금 쓸 거리 → 황소개미 쓰레드 글 A·B·C
   python ai_request.py chart symbols="테슬라,삼성전자"  # 차트리포트 이미지 + 설명 글 → 봇·사이트
+  python ai_request.py publish id=20261101-1805-bignum  # 대표가 고른 초안을 인스타에 발행 (publish/publish_card.py)
 
 data/ai_requests.json 에 쌓이고, 내 PC의 local_ai.py 가 5분마다 확인해서 Max 구독으로 처리한다.
 """
@@ -18,7 +19,7 @@ from datetime import datetime, timedelta, timezone
 from common import DATA_DIR
 
 PATH = DATA_DIR / "ai_requests.json"
-JOBS = ("daily", "social", "tg", "trd", "draft", "chart", "thpost")
+JOBS = ("daily", "social", "tg", "trd", "draft", "chart", "thpost", "publish")
 
 
 def load():
