@@ -121,6 +121,15 @@ CSS = """
 .shade.cv{background:linear-gradient(180deg,#00000040 0,#00000000 35%,#000000b0 62%,#000000f0 100%)}
 .scene-t{text-shadow:0 2px 14px #000c}
 .credit{position:absolute;left:40px;bottom:14px;font-size:18px;color:#ffffffa0;max-width:1000px;white-space:nowrap;overflow:hidden}
+/* 글 길이에 맞춰 아래로 밀리는 묶음 (고정 위치면 제목이 길 때 겹침) */
+.stack{position:absolute;left:72px;right:72px;display:flex;flex-direction:column;gap:36px}
+.stack .ui{position:relative;left:auto;right:auto;margin:0 38px;top:auto}
+.endbox{position:absolute;left:72px;right:72px;top:90px;bottom:170px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px}
+.endlogo{width:180px;height:180px;border-radius:50%;flex:none}
+.endchecks{font-size:42px;font-weight:500;line-height:1.4;display:flex;flex-direction:column;gap:18px;max-width:880px}
+.endchecks div{padding-left:58px;text-indent:-58px}
+.endkw{font-size:36px;font-weight:700;text-align:center}
+.endbox .btns{position:static;align-self:stretch;margin:0 18px;flex:none}
 /* 마지막 */
 .btns{position:absolute;left:90px;right:90px;display:flex;gap:30px}
 .btn{flex:1;height:112px;border-radius:60px;display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:800}
@@ -198,12 +207,11 @@ def f_breaking(c, s, n, t):
         return (f'<div class="ticker">{tick}</div><div style="position:absolute;top:110px;left:20px">{svg}</div>{price}'
                 f'<div class="pad center t-xl" style="top:880px;font-size:94px">{md(c["title"])}</div>')
     chart = ""
-    if s.get("chart"):
-        chart = f'<div style="position:absolute;left:0;top:800px;opacity:.9">{line_svg(s["chart"]["line"], 1080, 330, "#ff2e4d")}</div>'
+    if s.get("chart") and len(s.get("text", "")) < 70:   # 글이 길면 차트를 빼서 겹치지 않게
+        chart = f'<div style="position:absolute;left:0;top:880px;opacity:.9">{line_svg(s["chart"]["line"], 1080, 330, "#ff2e4d")}</div>'
     return (f'<div class="ticker" style="height:70px;line-height:70px;font-size:38px">{tick}</div>'
-            f'<div class="pad" style="top:170px"><span class="chip">{html.escape(s.get("tag", "무슨 일?"))}</span></div>'
-            f'<div class="pad t-l" style="top:280px">{md(s["title"])}</div>'
-            f'<div class="pad b-l" style="top:{560 if len(s["title"]) < 14 else 660}px">{md(s.get("text", ""))}</div>{chart}')
+            f'<div class="stack" style="top:150px"><div><span class="chip">{html.escape(s.get("tag", "무슨 일?"))}</span></div>'
+            f'<div class="t-l">{md(s["title"])}</div><div class="b-l">{md(s.get("text", ""))}</div></div>{chart}')
 
 
 def f_bignum(c, s, n, t):
@@ -213,37 +221,37 @@ def f_bignum(c, s, n, t):
         line = f'<div style="position:absolute;left:0;top:960px;opacity:.55">{line_svg(c["line"], 1080, 260)}</div>' if c.get("line") else ""
         return (f'{line}<div class="pad center b-m" style="top:250px;font-size:46px;color:#fff;font-weight:700">{md(c.get("label", ""))}</div>'
                 f'<div class="pad center" style="top:360px;font-size:{170 if len(c["number"]) < 9 else 120}px;font-weight:900;letter-spacing:-4px;line-height:1.1;{grad}">{html.escape(c["number"])}</div>'
-                f'<div class="pad center t-m" style="top:640px">{md(c.get("sub", ""))}</div>')
-    return (f'<div class="pad" style="top:200px;font-size:140px;font-weight:900;letter-spacing:-3px;{grad}">{html.escape(s["number"])}</div>'
-            f'<div class="pad t-m" style="top:420px">{md(s["title"])}</div><div class="pad b-l" style="top:640px">{md(s.get("text", ""))}</div>')
+                f'<div class="pad center t-m" style="top:620px">{md(c.get("sub", ""))}</div>')
+    return (f'<div class="stack" style="top:190px"><div style="font-size:140px;font-weight:900;letter-spacing:-3px;line-height:1.15;{grad}">{html.escape(s["number"])}</div>'
+            f'<div class="t-m">{md(s["title"])}</div><div class="b-l">{md(s.get("text", ""))}</div></div>')
 
 
 def f_bars(c, s, n, t):
     """표지 c: title, sub, bars[...]. 본문 s: title, bars(선택) 또는 text."""
     d = c if s is None else s
-    head = (f'<div class="pad t-l" style="top:110px;font-size:{86 if s is None else 66}px">{md(d["title"])}</div>'
-            f'<div class="pad b-m" style="top:{330 if s is None else 290}px">{md(d.get("sub", ""))}</div>')
-    body = f'<div class="pad" style="top:470px">{bars_html(d["bars"])}</div>' if d.get("bars") else f'<div class="pad b-l" style="top:470px">{md(d.get("text", ""))}</div>'
-    return head + body
+    sub = f'<div class="b-m">{md(d["sub"])}</div>' if d.get("sub") else ""
+    body = f'<div style="margin-top:24px">{bars_html(d["bars"])}</div>' if d.get("bars") else f'<div class="b-l" style="margin-top:24px">{md(d.get("text", ""))}</div>'
+    return f'<div class="stack" style="top:110px"><div class="t-l" style="font-size:{86 if s is None else 66}px">{md(d["title"])}</div>{sub}{body}</div>'
 
 
 def f_list(c, s, n, t):
     """표지 c: title, sub, count(숫자). 본문 s: title, items[{icon,name,sub,value}] (최대 3개)."""
     if s is None:
-        return (f'<div class="pad b-m" style="top:230px;font-size:44px">{md(c.get("sub", ""))}</div>'
-                f'<div class="pad t-xl" style="top:320px">{md(c["title"])}</div>'
-                f'<div style="position:absolute;right:60px;top:760px;font-size:360px;font-weight:900;color:#e3262b;opacity:.9;line-height:1">{html.escape(str(c.get("count", "")))}</div>')
+        return (f'<div class="stack" style="top:170px"><div class="b-m" style="font-size:44px">{md(c.get("sub", ""))}</div>'
+                f'<div class="t-xl" style="font-size:{100 if len(c["title"]) < 20 else 84}px">{md(c["title"])}</div></div>'
+                f'<div style="position:absolute;right:60px;top:860px;font-size:300px;font-weight:900;color:#e3262b;opacity:.9;line-height:1">{html.escape(str(c.get("count", "")))}</div>')
     rows = "".join(f'<div class="row"><div class="ico">{it.get("icon", "•")}</div><div><div class="nm">{md(it["name"])}</div>'
                    f'<div class="sm">{md(it.get("sub", ""))}</div></div><div class="val">{html.escape(it.get("value", ""))}</div></div>' for it in s["items"][:3])
-    return f'<div class="pad t-m" style="top:150px">{md(s["title"])}</div><div class="pad" style="top:420px">{rows}</div>'
+    return f'<div class="stack" style="top:150px;gap:60px"><div class="t-m">{md(s["title"])}</div><div>{rows}</div></div>'
 
 
 def f_photo(c, s, n, t):
     """표지 c: image(사진 경로 또는 {"line"/"candles"}), title. 본문 s: image, text(한두 줄)."""
     d = c if s is None else s
-    size = 90 if s is None else 64
+    words = d.get("title") or d.get("text", "")
+    size = (90 if len(words) < 24 else 68) if s is None else (64 if len(words) < 34 else 46)
     return (f'{img_or_chart(d.get("image"))}<div class="fade"></div>'
-            f'<div class="pad center" style="top:{1020 if s is None else 1050}px;font-size:{size}px;font-weight:900;line-height:1.22;letter-spacing:-1px">{md(d.get("title") or d.get("text", ""))}</div>')
+            f'<div class="pad center" style="bottom:120px;font-size:{size}px;font-weight:900;line-height:1.22;letter-spacing:-1px">{md(d.get("title") or d.get("text", ""))}</div>')
 
 
 def f_scene(c, s, n, t):
@@ -300,7 +308,7 @@ def f_paper(c, s, n, t):
         body = "".join(f'<div class="term">• <b>{html.escape(x["term"])}</b> : {md(x["desc"])}</div>' for x in s["terms"])
     else:
         body = "".join(f'<div class="term">• {md(h)}</div>' for h in s.get("headlines", []))
-    return fr + f'<div class="pad center" style="top:130px;font-size:56px;font-weight:800">[{html.escape(s["title"])}]</div><div class="pad" style="top:300px;left:110px;right:110px">{body}</div>'
+    return fr + f'<div class="pad center" style="top:130px;font-size:56px;font-weight:800">[{md(s["title"])}]</div><div class="pad" style="top:300px;left:110px;right:110px">{body}</div>'
 
 
 def f_steps(c, s, n, t):
@@ -311,9 +319,9 @@ def f_steps(c, s, n, t):
                 f'<div class="pad b-m" style="top:640px;font-size:44px">{md(c.get("sub", ""))}</div>'
                 f'<div class="pad" style="top:860px;display:flex;gap:30px">{dots}</div>')
     rows = "".join(f'<div class="r{" on" if i == s.get("on") else ""}"><span class="dot">{i}</span>{md(r)}</div>' for i, r in enumerate(s.get("ui", []), 1))
-    return (f'<div class="pad" style="top:110px"><span class="chip">STEP {s["step"]}</span></div>'
-            f'<div class="pad t-m" style="top:220px">{md(s["title"])}</div><div class="ui" style="top:470px">{rows}</div>'
-            f'<div class="pad center b-l" style="top:1060px;font-weight:700">{md(s.get("tip", ""))}</div>')
+    return (f'<div class="stack" style="top:100px"><div><span class="chip">STEP {s["step"]}</span></div>'
+            f'<div class="t-m">{md(s["title"])}</div><div class="ui">{rows}</div>'
+            f'<div class="center" style="font-size:{48 if len(s.get("tip", "")) < 40 else 38}px;font-weight:700;line-height:1.45">{md(s.get("tip", ""))}</div></div>')
 
 
 def f_quote(c, s, n, t):
@@ -330,13 +338,13 @@ def f_hot(c, s, n, t):
     bg = '<div class="hotbg"></div>'
     if s is None:
         line = f'<div style="position:absolute;left:0;top:930px;opacity:.9">{line_svg([3, 4, 3.6, 5, 4.6, 6.4, 6, 8.2], 1080, 300, "#ff3b2e", False)}</div>'
-        return (bg + line + f'<div class="pad" style="top:200px"><span class="chip">{html.escape(c.get("tag", "경제 기초"))}</span></div>'
-                f'<div class="pad t-xl" style="top:300px;font-size:112px">{md(c["title"])}</div>'
-                f'<div class="pad b-m" style="top:770px;font-size:44px">{md(c.get("sub", ""))}</div>')
+        return (bg + line + f'<div class="stack" style="top:150px"><div><span class="chip">{html.escape(c.get("tag", "경제 기초"))}</span></div>'
+                f'<div class="t-xl" style="font-size:{112 if len(c["title"]) < 18 else 88}px">{md(c["title"])}</div>'
+                f'<div class="b-m" style="font-size:{44 if len(c.get("sub", "")) < 40 else 38}px">{md(c.get("sub", ""))}</div></div>')
     pt = f'<div class="point" style="top:930px"><div class="k">🔥 핵심</div><div class="v">{md(s["point"])}</div></div>' if s.get("point") else ""
-    return (bg + f'<div class="pad" style="top:150px;font-size:150px;font-weight:900;color:#ff7a1a;line-height:1">{n - 1:02d}</div>'
-            f'<div class="pad t-l" style="top:340px">{md(s["title"])}</div>'
-            f'<div class="pad b-l" style="top:560px;font-size:52px">{md(s.get("text", ""))}</div>{pt}')
+    return (bg + f'<div class="stack" style="top:130px"><div style="font-size:130px;font-weight:900;color:#ff7a1a;line-height:1">{n - 1:02d}</div>'
+            f'<div class="t-l">{md(s["title"])}</div>'
+            f'<div class="b-l" style="font-size:{52 if len(s.get("text", "")) < 50 else 44}px">{md(s.get("text", ""))}</div></div>{pt}')
 
 
 FORMS = {"breaking": (f_breaking, "brk"), "bignum": (f_bignum, ""), "bars": (f_bars, "navy"), "list": (f_list, ""),
@@ -345,14 +353,14 @@ FORMS = {"breaking": (f_breaking, "brk"), "bignum": (f_bignum, ""), "bars": (f_b
 
 
 def end_slide(e, n, theme):
-    """마지막 장 e: title, checks[...], keyword(댓글 유도 단어, 선택)."""
-    logo = f'<img src="{LOGO}" style="position:absolute;left:430px;top:140px;width:220px;height:220px;border-radius:50%">' if LOGO else ""
-    checks = "<br>".join(f"✓&nbsp; {md(x)}" for x in e.get("checks", []))
-    kw = (f'<div class="pad center" style="top:880px;font-size:38px;font-weight:700">💬 궁금한 점은 댓글에 <b class="hl">\'{html.escape(e["keyword"])}\'</b> 남겨 주세요</div>'
+    """마지막 장 e: title, checks[...], keyword(댓글 유도 단어, 선택). 위에서 아래로 차례로 쌓아서 제목이 두 줄이어도 안 겹침."""
+    logo = f'<img class="endlogo" src="{LOGO}">' if LOGO else ""
+    checks = "".join(f"<div>✓&nbsp; {md(x)}</div>" for x in e.get("checks", []))
+    kw = (f'<div class="endkw">💬 궁금한 점은 댓글에 <b class="hl">\'{html.escape(e["keyword"])}\'</b> 남겨 주세요</div>'
           if e.get("keyword") else "")
-    return (logo + f'<div class="pad center t-m" style="top:400px">{md(e.get("title", "정리하면"))}</div>'
-            f'<div class="pad b-l" style="top:540px;left:170px;font-size:44px;line-height:1.7">{checks}</div>{kw}'
-            f'<div class="btns" style="top:980px"><div class="btn o">🔖 저장해두기</div><div class="btn f">팔로우 하기</div></div>'
+    return (f'<div class="endbox">{logo}<div class="center t-m">{md(e.get("title", "정리하면"))}</div>'
+            f'<div class="endchecks">{checks}</div>{kw}'
+            f'<div class="btns"><div class="btn o">🔖 저장해두기</div><div class="btn f">팔로우 하기</div></div></div>'
             f'<div class="disc">{DISCLAIMER}</div><div class="pn">{n}</div>')
 
 

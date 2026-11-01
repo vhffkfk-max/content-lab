@@ -5,7 +5,7 @@
     python -m publish.publish_card <초안 id> --yes           # 바로 올림
 
 자동으로 고르지 않는다 — 초안 id 를 찍어 준 것만 올린다. 이미 올린 초안, 위험 표현 경고가 남은 초안은 거절한다.
-이미지: 캔바에서 고쳤으면 고친 디자인을 내보내서(글자 깨짐 검사 포함), 안 고쳤으면 처음 그린 이미지를 그대로.
+이미지: 캔바에서 고쳤으면 고친 디자인을 내보내서(글자 깨짐 검사 포함), 안 고쳤으면 저장된 글을 지금 배치로 다시 그려서(겹침 검사 포함).
          캔바를 고쳤는데 못 가져오면 고치기 전 이미지로 올리지 않고 멈춘다.
 순서: 임시 공개 주소(깃허브 Release) → 인스타 캐러셀 발행 → 임시 파일 삭제 → 큐에 기록 → 텔레그램 알림.
 """
@@ -50,11 +50,28 @@ def canva_edited(it):
     return cid if upd - (d.get("created_at") or upd) >= EDITED_AFTER else None
 
 
+def redraw(it):
+    """저장된 글(post.json)을 지금 배치로 다시 그린다 — 옛 초안도 겹침 고친 배치로. 겹치면 멈춘다."""
+    import json
+
+    from publish import forms
+    from publish.layout_check import check
+    folder = ROOT / "output" / "cardnews" / "drafts" / it["id"]
+    if not (folder / "post.json").exists():
+        return [ROOT / f for f in it["files"]]
+    post = json.loads((folder / "post.json").read_text(encoding="utf-8"))
+    css, slides = forms._styled(post)
+    problems = check(slides, css)
+    if problems:
+        raise RuntimeError("글자 겹침: " + " / ".join(problems[:3]))
+    return forms.make(post, folder, it["id"])
+
+
 def images(it):
     """올릴 이미지 경로. 캔바에서 고쳤으면 내보내서 받는다."""
     cid = canva_edited(it)
     if not cid:
-        return [ROOT / f for f in it["files"]], "처음 그린 이미지"
+        return redraw(it), "처음 초안 (지금 배치로 다시 그림)"
     from publish.canva import Canva
     out = ROOT / "output" / "cardnews" / "drafts" / it["id"] / "canva-final"
     out.mkdir(parents=True, exist_ok=True)
@@ -87,8 +104,8 @@ def main():
     try:
         paths, source = images(it)
     except Exception as e:   # 고친 내용을 잃고 올리지 않도록 여기서 멈춘다
-        notify.send(f"❌ 발행 못 함: {it.get('title', a.id)}\n캔바 이미지를 가져오지 못했어요: {e}")
-        sys.exit(f"❌ 캔바 이미지 실패: {e}")
+        notify.send(f"❌ 발행 못 함: {it.get('title', a.id)}\n이미지 준비 실패: {e}")
+        sys.exit(f"❌ 이미지 준비 실패: {e}")
     missing = [str(p) for p in paths if not pathlib.Path(p).exists()]
     if missing:
         notify.send(f"❌ 발행 못 함: {it.get('title', a.id)}\n이미지 파일이 없어요.")
