@@ -6,7 +6,7 @@
 매번 하는 일
   1) 저장소 최신으로 맞춤 (작업 폴더라 로컬 변경은 버림)
   2) 깃허브가 남긴 요청(data/ai_requests.json) 처리: daily·social·tg·trd·draft·thpost(쓰레드 글 A·B·C)
-  3) 정해진 시각 일: 텔레그램 문구(07·12·18시), 트레이더스 글(07·18시), 카드뉴스 초안(07시), 시황 변환, 트레이더스 피드백
+  3) 정해진 시각 일: 텔레그램 문구(07·12·18시), 트레이더스 글(07·18시), 카드뉴스 초안(하루 7개, 07~19시 2시간마다), 시황 변환, 트레이더스 피드백
   4) 결과 파일만 커밋·푸시 → 깃허브가 사이트를 다시 배포
 로그: data/local_ai.log
 """
@@ -78,6 +78,30 @@ def slot_once(state, key, hours):
     return True
 
 
+DRAFT_SLOTS = (7, 9, 11, 13, 15, 17, 19)   # 하루 7개 (2026-11-02 발행 시작): 07·13시는 깊은 시리즈(6~8장), 나머지는 속보형(3~5장)
+DEEP_SLOTS = (7, 13)
+
+
+def auto_drafts(state, did):
+    """지난 시각만큼 오늘 자동 초안이 없으면 한 번에 하나씩 채움 — PC가 꺼져 있었어도 켜지면 따라잡아 하루 7개."""
+    now = datetime.now(KST)
+    today = f"{now:%Y-%m-%d}"
+    if state.get("draft_fail", {}).get("day") == today and state["draft_fail"]["n"] >= 3:
+        return   # 오늘 3번 실패했으면 멈춤 (Max 사용량 낭비 방지) — 봇 알림은 draft_card 가 함
+    qp = ROOT / "data" / "publish_queue.json"
+    items = json.loads(qp.read_text(encoding="utf-8"))["items"] if qp.exists() else []
+    auto = [i for i in items if i.get("auto") and i.get("created_at", "").startswith(today)]
+    due = [h for h in DRAFT_SLOTS if now.hour >= h]
+    if len(auto) >= len(due):
+        return
+    short = sum(i.get("series") == "deep" for i in auto) >= sum(h in DEEP_SLOTS for h in due)
+    if py("-m", "publish.draft_card", "--auto", *(["--short"] if short else [])) != 0:
+        f = state.get("draft_fail", {})
+        state["draft_fail"] = {"day": today, "n": (f.get("n", 0) if f.get("day") == today else 0) + 1}
+        return
+    did.append(f"카드뉴스 초안 {len(auto) + 1}/7({'속보' if short else '시리즈'})")
+
+
 def run_cycle():
     state = json.loads(STATE.read_text(encoding="utf-8")) if STATE.exists() else {"done": []}
     reqs = json.loads((ROOT / "data" / "ai_requests.json").read_text(encoding="utf-8")) if (ROOT / "data" / "ai_requests.json").exists() else []
@@ -136,9 +160,8 @@ def run_cycle():
         topic = r["args"].get("topic", "")
         py("-m", "publish.draft_card", *(["--topic", topic] if topic else []))
         did.append(f"카드뉴스 초안 {topic}")
-    if not drafts and slot_once(state, "draft", (7,)):   # 매일 07시 추천 1위로 초안 하나 (2026-11-02 발행 시작) — 캔바 사본·봇 알림까지
-        py("-m", "publish.draft_card")
-        did.append("카드뉴스 초안(매일)")
+    if not drafts:
+        auto_drafts(state, did)
 
     if slot_once(state, "learn", tuple(range(8, 24))):   # 1시간마다: 캔바에서 고친 것·48시간 성적 배우기 (publish/card_learn.py)
         py("-m", "publish.card_learn")
