@@ -331,6 +331,15 @@ def alert(c, rows):
     return len(hot)
 
 
+def json_ok(path):
+    """겹침 표시(<<<<<<<) 등으로 깨진 JSON 은 올리지 않음."""
+    try:
+        json.loads(path.read_text(encoding="utf-8"))
+        return True
+    except (OSError, ValueError):
+        return False
+
+
 def git(*args):
     r = subprocess.run(["git", *args], cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="ignore",
                        creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
@@ -395,11 +404,17 @@ def push(c, now, force=False):
     c.commit()
     side_jobs()
     free_export(c, now)
-    git("pull", "--rebase", "--autostash")
-    git("add", "output/site/thx_live.json", "output/site/thx_live_meta.json", "output/site/igx_live.json", "output/site/igx_live_meta.json",
-        "data/free_crawl.json", *NEWS_FILES, "output/site/hot_now.json", *THM_FILES)
+    files = [f for f in ["output/site/thx_live.json", "output/site/thx_live_meta.json", "output/site/igx_live.json", "output/site/igx_live_meta.json",
+                         "data/free_crawl.json", *NEWS_FILES, "output/site/hot_now.json", *THM_FILES] if json_ok(ROOT / f)]
+    # 먼저 내 파일을 커밋한 뒤 받기 — 깃허브(매일 06:00)도 같은 뉴스·진단 파일을 쓰기 때문에, 받으면서 겹치면 PC 쪽 최신을 씀.
+    # (예전엔 받기→stash 되돌리기에서 겹쳐 <<<<<<< 표시가 든 JSON 이 그대로 올라가 사이트가 깨졌음, 2026-11-01)
+    git("add", "--", *files)
     if git("commit", "-m", f"data: 쓰레드·인스타 실시간 추적 {datetime.now(KST).strftime('%m/%d %H:%M')}")[0] != 0:
         return
+    code, out = git("pull", "--rebase", "-X", "theirs", "--autostash")
+    if code != 0:
+        git("rebase", "--abort")
+        return log.info("깃허브 받기 실패: %s", out[-200:])
     code, out = git("push")
     log.info("깃허브 올리기 %s", "완료" if code == 0 else f"실패: {out[-200:]}")
 
