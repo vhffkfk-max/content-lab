@@ -214,6 +214,19 @@ def ai_chats(since_day):
     return out, files
 
 
+def connector_log(since_day):
+    """연구소 커넥터(ChatGPT·Claude 에 붙인 MCP, connector/api/mcp.js)가 mcp-log 브랜치에 남긴 기록 — 언제·어느 앱이·어느 추천을 가져갔나."""
+    git("fetch", "-q", "origin", "mcp-log")
+    out = []
+    for k in (1, 0):
+        month = (datetime.now(KST).replace(day=1) - timedelta(days=k)).strftime("%Y-%m") if k else datetime.now(KST).strftime("%Y-%m")
+        try:
+            out += json.loads(git("show", f"origin/mcp-log:log/{month}.json") or "[]")
+        except ValueError:
+            pass
+    return [r for r in out if r.get("at", "")[:10] >= since_day]
+
+
 # ── Claude 로 맞춰 보기 ─────────────────────────────────────
 class Match(BaseModel):
     out_id: int
@@ -309,6 +322,16 @@ def main():
             matches.append({"day": o["day"], "time": o["time"], "kind": o["kind"], "how": x.how, "note": x.note,
                             "out": first_line(o["text"], 80) if o["public"] else "", "url": o.get("url") if o["public"] else None,
                             "views": o.get("views"), "rec": r["title"], "rec_src": r["src"], "rec_day": r["day"]})
+    clog = connector_log(since_day)
+    rec_key = {(r["src"], r["title"]): i for i, r in enumerate(recs)}
+    for c in clog:
+        for u in c.get("used") or []:
+            i = rec_key.get((u.get("src"), u.get("title")))
+            if i is not None:
+                used_rec[i] = used_rec.get(i, 0) + 1
+            matches.append({"day": c["at"][:10], "time": c["at"][5:].replace("-", "/"), "kind": f"{c.get('app', '기타')} 커넥터", "how": "가져감",
+                            "note": c.get("tool", ""), "out": "", "url": None, "views": None, "rec": u.get("title", ""),
+                            "rec_src": u.get("src", ""), "rec_day": recs[i]["day"] if i is not None else c["at"][:10]})
     mins = site_minutes()
     days = []
     for k in range(7):
@@ -318,7 +341,8 @@ def main():
                      "posts": sum(o["kind"] != "ChatGPT 대화" and o["kind"] != "Claude 대화" for o in os_),
                      "posts_used": sum(o["used"] and o["public"] for o in os_),
                      "chats": sum(not o["public"] for o in os_), "chats_used": sum(o["used"] and not o["public"] for o in os_),
-                     "recs": sum(r["day"] == d for r in recs), "site_min": (mins or {}).get(d)})
+                     "recs": sum(r["day"] == d for r in recs), "site_min": (mins or {}).get(d),
+                     "connector": sum(c["at"][:10] == d for c in clog)})
     by_src = {}
     for i, r in enumerate(recs):
         s = by_src.setdefault(r["src"], {"src": r["src"], "shown": 0, "used": 0})
@@ -334,6 +358,8 @@ def main():
                  "chats": sum(not o["public"] and o["day"] >= week for o in outs),
                  "chats_used": sum(o["used"] and not o["public"] and o["day"] >= week for o in outs),
                  "recs": sum(r["day"] >= week for r in recs),
+                 "connector": sum(c["at"][:10] >= week for c in clog),
+                 "connector_apps": sorted({c.get("app", "기타") for c in clog if c["at"][:10] >= week}),
                  "site_min": sum(v for k, v in (mins or {}).items() if k >= week) if mins else None},
         "verdict": A.verdict if A else "아직 맞춰 볼 글이 없어요.", "nudge": A.nudge if A else "",
         "matches": sorted(matches, key=lambda x: x["time"], reverse=True)[:40],
@@ -342,6 +368,7 @@ def main():
         "by_src": sorted(by_src.values(), key=lambda s: -s["shown"]),
         "chat_files": [{"app": f["app"], "last": f["last"]} for f in chat_files],
         "site_connected": mins is not None,
+        "connector_last": max((c["at"] for c in clog), default=None),
     }
     OUT.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
     wk = out["week"]

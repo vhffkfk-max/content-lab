@@ -282,7 +282,7 @@ a.row:hover .row-main{text-decoration:underline}
             <li><a href="#uc-match">추천 → 실제 글</a></li>
             <li><a href="#uc-miss">놓친 추천</a></li>
             <li><a href="#uc-src">어떤 추천을 쓰나</a></li>
-            <li><a href="#uc-ai">GPT·Claude 기록 넣기</a></li>
+            <li><a href="#uc-ai">GPT·Claude 연결</a></li>
           </ul></li>
         <li class="nav-label" style="margin-top:10px">만들기</li>
         <li><button type="button" data-ch="threads"><i class="dot" style="background:var(--ch-threads)"></i>쓰레드<span class="soon" id="th-badge">심사 중</span></button>
@@ -449,7 +449,7 @@ a.row:hover .row-main{text-decoration:underline}
         <section class="sec" id="uc-match"><h2>추천 → 실제 글</h2><p class="note">황소개미 쓰레드·텔레그램 채널 글과 GPT·Claude 대화가 어느 추천에서 나왔는지 Claude가 판정했어요. 그대로 · 고쳐서 · 주제만 세 단계예요.</p><div class="card"><div class="rows" id="uc-match-list"></div></div></section>
         <section class="sec" id="uc-miss"><h2>놓친 추천</h2><p class="note">추천했는데 아무 데도 안 쓴 것 중 지금도 쓸 만한 것이에요.</p><div class="card"><div class="rows" id="uc-miss-list"></div></div></section>
         <section class="sec" id="uc-src"><h2>어떤 추천을 쓰나</h2><p class="note">최근 14일, 메뉴별로 보여 준 추천 수와 실제로 쓴 수예요. 안 쓰는 메뉴는 줄이고 쓰는 메뉴를 앞으로 당겨요.</p><div class="card" id="uc-src-box"></div></section>
-        <section class="sec" id="uc-ai"><h2>GPT·Claude 기록 넣기</h2><div class="card" id="uc-ai-box"></div></section>
+        <section class="sec" id="uc-ai"><h2>GPT·Claude 연결</h2><div class="card" id="uc-ai-box"></div></section>
       </div>
 
       <!-- 인스타그램 -->
@@ -2515,7 +2515,7 @@ a.row:hover .row-main{text-decoration:underline}
     big.append(el('span', 'uc-num', `${w.posts_used}`), ` / ${w.posts}개`);
     head.append(el('p', 'uc-label', '최근 7일 올린 글 중 연구소 추천에서 나온 글'), big,
       el('p', 'uc-cap', `황소개미 ${w.threads}개 중 ${w.threads_used}개 · 텔레그램 ${w.posts - w.threads}개 중 ${w.posts_used - w.threads_used}개 · ` +
-        (A.chat_files && A.chat_files.length ? `GPT·Claude 대화 ${w.chats}개 중 ${w.chats_used}개` : 'GPT·Claude 기록 아직 없음') +
+        (w.connector ? `커넥터로 추천 가져감 ${w.connector}번(${(w.connector_apps || []).join('·')})` : A.chat_files && A.chat_files.length ? `GPT·Claude 대화 ${w.chats}개 중 ${w.chats_used}개` : 'GPT·Claude 커넥터 사용 아직 없음') +
         (w.site_min != null ? ` · 사이트 ${w.site_min}분` : '')));
     const max = Math.max(1, ...A.days.map(d => d.posts));
     const chart = el('div', 'uc-days');
@@ -2544,7 +2544,7 @@ a.row:hover .row-main{text-decoration:underline}
       const r = el(m.url && webLink(m.url) ? 'a' : 'div', 'row'), top = el('div', 'row-main');
       if (m.url && webLink(m.url)) { r.href = m.url; r.target = '_blank'; r.rel = 'noopener'; }
       top.append(el('span', 'pill ' + (m.how === '그대로' ? 'positive' : m.how === '고쳐서' ? 'accent' : 'neutral'), m.how), ' ',
-        m.out ? m.out : `${m.kind} (내용은 올리지 않음)`);
+        m.out ? m.out : m.how === '가져감' ? `${m.kind}로 가져감` : `${m.kind} (내용은 올리지 않음)`);
       r.append(top, el('div', 'row-sub', `${m.time} · ${m.kind}${m.views != null ? ` · 조회 ${fmtN(m.views)}` : ''} ← ${m.rec_src} '${m.rec}' (${md(m.rec_day)})`));
       return r;
     }));
@@ -2563,6 +2563,8 @@ a.row:hover .row-main{text-decoration:underline}
     const ai = document.getElementById('uc-ai-box'), files = (A && A.chat_files) || [];
     const p = t => el('p', null, t);
     ai.replaceChildren(
+      p(A && A.connector_last ? `연구소 커넥터 마지막 사용: ${A.connector_last.slice(5).replace('-', '/')} · 최근 7일 ${A.week.connector || 0}번` : '연구소 커넥터를 ChatGPT·Claude에 붙이면, 글 쓸 때 "연구소에서 지금 쓸 거리 가져와서 써 줘"라고만 하면 돼요. 가져간 추천은 여기 자동으로 기록돼요(대화 내용은 기록 안 함).'),
+      p('커넥터가 없을 때는 내보내기 파일로도 볼 수 있어요:'),
       p(files.length ? `지금 들어 있는 기록: ${files.map(f => `${f.app} (마지막 대화 ${f.last ? md(f.last) : '–'})`).join(', ')}` : '아직 GPT·Claude 기록이 없어요. 한 달에 한두 번 내보내기 파일을 넣어 주면, 대화에서 연구소 추천을 썼는지도 같이 봐요.'),
       p('ChatGPT: 설정 → 데이터 제어 → 데이터 내보내기 → 메일로 온 zip 파일을 그대로 넣기'),
       p('Claude: 설정 → 개인정보 → 데이터 내보내기 → 메일로 온 zip 파일 (파일 이름에 claude 가 들어가게)'),
