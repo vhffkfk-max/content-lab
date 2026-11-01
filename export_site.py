@@ -5,6 +5,7 @@
 import json
 import re
 
+import news_pool
 from common import OUTPUT_DIR
 
 SITE = OUTPUT_DIR / "site"
@@ -16,24 +17,17 @@ def write(name, rows):
 
 
 def dedupe(rows):
-    """같은 기사가 여러 매체·피드로 들어오면 제목(띄어쓰기·기호 무시)이 같은 것은 처음 한 번만 남긴다."""
-    seen, out = set(), []
-    for r in rows:
-        key = re.sub(r"[\W_]+", "", (r.get("title") or "").split(" - ")[0]).lower()
-        if key and key in seen:
-            continue
-        seen.add(key)
-        out.append(r)
-    return out
+    """같은 소식이 여러 매체·피드로 들어오면 처음 한 번만 남긴다 (제목이 조금 달라도 묶음, news_pool.py)."""
+    return news_pool.dedupe(rows)
 
 
 def write_news(g):
     """구글 뉴스·급상승 검색어·경제 매체 표. 매일 export 와 5분마다 도는 live_news.py 가 같이 쓴다."""
     write("google_meta", [{"date": g.get("date"), "topics": len(g.get("topics") or [])}])
     write("google_topics", [{k: (", ".join(v) if isinstance(v, list) else v) for k, v in x.items()} for x in g.get("topics") or []])
-    write("google_headlines", dedupe(g.get("headlines") or []))
+    write("google_headlines", dedupe([r for r in g.get("headlines") or [] if news_pool.keep(r.get("source"), r.get("title") or "", r.get("region"))]))
     write("google_trends", g.get("trends") or [])
-    write("press_headlines", dedupe(g.get("press") or []))
+    write("press_headlines", dedupe([r for r in g.get("press") or [] if not news_pool.junk(r.get("title"), r.get("link"))]))
     write("press_popular", dedupe(g.get("popular") or []))
     write("google_opportunities", [{k: (", ".join(v) if isinstance(v, list) else v) for k, v in x.items()} for x in g.get("opportunities") or []])
 

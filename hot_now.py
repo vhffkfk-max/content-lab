@@ -3,7 +3,7 @@
     python hot_now.py          # 차례가 됐을 때만 (threads_watch.py 가 30분마다 부름)
     python hot_now.py --force  # 지금 바로
 
-- 재료(돈 안 듦): 경제 매체·구글 뉴스 제목(최근 3시간), PC 크롤러가 잰 지금 크는 쓰레드·인스타 글, X 글(최근 6시간)
+- 재료(돈 안 듦): 경제 매체·다음·구글 뉴스 제목(최근 3시간, 같은 소식은 묶어서 몇 곳이 다뤘는지 — news_pool.py), PC 크롤러가 잰 지금 크는 쓰레드·인스타 글, X 글(최근 6시간)
 - 글 쓰기: Claude Sonnet — 내 PC Claude Code(Max 구독, llm.py)라 API 요금 없음. 구독 사용량만 조금 씀(한 번에 짧게)
 - 같은 주제 반복 금지: 최근 6시간에 보낸 주제는 큰 새 소식이 없으면 빼라고 알려 줌
 → output/site/hot_now.json (최근 12번) + 텔레그램 봇 알림. 매일 06:00 추천(recs)은 30일 통계라 느리고, 이건 '지금'용.
@@ -21,6 +21,7 @@ import requests
 from pydantic import BaseModel
 
 import llm as anthropic
+import news_pool
 from common import OUTPUT_DIR, ROOT, load_env
 
 KST = timezone(timedelta(hours=9))
@@ -34,7 +35,9 @@ KEEP = 12
 SYSTEM = """너는 한국 경제 콘텐츠 계정(@hotconomy, 인스타 카드뉴스·쓰레드·텔레그램 운영)의 편집장이다.
 지금 몇 시간 사이 실제로 뜨는 경제 주제를 골라, 바로 발행할 글감 3개를 만든다.
 - 근거는 아래 자료에 있는 숫자·제목만 쓴다. 자료에 없는 숫자·사실을 지어내지 않는다. 확인이 필요한 숫자는 [확인] 표시.
-- '왜 지금'은 자료 근거로: 기사 몇 건, 쓰레드 조회 속도, X 조회수 등.
+- '왜 지금'은 자료 근거로: 몇 곳이 다뤘는지, 쓰레드 조회 속도, X 조회수 등.
+- 뉴스는 같은 소식을 한 줄로 묶어 뒀다. '○곳'은 그 소식을 다룬 매체 수이고, 많을수록 큰 소식이다. '많이 봄'은 독자가 많이 읽는 기사다.
+- sources 에는 자료에 있는 기사 링크를 그대로 넣고, 구글 뉴스 주소보다 언론사 주소를 고른다.
 - 최근에 이미 보낸 주제는 빼라. 같은 주제라도 큰 새 소식(새 발표·급등락)이 있을 때만 '후속'으로 다시 쓴다.
 - 3개는 서로 다른 주제로, 가능하면 다른 채널(쓰레드 글 / 인스타 카드뉴스 / 텔레그램 짧은 속보)로 나눈다.
 - 초안은 그 채널에 바로 붙여 넣을 수 있게 쉬운 한국어로. 쓰레드는 3~6줄, 첫 줄은 멈추게 하는 한 줄.
@@ -84,6 +87,10 @@ def rows(name):
 
 
 def recent_news(hours=3):
+    pool = news_pool.load()
+    if pool:
+        return [f"- [{c['time']}] {c['title']} ({','.join(c['sources'][:3])}{' 등' if c['n'] > 3 else ''} {c['n']}곳{' · 많이 봄' if c['popular'] else ''}) {' '.join(u[:120] for u in c['links'][:2])}"
+                for c in pool["clusters"][:90]]
     now = datetime.now(KST)
     out, seen = [], set()
     for r in rows("press_headlines") + rows("google_headlines"):

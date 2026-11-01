@@ -9,6 +9,7 @@ import json
 from datetime import datetime, timedelta, timezone
 
 import google_collect
+import news_pool
 import press_collect
 from analyze import KST, google_section, load_posts
 from common import DEFAULT_DB, connect
@@ -34,6 +35,8 @@ def main():
     recent = [p for p in posts if p["dt"] >= since and not p["promo"] and not p["lead"]]
     g = google_section(conn, recent, now)
     write_news(g)
+    a, b = news_pool.save(conn)   # 글감 고르는 재료: 전체 기사를 같은 소식끼리 묶음 (hot_now.py)
+    print(f"✅ 뉴스 묶음: 기사 {a}개 → 소식 {b}개")
 
     new = {n: len(links(n) - before[n]) for n in before}
     write("live_meta", [{"updated_at": now.astimezone(KST).strftime("%Y-%m-%d %H:%M"),
