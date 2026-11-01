@@ -384,7 +384,7 @@ THM_FILES = ["output/site/thm_meta.json", "output/site/thm_posts.json", "output/
 
 def side_jobs():
     """30분마다 같이: 뉴스 새로 모으기(깃허브 5분 예약은 실제로 몇 시간씩 밀려서 PC가 맡음) + 2시간마다 '지금 발행할 거리'·황소개미 진단."""
-    for args, limit in ((["live_news.py"], 300), (["hot_now.py"], 900), (["mine_live.py"], 1200)):
+    for args, limit in ((["live_news.py"], 300), (["hot_now.py"], 900), (["mine_live.py"], 1200), (["usage_audit.py"], 900)):
         try:
             r = subprocess.run([sys.executable, *args], cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace",
                                timeout=limit, env={**os.environ, "PYTHONIOENCODING": "utf-8"})
@@ -405,7 +405,7 @@ def push(c, now, force=False):
     side_jobs()
     free_export(c, now)
     files = [f for f in ["output/site/thx_live.json", "output/site/thx_live_meta.json", "output/site/igx_live.json", "output/site/igx_live_meta.json",
-                         "data/free_crawl.json", *NEWS_FILES, "output/site/hot_now.json", *THM_FILES] if json_ok(ROOT / f)]
+                         "data/free_crawl.json", *NEWS_FILES, "output/site/hot_now.json", "output/site/use_audit.json", *THM_FILES] if json_ok(ROOT / f)]
     # 먼저 내 파일을 커밋한 뒤 받기 — 깃허브(매일 06:00)도 같은 뉴스·진단 파일을 쓰기 때문에, 받으면서 겹치면 PC 쪽 최신을 씀.
     # (예전엔 받기→stash 되돌리기에서 겹쳐 <<<<<<< 표시가 든 JSON 이 그대로 올라가 사이트가 깨졌음, 2026-11-01)
     git("add", "--", *files)

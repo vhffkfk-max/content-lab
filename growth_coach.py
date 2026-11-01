@@ -121,6 +121,7 @@ def context():
         "벤치마킹_상위계정": bench[:12] if isinstance(bench, list) else [],
         "지금_뜨는_주제": {"summary": hn.get("summary"), "topics": [p.get("topic") for p in hn.get("picks", [])]},
         "30일_추천주제": [r.get("topic") for r in rows("recs")[:5]],
+        "연구소_활용체크": {k: (rows("use_audit") or {}).get(k) for k in ("week", "verdict", "by_src")} if isinstance(rows("use_audit"), dict) else "아직 없음",
         "사이트_이용시간_7일": usage() or ["아직 기록 없음 (저장소 연결된 브라우저만 올라옴)"],
     }
 

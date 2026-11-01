@@ -226,6 +226,39 @@ a.row:hover .row-main{text-decoration:underline}
 .home-map b{display:flex;align-items:center;gap:8px}
 .home-map span{color:var(--muted)}
 @media (max-width:640px){.job{grid-template-columns:1fr;padding:18px}.job-acts{justify-content:flex-start}.home-map button{grid-template-columns:1fr auto;gap:4px 12px}.home-map span{grid-column:1/2}}
+/* 처음 화면 개편 (2026-11-01): 활용 체크 → 지금 쓸 거리 3개 → 채널별 다음 한 가지 */
+.clamp1{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;overflow:hidden;cursor:pointer}
+.job-why{color:var(--muted)!important}
+.job-ch .pill{margin-left:4px}
+.uc-strip{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:18px 32px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-card);padding:22px 24px}
+.uc-head p{margin:0}
+.uc-label{font-size:13px;color:var(--muted)}
+.uc-big{font-size:20px;font-weight:600;margin:2px 0 4px!important;font-variant-numeric:tabular-nums}
+.uc-num{font-size:44px;line-height:1.1;letter-spacing:-.02em;color:var(--accent)}
+.uc-cap{font-size:13px;color:var(--muted)}
+.uc-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;align-items:end;min-height:120px}
+.uc-day{display:grid;grid-template-rows:auto 84px auto;gap:4px;justify-items:center;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.uc-bar{width:100%;max-width:34px;height:84px;display:flex;flex-direction:column;justify-content:flex-end;background:var(--raised);border-radius:3px;overflow:hidden}
+.uc-bar i{display:block;width:100%}
+.uc-bar .rest,.uc-src-track .rest{background:var(--accent-track)}
+.uc-bar .used,.uc-src-track .used{background:var(--accent)}
+.uc-say{grid-column:1/-1;display:grid;gap:6px}
+.uc-say p{margin:0}
+.uc-verdict{font-size:15px}
+.uc-nudge{font-size:15px;background:var(--accent-soft);color:var(--accent-ink);padding:10px 14px;border-radius:var(--radius-control)}
+.uc-foot{grid-column:1/-1;margin:0;font-size:12px;color:var(--muted);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.uc-src{display:grid;grid-template-columns:140px minmax(0,1fr) 64px;gap:14px;align-items:center;padding:8px 0;font-size:14px}
+.uc-src b{text-align:right;font-variant-numeric:tabular-nums}
+.uc-src-track{display:flex;height:10px;background:var(--raised);border-radius:3px;overflow:hidden}
+.uc-src-track i{display:block;height:100%}
+#uc-ai-box p{margin:0 0 6px}
+.next-list{padding:4px 20px}
+.next-row{display:grid;grid-template-columns:130px minmax(0,1fr) auto;gap:16px;align-items:center;padding:12px 0;border-bottom:1px solid var(--rule)}
+.next-row:last-child{border-bottom:0}
+.next-row>b{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);font-weight:600}
+.next-title{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.next-sub{font-size:13px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media (max-width:760px){.next-title,.next-sub{white-space:normal}.uc-strip{grid-template-columns:1fr;padding:18px}.next-row{grid-template-columns:1fr;gap:4px}.next-row .job-acts{justify-content:flex-start}.uc-src{grid-template-columns:96px minmax(0,1fr) 52px}}
 /* 긴 글은 접어 두고 '더 보기'로 펼친다 */
 .fold{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
 .fold.fold1{-webkit-line-clamp:1}
@@ -243,37 +276,15 @@ a.row:hover .row-main{text-decoration:underline}
     <nav>
       <ul class="nav" id="channel-nav">
         <li><button type="button" data-ch="home"><i class="dot" style="background:var(--text)"></i>오늘 할 일</button></li>
-        <li class="nav-label" style="margin-top:10px">채널별 자세히</li>
-        <li><button type="button" data-ch="instagram"><i class="dot" style="background:var(--ch-instagram)"></i>인스타 · 한국</button>
-          <ul class="subnav" data-for="instagram">
-            <li><a href="#today">오늘 할 일</a></li>
-            <li><a href="#recommend">추천 콘텐츠</a></li>
-            <li><a href="#week">이번 주 계획</a></li>
-            <li><a href="#competitors">경쟁 동향</a></li>
-            <li><a href="#ig-live">지금 크는 글 (실시간)</a></li>
-            <li><a href="#analysis">주간 분석</a></li>
+        <li><button type="button" data-ch="usage"><i class="dot" style="background:var(--accent)"></i>활용 체크<span class="soon" id="uc-badge">—</span></button>
+          <ul class="subnav" data-for="usage">
+            <li><a href="#uc-sum">이번 주 성적</a></li>
+            <li><a href="#uc-match">추천 → 실제 글</a></li>
+            <li><a href="#uc-miss">놓친 추천</a></li>
+            <li><a href="#uc-src">어떤 추천을 쓰나</a></li>
+            <li><a href="#uc-ai">GPT·Claude 기록 넣기</a></li>
           </ul></li>
-        <li><button type="button" data-ch="foreign"><i class="dot" style="background:var(--ch-instagram)"></i>인스타 · 해외</button>
-          <ul class="subnav" data-for="foreign">
-            <li><a href="#fo-ideas">한국에 안 풀린 콘텐츠</a></li>
-            <li><a href="#fo-hot">해외에서 터진 게시물</a></li>
-            <li><a href="#fo-topics">해외 주제 흐름</a></li>
-          </ul></li>
-        <li><button type="button" data-ch="accounts"><i class="dot" style="background:var(--ch-instagram)"></i>계정 분석</button>
-          <ul class="subnav" data-for="accounts">
-            <li><a href="#acc-rank">분야별 계정 순위</a></li>
-            <li><a href="#my">내 계정</a></li>
-            <li><a href="#other">다른 계정 보기</a></li>
-          </ul></li>
-        <li><button type="button" data-ch="google"><i class="dot" style="background:var(--ch-google)"></i>뉴스·정보</button>
-          <ul class="subnav" data-for="google">
-            <li><a href="#g-opps">덜 다룬 화제</a></li>
-            <li><a href="#g-trends">급상승 검색어</a></li>
-            <li><a href="#g-heat">주제별 뉴스량</a></li>
-            <li><a href="#g-press">경제 매체 헤드라인</a></li>
-            <li><a href="#g-news">주제별 기사</a></li>
-          </ul></li>
-        <li><button type="button" data-ch="youtube"><i class="dot" style="background:var(--ch-youtube)"></i>유튜브<span class="soon">준비 중</span></button></li>
+        <li class="nav-label" style="margin-top:10px">만들기</li>
         <li><button type="button" data-ch="threads"><i class="dot" style="background:var(--ch-threads)"></i>쓰레드<span class="soon" id="th-badge">심사 중</span></button>
           <ul class="subnav" data-for="threads">
             <li><a href="#th-mine">황소개미 진단</a></li>
@@ -289,28 +300,14 @@ a.row:hover .row-main{text-decoration:underline}
             <li><a href="#th-formulas">잘 되는 글 공식</a></li>
             <li><a href="#th-accounts">참고 계정</a></li>
           </ul></li>
-        <li><button type="button" data-ch="x"><i class="dot" style="background:var(--ch-x)"></i>X · 트루스</button>
-          <ul class="subnav" data-for="x">
-            <li><a href="#x-brief">오늘의 브리핑</a></li>
-            <li><a href="#x-trump">트럼프 최신 글</a></li>
-            <li><a href="#x-rank">반응 랭킹</a></li>
-            <li><a href="#x-groups">묶음별 주요 글</a></li>
-            <li><a href="#x-accs">보는 계정</a></li>
-          </ul></li>
-        <li><button type="button" data-ch="growth"><i class="dot" style="background:var(--accent)"></i>마케팅 코치</button>
-          <ul class="subnav" data-for="growth">
-            <li><a href="#gr-now">이번 주 진단</a></li>
-            <li><a href="#gr-exp">성장 실험</a></li>
-            <li><a href="#gr-hooks">첫 줄·카피</a></li>
-            <li><a href="#gr-cal">7일 계획</a></li>
-            <li><a href="#gr-comm">팬 만들기</a></li>
-          </ul></li>
-        <li><button type="button" data-ch="feedback"><i class="dot" style="background:var(--accent)"></i>후기·기록</button>
-          <ul class="subnav" data-for="feedback">
-            <li><a href="#fb-done">만든 콘텐츠</a></li>
-            <li><a href="#fb-notes">남긴 후기</a></li>
-            <li><a href="#fb-usage">내 이용 시간</a></li>
-            <li><a href="#fb-store">저장 연결</a></li>
+        <li><button type="button" data-ch="instagram"><i class="dot" style="background:var(--ch-instagram)"></i>인스타 · 한국</button>
+          <ul class="subnav" data-for="instagram">
+            <li><a href="#today">오늘 할 일</a></li>
+            <li><a href="#recommend">추천 콘텐츠</a></li>
+            <li><a href="#week">이번 주 계획</a></li>
+            <li><a href="#competitors">경쟁 동향</a></li>
+            <li><a href="#ig-live">지금 크는 글 (실시간)</a></li>
+            <li><a href="#analysis">주간 분석</a></li>
           </ul></li>
         <li><button type="button" data-ch="telegram"><i class="dot" style="background:var(--ch-telegram)"></i>텔레그램<span class="soon" id="tg-badge">연결 전</span></button>
           <ul class="subnav" data-for="telegram">
@@ -327,6 +324,52 @@ a.row:hover .row-main{text-decoration:underline}
             <li><a href="#trd-posts">오늘 방별 올릴 글</a></li>
             <li><a href="#trd-awards">왕 선정 중간 체크</a></li>
             <li><a href="#trd-rooms">방별 활성화 피드백</a></li>
+          </ul></li>
+        <li class="nav-label" style="margin-top:10px">참고 자료</li>
+        <li><button type="button" data-ch="google"><i class="dot" style="background:var(--ch-google)"></i>뉴스·정보</button>
+          <ul class="subnav" data-for="google">
+            <li><a href="#g-opps">덜 다룬 화제</a></li>
+            <li><a href="#g-trends">급상승 검색어</a></li>
+            <li><a href="#g-heat">주제별 뉴스량</a></li>
+            <li><a href="#g-press">경제 매체 헤드라인</a></li>
+            <li><a href="#g-news">주제별 기사</a></li>
+          </ul></li>
+        <li><button type="button" data-ch="foreign"><i class="dot" style="background:var(--ch-instagram)"></i>인스타 · 해외</button>
+          <ul class="subnav" data-for="foreign">
+            <li><a href="#fo-ideas">한국에 안 풀린 콘텐츠</a></li>
+            <li><a href="#fo-hot">해외에서 터진 게시물</a></li>
+            <li><a href="#fo-topics">해외 주제 흐름</a></li>
+          </ul></li>
+        <li><button type="button" data-ch="x"><i class="dot" style="background:var(--ch-x)"></i>X · 트루스</button>
+          <ul class="subnav" data-for="x">
+            <li><a href="#x-brief">오늘의 브리핑</a></li>
+            <li><a href="#x-trump">트럼프 최신 글</a></li>
+            <li><a href="#x-rank">반응 랭킹</a></li>
+            <li><a href="#x-groups">묶음별 주요 글</a></li>
+            <li><a href="#x-accs">보는 계정</a></li>
+          </ul></li>
+        <li><button type="button" data-ch="accounts"><i class="dot" style="background:var(--ch-instagram)"></i>계정 분석</button>
+          <ul class="subnav" data-for="accounts">
+            <li><a href="#acc-rank">분야별 계정 순위</a></li>
+            <li><a href="#my">내 계정</a></li>
+            <li><a href="#other">다른 계정 보기</a></li>
+          </ul></li>
+        <li><button type="button" data-ch="youtube"><i class="dot" style="background:var(--ch-youtube)"></i>유튜브<span class="soon">준비 중</span></button></li>
+        <li class="nav-label" style="margin-top:10px">성장</li>
+        <li><button type="button" data-ch="growth"><i class="dot" style="background:var(--accent)"></i>마케팅 코치</button>
+          <ul class="subnav" data-for="growth">
+            <li><a href="#gr-now">이번 주 진단</a></li>
+            <li><a href="#gr-exp">성장 실험</a></li>
+            <li><a href="#gr-hooks">첫 줄·카피</a></li>
+            <li><a href="#gr-cal">7일 계획</a></li>
+            <li><a href="#gr-comm">팬 만들기</a></li>
+          </ul></li>
+        <li><button type="button" data-ch="feedback"><i class="dot" style="background:var(--accent)"></i>후기·기록</button>
+          <ul class="subnav" data-for="feedback">
+            <li><a href="#fb-done">만든 콘텐츠</a></li>
+            <li><a href="#fb-notes">남긴 후기</a></li>
+            <li><a href="#fb-usage">내 이용 시간</a></li>
+            <li><a href="#fb-store">저장 연결</a></li>
           </ul></li>
       </ul>
     </nav>
@@ -377,18 +420,36 @@ a.row:hover .row-main{text-decoration:underline}
     <main class="canvas"><div class="page">
       <div class="card" id="ig-alert" hidden style="border-color:var(--pill-negative-ink);background:var(--pill-negative-bg);margin-bottom:12px"></div>
 
-      <!-- 처음 화면: 오늘 할 일만 골라 보여 준다 -->
+      <!-- 처음 화면: 활용 체크(어제까지 실제로 썼나) → 지금 쓸 거리 3개 → 채널별 다음 한 가지 -->
       <div class="view" data-view="home">
         <div class="title-row">
           <div><h1>오늘 뭐 할까요?</h1><p id="home-sub">오늘 할 일만 골랐어요. 하나 골라서 버튼을 누르세요.</p></div>
         </div>
-        <section class="sec" id="home-jobs-sec" aria-label="오늘 할 일">
+        <section class="sec" id="home-check" aria-label="연구소 활용 체크"><div class="uc-strip" id="home-check-box"></div></section>
+        <section class="sec" id="home-jobs-sec">
+          <h2>지금 쓸 거리</h2>
           <div class="home-jobs" id="home-jobs"></div>
         </section>
+        <section class="sec" id="home-next-sec">
+          <h2>채널별 다음 한 가지</h2>
+          <div class="card next-list" id="home-next"></div>
+        </section>
         <section class="sec" id="home-map-sec">
-          <h2>메뉴는 이렇게 나뉘어 있어요</h2>
+          <h2>메뉴 안내</h2>
           <div class="card home-map" id="home-map"></div>
         </section>
+      </div>
+
+      <!-- 활용 체크: 연구소 추천을 실제 글·AI 대화에 썼는지 (usage_audit.py, 3시간마다) -->
+      <div class="view" data-view="usage" hidden>
+        <div class="title-row">
+          <div><h1>활용 체크</h1><p id="uc-sub">—</p></div>
+        </div>
+        <section class="sec" id="uc-sum"><h2>이번 주 성적</h2><div class="uc-strip" id="uc-sum-box"></div></section>
+        <section class="sec" id="uc-match"><h2>추천 → 실제 글</h2><p class="note">황소개미 쓰레드·텔레그램 채널 글과 GPT·Claude 대화가 어느 추천에서 나왔는지 Claude가 판정했어요. 그대로 · 고쳐서 · 주제만 세 단계예요.</p><div class="card"><div class="rows" id="uc-match-list"></div></div></section>
+        <section class="sec" id="uc-miss"><h2>놓친 추천</h2><p class="note">추천했는데 아무 데도 안 쓴 것 중 지금도 쓸 만한 것이에요.</p><div class="card"><div class="rows" id="uc-miss-list"></div></div></section>
+        <section class="sec" id="uc-src"><h2>어떤 추천을 쓰나</h2><p class="note">최근 14일, 메뉴별로 보여 준 추천 수와 실제로 쓴 수예요. 안 쓰는 메뉴는 줄이고 쓰는 메뉴를 앞으로 당겨요.</p><div class="card" id="uc-src-box"></div></section>
+        <section class="sec" id="uc-ai"><h2>GPT·Claude 기록 넣기</h2><div class="card" id="uc-ai-box"></div></section>
       </div>
 
       <!-- 인스타그램 -->
@@ -1080,55 +1141,57 @@ a.row:hover .row-main{text-decoration:underline}
     const b = el('button', kind, label); b.type = 'button'; b.addEventListener('click', () => goTo(ch, id)); return b;
   }
   function drawHome(recs) {
-    const jobs = [], dot = c => { const i = el('i', 'dot'); i.style.background = `var(--ch-${c})`; return i; };
-    const job = (c, chName, title, why, acts) => {
-      const card = el('article', 'job'), txt = el('div'), ch = el('p', 'job-ch'), a = el('div', 'job-acts');
-      ch.append(dot(c), chName); txt.append(ch, el('h3', null, title));
-      if (why) txt.append(el('p', 'job-why', why));
-      a.append(...acts); card.append(txt, a); jobs.push(card);
-    };
-    // 2시간마다 PC가 고른 '지금 발행할 거리' (hot_now.py) — 매일 아침 30일 통계 추천보다 먼저
-    const hn = (rows('hot_now') || [])[0];
-    if (hn) (hn.picks || []).forEach((p, i) => {
+    const jobs = [], next = [], dot = c => { const i = el('i', 'dot'); i.style.background = c === 'accent' ? 'var(--accent)' : `var(--ch-${c})`; return i; };
+    // 지금 쓸 거리: 2시간마다 PC가 고른 3개만 (hot_now.py). 설명은 한 줄만 보이고 눌러서 펼침
+    const hn = (rows('hot_now') || [])[0], A = auditData();
+    const usedTitles = new Set((A && A.matches || []).map(m => m.rec));
+    if (hn) (hn.picks || []).slice(0, 3).forEach(p => {
       const ch = /쓰레드/.test(p.channel) ? 'threads' : /텔레그램/.test(p.channel) ? 'telegram' : /X/.test(p.channel) ? 'x' : 'instagram';
-      const src = (p.sources || [])[0], acts = [copyBtn('초안 복사', p.draft, 'btn primary')];
-      if (src && webLink(src)) { const a = el('a', 'btn small', '근거 보기'); a.href = src; a.target = '_blank'; a.rel = 'noopener'; acts.push(a); }
-      job(ch, `지금 발행할 거리 ${i + 1} · ${p.channel} · ${hn.time} 기준`, `${p.title}${p.follow_up ? ' (후속)' : ''}`, p.why_now, acts);
+      const card = el('article', 'job'), txt = el('div'), meta = el('p', 'job-ch'), acts = el('div', 'job-acts');
+      meta.append(dot(ch), `${p.channel} · ${hn.time.slice(6)} 기준`);
+      if (usedTitles.has(p.title)) meta.append(el('span', 'pill positive', '올렸어요'));
+      const why = el('p', 'job-why clamp1', p.why_now); why.title = '눌러서 펼치기';
+      why.addEventListener('click', () => why.classList.toggle('clamp1'));
+      txt.append(meta, el('h3', null, `${p.title}${p.follow_up ? ' (후속)' : ''}`), why);
+      acts.append(copyBtn('초안 복사', p.draft, 'btn primary'));
+      const src = (p.sources || [])[0];
+      if (src && webLink(src)) { const l = el('a', 'btn small', '근거'); l.href = src; l.target = '_blank'; l.rel = 'noopener'; acts.append(l); }
+      card.append(txt, acts); jobs.push(card);
     });
-    const G = rows('growth_plan'), ex = G && (G.experiments || [])[0];
-    if (ex) {
-      const go = el('button', 'btn small', '실험 자세히'); go.type = 'button'; go.addEventListener('click', () => openFolder('gr-exp'));
-      job('threads', `이번 주 성장 실험 · 마케팅 코치 · ${G.time}`, ex.name, `막힌 곳: ${G.bottleneck}`, [go]);
-    }
+    // 채널별 다음 한 가지: 한 줄씩
+    const row = (c, chName, title, sub, acts) => {
+      const r = el('div', 'next-row'), n = el('b'), t = el('div'), a = el('div', 'job-acts');
+      n.append(dot(c), chName); t.append(el('div', 'next-title', title)); if (sub) t.append(el('div', 'next-sub', sub));
+      a.append(...acts); r.append(n, t, a); next.push(r);
+    };
+    const th = (rows('thx_top') || [])[0];
+    if (th) row('threads', '쓰레드', `따라 할 글 1위 · ${firstLine(th.text, 40)}`, `조회 ${fmtN(th.views)} · @${th.username}`, [goBtn('TOP 5', 'threads', 'th-top')]);
     const r = recs[0];
     if (r) {
-      const plan = el('button', 'btn small', '기획안 보기'); plan.type = 'button'; plan.addEventListener('click', () => openPlan(r.rank));
-      const d = draftBtn(r.topic); d.className = 'btn primary';
-      job('instagram', '인스타 카드뉴스', r.title, `추천 1위 · ${r.reasons[0] || r.topic}`, [d, plan]);
+      const plan = el('button', 'btn small', '기획안'); plan.type = 'button'; plan.addEventListener('click', () => openPlan(r.rank));
+      const d = draftBtn(r.topic); d.className = 'btn small';
+      row('instagram', '인스타', r.title, `추천 1위 · ${r.reasons[0] || r.topic}`, [d, plan]);
     }
     const tg = (() => { const d = dash.data('tg_ai'); return d.status === 'ok' && !Array.isArray(d.data) ? d.data : null; })();
     if (tg && tg.today && tg.today.length) {
       const now = kst(), hm = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
-      const next = tg.today.find(t => (t.time || '') >= hm) || tg.today[0];
-      const line = (next.text || '').split('\n').find(x => x.trim()) || '';
-      job('telegram', '텔레그램', `${next.time}에 올릴 문구 · ${line.length > 34 ? line.slice(0, 34) + '…' : line}`, `오늘 문구 ${tg.today.length}개 중 다음 차례예요.`,
-        [copyBtn('다음 문구 복사', next.text, 'btn primary'), goBtn('전체 보기', 'telegram', 'tg-today')]);
+      const nx = tg.today.find(t => (t.time || '') >= hm) || tg.today[0];
+      row('telegram', '텔레그램', `${(nx.time || '').slice(0, 5)} 문구 · ${firstLine(nx.text, 34)}`, `오늘 문구 ${tg.today.length}개 중 다음 차례`,
+        [copyBtn('복사', nx.text), goBtn('전체', 'telegram', 'tg-today')]);
     }
-    const th = (rows('thx_top') || [])[0];
-    if (th) {
-      const first = (th.text || '').split('\n').find(x => x.trim()) || '';
-      job('threads', '쓰레드', `따라 할 글 1위 · ${first.length > 40 ? first.slice(0, 40) + '…' : first}`, `조회 ${fmtN(th.views)} · @${th.username}`, [goBtn('TOP 5 보기', 'threads', 'th-top', 'btn primary')]);
-    }
+    const G = rows('growth_plan'), ex = G && (G.experiments || [])[0];
+    if (ex) row('accent', '이번 주 실험', ex.name, `마케팅 코치 · ${G.time}`, [goBtn('자세히', 'growth', 'gr-exp')]);
     const g = (rows('google_opportunities') || [])[0];
-    if (g) job('google', '뉴스', `뉴스는 많은데 인스타엔 적은 주제 · ${g.topic}`, `뉴스 하루 약 ${fmtN(g.kr_per_day)}건 · 인스타 경제 계정 게시물 ${g.ig_kr_posts}개`,
-      [goBtn('관련 기사 보기', 'google', 'g-opps', 'btn primary')]);
+    if (g) row('google', '뉴스', `인스타가 덜 다룬 화제 · ${g.topic}`, `뉴스 하루 약 ${fmtN(g.kr_per_day)}건 · 인스타 게시물 ${g.ig_kr_posts}개`, [goBtn('기사', 'google', 'g-opps')]);
+    drawCheckStrip(document.getElementById('home-check-box'), A, true);
+    document.getElementById('home-next').replaceChildren(...next);
     const L = (rows('live_meta') || [])[0], S = (rows('summary') || [])[0];
     document.getElementById('home-sub').textContent = [
       hn ? `지금 발행할 거리는 2시간마다(07~23시) · 마지막 ${hn.time.slice(6)}` : '',
       L ? `뉴스는 30분마다 새로 모아요 · 마지막 ${L.updated_at.slice(11)}${L.new_press + L.new_google ? ` · 새 기사 ${L.new_press + L.new_google}개` : ''}` : '',
       S ? `추천·분석은 매일 06:00 (${S.generated_at.slice(5, 10).replace('-', '/')} 기준)` : ''].filter(Boolean).join(' · ') || '오늘 할 일만 골랐어요. 하나 골라서 버튼을 누르세요.';
     const box = document.getElementById('home-jobs');
-    if (!jobs.length) empty(box, '다음 06:00 수집이 끝나면 오늘 할 일이 여기에 나와요.'); else box.replaceChildren(...jobs);
+    if (!jobs.length) empty(box, '07~23시 사이 2시간마다 새 글감이 나와요.'); else box.replaceChildren(...jobs);
 
     const MAP = [
       ['instagram', 'instagram', '인스타 · 한국', '오늘 만들 카드뉴스 추천과 기획안, 경쟁 계정 동향', 'recommend'],
@@ -1140,6 +1203,7 @@ a.row:hover .row-main{text-decoration:underline}
       ['telegram', 'telegram', '텔레그램', '오늘 올릴 문구와 시황 자동 변환, 방별 성과'],
       ['growth', 'accent', '마케팅 코치', '이번 주 막힌 곳, 성장 실험 3개, 첫 줄 카피, 7일 계획'],
       ['feedback', 'accent', '후기·기록', '도움 된 글과 만든 콘텐츠 기록, 내 이용 시간'],
+      ['usage', 'accent', '활용 체크', '연구소 추천을 실제 글·GPT·Claude 대화에 썼는지 3시간마다 확인'],
     ];
     document.getElementById('home-map').replaceChildren(...MAP.map(([ch, color, name, what, id]) => {
       const b = el('button'), n = el('b'), i = el('i', 'dot'); b.type = 'button';
@@ -2441,6 +2505,69 @@ a.row:hover .row-main{text-decoration:underline}
     },
   };
   const fmtDur = s => s >= 3600 ? `${Math.floor(s / 3600)}시간 ${Math.round(s % 3600 / 60)}분` : s >= 60 ? `${Math.round(s / 60)}분` : `${s}초`;
+  function auditData() { const d = rows('use_audit'); return d && !Array.isArray(d) ? d : null; }
+  function firstLine(t, n) { const l = ((t || '').split('\n').find(x => x.trim()) || '').trim(); return l.length > n ? l.slice(0, n) + '…' : l; }
+  // 7일 막대: 하루 올린 글(연한 색) 중 연구소 추천에서 나온 글(라즈베리)
+  function drawCheckStrip(box, A, compact) {
+    if (!A) { empty(box, '활용 체크는 3시간마다(07~23시) 새로 계산돼요. 첫 결과가 나오면 여기에 떠요.'); return; }
+    const w = A.week, pct = w.posts ? Math.round(w.posts_used / w.posts * 100) : 0;
+    const head = el('div', 'uc-head'), big = el('p', 'uc-big');
+    big.append(el('span', 'uc-num', `${w.posts_used}`), ` / ${w.posts}개`);
+    head.append(el('p', 'uc-label', '최근 7일 올린 글 중 연구소 추천에서 나온 글'), big,
+      el('p', 'uc-cap', `황소개미 ${w.threads}개 중 ${w.threads_used}개 · 텔레그램 ${w.posts - w.threads}개 중 ${w.posts_used - w.threads_used}개 · ` +
+        (A.chat_files && A.chat_files.length ? `GPT·Claude 대화 ${w.chats}개 중 ${w.chats_used}개` : 'GPT·Claude 기록 아직 없음') +
+        (w.site_min != null ? ` · 사이트 ${w.site_min}분` : '')));
+    const max = Math.max(1, ...A.days.map(d => d.posts));
+    const chart = el('div', 'uc-days');
+    A.days.forEach(d => {
+      const col = el('div', 'uc-day'), bar = el('div', 'uc-bar'), used = el('i', 'used'), rest = el('i', 'rest');
+      used.style.height = `${d.posts_used / max * 100}%`; rest.style.height = `${(d.posts - d.posts_used) / max * 100}%`;
+      bar.append(rest, used); bar.title = `${d.label}: 글 ${d.posts}개 중 추천에서 ${d.posts_used}개 · 추천 ${d.recs}개 보여 줌`;
+      col.append(el('span', 'uc-n', d.posts ? `${d.posts_used}/${d.posts}` : '0'), bar, el('span', 'uc-d', d.label));
+      chart.append(col);
+    });
+    const say = el('div', 'uc-say');
+    say.append(el('p', 'uc-verdict', A.verdict));
+    if (A.nudge) { const n = el('p', 'uc-nudge'); n.append(el('b', null, '다음에 할 것 '), A.nudge); say.append(n); }
+    const foot = el('p', 'uc-foot', `${A.time} 확인 · 3시간마다 · 진한 막대 = 추천에서 나온 글 (${pct}%)`);
+    if (compact) { const go = el('button', 'btn small', '활용 체크 자세히'); go.type = 'button'; go.addEventListener('click', () => goTo('usage')); foot.append(' ', go); }
+    box.replaceChildren(head, chart, say, foot);
+  }
+  function drawAudit() {
+    const A = auditData(), badge = document.getElementById('uc-badge');
+    if (A) { const w = A.week; badge.textContent = w.posts ? `${Math.round(w.posts_used / w.posts * 100)}%` : '0%'; }
+    document.getElementById('uc-sub').textContent = A ? `연구소가 보여 준 추천(최근 14일 ${A.by_src.reduce((s, x) => s + x.shown, 0)}개)과 실제로 올린 글을 Claude가 3시간마다 맞춰 봐요 · ${A.time} 기준` : '아직 첫 결과 전이에요.';
+    drawCheckStrip(document.getElementById('uc-sum-box'), A, false);
+    const ml = document.getElementById('uc-match-list');
+    if (!A || !A.matches.length) empty(ml, '아직 추천에서 나온 글이 없어요.');
+    else ml.replaceChildren(...A.matches.map(m => {
+      const r = el(m.url && webLink(m.url) ? 'a' : 'div', 'row'), top = el('div', 'row-main');
+      if (m.url && webLink(m.url)) { r.href = m.url; r.target = '_blank'; r.rel = 'noopener'; }
+      top.append(el('span', 'pill ' + (m.how === '그대로' ? 'positive' : m.how === '고쳐서' ? 'accent' : 'neutral'), m.how), ' ',
+        m.out ? m.out : `${m.kind} (내용은 올리지 않음)`);
+      r.append(top, el('div', 'row-sub', `${m.time} · ${m.kind}${m.views != null ? ` · 조회 ${fmtN(m.views)}` : ''} ← ${m.rec_src} '${m.rec}' (${md(m.rec_day)})`));
+      return r;
+    }));
+    const wl = document.getElementById('uc-miss-list');
+    if (!A || !A.wasted.length) empty(wl, '놓친 추천이 없어요.');
+    else wl.replaceChildren(...A.wasted.map(x => { const r = el('div', 'row'); r.append(el('div', 'row-main', x.title), el('div', 'row-sub', `${md(x.day)} · ${x.src} · ${x.channel}`)); return r; }));
+    const sb = document.getElementById('uc-src-box');
+    if (!A) empty(sb); else {
+      const max = Math.max(1, ...A.by_src.map(x => x.shown));
+      sb.replaceChildren(...A.by_src.map(x => {
+        const r = el('div', 'uc-src'), t = el('div', 'uc-src-track'), s1 = el('i', 'rest'), s2 = el('i', 'used');
+        s1.style.width = `${(x.shown - x.used) / max * 100}%`; s2.style.width = `${x.used / max * 100}%`; t.append(s2, s1);
+        r.append(el('span', null, x.src), t, el('b', null, `${x.used} / ${x.shown}`)); return r;
+      }));
+    }
+    const ai = document.getElementById('uc-ai-box'), files = (A && A.chat_files) || [];
+    const p = t => el('p', null, t);
+    ai.replaceChildren(
+      p(files.length ? `지금 들어 있는 기록: ${files.map(f => `${f.app} (마지막 대화 ${f.last ? md(f.last) : '–'})`).join(', ')}` : '아직 GPT·Claude 기록이 없어요. 한 달에 한두 번 내보내기 파일을 넣어 주면, 대화에서 연구소 추천을 썼는지도 같이 봐요.'),
+      p('ChatGPT: 설정 → 데이터 제어 → 데이터 내보내기 → 메일로 온 zip 파일을 그대로 넣기'),
+      p('Claude: 설정 → 개인정보 → 데이터 내보내기 → 메일로 온 zip 파일 (파일 이름에 claude 가 들어가게)'),
+      p('넣을 곳: PC의 insta-research\\data\\ai_chats 폴더. 대화 내용은 PC에만 두고, 사이트에는 날짜와 어느 추천을 썼는지만 올라가요.'));
+  }
   function drawUsage() {
     if (!document.getElementById('use-kpis')) return;
     use.tick();
@@ -2469,7 +2596,7 @@ a.row:hover .row-main{text-decoration:underline}
   const closeMenu = () => { side.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); };
   menuBtn.addEventListener('click', () => { side.classList.add('open'); menuBtn.setAttribute('aria-expanded', 'true'); });
   document.getElementById('side-close').addEventListener('click', closeMenu);
-  const NAMES = { home: '오늘 할 일', instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드', x: 'X · 트루스소셜', telegram: '텔레그램', feedback: '후기·기록', growth: '마케팅 코치' };
+  const NAMES = { home: '오늘 할 일', instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드', x: 'X · 트루스소셜', telegram: '텔레그램', feedback: '후기·기록', growth: '마케팅 코치', usage: '활용 체크' };
   function setChannel(ch) {
     document.querySelectorAll('#channel-nav > li > button').forEach(b => b.setAttribute('aria-current', String(b.dataset.ch === ch)));
     document.querySelectorAll('.subnav').forEach(u => { u.hidden = u.dataset.for !== ch; });
@@ -2544,7 +2671,7 @@ a.row:hover .row-main{text-decoration:underline}
     if (!setupRefresh.done) { setupRefresh(); setupRefresh.done = true; }
     const recs = grouped();
     drawHome(recs); drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors(); drawAccRank();
-    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawX(); drawFeedback(); drawRewrites(); drawThreadsMine(); drawSlides(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics(); drawTraders(); drawTraderPosts(); drawGrowth();
+    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawX(); drawFeedback(); drawRewrites(); drawThreadsMine(); drawSlides(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics(); drawTraders(); drawTraderPosts(); drawGrowth(); drawAudit();
     const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/), g = location.hash.match(/^#go-([\w-]+)$/);
     setChannel(ch ? ch[1] : m ? 'instagram' : 'home');
     if (g && document.getElementById(g[1])) focusSec(g[1]);
