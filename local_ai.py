@@ -25,7 +25,7 @@ LOCK = Path.home() / ".content-lab-ai" / "lock"
 LOG = ROOT / "data" / "local_ai.log"
 SITE = "output/site/"
 OUTPUTS = [SITE + f for f in ("tg_ai.json", "tg_rewrites.json", "trd_rooms.json", "trd_posts.json", "drafts.json",
-                               "imports.json", "threads_ai.json", "x_ai.json", "thm_ai.json")] + ["data/publish_queue.json"]
+                               "imports.json", "threads_ai.json", "x_ai.json", "thm_ai.json", "growth_plan.json")] + ["data/publish_queue.json"]
 ENV = {**os.environ, "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1"}
 
 
@@ -118,6 +118,11 @@ def run_cycle():
 
     py("tg_rewrite.py")              # 새 시황이 있을 때만 Claude 를 부름
     py("tg_traders.py", "--ai-only")  # PC가 올린 통계가 바뀌었을 때만
+    gp = ROOT / SITE / "growth_plan.json"
+    before = gp.stat().st_mtime if gp.exists() else 0
+    py("growth_coach.py")             # 마케팅 코치 — 월·목 아침 한 번 (스스로 차례를 봄)
+    if gp.exists() and gp.stat().st_mtime != before:
+        did.append("마케팅 코치")
 
     drafts = [r for r in todo if r["job"] == "draft"][-3:]
     for r in drafts:

@@ -11,6 +11,9 @@ on:
       - output/site/igx_live_meta.json
       - output/site/live_meta.json
       - output/site/hot_now.json
+      - output/site/thm_meta.json
+      - output/site/thm_ai.json
+      - output/site/growth_plan.json
   workflow_dispatch:
 
 permissions:

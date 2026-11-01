@@ -15,6 +15,9 @@ from datetime import datetime, timezone
 
 from common import ROOT, connect
 from topics import topics_of
+from apify_threads import MY_ACCOUNTS
+
+MINE = {a.lower() for a in MY_ACCOUNTS}   # 우리 쓰레드 계정 글은 '내 계정'으로 (남의 글 비교 기준에서 빠지게)
 from x_collect import SCHEMA as X_SCHEMA
 
 FREE = ROOT / "data" / "free_crawl.json"
@@ -62,7 +65,7 @@ def main():
         at = iso(p["at"], "%Y-%m-%dT%H:%M:%S+00:00")
         conn.execute(
             "INSERT INTO threads_apify (post_id, code, url, username, text, posted_at, likes, replies, reposts, is_reply, source, topics, "
-            "scraped_at, views, view_status, followers, views_at) VALUES (?,?,?,?,?,?,?,?,?,0,'무료크롤러',?,?,?,?,?,?) "
+            "scraped_at, views, view_status, followers, views_at) VALUES (?,?,?,?,?,?,?,?,?,0,?,?,?,?,?,?,?) "
             "ON CONFLICT(post_id) DO UPDATE SET likes=COALESCE(excluded.likes, likes), replies=COALESCE(excluded.replies, replies), "
             "reposts=COALESCE(excluded.reposts, reposts), views=COALESCE(excluded.views, views), "
             "view_status=COALESCE(excluded.view_status, view_status), followers=COALESCE(excluded.followers, followers), "
@@ -71,7 +74,7 @@ def main():
             "source=CASE WHEN instr(threads_apify.source, '무료크롤러') > 0 THEN threads_apify.source "
             "ELSE threads_apify.source || ', 무료크롤러' END",
             (p["code"], p["code"], p["url"], p["username"], p["text"], iso(p["taken_at"], "%Y-%m-%dT%H:%M:%S+00:00"), p["likes"],
-             p["replies"], p["reposts"], ", ".join(t for t in topics_of(p["text"]) if t != "기타"), at, p["views"],
+             p["replies"], p["reposts"], "내 계정, 무료크롤러" if p["username"].lower() in MINE else "무료크롤러", ", ".join(t for t in topics_of(p["text"]) if t != "기타"), at, p["views"],
              "available" if p["views"] is not None else None, p["followers"], at))
         th += 1
     xs = d.get("x", [])

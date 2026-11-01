@@ -54,7 +54,6 @@ jobs:
           python threads_links.py
           python free_import.py               # 참고 계정 인스타·쓰레드 숫자는 내 PC 무료 크롤러가 모은 것 (Apify 끔)
           python threads_viral.py --export || true
-          python x_collect.py
           python analyze.py --no-open
           python export_site.py
           python account_rank.py              # 계정 분야 분류·점수 → 벤치마킹 목록 (PC 크롤러가 더 자주 봄)

@@ -24,6 +24,8 @@ def section(conn, now, accounts):
             if (r["username"] or "").lower() in names]
     if not rows:
         return empty
+    # 유료 수집(숫자 id)과 PC 크롤러(code id)가 같은 글을 두 줄로 넣었을 수 있어 code 로 하나만 (조회 큰 쪽)
+    rows = list({r["code"] or r["post_id"]: r for r in sorted(rows, key=lambda r: r["views"] or 0)}.values())
     posts = []
     for r in rows:
         try:

@@ -35,6 +35,7 @@ import account_rank
 import insta_watch
 import logged_browser as lb
 import x_watch
+from apify_threads import MY_ACCOUNTS
 from common import DEFAULT_DB, OUTPUT_DIR, ROOT, load_env
 from post_reader import _dom, _threads, _walk
 from topics import topics_of
@@ -51,6 +52,7 @@ WORKERS = 2            # 동시에 여는 페이지 (천천히)
 WINDOW_H = 48          # 이 시간 안에 올라온 글만 지켜봄
 SEARCH_EVERY_S = 1800  # 키워드 검색으로 새 계정 찾기 간격 (로그인 때만)
 FOUND_MAX = 80         # 검색으로 찾아 지켜보는 계정 최대 수
+OWN_EVERY_S = 3600     # 우리 계정(황소개미)은 1시간마다 프로필을 봄 — 진단(mine_live.py)용, 최근 7일 글까지
 IMPORT_EVERY_S = 3600  # 매일 수집 글 목록 가져오기 간격
 PUSH_EVERY_S = 1800    # 깃허브 올리는 간격
 ALERT_VPH = 3000       # 올린 지 24시간 안에 시간당 조회 이만큼이면 알림
@@ -99,7 +101,7 @@ def accounts(c=None):
             if l.strip() and not l.startswith("#")] if WATCH.exists() else []
     found = [r[0] for r in c.execute("SELECT username FROM th_found WHERE hits >= 2 OR best_likes >= 300 "
                                      "ORDER BY best_likes DESC LIMIT ?", (FOUND_MAX,))] if c else []
-    return list(dict.fromkeys(mine + account_rank.bench_accounts("threads") + found))
+    return list(dict.fromkeys(MY_ACCOUNTS + mine + account_rank.bench_accounts("threads") + found))
 
 
 def add_post(c, code, url, user, followers, text, taken_at, source, now, likes=None):
@@ -142,6 +144,8 @@ def scan_accounts(c, now, n):
     bench = set(account_rank.bench_accounts("threads"))
     last = dict(c.execute("SELECT username, last_scan FROM accounts WHERE username IN (%s)" % ",".join("?" * len(users)), users)) if users else {}
     pick = sorted(users, key=lambda u: (last.get(u) or 0) - (1800 if u in bench else 0))[:n]
+    own = [u for u in MY_ACCOUNTS if now - (last.get(u) or 0) >= OWN_EVERY_S]
+    pick = list(dict.fromkeys(own + pick))[:n + len(own)]
     new = 0
     # 로그인 크롬은 한 곳에서 차례로만 쓸 수 있어서 그땐 동시에 열지 않음
     with ThreadPoolExecutor(WORKERS) as ex:
@@ -151,7 +155,7 @@ def scan_accounts(c, now, n):
                 info = p.get("text_post_app_info") or {}
                 if info.get("is_reply") or p["user"]["username"] != user or not p.get("taken_at"):
                     continue
-                if now - p["taken_at"] > WINDOW_H * 3600:
+                if now - p["taken_at"] > (FREE_DAYS * 86400 if user in MY_ACCOUNTS else WINDOW_H * 3600):
                     continue
                 new += c.execute("SELECT 1 FROM posts WHERE code=?", (p["code"],)).fetchone() is None
                 add_post(c, p["code"], f"https://www.threads.com/@{user}/post/{p['code']}", user, followers,
@@ -366,10 +370,12 @@ NEWS_FILES = ["output/site/google_headlines.json", "output/site/google_meta.json
               "output/site/google_topics.json", "output/site/google_trends.json", "output/site/press_headlines.json",
               "output/site/press_popular.json", "output/site/live_meta.json"]
 
+THM_FILES = ["output/site/thm_meta.json", "output/site/thm_posts.json", "output/site/thm_feed.json", "output/site/thm_ai.json"]
+
 
 def side_jobs():
-    """30분마다 같이: 뉴스 새로 모으기(깃허브 5분 예약은 실제로 몇 시간씩 밀려서 PC가 맡음) + 2시간마다 '지금 발행할 거리'."""
-    for args, limit in ((["live_news.py"], 300), (["hot_now.py"], 900)):
+    """30분마다 같이: 뉴스 새로 모으기(깃허브 5분 예약은 실제로 몇 시간씩 밀려서 PC가 맡음) + 2시간마다 '지금 발행할 거리'·황소개미 진단."""
+    for args, limit in ((["live_news.py"], 300), (["hot_now.py"], 900), (["mine_live.py"], 1200)):
         try:
             r = subprocess.run([sys.executable, *args], cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace",
                                timeout=limit, env={**os.environ, "PYTHONIOENCODING": "utf-8"})
@@ -391,7 +397,7 @@ def push(c, now, force=False):
     free_export(c, now)
     git("pull", "--rebase", "--autostash")
     git("add", "output/site/thx_live.json", "output/site/thx_live_meta.json", "output/site/igx_live.json", "output/site/igx_live_meta.json",
-        "data/free_crawl.json", *NEWS_FILES, "output/site/hot_now.json")
+        "data/free_crawl.json", *NEWS_FILES, "output/site/hot_now.json", *THM_FILES)
     if git("commit", "-m", f"data: 쓰레드·인스타 실시간 추적 {datetime.now(KST).strftime('%m/%d %H:%M')}")[0] != 0:
         return
     code, out = git("push")
