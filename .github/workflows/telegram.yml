@@ -11,6 +11,7 @@ on:
       - output/site/tg_streak.json
       - output/site/trd_rooms.json
       - output/site/tg_ai.json
+      - output/site/chart_reports.json
       - output/site/tg_rewrites.json
       - output/site/trd_posts.json
       - output/site/drafts.json
@@ -32,6 +33,10 @@ on:
         description: "트레이더스 방별 올릴 글을 지금 다시 쓰기"
         type: boolean
         default: false
+      chart:
+        description: "차트리포트 만들 종목 (쉼표로 여러 개, 예: 테슬라,삼성전자,이더리움)"
+        type: string
+        default: ""
 
 permissions:
   contents: write
@@ -59,11 +64,13 @@ jobs:
         if: ${{ github.event_name == 'workflow_dispatch' }}
         env:
           FOCUS: ${{ inputs.focus }}
+          CHART: ${{ inputs.chart }}
         run: |
           git config user.name "content-lab-bot"
           git config user.email "content-lab-bot@users.noreply.github.com"
           if [ "${{ inputs.force }}" = "true" ]; then python ai_request.py tg "focus=$FOCUS"; fi
           if [ "${{ inputs.traders }}" = "true" ]; then python ai_request.py trd; fi
+          if [ -n "$CHART" ]; then python ai_request.py chart "symbols=$CHART"; fi
           git add data/ai_requests.json
           git commit -m "ai: PC에 Claude 작업 요청" || echo "변경 없음"
           git pull --rebase -X theirs --autostash || (git rebase --abort; git pull --no-rebase -X ours --no-edit) || true

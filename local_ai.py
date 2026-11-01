@@ -25,7 +25,8 @@ LOCK = Path.home() / ".content-lab-ai" / "lock"
 LOG = ROOT / "data" / "local_ai.log"
 SITE = "output/site/"
 OUTPUTS = [SITE + f for f in ("tg_ai.json", "tg_rewrites.json", "trd_rooms.json", "trd_posts.json", "drafts.json",
-                               "imports.json", "threads_ai.json", "x_ai.json", "thm_ai.json", "growth_plan.json", "thread_posts.json")] + ["data/publish_queue.json", "data/card_style.json", "data/form_stats.json"]
+                               "imports.json", "threads_ai.json", "x_ai.json", "thm_ai.json", "growth_plan.json", "thread_posts.json",
+                               "chart_reports.json", "charts")] + ["data/publish_queue.json", "data/card_style.json", "data/form_stats.json"]
 ENV = {**os.environ, "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1"}
 
 
@@ -137,6 +138,15 @@ def run_cycle():
         refresh_news()
         py("tg_analyze.py", "--scheduled")
         did.append("텔레그램 문구")
+
+    charts = [r for r in todo if r["job"] == "chart"][-3:]   # 사이트 '차트 만들기' 버튼 (빈칸이면 auto = 오늘 차트 글 종목)
+    for r in charts:
+        syms = r["args"].get("symbols", "") or "auto"
+        py("chart_report.py", *(["--from-tg", "--force"] if syms == "auto" else [syms, "--send"]), timeout=15 * 60)
+        did.append(f"차트 {syms}")
+    if slot_once(state, "chart", (8, 19)):   # 자동 차트리포트는 하루 2번 (08시 장 시작 전 · 19시 저녁 미장·코인)
+        py("chart_report.py", "--from-tg", timeout=15 * 60)
+        did.append("차트리포트")
 
     if "trd" in latest:
         refresh_news()

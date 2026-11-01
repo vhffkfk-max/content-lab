@@ -325,6 +325,7 @@ a.row:hover .row-main{text-decoration:underline}
             <li><a href="#tg-mine">내 채널 성과</a></li>
             <li><a href="#tg-rank">경쟁 채널 순위</a></li>
             <li><a href="#tg-today">오늘 올릴 문구</a></li>
+            <li><a href="#tg-charts">차트리포트 이미지</a></li>
             <li><a href="#tg-formulas">잘 되는 글 공식</a></li>
             <li><a href="#tg-hot">다른 방 인기 글</a></li>
             <li><a href="#tg-when">시간대·형식</a></li>
@@ -846,6 +847,16 @@ a.row:hover .row-main{text-decoration:underline}
           <h2>오늘 우리 채널에 올릴 문구</h2>
           <p class="note" id="tg-today-note">하루 7개 시간표(07:30 아침 브리핑 · 08:50 장 시작 전 · 10:30·13:30 장중 · 15:40 장 마감 · 20:30 저녁 미장 · 21:30 공유용 분석)에 맞춘 완성 문구예요. 숫자는 [확인] 표시를 꼭 채워 주세요.</p>
           <div class="recs" id="tg-today-list"></div>
+        </section>
+        <section class="sec" id="tg-charts">
+          <h2>차트리포트 이미지</h2>
+          <p class="note">종목을 넣으면 실제 시세(미국 야후·국내 네이버·코인 바이낸스)로 피보나치·이평선·지지선·추세선을 그려 PC용·모바일용 이미지와 설명 글을 만들어요. 텔레그램 봇으로 이미지 → 설명 글 순서로 오고, 여기에도 올라와요. 하루 2번(08시·19시) 오늘 문구의 다음 차트 글 종목으로 자동으로 만들고, 칸을 비우고 누르면 그 종목으로 지금 바로 만들어요.</p>
+          <div class="chips" style="gap:8px;align-items:center;margin:4px 0 14px">
+            <input id="cr-input" type="text" placeholder="종목 (예: 테슬라, 삼성전자, 이더리움 — 쉼표로 5개까지 · 비우면 오늘 차트 글 종목)" style="flex:1;min-width:240px;padding:9px 12px;border-radius:10px;border:1px solid var(--line, #d0d4dc);font:inherit">
+            <button class="btn primary" id="cr-run" type="button">차트 만들기</button>
+          </div>
+          <div id="cr-status"></div>
+          <div class="recs" id="tg-chart-list"></div>
         </section>
         <section class="sec" id="tg-formulas">
           <h2>잘 되는 텔레그램 글 공식</h2>
@@ -1579,8 +1590,58 @@ a.row:hover .row-main{text-decoration:underline}
     }, 12);
   }
 
+  // ── 텔레그램: 차트리포트 이미지 (chart_report.py) ──
+  function chartBlock(r) {
+    const wrap = el('div'), v = encodeURIComponent(r.made_at || '');
+    wrap.style.display = 'grid'; wrap.style.gap = '8px';
+    const a = el('a'); a.href = `${r.pc}?v=${v}`; a.target = '_blank'; a.rel = 'noopener';
+    const img = el('img'); img.src = `${r.pc}?v=${v}`; img.alt = `${r.name} 일봉 분석 차트`; img.loading = 'lazy';
+    img.style.cssText = 'width:100%;border-radius:10px;display:block;border:1px solid var(--line, #2a2f3a)';
+    a.append(img);
+    const links = el('div', 'chips');
+    for (const [label, href] of [['PC 이미지', r.pc], ['모바일 이미지', r.mobile]]) {
+      const l = el('a', 'btn small', label); l.href = `${href}?v=${v}`; l.target = '_blank'; l.rel = 'noopener'; l.setAttribute('download', ''); links.append(l);
+    }
+    links.append(copyBtn('차트리포트 문구 복사', r.text, 'btn small primary'));
+    wrap.append(a, links, el('div', 'box', r.text));
+    return wrap;
+  }
+  function setupChartRequest() {
+    const inp = document.getElementById('cr-input'), btn = document.getElementById('cr-run'), st = document.getElementById('cr-status');
+    if (!btn) return;
+    const show = (msg, kind) => st.replaceChildren(el('p', kind === 'err' ? 'warn' : 'sub', msg));
+    const run = async () => {
+      const chart = inp.value.split(/[,\n]/).map(x => x.trim()).filter(Boolean).slice(0, 5).join(',');
+      const label = chart || '오늘 차트 글 종목';
+      if (!fb.token && !(await connectGitHub())) return;
+      show('요청하는 중이에요…');
+      try {
+        const r = await ghApi('actions/workflows/telegram.yml/dispatches', { method: 'POST', body: JSON.stringify({ ref: 'main', inputs: { chart: chart || 'auto' } }) });
+        if (r.status === 204) show(`요청했어요 (${label}). PC가 켜져 있으면 5~10분 안에 텔레그램 봇으로 이미지와 설명 글이 오고, 이 칸에도 올라와요.`);
+        else if (r.status === 403 || r.status === 404) show(`실행 권한이 없어요(${r.status}). 토큰에 'Actions: Read and write' 권한을 추가해 주세요.`, 'err');
+        else show(`요청 실패 (${r.status})`, 'err');
+      } catch (e) { show('요청 실패 — 인터넷 연결을 확인해 주세요', 'err'); }
+    };
+    btn.addEventListener('click', run);
+    inp.addEventListener('keydown', e => { if (e.key === 'Enter') run(); });
+  }
+  function drawCharts(CR) {
+    const box = document.getElementById('tg-chart-list');
+    if (!box) return;
+    if (!CR.length) return empty(box, '차트 글 칸이 생기면 PC가 실제 시세로 이미지를 만들어 여기에 올려요.');
+    box.replaceChildren(...CR.map(r => {
+      const c = el('article', 'card rec'), chips = el('div', 'chips');
+      chips.append(el('span', 'pill accent', r.name), el('span', 'pill neutral', `${r.date} 종가 ${r.close} (${r.chg > 0 ? '+' : ''}${r.chg}%)`),
+        el('span', `pill ${r.trend === '상승추세' ? 'positive' : r.trend === '하락추세' ? 'warning' : 'neutral'}`, r.trend));
+      if (r.slot_time) chips.append(el('span', 'pill neutral', `${r.slot_time} 칸`));
+      c.append(chips, chartBlock(r)); c.style.gap = '10px'; return c;
+    }));
+  }
+
   // ── 텔레그램 ──
   function drawTelegram() {
+    const CR = (() => { const d = dash.data('chart_reports'); return d.status === 'ok' && d.data && !Array.isArray(d.data) ? (d.data.items || []) : []; })();
+    drawCharts(CR);
     const M = (rows('tg_meta') || [])[0], C = rows('tg_chats') || [], H = rows('tg_hot') || [];
     const AI = (() => { const d = dash.data('tg_ai'); return d.status === 'ok' && !Array.isArray(d.data) ? d.data : null; })();
     const kb = document.getElementById('tg-kpis'), tl = document.getElementById('tg-today-list'), sb = document.getElementById('tg-summary'),
@@ -1602,6 +1663,8 @@ a.row:hover .row-main{text-decoration:underline}
         const c = el('article', 'card rec'), chips = el('div', 'chips');
         chips.append(el('span', 'pill accent', t.time), el('span', 'pill neutral', t.type));
         c.append(chips, el('div', 'box', t.text), el('p', 'why1', t.why), el('p', 'sub', `근거 · ${t.based_on}`), copyBtn('문구 복사', t.text, 'btn primary'));
+        const cr = CR.find(r => r.slot === `${AI.analyzed_at}|${t.time}`);
+        if (cr) c.append(el('p', 'sub', '↓ 실제 시세로 채운 차트리포트 (이미지 + 본문)'), chartBlock(cr));
         c.append(fbBar({ id: `tg-today:${t.time}:${(t.text || '').slice(0, 24)}`, type: '텔레그램 문구', title: (t.text || '').slice(0, 80), url: '' }));
         c.style.gap = '10px'; return c;
       }));
@@ -1979,6 +2042,7 @@ a.row:hover .row-main{text-decoration:underline}
     { key: 'all', label: '전체 새로 수집 (인스타·뉴스 포함)', wf: 'daily.yml', inputs: { instagram: 'true' }, cost: '수집(Apify·인스타) 비용 · 30~40분 · 하루 1번 이상은 비추천' },
   ];
   function setupRefresh() {
+    setupChartRequest();
     const dlg = document.getElementById('rf-dialog'), opts = document.getElementById('rf-options'), st = document.getElementById('rf-status');
     const focusWrap = document.getElementById('rf-focus-wrap');
     let picked = RF_RUNS[0], polling = null;

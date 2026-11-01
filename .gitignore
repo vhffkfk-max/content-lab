@@ -36,3 +36,5 @@ data/crawl_chrome/
 # 활용 체크 — 추천 기록·AI 대화 내보내기(원문, 로컬 전용)
 data/rec_log.json
 data/ai_chats/
+# 차트리포트 원본 PNG (봇으로 보내는 것, 사이트엔 output/site/charts/*.jpg)
+output/charts/
