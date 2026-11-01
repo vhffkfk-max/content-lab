@@ -100,6 +100,27 @@ def pick_topic(queue, wanted=None):
     return recs[0]["topic"]
 
 
+def pick_hot(queue):
+    """속보형(--short) 재료: 2시간마다 나오는 '지금 발행할 거리'(hot_now) 중 오늘 아직 안 만든 것. 인스타 칸을 먼저."""
+    try:
+        h = json.loads((SITE / "hot_now.json").read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+    today = datetime.now(KST).strftime("%Y-%m-%d")
+    done = {i.get("hot_title") for i in queue["items"] if i.get("created_at", "").startswith(today)}
+    picks = [p for run in h[:3] for p in run.get("picks", []) if p.get("title") not in done]
+    picks.sort(key=lambda p: 0 if "인스타" in p.get("channel", "") else 1)
+    return picks[0] if picks else None
+
+
+SHORT = """
+
+[이번 글은 속보형 짧은 카드]
+- 표지 + 본문 1~3장 + 마지막 장, 모두 합쳐 3~5장. slides 는 1~3개만.
+- 아래 [지금 발행할 거리]의 사건 하나만 다룹니다. 표지에 가장 큰 숫자 하나, 본문은 '무슨 일 → 왜 중요 → 다음에 볼 것'.
+- 폼은 breaking·bignum·bars 처럼 짧게 읽히는 것을 우선합니다."""
+
+
 # ── 프롬프트 ──
 SYSTEM = """당신은 한국 경제 인스타그램 @hotconomy(핫코노미)의 카드뉴스 에디터입니다.
 주어진 재료(뉴스 제목, 시세 숫자, 연구소 기획안)만으로 오늘 올릴 카드뉴스 한 편을 씁니다.
@@ -245,23 +266,31 @@ def main():
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--no-send", action="store_true")
     ap.add_argument("--no-canva", action="store_true", help="캔바 사본 안 만듦")
+    ap.add_argument("--short", action="store_true", help="속보형 3~5장 (지금 발행할 거리에서 주제)")
+    ap.add_argument("--auto", action="store_true", help="PC 예약이 만든 것 (하루 개수 세기용)")
     a = ap.parse_args()
     load_env()
     queue = load_queue()
-    topic = pick_topic(queue, a.topic)
+    hot = pick_hot(queue) if a.short and not a.topic else None
+    if a.short and not a.topic and not hot:
+        a.short = False   # 지금 발행할 거리가 없으면 보통 초안으로
+    topic = hot["title"] if hot else pick_topic(queue, a.topic)
     recent = [i["form"] for i in queue["items"] if i.get("form")][-3:]
     allowed = card_learn.prune([k for k in forms.FORMS if k not in recent])   # 성적이 계속 나쁜 폼은 뺌
     now = datetime.now(KST)
     print(f"📰 주제: {topic} / 최근 폼 {recent or '없음'} 제외")
     mk, news = market(), headlines(topic)
     prompt = build_prompt(topic, news, mk, plan_rows(topic), allowed, now.strftime("%Y-%m-%d (%a)"))
+    if a.short:
+        prompt += SHORT + (f"\n\n[지금 발행할 거리] ({hot.get('channel', '')})\n제목: {hot['title']}\n왜 지금: {hot.get('why_now', '')}\n"
+                           f"참고 초안:\n{hot.get('draft', '')}\n근거: {', '.join(hot.get('sources', [])[:3])}" if hot else "")
     if a.dry_run:
         print(SYSTEM, "\n\n", prompt)
         return
     post = clean(ask_claude(prompt))
     if post.get("form") not in allowed:
         post["form"] = forms.pick_form(post.get("kind", ""), recent)
-    post["slides"] = post.get("slides", [])[:MAX_SLIDES - 2]
+    post["slides"] = post.get("slides", [])[:3 if a.short else MAX_SLIDES - 2]
     tickers = fill_charts(post, mk)
     warns = check(post)
     post["hashtags"] = hashtags(post.get("hashtags", []))
@@ -282,7 +311,8 @@ def main():
                            "title": post.get("title", topic), "caption": caption, "youtube": post.get("youtube", {}),
                            "files": [str(f.relative_to(ROOT)).replace("\\", "/") for f in files], "tickers": tickers,
                            "sources": post.get("sources", []), "warnings": warns, "status": "drafted", "risk": None,
-                           "published": {}, "canva": canva, "created_at": now.isoformat(timespec="seconds")})
+                           "published": {}, "canva": canva, "created_at": now.isoformat(timespec="seconds"),
+                           "series": "short" if a.short else "deep", "auto": a.auto, "hot_title": hot["title"] if hot else None})
     QUEUE.parent.mkdir(parents=True, exist_ok=True)
     QUEUE.write_text(json.dumps(queue, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"✅ {forms.FORM_NAMES[post['form']]} {len(files)}장 → {OUT / did}")
