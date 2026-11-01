@@ -1,5 +1,58 @@
 [
  {
+  "slot": "2026-11-01 15",
+  "at": "2026-11-01T15:31:31+09:00",
+  "time": "11/01 15:31",
+  "summary": "해외 핵심 인물(트럼프·연준·머스크 등)의 X 글이 이번 자료에는 0건이라 인물 글감은 만들지 못했습니다. 지어내지 않았습니다. 트럼프·엔비디아 건은 13:16에 이미 보냈고 새 발표가 없어 뺐습니다. 수출 1조달러도 같은 이유로 뺐습니다. 대신 바이낸스 해킹 속보(텔레그램), 인텔 쇼크와 SOXL·AMD 실적(쓰레드), 중소기업 연체율 카드뉴스(인스타) 3개를 골랐습니다.",
+  "picks": [
+   {
+    "topic": "바이낸스 60억달러대 해킹, 북한 소행 확인·자산 95% 복구",
+    "channel": "텔레그램 짧은 속보",
+    "title": "바이낸스 해킹 자산 95% 복구, 출금 단계 재개",
+    "why_now": "15:17~15:23 사이 전자신문·연합뉴스TV·Investing.com 등 5건 이상이 같은 내용을 보도했습니다. 인스타 @cryptosrus 글은 평소의 152배 반응입니다. 14:19 인베스팅닷컴은 비트코인 추가 하락 위험을 경고했습니다.",
+    "draft": "🚨 [속보] 바이낸스 해킹 자산 95% 복구\n\n- 피해 규모: 약 63억 달러 [확인: 일부 매체는 60억 달러로 표기]\n- 북한 소행으로 확인됐다는 보도(전자신문)\n- 바이낸스는 출금을 단계적으로 다시 열고 있음\n\n다만 인베스팅닷컴은 공포 심리 때문에 비트코인이 더 떨어질 위험이 있다고 짚었습니다. 출금 재개 속도와 코인 시장 반응을 더 지켜볼 필요가 있습니다.",
+    "sources": [
+     "https://news.google.com/rss/articles/CBMiTkFVX3lxTE81WHowQndab0hSYXZndzJ2SWZUb3p2a0VYNXlCeEY2V2tkaUc3UlhmamlpOGZsOGlod1U",
+     "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1jQkJYSk13d25uSWI2QndaWk5sQ1k0U1MtR29Tak1ZSWVoRG9TOXZkSElNQWtrNU1veWx",
+     "https://kr.investing.com/news/cryptocurrency-news/article-2152404"
+    ],
+    "follow_up": false
+   },
+   {
+    "topic": "인텔 21% 급락, 서학개미 SOXL 4조원 베팅, 다음 주 AMD 실적",
+    "channel": "쓰레드 글",
+    "title": "인텔 쇼크 뒤 서학개미 4조원, 다음 주가 갈림길",
+    "why_now": "15:03 매일경제가 서학개미의 SOXL 4조원 베팅을 보도했습니다. 15:15 Memeburn은 인텔 21% 급락을 전했습니다. 쓰레드에서는 AI·반도체 글이 시간당 조회 8,805, 인텔 쇼크·AMD 어닝콜 글이 시간당 726으로 빠르게 크고 있습니다.",
+    "draft": "인텔이 하루에 21% 빠졌는데, 서학개미는 반대로 갔습니다.\n\nSOXL(반도체 3배 레버리지 ETF)에 4조원 넘게 베팅했다는 보도(매일경제)입니다. \"떨어질수록 3배짜리로 만회한다\"는 말까지 나옵니다.\n\n쓰레드 분석 글에 따르면 인텔 쇼크의 핵심은 4분기 PC 부문 가이던스입니다. 다음 주 AMD 실적이 반도체 투자심리를 가를 변수로 꼽힙니다.\n\n3배짜리는 오를 때뿐 아니라 내릴 때도 3배로 움직입니다. 다음 주 일정부터 확인해 두세요.",
+    "sources": [
+     "https://www.mk.co.kr/news/stock/12192523",
+     "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9TMUc3c1BBVE05blFNSy1wS2FDUGNFNUc3N1VJelFIb1J4UERMRWlOdTFZRkdFS0tuemJ",
+     "https://www.threads.com/@tujain.tj/post/DfLa0gCH32d"
+    ],
+    "follow_up": false
+   },
+   {
+    "topic": "중소기업 대출 연체율 9년 반 만에 최고, 가계 5% 대출",
+    "channel": "인스타 카드뉴스",
+    "title": "중소기업 연체율 9년 반 만에 최고",
+    "why_now": "14:43 한국경제가 중소기업 대출 연체율이 9년 반 만에 최고라고 보도했습니다. 15:07 리드경제는 '4% 예금은 그림의 떡, 가계엔 5% 대출 폭탄'을 보도했습니다. 같은 시간대에 이자 부담 기사가 겹쳐 나왔습니다.",
+    "draft": "[1장] 중소기업 대출 연체율, 9년 반 만에 최고\n[2장] 연체율 수치와 기준 시점 [확인: 한국경제 원문에서 수치 확인 후 기입]\n[3장] 가계도 부담: 예금은 4%, 대출은 5% (리드경제 보도)\n[4장] 예금으로 받는 이자는 작고, 대출로 내는 이자는 크다는 뜻\n[5장] 체크 포인트: 내 대출 금리 방식(변동·고정)과 만기 확인하기\n[마지막] 저장해 두고, 다음 지표 발표 때 비교해 보세요",
+    "sources": [
+     "https://www.hankyung.com/article/202611018298i",
+     "https://news.google.com/rss/articles/CBMicEFVX3lxTFBtZnBEdnN5RXNqS0pvdmpvVTBZUnk1Yk1RTnhpMERlcHJRS3Y1RXg1dHM5ZW1PV2ZOWVI"
+    ],
+    "follow_up": false
+   }
+  ],
+  "inputs": {
+   "news": 60,
+   "threads": 8,
+   "insta": 6,
+   "x_vip": 0,
+   "x": 0
+  }
+ },
+ {
   "slot": "2026-11-01 13",
   "at": "2026-11-01T13:16:38+09:00",
   "time": "11/01 13:16",
@@ -575,61 +628,6 @@
   "inputs": {
    "news": 60,
    "threads": 4,
-   "insta": 6,
-   "x_vip": 0,
-   "x": 0
-  }
- },
- {
-  "slot": "2026-10-31 09",
-  "at": "2026-10-31T09:31:59+09:00",
-  "time": "10/31 09:31",
-  "summary": "핵심 인물 X 글은 자료에 없어, 해외 인물 건은 '연준 인상 복귀 발언'(후속 아님, 새 소식 없음)이 이미 발송돼 제외했습니다. 대신 ①나스닥 조정 진입(인텔 -30.7%) ②브렌트유 118달러 육박·휘발유 ③메타 신용전망 하향을 골랐습니다. 바이낸스·연준·쿡 청문회는 중복이라 뺐습니다.",
-  "picks": [
-   {
-    "topic": "나스닥100 조정 진입, 인텔 -30.7%",
-    "channel": "쓰레드",
-    "title": "나스닥, 3주 반 만에 -10%",
-    "why_now": "쓰레드 @pangyobulpae 글 시간당 조회 3,910(조회 21,629, 5.5시간). 같은 주제 급락 글 @beyond.cho 시간당 9,049. 인스타 cryptodaily '시총 8,900억 달러 증발' 글 평소 4.6배. 한경·MarketWatch(닷컴버블 비교) 기사도 다수. 이전 발송은 연준·해킹 중심이라 '나스닥 조정' 자체는 새 각도.",
-    "draft": "오늘 새벽 계좌 보고 놀란 분들 많죠.\n\n나스닥100이 고점 대비 -10%, 3주 반 만에 '조정' 구간에 들어갔어요.\n시작은 인텔. 하루 -30.7%로, 1982년 이후 최악의 하루였다고 합니다.\n\n한국 서학개미는 '6천피' 직후 레버리지 ETF·기술주를 늘렸다는 보도가 있었는데요(연합뉴스). 변동성이 큰 구간이라 레버리지 상품은 손익 폭이 커진다는 점은 알아둘 만해요.\n\n다음 주 애플·AMD 실적과 고용지표가 변수예요. [확인: 지수 낙폭 수치 출처]",
-    "sources": [
-     "https://www.threads.com/@pangyobulpae/post/DfIOsqOnxr6",
-     "https://www.hankyung.com/article/202610317321i",
-     "https://www.yna.co.kr/view/AKR20261030128500008",
-     "https://www.marketwatch.com/story/has-the-tech-bubble-burst-why-the-nasdaqs-rough-ride-looks-eerily-like-2000-5bcefcb2?m"
-    ],
-    "follow_up": false
-   },
-   {
-    "topic": "브렌트유 118달러 육박, 휘발유 재상승 조짐",
-    "channel": "텔레그램 짧은 속보",
-    "title": "브렌트유 넉 달째 상승, 118달러 육박",
-    "why_now": "블루밍비트 09:23 '브렌트유 이란 확전 우려에 넉 달째 상승, 118달러 육박', 한경 08:44 '휘발유 다시 뛸 조짐'. 방금 올라온 새 소식이고 이전 발송에 없음.",
-    "draft": "[속보] 브렌트유 118달러 육박\n\n이란 확전 우려로 넉 달째 상승 중입니다(블루밍비트).\n국내도 '휘발유 다시 뛸 조짐'이라는 보도가 나왔어요(한국경제).\n\n다음 주 발표되는 소비자물가는 이번 유가 흐름이 반영되기 전 수치예요. 물가·금리 기대에는 계속 부담 요인입니다. [확인: 정확한 유가 수치와 국내 휘발유 가격]",
-    "sources": [
-     "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9lLURuOFpfRlBuai1fSGstYmtpTlRiUlhtOUlsSnRFLXR6cF9kWDBFcXdaQXdqbjBLSUU",
-     "https://www.hankyung.com/article/2026103173397",
-     "https://www.yna.co.kr/view/AKR20261031012200002"
-    ],
-    "follow_up": false
-   },
-   {
-    "topic": "S&P, 메타 전망 '부정적'으로 하향",
-    "channel": "인스타 카드뉴스",
-    "title": "AI 투자, 이제 신용평가사가 경고한다",
-    "why_now": "CNBC 07:42 'S&P, 현금흐름·설비투자 우려로 메타 전망 하향'. 인스타에서 Anthropic IPO 글(시간당 좋아요 782) 등 AI 관련 반응이 높고, 쓰레드에서도 구글 시총 700조 증발 글이 인기. 'AI 투자 공포'는 이전 발송에 있었지만 메타 신용전망 하향은 새 사실.",
-    "draft": "[1장] S&P가 메타 전망을 '부정적'으로 낮췄다\n[2장] 이유: 현금흐름 악화와 설비투자(capex) 부담 우려\n[3장] 쉬운 설명: AI에 돈을 너무 빨리 쓰면, 빌려준 쪽은 갚을 능력을 더 따져 본다는 뜻\n[4장] 시장 분위기: 인텔 급락, 나스닥 조정에 이어 빅테크 투자 부담이 부각\n[5장] 한국 투자자 체크: 삼성전자·SK하이닉스 등 AI 반도체 수요는 빅테크 투자에 달려 있음\n[6장] 다음 주 빅테크·AMD 실적에서 투자 계획 언급 주목\n※ 신용등급 자체 변경이 아니라 전망 변경인지 [확인]",
-    "sources": [
-     "https://www.cnbc.com/2026/10/30/meta-outlook-to-revised-to-negative-by-sp-after-cash-flow-negative.html",
-     "https://www.cnbc.com/2026/10/30/jim-cramer-week-ahead-apple-amd-jobs-report.html",
-     "https://www.threads.com/@beyond.cho/post/DfHfgXOmS9l"
-    ],
-    "follow_up": false
-   }
-  ],
-  "inputs": {
-   "news": 60,
-   "threads": 8,
    "insta": 6,
    "x_vip": 0,
    "x": 0
