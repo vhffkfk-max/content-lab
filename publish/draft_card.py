@@ -124,7 +124,7 @@ SYSTEM = """당신은 한국 경제 인스타그램 @hotconomy(핫코노미)의 
 
 캡션 규칙:
 - 첫 줄 훅(40자 이내) → 핵심 3줄 → 행동 유도 하나(댓글 키워드) → 빈 줄 → '(정보 제공용이며 투자 권유가 아닙니다)'.
-- 해시태그 5~8개: #핫코노미 1개 + 주제 태그 + 대형 태그 1~2개. 다른 계정, 매체, 회사 이름 태그 금지.
+- 해시태그 3~5개(인스타 공식 상한 5개): #핫코노미 1개 + 주제 태그 + 대형 태그 1개. 다른 계정, 매체, 회사 이름 태그 금지.
 - youtube: 쇼츠용 제목(40자 이내)과 설명(2~3줄 + 면책 문구).
 
 출력: 설명 없이 JSON 하나만.
@@ -220,7 +220,7 @@ def hashtags(tags):
     tags = [t for t in tags if not any(b in t.lower() for b in NOT_MINE)]
     if BRAND_TAG not in tags:
         tags.insert(0, BRAND_TAG)
-    return list(dict.fromkeys(tags))[:8]
+    return list(dict.fromkeys(tags))[:5]   # 인스타 해시태그 상한 5개
 
 
 def ask_claude(prompt):
