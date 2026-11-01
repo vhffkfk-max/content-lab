@@ -254,13 +254,18 @@ def f_editorial(c, s, n, t):
     d = c if s is None else s
     kick = f'<div class="pad center" style="top:120px;font-size:26px;letter-spacing:12px;color:var(--sub)">{html.escape(c.get("kicker", "HOTCONOMY"))}</div>' if s is None else ""
     img = ""
+    if isinstance(d.get("image"), dict):   # draft_card 가 시세로 채운 {"candles"/"line"} → 선 차트로 (2026-11-01 표지에서 깨졌음)
+        v = d["image"]
+        d = {**d, "image": None, "line": v.get("line") or [round(x[3], 2) for x in v.get("candles", [])]}
     if d.get("image"):
         src = d["image"] if "://" in str(d["image"]) else asset_uri(d["image"])
         img = f'<img src="{src}" style="position:absolute;left:240px;top:{620 if s is None else 520}px;width:600px;height:420px;object-fit:cover;border-radius:24px">'
     elif d.get("line"):
         img = f'<div style="position:absolute;left:140px;top:{640 if s is None else 540}px">{line_svg(d["line"], 800, 360, "#d8262b")}</div>'
     return (kick + f'<div class="pad center serif" style="top:{200 if s is None else 150}px;font-size:{88 if s is None else 70}px;font-weight:700;line-height:1.22;letter-spacing:-1px">{md(d["title"])}</div>'
-            + img + f'<div class="pad center" style="top:1080px;font-size:32px;color:var(--sub);line-height:1.5">{md(d.get("caption", ""))}</div>')
+            + img + (f'<div class="pad center" style="top:1080px;font-size:32px;color:var(--sub);line-height:1.5">{md(d.get("caption", ""))}</div>' if img or s is None else
+                     # 그림 없는 본문은 설명을 제목 바로 아래 크게 (가운데가 텅 비던 문제, 2026-11-01)
+                     f'<div class="pad center" style="top:470px;font-size:44px;color:var(--ink,#1b1b1b);line-height:1.6">{md(d.get("caption", ""))}</div>'))
 
 
 def f_paper(c, s, n, t):
