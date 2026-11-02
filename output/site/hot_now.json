@@ -1,5 +1,65 @@
 [
  {
+  "slot": "2026-11-02 13:22",
+  "at": "2026-11-02T13:22:22+09:00",
+  "time": "11/02 13:22",
+  "checked_at": "2026-11-02T13:22:22+09:00",
+  "checked": "11/02 13:22",
+  "summary": "새 글감 3개: 코스피 반전(텔레그램), 제조업 PMI 8개월 최저(쓰레드), AI 투자금 엔화채·빅테크 우려(인스타). 해외 핵심 인물 X 글은 자료에 없어 제외.",
+  "picks": [
+   {
+    "topic": "코스피 반전, 기관 1조 매수",
+    "channel": "텔레그램 짧은 속보",
+    "title": "[속보] 美 기술주 쇼크에도 코스피 반등, 기관 1조 매수에 5800선",
+    "why_now": "'美 기술주 쇼크에도 코스피 반전' 기사가 13:09 나왔고 장중 2% 상승 기사도 여러 곳에서 이어짐. 10:48 '낙폭 축소' 이후 상승 전환이라는 새 국면.",
+    "draft": "[속보] 코스피 반전\n\n간밤 美 기술주 쇼크로 하락 출발했지만 장중 상승 전환, 한때 2% 상승했습니다.\n기관이 약 1조 원 순매수하며 5800선 [확인: 종가 기준 아님]\n개인·외국인은 '팔자'였습니다.\n같은 시각 국고채 3년물은 3.4bp 올라 연 3.743%까지 상승했습니다.\n\n내일 美 중간선거를 앞둔 변동성은 계속 경계 대상입니다.",
+    "sources": [
+     "https://v.daum.net/v/20261102130920465",
+     "https://biz.chosun.com/stock/stock_general/2026/11/02/LTDQJJJJEJA7BISK2NLXRWRCHY/",
+     "https://www.yna.co.kr/view/AKR20261102085900008"
+    ],
+    "follow_up": true,
+    "time": "11/02 13:22"
+   },
+   {
+    "topic": "한국 제조업 PMI 8개월 만에 최저",
+    "channel": "쓰레드 글",
+    "title": "한국 제조업 체감경기, 8개월 만에 가장 나빴다",
+    "why_now": "13:04 '한국 제조업 PMI 10월 8개월 만에 최저치' 기사가 인베스팅닷컴에서 많이 읽힘. 수출 1조 달러 기대와 대비되는 새 지표이고 오늘 아직 안 다룸. 같은 날 中 PMI는 52.0으로 11개월째 확장.",
+    "draft": "수출 1조 달러 눈앞이라는데, 제조업 체감은 정반대였습니다.\n\n10월 한국 제조업 PMI가 8개월 만에 가장 낮았습니다.\n같은 날 나온 중국 PMI는 52.0, 11개월째 '경기 확대' 구간입니다.\n\n수출 숫자와 공장 체감이 엇갈릴 때는 다음 달 지표를 같이 봐야 합니다.\n(PMI는 50 위면 확장, 아래면 위축 [확인: 한국 10월 수치])",
+    "sources": [
+     "https://kr.investing.com/news/economic-indicators/article-2152785",
+     "https://www.newsis.com/view/NISX20261102_0003850892"
+    ],
+    "follow_up": false,
+    "time": "11/02 13:22"
+   },
+   {
+    "topic": "AI 투자금 엔화채·빅테크 AI 투자 우려",
+    "channel": "인스타 카드뉴스",
+    "title": "AI 돈이 일본으로 간다: 엔화채 사상 최대",
+    "why_now": "'AI 투자금 찾아 일본으로…엔화채 발행 사상 최대'가 많이 읽힘. 쓰레드에서도 시간당 조회 1614로 '오픈AI 자금조달 목표 하향, 메타 신용등급전망 부정적'이 뜸. 07:24 인텔·AI 수익성 우려 이후의 새 흐름.",
+    "draft": "[1장] AI 투자금, 왜 일본으로 갔나\n[2장] 해외 기업·공공기관의 엔화채 발행, 사상 최대\n[3장] 간밤 소식: 오픈AI 자금조달 목표 하향, 메타 신용등급 전망 부정적 [확인: 원문]\n[4장] 뜻: AI 투자가 커질수록 돈을 어디서 빌리느냐가 중요해짐\n[5장] 한국 투자자 체크: 반도체·AI 관련주 변동성, 환율·금리 동향\n※ 투자 권유가 아닙니다.",
+    "sources": [
+     "https://kr.investing.com/news/stock-market-news/article-2152712",
+     "https://news.einfomax.co.kr/news/articleView.html?idxno=4442496",
+     "https://www.threads.com/@joo___wol2/post/DfNtx5Zk8eO"
+    ],
+    "follow_up": false,
+    "time": "11/02 13:22"
+   }
+  ],
+  "notified_at": "2026-11-02T12:49:04+09:00",
+  "inputs": {
+   "news": 90,
+   "new_news": 34,
+   "threads": 2,
+   "insta": 6,
+   "x_vip": 0,
+   "x": 0
+  }
+ },
+ {
   "slot": "2026-11-02 12:49",
   "at": "2026-11-02T12:49:04+09:00",
   "time": "11/02 12:49",
@@ -800,60 +860,6 @@
      "https://www.cnbc.com/2026/10/31/openai-fundraising-20-billion-valuation.html",
      "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9iYU8tR2ZHZmxTaXhCVU5PU1pFMlBLUVNEQkNRelhZak1fMXlnd2pDNVJHV1Ayd2JFd0t",
      "http://www.edaily.co.kr/news/newspath.asp?newsid=01115206645641456"
-    ],
-    "follow_up": false
-   }
-  ],
-  "inputs": {
-   "news": 60,
-   "threads": 10,
-   "insta": 6,
-   "x_vip": 0,
-   "x": 0
-  }
- },
- {
-  "slot": "2026-10-31 23",
-  "at": "2026-10-31T23:07:08+09:00",
-  "time": "10/31 23:07",
-  "summary": "해외 핵심 인물 X 글은 자료에 없어, 연준 워시 의장 기자회견 기사로 대신했습니다. 나머지는 올트먼 방한과 SK·삼성 협력(카드뉴스), 비트코인 공포와 나스닥 상장사 매도 검토(텔레그램)입니다. 머스크, 인텔, 바이낸스 해킹 자체, 금값, 트럼프 5000달러는 이미 보내서 뺐습니다.",
-  "picks": [
-   {
-    "topic": "워시 연준 의장 기자회견, 금리 동결과 월가의 불안",
-    "channel": "쓰레드",
-    "title": "워시 연준 의장이 입을 열었는데 시장은 더 헷갈립니다",
-    "why_now": "'워시 기자회견, 월스트리트 다시 추측만 남겨'(IndexBox 21:50), 'Fed Chair Kevin Warsh 4 words'(Motley Fool 22:36), '연준 물가 높은데 금리 동결'(21:32) 기사가 한꺼번에 나왔습니다. 21:28에 보낸 로건 '추가 인상' 발언의 연장선이라 후속으로 씁니다. 월요일 개장 전에 읽히기 좋습니다.",
-    "draft": "연준 워시 의장이 말했는데, 시장은 오히려 더 헷갈립니다.\n\n연준은 물가가 높은데도 금리를 동결했습니다.\n기자회견 뒤 월가는 \"그래서 다음엔 올린다는 거야, 만다는 거야?\" 추측만 하는 분위기입니다.\n\n앞서 댈러스 연은 총재는 \"최소 두 번 더 올려야 한다\"고 했습니다.\n의장의 말(동결)과 위원의 말(추가 인상)이 엇갈리는 겁니다.\n\n한국 투자자에겐 금리 방향이 불확실하면 환율과 성장주가 같이 흔들릴 수 있다는 뜻입니다.\n월요일 장 시작 전에 이 문장을 다시 보세요.\n\n※ 워시 의장이 한 '4 words'가 정확히 무엇인지 [확인] 후 넣을 것",
-    "sources": [
-     "https://news.google.com/rss/articles/CBMikwFBVV95cUxOdnNabW8zQllSSzJLVExVVXRiMXVRYXlBc2NOZkFjelZTc0VTbjl1NkdJZUZMejFPeG5",
-     "https://news.google.com/rss/articles/CBMivwFBVV95cUxPOTg1a3F5SUp6ZzJPUjB2Yk5tTTh6dTR3WnFESEtqcjhiNlJKZTNMSUR0RzVucWFzU1R",
-     "https://news.google.com/rss/articles/CBMieEFVX3lxTE13aWVxbnBPVDhZRXFWR1VWdjFzQ0EyMUlYNmhFYmtaVnJ6aXJSdWZIU1RHRWpqYU1PU2d"
-    ],
-    "follow_up": true
-   },
-   {
-    "topic": "샘 올트먼 깜짝 방한, 삼성·SK 회동",
-    "channel": "인스타 카드뉴스",
-    "title": "올트먼이 한국에 왔다: 삼성·SK와 무슨 얘기?",
-    "why_now": "'깜짝 방한 샘 올트먼, 삼성·SK 연쇄 회동'(21:41), '최태원·올트먼 다시 만났다…SK HBM 90만장·AI 데이터센터'(22:13) 기사가 나왔습니다. 월요일 '삼전닉스' 긴장 기사(22:15)와도 이어집니다. 같은 시각 'OpenAI, 45조원 조달 목표의 절반에도 못 미치는 투자 약정'(22:38)도 있어 대비가 됩니다.",
-    "draft": "[1장] 샘 올트먼, 깜짝 방한\n삼성·SK 연쇄 회동\n\n[2장] 무슨 일?\n- 올트먼이 삼성, SK 경영진을 잇달아 만남\n- 최태원 회장과는 다시 만남\n- 보도: SK와 HBM 90만장·AI 데이터센터 협력 논의 [확인]\n\n[3장] 왜 중요?\nAI 회사가 돈을 쓰려면 메모리 반도체가 필요합니다.\n한국 기업이 그 공급 쪽에 서 있습니다.\n\n[4장] 하지만\nOpenAI는 목표 45조원 중 절반도 안 되는 투자 약정만 확보했다는 보도가 나왔습니다. [확인]\n\n[5장] 체크포인트\n- 협약이 실제 계약으로 이어지는지\n- 다음 주 반도체 기업 실적 발표\n- 월요일 삼성전자·SK하이닉스 반응\n\n※ 투자 권유가 아닌 정보 정리입니다.",
-    "sources": [
-     "https://news.google.com/rss/articles/CBMicEFVX3lxTE5BSnpra0cyZU51ZDV6VGNNMVFtSVlRT0k1TWJGZ1hsYnppc0t0dFJMb0p1bFB6N3ZBUm4",
-     "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5leExMT1dBRTBQUE04dy1QWnZ4c2pwX1JqLTdMR21VOTBWenM1MmZab2dMejFQRXNIb0Z",
-     "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBzMVFTNmJqaEFWeDdBcC15QnRhS3NXQ2dIX0g2X0EwNzFObzhGMng2NzA4OGVXUV9YR1p"
-    ],
-    "follow_up": false
-   },
-   {
-    "topic": "비트코인 공포 지수 8월 저점, 나스닥 상장사의 4.5억 달러 비트코인 매도 검토",
-    "channel": "텔레그램 짧은 속보",
-    "title": "[속보] 나스닥 상장사, 4.5억 달러 비트코인 매도 검토",
-    "why_now": "CoinDesk(21:49)와 BigGo(22:25)가 보도했고, AMBCrypto(23:00)는 '비트코인 공포 8월 저점, $73K 주목'이라 전했습니다. 매일경제 엠블록(22:45)은 '반등했는데 왜 흔들리나'를 다뤘습니다. 이전 발송은 해킹 경고였고, 이번엔 매도 검토와 공포 지표라 각도가 다릅니다.",
-    "draft": "[속보] 나스닥 상장사 \"비트코인 약 4.5억 달러어치 팔 수도\"\n\n- 이유로 바이낸스 해킹과 양자컴퓨터 위험을 꼽았다고 합니다.\n- 이 회사 시가총액은 약 780만 달러 수준으로 알려졌습니다. [확인]\n- 비트코인 공포 지표는 8월 저점 수준, 트레이더들은 7만3천 달러 선을 보고 있습니다. [확인]\n\n회사 규모에 비해 보유량이 커서 실제 매도로 이어질지는 더 봐야 합니다.\n\n※ 투자 권유가 아닙니다.",
-    "sources": [
-     "https://www.coindesk.com/markets/2026/10/31/a-nasdaq-listed-company-may-sell-usd450-million-bitcoin-citing-binance-hack-",
-     "https://news.google.com/rss/articles/CBMidkFVX3lxTFA0X0tzTTNxcU9aUlc3MFRiVWdKZGRBVlJXaEdzV0hWLTh6S0E2ZmxyS19iSkNjUHVISEV",
-     "https://news.google.com/rss/articles/CBMijgFBVV95cUxPVV95enE2RlZKZmU4clBYOExXX2JwSE5BVDZjOGliQzV2ckc1ZndRVFRHWUdXbjlnTWd"
     ],
     "follow_up": false
    }
