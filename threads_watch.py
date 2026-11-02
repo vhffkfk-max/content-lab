@@ -34,6 +34,7 @@ import requests
 import account_rank
 import insta_watch
 import logged_browser as lb
+import repo_sync
 import x_watch
 from apify_threads import MY_ACCOUNTS
 from common import DEFAULT_DB, OUTPUT_DIR, ROOT, load_env
@@ -406,17 +407,9 @@ def push(c, now, force=False):
     free_export(c, now)
     files = [f for f in ["output/site/thx_live.json", "output/site/thx_live_meta.json", "output/site/igx_live.json", "output/site/igx_live_meta.json",
                          "data/free_crawl.json", *NEWS_FILES, "output/site/hot_now.json", "output/site/use_audit.json", *THM_FILES] if json_ok(ROOT / f)]
-    # 먼저 내 파일을 커밋한 뒤 받기 — 깃허브(매일 06:00)도 같은 뉴스·진단 파일을 쓰기 때문에, 받으면서 겹치면 PC 쪽 최신을 씀.
-    # (예전엔 받기→stash 되돌리기에서 겹쳐 <<<<<<< 표시가 든 JSON 이 그대로 올라가 사이트가 깨졌음, 2026-11-01)
-    git("add", "--", *files)
-    if git("commit", "-m", f"data: 쓰레드·인스타 실시간 추적 {datetime.now(KST).strftime('%m/%d %H:%M')}")[0] != 0:
-        return
-    code, out = git("pull", "--rebase", "-X", "theirs", "--autostash")
-    if code != 0:
-        git("rebase", "--abort")
-        return log.info("깃허브 받기 실패: %s", out[-200:])
-    code, out = git("push")
-    log.info("깃허브 올리기 %s", "완료" if code == 0 else f"실패: {out[-200:]}")
+    # 깃허브(매일 06:00)도 같은 뉴스·진단 파일을 쓰는데, 겹치면 PC 쪽 최신을 씀. 개발 폴더의 수정 중인 코드는 안 건드림 (repo_sync.py)
+    log.info("깃허브 올리기 %s", repo_sync.publish(files, f"data: 쓰레드·인스타 실시간 추적 {datetime.now(KST).strftime('%m/%d %H:%M')}"))
+    log.info("깃허브 받기 %s", repo_sync.pull())
 
 
 def tick(c, no_push=False):

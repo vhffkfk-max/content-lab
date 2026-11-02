@@ -19,13 +19,13 @@ import os
 import re
 import sqlite3
 import statistics
-import subprocess
 import sys
 from datetime import datetime, timedelta, timezone
 
-from common import DATA_DIR, OUTPUT_DIR, ROOT, load_env
+from common import DATA_DIR, OUTPUT_DIR, load_env
 from tg_collect import MIN_GROUP_CHARS, link_of, media_of
 from tg_login import CHATS
+import repo_sync
 import tg_analyze
 import tg_metrics
 from tg_history import SCHEMA as HISTORY_SCHEMA
@@ -193,7 +193,7 @@ async def send_alerts(client, conn, chats, dry, since_min=None):
 async def deliver_rewrites(client, conn, dry):
     """서버가 변환한 말희아빠 시황(output/site/tg_rewrites.json)을 내 텔레그램 '저장된 메시지'로 한 번씩 보낸다."""
     import json
-    git("pull", "--rebase", "--autostash")
+    repo_sync.pull()
     path = OUTPUT_DIR / "site" / "tg_rewrites.json"
     if not path.exists():
         return
@@ -236,19 +236,13 @@ async def ig_alert(client, conn, dry):
     conn.commit()
 
 
-def git(*args):
-    r = subprocess.run(["git", *args], cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="ignore", creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
-    return r.returncode, (r.stdout + r.stderr).strip()
-
-
 def push():
-    git("pull", "--rebase", "--autostash")
-    git("add", *[f"output/site/{n}.json" for n in SITE_FILES])
-    code, _ = git("commit", "-m", f"data: 텔레그램 {datetime.now(tg_analyze.KST).strftime('%m/%d %H:%M')}")
-    if code != 0:
-        return  # 바뀐 게 없음
-    code, out = git("push")
-    log.info("사이트 올리기 %s", "완료" if code == 0 else f"실패: {out[-200:]}")
+    result = repo_sync.publish([f"output/site/{n}.json" for n in SITE_FILES], f"data: 텔레그램 {datetime.now(tg_analyze.KST).strftime('%m/%d %H:%M')}")
+    if result != "바뀐 것 없음":
+        log.info("사이트 올리기 %s", result)
+    pulled = repo_sync.pull()
+    if pulled.startswith("보류"):
+        log.info("깃허브 받기 %s", pulled)
 
 
 async def run(args):
