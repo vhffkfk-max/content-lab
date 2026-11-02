@@ -1,6 +1,15 @@
 [
  {
   "geo": "KR",
+  "term": "걷기",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "속초해수욕장서 7일 맨발걷기…버스킹·체험 행사",
+  "news_link": "https://www.yna.co.kr/view/AKR20261102057400062"
+ },
+ {
+  "geo": "KR",
   "term": "김지영",
   "traffic": 2000,
   "topics": "",
@@ -37,21 +46,21 @@
  },
  {
   "geo": "KR",
-  "term": "한국 버추얼 휴먼 산업 협회",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "국내 첫 버추얼 전문 시상식 열린다…‘버추얼 아이콘 어워즈’ 내년 2월 개최",
-  "news_link": "https://sports.khan.co.kr/article/202611021038013"
- },
- {
-  "geo": "KR",
   "term": "pakhtakor đấu với al-nassr",
   "traffic": 100,
   "topics": "",
   "econ": false,
   "news_title": "Nhận định Pakhtakor vs Al Nassr: Ronaldo lại tỏa sáng?, 20h45 ngày 2/11/2026",
   "news_link": "https://thethao247.vn/441-nhan-dinh-pakhtakor-vs-al-nassr-ronaldo-lai-toa-sang-20h45-ngay-2-11-2026-c288-d443121.html"
+ },
+ {
+  "geo": "KR",
+  "term": "노숙인",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "",
+  "news_link": ""
  },
  {
   "geo": "KR",
@@ -81,81 +90,27 @@
   "news_link": "https://weekly.chosun.com/news/articleView.html?idxno=56804"
  },
  {
-  "geo": "KR",
-  "term": "오라클",
-  "traffic": 100,
-  "topics": "AI·반도체, 환율·달러",
-  "econ": true,
-  "news_title": "오라클, 증자·회사채로 200억달러 조달 추진…AI 인프라 투자 박차",
-  "news_link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4442609"
- },
- {
   "geo": "US",
-  "term": "king charles downpour royal parade",
-  "traffic": 2000,
+  "term": "harrison butker",
+  "traffic": 20000,
   "topics": "",
   "econ": false,
-  "news_title": "Watch: King Charles III caught in torrential downpour at Antigua and Barbuda parade",
-  "news_link": "https://www.bbc.com/news/videos/cxnv090q9qelo"
+  "news_title": "Kansas City Chiefs kicker Harrison Butker misses fourth quarter FG in Denver",
+  "news_link": "https://www.nfl.com/videos/harrison-butker-misses-fourth-quarter-fg-in-denver"
  },
  {
   "geo": "US",
-  "term": "utep basketball",
-  "traffic": 1000,
+  "term": "tornado watch",
+  "traffic": 20000,
   "topics": "",
   "econ": false,
-  "news_title": "Northern Kentucky vs UTEP Prediction, Pick, College Basketball Odds for Monday, Nov. 2",
-  "news_link": "https://sports.yahoo.com/articles/northern-kentucky-vs-utep-prediction-100018023.html"
- },
- {
-  "geo": "US",
-  "term": "al-gharafa vs al qadsiah",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Kashiwa vs Daejeon Citizen: First Half BTTS",
-  "news_link": "https://www.coinbase.com/en-br/predictions/event/KXAFCCL1HBTTS-26NOV03REYDAJ"
- },
- {
-  "geo": "US",
-  "term": "atalanta vs parma",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Atalanta vs Parma: Italian Serie A stats & head-to-head",
-  "news_link": "https://www.bbc.com/sport/football/live/cm9wzqv92nq7t"
- },
- {
-  "geo": "US",
-  "term": "david schwimmer",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Today’s famous birthdays list for November 2, 2026 includes celebrities David Schwimmer, Reshma Shetty",
-  "news_link": "https://www.cleveland.com/entertainment/2026/11/todays-famous-birthdays-list-for-november-2-2026-includes-celebrities-david-schwimmer-reshma-shetty.html"
- },
- {
-  "geo": "US",
-  "term": "ella langley toy story outfit",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Ella Langley's 'Toy Story' Halloween costume goes viral with nearly 500,000 Instagram likes",
-  "news_link": "https://www.foxnews.com/outkick-culture/ella-langley-toy-story-halloween-costume-goes-viral-500000-instagram-likes"
- },
- {
-  "geo": "US",
-  "term": "mining",
-  "traffic": 500,
-  "topics": "정치·관세",
-  "econ": true,
-  "news_title": "Exclusive | Trump Family-Linked Mining Venture Aims to Go Public in $2 Billion Deal",
-  "news_link": "https://www.wsj.com/finance/trump-family-linked-mining-venture-aims-to-go-public-in-2-billion-deal-38d85946"
+  "news_title": "Tornado Watch Issued in Briscoe, Hale, Lamb and Swisher, Texas",
+  "news_link": "https://cedarnews.net/newstasks/1111995/tornado-watch-briscoe-hale-lamb-swisher-texas/"
  },
  {
   "geo": "US",
   "term": "newcastle vs everton",
-  "traffic": 500,
+  "traffic": 5000,
   "topics": "",
   "econ": false,
   "news_title": "Premier League: build-up to Newcastle v Everton - live text",
@@ -163,20 +118,65 @@
  },
  {
   "geo": "US",
-  "term": "robinson cano jr",
-  "traffic": 500,
+  "term": "deportivo - osasuna",
+  "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Miami Marlins, Robinson Cano Jr. reach $1M pre-agreement",
-  "news_link": "https://sports.yahoo.com/articles/miami-marlins-robinson-cano-jr-184136695.html"
+  "news_title": "Alineaciones confirmadas de Deportivo y Osasuna hoy, jornada 11 de LaLiga",
+  "news_link": "https://www.eldesmarque.com/futbol/liga-1a-division/20261102/alineaciones-confirmadas-deportivo-coruna-osasuna-jornada-laliga-11_18_020598104.html"
  },
  {
   "geo": "US",
-  "term": "san jose state vs nebraska",
+  "term": "okc weather",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Waves of Storms likely Monday. Severe Storms likely, some see heavy rainfall.",
+  "news_link": "https://kfor.com/weather/waves-of-storms-likely-monday-severe-storms-likely-some-see-heavy-rainfall/"
+ },
+ {
+  "geo": "US",
+  "term": "russell westbrook",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Thunder Set to Retire Russell Westbrook's No. 0",
+  "news_link": "http://www.nba.com/thunder/news/westbrook-261102"
+ },
+ {
+  "geo": "US",
+  "term": "atalanta - parma",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "How to Watch Nebraska Women’s Basketball vs. San Jose State with Preview, Breakdown, TV Channel",
-  "news_link": "https://www.si.com/college/nebraska/basketball/how-to-watch-husker-women-vs-san-jose-state-preview-breakdown-tv-channel-01m6c8yvy618"
+  "news_title": "Atalanta-Parma, formazioni ufficiali: fuori Elmas e Romero, c'è Rowe",
+  "news_link": "https://www.fantacalcio.it/news/calcio-italia/02_11_2026/atalanta-parma-formazioni-ufficiali-500150"
+ },
+ {
+  "geo": "US",
+  "term": "ben wang",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Ben Wang Circling Iceman Role In Marvel’s ‘X-Men’",
+  "news_link": "https://deadline.com/2026/11/ben-wang-circling-iceman-role-x-men-1237211516/"
+ },
+ {
+  "geo": "US",
+  "term": "michael strahan dodge challenger demon",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Michael Strahan Bought This Dodge Challenger SRT Demon in 2023, Drove 350 Miles, Listed It for Sale",
+  "news_link": "https://www.autoevolution.com/news/michael-strahan-bought-this-dodge-challenger-srt-demon-in-2023-drove-350-miles-listed-it-for-sale-277858.html"
+ },
+ {
+  "geo": "US",
+  "term": "mike bobo",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Georgia 27-8 Florida (Oct 31, 2026) Game Recap",
+  "news_link": "https://www.espn.com/college-football/recap/_/gameId/401856734"
  }
 ]
