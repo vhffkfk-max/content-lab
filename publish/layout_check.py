@@ -42,7 +42,7 @@ document.fonts.ready.then(() => {
     el.dataset.lc = items.length - 1;
   }
   for (const el of root.querySelectorAll('svg,img,.ui,.point,.bub,.btn')) {
-    if (el.closest('.foot') || el.closest('svg') !== null && el.tagName !== 'svg' || el.matches('.bgph,.ph')) continue;
+    if (el.closest('.foot') || el.closest('svg') !== null && el.tagName !== 'svg' || el.matches('.bgph,.ph,.nw-ph')) continue;
     const q = el.getBoundingClientRect();
     if (q.width < 2 || q.height < 2) continue;
     const inside = [...el.querySelectorAll('[data-lc]')].map(x => +x.dataset.lc);

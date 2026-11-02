@@ -92,6 +92,22 @@ def _run(model, system, messages, schema=None, effort=None):
                            content=[SimpleNamespace(type="text", text=text)])
 
 
+def look(model, prompt, image):
+    """그림 파일 하나를 보여 주고 글로 답을 받는다 (Read 도구만 허용)."""
+    cli = _cli()
+    if not cli:
+        raise APIConnectionError("claude 명령을 찾지 못했어요")
+    env = {k: v for k, v in os.environ.items() if k not in ("ANTHROPIC_API_KEY", "ANTHROPIC_AUTH_TOKEN")}
+    cmd = [cli, "-p", "--model", model, "--tools", "Read", "--allowedTools", "Read", "--strict-mcp-config", "--setting-sources", "",
+           "--no-session-persistence", "--output-format", "json"]
+    p = subprocess.run(cmd, input=f"{prompt}\n\n그림 파일: {image}", capture_output=True, text=True, encoding="utf-8", errors="replace",
+                       timeout=180, cwd=os.path.dirname(image), env=env, creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
+    d = json.loads(p.stdout)
+    if d.get("is_error"):
+        raise APIStatusError(str(d.get("result"))[:300])
+    return d.get("result") or ""
+
+
 class _Stream:
     def __init__(self, r):
         self.r = r

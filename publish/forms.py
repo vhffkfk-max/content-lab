@@ -1,4 +1,4 @@
-"""핫코노미 카드뉴스 디자인 폼 12개 (벤치마크 45개 캐러셀 분석, 2026-10-28 + 배경 사진형 2026-11-01).
+"""핫코노미 카드뉴스 디자인 폼 (벤치마크 45개 캐러셀 2026-10-28, 계정 16곳 50개 글 비교 2026-11-02 → publish/DESIGN_NOTES.md).
 
     from publish.forms import make, pick_form
     form = pick_form("속보", recent=["list", "bars"])     # 소재 종류 → 폼 (최근 3개에 쓴 폼은 피함)
@@ -26,26 +26,39 @@ DISCLAIMER = "정보 제공용이며 투자 권유가 아닙니다"
 
 # 소재 종류 → 어울리는 폼 (앞쪽일수록 우선)
 KINDS = {
-    "속보": ["breaking", "photo", "bignum"], "급등락": ["breaking", "bignum", "photo"],
-    "숫자": ["bignum", "bars", "breaking"], "실적": ["bignum", "bars", "photo"], "지표": ["bignum", "paper", "bars"],
-    "순위": ["bars", "list", "bignum"], "비교": ["bars", "list", "editorial"],
-    "정리": ["list", "hot", "paper"], "절약": ["list", "editorial", "steps"], "N가지": ["list", "steps", "hot"],
-    "이슈": ["scene", "photo", "breaking"], "기업": ["scene", "photo", "bignum"], "인물": ["scene", "photo", "quote"],
-    "썰": ["story", "editorial", "quote"], "입문": ["story", "hot", "steps"], "기초": ["hot", "story", "list"],
-    "트렌드": ["scene", "editorial", "photo"], "생활": ["scene", "editorial", "list"],
-    "브리핑": ["paper", "breaking", "list"], "방법": ["steps", "list", "hot"], "격언": ["quote", "editorial", "story"],
+    "속보": ["news", "bignum"], "급등락": ["news", "bignum", "bars"], "이슈": ["news", "editorial"], "인물": ["news", "editorial"],
+    "기업": ["news", "bignum"], "숫자": ["bignum", "bars", "news"], "실적": ["bignum", "bars", "news"], "지표": ["bignum", "bars"],
+    "순위": ["bars", "bignum"], "비교": ["bars", "editorial"], "트렌드": ["editorial", "news"], "생활": ["editorial", "news"],
+    "절약": ["editorial", "bars"], "정리": ["editorial", "news"], "입문": ["editorial", "bignum"], "썰": ["editorial", "news"],
 }
+# 새 초안에 쓰는 폼. 나머지(breaking, list, photo, story, paper, steps, quote, hot, scene)는 옛 초안을 다시 그릴 때만 쓴다.
+ACTIVE = ["news", "editorial", "bignum", "bars"]
+# 사진을 위키미디어에서 찾아 채우는 폼
+PHOTO_FORMS = {"scene", "news", "editorial"}
 FORM_NAMES = {"breaking": "속보형", "bignum": "숫자 한 방형", "bars": "막대 비교형", "list": "TOP N 리스트형",
               "photo": "사진+한 줄 자막형", "story": "캐릭터 썰형", "editorial": "밝은 에디토리얼형", "paper": "아침 경제신문형",
-              "steps": "단계별 따라하기형", "quote": "다크 인사이트형", "hot": "핫코노미 기본형", "scene": "배경 사진형"}
+              "steps": "단계별 따라하기형", "quote": "다크 인사이트형", "hot": "핫코노미 기본형", "scene": "배경 사진형", "news": "사진 뉴스형"}
+# 왜 이 폼을 쓰나: 지켜보는 계정 글을 같은 계정 안에서 비교한 근거 (DESIGN_NOTES.md, 좋아요 기준, 주제 영향이 섞여 있음)
+FORM_WHY = {
+    "news": "같은 계정 비교: 한경미디어 얼굴 사진+큰 제목 4,568 좋아요, 글자만 있는 '이슈 한 입' 10. 크립토데일리 51,302. 매일경제, 머니투데이도 같은 구성이 계정 중앙값의 18~24배.",
+    "editorial": "friendsthatinvest 47,989 좋아요(계정 중앙값의 10배): 밝은 바탕, 큰 세리프 제목, 내용을 보여 주는 사진 한 장, 설명은 한두 줄.",
+    "bignum": "크립토데일리 '$1,045,000,000,000' 표지처럼 숫자를 크게 보여 주는 구성 (계정 중앙값의 32배). 숫자 하나가 곧 훅.",
+    "bars": "personalfinanceclub 'Elon's Trillion' 309,394 좋아요(계정 중앙값의 80배): 막대로 규모 차이를 눈으로 보여 줌.",
+}
 
 
 def pick_form(kind, recent=()):
-    cands = KINDS.get(kind) or ["hot", "list", "photo"]
+    cands = KINDS.get(kind) or ["news", "editorial"]
     for f in cands:
-        if f not in list(recent)[-3:]:
+        if f == "news" or f not in list(recent)[-2:]:
             return f
     return cands[0]
+
+
+def fit(text, width=936, top=110, low=60, ratio=.97):
+    """가장 긴 줄이 폭에 꽉 차는 글자 크기 — 짧은 제목일수록 크게."""
+    lines = re.sub(r"\*\*", "", text or "").split("\n")
+    return max(low, min(top, int(width / (max(map(len, lines), default=1) * ratio or 1))))
 
 
 # ── 글자 도우미 ──
@@ -73,7 +86,7 @@ CSS = """
 .t-xl{font-size:100px;font-weight:900;line-height:1.16;letter-spacing:-2px}
 .t-l{font-size:80px;font-weight:900;line-height:1.18;letter-spacing:-1.5px}
 .t-m{font-size:62px;font-weight:800;line-height:1.25;letter-spacing:-1px}
-.b-l{font-size:48px;font-weight:500;line-height:1.55}
+.b-l{font-size:54px;font-weight:500;line-height:1.5}
 .b-m{font-size:40px;font-weight:500;line-height:1.55;color:var(--sub)}
 .chip{display:inline-block;background:var(--ac);color:#fff;font-weight:800;font-size:32px;padding:10px 26px;border-radius:40px}
 .center{text-align:center}
@@ -126,10 +139,25 @@ CSS = """
 .stack .ui{position:relative;left:auto;right:auto;margin:0 38px;top:auto}
 .endbox{position:absolute;left:72px;right:72px;top:90px;bottom:170px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px}
 .endlogo{width:180px;height:180px;border-radius:50%;flex:none}
-.endchecks{font-size:42px;font-weight:500;line-height:1.4;display:flex;flex-direction:column;gap:18px;max-width:880px}
+.endchecks{font-size:48px;font-weight:600;line-height:1.4;display:flex;flex-direction:column;gap:18px;max-width:880px}
 .endchecks div{padding-left:58px;text-indent:-58px}
-.endkw{font-size:36px;font-weight:700;text-align:center}
+.endkw{font-size:40px;font-weight:700;text-align:center}
 .endbox .btns{position:static;align-self:stretch;margin:0 18px;flex:none}
+/* 사진 뉴스형: 표지는 사진 전체 + 아래 큰 제목, 본문은 위 사진 + 아래 큰 글 */
+.nw-sh{position:absolute;inset:0;background:linear-gradient(180deg,#00000000 0,#00000000 38%,#000000c8 60%,#000000f5 76%,#000 100%)}
+.nw-ph{position:absolute;left:0;top:0;width:1080px;height:830px;object-fit:cover;object-position:center 22%}
+.nw-fd{position:absolute;left:0;right:0;top:520px;height:320px;background:linear-gradient(180deg,#0b0b0d00,#0b0b0d)}
+.nw-box{position:absolute;left:64px;right:64px;bottom:128px;display:flex;flex-direction:column;gap:26px}
+.nw-tag{font-size:40px;font-weight:800;color:var(--hl)}
+.nw-t{font-weight:900;line-height:1.16;letter-spacing:-2px;text-shadow:0 2px 16px #000a}
+.nw-b{font-size:48px;font-weight:600;line-height:1.42;color:#e9e9ee}
+/* 세리프 에디토리얼: 제목 + 내용 사진 + 짧은 설명으로 꽉 채움 */
+.ed{position:absolute;left:72px;right:72px;top:96px;bottom:124px;display:flex;flex-direction:column;gap:34px;align-items:center;text-align:center}
+.ed img{flex:1;min-height:0;width:100%;object-fit:cover;object-position:center 25%;border-radius:18px}
+.ed-t{font-family:HSerif,'Noto Serif CJK KR',serif;font-weight:700;line-height:1.2;letter-spacing:-1.5px}
+.ed-c{font-size:44px;line-height:1.45;font-weight:500}
+/* 글이 짧아도 아래가 비지 않게 가운데로 */
+.vc{position:absolute;left:72px;right:72px;top:80px;bottom:130px;display:flex;flex-direction:column;justify-content:center;gap:44px}
 /* 마지막 */
 .btns{position:absolute;left:90px;right:90px;display:flex;gap:30px}
 .btn{flex:1;height:112px;border-radius:60px;display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:800}
@@ -170,17 +198,17 @@ def line_svg(values, w=1080, h=300, color="#ff4d2e", fill=True):
     return f'<svg width="{w}" height="{h}" xmlns="http://www.w3.org/2000/svg">{area}<polyline points="{d}" fill="none" stroke="{color}" stroke-width="8" stroke-linejoin="round"/></svg>'
 
 
-def bars_html(items, maxw=600, unit=""):
+def bars_html(items, maxw=430, unit=""):
     """items: [{"label","value","text"(표시값),"hi":bool}]"""
     top = max(i["value"] for i in items) or 1
     rows = []
     for it in items:
         bw = max(8, it["value"] / top * maxw)
         col = "#ff4d4f" if it.get("hi") else "#5ec4b6"
-        rows.append(f'<div style="display:flex;align-items:center;margin-bottom:26px"><div style="width:250px;font-size:34px;'
+        rows.append(f'<div style="display:flex;align-items:center;margin-bottom:44px"><div style="width:230px;font-size:42px;'
                     f'font-weight:{800 if it.get("hi") else 500};text-align:right;padding-right:22px">{html.escape(it["label"])}</div>'
-                    f'<div style="height:54px;width:{bw:.0f}px;background:{col};border-radius:0 8px 8px 0"></div>'
-                    f'<div style="font-size:36px;font-weight:800;padding-left:18px;color:{col}">{html.escape(it.get("text", str(it["value"]) + unit))}</div></div>')
+                    f'<div style="height:92px;width:{bw:.0f}px;background:{col};border-radius:0 8px 8px 0"></div>'
+                    f'<div style="font-size:46px;font-weight:900;padding-left:20px;white-space:nowrap;color:{col}">{html.escape(it.get("text", str(it["value"]) + unit))}</div></div>')
     return "".join(rows)
 
 
@@ -218,20 +246,20 @@ def f_bignum(c, s, n, t):
     """표지 c: label, number, sub, line(선택). 본문 s: number, title, text."""
     grad = "background:linear-gradient(180deg,#ffd24a,#ff6a1a);-webkit-background-clip:text;color:transparent"
     if s is None:
-        line = f'<div style="position:absolute;left:0;top:960px;opacity:.55">{line_svg(c["line"], 1080, 260)}</div>' if c.get("line") else ""
-        return (f'{line}<div class="pad center b-m" style="top:250px;font-size:46px;color:#fff;font-weight:700">{md(c.get("label", ""))}</div>'
-                f'<div class="pad center" style="top:360px;font-size:{170 if len(c["number"]) < 9 else 120}px;font-weight:900;letter-spacing:-4px;line-height:1.1;{grad}">{html.escape(c["number"])}</div>'
-                f'<div class="pad center t-m" style="top:620px">{md(c.get("sub", ""))}</div>')
-    return (f'<div class="stack" style="top:190px"><div style="font-size:140px;font-weight:900;letter-spacing:-3px;line-height:1.15;{grad}">{html.escape(s["number"])}</div>'
-            f'<div class="t-m">{md(s["title"])}</div><div class="b-l">{md(s.get("text", ""))}</div></div>')
+        line = f'<div style="margin:0 -72px">{line_svg(c["line"], 1080, 280)}</div>' if c.get("line") else ""
+        return (f'<div class="vc center"><div class="t-m" style="color:#fff">{md(c.get("label", ""))}</div>'
+                f'<div style="font-size:{fit(c["number"], top=240, low=110, ratio=.68)}px;font-weight:900;letter-spacing:-5px;line-height:1.08;{grad}">{html.escape(c["number"])}</div>'
+                f'<div class="t-l" style="font-size:{fit(c.get("sub", ""), top=84, low=58)}px">{md(c.get("sub", ""))}</div>{line}</div>')
+    return (f'<div class="vc"><div style="font-size:{fit(s["number"], top=210, low=110, ratio=.68)}px;font-weight:900;letter-spacing:-4px;line-height:1.1;{grad}">{html.escape(s["number"])}</div>'
+            f'<div class="t-l" style="font-size:{fit(s["title"], top=80, low=60)}px">{md(s["title"])}</div><div class="b-l">{md(s.get("text", ""))}</div></div>')
 
 
 def f_bars(c, s, n, t):
-    """표지 c: title, sub, bars[...]. 본문 s: title, bars(선택) 또는 text."""
+    """표지 c: title, sub, bars[...]. 본문 s: title, bars 또는 text. 막대가 주인공이라 본문은 2~3장, 막대 없는 장은 1장까지."""
     d = c if s is None else s
     sub = f'<div class="b-m">{md(d["sub"])}</div>' if d.get("sub") else ""
     body = f'<div style="margin-top:24px">{bars_html(d["bars"])}</div>' if d.get("bars") else f'<div class="b-l" style="margin-top:24px">{md(d.get("text", ""))}</div>'
-    return f'<div class="stack" style="top:110px"><div class="t-l" style="font-size:{86 if s is None else 66}px">{md(d["title"])}</div>{sub}{body}</div>'
+    return f'<div class="vc"><div class="t-l" style="font-size:{fit(d["title"], top=96, low=66)}px">{md(d["title"])}</div>{sub}{body}</div>'
 
 
 def f_list(c, s, n, t):
@@ -278,22 +306,48 @@ def f_story(c, s, n, t):
 
 
 def f_editorial(c, s, n, t):
-    """표지 c: kicker, title, image(선택), caption. 본문 s: title, image(선택), caption."""
+    """표지 c: kicker, title, bg, caption(한 줄). 본문 s: title, bg, caption(한두 줄, 50자 안쪽). 일상, 소비, 트렌드처럼 '내 얘기'인 소재.
+    제목은 한 문장의 관찰('평범한 것들이 사치가 됐다'), bg 는 글 내용을 그대로 보여 주는 사물, 장소, 인물. 고유명사 영어 검색어 2~4단어, 일반어는 엉뚱한 사진이 나오니 쓰지 않는다."""
     d = c if s is None else s
-    kick = f'<div class="pad center" style="top:120px;font-size:26px;letter-spacing:12px;color:var(--sub)">{html.escape(c.get("kicker", "HOTCONOMY"))}</div>' if s is None else ""
-    img = ""
-    if isinstance(d.get("image"), dict):   # draft_card 가 시세로 채운 {"candles"/"line"} → 선 차트로 (2026-11-01 표지에서 깨졌음)
-        v = d["image"]
-        d = {**d, "image": None, "line": v.get("line") or [round(x[3], 2) for x in v.get("candles", [])]}
-    if d.get("image"):
-        src = d["image"] if "://" in str(d["image"]) else asset_uri(d["image"])
-        img = f'<img src="{src}" style="position:absolute;left:240px;top:{620 if s is None else 520}px;width:600px;height:420px;object-fit:cover;border-radius:24px">'
-    elif d.get("line"):
-        img = f'<div style="position:absolute;left:140px;top:{640 if s is None else 540}px">{line_svg(d["line"], 800, 360, "#d8262b")}</div>'
-    return (kick + f'<div class="pad center serif" style="top:{200 if s is None else 150}px;font-size:{88 if s is None else 70}px;font-weight:700;line-height:1.22;letter-spacing:-1px">{md(d["title"])}</div>'
-            + img + (f'<div class="pad center" style="top:1080px;font-size:32px;color:var(--sub);line-height:1.5">{md(d.get("caption", ""))}</div>' if img or s is None else
-                     # 그림 없는 본문은 설명을 제목 바로 아래 크게 (가운데가 텅 비던 문제, 2026-11-01)
-                     f'<div class="pad center" style="top:470px;font-size:44px;color:var(--ink,#1b1b1b);line-height:1.6">{md(d.get("caption", ""))}</div>'))
+    kick = f'<div style="font-size:30px;letter-spacing:8px;color:var(--sub)">{html.escape(c.get("kicker", "HOTCONOMY"))}</div>' if s is None and c.get("kicker") else ""
+    v = d.get("image") if isinstance(d.get("image"), dict) else {}   # 옛 초안: 시세 선 차트
+    line = d.get("line") or v.get("line") or [round(x[3], 2) for x in v.get("candles", [])]
+    if d.get("photo"):
+        pic = f'<img src="{html.escape(d["photo"])}">'
+    elif isinstance(d.get("image"), str) and d.get("image"):
+        pic = f'<img src="{d["image"] if "://" in d["image"] else asset_uri(d["image"])}">'
+    elif line:
+        pic = f'<div style="flex:1;display:flex;align-items:center">{line_svg(line, 936, 460, "#d8262b")}</div>'
+    else:
+        pic = ""
+    size = fit(d["title"], top=104 if s is None else 88, low=62)
+    if not pic:   # 사진을 못 찾은 장: 아래가 비지 않게 가운데로
+        return (f'<div class="ed" style="justify-content:center;gap:64px">{kick}<div class="ed-t" style="font-size:{min(size + 14, 118)}px">{md(d["title"])}</div>'
+                + (f'<div class="ed-c" style="font-size:50px">{md(d.get("caption", ""))}</div>' if d.get("caption") else "") + "</div>")
+    cap = f'<div class="ed-c">{md(d.get("caption", ""))}</div>' if d.get("caption") else ""
+    credit = f'<div class="credit" style="color:var(--sub)">{html.escape(d["credit"])}</div>' if d.get("credit") else ""
+    return f'<div class="ed">{kick}<div class="ed-t" style="font-size:{size}px">{md(d["title"])}</div>{pic}{cap}</div>{credit}'
+
+
+def f_news(c, s, n, t):
+    """표지 c: tag(짧은 분류, 선택), title, bg. 본문 s: title, text, bg. 뉴스, 이슈, 인물, 기업 소재의 기본 폼.
+    표지 title: 주제 요약이 아니라 사건 + 구체적인 사람, 금액, 반전. 2~3줄, 줄당 7~13자, 강조 **한 곳**. 예: '인텔 하루 만에\\n**시총 30% 증발**'
+    본문 title: 한 장에 사실 하나, 2줄 안쪽. text: 60자 안쪽(없어도 됨), 끝 문장은 다음 장이 궁금하게.
+    bg: 영어 사진 검색어 2~4단어. 표지는 그 사건의 핵심 인물 이름(예: 'Jensen Huang') 또는 고유한 제품, 회사 건물. 사람 얼굴이 있으면 가장 좋다. 일반어 금지, 글자가 많을 만한 것 금지."""
+    d = c if s is None else s
+    credit = f'<div class="credit">{html.escape(d["credit"])}</div>' if d.get("credit") else ""
+    if s is None:
+        bg = f'<img class="bgph" src="{html.escape(d["photo"])}" style="object-position:center 18%">' if d.get("photo") else '<div class="nophoto"></div>'
+        tag = f'<div class="nw-tag">{html.escape(c["tag"])}</div>' if c.get("tag") else ""
+        return (f'{bg}<div class="nw-sh"></div><div class="nw-box">{tag}'
+                f'<div class="nw-t" style="font-size:{fit(c["title"], 952, 124, 72)}px">{md(c["title"])}</div></div>{credit}')
+    text = f'<div class="nw-b">{md(s["text"])}</div>' if s.get("text") else ""
+    if not d.get("photo"):   # 사진을 못 찾은 장: 위가 비지 않게 글을 가운데 크게
+        return (f'<div class="nophoto"></div><div class="vc"><div class="nw-t" style="font-size:{fit(s["title"], 936, 110, 66)}px">{md(s["title"])}</div>'
+                f'{text.replace("nw-b", "b-l")}</div>')
+    bg = f'<img class="nw-ph" src="{html.escape(d["photo"])}">'
+    return (f'{bg}<div class="nw-fd"></div><div class="nw-box">'
+            f'<div class="nw-t" style="font-size:{fit(s["title"], 952, 92, 62)}px">{md(s["title"])}</div>{text}</div>{credit}')
 
 
 def f_paper(c, s, n, t):
@@ -349,7 +403,7 @@ def f_hot(c, s, n, t):
 
 FORMS = {"breaking": (f_breaking, "brk"), "bignum": (f_bignum, ""), "bars": (f_bars, "navy"), "list": (f_list, ""),
          "photo": (f_photo, ""), "story": (f_story, "white"), "editorial": (f_editorial, "light"), "paper": (f_paper, "paper"),
-         "steps": (f_steps, "white"), "quote": (f_quote, ""), "hot": (f_hot, ""), "scene": (f_scene, "")}
+         "steps": (f_steps, "white"), "quote": (f_quote, ""), "hot": (f_hot, ""), "scene": (f_scene, ""), "news": (f_news, "")}
 
 
 def end_slide(e, n, theme):
@@ -358,7 +412,7 @@ def end_slide(e, n, theme):
     checks = "".join(f"<div>✓&nbsp; {md(x)}</div>" for x in e.get("checks", []))
     kw = (f'<div class="endkw">💬 궁금한 점은 댓글에 <b class="hl">\'{html.escape(e["keyword"])}\'</b> 남겨 주세요</div>'
           if e.get("keyword") else "")
-    return (f'<div class="endbox">{logo}<div class="center t-m">{md(e.get("title", "정리하면"))}</div>'
+    return (f'<div class="endbox">{logo}<div class="center t-l" style="font-size:{fit(e.get("title", ""), top=80, low=58)}px">{md(e.get("title", "정리하면"))}</div>'
             f'<div class="endchecks">{checks}</div>{kw}'
             f'<div class="btns"><div class="btn o">🔖 저장해두기</div><div class="btn f">팔로우 하기</div></div></div>'
             f'<div class="disc">{DISCLAIMER}</div><div class="pn">{n}</div>')
@@ -432,6 +486,9 @@ DEMO = {
               "slides": [{"image": {"line": [3, 3.4, 3.2, 4.1, 4.6, 5.2, 6.4]}, "text": "① 데이터센터 매출\n**예상보다 20% 많았어요**"},
                          {"image": {"candles": _walk(36, 13)}, "text": "② 다음 분기 전망도\n**더 높게** 잡았어요"}],
               "end": {"title": "정리하면", "checks": ["매출 서프라이즈", "전망 상향", "다음은 공급망 체크"], "keyword": "엔비디아"}},
+    "news": {"cover": {"tag": "속보", "title": "유럽에서 FSD 승인\n**10번째** 국가 나왔다"},
+             "slides": [{"title": "발트 3국이\n**모두** 들어갔다", "text": "라트비아가 승인하면서 발트 3국이 모두 포함됐다는 소식입니다. (예시)"}],
+             "end": {"title": "정리하면", "checks": ["사진 없으면 그라데이션", "글은 짧게", "장마다 다른 사진"], "keyword": "테슬라"}},
     "story": {"cover": {"label": "핫코노미 썰 · 1화", "title": "결혼자금 3억을\n**전부 주식**에\n넣었습니다"},
               "slides": [{"narration": "나 결혼 준비하던 공무원이었거든.", "say": "여친이랑 돈도\n**꾸준히** 모으고 있었지."},
                          {"narration": "그런데 계좌를 열었는데,", "say": "…어?\n이게 **왜 반토막**이야?"}],

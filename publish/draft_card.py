@@ -8,7 +8,7 @@
 
 숫자 원칙: 시세 숫자는 코드가 야후 차트에서 가져와 넣고, 사실은 모아 둔 뉴스 제목에 있는 것만 쓴다.
   Claude 는 폼을 고르고 글만 쓴다. 차트 자리는 {"ticker": "TSLA"} 로 남기면 코드가 실제 시세로 채운다.
-폼 돌려쓰기: 큐(data/publish_queue.json)에서 최근 3개 게시물에 쓴 폼은 후보에서 뺀다.
+폼 돌려쓰기: forms.ACTIVE 중 최근 2개 게시물에 쓴 폼은 뺀다 (사진 뉴스형은 사진이 매번 달라서 예외). 왜 이 폼인지는 큐 design_why 에 남긴다.
 학습(publish/card_learn.py): 대표가 캔바에서 고친 습관 규칙과 폼별 48시간 성적이 프롬프트에 들어가고, 성적이 계속 나쁜 폼은 후보에서 빠진다.
 결과: output/cardnews/drafts/<id>/ 에 JPG, 큐에 status=drafted 로 저장, 텔레그램 봇으로 앨범 + 캡션.
   + 캔바 '핫코노미 · 발행 대기' 폴더에 고칠 수 있는 사본(publish/canva_copy.py), 편집 링크는 큐 canva.edit_url·텔레그램으로.
@@ -118,7 +118,7 @@ SHORT = """
 [이번 글은 속보형 짧은 카드]
 - 표지 + 본문 1~3장 + 마지막 장, 모두 합쳐 3~5장. slides 는 1~3개만.
 - 아래 [지금 발행할 거리]의 사건 하나만 다룹니다. 표지에 가장 큰 숫자 하나, 본문은 '무슨 일 → 왜 중요 → 다음에 볼 것'.
-- 폼은 breaking·bignum·bars 처럼 짧게 읽히는 것을 우선합니다."""
+- 폼은 news·bignum 처럼 짧게 읽히는 것을 우선합니다."""
 
 
 # ── 프롬프트 ──
@@ -135,11 +135,17 @@ SYSTEM = """당신은 한국 경제 인스타그램 @hotconomy(핫코노미)의 
 - 가운뎃점(·) 대신 쉼표를 씁니다. 과한 이모지, '~해보세요!' 남발, 뻔한 마무리 같은 AI 티 나는 표현을 쓰지 않습니다.
 - 한 장에 메시지 하나. 제목은 2줄 안쪽, 줄당 10~16자. 줄바꿈은 \\n, 강조할 핵심 단어(숫자, %)만 **이렇게** 감쌉니다(장마다 1곳).
 - 1장(표지)은 스크롤을 멈추게 하는 훅, 가운데 장은 핵심 하나씩, 마지막 장(end)은 한 줄 요약 체크 3개와 질문형 제목.
-- 표지 + 본문 + 마지막 장을 합쳐 6~8장(최대 10장). slides 는 본문 장만 넣습니다(표지·마지막 장 제외, 4~6개).
+- 표지 + 본문 + 마지막 장을 합쳐 5~7장(최대 10장). slides 는 본문 장만 넣습니다(표지·마지막 장 제외, 3~5개).
+
+디자인 규칙 (같은 계정의 잘 된 글과 안 된 글을 비교한 결과):
+- 표지 제목은 주제 요약이 아니라 사건입니다. 누가, 얼마나, 무슨 반전인지 구체적으로 씁니다. '수출 전망 정리' (X) → '수출 1조 달러, 세계 4번째 눈앞' (O)
+- 표지에 그 일의 주인공(인물 얼굴, 고유한 제품, 회사)을 보여 줄 수 있으면 사진 뉴스형(news)을 먼저 고려합니다. 글자만 있는 표지는 숫자 하나가 곧 훅일 때만(bignum).
+- 본문 한 장에 사실 하나만, 큰 글씨로 읽히게 짧게 씁니다. 긴 문단을 쓰지 않습니다.
+- design_note 에 이번 글에 왜 이 폼과 이 표지를 골랐는지 한두 문장으로 적습니다(예: '주인공이 분명한 사건이라 얼굴 표지로, 숫자 28%를 제목에 넣어 멈추게 함').
 
 폼 규칙:
 - [쓸 수 있는 폼] 중 소재에 가장 맞는 것 하나를 고르고, 그 폼의 필드 설명대로 cover/slides 를 채웁니다.
-- 배경 사진형(scene)은 차트 대신 장마다 bg(영어 사진 검색어)를 넣습니다. 글 내용과 바로 연결되는 사물, 장소로 씁니다.
+- 사진 뉴스형(news), 에디토리얼(editorial)은 차트 대신 장마다 bg(영어 사진 검색어)를 넣습니다. 글 내용과 바로 연결되는 인물, 사물, 장소로 씁니다.
 - 차트·이미지 자리(chart, image, line)에는 {"ticker": "시세 코드"} 만 넣습니다. 코드가 실제 시세로 그립니다. 사진 경로는 쓰지 않습니다.
 - 막대(bars)는 [시세]의 등락률로만 만듭니다: {"label","value"(숫자),"text"(표시값),"hi"(강조 여부)}.
 - end.keyword 는 댓글로 받을 짧은 단어 하나(예: '환율').
@@ -150,7 +156,7 @@ SYSTEM = """당신은 한국 경제 인스타그램 @hotconomy(핫코노미)의 
 - youtube: 쇼츠용 제목(40자 이내)과 설명(2~3줄 + 면책 문구).
 
 출력: 설명 없이 JSON 하나만.
-{"form": "폼 키", "kind": "소재 종류", "title": "게시물 제목(관리용)", "cover": {...}, "slides": [{...}], "end": {"title","checks":[3개],"keyword"},
+{"form": "폼 키", "kind": "소재 종류", "title": "게시물 제목(관리용)", "design_note": "이 폼을 고른 이유", "cover": {...}, "slides": [{...}], "end": {"title","checks":[3개],"keyword"},
  "caption": "...", "hashtags": ["#..."], "youtube": {"title","description"}, "sources": ["쓴 뉴스 링크"]}"""
 
 
@@ -216,13 +222,13 @@ def fill_charts(post, mk):
 
 def fill_photos(post):
     """배경 사진형: 장마다 bg 검색어로 실제 사진을 찾아 넣는다. 못 찾으면 그 장은 그라데이션 배경. → 출처 목록."""
-    if post["form"] != "scene":
+    if post["form"] not in forms.PHOTO_FORMS:
         return []
     from publish.photos import find
     used, credits = set(), []
     for d in [post["cover"], *post.get("slides", [])]:
         q = d.pop("bg", "")
-        p = find(q, used) if q else None
+        p = find(q, used, about=re.sub(r"\*\*|\n", " ", f'{d.get("title", "")} {d.get("text", "")}')) if q else None
         if p:
             used.add(p["url"])
             d["photo"], d["credit"] = p["uri"], p["credit"]
@@ -295,7 +301,7 @@ def main():
         a.short = False   # 지금 발행할 거리가 없으면 보통 초안으로
     topic = hot["title"] if hot else pick_topic(queue, a.topic)
     recent = [i["form"] for i in queue["items"] if i.get("form")][-3:]
-    allowed = card_learn.prune([k for k in forms.FORMS if k not in recent])   # 성적이 계속 나쁜 폼은 뺌
+    allowed = card_learn.prune([k for k in forms.ACTIVE if k == "news" or k not in recent[-2:]])   # 성적이 계속 나쁜 폼은 뺌
     now = datetime.now(KST)
     print(f"📰 주제: {topic} / 최근 폼 {recent or '없음'} 제외")
     mk, news = market(), headlines(topic)
@@ -334,6 +340,7 @@ def main():
                            "files": [str(f.relative_to(ROOT)).replace("\\", "/") for f in files], "tickers": tickers,
                            "sources": post.get("sources", []), "photo_credits": post.get("photo_credits", []), "warnings": warns, "status": "drafted", "risk": None,
                            "published": {}, "canva": canva, "created_at": now.isoformat(timespec="seconds"),
+                           "design_why": {"form": forms.FORM_NAMES[post["form"]], "note": post.get("design_note", ""), "evidence": forms.FORM_WHY.get(post["form"], "")},
                            "series": "short" if a.short else "deep", "auto": a.auto, "hot_title": hot["title"] if hot else None})
     QUEUE.parent.mkdir(parents=True, exist_ok=True)
     QUEUE.write_text(json.dumps(queue, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -342,6 +349,8 @@ def main():
         print("⚠️", w)
     if not a.no_send:
         head = f"📝 카드뉴스 초안: {post.get('title', topic)}\n폼: {forms.FORM_NAMES[post['form']]} / {len(files)}장"
+        if post.get("design_note"):
+            head += f"\n왜 이렇게: {post['design_note']}"
         if warns:
             head += "\n⚠️ " + "\n⚠️ ".join(warns)
         notify.send_photos(files, head)
