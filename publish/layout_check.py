@@ -38,7 +38,7 @@ document.fonts.ready.then(() => {
   for (const el of root.querySelectorAll('*')) {
     if (el.closest(SKIP) || INL.has(el.tagName) || el.closest('svg') || !isBlock(el)) continue;
     const rects = rectsOf(el);
-    if (rects.length) items.push({kind: 'text', text: el.textContent.trim().slice(0, 24), rects, el: 0, idx: items.length});
+    if (rects.length) items.push({kind: 'text', text: el.textContent.trim().slice(0, 24), rects, el: 0, idx: items.length, free: !!el.closest('.foot,.pn')});
     el.dataset.lc = items.length - 1;
   }
   for (const el of root.querySelectorAll('svg,img,.ui,.point,.bub,.btn')) {
@@ -55,6 +55,7 @@ document.fonts.ready.then(() => {
 </script>"""
 TOL = 8        # 글자 상자는 실제 글자보다 위아래로 넉넉해서 이 정도 겹침은 눈에 안 보인다
 W, H = 1080, 1350
+TOP, BOTTOM = 135, 1215   # 1:1로 올려도 남는 가운데 (forms.CSS 위 설명)
 
 
 def overlap(a, b):
@@ -62,9 +63,11 @@ def overlap(a, b):
     return min(w, h) if w > TOL and h > TOL else 0
 
 
-def problems_of(items, n):
+def problems_of(items, n, safe=False):
     out, texts = [], [(i, x) for i, x in enumerate(items) if x["kind"] == "text"]
     for i, x in texts:
+        if safe and not x.get("free") and any(r[1] < TOP - 2 or r[3] > BOTTOM + 2 for r in x["rects"]):
+            out.append(f"{n}장: '{x['text']}' 1:1로 올리면 잘림")
         for r in x["rects"]:
             if r[0] < -2 or r[2] > W + 2 or r[3] > H + 2 or r[1] < -2:
                 out.append(f"{n}장: '{x['text']}' 화면 밖으로 나감")
@@ -84,7 +87,7 @@ def problems_of(items, n):
     return list(dict.fromkeys(out))
 
 
-def check(slides, css):
+def check(slides, css, safe=False):
     out = []
     with tempfile.TemporaryDirectory() as tmp:
         for n, body in enumerate(slides, 1):
@@ -94,7 +97,7 @@ def check(slides, css):
                 out.append(f"{n}장: 검사 실패 (위치를 재지 못함)")
                 continue
             import html
-            out += problems_of(json.loads(html.unescape(m.group(1))), n)
+            out += problems_of(json.loads(html.unescape(m.group(1))), n, safe)
     return out
 
 
@@ -126,7 +129,7 @@ def main():
     bad = 0
     for label, posts in (("예시", {k: {"form": k, **v} for k, v in forms.DEMO.items()}), ("긴 글", stress(forms))):
         for form, post in posts.items():
-            pr = check(forms.slides_of(post), forms.CSS)
+            pr = check(forms.slides_of(post), forms.CSS, form in forms.ACTIVE)
             bad += len(pr)
             print(f"[{label}] {form}: {'✅' if not pr else ''}")
             for x in pr:

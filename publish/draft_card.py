@@ -335,7 +335,7 @@ def main():
     did = f"{now:%Y%m%d-%H%M}-{post['form']}"
     files = forms.make(post, OUT / did, did)
     from publish.layout_check import check as layout_check
-    warns += [f"글자 겹침: {x}" for x in layout_check(*reversed(forms._styled(post)))]   # 겹치면 경고 → 발행 거절
+    warns += [f"글자 겹침: {x}" for x in layout_check(*reversed(forms._styled(post)), safe=True)]   # 겹치면 경고 → 발행 거절
     (OUT / did / "post.json").write_text(json.dumps(post, ensure_ascii=False, indent=1), encoding="utf-8")
     canva = {}
     if not a.no_canva:
