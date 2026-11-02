@@ -214,6 +214,14 @@ a.row:hover .row-main{text-decoration:underline}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 /* 처음 화면 */
 .home-jobs{display:grid;gap:12px}
+.hn-old{margin-top:12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-control)}
+.hn-old>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;font-weight:600}
+.hn-old>summary .note{font-weight:400;margin:0}
+.hn-old[open]>summary{border-bottom:1px solid var(--border)}
+.hn-old-days{display:grid;gap:4px;padding:10px 12px}
+.hn-old-day>summary{padding:8px 6px;font-size:14px;font-weight:600}
+.hn-old-day>summary span{font-weight:400;color:var(--muted);margin-left:6px}
+.hn-old-day .home-jobs{padding:4px 0 12px}
 .job{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 24px;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-card);padding:20px 24px}
 .job-ch{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);margin:0}
 .job h3{font-size:19px;line-height:1.4;margin:4px 0 0}
@@ -451,6 +459,7 @@ a.row:hover .row-main{text-decoration:underline}
         <section class="sec" id="home-jobs-sec">
           <h2>지금 쓸 거리</h2>
           <div class="home-jobs" id="home-jobs"></div>
+          <div id="home-jobs-old" hidden></div>
         </section>
         <section class="sec" id="home-next-sec">
           <h2>채널별 다음 한 가지</h2>
@@ -1371,12 +1380,12 @@ a.row:hover .row-main{text-decoration:underline}
   function drawHome(recs) {
     const jobs = [], next = [], dot = c => { const i = el('i', 'dot'); i.style.background = c === 'accent' ? 'var(--accent)' : `var(--ch-${c})`; return i; };
     // 지금 쓸 거리: 30분마다 확인해 새 소식이면 바뀌는 3개 (hot_now.py). 설명은 한 줄만 보이고 눌러서 펼침
-    const hn = (rows('hot_now') || [])[0], A = auditData();
+    const hist = rows('hot_now') || [], hn = hist[0], A = auditData();
     const usedTitles = new Set((A && A.matches || []).map(m => m.rec));
-    if (hn) (hn.picks || []).slice(0, 3).forEach((p, i) => {
+    const jobCard = (p, i, run) => {
       const ch = /쓰레드/.test(p.channel) ? 'threads' : /텔레그램/.test(p.channel) ? 'telegram' : /X/.test(p.channel) ? 'x' : 'instagram';
       const card = el('article', 'job'), txt = el('div'), meta = el('p', 'job-ch'), acts = el('div', 'job-acts');
-      meta.append(dot(ch), `${p.channel} · ${(p.time || hn.time).slice(6)} 기준`);
+      meta.append(dot(ch), `${p.channel} · ${(p.time || run.time).slice(6)} 기준`);
       if (usedTitles.has(p.title)) meta.append(el('span', 'pill positive', '올렸어요'));
       const why = el('p', 'job-why clamp1', p.why_now); why.title = '눌러서 펼치기';
       why.addEventListener('click', () => why.classList.toggle('clamp1'));
@@ -1384,8 +1393,36 @@ a.row:hover .row-main{text-decoration:underline}
       acts.append(copyBtn('초안 복사', p.draft, 'btn primary'));
       const src = (p.sources || [])[0];
       if (src && webLink(src)) { const l = el('a', 'btn small', '근거'); l.href = src; l.target = '_blank'; l.rel = 'noopener'; acts.append(l); }
-      card.append(txt, acts, threadBlock(p, i, hn.time, usedTitles)); jobs.push(card);
-    });
+      card.append(txt, acts, threadBlock(p, i, run.time, usedTitles));
+      return card;
+    };
+    if (hn) (hn.picks || []).slice(0, 3).forEach((p, i) => jobs.push(jobCard(p, i, hn)));
+    // 지난 쓸 거리: 화면에서 밀려난 글감을 날짜별로 보관. 쓰레드 버튼도 그대로 쓸 수 있고, 펼칠 때 그림
+    const oldDays = new Map(), oldSeen = new Set((hn ? hn.picks || [] : []).slice(0, 3).map(p => p.title));
+    hist.slice(1).forEach(run => (run.picks || []).slice(0, 3).forEach((p, i) => {
+      if (oldSeen.has(p.title)) return;
+      oldSeen.add(p.title);
+      const day = (p.time || run.time).slice(0, 5);
+      if (!oldDays.has(day)) oldDays.set(day, []);
+      oldDays.get(day).push({ p, i, run });
+    }));
+    const oldBox = document.getElementById('home-jobs-old');
+    oldBox.hidden = !oldDays.size;
+    if (oldDays.size) {
+      const total = [...oldDays.values()].reduce((n, l) => n + l.length, 0);
+      const top = el('details', 'hn-old'), sum = el('summary'), days = el('div', 'hn-old-days');
+      sum.append(el('span', null, `지난 쓸 거리 · ${total}개`), el('span', 'note', '날짜별 보관 · 일주일쯤'));
+      [...oldDays].forEach(([day, list], n) => {
+        const d = el('details', 'hn-old-day'), s = el('summary'), box = el('div', 'home-jobs');
+        s.append(day); s.append(el('span', null, `${list.length}개`));
+        const fill = () => { if (d.open && !box.firstChild) box.replaceChildren(...list.map(x => jobCard(x.p, x.i, x.run))); };
+        d.addEventListener('toggle', fill);
+        d.append(s, box); d.open = n === 0;
+        days.append(d);
+      });
+      top.append(sum, days);
+      oldBox.replaceChildren(top);
+    }
     // 채널별 다음 한 가지: 한 줄씩
     const row = (c, chName, title, sub, acts) => {
       const r = el('div', 'next-row'), n = el('b'), t = el('div'), a = el('div', 'job-acts');

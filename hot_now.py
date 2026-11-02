@@ -35,7 +35,7 @@ HOURS = range(7, 24)           # 07~23시, 30분마다 확인
 EVERY_S = 25 * 60              # threads_watch 가 30분마다 부르는데 몇 분씩 밀려서 25분으로 봄
 NOTIFY_S = 110 * 60            # 봇 알림 간격 (2시간쯤)
 MIN_NEW = 2                    # 새 소식이 이보다 적으면 Claude 를 안 부름
-KEEP = 16
+KEEP = 120                     # 사이트 '지난 쓸 거리'에 보여 줄 기록 (일주일쯤)
 SEEN = ROOT / "data" / "hot_now_seen.json"   # 지난번에 본 뉴스 제목 (로컬 전용)
 
 SYSTEM = """너는 한국 경제 콘텐츠 계정(@hotconomy, 인스타 카드뉴스·쓰레드·텔레그램 운영)의 편집장이다.
