@@ -1,6 +1,24 @@
 [
  {
   "geo": "KR",
+  "term": "시체",
+  "traffic": 10000,
+  "topics": "",
+  "econ": false,
+  "news_title": "아산 오폐수시설서 숨진 태아 산모 찾았지만…경찰, 사건 종결",
+  "news_link": "https://www.fnnews.com/news/202610311121179989"
+ },
+ {
+  "geo": "KR",
+  "term": "김도영",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "\"김도영 메츠-양키스-다저스-보스턴-에인절스 딱이야\" 韓슈퍼스타 관심 폭발! 벌써 ML이 주목한다 \"미국 와도 20~25홈런 칠 것\"",
+  "news_link": "https://www.chosun.com/sports/baseball/2026/11/02/ME3GKYJYMRTDQMJTGEZGMMDFGI/"
+ },
+ {
+  "geo": "KR",
   "term": "선박",
   "traffic": 2000,
   "topics": "정치·관세",
@@ -10,30 +28,12 @@
  },
  {
   "geo": "KR",
-  "term": "김도영",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "2년 반짝한 선수가 200억 받고 갔다...'충격 계약' 307억 사나이, 미국 못 갈 이유 없다",
-  "news_link": "https://www.chosun.com/sports/baseball/2026/11/02/GA3DQNDFG43TMOJUHAYTKNRZGA/"
- },
- {
-  "geo": "KR",
-  "term": "한진칼",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "호반, 한진칼 최대주주? 경영권 분쟁 시계제로",
-  "news_link": "https://www.chosun.com/economy/industry-company/2026/11/02/SN3N3CKNG5AJPF2X5RB3YJSTOA/"
- },
- {
-  "geo": "KR",
   "term": "협박",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "“신세경에 염산 테러” 두달간 450회 협박·모욕글…징역 8개월에 법정구속",
-  "news_link": "https://www.donga.com/news/Society/article/all/20261102/134950358/2"
+  "news_title": "신세경에 과격·엽기적 협박한 악플러…징역 8개월에 법정 구속",
+  "news_link": "http://weekly.chosun.com/news/articleView.html?idxno=56798"
  },
  {
   "geo": "KR",
@@ -59,8 +59,8 @@
   "traffic": 200,
   "topics": "AI·반도체",
   "econ": true,
-  "news_title": "1년 30곳 뚫은 독학 해커… AI 쓰니 40일 만에 60곳 해킹",
-  "news_link": "https://www.donga.com/news/Society/article/all/20261101/134946639/2"
+  "news_title": "[한국정보보호학회 칼럼] AI 시대의 금융보안, 망분리에서 제로트러스트로",
+  "news_link": "https://www.boannews.com/news/articleView.html?idxno=146911"
  },
  {
   "geo": "KR",
@@ -73,39 +73,21 @@
  },
  {
   "geo": "KR",
-  "term": "기술",
-  "traffic": 100,
+  "term": "제트기",
+  "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "최대호 안양시장, ITU-UN-Habitat 공식 초청으로 출국",
-  "news_link": "https://www.viva100.com/article/20261102501097"
+  "news_title": "제트기, 플로리다 주택가 도로 추락…탑승자 9명 전원 사망 [현장영상]",
+  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8701183"
  },
  {
   "geo": "KR",
   "term": "황사",
-  "traffic": 100,
+  "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "[날씨] 오늘(월) 서울 맑고 낮 최고 15도…전국 대체로 맑아져",
-  "news_link": "https://m.science.ytn.co.kr/weather/weather_view.php?s_mcd=1000&key=202611020631560001"
- },
- {
-  "geo": "US",
-  "term": "stocks",
-  "traffic": 20000,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "Stock futures jump ahead of a monster week after a $5 trillion AI rout",
-  "news_link": "https://finance.yahoo.com/markets/article/stock-futures-jump-ahead-of-a-monster-week-after-a-5-trillion-ai-rout-021203996.html"
- },
- {
-  "geo": "US",
-  "term": "how to vote in the us midterms",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "US midterms: What to know about independent voters and candidates",
-  "news_link": "https://www.aljazeera.com/news/2026/11/2/us-midterms-what-to-know-about-independent-voters-and-candidates"
+  "news_title": "서울에 '11월 황사' 6년만…수도권·서해안 미세먼지 '나쁨'",
+  "news_link": "https://www.yna.co.kr/view/AKR20261102108300530"
  },
  {
   "geo": "US",
@@ -118,12 +100,12 @@
  },
  {
   "geo": "US",
-  "term": "gta6",
+  "term": "grambling basketball",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Grand Theft Auto VI exclusive – The state that never sleeps",
-  "news_link": "https://www.gamesradar.com/edge/gtavi-cover/"
+  "news_title": "Jerry Jonens responds to Dallas OT loss: 'It's an indictment of the whole show'",
+  "news_link": "https://www.espn.com/video/clip/_/id/50355024"
  },
  {
   "geo": "US",
@@ -136,12 +118,30 @@
  },
  {
   "geo": "US",
+  "term": "playstation",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "PS5 drops 3 must-play free indies to try, perfect if you're low on time",
+  "news_link": "https://www.gamingbible.com/news/platform/playstation/ps5-free-indie-games-try-playstation-888971-20261030"
+ },
+ {
+  "geo": "US",
   "term": "claire liu",
   "traffic": 200,
   "topics": "",
   "econ": false,
   "news_title": "WTA Hong Kong Day 1 Predictions Including Venus Williams vs Mary Stoiana",
   "news_link": "https://lastwordonsports.com/tennis/2026/11/01/wta-hong-kong-day-1-predictions-williams-vs-stoiana/"
+ },
+ {
+  "geo": "US",
+  "term": "flock safety",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Flock was founded in Atlanta. Thousands of cameras later, the company is getting pushback in its hometown",
+  "news_link": "https://www.cnn.com/2026/11/01/us/flock-cameras-atlanta-privacy-backlash"
  },
  {
   "geo": "US",
@@ -154,29 +154,29 @@
  },
  {
   "geo": "US",
-  "term": "elsie hewitt",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "Exes Pete Davidson and Elsie Hewitt team up for family Halloween costume with daughter Scottie",
-  "news_link": "https://pagesix.com/2026/11/01/celebrity-news/exes-pete-davidson-and-elsie-hewitt-team-up-for-family-halloween-costume-with-daughter-scottie/"
- },
- {
-  "geo": "US",
-  "term": "last day to vote",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "In the Final Stretch, Hochul and Blakeman Try to Motivate Their Voters",
-  "news_link": "https://www.nytimes.com/2026/11/01/nyregion/hochul-blakeman-ny-governor-election.html"
- },
- {
-  "geo": "US",
   "term": "marty erlichman",
   "traffic": 100,
   "topics": "",
   "econ": false,
   "news_title": "Martin Erlichman, Barbra Streisand’s Longtime Manager, Dies at 97",
   "news_link": "https://www.nytimes.com/2026/11/01/obituaries/martin-erlichman-dead.html"
+ },
+ {
+  "geo": "US",
+  "term": "the avengers",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "Spider-Man Defies the Avengers to Take on Marvel’s Most Terrifying Hulk in New Preview",
+  "news_link": "https://www.yahoo.com/entertainment/movies/articles/spider-man-defies-avengers-marvel-184630831.html"
+ },
+ {
+  "geo": "US",
+  "term": "when is the last day to vote",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "Record 2.8M early ballots cast in North Carolina, driven by unaffiliated voters and steady Democrats",
+  "news_link": "https://www.wbtv.com/2026/11/01/record-28m-early-ballots-cast-north-carolina-driven-by-unaffiliated-voters-steady-democrats/"
  }
 ]
