@@ -28,7 +28,7 @@ OUTPUTS = [SITE + f for f in ("tg_ai.json", "tg_rewrites.json", "trd_rooms.json"
                                "imports.json", "threads_ai.json", "x_ai.json", "thm_ai.json", "growth_plan.json", "thread_posts.json",
                                "chart_reports.json", "charts")] + ["data/publish_queue.json", "data/card_style.json", "data/form_stats.json"]
 ENV = {**os.environ, "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1"}
-CRAWLERS = (("content-lab-telegram-live", "tg_live.py"), ("content-lab-threads-watch", "threads_watch.py"))
+CRAWLERS = (("content-lab-telegram-live", "tg_live.py"), ("content-lab-threads-watch", "threads_watch.py"), ("content-lab-thread-listen", "thread_listen.py"))
 TG_BEAT = Path.home() / ".content-lab-ai" / "tg_live.beat"
 TG_STALE_MIN = 40   # 10분마다 갱신되는 표시가 이만큼 멈추면 수집이 걸린 것
 ALERTED = Path.home() / ".content-lab-ai" / "crawl_alert"
@@ -155,7 +155,7 @@ def run_cycle():
     latest = {r["job"]: r for r in todo}   # 같은 일은 마지막 요청 하나만 (draft 는 주제별로 따로)
     did = []
 
-    posts = [r for r in todo if r["job"] == "thpost"][-6:]   # 사이트 '쓰레드 콘텐츠 만들기' 버튼 — 1~2분이라 맨 먼저 (thread_post.py)
+    posts = [r for r in todo if r["job"] == "thpost"][-6:]   # 지금은 thread_listen.py 가 바로 처리. 이전 요청 경로용으로만 남김
     for r in posts:
         a = r["args"]
         py("thread_post.py", "--idx", a.get("idx", "0"), "--styles", a.get("styles", "ABC"), "--slot", a.get("slot", ""),

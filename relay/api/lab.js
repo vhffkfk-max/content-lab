@@ -11,6 +11,9 @@ const OWNER_ONLY = ['card-publish.yml'];   // 실제 인스타에 올라가는 �
 const READ_FILES = ['data/publish_queue.json', 'output/site/thread_posts.json', 'data/feedback.json', 'data/site_usage.json'];
 const WRITE_FILES = ['data/feedback.json', 'data/site_usage.json'];
 
+// 쓰레드 글 요청은 main 대신 전용 가지에 파일로 넣는다 — 크롤러 푸시와 안 부딪혀 사라지지 않고, PC(thread_listen.py)가 몇 초 안에 읽어 감
+const THREAD_BRANCH = 'lab-requests', THREAD_DIR = 'requests/thpost', RID = /^[a-z0-9]{6,16}$/;
+
 const digest = s => createHash('sha256').update(String(s)).digest();
 const same = (a, b) => !!a && !!b && timingSafeEqual(digest(a), digest(b));
 
@@ -20,6 +23,8 @@ export function route(method, path) {
   if (method === 'GET' && p === '') return {};
   if (method === 'GET' && p === 'owner') return { owner: true, check: true };   // 발행 암호 확인용, 깃허브로 안 보냄
   let m;
+  if (p === 'thread-request') return method === 'POST' && !query ? { thread: true } : null;
+  if ((m = p.match(/^thread-request\/([a-z0-9]+)$/))) return method === 'GET' && RID.test(m[1]) ? { threadStatus: m[1] } : null;
   if ((m = p.match(/^contents\/(.+)$/))) {
     if (method === 'GET' && READ_FILES.includes(m[1])) return {};
     if (method === 'PUT' && WRITE_FILES.includes(m[1]) && !query) return {};
@@ -30,6 +35,14 @@ export function route(method, path) {
     return method === 'POST' && !query ? { owner: OWNER_ONLY.includes(m[1]) } : null;
   }
   return null;
+}
+
+// 요청 내용은 서버에서 다시 만든다 (정해진 칸·형식만)
+export function threadFile({ rid, idx, styles, slot } = {}, now = new Date()) {
+  const ok = RID.test(rid) && [0, 1, 2].includes(Number(idx)) && /^[ABC]{1,3}$/.test(styles) && /^[\d/: ]{0,20}$/.test(slot || '');
+  if (!ok) return null;
+  const at = new Date(now.getTime() + 9 * 3600e3).toISOString().slice(0, 19) + '+09:00';
+  return { rid, idx: Number(idx), styles, slot: slot || '', at };
 }
 
 export default async function handler(req, res) {
@@ -55,6 +68,24 @@ export default async function handler(req, res) {
   if (!rule) return res.status(404).json({ error: 'not_allowed' });
   if (rule.owner && !isOwner) return res.status(403).json({ error: 'owner_only' });
   if (rule.check) return res.status(204).end();
+  const gh = (p, init = {}) => fetch(`https://api.github.com/repos/${REPO}/${p}`, { cache: 'no-store', ...init,
+    headers: { Authorization: `Bearer ${LAB_GH_TOKEN}`, Accept: 'application/vnd.github+json', 'User-Agent': 'content-lab-relay', 'Content-Type': 'application/json' } });
+  if (rule.thread) {
+    const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : req.body;
+    const file = threadFile(body);
+    if (!file) return res.status(400).json({ error: 'bad_request' });
+    const r = await gh(`contents/${THREAD_DIR}/${file.rid}.json`, { method: 'PUT', body: JSON.stringify({ message: 'thread request', branch: THREAD_BRANCH,
+      content: Buffer.from(JSON.stringify(file)).toString('base64') }) });
+    if (r.status === 401) return res.status(502).json({ error: 'github_token' });
+    return r.ok ? res.status(201).json({ rid: file.rid }) : res.status(r.status).json({ error: 'github' });
+  }
+  if (rule.threadStatus) {
+    const r = await gh(`contents/${THREAD_DIR}/${rule.threadStatus}.json?ref=${THREAD_BRANCH}`);
+    if (r.status === 401) return res.status(502).json({ error: 'github_token' });
+    if (!r.ok) return res.status(r.status === 404 ? 404 : 502).json({ error: 'none' });
+    const { picked, error } = JSON.parse(Buffer.from((await r.json()).content, 'base64').toString('utf-8'));
+    return res.status(200).json({ picked: picked || null, error: error || null });
+  }
 
   const accept = req.headers['x-lab-accept'] === 'raw' ? 'application/vnd.github.raw+json' : 'application/vnd.github+json';
   const body = req.method === 'GET' ? undefined : typeof req.body === 'string' ? req.body : JSON.stringify(req.body || {});

@@ -1,21 +1,25 @@
 """쓰레드 콘텐츠 만들기 — '지금 쓸 거리'(hot_now.json) 하나를 황소개미(@bullant_economy) 쓰레드에 칸마다 이어 올릴 연결형 글로 쓴다.
 
     python thread_post.py --idx 0 --styles ABC            # 최신 '지금 쓸 거리' 1번으로 A·B·C 세 개
-    python thread_post.py --idx 2 --styles B --slot "11/01 17:10" --rid abc123   # 사이트 버튼 (local_ai.py 가 부름)
+    python thread_post.py --idx 2 --styles B --slot "11/01 17:10" --rid abc123 --push   # 사이트 버튼 (thread_listen.py 가 부름)
     python thread_post.py --idx 0 --styles A --dry-run    # Claude 에게 넘길 글만 보기
 
 - 말투·형식: ~/.content-lab-ai/threads_abc.md (Claude.ai 프로젝트 3곳의 지침 — 저장소가 공개라 PC에만 둠). 없으면 config/threads_abc.md
 - 재료: 지금 쓸 거리 + 근거 링크의 기사 본문 + 같은 주제 최근 기사 제목 (자료에 없는 숫자는 못 쓰게 함)
   근거 기사가 자동 접속을 막으면(매일경제·인베스팅 403) 뚫지 않고, 뉴스 검색 피드(Bing RSS)에서 같은 소식을 다룬 읽히는 기사를 찾아 씀
 - 마케팅 코치 원칙: 글마다 '황소개미 해석 한 줄', AI 티(반전 문구 '~가 아니라 ~다', 번호·기호 나열) 금지 — 걸리면 한 번 다시 쓰게 함
-- 글 쓰기: Claude Opus — 내 PC Claude Code(Max 구독, llm.py)라 API 요금 없음
+- 글 쓰기: Claude Opus — 내 PC Claude Code(Max 구독, llm.py)라 API 요금 없음. A·B·C 를 동시에 쓰고, 끝나는 글부터 저장(--push 면 바로 올림)
 → output/site/thread_posts.json (최근 60개, parts = 칸 목록). 사이트 '지금 쓸 거리' 카드 밑에 뜨고, 활용 체크(usage_audit.py)가 실제 올린 글과 맞춰 봄.
 """
 import argparse
 import html
 import json
 import re
+import subprocess
 import sys
+import threading
+import time
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
@@ -175,7 +179,8 @@ def related(pick, n=12):
     return [f"- {r['title']} ({r.get('source', '')})" for k, r in hits[:n] if k >= 2]
 
 
-def write(pick, styles, names, guide):
+def write(pick, styles, names, guide, done):
+    """글마다 따로 동시에 쓰고, 끝나는 대로 done(style, post, thin) 을 부른다."""
     G = load(SITE / "growth_plan.json", {})
     G = G[0] if isinstance(G, list) and G else G
     arts = [f"[{u}]\n{t}" for u, t in materials(pick)]
@@ -187,28 +192,54 @@ def write(pick, styles, names, guide):
         "계정 소개, 팔로우 권유, 다른 채널 홍보는 글에 쓰지 않는다. '확인 필요'를 본문에 쓰지 말고, 모르는 항목은 빼고 check 에 적는다. 수치가 없는 수치 칸을 억지로 만들지 않는다.",
         "check 에는 올리기 전 원문에서 확인할 숫자·사실만 짧게 적는다 (최대 3개, 각 30자 안팎, 지침 얘기는 쓰지 않음).",
         "글마다 '황소개미 해석 한 줄'(1인칭 입장)을 꼭 넣고 take 에 그대로 옮긴다.", "", guide])
-    prompt = "\n".join([
+    head = "\n".join([
         "## 이 계정 포지셔닝 (방향 참고만. 글에 옮겨 쓰지 말 것)", (G or {}).get("positioning", "") or "-", "",
         "## 황소개미 최근 글의 첫 칸들 (말투·줄 길이만 참고. 번호 목록·반전 문구는 따라 하지 말 것)", *examples(), "",
         "## 쓸 거리", f"주제: {pick.get('topic', '')}", f"제목: {pick.get('title', '')}", f"왜 지금: {pick.get('why_now', '')}",
         f"편집장 초안({pick.get('channel', '')}용):\n{pick.get('draft', '')}", f"근거 링크: {' '.join(pick.get('sources') or []) or '없음'}", "",
         "## 기사 본문 (자료)", *(arts or ["못 읽음 — 위 쓸 거리와 아래 제목에 있는 사실만 쓸 것"]), "",
-        "## 같은 주제 최근 기사 제목", *(related(pick) or ["- 없음"]), "",
-        f"위 쓸 거리로 {', '.join(f'{s}({names.get(s, s)})' for s in styles)} 글을 하나씩 써 줘. style 에는 A·B·C 글자만."])
-    msgs = [{"role": "user", "content": prompt}]
-    client = anthropic.Anthropic()
-    for attempt in range(2):
-        r = client.messages.parse(model=MODEL, max_tokens=6000, system=system, output_config={"effort": "medium"},
-                                  messages=msgs, output_format=Result)
-        if r.parsed_output is None:
-            return None, not arts
-        posts = {p.style.strip()[:1].upper(): p for p in r.parsed_output.posts}
-        bad = {s: tells(p.parts) for s, p in posts.items() if tells(p.parts)}
-        if attempt or not bad:
-            return posts, not arts
-        msgs = [{"role": "user", "content": prompt}, {"role": "assistant", "content": json.dumps(r.parsed_output.model_dump(), ensure_ascii=False)},
-                {"role": "user", "content": "AI 티가 남았어요. 다음 글을 고쳐서 전체를 다시 주세요: "
-                 + "; ".join(f"{s}: {', '.join(v)}" for s, v in bad.items()) + ". 나머지 글은 그대로."}]
+        "## 같은 주제 최근 기사 제목", *(related(pick) or ["- 없음"]), ""])
+
+    def one(s):
+        prompt = f"{head}\n위 쓸 거리로 {s}({names.get(s, s)}) 글을 하나 써 줘. style 에는 {s} 글자만."
+        msgs = [{"role": "user", "content": prompt}]
+        for attempt in range(2):
+            r = anthropic.Anthropic().messages.parse(model=MODEL, max_tokens=6000, system=system, output_config={"effort": "medium"},
+                                                     messages=msgs, output_format=Result)
+            post = next(iter(r.parsed_output.posts), None) if r.parsed_output else None
+            if post is None:
+                return False
+            bad = tells(post.parts)
+            if attempt or not bad:
+                done(s, post, not arts)
+                return True
+            msgs = [{"role": "user", "content": prompt}, {"role": "assistant", "content": json.dumps(r.parsed_output.model_dump(), ensure_ascii=False)},
+                    {"role": "user", "content": f"AI 티가 남았어요. 다음을 고쳐서 글 전체를 다시 주세요: {', '.join(bad)}."}]
+
+    def safe(s):
+        try:
+            return one(s)
+        except Exception as e:   # 하나가 실패해도 나머지 글은 살림
+            print(f"{s} 글 실패: {e}"[:300])
+            return False
+
+    with ThreadPoolExecutor(len(styles)) as pool:
+        return dict(zip(styles, pool.map(safe, styles)))
+
+
+def push_out():
+    """결과 파일만 바로 올림. 크롤러 푸시와 겹치면 다시 시도."""
+    git = lambda *a: subprocess.run(["git", "-c", "user.name=content-lab-bot", "-c", "user.email=content-lab-bot@users.noreply.github.com", *a], cwd=ROOT,
+                                    capture_output=True, creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0)).returncode == 0
+    git("add", "--", str(OUT.relative_to(ROOT)))
+    git("commit", "-q", "-m", "data: 쓰레드 글")
+    for _ in range(6):
+        if not (git("fetch", "-q", "--depth", "1", "origin", "main") and git("rebase", "-q", "-X", "theirs", "origin/main")):
+            git("rebase", "--abort")
+        elif git("push", "-q", "origin", "HEAD:main"):
+            return True
+        time.sleep(3)
+    return False
 
 
 def main():
@@ -218,6 +249,7 @@ def main():
     ap.add_argument("--slot", default="")
     ap.add_argument("--rid", default="")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--push", action="store_true", help="글이 끝날 때마다 바로 푸시 (thread_listen.py 용)")
     a = ap.parse_args()
     sys.stdout.reconfigure(encoding="utf-8")
     run, pick = find_pick(a.idx, a.slot)
@@ -230,16 +262,28 @@ def main():
         return print(f"{pick['title']} → {styles} · 예시 글 {len(examples())}개 · 지침 {len(guide)}자")
     if not anthropic.ready():
         return print("⚠️ Claude Code 가 없어요 — 건너뜀")
-    posts, thin = write(pick, styles, names, guide)
-    if not posts:
-        return print("⚠️ 결과를 못 받았어요 — 다시 눌러 주세요")
-    now = datetime.now(KST)
-    new = [{"rid": a.rid, "at": now.isoformat(timespec="seconds"), "time": now.strftime("%m/%d %H:%M"), "slot": run["time"],
-            "idx": a.idx, "pick": pick["title"], "style": s, "label": names.get(s, s), "parts": [x.strip() for x in p.parts],
-            "text": "\n\n".join(x.strip() for x in p.parts), "take": p.take, "check": p.check, "tells": tells(p.parts), "thin": thin} for s in styles if (p := posts.get(s))]
-    OUT.write_text(json.dumps(new + load(OUT, [])[: KEEP - len(new)], ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"✅ 쓰레드 글 {len(new)}개 ({''.join(x['style'] for x in new)}) · {pick['title'][:30]}"
-          + "".join(f" · {x['style']} AI 티 남음: {', '.join(x['tells'])}" for x in new if x["tells"]))
+    new, lock, pushed = [], threading.Lock(), []
+
+    def done(s, p, thin):
+        now = datetime.now(KST)
+        row = {"rid": a.rid, "at": now.isoformat(timespec="seconds"), "time": now.strftime("%m/%d %H:%M"), "slot": run["time"],
+               "idx": a.idx, "pick": pick["title"], "style": s, "label": names.get(s, s), "parts": [x.strip() for x in p.parts],
+               "text": "\n\n".join(x.strip() for x in p.parts), "take": p.take, "check": p.check, "tells": tells(p.parts), "thin": thin}
+        with lock:
+            new.append(row)
+            OUT.write_text(json.dumps([row] + load(OUT, [])[: KEEP - 1], ensure_ascii=False, indent=1), encoding="utf-8")
+            if a.push:
+                pushed.append(push_out())
+
+    results = write(pick, styles, names, guide, done)
+    if new:
+        print(f"✅ 쓰레드 글 {len(new)}개 ({''.join(x['style'] for x in new)}) · {pick['title'][:30]}"
+              + "".join(f" · {x['style']} AI 티 남음: {', '.join(x['tells'])}" for x in new if x["tells"]))
+    missed = [s for s, ok in results.items() if not ok]
+    if missed:
+        print(f"⚠️ {'·'.join(missed)} 글을 못 받았어요 — 다시 눌러 주세요")
+    if not all(pushed):
+        print("⚠️ 글을 올리지 못했어요 — 다시 눌러 주세요")
 
 
 if __name__ == "__main__":
