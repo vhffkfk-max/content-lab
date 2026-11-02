@@ -28,6 +28,7 @@ from tg_login import CHATS
 import repo_sync
 import tg_analyze
 import tg_metrics
+import trd_research
 from tg_history import SCHEMA as HISTORY_SCHEMA
 
 DB = DATA_DIR / "telegram_history.db"   # tg_history.py 와 같은 곳에 쌓음 (1년 치 + 실시간)
@@ -41,7 +42,8 @@ SOURCE_USERS = {"shmstory"}
 MORNING_RE = re.compile(r"^\s*\d{1,2}월\s*\d{1,2}일\s*시황")
 CLOSE_RE = re.compile(r"^\s*마감\s*시황")
 SITE_FILES = ["tg_source", "tg_meta", "tg_chats", "tg_hot", "tg_mine", "tg_hours", "tg_lengths", "tg_media",
-              "tg_growth", "tg_streak", "tg_slots", "tg_shared", "tg_rank"]
+              "tg_growth", "tg_streak", "tg_slots", "tg_shared", "tg_rank", "trd_folders"]
+BEAT = os.path.join(os.path.expanduser("~"), ".content-lab-ai", "tg_live.beat")   # 수집이 살아 있다는 표시 — local_ai.py 가 5분마다 확인
 
 SCHEMA = HISTORY_SCHEMA + """
 CREATE TABLE IF NOT EXISTS alerted (chat_id TEXT, id INTEGER, PRIMARY KEY (chat_id, id));
@@ -72,15 +74,21 @@ def save(conn, ch, m):
 
 async def refresh(client, conn, chats, limit):
     since = datetime.now(timezone.utc) - timedelta(days=KEEP_DAYS)
+    ok = 0
     for ch in chats:
         try:
             async for m in client.iter_messages(int(ch["id"]), limit=limit):
                 if m.date < since:
                     break
                 save(conn, ch, m)
+            ok += 1
         except Exception as e:  # 나간 방·권한 없는 방은 건너뛴다
             log.warning("%s: %s", ch["이름"], e)
     conn.commit()
+    if ok:
+        os.makedirs(os.path.dirname(BEAT), exist_ok=True)
+        with open(BEAT, "w") as f:
+            f.write(datetime.now(timezone.utc).isoformat())
 
 
 async def record_members(client, conn, chats):
@@ -132,6 +140,12 @@ def write_site(conn, chats):
     out = tg_analyze.build(snapshot(conn, chats), datetime.now(timezone.utc))
     out.update(tg_metrics.compute(conn, chats))
     out["tg_source"] = source_posts(conn, chats)
+    try:
+        out["trd_folders"] = trd_research.build(conn, chats)
+    except Exception:   # 연구가 틀려도 수집은 멈추지 않게 — 지난 파일 유지
+        log.exception("폴더 연구 실패")
+        p = SITE / "trd_folders.json"
+        out["trd_folders"] = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
     SITE.mkdir(parents=True, exist_ok=True)
     for name in SITE_FILES:
         (SITE / f"{name}.json").write_text(json.dumps(out[name], ensure_ascii=False, indent=1), encoding="utf-8")
@@ -271,7 +285,7 @@ async def run(args):
         conn.execute("INSERT OR REPLACE INTO chats VALUES (?,?,?,?,?,?)", (c["id"], c["이름"], c["아이디"], c["종류"],
                      int(c["인원"] or 0), "mine" if "내" in c["분석"] else "other"))
     first = conn.execute("SELECT COUNT(*) FROM alerted").fetchone()[0] == 0   # 처음 켜는 것
-    await refresh(client, conn, chats, 300 if first else 80)
+    await refresh(client, conn, chats, 300)   # 꺼져 있던 동안의 글까지 메움
     await record_members(client, conn, chats)
     started = datetime.now(timezone.utc)
     if first:  # 처음 켤 때는 지난 글로 알림이 쏟아지지 않게, 최근 1시간 글만 알리고 나머지는 알린 것으로 표시
@@ -298,6 +312,7 @@ async def run(args):
 
     async def loop():
         last_push = last_members = datetime.now(timezone.utc)
+        own_day = None
         mine = [c for c in chats if "내" in c["분석"]]
         last_source = max((s["id"] for s in source_posts(conn, chats) if s["kind"] != "기타"), default=None)
         while True:
@@ -305,6 +320,10 @@ async def run(args):
             try:
                 await refresh(client, conn, chats, 80)
                 await send_alerts(client, conn, chats, args.dry_alert)
+                today = datetime.now(tg_analyze.KST).date()
+                if own_day != today:   # 우리 방 성적은 하루 한 번만 다시 읽음
+                    own_day = today
+                    await trd_research.refresh_own(client)
                 hourly = datetime.now(timezone.utc) - last_members >= timedelta(minutes=59)
                 await record_members(client, conn, chats if hourly else mine)
                 if hourly:

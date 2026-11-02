@@ -28,6 +28,10 @@ OUTPUTS = [SITE + f for f in ("tg_ai.json", "tg_rewrites.json", "trd_rooms.json"
                                "imports.json", "threads_ai.json", "x_ai.json", "thm_ai.json", "growth_plan.json", "thread_posts.json",
                                "chart_reports.json", "charts")] + ["data/publish_queue.json", "data/card_style.json", "data/form_stats.json"]
 ENV = {**os.environ, "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1"}
+CRAWLERS = (("content-lab-telegram-live", "tg_live.py"), ("content-lab-threads-watch", "threads_watch.py"))
+TG_BEAT = Path.home() / ".content-lab-ai" / "tg_live.beat"
+TG_STALE_MIN = 40   # 10분마다 갱신되는 표시가 이만큼 멈추면 수집이 걸린 것
+ALERTED = Path.home() / ".content-lab-ai" / "crawl_alert"
 
 
 def log(*a):
@@ -53,6 +57,45 @@ def py(*a, timeout=40 * 60):
     tail = [l for l in (p.stdout + p.stderr).strip().splitlines() if l.strip()][-3:]
     log(f"{'✓' if p.returncode in (0, 3) else '✗'} {' '.join(a)} →", " / ".join(tail)[:500])
     return p.returncode
+
+
+def alert_owner(text):
+    """크롤러 문제를 봇으로 — 1시간에 한 번만."""
+    if ALERTED.exists() and time.time() - ALERTED.stat().st_mtime < 3600:
+        return
+    ALERTED.touch()
+    sys.path.insert(0, str(ROOT))
+    from common import load_env
+    load_env()
+    token, chat = os.environ.get("TELEGRAM_BOT_TOKEN"), os.environ.get("TELEGRAM_CHAT_ID")
+    if not token or not chat:
+        return
+    import urllib.parse
+    import urllib.request
+    try:
+        data = urllib.parse.urlencode({"chat_id": chat, "text": text}).encode()
+        urllib.request.urlopen(f"https://api.telegram.org/bot{token}/sendMessage", data=data, timeout=20)
+    except Exception as e:
+        log("⚠️ 봇 알림 실패:", e)
+
+
+def watch_crawlers():
+    """크롤링은 멈추면 안 된다 — 꺼졌거나 걸렸으면 작업 스케줄러로 다시 켠다."""
+    flags = subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0
+    run = lambda *a: subprocess.run(a, capture_output=True, text=True, errors="replace", creationflags=flags)
+    ps = run("powershell", "-NoProfile", "-Command", "Get-CimInstance Win32_Process -Filter \"Name like 'python%'\" | ForEach-Object CommandLine")
+    if ps.returncode != 0:
+        return log("⚠️ 크롤러 확인 실패:", ps.stderr[:200])
+    for task, script in CRAWLERS:
+        hung = script == "tg_live.py" and TG_BEAT.exists() and time.time() - TG_BEAT.stat().st_mtime > TG_STALE_MIN * 60
+        if script in ps.stdout and not hung:
+            continue
+        if hung:
+            run("schtasks", "/end", "/tn", task)
+        r = run("schtasks", "/run", "/tn", task)
+        msg = f"{'걸려서' if hung else '꺼져서'} 다시 켬: {script}" + ("" if r.returncode == 0 else f" (실패: {r.stderr.strip()[:120]})")
+        log("🔁", msg)
+        alert_owner(f"⚠️ 크롤러 {msg}")
 
 
 def refresh_news(done=[]):
@@ -224,6 +267,7 @@ def push(did):
 def main():
     LOCK.parent.mkdir(parents=True, exist_ok=True)
     if "--run" not in sys.argv:
+        watch_crawlers()
         # 1) 작업 폴더를 저장소 최신으로 맞춘 뒤, 새 코드로 다시 실행
         if LOCK.exists() and time.time() - LOCK.stat().st_mtime < 90 * 60:
             return

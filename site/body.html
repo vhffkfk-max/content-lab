@@ -326,9 +326,8 @@ a.row:hover .row-main{text-decoration:underline}
             <li><a href="#ig-live">지금 크는 글 (실시간)</a></li>
             <li><a href="#analysis">주간 분석</a></li>
           </ul></li>
-        <li><button type="button" data-ch="telegram"><i class="dot" style="background:var(--ch-telegram)"></i>텔레그램<span class="soon" id="tg-badge">연결 전</span></button>
+        <li><button type="button" data-ch="telegram"><i class="dot" style="background:var(--ch-telegram)"></i>텔레그램 · 말희아빠<span class="soon" id="tg-badge">연결 전</span></button>
           <ul class="subnav" data-for="telegram">
-            <li class="sub-label">말희아빠 채널</li>
             <li><a href="#tg-rw">시황 자동 변환</a></li>
             <li><a href="#tg-mine">내 채널 성과</a></li>
             <li><a href="#tg-rank">경쟁 채널 순위</a></li>
@@ -338,9 +337,19 @@ a.row:hover .row-main{text-decoration:underline}
             <li><a href="#tg-hot">다른 방 인기 글</a></li>
             <li><a href="#tg-when">시간대·형식</a></li>
             <li><a href="#tg-rooms">방별 현황</a></li>
-            <li class="sub-label">트레이더스 방</li>
-            <li><a href="#trd-posts">오늘 방별 올릴 글</a></li>
-            <li><a href="#trd-awards">왕 선정 중간 체크</a></li>
+          </ul></li>
+        <li><button type="button" data-ch="traders"><i class="dot" style="background:var(--ch-telegram)"></i>텔레그램 · 트레이더스</button>
+          <ul class="subnav" data-for="traders">
+            <li><a href="#trdf-notice">📌 공지사항</a></li>
+            <li><a href="#trdf-coin">🪙 코인 관점 공유방</a></li>
+            <li><a href="#trdf-stock">📈 주식토큰방</a></li>
+            <li><a href="#trdf-trader">🎯 트레이더 관점 공유방</a></li>
+            <li><a href="#trdf-talk">💬 소통방</a></li>
+            <li><a href="#trdf-proof">🏆 수익 인증방</a></li>
+            <li><a href="#trdf-news">📰 중요 뉴스 및 중요 한마디</a></li>
+            <li><a href="#trdf-study">🎓 기초가이드 & 공부방</a></li>
+            <li class="sub-label">운영</li>
+            <li><a href="#trd-awards">왕 선정</a></li>
             <li><a href="#trd-rooms">방별 활성화 피드백</a></li>
           </ul></li>
         <li class="nav-label" style="margin-top:10px">참고 자료</li>
@@ -823,7 +832,7 @@ a.row:hover .row-main{text-decoration:underline}
 
       <div class="view" data-view="telegram" hidden>
         <div class="title-row">
-          <div><h1>텔레그램</h1><p>위쪽은 차트보는 말희아빠 채널 키우기(다른 업체 방의 반응 큰 글 + 오늘 뉴스로 올릴 문구), 아래쪽은 내가 운영하는 트레이더스 방 활성화예요.</p></div>
+          <div><h1>텔레그램 · 말희아빠</h1><p>차트보는 말희아빠 채널 키우기예요. 다른 업체 방의 반응 큰 글과 오늘 뉴스로 올릴 문구를 보여 줘요.</p></div>
         </div>
         <div class="kpis" id="tg-kpis"></div>
         <section class="sec" id="tg-rw">
@@ -883,15 +892,24 @@ a.row:hover .row-main{text-decoration:underline}
           <section class="sec" id="tg-rooms"><h2>방별 현황</h2><p class="note">분석 중인 방과 하루 글 수, 반응 중앙값, 잘 되는 시간대예요.</p>
             <div class="card"><div class="rows" id="tg-chats"></div></div></section>
         </div>
-        <h2 style="margin-top:28px;font-size:22px">트레이더스 방</h2>
-        <section class="sec" id="trd-posts">
-          <h2>오늘 방별 올릴 글</h2>
-          <p class="note" id="trd-posts-note">매일 07시(하루 글 전부)·18시(저녁 글) Claude가 오늘 뉴스와 실제 시세로 방마다 올릴 글을 써요. [확인] 표시가 있으면 올리기 전에 채워 주세요.</p>
-          <div class="kpis" id="trd-market"></div>
-          <div class="recs" id="trd-post-list" style="margin-top:12px"></div>
-        </section>
+      </div>
+      <div class="view" data-view="traders" hidden>
+        <div class="title-row">
+          <div><h1>트레이더스 방</h1><p>텔레그램 폴더와 같은 8칸이에요. 칸마다 넣을 것과 이유, 크롤링으로 쌓은 근거, 오늘 올릴 글, 오늘 소재를 보여 줘요.</p></div>
+        </div>
+        <p class="note" id="trd-crawl"></p>
+        <div class="kpis" id="trd-market"></div>
+        <section class="sec" id="trdf-notice"><h2>📌 공지사항</h2><div data-trdf="notice"></div></section>
+        <section class="sec" id="trdf-coin"><h2>🪙 코인 관점 공유방</h2><div data-trdf="coin"></div></section>
+        <section class="sec" id="trdf-stock"><h2>📈 주식토큰방</h2><div data-trdf="stock"></div></section>
+        <section class="sec" id="trdf-trader"><h2>🎯 트레이더 관점 공유방</h2><div data-trdf="trader"></div></section>
+        <section class="sec" id="trdf-talk"><h2>💬 소통방</h2><div data-trdf="talk"></div></section>
+        <section class="sec" id="trdf-proof"><h2>🏆 수익 인증방</h2><div data-trdf="proof"></div></section>
+        <section class="sec" id="trdf-news"><h2>📰 중요 뉴스 및 중요 한마디</h2><div data-trdf="news"></div></section>
+        <section class="sec" id="trdf-study"><h2>🎓 기초가이드 & 공부방</h2><div data-trdf="study"></div></section>
+        <h2 style="margin-top:28px;font-size:22px">운영</h2>
         <section class="sec" id="trd-awards">
-          <h2>이달의 왕 선정 — 중간 체크</h2>
+          <h2>이달의 왕 선정</h2>
           <p class="note" id="trd-awards-note">회원 이름이 들어간 순위표는 개인정보라 사이트에 올리지 않고 내 PC 엑셀(output/participation)에만 있어요. 여기엔 부문별 후보 수와 기준만 보여요.</p>
           <div class="kpis" id="trd-kpis"></div>
           <div class="grid" id="trd-award-list" style="margin-top:12px"></div>
@@ -1199,6 +1217,8 @@ a.row:hover .row-main{text-decoration:underline}
         const acts = el('div', 'actions'); acts.append(a); c.append(acts);
         return c;
       }
+      const why = it.design_why;
+      if (why) { const w = el('details', 'more'); w.append(el('summary', null, '왜 이렇게 만들었나요'), el('div', 'box', [why.note, why.evidence && `근거: ${why.evidence}`].filter(Boolean).join('\n\n'))); c.append(w); }
       const more = el('details', 'more'); more.append(el('summary', null, '캡션 보기'), el('div', 'box', it.caption || '')); c.append(more);
       const acts = el('div', 'actions'), err = it.publish_error;
       if (it.canva && it.canva.id) { const a = el('a', 'btn small', '캔바에서 고치기'); a.href = `https://www.canva.com/design/${encodeURIComponent(it.canva.id)}/edit`; a.target = '_blank'; a.rel = 'noopener'; acts.append(a); }
@@ -1397,7 +1417,8 @@ a.row:hover .row-main{text-decoration:underline}
       ['google', 'google', '뉴스·정보', '뉴스는 많은데 인스타가 덜 다룬 화제, 급상승 검색어'],
       ['threads', 'threads', '쓰레드', '황소개미 진단, 따라 할 글, 조회수 10만+ 모음'],
       ['x', 'x', 'X · 트루스', '트럼프 글과 해외 시장 반응 브리핑'],
-      ['telegram', 'telegram', '텔레그램', '오늘 올릴 문구와 시황 자동 변환, 방별 성과'],
+      ['telegram', 'telegram', '텔레그램 · 말희아빠', '오늘 올릴 문구와 시황 자동 변환, 방별 성과'],
+      ['traders', 'traders', '텔레그램 · 트레이더스', '폴더 8칸별 넣을 것과 이유, 오늘 올릴 글, 크롤링 소재'],
       ['growth', 'accent', '마케팅 코치', '이번 주 막힌 곳, 성장 실험 3개, 첫 줄 카피, 7일 계획'],
       ['feedback', 'accent', '후기·기록', '도움 된 글과 만든 콘텐츠 기록, 내 이용 시간'],
       ['usage', 'accent', '활용 체크', '연구소 추천을 실제 글·GPT·Claude 대화에 썼는지 3시간마다 확인'],
@@ -1842,23 +1863,53 @@ a.row:hover .row-main{text-decoration:underline}
   }
 
   function drawTraderPosts() {
-    const d = (() => { const x = dash.data('trd_posts'); return x.status === 'ok' && !Array.isArray(x.data) ? x.data : null; })();
-    const mb = document.getElementById('trd-market'), lb = document.getElementById('trd-post-list');
-    if (!d) { mb.replaceChildren(); empty(lb, '다음 07시·18시 깃허브 실행 때 방별 글이 생겨요. 지금 바로 보려면 「데이터 새로 불러오기 → 트레이더스 방별 글 다시 쓰기」.'); return; }
-    document.getElementById('trd-posts-note').textContent = `${d.date} · ${(d.generated_at || '').slice(11, 16)} 작성 — ${d.theme || ''} · [확인] 표시가 있으면 올리기 전에 채워 주세요.`;
-    const M = d.market || {}, pct = v => v == null ? '' : `${v > 0 ? '+' : ''}${v}%`;
+    const get = k => { const x = dash.data(k); return x.status === 'ok' && !Array.isArray(x.data) ? x.data : null; };
+    const F = get('trd_folders'), d = get('trd_posts'), mb = document.getElementById('trd-market'), cb = document.getElementById('trd-crawl');
+    const M = (d && d.market) || {}, pct = v => v == null ? '' : `${v > 0 ? '+' : ''}${v}%`;
     mb.replaceChildren(...['코스피', '나스닥', '원/달러 환율', '비트코인(업비트 원화)', '이더리움(달러)', '비트코인 김치프리미엄(%)'].filter(k => M[k]).map(k =>
       kpi(k.replace('(%)', ''), k.includes('김치') ? `${M[k].close}%` : fmtN(M[k].close), M[k].d1 != null ? `하루 ${pct(M[k].d1)}` : '업비트 ÷ (달러가 × 환율)')));
-    const nowHm = new Date(Date.now() + 9 * 3600e3).toISOString().slice(11, 16), isToday = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10) === d.date;
-    lb.replaceChildren(...(d.posts || []).map(p => {
-      const c = el('article', 'card rec trd-room'), h = el('h3', null, `${p.time} · ${p.room}`);
-      h.append(el('span', 'pill ' + (isToday && p.time <= nowHm ? 'neutral' : 'accent'), isToday && p.time <= nowHm ? '시간 지남' : p.kind));
-      c.append(h, el('p', 'why1', p.title), el('div', 'box', p.text), copyBtn('글 복사', p.text));
-      if (p.check && p.check.length) { const ul = el('ul'); p.check.forEach(x => ul.append(el('li', null, x))); c.append(el('p', 'sub', '올리기 전 확인'), ul); }
-      if (p.based_on) c.append(el('p', 'sub', `재료: ${p.based_on}`));
-      c.append(fbBar({ id: `trdp:${d.date}:${p.time}:${p.room}`, type: '트레이더스 글', title: `${p.room} ${p.kind}: ${p.title}`, url: '' }));
-      c.style.gap = '10px'; return c;
-    }));
+    const c = F && F.crawl;
+    if (c) {
+      const late = c.last_at && Date.now() - new Date(c.last_at).getTime() > 90 * 60e3;
+      cb.textContent = `${late ? '⚠️ 수집이 멈춘 것 같아요' : '수집 중'} · 마지막 글 ${(c.last_at || '').slice(5, 16).replace('T', ' ')} · 채널·방 ${c.chats}곳 · 최근 24시간 ${fmtN(c.day)}개 · 누적 ${fmtN(c.total)}개${d ? ` · 오늘 글 ${(d.generated_at || '').slice(11, 16)} 작성` : ''}`;
+    } else cb.textContent = '';
+    const nowHm = new Date(Date.now() + 9 * 3600e3).toISOString().slice(11, 16), isToday = d && new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10) === d.date;
+    (F ? F.folders : []).forEach(f => {
+      const box = document.querySelector(`[data-trdf="${f.id}"]`);
+      if (!box) return;
+      const plan = el('div', 'card trd-room'), h = el('h3', null, '넣을 것과 이유');
+      h.append(el('span', 'pill neutral', f.access));
+      plan.append(h, el('p', 'sub', f.role));
+      f.items.forEach(i => plan.append(el('p', 'why1', i.what), el('p', 'sub', i.why)));
+      plan.style.gap = '6px';
+      const parts = [plan];
+      if (f.research && f.research.length) {
+        const r = el('div', 'card'), ul = el('ul', 'learn');
+        f.research.forEach(x => ul.append(el('li', null, x)));
+        ul.style.marginTop = '10px'; r.style.marginTop = '12px';
+        r.append(el('h3', null, '연구 근거 (매일 다시 계산)'), ul); parts.push(r);
+      }
+      const posts = (d && d.posts || []).filter(p => p.room === f.room), list = el('div', 'recs');
+      list.style.marginTop = '12px';
+      list.replaceChildren(...posts.map(p => {
+        const a = el('article', 'card rec trd-room'), t = el('h3', null, `${p.time} · ${p.kind}`);
+        t.append(el('span', 'pill ' + (isToday && p.time <= nowHm ? 'neutral' : 'accent'), isToday && p.time <= nowHm ? '시간 지남' : '오늘 올릴 글'));
+        a.append(t, el('p', 'why1', p.title), el('div', 'box', p.text), copyBtn('글 복사', p.text));
+        if (p.check && p.check.length) { const ul = el('ul'); p.check.forEach(x => ul.append(el('li', null, x))); a.append(el('p', 'sub', '올리기 전 확인'), ul); }
+        if (p.based_on) a.append(el('p', 'sub', `재료: ${p.based_on}`));
+        a.append(fbBar({ id: `trdp:${d.date}:${p.time}:${p.room}`, type: '트레이더스 글', title: `${p.room} ${p.kind}: ${p.title}`, url: '' }));
+        a.style.gap = '10px'; return a;
+      }));
+      if (!posts.length) list.append(el('p', 'note', '다음 07시 작성 때 이 폴더 글이 생겨요.'));
+      parts.push(list);
+      if (f.sources && f.sources.length) {
+        const s = el('div', 'card'), rowsBox = el('div', 'rows');
+        s.style.marginTop = '12px';
+        rowsBox.replaceChildren(...f.sources.map(x => rowLink(x.text, `${x.time} · ${x.chat} · 평소의 ${x.x}배`, x.link, webLink)));
+        s.append(el('h3', null, '오늘 소재 (다른 채널에서 크는 글)'), rowsBox); parts.push(s);
+      }
+      box.replaceChildren(...parts);
+    });
   }
 
   // ── 텔레그램: 내 채널 ──
@@ -2854,7 +2905,7 @@ a.row:hover .row-main{text-decoration:underline}
   const closeMenu = () => { side.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); };
   menuBtn.addEventListener('click', () => { side.classList.add('open'); menuBtn.setAttribute('aria-expanded', 'true'); });
   document.getElementById('side-close').addEventListener('click', closeMenu);
-  const NAMES = { home: '오늘 할 일', instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드', x: 'X · 트루스소셜', telegram: '텔레그램', feedback: '후기·기록', growth: '마케팅 코치', usage: '활용 체크' };
+  const NAMES = { home: '오늘 할 일', instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드', x: 'X · 트루스소셜', telegram: '텔레그램 · 말희아빠', traders: '텔레그램 · 트레이더스', feedback: '후기·기록', growth: '마케팅 코치', usage: '활용 체크' };
   function setChannel(ch) {
     document.querySelectorAll('#channel-nav > li > button').forEach(b => b.setAttribute('aria-current', String(b.dataset.ch === ch)));
     document.querySelectorAll('.subnav').forEach(u => { u.hidden = u.dataset.for !== ch; });
