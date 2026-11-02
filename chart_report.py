@@ -2,7 +2,7 @@
 
     python chart_report.py IONQ 비트코인 SK하이닉스   # 종목마다 PC(가로)·모바일(세로) PNG + 본문
     python chart_report.py 아이온큐 --send             # 봇으로도 보냄 (TELEGRAM_BOT_TOKEN·CHAT_ID)
-    python chart_report.py --from-tg                 # 오늘 문구의 다음 차트 글 종목 하나로 만들고 봇으로 보냄 (PC가 하루 2번 08·19시)
+    python chart_report.py --from-tg                 # 오늘 문구의 다음 차트 글 종목 하나로 만들고 봇으로 보냄 (PC가 매일 아침 08시에 --force 로)
     python chart_report.py --from-tg --force         # 이미 만든 칸이어도 다시 (사이트 '차트 만들기' 빈칸 요청)
     python chart_report.py IONQ --no-ai              # Claude 없이 정해진 문장으로 본문
 시세(무료 공개): 미국 주식 야후 파이낸스 차트 주소(yfinance 가 쓰는 곳), 국내 네이버 금융, 코인 바이낸스(안 되면 업비트).
@@ -631,7 +631,7 @@ def chart_posts(ai):
 
 
 def from_tg(use_ai, notify=True, force=False):
-    """오늘 문구의 차트 글 중 다음 차례(지금 이후 가장 가까운 칸) 하나를 만든다. 하루 2번(08·19시) 자동 + 수동 버튼."""
+    """오늘 문구의 차트 글 중 다음 차례(지금 이후 가장 가까운 칸) 하나를 만든다. 매일 08시 자동 + 수동 버튼."""
     p = SITE / "tg_ai.json"
     ai = json.loads(p.read_text(encoding="utf-8") or "{}") if p.exists() else {}
     posts = chart_posts(ai)

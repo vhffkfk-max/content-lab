@@ -144,8 +144,8 @@ def run_cycle():
         syms = r["args"].get("symbols", "") or "auto"
         py("chart_report.py", *(["--from-tg", "--force"] if syms == "auto" else [syms, "--send"]), timeout=15 * 60)
         did.append(f"차트 {syms}")
-    if slot_once(state, "chart", (8, 19)):   # 자동 차트리포트는 하루 2번 (08시 장 시작 전 · 19시 저녁 미장·코인)
-        py("chart_report.py", "--from-tg", timeout=15 * 60)
+    if slot_once(state, "chart", (8,)):   # 자동 차트리포트는 하루 1번 아침 08시 (PC가 꺼져 있었으면 켜진 뒤 바로). --force: 어제 문구 그대로여도 매일 새로 만듦
+        py("chart_report.py", "--from-tg", "--force", timeout=15 * 60)
         did.append("차트리포트")
 
     if "trd" in latest:
