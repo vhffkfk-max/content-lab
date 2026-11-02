@@ -1757,7 +1757,7 @@ a.row:hover .row-main{text-decoration:underline}
     if (!CR.length) return empty(box, '차트 글 칸이 생기면 PC가 실제 시세로 이미지를 만들어 여기에 올려요.');
     box.replaceChildren(...CR.map(r => {
       const c = el('article', 'card rec'), chips = el('div', 'chips');
-      chips.append(el('span', 'pill accent', r.name), el('span', 'pill neutral', `${r.date} 종가 ${r.close} (${r.chg > 0 ? '+' : ''}${r.chg}%)`),
+      chips.append(el('span', 'pill accent', r.name), el('span', 'pill neutral', r.basis ? `${r.px} ${r.close} (${r.chg > 0 ? '+' : ''}${r.chg}%) · ${r.basis}` : `${r.date} 종가 ${r.close} (${r.chg > 0 ? '+' : ''}${r.chg}%)`),
         el('span', `pill ${r.trend === '상승추세' ? 'positive' : r.trend === '하락추세' ? 'warning' : 'neutral'}`, r.trend));
       if (r.slot_time) chips.append(el('span', 'pill neutral', `${r.slot_time} 칸`));
       c.append(chips, chartBlock(r)); c.style.gap = '10px'; return c;
