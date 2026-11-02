@@ -35,5 +35,10 @@ jobs:
           python ai_request.py publish "id=$DRAFT_ID"
           git add data/ai_requests.json
           git commit -m "ai: PC에 카드뉴스 발행 요청" || echo "변경 없음"
-          git pull --rebase -X theirs --autostash || (git rebase --abort; git pull --no-rebase -X ours --no-edit) || true
-          git push
+          # 다른 자동 작업이 자주 푸시해서 한 번에 안 될 때가 있다. 요청이 사라지면 안 되므로 몇 번 다시 시도한다.
+          for i in 1 2 3 4 5 6; do
+            git pull --rebase -X theirs --autostash || (git rebase --abort; git pull --no-rebase -X ours --no-edit) || true
+            git push && exit 0
+            sleep $((i * 5))
+          done
+          exit 1
