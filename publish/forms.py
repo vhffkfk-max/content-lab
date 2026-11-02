@@ -71,7 +71,7 @@ def md(s):
 LOGO = asset_uri("brand/hotconomy_logo.png")
 
 # 인스타는 4:5 그림을 1:1로 올리면 위아래를 135px씩 자른다. 글은 가운데 1080×1080(y 135~1215) 안에 둔다.
-# 잘려도 되는 건 사진과 아래 띠의 로고, 쪽 번호뿐 (layout_check 가 safe 로 검사).
+# 잘려도 되는 건 사진뿐. 로고도 안에 두고, 쪽 번호는 인스타가 보여 주니 뺀다 (layout_check 가 safe 로 검사).
 CSS = """
 .s{position:relative;width:1080px;height:1350px;overflow:hidden;font-family:HSans,'Noto Sans CJK KR',sans-serif;--bg:#0b0b0d;--fg:#fff;--sub:#a9a9b2;--ac:#e3262b;--hl:#ffc23a;background:var(--bg);color:var(--fg);word-break:keep-all}
 .light{--bg:#f4efe7;--fg:#1d1a17;--sub:#6e665e;--ac:#d8262b;--hl:#d8262b}
@@ -82,6 +82,7 @@ CSS = """
 .hl{color:var(--hl)}
 .foot{position:absolute;left:0;right:0;bottom:44px;display:flex;justify-content:center;align-items:center;gap:12px;font-size:28px;font-weight:700;color:var(--fg);opacity:.9}
 .foot img{width:46px;height:46px;border-radius:50%}
+.foot.in{left:auto;right:64px;bottom:140px}
 .pn{position:absolute;right:56px;bottom:50px;font-size:26px;color:var(--sub);font-weight:500}
 .demo{position:absolute;left:24px;top:20px;font-size:20px;color:#fff;background:#0008;padding:4px 10px;border-radius:6px;z-index:9}
 .pad{position:absolute;left:72px;right:72px}
@@ -135,7 +136,7 @@ CSS = """
 .shade{position:absolute;inset:0;background:linear-gradient(180deg,#000000d0 0,#000000b0 26%,#00000050 42%,#00000070 58%,#000000e6 78%,#000000f0 100%)}
 .shade.cv{background:linear-gradient(180deg,#00000040 0,#00000000 35%,#000000b0 62%,#000000f0 100%)}
 .scene-t{text-shadow:0 2px 14px #000c}
-.credit{position:absolute;left:64px;bottom:140px;font-size:18px;color:#ffffffa0;max-width:1000px;white-space:nowrap;overflow:hidden}
+.credit{position:absolute;left:64px;bottom:150px;font-size:18px;color:#ffffffa0;max-width:680px;white-space:nowrap;overflow:hidden}
 /* 글 길이에 맞춰 아래로 밀리는 묶음 (고정 위치면 제목이 길 때 겹침) */
 .stack{position:absolute;left:72px;right:72px;display:flex;flex-direction:column;gap:36px}
 .stack .ui{position:relative;left:auto;right:auto;margin:0 38px;top:auto}
@@ -149,19 +150,19 @@ CSS = """
 .nw-sh{position:absolute;inset:0;background:linear-gradient(180deg,#00000000 0,#00000000 38%,#000000c8 60%,#000000f5 76%,#000 100%)}
 .nw-ph{position:absolute;left:0;top:0;width:1080px;height:830px;object-fit:cover;object-position:center 22%}
 .nw-fd{position:absolute;left:0;right:0;top:520px;height:320px;background:linear-gradient(180deg,#0b0b0d00,#0b0b0d)}
-.nw-box{position:absolute;left:64px;right:64px;bottom:180px;display:flex;flex-direction:column;gap:26px}
+.nw-box{position:absolute;left:64px;right:64px;bottom:205px;display:flex;flex-direction:column;gap:26px}
 .nw-tag{font-size:40px;font-weight:800;color:var(--hl)}
 .nw-t{font-weight:900;line-height:1.16;letter-spacing:-2px;text-shadow:0 2px 16px #000a}
 .nw-b{font-size:48px;font-weight:600;line-height:1.42;color:#e9e9ee}
 .nw-k{font-size:66px;font-weight:800;line-height:1.25;letter-spacing:-1px}
 .nw-h{font-weight:900;line-height:1.05;letter-spacing:-4px;color:var(--hl);white-space:nowrap}
 /* 세리프 에디토리얼: 제목 + 내용 사진 + 짧은 설명으로 꽉 채움 */
-.ed{position:absolute;left:72px;right:72px;top:175px;bottom:195px;display:flex;flex-direction:column;gap:34px;align-items:center;text-align:center}
+.ed{position:absolute;left:72px;right:72px;top:175px;bottom:210px;display:flex;flex-direction:column;gap:34px;align-items:center;text-align:center}
 .ed img{flex:1;min-height:0;width:100%;object-fit:cover;object-position:center 25%;border-radius:18px}
 .ed-t{font-family:HSerif,'Noto Serif CJK KR',serif;font-weight:700;line-height:1.2;letter-spacing:-1.5px}
 .ed-c{font-size:44px;line-height:1.45;font-weight:500}
 /* 글이 짧아도 아래가 비지 않게 가운데로 */
-.vc{position:absolute;left:72px;right:72px;top:145px;bottom:145px;display:flex;flex-direction:column;justify-content:center;gap:44px}
+.vc{position:absolute;left:72px;right:72px;top:145px;bottom:205px;display:flex;flex-direction:column;justify-content:center;gap:44px}
 /* 마지막 */
 .btns{position:absolute;left:90px;right:90px;display:flex;gap:30px}
 .btn{flex:1;height:96px;border-radius:60px;display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:800}
@@ -171,8 +172,10 @@ CSS = """
 """
 
 
-def foot(n, total, theme_logo=True):
+def foot(n, total, theme_logo=True, inside=False):
     logo = f'<img src="{LOGO}">' if LOGO and theme_logo else ""
+    if inside:
+        return f'<div class="foot in">{logo}핫코노미</div>'
     return f'<div class="foot">{logo}핫코노미</div><div class="pn">{n}</div>'
 
 
@@ -432,7 +435,7 @@ def end_slide(e, n, theme):
     return (f'<div class="endbox">{logo}<div class="center t-l" style="font-size:{fit(e.get("title", ""), top=80, low=58)}px">{md(e.get("title", "정리하면"))}</div>'
             f'<div class="endchecks">{checks}</div>{kw}'
             f'<div class="btns"><div class="btn o">🔖 저장해두기</div><div class="btn f">팔로우 하기</div></div></div>'
-            f'<div class="disc">{DISCLAIMER}</div><div class="pn">{n}</div>')
+            f'<div class="disc">{DISCLAIMER}</div>')
 
 
 def make(post, out_dir, name, demo=False):
@@ -457,9 +460,10 @@ def slides_of(post, demo=False):
     fn, theme = FORMS[post["form"]]
     total = 1 + len(post.get("slides", [])) + 1
     tag = '<div class="demo">예시 · 발행 금지</div>' if demo else ""
-    slides = [f'<div class="s {theme}">{tag}{fn(post["cover"], None, 1, total)}{foot(1, total)}</div>']
+    inside = post["form"] in ACTIVE
+    slides = [f'<div class="s {theme}">{tag}{fn(post["cover"], None, 1, total)}{foot(1, total, inside=inside)}</div>']
     for i, s in enumerate(post.get("slides", []), 2):
-        slides.append(f'<div class="s {theme}">{tag}{fn(post["cover"], s, i, total)}{foot(i, total)}</div>')
+        slides.append(f'<div class="s {theme}">{tag}{fn(post["cover"], s, i, total)}{foot(i, total, inside=inside)}</div>')
     slides.append(f'<div class="s {theme}">{tag}{end_slide(post.get("end", {}), total, theme)}</div>')
     return slides
 

@@ -38,7 +38,7 @@ document.fonts.ready.then(() => {
   for (const el of root.querySelectorAll('*')) {
     if (el.closest(SKIP) || INL.has(el.tagName) || el.closest('svg') || !isBlock(el)) continue;
     const rects = rectsOf(el);
-    if (rects.length) items.push({kind: 'text', text: el.textContent.trim().slice(0, 24), rects, el: 0, idx: items.length, free: !!el.closest('.foot,.pn')});
+    if (rects.length) items.push({kind: 'text', text: el.textContent.trim().slice(0, 24), rects, el: 0, idx: items.length, free: !!el.closest('.pn,.foot:not(.in)')});
     el.dataset.lc = items.length - 1;
   }
   for (const el of root.querySelectorAll('svg,img,.ui,.point,.bub,.btn')) {
