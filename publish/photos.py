@@ -110,7 +110,7 @@ def find(query, used=(), about=""):
     got = [(r, p) for r in rows[:6 if about else 4] if (p := _save(r["url"]))]
     if not got:
         return None
-    pick = _eye([p for _, p in got], about) if about and len(got) > 1 else None
+    pick = _eye([p for _, p in got], about) if about else None   # 후보가 한 장이어도 엉뚱할 수 있어서(조원태 → NOAA 사진) 눈으로 본다
     if pick == 0:
         return None
     r, p = got[pick - 1] if pick and pick <= len(got) else got[0]

@@ -146,7 +146,7 @@ SYSTEM = """당신은 한국 경제 인스타그램 @hotconomy(핫코노미)의 
 
 폼 규칙:
 - [쓸 수 있는 폼] 중 소재에 가장 맞는 것 하나를 고르고, 그 폼의 필드 설명대로 cover/slides 를 채웁니다.
-- 사진 뉴스형(news), 에디토리얼(editorial)은 장마다 빠짐없이 bg(영어 사진 검색어)를 넣습니다. 글 내용과 바로 연결되는 인물, 사물, 장소로 씁니다. 사진 뉴스형에서 주가 움직임을 말하는 장 하나만 bg 대신 chart 를 씁니다(한 글에 1장까지).
+- 사진 뉴스형(news), 에디토리얼(editorial)은 장마다 빠짐없이 bg(영어 사진 검색어)를 넣습니다. 글 내용과 바로 연결되는 인물, 사물, 장소로 씁니다. 사진 뉴스형에서 주가 움직임을 말하는 장 하나만 bg 대신 chart 를 씁니다(한 글에 1장까지). 표지에는 bg_alt 도 넣습니다: 인물 사진이 없을 때 대신 쓸, 사진이 많은 회사 제품이나 건물의 영어 검색어(예: 'Korean Air Boeing'). 한국 경영인은 무료 사진이 거의 없습니다.
 - 차트·이미지 자리(chart, image, line)에는 {"ticker": "시세 코드"} 만 넣습니다. 코드가 실제 시세로 그립니다. 사진 경로는 쓰지 않습니다.
 - 막대(bars)는 [시세]의 등락률로만 만듭니다: {"label","value"(숫자),"text"(표시값),"hi"(강조 여부)}.
 - end.keyword 는 댓글로 받을 짧은 단어 하나(예: '환율').
@@ -222,13 +222,15 @@ def fill_charts(post, mk):
 
 
 def fill_photos(post):
-    """배경 사진형: 장마다 bg 검색어로 실제 사진을 찾아 넣는다. 못 찾으면 표지 검색어로 주인공의 다른 사진, 그래도 없으면 사진 없는 화면. → 출처 목록."""
+    """배경 사진형: 장마다 bg 검색어로 실제 사진을 찾아 넣는다. 못 찾으면 표지 검색어, 그다음 bg_alt, 그래도 없으면 사진 없는 화면.
+    표지는 비면 안 돼서 bg_alt 검색 1순위, 본문 사진, bg 검색 1순위 순으로 채운다. → 출처 목록."""
     if post["form"] not in forms.PHOTO_FORMS:
         return []
     from publish.photos import find
     used, credits = set(), []
     plain = lambda d: re.sub(r"\*\*|\n", " ", f'{d.get("title", "")} {d.get("text", "")}')
-    main_q, has_chart = post["cover"].get("bg", ""), False
+    cover = post["cover"]
+    main_q, alt_q, has_chart = cover.get("bg", ""), cover.pop("bg_alt", ""), False
     for d in [post["cover"], *post.get("slides", [])]:
         q = d.pop("bg", "")
         if d.get("chart") and post["form"] == "news":   # 주가 장은 실제 시세가 그림 자리를 채움 (한 글에 1장만)
@@ -237,16 +239,26 @@ def fill_photos(post):
                 continue
             d.pop("chart")
         p = find(q, used, about=plain(d)) if q else None
-        if not p and d is post["cover"] and q:   # 표지는 사진이 생명이라, 눈으로 못 고르면 검색 1순위
-            p = find(q, used)
-        if not p and main_q and d is not post["cover"]:
-            p = find(main_q, used, about=plain(post["cover"]))
+        if not p and main_q and d is not cover:
+            p = find(main_q, used, about=plain(cover))
+        if not p and alt_q:
+            p = find(alt_q, used, about=plain(cover))
         if p:
             used.add(p["url"])
             d["photo"], d["credit"] = p["uri"], p["credit"]
             credits.append(f"{p['credit']} {p['page']}".strip())
         else:
             print("⚠️ 사진 못 찾음 (그라데이션 배경):", q)
+    if not cover.get("photo"):
+        lent = next((s for s in post.get("slides", []) if s.get("photo")), None)
+        if p := find(alt_q, used) if alt_q else None:
+            cover["photo"], cover["credit"] = p["uri"], p["credit"]
+            credits.append(f"{p['credit']} {p['page']}".strip())
+        elif lent:
+            cover["photo"], cover["credit"] = lent["photo"], lent["credit"]
+        elif p := find(main_q, used) if main_q else None:
+            cover["photo"], cover["credit"] = p["uri"], p["credit"]
+            credits.append(f"{p['credit']} {p['page']}".strip())
     return credits
 
 
@@ -268,6 +280,8 @@ def check(post):
     warns = [f"위험 표현: {', '.join(risky_phrases(text))}"] if risky_phrases(text) else []
     if re.search(r"\[\s*(확인)?\s*\]", text):
         warns.append("빈칸 [ ] 이 남아 있어요")
+    if post["form"] in forms.PHOTO_FORMS and not post["cover"].get("photo"):
+        warns.append("표지 사진을 못 찾았어요")
     if "투자 권유가 아닙니다" not in post["caption"]:
         post["caption"] = post["caption"].rstrip() + "\n\n(정보 제공용이며 투자 권유가 아닙니다)"
     return warns
