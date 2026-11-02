@@ -1270,8 +1270,8 @@ a.row:hover .row-main{text-decoration:underline}
     load();
   }
 
-  // 쓰레드 콘텐츠 만들기 → 깃허브 thread-post.yml 이 내 PC에 요청 → PC(Max 구독, thread_post.py)가 황소개미 글을 써서 올림
-  // → 결과 파일(thread_posts.json)을 15초마다 읽어 이 칸에 바로 띄움. 창을 닫아도 요청은 이 브라우저에 남아 다시 열면 이어서 기다림.
+  // 쓰레드 콘텐츠 만들기 → 중간 서버가 요청함(lab-requests 가지)에 넣음 → PC(thread_listen.py, Max 구독)가 몇 초 안에 받아 황소개미 글을 써서 올림
+  // → 결과 파일(thread_posts.json)을 6초마다 읽어 끝난 글부터 이 칸에 띄움. 창을 닫아도 요청은 이 브라우저에 남아 다시 열면 이어서 기다림.
   const TH_STYLES = { A: '뜬글 지침', B: '불스토리', C: '바레이션 C' }, TH_WAIT_MIN = 20, thLive = [];
   const thPending = { get: () => { try { return JSON.parse(store.get('th_pending') || '[]').filter(q => Date.now() - q.t < TH_WAIT_MIN * 60000); } catch (e) { return []; } },
     set: list => store.set('th_pending', JSON.stringify(list)) };
@@ -1305,21 +1305,33 @@ a.row:hover .row-main{text-decoration:underline}
     const busy = on => buttons.forEach(b => { b.disabled = on; });
     function watch(q) {
       busy(true);
+      const end = () => { thPending.set(thPending.get().filter(o => o.rid !== q.rid)); busy(false); };
+      const shown = new Set();
       const tick = async () => {
-        const mins = Math.floor((Date.now() - q.t) / 60000);
+        const secs = Math.floor((Date.now() - q.t) / 1000), mins = Math.floor(secs / 60);
         if (mins >= TH_WAIT_MIN) {
-          thPending.set(thPending.get().filter(o => o.rid !== q.rid)); busy(false);
+          end();
           return show(`${TH_WAIT_MIN}분이 지나도 글이 안 왔어요. PC가 꺼져 있거나 Claude 사용량이 다 찼을 수 있어요. PC를 켠 뒤 다시 눌러 주세요.`, 'err');
         }
+        let picked = false;
         try {
-          const got = (await thFetch()).filter(x => x.rid === q.rid);
-          if (got.length) {
-            thLive.unshift(...got); thPending.set(thPending.get().filter(o => o.rid !== q.rid));
-            busy(false); show(`다 됐어요 — ${got.map(x => x.style).join('·')} 글을 복사해서 쓰레드에 붙여 넣으세요.`); draw(); return;
-          }
+          const got = (await thFetch()).filter(x => x.rid === q.rid && !shown.has(x.style));
+          if (got.length) { got.forEach(x => shown.add(x.style)); thLive.unshift(...got); draw(); }
+          const left = q.styles.split('').filter(c => !shown.has(c));
+          if (!left.length) { end(); return show(`다 됐어요 — ${q.styles.split('').join('·')} 글을 복사해서 쓰레드에 붙여 넣으세요.`); }
+          const r = await ghApi(`thread-request/${q.rid}`);
+          if (r.status === 200) {
+            const st = await r.json();
+            picked = !!st.picked;
+            if (st.error) { end(); return show(`${st.error}`, 'err'); }
+          } else if (r.status === 404) picked = true;   // PC가 다 쓰고 요청을 지움 → 결과 파일을 곧 읽음
         } catch (e) { /* 인터넷이 잠깐 끊겨도 다음 차례에 다시 */ }
-        show(`${q.styles.split('').join('·')} 글을 PC가 쓰는 중이에요 · ${mins}분째. PC가 5분마다 요청을 확인하고 글 쓰는 데 1~2분 걸려서, 보통 7분 안쪽에 여기 떠요. 창을 닫아도 계속 만들어져요.`);
-        setTimeout(tick, 15000);
+        const left = q.styles.split('').filter(c => !shown.has(c)).join('·');
+        const took = mins ? `${mins}분 ${secs % 60}초째` : `${secs}초째`;
+        show(picked ? `PC가 ${left} 글을 쓰는 중이에요 · ${took}. 보통 1~2분이면 끝난 글부터 여기 떠요. 창을 닫아도 계속 만들어져요.`
+          : secs < 30 ? 'PC에 요청을 보내는 중이에요…'
+          : `PC가 아직 요청을 못 받았어요 · ${took}. PC가 꺼져 있거나 절전 중일 수 있어요. 켜지면 바로 이어서 써요.`, picked || secs < 30 ? '' : 'err');
+        setTimeout(tick, 6000);
       };
       tick();
     }
@@ -1328,9 +1340,8 @@ a.row:hover .row-main{text-decoration:underline}
       const q = { rid: Math.random().toString(36).slice(2, 12), idx, slot, title: p.title, styles, t: Date.now() };
       busy(true); show('요청하는 중이에요…');
       try {
-        const r = await ghApi('actions/workflows/thread-post.yml/dispatches', { method: 'POST',
-          body: JSON.stringify({ ref: 'main', inputs: { idx: String(idx), styles, slot, rid: q.rid } }) });
-        if (r.status === 204) { thPending.set([...thPending.get(), q]); watch(q); return; }
+        const r = await ghApi('thread-request', { method: 'POST', body: JSON.stringify({ idx, styles, slot, rid: q.rid }) });
+        if (r.status === 201) { thPending.set([...thPending.get(), q]); watch(q); return; }
         busy(false);
         show(ghFail(r.status), 'err');
       } catch (e) { busy(false); show('요청 실패 — 인터넷 연결을 확인해 주세요', 'err'); }
