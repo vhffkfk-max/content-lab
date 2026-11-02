@@ -151,6 +151,8 @@ CSS = """
 .nw-tag{font-size:40px;font-weight:800;color:var(--hl)}
 .nw-t{font-weight:900;line-height:1.16;letter-spacing:-2px;text-shadow:0 2px 16px #000a}
 .nw-b{font-size:48px;font-weight:600;line-height:1.42;color:#e9e9ee}
+.nw-k{font-size:66px;font-weight:800;line-height:1.25;letter-spacing:-1px}
+.nw-h{font-weight:900;line-height:1.05;letter-spacing:-4px;color:var(--hl);white-space:nowrap}
 /* 세리프 에디토리얼: 제목 + 내용 사진 + 짧은 설명으로 꽉 채움 */
 .ed{position:absolute;left:72px;right:72px;top:96px;bottom:124px;display:flex;flex-direction:column;gap:34px;align-items:center;text-align:center}
 .ed img{flex:1;min-height:0;width:100%;object-fit:cover;object-position:center 25%;border-radius:18px}
@@ -333,7 +335,8 @@ def f_news(c, s, n, t):
     """표지 c: tag(짧은 분류, 선택), title, bg. 본문 s: title, text, bg. 뉴스, 이슈, 인물, 기업 소재의 기본 폼.
     표지 title: 주제 요약이 아니라 사건 + 구체적인 사람, 금액, 반전. 2~3줄, 줄당 7~13자, 강조 **한 곳**. 예: '인텔 하루 만에\\n**시총 30% 증발**'
     본문 title: 한 장에 사실 하나, 2줄 안쪽. text: 60자 안쪽(없어도 됨), 끝 문장은 다음 장이 궁금하게.
-    bg: 영어 사진 검색어 2~4단어. 표지는 그 사건의 핵심 인물 이름(예: 'Jensen Huang') 또는 고유한 제품, 회사 건물. 사람 얼굴이 있으면 가장 좋다. 일반어 금지, 글자가 많을 만한 것 금지."""
+    bg: 영어 사진 검색어 2~4단어. 표지는 그 사건의 핵심 인물 이름(예: 'Jensen Huang') 또는 고유한 제품, 회사 건물. 사람 얼굴이 있으면 가장 좋다. 일반어 금지, 글자가 많을 만한 것 금지.
+    본문은 모든 장에 bg 를 넣는다. 주가 움직임을 말하는 장 하나만 bg 대신 chart: {"ticker": "시세 코드"} (한 글에 1장까지)."""
     d = c if s is None else s
     credit = f'<div class="credit">{html.escape(d["credit"])}</div>' if d.get("credit") else ""
     if s is None:
@@ -342,9 +345,21 @@ def f_news(c, s, n, t):
         return (f'{bg}<div class="nw-sh"></div><div class="nw-box">{tag}'
                 f'<div class="nw-t" style="font-size:{fit(c["title"], 952, 124, 72)}px">{md(c["title"])}</div></div>{credit}')
     text = f'<div class="nw-b">{md(s["text"])}</div>' if s.get("text") else ""
-    if not d.get("photo"):   # 사진을 못 찾은 장: 위가 비지 않게 글을 가운데 크게
-        return (f'<div class="nophoto"></div><div class="vc"><div class="nw-t" style="font-size:{fit(s["title"], 936, 110, 66)}px">{md(s["title"])}</div>'
-                f'{text.replace("nw-b", "b-l")}</div>')
+    line = (s.get("chart") or {}).get("line")
+    if line:   # 주가 장: 사진 자리에 실제 시세 (한국식: 오르면 빨강, 내리면 파랑)
+        color = "#ff2e4d" if line[-1] >= line[0] else "#3d8bff"
+        return (f'<div class="nophoto"></div><div style="position:absolute;left:0;top:110px">{line_svg(line, 1080, 620, color, False)}</div><div class="nw-box">'
+                f'<div class="nw-t" style="font-size:{fit(s["title"], 952, 92, 62)}px">{md(s["title"])}</div>{text}</div>')
+    if not d.get("photo"):   # 사진을 끝내 못 찾은 장: 표지 사진을 어둡게 깔고 강조 단어를 아주 크게
+        back = f'<img class="bgph" src="{html.escape(c["photo"])}" style="filter:blur(28px) brightness(.24);transform:scale(1.1)">' if c.get("photo") else '<div class="nophoto"></div>'
+        credit = f'<div class="credit">{html.escape(c["credit"])}</div>' if c.get("credit") else ""
+        m = re.search(r"\*\*(.+?)\*\*", s["title"], re.S)
+        if not m:
+            return f'{back}<div class="vc"><div class="nw-t" style="font-size:{fit(s["title"], 936, 110, 66)}px">{md(s["title"])}</div>{text.replace("nw-b", "b-l")}</div>{credit}'
+        before, hero, after = (" ".join(x.split()) for x in (s["title"][:m.start()], m[1], s["title"][m.end():]))
+        size = fit(hero, 936, 216, 96, .72 if hero.isascii() else .97)
+        return (f'{back}<div class="vc"><div class="nw-k">{md(before)}</div><div class="nw-h" style="font-size:{size}px">{html.escape(hero)}</div>'
+                + (f'<div class="nw-k">{md(after)}</div>' if after else "") + f'{text.replace("nw-b", "b-l")}</div>{credit}')
     bg = f'<img class="nw-ph" src="{html.escape(d["photo"])}">'
     return (f'{bg}<div class="nw-fd"></div><div class="nw-box">'
             f'<div class="nw-t" style="font-size:{fit(s["title"], 952, 92, 62)}px">{md(s["title"])}</div>{text}</div>{credit}')
@@ -487,7 +502,9 @@ DEMO = {
                          {"image": {"candles": _walk(36, 13)}, "text": "② 다음 분기 전망도\n**더 높게** 잡았어요"}],
               "end": {"title": "정리하면", "checks": ["매출 서프라이즈", "전망 상향", "다음은 공급망 체크"], "keyword": "엔비디아"}},
     "news": {"cover": {"tag": "속보", "title": "유럽에서 FSD 승인\n**10번째** 국가 나왔다"},
-             "slides": [{"title": "발트 3국이\n**모두** 들어갔다", "text": "라트비아가 승인하면서 발트 3국이 모두 포함됐다는 소식입니다. (예시)"}],
+             "slides": [{"title": "발트 3국이\n**모두** 들어갔다", "text": "라트비아가 승인하면서 발트 3국이 모두 포함됐다는 소식입니다. (예시)"},
+                        {"title": "테슬라 주가\n**+12.4%**", "text": "승인 소식에 오른 폭입니다. (예시)", "chart": {"line": [100, 98, 103, 101, 108, 112]}},
+                        {"title": "유럽 승인 국가\n**10곳** 돌파", "text": "사진을 못 찾은 장의 화면입니다. (예시)"}],
              "end": {"title": "정리하면", "checks": ["사진 없으면 그라데이션", "글은 짧게", "장마다 다른 사진"], "keyword": "테슬라"}},
     "story": {"cover": {"label": "핫코노미 썰 · 1화", "title": "결혼자금 3억을\n**전부 주식**에\n넣었습니다"},
               "slides": [{"narration": "나 결혼 준비하던 공무원이었거든.", "say": "여친이랑 돈도\n**꾸준히** 모으고 있었지."},

@@ -141,11 +141,12 @@ SYSTEM = """당신은 한국 경제 인스타그램 @hotconomy(핫코노미)의 
 - 표지 제목은 주제 요약이 아니라 사건입니다. 누가, 얼마나, 무슨 반전인지 구체적으로 씁니다. '수출 전망 정리' (X) → '수출 1조 달러, 세계 4번째 눈앞' (O)
 - 표지에 그 일의 주인공(인물 얼굴, 고유한 제품, 회사)을 보여 줄 수 있으면 사진 뉴스형(news)을 먼저 고려합니다. 글자만 있는 표지는 숫자 하나가 곧 훅일 때만(bignum).
 - 본문 한 장에 사실 하나만, 큰 글씨로 읽히게 짧게 씁니다. 긴 문단을 쓰지 않습니다.
+- 모든 장이 표지의 사건 하나를 따라갑니다. 그 사건과 직접 이어지지 않는 다른 종목의 등락이나 그날 시황으로 새지 않습니다.
 - design_note 에 이번 글에 왜 이 폼과 이 표지를 골랐는지 한두 문장으로 적습니다(예: '주인공이 분명한 사건이라 얼굴 표지로, 숫자 28%를 제목에 넣어 멈추게 함').
 
 폼 규칙:
 - [쓸 수 있는 폼] 중 소재에 가장 맞는 것 하나를 고르고, 그 폼의 필드 설명대로 cover/slides 를 채웁니다.
-- 사진 뉴스형(news), 에디토리얼(editorial)은 차트 대신 장마다 bg(영어 사진 검색어)를 넣습니다. 글 내용과 바로 연결되는 인물, 사물, 장소로 씁니다.
+- 사진 뉴스형(news), 에디토리얼(editorial)은 장마다 빠짐없이 bg(영어 사진 검색어)를 넣습니다. 글 내용과 바로 연결되는 인물, 사물, 장소로 씁니다. 사진 뉴스형에서 주가 움직임을 말하는 장 하나만 bg 대신 chart 를 씁니다(한 글에 1장까지).
 - 차트·이미지 자리(chart, image, line)에는 {"ticker": "시세 코드"} 만 넣습니다. 코드가 실제 시세로 그립니다. 사진 경로는 쓰지 않습니다.
 - 막대(bars)는 [시세]의 등락률로만 만듭니다: {"label","value"(숫자),"text"(표시값),"hi"(강조 여부)}.
 - end.keyword 는 댓글로 받을 짧은 단어 하나(예: '환율').
@@ -221,14 +222,25 @@ def fill_charts(post, mk):
 
 
 def fill_photos(post):
-    """배경 사진형: 장마다 bg 검색어로 실제 사진을 찾아 넣는다. 못 찾으면 그 장은 그라데이션 배경. → 출처 목록."""
+    """배경 사진형: 장마다 bg 검색어로 실제 사진을 찾아 넣는다. 못 찾으면 표지 검색어로 주인공의 다른 사진, 그래도 없으면 사진 없는 화면. → 출처 목록."""
     if post["form"] not in forms.PHOTO_FORMS:
         return []
     from publish.photos import find
     used, credits = set(), []
+    plain = lambda d: re.sub(r"\*\*|\n", " ", f'{d.get("title", "")} {d.get("text", "")}')
+    main_q, has_chart = post["cover"].get("bg", ""), False
     for d in [post["cover"], *post.get("slides", [])]:
         q = d.pop("bg", "")
-        p = find(q, used, about=re.sub(r"\*\*|\n", " ", f'{d.get("title", "")} {d.get("text", "")}')) if q else None
+        if d.get("chart") and post["form"] == "news":   # 주가 장은 실제 시세가 그림 자리를 채움 (한 글에 1장만)
+            if not has_chart:
+                has_chart = True
+                continue
+            d.pop("chart")
+        p = find(q, used, about=plain(d)) if q else None
+        if not p and d is post["cover"] and q:   # 표지는 사진이 생명이라, 눈으로 못 고르면 검색 1순위
+            p = find(q, used)
+        if not p and main_q and d is not post["cover"]:
+            p = find(main_q, used, about=plain(post["cover"]))
         if p:
             used.add(p["url"])
             d["photo"], d["credit"] = p["uri"], p["credit"]
