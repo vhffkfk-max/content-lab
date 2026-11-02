@@ -80,6 +80,7 @@
 .today .meta{color:var(--accent-ink);font-weight:500}
 .today .why{margin:0}
 .actions{display:flex;gap:8px;flex-wrap:wrap}
+.pub-check{display:inline-flex;align-items:center;gap:6px;font-size:14px;cursor:pointer}
 
 /* 추천 카드 */
 .recs{display:grid;gap:12px}
@@ -318,6 +319,7 @@ a.row:hover .row-main{text-decoration:underline}
         <li><button type="button" data-ch="instagram"><i class="dot" style="background:var(--ch-instagram)"></i>인스타 · 한국</button>
           <ul class="subnav" data-for="instagram">
             <li><a href="#today">오늘 할 일</a></li>
+            <li><a href="#ig-publish">카드뉴스 발행</a></li>
             <li><a href="#recommend">추천 콘텐츠</a></li>
             <li><a href="#week">이번 주 계획</a></li>
             <li><a href="#competitors">경쟁 동향</a></li>
@@ -478,6 +480,12 @@ a.row:hover .row-main{text-decoration:underline}
         <div class="grid">
           <div class="col">
             <section class="sec" id="today" aria-label="오늘 할 일"><div class="today" id="today-box"></div></section>
+            <section class="sec" id="ig-publish">
+              <h2>카드뉴스 발행</h2>
+              <p class="note">캔바에서 고친 뒤 확인 칸을 체크하고 발행을 누르세요. PC가 5분마다 요청을 확인해서 @hotconomy 에 올려요. 고친 내용이 있으면 고친 이미지로 올라가요.</p>
+              <div class="actions" style="margin-bottom:10px"><button type="button" class="btn small" id="pub-refresh">목록 새로고침</button></div>
+              <div class="recs" id="pub-list"></div>
+            </section>
             <section class="sec" id="recommend">
               <h2>추천 콘텐츠</h2>
               <p class="note">순위는 반응 강도, 게시물 수, 최근 2주 증가세, 구글 뉴스 화제도로 매겨요. 카드를 열면 바로 만들 수 있는 기획안이 있어요.</p>
@@ -1153,6 +1161,98 @@ a.row:hover .row-main{text-decoration:underline}
       } catch (e) { fail('실행 요청 실패 — 인터넷 연결을 확인해 주세요'); }
     });
     return b;
+  }
+
+  // 카드뉴스 발행 → 깃허브 card-publish.yml 이 내 PC에 요청 → PC(publish_card.py)가 @hotconomy 에 올림
+  // → 큐(data/publish_queue.json)를 20초마다 읽어 결과를 이 칸에 띄움. 창을 닫아도 요청은 이 브라우저에 남아 다시 열면 이어서 기다림.
+  const PUB_WAIT_MIN = 20, pubChecked = new Set();
+  const pubPending = { get: () => { try { return JSON.parse(store.get('pub_pending') || '{}'); } catch (e) { return {}; } },
+    set: o => store.set('pub_pending', JSON.stringify(o)) };
+  function setupCardPublish() {
+    const box = document.getElementById('pub-list'), refresh = document.getElementById('pub-refresh');
+    if (!box) return;
+    let timer = null;
+    const fetchItems = async () => {
+      const r = await ghApi('contents/data/publish_queue.json?ref=main', { headers: { Accept: 'application/vnd.github.raw+json' } });
+      if (r.status === 401 || r.status === 403 || r.status === 404) { store.set('gh_token', ''); fb.token = ''; throw new Error('auth'); }
+      if (r.status !== 200) throw new Error(String(r.status));
+      return (await r.json()).items || [];
+    };
+    const connect = () => {
+      const b = el('button', 'btn small primary', '깃허브 연결하고 목록 보기'); b.type = 'button';
+      b.addEventListener('click', async () => { if (await connectGitHub()) load(); });
+      const w = el('div', 'empty', '발행은 깃허브에 연결한 브라우저에서만 할 수 있어요. '); w.append(b);
+      box.replaceChildren(w);
+    };
+    async function request(it, btn) {
+      if (!confirm(`'${it.title || it.id}' 을(를) @hotconomy 에 바로 올릴까요?\n올린 뒤에는 여기서 되돌릴 수 없어요.`)) return;
+      btn.disabled = true; btn.textContent = '요청하는 중…';
+      try {
+        const r = await ghApi('actions/workflows/card-publish.yml/dispatches', { method: 'POST', body: JSON.stringify({ ref: 'main', inputs: { id: it.id } }) });
+        if (r.status === 204) { pubPending.set({ ...pubPending.get(), [it.id]: Date.now() }); load(); return; }
+        alert(r.status === 401 || r.status === 403 || r.status === 404 ? `발행 권한이 없어요(${r.status}). 토큰에 'Actions: Read and write' 권한이 있는지 확인해 주세요.` : `발행 요청 실패 (${r.status})`);
+      } catch (e) { alert('발행 요청 실패 — 인터넷 연결을 확인해 주세요'); }
+      btn.disabled = !pubChecked.has(it.id); btn.textContent = '인스타에 발행';
+    }
+    function card(it, waitedAt) {
+      const c = el('article', 'card rec'), chips = el('div', 'chips'), ig = (it.published || {}).instagram;
+      chips.append(el('span', 'pill neutral', it.form || '카드'), el('span', 'pill neutral', (it.created_at || '').slice(5, 16).replace('T', ' ')));
+      c.append(chips, el('h3', 'rec-title', it.title || it.topic || it.id));
+      if (ig) {
+        chips.prepend(el('span', 'pill positive', '발행됨'));
+        const a = el('a', 'btn small', '인스타에서 보기'); a.href = igLink(ig.permalink) || ig.permalink; a.target = '_blank'; a.rel = 'noopener';
+        const acts = el('div', 'actions'); acts.append(a); c.append(acts);
+        return c;
+      }
+      const more = el('details', 'more'); more.append(el('summary', null, '캡션 보기'), el('div', 'box', it.caption || '')); c.append(more);
+      const acts = el('div', 'actions'), err = it.publish_error;
+      if (it.canva && it.canva.edit_url) { const a = el('a', 'btn small', '캔바에서 고치기'); a.href = it.canva.edit_url; a.target = '_blank'; a.rel = 'noopener'; acts.append(a); }
+      c.append(acts);
+      if (it.warnings && it.warnings.length) { c.append(el('p', 'warn', `경고가 있어 발행할 수 없어요: ${it.warnings.join(' / ')}`)); return c; }
+      if (waitedAt) {
+        const mins = Math.floor((Date.now() - waitedAt) / 60000);
+        c.append(el('p', 'sub', `PC가 올리는 중이에요 · ${mins}분째. 보통 10분 안쪽이고, 끝나면 텔레그램으로도 알려 줘요.`));
+        return c;
+      }
+      if (err) c.append(el('p', 'warn', `지난 발행 실패 (${(err.at || '').slice(5, 16).replace('T', ' ')}): ${err.reason}`));
+      const label = el('label', 'pub-check'), check = el('input'), btn = el('button', 'btn small primary', '인스타에 발행');
+      check.type = 'checkbox'; check.checked = pubChecked.has(it.id); btn.type = 'button'; btn.disabled = !check.checked;
+      check.addEventListener('change', () => { if (check.checked) pubChecked.add(it.id); else pubChecked.delete(it.id); btn.disabled = !check.checked; });
+      btn.addEventListener('click', () => request(it, btn));
+      label.append(check, el('span', null, '캔바에서 확인했어요'));
+      const go = el('div', 'actions'); go.style.alignItems = 'center'; go.append(label, btn); c.append(go);
+      return c;
+    }
+    async function load() {
+      clearTimeout(timer);
+      if (!fb.token) return connect();
+      let items;
+      try { items = await fetchItems(); }
+      catch (e) {
+        if (e.message === 'auth') return connect();
+        if (!box.children.length) empty(box, '목록을 못 읽었어요. 잠시 뒤 새로고침해 주세요.');
+        timer = setTimeout(load, 20000); return;
+      }
+      const pending = pubPending.get(), done = [], late = [];
+      Object.entries(pending).forEach(([id, t]) => {
+        const it = items.find(x => x.id === id), err = it && it.publish_error;
+        const failed = err && Date.parse(err.at) >= t;
+        if (!it || it.status === 'published' || failed) done.push(id);
+        else if (Date.now() - t >= PUB_WAIT_MIN * 60000) late.push(it);
+      });
+      done.forEach(id => { delete pending[id]; pubChecked.delete(id); });
+      late.forEach(it => { delete pending[it.id]; });
+      pubPending.set(pending);
+      const open = items.filter(x => x.status === 'drafted' && x.canva).slice(-12).reverse();
+      const shipped = items.filter(x => (x.published || {}).instagram).slice(-5).reverse();
+      const cards = [...open, ...shipped].map(it => card(it, pending[it.id]));
+      if (late.length) { const w = el('p', 'warn', `${PUB_WAIT_MIN}분이 지나도 발행 결과가 안 왔어요: ${late.map(x => x.title || x.id).join(', ')}. PC가 꺼져 있었을 수 있어요. 요청한 지 6시간이 지나면 PC가 켜져도 올리지 않아요. 인스타를 먼저 확인한 뒤 다시 눌러 주세요.`); cards.unshift(w); }
+      if (cards.length) box.replaceChildren(...cards); else empty(box, '발행할 초안이 아직 없어요. 초안을 만들면 여기에 올라와요.');
+      if (Object.keys(pending).length) timer = setTimeout(load, 20000);
+    }
+    refresh.addEventListener('click', load);
+    fb.listeners.push(() => { if (fb.token && !box.querySelector('article')) load(); });
+    load();
   }
 
   // 쓰레드 콘텐츠 만들기 → 깃허브 thread-post.yml 이 내 PC에 요청 → PC(Max 구독, thread_post.py)가 황소개미 글을 써서 올림
@@ -2056,6 +2156,7 @@ a.row:hover .row-main{text-decoration:underline}
   ];
   function setupRefresh() {
     setupChartRequest();
+    setupCardPublish();
     const dlg = document.getElementById('rf-dialog'), opts = document.getElementById('rf-options'), st = document.getElementById('rf-status');
     const focusWrap = document.getElementById('rf-focus-wrap');
     let picked = RF_RUNS[0], polling = null;

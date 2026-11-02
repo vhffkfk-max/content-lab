@@ -97,19 +97,23 @@ def main():
     if not it:
         notify.send(f"❌ 발행 못 함: 초안 {a.id} 를 찾지 못했어요.")
         sys.exit(f"❌ 초안을 찾지 못했어요: {a.id}")
+
+    def fail(head, reason):   # 사이트가 실패를 바로 보여 주도록 큐에도 남긴다 (올린 초안의 기록은 건드리지 않음)
+        if not a.dry_run and it.get("status") != "published":
+            it["publish_error"] = {"at": datetime.now(KST).isoformat(timespec="seconds"), "reason": str(reason)[:300]}
+            save(QUEUE, queue)
+        notify.send(f"❌ {head}: {it.get('title', a.id)}\n{reason}")
+        sys.exit(f"❌ {reason}")
+
     why = refuse_reason(it)
     if why:
-        notify.send(f"❌ 발행 안 함: {it.get('title', a.id)}\n{why}")
-        sys.exit("❌ " + why)
+        fail("발행 안 함", why)
     try:
         paths, source = images(it)
     except Exception as e:   # 고친 내용을 잃고 올리지 않도록 여기서 멈춘다
-        notify.send(f"❌ 발행 못 함: {it.get('title', a.id)}\n이미지 준비 실패: {e}")
-        sys.exit(f"❌ 이미지 준비 실패: {e}")
-    missing = [str(p) for p in paths if not pathlib.Path(p).exists()]
-    if missing:
-        notify.send(f"❌ 발행 못 함: {it.get('title', a.id)}\n이미지 파일이 없어요.")
-        sys.exit(f"❌ 이미지가 없어요: {missing[:2]}")
+        fail("발행 못 함", f"이미지 준비 실패: {e}")
+    if [p for p in paths if not pathlib.Path(p).exists()]:
+        fail("발행 못 함", "이미지 파일이 없어요.")
     ig = Instagram(os.environ["IG_USER_ID"], os.environ["IG_ACCESS_TOKEN"])
     print(f"제목: {it.get('title')}\n폼: {it.get('form')} / {len(paths)}장 ({source})\n오늘 발행 사용량: {ig.limit()}\n캡션 {len(it['caption'])}자:\n{it['caption'][:300]}")
     if a.dry_run or not a.yes:
@@ -120,12 +124,11 @@ def main():
         urls = hosting.upload(paths, tag)
         media_id, link = ig.publish_carousel(urls, it["caption"])
     except (PublishError, RuntimeError) as e:
-        detail = f"{e.reason} {e.detail}" if isinstance(e, PublishError) else str(e)
-        notify.send(f"❌ 인스타 발행 실패: {it.get('title', a.id)}\n{detail}")
-        sys.exit("❌ " + detail)
+        fail("인스타 발행 실패", f"{e.reason} {e.detail}" if isinstance(e, PublishError) else str(e))
     finally:
         hosting.cleanup(tag)
     it["status"] = "published"
+    it.pop("publish_error", None)
     it.setdefault("published", {})["instagram"] = {"media_id": media_id, "permalink": link,
                                                     "at": datetime.now(KST).isoformat(timespec="seconds"), "source": source}
     save(QUEUE, queue)
