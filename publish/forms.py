@@ -321,7 +321,7 @@ def f_editorial(c, s, n, t):
     elif isinstance(d.get("image"), str) and d.get("image"):
         pic = f'<img src="{d["image"] if "://" in d["image"] else asset_uri(d["image"])}">'
     elif line:
-        pic = f'<div style="flex:1;display:flex;align-items:center">{line_svg(line, 936, 460, "#d8262b")}</div>'
+        pic = f'<div style="flex:1;display:flex;align-items:center">{line_svg(line, 936, 400, "#d8262b")}</div>'
     else:
         pic = ""
     size = fit(d["title"], top=104 if s is None else 88, low=62)
