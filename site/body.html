@@ -1206,7 +1206,7 @@ a.row:hover .row-main{text-decoration:underline}
       }
       const more = el('details', 'more'); more.append(el('summary', null, '캡션 보기'), el('div', 'box', it.caption || '')); c.append(more);
       const acts = el('div', 'actions'), err = it.publish_error;
-      if (it.canva && it.canva.edit_url) { const a = el('a', 'btn small', '캔바에서 고치기'); a.href = it.canva.edit_url; a.target = '_blank'; a.rel = 'noopener'; acts.append(a); }
+      if (it.canva && it.canva.id) { const a = el('a', 'btn small', '캔바에서 고치기'); a.href = `https://www.canva.com/design/${encodeURIComponent(it.canva.id)}/edit`; a.target = '_blank'; a.rel = 'noopener'; acts.append(a); }
       c.append(acts);
       if (it.warnings && it.warnings.length) { c.append(el('p', 'warn', `경고가 있어 발행할 수 없어요: ${it.warnings.join(' / ')}`)); return c; }
       if (waitedAt) {

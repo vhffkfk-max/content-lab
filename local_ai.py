@@ -192,7 +192,21 @@ def run_cycle():
     return did
 
 
+def strip_canva_links():
+    """저장소가 공개라 캔바 편집 링크(열쇠가 든 주소)는 큐에서 빼고 올린다. 링크는 텔레그램으로만, 사이트는 디자인 id 로 만든 주소를 쓴다."""
+    qp = ROOT / "data" / "publish_queue.json"
+    if not qp.exists():
+        return
+    queue = json.loads(qp.read_text(encoding="utf-8"))
+    found = [it for it in queue.get("items", []) if "edit_url" in (it.get("canva") or {})]
+    for it in found:
+        del it["canva"]["edit_url"]
+    if found:
+        qp.write_text(json.dumps(queue, ensure_ascii=False, indent=1), encoding="utf-8")
+
+
 def push(did):
+    strip_canva_links()
     git("add", "--", *[p for p in OUTPUTS if (ROOT / p).exists()])
     if git("diff", "--cached", "--quiet", check=False).returncode == 0:
         return
