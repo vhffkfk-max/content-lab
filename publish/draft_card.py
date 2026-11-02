@@ -101,14 +101,14 @@ def pick_topic(queue, wanted=None):
 
 
 def pick_hot(queue):
-    """속보형(--short) 재료: 2시간마다 나오는 '지금 발행할 거리'(hot_now) 중 오늘 아직 안 만든 것. 인스타 칸을 먼저."""
+    """속보형(--short) 재료: 30분마다 바뀌는 '지금 발행할 거리'(hot_now) 중 오늘 아직 안 만든 것. 인스타 칸을 먼저."""
     try:
         h = json.loads((SITE / "hot_now.json").read_text(encoding="utf-8"))
     except (OSError, ValueError):
         return None
     today = datetime.now(KST).strftime("%Y-%m-%d")
     done = {i.get("hot_title") for i in queue["items"] if i.get("created_at", "").startswith(today)}
-    picks = [p for run in h[:3] for p in run.get("picks", []) if p.get("title") not in done]
+    picks = [p for run in h[:6] for p in run.get("picks", []) if p.get("title") not in done]
     picks.sort(key=lambda p: 0 if "인스타" in p.get("channel", "") else 1)
     return picks[0] if picks else None
 

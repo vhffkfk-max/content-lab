@@ -1266,7 +1266,7 @@ a.row:hover .row-main{text-decoration:underline}
   }
   function threadBlock(p, idx, slot, usedTitles) {
     const wrap = el('div', 'job-th'), bar = el('div', 'job-th-bar'), st = el('div', 'job-th-st'), list = el('div', 'job-th-posts');
-    const mine = x => x.slot === slot && x.idx === idx && x.pick === p.title;
+    const mine = x => x.pick === p.title;   // 글감이 30분마다 일부만 바뀌므로 제목으로 찾음
     const show = (msg, kind) => st.replaceChildren(...(msg ? [el('p', kind === 'err' ? 'warn' : 'sub', msg)] : []));
     const draw = () => {
       const seen = new Set(), made = [...thLive, ...(rows('thread_posts') || [])].filter(mine).filter(x => !seen.has(x.style) && seen.add(x.style));
@@ -1328,7 +1328,7 @@ a.row:hover .row-main{text-decoration:underline}
     }
     const all = el('button', 'btn small primary', 'A·B·C 다 만들기'); all.type = 'button'; all.addEventListener('click', () => ask('ABC')); buttons.push(all); bar.append(all);
     wrap.append(bar, st, list); draw();
-    const q = thPending.get().find(o => o.slot === slot && o.idx === idx && o.title === p.title);
+    const q = thPending.get().find(o => o.title === p.title);
     if (q && fb.token) watch(q);
     return wrap;
   }
@@ -1346,13 +1346,13 @@ a.row:hover .row-main{text-decoration:underline}
   }
   function drawHome(recs) {
     const jobs = [], next = [], dot = c => { const i = el('i', 'dot'); i.style.background = c === 'accent' ? 'var(--accent)' : `var(--ch-${c})`; return i; };
-    // 지금 쓸 거리: 2시간마다 PC가 고른 3개만 (hot_now.py). 설명은 한 줄만 보이고 눌러서 펼침
+    // 지금 쓸 거리: 30분마다 확인해 새 소식이면 바뀌는 3개 (hot_now.py). 설명은 한 줄만 보이고 눌러서 펼침
     const hn = (rows('hot_now') || [])[0], A = auditData();
     const usedTitles = new Set((A && A.matches || []).map(m => m.rec));
     if (hn) (hn.picks || []).slice(0, 3).forEach((p, i) => {
       const ch = /쓰레드/.test(p.channel) ? 'threads' : /텔레그램/.test(p.channel) ? 'telegram' : /X/.test(p.channel) ? 'x' : 'instagram';
       const card = el('article', 'job'), txt = el('div'), meta = el('p', 'job-ch'), acts = el('div', 'job-acts');
-      meta.append(dot(ch), `${p.channel} · ${hn.time.slice(6)} 기준`);
+      meta.append(dot(ch), `${p.channel} · ${(p.time || hn.time).slice(6)} 기준`);
       if (usedTitles.has(p.title)) meta.append(el('span', 'pill positive', '올렸어요'));
       const why = el('p', 'job-why clamp1', p.why_now); why.title = '눌러서 펼치기';
       why.addEventListener('click', () => why.classList.toggle('clamp1'));
@@ -1391,11 +1391,11 @@ a.row:hover .row-main{text-decoration:underline}
     document.getElementById('home-next').replaceChildren(...next);
     const L = (rows('live_meta') || [])[0], S = (rows('summary') || [])[0];
     document.getElementById('home-sub').textContent = [
-      hn ? `지금 발행할 거리는 2시간마다(07~23시) · 마지막 ${hn.time.slice(6)}` : '',
+      hn ? `지금 쓸 거리는 30분마다 확인(07~23시) · 마지막 확인 ${(hn.checked || hn.time).slice(6)} · 새 글감 ${hn.time.slice(6)}` : '',
       L ? `뉴스는 30분마다 새로 모아요 · 마지막 ${L.updated_at.slice(11)}${L.new_press + L.new_google ? ` · 새 기사 ${L.new_press + L.new_google}개` : ''}` : '',
       S ? `추천·분석은 매일 06:00 (${S.generated_at.slice(5, 10).replace('-', '/')} 기준)` : ''].filter(Boolean).join(' · ') || '오늘 할 일만 골랐어요. 하나 골라서 버튼을 누르세요.';
     const box = document.getElementById('home-jobs');
-    if (!jobs.length) empty(box, '07~23시 사이 2시간마다 새 글감이 나와요.'); else box.replaceChildren(...jobs);
+    if (!jobs.length) empty(box, '07~23시 사이 30분마다 새 글감을 확인해요.'); else box.replaceChildren(...jobs);
 
     const MAP = [
       ['instagram', 'instagram', '인스타 · 한국', '오늘 만들 카드뉴스 추천과 기획안, 경쟁 계정 동향', 'recommend'],

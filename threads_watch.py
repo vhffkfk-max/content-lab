@@ -14,7 +14,7 @@
     반응이 거의 없는 글은 6시간, 48시간이 지나면 그만
   - 매일 Apify 로 모은 경제 글은 1시간에 한 번 목록만 가져옴
   - 인스타도 같은 바퀴에서 조금씩 (insta_watch.py), X는 X 전용 계정 로그인이 있을 때 (x_watch.py)
-  → output/site/thx_live.json(+_meta)·igx_live.json(+_meta), 30분마다 깃허브 (그때 뉴스 새로 모으기 + 2시간마다 hot_now.py '지금 발행할 거리' 텔레그램) / 빨리 크는 글은 텔레그램 알림(글당 한 번)
+  → output/site/thx_live.json(+_meta)·igx_live.json(+_meta), 30분마다 깃허브 (그때 뉴스 새로 모으기 + 30분마다 hot_now.py '지금 발행할 거리'(봇 알림은 2시간마다)) / 빨리 크는 글은 텔레그램 알림(글당 한 번)
 기록: data/threads_watch.db (PC에만, 저장소에 안 올림)
 """
 import argparse
