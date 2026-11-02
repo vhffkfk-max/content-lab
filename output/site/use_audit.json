@@ -1,5 +1,5 @@
 {
- "time": "11/02 20:34",
+ "time": "11/02 23:51",
  "days": [
   {
    "day": "2026-10-27",
@@ -60,7 +60,7 @@
    "day": "2026-11-01",
    "label": "11/01",
    "posts": 15,
-   "posts_used": 6,
+   "posts_used": 5,
    "chats": 0,
    "chats_used": 0,
    "recs": 82,
@@ -70,30 +70,43 @@
   {
    "day": "2026-11-02",
    "label": "11/02",
-   "posts": 42,
-   "posts_used": 7,
+   "posts": 44,
+   "posts_used": 10,
    "chats": 0,
    "chats_used": 0,
-   "recs": 130,
-   "site_min": 63,
+   "recs": 157,
+   "site_min": 68,
    "connector": 0
   }
  ],
  "week": {
-  "posts": 73,
-  "posts_used": 20,
-  "threads": 43,
-  "threads_used": 18,
+  "posts": 75,
+  "posts_used": 22,
+  "threads": 45,
+  "threads_used": 20,
   "chats": 0,
   "chats_used": 0,
-  "recs": 327,
+  "recs": 354,
   "connector": 0,
   "connector_apps": [],
-  "site_min": 113
+  "site_min": 118
  },
- "verdict": "같은 날 나온 쓰레드 추천(머스크 중간선거, 앤트로픽, 수출 1조달러, SK스퀘어, 저PBR)은 제목이나 숫자를 거의 그대로 가져다 썼다. 반면 바이낸스 해킹, 인스타 카드뉴스, 텔레그램 속보 추천은 거의 쓰지 않았고, 올린 글의 절반 이상은 추천과 무관한 직접 고른 주제다.",
- "nudge": "내일 아침 '지금 발행할 거리' 메뉴를 열어 쓰레드 글 추천 중 하나를 골라 오후 1시 전에 올리세요.",
+ "verdict": "쓰레드 글은 같은 날 올라온 '숫자·사건이 분명한 추천'(수출 1조달러, 저PBR 151곳, 앤트로픽 몸값, SK스퀘어 4.3조, 골드만 유가)은 자주 가져다 썼습니다. 반면 바이낸스 해킹·인텔 폭락 같은 속보형·카드뉴스형 추천은 거의 안 썼고, 텔레그램 채널은 이벤트·링크 위주라 추천과 연결이 없었습니다.",
+ "nudge": "내일 오전에 '지금 발행할 거리' 메뉴에서 텔레그램 속보 중 바이낸스·인텔 관련 1개를 골라 첫 줄만 바꿔 올리세요.",
  "matches": [
+  {
+   "day": "2026-11-02",
+   "time": "11/02 20:51",
+   "kind": "황소개미 쓰레드",
+   "how": "그대로",
+   "note": "골드만 내년 유가 130달러 문장 거의 동일",
+   "out": "골드만삭스가 내년 유가 평균 130달러 시나리오를 내놨습니다.",
+   "url": "https://www.threads.com/@bullant_economy/post/DfPPd-lj1qW",
+   "views": null,
+   "rec": "유가 내년 평균 130달러? 골드만 시나리오 (B)",
+   "rec_src": "쓰레드 글 만들기",
+   "rec_day": "2026-11-02"
+  },
   {
    "day": "2026-11-02",
    "time": "11/02 18:09",
@@ -102,21 +115,34 @@
    "note": "주식 결제 T+1, 50년 만의 변화",
    "out": "📌 주식 매도대금, 2일 → 1일로 빨라진다 (50년 만의 변경)",
    "url": "https://t.me/oh_neworld/807",
-   "views": 142,
+   "views": 173,
    "rec": "주식 팔면 다음 날 돈 받는다, 50년 만의 변화",
    "rec_src": "지금 발행할 거리",
    "rec_day": "2026-11-02"
   },
   {
    "day": "2026-11-02",
+   "time": "11/02 18:05",
+   "kind": "황소개미 쓰레드",
+   "how": "주제만",
+   "note": "기술주 헤지 수요 주제, 하루 차이",
+   "out": "월가가 빅테크에 '보험'을 들기 시작했습니다.",
+   "url": "https://www.threads.com/@bullant_economy/post/DfO8Zc8j7Mn",
+   "views": null,
+   "rec": "🥛 11월 1일(일) 말희아빠 주말 경제 3줄^^",
+   "rec_src": "텔레그램 문구",
+   "rec_day": "2026-11-01"
+  },
+  {
+   "day": "2026-11-02",
    "time": "11/02 16:12",
    "kind": "황소개미 쓰레드",
    "how": "주제만",
-   "note": "공포 속 코스피 반등 주제",
+   "note": "코스피 반등 주제만 겹침",
    "out": "아침엔 공포였고",
    "url": "https://www.threads.com/@bullant_economy/post/DfOve1_j7Aj",
-   "views": null,
-   "rec": "인텔 29% 폭락, 그런데 코스피는 올랐다",
+   "views": 313,
+   "rec": "[마감] 코스피 5859.08, 2.24% 반등",
    "rec_src": "지금 발행할 거리",
    "rec_day": "2026-11-02"
   },
@@ -125,7 +151,7 @@
    "time": "11/02 11:59",
    "kind": "황소개미 쓰레드",
    "how": "그대로",
-   "note": "SK스퀘어 4.3조 초안 C 첫 줄 그대로",
+   "note": "SK스퀘어 4.3조 첫 줄 거의 동일",
    "out": "돌려주겠다는 돈은 최소 4조3천억원.",
    "url": "https://www.threads.com/@bullant_economy/post/DfOSiEpj0G0",
    "views": 205,
@@ -138,10 +164,10 @@
    "time": "11/02 09:59",
    "kind": "황소개미 쓰레드",
    "how": "고쳐서",
-   "note": "코스피 반등 기다리다 지친 개미, 미국주식 순매수",
+   "note": "코스피 기다리다 지친 개미 같은 글감",
    "out": "코스피 반등을 기다리다 지친 돈이",
    "url": "https://www.threads.com/@bullant_economy/post/DfOE3pGj1_V",
-   "views": 129,
+   "views": 131,
    "rec": "“코스피 반등 기다리기 지쳐” 개미들이 미국으로 갔다",
    "rec_src": "지금 발행할 거리",
    "rec_day": "2026-11-02"
@@ -151,20 +177,33 @@
    "time": "11/02 08:07",
    "kind": "텔레그램 채널",
    "how": "주제만",
-   "note": "저PBR 딱지 주제, 추천이 하루 전",
+   "note": "저PBR 딱지 주제, 추천이 하루 앞서",
    "out": "저PBR' 딱지를 붙여 압박하는 건데,",
    "url": "https://t.me/oh_neworld/785",
-   "views": 217,
+   "views": 223,
    "rec": "내일부터 주식 종목에 '저PBR' 꼬리표",
    "rec_src": "지금 발행할 거리",
    "rec_day": "2026-11-01"
   },
   {
    "day": "2026-11-02",
+   "time": "11/02 06:11",
+   "kind": "황소개미 쓰레드",
+   "how": "주제만",
+   "note": "월요일 개장 전 인텔 폭락 주제",
+   "out": "오늘 장 열리기 전에",
+   "url": "https://www.threads.com/@bullant_economy/post/DfNqyj-gIDO",
+   "views": 1838,
+   "rec": "인텔 폭락, 오늘 코스피는 어떻게 될까",
+   "rec_src": "지금 발행할 거리",
+   "rec_day": "2026-11-02"
+  },
+  {
+   "day": "2026-11-02",
    "time": "11/02 02:57",
    "kind": "황소개미 쓰레드",
    "how": "주제만",
-   "note": "반도체 호황과 가계, 추천이 하루 전",
+   "note": "반도체 호황과 가계 주제, 하루 차이",
    "out": "반도체 호황이 낙수효과 없는 이유",
    "url": "https://www.threads.com/@bullant_economy/post/DfNUewjiiEP",
    "views": 2731,
@@ -177,7 +216,7 @@
    "time": "11/02 00:30",
    "kind": "황소개미 쓰레드",
    "how": "주제만",
-   "note": "올트먼 방한, 추천이 하루 전",
+   "note": "올트먼 방한, 추천이 하루 앞서 주제만",
    "out": "샘 올트먼이 1박 2일로 한국에 왔습니다.",
    "url": "https://www.threads.com/@bullant_economy/post/DfNDt3MD5hA",
    "views": 6566,
@@ -190,10 +229,10 @@
    "time": "11/01 22:48",
    "kind": "황소개미 쓰레드",
    "how": "고쳐서",
-   "note": "저PBR 151곳 공개",
+   "note": "저PBR 151곳 같은 숫자",
    "out": "📌 저PBR 151곳, 11/2 공개",
    "url": "https://www.threads.com/@bullant_economy/post/DfM4AQ0EUSf",
-   "views": 441,
+   "views": 450,
    "rec": "저PBR 꼬리표 151곳 첫 공개, 누가 들어갔나",
    "rec_src": "지금 발행할 거리",
    "rec_day": "2026-11-01"
@@ -203,7 +242,7 @@
    "time": "11/01 21:49",
    "kind": "황소개미 쓰레드",
    "how": "고쳐서",
-   "note": "내일부터 저PBR 표시",
+   "note": "내일부터 저PBR 표기 같은 사건",
    "out": "내일부터 여러분 MTS에",
    "url": "https://www.threads.com/@bullant_economy/post/DfMxPwWkQJh",
    "views": 12020,
@@ -216,7 +255,7 @@
    "time": "11/01 20:58",
    "kind": "황소개미 쓰레드",
    "how": "고쳐서",
-   "note": "수출 1조달러 같은 날",
+   "note": "수출 1조달러 같은 숫자",
    "out": "한국 수출 1조달러",
    "url": "https://www.threads.com/@bullant_economy/post/DfMrdnykWLE",
    "views": 232,
@@ -229,7 +268,7 @@
    "time": "11/01 17:49",
    "kind": "황소개미 쓰레드",
    "how": "고쳐서",
-   "note": "앤트로픽 몸값 2700조",
+   "note": "앤트로픽 몸값 2700조 같은 사건",
    "out": "몸값 최대 2700조 원.",
    "url": "https://www.threads.com/@bullant_economy/post/DfMVzUsEbWJ",
    "views": 643,
@@ -241,25 +280,12 @@
    "day": "2026-11-01",
    "time": "11/01 14:44",
    "kind": "황소개미 쓰레드",
-   "how": "그대로",
-   "note": "머스크 중간선거 베팅, 같은 날 같은 제목",
+   "how": "고쳐서",
+   "note": "머스크 중간선거 베팅 같은 주제와 문장",
    "out": "머스크가 이번 중간선거에",
    "url": "https://www.threads.com/@bullant_economy/post/DfMAnHukQvP",
    "views": 19217,
    "rec": "머스크가 중간선거에 건 돈",
-   "rec_src": "지금 발행할 거리",
-   "rec_day": "2026-11-01"
-  },
-  {
-   "day": "2026-11-01",
-   "time": "11/01 00:38",
-   "kind": "황소개미 쓰레드",
-   "how": "주제만",
-   "note": "월요일 코스피 전망 주제",
-   "out": "다음 주 코스피 밴드",
-   "url": "https://www.threads.com/@bullant_economy/post/DfKf4gvkTbm",
-   "views": 2080,
-   "rec": "10월 코스피 16% 급락, 월요일 어떻게 될까",
    "rec_src": "지금 발행할 거리",
    "rec_day": "2026-11-01"
   },
@@ -281,7 +307,7 @@
    "time": "10/31 19:49",
    "kind": "황소개미 쓰레드",
    "how": "고쳐서",
-   "note": "같은 날 금값 하락 사건",
+   "note": "금값 4000달러 붕괴를 3900달러로 바꿔 씀",
    "out": "금값이 3900달러 아래로 내려왔습니다.",
    "url": "https://www.threads.com/@bullant_economy/post/DfJ-t-ODyEi",
    "views": 245,
@@ -294,11 +320,11 @@
    "time": "10/31 18:19",
    "kind": "황소개미 쓰레드",
    "how": "고쳐서",
-   "note": "유가 6개월 최고, 117달러 vs 118달러 육박",
+   "note": "브렌트유 6개월 최고 같은 사건을 자기 말로",
    "out": "브렌트유 117달러, 6개월 최고치입니다.",
    "url": "https://www.threads.com/@bullant_economy/post/DfJ0bR5E1qb",
    "views": 242,
-   "rec": "[속보] 유가 6개월 최고… 호르무즈 공격에 이란 협상 난항",
+   "rec": "브렌트유 넉 달째 상승, 118달러 육박",
    "rec_src": "지금 발행할 거리",
    "rec_day": "2026-10-31"
   },
@@ -307,7 +333,7 @@
    "time": "10/31 18:04",
    "kind": "황소개미 쓰레드",
    "how": "주제만",
-   "note": "호르무즈 주제 같음",
+   "note": "호르무즈 주제만 같음",
    "out": "호르무즈 10월 상황",
    "url": "https://www.threads.com/@bullant_economy/post/DfJyyIdE6wZ",
    "views": 239,
@@ -320,7 +346,7 @@
    "time": "10/31 14:24",
    "kind": "황소개미 쓰레드",
    "how": "주제만",
-   "note": "유가 주제 같음",
+   "note": "유가 주제는 같으나 숫자 불명확",
    "out": "유가",
    "url": "https://www.threads.com/@bullant_economy/post/DfJZiJejyaF",
    "views": 1225,
@@ -333,7 +359,7 @@
    "time": "10/31 14:08",
    "kind": "황소개미 쓰레드",
    "how": "주제만",
-   "note": "월요일 한국장 전망 주제",
+   "note": "월요일 한국장 전망 주제만 겹침",
    "out": "월요일 장 열리기 전에",
    "url": "https://www.threads.com/@bullant_economy/post/DfJXwvTk0W5",
    "views": 1061,
@@ -346,7 +372,7 @@
    "time": "10/31 11:57",
    "kind": "황소개미 쓰레드",
    "how": "주제만",
-   "note": "같은 날 미국 기술주 폭락 주제, 각도는 다름",
+   "note": "같은 날 미국 기술주 폭락 주제, 각도 다름",
    "out": "주식 시장 개박살난 이유",
    "url": "https://www.threads.com/@bullant_economy/post/DfJIvnaD587",
    "views": 1004,
@@ -356,12 +382,6 @@
   }
  ],
  "wasted": [
-  {
-   "title": "北 해커가 훔친 비트코인, 테슬라 보유량도 넘었다",
-   "src": "지금 발행할 거리",
-   "day": "2026-11-02",
-   "channel": "쓰레드 글"
-  },
   {
    "title": "[속보] 바이낸스, 출금 재개 반나절 만에 5조원 순유출",
    "src": "지금 발행할 거리",
@@ -375,33 +395,44 @@
    "channel": "텔레그램 짧은 속보"
   },
   {
-   "title": "정크본드 시장에 투매, 헤지펀드도 흔들",
+   "title": "인텔 29% 폭락, 그런데 코스피는 올랐다",
+   "src": "지금 발행할 거리",
+   "day": "2026-11-02",
+   "channel": "인스타 카드뉴스"
+  },
+  {
+   "title": "北 해커가 훔친 비트코인, 테슬라 보유량도 넘었다",
    "src": "지금 발행할 거리",
    "day": "2026-11-02",
    "channel": "쓰레드 글"
   },
   {
-   "title": "트럼프가 이란과 협상 쪽으로 기울자 유가가 내렸다",
+   "title": "[속보] 美 원유 100달러 아래로… 미-이란 외교 보도",
    "src": "지금 발행할 거리",
    "day": "2026-11-02",
-   "channel": "쓰레드 글"
+   "channel": "텔레그램 짧은 속보"
   }
  ],
  "by_src": [
   {
    "src": "지금 발행할 거리",
-   "shown": 107,
+   "shown": 122,
    "used": 15
   },
   {
    "src": "텔레그램 문구",
    "shown": 74,
-   "used": 0
+   "used": 1
   },
   {
    "src": "트레이더스 글",
    "shown": 64,
    "used": 0
+  },
+  {
+   "src": "쓰레드 글 만들기",
+   "shown": 36,
+   "used": 2
   },
   {
    "src": "코치 7일 계획",
@@ -412,11 +443,6 @@
    "src": "인스타 추천",
    "shown": 27,
    "used": 0
-  },
-  {
-   "src": "쓰레드 글 만들기",
-   "shown": 24,
-   "used": 1
   },
   {
    "src": "코치 첫 줄 카피",
