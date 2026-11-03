@@ -1,14 +1,14 @@
 """트레이더스 방(내가 운영하는 포럼형 그룹) 게이미피케이션 '왕' 후보 집계 + 토픽(방)별 활성화 피드백.
 
-    python tg_traders.py                                  # 10월 1일~오늘 중간 체크 (엑셀 + 사이트 통계 + Claude 피드백)
-    python tg_traders.py --end 2026-10-31                 # 최종
+    python tg_traders.py                                  # 이번 달 1일~오늘 중간 체크 (엑셀 + 사이트 통계 + Claude 피드백)
+    python tg_traders.py --start 2026-11-01 --end 2026-11-30   # 최종
     python tg_traders.py --no-ai                          # Claude 없이 통계만
     python tg_traders.py --from-cache                     # 텔레그램 다시 안 읽고 지난 집계로 피드백만 다시
-왕 4개 (공지 기준):
+왕 3개 (2026-11 테더 지급 이벤트 공지 기준):
   💬 활동왕 — 채팅·참여량: 메시지(10자 이상) 1 + 참여한 날 3 + 받은 반응 1 + 받은 답글 2 (tg_participation.py 와 같은 식)
-  😇 성장왕 — 한 달 꾸준한 매매일지: 일지 토픽(수익 인증방)에 글·사진을 올린 '서로 다른 날' 수 → 담당자가 내용 확인
-  🧠 정보왕 — 양질의 정보: 정보 토픽의 링크·전달(퍼오기)·100자 이상 글·설명 붙은 사진 → 글 2 + 받은 반응 1 + 받은 답글 1
-  🤝 기여왕 — 질문 답변·회원 도움: 다른 회원 질문(?)에 단 답글 3 + 다른 회원 글에 단 답글(10자 이상) 1
+  😇 수익왕 — 한 달 꾸준한 수익 인증: 수익 인증방에 직접 찍은 사진을 올린 '서로 다른 날' 수 → 사진이 실제 수익인지는 담당자가 확인
+  🧠 정보왕 — 양질의 정보(퍼오기 가능): 시장 관련 링크·전달·100자 이상 글·설명 붙은 사진 → 글 1 + 받은 반응 2 + 받은 답글 2
+tg_live.py 가 크롤링하면서 하루 한 번 refresh_month 로 다시 센다.
 관리자·봇은 순위에서 뺀다. 회원 이름이 들어간 엑셀은 output/participation/ (내 PC에만, 저장소에 안 올림).
 사이트(output/site/trd_rooms.json)에는 이름·원문 없이 토픽 통계 + 피드백 + 부문별 후보 수만 올린다.
 """
@@ -31,7 +31,7 @@ OUT_DIR = OUTPUT_DIR / "participation"
 CACHE = OUT_DIR / "traders_stats.json"          # 이름 포함 → 로컬 전용 폴더
 SITE = OUTPUT_DIR / "site" / "trd_rooms.json"
 MIN_CHARS = 10
-JOURNAL_TOPICS = {"수익 인증방"}                  # 매매일지 올리는 곳
+PROOF_TOPICS = {"수익 인증방"}                    # 수익 인증 올리는 곳
 NOT_INFO_TOPICS = {"수익 인증방", "공지사항"}      # 정보왕 집계에서 뺄 곳
 URL_RE = re.compile(r"https?://|t\.me/|www\.", re.I)
 Q_RE = re.compile(r"\?|？|(나요|까요|ㄹ까|을까|인가요|있나요|되나요|어떤가요|맞나요|궁금)")
@@ -51,27 +51,23 @@ def topic_of(m):
     return 1
 
 
-def collect(start, end):
+async def collect(c, start, end):
     from telethon.tl.functions.messages import GetForumTopicsRequest
     from telethon.tl.types import ChannelParticipantsAdmins
-    from tg_login import client
-    c = client()
-    c.connect()
-    if not c.is_user_authorized():
-        sys.exit("❌ 텔레그램 로그인이 풀렸어요 — python tg_login.py 로 다시 로그인해 주세요.")
-    chat = c.get_entity(CHAT_ID)
+    from trd_research import ADS, MARKET
+    chat = await c.get_entity(CHAT_ID)
     topics = {t.id: {"title": t.title, "closed": bool(getattr(t, "closed", False))}
-              for t in c(GetForumTopicsRequest(peer=chat, offset_date=None, offset_id=0, offset_topic=0, limit=100)).topics}
-    admins = {u.id for u in c.get_participants(chat, filter=ChannelParticipantsAdmins)}
-    members = getattr(c.get_entity(chat), "participants_count", None)
+              for t in (await c(GetForumTopicsRequest(peer=chat, offset_date=None, offset_id=0, offset_topic=0, limit=100))).topics}
+    admins = {u.id async for u in c.iter_participants(chat, filter=ChannelParticipantsAdmins)}
+    members = getattr(chat, "participants_count", None)
     msgs, users = [], {}
-    for m in c.iter_messages(chat, offset_date=end):
+    async for m in c.iter_messages(chat, offset_date=end):
         if m.date < start:
             break
         if m.action or not m.sender_id or m.id in topics:
             continue
         if m.sender_id not in users:
-            u = m.sender
+            u = await m.get_sender()
             users[m.sender_id] = {"name": name_of(u), "username": getattr(u, "username", None) or "",
                                   "bot": bool(getattr(u, "bot", False))}
         text = m.message or ""
@@ -84,8 +80,7 @@ def collect(start, end):
         msgs.append({"id": m.id, "uid": m.sender_id, "topic": topic_of(m), "at": m.date.astimezone(KST).isoformat(),
                      "len": len(text.strip()), "q": bool(Q_RE.search(text)), "url": has_url, "fwd": bool(m.fwd_from),
                      "media": bool(m.media), "react": sum(x.count for x in m.reactions.results) if m.reactions else 0,
-                     "reply_to": reply_to})
-    c.disconnect()
+                     "reply_to": reply_to, "info_ok": bool(MARKET.search(text)) and not ADS.search(text)})
     return {"title": getattr(chat, "title", "트레이더스"), "members": members, "topics": {str(k): v for k, v in topics.items()},
             "admins": sorted(admins), "users": {str(k): v for k, v in users.items()}, "msgs": msgs}
 
@@ -108,9 +103,8 @@ def analyze(raw, start, end):
             answered.add(t["id"])
 
     P = defaultdict(lambda: {"msgs": 0, "short": 0, "days": set(), "react": 0, "replies": 0,
-                             "journal_days": set(), "journal_posts": 0,
-                             "info_posts": 0, "info_react": 0, "info_replies": 0, "info_topics": Counter(),
-                             "answers": 0, "helps": 0})
+                             "proof_days": set(), "proof_posts": 0, "proof_text": 0,
+                             "info_posts": 0, "info_react": 0, "info_replies": 0, "info_topics": Counter()})
     for m in msgs:
         uid = m["uid"]
         p = P[uid]
@@ -120,20 +114,16 @@ def analyze(raw, start, end):
         p["msgs" if m["len"] >= MIN_CHARS else "short"] += 1
         p["react"] += m["react"]
         p["replies"] += got_replies[m["id"]]
-        if title in JOURNAL_TOPICS and (m["len"] >= MIN_CHARS or m["media"]):
-            p["journal_days"].add(day)
-            p["journal_posts"] += 1
-        if title not in NOT_INFO_TOPICS and (m["url"] or m["fwd"] or m["len"] >= 100 or (m["media"] and m["len"] >= 30)):
+        if title in PROOF_TOPICS and m["media"] and not m["fwd"]:
+            p["proof_days"].add(day)
+            p["proof_posts"] += 1
+        elif title in PROOF_TOPICS and m["len"] >= MIN_CHARS and not m["reply_to"]:
+            p["proof_text"] += 1   # 사진 없는 글은 참고로만 (축하 답글·감사 인사가 많음)
+        if title not in NOT_INFO_TOPICS and m.get("info_ok", True) and (m["url"] or m["fwd"] or m["len"] >= 100 or (m["media"] and m["len"] >= 30)):
             p["info_posts"] += 1
             p["info_react"] += m["react"]
             p["info_replies"] += got_replies[m["id"]]
             p["info_topics"][title] += 1
-        t = by_id.get(m["reply_to"])
-        if t and t["uid"] != uid:
-            if t["q"]:
-                p["answers"] += 1
-            elif m["len"] >= MIN_CHARS:
-                p["helps"] += 1
 
     elapsed = max(1, -(-int((min(end, datetime.now(KST)) - start).total_seconds()) // 86400))
     people = []
@@ -145,12 +135,11 @@ def analyze(raw, start, end):
             "이름": u.get("name", str(uid)), "아이디": f"@{u['username']}" if u.get("username") else "", "회원번호": uid,
             "활동왕": p["msgs"] + 3 * len(p["days"]) + p["react"] + 2 * p["replies"],
             "참여한 날": len(p["days"]), "메시지(10자 이상)": p["msgs"], "짧은 메시지": p["short"], "받은 반응": p["react"], "받은 답글": p["replies"],
-            "성장왕": len(p["journal_days"]), "일지 올린 날": len(p["journal_days"]), "일지 글": p["journal_posts"],
-            "일지 꾸준함": f"{len(p['journal_days'])}/{elapsed}일",
-            "정보왕": 2 * p["info_posts"] + p["info_react"] + p["info_replies"], "정보 글": p["info_posts"],
+            "수익왕": len(p["proof_days"]), "인증 사진": p["proof_posts"], "사진 없는 글": p["proof_text"],
+            "인증 꾸준함": f"{len(p['proof_days'])}/{elapsed}일",
+            "정보왕": p["info_posts"] + 2 * p["info_react"] + 2 * p["info_replies"], "정보 글": p["info_posts"],
             "정보 글 반응": p["info_react"], "정보 글 답글": p["info_replies"],
             "정보 주 토픽": ", ".join(t for t, _ in p["info_topics"].most_common(2)),
-            "기여왕": 3 * p["answers"] + p["helps"], "질문에 단 답": p["answers"], "도움 답글": p["helps"],
         })
 
     # 토픽별 지표 (이름 없음)
@@ -197,9 +186,11 @@ def analyze(raw, start, end):
 
 
 AWARDS = [("활동왕", "💬", ["참여한 날", "메시지(10자 이상)", "받은 반응", "받은 답글"]),
-          ("성장왕", "😇", ["일지 꾸준함", "일지 글"]),
-          ("정보왕", "🧠", ["정보 글", "정보 글 반응", "정보 글 답글", "정보 주 토픽"]),
-          ("기여왕", "🤝", ["질문에 단 답", "도움 답글"])]
+          ("수익왕", "😇", ["인증 꾸준함", "인증 사진", "사진 없는 글"]),
+          ("정보왕", "🧠", ["정보 글", "정보 글 반응", "정보 글 답글", "정보 주 토픽"])]
+AWARD_RULES = {"활동왕": "채팅·참여량 (10자 이상 글 + 참여한 날 + 받은 반응·답글)",
+               "수익왕": "꾸준한 수익 인증 (수익 인증방에 사진을 올린 날 수, 담당자 확인)",
+               "정보왕": "양질의 정보, 퍼오기 가능 (시장 관련 링크·전달·긴 글에 받은 반응·답글)"}
 
 
 def save_excel(people, title, start_s, end_s, totals):
@@ -209,7 +200,7 @@ def save_excel(people, title, start_s, end_s, totals):
     wb.remove(wb.active)
     tops = {}
     for award, icon, cols in AWARDS:
-        ranked = sorted([p for p in people if p[award] > 0], key=lambda p: (-p[award], -p["참여한 날"]))
+        ranked = sorted([p for p in people if p[award] > 0], key=lambda p: (-p[award], -p["인증 사진"] if award == "수익왕" else 0, -p["참여한 날"]))
         tops[award] = ranked
         ws = wb.create_sheet(f"{icon}{award}")
         head = ["순위", "이름", "아이디", "점수"] + cols + ["회원번호"]
@@ -221,9 +212,8 @@ def save_excel(people, title, start_s, end_s, totals):
                  ("뽑은 시각", datetime.now(KST).strftime("%Y-%m-%d %H:%M")),
                  ("읽은 메시지", totals["messages"]), ("활동 회원", totals["active_members"]),
                  ("💬 활동왕", "메시지(10자 이상) 1 + 참여한 날 3 + 받은 반응 1 + 받은 답글 2"),
-                 ("😇 성장왕", f"{', '.join(JOURNAL_TOPICS)}에 글(10자 이상)·사진을 올린 서로 다른 날 수 — 일지 내용은 담당자 확인"),
-                 ("🧠 정보왕", "정보 토픽(수익 인증방·공지 제외)의 링크·전달·100자 이상·설명 붙은 사진 글: 글 2 + 받은 반응 1 + 받은 답글 1"),
-                 ("🤝 기여왕", "다른 회원 질문(? 등)에 단 답글 3 + 다른 회원 글에 단 답글(10자 이상) 1"),
+                 ("😇 수익왕", f"{', '.join(PROOF_TOPICS)}에 직접 올린 사진이 있는 서로 다른 날 수 (같으면 사진 수) — 사진이 실제 수익인지는 담당자 확인"),
+                 ("🧠 정보왕", "수익 인증방·공지 제외, 시장 관련이고 광고가 아닌 링크·전달(퍼오기)·100자 이상·설명 붙은 사진 글: 글 1 + 받은 반응 2 + 받은 답글 2"),
                  ("제외", "관리자·봇"), ("주의", "텔레그램 '답장' 기능을 쓴 것만 답글로 셈 — 답장 없이 이어 쓴 답은 못 셈")]:
         ws.append(list(line))
     for sheet in wb.worksheets:
@@ -259,7 +249,7 @@ def feedback(rooms, totals, awards_summary, period):
         award_tips: List[str]
 
     system = ("당신은 유료·무료 투자 커뮤니티(텔레그램 포럼형 그룹 '트레이더스') 운영 컨설턴트입니다. 운영자는 회원 참여 보상으로 "
-              "매달 활동왕·성장왕(매매일지)·정보왕·기여왕을 뽑아 15만원 상당 상품을 줍니다. 토픽(방)별 통계를 보고 각 방을 살릴 "
+              "매달 활동왕·수익왕(꾸준한 수익 인증)·정보왕(퍼오기 가능)을 뽑아 15만원 상당 테더를 줍니다. 토픽(방)별 통계를 보고 각 방을 살릴 "
               "구체적인 운영 피드백을 한국어로 쓰세요. 규칙: 회원 이름·아이디·원문을 지어내거나 쓰지 말 것, 투자 권유·수익 보장 문구 금지, "
               "숫자 근거를 들 것, actions 는 이번 주에 운영자가 바로 할 일 2~4개(시간대·형식까지), post_example 은 그 방에 운영자가 "
               "그대로 올릴 수 있는 글 한 편(3~6줄, 참여를 부르는 질문·미션 포함). closed=true 인 방은 관리자만 글을 쓰는 방이니 "
@@ -285,6 +275,39 @@ def feedback(rooms, totals, awards_summary, period):
     return r.parsed_output.model_dump()
 
 
+def write_site(rooms, totals, tops, period, final, now, ai=None):
+    old = json.loads(SITE.read_text(encoding="utf-8")) if SITE.exists() else {}
+    SITE.parent.mkdir(parents=True, exist_ok=True)
+    SITE.write_text(json.dumps({
+        "period": period, "final": final, "updated_at": now.isoformat(timespec="minutes"), "totals": totals,
+        "awards": [{"name": a, "icon": i, "candidates": len(tops[a]), "rule": AWARD_RULES[a],
+                    "top_score": tops[a][0][a] if tops[a] else 0} for a, i, _ in AWARDS],
+        "rooms": rooms, "ai": ai or old.get("ai"), "ai_key": stats_key(rooms) if ai else old.get("ai_key"),
+    }, ensure_ascii=False, indent=1), encoding="utf-8")
+
+
+async def refresh_month(c):
+    """크롤러가 하루 한 번 부름: 이번 달 왕 후보를 다시 세어 엑셀(내 PC)과 사이트 통계(이름 없음)를 갱신. 매달 1일엔 지난달 최종 엑셀도."""
+    now = datetime.now(KST)
+    first = now.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
+    if now.day == 1:
+        last = first - timedelta(days=1)
+        p_start = last.replace(day=1)
+        raw = await collect(c, p_start, first)
+        people, _, totals = analyze(raw, p_start, first)
+        save_excel(people, raw["title"], f"{p_start:%Y-%m-%d}", f"{last:%Y-%m-%d}", totals)
+    start_s, end_s = f"{first:%Y-%m-%d}", f"{now:%Y-%m-%d}"
+    end = first.replace(day=now.day) + timedelta(days=1)
+    raw = await collect(c, first, end)
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    CACHE.write_text(json.dumps(raw, ensure_ascii=False), encoding="utf-8")
+    people, rooms, totals = analyze(raw, first, end)
+    for f in OUT_DIR.glob(f"왕선정_*_{start_s}_*.xlsx"):   # 중간 체크 파일은 하나만 남김
+        f.unlink(missing_ok=True)
+    _, tops = save_excel(people, raw["title"], start_s, end_s, totals)
+    write_site(rooms, totals, tops, f"{start_s} ~ {end_s} (중간 체크)", False, now)
+
+
 def stats_key(rooms):
     import hashlib
     return hashlib.sha1(json.dumps(rooms, sort_keys=True).encode()).hexdigest()[:12]
@@ -304,7 +327,7 @@ def ai_only():
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--start", default="2026-10-01")
+    ap.add_argument("--start", default=f"{datetime.now(KST):%Y-%m-01}")
     ap.add_argument("--end", default=None, help="끝일 YYYY-MM-DD (포함). 없으면 오늘까지 = 중간 체크")
     ap.add_argument("--no-ai", action="store_true")
     ap.add_argument("--from-cache", action="store_true")
@@ -322,7 +345,13 @@ def main():
         raw = json.loads(CACHE.read_text(encoding="utf-8"))
     else:
         print("트레이더스 메시지 읽는 중... (몇 분 걸려요)")
-        raw = collect(start, end)
+        from tg_login import client
+        c = client()
+        c.connect()
+        if not c.is_user_authorized():
+            sys.exit("❌ 텔레그램 로그인이 풀렸어요 — python tg_login.py 로 다시 로그인해 주세요.")
+        raw = c.loop.run_until_complete(collect(c, start, end))
+        c.disconnect()
         OUT_DIR.mkdir(parents=True, exist_ok=True)
         CACHE.write_text(json.dumps(raw, ensure_ascii=False), encoding="utf-8")
     people, rooms, totals = analyze(raw, start, end)
@@ -335,18 +364,7 @@ def main():
     awards_summary = {a: len(tops[a]) for a, _, _ in AWARDS}
     period = f"{args.start} ~ {end_s}" + ("" if final else " (중간 체크)")
     ai = None if args.no_ai else feedback(rooms, totals, awards_summary, period)
-    old = json.loads(SITE.read_text(encoding="utf-8")) if SITE.exists() else {}
-    SITE.parent.mkdir(parents=True, exist_ok=True)
-    SITE.write_text(json.dumps({
-        "period": period, "final": final, "updated_at": now.isoformat(timespec="minutes"), "totals": totals,
-        "awards": [{"name": a, "icon": i, "candidates": len(tops[a]),
-                    "rule": {"활동왕": "채팅·참여량 (10자 이상 글 + 참여한 날 + 받은 반응·답글)",
-                             "성장왕": "매매일지 꾸준함 (수익 인증방에 올린 날 수, 담당자 확인)",
-                             "정보왕": "양질의 정보 (링크·퍼오기·긴 글·설명 붙은 사진 + 받은 반응)",
-                             "기여왕": "질문 답변·회원 도움 (다른 회원 글에 단 답장)"}[a],
-                    "top_score": tops[a][0][a] if tops[a] else 0} for a, i, _ in AWARDS],
-        "rooms": rooms, "ai": ai or old.get("ai"), "ai_key": stats_key(rooms) if ai else old.get("ai_key"),
-    }, ensure_ascii=False, indent=1), encoding="utf-8")
+    write_site(rooms, totals, tops, period, final, now, ai)
     print(f"✅ 사이트용 {SITE.name} (이름 없이 통계·피드백만)")
 
 

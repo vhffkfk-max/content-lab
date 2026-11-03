@@ -1928,7 +1928,7 @@ a.row:hover .row-main{text-decoration:underline}
     const T = d.totals || {};
     document.getElementById('trd-awards-note').textContent = `${d.period} · ${(d.updated_at || '').slice(5, 16).replace('T', ' ')} 집계. 회원 이름이 들어간 순위표는 개인정보라 사이트에 올리지 않고 내 PC 엑셀(output/participation)에만 있어요.`;
     kb.replaceChildren(kpi('지난 날', `${T.elapsed_days || '–'}일`, d.final ? '최종' : '중간 체크'), kpi('메시지', fmtN(T.messages || 0), '관리자 포함'),
-      kpi('글 쓴 회원', `${T.active_members || 0}명`, '관리자 제외'), kpi('후보 있는 부문', `${(d.awards || []).filter(a => a.candidates).length}/4`, '점수 1점 이상'));
+      kpi('글 쓴 회원', `${T.active_members || 0}명`, '관리자 제외'), kpi('후보 있는 부문', `${(d.awards || []).filter(a => a.candidates).length}/${(d.awards || []).length}`, '점수 1점 이상'));
     ab.replaceChildren(...(d.awards || []).map(a => {
       const c = el('div', 'card'); c.append(el('h3', null, `${a.icon} ${a.name}`), el('p', 'meta-line', `후보 ${a.candidates}명 · 1등 ${fmtN(a.top_score)}점`), el('p', 'sub', a.rule));
       if (a.candidates < 6) c.append(el('p', 'sub', '후보가 적어요 — 이 부문을 공지로 한 번 더 띄워 주세요.'));

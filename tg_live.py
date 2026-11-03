@@ -28,6 +28,7 @@ from tg_login import CHATS
 import repo_sync
 import tg_analyze
 import tg_metrics
+import tg_traders
 import trd_research
 from tg_history import SCHEMA as HISTORY_SCHEMA
 
@@ -324,6 +325,11 @@ async def run(args):
                 if own_day != today:   # 우리 방 성적은 하루 한 번만 다시 읽음
                     own_day = today
                     await trd_research.refresh_own(client)
+                    try:   # 왕 집계가 실패해도 수집은 계속
+                        await tg_traders.refresh_month(client)
+                        log.info("이달의 왕 집계: %s", repo_sync.publish(["output/site/trd_rooms.json"], f"data: 트레이더스 왕 집계 {today:%m/%d}") if not args.no_push else "올리지 않음")
+                    except Exception:
+                        log.exception("왕 집계 실패 (내일 다시)")
                 hourly = datetime.now(timezone.utc) - last_members >= timedelta(minutes=59)
                 await record_members(client, conn, chats if hourly else mine)
                 if hourly:
