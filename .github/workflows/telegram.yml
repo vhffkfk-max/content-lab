@@ -35,6 +35,10 @@ on:
         description: "트레이더스 방별 올릴 글을 지금 다시 쓰기"
         type: boolean
         default: false
+      trd_room:
+        description: "트레이더스 이 폴더 글만 지금 다시 쓰기 (폴더 id, 예: coin)"
+        type: string
+        default: ""
       chart:
         description: "차트리포트 만들 종목 (쉼표로 여러 개, 예: 테슬라,삼성전자,이더리움)"
         type: string
@@ -67,11 +71,13 @@ jobs:
         env:
           FOCUS: ${{ inputs.focus }}
           CHART: ${{ inputs.chart }}
+          TRD_ROOM: ${{ inputs.trd_room }}
         run: |
           git config user.name "content-lab-bot"
           git config user.email "content-lab-bot@users.noreply.github.com"
           if [ "${{ inputs.force }}" = "true" ]; then python ai_request.py tg "focus=$FOCUS"; fi
           if [ "${{ inputs.traders }}" = "true" ]; then python ai_request.py trd; fi
+          if [ -n "$TRD_ROOM" ]; then python ai_request.py trd "room=$TRD_ROOM"; fi
           if [ -n "$CHART" ]; then python ai_request.py chart "symbols=$CHART"; fi
           git add data/ai_requests.json
           git commit -m "ai: PC에 Claude 작업 요청" || echo "변경 없음"

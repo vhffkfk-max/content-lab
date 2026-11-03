@@ -198,9 +198,13 @@ def run_cycle():
         py("futures_brief.py", "--send", timeout=15 * 60)
         did.append("선물 브리핑")
 
-    if "trd" in latest:
+    trds = [r["args"].get("room") for r in todo if r["job"] == "trd"]   # 사이트 버튼: 폴더별 요청은 모아서 한 번에, 전체 요청이 하나라도 있으면 전부
+    if trds:
         refresh_news()
-        py("trd_posts.py", "--force")
+        if all(trds):
+            py("trd_posts.py", *[x for room in dict.fromkeys(trds) for x in ("--room", room)])
+        else:
+            py("trd_posts.py", "--force")
         did.append("트레이더스 글(요청)")
     elif slot_once(state, "trd", (7, 18)) and py("trd_posts.py", "--due") == 0:
         refresh_news()

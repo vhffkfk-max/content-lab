@@ -4,6 +4,7 @@
   python ai_request.py social                 # 쓰레드·X 다시 분석
   python ai_request.py tg focus="하락장 대응"  # 텔레그램 오늘 문구 다시
   python ai_request.py trd                    # 트레이더스 방별 글 다시
+  python ai_request.py trd room=coin          # 트레이더스 그 폴더 글만 다시
   python ai_request.py draft topic="환율"      # 카드뉴스 초안
   python ai_request.py thpost idx=0 styles=ABC slot="11/01 17:10" rid=x  # 지금 쓸 거리 → 황소개미 쓰레드 글 A·B·C
   python ai_request.py chart symbols="테슬라,삼성전자"  # 차트리포트 이미지 + 설명 글 → 봇·사이트

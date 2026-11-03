@@ -5,7 +5,8 @@
 숫자는 코드가 가져온 시세만 쓰고, 없는 숫자는 [확인] 으로 남긴다. 회원 이름·원문은 넣지 않는다.
 
   python trd_posts.py            # 지금 이후 시각의 글만 새로 씀 (같은 날 앞선 글은 그대로 둠)
-  python trd_posts.py --force    # 오늘 글 전부 다시
+  python trd_posts.py --force    # 오늘 글 전부 다시 (사이트 '오늘 글 전부 새로 만들기')
+  python trd_posts.py --room coin --room talk   # 그 폴더 글만 지금 다시 (사이트 '이 폴더 글 새로 만들기'), 자동 작성 차례는 그대로
   python trd_posts.py --due      # 07·18시 차례면 0, 아니면 3 (워크플로용)
   python trd_posts.py --dry-run  # Claude 없이 재료만 출력
 """
@@ -121,6 +122,7 @@ def main():
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--due", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--room", action="append", help="trd_folders.json 의 폴더 id")
     args = ap.parse_args()
     now = datetime.now(KST)
     if args.due:
@@ -130,26 +132,37 @@ def main():
     old = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
     today = now.strftime("%Y-%m-%d")
     same_day = old.get("date") == today
+    written_today = old.get("generated_at", "").startswith(today)   # 폴더만 다시 쓴 건 generated_at 을 안 바꿔서, 그날 자동 첫 작성이 그대로 돈다
     hm = now.strftime("%H:%M")
+    fp = SITE / "trd_folders.json"
+    folder_rows = json.loads(fp.read_text(encoding="utf-8")).get("folders", []) if fp.exists() else []
+    rooms = None
+    if args.room:
+        ids = {f["id"]: f["room"] for f in folder_rows}
+        if not set(args.room) <= set(ids):
+            sys.exit(f"없는 폴더: {sorted(set(args.room) - set(ids))}")
+        rooms = {ids[i] for i in args.room}
+    manual = args.force or bool(rooms)
     # 지금 이후 시각만 새로 (오늘 앞선 글은 이미 올렸을 수 있으니 그대로). --force 나 새 날 첫 실행(07시 전 수동 포함)은 전부
-    todo = SLOTS if args.force or not same_day or hm < "07:00" else [s for s in SLOTS if s[1] > hm]
+    todo = [s for s in SLOTS if s[0] in rooms] if rooms else SLOTS if args.force or not written_today or hm < "07:00" else [s for s in SLOTS if s[1] > hm]
     if not todo:
         return print("오늘 남은 올릴 시각이 없어요 — 내일 07시에 새로 써요.")
 
     news = news_context()
-    fp = SITE / "trd_folders.json"
     folders = {f["room"]: {"역할": f["role"], "넣을 것": [i["what"] for i in f["items"]], "연구 근거": f["research"],
                            "소재": [{"채널": x["chat"], "평소 대비": x["x"], "글": x["text"][:220]} for x in f["sources"][:4]]}
-               for f in json.loads(fp.read_text(encoding="utf-8")).get("folders", [])} if fp.exists() else {}
+               for f in folder_rows if not rooms or f["room"] in rooms}
     news_key = hashlib.sha1(json.dumps([news["headlines"][:10], news["x_truth_briefing"], [s[1] for s in todo], today],
                                        ensure_ascii=False).encode()).hexdigest()
-    if not args.force and old.get("news_key") == news_key:
+    if not manual and old.get("news_key") == news_key:
         return print("뉴스가 지난번과 같아 트레이더스 글을 다시 쓰지 않아요 (비용 절약).")
     quotes = market()
     ctx = {"now": now.strftime("%Y-%m-%d (%a) %H:%M KST"), "시세": quotes, "오늘 뉴스": news, "폴더 자료": folders,
-           "방 통계": rooms_context(),
+           "방 통계": {k: v for k, v in rooms_context().items() if not rooms or k in rooms},
            "써야 할 글": [{"no": i, "room": r, "time": t, "kind": k, "how": how} for i, (r, t, k, how) in enumerate(todo, 1)]}
     prompt = "자료:\n" + json.dumps(ctx, ensure_ascii=False, indent=1) + "\n\n'써야 할 글'의 no 마다 하나씩, 빠짐없이 쓰세요."
+    if manual:
+        prompt += "\n운영자가 버튼을 눌러 지금 바로 쓰는 글이에요. time 이 now 보다 지난 글은 지금 올려도 맞도록 지금 시점 기준으로 쓰세요."
     from feedback import feedback_prompt
     prompt += feedback_prompt(["트레이더스", "트레이더스 글"])
     if args.dry_run:
@@ -179,12 +192,17 @@ def main():
     if r.stop_reason != "end_turn" or r.parsed_output is None:
         return print(f"⚠️ 결과를 받지 못했어요(stop_reason={r.stop_reason}) — 지난 결과를 유지해요.")
     a = r.parsed_output
-    new = [{"room": todo[p.no - 1][0], "time": todo[p.no - 1][1], "kind": todo[p.no - 1][2], **p.model_dump(exclude={"no"})}
+    new = [{"room": todo[p.no - 1][0], "time": todo[p.no - 1][1], "kind": todo[p.no - 1][2], **p.model_dump(exclude={"no"}),
+            **({"made_at": now.isoformat(timespec="seconds")} if manual else {})}
            for p in a.posts if 1 <= p.no <= len(todo)]
-    keep = [p for p in old.get("posts", []) if same_day and not args.force and p["time"] <= hm and hm >= "07:00"]
+    if rooms:
+        keep = [p for p in old.get("posts", []) if same_day and p["room"] not in rooms]
+    else:
+        keep = [p for p in old.get("posts", []) if written_today and not args.force and p["time"] <= hm and hm >= "07:00"]
     posts = sorted(keep + new, key=lambda p: p["time"])
-    OUT.write_text(json.dumps({"date": today, "generated_at": now.isoformat(timespec="seconds"), "theme": a.theme,
-                               "market": {k: v for k, v in quotes.items()}, "posts": posts, "news_key": news_key},
+    OUT.write_text(json.dumps({"date": today, "generated_at": old.get("generated_at", "") if rooms else now.isoformat(timespec="seconds"),
+                               "theme": old.get("theme", a.theme) if rooms and same_day else a.theme,
+                               "market": {k: v for k, v in quotes.items()}, "posts": posts, "news_key": old.get("news_key", "") if rooms else news_key},
                               ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"✅ 트레이더스 올릴 글 {len(new)}개 새로 (유지 {len(keep)}개) · 입력 {r.usage.input_tokens:,} / 출력 {r.usage.output_tokens:,} 토큰")
 

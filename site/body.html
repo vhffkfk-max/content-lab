@@ -914,7 +914,9 @@ a.row:hover .row-main{text-decoration:underline}
       <div class="view" data-view="traders" hidden>
         <div class="title-row">
           <div><h1>트레이더스 방</h1><p>텔레그램 폴더와 같은 8칸이에요. 칸마다 넣을 것과 이유, 크롤링으로 쌓은 근거, 오늘 올릴 글, 오늘 소재를 보여 줘요.</p></div>
+          <button class="btn" id="trd-run-all" type="button">오늘 글 전부 새로 만들기</button>
         </div>
+        <p class="note" id="trd-run-st"></p>
         <p class="note" id="trd-crawl"></p>
         <div class="kpis" id="trd-market"></div>
         <section class="sec" id="trdf-notice"><h2>📌 공지사항</h2><div data-trdf="notice"></div></section>
@@ -1955,9 +1957,45 @@ a.row:hover .row-main{text-decoration:underline}
     }));
   }
 
+  // 글 수동 만들기: 폴더 하나 또는 전체. 자동 작성(07·18시)은 그대로이고, PC가 다음 5분 차례에 Max 구독으로 쓴다
+  const TRD_RAW = 'https://raw.githubusercontent.com/vhffkfk-max/content-lab/main/output/site/trd_posts.json';
+  const trdReq = {};
+  let trdLive = null;
+  function trdPaint(key) {
+    const q = trdReq[key] || {}, btn = document.querySelector(`[data-trd-btn="${key}"]`), st = document.querySelector(`[data-trd-st="${key}"]`);
+    if (btn) btn.disabled = !!q.busy;
+    if (st) { st.className = q.err ? 'warn' : 'note'; st.textContent = q.msg || ''; }
+  }
+  async function requestTrdPosts(f) {
+    const key = f ? f.id : 'all', set = (msg, busy, err) => { trdReq[key] = { msg, busy, err }; trdPaint(key); };
+    if (trdReq[key] && trdReq[key].busy) return;
+    if (!f && !confirm('오늘 글 12개를 전부 새로 써요. 이미 올린 글이 있어도 화면의 글은 바뀌어요. 진행할까요?')) return;
+    if (!fb.key && !(await connectLab())) return;
+    set('요청하는 중이에요…', true);
+    try {
+      const q = await ghApi('actions/workflows/telegram.yml/runs?event=workflow_dispatch&per_page=5');
+      // 이 실행은 대기 칸이 하나뿐이라, 앞 요청이 기다리는 중에 또 보내면 앞 요청이 취소된다
+      if (q.ok && ((await q.json()).workflow_runs || []).some(x => ['queued', 'pending', 'waiting', 'requested'].includes(x.status))) return set('앞 요청이 접수되는 중이에요. 1~2분 뒤 다시 눌러 주세요.');
+      const since = new Date().toISOString();
+      const r = await ghApi('actions/workflows/telegram.yml/dispatches', { method: 'POST', body: JSON.stringify({ ref: 'main', inputs: f ? { trd_room: f.id } : { traders: 'true' } }) });
+      if (r.status !== 204) return set(ghFail(r.status), false, true);
+      set('요청했어요. PC가 켜져 있으면 보통 5~15분 안에 글이 나와요. 이 화면을 닫아도 작성은 계속돼요.', true);
+      const started = Date.now(), timer = setInterval(async () => {
+        if (Date.now() - started > 25 * 60e3) { clearInterval(timer); return set('25분이 지나도 새 글이 안 보여요. PC가 꺼졌거나 Claude 사용량이 찼을 수 있어요. 잠시 뒤 다시 눌러 주세요.', false, true); }
+        try {
+          const live = await (await fetch(`${TRD_RAW}?t=${Date.now()}`, { cache: 'no-store' })).json();
+          if (!(live.posts || []).some(p => p.made_at && new Date(p.made_at) >= new Date(since) && (!f || p.room === f.room))) return;
+          clearInterval(timer);
+          trdLive = live;
+          trdReq[key] = { msg: '새 글이 나왔어요. 올리기 전 확인 칸을 봐 주세요.' };
+          drawTraderPosts();
+        } catch (e) { /* 다음 차례에 다시 확인 */ }
+      }, 30e3);
+    } catch (e) { set('요청 실패 — 인터넷 연결을 확인해 주세요', false, true); }
+  }
   function drawTraderPosts() {
     const get = k => { const x = dash.data(k); return x.status === 'ok' && !Array.isArray(x.data) ? x.data : null; };
-    const F = get('trd_folders'), d = get('trd_posts'), mb = document.getElementById('trd-market'), cb = document.getElementById('trd-crawl');
+    const F = get('trd_folders'), d = trdLive || get('trd_posts'), mb = document.getElementById('trd-market'), cb = document.getElementById('trd-crawl');
     const M = (d && d.market) || {}, pct = v => v == null ? '' : `${v > 0 ? '+' : ''}${v}%`;
     mb.replaceChildren(...['코스피', '나스닥', '원/달러 환율', '비트코인(업비트 원화)', '이더리움(달러)', '비트코인 김치프리미엄(%)'].filter(k => M[k]).map(k =>
       kpi(k.replace('(%)', ''), k.includes('김치') ? `${M[k].close}%` : fmtN(M[k].close), M[k].d1 != null ? `하루 ${pct(M[k].d1)}` : '업비트 ÷ (달러가 × 환율)')));
@@ -1967,6 +2005,10 @@ a.row:hover .row-main{text-decoration:underline}
       cb.textContent = `${late ? '⚠️ 수집이 멈춘 것 같아요' : '수집 중'} · 마지막 글 ${(c.last_at || '').slice(5, 16).replace('T', ' ')} · 채널·방 ${c.chats}곳 · 최근 24시간 ${fmtN(c.day)}개 · 누적 ${fmtN(c.total)}개${d ? ` · 오늘 글 ${(d.generated_at || '').slice(11, 16)} 작성` : ''}`;
     } else cb.textContent = '';
     const nowHm = new Date(Date.now() + 9 * 3600e3).toISOString().slice(11, 16), isToday = d && new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10) === d.date;
+    const allBtn = document.getElementById('trd-run-all'), allSt = document.getElementById('trd-run-st');
+    allBtn.dataset.trdBtn = 'all'; allSt.dataset.trdSt = 'all';
+    allBtn.onclick = () => requestTrdPosts(null);
+    trdPaint('all');
     (F ? F.folders : []).forEach(f => {
       const box = document.querySelector(`[data-trdf="${f.id}"]`);
       if (!box) return;
@@ -1984,9 +2026,16 @@ a.row:hover .row-main{text-decoration:underline}
       }
       const posts = (d && d.posts || []).filter(p => p.room === f.room), list = el('div', 'recs');
       list.style.marginTop = '12px';
+      const bar = el('div', 'chips'), mk = el('button', 'btn primary', '이 폴더 글 새로 만들기'), mkSt = el('p', 'note');
+      mk.type = 'button'; mk.dataset.trdBtn = f.id; mkSt.dataset.trdSt = f.id;
+      mk.addEventListener('click', () => requestTrdPosts(f));
+      bar.style.marginTop = '12px';
+      bar.append(mk, mkSt);
+      parts.push(bar);
       list.replaceChildren(...posts.map(p => {
         const a = el('article', 'card rec trd-room'), t = el('h3', null, `${p.time} · ${p.kind}`);
-        t.append(el('span', 'pill ' + (isToday && p.time <= nowHm ? 'neutral' : 'accent'), isToday && p.time <= nowHm ? '시간 지남' : '오늘 올릴 글'));
+        const late = isToday && p.time <= nowHm && !p.made_at;
+        t.append(el('span', 'pill ' + (late ? 'neutral' : 'accent'), p.made_at ? `${p.made_at.slice(11, 16)}에 새로 만든 글` : late ? '시간 지남' : '오늘 올릴 글'));
         a.append(t, el('p', 'why1', p.title), el('div', 'box', p.text), copyBtn('글 복사', p.text));
         if (p.check && p.check.length) { const ul = el('ul'); p.check.forEach(x => ul.append(el('li', null, x))); a.append(el('p', 'sub', '올리기 전 확인'), ul); }
         if (p.based_on) a.append(el('p', 'sub', `재료: ${p.based_on}`));
@@ -2002,6 +2051,7 @@ a.row:hover .row-main{text-decoration:underline}
         s.append(el('h3', null, '오늘 소재 (다른 채널에서 크는 글)'), rowsBox); parts.push(s);
       }
       box.replaceChildren(...parts);
+      trdPaint(f.id);
     });
   }
 
