@@ -50,6 +50,9 @@ INTRADAY = ("15m", "1h", "4h")
 # ── 종목 찾기·시세 ──
 def resolve(q):
     key = q.strip()
+    m = re.fullmatch(r"(?:BINANCE:)?([A-Z0-9]{1,16})USDT(?:\.P|PERP)?", key.upper())   # 바이낸스 무기한 선물 (AAPLUSDT.P · BTCUSDT · BINANCE:ETHUSDT.P)
+    if m:
+        return {"kind": "coin", "perp": True, "symbol": m[1] + "USDT", "name": f"{m[1]} 선물", "exchange": "BINANCE PERP"}
     if key.lower() in COINS:
         s = COINS[key.lower()]
         return {"kind": "coin", "symbol": s, "name": COIN_NAMES[s], "exchange": "BINANCE"}
@@ -60,7 +63,7 @@ def resolve(q):
         return {"kind": "us", "symbol": key.upper(), "name": key.upper(), "exchange": ""}
     items = naver_ac(key)
     if not items:
-        raise SystemExit(f"'{q}' 종목을 찾지 못했어요 — 티커(IONQ)나 6자리 코드(000660)로 넣어 주세요.")
+        raise SystemExit(f"'{q}' 종목을 찾지 못했어요 — 티커(IONQ), 6자리 코드(000660), 바이낸스 선물(AAPLUSDT.P)로 넣어 주세요.")
     it = items[0]
     if it.get("nationCode") == "KOR":
         return {"kind": "kr", "symbol": it["code"], "name": it["name"], "exchange": it.get("typeName") or "KRX"}
@@ -123,7 +126,14 @@ def yahoo_rows(symbol, tf, a=None):
 
 def fetch(a, tf="1d"):
     """봉 [{time, day, d, open, high, low, close, volume}] — 오래된 것부터."""
-    if a["kind"] == "us":
+    if a.get("perp"):
+        k = requests.get("https://fapi.binance.com/fapi/v1/klines", params={"symbol": a["symbol"], "interval": tf, "limit": 1000}, timeout=30)
+        if k.status_code == 400:
+            raise SystemExit(f"바이낸스 선물에 {a['symbol']} 종목이 없어요.")
+        k.raise_for_status()
+        rows = [bar(x[0] / 1000, float(x[1]), float(x[2]), float(x[3]), float(x[4]), float(x[5]), tf, 0) for x in k.json()]
+        a["unit"], a["src"] = "달러", "바이낸스 USDT 무기한"
+    elif a["kind"] == "us":
         rows = yahoo_rows(a["symbol"], tf, a)
         a["unit"], a["src"] = "달러", "야후 파이낸스"
     elif a["kind"] == "kr" and tf in INTRADAY:   # 네이버는 분봉을 길게 안 줌 → 야후 (국내 분봉은 조금 늦음)
