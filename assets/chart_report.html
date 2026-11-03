@@ -40,13 +40,14 @@ Object.assign(box.style, { left: '0', top: '0', width: L.W + 'px', height: L.cha
 ov.setAttribute('width', L.W); ov.setAttribute('height', L.H);
 for (const [k, v] of Object.entries(L.vars)) stage.style.setProperty(k, v);
 
+const plotB = 1 - (L.bottom ?? .2);   // 캔들 칸 아래 끝 (선물 브리핑은 미결제약정 칸만큼 더 위)
 const two = n => String(n).padStart(2, '0');
 const chart = LightweightCharts.createChart(box, {
   width: L.W, height: L.chartH,
   layout: { background: { type: 'solid', color: '#131722' }, textColor: '#787b86', fontSize: L.axisFont,
             fontFamily: "'Segoe UI', 'Malgun Gothic', sans-serif", attributionLogo: false },
   grid: { vertLines: { color: '#1b1f2b' }, horzLines: { color: '#1b1f2b' } },
-  rightPriceScale: { borderColor: '#2a2e39', scaleMargins: { top: L.top, bottom: .2 } },
+  rightPriceScale: { borderColor: '#2a2e39', scaleMargins: { top: L.top, bottom: 1 - plotB } },
   timeScale: { borderColor: '#2a2e39', rightOffset: L.rightOffset, timeVisible: S.intraday, secondsVisible: false, lockVisibleTimeRangeOnResize: true,
     tickMarkFormatter: (t, type) => {
       const d = typeof t === 'number' ? (x => ({ year: x.getUTCFullYear(), month: x.getUTCMonth() + 1, day: x.getUTCDate(), h: x.getUTCHours(), m: x.getUTCMinutes() }))(new Date(t * 1000))
@@ -61,9 +62,13 @@ const cs = chart.addCandlestickSeries({ upColor: '#089981', downColor: '#f23645'
 cs.setData(S.candles);
 cs.applyOptions({ priceLineColor: S.candles[S.candles.length - 1].close >= S.candles[S.candles.length - 1].open ? '#089981' : '#f23645' });
 const vol = chart.addHistogramSeries({ priceScaleId: 'vol', priceFormat: { type: 'volume' }, priceLineVisible: false, lastValueVisible: false });
-chart.priceScale('vol').applyOptions({ scaleMargins: { top: .85, bottom: 0 } });
+chart.priceScale('vol').applyOptions({ scaleMargins: { top: L.volTop ?? .85, bottom: 0 } });
 vol.setData(S.volume);
 for (const m of S.mas) chart.addLineSeries({ color: m.color, lineWidth: 1, priceLineVisible: false, lastValueVisible: false, crosshairMarkerVisible: false }).setData(m.data);
+if (S.oi && S.oi.length) {
+  chart.addLineSeries({ priceScaleId: 'oi', color: '#9598a1', lineWidth: 1, priceLineVisible: false, lastValueVisible: false, crosshairMarkerVisible: false }).setData(S.oi);
+  chart.priceScale('oi').applyOptions({ scaleMargins: { top: L.oiTop + .025, bottom: 1 - L.oiBottom } });
+}
 chart.timeScale().setVisibleLogicalRange({ from: -1, to: S.candles.length - 1 + L.rightOffset });
 
 // ── 겹쳐 그리기 (차트 좌표 → 무대 좌표) ──
@@ -76,7 +81,7 @@ const overlap = (a, b) => Math.max(0, Math.min(a.x + a.w, b.x + b.w) - Math.max(
 
 function draw() {
   const ts = chart.timeScale(), plotW = L.W - chart.priceScale('right').width();
-  const plot = { x: 6, y: L.legendH, w: plotW - 12, h: L.chartH * .8 - L.legendH };
+  const plot = { x: 6, y: L.legendH, w: plotW - 12, h: L.chartH * plotB - L.legendH };
   const lastX = X(S.candles[S.candles.length - 1].time);
   const bars = S.candles.map(c => ({ x: X(c.time), y1: Y(c.high), y2: Y(c.low) }));
   const legendBox = document.querySelector('.legend').getBoundingClientRect();
@@ -92,7 +97,7 @@ function draw() {
     if (gold >= 0 && g2 >= 0) svg('rect', { x: x0, y: Math.min(lvy[gold], lvy[g2]), width: plotW - x0, height: Math.abs(lvy[g2] - lvy[gold]), fill: '#c9a227', opacity: .07 });
     lv.forEach((l, i) => {
       const y = lvy[i];
-      if (y < 0 || y > L.chartH * .8) return;
+      if (y < 0 || y > L.chartH * plotB) return;
       svg('line', { x1: x0, x2: plotW, y1: y, y2: y, stroke: l.color, 'stroke-width': 1, opacity: .55 });
       const t = $('div', 'fib', l.label); t.style.color = l.color; stage.appendChild(t);
       const w = t.offsetWidth, h = t.offsetHeight;
@@ -100,8 +105,10 @@ function draw() {
       placed.push({ x: plotW - w - 5, y: y - h - 2, w, h });
     });
   }
+  // 거래량·미결제약정 칸 옆 가격 눈금은 캔들 가격이라 가림
+  svg('rect', { x: plotW + 1, y: L.chartH * plotB + 2, width: L.W - plotW, height: L.chartH * (1 - plotB) - ts.height() - 3, fill: '#131722' });
   // 수평선
-  for (const h of S.hlines) if (Y(h.price) >= 0 && Y(h.price) <= L.chartH * .8) svg('line', { x1: 0, x2: plotW, y1: Y(h.price), y2: Y(h.price), stroke: h.color, 'stroke-width': 1, ...(h.dash ? { 'stroke-dasharray': h.dash } : {}) });
+  for (const h of S.hlines) if (Y(h.price) >= 0 && Y(h.price) <= L.chartH * plotB) svg('line', { x1: 0, x2: plotW, y1: Y(h.price), y2: Y(h.price), stroke: h.color, 'stroke-width': 1, ...(h.dash ? { 'stroke-dasharray': h.dash } : {}) });
   // 추세선
   for (const t of S.tlines) svg('line', { x1: X(t.t1), y1: Y(t.p1), x2: X(t.t2), y2: Y(t.p2), stroke: t.color, 'stroke-width': 1.5 });
   // 글자: 캔들·다른 글자를 가장 덜 가리는 자리
@@ -129,6 +136,10 @@ function draw() {
     if (!best || best.s >= 1e6) { e.remove(); continue; }
     e.style.left = best.x + 'px'; e.style.top = best.y + 'px';
     placed.push({ x: best.x, y: best.y, w, h });
+  }
+  if (S.oi && S.oi.length) {
+    for (const r of [L.oiTop - .012, L.volTop - .012]) svg('line', { x1: 0, x2: plotW, y1: L.chartH * r, y2: L.chartH * r, stroke: '#2a2e39', 'stroke-width': 1 });
+    const o = $('div', 'note', S.oi_label); o.style.setProperty('--c', '#9598a1'); o.style.left = '8px'; o.style.top = (L.chartH * (L.oiTop - .009)) + 'px'; stage.appendChild(o);
   }
   document.title = 'ready';
 }

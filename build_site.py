@@ -18,7 +18,7 @@ DATASETS = ["summary", "recs", "rec_reasons", "rec_examples", "insights", "topic
             "x_meta", "x_trump", "x_rank", "x_groups", "x_accounts", "x_ai",
             "tg_meta", "tg_chats", "tg_hot", "tg_mine", "tg_hours", "tg_lengths", "tg_media", "tg_ai",
             "tg_growth", "tg_streak", "tg_slots", "tg_shared", "tg_rank", "tg_rewrites", "trd_rooms", "trd_posts", "trd_folders", "live_meta", "hot_now", "growth_plan", "use_audit", "thread_posts",
-            "chart_reports"]
+            "chart_reports", "futures_brief"]
 
 
 def main():
@@ -50,11 +50,11 @@ def main():
     contact = cfg.get("contact_email") or "운영팀 문의 메일 (등록 예정)"
     for page in (ROOT / "site" / "pages").glob("*.html"):
         (out / page.name).write_text(page.read_text(encoding="utf-8").replace("CONTACT_EMAIL", contact), encoding="utf-8")
-    charts = site / "charts"   # 차트리포트 이미지 (chart_report.py)
-    if charts.exists():
-        (out / "charts").mkdir(exist_ok=True)
-        for p in charts.glob("*.jpg"):
-            (out / "charts" / p.name).write_bytes(p.read_bytes())
+    for name in ("charts", "futures"):   # 차트리포트(chart_report.py)·선물 브리핑(futures_brief.py) 이미지
+        if (site / name).exists():
+            (out / name).mkdir(exist_ok=True)
+            for p in (site / name).glob("*.jpg"):
+                (out / name / p.name).write_bytes(p.read_bytes())
     print(f"✅ 사이트 생성: {out / 'index.html'} ({len(html.encode()) // 1024}KB)")
 
 

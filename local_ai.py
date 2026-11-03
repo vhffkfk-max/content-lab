@@ -26,7 +26,7 @@ LOG = ROOT / "data" / "local_ai.log"
 SITE = "output/site/"
 OUTPUTS = [SITE + f for f in ("tg_ai.json", "tg_rewrites.json", "trd_rooms.json", "trd_posts.json", "drafts.json",
                                "imports.json", "threads_ai.json", "x_ai.json", "thm_ai.json", "growth_plan.json", "thread_posts.json",
-                               "chart_reports.json", "charts")] + ["data/publish_queue.json", "data/card_style.json", "data/form_stats.json"]
+                               "chart_reports.json", "charts", "futures_brief.json", "futures")] + ["data/publish_queue.json", "data/card_style.json", "data/form_stats.json"]
 ENV = {**os.environ, "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1"}
 CRAWLERS = (("content-lab-telegram-live", "tg_live.py"), ("content-lab-threads-watch", "threads_watch.py"), ("content-lab-thread-listen", "thread_listen.py"))
 TG_BEAT = Path.home() / ".content-lab-ai" / "tg_live.beat"
@@ -112,7 +112,7 @@ def refresh_news(done=[]):
 def slot_once(state, key, hours):
     """정해진 시각(07·12·18시 등)마다 한 번만 시도 — 뉴스가 그대로라 건너뛴 경우에도 5분마다 다시 모으지 않게."""
     now = datetime.now(KST)
-    passed = [h for h in hours if now.hour >= h]
+    passed = [h for h in hours if now.hour + now.minute / 60 >= h]   # 8.5 = 08:30
     if not passed:
         return False
     slot = f"{now:%Y-%m-%d}-{passed[-1]}"
@@ -186,11 +186,17 @@ def run_cycle():
     for r in charts:
         syms = r["args"].get("symbols", "") or "auto"
         s, _, tf = syms.partition("@")   # 'auto@4h' = 오늘 차트 글 종목을 4시간봉으로
-        py("chart_report.py", *(["--from-tg", "--force", *(["--tf", tf] if tf else [])] if s == "auto" else [syms, "--send"]), timeout=15 * 60)
+        if s == "futures":   # 사이트 '선물 브리핑 만들기' 버튼
+            py("futures_brief.py", "--send", timeout=15 * 60)
+        else:
+            py("chart_report.py", *(["--from-tg", "--force", *(["--tf", tf] if tf else [])] if s == "auto" else [syms, "--send"]), timeout=15 * 60)
         did.append(f"차트 {syms}")
     if slot_once(state, "chart", (8,)):   # 자동 차트리포트는 하루 1번 아침 08시 (PC가 꺼져 있었으면 켜진 뒤 바로). --force: 어제 문구 그대로여도 매일 새로 만듦
         py("chart_report.py", "--from-tg", "--force", timeout=15 * 60)
         did.append("차트리포트")
+    if slot_once(state, "futures", (8.5, 21)):   # BTC·ETH 선물 브리핑 하루 2번 (08:30 · 미국장 전 21시)
+        py("futures_brief.py", "--send", timeout=15 * 60)
+        did.append("선물 브리핑")
 
     if "trd" in latest:
         refresh_news()

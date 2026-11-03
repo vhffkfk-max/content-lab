@@ -341,6 +341,7 @@ a.row:hover .row-main{text-decoration:underline}
             <li><a href="#tg-rank">경쟁 채널 순위</a></li>
             <li><a href="#tg-today">오늘 올릴 문구</a></li>
             <li><a href="#tg-charts">차트리포트 이미지</a></li>
+            <li><a href="#tg-futures">선물 브리핑</a></li>
             <li><a href="#tg-formulas">잘 되는 글 공식</a></li>
             <li><a href="#tg-hot">다른 방 인기 글</a></li>
             <li><a href="#tg-when">시간대·형식</a></li>
@@ -885,6 +886,13 @@ a.row:hover .row-main{text-decoration:underline}
           </div>
           <div id="cr-status"></div>
           <div class="recs" id="tg-chart-list"></div>
+        </section>
+        <section class="sec" id="tg-futures">
+          <h2>비트코인·이더리움 선물 브리핑</h2>
+          <p class="note">바이낸스 USDT 무기한 시세로 4시간봉·1시간봉을 작도하고, 펀딩·미결제약정·롱숏 비율과 롱·숏 시나리오를 붙여요. 매일 08:30·21시에 자동으로 만들어 봇으로 보내요. 진입 지시나 레버리지 추천은 넣지 않아요.</p>
+          <div class="chips" style="gap:8px;align-items:center;margin:4px 0 14px"><button class="btn primary" id="fu-run" type="button">선물 브리핑 만들기</button></div>
+          <div id="fu-status"></div>
+          <div class="recs" id="tg-futures-list"></div>
         </section>
         <section class="sec" id="tg-formulas">
           <h2>잘 되는 텔레그램 글 공식</h2>
@@ -1767,7 +1775,7 @@ a.row:hover .row-main{text-decoration:underline}
   }
 
   // ── 텔레그램: 차트리포트 이미지 (chart_report.py) ──
-  function chartBlock(r) {
+  function chartBlock(r, copyLabel = '차트리포트 문구 복사') {
     const wrap = el('div'), v = encodeURIComponent(r.made_at || '');
     wrap.style.display = 'grid'; wrap.style.gap = '8px';
     const a = el('a'); a.href = `${r.pc}?v=${v}`; a.target = '_blank'; a.rel = 'noopener';
@@ -1778,7 +1786,7 @@ a.row:hover .row-main{text-decoration:underline}
     for (const [label, href] of [['PC 이미지', r.pc], ['모바일 이미지', r.mobile]]) {
       const l = el('a', 'btn small', label); l.href = `${href}?v=${v}`; l.target = '_blank'; l.rel = 'noopener'; l.setAttribute('download', ''); links.append(l);
     }
-    links.append(copyBtn('차트리포트 문구 복사', r.text, 'btn small primary'));
+    links.append(copyBtn(copyLabel, r.text, 'btn small primary'));
     wrap.append(a, links, el('div', 'box', r.text));
     return wrap;
   }
@@ -1801,6 +1809,40 @@ a.row:hover .row-main{text-decoration:underline}
     btn.addEventListener('click', run);
     inp.addEventListener('keydown', e => { if (e.key === 'Enter') run(); });
   }
+  // ── 텔레그램: 선물 브리핑 (futures_brief.py) ──
+  function drawFutures() {
+    const box = document.getElementById('tg-futures-list'), btn = document.getElementById('fu-run'), st = document.getElementById('fu-status');
+    if (!box) return;
+    const show = (msg, kind) => st.replaceChildren(el('p', kind === 'err' ? 'warn' : 'sub', msg));
+    btn.addEventListener('click', async () => {
+      if (!fb.key && !(await connectLab())) return;
+      show('요청하는 중이에요…');
+      try {
+        const r = await ghApi('actions/workflows/telegram.yml/dispatches', { method: 'POST', body: JSON.stringify({ ref: 'main', inputs: { chart: 'futures' } }) });
+        if (r.status === 204) show('요청했어요. PC가 켜져 있으면 5~10분 안에 텔레그램 봇으로 오고, 이 칸에도 올라와요.');
+        else show(ghFail(r.status), 'err');
+      } catch (e) { show('요청 실패 — 인터넷 연결을 확인해 주세요', 'err'); }
+    });
+    const d = dash.data('futures_brief'), items = d.status === 'ok' && d.data && !Array.isArray(d.data) ? (d.data.items || []) : [];
+    if (!items.length) return empty(box, '브리핑이 만들어지면 여기에 올라와요.');
+    const pct = (x, n = 2) => x == null ? '-' : `${x > 0 ? '+' : ''}${x.toFixed(n)}%`;
+    box.replaceChildren(...items.map(r => {
+      const c = el('article', 'card rec'), chips = el('div', 'chips'), v = encodeURIComponent(r.made_at || '');
+      chips.append(el('span', 'pill accent', r.name), el('span', 'pill neutral', `${r.close} (24시간 ${pct(r.chg24)})`), el('span', 'pill neutral', `펀딩 ${pct(r.funding, 3)} · OI ${pct(r.oi_chg, 1)}`),
+        el('span', 'pill neutral', `4시간봉 ${r.trend_4h} · 1시간봉 ${r.trend_1h}`), el('span', 'pill neutral', `${(r.made_at || '').slice(5, 16).replace('-', '/').replace('T', ' ')} 생성`));
+      const block = chartBlock(r, '브리핑 문구 복사');
+      const a = el('a'); a.href = `${r.pc_1h}?v=${v}`; a.target = '_blank'; a.rel = 'noopener';
+      const img = el('img'); img.src = `${r.pc_1h}?v=${v}`; img.alt = `${r.name} 1시간봉 차트`; img.loading = 'lazy';
+      img.style.cssText = 'width:100%;border-radius:10px;display:block;border:1px solid var(--line, #2a2f3a)';
+      a.append(img); block.insertBefore(a, block.children[1]);
+      const links = block.children[2];
+      links.children[0].textContent = '4시간봉 PC'; links.children[1].textContent = '4시간봉 모바일';
+      [['1시간봉 PC', r.pc_1h], ['1시간봉 모바일', r.mobile_1h]].reverse().forEach(([label, href]) => {
+        const l = el('a', 'btn small', label); l.href = `${href}?v=${v}`; l.target = '_blank'; l.rel = 'noopener'; l.setAttribute('download', ''); links.insertBefore(l, links.children[2]);
+      });
+      c.append(chips, block); c.style.gap = '10px'; return c;
+    }));
+  }
   function drawCharts(CR) {
     const box = document.getElementById('tg-chart-list');
     if (!box) return;
@@ -1818,6 +1860,7 @@ a.row:hover .row-main{text-decoration:underline}
   function drawTelegram() {
     const CR = (() => { const d = dash.data('chart_reports'); return d.status === 'ok' && d.data && !Array.isArray(d.data) ? (d.data.items || []) : []; })();
     drawCharts(CR);
+    drawFutures();
     const M = (rows('tg_meta') || [])[0], C = rows('tg_chats') || [], H = rows('tg_hot') || [];
     const AI = (() => { const d = dash.data('tg_ai'); return d.status === 'ok' && !Array.isArray(d.data) ? d.data : null; })();
     const kb = document.getElementById('tg-kpis'), tl = document.getElementById('tg-today-list'), sb = document.getElementById('tg-summary'),
