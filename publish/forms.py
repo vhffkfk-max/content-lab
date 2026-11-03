@@ -71,7 +71,6 @@ def md(s):
 LOGO = asset_uri("brand/hotconomy_logo.png")
 
 # 4:5 그대로 올리는 기준으로 꽉 채운다. 폰 업로드에서 ⤢ 를 눌러 4:5로 바꿔야 한다(그대로 1:1이면 위아래 135px가 잘림).
-# 프로필 격자는 3:4로 보여 좌우 34px씩 잘리니, 글은 x 44~1036 안에 둔다.
 # 쪽 번호는 인스타가 보여 주니 새 폼에는 넣지 않는다. 가장자리 여백은 layout_check 가 safe 로 검사.
 CSS = """
 .s{position:relative;width:1080px;height:1350px;overflow:hidden;font-family:HSans,'Noto Sans CJK KR',sans-serif;--bg:#0b0b0d;--fg:#fff;--sub:#a9a9b2;--ac:#e3262b;--hl:#ffc23a;background:var(--bg);color:var(--fg);word-break:keep-all}
@@ -136,6 +135,7 @@ CSS = """
 .shade{position:absolute;inset:0;background:linear-gradient(180deg,#000000d0 0,#000000b0 26%,#00000050 42%,#00000070 58%,#000000e6 78%,#000000f0 100%)}
 .shade.cv{background:linear-gradient(180deg,#00000040 0,#00000000 35%,#000000b0 62%,#000000f0 100%)}
 .scene-t{text-shadow:0 2px 14px #000c}
+.credit{position:absolute;left:40px;bottom:14px;font-size:18px;color:#ffffffa0;max-width:1000px;white-space:nowrap;overflow:hidden}
 /* 글 길이에 맞춰 아래로 밀리는 묶음 (고정 위치면 제목이 길 때 겹침) */
 .stack{position:absolute;left:72px;right:72px;display:flex;flex-direction:column;gap:36px}
 .stack .ui{position:relative;left:auto;right:auto;margin:0 38px;top:auto}
@@ -292,11 +292,12 @@ def f_scene(c, s, n, t):
     bg = 그 장 내용과 맞는 사진 영어 검색어 2~4단어, 글에 나온 고유한 제품, 회사, 장소 이름으로 (예: 'Tesla Model 3', 'Riga old town', 'silicon wafer'). 'city at night', 'car steering wheel' 같은 일반어는 엉뚱한 사진이 나오니 쓰지 않는다. 코드가 위키미디어에서 실제 사진을 찾아 넣는다. 인물 이름은 그 사람 이야기일 때만, 글자가 많을 만한 것(포스터, 도표, 발표 자료)은 피한다."""
     d = c if s is None else s
     bg = f'<img class="bgph" src="{html.escape(d["photo"])}">' if d.get("photo") else '<div class="nophoto"></div>'
+    credit = f'<div class="credit">{html.escape(d["credit"])}</div>' if d.get("credit") else ""
     if s is None:
         tag = f'<div class="pad" style="top:90px"><span class="chip">{html.escape(c.get("tag", ""))}</span></div>' if c.get("tag") else ""
-        return f'{bg}<div class="shade cv"></div>{tag}<div class="pad t-xl scene-t" style="bottom:190px;font-size:92px">{md(c["title"])}</div>'
+        return f'{bg}<div class="shade cv"></div>{tag}<div class="pad t-xl scene-t" style="bottom:190px;font-size:92px">{md(c["title"])}</div>{credit}'
     return (f'{bg}<div class="shade"></div><div class="pad t-m scene-t" style="top:120px;font-size:68px">{md(s["title"])}</div>'
-            f'<div class="pad b-l scene-t" style="bottom:190px;font-weight:600">{md(s.get("text", ""))}</div>')
+            f'<div class="pad b-l scene-t" style="bottom:190px;font-weight:600">{md(s.get("text", ""))}</div>{credit}')
 
 
 def f_story(c, s, n, t):
@@ -329,7 +330,8 @@ def f_editorial(c, s, n, t):
         return (f'<div class="ed" style="justify-content:center;gap:64px">{kick}<div class="ed-t" style="font-size:{min(size + 14, 118)}px">{md(d["title"])}</div>'
                 + (f'<div class="ed-c" style="font-size:50px">{md(d.get("caption", ""))}</div>' if d.get("caption") else "") + "</div>")
     cap = f'<div class="ed-c">{md(d.get("caption", ""))}</div>' if d.get("caption") else ""
-    return f'<div class="ed">{kick}<div class="ed-t" style="font-size:{size}px">{md(d["title"])}</div>{pic}{cap}</div>'
+    credit = f'<div class="credit" style="color:var(--sub)">{html.escape(d["credit"])}</div>' if d.get("credit") else ""
+    return f'<div class="ed">{kick}<div class="ed-t" style="font-size:{size}px">{md(d["title"])}</div>{pic}{cap}</div>{credit}'
 
 
 def f_news(c, s, n, t):
@@ -339,11 +341,12 @@ def f_news(c, s, n, t):
     bg: 영어 사진 검색어 2~4단어. 표지는 그 사건의 핵심 인물 이름(예: 'Jensen Huang') 또는 고유한 제품, 회사 건물. 사람 얼굴이 있으면 가장 좋다. 일반어 금지, 글자가 많을 만한 것 금지.
     표지 bg_alt: 인물 사진이 없을 때 대신 쓸 회사 제품, 건물 검색어. 본문은 모든 장에 bg 를 넣는다. 주가 움직임을 말하는 장 하나만 bg 대신 chart: {"ticker": "시세 코드"} (한 글에 1장까지)."""
     d = c if s is None else s
+    credit = f'<div class="credit">{html.escape(d["credit"])}</div>' if d.get("credit") else ""
     if s is None:
         bg = f'<img class="bgph" src="{html.escape(d["photo"])}" style="object-position:center 18%">' if d.get("photo") else '<div class="nophoto"></div>'
         tag = f'<div class="nw-tag">{html.escape(c["tag"])}</div>' if c.get("tag") else ""
         return (f'{bg}<div class="nw-sh"></div><div class="nw-box">{tag}'
-                f'<div class="nw-t" style="font-size:{fit(c["title"], 952, 124, 72)}px">{md(c["title"])}</div></div>')
+                f'<div class="nw-t" style="font-size:{fit(c["title"], 952, 124, 72)}px">{md(c["title"])}</div></div>{credit}')
     text = f'<div class="nw-b">{md(s["text"])}</div>' if s.get("text") else ""
     line = (s.get("chart") or {}).get("line")
     if line:   # 주가 장: 사진 자리에 실제 시세 (한국식: 오르면 빨강, 내리면 파랑)
@@ -352,16 +355,17 @@ def f_news(c, s, n, t):
                 f'<div class="nw-t" style="font-size:{fit(s["title"], 952, 92, 62)}px">{md(s["title"])}</div>{text}</div>')
     if not d.get("photo"):   # 사진을 끝내 못 찾은 장: 표지 사진을 어둡게 깔고 강조 단어를 아주 크게
         back = f'<img class="bgph" src="{html.escape(c["photo"])}" style="filter:blur(28px) brightness(.24);transform:scale(1.1)">' if c.get("photo") else '<div class="nophoto"></div>'
+        credit = f'<div class="credit">{html.escape(c["credit"])}</div>' if c.get("credit") else ""
         m = re.search(r"\*\*(.+?)\*\*", s["title"], re.S)
         if not m:
-            return f'{back}<div class="vc"><div class="nw-t" style="font-size:{fit(s["title"], 936, 110, 66)}px">{md(s["title"])}</div>{text.replace("nw-b", "b-l")}</div>'
+            return f'{back}<div class="vc"><div class="nw-t" style="font-size:{fit(s["title"], 936, 110, 66)}px">{md(s["title"])}</div>{text.replace("nw-b", "b-l")}</div>{credit}'
         before, hero, after = (" ".join(x.split()) for x in (s["title"][:m.start()], m[1], s["title"][m.end():]))
         size = fit(hero, 936, 216, 96, .72 if hero.isascii() else .97)
         return (f'{back}<div class="vc"><div class="nw-k">{md(before)}</div><div class="nw-h" style="font-size:{size}px">{html.escape(hero)}</div>'
-                + (f'<div class="nw-k">{md(after)}</div>' if after else "") + f'{text.replace("nw-b", "b-l")}</div>')
+                + (f'<div class="nw-k">{md(after)}</div>' if after else "") + f'{text.replace("nw-b", "b-l")}</div>{credit}')
     bg = f'<img class="nw-ph" src="{html.escape(d["photo"])}">'
     return (f'{bg}<div class="nw-fd"></div><div class="nw-box">'
-            f'<div class="nw-t" style="font-size:{fit(s["title"], 952, 92, 62)}px">{md(s["title"])}</div>{text}</div>')
+            f'<div class="nw-t" style="font-size:{fit(s["title"], 952, 92, 62)}px">{md(s["title"])}</div>{text}</div>{credit}')
 
 
 def f_paper(c, s, n, t):

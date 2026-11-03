@@ -287,11 +287,6 @@ def check(post):
     return warns
 
 
-def photo_credit_lines(post):
-    """CC 사진은 출처 표시가 조건이다. 카드 위에는 안 쓰고 캡션 끝에 모아 적는다."""
-    return "\n".join(dict.fromkeys(d["credit"] for d in [post["cover"], *post.get("slides", [])] if d.get("credit")))
-
-
 def hashtags(tags):
     tags = [t if t.startswith("#") else f"#{t}" for t in tags]
     tags = [t for t in tags if not any(b in t.lower() for b in NOT_MINE)]
@@ -365,8 +360,7 @@ def main():
             print("✅ 캔바 사본:", canva["edit_url"])
         except Exception as e:
             print("⚠️ 캔바 사본 실패 (초안은 그대로):", e)
-    credits = photo_credit_lines(post)
-    caption = post["caption"].rstrip() + (f"\n\n{credits}" if credits else "") + "\n\n" + " ".join(post["hashtags"])
+    caption = post["caption"].rstrip() + "\n\n" + " ".join(post["hashtags"])
     queue["items"].append({"id": did, "account": "hotconomy", "type": "carousel", "topic": topic, "form": post["form"],
                            "title": post.get("title", topic), "caption": caption, "youtube": post.get("youtube", {}),
                            "files": [str(f.relative_to(ROOT)).replace("\\", "/") for f in files], "tickers": tickers,
