@@ -3,46 +3,25 @@
 <!-- chart_report.py 가 __SPEC__·__LWC__ 를 채워 헤드리스 Chrome 으로 캡처한다.
      차트: TradingView Lightweight Charts™ (Apache 2.0) — assets/vendor -->
 <style>
-  :root { --bg:#0b0e14; --line:#252b38; --text:#e8ebf2; --sub:#9aa3b5; --up:#26a69a; --down:#ef5350;
-          --blue:#4f8cff; --sky:#7fd3ff; --orange:#ffa726; --yellow:#ffd54f; --pink:#ff4fa3; }
+  :root { --bg:#131722; --text:#d1d4dc; --sub:#787b86; --up:#089981; --down:#f23645; }
   html, body { margin:0; background:var(--bg); overflow:hidden; color:var(--text);
-               font-family:'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif; }
+               font-family:'Segoe UI','Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif; }
   #stage { position:relative; overflow:hidden; background:var(--bg); }
   #chart { position:absolute; z-index:0; }
   #stage > :not(#chart) { z-index:2; }
   #ov { position:absolute; left:0; top:0; pointer-events:none; overflow:visible; }
-  .hdr { position:absolute; left:14px; top:10px; font-size:13px; color:var(--sub); white-space:nowrap; }
-  .hdr b { color:var(--text); font-weight:700; margin-right:6px; }
-  .hdr .up { color:var(--up); } .hdr .dn { color:var(--down); }
-  .title { position:absolute; left:50%; transform:translateX(-50%); padding:8px 34px; border-radius:12px;
-           background:linear-gradient(#141824,#0b0e14); border:2px solid #3a4152; font-weight:800; white-space:nowrap;
-           box-shadow:0 0 18px rgba(255,255,255,.12), inset 0 -3px 0 rgba(239,83,80,.55); letter-spacing:-.5px; }
-  .co { position:absolute; background:rgba(10,12,18,.94); border:2px solid var(--c); border-radius:10px;
-        padding:5px 12px 6px; text-align:center; white-space:nowrap; line-height:1.25;
-        box-shadow:0 0 12px color-mix(in srgb, var(--c) 45%, transparent); }
-  .co .t { font-size:var(--fs1); color:#dfe3ec; font-weight:700; }
-  .co .v { font-size:var(--fs2); color:var(--c); font-weight:800; }
-  .co .s { font-size:var(--fs3); color:var(--sub); }
-  .tag { position:absolute; font-size:var(--fs3); padding:2px 8px; border-radius:6px; background:rgba(10,12,18,.9);
-         border:1px solid var(--c); color:var(--c); white-space:nowrap; font-weight:700; }
-  .fib { position:absolute; font-size:11px; white-space:nowrap; font-weight:700; background:rgba(11,14,20,.82); padding:0 4px; border-radius:4px; }
-  .panel { box-sizing:border-box; position:absolute; background:rgba(14,17,24,.95); border:1.5px solid #3a4152; border-radius:14px;
-           display:grid; gap:0; box-shadow:0 0 22px rgba(0,0,0,.6); }
-  .col { padding:0 18px; border-left:1px solid #2c3343; min-width:0; }
-  .col:first-child { border-left:none; }
-  .col h4 { margin:0 0 6px; font-size:var(--ph); font-weight:800; }
-  .col ul { margin:0; padding:0; list-style:none; }
-  .col li { font-size:var(--pf); line-height:1.5; color:#dfe3ec; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-  .col li::before { content:'■'; color:var(--hc); font-size:.7em; margin-right:7px; position:relative; top:-1px; }
-  .col.check li::before { content:'✔'; color:#ffd54f; font-size:.85em; top:0; }
-  .col li b { color:var(--hl, #fff); }
-  .badge { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; }
-  .badge .box { border:2px solid var(--c); border-radius:12px; padding:8px 18px; text-align:center;
-                background:color-mix(in srgb, var(--c) 18%, #0b0e14); box-shadow:0 0 16px color-mix(in srgb, var(--c) 40%, transparent); }
-  .badge .k { font-size:var(--pf); color:#e8ebf2; }
-  .badge .w { font-size:var(--bw); font-weight:900; color:var(--c); }
-  .badge .n { font-size:calc(var(--pf) - 1px); color:var(--sub); text-align:center; border:1px solid #3a4152; border-radius:20px; padding:3px 12px; white-space:nowrap; }
-  .credit { position:absolute; font-size:10.5px; color:#6c7486; white-space:nowrap; }
+  .mark { position:absolute; left:0; right:64px; text-align:center; color:#d1d4dc; opacity:.045; font-weight:600; white-space:nowrap; }
+  .legend { position:absolute; left:12px; top:9px; font-size:var(--lg); line-height:1.5; white-space:nowrap; color:var(--sub); }
+  .legend b { color:var(--text); font-weight:600; }
+  .legend .up { color:var(--up); } .legend .dn { color:var(--down); }
+  .legend .ma { margin-right:12px; }
+  .note { position:absolute; font-size:var(--nt); line-height:1.15; white-space:nowrap; color:var(--c, var(--text)); padding:0 3px;
+          background:rgba(19,23,34,.72); }
+  .fib { position:absolute; font-size:var(--fb); line-height:1; white-space:nowrap; }
+  .foot { box-sizing:border-box; position:absolute; left:0; right:0; bottom:0; padding:0 12px; display:flex; flex-wrap:wrap; align-items:center;
+          justify-content:space-between; column-gap:20px; border-top:1px solid #2a2e39; background:var(--bg); }
+  .foot .read { font-size:var(--ft); color:var(--text); white-space:nowrap; }
+  .foot .cr { font-size:var(--cr); color:#5d606b; white-space:nowrap; }
 </style></head>
 <body>
 <div id="stage"><div id="chart"></div><svg id="ov"></svg></div>
@@ -57,148 +36,108 @@ const stage = document.getElementById('stage'), box = document.getElementById('c
 const L = S.layout;
 stage.style.width = L.W + 'px'; stage.style.height = L.H + 'px';
 document.body.style.width = L.W + 'px'; document.body.style.height = L.H + 'px';
-Object.assign(box.style, { left: L.chart.x + 'px', top: L.chart.y + 'px', width: L.chart.w + 'px', height: L.chart.h + 'px' });
+Object.assign(box.style, { left: '0', top: '0', width: L.W + 'px', height: L.chartH + 'px' });
 ov.setAttribute('width', L.W); ov.setAttribute('height', L.H);
 for (const [k, v] of Object.entries(L.vars)) stage.style.setProperty(k, v);
 
+const two = n => String(n).padStart(2, '0');
 const chart = LightweightCharts.createChart(box, {
-  width: L.chart.w, height: L.chart.h,
-  layout: { background: { type: 'solid', color: '#0b0e14' }, textColor: '#8b93a5', fontSize: L.axisFont,
-            fontFamily: "'Malgun Gothic', sans-serif", attributionLogo: false },
-  grid: { vertLines: { color: '#151a24' }, horzLines: { color: '#151a24' } },
-  rightPriceScale: { borderColor: '#252b38', scaleMargins: L.margins },
-  timeScale: { borderColor: '#252b38', rightOffset: L.rightOffset, timeVisible: false, lockVisibleTimeRangeOnResize: true,
-    tickMarkFormatter: (t, type) => { const d = typeof t === 'object' ? t : (([y, m, dd]) => ({ year: +y, month: +m, day: +dd }))(String(t).split('-'));
-      return type === 0 ? `${d.year}년` : type === 1 ? `${d.month}월` : `${d.month}/${d.day}`; } },
+  width: L.W, height: L.chartH,
+  layout: { background: { type: 'solid', color: '#131722' }, textColor: '#787b86', fontSize: L.axisFont,
+            fontFamily: "'Segoe UI', 'Malgun Gothic', sans-serif", attributionLogo: false },
+  grid: { vertLines: { color: '#1b1f2b' }, horzLines: { color: '#1b1f2b' } },
+  rightPriceScale: { borderColor: '#2a2e39', scaleMargins: { top: L.top, bottom: .2 } },
+  timeScale: { borderColor: '#2a2e39', rightOffset: L.rightOffset, timeVisible: S.intraday, secondsVisible: false, lockVisibleTimeRangeOnResize: true,
+    tickMarkFormatter: (t, type) => {
+      const d = typeof t === 'number' ? (x => ({ year: x.getUTCFullYear(), month: x.getUTCMonth() + 1, day: x.getUTCDate(), h: x.getUTCHours(), m: x.getUTCMinutes() }))(new Date(t * 1000))
+        : typeof t === 'object' ? t : (([y, m, dd]) => ({ year: +y, month: +m, day: +dd }))(String(t).split('-'));
+      return type === 0 ? `${d.year}` : type === 1 ? `${d.month}월` : type === 2 ? `${d.month}/${d.day}` : `${two(d.h)}:${two(d.m)}`; } },
   crosshair: { vertLine: { visible: false, labelVisible: false }, horzLine: { visible: false, labelVisible: false } },
-  localization: { priceFormatter: p => S.fmtAxis(p), dateFormat: 'yy/MM/dd' },
+  localization: { priceFormatter: p => S.fmtAxis(p) },
   handleScroll: false, handleScale: false,
 });
-const cs = chart.addCandlestickSeries({ upColor: '#26a69a', downColor: '#ef5350', borderVisible: false,
-  wickUpColor: '#26a69a', wickDownColor: '#ef5350', priceLineVisible: true, priceLineColor: '#ef5350', lastValueVisible: true });
+const cs = chart.addCandlestickSeries({ upColor: '#089981', downColor: '#f23645', borderVisible: false,
+  wickUpColor: '#089981', wickDownColor: '#f23645', priceLineVisible: true, priceLineStyle: 2, priceLineWidth: 1, lastValueVisible: true });
 cs.setData(S.candles);
-for (const m of S.mas) {
-  const s = chart.addLineSeries({ color: m.color, lineWidth: m.width || 2, priceLineVisible: false, lastValueVisible: true,
-    crosshairMarkerVisible: false });
-  s.setData(m.data);
-}
+cs.applyOptions({ priceLineColor: S.candles[S.candles.length - 1].close >= S.candles[S.candles.length - 1].open ? '#089981' : '#f23645' });
+const vol = chart.addHistogramSeries({ priceScaleId: 'vol', priceFormat: { type: 'volume' }, priceLineVisible: false, lastValueVisible: false });
+chart.priceScale('vol').applyOptions({ scaleMargins: { top: .85, bottom: 0 } });
+vol.setData(S.volume);
+for (const m of S.mas) chart.addLineSeries({ color: m.color, lineWidth: 1, priceLineVisible: false, lastValueVisible: false, crosshairMarkerVisible: false }).setData(m.data);
 chart.timeScale().setVisibleLogicalRange({ from: -1, to: S.candles.length - 1 + L.rightOffset });
 
 // ── 겹쳐 그리기 (차트 좌표 → 무대 좌표) ──
 const SVG = 'http://www.w3.org/2000/svg';
 const svg = (tag, attrs) => { const e = document.createElementNS(SVG, tag); for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v); ov.appendChild(e); return e; };
-const X = t => L.chart.x + chart.timeScale().timeToCoordinate(t);
-const Y = p => L.chart.y + cs.priceToCoordinate(p);
-const placed = [];   // 이미 놓은 상자들 (겹치지 않게)
-const rect = e => { const r = e.getBoundingClientRect(), s = stage.getBoundingClientRect(); return { x: r.left - s.left, y: r.top - s.top, w: r.width, h: r.height }; };
+const X = t => chart.timeScale().timeToCoordinate(t);
+const Y = p => cs.priceToCoordinate(p);
+const placed = [];
 const overlap = (a, b) => Math.max(0, Math.min(a.x + a.w, b.x + b.w) - Math.max(a.x, b.x)) * Math.max(0, Math.min(a.y + a.h, b.y + b.h) - Math.max(a.y, b.y));
 
 function draw() {
-  const ts = chart.timeScale(), plotW = L.chart.w - chart.priceScale('right').width();
-  const plot = { x: L.chart.x + 6, y: L.chart.y + 6, w: plotW - 12, h: L.chart.h - 30 };
-  const lastX = X(S.candles[S.candles.length - 1].time), bar = Math.max(ts.options().barSpacing, 2);
+  const ts = chart.timeScale(), plotW = L.W - chart.priceScale('right').width();
+  const plot = { x: 6, y: L.legendH, w: plotW - 12, h: L.chartH * .8 - L.legendH };
+  const lastX = X(S.candles[S.candles.length - 1].time);
   const bars = S.candles.map(c => ({ x: X(c.time), y1: Y(c.high), y2: Y(c.low) }));
-  for (const b of S.blocked) placed.push(b === 'title' ? rect(document.querySelector('.title')) : rect(document.querySelector(b)));
+  const legendBox = document.querySelector('.legend').getBoundingClientRect();
+  placed.push({ x: legendBox.left, y: legendBox.top, w: legendBox.width, h: legendBox.height });
 
-  // 피보나치: 오른쪽 빈 칸에 색 띠 + 차트 전체에 옅은 점선
+  // 피보나치: 작도 도구처럼 고점·저점에서 시작해 오른쪽 끝까지
   if (S.fib) {
-    const bx0 = lastX + bar * 3, bx1 = L.chart.x + plotW - 2, lv = S.fib.levels;
-    for (let i = 0; i < lv.length; i++) {
-      const y = Y(lv[i].price);
-      if (y < L.chart.y - 2 || y > L.chart.y + L.chart.h - 24) continue;
-      if (i + 1 < lv.length) {
-        const y2 = Y(lv[i + 1].price);
-        svg('rect', { x: bx0, y: Math.min(y, y2), width: Math.max(bx1 - bx0, 0), height: Math.abs(y2 - y), fill: lv[i].color, opacity: .13 });
-      }
-      svg('line', { x1: L.chart.x, x2: bx0, y1: y, y2: y, stroke: lv[i].color, 'stroke-width': 1, 'stroke-dasharray': '2 5', opacity: .45 });
-      svg('line', { x1: bx0, x2: bx1, y1: y, y2: y, stroke: lv[i].color, 'stroke-width': 1.3, opacity: .95 });
-      const t = $('div', 'fib', lv[i].label); t.style.color = lv[i].color; stage.appendChild(t);
-      t.style.top = (y - 15) + 'px';
-      t.style.left = (bx1 - bx0 > t.offsetWidth + 8 ? bx0 + 4 : bx0 - t.offsetWidth - 4) + 'px';   // 띠가 좁으면 왼쪽에
-      if (bx1 - bx0 <= t.offsetWidth + 8) placed.push(rect(t));
-    }
-    const ys = lv.map(l => Y(l.price));   // 띠 자리는 말풍선이 피해 가게
-    placed.push({ x: bx0, y: Math.min(...ys) - 16, w: bx1 - bx0, h: Math.max(...ys) - Math.min(...ys) + 18 });
+    const x0 = X(S.fib.from) ?? 0, lv = S.fib.levels;
+    const lvy = lv.map(l => Y(l.price));
+    if (S.fib.a && S.fib.b && X(S.fib.a.t) != null && X(S.fib.b.t) != null)
+      svg('line', { x1: X(S.fib.a.t), y1: Y(S.fib.a.p), x2: X(S.fib.b.t), y2: Y(S.fib.b.p), stroke: '#787b86', 'stroke-width': 1, 'stroke-dasharray': '3 4' });
+    const gold = lv.findIndex(l => l.r === .5), g2 = lv.findIndex(l => l.r === .618);
+    if (gold >= 0 && g2 >= 0) svg('rect', { x: x0, y: Math.min(lvy[gold], lvy[g2]), width: plotW - x0, height: Math.abs(lvy[g2] - lvy[gold]), fill: '#c9a227', opacity: .07 });
+    lv.forEach((l, i) => {
+      const y = lvy[i];
+      if (y < 0 || y > L.chartH * .8) return;
+      svg('line', { x1: x0, x2: plotW, y1: y, y2: y, stroke: l.color, 'stroke-width': 1, opacity: .55 });
+      const t = $('div', 'fib', l.label); t.style.color = l.color; stage.appendChild(t);
+      const w = t.offsetWidth, h = t.offsetHeight;
+      t.style.top = (y - h - 2) + 'px'; t.style.left = (plotW - w - 5) + 'px';
+      placed.push({ x: plotW - w - 5, y: y - h - 2, w, h });
+    });
   }
-  // 수평선 (지지·52주 저점 등)
-  for (const h of S.hlines) {
-    const y = Y(h.price);
-    svg('line', { x1: L.chart.x, x2: L.chart.x + plotW, y1: y, y2: y, stroke: h.color, 'stroke-width': h.width || 1.6,
-                  ...(h.dash ? { 'stroke-dasharray': h.dash } : {}) });
-  }
+  // 수평선
+  for (const h of S.hlines) if (Y(h.price) >= 0 && Y(h.price) <= L.chartH * .8) svg('line', { x1: 0, x2: plotW, y1: Y(h.price), y2: Y(h.price), stroke: h.color, 'stroke-width': 1, ...(h.dash ? { 'stroke-dasharray': h.dash } : {}) });
   // 추세선
-  for (const t of S.tlines) {
-    svg('line', { x1: X(t.t1), y1: Y(t.p1), x2: X(t.t2), y2: Y(t.p2), stroke: t.color, 'stroke-width': 2.2 });
-  }
-  // 말풍선: 후보 자리 중 캔들·다른 상자와 가장 덜 겹치는 곳
-  const dirs = [[0, -1], [0, 1], [-1, -1], [1, -1], [-1, 1], [1, 1], [-1, 0], [1, 0]];
-  for (const c of S.callouts) {
-    const ax = c.x != null ? L.chart.x + c.x * plotW : X(c.time), ay = Y(c.price);
-    if (!isFinite(ax) || !isFinite(ay)) continue;
-    const e = $('div', c.kind === 'tag' ? 'tag' : 'co', c.kind === 'tag' ? c.title
-      : `<div class="t">${c.title}</div>${c.value ? `<div class="v">${c.value}</div>` : ''}${c.sub ? `<div class="s">${c.sub}</div>` : ''}`);
-    e.style.setProperty('--c', c.color); stage.appendChild(e);
-    const w = e.offsetWidth, h = e.offsetHeight;
-    let best = null;
-    const order = c.prefer ? [c.prefer, ...dirs] : dirs;
+  for (const t of S.tlines) svg('line', { x1: X(t.t1), y1: Y(t.p1), x2: X(t.t2), y2: Y(t.p2), stroke: t.color, 'stroke-width': 1.5 });
+  // 글자: 캔들·다른 글자를 가장 덜 가리는 자리
+  for (const c of S.notes) {
+    const e = $('div', 'note', c.text); e.style.setProperty('--c', c.color || '#d1d4dc'); stage.appendChild(e);
+    const w = e.offsetWidth, h = e.offsetHeight, ay = Y(c.price), ax = c.time != null ? X(c.time) : null;
+    if (!isFinite(ay) || (c.time != null && ax == null)) { e.remove(); continue; }
     const cands = [];
-    if (c.kind === 'tag') {   // 선 이름표: 선 바로 위·아래를 따라 미끄러지며
-      for (let x = plot.x + 8; x + w < plot.x + plot.w - 8; x += 24)
-        for (const y of [ay - h - 3, ay + 3]) cands.push({ x, y, pen: Math.abs(x - ax) * .4 });
-    } else {
-      for (const d of [55, 85, 125, 170]) for (const [dx, dy] of order)
-        cands.push({ x: ax + dx * (d + w / 2) - w / 2, y: ay + dy * (d * .75 + h / 2) - h / 2, pen: (d - 55) * 6 });
+    if (ax == null) {   // 선 이름표: 선 바로 위를 왼쪽부터 따라가며
+      for (let x = plot.x; x + w < Math.min(lastX, plot.x + plot.w); x += 16) for (const y of [ay - h - 1, ay + 2]) cands.push({ x, y, pen: x * .02 });
+    } else {            // 고점은 위, 저점은 아래
+      const dy = c.side === 'low' ? [5, 12, 22] : [-h - 5, -h - 12, -h - 22];
+      for (const d of dy) for (const dx of [-w / 2, -w, 0, -w - 10, 10]) cands.push({ x: ax + dx, y: ay + d, pen: Math.abs(d) + Math.abs(dx + w / 2) * .2 });
     }
+    let best = null;
     for (const { x, y, pen } of cands) {
       const r = { x, y, w, h };
       let s = pen, hit = 0;
       if (x < plot.x || y < plot.y || x + w > plot.x + plot.w || y + h > plot.y + plot.h) s += 1e6;
-      for (const p of placed) hit += overlap(r, { x: p.x - 10, y: p.y - 10, w: p.w + 20, h: p.h + 20 });
-      s += hit * 50;
-      for (const b of bars) if (b.x > x - 3 && b.x < x + w + 3) s += Math.max(0, Math.min(y + h, b.y2 + 4) - Math.max(y, b.y1 - 4)) * 3;
+      for (const p of placed) hit += overlap(r, { x: p.x - 3, y: p.y - 3, w: p.w + 6, h: p.h + 6 });
+      s += hit * 30;
+      for (const b of bars) if (b.x > x - 2 && b.x < x + w + 2) s += Math.max(0, Math.min(y + h, b.y2) - Math.max(y, b.y1)) * 2;
       if (!best || s < best.s) best = { s, x, y, hit };
     }
-    if (c.optional && (best.hit > 0 || best.s >= 1e6)) { e.remove(); continue; }   // 자리 없으면 빼기
+    if (!best || best.s >= 1e6) { e.remove(); continue; }
     e.style.left = best.x + 'px'; e.style.top = best.y + 'px';
     placed.push({ x: best.x, y: best.y, w, h });
-    if (c.arrow !== false) {   // 상자 가장자리 → 가리키는 점
-      const cx = Math.max(best.x, Math.min(ax, best.x + w)), cy = Math.max(best.y, Math.min(ay, best.y + h));
-      const len = Math.hypot(ax - cx, ay - cy);
-      if (len > 8) {
-        const ux = (ax - cx) / len, uy = (ay - cy) / len, ex = ax - ux * 5, ey = ay - uy * 5;
-        svg('line', { x1: cx, y1: cy, x2: ex, y2: ey, stroke: '#f2f4f8', 'stroke-width': 1.8 });
-        svg('polygon', { points: `${ex},${ey} ${ex - ux * 10 - uy * 5},${ey - uy * 10 + ux * 5} ${ex - ux * 10 + uy * 5},${ey - uy * 10 - ux * 5}`, fill: '#f2f4f8' });
-      }
-      svg('circle', { cx: ax, cy: ay, r: 3.5, fill: c.color, stroke: '#0b0e14', 'stroke-width': 1.5 });
-    }
   }
   document.title = 'ready';
 }
 
-// 머리글 (트레이딩뷰 첫 줄처럼)
-const hd = $('div', 'hdr', S.header); stage.appendChild(hd);
-const tt = $('div', 'title', S.title);
-Object.assign(tt.style, { top: L.titleTop + 'px', fontSize: L.titleFont + 'px' }); stage.appendChild(tt);
-// 요약 패널
-const pn = $('div', 'panel');
-Object.assign(pn.style, { left: L.panel.x + 'px', top: L.panel.y + 'px', width: L.panel.w + 'px', height: L.panel.h + 'px',
-  gridTemplateColumns: L.panel.cols, gridTemplateRows: L.panel.rows || 'auto', padding: L.panel.pad });
-for (const s of S.panel) {
-  if (s.badge) {
-    const b = $('div', 'col badge');
-    b.innerHTML = `<div class="box" style="--c:${s.color}"><div class="k">${s.k}</div><div class="w">${s.w}</div></div>${s.n ? `<div class="n">${s.n}</div>` : ''}`;
-    if (s.area) b.style.gridArea = s.area;
-    pn.appendChild(b); continue;
-  }
-  const col = $('div', 'col', `<h4 style="color:${s.color}">${s.title}</h4><ul>${s.items.map(i => `<li>${i}</li>`).join('')}</ul>`);
-  col.style.setProperty('--hc', s.color);
-  if (s.check) col.classList.add('check');
-  if (s.area) col.style.gridArea = s.area;
-  pn.appendChild(col);
-}
-stage.appendChild(pn);
-const cr = $('div', 'credit', S.credit);
-Object.assign(cr.style, L.credit); stage.appendChild(cr);
+const mk = $('div', 'mark', S.mark);
+Object.assign(mk.style, { top: (L.chartH * .32) + 'px', fontSize: L.markFont + 'px' }); stage.appendChild(mk);
+stage.appendChild($('div', 'legend', S.legend));
+const ft = $('div', 'foot', `<span class="read">${S.read}</span><span class="cr">${S.credit}</span>`);
+ft.style.height = (L.H - L.chartH) + 'px'; stage.appendChild(ft);
 requestAnimationFrame(() => requestAnimationFrame(draw));
 </script>
 </body></html>

@@ -38,8 +38,13 @@ UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.3
 COINS = {"비트코인": "BTC", "비트": "BTC", "btc": "BTC", "이더리움": "ETH", "이더": "ETH", "eth": "ETH", "리플": "XRP", "xrp": "XRP",
          "솔라나": "SOL", "sol": "SOL", "도지코인": "DOGE", "도지": "DOGE", "doge": "DOGE"}
 COIN_NAMES = {"BTC": "비트코인", "ETH": "이더리움", "XRP": "리플", "SOL": "솔라나", "DOGE": "도지코인"}
-FIB = [(0, "#9aa3b5"), (0.236, "#ef5350"), (0.382, "#ffa726"), (0.5, "#66bb6a"), (0.618, "#26a69a"), (0.786, "#4fc3f7"), (1, "#5c6bc0")]
-MA = [(20, "#4f8cff"), (50, "#7fd3ff"), (200, "#ffa726")]
+FIB = [(0, "#9598a1"), (0.236, "#c9716e"), (0.382, "#c9a35a"), (0.5, "#7fae7a"), (0.618, "#4f9e93"), (0.786, "#6a9fc9"), (1, "#9598a1")]
+MA = [(20, "#d9a441"), (50, "#4c8bf5"), (200, "#b2b5be")]
+# 봉 종류: name 글에 쓰는 이름 · short 차트 머리글 · show 화면에 보일 봉 수 (일봉은 코인 365 · 주식 260)
+TF = {"15m": {"name": "15분봉", "short": "15분", "show": 220}, "1h": {"name": "1시간봉", "short": "1시간", "show": 220},
+      "4h": {"name": "4시간봉", "short": "4시간", "show": 220}, "1d": {"name": "일봉", "short": "1일", "show": None},
+      "1w": {"name": "주봉", "short": "1주", "show": 156}}
+INTRADAY = ("15m", "1h", "4h")
 
 
 # ── 종목 찾기·시세 ──
@@ -67,59 +72,112 @@ def naver_ac(q):
     return r.json().get("items", [])
 
 
-def fetch(a):
-    """일봉 [{time:'YYYY-MM-DD', open, high, low, close}] — 오래된 것부터."""
-    if a["kind"] == "us":
-        r = requests.get(f"https://query1.finance.yahoo.com/v8/finance/chart/{a['symbol']}", params={"range": "3y", "interval": "1d"},
-                         headers=UA, timeout=30).json()["chart"]["result"][0]
-        meta, q = r["meta"], r["indicators"]["quote"][0]
+def bar(t, o, h, l, c, v, tf, off):
+    """봉 하나. time 은 차트 값(분봉은 한국시간으로 옮긴 초, 일·주봉은 날짜), d 는 글에 쓰는 시각."""
+    if tf in INTRADAY:
+        at = datetime.fromtimestamp(t, KST)
+        return {"time": int(t) + 32400, "ts": int(t), "day": at.strftime("%Y-%m-%d"), "d": at.strftime("%m/%d %H:%M"),
+                "open": o, "high": h, "low": l, "close": c, "volume": v or 0}
+    day = datetime.fromtimestamp(t + off, timezone.utc).strftime("%Y-%m-%d")
+    return {"time": day, "day": day, "d": day[5:].replace("-", "/"), "open": o, "high": h, "low": l, "close": c, "volume": v or 0}
+
+
+def to_4h(rows):
+    """1시간봉 → 4시간봉 (야후에 4시간봉이 없어 장 시작부터 4시간씩 묶음)."""
+    out, start = [], None
+    for r in rows:
+        if start is None or r["ts"] - prev > 3 * 3600:   # 3시간 넘게 비면 새 장
+            start, key = r["ts"], None
+        prev = r["ts"]
+        k = (start, (r["ts"] - start) // 14400)
+        if k != key:
+            out.append(dict(r))
+            key = k
+        else:
+            x = out[-1]
+            x["high"], x["low"], x["close"] = max(x["high"], r["high"]), min(x["low"], r["low"]), r["close"]
+            x["volume"] += r["volume"]
+    return out
+
+
+def yahoo_rows(symbol, tf, a=None):
+    rng, iv = {"15m": ("60d", "15m"), "1h": ("2y", "60m"), "4h": ("2y", "60m"), "1d": ("3y", "1d"), "1w": ("10y", "1wk")}[tf]
+    r = requests.get(f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}", params={"range": rng, "interval": iv},
+                     headers=UA, timeout=30).json()["chart"]["result"][0]
+    meta, q = r["meta"], r["indicators"]["quote"][0]
+    if a is not None:
         a["exchange"] = a["exchange"] or meta.get("fullExchangeName", "")
-        off = meta.get("gmtoffset", 0)
-        rows = [{"time": datetime.fromtimestamp(t + off, timezone.utc).strftime("%Y-%m-%d"), "open": o, "high": h, "low": l, "close": c}
-                for t, o, h, l, c in zip(r["timestamp"], q["open"], q["high"], q["low"], q["close"]) if None not in (o, h, l, c)]
+    off = meta.get("gmtoffset", 0)
+    src = [list(x) for x in zip(r["timestamp"], q["open"], q["high"], q["low"], q["close"], q["volume"])]
+    last = src[-1]
+    if last[1] is not None and last[4] is None and meta.get("regularMarketPrice"):   # 야후가 막 끝난(진행 중인) 봉의 종가를 비워 줄 때가 있음 → 시세 값으로 채움
+        last[4] = meta["regularMarketPrice"]
+        last[2] = max(x for x in (last[2], meta.get("regularMarketDayHigh"), last[1], last[4]) if x is not None)
+        last[3] = min(x for x in (last[3], meta.get("regularMarketDayLow"), last[1], last[4]) if x is not None)
+    rows = [bar(t, o, h, l, c, v, tf, off) for t, o, h, l, c, v in src if None not in (o, h, l, c)]
+    rows = list({x["time"]: x for x in rows}.values())
+    if tf in INTRADAY and rows and not rows[-1]["volume"] and rows[-1]["high"] == rows[-1]["low"]:   # 장 마감 순간의 거래 없는 봉은 뺌
+        rows.pop()
+    return to_4h(rows) if tf == "4h" else rows
+
+
+def fetch(a, tf="1d"):
+    """봉 [{time, day, d, open, high, low, close, volume}] — 오래된 것부터."""
+    if a["kind"] == "us":
+        rows = yahoo_rows(a["symbol"], tf, a)
         a["unit"], a["src"] = "달러", "야후 파이낸스"
+    elif a["kind"] == "kr" and tf in INTRADAY:   # 네이버는 분봉을 길게 안 줌 → 야후 (국내 분봉은 조금 늦음)
+        rows = []
+        for suffix in (".KQ", ".KS") if "코스닥" in (a.get("exchange") or "") else (".KS", ".KQ"):
+            try:
+                rows = yahoo_rows(a["symbol"] + suffix, tf)
+            except (requests.RequestException, KeyError, IndexError, TypeError, ValueError):
+                rows = []
+            if rows:
+                break
+        a["unit"], a["src"] = "원", "야후 파이낸스(지연 시세)"
     elif a["kind"] == "kr":
-        start = (datetime.now(KST) - timedelta(days=1100)).strftime("%Y%m%d")
+        now = datetime.now(KST)
         t = requests.get("https://api.finance.naver.com/siseJson.naver", headers=UA, timeout=30,
-                         params={"symbol": a["symbol"], "requestType": 1, "startTime": start,
-                                 "endTime": datetime.now(KST).strftime("%Y%m%d"), "timeframe": "day"}).text
-        rows = [{"time": f"{d[:4]}-{d[4:6]}-{d[6:]}", "open": float(o), "high": float(h), "low": float(l), "close": float(c)}
-                for d, o, h, l, c in re.findall(r'\["(\d{8})",\s*([\d.]+),\s*([\d.]+),\s*([\d.]+),\s*([\d.]+)', t)]
+                         params={"symbol": a["symbol"], "requestType": 1, "startTime": (now - timedelta(days=3650 if tf == "1w" else 1100)).strftime("%Y%m%d"),
+                                 "endTime": now.strftime("%Y%m%d"), "timeframe": "week" if tf == "1w" else "day"}).text
+        rows = [{"time": f"{d[:4]}-{d[4:6]}-{d[6:]}", "day": f"{d[:4]}-{d[4:6]}-{d[6:]}", "d": f"{d[4:6]}/{d[6:]}", "open": float(o), "high": float(h), "low": float(l), "close": float(c), "volume": float(v)}
+                for d, o, h, l, c, v in re.findall(r'\["(\d{8})",\s*([\d.]+),\s*([\d.]+),\s*([\d.]+),\s*([\d.]+),\s*([\d.]+)', t)]
         rows = [r for r in rows if r["open"] > 0]   # 거래정지일
         a["unit"], a["src"] = "원", "네이버 금융"
     else:
         try:
-            k = requests.get("https://api.binance.com/api/v3/klines", params={"symbol": a["symbol"] + "USDT", "interval": "1d", "limit": 1000},
+            k = requests.get("https://api.binance.com/api/v3/klines", params={"symbol": a["symbol"] + "USDT", "interval": tf, "limit": 1000},
                              timeout=30)
             k.raise_for_status()
-            rows = [{"time": datetime.fromtimestamp(x[0] / 1000, timezone.utc).strftime("%Y-%m-%d"), "open": float(x[1]),
-                     "high": float(x[2]), "low": float(x[3]), "close": float(x[4])} for x in k.json()]
+            rows = [bar(x[0] / 1000, float(x[1]), float(x[2]), float(x[3]), float(x[4]), float(x[5]), tf, 0) for x in k.json()]
             a["unit"], a["src"], a["exchange"] = "달러", "바이낸스 USDT", "BINANCE"
         except requests.RequestException:
             rows, to = [], None
-            for _ in range(4):   # 업비트는 한 번에 200일
+            path = {"15m": "minutes/15", "1h": "minutes/60", "4h": "minutes/240", "1d": "days", "1w": "weeks"}[tf]
+            for _ in range(4):   # 업비트는 한 번에 200개
                 p = {"market": "KRW-" + a["symbol"], "count": 200, **({"to": to} if to else {})}
-                xs = requests.get("https://api.upbit.com/v1/candles/days", params=p, headers=UA, timeout=30).json()
+                xs = requests.get(f"https://api.upbit.com/v1/candles/{path}", params=p, headers=UA, timeout=30).json()
                 if not xs:
                     break
-                rows += [{"time": x["candle_date_time_kst"][:10], "open": x["opening_price"], "high": x["high_price"],
-                          "low": x["low_price"], "close": x["trade_price"]} for x in xs]
+                rows += [bar(datetime.fromisoformat(x["candle_date_time_utc"] + "+00:00").timestamp(), x["opening_price"], x["high_price"], x["low_price"],
+                             x["trade_price"], x["candle_acc_trade_volume"], tf, 32400) for x in xs]
                 to = xs[-1]["candle_date_time_utc"].replace("T", " ")
-            rows.sort(key=lambda r: r["time"])
+            rows.sort(key=lambda r: r["ts"] if tf in INTRADAY else r["time"])
             a["unit"], a["src"], a["exchange"] = "원", "업비트 KRW", "UPBIT"
     if len(rows) < 60:
-        raise SystemExit(f"{a['name']} 시세가 너무 적어요({len(rows)}일).")
+        raise SystemExit(f"{a['name']} {TF[tf]['name']} 시세가 너무 적어요({len(rows)}개).")
     return rows
 
 
-def live_of(a, rows):
+def live_of(a, rows, tf="1d"):
     """지금 시세 상태 — label: 장중·실시간·종가, ext: 미국 프리마켓·시간외 가격. 장중 일봉의 마지막 값은 이미 지금 가격이다."""
     now = datetime.now(KST)
     live = {"label": "종가", "at": now, "ext": None}
     if a["kind"] == "coin":
         live["label"] = "실시간"
     elif a["kind"] == "kr":
-        if now.weekday() < 5 and rows[-1]["time"] == now.strftime("%Y-%m-%d") and "0900" <= now.strftime("%H%M") < "1530":
+        if now.weekday() < 5 and (tf == "1w" or rows[-1]["day"] == now.strftime("%Y-%m-%d")) and "0900" <= now.strftime("%H%M") < "1530":
             live["label"] = "장중"
     else:
         try:
@@ -128,7 +186,7 @@ def live_of(a, rows):
             meta, per = r["meta"], r["meta"]["currentTradingPeriod"]
             ts = now.timestamp()
             if per["regular"]["start"] <= ts < per["regular"]["end"]:
-                if rows[-1]["time"] == datetime.fromtimestamp(ts + meta.get("gmtoffset", 0), timezone.utc).strftime("%Y-%m-%d"):
+                if tf != "1d" or rows[-1]["time"] == datetime.fromtimestamp(ts + meta.get("gmtoffset", 0), timezone.utc).strftime("%Y-%m-%d"):
                     live["label"], live["at"] = "장중", datetime.fromtimestamp(meta["regularMarketTime"], KST)
             else:
                 t, c = [(t, c) for t, c in zip(r["timestamp"], r["indicators"]["quote"][0]["close"]) if c is not None][-1]
@@ -145,8 +203,11 @@ def apply_live(f, a, live):
     P, U = f["P"], f["U"]
     at = live["at"].strftime("%m/%d %H:%M")
     f["live"], f["px"] = live, "종가" if live["label"] == "종가" else "현재가"
-    if live["label"] == "종가":
-        f["basis"] = f"{f['date'][5:].replace('-', '/')} 종가 · {at} 조회"
+    last = f["rows"][-1]["d"]
+    if f["tf"] in INTRADAY:
+        f["basis"] = f"{last} 봉 · {at} 조회" + (f" ({live['label']})" if live["label"] != "종가" else "")
+    elif live["label"] == "종가":
+        f["basis"] = f"{last} 종가 · {at} 조회"
     else:
         f["basis"] = f"{at} 시세 ({live['label']})"
     if live["ext"]:
@@ -184,8 +245,8 @@ def fmt_price(p, a):
     return f"{p:,.0f}" if p >= 1000 else f"{p:,.2f}" if p >= 1 else f"{p:.4f}"
 
 
-def analyze(rows, a, show):
-    """화면에 보일 마지막 show 일 기준으로 고점·저점·피보나치·이평선·지지선·추세선을 계산한다."""
+def analyze(rows, a, show, tf="1d"):
+    """화면에 보일 마지막 show 개 봉 기준으로 고점·저점·피보나치·이평선·지지선·추세선을 계산한다."""
     n = len(rows)
     closes = [r["close"] for r in rows]
     mas = {p: sma(closes, p) for p, _ in MA}
@@ -193,7 +254,7 @@ def analyze(rows, a, show):
     view = range(v0, n)
     P = lambda p: fmt_price(p, a)
     U = a["unit"]
-    md = lambda i: rows[i]["time"][5:].replace("-", "/")
+    md = lambda i: rows[i]["d"]
     last, prev = rows[-1], rows[-2]
     chg = (last["close"] / prev["close"] - 1) * 100
     hi_i = max(view, key=lambda i: rows[i]["high"])
@@ -307,11 +368,13 @@ def analyze(rows, a, show):
                 rsup = {"price": r, "label": f"{int(r):,}", "date": md(j), "low": P(rows[j]["low"]), "touch": len(near_lows)}
                 if hsup and abs(hsup["price"] / r - 1) <= 0.02:   # 같은 자리면 딱 떨어지는 가격 하나로
                     hsup = None
-    # 1년(코인 365일, 주식 252일) 고저
-    yr = rows[-(365 if a["kind"] == "coin" else 252):]
+    # 1년(코인 365일, 주식 252일, 주봉 52주) 고저 — 분봉은 화면 구간
+    yr = rows[v0:] if tf in INTRADAY else rows[-(52 if tf == "1w" else 365 if a["kind"] == "coin" else 252):]
     y_hi, y_lo = max(r["high"] for r in yr), min(r["low"] for r in yr)
-    return {"rows": rows, "mas": mas, "v0": v0, "n": n, "P": P, "U": U, "md": md,
-            "date": last["time"], "close": close, "chg": chg, "open": last["open"], "high": last["high"], "low": last["low"],
+    return {"rows": rows, "mas": mas, "v0": v0, "n": n, "P": P, "U": U, "md": md, "tf": tf,
+            "ma_nm": lambda p: f"{p}일선" if tf == "1d" else f"{p}주선" if tf == "1w" else f"{p}이평",
+            "chg_word": "하루" if tf == "1d" else "이번 주" if tf == "1w" else "직전 봉 대비", "y_word": "구간" if tf in INTRADAY else "1년",
+            "date": last["day"], "close": close, "chg": chg, "open": last["open"], "high": last["high"], "low": last["low"],
             "hi": {"i": hi_i, "price": hi, "date": md(hi_i), "label": P(hi)}, "lo": {"i": lo_i, "price": lo, "date": md(lo_i), "label": P(lo)},
             "drop": (lo / hi - 1) * 100, "rise": (hi / lo - 1) * 100, "fib": fib, "zone": zone, "zone_short": zone_short, "sup": below[:2], "res": above[-2:][::-1] if above else [],
             "ma": ma_txt, "order": order, "cross": cross, "trend": trend, "tcolor": tcolor, "swing": swing,
@@ -321,141 +384,84 @@ def analyze(rows, a, show):
 def facts_of(f, a):
     """본문용 사실 목록 — 단위까지 붙인 글자로 (Claude 는 이 숫자만 쓴다)."""
     P, U = f["P"], f["U"]
-    ma = {f"{p}일선": (f"{f['ma'][p]['label']}{U} ({f['px']}가 {f['ma'][p]['pos']}, 차이 {f['ma'][p]['gap_pct']:+.1f}%)" if f["ma"][p] else "데이터 부족")
+    ma = {f["ma_nm"](p): (f"{f['ma'][p]['label']}{U} ({f['px']}가 {f['ma'][p]['pos']}, 차이 {f['ma'][p]['gap_pct']:+.1f}%)" if f["ma"][p] else "데이터 부족")
           for p, _ in MA}
     return {
-        "종목": a["name"], "기준일": f["date"], "시세 기준": f["basis"], f"{f['px']}({f['live']['label']})": f"{P(f['close'])}{U}", "하루 등락": f"{f['chg']:+.2f}%",
+        "종목": a["name"], "봉": TF[f["tf"]]["name"], "기준일": f["date"], "시세 기준": f["basis"], f"{f['px']}({f['live']['label']})": f"{P(f['close'])}{U}", f"{f['chg_word']} 등락": f"{f['chg']:+.2f}%",
         **({f["live"]["ext"]["label"]: f"{P(f['live']['ext']['price'])}{U} (종가 대비 {f['live']['ext']['chg']:+.2f}%)"} if f["live"]["ext"] else {}),
         "차트 구간 고점": f"{f['hi']['label']}{U} ({f['hi']['date']})", "차트 구간 저점": f"{f['lo']['label']}{U} ({f['lo']['date']})",
         **({"고점→저점 낙폭": f"{f['drop']:.0f}%"} if f["lo"]["i"] > f["hi"]["i"] else {"저점→고점 상승폭": f"+{f['rise']:.0f}%"}),
         "피보나치(고점 0 → 저점 1.0)": [x["label"] for x in f["fib"]], "지금 위치": f["zone"],
         "아래 피보 지지": [x["label"] for x in f["sup"]], "위 피보 저항": [x["label"] for x in f["res"]],
         "이동평균선": ma, "이평 배열": f["order"], "최근 50·200일선 교차": f"{f['cross']['kind']} ({f['cross']['date']})" if f["cross"] else "없음",
-        f"추세 판단({f['px']}·20일선·50일선 위치)": f["trend"],
+        f"추세 판단({f['px']}·{f['ma_nm'](20)}·{f['ma_nm'](50)} 위치)": f["trend"],
         "되돌림": f"{f['swing']['kind']} {P(f['swing']['price'])}{U} ({f['swing']['date']})" if f["swing"] else "없음",
-        "수평 지지": f"{f['hsup']['label']}{U} (최근 120일 저점 {f['hsup']['touch']}번 모임)" if f["hsup"] else "없음",
+        "수평 지지": f"{f['hsup']['label']}{U} (최근 120봉 저점 {f['hsup']['touch']}번 모임)" if f["hsup"] else "없음",
         "심리적 지지(딱 떨어지는 가격)": f"{f['rsup']['label']}{U} 수평선 (최근 저점 {f['rsup']['low']}{U}, {f['rsup']['date']})" if f["rsup"] else "없음",
-        "수평 저항": f"{f['hres']['label']}{U} (최근 120일 고점 {f['hres']['touch']}번 모임)" if f["hres"] else "없음",
-        "추세선": f"{f['tline']['kind']} 추세선 {f['tline']['label']}, 오늘 위치 {P(f['tline']['now'])}{U}" if f["tline"] else "없음",
-        "1년 고점": f"{P(f['y_hi'])}{U}", "1년 저점": f"{P(f['y_lo'])}{U}",
+        "수평 저항": f"{f['hres']['label']}{U} (최근 120봉 고점 {f['hres']['touch']}번 모임)" if f["hres"] else "없음",
+        "추세선": f"{f['tline']['kind']} 추세선 {f['tline']['label']}, 지금 위치 {P(f['tline']['now'])}{U}" if f["tline"] else "없음",
+        f"{f['y_word']} 고점": f"{P(f['y_hi'])}{U}", f"{f['y_word']} 저점": f"{P(f['y_lo'])}{U}",
     }
 
 
 # ── 그림 ──
 def spec_of(f, a, mode):
-    rows, v0, P, U, md = f["rows"], f["v0"], f["P"], f["U"], f["md"]
+    """트레이딩뷰에 직접 그어 캡처한 화면처럼: 위 범례 + 얇은 선 + 값만 적은 글자 + 거래량. 상자·화살표·요약 패널은 없음."""
+    rows, v0, P, U = f["rows"], f["v0"], f["P"], f["U"]
     pc = mode == "pc"
     cut = v0 if pc else max(v0, f["n"] - 160)
     candles = [{k: r[k] for k in ("time", "open", "high", "low", "close")} for r in rows[cut:]]
+    volume = [{"time": r["time"], "value": r["volume"], "color": "rgba(8,153,129,.32)" if r["close"] >= r["open"] else "rgba(242,54,69,.32)"} for r in rows[cut:]]
     mas = [{"color": c, "data": [{"time": rows[i]["time"], "value": f["mas"][p][i]} for i in range(cut, f["n"]) if f["mas"][p][i] is not None]}
            for p, c in MA]
     vis = lambda i: i >= cut
-    up = f["chg"] >= 0
-    callouts = []
-    if vis(f["hi"]["i"]):
-        callouts.append({"time": rows[f["hi"]["i"]]["time"], "price": f["hi"]["price"], "title": "기간 고점" if pc else "고점",
-                         "value": f"{f['hi']['label']}{U}", "sub": f["hi"]["date"], "color": "#4f8cff", "prefer": [1, 0]})
-    if vis(f["lo"]["i"]):
-        callouts.append({"time": rows[f["lo"]["i"]]["time"], "price": f["lo"]["price"], "title": "저점",
-                         "value": f"{f['lo']['label']}{U}", "color": "#4f8cff", "prefer": [1, 0],
-                         "sub": f"고점 대비 {f['drop']:.0f}%" if f["lo"]["i"] > f["hi"]["i"] else f"이후 고점까지 +{f['rise']:.0f}%"})
-    if f["swing"] and vis(f["swing"]["i"]) and pc:
-        s = f["swing"]
-        callouts.append({"time": rows[s["i"]]["time"], "price": s["price"],
-                         "title": "반등 후 다시 꺾인 자리" if s["kind"] == "반등 고점" else "조정 후 다시 오른 자리",
-                         "value": f"{P(s['price'])}{U}", "sub": s["date"], "color": "#f2f4f8", "optional": True})
-    callouts.append({"time": rows[-1]["time"], "price": f["close"], "title": f"{f['px']} ({md(f['n'] - 1)})",
-                     "value": f"{P(f['close'])}{U}", "sub": f"하루 {f['chg']:+.2f}%", "color": "#26a69a" if up else "#ef5350", "prefer": [-1, 1]})
-    m20 = f["ma"][20]
-    if pc and m20:
-        callouts.append({"time": rows[-1]["time"], "price": m20["price"], "title": "20일선", "value": f"{m20['label']}{U}",
-                         "color": "#4f8cff", "prefer": [-1, -1], "optional": True})
-    hlines, tlines = [], []
-    if f["hsup"]:
-        hlines.append({"price": f["hsup"]["price"], "color": "#ef5350", "width": 1.6})
-        callouts.append({"kind": "tag", "x": 0.30, "price": f["hsup"]["price"], "arrow": False, "color": "#ef5350", "prefer": [0, 1],
-                         "title": f"수평 지지 {f['hsup']['label']} (저점 {f['hsup']['touch']}번)"})
-    if f["rsup"]:
-        rs = f["rsup"]
-        hlines.append({"price": rs["price"], "color": "#ef5350", "width": 1.8})
-        callouts.append({"kind": "tag", "x": 0.30, "price": rs["price"], "arrow": False, "color": "#ef5350", "prefer": [0, 1],
-                         "title": f"{rs['label']}{U} 수평선 ({rs['date']} 저점 {rs['low']}, 심리적 지지)"})
-    if pc and f["hres"]:
-        hlines.append({"price": f["hres"]["price"], "color": "#ffd54f", "width": 1.2, "dash": "6 4"})
-        callouts.append({"kind": "tag", "x": 0.30, "price": f["hres"]["price"], "arrow": False, "color": "#ffd54f", "prefer": [0, -1],
-                         "title": f"수평 저항 {f['hres']['label']} (고점 {f['hres']['touch']}번)"})
-    t = f["tline"]
+    notes, hlines, tlines = [], [], []
+    hi, lo, t = f["hi"], f["lo"], f["tline"]
+    if vis(hi["i"]):
+        notes.append({"time": rows[hi["i"]]["time"], "price": hi["price"], "side": "high", "text": f"{hi['label']} ({hi['date']})"})
+    if vis(lo["i"]):
+        notes.append({"time": rows[lo["i"]]["time"], "price": lo["price"], "side": "low", "text": f"{lo['label']} ({lo['date']})"})
     if t and vis(t["i1"]):
-        tlines.append({"t1": rows[t["i1"]]["time"], "p1": t["p1"], "t2": rows[-1]["time"], "p2": t["now"], "color": "#f2f4f8"})
-        if pc:
-            mid = (t["i1"] + t["i2"]) // 2
-            callouts.append({"time": rows[mid]["time"], "price": t["p1"] + t["slope"] * (mid - t["i1"]), "color": "#f2f4f8",
-                             "title": f"단기 {t['kind']} 추세선", "sub": t["label"], "prefer": [1, -1], "optional": True})
-    fib = {"levels": [{"price": x["price"], "color": x["color"], "label": x["label"]} for x in f["fib"]]}
-
-    sec = lambda title, color, items, area=None: {"title": title, "color": color, "items": items, **({"area": area} if area else {})}
-    b = lambda x: f"<b>{x}</b>"
-    core = [f"지금 위치: {b(f['zone_short'])}"]
-    if f["sup"]:
-        core.append(f"바로 아래: {b(f['sup'][0]['label'])}" + (" = 기간 저점" if f["sup"][0]["r"] == 1 else ""))
-    if len(f["sup"]) > 1:
-        core.append(f"그다음: {b(f['sup'][1]['label'])}" + (" = 기간 저점" if f["sup"][1]["r"] == 1 else ""))
-    if f["res"]:
-        core.append(f"위로는: {b(f['res'][0]['label'])}")
-    core.append(f"1년 범위: {P(f['y_lo'])} ~ {P(f['y_hi'])}")
-    mal = []
-    for p, _ in MA:
-        m = f["ma"][p]
-        mal.append(f"{p}일선 {b(m['label'])} · {f['px']} {m['pos']} {abs(m['gap_pct']):.1f}%" if m else f"{p}일선 · 데이터 부족")
-    mal.append(f"배열: {b(f['order'])}" + (f" · {f['cross']['kind']}({f['cross']['date']})" if f["cross"] else ""))
-    chk = [f"고점 {f['hi']['label']} → 저점 {f['lo']['label']} ({f['drop']:.0f}%)" if f["lo"]["i"] > f["hi"]["i"]
-           else f"저점 {f['lo']['label']} → 고점 {f['hi']['label']} (+{f['rise']:.0f}%)"]
-    if f["swing"]:
-        chk.append(f"{f['swing']['kind']} {P(f['swing']['price'])} ({f['swing']['date']})")
+        tlines.append({"t1": rows[t["i1"]]["time"], "p1": t["p1"], "t2": rows[-1]["time"], "p2": t["now"], "color": "#d1d4dc"})
+    SUP, RES = "#3fa796", "#d9625f"
     if f["rsup"]:
-        chk.append(f"{f['rsup']['label']}{U} 수평선 지키는지")
-    elif f["hsup"]:
-        chk.append(f"수평 지지 {f['hsup']['label']} 지키는지")
+        hlines.append({"price": f["rsup"]["price"], "color": SUP})
+        notes.append({"price": f["rsup"]["price"], "color": SUP, "text": f"지지 {f['rsup']['label']}"})
+    if f["hsup"]:
+        hlines.append({"price": f["hsup"]["price"], "color": SUP})
+        notes.append({"price": f["hsup"]["price"], "color": SUP, "text": f"지지 {f['hsup']['label']}"})
+    if f["hres"]:
+        hlines.append({"price": f["hres"]["price"], "color": RES})
+        notes.append({"price": f["hres"]["price"], "color": RES, "text": f"저항 {f['hres']['label']}"})
+    first = max(cut, min(hi["i"], lo["i"]))
+    fib = {"from": rows[first]["time"], "levels": [{"r": x["r"], "price": x["price"], "color": x["color"], "label": f"{x['name']}  {P(x['price'])}"} for x in f["fib"]],
+           **({"a": {"t": rows[hi["i"]]["time"], "p": hi["price"]}, "b": {"t": rows[lo["i"]]["time"], "p": lo["price"]}} if vis(hi["i"]) and vis(lo["i"]) else {})}
+
+    up_cls = "up" if f["chg"] >= 0 else "dn"
+    sym = a["name"] if a["kind"] != "us" else a["symbol"]
+    tf = TF[f["tf"]]
+    ext = f["live"]["ext"]
+    legend = (f"<b>{sym}</b> · {tf['short']} · {a.get('exchange') or ''} &nbsp; 시 {P(f['open'])} 고 {P(f['high'])} 저 {P(f['low'])} "
+              f"{f['px'][0]} <span class='{up_cls}'>{P(f['close'])} ({f['chg']:+.2f}%)</span>"
+              + (f" &nbsp; {ext['label']} {P(ext['price'])} ({ext['chg']:+.2f}%)" if ext else "") + "<br>"
+              + "".join(f"<span class='ma' style='color:{c}'>MA{p} {f['ma'][p]['label'] if f['ma'][p] else '-'}</span>" for p, c in MA))
+    read = []
+    if f["sup"]:
+        read.append(f"아래 {P(f['sup'][0]['price'])}")
+    if f["res"]:
+        read.append(f"위 {P(f['res'][0]['price'])}")
     if t:
-        chk.append(f"{t['kind']} 추세선 오늘 {P(t['now'])} {'돌파' if t['kind'] == '하락' else '이탈'} 여부")
-    if m20:
-        chk.append(f"20일선 {m20['label']} {'회복' if m20['gap'] < 0 else '유지'} 여부")
-    note = (f"20일선 아래 {abs(m20['gap']):,.{0 if U == '원' or abs(m20['gap']) >= 1000 else 2}f}{U}" if m20 and m20["gap"] < 0
-            else f"20일선 위 {abs(m20['gap']):,.{0 if U == '원' or abs(m20['gap']) >= 1000 else 2}f}{U}" if m20 else "")
-    badge = {"badge": True, "k": "이 기준이면", "w": f["trend"], "n": note, "color": f["tcolor"]}
-    exch = a.get("exchange") or ""
-    up_cls = "up" if up else "dn"
-    header = (f"<b>{a['name'] if a['kind'] != 'us' else a['symbol']}</b>· 1일 · {exch} &nbsp; 시 {P(f['open'])} 고 {P(f['high'])} "
-              f"저 {P(f['low'])} {f['px'][0]} <span class='{up_cls}'>{P(f['close'])} ({f['chg']:+.2f}%)</span>"
-              + (f" &nbsp; {f['live']['ext']['label']} {P(f['live']['ext']['price'])} ({f['live']['ext']['chg']:+.2f}%)" if f["live"]["ext"] else ""))
+        read.append(f"{t['kind']} 추세선 {P(t['now'])}")
+    read.append(f["order"] if f["order"] != "섞여 있음" else f["trend"])
     credit = f"{a['src']} · {f['basis'].split(' · 시간외')[0].split(' · 프리마켓')[0]} · TradingView Lightweight Charts™ · 투자 판단은 본인 몫"
-    title = f"{a['name']} 일봉 분석"
     if pc:
-        W, H = 1280, 720
-        layout = {"W": W, "H": H, "chart": {"x": 0, "y": 34, "w": W, "h": H - 34}, "margins": {"top": 0.12, "bottom": 0.27},
-                  "rightOffset": max(24, round(len(candles) * 0.12)), "axisFont": 11, "titleTop": 30, "titleFont": 30,
-                  "panel": {"x": 14, "y": H - 196, "w": 1200, "h": 158, "cols": "1.15fr 1.1fr 1.3fr .75fr", "pad": "14px 6px"},
-                  "credit": {"right": "86px", "top": "13px"},
-                  "vars": {"--fs1": "14px", "--fs2": "18px", "--fs3": "12px", "--ph": "17px", "--pf": "14px", "--bw": "26px"}}
-        panel = [sec("핵심 구간 정리", "#4fc3f7", core), sec("이동평균선", "#4f8cff", mal), {**sec("체크포인트", "#ffd54f", chk[:4]), "check": True}, badge]
-        blocked = ["title", ".panel"]
+        layout = {"W": 1280, "H": 720, "chartH": 692, "legendH": 50, "top": .09, "rightOffset": max(18, round(len(candles) * 0.09)), "axisFont": 11, "markFont": 92,
+                  "vars": {"--lg": "13px", "--nt": "12px", "--fb": "11px", "--ft": "13px", "--cr": "10.5px"}}
     else:
-        W, H = 720, 900
-        layout = {"W": W, "H": H, "chart": {"x": 0, "y": 100, "w": W, "h": 462}, "margins": {"top": 0.08, "bottom": 0.06},
-                  "rightOffset": 20, "axisFont": 11, "titleTop": 34, "titleFont": 28,
-                  "panel": {"x": 14, "y": 574, "w": W - 28, "h": 298, "cols": "1fr 1fr", "rows": "auto auto",
-                            "pad": "14px 4px"},
-                  "credit": {"left": "16px", "top": f"{H - 22}px"},
-                  "vars": {"--fs1": "13px", "--fs2": "16px", "--fs3": "11.5px", "--ph": "17px", "--pf": "14.5px", "--bw": "24px"}}
-        panel = [sec("핵심 구간 정리", "#4fc3f7", core[:4]), badge, sec("이동평균선", "#4f8cff", mal),
-                 {**sec("체크포인트", "#ffd54f", chk[:4]), "check": True}]
-        blocked = ["title"]
-        callouts = [c for c in callouts if c.get("kind") != "tag" or "지지" in c["title"]]
-        for c in callouts:
-            if c.get("kind") == "tag":
-                c["x"] = 0.05
-    return {"layout": layout, "krw": U == "원", "candles": candles, "mas": mas, "fib": fib, "hlines": hlines, "tlines": tlines,
-            "callouts": callouts, "panel": panel, "blocked": blocked, "header": header, "title": title, "credit": credit}
+        layout = {"W": 720, "H": 900, "chartH": 846, "legendH": 54, "top": .07, "rightOffset": 16, "axisFont": 12, "markFont": 64,
+                  "vars": {"--lg": "13px", "--nt": "13px", "--fb": "12px", "--ft": "15px", "--cr": "10.5px"}}
+    return {"layout": layout, "krw": U == "원", "intraday": f["tf"] in INTRADAY, "candles": candles, "volume": volume, "mas": mas, "fib": fib,
+            "hlines": hlines, "tlines": tlines, "notes": notes, "legend": legend, "mark": f"{sym}, {tf['short']}", "read": " · ".join(read), "credit": credit}
 
 
 def chrome():
@@ -495,13 +501,14 @@ def to_jpg(png, jpg, width):
 # ── 본문 ──
 def template_text(f, a):
     P, U = f["P"], f["U"]
-    pos = {"하락추세": "20일선 아래에서 내려오는 중", "상승추세": "20일선 위에서 올라가는 중",
+    m20 = f["ma_nm"](20)
+    pos = {"하락추세": f"{m20} 아래에서 내려오는 중", "상승추세": f"{m20} 위에서 올라가는 중",
            "방향 탐색": "이평선 사이에서 방향을 고르는 중"}[f["trend"]]
     s1 = f["sup"][0] if f["sup"] else None
     s2 = f["sup"][1] if len(f["sup"]) > 1 else None
     r1 = f["res"][0] if f["res"] else None
-    lines = ["차트리포트 입니다 ^^", f"{a['name']} 일봉 체크", "", " 지금 위치", pos,
-             f"{f['px']} {P(f['close'])}{U} (하루 {f['chg']:+.2f}%)", f"피보나치로는 {f['zone']}", "", " 볼 자리"]
+    lines = ["차트리포트 입니다 ^^", f"{a['name']} {TF[f['tf']]['name']} 체크", "", " 지금 위치", pos,
+             f"{f['px']} {P(f['close'])}{U} ({f['chg_word']} {f['chg']:+.2f}%)", f"피보나치로는 {f['zone']}", "", " 볼 자리"]
     if s1:
         lines.append(f"· 아래: {s1['label']}" + (" (기간 저점)" if s1["r"] == 1 else ""))
     if f["rsup"]:
@@ -511,13 +518,13 @@ def template_text(f, a):
     if r1:
         lines.append(f"· 위: {r1['label']}")
     if f["ma"][20]:
-        lines.append(f"· 20일선: {f['ma'][20]['label']}")
+        lines.append(f"· {m20}: {f['ma'][20]['label']}")
     lines += ["", " 시나리오"]
     # 시나리오는 종가에서 가장 가까운 지지·저항으로 (피보·수평선·20일선 중)
     sups = sorted([(x["price"], P(x["price"])) for x in f["sup"]] +
                   [(x["price"], x["label"]) for x in (f["rsup"], f["hsup"]) if x], reverse=True)
     ress = sorted([(x["price"], P(x["price"])) for x in f["res"]] +
-                  ([(f["ma"][20]["price"], f"20일선 {f['ma'][20]['label']}")] if f["ma"][20] and f["ma"][20]["gap"] < 0 else []))
+                  ([(f["ma"][20]["price"], f"{m20} {f['ma'][20]['label']}")] if f["ma"][20] and f["ma"][20]["gap"] < 0 else []))
     if sups:
         lo1 = sups[0][1]
         lo2 = next((l for p, l in sups[1:] if p < sups[0][0] * 0.99), None)
@@ -530,7 +537,7 @@ def template_text(f, a):
 SYSTEM = """당신은 텔레그램 채널 '차트보는 말희아빠' 운영자 대신 '차트리포트' 글을 씁니다.
 형식은 아래 예시를 그대로 따릅니다 (빈 줄·앞 공백 포함):
 차트리포트 입니다 ^^
-(종목) 일봉 체크
+(종목) (자료의 봉 이름) 체크
 
  지금 위치
 (한두 줄)
@@ -554,6 +561,7 @@ B. (지지)를 깨면 → 다음 지지 (값)에서 받는지 확인
 - 말투는 차분한 존댓말, 짧은 줄. 이모지는 쓰지 않습니다. 400자 안팎.
 - '~가 아니라 ~다' 같은 뒤집기 문장, '첫째·둘째' 나열, '핵심은', '결론적으로', '주목할 점' 같은 AI 말투를 쓰지 않습니다.
 - 매수·매도 권유, 목표가, '지금 사라' 같은 표현을 쓰지 않습니다.
+- 이평선 이름과 등락 표현은 자료에 적힌 그대로 씁니다 (20일선·20주선·20이평, 하루·이번 주·직전 봉 대비).
 - 자료에 '현재가'가 아니라 '종가'로 나와 있으면 장이 닫힌 상태이니 '현재가 (값)' 줄을 '종가 (값)'로 씁니다. 시세 기준 시각은 쓰지 않습니다 (따로 넣습니다). 프리마켓·시간외 값은 자료에 있을 때만 씁니다.
 - 본문만 출력합니다."""
 
@@ -605,19 +613,23 @@ def slug(a):
 def with_basis(text, f):
     """제목 줄 아래에 시세 기준을 넣는다 (언제 값인지 글만 봐도 알게)."""
     lines = text.split("\n")
-    i = next((i for i, x in enumerate(lines) if "일봉" in x), 0)
+    i = next((i for i, x in enumerate(lines) if "봉" in x), 0)
     lines.insert(i + 1, f"시세 기준: {f['basis']}")
     return "\n".join(lines)
 
 
-def make(query, use_ai=True, style=""):
+def make(query, use_ai=True, style="", tf="1d"):
+    query, _, at = query.partition("@")   # '테슬라@4h' 처럼 종목마다 봉을 붙일 수 있음
+    tf = at.strip() or tf
+    if tf not in TF:
+        raise SystemExit(f"봉 종류 '{tf}' 를 모르겠어요 ({', '.join(TF)} 중 하나).")
     a = resolve(query)
-    rows = fetch(a)
-    f = analyze(rows, a, 365 if a["kind"] == "coin" else 260)
-    apply_live(f, a, live_of(a, rows))
+    rows = fetch(a, tf)
+    f = analyze(rows, a, TF[tf]["show"] or (365 if a["kind"] == "coin" else 260), tf)
+    apply_live(f, a, live_of(a, rows, tf))
     RAW.mkdir(parents=True, exist_ok=True)
     WEB.mkdir(parents=True, exist_ok=True)
-    s = slug(a)
+    s = slug(a) + ("" if tf == "1d" else f"_{tf}")
     files = {}
     for mode, scale, width in (("pc", 1.5, 1600), ("m", 1.5, 1080)):
         png = RAW / f"{s}_{mode}.png"
@@ -627,7 +639,7 @@ def make(query, use_ai=True, style=""):
         files[mode] = png
     text, by = write_text(f, a, use_ai, style)
     text = with_basis(text, f)
-    item = {"query": query, "name": a["name"], "symbol": a["symbol"], "kind": a["kind"], "date": f["date"], "basis": f["basis"], "px": f["px"],
+    item = {"query": query, "tf": tf, "tf_name": TF[tf]["name"], "name": a["name"], "symbol": a["symbol"], "kind": a["kind"], "date": f["date"], "basis": f["basis"], "px": f["px"],
             "close": f"{f['P'](f['close'])}{f['U']}", "chg": round(f["chg"], 2), "trend": f["trend"],
             "pc": f"charts/{s}_pc.jpg", "mobile": f"charts/{s}_m.jpg", "text": text, "text_by": by,
             "made_at": datetime.now(KST).isoformat(timespec="seconds")}
@@ -639,10 +651,10 @@ def load_reports():
 
 
 def save_reports(d, new):
-    # 종목당 최신 1개만 (이미지 파일을 종목별로 덮어쓰니 옛 카드를 두면 글과 그림이 어긋남). 어느 칸에 쓰였는지는 slots 로 이어 받는다
+    # 종목·봉당 최신 1개만 (이미지 파일을 종목별로 덮어쓰니 옛 카드를 두면 글과 그림이 어긋남). 어느 칸에 쓰였는지는 slots 로 이어 받는다
     items = []
     for x in new + d["items"]:
-        same = next((y for y in items if y["symbol"] == x["symbol"]), None)
+        same = next((y for y in items if y["symbol"] == x["symbol"] and y.get("tf", "1d") == x.get("tf", "1d")), None)
         slots = [s for s in [x.get("slot"), *x.get("slots", [])] if s]
         if same:
             same["slots"] = list(dict.fromkeys(same["slots"] + slots))[:10]
@@ -661,7 +673,7 @@ def save_reports(d, new):
 def send(item, files):
     """PC·모바일 이미지 두 장을 먼저, 그 아래에 설명 글(그대로 복사해 올릴 본문)을 따로 보낸다."""
     from publish.notify import send as send_text, send_photos
-    ok = send_photos([files["pc"], files["m"]], f"📈 {item['name']} 일봉 분석 · {item['px']} {item['close']} · {item['basis']} (PC용·모바일용)")
+    ok = send_photos([files["pc"], files["m"]], f"📈 {item['name']} {item['tf_name']} 분석 · {item['px']} {item['close']} · {item['basis']} (PC용·모바일용)")
     ok = send_text(item["text"]) and ok
     print("📨 봇으로 보냄" if ok else "⚠️ 봇 보내기 실패/미설정", item["name"])
     return ok
@@ -687,7 +699,7 @@ def chart_posts(ai):
     return out
 
 
-def from_tg(use_ai, notify=True, force=False):
+def from_tg(use_ai, notify=True, force=False, tf="1d"):
     """오늘 문구의 차트 글 중 다음 차례(지금 이후 가장 가까운 칸) 하나를 만든다. 매일 08시 자동 + 수동 버튼."""
     p = SITE / "tg_ai.json"
     ai = json.loads(p.read_text(encoding="utf-8") or "{}") if p.exists() else {}
@@ -703,7 +715,7 @@ def from_tg(use_ai, notify=True, force=False):
     mine = SITE / "tg_mine.json"
     style = "\n---\n".join(m["text"][:300] for m in json.loads(mine.read_text(encoding="utf-8"))[:5]) if mine.exists() else ""
     try:
-        item, files = make(q, use_ai, style)
+        item, files = make(q, use_ai, style, tf)
     except (SystemExit, requests.RequestException, KeyError, ValueError, IndexError) as e:
         print(f"⚠️ {q} 차트 실패: {e}")
         d["failed"] = (d.get("failed", []) + [slot])[-30:]   # 같은 칸을 다시 시도하지 않게
@@ -719,6 +731,7 @@ def main():
     ap.add_argument("symbols", nargs="*", help="종목 (IONQ, 비트코인, SK하이닉스, 000660 … 쉼표로 여러 개도 됨)")
     ap.add_argument("--from-tg", action="store_true", help="tg_ai.json 오늘 문구의 차트 글 종목으로 만들고 봇으로 보냄")
     ap.add_argument("--send", action="store_true", help="봇으로도 보내기")
+    ap.add_argument("--tf", default="1d", choices=list(TF), help="봉 종류 (종목마다 '테슬라@4h' 로 붙여도 됨)")
     ap.add_argument("--no-ai", action="store_true", help="Claude 없이 정해진 문장으로 본문")
     ap.add_argument("--no-send", action="store_true", help="--from-tg 때 봇으로 보내지 않음 (시험용)")
     ap.add_argument("--force", action="store_true", help="--from-tg 때 이미 만든 칸이어도 다시 (수동 버튼)")
@@ -726,14 +739,14 @@ def main():
     args = ap.parse_args()
     load_env()
     if args.from_tg:
-        return from_tg(not args.no_ai, not args.no_send, args.force)
+        return from_tg(not args.no_ai, not args.no_send, args.force, args.tf)
     if not args.symbols:
         ap.error("종목을 넣거나 --from-tg 를 쓰세요")
     d, new = load_reports(), []
     qs = [q.strip() for x in args.symbols for q in re.split(r"[,\n]", x) if q.strip()]
     for q in qs[:5]:
         try:
-            item, files = make(q, not args.no_ai)
+            item, files = make(q, not args.no_ai, tf=args.tf)
         except (SystemExit, requests.RequestException, KeyError, ValueError, IndexError) as e:
             msg = f"'{q}' 차트를 못 만들었어요: {e}"
             print("⚠️", msg)
@@ -741,7 +754,7 @@ def main():
                 from publish.notify import send as send_text
                 send_text(msg + "\n티커(TSLA)·종목명(삼성전자)·6자리 코드(005930)·코인 이름(이더리움)으로 다시 넣어 주세요.")
             continue
-        print(f"\n✅ {item['name']} · {item['px']} {item['close']} ({item['chg']:+.2f}%) · {item['basis']} · {item['trend']}")
+        print(f"\n✅ {item['name']} {item['tf_name']} · {item['px']} {item['close']} ({item['chg']:+.2f}%) · {item['basis']} · {item['trend']}")
         print(f"   PC {files['pc']}\n   모바일 {files['m']}\n   본문({item['text_by']}):\n" + item["text"])
         if args.send:
             item["sent"] = send(item, files)

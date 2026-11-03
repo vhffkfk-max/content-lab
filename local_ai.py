@@ -185,7 +185,8 @@ def run_cycle():
     charts = [r for r in todo if r["job"] == "chart"][-3:]   # 사이트 '차트 만들기' 버튼 (빈칸이면 auto = 오늘 차트 글 종목)
     for r in charts:
         syms = r["args"].get("symbols", "") or "auto"
-        py("chart_report.py", *(["--from-tg", "--force"] if syms == "auto" else [syms, "--send"]), timeout=15 * 60)
+        s, _, tf = syms.partition("@")   # 'auto@4h' = 오늘 차트 글 종목을 4시간봉으로
+        py("chart_report.py", *(["--from-tg", "--force", *(["--tf", tf] if tf else [])] if s == "auto" else [syms, "--send"]), timeout=15 * 60)
         did.append(f"차트 {syms}")
     if slot_once(state, "chart", (8,)):   # 자동 차트리포트는 하루 1번 아침 08시 (PC가 꺼져 있었으면 켜진 뒤 바로). --force: 어제 문구 그대로여도 매일 새로 만듦
         py("chart_report.py", "--from-tg", "--force", timeout=15 * 60)
