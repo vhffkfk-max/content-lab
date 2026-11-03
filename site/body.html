@@ -1292,7 +1292,7 @@ a.row:hover .row-main{text-decoration:underline}
 
   // 쓰레드 콘텐츠 만들기 → 중간 서버가 요청함(lab-requests 가지)에 넣음 → PC(thread_listen.py, Max 구독)가 몇 초 안에 받아 황소개미 글을 써서 올림
   // → 결과 파일(thread_posts.json)을 6초마다 읽어 끝난 글부터 이 칸에 띄움. 창을 닫아도 요청은 이 브라우저에 남아 다시 열면 이어서 기다림.
-  const TH_STYLES = { A: '뜬글 지침', B: '불스토리', C: '바레이션 C' }, TH_WAIT_MIN = 20, thLive = [];
+  const TH_STYLES = { A: '뜬글 지침', B: '불스토리', C: '바레이션 C', D: '한 줄 반응', E: '한 줄+근거' }, TH_WAIT_MIN = 20, thLive = [];
   const thPending = { get: () => { try { return JSON.parse(store.get('th_pending') || '[]').filter(q => Date.now() - q.t < TH_WAIT_MIN * 60000); } catch (e) { return []; } },
     set: list => store.set('th_pending', JSON.stringify(list)) };
   async function thFetch() {
@@ -1313,7 +1313,7 @@ a.row:hover .row-main{text-decoration:underline}
         const part = (t, i) => { const w = el('div', 'job-th-part'); w.append(el('div', 'box', t), copyBtn(parts.length > 1 ? `${i + 1}칸 복사` : '복사', t)); return w; };
         c.append(chips, copyBtn(parts.length > 1 ? `전체 복사 · ${parts.length}칸` : '복사', x.text, 'btn small primary'), part(parts[0], 0));
         if (parts.length > 1) {
-          const more = el('details'); more.open = thLive.includes(x);
+          const more = el('details'); more.open = parts.length === 2 || thLive.includes(x);
           more.append(el('summary', null, `나머지 ${parts.length - 1}칸 보기`), ...parts.slice(1).map((t, i) => part(t, i + 1))); c.append(more);
         }
         if (x.thin) c.append(el('p', 'warn', '기사 본문을 못 읽어서 제목과 요약만으로 썼어요. 숫자가 적으니 기사를 보고 보강해서 올리세요.'));
@@ -1367,10 +1367,14 @@ a.row:hover .row-main{text-decoration:underline}
       } catch (e) { busy(false); show('요청 실패 — 인터넷 연결을 확인해 주세요', 'err'); }
     };
     bar.append(el('span', null, '쓰레드 콘텐츠 만들기'));
-    for (const s of ['A', 'B', 'C']) {
-      const b = el('button', 'btn small', `${s} ${TH_STYLES[s]}`); b.type = 'button'; b.addEventListener('click', () => ask(s)); buttons.push(b); bar.append(b);
-    }
-    const all = el('button', 'btn small primary', 'A·B·C 다 만들기'); all.type = 'button'; all.addEventListener('click', () => ask('ABC')); buttons.push(all); bar.append(all);
+    const group = (styles, label) => {
+      for (const s of styles) {
+        const b = el('button', 'btn small', `${s} ${TH_STYLES[s]}`); b.type = 'button'; b.addEventListener('click', () => ask(s)); buttons.push(b); bar.append(b);
+      }
+      const all = el('button', 'btn small primary', label); all.type = 'button'; all.addEventListener('click', () => ask(styles)); buttons.push(all); bar.append(all);
+    };
+    group('ABC', 'A·B·C 다 만들기');
+    group('DE', 'D·E 다 만들기');
     wrap.append(bar, st, list); draw();
     const q = thPending.get().find(o => o.title === p.title);
     if (q && fb.key) watch(q);

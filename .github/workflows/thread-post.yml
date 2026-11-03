@@ -9,7 +9,7 @@ on:
         required: false
         default: "0"
       styles:
-        description: "A·B·C 중 만들 것 (예: A, ABC)"
+        description: "A·B·C·D·E 중 만들 것 (예: A, ABC, DE)"
         required: false
         default: "ABC"
       slot:

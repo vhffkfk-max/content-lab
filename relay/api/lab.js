@@ -39,7 +39,7 @@ export function route(method, path) {
 
 // 요청 내용은 서버에서 다시 만든다 (정해진 칸·형식만)
 export function threadFile({ rid, idx, styles, slot } = {}, now = new Date()) {
-  const ok = RID.test(rid) && [0, 1, 2].includes(Number(idx)) && /^[ABC]{1,3}$/.test(styles) && /^[\d/: ]{0,20}$/.test(slot || '');
+  const ok = RID.test(rid) && [0, 1, 2].includes(Number(idx)) && /^[A-E]{1,5}$/.test(styles) && /^[\d/: ]{0,20}$/.test(slot || '');
   if (!ok) return null;
   const at = new Date(now.getTime() + 9 * 3600e3).toISOString().slice(0, 19) + '+09:00';
   return { rid, idx: Number(idx), styles, slot: slot || '', at };
