@@ -1,12 +1,12 @@
 [
  {
   "geo": "KR",
-  "term": "중앙일보",
-  "traffic": 10000,
+  "term": "비야디",
+  "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "[단독] 중앙일보 새 주주 될 다우·CJ·신세계 신주인수계약체결 연기",
-  "news_link": "https://www.mediatoday.co.kr/news/articleView.html?idxno=338136"
+  "news_title": "'이럴 거면 그냥 국산차 탈걸'…BYD 차주들 비명 터졌다",
+  "news_link": "https://www.hankyung.com/article/2026110210431"
  },
  {
   "geo": "KR",
@@ -19,53 +19,35 @@
  },
  {
   "geo": "KR",
-  "term": "종신보험",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "죽은 뒤 1억원 주면 무슨 소용있나…고령화에 종신보험 바뀐다 [금융 라운지]",
-  "news_link": "https://www.mk.co.kr/news/economy/12194100"
- },
- {
-  "geo": "KR",
-  "term": "지민",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "BTS 지민 부친 카페, 내년 영업 종료",
-  "news_link": "https://www.newsis.com/view/NISX20261103_0003851902"
- },
- {
-  "geo": "KR",
   "term": "김민",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "김민, 집 공개 후 사생활 침해 피해 \"모르는 사람 계속 온다\"",
-  "news_link": "https://www.segye.com/newsView/20261031501185"
+  "news_title": "'나혼산' 위기마다 나타나는 구세주…시청률 71% 급등→5주 연속 1위 '김민 효과'",
+  "news_link": "https://news.nate.com/view/20261102n28641"
  },
  {
   "geo": "KR",
-  "term": "유예린",
+  "term": "단기채",
   "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "유예린, WTT 피더 대회 '3전 4기' 첫 우승…준우승 징크스 깼다",
-  "news_link": "https://www.yna.co.kr/view/AKR20261102118700007"
- },
- {
-  "geo": "KR",
-  "term": "팔란티어",
-  "traffic": 200,
-  "topics": "환율·달러",
+  "topics": "금리·연준, 환율·달러",
   "econ": true,
-  "news_title": "팔란티어 분기매출 20억 달러 첫 돌파…전년 대비 2배로 성장",
-  "news_link": "https://www.yna.co.kr/view/AKR20261103013300091"
+  "news_title": "\"제로금리·1100원 환율 시대 안 올 듯… 달러 쪼개사고 단기채 담아라\"",
+  "news_link": "https://www.chosun.com/economy/money/2026/11/03/EYYBMPLNO5HDXF3SLB3I6FN5WA/"
  },
  {
   "geo": "KR",
-  "term": "김원효",
-  "traffic": 100,
+  "term": "래블업",
+  "traffic": 200,
+  "topics": "국내 대형주",
+  "econ": true,
+  "news_title": "[특징주] 영광, 코스닥 상장 첫날 26% 상승 마감(종합)",
+  "news_link": "https://www.yna.co.kr/view/AKR20261102032651008"
+ },
+ {
+  "geo": "KR",
+  "term": "말자쇼",
+  "traffic": 200,
   "topics": "",
   "econ": false,
   "news_title": "김원효, 심진화에 매년 명품백 선물 \"누적 금액 1억 넘어\"",
@@ -73,110 +55,128 @@
  },
  {
   "geo": "KR",
-  "term": "미국시간",
-  "traffic": 100,
+  "term": "매일경제",
+  "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "“어? 미장 데이거래 아침9시부터 아니였나요…”서머타임끝, 한시간 늦춰집니다“",
-  "news_link": "https://stock.mk.co.kr/news/view/1186606"
+  "news_title": "“진짜 괜찮아”…일본 10대들이 한국어에 빠진 이유는? [잇슈 키워드]",
+  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8702107"
  },
  {
   "geo": "KR",
-  "term": "토지임대부 분양주택",
+  "term": "미스트롯4",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "'미스트롯4' 톱7, 20개 도시 투어 성료…서울 앙코르로 피날레",
+  "news_link": "https://www.newsis.com/view/NISX20261102_0003851037"
+ },
+ {
+  "geo": "KR",
+  "term": "도지코인",
+  "traffic": 100,
+  "topics": "알트코인",
+  "econ": true,
+  "news_title": "도지코인에 무슨 일이…대형 고래 1억 2,000만 개 던지고 가격은 5주째 추락",
+  "news_link": "https://www.coinreaders.com/266853"
+ },
+ {
+  "geo": "KR",
+  "term": "리센느 컴백",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "'3억대 신축' 고덕강일3단지…실부담 따지니 59㎡ 월 140만원대",
-  "news_link": "https://www.news1.kr/realestate/general/6340382"
+  "news_title": "[Y초점] 밈으로 떴지만, 음악은 이미 달랐다…리센느가 기대되는 이유",
+  "news_link": "https://star.ytn.co.kr/_sn/0117_202611030930289185"
  },
  {
   "geo": "US",
-  "term": "denver vs wisconsin",
+  "term": "is the voice on tonight",
+  "traffic": 10000,
+  "topics": "",
+  "econ": false,
+  "news_title": "The Voice Season 30 Has a Big Schedule Change: Here's the New Air Time",
+  "news_link": "https://www.yahoo.com/entertainment/tv/articles/voice-season-30-big-schedule-120004160.html"
+ },
+ {
+  "geo": "US",
+  "term": "disney plus",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Everything Coming to Disney+ and Hulu in November 2026",
+  "news_link": "https://www.ign.com/articles/whats-new-on-disney-plus-hulu-streaming-bundle-november-2026"
+ },
+ {
+  "geo": "US",
+  "term": "amber glenn",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "Wisconsin basketball’s 2026-27 projected starters, reserves include many newcomers",
-  "news_link": "https://www.jsonline.com/story/sports/college/uw/2026/11/02/wisconsin-badgers-basketball-2026-27-roster-projected-starters-reserves/92562593007/"
+  "news_title": "Ezra Frech on Tackling ‘DWTS’ Season 35 With Amber Glenn as “Teammates” and What Becoming the Show’s First Amputee Winner Would Mean",
+  "news_link": "https://www.hollywoodreporter.com/tv/tv-news/ezra-frech-dwts-season-35-amputee-amber-glenn-daniella-karagach-1236745708/"
  },
  {
   "geo": "US",
-  "term": "jazz vs spurs",
+  "term": "fordham vs kansas",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "NFL Trade Prediction: Jonathan Taylor to the Broncos Stream of National Football League",
-  "news_link": "https://www.cbssports.com/watch/nfl/video/nfl-trade-prediction-jonathan-taylor-to-the-broncos"
+  "news_title": "Preview: KU opens season against Fordham",
+  "news_link": "https://www2.ljworld.com/sports/ku-mens-basketball/2026/nov/01/preview-ku-opens-season-against-fordham/"
  },
  {
   "geo": "US",
-  "term": "celtics vs rockets",
+  "term": "nfl game tonight",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "NFL, TMRW Sports unveil Premier Flag, new professional flag football league launching summer 2027",
+  "news_link": "https://www.nfl.com/news/nfl-tmrw-sports-unveil-premier-flag-new-professional-flag-football-league-launching-summer-2027"
+ },
+ {
+  "geo": "US",
+  "term": "leonard williams",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Celtics at Rockets preview: Can Boston extend its winning streak to six?",
-  "news_link": "https://www.bostonglobe.com/2026/11/02/sports/celtics-rockets-preview-oct-2/"
+  "news_title": "Seahawks’ Leonard Williams joins Jadarian Price on injury report before Bears game",
+  "news_link": "https://sports.yahoo.com/articles/seahawks-leonard-williams-joins-jadarian-182559546.html"
  },
  {
   "geo": "US",
-  "term": "illinois basketball",
+  "term": "the voice 2026",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "No. 3 Illinois Hosts FDU in Season-Opener Monday at State Farm Center - University of Illinois Athletics",
-  "news_link": "https://fightingillini.com/news/2026/11/1/mens-basketball-no-3-illinois-hosts-fdu-in-season-opener-monday-at-state-farm-center"
+  "news_title": "Cate McHugh wins The Voice UK after being mentored by Sir Tom Jones",
+  "news_link": "https://www.bbc.com/news/articles/c8y56vp10075o"
  },
  {
   "geo": "US",
-  "term": "bucaramanga - atlético nacional",
+  "term": "tv guide",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Sharon Horgan’s ‘Youth’ Renewed For Season 2 At HBO",
+  "news_link": "https://deadline.com/2026/11/youth-renewed-season-2-hbo-1237211644/"
+ },
+ {
+  "geo": "US",
+  "term": "angie nixon",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Los convocados de Atlético Nacional vs. Bucaramanga ¿está James?",
-  "news_link": "https://espndeportes.espn.com/futbol/colombia/nota/_/id/17464463/los-convocados-de-atletico-nacional-vs-bucaramanga-james-rodriguez"
+  "news_title": "U.S. Senate candidate Angie Nixon looks for late-campaign support in Broward, including soggy Souls to Polls rally",
+  "news_link": "https://www.sun-sentinel.com/2026/11/01/u-s-senate-candidate-angie-nixon-looks-for-late-campaign-support-in-broward-including-soggy-souls-to-polls-rally/"
  },
  {
   "geo": "US",
-  "term": "braden smith",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Jack Campbell (neck) remains in hospital Monday",
-  "news_link": "https://www.fantasypros.com/nfl/news/617328/jack-campbell-neck-remains-hospital-monday.php"
- },
- {
-  "geo": "US",
-  "term": "carter mazur",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "",
-  "news_link": ""
- },
- {
-  "geo": "US",
-  "term": "marquette basketball",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "GAME THREAD: RV Marquette vs Mercyhurst",
-  "news_link": "https://www.anonymouseagle.com/marquette-mens-basketball/40438/how-to-watch-golden-eagles-game-mercyhurst-lakers-time-television-streaming-odds-fan-discussion"
- },
- {
-  "geo": "US",
-  "term": "sanford pentagon",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Sanford Pentagon helps tip off college basketball season",
-  "news_link": "https://www.keloland.com/news/local-news/sanford-pentagon-helps-tip-off-college-basketball-season/"
- },
- {
-  "geo": "US",
-  "term": "texas basketball",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "No. 7 Texas vs. Chicago State preview: Three problems to fix before the games get harder",
-  "news_link": "https://www.burntorangenation.com/texas-longhorns-baseball/106668/texas-longhorns-chicago-state-preview"
+  "term": "qeshm island",
+  "traffic": 500,
+  "topics": "정치·관세",
+  "econ": true,
+  "news_title": "Exclusive | U.S. Strikes Iran’s Qeshm Island as Trump Talks Down War Risks",
+  "news_link": "https://www.wsj.com/world/middle-east/u-s-strikes-irans-qeshm-island-as-trump-talks-down-war-risks-79d73d3d"
  }
 ]
