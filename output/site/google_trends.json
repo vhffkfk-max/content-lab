@@ -1,21 +1,12 @@
 [
  {
   "geo": "KR",
-  "term": "kbo",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Live: Samsung Lions vs. KT Wiz in Game 1 of Korean Series",
-  "news_link": "https://www.koreajoongangdaily.com/sports/live-samsung-lions-vs-kt-wiz-in-game-1-of-korean-series/12952792"
- },
- {
-  "geo": "KR",
-  "term": "양도소득세",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "국세청, 주식 양도세 더 낸 4천687명에게 21억원 돌려줘",
-  "news_link": "https://www.yna.co.kr/view/AKR20261103075200002"
+  "term": "폰지 사기",
+  "traffic": 500,
+  "topics": "부동산",
+  "econ": true,
+  "news_title": "방송 출연한 ‘부동산 투자 전문가’…알고 보니 125억 폰지사기",
+  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8702352"
  },
  {
   "geo": "KR",
@@ -37,6 +28,24 @@
  },
  {
   "geo": "KR",
+  "term": "종합부동산세",
+  "traffic": 200,
+  "topics": "연금·절세, 부동산",
+  "econ": true,
+  "news_title": "실거주 아니면 ‘세금 폭탄’…꼬이는 부동산 세제개편안 셈법",
+  "news_link": "https://www.mk.co.kr/news/realestate/12194970"
+ },
+ {
+  "geo": "KR",
+  "term": "코너 맥그리거",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "1분 만에 드러눕고 450억 번 맥그리거, 격투기 은퇴 시사",
+  "news_link": "https://www.chosun.com/sports/sports_general/2026/11/03/V565ESHVUVHKJBYCR2WRBCIPKA/"
+ },
+ {
+  "geo": "KR",
   "term": "한국항공우주산업",
   "traffic": 200,
   "topics": "",
@@ -48,10 +57,10 @@
   "geo": "KR",
   "term": "midterm elections 2026",
   "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "Live updates: 2026 US midterm elections and results",
-  "news_link": "https://www.bbc.com/news/live/cj1dw0ydn595t"
+  "topics": "정치·관세",
+  "econ": true,
+  "news_title": "U.S. House Midterm Election Live Results 2026",
+  "news_link": "https://www.nbcnews.com/politics/2026-elections/house-results"
  },
  {
   "geo": "KR",
@@ -81,40 +90,13 @@
   "news_link": ""
  },
  {
-  "geo": "KR",
-  "term": "폰지 사기",
-  "traffic": 100,
-  "topics": "부동산",
-  "econ": true,
-  "news_title": "‘부동산 전문가’ 믿었는데…125억 가로챈 스타 강사",
-  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8702992"
- },
- {
   "geo": "US",
-  "term": "kalshi",
-  "traffic": 10000,
-  "topics": "정치·관세",
-  "econ": true,
-  "news_title": "Prediction markets vs. polls: Election forecasting industry faces midterm test",
-  "news_link": "https://finance.yahoo.com/economy/article/prediction-markets-vs-polls-election-forecasting-industry-faces-midterm-test-100000463.html"
- },
- {
-  "geo": "US",
-  "term": "kedon slovis",
+  "term": "elder scrolls 6",
   "traffic": 10000,
   "topics": "",
   "econ": false,
-  "news_title": "Ravens adding QB Kedon Slovis off Packers’ practice squad",
-  "news_link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/ravens-adding-qb-kedon-slovis-off-packers-practice-squad"
- },
- {
-  "geo": "US",
-  "term": "senate election results today",
-  "traffic": 10000,
-  "topics": "정치·관세",
-  "econ": true,
-  "news_title": "U.S. Senate Midterm Election Live Results 2026",
-  "news_link": "https://www.nbcnews.com/politics/2026-elections/senate-results"
+  "news_title": "The Elder Scrolls VI officially has a name: Sentinel",
+  "news_link": "https://www.theverge.com/news/1025273/the-elder-scrolls-vi-sentinel-name-announcement"
  },
  {
   "geo": "US",
@@ -127,56 +109,74 @@
  },
  {
   "geo": "US",
-  "term": "emma roberts",
+  "term": "voting centers near me",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "Emma Roberts Is in a New League Debuting Trading Card Business With Husband Cody John",
-  "news_link": "https://www.eonline.com/news/1437754/emma-roberts-husband-cody-john-start-trading-card-channel-summer-breaks"
- },
- {
-  "geo": "US",
-  "term": "elder scrolls 6",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "The Elder Scrolls 6: Sentinel Name, Logo, Officially Revealed as Bethesda Marks 40th Anniversary",
-  "news_link": "https://www.ign.com/articles/the-elder-scrolls-6-sentinel-name-logo-officially-revealed-as-bethesda-marks-40th-anniversary"
- },
- {
-  "geo": "US",
-  "term": "lego godzilla",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "LEGO Godzilla Announced, Releases on Black Friday",
-  "news_link": "https://www.ign.com/articles/lego-godzilla-announced-releases-on-black-friday"
- },
- {
-  "geo": "US",
-  "term": "scott colom",
-  "traffic": 500,
-  "topics": "정치·관세",
-  "econ": true,
-  "news_title": "Mississippi U.S. Senate 2026: Live Election Results, Hyde-Smith vs. Colom",
-  "news_link": "https://www.nytimes.com/interactive/2026/11/03/us/elections/results-mississippi-us-senate.html"
- },
- {
-  "geo": "US",
-  "term": "midterm elections live map",
-  "traffic": 200,
-  "topics": "정치·관세",
-  "econ": true,
-  "news_title": "U.S. House Midterm Election Live Results 2026",
-  "news_link": "https://www.nbcnews.com/politics/2026-elections/house-results"
+  "news_title": "When do polls open and close in DC?",
+  "news_link": "https://www.wusa9.com/article/news/politics/elections/polls-open-and-close-dc-midterm-elections-2026/65-35b6b911-57e9-4192-8d76-cd6ddc0dba56"
  },
  {
   "geo": "US",
   "term": "where can i drop off my ballot",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Voting in Stanislaus County? Where to find polling places, ballot drop-off sites",
+  "news_link": "https://www.modbee.com/news/politics-government/election/voter-guide/article317891480.html"
+ },
+ {
+  "geo": "US",
+  "term": "lego godzilla",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Lego’s 5,363-piece Godzilla stands over 27-inches tall.",
+  "news_link": "https://www.theverge.com/tech/1025293/lego-godzilla-set-model-posable-heat-ray"
+ },
+ {
+  "geo": "US",
+  "term": "school building",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "At least 33 dead after Russia drops nine bombs on a Ukrainian school building",
+  "news_link": "https://www.cnn.com/2026/11/03/europe/ukraine-russia-zaporiszhzha-school-strike-intl"
+ },
+ {
+  "geo": "US",
+  "term": "jiri lehecka",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Valentin Vacherot rallies to beat Jiri Lehecka to win Swiss Indoors title",
+  "news_link": "https://www.espn.com/tennis/story/_/id/50348821/vacherot-rallies-beat-lehecka-swiss-indoors-final"
+ },
+ {
+  "geo": "US",
+  "term": "how to vote online",
   "traffic": 200,
   "topics": "정치·관세",
   "econ": true,
-  "news_title": "Still have a mail-in ballot for this year's election? Here's what to do",
-  "news_link": "https://www.nbcchicago.com/illinois-election-2026/still-have-a-mail-in-ballot-for-this-years-election-heres-what-to-do/4010398/"
+  "news_title": "Everything you need to know about the 2026 Midterm Election | 13 Action News",
+  "news_link": "https://www.13abc.com/2026/10/28/everything-you-need-know-about-2026-midterm-election-13-action-news/"
+ },
+ {
+  "geo": "US",
+  "term": "mardi gras 2027",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Zachary Mardi Gras set to return in 2027 with music, culture and community",
+  "news_link": "https://www.wbrz.com/news/zachary-mardi-gras-set-to-return-in-2027-with-music-culture-and-community/"
+ },
+ {
+  "geo": "US",
+  "term": "texas election",
+  "traffic": 200,
+  "topics": "정치·관세",
+  "econ": true,
+  "news_title": "Texas Midterm Elections 2026: Live Results",
+  "news_link": "https://www.nbcnews.com/politics/2026-elections/texas-results"
  }
 ]
