@@ -81,8 +81,12 @@ jobs:
           if [ -n "$CHART" ]; then python ai_request.py chart "symbols=$CHART"; fi
           git add data/ai_requests.json
           git commit -m "ai: PC에 Claude 작업 요청" || echo "변경 없음"
-          git pull --rebase -X theirs --autostash || (git rebase --abort; git pull --no-rebase -X ours --no-edit) || true
-          git push
+          for i in 1 2 3 4 5; do   # 크롤러가 먼저 올리면 밀려서 요청이 사라지므로 다시 받아 재시도
+            git pull --rebase -X theirs --autostash || (git rebase --abort; git pull --no-rebase -X ours --no-edit) || true
+            git push && break
+            [ "$i" = 5 ] && exit 1
+            sleep 5
+          done
 
       - name: 사이트 만들기
         run: python build_site.py
