@@ -2,8 +2,8 @@
  {
   "dim": "길이",
   "key": "100자 미만",
-  "n": 739,
-  "spread": 0.57,
+  "n": 813,
+  "spread": 0.6,
   "rate": 1.2,
   "vs": 1.88,
   "small": false
@@ -11,100 +11,100 @@
  {
   "dim": "길이",
   "key": "100~300자",
-  "n": 1397,
-  "spread": 0.3,
-  "rate": 1.6,
-  "vs": 0.98,
+  "n": 1458,
+  "spread": 0.28,
+  "rate": 1.5,
+  "vs": 0.88,
   "small": false
  },
  {
   "dim": "길이",
   "key": "300~500자",
-  "n": 679,
-  "spread": 0.17,
-  "rate": 1.6,
-  "vs": 0.55,
+  "n": 614,
+  "spread": 0.18,
+  "rate": 1.3,
+  "vs": 0.58,
   "small": false
  },
  {
   "dim": "미디어",
   "key": "글만",
-  "n": 2333,
+  "n": 2608,
   "spread": 0.33,
-  "rate": 1.4,
-  "vs": 1.1,
+  "rate": 1.3,
+  "vs": 1.03,
   "small": false
  },
  {
   "dim": "미디어",
   "key": "이미지·영상",
-  "n": 487,
-  "spread": 0.21,
-  "rate": 2.0,
-  "vs": 0.7,
+  "n": 281,
+  "spread": 0.26,
+  "rate": 2.2,
+  "vs": 0.82,
   "small": false
  },
  {
   "dim": "첫 줄",
   "key": "속보형",
-  "n": 27,
-  "spread": 1.22,
-  "rate": 0.9,
-  "vs": 4.01,
-  "small": true
+  "n": 31,
+  "spread": 0.74,
+  "rate": 0.7,
+  "vs": 2.31,
+  "small": false
  },
  {
   "dim": "첫 줄",
   "key": "경고형",
-  "n": 42,
-  "spread": 0.39,
+  "n": 35,
+  "spread": 0.48,
   "rate": 1.7,
-  "vs": 1.29,
-  "small": false
- },
- {
-  "dim": "첫 줄",
-  "key": "평서형",
-  "n": 1808,
-  "spread": 0.34,
-  "rate": 1.6,
-  "vs": 1.11,
-  "small": false
- },
- {
-  "dim": "첫 줄",
-  "key": "경험형",
-  "n": 71,
-  "spread": 0.28,
-  "rate": 1.8,
-  "vs": 0.91,
-  "small": false
- },
- {
-  "dim": "첫 줄",
-  "key": "숫자형",
-  "n": 584,
-  "spread": 0.27,
-  "rate": 1.2,
-  "vs": 0.9,
+  "vs": 1.48,
   "small": false
  },
  {
   "dim": "첫 줄",
   "key": "반전형",
-  "n": 12,
-  "spread": 0.2,
+  "n": 10,
+  "spread": 0.37,
   "rate": 1.0,
-  "vs": 0.64,
+  "vs": 1.14,
   "small": true
  },
  {
   "dim": "첫 줄",
-  "key": "질문형",
-  "n": 276,
-  "spread": 0.16,
+  "key": "평서형",
+  "n": 1864,
+  "spread": 0.33,
   "rate": 1.5,
-  "vs": 0.54,
+  "vs": 1.05,
+  "small": false
+ },
+ {
+  "dim": "첫 줄",
+  "key": "숫자형",
+  "n": 601,
+  "spread": 0.31,
+  "rate": 1.1,
+  "vs": 0.98,
+  "small": false
+ },
+ {
+  "dim": "첫 줄",
+  "key": "경험형",
+  "n": 69,
+  "spread": 0.24,
+  "rate": 1.5,
+  "vs": 0.76,
+  "small": false
+ },
+ {
+  "dim": "첫 줄",
+  "key": "질문형",
+  "n": 279,
+  "spread": 0.21,
+  "rate": 1.2,
+  "vs": 0.65,
   "small": false
  }
 ]
