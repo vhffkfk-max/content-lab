@@ -6,13 +6,16 @@
 - 블로그: 네이버 공개 RSS(5분마다) → 본문 + 차트 사진. 사진은 용량으로 가림 (150KB 미만이 차트, 그 위는 사진·기사 캡처라 뺌)
 - 인스타: 로그인 없는 공개 프로필 화면(15분마다) → 새 글의 캡션. 경제와 상관없는 글·블로그와 겹치는 글은 Claude 가 건너뜀
 - 채널에 직접 올리지 않는다. 봇으로 대표에게 보내고 사이트(텔레그램 › 말희아빠)에 띄우면 대표가 확인 후 복사해 올림
+- 새 글을 찾으면 PC 팝업(malhee_popup.py)을 바로 띄움. '확인했어요'를 누를 때까지 안 꺼지고, 30분마다 봇으로도 다시 알림 (글당 4번까지)
 - 처음 실행 때는 지금까지 올라온 글을 '본 글'로만 표시 (밀린 글을 한꺼번에 쓰지 않음)
 → output/site/malhee_var.json (최근 40개) / 본 글 기록: ~/.content-lab-ai/malhee_state.json
 """
 import argparse
 import html
 import json
+import os
 import re
+import subprocess
 import sys
 import tempfile
 import time
@@ -34,12 +37,15 @@ BLOG_ID, IG_USER = "kis6574", "oh_neworld"
 RSS = f"https://rss.blog.naver.com/{BLOG_ID}.xml"
 OUT = OUTPUT_DIR / "site" / "malhee_var.json"
 STATE = Path.home() / ".content-lab-ai" / "malhee_state.json"
+PENDING = Path.home() / ".content-lab-ai" / "malhee_pending.json"      # 팝업에 띄울 글 (이 프로그램만 씀)
+CONFIRMED = Path.home() / ".content-lab-ai" / "malhee_confirmed.json"  # 팝업에서 확인한 글 (팝업만 씀)
 EXAMPLES = ROOT / "config" / "malhee_var_examples.txt"
 MODEL = "claude-opus-5-5"      # 실제로 올리는 글이라 Opus (대표 결정)
 KEEP, PER_RUN, MAX_FAILS = 40, 3, 3
 IG_EVERY_MIN, MAX_AGE_H = 15, 24
 CHART_MAX_BYTES, MAX_CHARTS = 150 * 1024, 4
 BODY_CHARS = 8000
+REMIND_MIN, REMIND_MAX, QUIET_UNTIL = 30, 4, 7   # 확인 안 한 글 봇 재알림: 30분마다, 글당 4번, 밤 12시~아침 7시는 쉼
 LINK_LEAD = "딥한 내용은 원문 참조\n\n⬇️⬇️⬇️⬇️⬇️"
 UA = {"User-Agent": "Mozilla/5.0 (Linux; Android 10) Mobile"}
 
@@ -155,6 +161,47 @@ def recent_titles(rows):
     return [f"- {r['title']}" for r in rows if r.get("made", "") >= since]
 
 
+def save_pending(rows):
+    tmp = PENDING.with_suffix(".tmp")
+    tmp.write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
+    os.replace(tmp, PENDING)   # 팝업이 읽는 중에도 반쯤 쓴 파일이 안 보이게
+
+
+def mark(key, **fields):
+    """팝업 칸 고치기 (시험 실행처럼 목록에 없는 글이면 그냥 지나감)."""
+    rows = load(PENDING, [])
+    for r in rows:
+        if r["key"] == key:
+            r.update(fields)
+            save_pending(rows)
+            return
+
+
+def show_popup():
+    """팝업 띄우기. 이미 떠 있으면 팝업이 알아서 끝남. 출력을 물려받지 않게 해야 local_ai 가 창이 닫힐 때까지 안 기다림."""
+    pyw = Path(sys.executable).with_name("pythonw.exe")
+    try:
+        subprocess.Popen([str(pyw if pyw.exists() else sys.executable), str(ROOT / "malhee_popup.py")], cwd=ROOT, stdin=subprocess.DEVNULL,
+                         stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, creationflags=getattr(subprocess, "DETACHED_PROCESS", 0))
+    except OSError as e:
+        print(f"⚠️ 팝업 실패: {e}"[:200])
+
+
+def remind(rows, state):
+    """오래 확인 안 한 글을 봇으로 다시 알림 (PC 앞에 없을 때를 위해)."""
+    now = datetime.now(KST)
+    if now.hour < QUIET_UNTIL or time.time() - state.get("remind_at", 0) < (REMIND_MIN - 1) * 60:
+        return
+    due = [r for r in rows if time.time() - r["found"] >= REMIND_MIN * 60 and r.get("reminded", 0) < REMIND_MAX]
+    if not due:
+        return
+    if send("\n".join([f"🔔 아직 확인 안 한 글 {len(rows)}개 · PC 팝업에서 '확인했어요'를 눌러 주세요", *(f"· {r['source']} {r['time']} {r.get('title', '')}" for r in rows[:5])])):
+        state["remind_at"] = time.time()
+        for r in due:
+            r["reminded"] = r.get("reminded", 0) + 1
+        save_pending(rows)
+
+
 def process(item, do_send):
     """글 하나를 씀. 건너뛴 글은 None."""
     urls, folder = [], tempfile.TemporaryDirectory()
@@ -172,14 +219,17 @@ def process(item, do_send):
             raise ValueError("글을 못 받았어요")
         if v.skip or not v.text.strip():
             print(f"⏭ {item['source']} 건너뜀: {v.skip_reason} · {item['url']}")
+            mark(item["key"], status="건너뜀", reason=v.skip_reason)
             return None
         charts = chart_files(urls, folder.name)
         print(f"--- {item['source']} {item['url']} · 글자 {len(v.text)} · 차트 {len(charts)}장\n{v.title}\n\n{v.text}\n\n확인: {v.check}")
+        link_lead = LINK_LEAD if item["source"] == "블로그" else ""
+        mark(item["key"], status="완료", title=v.title, text=v.text, check=v.check, link_lead=link_lead)   # 봇이 실패해도 팝업엔 글이 뜨게 먼저
         if do_send and not deliver(item, v, charts):
             raise ValueError("봇으로 못 보냈어요")
         return {"key": item["key"], "source": item["source"], "url": item["url"], "title": v.title, "time": f"{item['at']:%m/%d %H:%M}",
                 "made": datetime.now(KST).isoformat(timespec="seconds"), "text": v.text, "check": v.check,
-                "link_lead": LINK_LEAD if item["source"] == "블로그" else ""}
+                "link_lead": link_lead}
 
 
 def test_item(url):
@@ -233,6 +283,14 @@ def main():
     cutoff = datetime.now(KST) - timedelta(hours=MAX_AGE_H)
     for i in [i for i in new if i["at"] < cutoff]:   # PC가 오래 꺼져 있던 사이 글은 늦은 소식이라 쓰지 않음
         seen[i["key"]] = None
+    fresh = [i for i in new if i["at"] >= cutoff]
+    known = load(PENDING, [])
+    have = {r["key"] for r in known}
+    added = [{"key": i["key"], "source": i["source"], "url": i["url"], "title": i["title"], "time": f"{i['at']:%m/%d %H:%M}", "status": "쓰는 중", "found": time.time()}
+             for i in fresh if i["key"] not in have]
+    if added:
+        save_pending(known + added)
+        show_popup()   # 글을 쓰기 전에 먼저 띄움
     made = 0
     for item in sorted((i for i in new if i["at"] >= cutoff), key=lambda i: i["at"])[:PER_RUN]:
         try:
@@ -243,12 +301,20 @@ def main():
             print(f"⚠️ {item['url']} 실패 {n}번: {e}"[:300])
             if n >= MAX_FAILS:
                 seen[item["key"]] = None
+                mark(item["key"], status="실패")
                 send(f"⚠️ 바레이션을 못 만들었어요 ({item['source']}): {item['url']}")
             continue
         seen[item["key"]] = None
         if row:
             OUT.write_text(json.dumps(([row] + load(OUT, []))[:KEEP], ensure_ascii=False, indent=1), encoding="utf-8")
             made += 1
+    done = set(load(CONFIRMED, []))
+    left = [r for r in load(PENDING, []) if r["key"] not in done]
+    if left or PENDING.exists():
+        save_pending(left)
+    if left:   # PC를 다시 켰거나 창이 꺼졌어도 확인할 때까지 다시 뜸
+        show_popup()
+        remind(left, state)
     state["seen"] = list(seen)[-500:]
     STATE.parent.mkdir(parents=True, exist_ok=True)
     STATE.write_text(json.dumps(state, ensure_ascii=False), encoding="utf-8")
