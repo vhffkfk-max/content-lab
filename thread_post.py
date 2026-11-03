@@ -245,7 +245,8 @@ def push_out():
     git("add", "--", str(OUT.relative_to(ROOT)))
     git("commit", "-q", "-m", "data: 쓰레드 글")
     for _ in range(6):
-        if not (git("fetch", "-q", "--depth", "1", "origin", "main") and git("rebase", "-q", "-X", "theirs", "origin/main")):
+        # --depth 1 금지: 얕게 받으면 이전 커밋과 이어지지 않아 rebase 가 옛 파일 전체를 다시 얹어 그사이 올라온 것을 되돌린다 (2026-11-03 83414db)
+        if not (git("fetch", "-q", "origin", "main") and git("rebase", "-q", "-X", "theirs", "origin/main")):
             git("rebase", "--abort")
         elif git("push", "-q", "origin", "HEAD:main"):
             return True
