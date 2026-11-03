@@ -28,16 +28,18 @@ def publish(files, message):
         code, out = git("fetch", "-q", "origin", "main")
         if code != 0:
             continue
+        # 커밋 하나로 고정한다. origin/main 은 다른 프로세스의 fetch·push 로 언제든 움직이는데, 다시 읽으면 옛 파일 묶음이 새 커밋 위에 얹혀 그사이 올라온 것을 되돌린다 (2026-11-03 d9b769c)
+        base = git("rev-parse", "origin/main")[1]
         with tempfile.TemporaryDirectory() as tmp:
             env = {**os.environ, "GIT_INDEX_FILE": os.path.join(tmp, "index")}
-            git("read-tree", "origin/main", env=env)
+            git("read-tree", base, env=env)
             code, out = git("add", "--", *files, env=env)
             if code != 0:
                 return f"실패: {out[-200:]}"
             _, tree = git("write-tree", env=env)
-        if tree == git("rev-parse", "origin/main^{tree}")[1]:
+        if tree == git("rev-parse", f"{base}^{{tree}}")[1]:
             return "바뀐 것 없음"
-        code, commit = git("commit-tree", tree, "-p", "origin/main", "-m", message)
+        code, commit = git("commit-tree", tree, "-p", base, "-m", message)
         if code != 0:
             return f"실패: {commit[-200:]}"
         code, out = git("push", "-q", "origin", f"{commit}:refs/heads/main")
