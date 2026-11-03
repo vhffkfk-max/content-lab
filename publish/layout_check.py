@@ -38,7 +38,7 @@ document.fonts.ready.then(() => {
   for (const el of root.querySelectorAll('*')) {
     if (el.closest(SKIP) || INL.has(el.tagName) || el.closest('svg') || !isBlock(el)) continue;
     const rects = rectsOf(el);
-    if (rects.length) items.push({kind: 'text', text: el.textContent.trim().slice(0, 24), rects, el: 0, idx: items.length, free: !!el.closest('.pn,.foot:not(.in)')});
+    if (rects.length) items.push({kind: 'text', text: el.textContent.trim().slice(0, 24), rects, el: 0, idx: items.length});
     el.dataset.lc = items.length - 1;
   }
   for (const el of root.querySelectorAll('svg,img,.ui,.point,.bub,.btn')) {
@@ -55,7 +55,7 @@ document.fonts.ready.then(() => {
 </script>"""
 TOL = 8        # 글자 상자는 실제 글자보다 위아래로 넉넉해서 이 정도 겹침은 눈에 안 보인다
 W, H = 1080, 1350
-TOP, BOTTOM = 135, 1215   # 1:1로 올려도 남는 가운데 (forms.CSS 위 설명)
+TOP, BOTTOM = 60, 1340   # 4:5 에서 글이 가장자리에 붙지 않게. 위는 인스타 쪽 번호 표시 자리
 
 
 def overlap(a, b):
@@ -66,8 +66,8 @@ def overlap(a, b):
 def problems_of(items, n, safe=False):
     out, texts = [], [(i, x) for i, x in enumerate(items) if x["kind"] == "text"]
     for i, x in texts:
-        if safe and not x.get("free") and any(r[1] < TOP - 2 or r[3] > BOTTOM + 2 for r in x["rects"]):
-            out.append(f"{n}장: '{x['text']}' 1:1로 올리면 잘림")
+        if safe and any(r[1] < TOP - 2 or r[3] > BOTTOM + 2 for r in x["rects"]):
+            out.append(f"{n}장: '{x['text']}' 가장자리에 너무 붙음")
         for r in x["rects"]:
             if r[0] < -2 or r[2] > W + 2 or r[3] > H + 2 or r[1] < -2:
                 out.append(f"{n}장: '{x['text']}' 화면 밖으로 나감")

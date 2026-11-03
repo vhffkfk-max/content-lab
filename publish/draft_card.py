@@ -374,7 +374,7 @@ def main():
     for w in warns:
         print("⚠️", w)
     if not a.no_send:
-        head = f"📝 카드뉴스 초안: {post.get('title', topic)}\n폼: {forms.FORM_NAMES[post['form']]} / {len(files)}장"
+        head = f"📝 카드뉴스 초안: {post.get('title', topic)}\n폼: {forms.FORM_NAMES[post['form']]} / {len(files)}장\n올릴 때 첫 장에서 ⤢ 눌러 4:5로 (그대로 1:1이면 위아래가 잘려요)"
         if post.get("design_note"):
             head += f"\n왜 이렇게: {post['design_note']}"
         if warns:
