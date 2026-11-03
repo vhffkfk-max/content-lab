@@ -2,11 +2,20 @@
  {
   "geo": "KR",
   "term": "삼성",
-  "traffic": 10000,
+  "traffic": 20000,
   "topics": "AI·반도체, 국내 대형주",
   "econ": true,
   "news_title": "코스피 3.59% 내린 5648 마감...삼성전자 4.2%, SK하이닉스 5% 하락",
   "news_link": "https://www.chosun.com/economy/money/2026/11/03/3VDFUFVH6BGWTGB7XM7I3K2SRQ/"
+ },
+ {
+  "geo": "KR",
+  "term": "김자연",
+  "traffic": 2000,
+  "topics": "국내 대형주",
+  "econ": true,
+  "news_title": "45세 슈퍼모델 김자연, 70세 삼성전자 전 사장과 결혼",
+  "news_link": "https://www.newsis.com/view/NISX20261103_0003853011"
  },
  {
   "geo": "KR",
@@ -19,12 +28,12 @@
  },
  {
   "geo": "KR",
-  "term": "유언",
+  "term": "우량주",
   "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "\"15억 전재산 동거녀에게 다 준다는 아버지 유언, 친자녀 몫은 0원?\"",
-  "news_link": "https://realty.chosun.com/site/data/html_dir/2026/11/02/2026110202845.html"
+  "topics": "국내 대형주",
+  "econ": true,
+  "news_title": "\"다신 국장 안해\" … 李 '오천피' 무색, 우량주는 '코스피 2000' 시절로 회귀",
+  "news_link": "https://biz.newdaily.co.kr/site/data/html/2026/11/03/2026110300107.html"
  },
  {
   "geo": "KR",
@@ -37,12 +46,12 @@
  },
  {
   "geo": "KR",
-  "term": "우량주",
+  "term": "전투기",
   "traffic": 1000,
-  "topics": "국내 대형주",
-  "econ": true,
-  "news_title": "\"다신 국장 안해\" … 李 '오천피' 무색, 우량주는 '코스피 2000' 시절로 회귀",
-  "news_link": "https://biz.newdaily.co.kr/site/data/html/2026/11/03/2026110300107.html"
+  "topics": "",
+  "econ": false,
+  "news_title": "中 전투기굴기 맹위, 러시아 의존서 미국의 6세대 경쟁자로...",
+  "news_link": "https://www.newspim.com/news/view/20261101000132"
  },
  {
   "geo": "KR",
@@ -55,21 +64,12 @@
  },
  {
   "geo": "KR",
-  "term": "손영권",
-  "traffic": 500,
-  "topics": "국내 대형주",
-  "econ": true,
-  "news_title": "45세 슈퍼모델 김자연, 70세 삼성전자 전 사장과 결혼",
-  "news_link": "https://www.newsis.com/view/NISX20261103_0003853011"
- },
- {
-  "geo": "KR",
-  "term": "김원훈",
+  "term": "where to vote",
   "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "지예은, 청첩장 공개…신동엽 앞에서 \"사회는 유재석\" - 머니투데이",
-  "news_link": "https://www.mt.co.kr/entertainment/2026/11/02/2026110223195918105"
+  "topics": "정치·관세",
+  "econ": true,
+  "news_title": "It’s Election Day in Florida",
+  "news_link": "https://www.newsfromthestates.com/article/its-election-day-florida"
  },
  {
   "geo": "KR",
@@ -91,16 +91,7 @@
  },
  {
   "geo": "US",
-  "term": "nba standings",
-  "traffic": 10000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Luka Doncic touts his improved defense, draws praise from Lakers, Raptors",
-  "news_link": "https://www.espn.com/nba/story/_/id/50356293/lakers-luka-doncic-touts-improved-defense-win-vs-raptors"
- },
- {
-  "geo": "US",
-  "term": "talia gibson",
+  "term": "dayana yastremska",
   "traffic": 2000,
   "topics": "",
   "econ": false,
@@ -109,66 +100,57 @@
  },
  {
   "geo": "US",
-  "term": "paris jackson",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Paris Jackson Seeks $600 Million from Michael Jackson Estate to Her Family Trust",
-  "news_link": "https://people.com/paris-jackson-seeks-600-million-transfer-from-michael-jackson-estate-to-family-trust-12208764"
- },
- {
-  "geo": "US",
-  "term": "robin montgomery",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "How to watch the women’s Chennai Open: Streaming options for the Round of 32",
-  "news_link": "https://www.nytimes.com/athletic/7746330/2026/11/01/womens-chennai-open-stream-how-to-watch-november-3/"
- },
- {
-  "geo": "US",
-  "term": "dead by daylight",
+  "term": "sadie sink",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Dead by Daylight fans are uninstalling the game in protest — here's why",
-  "news_link": "https://www.polygon.com/dead-by-daylight-theburntpeanut-controversy-explained/"
+  "news_title": "Sadie Sink Chooses Perfect Follow-Up Movie to 'Spider-Man: Brand New Day'",
+  "news_link": "https://thedirect.com/article/spider-man-brand-new-day-sadie-sink-follow-up-movie"
  },
  {
   "geo": "US",
-  "term": "jil teichmann",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "WTA Chennai Day 2 Predictions Including Janice Tjen vs Katherine Hui",
-  "news_link": "https://lastwordonsports.com/tennis/2026/11/02/wta-chennai-day-2-predictions-tjen-hui/"
- },
- {
-  "geo": "US",
-  "term": "kamala harris",
+  "term": "barcelona vs aston villa",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "Kamala Harris and Gavin Newsom, weighing 2028 runs, rally together in California",
-  "news_link": "https://www.washingtonpost.com/politics/2026/11/02/kamala-harris-gavin-newsom-weighing-2028-runs-rally-together-california/"
+  "news_title": "Aston Villa Football Club - The Official Club Website",
+  "news_link": "https://www.avfc.co.uk/news/2026/november/02/prematch-unai-emery-pre-barcelona/"
  },
  {
   "geo": "US",
-  "term": "la county measure a",
+  "term": "ca lottery",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "Your last-minute guide to L.A. County Charter Amendment A",
-  "news_link": "https://www.latimes.com/california/story/2026-10-31/2026-california-election-los-angeles-county-charter-amendment-a-last-minute-voter-guide"
+  "news_title": "California Lottery Powerball, Daily 3 Midday winning numbers for Nov. 2, 2026",
+  "news_link": "https://www.desertsun.com/story/news/local/2026/11/02/california-lottery-results-monday-november-2-2026/92580771007/"
  },
  {
   "geo": "US",
-  "term": "polymarket midterms",
+  "term": "disneyland paris ride closing 2027",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "Prediction Markets Keep Whiffing on Elections. Will They Miss on the Midterms?",
-  "news_link": "https://www.wsj.com/politics/elections/prediction-markets-keep-whiffing-on-elections-will-they-miss-on-the-midterms-9809c8c9"
+  "news_title": "Beloved Disney ride to close after 33 years",
+  "news_link": "https://www.thestreet.com/retail/disneyland-paris-ride-to-close-after-33-years"
+ },
+ {
+  "geo": "US",
+  "term": "matt damon",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "Matt Damon & David Letterman Make Blink & You Missed It Cameos On ‘The Gilded Age’ Season 4 Premiere",
+  "news_link": "https://deadline.com/2026/11/matt-damon-david-letterman-cast-the-gilded-age-season-4-1237211033/"
+ },
+ {
+  "geo": "US",
+  "term": "seattle basketball",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "Lobos Drop Season Opener to Seattle - New Mexico Lobos - Official Athletics Website",
+  "news_link": "https://golobos.com/news/2026/11/2/lobos-drop-season-opener-to-seattle"
  },
  {
   "geo": "US",
@@ -176,7 +158,25 @@
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "‘Severance’ Season 3 Release Date Info: When Is Season 3 Of ‘Severance’ Coming Out?",
-  "news_link": "https://www.yahoo.com/entertainment/tv/articles/severance-season-3-release-date-143000903.html"
+  "news_title": "Dark Matter Season-Finale Recap: Into the Great Unknown",
+  "news_link": "https://www.vulture.com/article/dark-matter-recap-season-2-episode-10-finale-apple-tv.html"
+ },
+ {
+  "geo": "US",
+  "term": "zeynep sonmez",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "Alex Eala targets strong Hong Kong finale after breakout WTA season",
+  "news_link": "https://www.espn.com/tennis/story/_/id/50353100/alex-eala-hong-kong-finale-breakout-season"
+ },
+ {
+  "geo": "US",
+  "term": "中期选举",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "一文读懂美国中期选举：两党各持何种立场，选情如何",
+  "news_link": "https://cn.nytimes.com/usa/20261103/midterms-election-2026-senate-house-congress/"
  }
 ]
