@@ -1,17 +1,8 @@
 [
  {
   "geo": "KR",
-  "term": "kbo",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Live: Samsung Lions vs. KT Wiz in Game 1 of Korean Series",
-  "news_link": "https://www.koreajoongangdaily.com/sports/live-samsung-lions-vs-kt-wiz-in-game-1-of-korean-series/12952792"
- },
- {
-  "geo": "KR",
   "term": "두산에너 빌리티",
-  "traffic": 1000,
+  "traffic": 2000,
   "topics": "",
   "econ": false,
   "news_title": "겹악재에 52주 최저가 찍은 두산에너빌리티…4분기가 분수령",
@@ -19,12 +10,12 @@
  },
  {
   "geo": "KR",
-  "term": "김광석",
-  "traffic": 500,
+  "term": "kbo",
+  "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "'그대 그리고 나' 부른 포크 그룹 소리새 김광석 별세",
-  "news_link": "https://www.yna.co.kr/view/AKR20261103159200005"
+  "news_title": "Live: Samsung Lions vs. KT Wiz in Game 1 of Korean Series",
+  "news_link": "https://www.koreajoongangdaily.com/sports/live-samsung-lions-vs-kt-wiz-in-game-1-of-korean-series/12952792"
  },
  {
   "geo": "KR",
@@ -41,26 +32,26 @@
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Kim Hyun-soo's Homer Powers KT to 8-0 Lead in Korean Series",
-  "news_link": "https://www.chosun.com/english/sports-en/2026/11/03/Y6UCGQ3MMVDJJCNUEQMYEFCJZY/"
- },
- {
-  "geo": "KR",
-  "term": "김현준",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "추가 실점위기, 역투하는 김정운",
-  "news_link": "https://mobile.newsis.com/photo/NISI20261103_0021517760"
+  "news_title": "KT Defeats Samsung in Slugfest to Take Game 1 of Korean Series",
+  "news_link": "https://news.sbs.co.kr/english/article.do?news_id=N1008829156"
  },
  {
   "geo": "KR",
   "term": "사토시",
   "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "",
-  "news_link": ""
+  "topics": "비트코인",
+  "econ": true,
+  "news_title": "Bitcoin's white paper turns 18, and small businesses are still paying for the bailouts it answered",
+  "news_link": "https://www.coindesk.com/opinion/2026/10/31/bitcoin-s-white-paper-turns-18-and-small-businesses-are-still-paying-for-the-bailouts-it-answered"
+ },
+ {
+  "geo": "KR",
+  "term": "폰지 사기",
+  "traffic": 200,
+  "topics": "부동산",
+  "econ": true,
+  "news_title": "‘부동산 전문가’ 믿었는데…125억 가로챈 스타 강사",
+  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8702992"
  },
  {
   "geo": "KR",
@@ -73,12 +64,21 @@
  },
  {
   "geo": "KR",
-  "term": "잠실야구장",
+  "term": "한국항공우주산업",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "KAI 노조 1천300명 상경투쟁…\"한화 인수 저지·독립경영 보장\"",
+  "news_link": "https://www.yna.co.kr/view/AKR20261103155700052"
+ },
+ {
+  "geo": "KR",
+  "term": "이재현",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "'아직' 잠실야구장 사라지기 전... 특별한 추억 남길 수 있다, 두산 베어스 8일, 11일, 20일, 24일 팬 투어 프로그램 진행 - 머니투데이",
-  "news_link": "https://www.mt.co.kr/sports/2026/11/02/2026103122230050808"
+  "news_title": "추가 실점위기, 역투하는 김정운",
+  "news_link": "https://mobile.newsis.com/photo/NISI20261103_0021517759"
  },
  {
   "geo": "KR",
@@ -91,92 +91,92 @@
  },
  {
   "geo": "US",
-  "term": "lisa rinna",
+  "term": "taxes",
+  "traffic": 10000,
+  "topics": "연금·절세",
+  "econ": true,
+  "news_title": "Two economists studied California's billionaire tax. They reached wildly different conclusions",
+  "news_link": "https://www.npr.org/sections/planet-money/2026/11/02/g-s1-151009/two-economists-studied-californias-billionaire-tax-they-reached-wildly-different-conclusions"
+ },
+ {
+  "geo": "US",
+  "term": "lawsuit",
+  "traffic": 5000,
+  "topics": "정치·관세",
+  "econ": true,
+  "news_title": "Judge Dismisses Trump Lawsuit Demanding Harvard Admissions Data",
+  "news_link": "https://www.nytimes.com/2026/11/02/us/harvard-admissions-trump-lawsuit-dismissed.html"
+ },
+ {
+  "geo": "US",
+  "term": "dalen terry",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Delilah Belle Hamlin, Lisa Rinna and Harry Hamlin Star in Express Holiday Campaign (Exclusive)",
-  "news_link": "https://people.com/delilah-belle-parents-lisa-rinna-harry-hamlin-star-express-holiday-campaign-exclusive-12202655"
+  "news_title": "Sources: Injury-plagued Thunder agree to 2-year deal with veteran Dalen Terry",
+  "news_link": "https://www.espn.com/nba/story/_/id/50368707/sources-thunder-agree-2-year-deal-dalen-terry"
  },
  {
   "geo": "US",
-  "term": "awkwafina",
+  "term": "emma roberts",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Emma Roberts Is in a New League Debuting Trading Card Business With Husband Cody John",
+  "news_link": "https://www.eonline.com/news/1437754/emma-roberts-husband-cody-john-start-trading-card-channel-summer-breaks"
+ },
+ {
+  "geo": "US",
+  "term": "jon ossoff",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Jon Ossoff, once vulnerable, seeks a commanding win over Mike Collins",
+  "news_link": "https://www.ajc.com/politics/2026/11/jon-ossoff-commanding-win-mike-collins/"
+ },
+ {
+  "geo": "US",
+  "term": "spectrum outage",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "‘I felt bad for my exes’: Awkwafina on making deeply personal TV – with her grandma",
-  "news_link": "https://www.theguardian.com/tv-and-radio/2026/oct/30/i-felt-bad-for-my-exes-awkwafina-on-making-deeply-personal-tv-with-her-grandma"
+  "news_title": "Internet outage prompts auditors to make calls to verify voters",
+  "news_link": "https://www.bhpioneer.com/local_news/internet-outage-prompts-auditors-to-make-calls-to-verify-voters/article_9719d335-b359-4d2a-82c9-b9baba1989e4.html"
  },
  {
   "geo": "US",
-  "term": "bill ackman",
+  "term": "trump israel",
   "traffic": 500,
-  "topics": "AI·반도체, 빅테크",
+  "topics": "정치·관세",
   "econ": true,
-  "news_title": "Ackman's Pershing Square says Wall Street estimates penalize hyperscalers for AI spending (META:NASDAQ)",
-  "news_link": "https://seekingalpha.com/news/4663189-ackmans-pershing-square-says-wall-street-estimates-penalize-hyperscalers-for-ai-spending"
+  "news_title": "Trump says that US will stop paying Israel aid after year-end",
+  "news_link": "https://www.aljazeera.com/news/2026/11/3/trump-announces-that-us-will-stop-paying-israel-after-year-end"
  },
  {
   "geo": "US",
-  "term": "msc poesia cruise ship",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Coast Guard detains cruise ship in Miami, officials say",
-  "news_link": "https://www.cbsnews.com/news/coast-guard-detains-msc-poesia-cruise-ship-miami/"
- },
- {
-  "geo": "US",
-  "term": "amy klobuchar",
+  "term": "kedon slovis",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Minnesota voters set to hire their next governor — and make a little history",
-  "news_link": "https://www.mprnews.org/story/2026/11/03/minnesota-voters-set-to-hire-their-next-governor-and-make-a-little-history"
+  "news_title": "",
+  "news_link": ""
  },
  {
   "geo": "US",
-  "term": "brandon nakashima",
+  "term": "roger marshall",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Tommy Paul v Holger Rune Odds",
-  "news_link": "https://sportsbook.fanduel.com/tennis/atp-paris-2026/tommy-paul-v-holger-rune-36260856"
+  "news_title": "Roger Marshall Goes Rogue in Kansas Senate Race With a Video",
+  "news_link": "https://www.nytimes.com/2026/11/01/us/elections/roger-marshall-ad-kansas-senate-race.html"
  },
  {
   "geo": "US",
-  "term": "david crowley",
+  "term": "valentin vacherot",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Who's running for Wisconsin governor? Where Crowley, Tiffany stand on key issues",
-  "news_link": "https://www.fox6now.com/news/wisconsin-governor-crowley-tiffany-102626"
- },
- {
-  "geo": "US",
-  "term": "gerrymandering",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Opinion | When Does a Dirty Trick Become a Crime?",
-  "news_link": "https://www.wsj.com/opinion/when-does-a-dirty-trick-become-a-crime-10e0b585"
- },
- {
-  "geo": "US",
-  "term": "mike lawler",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Canvassers Sue Mike Lawler for Unpaid Wages, Discrimination",
-  "news_link": "https://news.bloomberglaw.com/daily-labor-report/canvassers-sue-mike-lawler-for-unpaid-wages-discrimination"
- },
- {
-  "geo": "US",
-  "term": "north royalton fire",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "2 firefighters hospitalized after battling blaze in Broadview Heights",
-  "news_link": "https://www.wkyc.com/article/news/local/cuyahoga-county/2-broadview-heights-firefighters-hospitalized-blaze-west-royalton-road/95-534d8666-53c2-48e0-9e20-89d104988b86"
+  "news_title": "Vacherot ahead of Djokovic clash in Paris: 'My season could be over, I'm giving 100%'",
+  "news_link": "https://www.atptour.com/en/news/vacherot-feature-paris-2026-r1"
  }
 ]
