@@ -18,7 +18,7 @@ DATASETS = ["summary", "recs", "rec_reasons", "rec_examples", "insights", "topic
             "x_meta", "x_trump", "x_rank", "x_groups", "x_accounts", "x_ai",
             "tg_meta", "tg_chats", "tg_hot", "tg_mine", "tg_hours", "tg_lengths", "tg_media", "tg_ai",
             "tg_growth", "tg_streak", "tg_slots", "tg_shared", "tg_rank", "tg_rewrites", "trd_rooms", "trd_posts", "trd_folders", "live_meta", "hot_now", "growth_plan", "use_audit", "thread_posts",
-            "chart_reports", "futures_brief"]
+            "chart_reports", "futures_brief", "malhee_var"]
 
 
 def main():

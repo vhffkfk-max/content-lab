@@ -26,7 +26,7 @@ LOG = ROOT / "data" / "local_ai.log"
 SITE = "output/site/"
 OUTPUTS = [SITE + f for f in ("tg_ai.json", "tg_rewrites.json", "trd_rooms.json", "trd_posts.json", "drafts.json",
                                "imports.json", "threads_ai.json", "x_ai.json", "thm_ai.json", "growth_plan.json", "thread_posts.json",
-                               "chart_reports.json", "charts", "futures_brief.json", "futures")] + ["data/publish_queue.json", "data/card_style.json", "data/form_stats.json"]
+                               "chart_reports.json", "charts", "futures_brief.json", "futures", "malhee_var.json")] + ["data/publish_queue.json", "data/card_style.json", "data/form_stats.json"]
 ENV = {**os.environ, "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1"}
 CRAWLERS = (("content-lab-telegram-live", "tg_live.py"), ("content-lab-threads-watch", "threads_watch.py"), ("content-lab-thread-listen", "thread_listen.py"))
 TG_BEAT = Path.home() / ".content-lab-ai" / "tg_live.beat"
@@ -212,6 +212,11 @@ def run_cycle():
         did.append("트레이더스 글")
 
     py("tg_rewrite.py")              # 새 시황이 있을 때만 Claude 를 부름
+    mv = ROOT / SITE / "malhee_var.json"
+    before = mv.stat().st_mtime if mv.exists() else 0
+    py("malhee_watch.py", timeout=15 * 60)   # 말희아빠 블로그·오뉴월드 인스타 새 글 → 채널용 바레이션 (새 글이 있을 때만 Claude 를 부름)
+    if mv.exists() and mv.stat().st_mtime != before:
+        did.append("말희아빠 바레이션")
     py("tg_traders.py", "--ai-only")  # PC가 올린 통계가 바뀌었을 때만
     gp = ROOT / SITE / "growth_plan.json"
     before = gp.stat().st_mtime if gp.exists() else 0

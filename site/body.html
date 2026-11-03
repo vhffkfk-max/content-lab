@@ -336,6 +336,7 @@ a.row:hover .row-main{text-decoration:underline}
           </ul></li>
         <li><button type="button" data-ch="telegram"><i class="dot" style="background:var(--ch-telegram)"></i>텔레그램 · 말희아빠<span class="soon" id="tg-badge">연결 전</span></button>
           <ul class="subnav" data-for="telegram">
+            <li><a href="#tg-mv">블로그·인스타 바레이션</a></li>
             <li><a href="#tg-rw">시황 자동 변환</a></li>
             <li><a href="#tg-mine">내 채널 성과</a></li>
             <li><a href="#tg-rank">경쟁 채널 순위</a></li>
@@ -845,6 +846,11 @@ a.row:hover .row-main{text-decoration:underline}
           <div><h1>텔레그램 · 말희아빠</h1><p>차트보는 말희아빠 채널 키우기예요. 다른 업체 방의 반응 큰 글과 오늘 뉴스로 올릴 문구를 보여 줘요.</p></div>
         </div>
         <div class="kpis" id="tg-kpis"></div>
+        <section class="sec" id="tg-mv">
+          <h2>블로그·인스타 바레이션</h2>
+          <p class="note">말희아빠 블로그와 오뉴월드 인스타에 새 글이 올라오면 채널용 요약을 써서 여기와 봇으로 보내요. 채널에 자동으로 올라가지는 않아요. 경제와 상관없는 인스타 글은 건너뛰어요.</p>
+          <div class="recs" id="tg-mv-list"></div>
+        </section>
         <section class="sec" id="tg-rw">
           <h2>시황 자동 변환 — 말희아빠 아침·마감시황</h2>
           <p class="note">시황맨 채널에 아침·마감 시황이 올라오면 말희아빠 스타일로 새로 써서 여기와 내 텔레그램 '저장된 메시지'로 보내요. 숫자는 '올리기 전 확인'을 보고 한 번 체크해 주세요.</p>
@@ -2405,6 +2411,24 @@ a.row:hover .row-main{text-decoration:underline}
     document.getElementById('rf-open').addEventListener('click', () => { st.replaceChildren(); dlg.showModal(); });
   }
 
+  // ── 텔레그램: 블로그·인스타 새 글 → 채널용 바레이션 (malhee_watch.py) ──
+  function drawMalheeVar() {
+    const R = rows('malhee_var') || [], box = document.getElementById('tg-mv-list');
+    if (!R.length) { empty(box, '블로그나 인스타에 새 글이 올라오면 10분쯤 안에 여기와 봇으로 바레이션이 와요.'); return; }
+    listWithMore(box, R, r => {
+      const c = el('article', 'card rec'), chips = el('div', 'chips');
+      chips.append(el('span', 'pill accent', r.source), el('span', 'pill neutral', `원문 ${r.time}`));
+      const box = el('div', 'box'); box.textContent = r.text;   // 복사되는 글 그대로 (이모지 포함)
+      c.append(chips, el('h3', null, r.title), box);
+      if (r.check && r.check.length) c.append(el('p', 'sub', `올리기 전 확인 · ${r.check.join(' · ')}`));
+      const row = el('div', 'chips');
+      row.append(copyBtn('바레이션 복사', r.text, 'btn primary'));
+      if (r.link_lead) row.append(copyBtn('링크 안내 복사', `${r.link_lead}\n\n${r.url}`));
+      const a = el('a', 'btn small', '원문 보기'); a.href = r.url; a.target = '_blank'; a.rel = 'noopener'; row.append(a);
+      c.append(row); c.style.gap = '10px'; return c;
+    }, 3);
+  }
+
   // ── 텔레그램: 시황 자동 변환 (원문 채널 → 말희아빠 아침·마감시황) ──
   function drawRewrites() {
     const R = [...(rows('tg_rewrites') || [])].reverse(), box = document.getElementById('tg-rw-list');
@@ -3127,7 +3151,7 @@ a.row:hover .row-main{text-decoration:underline}
     if (!setupRefresh.done) { setupRefresh(); setupRefresh.done = true; }
     const recs = grouped();
     drawHome(recs); drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors(); drawAccRank();
-    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawX(); drawFeedback(); drawRewrites(); drawThreadsMine(); drawSlides(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics(); drawTraders(); drawTraderPosts(); drawGrowth(); drawAudit();
+    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawX(); drawFeedback(); drawMalheeVar(); drawRewrites(); drawThreadsMine(); drawSlides(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics(); drawTraders(); drawTraderPosts(); drawGrowth(); drawAudit();
     const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/), g = location.hash.match(/^#go-([\w-]+)$/);
     setChannel(ch ? ch[1] : m ? 'instagram' : 'home');
     if (g && document.getElementById(g[1])) focusSec(g[1]);

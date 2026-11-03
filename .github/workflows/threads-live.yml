@@ -16,6 +16,7 @@ on:
       - output/site/growth_plan.json
       - output/site/use_audit.json
       - output/site/thread_posts.json
+      - output/site/malhee_var.json
   workflow_dispatch:
 
 permissions:
