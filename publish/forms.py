@@ -71,6 +71,7 @@ def md(s):
 LOGO = asset_uri("brand/hotconomy_logo.png")
 
 # 4:5 그대로 올리는 기준으로 꽉 채운다. 폰 업로드에서 ⤢ 를 눌러 4:5로 바꿔야 한다(그대로 1:1이면 위아래 135px가 잘림).
+# 프로필 격자는 3:4로 보여 좌우 34px씩 잘리니, 글은 x 44~1036 안에 둔다.
 # 쪽 번호는 인스타가 보여 주니 새 폼에는 넣지 않는다. 가장자리 여백은 layout_check 가 safe 로 검사.
 CSS = """
 .s{position:relative;width:1080px;height:1350px;overflow:hidden;font-family:HSans,'Noto Sans CJK KR',sans-serif;--bg:#0b0b0d;--fg:#fff;--sub:#a9a9b2;--ac:#e3262b;--hl:#ffc23a;background:var(--bg);color:var(--fg);word-break:keep-all}
@@ -135,7 +136,7 @@ CSS = """
 .shade{position:absolute;inset:0;background:linear-gradient(180deg,#000000d0 0,#000000b0 26%,#00000050 42%,#00000070 58%,#000000e6 78%,#000000f0 100%)}
 .shade.cv{background:linear-gradient(180deg,#00000040 0,#00000000 35%,#000000b0 62%,#000000f0 100%)}
 .scene-t{text-shadow:0 2px 14px #000c}
-.credit{position:absolute;left:40px;bottom:14px;font-size:18px;color:#ffffffa0;max-width:1000px;white-space:nowrap;overflow:hidden}
+.credit{position:absolute;left:64px;bottom:14px;font-size:18px;color:#ffffffa0;max-width:1000px;white-space:nowrap;overflow:hidden}
 /* 글 길이에 맞춰 아래로 밀리는 묶음 (고정 위치면 제목이 길 때 겹침) */
 .stack{position:absolute;left:72px;right:72px;display:flex;flex-direction:column;gap:36px}
 .stack .ui{position:relative;left:auto;right:auto;margin:0 38px;top:auto}
