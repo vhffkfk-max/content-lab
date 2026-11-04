@@ -60,7 +60,12 @@ const chart = LightweightCharts.createChart(box, {
 const cs = chart.addCandlestickSeries({ upColor: '#089981', downColor: '#f23645', borderVisible: false,
   wickUpColor: '#089981', wickDownColor: '#f23645', priceLineVisible: true, priceLineStyle: 2, priceLineWidth: 1, lastValueVisible: true });
 cs.setData(S.candles);
-cs.applyOptions({ priceLineColor: S.candles[S.candles.length - 1].close >= S.candles[S.candles.length - 1].open ? '#089981' : '#f23645' });
+const lineColor = S.candles[S.candles.length - 1].close >= S.candles[S.candles.length - 1].open ? '#089981' : '#f23645';
+cs.applyOptions({ priceLineColor: lineColor });
+if (S.heikin) {   // 하이킨아시 값은 계산값이라 가격 눈금에는 실제 시세를 표시
+  cs.applyOptions({ priceLineVisible: false, lastValueVisible: false });
+  cs.createPriceLine({ price: S.last, color: lineColor, lineWidth: 1, lineStyle: 2, axisLabelVisible: true, title: '' });
+}
 const vol = chart.addHistogramSeries({ priceScaleId: 'vol', priceFormat: { type: 'volume' }, priceLineVisible: false, lastValueVisible: false });
 chart.priceScale('vol').applyOptions({ scaleMargins: { top: L.volTop ?? .85, bottom: 0 } });
 vol.setData(S.volume);
@@ -69,6 +74,10 @@ if (S.oi && S.oi.length) {
   chart.addLineSeries({ priceScaleId: 'oi', color: '#9598a1', lineWidth: 1, priceLineVisible: false, lastValueVisible: false, crosshairMarkerVisible: false }).setData(S.oi);
   chart.priceScale('oi').applyOptions({ scaleMargins: { top: L.oiTop + .025, bottom: 1 - L.oiBottom } });
 }
+for (const b of S.bb || []) chart.addLineSeries({ color: 'rgba(128,160,214,.75)', lineWidth: 1, lineStyle: 2, priceLineVisible: false, lastValueVisible: false, crosshairMarkerVisible: false }).setData(b);
+const rs = S.rsi ? chart.addLineSeries({ priceScaleId: 'rsi', color: '#b39ddb', lineWidth: 1, priceLineVisible: false, lastValueVisible: false, crosshairMarkerVisible: false,
+  autoscaleInfoProvider: () => ({ priceRange: { minValue: 0, maxValue: 100 } }) }) : null;
+if (rs) { rs.setData(S.rsi); chart.priceScale('rsi').applyOptions({ scaleMargins: { top: L.oiTop + .012, bottom: 1 - L.oiBottom } }); }
 chart.timeScale().setVisibleLogicalRange({ from: -1, to: S.candles.length - 1 + L.rightOffset });
 
 // ── 겹쳐 그리기 (차트 좌표 → 무대 좌표) ──
@@ -140,6 +149,15 @@ function draw() {
   if (S.oi && S.oi.length) {
     for (const r of [L.oiTop - .012, L.volTop - .012]) svg('line', { x1: 0, x2: plotW, y1: L.chartH * r, y2: L.chartH * r, stroke: '#2a2e39', 'stroke-width': 1 });
     const o = $('div', 'note', S.oi_label); o.style.setProperty('--c', '#9598a1'); o.style.left = '8px'; o.style.top = (L.chartH * (L.oiTop - .009)) + 'px'; stage.appendChild(o);
+  }
+  if (rs) {
+    for (const r of [L.oiTop - .012, L.volTop - .012]) svg('line', { x1: 0, x2: plotW, y1: L.chartH * r, y2: L.chartH * r, stroke: '#2a2e39', 'stroke-width': 1 });
+    for (const lv of [70, 30]) {
+      const y = rs.priceToCoordinate(lv);
+      svg('line', { x1: 0, x2: plotW, y1: y, y2: y, stroke: '#5d606b', 'stroke-width': 1, 'stroke-dasharray': '3 4' });
+      const t = $('div', 'fib', String(lv)); t.style.color = '#787b86'; stage.appendChild(t); t.style.top = (y - t.offsetHeight / 2) + 'px'; t.style.left = (plotW + 6) + 'px';
+    }
+    const o = $('div', 'note', S.rsi_label); o.style.setProperty('--c', '#b39ddb'); o.style.left = '8px'; o.style.top = (L.chartH * (L.oiTop - .009)) + 'px'; stage.appendChild(o);
   }
   document.title = 'ready';
 }

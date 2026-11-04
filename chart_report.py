@@ -39,12 +39,13 @@ COINS = {"비트코인": "BTC", "비트": "BTC", "btc": "BTC", "이더리움": "
          "솔라나": "SOL", "sol": "SOL", "도지코인": "DOGE", "도지": "DOGE", "doge": "DOGE"}
 COIN_NAMES = {"BTC": "비트코인", "ETH": "이더리움", "XRP": "리플", "SOL": "솔라나", "DOGE": "도지코인"}
 FIB = [(0, "#9598a1"), (0.236, "#c9716e"), (0.382, "#c9a35a"), (0.5, "#7fae7a"), (0.618, "#4f9e93"), (0.786, "#6a9fc9"), (1, "#9598a1")]
-MA = [(20, "#d9a441"), (50, "#4c8bf5"), (200, "#b2b5be")]
+MA = [(20, "#d9a441"), (240, "#4c8bf5")]   # 추세는 20선·240선으로 봄
 # 봉 종류: name 글에 쓰는 이름 · short 차트 머리글 · show 화면에 보일 봉 수 (일봉은 코인 365 · 주식 260)
-TF = {"15m": {"name": "15분봉", "short": "15분", "show": 220}, "1h": {"name": "1시간봉", "short": "1시간", "show": 220},
+TF = {"1m": {"name": "1분봉", "short": "1분", "show": 240}, "15m": {"name": "15분봉", "short": "15분", "show": 220}, "1h": {"name": "1시간봉", "short": "1시간", "show": 220},
       "4h": {"name": "4시간봉", "short": "4시간", "show": 220}, "1d": {"name": "일봉", "short": "1일", "show": None},
       "1w": {"name": "주봉", "short": "1주", "show": 156}}
-INTRADAY = ("15m", "1h", "4h")
+INTRADAY = ("1m", "15m", "1h", "4h")
+SCALP = {"1m": 60, "15m": 900}   # 단타용 봉: RSI·볼린저밴드·거래량 칸을 함께 보여 줌 (값은 봉 길이, 초)
 
 
 # ── 종목 찾기·시세 ──
@@ -104,7 +105,7 @@ def to_4h(rows):
 
 
 def yahoo_rows(symbol, tf, a=None):
-    rng, iv = {"15m": ("60d", "15m"), "1h": ("2y", "60m"), "4h": ("2y", "60m"), "1d": ("3y", "1d"), "1w": ("10y", "1wk")}[tf]
+    rng, iv = {"1m": ("5d", "1m"), "15m": ("60d", "15m"), "1h": ("2y", "60m"), "4h": ("2y", "60m"), "1d": ("3y", "1d"), "1w": ("10y", "1wk")}[tf]
     r = requests.get(f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}", params={"range": rng, "interval": iv},
                      headers=UA, timeout=30).json()["chart"]["result"][0]
     meta, q = r["meta"], r["indicators"]["quote"][0]
@@ -164,7 +165,7 @@ def fetch(a, tf="1d"):
             a["unit"], a["src"], a["exchange"] = "달러", "바이낸스 USDT", "BINANCE"
         except requests.RequestException:
             rows, to = [], None
-            path = {"15m": "minutes/15", "1h": "minutes/60", "4h": "minutes/240", "1d": "days", "1w": "weeks"}[tf]
+            path = {"1m": "minutes/1", "15m": "minutes/15", "1h": "minutes/60", "4h": "minutes/240", "1d": "days", "1w": "weeks"}[tf]
             for _ in range(4):   # 업비트는 한 번에 200개
                 p = {"market": "KRW-" + a["symbol"], "count": 200, **({"to": to} if to else {})}
                 xs = requests.get(f"https://api.upbit.com/v1/candles/{path}", params=p, headers=UA, timeout=30).json()
@@ -238,6 +239,93 @@ def sma(xs, n):
     return out
 
 
+def rsi_of(xs, n=14):
+    """RSI (와일더 평균)."""
+    out, up, dn = [None] * len(xs), 0.0, 0.0
+    for i in range(1, len(xs)):
+        d = xs[i] - xs[i - 1]
+        if i <= n:
+            up += max(d, 0) / n
+            dn += max(-d, 0) / n
+        else:
+            up = (up * (n - 1) + max(d, 0)) / n
+            dn = (dn * (n - 1) + max(-d, 0)) / n
+        if i >= n:
+            out[i] = 100.0 if dn == 0 else 100 - 100 / (1 + up / dn)
+    return out
+
+
+def indicators(rows, tf, P):
+    """단타용 RSI(14)·볼린저밴드(20, 2)·거래량 — 글과 차트가 같은 값을 쓴다."""
+    closes = [r["close"] for r in rows]
+    mid = sma(closes, 20)
+    up, lo = [None] * len(rows), [None] * len(rows)
+    for i in range(19, len(rows)):
+        w = closes[i - 19:i + 1]
+        sd = (sum((x - mid[i]) ** 2 for x in w) / 20) ** 0.5
+        up[i], lo[i] = mid[i] + 2 * sd, mid[i] - 2 * sd
+    rsi = rsi_of(closes)
+    close, u, l = closes[-1], up[-1], lo[-1]
+    pb = (close - l) / (u - l) if u > l else 0.5
+    bb = ("상단 돌파" if close > u else "하단 이탈" if close < l else "상단 근처" if pb >= 0.8 else "하단 근처" if pb <= 0.2
+          else "중단 위" if pb >= 0.5 else "중단 아래")
+    widths = [(a - b) / m for a, b, m in zip(up[-120:], lo[-120:], mid[-120:]) if a is not None and m]
+    squeeze = len(widths) >= 40 and sum(w <= widths[-1] for w in widths) / len(widths) <= 0.2   # 최근 120봉 중 폭이 좁은 편
+    # 거래량은 진행 중인 봉을 빼고 완성된 봉으로 비교
+    last = -1 if rows[-1]["ts"] + SCALP[tf] <= datetime.now(KST).timestamp() else -2
+    base = [r["volume"] for r in rows[last - 20:last]]
+    ratio = rows[last]["volume"] / (sum(base) / len(base)) if sum(base) else None
+    now = rsi[-1]
+    return {"rsi": rsi, "up": up, "lo": lo, "rsi_now": now, "rsi_word": "과매수권" if now >= 70 else "과매도권" if now <= 30 else "중립 위" if now >= 50 else "중립 아래",
+            "pb": pb, "bb_word": bb, "squeeze": squeeze, "up_now": u, "lo_now": l, "up_label": P(u), "lo_label": P(l), "vol": ratio,
+            "vol_word": None if ratio is None else "급증" if ratio >= 2 else "평균 이상" if ratio >= 1.3 else "한산" if ratio <= 0.6 else "평균 수준"}
+
+
+def ind_line(f):
+    """RSI·볼밴·거래량 한 줄."""
+    x = f["ind"]
+    out = [f"RSI {x['rsi_now']:.1f}({x['rsi_word']})", f"볼밴 {x['bb_word']}" + (" · 밴드 좁음" if x["squeeze"] else "")]
+    if x["vol"] is not None:
+        out.append(f"거래량 평균의 {x['vol']:.1f}배({x['vol_word']})")
+    return " · ".join(out)
+
+
+def ha_of(rows):
+    """하이킨아시 캔들과 지금 흐름 (같은 색이 몇 개째인지, 꼬리로 본 힘)."""
+    out = []
+    for i, r in enumerate(rows):
+        c = (r["open"] + r["high"] + r["low"] + r["close"]) / 4
+        o = (out[-1]["open"] + out[-1]["close"]) / 2 if out else (r["open"] + r["close"]) / 2
+        out.append({"time": r["time"], "open": o, "high": max(r["high"], o, c), "low": min(r["low"], o, c), "close": c})
+    last = out[-1]
+    up = last["close"] >= last["open"]
+    streak = 0
+    for x in reversed(out):
+        if (x["close"] >= x["open"]) != up:
+            break
+        streak += 1
+    body, span = abs(last["close"] - last["open"]), last["high"] - last["low"]
+    word = f"하이킨아시 {'양봉' if up else '음봉'} " + (f"{streak}연속" if streak > 1 else "전환")
+    if span and body <= span * 0.25:
+        word += " · 몸통 작음(힘 약해짐)"
+    elif up and last["low"] >= min(last["open"], last["close"]):
+        word += " · 아래꼬리 없음(상승 힘 강함)"
+    elif not up and last["high"] <= max(last["open"], last["close"]):
+        word += " · 위꼬리 없음(하락 힘 강함)"
+    return {"rows": out, "up": up, "streak": streak, "word": word}
+
+
+def adr_of(rows, n=20):
+    """ADR: 최근 n일 평균 일중 변동폭(%)과 오늘 변동폭이 그 몇 %인지."""
+    done = rows[-n - 1:-1]
+    if len(done) < n:
+        return None
+    adr = sum(r["high"] / r["low"] - 1 for r in done) / n * 100
+    today = (rows[-1]["high"] / rows[-1]["low"] - 1) * 100
+    return {"adr": adr, "today": today, "used": today / adr * 100 if adr else 0,
+            "text": f"ADR {adr:.2f}% · 오늘 변동 {today:.2f}% (ADR의 {today / adr * 100:.0f}%)" if adr else f"ADR {adr:.2f}%"}
+
+
 def pivots(rows, k, key, lo, hi):
     """rows[lo:hi] 안에서 앞뒤 k일 중 가장 높/낮은 날 (인덱스)."""
     out = []
@@ -294,23 +382,23 @@ def analyze(rows, a, show, tf="1d"):
         gap = close - v
         ma_txt[p] = {"price": v, "label": P(v), "gap": gap, "gap_pct": gap / v * 100,
                      "pos": "위" if gap > 0 else "아래"}
-    m20, m50, m200 = (ma_now[p] for p, _ in MA)
-    if m200 and m20 > m50 > m200:
+    m20, m240 = (ma_now[p] for p, _ in MA)
+    if m240 and close > m20 > m240:
         order = "정배열"
-    elif m200 and m20 < m50 < m200:
+    elif m240 and close < m20 < m240:
         order = "역배열"
     else:
         order = "섞여 있음"
     cross = None
-    if m200:
-        sign = lambda i: (mas[50][i] or 0) > (mas[200][i] or 0)
-        for i in range(n - 1, max(n - 400, 200), -1):
-            if mas[200][i - 1] is not None and sign(i) != sign(i - 1):
+    if m240:
+        sign = lambda i: (mas[20][i] or 0) > (mas[240][i] or 0)
+        for i in range(n - 1, max(n - 400, 240), -1):
+            if mas[240][i - 1] is not None and sign(i) != sign(i - 1):
                 cross = {"kind": "골든크로스" if sign(i) else "데드크로스", "date": md(i)}
                 break
-    if close < m20 and m20 < m50:
+    if close < m20 and (m240 is None or m20 < m240):
         trend, tcolor = "하락추세", "#ef5350"
-    elif close > m20 and m20 > m50:
+    elif close > m20 and (m240 is None or m20 > m240):
         trend, tcolor = "상승추세", "#26a69a"
     else:
         trend, tcolor = "방향 탐색", "#ffa726"
@@ -381,7 +469,7 @@ def analyze(rows, a, show, tf="1d"):
     # 1년(코인 365일, 주식 252일, 주봉 52주) 고저 — 분봉은 화면 구간
     yr = rows[v0:] if tf in INTRADAY else rows[-(52 if tf == "1w" else 365 if a["kind"] == "coin" else 252):]
     y_hi, y_lo = max(r["high"] for r in yr), min(r["low"] for r in yr)
-    return {"rows": rows, "mas": mas, "v0": v0, "n": n, "P": P, "U": U, "md": md, "tf": tf,
+    return {"rows": rows, "mas": mas, "v0": v0, "n": n, "P": P, "U": U, "md": md, "tf": tf, "ind": indicators(rows, tf, P) if tf in SCALP else None, "ha": ha_of(rows), "adr": None,
             "ma_nm": lambda p: f"{p}일선" if tf == "1d" else f"{p}주선" if tf == "1w" else f"{p}이평",
             "chg_word": "하루" if tf == "1d" else "이번 주" if tf == "1w" else "직전 봉 대비", "y_word": "구간" if tf in INTRADAY else "1년",
             "date": last["day"], "close": close, "chg": chg, "open": last["open"], "high": last["high"], "low": last["low"],
@@ -403,14 +491,18 @@ def facts_of(f, a):
         **({"고점→저점 낙폭": f"{f['drop']:.0f}%"} if f["lo"]["i"] > f["hi"]["i"] else {"저점→고점 상승폭": f"+{f['rise']:.0f}%"}),
         "피보나치(고점 0 → 저점 1.0)": [x["label"] for x in f["fib"]], "지금 위치": f["zone"],
         "아래 피보 지지": [x["label"] for x in f["sup"]], "위 피보 저항": [x["label"] for x in f["res"]],
-        "이동평균선": ma, "이평 배열": f["order"], "최근 50·200일선 교차": f"{f['cross']['kind']} ({f['cross']['date']})" if f["cross"] else "없음",
-        f"추세 판단({f['px']}·{f['ma_nm'](20)}·{f['ma_nm'](50)} 위치)": f["trend"],
+        "이동평균선": ma, "이평 배열": f["order"], f"최근 {f['ma_nm'](20)}·{f['ma_nm'](240)} 교차": f"{f['cross']['kind']} ({f['cross']['date']})" if f["cross"] else "없음",
+        f"추세 판단({f['px']}·{f['ma_nm'](20)}·{f['ma_nm'](240)} 위치)": f["trend"], "하이킨아시": f["ha"]["word"],
+        **({"ADR(20일 평균 일중 변동폭)": f["adr"]["text"]} if f["adr"] else {}),
         "되돌림": f"{f['swing']['kind']} {P(f['swing']['price'])}{U} ({f['swing']['date']})" if f["swing"] else "없음",
         "수평 지지": f"{f['hsup']['label']}{U} (최근 120봉 저점 {f['hsup']['touch']}번 모임)" if f["hsup"] else "없음",
         "심리적 지지(딱 떨어지는 가격)": f"{f['rsup']['label']}{U} 수평선 (최근 저점 {f['rsup']['low']}{U}, {f['rsup']['date']})" if f["rsup"] else "없음",
         "수평 저항": f"{f['hres']['label']}{U} (최근 120봉 고점 {f['hres']['touch']}번 모임)" if f["hres"] else "없음",
         "추세선": f"{f['tline']['kind']} 추세선 {f['tline']['label']}, 지금 위치 {P(f['tline']['now'])}{U}" if f["tline"] else "없음",
         f"{f['y_word']} 고점": f"{P(f['y_hi'])}{U}", f"{f['y_word']} 저점": f"{P(f['y_lo'])}{U}",
+        **({"RSI(14)": f"{f['ind']['rsi_now']:.1f} ({f['ind']['rsi_word']})",
+            "볼린저밴드(20, 2)": f"상단 {f['ind']['up_label']}{U}, 하단 {f['ind']['lo_label']}{U}, 위치 {f['ind']['bb_word']}" + (", 밴드 좁음" if f["ind"]["squeeze"] else ""),
+            "거래량": f"완성된 마지막 봉이 20봉 평균의 {f['ind']['vol']:.1f}배 ({f['ind']['vol_word']})" if f["ind"]["vol"] is not None else "데이터 없음"} if f["ind"] else {}),
     }
 
 
@@ -420,7 +512,8 @@ def spec_of(f, a, mode):
     rows, v0, P, U = f["rows"], f["v0"], f["P"], f["U"]
     pc = mode == "pc"
     cut = v0 if pc else max(v0, f["n"] - 160)
-    candles = [{k: r[k] for k in ("time", "open", "high", "low", "close")} for r in rows[cut:]]
+    heikin = f["tf"] not in SCALP   # 추세를 보는 봉은 하이킨아시, 단타 봉(1·15분)은 실제 캔들
+    candles = (f["ha"]["rows"] if heikin else [{k: r[k] for k in ("time", "open", "high", "low", "close")} for r in rows])[cut:]
     volume = [{"time": r["time"], "value": r["volume"], "color": "rgba(8,153,129,.32)" if r["close"] >= r["open"] else "rgba(242,54,69,.32)"} for r in rows[cut:]]
     mas = [{"color": c, "data": [{"time": rows[i]["time"], "value": f["mas"][p][i]} for i in range(cut, f["n"]) if f["mas"][p][i] is not None]}
            for p, c in MA]
@@ -451,10 +544,12 @@ def spec_of(f, a, mode):
     sym = a["name"] if a["kind"] != "us" else a["symbol"]
     tf = TF[f["tf"]]
     ext = f["live"]["ext"]
-    legend = (f"<b>{sym}</b> · {tf['short']} · {a.get('exchange') or ''} &nbsp; 시 {P(f['open'])} 고 {P(f['high'])} 저 {P(f['low'])} "
+    legend = (f"<b>{sym}</b> · {tf['short']}{' · 하이킨아시' if heikin else ''} · {a.get('exchange') or ''} &nbsp; 시 {P(f['open'])} 고 {P(f['high'])} 저 {P(f['low'])} "
               f"{f['px'][0]} <span class='{up_cls}'>{P(f['close'])} ({f['chg']:+.2f}%)</span>"
               + (f" &nbsp; {ext['label']} {P(ext['price'])} ({ext['chg']:+.2f}%)" if ext else "") + "<br>"
-              + "".join(f"<span class='ma' style='color:{c}'>MA{p} {f['ma'][p]['label'] if f['ma'][p] else '-'}</span>" for p, c in MA))
+              + "".join(f"<span class='ma' style='color:{c}'>MA{p} {f['ma'][p]['label'] if f['ma'][p] else '-'}</span>" for p, c in MA)
+              + (f"<span class='ma'>ADR {f['adr']['adr']:.2f}% · 오늘 {f['adr']['today']:.2f}%</span>" if f["adr"] else "")
+              + f"<span class='ma'>{f['ha']['word'].replace('하이킨아시 ', 'HA ').split(' · ')[0]}</span>")
     read = []
     if f["sup"]:
         read.append(f"아래 {P(f['sup'][0]['price'])}")
@@ -463,15 +558,24 @@ def spec_of(f, a, mode):
     if t:
         read.append(f"{t['kind']} 추세선 {P(t['now'])}")
     read.append(f["order"] if f["order"] != "섞여 있음" else f["trend"])
-    credit = f"{a['src']} · {f['basis'].split(' · 시간외')[0].split(' · 프리마켓')[0]} · TradingView Lightweight Charts™ · 투자 판단은 본인 몫"
+    if f["ind"]:
+        x = f["ind"]
+        read = [f"RSI {x['rsi_now']:.1f}", f"볼밴 {x['bb_word']}"] + ([f"거래량 {x['vol']:.1f}배"] if x["vol"] is not None else []) + read[:2]
+    credit = f"{a['src']} · {f['basis'].split(' · 시간외')[0].split(' · 프리마켓')[0]}{' · 캔들은 하이킨아시, 표시 가격은 실제 시세' if heikin else ''} · TradingView Lightweight Charts™ · 투자 판단은 본인 몫"
     if pc:
         layout = {"W": 1280, "H": 720, "chartH": 692, "legendH": 50, "top": .09, "rightOffset": max(18, round(len(candles) * 0.09)), "axisFont": 11, "markFont": 92,
                   "vars": {"--lg": "13px", "--nt": "12px", "--fb": "11px", "--ft": "13px", "--cr": "10.5px"}}
     else:
         layout = {"W": 720, "H": 900, "chartH": 846, "legendH": 54, "top": .07, "rightOffset": 16, "axisFont": 12, "markFont": 64,
                   "vars": {"--lg": "13px", "--nt": "13px", "--fb": "12px", "--ft": "15px", "--cr": "10.5px"}}
-    return {"layout": layout, "krw": U == "원", "intraday": f["tf"] in INTRADAY, "candles": candles, "volume": volume, "mas": mas, "fib": fib,
-            "hlines": hlines, "tlines": tlines, "notes": notes, "legend": legend, "mark": f"{sym}, {tf['short']}", "read": " · ".join(read), "credit": credit}
+    extra = {}
+    if f["ind"]:
+        x = f["ind"]
+        line = lambda k: [{"time": rows[i]["time"], "value": x[k][i]} for i in range(cut, f["n"]) if x[k][i] is not None]
+        extra = {"bb": [line("up"), line("lo")], "rsi": line("rsi"), "rsi_label": f"RSI(14) {x['rsi_now']:.1f}"}
+        layout.update({"top": .1, "bottom": .32, "oiTop": .70, "oiBottom": .83, "volTop": .86})
+    return {**extra, "layout": layout, "krw": U == "원", "intraday": f["tf"] in INTRADAY, "candles": candles, "volume": volume, "mas": mas, "fib": fib,
+            "hlines": hlines, "tlines": tlines, "notes": notes, "legend": legend, "heikin": heikin, "last": f["close"], "mark": f"{sym}, {tf['short']}", "read": " · ".join(read), "credit": credit}
 
 
 def chrome():
@@ -518,7 +622,7 @@ def template_text(f, a):
     s2 = f["sup"][1] if len(f["sup"]) > 1 else None
     r1 = f["res"][0] if f["res"] else None
     lines = ["차트리포트 입니다 ^^", f"{a['name']} {TF[f['tf']]['name']} 체크", "", " 지금 위치", pos,
-             f"{f['px']} {P(f['close'])}{U} ({f['chg_word']} {f['chg']:+.2f}%)", f"피보나치로는 {f['zone']}", "", " 볼 자리"]
+             f"{f['px']} {P(f['close'])}{U} ({f['chg_word']} {f['chg']:+.2f}%)", f"피보나치로는 {f['zone']}", f["ha"]["word"], *([f["adr"]["text"]] if f["adr"] else []), *([ind_line(f)] if f["ind"] else []), "", " 볼 자리"]
     if s1:
         lines.append(f"· 아래: {s1['label']}" + (" (기간 저점)" if s1["r"] == 1 else ""))
     if f["rsup"]:
@@ -571,6 +675,8 @@ B. (지지)를 깨면 → 다음 지지 (값)에서 받는지 확인
 - 말투는 차분한 존댓말, 짧은 줄. 이모지는 쓰지 않습니다. 400자 안팎.
 - '~가 아니라 ~다' 같은 뒤집기 문장, '첫째·둘째' 나열, '핵심은', '결론적으로', '주목할 점' 같은 AI 말투를 쓰지 않습니다.
 - 매수·매도 권유, 목표가, '지금 사라' 같은 표현을 쓰지 않습니다.
+- 추세는 20선·240선과 하이킨아시로 설명합니다. 자료의 하이킨아시와 ADR을 지금 위치에 함께 씁니다.
+- 자료에 RSI·볼린저밴드·거래량이 있으면 지금 위치에 함께 쓰고, 볼 자리에 볼린저 상단·하단을 넣습니다.
 - 이평선 이름과 등락 표현은 자료에 적힌 그대로 씁니다 (20일선·20주선·20이평, 하루·이번 주·직전 봉 대비).
 - 자료에 '현재가'가 아니라 '종가'로 나와 있으면 장이 닫힌 상태이니 '현재가 (값)' 줄을 '종가 (값)'로 씁니다. 시세 기준 시각은 쓰지 않습니다 (따로 넣습니다). 프리마켓·시간외 값은 자료에 있을 때만 씁니다.
 - 본문만 출력합니다."""
@@ -583,7 +689,7 @@ BANNED = ("아니라", "아닌,", "첫째", "둘째", "결론적으로", "핵심
 def check_text(text, facts):
     """계산에 없는 숫자·금지 표현이 있으면 그 목록을 돌려준다."""
     allowed = {x.replace(",", "") for x in NUM.findall(json.dumps(facts, ensure_ascii=False))}
-    allowed |= {str(i) for i in range(0, 11)} | {"20", "50", "200"}
+    allowed |= {str(i) for i in range(0, 11)} | {"20", "240"}
     bad = [x for x in NUM.findall(text) if x.replace(",", "") not in allowed]
     bad += [w for w in BANNED if w in text]
     return bad
@@ -628,14 +734,126 @@ def with_basis(text, f):
     return "\n".join(lines)
 
 
+SCALP_SYSTEM = """텔레그램 채널 '차트보는 말희아빠'의 단타 체크 글 끝에 붙일 코멘트를 씁니다.
+규칙:
+- 차분한 존댓말로 한두 줄, 합쳐서 80자 안팎. 이모지를 쓰지 않습니다.
+- 숫자는 '자료'에 있는 값만 그대로 씁니다. 지어내거나 새로 계산하지 않습니다.
+- 15분봉 방향과 1분봉 RSI·볼린저·거래량이 맞는지, 무엇을 보면 판단이 바뀌는지만 씁니다.
+- 진입 지시, 레버리지 배수, 목표 수익률, '지금 사라/팔아라' 같은 표현을 쓰지 않습니다.
+- '~가 아니라 ~다' 뒤집기, '핵심은', '결론적으로', '주목할' 같은 AI 말투를 쓰지 않습니다.
+- 코멘트만 출력합니다."""
+
+
+def scalp_levels(f15, f1):
+    """15분봉 자리 + 1분봉 볼린저밴드를 지금 가격 아래·위로 가까운 순서대로 (1분봉 평균 변동폭보다 가까운 자리는 뺌)."""
+    pts = [(x["price"], f"15분 피보 {x['name']}") for x in f15["fib"]]
+    pts += [(f15["ind"]["up_now"], "15분 볼밴 상단"), (f15["ind"]["lo_now"], "15분 볼밴 하단"), (f1["ind"]["up_now"], "1분 볼밴 상단"), (f1["ind"]["lo_now"], "1분 볼밴 하단")]
+    pts += [(f15[k]["price"], "15분 수평선") for k in ("hsup", "rsup", "hres") if f15[k]]
+    if f15["ma"][20]:
+        pts.append((f15["ma"][20]["price"], "15분 20이평"))
+    if f15["tline"]:
+        pts.append((f15["tline"]["now"], "15분 추세선"))
+    now = f1["close"]
+    r = f1["rows"][-15:]
+    atr = sum(max(b["high"] - b["low"], abs(b["high"] - a["close"]), abs(b["low"] - a["close"])) for a, b in zip(r, r[1:])) / 14
+
+    def pick(side):
+        out = []
+        for p in sorted((p for p in pts if side * (p[0] - now) >= atr), key=lambda p: abs(p[0] - now)):
+            if not out or abs(p[0] - out[-1][0]) >= atr:
+                out.append(p)
+        return out
+    return pick(-1), pick(1)
+
+
+def scalp_text(a, f15, f1, comment=None):
+    P, U = f15["P"], f15["U"]
+    lab = lambda p: f"{P(p[0])}({p[1]})"
+    sups, ress = scalp_levels(f15, f1)
+    same = f15["trend"] == f1["trend"]
+    lines = ["차트리포트 입니다 ^^", f"{a['name']} 단타 체크 · 15분봉 / 1분봉", "", " 지금 위치", f"{f1['px']} {P(f1['close'])}{U}",
+             f"15분봉 {f15['trend']} · 1분봉 {f1['trend']}" + ("" if same else " (서로 어긋남)"), *([f1["adr"]["text"]] if f1["adr"] else []),
+             "", " 15분봉", f15["ha"]["word"], ind_line(f15), "", " 1분봉", f1["ha"]["word"], ind_line(f1), "", " 볼 자리"]
+    lines += [f"· 아래: {' / '.join(lab(p) for p in sups[:2])}"] if sups else []
+    lines += [f"· 위: {' / '.join(lab(p) for p in ress[:2])}"] if ress else []
+    lines += ["", " 시나리오"]
+    if sups and ress:
+        lines += [f"A. {lab(sups[0])} 지키면 → {lab(ress[0])} 확인", f"B. {lab(sups[0])} 깨면 → " + (f"{lab(sups[1])}에서 받는지 확인" if len(sups) > 1 else "새 저점 만드는지 확인")]
+    else:
+        lines += ["가까운 자리가 뚜렷하지 않아 새 자리가 잡힐 때까지 확인"]
+    lines += [*(["", comment] if comment else []), "", "투자 판단은 본인 몫입니다."]
+    return "\n".join(lines)
+
+
+def scalp_comment(text):
+    import llm
+    if not llm.ready():
+        return None
+    try:
+        r = llm.Anthropic().messages.create(model=MODEL, max_tokens=500, system=SCALP_SYSTEM, messages=[{"role": "user", "content": "자료:\n" + text}], output_config={"effort": "low"})
+        c = r.content[0].text.strip().strip("`").strip()
+    except (llm.APIStatusError, llm.APIConnectionError) as e:
+        print("⚠️ Claude 코멘트 실패 — 코멘트 없이 보내요:", str(e)[:200])
+        return None
+    if check_text(c, {"자료": text}) or any(w in c for w in ("진입하", "레버리지", "사세요", "파세요", "수익률")) or len(c) > 200:
+        print("⚠️ Claude 코멘트에 없는 숫자·금지 표현 — 코멘트 없이 보내요:", c[:120])
+        return None
+    return c
+
+
+def daily_adr(a, tf="", rows=None):
+    """ADR 은 일봉으로 계산 (일봉 요청이면 받은 시세 그대로, 못 받으면 ADR 만 뺌)."""
+    try:
+        return adr_of(rows if tf == "1d" else fetch(dict(a), "1d"))
+    except (SystemExit, requests.RequestException, KeyError, IndexError, TypeError, ValueError) as e:
+        print("⚠️ ADR 계산 실패:", str(e)[:100])
+        return None
+
+
+def make_scalp(query, use_ai=True):
+    """단타: 15분봉·1분봉 이미지 두 장 + 한 글."""
+    a = resolve(query)
+    adr = daily_adr(a)
+    frames, files, web = {}, {}, {}
+    s = slug(a)
+    RAW.mkdir(parents=True, exist_ok=True)
+    WEB.mkdir(parents=True, exist_ok=True)
+    for tf, key in (("15m", ""), ("1m", "2")):
+        rows = fetch(a, tf)
+        f = analyze(rows, a, TF[tf]["show"], tf)
+        f["adr"] = adr
+        apply_live(f, a, live_of(a, rows, tf))
+        frames[tf] = f
+        for mode, scale, width, name in (("pc", 1.5, 1600, "pc"), ("m", 1.5, 1080, "mobile")):
+            png = RAW / f"{s}_{tf}_{mode}.png"
+            png.unlink(missing_ok=True)
+            render(spec_of(f, a, "pc" if mode == "pc" else "mobile"), png, scale)
+            to_jpg(png, WEB / f"{s}_{tf}_{mode}.jpg", width)
+            files[mode + key] = png
+            web[name + key] = f"charts/{s}_{tf}_{mode}.jpg"
+    f15, f1 = frames["15m"], frames["1m"]
+    text = scalp_text(a, f15, f1)
+    comment = scalp_comment(text) if use_ai else None
+    if comment:
+        text = scalp_text(a, f15, f1, comment)
+    text = with_basis(text, f1)
+    item = {"query": query, "tf": "scalp", "tf_name": "단타 15분+1분", "name": a["name"], "symbol": a["symbol"], "kind": a["kind"], "date": f1["date"], "basis": f1["basis"], "px": f1["px"],
+            "close": f"{f1['P'](f1['close'])}{f1['U']}", "chg": round(f1["chg"], 2), "trend": f15["trend"], **web, "text": text, "text_by": "claude" if comment else "template",
+            "made_at": datetime.now(KST).isoformat(timespec="seconds")}
+    return item, files
+
+
 def make(query, use_ai=True, style="", tf="1d"):
     query, _, at = query.partition("@")   # '테슬라@4h' 처럼 종목마다 봉을 붙일 수 있음
     tf = at.strip() or tf
+    if tf == "scalp":
+        return make_scalp(query, use_ai)
     if tf not in TF:
         raise SystemExit(f"봉 종류 '{tf}' 를 모르겠어요 ({', '.join(TF)} 중 하나).")
     a = resolve(query)
     rows = fetch(a, tf)
     f = analyze(rows, a, TF[tf]["show"] or (365 if a["kind"] == "coin" else 260), tf)
+    f["adr"] = daily_adr(a, tf, rows)
     apply_live(f, a, live_of(a, rows, tf))
     RAW.mkdir(parents=True, exist_ok=True)
     WEB.mkdir(parents=True, exist_ok=True)
@@ -674,7 +892,7 @@ def save_reports(d, new):
     d["updated_at"] = datetime.now(KST).isoformat(timespec="seconds")
     REPORTS.parent.mkdir(parents=True, exist_ok=True)
     REPORTS.write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf-8")
-    used = {Path(x[k]).name for x in d["items"] for k in ("pc", "mobile")}
+    used = {Path(x[k]).name for x in d["items"] for k in ("pc", "mobile", "pc2", "mobile2") if x.get(k)}
     for p in WEB.glob("*.jpg"):   # 목록에서 빠진 그림은 지움 (저장소가 커지지 않게)
         if p.name not in used:
             p.unlink()
@@ -683,7 +901,7 @@ def save_reports(d, new):
 def send(item, files):
     """PC·모바일 이미지 두 장을 먼저, 그 아래에 설명 글(그대로 복사해 올릴 본문)을 따로 보낸다."""
     from publish.notify import send as send_text, send_photos
-    ok = send_photos([files["pc"], files["m"]], f"📈 {item['name']} {item['tf_name']} 분석 · {item['px']} {item['close']} · {item['basis']} (PC용·모바일용)")
+    ok = send_photos([files[k] for k in ("pc", "pc2", "m", "m2") if k in files], f"📈 {item['name']} {item['tf_name']} 분석 · {item['px']} {item['close']} · {item['basis']} (PC용·모바일용)")
     ok = send_text(item["text"]) and ok
     print("📨 봇으로 보냄" if ok else "⚠️ 봇 보내기 실패/미설정", item["name"])
     return ok
@@ -741,7 +959,7 @@ def main():
     ap.add_argument("symbols", nargs="*", help="종목 (IONQ, 비트코인, SK하이닉스, 000660 … 쉼표로 여러 개도 됨)")
     ap.add_argument("--from-tg", action="store_true", help="tg_ai.json 오늘 문구의 차트 글 종목으로 만들고 봇으로 보냄")
     ap.add_argument("--send", action="store_true", help="봇으로도 보내기")
-    ap.add_argument("--tf", default="1d", choices=list(TF), help="봉 종류 (종목마다 '테슬라@4h' 로 붙여도 됨)")
+    ap.add_argument("--tf", default="1d", choices=[*TF, "scalp"], help="봉 종류 (종목마다 '테슬라@4h' 로 붙여도 됨)")
     ap.add_argument("--no-ai", action="store_true", help="Claude 없이 정해진 문장으로 본문")
     ap.add_argument("--no-send", action="store_true", help="--from-tg 때 봇으로 보내지 않음 (시험용)")
     ap.add_argument("--force", action="store_true", help="--from-tg 때 이미 만든 칸이어도 다시 (수동 버튼)")
