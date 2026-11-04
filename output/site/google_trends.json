@@ -1,6 +1,15 @@
 [
  {
   "geo": "KR",
+  "term": "원태인",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "한국시리즈 2차전...kt \"홈 2연승\" 삼성 \"원정 1승 1패\"",
+  "news_link": "https://www.ytn.co.kr/_ln/0107_202611041717473788"
+ },
+ {
+  "geo": "KR",
   "term": "무죄",
   "traffic": 2000,
   "topics": "",
@@ -10,21 +19,12 @@
  },
  {
   "geo": "KR",
-  "term": "송혜교",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "송혜교, 또 헤어스타일리스트 이일중과 투샷 포착",
-  "news_link": "https://www.newsis.com/view/NISX20261104_0003853703"
- },
- {
-  "geo": "KR",
-  "term": "디아즈",
+  "term": "야구중계",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "2차전 살얼음판 승부…디아즈는 왜 뛰었을까?",
-  "news_link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8704214"
+  "news_title": "‘스포츠 명가’ 삼성의 부활…야구-축구-농구-배구 일제히 ‘파란 돌풍’",
+  "news_link": "https://www.donga.com/news/Culture/article/all/20261103/134957943/1"
  },
  {
   "geo": "KR",
@@ -46,6 +46,33 @@
  },
  {
   "geo": "KR",
+  "term": "구자욱",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "기뻐하는 구자욱",
+  "news_link": "https://mobile.newsis.com/photo/NISI20261104_0021519600"
+ },
+ {
+  "geo": "KR",
+  "term": "김성윤",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "[사진]환호하는 삼성 김성윤, '찬스 만들었어'",
+  "news_link": "https://biz.chosun.com/sports/sports_photo/2026/11/04/MZQTSYTFHEYWEMZVG5TDKOJZGU/"
+ },
+ {
+  "geo": "KR",
+  "term": "당기순이익",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "하림, 3분기 영업이익 53억원…전년 대비 71% 감소",
+  "news_link": "https://www.yna.co.kr/view/AKR20261104154900030"
+ },
+ {
+  "geo": "KR",
   "term": "삼성갤",
   "traffic": 200,
   "topics": "",
@@ -55,48 +82,12 @@
  },
  {
   "geo": "KR",
-  "term": "엘앤에프",
-  "traffic": 200,
-  "topics": "2차전지",
-  "econ": true,
-  "news_title": "[단독] 배터리 3사 싹쓸이…엘앤에프, 6만t LFP 신공장 짓는다",
-  "news_link": "https://www.hankyung.com/article/202611033805i"
- },
- {
-  "geo": "KR",
-  "term": "이강철",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "[사진]노시환-강백호, 함께 한국시리즈 관전해요",
-  "news_link": "https://www.chosun.com/sports/sports_photo/2026/11/04/GAYDMZDCMY4GCODFGI2TGYTEGA/"
- },
- {
-  "geo": "KR",
-  "term": "다니엘기도회 2026",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "2026 다니엘기도회 4일차 강사, 도박 걱정 성직자 모임 정석용 사무총장 : 목회/신학",
-  "news_link": "https://www.christiantoday.co.kr/news/378375"
- },
- {
-  "geo": "KR",
   "term": "안현민",
-  "traffic": 100,
+  "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "[사진]파울 라인 벗어나지 않는 안현민의 타구",
-  "news_link": "https://www.chosun.com/sports/sports_photo/2026/11/04/GU2DEYTDMQZTANRVHE2DOZJXG4/"
- },
- {
-  "geo": "US",
-  "term": "outback steakhouse",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Outback Steakhouse franchisee files for bankruptcy",
-  "news_link": "https://www.foxbusiness.com/lifestyle/outback-steakhouse-franchisee-files-bankruptcy"
+  "news_title": "[포토] 안현민 '승리가 보인다' - 머니투데이",
+  "news_link": "https://www.mt.co.kr/sports/2026/11/04/2026110422052033405"
  },
  {
   "geo": "US",
@@ -109,6 +100,15 @@
  },
  {
   "geo": "US",
+  "term": "alls fair",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Look of the Week: Glenn Close and her six-foot impersonator demand a double take",
+  "news_link": "https://www.cnn.com/2026/11/04/style/glenn-close-alexis-stone-lotw"
+ },
+ {
+  "geo": "US",
   "term": "christmas forecast",
   "traffic": 1000,
   "topics": "",
@@ -118,12 +118,30 @@
  },
  {
   "geo": "US",
-  "term": "big beautiful bill",
-  "traffic": 200,
-  "topics": "정치·관세",
-  "econ": true,
-  "news_title": "Trump's big 'accomplishment' is ugly for everyone but the rich | Opinion",
-  "news_link": "https://www.yahoo.com/news/politics/articles/trumps-big-accomplishment-ugly-everyone-090114867.html"
+  "term": "is lamar jackson out for the season",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "NFL Week 8 Sunday aftermath: Ravens' season on the brink; can Vikings trust Kyler Murray?",
+  "news_link": "https://www.nfl.com/news/nfl-week-8-sunday-aftermath-ravens-cowboys-vikings"
+ },
+ {
+  "geo": "US",
+  "term": "ralph macchio",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "“Ralph Macchio and I have talked about it. We’ve got a plan”: A sequel to cult guitar movie Crossroads is in the works – and Steve Vai is up for reprising his role",
+  "news_link": "https://www.guitarworld.com/artists/guitarists/crossroads-sequel-in-the-works"
+ },
+ {
+  "geo": "US",
+  "term": "samuel alito",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Alito’s Refusal to Retire May Haunt Republicans",
+  "news_link": "https://nymag.com/intelligencer/article/samuel-alito-retirement-senate-democrats.html"
  },
  {
   "geo": "US",
@@ -142,24 +160,6 @@
   "econ": false,
   "news_title": "HP names former GSK chief Emma Walmsley as CEO",
   "news_link": "https://www.reuters.com/business/hp-names-emma-walmsley-ceo-2026-11-04/"
- },
- {
-  "geo": "US",
-  "term": "is lamar jackson out for the season",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "NFL Week 8 Sunday aftermath: Ravens' season on the brink; can Vikings trust Kyler Murray?",
-  "news_link": "https://www.nfl.com/news/nfl-week-8-sunday-aftermath-ravens-cowboys-vikings"
- },
- {
-  "geo": "US",
-  "term": "samuel alito",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Alito’s Refusal to Retire May Haunt Republicans",
-  "news_link": "https://nymag.com/intelligencer/article/samuel-alito-retirement-senate-democrats.html"
  },
  {
   "geo": "US",
