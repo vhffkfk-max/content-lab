@@ -211,6 +211,15 @@ a.row:hover .row-main{text-decoration:underline}
   .item{grid-template-columns:minmax(0,1fr);gap:4px}
 }
 .side-close{display:none}
+.side-hide{margin-left:auto;flex:none}
+.side-show{display:none;position:fixed;top:12px;left:12px;z-index:30}
+@media (min-width:861px){
+  .app.side-hidden{grid-template-columns:minmax(0,1fr)}
+  .app.side-hidden .side{display:none}
+  .app.side-hidden .side-show{display:inline-flex}
+  .app.side-hidden .canvas{padding-top:60px}
+}
+@media (max-width:860px){.side-hide{display:none}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 /* 처음 화면 */
 .home-jobs{display:grid;gap:12px}
@@ -291,11 +300,13 @@ a.row:hover .row-main{text-decoration:underline}
 </style>
 
 <div class="app">
+  <button type="button" class="btn small side-show" id="side-show" aria-label="메뉴 열기">메뉴 열기</button>
   <aside class="side" id="side" aria-label="메뉴">
     <div class="brand">
       <span class="brand-mark" aria-hidden="true">핫</span>
       <div><b>컨텐츠 연구소</b><span>말희아빠 &amp; 파로파트너스</span></div>
       <button type="button" class="btn small side-close" id="side-close" style="margin-left:auto">닫기</button>
+      <button type="button" class="btn small side-hide" id="side-hide" aria-label="메뉴 숨기기" title="메뉴 숨기기">숨기기</button>
     </div>
     <nav>
       <ul class="nav" id="channel-nav">
@@ -3076,6 +3087,11 @@ a.row:hover .row-main{text-decoration:underline}
   const closeMenu = () => { side.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); };
   menuBtn.addEventListener('click', () => { side.classList.add('open'); menuBtn.setAttribute('aria-expanded', 'true'); });
   document.getElementById('side-close').addEventListener('click', closeMenu);
+  // PC: 왼쪽 메뉴 숨기기·열기 (이 브라우저에 기억)
+  const setSide = hidden => { side.closest('.app').classList.toggle('side-hidden', hidden); store.set('side_hidden', hidden ? '1' : ''); };
+  document.getElementById('side-hide').addEventListener('click', () => setSide(true));
+  document.getElementById('side-show').addEventListener('click', () => setSide(false));
+  if (store.get('side_hidden') === '1') setSide(true);
   const NAMES = { home: '오늘 할 일', instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드', x: 'X · 트루스소셜', telegram: '텔레그램 · 말희아빠', traders: '텔레그램 · 트레이더스', feedback: '후기·기록', growth: '마케팅 코치', usage: '활용 체크' };
   function setChannel(ch) {
     document.querySelectorAll('#channel-nav > li > button').forEach(b => b.setAttribute('aria-current', String(b.dataset.ch === ch)));
@@ -3123,6 +3139,8 @@ a.row:hover .row-main{text-decoration:underline}
     try { history.replaceState(null, '', '#go-' + id); } catch (e) {}
   }
   document.querySelectorAll('#channel-nav > li > button').forEach(b => b.addEventListener('click', () => {
+    const sub = b.parentElement.querySelector('.subnav');   // 지금 메뉴를 한 번 더 누르면 하위 목록 접기·펴기
+    if (b.getAttribute('aria-current') === 'true' && sub && !focused) { sub.hidden = !sub.hidden; return; }
     setChannel(b.dataset.ch); scrollTo({ top: 0 });
     try { history.replaceState(null, '', b.dataset.ch === 'home' ? location.pathname : '#ch-' + b.dataset.ch); } catch (e) {}
   }));
