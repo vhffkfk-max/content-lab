@@ -14,6 +14,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import sys
 import urllib.request
 from datetime import datetime, timedelta, timezone
@@ -25,6 +26,7 @@ KST = timezone(timedelta(hours=9))
 MODEL = "claude-opus-5-5"   # 텔레그램 문구 = Opus (2026-10-26 대표 결정)
 SITE = OUTPUT_DIR / "site"
 OUT = SITE / "trd_posts.json"
+MAX_LINE = 34   # 이보다 긴 줄은 폰에서 접혀 보여서 문장마다 나눈다
 REFRESH_HOURS = (7, 18)   # 07시: 하루 글 전부 · 18시: 저녁 글만 최신 뉴스로 (tg_analyze 뉴스 갱신 시각과 맞춤)
 
 # 방별로 올릴 글 — (방 이름, 시각, 종류, 쓰는 법)
@@ -56,10 +58,33 @@ SYSTEM = """당신은 텔레그램 투자 커뮤니티 '트레이더스'(포럼�
 - 뉴스는 '자료'의 헤드라인·브리핑에 있는 것만. 지어내지 마세요. 날짜·요일을 확인해 이미 지난 일정을 앞으로 할 일처럼 쓰지 마세요.
 - 회원 이름·아이디·회원 글 인용 금지.
 - 매수·매도 권유, 목표가 단정, 수익 보장 표현 금지. '볼 가격대', '이렇게 대응' 같은 관점으로. 코인·주식 관점 글 끝에는 '※ 정보 제공용이며 투자 판단은 본인 책임입니다.' 한 줄.
-- 텔레그램에 바로 붙여 넣는 글: 이모지는 줄 머리에 1개 정도, 줄바꿈으로 읽기 쉽게, 마크다운(**, #) 쓰지 말 것. 길이는 3~10줄.
+- 텔레그램에 그대로 붙여 넣어도 운영자가 고칠 게 없게, 폰 화면 기준으로 쓰세요. 마크다운(**, #)은 쓰지 말 것 (붙여 넣으면 기호가 그대로 보여요).
+  · 첫 줄: 이모지 1개 + 제목 (20자 안쪽)
+  · 둘째 줄: 👉 로 시작하는 오늘의 핵심 한 줄. 이 줄만 읽어도 내용을 알게.
+  · 그다음 빈 줄 한 칸. 덩어리와 덩어리 사이마다 빈 줄 한 칸.
+  · 한 줄에 한 문장, 25자 안쪽. 길면 문장을 나누세요.
+  · 여러 항목은 1️⃣ 2️⃣ 3️⃣ 로 시작. 항목 첫 줄은 이름과 숫자만, 그 아래 줄에 '▸ 왜:', '▸ 위험:' 처럼 짧게.
+  · 뉴스·체크 목록은 ✅, 일정은 🕘 시각 · 내용 으로 줄마다 하나씩.
+  · 회원에게 묻는 질문은 💬 로 시작해 빈 줄 뒤에. 안내문(※)은 맨 끝에 빈 줄 뒤에.
+  · 빈 줄 빼고 15줄 안쪽.
 - 방마다 성격이 다르니 같은 뉴스를 반복하지 말고 각 방에 맞는 각도로.
 - '폴더 자료'의 소재는 다른 채널 글이에요. 문장을 베끼지 말고 자기 말로 쓰세요. 소재에만 나온 숫자·사실은 check 에 '원문 확인'으로 남기세요. 연구 근거에서 반응이 큰 형식을 참고하세요.
 - 방 통계(많이 쓰는 시각, 답장 없는 질문 등)와 지난 피드백을 참고해 회원이 답장하고 싶어지게 끝내세요."""
+
+
+def tidy(text):
+    """붙여 넣으면 바로 읽히게 다듬기: 마크다운 기호 제거, 긴 줄은 문장마다 나눔, 빈 줄은 한 칸, 안내문 앞은 띄움."""
+    lines = []
+    for raw in text.replace("\r", "").replace("**", "").split("\n"):
+        line = re.sub(r"^#+\s*", "", raw).strip()
+        lines += re.split(r"(?<=[다요까죠]\.)\s+|(?<=[?!])\s+", line) if len(line) > MAX_LINE else [line]
+    out = []
+    for line in lines:
+        if line.startswith("※") and out and out[-1]:
+            out.append("")
+        if line or (out and out[-1]):
+            out.append(line)
+    return "\n".join(out).strip()
 
 
 def market():
@@ -192,7 +217,7 @@ def main():
     if r.stop_reason != "end_turn" or r.parsed_output is None:
         return print(f"⚠️ 결과를 받지 못했어요(stop_reason={r.stop_reason}) — 지난 결과를 유지해요.")
     a = r.parsed_output
-    new = [{"room": todo[p.no - 1][0], "time": todo[p.no - 1][1], "kind": todo[p.no - 1][2], **p.model_dump(exclude={"no"}),
+    new = [{"room": todo[p.no - 1][0], "time": todo[p.no - 1][1], "kind": todo[p.no - 1][2], **p.model_dump(exclude={"no"}), "text": tidy(p.text),
             **({"made_at": now.isoformat(timespec="seconds")} if manual else {})}
            for p in a.posts if 1 <= p.no <= len(todo)]
     if rooms:
