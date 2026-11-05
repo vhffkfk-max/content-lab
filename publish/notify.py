@@ -28,6 +28,23 @@ def send(text, silent=False):
         return False
 
 
+def send_video(path, caption=""):
+    """영상 파일 보내기 (봇 한도 50MB). 영상은 공개 저장소에 올리지 않고 이 길로 보낸다."""
+    import requests
+    token, chat = os.environ.get("TELEGRAM_BOT_TOKEN"), os.environ.get("TELEGRAM_CHAT_ID")
+    if not token or not chat:
+        print("[알림 미설정] 영상:", caption)
+        return False
+    try:
+        with open(path, "rb") as f:
+            r = requests.post(f"https://api.telegram.org/bot{token}/sendVideo", data={"chat_id": chat, "caption": caption[:1000], "supports_streaming": "true"},
+                              files={"video": f}, timeout=180)
+        return r.json().get("ok", False)
+    except requests.RequestException as e:
+        print("⚠️ 텔레그램 영상 전송 실패:", e)
+        return False
+
+
 def send_photos(paths, caption=""):
     """이미지 앨범(최대 10장) 보내기 — 카드뉴스 초안 확인용. 첫 장에 설명이 붙는다."""
     import requests

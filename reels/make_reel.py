@@ -36,9 +36,10 @@ from publish.caption_check import clean  # noqa: E402
 from publish.render import font_css  # noqa: E402
 
 MODEL = "claude-opus-5-5"
-ASR_PY = pathlib.Path(r"C:\Users\qkreo\voice-lab\asr\Scripts\python.exe")
-GPU_PY = pathlib.Path(r"C:\Users\qkreo\voice-lab\sv\Scripts\python.exe")
-RT = pathlib.Path(r"C:\Users\qkreo\voice-lab\work\rt2.py")
+ASR_PY = pathlib.Path.home() / "voice-lab/asr/Scripts/python.exe"
+REELS_DIR = pathlib.Path.home() / "content-lab-reels"
+GPU_PY = pathlib.Path.home() / "voice-lab/sv/Scripts/python.exe"
+RT = pathlib.Path.home() / "voice-lab/work/rt2.py"
 BASE = {"코스피": "^KS11", "코스닥": "^KQ11", "삼성전자": "005930.KS", "SK하이닉스": "000660.KS", "원/달러 환율": "KRW=X",
         "S&P500": "^GSPC", "나스닥": "^IXIC", "필라델피아 반도체": "^SOX", "엔비디아": "NVDA", "테슬라": "TSLA", "애플": "AAPL",
         "마이크로소프트": "MSFT", "미국 10년물 금리": "^TNX", "비트코인": "BTC-USD", "금": "GC=F"}
@@ -449,7 +450,7 @@ def scene(i, c, q):
     t = lambda x: to_text(x, q)
     kick = f'<div class="a kick">{html.escape(t(c.kick))}</div>' if c.kick else ""
     bg = BG[c.bg]
-    emo = f'<div class="emo">{emoji_of(c)}</div>'
+    emo = f'<div class="emo">{html.escape(emoji_of(c))}</div>'
     if c.kind == "number":
         v = q[c.ticker]
         when = "오늘" if v["date"] == datetime.now(KST).strftime("%m/%d") else v["date"]
@@ -457,7 +458,7 @@ def scene(i, c, q):
             bg = "#26090c" if v["pct"] > 0 else "#07142e"
         val = f"{v['close']:,.0f}" if float(v["close"]).is_integer() else f"{v['close']:,.2f}"
         emo = f'<div class="emo">{"📈" if v["pct"] > 0 else "📉"}</div>'
-        body = (f'{emo}{kick}<div class="a nm xl">{html.escape(c.ticker)} <small>{when}</small></div>'
+        body = (f'{"" if c.kick else emo}{kick}<div class="a nm xl">{html.escape(c.ticker)} <small>{when}</small></div>'
                 f'<div class="big slam {"up" if v["pct"] > 0 else "dn"} mega" data-count="{v["pct"]:.1f}" data-sign="{"+" if v["pct"] > 0 else "−"}">{pct(v["pct"], True)}</div>'
                 f'<div class="a sub">{val}</div>')
     elif c.kind == "chart":
@@ -612,24 +613,110 @@ def round_trip(out, s, q):
     return heard, miss
 
 
+def used_names(s):
+    return list(dict.fromkeys([m for _, x in texts(s) for m in PH.findall(x)] + [n for c in s.cuts for n in ([c.ticker] if c.ticker else c.tickers)]))
+
+
+def load_state(out):
+    return json.loads((out / "대본.json").read_text(encoding="utf-8"))
+
+
+def save_state(out, **fields):
+    f = out / "대본.json"
+    state = json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
+    state.update(fields)
+    f.write_text(json.dumps(state, ensure_ascii=False, indent=1), encoding="utf-8")
+    return state
+
+
+def write_board(out, **fields):
+    f = out / "board.json"
+    board = json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
+    board.update(fields)
+    f.write_text(json.dumps(board, ensure_ascii=False, indent=1), encoding="utf-8")
+
+
+def estimate(say):
+    """말 길이 어림 (실제 음성은 영상 만들 때 만든다)."""
+    return round(len(re.findall(r"[가-힣]", say)) / 8.2 + .2, 2)
+
+
+def render_board(out, s, q, basis, block, warn):
+    """음성·영상 없이 컷 이미지만 만든다. 영상과 같은 화면 코드라 보이는 그대로 나온다."""
+    engine.OUT = out
+    t, scenes = 0.15, []
+    for i, c in enumerate(s.cuts, 1):
+        say = to_say(c.say, q) if not any(n not in q for n in PH.findall(c.say)) else c.say
+        dur = estimate(say)
+        cap = to_text(c.cap, q) if not any(n not in q for n in PH.findall(c.cap)) else c.cap
+        scenes.append({"id": f"c{i}", "start": t, "end": t + dur, "caps": [{"t": t, "e": t + dur, "text": cap}]})
+        t += dur + .05
+    problems = []
+    try:
+        page, _, _ = build_page(out, s, q, scenes, basis)
+        problems = engine.shoot(page, t, False)
+    except KeyError as e:
+        problems = [f"시세표에 없는 이름 때문에 컷 이미지를 못 만들었어요: {e}"]
+    hooks = []
+    for h in s.hooks:
+        known = not any(n not in q for n in PH.findall(h))
+        hooks.append({"say": h, "text": to_text(h, q) if known else h, "score": hook_score(to_say(h, q).replace("*", "")) if known else None})
+    write_board(out, updated=datetime.now(KST).strftime("%m/%d %H:%M"), basis=basis, block=block, warn=warn, problems=problems, seconds=round(t, 1), hooks=hooks,
+                changes=[], video=(out / "영상.mp4").exists() and (out / "영상.mp4").stat().st_mtime > (out / "대본.json").stat().st_mtime)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("topic", nargs="?")
     ap.add_argument("--script-only", action="store_true")
     ap.add_argument("--from-script")
+    ap.add_argument("--board", action="store_true", help="대본과 컷 이미지까지만 만든다")
+    ap.add_argument("--stills", help="대본.json 을 고친 뒤 컷 이미지만 다시 만든다")
+    ap.add_argument("--accept-market", action="store_true", help="보드를 본 뒤 시세가 바뀌어도 새 숫자로 만든다")
     a = ap.parse_args()
+    if a.stills:
+        out = pathlib.Path(a.stills).resolve().parent
+        saved = load_state(out)
+        s = Script(**saved["script"])
+        if saved.get("quotes"):
+            q, basis = saved["quotes"], saved["basis"]
+        else:
+            q, basis = quotes(saved["topic"])
+            save_state(out, quotes=q, basis=basis)
+        block, warn = check(s, q, saved["news"], saved["bodies"])
+        render_board(out, s, q, basis, block + saved.get("review", []), warn)
+        print("컷 이미지를 다시 만들었어요:", out)
+        return
     if a.from_script:
         out = pathlib.Path(a.from_script).resolve().parent
         saved = json.loads(pathlib.Path(a.from_script).read_text(encoding="utf-8"))
         topic, news, bodies = saved["topic"], saved["news"], saved["bodies"]
         s = Script(**saved["script"])
         q, basis = quotes(topic)
+        if saved.get("quotes"):   # 보드를 본 뒤 숫자가 바뀌었으면 먼저 알린다
+            old = saved["quotes"]
+            changes = [{"name": n, "old": pct(old[n]["pct"], True), "new": pct(q[n]["pct"], True)} for n in used_names(s)
+                       if n in old and n in q and pct(old[n]["pct"], True) != pct(q[n]["pct"], True)]
+            if changes and not a.accept_market:
+                write_board(out, changes=changes)
+                print("보드를 본 뒤 시세가 바뀌었어요:", *[f"{c['name']} {c['old']} → {c['new']}" for c in changes])
+                sys.exit(3)
+            save_state(out, quotes=q, basis=basis)
+        if saved.get("edited"):   # 사람이 고친 대본은 영상 전에 기사와 다시 대조한다
+            print("고친 대본을 기사와 대조하는 중...")
+            found = check(s, q, news, bodies)[0] or review(topic, s, q, basis, news, bodies)
+            save_state(out, review=found, edited=bool(found))
+            if found:
+                write_board(out, block=found)
+                print("대조에서 문제가 나왔어요:", *found, sep="\n  ")
+                sys.exit(4)
+        write_board(out, changes=[])
     else:
         if not a.topic:
             raise SystemExit('주제를 넣어 주세요: python reels/make_reel.py "주제"')
         topic = a.topic
         slug = re.sub(r"[^0-9A-Za-z가-힣]+", "_", topic)[:30]
-        out = OUTPUT_DIR / "reels" / f"{datetime.now(KST):%Y%m%d_%H%M}_{slug}"
+        out = REELS_DIR / f"{datetime.now(KST):%Y%m%d_%H%M}_{slug}"
         news, bodies = gather(topic)
         q, basis = quotes(topic)
         print(f"기사 제목 {len(news)}건, 본문 {len(bodies)}건, 시세 {len(q)}개 | {basis}")
@@ -656,7 +743,12 @@ def main():
         if not block:
             block = review(topic, s, q, basis, news, bodies)
 
-    (out / "대본.json").write_text(json.dumps({"topic": topic, "script": s.model_dump(), "news": news, "bodies": bodies}, ensure_ascii=False, indent=1), encoding="utf-8")
+    save_state(out, topic=topic, script=s.model_dump(), news=news, bodies=bodies, quotes=q, basis=basis, review=[], edited=False)
+    if a.board:
+        render_board(out, s, q, basis, block, warn)
+        print("폴더:", out)
+        print("컷 보드를 만들었어요. 영상은 아직 만들지 않았어요.")
+        return
     report = [f"주제: {topic}", f"기준: {basis}", ""]
     report += ["[막힌 문제]", *block, ""] if block else []
     report += ["[참고]", *warn, ""] if warn else []
@@ -691,6 +783,7 @@ def main():
     with (out / "확인목록.txt").open("a", encoding="utf-8") as f:
         f.write("\n" + "\n".join(extra))
     print("\n".join(extra))
+    write_board(out, video=True, seconds=round(total, 1), problems=problems, heard=heard, miss=miss)
     print("끝났어요. 영상을 확인한 뒤 직접 올려 주세요 (자동 게시 안 함).")
 
 

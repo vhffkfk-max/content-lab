@@ -1,0 +1,222 @@
+"""사이트 '영상 연구소' 요청을 바로 받아 처리하는 담당. 5초마다 요청함을 보고, 들어오면 곧장 만든다.
+
+- 요청함: lab-requests 가지 requests/reel/<rid>.json (relay/api/lab.js 가 형식을 확인해 넣음).
+- 일: board(대본·컷 이미지) · save(글자 고치고 컷 다시 그리기) · voice(한 컷 듣기) · make(영상).
+- 달라졌는지만 묻는 조건부 요청(ETag)이라 5초마다 봐도 깃허브 한도가 줄지 않고, Claude 는 요청이 있을 때만 부른다.
+- 결과는 reel-previews 가지로(reels/preview.py), 영상은 텔레그램으로 보낸다. 플랫폼 업로드는 하지 않는다.
+- 작업 폴더: ~/content-lab-reel (local_ai.py 가 5분마다 reset 하는 폴더와 분리). 설치: reels/reel_listen_install.ps1
+로그: ~/.content-lab-ai/reel_listen.log
+"""
+import base64
+import json
+import os
+import pathlib
+import queue
+import re
+import subprocess
+import sys
+import threading
+import time
+from datetime import datetime, timedelta, timezone
+
+import requests
+
+HERE = pathlib.Path(__file__).resolve().parent
+ROOT = HERE.parent
+sys.path[:0] = [str(HERE), str(ROOT)]
+KST = timezone(timedelta(hours=9))
+REPO, BRANCH, FOLDER = "vhffkfk-max/content-lab", "lab-requests", "requests/reel"
+API = f"https://api.github.com/repos/{REPO}/contents/{FOLDER}"
+POLL_S = 5
+MAX_AGE_MIN = 30
+JOB_TIMEOUT_S = 20 * 60
+LOG = pathlib.Path.home() / ".content-lab-ai" / "reel_listen.log"
+DEV_ENV = pathlib.Path.home() / "Desktop" / "솔개" / "insta-research" / ".env"
+ENV = {**os.environ, "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1"}
+NO_WINDOW = getattr(subprocess, "CREATE_NO_WINDOW", 0)
+S = requests.Session()
+
+
+def log(*a):
+    with open(LOG, "a", encoding="utf-8") as f:
+        f.write(f"{datetime.now(KST):%m/%d %H:%M:%S} " + " ".join(str(x) for x in a) + "\n")
+
+
+def login():
+    """PC에 로그인된 gh 의 토큰을 씀 (파일에 따로 두지 않음)."""
+    t = subprocess.run(["gh", "auth", "token"], capture_output=True, text=True, creationflags=NO_WINDOW).stdout.strip()
+    S.headers.update({"Authorization": f"Bearer {t}", "Accept": "application/vnd.github+json", "User-Agent": "content-lab-reel-listen"})
+
+
+def api(method, url, **kw):
+    r = S.request(method, url, timeout=20, **kw)
+    if r.status_code == 401:
+        login()
+        r = S.request(method, url, timeout=20, **kw)
+    return r
+
+
+def read(name):
+    r = api("GET", f"{API}/{name}", params={"ref": BRANCH})
+    if r.status_code != 200:
+        return None, None
+    d = r.json()
+    return json.loads(base64.b64decode(d["content"]).decode("utf-8")), d["sha"]
+
+
+def change(name, method, message, **fields):
+    for _ in range(4):
+        data, sha = read(name)
+        if sha is None:
+            return
+        body = {"message": message, "branch": BRANCH, "sha": sha}
+        if method == "PUT":
+            body["content"] = base64.b64encode(json.dumps({**data, **fields}, ensure_ascii=False).encode("utf-8")).decode("ascii")
+        r = api(method, f"{API}/{name}", json=body)
+        if r.status_code in (200, 201):
+            return
+        time.sleep(1)
+    log("요청 파일 처리 실패:", method, name, r.status_code)
+
+
+def git(*a):
+    return subprocess.run(["git", *a], cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace", creationflags=NO_WINDOW)
+
+
+def maker(*args):
+    """make_reel.py 실행 → (종료코드, 줄들)."""
+    try:
+        p = subprocess.run([sys.executable, str(HERE / "make_reel.py"), *args], cwd=ROOT, env=ENV, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=JOB_TIMEOUT_S, creationflags=NO_WINDOW)
+    except subprocess.TimeoutExpired:
+        return 1, ["20분 안에 끝나지 않았어요."]
+    return p.returncode, [x for x in (p.stdout + p.stderr).splitlines() if x.strip()]
+
+
+def plain(lines):
+    """오류 줄 가운데 사람이 읽을 마지막 한 줄."""
+    good = [x for x in lines if re.search(r"[가-힣]", x) and not x.startswith(("Traceback", "  File"))]
+    return (good[-1] if good else "PC에서 만들다가 멈췄어요. 다시 눌러 주세요.").strip()[:200]
+
+
+def folder(name):
+    """요청에 적힌 보드 이름 검사: 보드 폴더 바로 아래만 허용한다."""
+    import make_reel as mr
+    if not re.fullmatch(r"[0-9A-Za-z가-힣_]+", name or ""):
+        raise ValueError("잘못된 보드 이름")
+    d = (mr.REELS_DIR / name).resolve()
+    if d.parent != mr.REELS_DIR.resolve() or not (d / "대본.json").exists():
+        raise ValueError("없는 보드예요")
+    return d
+
+
+def send_video(d):
+    from publish.notify import send, send_video as tg_video
+    upload = d / "업로드글.txt"
+    ok = tg_video(d / "영상.mp4", f"릴스·쇼츠 영상이 나왔어요: {json.loads((d / '대본.json').read_text(encoding='utf-8'))['topic']}\n확인한 뒤 직접 올려 주세요.")
+    if ok and upload.exists():
+        send(upload.read_text(encoding="utf-8"))
+    return ok
+
+
+def run(name, q):
+    import make_reel as mr
+    import preview
+    action, t0, msg, out = q["action"], time.time(), None, None
+    if action == "board":
+        code, lines = maker(q["topic"], "--board")
+        found = next((x for x in lines if x.startswith("폴더: ")), None)
+        if code or not found:
+            msg = plain(lines)
+        else:
+            out = pathlib.Path(found[4:].strip())
+            mr.write_board(out, rid=q["rid"])
+    else:
+        out = folder(q["id"])
+        mr.write_board(out, rid=q["rid"])
+        script = str(out / "대본.json")
+        if action == "save":
+            preview.apply_edit(out, q["cuts"])
+            code, lines = maker("--stills", script)
+            msg = plain(lines) if code else None
+        elif action == "voice":
+            import engine
+            st = mr.load_state(out)
+            cut = int(q["cut"])
+            say = mr.Script(**st["script"]).cuts[cut].say
+            pv = out / "preview"
+            pv.mkdir(exist_ok=True)
+            engine.speak_all([mr.to_say(say, st.get("quotes") or {})], pv)
+            subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", str(pv / "01.wav"), "-c:a", "libmp3lame", "-b:a", "96k", str(pv / f"v{cut}.mp3")], check=True, creationflags=NO_WINDOW)
+        elif action == "make":
+            code, lines = maker("--from-script", script, *(["--accept-market"] if q.get("accept") else []))
+            if code == 0:
+                if not send_video(out):
+                    msg = "영상은 만들었지만 텔레그램 전송에 실패했어요. PC 폴더에서 확인해 주세요."
+            elif code not in (3, 4):   # 3 시세 바뀜, 4 사실 대조 문제: 보드에 표시된다
+                msg = plain(lines)
+        else:
+            raise ValueError("모르는 요청")
+    if out:
+        log("미리보기:", preview.push())
+    log(q["rid"], action, f"{time.time() - t0:.0f}초", msg or "완료")
+    if msg:
+        change(name, "PUT", "reel request failed", error=msg)
+    else:
+        change(name, "DELETE", "reel request done")
+
+
+def worker(jobs):
+    while True:
+        name, q = jobs.get()
+        try:
+            git("fetch", "-q", "--depth", "1", "origin", "main")
+            git("reset", "-q", "--hard", "origin/main")
+            git("clean", "-qfd", "output/site")
+            run(name, q)
+        except Exception as e:
+            log("오류", name, repr(e)[:400])
+            change(name, "PUT", "reel request failed", error="PC에서 만들다가 멈췄어요. 다시 눌러 주세요.")
+
+
+def poll(jobs, seen, etag):
+    r = api("GET", API, params={"ref": BRANCH}, headers={"If-None-Match": etag} if etag else {})
+    if r.status_code == 304:
+        return etag
+    names = [f["name"] for f in r.json() if f["name"].endswith(".json")] if r.status_code == 200 else []
+    for name in names:
+        if name in seen:
+            continue
+        seen.add(name)
+        q, _ = read(name)
+        if not q:
+            continue
+        old = datetime.now(KST) - datetime.fromisoformat(q["at"]) > timedelta(minutes=MAX_AGE_MIN)
+        if old or q.get("error"):   # PC가 꺼져 있던 사이 쌓인 요청·지난 실패 기록
+            change(name, "DELETE", "reel request expired")
+            continue
+        change(name, "PUT", "reel request picked", picked=datetime.now(KST).isoformat(timespec="seconds"))
+        log("요청 받음:", q["rid"], q["action"])
+        jobs.put((name, q))
+    seen &= set(names)
+    return r.headers.get("ETag") if r.status_code in (200, 404) else None
+
+
+def main():
+    from common import load_env
+    LOG.parent.mkdir(parents=True, exist_ok=True)
+    load_env()
+    load_env(DEV_ENV)   # 이 폴더는 저장소 복사본이라 .env 가 없다 (텔레그램 봇 설정)
+    login()
+    log("시작")
+    jobs, seen, etag = queue.Queue(), set(), None
+    threading.Thread(target=worker, args=(jobs,), daemon=True).start()
+    while True:
+        try:
+            etag = poll(jobs, seen, etag)
+        except Exception as e:   # 인터넷이 잠깐 끊겨도 계속
+            log("오류", repr(e)[:300])
+        time.sleep(POLL_S)
+
+
+if __name__ == "__main__":
+    main()

@@ -18,11 +18,25 @@ const digest = s => createHash('sha256').update(String(s)).digest();
 const same = (a, b) => !!a && !!b && timingSafeEqual(digest(a), digest(b));
 
 // 허용 목록에 있는 요청이면 '보낼 수 있음', 아니면 null. owner 는 발행 암호가 필요한 요청.
+// 영상 연구소: 요청은 lab-requests 가지 requests/reel 로, 보드 내용은 reel-previews 가지에서 읽는다
+const REEL_DIR = 'requests/reel', REEL_BRANCH = 'reel-previews', REEL_ID = /^[0-9A-Za-z가-힣_]{1,80}$/;
+const REEL_ACTIONS = ['board', 'save', 'voice', 'make'];
+const reelText = (v, n) => typeof v === 'string' && v.length <= n;
+const reelCut = c => !!c && Number.isInteger(c.i) && c.i >= 0 && c.i < 30 && reelText(c.say, 240) && reelText(c.cap, 240)
+  && (c.kick === undefined || reelText(c.kick, 240)) && (c.big === undefined || reelText(c.big, 240))
+  && (c.items === undefined || (Array.isArray(c.items) && c.items.length <= 5 && c.items.every(x => reelText(x, 60))));
+
 export function route(method, path) {
   const [p, query = ''] = path.split('?');
   if (method === 'GET' && p === '') return {};
   if (method === 'GET' && p === 'owner') return { owner: true, check: true };   // 발행 암호 확인용, 깃허브로 안 보냄
   let m;
+  if (p === 'reel-request') return method === 'POST' && !query ? { reel: true } : null;
+  if ((m = p.match(/^reel-request\/([a-z0-9]+)$/))) return method === 'GET' && RID.test(m[1]) ? { reelStatus: m[1] } : null;
+  if ((m = p.match(/^reel-data\/(index\.json|([^/]+)\/board\.json)$/))) {
+    const id = m[2] && decodeURIComponent(m[2]);
+    return method === 'GET' && !query && (!id || REEL_ID.test(id)) ? { reelData: m[2] ? `${id}/board.json` : 'index.json' } : null;
+  }
   if (p === 'thread-request') return method === 'POST' && !query ? { thread: true } : null;
   if ((m = p.match(/^thread-request\/([a-z0-9]+)$/))) return method === 'GET' && RID.test(m[1]) ? { threadStatus: m[1] } : null;
   if ((m = p.match(/^contents\/(.+)$/))) {
@@ -43,6 +57,21 @@ export function threadFile({ rid, idx, styles, slot } = {}, now = new Date()) {
   if (!ok) return null;
   const at = new Date(now.getTime() + 9 * 3600e3).toISOString().slice(0, 19) + '+09:00';
   return { rid, idx: Number(idx), styles, slot: slot || '', at };
+}
+
+// 요청 내용은 서버에서 다시 만든다 (정해진 칸·형식만)
+export function reelFile({ rid, action, id, topic, cut, cuts, accept } = {}, now = new Date()) {
+  if (!RID.test(rid) || !REEL_ACTIONS.includes(action)) return null;
+  const at = new Date(now.getTime() + 9 * 3600e3).toISOString().slice(0, 19) + '+09:00';
+  if (action === 'board') {
+    const t = typeof topic === 'string' ? topic.replace(/\s+/g, ' ').trim() : '';
+    return t.length >= 2 && t.length <= 60 ? { rid, action, topic: t, at } : null;
+  }
+  if (!REEL_ID.test(id || '')) return null;
+  if (action === 'make') return { rid, action, id, accept: accept === true, at };
+  if (action === 'voice') return Number.isInteger(cut) && cut >= 0 && cut < 30 ? { rid, action, id, cut, at } : null;
+  return Array.isArray(cuts) && cuts.length >= 1 && cuts.length <= 20 && cuts.every(reelCut)
+    ? { rid, action, id, cuts: cuts.map(({ i, say, cap, kick, big, items }) => ({ i, say, cap, kick, big, items })), at } : null;
 }
 
 export default async function handler(req, res) {
@@ -78,6 +107,29 @@ export default async function handler(req, res) {
       content: Buffer.from(JSON.stringify(file)).toString('base64') }) });
     if (r.status === 401) return res.status(502).json({ error: 'github_token' });
     return r.ok ? res.status(201).json({ rid: file.rid }) : res.status(r.status).json({ error: 'github' });
+  }
+  if (rule.reel) {
+    const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : req.body;
+    const file = reelFile(body);
+    if (!file) return res.status(400).json({ error: 'bad_request' });
+    const r = await gh(`contents/${REEL_DIR}/${file.rid}.json`, { method: 'PUT', body: JSON.stringify({ message: 'reel request', branch: THREAD_BRANCH,
+      content: Buffer.from(JSON.stringify(file)).toString('base64') }) });
+    if (r.status === 401) return res.status(502).json({ error: 'github_token' });
+    return r.ok ? res.status(201).json({ rid: file.rid }) : res.status(r.status).json({ error: 'github' });
+  }
+  if (rule.reelStatus) {
+    const r = await gh(`contents/${REEL_DIR}/${rule.reelStatus}.json?ref=${THREAD_BRANCH}`);
+    if (r.status === 401) return res.status(502).json({ error: 'github_token' });
+    if (!r.ok) return res.status(r.status === 404 ? 404 : 502).json({ error: 'none' });
+    const { picked, error } = JSON.parse(Buffer.from((await r.json()).content, 'base64').toString('utf-8'));
+    return res.status(200).json({ picked: picked || null, error: error || null });
+  }
+  if (rule.reelData) {
+    const r = await gh(`contents/${rule.reelData.split('/').map(encodeURIComponent).join('/')}?ref=${REEL_BRANCH}`);
+    if (r.status === 401) return res.status(502).json({ error: 'github_token' });
+    if (!r.ok) return res.status(r.status === 404 ? 404 : 502).json({ error: 'none' });
+    const data = JSON.parse(Buffer.from((await r.json()).content, 'base64').toString('utf-8'));
+    return res.status(200).json(data);
   }
   if (rule.threadStatus) {
     const r = await gh(`contents/${THREAD_DIR}/${rule.threadStatus}.json?ref=${THREAD_BRANCH}`);

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>숏폼 연구소 · 컷 보드</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;background:#0B0B0D;color:#f3f3f5;font-family:'Noto Sans KR','Malgun Gothic',sans-serif;font-size:15px}
+button,input,textarea,select{font:inherit;color:inherit}a{color:#FFC23A}
+.app{display:grid;grid-template-columns:270px 1fr;min-height:100vh}
+aside{background:#111114;border-right:1px solid #26262c;padding:18px;position:sticky;top:0;height:100vh;overflow:auto}
+h1{font-size:18px;margin:0 0 3px}.dim{color:#9c9ca6;font-size:13px}
+.tabs{display:flex;gap:6px;margin:14px 0}.tab{flex:1;padding:8px;border-radius:9px;background:#1c1c21;border:1px solid #2c2c33;text-align:center;font-weight:700}.tab.on{background:#E3262B;border-color:#E3262B}.tab.off{opacity:.45;cursor:not-allowed}
+.new input{width:100%;background:#1c1c21;border:1px solid #33333b;border-radius:9px;padding:10px;margin-bottom:8px}
+.btn{border:0;border-radius:9px;padding:9px 13px;background:#27272e;font-weight:700;cursor:pointer}.btn:hover{background:#34343c}.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn.red{background:#E3262B}.btn.red:hover{background:#f03a3f}.btn.yellow{background:#FFC23A;color:#111}.btn.wide{width:100%}
+.list{margin-top:18px;display:flex;flex-direction:column;gap:6px}.item{padding:10px;border-radius:9px;background:#18181c;border:1px solid transparent;cursor:pointer;text-align:left;width:100%}.item.on{border-color:#FFC23A}.item b{display:block;margin-bottom:2px}
+main{padding:22px 26px 110px;min-width:0}.head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:flex-start}.head h2{margin:0;font-size:24px}
+.pill{display:inline-block;padding:3px 9px;border-radius:99px;background:#26262c;font-size:12px;margin-right:5px}.pill.ok{background:#14351f;color:#7ee2a0}.pill.bad{background:#451316;color:#ff9ca0}.pill.warn{background:#463610;color:#ffd777}
+.box{background:#141418;border:1px solid #26262c;border-radius:13px;padding:14px;margin-top:14px}.box h3{margin:0 0 8px;font-size:15px}.box.bad{border-color:#E3262B}.box.warn{border-color:#c79723}.box ul{margin:0;padding-left:18px}
+.hook{display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px solid #222228}.hook:first-of-type{border:0}.score{font-weight:800;color:#FFC23A;min-width:50px}.hook span.t{flex:1}
+.cuts{display:grid;grid-template-columns:repeat(auto-fill,minmax(440px,1fr));gap:14px;margin-top:16px}
+.cut{display:grid;grid-template-columns:150px 1fr;gap:13px;background:#141418;border:1px solid #26262c;border-radius:13px;padding:12px}.cut.dirty{border-color:#FFC23A}
+.thumb{width:150px;aspect-ratio:9/16;border-radius:9px;background:#222;object-fit:cover;cursor:zoom-in;display:block}
+.no{font-weight:800;color:#FFC23A}.cut label{display:block;font-size:12px;color:#a9a9b2;margin-top:7px}.cut textarea{width:100%;background:#1d1d22;border:1px solid #33333b;border-radius:8px;padding:7px 9px;resize:vertical;min-height:38px;line-height:1.4}
+.heard{font-size:12px;color:#8f8f99;margin-top:2px}.tools{display:flex;gap:5px;margin-top:9px;flex-wrap:wrap}.tools .btn{padding:5px 9px;font-size:12.5px}
+.bar{position:fixed;left:270px;right:0;bottom:0;background:rgba(17,17,20,.96);border-top:1px solid #2c2c33;padding:12px 26px;display:flex;align-items:center;gap:10px;justify-content:space-between;flex-wrap:wrap}
+.log{white-space:pre-wrap;font-size:12px;color:#b9b9c2;max-height:120px;overflow:auto;background:#0e0e11;border-radius:8px;padding:8px;margin-top:8px}
+video{width:270px;border-radius:12px;background:#000;display:block}.result{display:flex;gap:18px;flex-wrap:wrap}.result pre{flex:1;min-width:280px;white-space:pre-wrap;background:#0e0e11;padding:12px;border-radius:9px;margin:0;max-height:480px;overflow:auto;font:inherit;font-size:13px}
+#zoom{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;z-index:9}#zoom img{height:94vh;border-radius:12px}
+.empty{color:#9c9ca6;margin-top:60px;text-align:center;line-height:1.7}details{margin-top:14px}summary{cursor:pointer;font-weight:700}
+@media(max-width:800px){.app{grid-template-columns:1fr}aside{position:static;height:auto}.bar{left:0}.cuts{grid-template-columns:1fr}.cut{grid-template-columns:110px 1fr}.thumb{width:110px}}
+</style></head><body>
+<div class="app"><aside>
+ <h1>숏폼 연구소</h1><div class="dim">대본과 컷을 먼저 보고, 괜찮을 때만 영상을 만들어요</div>
+ <div class="tabs"><div class="tab on">숏폼</div><div class="tab off" title="준비 중">롱폼 · 준비 중</div></div>
+ <form class="new" id="newForm"><input id="topic" placeholder="주제 (예: 코스피 급락)" maxlength="60" aria-label="주제"><button class="btn red wide" id="newBtn">컷 보드 만들기</button></form>
+ <div id="jobBox"></div><div class="list" id="list"></div>
+</aside><main id="main"><div class="empty">왼쪽에 주제를 넣으면 대본과 컷 이미지를 먼저 만들어요.<br>영상은 아래쪽 버튼을 눌렀을 때만 만들어요.</div></main></div>
+<div id="zoom"><img alt="크게 보기"></div>
+<script>
+const $=(t,p={},...k)=>{const e=document.createElement(t);for(const[a,v]of Object.entries(p)){if(a==='on')Object.entries(v).forEach(([n,f])=>e.addEventListener(n,f));else if(a==='class')e.className=v;else if(a in e)e[a]=v;else e.setAttribute(a,v)}k.flat().forEach(c=>c!=null&&e.append(c));return e};
+const api=async(u,b)=>{const r=await fetch(u,b?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)}:undefined);const j=await r.json();if(!r.ok)throw Error(j.error||'오류');return j};
+let cur=null,dirty=false,job={},lastRunning=false;
+const main=document.getElementById('main');
+
+async function loadList(){const l=await api('/api/boards');document.getElementById('list').replaceChildren(...l.map(b=>$('button',{class:'item'+(cur&&cur.id===b.id?' on':''),on:{click:()=>open(b.id)}},$('b',{},b.topic),$('span',{class:'dim'},b.updated+(b.video?' · 영상 있음':'')+(b.blocked?' · 문제 있음':'')))))}
+async function open(id){if(dirty&&!confirm('저장하지 않은 수정이 있어요. 버릴까요?'))return;cur=await api('/api/board?id='+encodeURIComponent(id));dirty=false;render();loadList()}
+
+function field(c,key,label,after){const t=$('textarea',{value:Array.isArray(c[key])?c[key].join('\n'):(c[key]||'').replaceAll('\\n','\n'),rows:key==='say'?2:1,on:{input:e=>{c[key]=key==='items'?e.target.value.split('\n').filter(Boolean):e.target.value;markDirty(c)}}});return[$('label',{},label),t,after]}
+function markDirty(c){dirty=true;c._dirty=true;document.querySelectorAll('.cut')[cur.cuts.indexOf(c)]?.classList.add('dirty');updateBar()}
+function move(i,d){const a=cur.cuts,j=i+d;if(j<0||j>=a.length)return;[a[i],a[j]]=[a[j],a[i]];dirty=true;render()}
+function removeCut(i){if(cur.cuts.length<=8&&!confirm('컷이 8개보다 적어지면 사실 검사에서 막혀요. 그래도 지울까요?'))return;cur.cuts.splice(i,1);dirty=true;render()}
+async function listen(i,btn){if(dirty){alert('수정을 먼저 반영해 주세요.');return}btn.disabled=true;btn.textContent='만드는 중…';try{const{url}=await api('/api/voice',{id:cur.id,cut:i});new Audio(url).play()}catch(e){alert(e.message)}btn.disabled=false;btn.textContent='▶ 듣기'}
+function useHook(h){const c=cur.cuts[0];c.say=h.say;c.cap=h.text.replaceAll('*','');c._dirty=true;dirty=true;render()}
+
+function cutCard(c,i){const fields=[...field(c,'say','대본 (읽는 글)',$('div',{class:'heard'},'읽는 소리: '+c.say_text)),...field(c,'cap','자막')];
+ if(c.kind==='word'){fields.push(...field(c,'kick','화면 작은 제목'),...field(c,'big','화면 큰 글자'))}else if(c.kind==='list'){fields.push(...field(c,'kick','화면 작은 제목'),...field(c,'items','화면 목록 (한 줄에 하나)'))}else if(c.kick!==undefined&&c.kind==='bars'){fields.push(...field(c,'kick','화면 작은 제목'))}
+ const img=c.image?$('img',{class:'thumb',src:c.image,alt:'컷 '+(i+1),on:{click:()=>zoom(c.image)}}):$('div',{class:'thumb'});
+ return $('div',{class:'cut'+(c._dirty?' dirty':'')},$('div',{},img),$('div',{},$('span',{class:'no'},'컷 '+(i+1)),' ',$('span',{class:'dim'},{number:'큰 숫자',word:'큰 글자',chart:'차트',bars:'비교 막대',list:'목록'}[c.kind]),fields,$('div',{class:'tools'},$('button',{class:'btn',textContent:'▶ 듣기',on:{click:e=>listen(i,e.target)}}),$('button',{class:'btn',textContent:'↑',title:'위로',on:{click:()=>move(i,-1)}}),$('button',{class:'btn',textContent:'↓',title:'아래로',on:{click:()=>move(i,1)}}),$('button',{class:'btn',textContent:'삭제',on:{click:()=>removeCut(i)}}))))}
+
+function render(){const b=cur.board,blocked=(b.block||[]).concat(b.problems||[]);const kids=[$('div',{class:'head'},$('div',{},$('h2',{},cur.topic),$('div',{class:'dim'},`${b.basis||''} · 컷 ${cur.cuts.length}개 · 약 ${b.seconds}초 · ${b.updated||''}`)),$('div',{},blocked.length?$('span',{class:'pill bad'},'문제 '+blocked.length+'건'):$('span',{class:'pill ok'},'사실 검사 통과'),cur.edited?$('span',{class:'pill warn'},'고친 내용은 영상 전에 다시 대조'):null))];
+ if(blocked.length)kids.push($('div',{class:'box bad'},$('h3',{},'고쳐야 할 문제'),$('ul',{},blocked.map(x=>$('li',{},x)))));
+ if((b.changes||[]).length)kids.push($('div',{class:'box warn'},$('h3',{},'보드를 본 뒤 시세가 바뀌었어요'),$('ul',{},b.changes.map(x=>$('li',{},`${x.name}: ${x.old} → ${x.new}`))),$('p',{class:'dim'},'새 숫자로 만들려면 아래 버튼을 다시 눌러 주세요.')));
+ if(cur.video_url)kids.push($('div',{class:'box'},$('h3',{},'완성된 영상'),$('div',{class:'result'},$('video',{src:cur.video_url,controls:true}),$('pre',{},cur.upload))));
+ if((b.hooks||[]).length)kids.push($('div',{class:'box'},$('h3',{},'첫 문장 후보 (후킹 점수)'),b.hooks.map(h=>$('div',{class:'hook'},$('span',{class:'score'},h.score==null?'-':Math.round(h.score)+'점'),$('span',{class:'t'},h.text.replaceAll('*','')),$('button',{class:'btn',textContent:'이걸로',on:{click:()=>useHook(h)}})))));
+ kids.push($('div',{class:'cuts'},cur.cuts.map(cutCard)));
+ kids.push($('details',{},$('summary',{},'제목·요약 보기'),$('div',{class:'box'},$('p',{},'인스타 제목: '+cur.ig_title),$('p',{},'유튜브 제목: '+cur.yt_title),$('ul',{},cur.summary.map(x=>$('li',{},x))),$('p',{},'질문: '+cur.question))));
+ kids.push($('details',{},$('summary',{},'근거 기사 '+cur.sources.length+'건'),$('ul',{},cur.sources.map(s=>$('li',{},s.source+': ',$('a',{href:s.link,target:'_blank',rel:'noopener'},s.title))))));
+ kids.push($('div',{class:'bar',id:'bar'}));main.replaceChildren(...kids);updateBar()}
+
+function updateBar(){const bar=document.getElementById('bar');if(!bar||!cur)return;const b=cur.board,blocked=(b.block||[]).length+(b.problems||[]).length>0,run=job.running,changes=(b.changes||[]).length>0;
+ bar.replaceChildren($('span',{class:'dim'},run?'작업 중이에요':dirty?'수정한 내용을 반영하면 컷 이미지만 몇 초 만에 다시 그려요':blocked?'문제를 고치면 영상을 만들 수 있어요':'괜찮으면 영상을 만들어 주세요 (약 1~2분, 업로드는 안 해요)'),$('div',{style:'display:flex;gap:8px'},$('button',{class:'btn yellow',disabled:!dirty||run,textContent:'수정 반영',on:{click:saveCuts}}),$('button',{class:'btn red',disabled:dirty||blocked||run,textContent:changes?'새 숫자로 영상 만들기':cur.video_url?'영상 다시 만들기':'영상 만들기',on:{click:()=>make(changes)}})))}
+
+async function saveCuts(){const cuts=cur.cuts.map(c=>{const o={...c};['say_text','cap_text','image','_dirty'].forEach(k=>delete o[k]);o.big=(o.big||'').replaceAll('\n','\\n');return o});const{started}=await api('/api/save',{id:cur.id,cuts});if(!started)alert('다른 작업이 끝난 뒤에 다시 눌러 주세요.');dirty=false;tick()}
+async function make(accept){const{started}=await api('/api/make',{id:cur.id,accept});if(!started)alert('다른 작업이 끝난 뒤에 다시 눌러 주세요.');tick()}
+function zoom(src){const z=document.getElementById('zoom');z.firstElementChild.src=src;z.style.display='flex'}
+document.getElementById('zoom').onclick=e=>e.currentTarget.style.display='none';
+document.getElementById('newForm').addEventListener('submit',async e=>{e.preventDefault();const t=document.getElementById('topic');try{const{started}=await api('/api/new',{topic:t.value});if(!started)alert('다른 작업이 끝난 뒤에 다시 눌러 주세요.');t.value='';tick()}catch(x){alert(x.message)}});
+
+const NAMES={board:'대본·컷 이미지 만드는 중 (보통 1~3분)',stills:'컷 이미지 다시 그리는 중',video:'영상 만드는 중 (약 1~2분)'};
+async function tick(){job=await api('/api/job');const box=document.getElementById('jobBox');document.getElementById('newBtn').disabled=job.running;
+ if(job.running||(job.code&&job.kind))box.replaceChildren($('div',{class:'box'+(job.code?' bad':'')},$('b',{},job.running?NAMES[job.kind]:job.code===3?'시세가 바뀌어 멈췄어요':'끝나지 못했어요'),job.log.length?$('div',{class:'log'},job.log.slice(-5).join('\n')):null));else box.replaceChildren();
+ if(lastRunning&&!job.running){await loadList();if(job.id)await reopen(job.id)}lastRunning=job.running;updateBar()}
+async function reopen(id){dirty=false;try{cur=await api('/api/board?id='+encodeURIComponent(id));render();loadList()}catch(e){}}
+loadList();tick();setInterval(tick,2000);
+</script></body></html>
