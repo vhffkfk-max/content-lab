@@ -1,12 +1,57 @@
 [
  {
   "geo": "KR",
+  "term": "코인니스",
+  "traffic": 1000,
+  "topics": "급락·변동성",
+  "econ": true,
+  "news_title": "'Staking Funds Drained for Ether Crash'? The Ledger Tells a Different Story, Binance Hack Fact-Check",
+  "news_link": "https://www.suwonilbo.kr/en/view.html?id=L261031181506e6e3"
+ },
+ {
+  "geo": "KR",
+  "term": "비트코인",
+  "traffic": 500,
+  "topics": "비트코인",
+  "econ": true,
+  "news_title": "비트코인, $80,500 회복…미국 선거 후 위험 선호 심리 개선",
+  "news_link": "https://kr.investing.com/news/cryptocurrency-news/article-2160831"
+ },
+ {
+  "geo": "KR",
+  "term": "수술",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "[단독] 기저질환 없던 60대, 무릎수술 다음날 사망",
+  "news_link": "https://www.chosun.com/national/national_general/2026/11/05/WZ4ZUNKQWBA4JMU33QAZ3M7URU/"
+ },
+ {
+  "geo": "KR",
+  "term": "어선",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "울릉도 공해상 표류 북한 어선 발견…당국 조사中",
+  "news_link": "https://www.yna.co.kr/view/AKR20261105174600504"
+ },
+ {
+  "geo": "KR",
   "term": "nasdaq",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Dow tumbles 1,500 points, erasing its postelection rally; Nasdaq plummets 5%: Live updates",
+  "news_title": "Dow tumbles 1,600 points, erasing its postelection rally; Nasdaq plummets 5%: Live updates",
   "news_link": "https://www.cnbc.com/2026/11/04/stock-market-today-live-updates.html"
+ },
+ {
+  "geo": "KR",
+  "term": "qld",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Jacinta Price rejects Qld LNP move to stay in NT",
+  "news_link": "https://www.theaustralian.com.au/commentary/feeding-the-chooks/jacinta-nampijinpa-price-snubs-queensland-lnp-as-she-confirms-nt-senate-run/news-story/85e9a40178f64ac98fe28e16a55566c1"
  },
  {
   "geo": "KR",
@@ -21,55 +66,10 @@
   "geo": "KR",
   "term": "마이크론 주가",
   "traffic": 200,
-  "topics": "AI·반도체",
+  "topics": "AI·반도체, 급락·변동성",
   "econ": true,
-  "news_title": "마이크론, 대만 HBM 공장 건설 중단…삼성·SK하이닉스 수혜 촉각 By EBN",
-  "news_link": "https://kr.investing.com/news/stock-market-news/article-2161305"
- },
- {
-  "geo": "KR",
-  "term": "비트코인",
-  "traffic": 200,
-  "topics": "환율·달러, 비트코인, 급락·변동성",
-  "econ": true,
-  "news_title": "기요사키, 비트코인(BTC) 7만 5,000달러 부근 폭락에 추가 매수",
-  "news_link": "https://www.coinreaders.com/267834"
- },
- {
-  "geo": "KR",
-  "term": "수술",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "[단독] 기저질환 없던 60대, 무릎수술 다음날 사망",
-  "news_link": "https://www.chosun.com/national/national_general/2026/11/05/WZ4ZUNKQWBA4JMU33QAZ3M7URU/"
- },
- {
-  "geo": "KR",
-  "term": "어선",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "울릉도 공해상 표류 북한 어선 발견…당국 조사中",
-  "news_link": "https://www.yna.co.kr/view/AKR20261105174600504"
- },
- {
-  "geo": "KR",
-  "term": "qld",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "1003/9 Castlebar Street, Kangaroo Point, Qld 4169",
-  "news_link": "https://www.realestate.com.au/property-studio-qld-kangaroo+point-445407928"
- },
- {
-  "geo": "KR",
-  "term": "soxl stock",
-  "traffic": 100,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "Why is Direxion Daily Semiconductor Bear 3X Shares surging today?",
-  "news_link": "https://www.investing.com/news/stock-market-news/why-is-direxion-daily-semiconductor-bear-3x-shares-surging-today-93CH-5005043"
+  "news_title": "마이크론, 메모리 가격 급등에도 주가 급락…AI 호황 속 커지는 반도체 시장의 역설",
+  "news_link": "https://www.jemin.com/news/articleView.html?idxno=846205"
  },
  {
   "geo": "KR",
@@ -100,15 +100,6 @@
  },
  {
   "geo": "US",
-  "term": "national hurricane center",
-  "traffic": 5000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Subtropical storm could develop in the Atlantic this week",
-  "news_link": "https://weather.com/2026/11/05/storms/hurricane/atlantic-tropics-subtropical-storm-kyle-nhc-november"
- },
- {
-  "geo": "US",
   "term": "sylvester stallone",
   "traffic": 5000,
   "topics": "",
@@ -118,26 +109,8 @@
  },
  {
   "geo": "US",
-  "term": "india",
+  "term": "conference league",
   "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "India in final-stage talks to expand missile sale to Philippines, sources say",
-  "news_link": "https://www.reuters.com/world/asia-pacific/india-final-stage-talks-expand-missile-sale-philippines-sources-say-2026-11-05/"
- },
- {
-  "geo": "US",
-  "term": "aldosivi vs river",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Aldosivi vs. River, hoy EN VIVO por el Torneo Clausura: formaciones confirmadas, horario y por dónde ver",
-  "news_link": "https://www.ole.com.ar/futbol-primera/aldosivi-vs-river-vivo-minuto-minuto-partido-torneo-clausura-fecha16_0_h9r9bVagbD.html"
- },
- {
-  "geo": "US",
-  "term": "atalanta vs kairat",
-  "traffic": 1000,
   "topics": "",
   "econ": false,
   "news_title": "Conference League line-ups: Atalanta vs. Kairat Almaty",
@@ -146,7 +119,7 @@
  {
   "geo": "US",
   "term": "crystal palace",
-  "traffic": 1000,
+  "traffic": 2000,
   "topics": "",
   "econ": false,
   "news_title": "Crystal Palace vs Hoffenheim: UEFA Europa League stats & head-to-head",
@@ -154,12 +127,39 @@
  },
  {
   "geo": "US",
-  "term": "midtjylland vs ajax",
+  "term": "brysen wright",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Florida, Miami or Texas? Elite WR Brysen Wright set to make commitment",
+  "news_link": "https://247sports.com/article/florida-miami-texas-wr-brysen-wright-commitment-292209449/"
+ },
+ {
+  "geo": "US",
+  "term": "erin napier",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "HGTV Star Erin Napier Announces Devastating Family Loss",
+  "news_link": "https://www.yahoo.com/entertainment/celebrity/deaths-obituaries/articles/hgtv-star-erin-napier-announces-152122701.html"
+ },
+ {
+  "geo": "US",
+  "term": "india",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "India's ONGC posts higher Q2 profit as surge in crude prices lifts margins",
+  "news_link": "https://www.reuters.com/business/energy/indias-ongc-posts-higher-q2-profit-surge-crude-prices-lifts-margins-2026-11-05/"
+ },
+ {
+  "geo": "US",
+  "term": "jalayshia alford",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Midtjylland vs Ajax: UEFA Conference League stats & head-to-head",
-  "news_link": "https://www.bbc.com/sport/football/live/c8r4y7n209ykt"
+  "news_title": "All-out search continues for 10-year-old Jalayshia Allford of West Philadelphia",
+  "news_link": "https://6abc.com/post/jalayshia-allford-update-search-continues-missing-10-year-old-west-philadelphia/20017799/"
  },
  {
   "geo": "US",
@@ -167,8 +167,8 @@
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Naresh Bhatt contends wife Mamta died by suicide in Virginia murder trial",
-  "news_link": "https://wtop.com/virginia/2026/11/naresh-bhatt-contends-wife-mamta-died-by-suicide-in-virginia-murder-trial/"
+  "news_title": "Naresh Bhatt testifies he found his wife dead, tried to dismember her body",
+  "news_link": "https://www.wusa9.com/article/news/crime/naresh-bhatt-murder-trial/naresh-bhatt-murder-trial-mamta-kafle-bhatt-says-he-found-her-dead/65-1e47de3d-9243-4329-9a51-b0ccf6e29920"
  },
  {
   "geo": "US",
