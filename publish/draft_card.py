@@ -160,9 +160,14 @@ SYSTEM = """당신은 한국 경제 인스타그램 @hotconomy(핫코노미)의 
 - 해시태그 3~5개(인스타 공식 상한 5개): #핫코노미 1개 + 주제 태그 + 대형 태그 1개. 다른 계정, 매체, 회사 이름 태그 금지.
 - youtube: 쇼츠용 제목(40자 이내)과 설명(2~3줄 + 면책 문구).
 
+BGM 추천(bgm): 사람이 인스타 앱에서 곡을 찾아 듣고 고를 때 쓰는 힌트입니다.
+- mood: 이 글 내용에 맞는 분위기 한 줄(예: '긴장감 있는 낮은 비트, 빠르지 않게').
+- search: 앱 음악 검색에 넣을 분위기, 장르 검색어 2~3개. 특정 곡명과 가수 이름은 쓰지 않습니다(지어낸 곡이 나올 수 있고 앱에 없을 수 있음).
+- avoid: 이 글에 안 맞는 분위기 한 줄(예: 폭락, 사고, 피해 소식이면 '밝고 신나는 곡').
+
 출력: 설명 없이 JSON 하나만.
 {"form": "폼 키", "kind": "소재 종류", "title": "게시물 제목(관리용)", "design_note": "이 폼을 고른 이유", "cover": {...}, "slides": [{...}], "end": {"title","checks":[3개],"keyword"},
- "caption": "...", "hashtags": ["#..."], "youtube": {"title","description"}, "sources": ["쓴 뉴스 링크"]}"""
+ "caption": "...", "hashtags": ["#..."], "youtube": {"title","description"}, "bgm": {"mood","search":["..."],"avoid"}, "sources": ["쓴 뉴스 링크"]}"""
 
 
 def form_specs(allowed):
@@ -293,6 +298,22 @@ def photo_credit_lines(post):
     return "\n".join(dict.fromkeys(d["credit"] for d in [post["cover"], *post.get("slides", [])] if d.get("credit")))
 
 
+def bgm_tip(post):
+    """AI가 준 BGM 추천을 정리. 없거나 모양이 틀리면 빈 값(추천일 뿐이라 초안을 막지 않는다)."""
+    b = post.get("bgm")
+    if not isinstance(b, dict):
+        return {}
+    search = b.get("search")
+    search = [str(x).strip() for x in search if str(x).strip()][:3] if isinstance(search, list) else []
+    mood, avoid = str(b.get("mood") or "").strip(), str(b.get("avoid") or "").strip()
+    return {"mood": mood, "search": search, "avoid": avoid} if mood or search else {}
+
+
+def bgm_line(tip):
+    parts = [tip.get("mood", ""), "검색어: " + ", ".join(tip["search"]) if tip.get("search") else "", "피하기: " + tip["avoid"] if tip.get("avoid") else ""]
+    return " / ".join(p for p in parts if p)
+
+
 def hashtags(tags):
     tags = [t if t.startswith("#") else f"#{t}" for t in tags]
     tags = [t for t in tags if not any(b in t.lower() for b in NOT_MINE)]
@@ -372,13 +393,14 @@ def main():
         except Exception as e:
             print("⚠️ 캔바 사본 실패 (초안은 그대로):", e)
     credits = photo_credit_lines(post)
+    bgm = bgm_tip(post)
     bad, notes = caption_check.check(post["caption"], post.get("end", {}).get("keyword", ""))
     warns += bad
     caption = post["caption"].rstrip() + (f"\n\n{credits}" if credits else "") + "\n\n" + " ".join(post["hashtags"])
     queue["items"].append({"id": did, "account": "hotconomy", "type": "carousel", "topic": topic, "form": post["form"],
                            "title": post.get("title", topic), "caption": caption, "youtube": post.get("youtube", {}),
                            "files": [str(f.relative_to(ROOT)).replace("\\", "/") for f in files], "tickers": tickers,
-                           "sources": post.get("sources", []), "photo_credits": post.get("photo_credits", []), "warnings": warns, "caption_notes": notes, "status": "drafted", "risk": None,
+                           "sources": post.get("sources", []), "photo_credits": post.get("photo_credits", []), "warnings": warns, "caption_notes": notes, "bgm": bgm, "status": "drafted", "risk": None,
                            "published": {}, "canva": canva, "created_at": now.isoformat(timespec="seconds"),
                            "design_why": {"form": forms.FORM_NAMES[post["form"]], "note": post.get("design_note", ""), "evidence": forms.FORM_WHY.get(post["form"], "")},
                            "series": "short" if a.short else "deep", "auto": a.auto, "hot_title": hot["title"] if hot else None})
@@ -395,6 +417,8 @@ def main():
             head += "\n⚠️ " + "\n⚠️ ".join(warns)
         if notes:
             head += "\n✏️ 캡션 참고: " + " / ".join(notes)
+        if bgm:
+            head += "\n🎵 BGM: " + bgm_line(bgm)
         notify.send_photos(files, head)
         try:   # 연구소 사이트 미리보기 (실패해도 초안은 그대로)
             from publish.card_preview import push as push_preview

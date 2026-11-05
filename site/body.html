@@ -1274,6 +1274,12 @@ a.row:hover .row-main{text-decoration:underline}
       const strip = cardStrip(it);
       if (strip) c.append(strip);
       if (it.caption_notes && it.caption_notes.length) c.append(el('p', 'sub', `캡션 참고: ${it.caption_notes.join(' / ')}`));
+      const bgm = it.bgm;
+      if (bgm && (bgm.mood || (bgm.search || []).length)) {
+        const b = el('div', 'box');
+        b.textContent = [bgm.mood && `분위기: ${bgm.mood}`, (bgm.search || []).length && `앱 검색어: ${bgm.search.join(', ')}`, bgm.avoid && `피하기: ${bgm.avoid}`].filter(Boolean).join('\n');
+        c.append(el('p', 'sub', 'BGM 추천 (앱에서 들어 보고 골라 주세요)'), b);
+      }
       const why = it.design_why;
       if (why) { const w = el('details', 'more'); w.append(el('summary', null, '왜 이렇게 만들었나요'), el('div', 'box', [why.note, why.evidence && `근거: ${why.evidence}`].filter(Boolean).join('\n\n'))); c.append(w); }
       const more = el('details', 'more'); more.append(el('summary', null, '캡션 보기'), el('div', 'box', it.caption || '')); c.append(more);
@@ -1292,6 +1298,7 @@ a.row:hover .row-main{text-decoration:underline}
       check.addEventListener('change', () => { if (check.checked) pubChecked.add(it.id); else pubChecked.delete(it.id); btn.disabled = !check.checked; });
       btn.addEventListener('click', () => request(it, btn));
       label.append(check, el('span', null, '카드와 캡션을 확인했어요'));
+      c.append(el('p', 'sub', '이 버튼은 음악 없이 바로 올라가요. 음악을 넣으려면 폰 앱으로 올려 주세요.'));
       const go = el('div', 'actions'); go.style.alignItems = 'center'; go.append(label, btn); c.append(go);
       return c;
     }
