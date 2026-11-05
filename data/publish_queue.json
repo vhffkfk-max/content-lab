@@ -4507,6 +4507,382 @@
      "path": "20261106-0707-i3/3-paper-gowun.jpg"
     }
    ]
+  },
+  {
+   "title": "선거 참패 이틀 만에 트럼프, 관세 최고 300%",
+   "concept": "선거에서 졌는데도 관세 카드를 접지 않은 트럼프 발언을 보도 중심으로 풀고, 반도체와 자동차 업종이 민감할 수 있다는 점을 짚는다",
+   "why_now": "나스닥이 5.5% 빠진 직후 나온 발언이라 오늘 장의 변수로 바로 이어진다. 이투데이, 연합뉴스, 조선비즈가 아침에 보도했다.",
+   "tag": "관세",
+   "sources": [
+    "https://v.daum.net/v/20261106074905418",
+    "https://biz.chosun.com/international/international_general/2026/11/06/J2D2WX725RCM5KPIXXN4VNOBMA/"
+   ],
+   "bg": "Donald Trump",
+   "bg_alt": "US port containers",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "선거 참패 이틀 만에\n트럼프가 꺼낸 관세는\n최고 **300%**",
+     "number": "300%",
+     "label": "트럼프가 예고한 최고 관세율",
+     "sub": "미국에 공장 지어야 면제 조건도 다시"
+    },
+    {
+     "type": "질문형",
+     "title": "선거에서 졌는데도\n트럼프는 왜 또\n**관세**를 꺼냈나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "선거엔 졌는데\n관세 카드는 안 접고\n**300%**로 돌아왔다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "breaking"
+   ],
+   "extra": {},
+   "id": "20261106-0801-i1",
+   "created_at": "2026-11-06T08:01:50+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-0801-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-0801-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-0801-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-0801-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-0801-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-0801-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-0801-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-0801-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-0801-i1/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "머스크 회사 두 곳, 이틀 새 시총 500조 증발",
+   "concept": "테슬라와 스페이스X 시총이 중간선거 뒤 얼마나 빠졌는지 숫자로 보여주고, 합병 구상이 흔들린다는 해석을 보도로 전한다",
+   "why_now": "연합, 이데일리, KBS 등 4곳이 다뤘고 CNBC가 합산 4200억 달러 이상 증발을 집계했다. 테슬라는 전일 대비 10.77% 내렸다.",
+   "tag": "기업",
+   "sources": [
+    "https://www.yna.co.kr/view/AKR20261106011400009",
+    "https://www.cnbc.com/2026/11/05/tesla-spacex-stocks-fall-after-2026-midterms.html"
+   ],
+   "bg": "Elon Musk",
+   "bg_alt": "Tesla Model Y",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "머스크 회사 두 곳이\n이틀 새 시총\n**500조원** 증발",
+     "number": "500조원",
+     "label": "테슬라, 스페이스X 이틀 시총 증발",
+     "sub": "CNBC 집계 합산 4200억 달러 이상"
+    },
+    {
+     "type": "질문형",
+     "title": "민주당 승리 뒤\n머스크의 합병 구상\n정말 **흔들리나**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "민주당이 이겼는데\n머스크 시총이\n**500조** 사라졌다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261106-0801-i2",
+   "created_at": "2026-11-06T08:01:50+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261106-0801-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261106-0801-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261106-0801-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-0801-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-0801-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-0801-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-0801-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-0801-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-0801-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-0801-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-0801-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-0801-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "서울 아파트값, 오르긴 오르는데 힘이 빠졌다",
+   "concept": "서울 매매 상승폭 둔화, 강남 3구 약세와 경기 남부권 강세를 비교하고, 다음 주 반포현대 재건축초과이익환수금 사전통지를 변수로 짚는다",
+   "why_now": "어젯밤 KBS 등 여러 매체가 서울 아파트 매매 오름세 둔화를 보도했다. 대출 규제와 단기 급등 피로감이 이유로 꼽혔고, 최근 6시간 동안 다루지 않은 주제다.",
+   "tag": "부동산",
+   "sources": [
+    "https://v.daum.net/v/20261105233436332",
+    "https://v.daum.net/v/20261105233725354",
+    "https://v.daum.net/v/20261105220023506"
+   ],
+   "bg": "Seoul apartment skyline",
+   "bg_alt": "Gangnam Seoul apartments",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "서울 아파트값\n오르긴 오르는데\n상승 **힘**이 빠졌다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "서울 아파트 강남 3구\n약세의 이유는\n**대출 규제**일까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "서울은 주춤한데\n경기 남부권은\n**강세**를 유지한다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "editorial",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/06",
+     "headlines": [
+      "서울 아파트 상승폭 둔화",
+      "강남 3구는 약세",
+      "경기 남부권은 강세 유지"
+     ]
+    }
+   },
+   "id": "20261106-0801-i3",
+   "created_at": "2026-11-06T08:01:50+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261106-0801-i3/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261106-0801-i3/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261106-0801-i3/1-editorial-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261106-0801-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261106-0801-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261106-0801-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261106-0801-i3/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261106-0801-i3/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261106-0801-i3/2-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261106-0801-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261106-0801-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261106-0801-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261106-0801-i3/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261106-0801-i3/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261106-0801-i3/3-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261106-0801-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261106-0801-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261106-0801-i3/3-paper-gowun.jpg"
+    }
+   ]
   }
  ]
 }
