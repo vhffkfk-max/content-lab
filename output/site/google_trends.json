@@ -1,30 +1,39 @@
 [
  {
   "geo": "KR",
-  "term": "커버 드 콜",
+  "term": "나스닥",
   "traffic": 1000,
-  "topics": "연금·절세",
+  "topics": "AI·반도체",
   "econ": true,
-  "news_title": "[단독] \"원금 돌려받았는데 왜\"…서학개미, 美 커버드콜 '수천억 세금 환급' 집단 반발",
-  "news_link": "https://www.hankyung.com/article/202611056806i"
+  "news_title": "30조 발전소·36조 수주잔고…대미 AI 인프라, 美 의회 변수 노출",
+  "news_link": "https://www.investchosun.com/site/data/html_dir/2026/11/05/2026110580127.html"
  },
  {
   "geo": "KR",
-  "term": "목동",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "“재건축 아직 멀었으니 고치고 살아야죠”…목동 주민들 찾는다는 ‘이곳’ [현장]",
-  "news_link": "https://www.mk.co.kr/news/business/12198369"
- },
- {
-  "geo": "KR",
-  "term": "상장지수 펀드",
-  "traffic": 500,
+  "term": "상장지수펀드",
+  "traffic": 1000,
   "topics": "ETF·지수투자",
   "econ": true,
   "news_title": "ETF 왕좌 지킨 KODEX200…개미는 TIGER 미국S&P500에 ‘우르르’",
   "news_link": "https://www.kukinews.com/article/view/kuk202611030175"
+ },
+ {
+  "geo": "KR",
+  "term": "제니",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "‘분노의 질주’ 속 수키로 변신한 제니, 붉은색 차량 앞 파격적인 레트로 룩",
+  "news_link": "https://www.sportsseoul.com/news/read/1646060"
+ },
+ {
+  "geo": "KR",
+  "term": "soxx",
+  "traffic": 200,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "Why is Direxion Daily Semiconductor Bear 3X Shares surging today?",
+  "news_link": "https://www.investing.com/news/stock-market-news/why-is-direxion-daily-semiconductor-bear-3x-shares-surging-today-93CH-5005043"
  },
  {
   "geo": "KR",
@@ -55,21 +64,12 @@
  },
  {
   "geo": "KR",
-  "term": "제니",
+  "term": "퍽즈",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "‘분노의 질주’ 속 수키로 변신한 제니, 붉은색 차량 앞 파격적인 레트로 룩",
-  "news_link": "https://www.sportsseoul.com/news/read/1646060"
- },
- {
-  "geo": "KR",
-  "term": "교차로",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "\"누구 인생 망치려고\"…교차로서 아찔한 무단횡단 '분노'(영상)",
-  "news_link": "https://www.newsis.com/view/NISX20261104_0003853781"
+  "news_title": "'롤드컵 탈락' G2, 정글러 '스큐몬드' 결별하나",
+  "news_link": "https://www.dailyesports.com/view.php?ud=202611050654018539b91e133c1f_27"
  },
  {
   "geo": "KR",
@@ -91,92 +91,92 @@
  },
  {
   "geo": "US",
-  "term": "stock market",
-  "traffic": 20000,
-  "topics": "ETF·지수투자, 정치·관세",
-  "econ": true,
-  "news_title": "Stock market today: Dow rises, S&P 500 and Nasdaq slip as post-election relief rally fades, oil rises",
-  "news_link": "https://finance.yahoo.com/markets/live/stock-market-today-thursday-november-5-dow-sp-500-nasdaq-oil-rises-chip-stocks-141439950.html"
- },
- {
-  "geo": "US",
-  "term": "amd stock",
+  "term": "cnbc",
   "traffic": 5000,
-  "topics": "AI·반도체",
+  "topics": "금리·연준",
   "econ": true,
-  "news_title": "AMD’s record quarter: Data center business doubles, while gaming craters",
-  "news_link": "https://arstechnica.com/gadgets/2026/11/amds-record-quarter-data-center-business-doubles-while-gaming-craters/"
+  "news_title": "Barkin sees interest rate hikes ahead, but at a gradual pace",
+  "news_link": "https://www.cnbc.com/2026/11/05/barkin-sees-interest-rate-hikes-ahead-but-at-a-gradual-pace.html"
  },
  {
   "geo": "US",
-  "term": "sp500",
-  "traffic": 2000,
-  "topics": "ETF·지수투자",
-  "econ": true,
-  "news_title": "Ed Yardeni on his 7,900 S&P 500 year-end target: 'Santa is coming'",
-  "news_link": "https://www.cnbc.com/video/2026/11/05/ed-yardeni-on-his-7900-sp-500-year-end-target-santa-is-coming.html"
- },
- {
-  "geo": "US",
-  "term": "voo",
-  "traffic": 2000,
-  "topics": "ETF·지수투자",
-  "econ": true,
-  "news_title": "Voos na Europa fazem pousos de emergência por ameaça de bomba; nenhum explosivo foi encontrado",
-  "news_link": "https://g1.globo.com/mundo/noticia/2026/11/05/voos-na-europa-fazem-pouso-de-emergencia-por-ameaca-de-bomba.ghtml"
- },
- {
-  "geo": "US",
-  "term": "schd",
-  "traffic": 1000,
-  "topics": "ETF·지수투자, 배당",
-  "econ": true,
-  "news_title": "Schwab's Dividend ETF Keeps Hitting Records. I'd Still Buy It Now.",
-  "news_link": "https://finance.yahoo.com/markets/stocks/articles/schwabs-dividend-etf-keeps-hitting-040101769.html"
- },
- {
-  "geo": "US",
-  "term": "tsla",
-  "traffic": 1000,
+  "term": "tesla stock",
+  "traffic": 5000,
   "topics": "테슬라",
   "econ": true,
-  "news_title": "Tesla’s Five Year Stock Price Turns Negative",
-  "news_link": "https://finance.yahoo.com/markets/stocks/articles/tesla-five-stock-price-turns-164603219.html"
+  "news_title": "Opinion | Elon Musk’s Very Bad Night",
+  "news_link": "https://www.nytimes.com/2026/11/05/opinion/elon-musk-midterms-trump-results.html"
  },
  {
   "geo": "US",
-  "term": "vti",
+  "term": "avgo stock",
+  "traffic": 2000,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "Is Broadcom Stock a Buy Now?",
+  "news_link": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stock-buy-now-182000414.html"
+ },
+ {
+  "geo": "US",
+  "term": "tsla stock",
+  "traffic": 2000,
+  "topics": "테슬라",
+  "econ": true,
+  "news_title": "America got the anti-data-center wave it voted for. Here come the economic consequences",
+  "news_link": "https://www.cnn.com/2026/11/05/economy/data-center-texas-election"
+ },
+ {
+  "geo": "US",
+  "term": "kimmarie johnson",
   "traffic": 1000,
-  "topics": "초보·투자마인드",
-  "econ": true,
-  "news_title": "Could Investing $400 per Month in VTI Make You a Millionaire? Here's the Math.",
-  "news_link": "https://www.fool.com/investing/2026/11/04/could-investing-400-per-month-in-vti-make-you-a-mi/"
+  "topics": "",
+  "econ": false,
+  "news_title": "‘Beverly Hills, 90210’ actress Kimmarie Johnson dead at 50",
+  "news_link": "https://pagesix.com/2026/11/05/celebrity-news/beverly-hills-90210-actress-kimmarie-johnson-dead-at-50/"
  },
  {
   "geo": "US",
-  "term": "rklb stock",
+  "term": "nbis stock",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Nebius: 53% Down, 20% Short, And Ready To Explode (NASDAQ:NBIS)",
+  "news_link": "https://seekingalpha.com/article/4962923-nebius-53-percent-down-20-percent-short-and-ready-to-explode"
+ },
+ {
+  "geo": "US",
+  "term": "vix",
+  "traffic": 1000,
+  "topics": "급락·변동성",
+  "econ": true,
+  "news_title": "In Bouncy Market, This Stock Provides One Option For Investors. And Wall Street Is Buying In.",
+  "news_link": "https://www.investors.com/research/ibd-stock-analysis/cboe-stock-vix-sp-500-options-index-owner-battles-market-volatility/"
+ },
+ {
+  "geo": "US",
+  "term": "nasdaq 100",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Insider Alert: Rocket Lab CFO Dumps $7.4 Million in Shares",
-  "news_link": "https://finance.yahoo.com/markets/stocks/articles/insider-alert-rocket-lab-cfo-120938434.html"
+  "news_title": "Nasdaq-100® Inside the Index: Workday (WDAY)",
+  "news_link": "https://www.nasdaq.com/articles/global-indexes/inside-the-index/wday"
  },
  {
   "geo": "US",
-  "term": "rockstar",
+  "term": "space x stock",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Take-Two CEO Faces Bizarre Question Over Company’s Lack of ‘Enough Hits’",
-  "news_link": "https://insider-gaming.com/take-two-ceo-faces-bizarre-question-not-enough-hits/"
+  "news_title": "SPCX Sinks 17.8% in a Month as Growth Meets Rising Spending Risks",
+  "news_link": "https://finance.yahoo.com/markets/stocks/articles/spcx-sinks-17-8-month-152000561.html"
  },
  {
   "geo": "US",
-  "term": "vgt",
+  "term": "stock market crash",
   "traffic": 500,
-  "topics": "ETF·지수투자",
+  "topics": "급락·변동성",
   "econ": true,
-  "news_title": "VGT vs. QQQ: Which Tech ETF Is the Better Long-Term Buy?",
-  "news_link": "https://finance.yahoo.com/markets/stocks/articles/vgt-vs-qqq-tech-etf-140500753.html"
+  "news_title": "Prediction: A Stock Market Crash Is Coming. Here's What Investors Should Do Based on Nearly 70 Years' Worth of History.",
+  "news_link": "https://www.fool.com/investing/2026/11/05/prediction-stock-market-crash-investors-70-years/"
  }
 ]
