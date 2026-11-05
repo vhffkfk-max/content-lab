@@ -89,6 +89,9 @@
 .rank{flex:none;width:28px;height:28px;border-radius:7px;background:var(--raised);display:grid;place-items:center;font-weight:700;font-size:14px;font-variant-numeric:tabular-nums}
 .rec:first-child .rank{background:var(--accent);color:#fff}
 .rec-title{margin:0;font-size:17px;font-weight:600;line-height:1.4}
+.card-strip{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;padding-bottom:6px;margin-top:10px;max-width:100%}
+.card-strip a{flex:none;width:min(62vw,230px);aspect-ratio:4/5;scroll-snap-align:start;border-radius:var(--radius-control);overflow:hidden;background:var(--raised)}
+.card-strip img{width:100%;height:100%;object-fit:cover;display:block}
 .chips{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .meta-line{color:var(--muted);font-size:14px;margin:0}
 .why1{margin:0;font-weight:500}
@@ -1244,6 +1247,20 @@ a.row:hover .row-main{text-decoration:underline}
       } catch (e) { alert('발행 요청 실패 — 인터넷 연결을 확인해 주세요'); }
       btn.disabled = !pubChecked.has(it.id); btn.textContent = '인스타에 발행';
     }
+    // 미리보기는 card-previews 가지의 저화질 그림(publish/card_preview.py). 오래된 초안은 없어서 그림이 안 오면 칸을 지움.
+    function cardStrip(it) {
+      const n = (it.files || []).length;
+      if (!n) return null;
+      const s = el('div', 'card-strip');
+      for (let i = 1; i <= n; i++) {
+        const a = el('a'), img = el('img'), src = `https://raw.githubusercontent.com/vhffkfk-max/content-lab/card-previews/${encodeURIComponent(it.id)}/${i}.jpg`;
+        img.src = src; img.alt = `${it.title || it.id} ${i}장`; if (i > 2) img.loading = 'lazy';
+        img.addEventListener('error', () => { a.remove(); if (!s.children.length) s.remove(); });
+        a.href = src; a.target = '_blank'; a.rel = 'noopener';
+        a.append(img); s.append(a);
+      }
+      return s;
+    }
     function card(it, waitedAt) {
       const c = el('article', 'card rec'), chips = el('div', 'chips'), ig = (it.published || {}).instagram;
       chips.append(el('span', 'pill neutral', it.form || '카드'), el('span', 'pill neutral', (it.created_at || '').slice(5, 16).replace('T', ' ')));
@@ -1254,6 +1271,9 @@ a.row:hover .row-main{text-decoration:underline}
         const acts = el('div', 'actions'); acts.append(a); c.append(acts);
         return c;
       }
+      const strip = cardStrip(it);
+      if (strip) c.append(strip);
+      if (it.caption_notes && it.caption_notes.length) c.append(el('p', 'sub', `캡션 참고: ${it.caption_notes.join(' / ')}`));
       const why = it.design_why;
       if (why) { const w = el('details', 'more'); w.append(el('summary', null, '왜 이렇게 만들었나요'), el('div', 'box', [why.note, why.evidence && `근거: ${why.evidence}`].filter(Boolean).join('\n\n'))); c.append(w); }
       const more = el('details', 'more'); more.append(el('summary', null, '캡션 보기'), el('div', 'box', it.caption || '')); c.append(more);
@@ -1271,7 +1291,7 @@ a.row:hover .row-main{text-decoration:underline}
       check.type = 'checkbox'; check.checked = pubChecked.has(it.id); btn.type = 'button'; btn.disabled = !check.checked;
       check.addEventListener('change', () => { if (check.checked) pubChecked.add(it.id); else pubChecked.delete(it.id); btn.disabled = !check.checked; });
       btn.addEventListener('click', () => request(it, btn));
-      label.append(check, el('span', null, '캔바에서 확인했어요'));
+      label.append(check, el('span', null, '카드와 캡션을 확인했어요'));
       const go = el('div', 'actions'); go.style.alignItems = 'center'; go.append(label, btn); c.append(go);
       return c;
     }
@@ -1295,7 +1315,7 @@ a.row:hover .row-main{text-decoration:underline}
       done.forEach(id => { delete pending[id]; pubChecked.delete(id); });
       late.forEach(it => { delete pending[it.id]; });
       pubPending.set(pending);
-      const open = items.filter(x => x.status === 'drafted' && x.canva).slice(-12).reverse();
+      const open = items.filter(x => x.status === 'drafted').slice(-12).reverse();
       const shipped = items.filter(x => (x.published || {}).instagram).slice(-5).reverse();
       const cards = [...open, ...shipped].map(it => card(it, pending[it.id]));
       if (late.length) { const w = el('p', 'warn', `${PUB_WAIT_MIN}분이 지나도 발행 결과가 안 왔어요: ${late.map(x => x.title || x.id).join(', ')}. PC가 꺼져 있었을 수 있어요. 요청한 지 6시간이 지나면 PC가 켜져도 올리지 않아요. 인스타를 먼저 확인한 뒤 다시 눌러 주세요.`); cards.unshift(w); }
@@ -2024,6 +2044,8 @@ a.row:hover .row-main{text-decoration:underline}
       }, 30e3);
     } catch (e) { set('요청 실패 — 인터넷 연결을 확인해 주세요', false, true); }
   }
+  // 텔레그램에서 보이는 폭으로 미리 보기
+  const phoneBox = text => { const b = el('div', 'box', text); b.style.maxWidth = '420px'; return b; };
   function drawTraderPosts() {
     const get = k => { const x = dash.data(k); return x.status === 'ok' && !Array.isArray(x.data) ? x.data : null; };
     const F = get('trd_folders'), d = trdLive || get('trd_posts'), mb = document.getElementById('trd-market'), cb = document.getElementById('trd-crawl');
@@ -2067,7 +2089,7 @@ a.row:hover .row-main{text-decoration:underline}
         const a = el('article', 'card rec trd-room'), t = el('h3', null, `${p.time} · ${p.kind}`);
         const late = isToday && p.time <= nowHm && !p.made_at;
         t.append(el('span', 'pill ' + (late ? 'neutral' : 'accent'), p.made_at ? `${p.made_at.slice(11, 16)}에 새로 만든 글` : late ? '시간 지남' : '오늘 올릴 글'));
-        a.append(t, el('p', 'why1', p.title), el('div', 'box', p.text), copyBtn('글 복사', p.text));
+        a.append(t, el('p', 'why1', p.title), phoneBox(p.text), copyBtn('글 복사', p.text));
         if (p.check && p.check.length) { const ul = el('ul'); p.check.forEach(x => ul.append(el('li', null, x))); a.append(el('p', 'sub', '올리기 전 확인'), ul); }
         if (p.based_on) a.append(el('p', 'sub', `재료: ${p.based_on}`));
         a.append(fbBar({ id: `trdp:${d.date}:${p.time}:${p.room}`, type: '트레이더스 글', title: `${p.room} ${p.kind}: ${p.title}`, url: '' }));

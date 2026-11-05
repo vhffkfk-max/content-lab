@@ -396,6 +396,11 @@ def main():
         if notes:
             head += "\n✏️ 캡션 참고: " + " / ".join(notes)
         notify.send_photos(files, head)
+        try:   # 연구소 사이트 미리보기 (실패해도 초안은 그대로)
+            from publish.card_preview import push as push_preview
+            print("미리보기:", push_preview({did: files}))
+        except Exception as e:
+            print("⚠️ 미리보기 실패 (초안은 그대로):", e)
         if canva:   # 주소가 길어서 사진 설명(1024자 제한) 대신 따로 보냄
             notify.send("🎨 캔바에서 고치기 ('핫코노미 · 발행 대기' 폴더)\n" + canva["edit_url"])
         notify.send("캡션 초안\n\n" + caption + ("\n\n출처\n" + "\n".join(post.get("sources", [])[:5]) if post.get("sources") else ""))
