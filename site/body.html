@@ -895,7 +895,7 @@ a.row:hover .row-main{text-decoration:underline}
         </section>
         <section class="sec" id="tg-charts">
           <h2>차트리포트 이미지</h2>
-          <p class="note">종목을 넣으면 실제 시세(미국 야후·국내 네이버·코인 바이낸스)로 피보나치·이평선·지지선·추세선을 그려 PC용·모바일용 이미지와 설명 글을 만들어요. 텔레그램 봇으로 이미지 → 설명 글 순서로 오고, 여기에도 올라와요. 매일 아침 8시에 오늘 문구의 다음 차트 글 종목으로 자동으로 만들고, 칸을 비우고 누르면 그 종목으로 지금 바로 만들어요. 봉은 옆에서 고르면 돼요 (자동은 일봉, 국내 분봉은 조금 늦은 시세). 추세는 20선·240선과 ADR, 하이킨아시로 보고, 1시간봉 이상은 하이킨아시 캔들로 그려요. 1분봉·15분봉에는 RSI·볼린저밴드·거래량 분석이 함께 들어가고, 단타는 15분봉과 1분봉을 한 글로 묶어요.</p>
+          <p class="note">종목을 넣으면 실제 시세(미국 야후·국내 네이버·코인 바이낸스)로 피보나치·이평선·지지선·추세선을 그려 PC용·모바일용 이미지와 설명 글을 만들어요. 텔레그램 봇으로 이미지 → 설명 글 순서로 오고, 여기에도 올라와요. 매일 아침 8시에 오늘 문구의 다음 차트 글 종목으로 자동으로 만들고, 칸을 비우고 누르면 그 종목으로 지금 바로 만들어요. 봉은 옆에서 고르면 돼요 (자동은 일봉, 국내 분봉은 조금 늦은 시세). 추세는 20선·240선과 ATR, 하이킨아시로 보고, 1시간봉 이상은 하이킨아시 캔들로 그려요. 1분봉·15분봉에는 RSI·볼린저밴드·거래량 분석이 함께 들어가고, 단타는 15분봉과 1분봉을 한 글로 묶어요.</p>
           <div class="chips" style="gap:8px;align-items:center;margin:4px 0 14px">
             <input id="cr-input" type="text" placeholder="종목 (예: 테슬라, 삼성전자, 이더리움, AAPLUSDT.P — 쉼표로 5개까지 · 비우면 오늘 차트 글 종목)" style="flex:1;min-width:240px;padding:9px 12px;border-radius:10px;border:1px solid var(--line, #d0d4dc);font:inherit">
             <select id="cr-tf" aria-label="봉 종류" style="padding:9px 12px;border-radius:10px;border:1px solid var(--line, #2a2f3a);background:transparent;color:inherit;font:inherit"><option value="scalp">단타 (15분+1분)</option><option value="1m">1분봉</option><option value="15m">15분봉</option><option value="1h">1시간봉</option><option value="4h">4시간봉</option><option value="1d" selected>일봉</option><option value="1w">주봉</option></select>

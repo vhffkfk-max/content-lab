@@ -315,15 +315,23 @@ def ha_of(rows):
     return {"rows": out, "up": up, "streak": streak, "word": word}
 
 
-def adr_of(rows, n=20):
-    """ADR: 최근 n일 평균 일중 변동폭(%)과 오늘 변동폭이 그 몇 %인지."""
-    done = rows[-n - 1:-1]
-    if len(done) < n:
+def atr_of(rows, P, U, n=14, back=20):
+    """ATR(n): 그 봉 기준 평균 진폭 (와일더 방식, 트레이딩뷰 기본값과 같음). back 봉 전과 비교해 변동성 방향도 본다."""
+    if len(rows) <= n:
         return None
-    adr = sum(r["high"] / r["low"] - 1 for r in done) / n * 100
-    today = (rows[-1]["high"] / rows[-1]["low"] - 1) * 100
-    return {"adr": adr, "today": today, "used": today / adr * 100 if adr else 0,
-            "text": f"ADR {adr:.2f}% · 오늘 변동 {today:.2f}% (ADR의 {today / adr * 100:.0f}%)" if adr else f"ADR {adr:.2f}%"}
+    tr = [max(b["high"] - b["low"], abs(b["high"] - a["close"]), abs(b["low"] - a["close"])) for a, b in zip(rows, rows[1:])]
+    atr = sum(tr[:n]) / n
+    series = [atr]
+    for x in tr[n:]:
+        atr = (atr * (n - 1) + x) / n
+        series.append(atr)
+    pct = atr / rows[-1]["close"] * 100
+    word = None
+    if len(series) > back and series[-1 - back]:
+        ratio = atr / series[-1 - back]
+        word = "변동성 커지는 중" if ratio >= 1.15 else "변동성 줄어드는 중" if ratio <= 0.85 else "변동성 비슷함"
+    return {"atr": atr, "pct": pct, "label": f"{P(atr)} ({pct:.2f}%)", "word": word,
+            "text": f"ATR({n}) {P(atr)}{U} · 가격의 {pct:.2f}%" + (f" · {word}" if word else "")}
 
 
 def pivots(rows, k, key, lo, hi):
@@ -469,7 +477,7 @@ def analyze(rows, a, show, tf="1d"):
     # 1년(코인 365일, 주식 252일, 주봉 52주) 고저 — 분봉은 화면 구간
     yr = rows[v0:] if tf in INTRADAY else rows[-(52 if tf == "1w" else 365 if a["kind"] == "coin" else 252):]
     y_hi, y_lo = max(r["high"] for r in yr), min(r["low"] for r in yr)
-    return {"rows": rows, "mas": mas, "v0": v0, "n": n, "P": P, "U": U, "md": md, "tf": tf, "ind": indicators(rows, tf, P) if tf in SCALP else None, "ha": ha_of(rows), "adr": None,
+    return {"rows": rows, "mas": mas, "v0": v0, "n": n, "P": P, "U": U, "md": md, "tf": tf, "ind": indicators(rows, tf, P) if tf in SCALP else None, "ha": ha_of(rows), "atr": atr_of(rows, P, U),
             "ma_nm": lambda p: f"{p}일선" if tf == "1d" else f"{p}주선" if tf == "1w" else f"{p}이평",
             "chg_word": "하루" if tf == "1d" else "이번 주" if tf == "1w" else "직전 봉 대비", "y_word": "구간" if tf in INTRADAY else "1년",
             "date": last["day"], "close": close, "chg": chg, "open": last["open"], "high": last["high"], "low": last["low"],
@@ -493,7 +501,7 @@ def facts_of(f, a):
         "아래 피보 지지": [x["label"] for x in f["sup"]], "위 피보 저항": [x["label"] for x in f["res"]],
         "이동평균선": ma, "이평 배열": f["order"], f"최근 {f['ma_nm'](20)}·{f['ma_nm'](240)} 교차": f"{f['cross']['kind']} ({f['cross']['date']})" if f["cross"] else "없음",
         f"추세 판단({f['px']}·{f['ma_nm'](20)}·{f['ma_nm'](240)} 위치)": f["trend"], "하이킨아시": f["ha"]["word"],
-        **({"ADR(20일 평균 일중 변동폭)": f["adr"]["text"]} if f["adr"] else {}),
+        **({"ATR(14, 이 봉 기준 평균 진폭)": f["atr"]["text"]} if f["atr"] else {}),
         "되돌림": f"{f['swing']['kind']} {P(f['swing']['price'])}{U} ({f['swing']['date']})" if f["swing"] else "없음",
         "수평 지지": f"{f['hsup']['label']}{U} (최근 120봉 저점 {f['hsup']['touch']}번 모임)" if f["hsup"] else "없음",
         "심리적 지지(딱 떨어지는 가격)": f"{f['rsup']['label']}{U} 수평선 (최근 저점 {f['rsup']['low']}{U}, {f['rsup']['date']})" if f["rsup"] else "없음",
@@ -548,7 +556,7 @@ def spec_of(f, a, mode):
               f"{f['px'][0]} <span class='{up_cls}'>{P(f['close'])} ({f['chg']:+.2f}%)</span>"
               + (f" &nbsp; {ext['label']} {P(ext['price'])} ({ext['chg']:+.2f}%)" if ext else "") + "<br>"
               + "".join(f"<span class='ma' style='color:{c}'>MA{p} {f['ma'][p]['label'] if f['ma'][p] else '-'}</span>" for p, c in MA)
-              + (f"<span class='ma'>ADR {f['adr']['adr']:.2f}% · 오늘 {f['adr']['today']:.2f}%</span>" if f["adr"] else "")
+              + (f"<span class='ma'>ATR14 {f['atr']['label']}</span>" if f["atr"] else "")
               + f"<span class='ma'>{f['ha']['word'].replace('하이킨아시 ', 'HA ').split(' · ')[0]}</span>")
     read = []
     if f["sup"]:
@@ -622,7 +630,7 @@ def template_text(f, a):
     s2 = f["sup"][1] if len(f["sup"]) > 1 else None
     r1 = f["res"][0] if f["res"] else None
     lines = ["차트리포트 입니다 ^^", f"{a['name']} {TF[f['tf']]['name']} 체크", "", " 지금 위치", pos,
-             f"{f['px']} {P(f['close'])}{U} ({f['chg_word']} {f['chg']:+.2f}%)", f"피보나치로는 {f['zone']}", f["ha"]["word"], *([f["adr"]["text"]] if f["adr"] else []), *([ind_line(f)] if f["ind"] else []), "", " 볼 자리"]
+             f"{f['px']} {P(f['close'])}{U} ({f['chg_word']} {f['chg']:+.2f}%)", f"피보나치로는 {f['zone']}", f["ha"]["word"], *([f["atr"]["text"]] if f["atr"] else []), *([ind_line(f)] if f["ind"] else []), "", " 볼 자리"]
     if s1:
         lines.append(f"· 아래: {s1['label']}" + (" (기간 저점)" if s1["r"] == 1 else ""))
     if f["rsup"]:
@@ -675,7 +683,7 @@ B. (지지)를 깨면 → 다음 지지 (값)에서 받는지 확인
 - 말투는 차분한 존댓말, 짧은 줄. 이모지는 쓰지 않습니다. 400자 안팎.
 - '~가 아니라 ~다' 같은 뒤집기 문장, '첫째·둘째' 나열, '핵심은', '결론적으로', '주목할 점' 같은 AI 말투를 쓰지 않습니다.
 - 매수·매도 권유, 목표가, '지금 사라' 같은 표현을 쓰지 않습니다.
-- 추세는 20선·240선과 하이킨아시로 설명합니다. 자료의 하이킨아시와 ADR을 지금 위치에 함께 씁니다.
+- 추세는 20선·240선과 하이킨아시로 설명합니다. 자료의 하이킨아시와 ATR을 지금 위치에 함께 씁니다.
 - 자료에 RSI·볼린저밴드·거래량이 있으면 지금 위치에 함께 쓰고, 볼 자리에 볼린저 상단·하단을 넣습니다.
 - 이평선 이름과 등락 표현은 자료에 적힌 그대로 씁니다 (20일선·20주선·20이평, 하루·이번 주·직전 봉 대비).
 - 자료에 '현재가'가 아니라 '종가'로 나와 있으면 장이 닫힌 상태이니 '현재가 (값)' 줄을 '종가 (값)'로 씁니다. 시세 기준 시각은 쓰지 않습니다 (따로 넣습니다). 프리마켓·시간외 값은 자료에 있을 때만 씁니다.
@@ -772,8 +780,9 @@ def scalp_text(a, f15, f1, comment=None):
     sups, ress = scalp_levels(f15, f1)
     same = f15["trend"] == f1["trend"]
     lines = ["차트리포트 입니다 ^^", f"{a['name']} 단타 체크 · 15분봉 / 1분봉", "", " 지금 위치", f"{f1['px']} {P(f1['close'])}{U}",
-             f"15분봉 {f15['trend']} · 1분봉 {f1['trend']}" + ("" if same else " (서로 어긋남)"), *([f1["adr"]["text"]] if f1["adr"] else []),
-             "", " 15분봉", f15["ha"]["word"], ind_line(f15), "", " 1분봉", f1["ha"]["word"], ind_line(f1), "", " 볼 자리"]
+             f"15분봉 {f15['trend']} · 1분봉 {f1['trend']}" + ("" if same else " (서로 어긋남)"),
+             "", " 15분봉", f15["ha"]["word"], *([f15["atr"]["text"]] if f15["atr"] else []), ind_line(f15),
+             "", " 1분봉", f1["ha"]["word"], *([f1["atr"]["text"]] if f1["atr"] else []), ind_line(f1), "", " 볼 자리"]
     lines += [f"· 아래: {' / '.join(lab(p) for p in sups[:2])}"] if sups else []
     lines += [f"· 위: {' / '.join(lab(p) for p in ress[:2])}"] if ress else []
     lines += ["", " 시나리오"]
@@ -801,19 +810,9 @@ def scalp_comment(text):
     return c
 
 
-def daily_adr(a, tf="", rows=None):
-    """ADR 은 일봉으로 계산 (일봉 요청이면 받은 시세 그대로, 못 받으면 ADR 만 뺌)."""
-    try:
-        return adr_of(rows if tf == "1d" else fetch(dict(a), "1d"))
-    except (SystemExit, requests.RequestException, KeyError, IndexError, TypeError, ValueError) as e:
-        print("⚠️ ADR 계산 실패:", str(e)[:100])
-        return None
-
-
 def make_scalp(query, use_ai=True):
     """단타: 15분봉·1분봉 이미지 두 장 + 한 글."""
     a = resolve(query)
-    adr = daily_adr(a)
     frames, files, web = {}, {}, {}
     s = slug(a)
     RAW.mkdir(parents=True, exist_ok=True)
@@ -821,7 +820,6 @@ def make_scalp(query, use_ai=True):
     for tf, key in (("15m", ""), ("1m", "2")):
         rows = fetch(a, tf)
         f = analyze(rows, a, TF[tf]["show"], tf)
-        f["adr"] = adr
         apply_live(f, a, live_of(a, rows, tf))
         frames[tf] = f
         for mode, scale, width, name in (("pc", 1.5, 1600, "pc"), ("m", 1.5, 1080, "mobile")):
@@ -853,7 +851,6 @@ def make(query, use_ai=True, style="", tf="1d"):
     a = resolve(query)
     rows = fetch(a, tf)
     f = analyze(rows, a, TF[tf]["show"] or (365 if a["kind"] == "coin" else 260), tf)
-    f["adr"] = daily_adr(a, tf, rows)
     apply_live(f, a, live_of(a, rows, tf))
     RAW.mkdir(parents=True, exist_ok=True)
     WEB.mkdir(parents=True, exist_ok=True)

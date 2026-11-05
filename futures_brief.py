@@ -129,7 +129,8 @@ def brief_text(a, frames, st, comment=None):
         pos2.append(f"테이커 비율 {st['taker']:.2f}")
     lines = [f"{a['symbol']} 선물 체크 · 4시간봉 / 1시간봉", f"시세 기준: {now} · 바이낸스 무기한", "", " 지금 위치", head,
              f"4시간봉 {f4['trend']} · 1시간봉 {f1['trend']}" + ("" if same else " (서로 어긋남)"),
-             f"4시간봉 {f4['ha']['word']}", f"1시간봉 {f1['ha']['word']}", *([f4["adr"]["text"]] if f4["adr"] else []), "", " 포지션 상황"]
+             f"4시간봉 {f4['ha']['word']}", *([f"4시간봉 {f4['atr']['text']}"] if f4["atr"] else []),
+             f"1시간봉 {f1['ha']['word']}", *([f"1시간봉 {f1['atr']['text']}"] if f1["atr"] else []), "", " 포지션 상황"]
     lines += [" · ".join(x) for x in (pos1, pos2) if x] + read_position(st)
     lines += ["", " 롱 시나리오"]
     if sups and ress:
@@ -209,15 +210,12 @@ def make(symbol, name, use_ai=True):
     st = stats_of(symbol)
     frames, files, web = {}, {}, {}
     now = datetime.now(KST)
-    adr = cr.adr_of([cr.bar(x[0] / 1000, float(x[1]), float(x[2]), float(x[3]), float(x[4]), float(x[5]), "1d", 0)
-                     for x in get("/fapi/v1/klines", symbol=symbol + "USDT", interval="1d", limit=30)])
     RAW.mkdir(parents=True, exist_ok=True)
     WEB.mkdir(parents=True, exist_ok=True)
     for tf, sec, show in FRAMES:
         k = get("/fapi/v1/klines", symbol=symbol + "USDT", interval=tf, limit=1000)
         rows = [cr.bar(x[0] / 1000, float(x[1]), float(x[2]), float(x[3]), float(x[4]), float(x[5]), tf, 0) for x in k]
         f = cr.analyze(rows, a, show, tf)
-        f["adr"] = adr
         cr.apply_live(f, a, {"label": "실시간", "at": now, "ext": None})
         frames[tf] = f
         for mode, scale, width in (("pc", 1.5, 1600), ("m", 1.5, 1080)):
