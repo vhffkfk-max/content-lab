@@ -1,12 +1,21 @@
 [
  {
   "geo": "KR",
-  "term": "nasdaq",
-  "traffic": 500,
+  "term": "수술",
+  "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Dow tumbles 1,700 points, erasing its postelection rally; Nasdaq plummets 5%: Live updates",
-  "news_link": "https://www.cnbc.com/2026/11/04/stock-market-today-live-updates.html"
+  "news_title": "[단독] 기저질환 없던 60대, 무릎수술 다음날 사망",
+  "news_link": "https://www.chosun.com/national/national_general/2026/11/05/WZ4ZUNKQWBA4JMU33QAZ3M7URU/"
+ },
+ {
+  "geo": "KR",
+  "term": "아이렌",
+  "traffic": 1000,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "미 선거에 흔들린 반도체…복잡해진 우리 경제 셈법",
+  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8705267"
  },
  {
   "geo": "KR",
@@ -19,21 +28,12 @@
  },
  {
   "geo": "KR",
-  "term": "수술",
-  "traffic": 500,
+  "term": "nasdaq",
+  "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "[단독] 기저질환 없던 60대, 무릎수술 다음날 사망",
-  "news_link": "https://www.chosun.com/national/national_general/2026/11/05/WZ4ZUNKQWBA4JMU33QAZ3M7URU/"
- },
- {
-  "geo": "KR",
-  "term": "어선",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "울릉도 공해상 표류 북한 어선 발견…당국 조사中",
-  "news_link": "https://www.yna.co.kr/view/AKR20261105174600504"
+  "news_title": "Dow tumbles 1,700 points, erasing its postelection rally; Nasdaq plummets 5%: Live updates",
+  "news_link": "https://www.cnbc.com/2026/11/04/stock-market-today-live-updates.html"
  },
  {
   "geo": "KR",
@@ -41,17 +41,8 @@
   "traffic": 200,
   "topics": "ETF·지수투자",
   "econ": true,
-  "news_title": "ProShares UltraPro Short QQQ offers a tactical short-term bet on tech sector declines amid volatility.",
-  "news_link": "https://pluang.com/en/news-feed/sqqq-pembelian-taktis-untuk-minggu-volatilitas-tertinggi-nasdaq-sqqq"
- },
- {
-  "geo": "KR",
-  "term": "마이크론 주가",
-  "traffic": 200,
-  "topics": "AI·반도체, 급락·변동성",
-  "econ": true,
-  "news_title": "마이크론, 메모리 가격 급등에도 주가 급락…AI 호황 속 커지는 반도체 시장의 역설",
-  "news_link": "https://www.jemin.com/news/articleView.html?idxno=846205"
+  "news_title": "Volume Surges on Leveraged Nasdaq-100 ETF",
+  "news_link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-11-05-2026/card/volume-surges-on-leveraged-nasdaq-100-etf-wFiN1sLCspwlAbViEIdq"
  },
  {
   "geo": "KR",
@@ -73,6 +64,15 @@
  },
  {
   "geo": "KR",
+  "term": "수소",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "[포토] 수소연료전지 기반 개방형 플랫폼",
+  "news_link": "https://www.etnews.com/20261104000396"
+ },
+ {
+  "geo": "KR",
   "term": "알테오젠",
   "traffic": 100,
   "topics": "",
@@ -86,8 +86,8 @@
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "추미애, 도의회서 전두환 소환 “존경하지 않는 분이지만…”",
-  "news_link": "https://www.donga.com/news/Society/article/all/20261105/134974833/1"
+  "news_title": "정부 세수 호황인데…팍팍해지는 인천 살림살이",
+  "news_link": "https://www.incheonilbo.com/news/articleView.html?idxno=1336131"
  },
  {
   "geo": "US",
@@ -100,30 +100,21 @@
  },
  {
   "geo": "US",
-  "term": "brysen wright",
+  "term": "az vs juventus",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "Elite WR Brysen Wright commits to Miami, reclassifies to 2027",
-  "news_link": "https://247sports.com/college/miami/article/wr-brysen-wright-commits-miami-reclassifies-2027-291533553/"
+  "news_title": "Game Time Thread: Juventus vs. AZ Alkmaar",
+  "news_link": "https://sports.yahoo.com/articles/game-time-thread-juventus-vs-184500491.html"
  },
  {
   "geo": "US",
-  "term": "conference league",
+  "term": "getafe vs brighton",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "Atalanta vs Kairat: UEFA Conference League stats & head-to-head",
-  "news_link": "https://www.bbc.com/sport/football/live/c5djvklyewpgt"
- },
- {
-  "geo": "US",
-  "term": "erin napier",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Erin Napier Honors Late Aunt Mae Mae in Heartfelt Instagram Tribute",
-  "news_link": "https://www.aol.com/articles/erin-napier-honors-aunt-mae-040429000.html"
+  "news_title": "Getafe vs Brighton & Hove Albion: UEFA Conference League stats & head-to-head",
+  "news_link": "https://www.bbc.com/sport/football/live/cwj0lgzz9nlmt"
  },
  {
   "geo": "US",
@@ -136,47 +127,56 @@
  },
  {
   "geo": "US",
+  "term": "sunderland vs dinamo zagreb",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Sunderland vs Dinamo Zagreb: UEFA Europa League stats & head-to-head",
+  "news_link": "https://www.bbc.com/sport/football/live/cr78pyje5052t"
+ },
+ {
+  "geo": "US",
   "term": "taylor fritz",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Highlights: Paul books Paris QF spot, keeps Turin hopes alive",
-  "news_link": "https://www.atptour.com/en/video/highlights-paul-books-paris-2026-qf-spot-keeps-turin-hopes-alive"
+  "news_title": "Alcaraz into Paris quarter-finals after Berrettini withdraws",
+  "news_link": "https://www.reuters.com/sports/tennis/alcaraz-into-paris-quarter-finals-after-berrettini-withdraws-2026-11-05/"
  },
  {
   "geo": "US",
-  "term": "ajax",
+  "term": "aaron judge",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Jordi Cruijff moet keuze maken over toekomst van deze Jong Ajax-spelers",
-  "news_link": "https://www.footballtransfers.com/nl/transfernieuws/nl-eredivisie/2026/11/jordi-cruijff-moet-keuze-maken-over-toekomst-van-deze-jong-ajax-spelers"
+  "news_title": "Yankees’ Aaron Judge Announces Personal Family News After Historic Feat",
+  "news_link": "https://sports.yahoo.com/articles/yankees-aaron-judge-announces-personal-183257181.html"
  },
  {
   "geo": "US",
-  "term": "diésel",
+  "term": "az - juventus",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Polémica con los descuentos a la gasolina y diésel: la OCU denuncia \"prácticas anticompetitivas\" y señala a las low cost",
-  "news_link": "https://www.caranddriver.com/es/coches/planeta-motor/a74343360/polemica-con-los-descuentos-a-la-gasolina-y-diesel-la-ocu-denuncia-practicas-anticompetitivas-y-senala-a-las-low-cost/"
+  "news_title": "Juve ad Alkmaar: Spalletti chiede i gol a Kolo Muani. C'è Boga, si rivede Cambiaso",
+  "news_link": "https://www.gazzetta.it/Calcio/Serie-A/Juventus/05-11-2026/az-juve-le-ultime-sulla-formazione.shtml"
  },
  {
   "geo": "US",
-  "term": "jubilación",
+  "term": "benfica vs lech poznań",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Encuesta de TIAA: el 43 % redujo o dejó de hacer aportes a su 401(k) ante el alza de costos - Noticias y Estadísticas",
-  "news_link": "https://www.indexbox.io/es/blog/tiaa-report-43-of-americans-cut-or-stopped-401k-contributions-to-cover-rising-living-costs/"
+  "news_title": "Benfica vs Lech Poznań: UEFA Europa League stats & head-to-head",
+  "news_link": "https://www.bbc.com/sport/football/live/cx4g1y2mlgvdt"
  },
  {
   "geo": "US",
-  "term": "trabzonspor",
+  "term": "malik nabers injury",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Canlı | Trabzonspor - Freiburg maçı canlı anlatımı (UEFA Konferans Ligi)",
-  "news_link": "https://www.sozcu.com.tr/canli-veya-trabzonspor-freiburg-maci-canli-anlatimi-uefa-konferans-ligi-p376402"
+  "news_title": "Malik Nabers named NFC offensive player of the month",
+  "news_link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/malik-nabers-named-nfc-offensive-player-of-the-month"
  }
 ]
