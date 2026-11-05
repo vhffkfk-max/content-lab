@@ -394,6 +394,9 @@ def main():
             print("⚠️ 캔바 사본 실패 (초안은 그대로):", e)
     credits = photo_credit_lines(post)
     bgm = bgm_tip(post)
+    if bgm:   # 사이트에서 들어 볼 실제 곡 후보
+        from publish import bgm_tracks
+        bgm["tracks"] = bgm_tracks.find(bgm.get("search"))
     bad, notes = caption_check.check(post["caption"], post.get("end", {}).get("keyword", ""))
     warns += bad
     caption = post["caption"].rstrip() + (f"\n\n{credits}" if credits else "") + "\n\n" + " ".join(post["hashtags"])
