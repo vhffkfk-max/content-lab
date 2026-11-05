@@ -36,9 +36,9 @@ from publish.caption_check import clean  # noqa: E402
 from publish.render import font_css  # noqa: E402
 
 MODEL = "claude-opus-5-5"
-ASR_PY = pathlib.Path(r"C:\Users\qkreo\voice-lab\asr\Scripts\python.exe")
-GPU_PY = pathlib.Path(r"C:\Users\qkreo\voice-lab\sv\Scripts\python.exe")
-RT = pathlib.Path(r"C:\Users\qkreo\voice-lab\work\rt2.py")
+ASR_PY = pathlib.Path.home() / "voice-lab/asr/Scripts/python.exe"
+GPU_PY = pathlib.Path.home() / "voice-lab/sv/Scripts/python.exe"
+RT = pathlib.Path.home() / "voice-lab/work/rt2.py"
 BASE = {"코스피": "^KS11", "코스닥": "^KQ11", "삼성전자": "005930.KS", "SK하이닉스": "000660.KS", "원/달러 환율": "KRW=X",
         "S&P500": "^GSPC", "나스닥": "^IXIC", "필라델피아 반도체": "^SOX", "엔비디아": "NVDA", "테슬라": "TSLA", "애플": "AAPL",
         "마이크로소프트": "MSFT", "미국 10년물 금리": "^TNX", "비트코인": "BTC-USD", "금": "GC=F"}

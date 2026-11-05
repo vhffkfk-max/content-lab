@@ -21,7 +21,7 @@ from common import ROOT  # noqa: E402
 from publish.render import font_css  # noqa: E402
 
 OUT = ROOT / "output" / "reels" / "work"   # make_reel.py 가 주제별 폴더로 바꾼다
-TTS_PY = pathlib.Path(r"C:\Users\qkreo\voice-lab\st\Scripts\python.exe")
+TTS_PY = pathlib.Path.home() / "voice-lab/st/Scripts/python.exe"
 VOICE = "M3"   # 사용자가 고른 Supertonic 남성 음성 (무료, PC에서 실행. 코드 MIT, 모델 OpenRAIL-M)
 SR = 44100
 W, H, FPS = 1080, 1920, 30
