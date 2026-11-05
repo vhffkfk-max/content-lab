@@ -1710,6 +1710,49 @@
    "series": "deep",
    "auto": true,
    "hot_title": null
+  },
+  {
+   "id": "20261105-0900-bignum",
+   "account": "hotconomy",
+   "type": "carousel",
+   "topic": "10월 물가 2.8%, 장바구니는 숨통 틔었다",
+   "form": "bignum",
+   "title": "10월 소비자물가 2.8%, 신선식품 6.2% 급락",
+   "caption": "물가는 2.8% 올랐는데, 신선식품은 6.2% 급락했다\n\n10월 소비자물가가 2.8% 상승했다는 보도가 나왔습니다.\n신선식품은 6.2% 급락해 밥상 물가는 한숨 돌렸습니다.\n외식, 서비스 물가는 따로 봐야 하고, 물가 흐름은 금리 판단에도 영향을 줄 수 있습니다.\n\n이번 달 장바구니가 가벼워졌다고 느꼈다면 댓글에 '물가'를 남겨 주세요.\n\n(정보 제공용이며 투자 권유가 아닙니다)\n\n#핫코노미 #소비자물가 #신선식품 #장바구니물가 #경제",
+   "youtube": {
+    "title": "물가 2.8% 상승, 그런데 신선식품은 6.2% 급락",
+    "description": "10월 소비자물가가 2.8% 상승했고, 신선식품은 6.2% 급락했다는 보도가 나왔습니다.\n외식, 서비스 물가는 따로 봐야 하며, 물가 흐름은 금리 판단에도 영향을 줄 수 있습니다.\n(정보 제공용이며 투자 권유가 아닙니다)"
+   },
+   "files": [
+    "output/cardnews/drafts/20261105-0900-bignum/20261105-0900-bignum-1.jpg",
+    "output/cardnews/drafts/20261105-0900-bignum/20261105-0900-bignum-2.jpg",
+    "output/cardnews/drafts/20261105-0900-bignum/20261105-0900-bignum-3.jpg",
+    "output/cardnews/drafts/20261105-0900-bignum/20261105-0900-bignum-4.jpg",
+    "output/cardnews/drafts/20261105-0900-bignum/20261105-0900-bignum-5.jpg"
+   ],
+   "tickers": [],
+   "sources": [
+    "https://news.google.com/rss/articles/CBMicEFVX3lxTE5KSURESTB6cWNjOEZUWi1veVBxWGpOY2FjWmx0RXNwRDZHQjRWcFZZT2tWeUc0R0Y3MVB"
+   ],
+   "photo_credits": [],
+   "warnings": [
+    "글자 겹침: 1장: '-6.2%' ↔ '전체 물가는 2.8% 올랐는데장바구니는 숨통' 겹침 9px"
+   ],
+   "status": "drafted",
+   "risk": null,
+   "published": {},
+   "canva": {
+    "id": "DAHaAH43YJI"
+   },
+   "created_at": "2026-11-05T09:00:57+09:00",
+   "design_why": {
+    "form": "숫자 한 방형",
+    "note": "표지에 내세울 인물이나 제품이 없고 전체 물가는 올랐는데 신선식품은 내렸다는 숫자의 대비가 곧 훅이라 bignum을 골랐습니다. 체감과 바로 이어지는 -6.2%를 표지 숫자로 써서 멈추게 하고, 본문은 무슨 일, 왜 중요, 다음에 볼 것 순서로 짧게 구성했습니다.",
+    "evidence": "크립토데일리 '$1,045,000,000,000' 표지처럼 숫자를 크게 보여 주는 구성 (계정 중앙값의 32배). 숫자 하나가 곧 훅."
+   },
+   "series": "short",
+   "auto": true,
+   "hot_title": "10월 물가 2.8%, 장바구니는 숨통 틔었다"
   }
  ]
 }
