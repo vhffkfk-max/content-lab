@@ -3231,6 +3231,495 @@
      "path": "20261105-2001-i3/3-bars-dohyeon.jpg"
     }
    ]
+  },
+  {
+   "title": "마이크론 대만 HBM 공장 건설 중단",
+   "concept": "코스피 5.28% 폭락일에 나온 속보로 풀되, 삼성전자와 SK하이닉스 수혜는 '시장이 보는 중'이라는 보도 범위만 전하고 중단 배경과 기간은 [확인]으로 남긴다",
+   "why_now": "인베스팅닷컴 속보가 20:00 직전에 나온 새 소식이다. 오늘 코스피가 5.28% 빠지고 반도체주가 급락해 투자자 관심이 크고, 이전 발송 주제에는 없다.",
+   "tag": "반도체",
+   "sources": [
+    "https://kr.investing.com/news/stock-market-news/article-2161305"
+   ],
+   "bg": "Micron HBM memory",
+   "bg_alt": "Micron headquarters building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "코스피 **5.28%** 폭락\n마이크론 HBM 공장\n건설을 멈췄다",
+     "number": "5.28%",
+     "label": "오늘 코스피 하락률",
+     "sub": "마이크론 대만 HBM 공장 건설 중단"
+    },
+    {
+     "type": "질문형",
+     "title": "마이크론이 멈추면\n삼성과 하이닉스는\n**수혜**일까?",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "경쟁사가 멈춘 날\n하이닉스 **-9.46%**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "bars"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "11/05 전일 대비 하락률(%)",
+     "bars": [
+      {
+       "label": "코스피",
+       "value": 5.28
+      },
+      {
+       "label": "삼성전자",
+       "value": 7.57
+      },
+      {
+       "label": "SK하이닉스",
+       "value": 9.46,
+       "hi": true
+      }
+     ]
+    }
+   },
+   "id": "20261105-2102-i1",
+   "created_at": "2026-11-05T21:02:19+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261105-2102-i1/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261105-2102-i1/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261105-2102-i1/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261105-2102-i1/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261105-2102-i1/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261105-2102-i1/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261105-2102-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261105-2102-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261105-2102-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261105-2102-i1/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261105-2102-i1/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261105-2102-i1/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261105-2102-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261105-2102-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261105-2102-i1/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261105-2102-i1/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261105-2102-i1/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261105-2102-i1/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "中 \"美 농산물 더 사려면 관세부터\"",
+   "concept": "중국의 조건부 입장을 보도 그대로 전하고, 300억 달러 관세 인하 합의 이행이 먼저라는 점과 증시 분위기, 한국 수출과 환율 영향을 짚는다",
+   "why_now": "뉴스1, KBS, 한국경제 등 5곳이 20:06에 다룬 새 소식이다. 미국 중간선거 후 대중 강경책 완화 기대로 중국 증시가 올랐다는 보도와 이어진다.",
+   "tag": "미중 관세",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMiXkFVX3lxTE96STByVmhnYVQ4VTJ0aUl0X0kyZy1OWE93Q2xmQWhIZFE5ZXVXOURhNG5jT3pCTXlWY2J",
+    "https://www.newsis.com/view/NISX20261105_0003857020"
+   ],
+   "bg": "Xi Jinping",
+   "bg_alt": "US soybean harvest",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "중국 \"美 농산물은\n**300억 달러** 관세\n인하가 먼저\"",
+     "number": "300억 달러",
+     "label": "중국이 내건 관세 인하 규모",
+     "sub": "농산물 구매 확대는 합의 이행 뒤에"
+    },
+    {
+     "type": "질문형",
+     "title": "농산물 살 테니\n관세부터 내려라?\n중국의 **조건부** 카드",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "농산물 더 사려면\n중국 \"**관세**부터\"",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/05",
+     "headlines": [
+      "中 농산물 구매, 관세 인하가 먼저",
+      "300억 달러 관세 인하 합의 이행 요구",
+      "미 대중 완화 기대에 中 증시 상승"
+     ]
+    }
+   },
+   "id": "20261105-2102-i2",
+   "created_at": "2026-11-05T21:02:19+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261105-2102-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261105-2102-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261105-2102-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261105-2102-i2/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261105-2102-i2/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261105-2102-i2/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261105-2102-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261105-2102-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261105-2102-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261105-2102-i2/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261105-2102-i2/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261105-2102-i2/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261105-2102-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261105-2102-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261105-2102-i2/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261105-2102-i2/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261105-2102-i2/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261105-2102-i2/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "최태원 \"2100조 투자, 발표해도 되나 싶었다\"",
+   "concept": "서울대 특강 발언을 그대로 인용하고, 코스피가 5% 넘게 빠진 날 나온 '증시 롤러코스터는 계속될 것'이라는 말을 함께 놓아 독자에게 해석을 묻는다",
+   "why_now": "조선비즈, 동아일보, 뉴시스, 한국경제 등이 다룬 발언이다. 코스피 폭락 당일에 AI 패권 경쟁과 증시 변동성을 언급해 주목도가 높고, 앞서 보낸 주식 매각 건과는 다른 소식이다.",
+   "tag": "SK, AI 투자",
+   "sources": [
+    "https://biz.chosun.com/industry/company/2026/11/05/EG5OOJQ6QZBBZC5HDGRIDELNSA/",
+    "https://www.hankyung.com/article/2026110593127"
+   ],
+   "bg": "Chey Tae-won",
+   "bg_alt": "SK hynix headquarters",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "**2100조** 투자\n본인도 발표해도\n되나 싶었다",
+     "number": "2100조",
+     "label": "최태원 회장이 말한 투자 규모",
+     "sub": "서울대 특강에서 나온 발언"
+    },
+    {
+     "type": "질문형",
+     "title": "코스피 5% 빠진 날\n최태원은 왜\n**롤러코스터**를 말했나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "투자 발표한 본인도\n\"되나 싶었다\"\n**2100조**의 속내",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "quote",
+    "news"
+   ],
+   "extra": {
+    "quote": {
+     "label": "서울대 특강",
+     "quote": "2100조 투자, 발표해도 되나 싶었다",
+     "by": "최태원 SK 회장"
+    }
+   },
+   "id": "20261105-2102-i3",
+   "created_at": "2026-11-05T21:02:19+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261105-2102-i3/1-quote-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261105-2102-i3/1-quote-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261105-2102-i3/1-quote-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261105-2102-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261105-2102-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261105-2102-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261105-2102-i3/2-quote-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261105-2102-i3/2-quote-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261105-2102-i3/2-quote-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261105-2102-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261105-2102-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261105-2102-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261105-2102-i3/3-quote-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261105-2102-i3/3-quote-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261105-2102-i3/3-quote-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261105-2102-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261105-2102-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261105-2102-i3/3-news-myeongjo.jpg"
+    }
+   ]
   }
  ]
 }
