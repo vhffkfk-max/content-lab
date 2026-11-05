@@ -1,6 +1,15 @@
 [
  {
   "geo": "KR",
+  "term": "텍사스 주지사",
+  "traffic": 5000,
+  "topics": "정치·관세",
+  "econ": true,
+  "news_title": "\"트럼프 일가 코인으로만 3조원\"... 美민주당, 재산증식 의혹 다 턴다",
+  "news_link": "https://www.chosun.com/international/international_general/2026/11/05/OAHMQ4DPZJAQDEUYHQ45T3KWPQ/"
+ },
+ {
+  "geo": "KR",
   "term": "수술",
   "traffic": 1000,
   "topics": "",
@@ -28,21 +37,39 @@
  },
  {
   "geo": "KR",
-  "term": "nasdaq",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Dow tumbles 1,700 points, erasing its postelection rally; Nasdaq plummets 5%: Live updates",
-  "news_link": "https://www.cnbc.com/2026/11/04/stock-market-today-live-updates.html"
- },
- {
-  "geo": "KR",
   "term": "tqqq",
   "traffic": 200,
   "topics": "ETF·지수투자",
   "econ": true,
   "news_title": "Volume Surges on Leveraged Nasdaq-100 ETF",
   "news_link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-11-05-2026/card/volume-surges-on-leveraged-nasdaq-100-etf-wFiN1sLCspwlAbViEIdq"
+ },
+ {
+  "geo": "KR",
+  "term": "알테오젠",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "특징주, 알테오젠-바이오시밀러 테마 상승세에 7.48% ↑",
+  "news_link": "https://stock.mk.co.kr/news/view/1190290"
+ },
+ {
+  "geo": "KR",
+  "term": "한화에어로스페이스",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "순천에 들어선 우주발사체 사업장",
+  "news_link": "https://www.yna.co.kr/view/PYH20261104154500054"
+ },
+ {
+  "geo": "KR",
+  "term": "김지선",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "‘김지선 둘째’ 래퍼 시바, 악플과 자극적 보도에 불쾌감 “적당히 하시라”",
+  "news_link": "https://sports.khan.co.kr/article/202611050902003"
  },
  {
   "geo": "KR",
@@ -55,62 +82,17 @@
  },
  {
   "geo": "KR",
-  "term": "세계 청년 대회",
+  "term": "신민아",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "내년 '교황 방한' 행사, 광화문 아닌 상암...\"시민 불편 최소화\"",
-  "news_link": "https://www.ytn.co.kr/_ln/0106_202611060029098602"
- },
- {
-  "geo": "KR",
-  "term": "수소",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "[포토] 수소연료전지 기반 개방형 플랫폼",
-  "news_link": "https://www.etnews.com/20261104000396"
- },
- {
-  "geo": "KR",
-  "term": "알테오젠",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "특징주, 알테오젠-바이오시밀러 테마 상승세에 7.48% ↑",
-  "news_link": "https://stock.mk.co.kr/news/view/1190290"
- },
- {
-  "geo": "KR",
-  "term": "예산",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "정부 세수 호황인데…팍팍해지는 인천 살림살이",
-  "news_link": "https://www.incheonilbo.com/news/articleView.html?idxno=1336131"
- },
- {
-  "geo": "US",
-  "term": "arthur fils",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Les grands ont chuté, quatre Bleus se sont qualifiés : folle journée à la Plenitude Arena",
-  "news_link": "https://www.lequipe.fr/Tennis/Article/Les-grands-ont-chute-quatre-bleus-se-sont-qualifies-folle-journee-a-la-plenitude-arena/1741241"
- },
- {
-  "geo": "US",
-  "term": "az vs juventus",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Game Time Thread: Juventus vs. AZ Alkmaar",
-  "news_link": "https://sports.yahoo.com/articles/game-time-thread-juventus-vs-184500491.html"
+  "news_title": "신민아, 이혼→재혼→첫사랑도 만난다…\"작품 쉴틈 없네\" - 머니투데이",
+  "news_link": "https://www.mt.co.kr/entertainment/2026/11/05/2026110516123786507"
  },
  {
   "geo": "US",
   "term": "getafe vs brighton",
-  "traffic": 2000,
+  "traffic": 5000,
   "topics": "",
   "econ": false,
   "news_title": "Getafe vs Brighton & Hove Albion: UEFA Conference League stats & head-to-head",
@@ -118,65 +100,83 @@
  },
  {
   "geo": "US",
-  "term": "malik nabers",
-  "traffic": 1000,
+  "term": "newsom",
+  "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "Malik Nabers named NFC offensive player of the month",
-  "news_link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/malik-nabers-named-nfc-offensive-player-of-the-month"
- },
- {
-  "geo": "US",
-  "term": "sunderland vs dinamo zagreb",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Sunderland vs Dinamo Zagreb: UEFA Europa League stats & head-to-head",
-  "news_link": "https://www.bbc.com/sport/football/live/cr78pyje5052t"
- },
- {
-  "geo": "US",
-  "term": "taylor fritz",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Alcaraz into Paris quarter-finals after Berrettini withdraws",
-  "news_link": "https://www.reuters.com/sports/tennis/alcaraz-into-paris-quarter-finals-after-berrettini-withdraws-2026-11-05/"
- },
- {
-  "geo": "US",
-  "term": "aaron judge",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Yankees’ Aaron Judge Announces Personal Family News After Historic Feat",
-  "news_link": "https://sports.yahoo.com/articles/yankees-aaron-judge-announces-personal-183257181.html"
+  "news_title": "Newsom Commutes the Sentences of California’s 548 Death Row Inmates",
+  "news_link": "https://www.nytimes.com/2026/11/05/us/california-death-row-newsom-commutation.html"
  },
  {
   "geo": "US",
   "term": "az - juventus",
-  "traffic": 500,
+  "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Juve ad Alkmaar: Spalletti chiede i gol a Kolo Muani. C'è Boga, si rivede Cambiaso",
-  "news_link": "https://www.gazzetta.it/Calcio/Serie-A/Juventus/05-11-2026/az-juve-le-ultime-sulla-formazione.shtml"
+  "news_title": "LIVE Alle 21 Az Alkmaar-Juve, le ufficiali: Spalletti rilancia Cambiaso e Sarr, confermato Alajbegovic",
+  "news_link": "https://www.gazzetta.it/Calcio/Serie-A/Juventus/05-11-2026/az-alkmaar-juve-live-risultato-e-gol-in-diretta-europa-league.shtml"
  },
  {
   "geo": "US",
-  "term": "benfica vs lech poznań",
-  "traffic": 500,
+  "term": "casper ruud",
+  "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Benfica vs Lech Poznań: UEFA Europa League stats & head-to-head",
-  "news_link": "https://www.bbc.com/sport/football/live/cx4g1y2mlgvdt"
+  "news_title": "November 6, 2026: Bhamidipaty S / Rajeshwaran Revathi vs Haverlag / Udvardy Tennis Prediction Market",
+  "news_link": "https://robinhood.com/us/en/prediction-markets/tennis/events/bhamidipaty-s-rajeshwaran-revathi-vs-haverlag-udvardy-nov-06-2026/"
  },
  {
   "geo": "US",
-  "term": "malik nabers injury",
+  "term": "celta vs union",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Malik Nabers named NFC offensive player of the month",
-  "news_link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/malik-nabers-named-nfc-offensive-player-of-the-month"
+  "news_title": "Celta de Vigo - Union Saint-Gilloise: horario y dónde ver el partido de la Europa League",
+  "news_link": "https://elpais.com/deportes/futbol/2026-11-05/celta-de-vigo-union-saint-gilloise-horario-y-donde-ver-el-partido-de-la-europa-league.html"
+ },
+ {
+  "geo": "US",
+  "term": "celtic vs beşiktaş",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Celtic vs Besiktas: Martin O'Neill insists Scottish champions still qualify",
+  "news_link": "https://www.bbc.co.uk/sport/football/live/c6vg7dn53gdvt"
+ },
+ {
+  "geo": "US",
+  "term": "katseye chicago",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "K-pop band cancels sold out Detroit show, leaving angry parents to take to social media",
+  "news_link": "https://www.fox2detroit.com/news/k-pop-band-cancels-sold-out-detroit-show-leaving-angry-parents-take-social-media"
+ },
+ {
+  "geo": "US",
+  "term": "leverkusen vs marseille",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Bayer 04 Leverkusen vs Marseille: UEFA Europa League stats & head-to-head",
+  "news_link": "https://www.bbc.com/sport/football/live/c6n49rwwgp24t"
+ },
+ {
+  "geo": "US",
+  "term": "monaco vs nordsjælland",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Monaco vs Nordsjælland: UEFA Conference League stats & head-to-head",
+  "news_link": "https://www.bbc.com/sport/football/live/c679py38w41yt"
+ },
+ {
+  "geo": "US",
+  "term": "tilman fertitta",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "How WNBA Owners Spent in 2026 Midterm Elections",
+  "news_link": "https://frontofficesports.com/article/wnba-biggest-political-donations-2026-midterms/"
  }
 ]
