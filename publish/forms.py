@@ -34,6 +34,12 @@ KINDS = {
 # 새 초안에 쓰는 8가지. 나머지(photo, scene 은 news 와 비슷, story 는 그림 도구 없음, steps 는 앱 화면을 지어내게 됨, hot)는 옛 초안을 다시 그릴 때만 쓴다.
 # 최근 4개 글에 쓴 폼은 draft_card 가 뺀다. 모두 같은 규칙이라 한 폼이 연달아 나오지 않는다.
 ACTIVE = ["news", "bignum", "breaking", "editorial", "list", "bars", "quote", "paper"]
+# 제목 글꼴: 사람이 표지 시안을 보고 고른다 (글꼴이 내용과 맞는지는 감각의 문제라, 2026-11-05)
+FONTS = {"noto": {"name": "기본"}, "black": {"name": "굵은 헤드라인", "family": "HBlack"}, "dohyeon": {"name": "친근한 고딕", "family": "HDohyeon"},
+         "myeongjo": {"name": "신문 명조", "family": "HMyeongjo"}, "gowun": {"name": "잡지 명조", "family": "HGowun"}, "plex": {"name": "또렷한 고딕", "family": "HPlex"}}
+# 폼마다 어울리는 글꼴 3개 (표지 시안을 이 조합으로 그림)
+FORM_FONTS = {"breaking": ["noto", "black", "dohyeon"], "news": ["noto", "black", "myeongjo"], "editorial": ["noto", "gowun", "plex"], "bignum": ["noto", "black", "dohyeon"],
+              "list": ["noto", "black", "plex"], "bars": ["noto", "plex", "dohyeon"], "paper": ["noto", "myeongjo", "gowun"], "quote": ["noto", "myeongjo", "gowun"]}
 # 사진을 위키미디어에서 찾아 채우는 폼
 PHOTO_FORMS = {"scene", "news", "editorial"}
 FORM_NAMES = {"breaking": "속보형", "bignum": "숫자 한 방형", "bars": "막대 비교형", "list": "TOP N 리스트형",
@@ -455,10 +461,20 @@ def make(post, out_dir, name, demo=False):
     return render(slides, out_dir, name, css)
 
 
+def font_css(font):
+    """제목 글꼴 바꾸기. 본문은 읽기 쉽게 기본 고딕 그대로. noto 또는 빈 값이면 폼 기본 글꼴."""
+    fam = FONTS.get(font, {}).get("family")
+    if not fam:
+        return ""
+    return (f"\n.s,.serif,.ed-t,.mast,.nno{{font-family:{fam},HSans,'Noto Sans CJK KR',sans-serif}}"
+            f"\n.b-l,.b-m,.nw-b,.ed-c,.endchecks,.endkw,.btn,.disc,.foot,.chip,.nw-tag,.row .sm,.pricebox{{font-family:HSans,'Noto Sans CJK KR',sans-serif}}")
+
+
 def _styled(post, demo=False):
-    """대표가 캔바에서 2번 넘게 똑같이 바꾼 색은 이 폼에 그대로 적용 (publish/card_learn.py)."""
+    """대표가 캔바에서 2번 넘게 똑같이 바꾼 색은 이 폼에 그대로 적용 (publish/card_learn.py). 고른 제목 글꼴도 여기서."""
     from publish.card_learn import restyle
-    return restyle(post["form"], CSS, slides_of(post, demo))
+    css, slides = restyle(post["form"], CSS, slides_of(post, demo))
+    return css + font_css(post.get("font")), slides
 
 
 def make_canva(post, path):

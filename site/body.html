@@ -102,6 +102,13 @@
 .card-strip{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;padding-bottom:6px;margin-top:10px;max-width:100%}
 .card-strip a{flex:none;width:min(62vw,230px);aspect-ratio:4/5;scroll-snap-align:start;border-radius:var(--radius-control);overflow:hidden;background:var(--raised)}
 .card-strip img{width:100%;height:100%;object-fit:cover;display:block}
+.pub-h{margin:18px 0 10px;font-size:16px;font-weight:600}
+.hook-btn{display:block;width:100%;text-align:left;white-space:pre-line;padding:10px 12px;border:1px solid var(--line,#ddd);border-radius:var(--radius-control);background:transparent;color:inherit;font:inherit;font-size:14px;line-height:1.45;cursor:pointer;margin-top:6px}
+.hook-btn[aria-pressed=true],.look[aria-pressed=true]{outline:3px solid var(--accent,#b8326a);outline-offset:-1px}
+.looks{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-top:10px}
+.look{padding:0;border:0;background:transparent;color:inherit;font:inherit;font-size:12px;cursor:pointer;border-radius:var(--radius-control);overflow:hidden;text-align:left}
+.look img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:var(--raised)}
+.look span{display:block;padding:4px 6px}
 .bgm-tracks{display:grid;gap:10px;margin-top:10px}
 .bgm-track{display:grid;gap:4px;font-size:14px}
 .bgm-track audio{width:100%;max-width:420px;height:36px}
@@ -525,8 +532,11 @@ a.row:hover .row-main{text-decoration:underline}
             <section class="sec" id="today" aria-label="오늘 할 일"><div class="today" id="today-box"></div></section>
             <section class="sec" id="ig-publish">
               <h2>카드뉴스 검수</h2>
-              <p class="note">카드와 캡션을 확인하고 BGM을 들어 본 뒤, 이미지를 저장해 폰 인스타 앱으로 올리세요. 앱에서 첫 장의 ⤢를 눌러 4:5로 맞춰야 안 잘려요. 캔바에서 고쳤다면 캔바에서 내려받아 주세요. 여기서 인스타로 바로 올라가지는 않아요.</p>
+              <p class="note">1시간마다 추천안이 올라와요. 주제와 표지 문구, 시안을 고르면 그것만 완성해요(보통 10분 안쪽). 완성되면 아래에서 카드와 캡션을 확인하고 BGM을 들어 본 뒤, 이미지를 저장해 폰 인스타 앱으로 올리세요. 앱에서 첫 장의 ⤢를 눌러 4:5로 맞춰야 안 잘려요.</p>
               <div class="actions" style="margin-bottom:10px"><button type="button" class="btn small" id="pub-refresh">목록 새로고침</button></div>
+              <h3 class="pub-h">추천안 고르기</h3>
+              <div class="recs" id="idea-list"></div>
+              <h3 class="pub-h">완성 카드 검수</h3>
               <div class="recs" id="pub-list"></div>
             </section>
             <section class="sec" id="recommend">
@@ -1396,12 +1406,80 @@ a.row:hover .row-main{text-decoration:underline}
     const box = document.getElementById('pub-list'), refresh = document.getElementById('pub-refresh');
     if (!box) return;
     let timer = null;
+    const ideaBox = document.getElementById('idea-list');
+    let ideas = [];
     const fetchItems = async () => {
       const r = await ghApi('contents/data/publish_queue.json?ref=main', { raw: true });
       if (r.status === 401) { ghFail(401); throw new Error('auth'); }
       if (r.status !== 200) throw new Error(String(r.status));
-      return (await r.json()).items || [];
+      const q = await r.json();
+      ideas = q.ideas || [];
+      return q.items || [];
     };
+    // 추천안 → 표지 문구 → 시안(폼 × 글꼴) 고르기 → draft-create.yml 로 PC에 요청 → draft_card --pick 이 그것만 완성 (publish/card_ideas.py)
+    const FORM_NAME = { breaking: '속보형', news: '사진 뉴스형', editorial: '에디토리얼', bignum: '숫자 한 방형', list: '목록형', bars: '막대 비교형', paper: '신문 1면형', quote: '인사이트형' };
+    const FONT_NAME = { noto: '기본', black: '굵은 헤드라인', dohyeon: '친근한 고딕', myeongjo: '신문 명조', gowun: '잡지 명조', plex: '또렷한 고딕' };
+    const PICK_WAIT = 30 * 60000;
+    const picked = { get: () => { try { return JSON.parse(store.get('card_picks') || '{}'); } catch (e) { return {}; } }, set: o => store.set('card_picks', JSON.stringify(o)) };
+    const plain = s => String(s || '').replace(/\*\*/g, '');
+    function ideaCard(i, madeIds) {
+      const c = el('article', 'card rec');
+      const chips = el('div', 'chips');
+      chips.append(el('span', 'pill neutral', i.tag || '추천안'), el('span', 'pill neutral', (i.created_at || '').slice(5, 16).replace('T', ' ')));
+      c.append(chips, el('h3', 'rec-title', i.title));
+      if (i.concept) c.append(el('p', 'sub', `컨셉: ${i.concept}`));
+      if (i.why_now) c.append(el('p', 'sub', `왜 지금: ${i.why_now}`));
+      if ((i.sources || []).length) {
+        const d = el('details', 'more'), b = el('div', 'box'); d.append(el('summary', null, '근거 뉴스'));
+        i.sources.forEach(u => { const a = el('a', null, u); a.href = u; a.target = '_blank'; a.rel = 'noopener'; a.style.display = 'block'; b.append(a); });
+        d.append(b); c.append(d);
+      }
+      if (madeIds.has(i.id)) { c.append(el('p', 'sub', '완성했어요. 아래 완성 카드 검수에서 확인해 주세요.')); return c; }
+      const waited = picked.get()[i.id];
+      if (waited && Date.now() - waited < PICK_WAIT) {
+        c.append(el('p', 'sub', `PC가 만드는 중이에요 · ${Math.floor((Date.now() - waited) / 60000)}분째. 보통 10분 안쪽이에요.`));
+        return c;
+      }
+      let hook = 0, look = null, length = 'short';
+      const hooks = el('div'), grid = el('div', 'looks'), go = el('button', 'btn small primary', '이걸로 만들기');
+      go.type = 'button'; go.disabled = true;
+      const drawHooks = () => hooks.replaceChildren(...i.hooks.map((h, n) => {
+        const b = el('button', 'hook-btn', `${h.type}\n${plain(h.title)}`); b.type = 'button'; b.setAttribute('aria-pressed', String(n === hook));
+        b.addEventListener('click', () => { hook = n; look = null; go.disabled = true; drawHooks(); drawLooks(); });
+        return b;
+      }));
+      const drawLooks = () => {
+        const list = (i.previews || []).filter(p => p.h === hook);
+        if (!list.length) { const none = el('p', 'sub', '이 문구로 그린 시안이 없어요. 다른 문구를 골라 주세요.'); none.style.gridColumn = '1/-1'; grid.replaceChildren(none); return; }
+        grid.replaceChildren(...list.map(p => {
+          const b = el('button', 'look'), img = el('img'), label = `${FORM_NAME[p.form] || p.form} · ${FONT_NAME[p.font] || p.font}`;
+          b.type = 'button'; b.setAttribute('aria-pressed', String(look === p));
+          img.src = `https://raw.githubusercontent.com/vhffkfk-max/content-lab/card-previews/${p.path}`; img.alt = label; img.loading = 'lazy';
+          img.addEventListener('error', () => b.remove());
+          b.append(img, el('span', null, label));
+          b.addEventListener('click', () => { look = p; go.disabled = false; drawLooks(); });
+          return b;
+        }));
+      };
+      const lens = el('label', 'pub-check'), lenSel = el('select');
+      [['short', '짧게 (3~5장)'], ['long', '길게 (6~8장)']].forEach(([v, t]) => { const o = el('option', null, t); o.value = v; lenSel.append(o); });
+      lenSel.addEventListener('change', () => { length = lenSel.value; });
+      lens.append(el('span', null, '분량'), lenSel);
+      go.addEventListener('click', async () => {
+        go.disabled = true; go.textContent = '요청하는 중…';
+        try {
+          const pick = [i.id, hook, look.form, look.font, length].join('|');
+          const r = await ghApi('actions/workflows/draft-create.yml/dispatches', { method: 'POST', body: JSON.stringify({ ref: 'main', inputs: { pick } }) });
+          if (r.status === 204) { picked.set({ ...picked.get(), [i.id]: Date.now() }); load(); return; }
+          alert(ghFail(r.status));
+        } catch (e) { alert('요청하지 못했어요. 인터넷 연결을 확인해 주세요.'); }
+        go.disabled = false; go.textContent = '이걸로 만들기';
+      });
+      drawHooks(); drawLooks();
+      const acts = el('div', 'actions'); acts.style.alignItems = 'center'; acts.append(lens, go);
+      c.append(el('p', 'sub', '① 표지 문구'), hooks, el('p', 'sub', '② 시안 (폼 · 글꼴)'), grid, acts);
+      return c;
+    }
     const connect = () => {
       const b = el('button', 'btn small primary', '암호 넣고 목록 보기'); b.type = 'button';
       b.addEventListener('click', async () => { if (await connectLab()) load(); });
@@ -1528,6 +1606,11 @@ a.row:hover .row-main{text-decoration:underline}
         if (!box.children.length) empty(box, '목록을 못 읽었어요. 잠시 뒤 새로고침해 주세요.');
         timer = setTimeout(load, 20000); return;
       }
+      const madeIds = new Set(items.map(x => x.idea).filter(Boolean));
+      const pendingCount = Object.keys(picked.get()).filter(id => !madeIds.has(id) && Date.now() - picked.get()[id] < PICK_WAIT).length;
+      const ideaCards = ideas.slice(-9).reverse().map(i => ideaCard(i, madeIds));
+      if (ideaCards.length) ideaBox.replaceChildren(...ideaCards); else empty(ideaBox, '추천안이 아직 없어요. 1시간마다 올라와요.');
+      if (pendingCount) timer = setTimeout(load, 30000);
       const open = items.filter(x => x.status === 'drafted').slice(-24).reverse();
       const shipped = items.filter(x => (x.published || {}).instagram).slice(-5).reverse();
       const cards = [...open, ...shipped].map(it => card(it));

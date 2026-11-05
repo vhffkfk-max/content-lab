@@ -6,7 +6,7 @@
 매번 하는 일
   1) 저장소 최신으로 맞춤 (작업 폴더라 로컬 변경은 버림)
   2) 깃허브가 남긴 요청(data/ai_requests.json) 처리: daily·social·tg·trd·draft·thpost(쓰레드 글 A·B·C)
-  3) 정해진 시각 일: 텔레그램 문구(07·12·18시), 트레이더스 글(07·18시), 카드뉴스 초안(하루 최대 16개, 07~22시 1시간마다), 시황 변환, 트레이더스 피드백
+  3) 정해진 시각 일: 텔레그램 문구(07·12·18시), 트레이더스 글(07·18시), 카드뉴스 추천안(07~22시 1시간마다), 시황 변환, 트레이더스 피드백
   4) 결과 파일만 커밋·푸시 → 깃허브가 사이트를 다시 배포
 로그: data/local_ai.log
 """
@@ -122,28 +122,24 @@ def slot_once(state, key, hours):
     return True
 
 
-DRAFT_SLOTS = tuple(range(7, 23))   # 07~22시 1시간마다, 대표가 이 중 골라 폰으로 올림 (2026-11-05): 07·13시는 깊은 시리즈(6~8장), 나머지는 속보형(3~5장)
-DEEP_SLOTS = (7, 13)
+IDEA_SLOTS = tuple(range(7, 23))   # 07~22시 1시간마다 텍스트 추천안 + 표지 시안. 완성 카드는 대표가 사이트에서 고른 것만 (2026-11-05)
 
 
-def auto_drafts(state, did):
-    """이번 시각에 자동 초안이 없으면 하나 만듦. PC가 꺼져 있던 시간은 따라잡지 않는다(지난 소식을 몰아 만들면 Max 사용량만 쓴다)."""
+def auto_ideas(state, did):
+    """이번 시각에 추천안이 없으면 만듦. PC가 꺼져 있던 시간은 따라잡지 않는다(지난 소식을 몰아 만들면 Max 사용량만 쓴다)."""
     now = datetime.now(KST)
     today = f"{now:%Y-%m-%d}"
     if state.get("draft_fail", {}).get("day") == today and state["draft_fail"]["n"] >= 3:
         return   # 오늘 3번 실패했으면 멈춤 (Max 사용량 낭비 방지) — 봇 알림은 draft_card 가 함
     qp = ROOT / "data" / "publish_queue.json"
-    items = json.loads(qp.read_text(encoding="utf-8"))["items"] if qp.exists() else []
-    auto = [i for i in items if i.get("auto") and i.get("created_at", "").startswith(today)]
-    if now.hour not in DRAFT_SLOTS or any(i["created_at"].startswith(f"{now:%Y-%m-%dT%H}") for i in auto):
+    ideas = json.loads(qp.read_text(encoding="utf-8")).get("ideas", []) if qp.exists() else []
+    if now.hour not in IDEA_SLOTS or any(i["created_at"].startswith(f"{now:%Y-%m-%dT%H}") for i in ideas):
         return
-    due = [h for h in DRAFT_SLOTS if now.hour >= h]
-    short = sum(i.get("series") == "deep" for i in auto) >= sum(h in DEEP_SLOTS for h in due)
-    if py("-m", "publish.draft_card", "--auto", *(["--short"] if short else [])) != 0:
+    if py("-m", "publish.card_ideas") != 0:
         f = state.get("draft_fail", {})
         state["draft_fail"] = {"day": today, "n": (f.get("n", 0) if f.get("day") == today else 0) + 1}
         return
-    did.append(f"카드뉴스 초안 {len(auto) + 1}/{len(DRAFT_SLOTS)}({'속보' if short else '시리즈'})")
+    did.append("카드뉴스 추천안")
 
 
 def run_cycle():
@@ -237,11 +233,11 @@ def run_cycle():
 
     drafts = [r for r in todo if r["job"] == "draft"][-3:]
     for r in drafts:
-        topic = r["args"].get("topic", "")
-        py("-m", "publish.draft_card", *(["--topic", topic] if topic else []))
-        did.append(f"카드뉴스 초안 {topic}")
+        topic, pick = r["args"].get("topic", ""), r["args"].get("pick", "")
+        py("-m", "publish.draft_card", *(["--pick", pick] if pick else ["--topic", topic] if topic else []))
+        did.append(f"카드뉴스 초안 {pick or topic}")
     if not drafts:
-        auto_drafts(state, did)
+        auto_ideas(state, did)
 
     if slot_once(state, "learn", tuple(range(8, 24))):   # 1시간마다: 캔바에서 고친 것·48시간 성적 배우기 (publish/card_learn.py)
         py("-m", "publish.card_learn")

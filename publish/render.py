@@ -22,6 +22,10 @@ BROWSERS = [r"C:\Program Files\Google\Chrome\Application\chrome.exe",
             r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe", "google-chrome", "chromium", "chromium-browser"]
 FONT_FILES = {"HSans": ["C:/Windows/Fonts/NotoSansKR-VF.ttf"], "HSerif": ["C:/Windows/Fonts/NotoSerifKR-VF.ttf"]}
 ASSETS = ROOT / "assets"
+# 제목 글꼴 선택지 (구글 폰트, 상업 이용 가능한 OFL. 라이선스는 assets/fonts/OFL-*.txt)
+FONT_FILES.update({fam: [str(ASSETS / "fonts" / f)] for fam, f in {
+    "HBlack": "BlackHanSans-Regular.ttf", "HDohyeon": "DoHyeon-Regular.ttf", "HMyeongjo": "NanumMyeongjo-ExtraBold.ttf",
+    "HGowun": "GowunBatang-Bold.ttf", "HPlex": "IBMPlexSansKR-Bold.ttf"}.items()})
 
 
 def browser():

@@ -314,6 +314,29 @@ def bgm_line(tip):
     return " / ".join(p for p in parts if p)
 
 
+def pick_of(queue, pick):
+    """'추천안id|표지번호|폼|글꼴|short' → 고른 내용. 형식이 틀리거나 추천안이 없으면 멈춘다(요청은 사이트에서 오므로 믿지 않는다)."""
+    from publish.card_ideas import cover_for
+    m = re.fullmatch(r"([0-9a-z-]{8,30})\|(\d)\|([a-z]+)\|([a-z]+)\|(short|long)", pick or "")
+    if not m:
+        raise SystemExit(f"⚠️ 고른 내용 형식이 달라요: {pick}")
+    idea = next((i for i in queue.get("ideas", []) if i["id"] == m[1]), None)
+    if not idea or int(m[2]) >= len(idea["hooks"]) or m[3] not in forms.FORM_FONTS or m[4] not in forms.FORM_FONTS[m[3]]:
+        raise SystemExit(f"⚠️ 고른 추천안을 찾을 수 없어요: {pick}")
+    hook = idea["hooks"][int(m[2])]
+    cover = cover_for(idea, hook, m[3])
+    if cover is None:
+        raise SystemExit(f"⚠️ 이 폼으로는 표지를 만들 수 없어요: {pick}")
+    return {"idea": idea, "hook": hook, "form": m[3], "font": m[4], "cover": cover, "short": m[5] == "short"}
+
+
+def picked_note(c):
+    i = c["idea"]
+    return (f"\n\n[대표가 고른 것] 반드시 따릅니다.\n주제: {i['title']}\n컨셉: {i.get('concept', '')}\n왜 지금: {i.get('why_now', '')}\n"
+            f"폼: {c['form']} (이 폼의 칸대로 씁니다)\n표지 문구: {c['hook']['title']} (표지는 이 문구 그대로, 본문은 이 문구가 말한 사건을 따라갑니다)\n"
+            f"근거 링크: {', '.join(i.get('sources', []))}\n")
+
+
 def hashtags(tags):
     tags = [t if t.startswith("#") else f"#{t}" for t in tags]
     tags = [t for t in tags if not any(b in t.lower() for b in NOT_MINE)]
@@ -322,12 +345,12 @@ def hashtags(tags):
     return list(dict.fromkeys(tags))[:5]   # 인스타 해시태그 상한 5개
 
 
-def ask_claude(prompt):
+def ask_claude(prompt, system=None, model=None):
     import llm as anthropic   # 내 PC Claude Code(Max 구독)로 실행 — API 요금 없음
     client = anthropic.Anthropic()
     msgs = [{"role": "user", "content": prompt}]
     for _ in range(2):
-        r = client.messages.create(model=MODEL, max_tokens=8000, system=SYSTEM, messages=msgs)
+        r = client.messages.create(model=model or MODEL, max_tokens=8000, system=system or SYSTEM, messages=msgs)
         text = "".join(b.text for b in r.content if b.type == "text")
         print(f"   (입력 {r.usage.input_tokens:,} / 출력 {r.usage.output_tokens:,} 토큰)")
         m = re.search(r"\{.*\}", text, re.S)
@@ -346,15 +369,19 @@ def main():
     ap.add_argument("--no-canva", action="store_true", help="캔바 사본 안 만듦")
     ap.add_argument("--short", action="store_true", help="속보형 3~5장 (지금 발행할 거리에서 주제)")
     ap.add_argument("--auto", action="store_true", help="PC 예약이 만든 것 (하루 개수 세기용)")
+    ap.add_argument("--pick", help="추천안에서 고른 것: 추천안id|표지번호|폼|글꼴|short 또는 long (publish/card_ideas.py)")
     a = ap.parse_args()
     load_env()
     queue = load_queue()
+    chosen = pick_of(queue, a.pick) if a.pick else None
+    if chosen:
+        a.topic, a.short = chosen["idea"]["title"], chosen["short"]
     hot = pick_hot(queue) if a.short and not a.topic else None
     if a.short and not a.topic and not hot:
         a.short = False   # 지금 발행할 거리가 없으면 보통 초안으로
     topic = hot["title"] if hot else pick_topic(queue, a.topic)
     recent = [i["form"] for i in queue["items"] if i.get("form")][-4:]
-    allowed = card_learn.prune([k for k in forms.ACTIVE if k not in recent])   # 성적이 계속 나쁜 폼은 뺌
+    allowed = [chosen["form"]] if chosen else card_learn.prune([k for k in forms.ACTIVE if k not in recent])   # 성적이 계속 나쁜 폼은 뺌
     now = datetime.now(KST)
     print(f"📰 주제: {topic} / 최근 폼 {recent or '없음'} 제외")
     mk, news = market(), headlines(topic)
@@ -362,10 +389,15 @@ def main():
     if a.short:
         prompt += SHORT + (f"\n\n[지금 발행할 거리] ({hot.get('channel', '')})\n제목: {hot['title']}\n왜 지금: {hot.get('why_now', '')}\n"
                            f"참고 초안:\n{hot.get('draft', '')}\n근거: {', '.join(hot.get('sources', [])[:3])}" if hot else "")
+    if chosen:
+        prompt += picked_note(chosen)
     if a.dry_run:
         print(SYSTEM, "\n\n", prompt)
         return
     post = clean(ask_claude(prompt))
+    if chosen:   # 사람이 고른 폼, 표지, 글꼴은 AI가 바꾸지 못하게 덮어쓴다
+        post["form"], post["font"] = chosen["form"], chosen["font"]
+        post["cover"] = {**(post.get("cover") or {}), **chosen["cover"]}
     if post.get("form") not in forms.ACTIVE:   # 돌려쓰기를 어겨도 8가지 안이면 그대로 (글 칸이 그 폼에 맞춰 쓰였음)
         post["form"] = forms.pick_form(post.get("kind", ""), recent)
     post["slides"] = post.get("slides", [])[:3 if a.short else MAX_SLIDES - 2]
@@ -406,7 +438,7 @@ def main():
                            "sources": post.get("sources", []), "photo_credits": post.get("photo_credits", []), "warnings": warns, "caption_notes": notes, "bgm": bgm, "status": "drafted", "risk": None,
                            "published": {}, "canva": canva, "created_at": now.isoformat(timespec="seconds"),
                            "design_why": {"form": forms.FORM_NAMES[post["form"]], "note": post.get("design_note", ""), "evidence": forms.FORM_WHY.get(post["form"], "")},
-                           "series": "short" if a.short else "deep", "auto": a.auto, "hot_title": hot["title"] if hot else None})
+                           "series": "short" if a.short else "deep", "auto": a.auto, "font": post.get("font", ""), "idea": chosen["idea"]["id"] if chosen else "", "hot_title": hot["title"] if hot else None})
     QUEUE.parent.mkdir(parents=True, exist_ok=True)
     QUEUE.write_text(json.dumps(queue, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"✅ {forms.FORM_NAMES[post['form']]} {len(files)}장 → {OUT / did}")

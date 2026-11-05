@@ -50,11 +50,11 @@ def _gone(name, cutoff, full_cutoff):
     return _expired(name, full_cutoff if "/full/" in name else cutoff)
 
 
-def push(drafts):
-    """drafts: {초안 id: [그림 경로...]} → '완료' / '실패: ...'. 다른 PC 폴더가 올린 것도 지우지 않게 가지의 현재 내용 위에 얹는다."""
+def push(drafts, extra=None):
+    """drafts: {초안 id: [그림 경로...]}, extra: {가지 안 경로: bytes}(추천안 표지 시안) → '완료' / '실패: ...'. 다른 PC 폴더가 올린 것도 지우지 않게 가지의 현재 내용 위에 얹는다."""
     cutoff = f"{datetime.now() - timedelta(days=KEEP_DAYS):%Y%m%d}"
     full_cutoff = f"{datetime.now() - timedelta(days=KEEP_FULL_DAYS):%Y%m%d}"
-    blobs = {}
+    blobs = dict(extra or {})
     for did, files in drafts.items():
         for i, f in enumerate(files, 1):
             blobs[f"{did}/{i}.jpg"] = small(f)

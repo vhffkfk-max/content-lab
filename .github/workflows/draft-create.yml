@@ -8,6 +8,10 @@ on:
         description: "주제 (비우면 추천 1위, 오늘 이미 만든 주제는 건너뜀)"
         required: false
         default: ""
+      pick:
+        description: "추천안에서 고른 것 (추천안id|표지번호|폼|글꼴|short)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -28,10 +32,11 @@ jobs:
       - name: PC에 카드뉴스 초안 요청
         env:
           TOPIC: ${{ inputs.topic }}
+          PICK: ${{ inputs.pick }}
         run: |
           git config user.name "content-lab-bot"
           git config user.email "content-lab-bot@users.noreply.github.com"
-          python ai_request.py draft "topic=$TOPIC"
+          python ai_request.py draft "topic=$TOPIC" "pick=$PICK"
           git add data/ai_requests.json
           git commit -m "ai: PC에 Claude 작업 요청" || echo "변경 없음"
           git pull --rebase -X theirs --autostash || (git rebase --abort; git pull --no-rebase -X ours --no-edit) || true
