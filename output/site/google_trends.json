@@ -2,7 +2,7 @@
  {
   "geo": "KR",
   "term": "경제",
-  "traffic": 5000,
+  "traffic": 10000,
   "topics": "AI·반도체, 국내 대형주, 급락·변동성",
   "econ": true,
   "news_title": "[속보] 코스피, 5.28% 하락 마감...삼성전자 7%,SK하이닉스 9% 폭락",
@@ -10,48 +10,48 @@
  },
  {
   "geo": "KR",
+  "term": "삼성전자 주가",
+  "traffic": 2000,
+  "topics": "국내 대형주",
+  "econ": true,
+  "news_title": "삼성전자 주주환원 유보에 증여세 논란…이사회 독립성 시험대",
+  "news_link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4443191"
+ },
+ {
+  "geo": "KR",
   "term": "양민혁",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "이기혁·양민혁·박승수...태극마크를 잃은 자의 그라운드 [이영규의 비욘더매치]",
-  "news_link": "https://news.tf.co.kr/read/soccer/2384237.htm"
+  "news_title": "\"군면제만 봤다\"던 양민혁의 충격적인 입지! 리그서 선발 출전 '0회'...\"강렬함 부족해\", 사령탑 공개 비판→토트넘 '조기 복귀설' 등장",
+  "news_link": "https://mydaily.co.kr/page/view/2026110312445073492"
  },
  {
   "geo": "KR",
-  "term": "제네시스 g90",
+  "term": "제주 감귤",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "\"9,000만 원 싸게 산다고?\"... 1억 9,360만 원→‘4천만 원대’로 뚝 떨어진 프리미엄 세단",
-  "news_link": "https://topictree.co.kr/automobiles/news/2020-bmw-730d-used-luxury-sedan/"
- },
- {
-  "geo": "KR",
-  "term": "jtbc",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "",
-  "news_link": ""
+  "news_title": "“점심시간에 만난 달콤함”…제주감귤연합회, 정부세종청사서 고당도 제주감귤 특별판매",
+  "news_link": "https://www.seoul.co.kr/news/economy/2026/11/05/20261105500202"
  },
  {
   "geo": "KR",
   "term": "기뢰",
-  "traffic": 200,
+  "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "청해부대, 美 파병 요구에 화답…호르무즈 작전영역 2배로 확대",
-  "news_link": "https://www.munhwa.com/article/11629041"
+  "news_title": "정부, ‘청해부대 작전범위’ 확대…김준형 \"우회 꼼수 파병\"",
+  "news_link": "https://news.jtbc.co.kr/article/NB12326588"
  },
  {
   "geo": "KR",
-  "term": "데블스플랜3",
+  "term": "데이터센터",
   "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "6번째 우승 도전 장동민 \"살아있는 한 서바이벌 은퇴는 없죠\"",
-  "news_link": "https://www.yna.co.kr/view/AKR20261105097500005"
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "美 중간선거 후폭풍, AI 데이터센터 강타하나",
+  "news_link": "https://zdnet.co.kr/view/?no=20261105093759"
  },
  {
   "geo": "KR",
@@ -73,57 +73,57 @@
  },
  {
   "geo": "KR",
-  "term": "west indies vs bangladesh",
-  "traffic": 100,
+  "term": "진쓰레블 사망",
+  "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Jangoo, Wickham soften blow of Taskin's early strikes",
-  "news_link": "https://www.cricinfo.com/series/west-indies-in-bangladesh-2026-27-1553291/bangladesh-vs-west-indies-2nd-test-1553296/match-report-1"
+  "news_title": "\"믿기지 않는 비보\"…자전거 유튜버 33세 진쓰레블, 남미서 뺑소니 사망",
+  "news_link": "https://www.news1.kr/society/general-society/6344322"
  },
  {
   "geo": "KR",
-  "term": "진쓰레블 사망",
+  "term": "남대문 스카프 아저씨",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "“진짜 힐링 유튜버였는데 안 믿겨”…자전거 세계일주 한국인, 볼리비아 도로서 참변",
-  "news_link": "https://www.mk.co.kr/news/society/12198309"
+  "news_title": "’남대문 스카프 아저씨’ 출근길 인증…영업 재개에 시장 들썩",
+  "news_link": "https://www.yonhapnewstv.co.kr/news/AKR20261104160854BFB"
  },
  {
   "geo": "US",
-  "term": "giannis antetokounmpo",
-  "traffic": 2000,
+  "term": "midterm election results senate",
+  "traffic": 50000,
+  "topics": "정치·관세",
+  "econ": true,
+  "news_title": "Democrats continue to stack wins in House as Republicans start blame game after midterm rout",
+  "news_link": "https://www.cnn.com/2026/11/04/politics/live-news/midterm-election-congress"
+ },
+ {
+  "geo": "US",
+  "term": "chipotle",
+  "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Tim Hardaway Sr. calls out Giannis Antetokounmpo while praising Cooper Flagg",
-  "news_link": "https://sports.yahoo.com/articles/tim-hardaway-sr-calls-giannis-053215599.html"
+  "news_title": "Should Investors Buy Into the Chipotle Turnaround?",
+  "news_link": "https://finance.yahoo.com/markets/stocks/articles/investors-buy-chipotle-turnaround-072500920.html"
  },
  {
   "geo": "US",
-  "term": "brook lopez",
+  "term": "raman vs bass",
   "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Brook Lopez records 20/8/1 line, two blocked shots",
-  "news_link": "https://www.nbcsports.com/fantasy/basketball/player-news/2026-11-05/brook-lopez-records-20-8-1-line-two-blocked-shots"
+  "topics": "정치·관세",
+  "econ": true,
+  "news_title": "Live election results: Raman increases lead over Bass in LA mayoral race",
+  "news_link": "https://abc7.com/live-updates/california-election-day-2026-los-angeles-mayor-governor-propositions-top-mind-voters/20011511/"
  },
  {
   "geo": "US",
-  "term": "antonia ruzic",
+  "term": "enzo amore",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Wang vs. Ruzic Prediction at the Merida Open Akron – Thursday, November 5",
-  "news_link": "https://www.bleachernation.com/picks/2026/11/04/wang-vs-ruzic-prediction-at-the-merida-open-akron-thursday-november-5/"
- },
- {
-  "geo": "US",
-  "term": "john kennedy",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "2026 State Legislative Elections: The Results and What They Mean",
-  "news_link": "https://www.ncsl.org/resources/details/2026-state-legislative-elections-the-results-and-what-they-mean"
+  "news_title": "Backstage Update On Possible WWE Return Of Enzo Amore",
+  "news_link": "https://sports.yahoo.com/articles/backstage-possible-wwe-return-enzo-230157089.html"
  },
  {
   "geo": "US",
@@ -131,8 +131,17 @@
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Texans 34-31 Jaguars (Oct 18, 2026) Final Score",
-  "news_link": "https://www.espn.com/nfl/game/_/gameId/401872996/texans-jaguars"
+  "news_title": "MLB offseason buzz: Intel on Skubal, free agency, trade rumors",
+  "news_link": "https://www.espn.com/mlb/story/_/id/50328890/mlb-early-free-agency-buzz-intel-skubal-trade-rumors"
+ },
+ {
+  "geo": "US",
+  "term": "super troopers 3",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "‘Super Troopers 3’ Streaming: How to Watch the New Movie at Home & Where to Stream the First Two",
+  "news_link": "https://www.imdb.com/de/news/ni66095509/?ref_=nm_nwr_1"
  },
  {
   "geo": "US",
@@ -163,20 +172,11 @@
  },
  {
   "geo": "US",
-  "term": "enzo amore",
+  "term": "lapd navy helicopter near miss",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "Backstage Update On Possible WWE Return Of Enzo Amore",
-  "news_link": "https://sports.yahoo.com/articles/backstage-possible-wwe-return-enzo-230157089.html"
- },
- {
-  "geo": "US",
-  "term": "super troopers 3",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "‘Super Troopers 3’ Streaming: How to Watch the New Movie at Home & Where to Stream the First Two",
-  "news_link": "https://www.imdb.com/de/news/ni66095509/?ref_=nm_nwr_1"
+  "news_title": "‘You guys gotta pay attention’: LAPD pilot blasts Navy helicopter after near miss",
+  "news_link": "https://ktla.com/news/local-news/lapd-navy-helicopter-close-call-echo-park/"
  }
 ]
