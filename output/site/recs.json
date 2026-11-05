@@ -1,6 +1,20 @@
 [
  {
   "rank": 1,
+  "topic": "정치·관세",
+  "kind": "국내·해외 모두 강세",
+  "confidence": "높음",
+  "title_idea": "정치·관세, 한 줄 정리",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "짧은 한 줄",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 3.01,
+  "kr_n": 22,
+  "foreign_avg": 1.28,
+  "foreign_n": 32
+ },
+ {
+  "rank": 2,
   "topic": "비트코인",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
@@ -8,13 +22,13 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.6,
-  "kr_n": 11,
-  "foreign_avg": 1.78,
-  "foreign_n": 132
+  "kr_avg": 1.69,
+  "kr_n": 12,
+  "foreign_avg": 1.68,
+  "foreign_n": 136
  },
  {
-  "rank": 2,
+  "rank": 3,
   "topic": "AI·반도체",
   "kind": "국내 검증 주제",
   "confidence": "높음",
@@ -22,38 +36,24 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "인용형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.48,
-  "kr_n": 179,
-  "foreign_avg": 0.93,
-  "foreign_n": 100
- },
- {
-  "rank": 3,
-  "topic": "정치·관세",
-  "kind": "국내·해외 모두 강세",
-  "confidence": "높음",
-  "title_idea": "정치·관세 한 장으로 총정리",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "정리·요약형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 1.8,
-  "kr_n": 12,
-  "foreign_avg": 1.47,
-  "foreign_n": 25
+  "kr_avg": 1.46,
+  "kr_n": 194,
+  "foreign_avg": 1.0,
+  "foreign_n": 109
  },
  {
   "rank": 4,
-  "topic": "테슬라",
+  "topic": "빅테크",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
-  "title_idea": "테슬라, 한 줄 정리",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "짧은 한 줄",
+  "title_idea": "숫자 하나로 보는 빅테크",
+  "format": "단일 이미지",
+  "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.72,
-  "kr_n": 28,
-  "foreign_avg": 2.18,
-  "foreign_n": 20
+  "kr_avg": 1.84,
+  "kr_n": 26,
+  "foreign_avg": 1.6,
+  "foreign_n": 17
  },
  {
   "rank": 5,
@@ -64,24 +64,24 @@
   "format": "릴스",
   "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.97,
-  "kr_n": 22,
-  "foreign_avg": 0.85,
-  "foreign_n": 17
+  "kr_avg": 1.84,
+  "kr_n": 24,
+  "foreign_avg": 0.89,
+  "foreign_n": 18
  },
  {
   "rank": 6,
-  "topic": "빅테크",
+  "topic": "환율·달러",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
-  "title_idea": "숫자 하나로 보는 빅테크",
-  "format": "단일 이미지",
-  "hook": "숫자 강조형",
+  "title_idea": "환율·달러, 한 줄 정리",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "짧은 한 줄",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.85,
-  "kr_n": 25,
-  "foreign_avg": 1.56,
-  "foreign_n": 17
+  "kr_avg": 1.87,
+  "kr_n": 40,
+  "foreign_avg": 1.46,
+  "foreign_n": 9
  },
  {
   "rank": 7,
@@ -92,23 +92,23 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.63,
-  "kr_n": 118,
+  "kr_avg": 1.64,
+  "kr_n": 126,
   "foreign_avg": 0.95,
   "foreign_n": 16
  },
  {
   "rank": 8,
-  "topic": "환율·달러",
+  "topic": "연금·절세",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
-  "title_idea": "환율·달러, 한 줄 정리",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "짧은 한 줄",
+  "title_idea": "숫자 하나로 보는 연금·절세",
+  "format": "단일 이미지",
+  "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.88,
-  "kr_n": 39,
+  "kr_avg": 1.42,
+  "kr_n": 32,
   "foreign_avg": 1.47,
-  "foreign_n": 9
+  "foreign_n": 27
  }
 ]

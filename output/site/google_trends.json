@@ -5,17 +5,35 @@
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "\"4선발 가능\", \"40도루 예상\" 김도영만 보는 게 아니었다…美가 주목한 KBO 스타, 대체 누구길래",
-  "news_link": "https://www.chosun.com/sports/baseball/2026/11/03/GEYWKNRSGA4GKMJQMVRDKMZZHE/"
+  "news_title": "“사자 물리치고 한국시리즈로”…이 시각 광주기아챔피언스필드",
+  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8700161"
  },
  {
   "geo": "KR",
   "term": "디트로이트 대 필라데피아",
-  "traffic": 500,
+  "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Pistons vs 76ers preview: East’s top two teams square off on National TV",
-  "news_link": "https://www.detroitbadboys.com/detroit-pistons-game-day/51431/pistons-vs-76ers-preview-easts-top-two-teams-square-off-on-national-tv"
+  "news_title": "Sixers face Pistons with chance to avenge lone loss of the season",
+  "news_link": "https://www.libertyballers.com/76ers-game-previews/100969/philadelphia-sixers-detroit-pistons-nba-embiid-lebron-duren-reed"
+ },
+ {
+  "geo": "KR",
+  "term": "보디빌더",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "김민준 ‘세계최고 보디빌더’",
+  "news_link": "https://www.donga.com/news/Sports/article/all/20261105/134968751/2"
+ },
+ {
+  "geo": "KR",
+  "term": "lg그룹",
+  "traffic": 500,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "AI로 안전 챙긴다…LG 그룹 안전환경 콘퍼런스",
+  "news_link": "https://www.yna.co.kr/view/AKR20261105028200003"
  },
  {
   "geo": "KR",
@@ -25,33 +43,6 @@
   "econ": true,
   "news_title": "서울 이어 분당 국평도 30억 턱밑…포모 확산 속 청약쏠림 뚜렷",
   "news_link": "https://www.mk.co.kr/news/realestate/12197870"
- },
- {
-  "geo": "KR",
-  "term": "hd현대중공업",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "HD현대중공업, 하청노조와 첫 상견례…노란봉투법 시행 8개월만",
-  "news_link": "https://www.yna.co.kr/view/AKR20261104165700057"
- },
- {
-  "geo": "KR",
-  "term": "lg그룹",
-  "traffic": 200,
-  "topics": "실적발표",
-  "econ": true,
-  "news_title": "LG그룹, 연말 CEO 쇄신 예고…실적·사업 재편·세대교체",
-  "news_link": "https://dealsite.co.kr/articles/171953"
- },
- {
-  "geo": "KR",
-  "term": "이자",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "KB국민은행 대부업체 성실 상환자 이자 지원에 100억원",
-  "news_link": "https://www.yna.co.kr/view/AKR20261104058000002"
  },
  {
   "geo": "KR",
@@ -68,8 +59,8 @@
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "[롤드컵] '캐니언-기인 활약' 젠지, 초반 위기 딛고 라이온 상대로 8강 기선제압",
-  "news_link": "https://www.osen.co.kr/article/G1112904589"
+  "news_title": "LCK 챔피언의 압도적 경기력…젠지, 라이언 꺾고 월즈 4강 진출",
+  "news_link": "https://www.yna.co.kr/view/AKR20261105048100017"
  },
  {
   "geo": "KR",
@@ -79,6 +70,15 @@
   "econ": false,
   "news_title": "엔씨, '길드워' 20년 만의 신규 콘텐츠 '애프터라이프' 내년 1월 출시",
   "news_link": "https://www.businesspost.co.kr/BP?command=article_view&num=451198"
+ },
+ {
+  "geo": "KR",
+  "term": "우주발사체",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "순천에 들어선 우주발사체 사업장",
+  "news_link": "https://www.yna.co.kr/view/PYH20261104154500054"
  },
  {
   "geo": "KR",
@@ -92,7 +92,7 @@
  {
   "geo": "US",
   "term": "timberwolves vs rockets",
-  "traffic": 5000,
+  "traffic": 10000,
   "topics": "",
   "econ": false,
   "news_title": "How to watch Timberwolves vs Rockets: Live stream NBA, TV channel",
@@ -101,7 +101,7 @@
  {
   "geo": "US",
   "term": "ryan seacrest",
-  "traffic": 2000,
+  "traffic": 5000,
   "topics": "",
   "econ": false,
   "news_title": "‘Wheel of Fortune’: Ryan Seacrest Shocked After Contestant Loses Out on $113,000",
@@ -110,7 +110,7 @@
  {
   "geo": "US",
   "term": "tyrese maxey",
-  "traffic": 2000,
+  "traffic": 5000,
   "topics": "",
   "econ": false,
   "news_title": "Now 26 years old, Tyrese Maxey’s career trajectory remains remarkable",
@@ -118,57 +118,48 @@
  },
  {
   "geo": "US",
-  "term": "cade cunningham",
+  "term": "stardew 1.7 update",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Detroit Pistons Star Cade Cunningham Shares Candid Message Before 76ers Game",
-  "news_link": "https://heavy.com/sports/nba/detroit-pistons/cade-cunningham-instagram-message-76ers/"
+  "news_title": "Stardew's 2027 Update Will Be The Game's 'Largest Update Ever'",
+  "news_link": "https://kotaku.com/stardew-valleys-1-7-update-finally-has-a-release-window-and-its-set-to-be-the-games-largest-update-ever-2000753367"
  },
  {
   "geo": "US",
-  "term": "unrivaled basketball",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Unrivaled announces 2027 rosters as Olivia Miles and Sonia Citron team up on Hive BC, while Paige Bueckers lands with Breeze",
-  "news_link": "https://sports.yahoo.com/article/unrivaled-announces-2027-rosters-as-olivia-miles-and-sonia-citron-team-up-on-hive-bc-while-paige-bueckers-lands-with-breeze-001549296.html"
- },
- {
-  "geo": "US",
-  "term": "cj mccollum",
+  "term": "dana white",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Hawks' CJ McCollum: Not starting Wednesday",
-  "news_link": "https://www.cbssports.com/fantasy/basketball/news/hawks-cj-mccollum-not-starting-wednesday/"
+  "news_title": "Dana White on Islam Makhachev: ‘Being the champ, I don’t really expect you to fight 3 times a year, but twice would be nice’",
+  "news_link": "https://www.mmafighting.com/ufc/519467/dana-white-on-islam-makhachev-being-the-champ-i-dont-really-expect-you-to-fight-3-times-a-year-but-twice-would-be-nice"
  },
  {
   "geo": "US",
-  "term": "claudia sheinbaum",
+  "term": "josh hart",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Mensaje del Secretario de Seguridad y Protección Ciudadana, Omar García Harfuch, durante la ceremonia de entrega de Reconocimientos a Agentes de Investigación de la Secretaría de Seguridad y Protección Ciudadana",
-  "news_link": "https://certezadiario.com/mensaje-del-secretario-de-seguridad-y-proteccion-ciudadana-omar-garcia-harfuch-durante-la-ceremonia-de-entrega-de-reconocimientos-a-agentes-de-investigacion-de-la-secretaria-de-seguridad-y-proteccio/"
+  "news_title": "Final Injury Report for Bulls-Knicks: Will Josh Hart, Nic Claxton Play?",
+  "news_link": "https://sports.yahoo.com/articles/final-injury-report-bulls-knicks-203000359.html"
  },
  {
   "geo": "US",
-  "term": "maría alicia delgado",
+  "term": "kingston flemings",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Muere María Alicia Delgado, actriz de ‘Cero En Conducta’ y ‘Monteverde’",
-  "news_link": "https://www.univision.com/famosos/muere-maria-alicia-delgado"
+  "news_title": "NBA suspends Hawks rookie Kingston Flemings for 'intentionally elbowing' Pelicans' Bryce McGowens in the head",
+  "news_link": "https://sports.yahoo.com/nba/breaking-news/article/nba-suspends-hawks-rookie-kingston-flemings-for-intentionally-elbowing-pelicans-bryce-mcgowens-in-the-head-021248121.html"
  },
  {
   "geo": "US",
-  "term": "middletown fisheries violations 8 people",
+  "term": "nxt",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Dozens of illegally caught fish seized in Middletown as 8 people face fisheries violations",
-  "news_link": "https://turnto10.com/news/local/dozens-of-illegally-caught-fish-seized-in-middletown-as-8-people-face-fisheries-violations-undersized-tautog-black-sea-bass-november-4-2026"
+  "news_title": "WWE NXT preview, Nov. 4, 2026: CM Punk challenges Grayson Waller for the NXT Championship",
+  "news_link": "https://www.wwe.com/shows/wwenxt/2026-11-4"
  },
  {
   "geo": "US",
@@ -178,5 +169,14 @@
   "econ": false,
   "news_title": "Rob Lowe reflects on ‘completely bananas’ life in ‘The Outsider’ doc trailer (exclusive)",
   "news_link": "https://ew.com/rob-lowe-the-outsider-documentary-first-look-trailer-exclusive-12208089"
+ },
+ {
+  "geo": "US",
+  "term": "wichita state basketball",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Who will start for Wichita State basketball? Mills weighs his options",
+  "news_link": "https://www.kansas.com/sports/college/wichita-state/article317886928.html"
  }
 ]
