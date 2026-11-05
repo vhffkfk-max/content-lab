@@ -1,24 +1,6 @@
 [
  {
   "geo": "KR",
-  "term": "한국경제",
-  "traffic": 10000,
-  "topics": "정치·관세",
-  "econ": true,
-  "news_title": "‘레임덕 위기 트럼프’ 먼저 때린 2인자 “이란전쟁 시작 말았어야”",
-  "news_link": "https://www.donga.com/news/Inter/article/all/20261106/134975636/2"
- },
- {
-  "geo": "KR",
-  "term": "kia 타이거즈",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "이런 팬들이 있다는 건 축복…KIA 올러, 시즌 끝나자 남긴 말",
-  "news_link": "https://www.ajunews.com/view/20261105164130831"
- },
- {
-  "geo": "KR",
   "term": "김도영",
   "traffic": 2000,
   "topics": "",
@@ -37,12 +19,21 @@
  },
  {
   "geo": "KR",
-  "term": "알테오젠",
+  "term": "lg에너지솔루션",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "특징주, 알테오젠-바이오시밀러 테마 상승세에 7.48% ↑",
-  "news_link": "https://stock.mk.co.kr/news/view/1190290"
+  "news_title": "[단독] LG에너지솔루션, 3차 ESS 중앙계약입찰 불참...‘삼성SDI·SK온’ 2파전 압축",
+  "news_link": "https://www.electimes.com/news/articleView.html?idxno=374420"
+ },
+ {
+  "geo": "KR",
+  "term": "농장",
+  "traffic": 200,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "연천 산란계 농장서 올겨울 첫 고병원성 AI...전국 방역 강화",
+  "news_link": "https://m.science.ytn.co.kr/program/view_today.php?s_mcd=0082&key=202611051103342160"
  },
  {
   "geo": "KR",
@@ -55,44 +46,53 @@
  },
  {
   "geo": "KR",
-  "term": "김지선",
-  "traffic": 100,
+  "term": "현대자동차",
+  "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "김지선 아들 분노 “못 잡아먹어 안달, 적당히 하시라”…무슨 일",
-  "news_link": "https://www.koreadaily.com/article/20261104203602054"
+  "news_title": "[포토] 수소연료전지 기반 개방형 플랫폼",
+  "news_link": "https://www.etnews.com/20261104000396"
  },
  {
   "geo": "KR",
-  "term": "수소",
+  "term": "메가프로젝트",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "한수원, 미·중·일과 머리 맞댔다…청정수소 해법 모색",
-  "news_link": "https://www.electimes.com/news/articleView.html?idxno=374406"
+  "news_title": "최태원 \"美 중간선거 결과에 증시 요동‥롤러코스터 계속될 것\"",
+  "news_link": "https://imnews.imbc.com/news/2026/econo/article/6863531_36932.html"
  },
  {
   "geo": "KR",
-  "term": "신민아",
+  "term": "오타니 쇼헤이",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "신민아, 이혼→재혼→첫사랑도 만난다…\"작품 쉴틈 없네\" - 머니투데이",
-  "news_link": "https://www.mt.co.kr/entertainment/2026/11/05/2026110516123786507"
+  "news_title": "오타니 이대로 끝인가 → \"결코 일어나서는 안 될 일이 일어났다\"",
+  "news_link": "https://www.chosun.com/sports/world-baseball/2026/11/05/MJQWEMZWMQ2WCZJTMY2DSZRVMU/"
  },
  {
   "geo": "KR",
-  "term": "충청투데이",
+  "term": "유로파리그",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "",
-  "news_link": ""
+  "news_title": "유로파 리그 바이어 레버쿠젠 대 마르세유 축구 예측",
+  "news_link": "https://ko.laodong.vn/bong-da-quoc-te/nhan-dinh-bong-da-bayer-leverkusen-vs-marseille-tai-europa-league-1795248.ldo"
+ },
+ {
+  "geo": "KR",
+  "term": "장동현",
+  "traffic": 100,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "SK㈜, SK에코플랜트 완전 자회사화 추진… IPO 접고 반도체·AI 사업 통합 속도",
+  "news_link": "https://www.jemin.com/news/articleView.html?idxno=846213"
  },
  {
   "geo": "US",
   "term": "2027 tax brackets",
-  "traffic": 2000,
+  "traffic": 10000,
   "topics": "연금·절세",
   "econ": true,
   "news_title": "IRS announces new federal income tax brackets for 2027",
@@ -104,53 +104,62 @@
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "November 6, 2026: Bhamidipaty S / Rajeshwaran Revathi vs Haverlag / Udvardy Tennis Prediction Market",
-  "news_link": "https://robinhood.com/us/en/prediction-markets/tennis/events/bhamidipaty-s-rajeshwaran-revathi-vs-haverlag-udvardy-nov-06-2026/"
- },
- {
-  "geo": "US",
-  "term": "celtic vs beşiktaş",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Celtic vs Besiktas: Martin O'Neill insists Scottish champions still qualify",
-  "news_link": "https://www.bbc.com/sport/football/live/c6vg7dn53gdvt"
- },
- {
-  "geo": "US",
-  "term": "leverkusen vs marseille",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Bayer 04 Leverkusen vs Marseille: UEFA Europa League stats & head-to-head",
-  "news_link": "https://www.bbc.com/sport/football/live/c6n49rwwgp24t"
- },
- {
-  "geo": "US",
-  "term": "newsom",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Newsom commutes sentences of all California death row prisoners",
-  "news_link": "https://www.cnn.com/2026/11/05/us/california-death-row-commutation"
+  "news_title": "Shelton vs. Rinderknech Prediction at the Rolex Paris Masters – Thursday, November 5",
+  "news_link": "https://www.bleachernation.com/picks/2026/11/04/shelton-vs-rinderknech-prediction-at-the-rolex-paris-masters-thursday-november-5/"
  },
  {
   "geo": "US",
   "term": "celta vs union",
-  "traffic": 500,
+  "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Celta de Vigo - Union Saint-Gilloise: horario y dónde ver el partido de la Europa League",
-  "news_link": "https://elpais.com/deportes/futbol/2026-11-05/celta-de-vigo-union-saint-gilloise-horario-y-donde-ver-el-partido-de-la-europa-league.html"
+  "news_title": "Celta - Union Saint-Gilloise en directo | Última hora de Europa League en vivo hoy",
+  "news_link": "https://www.marca.com/futbol/europa-league/celta-union-sg/2026/11/05/01_0104_20261105_176_3235-directo.html"
  },
  {
   "geo": "US",
   "term": "katseye chicago",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Tonight’s sold-out Katseye show at United Center postponed",
+  "news_link": "https://wgntv.com/news/the-weekender/tonights-sold-out-katseye-show-at-united-center-postponed/"
+ },
+ {
+  "geo": "US",
+  "term": "49ers news",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "K-pop band cancels sold out Detroit show, leaving angry parents to take to social media",
-  "news_link": "https://www.fox2detroit.com/news/k-pop-band-cancels-sold-out-detroit-show-leaving-angry-parents-take-social-media"
+  "news_title": "John Lynch details why Mike Evans likely will miss 49ers' Week 9 game vs Raiders",
+  "news_link": "https://www.nbcsportsbayarea.com/nfl/san-francisco-49ers/mike-evans-likely-miss-week-9/1977142/"
+ },
+ {
+  "geo": "US",
+  "term": "93.9 lite fm",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Christmas comes early to Cache Valley as Lite FM flips to all-holiday music",
+  "news_link": "https://www.cachevalleydaily.com/news/christmas-comes-early-to-cache-valley-as-lite-fm-flips-to-all-holiday-music/article_fa622bc6-3f2d-41a6-ae98-c8b4b90fb70f.html"
+ },
+ {
+  "geo": "US",
+  "term": "hershey grinch max cindy lou kisses",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Hershey announces new candy and salty snacks for 2026 holiday season",
+  "news_link": "https://www.abc27.com/local-news/hershey-announces-new-candy-and-salty-snacks-for-2026-holiday-season/"
+ },
+ {
+  "geo": "US",
+  "term": "jay silveria",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Sources: Purdue expected to announce new president Thursday",
+  "news_link": "https://www.purdueexponent.org/campus/general_news/purdue-expected-to-announce-new-president-thursday/article_b421d93a-2212-44c4-96e4-69995e124438.html"
  },
  {
   "geo": "US",
@@ -158,25 +167,16 @@
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Ab 20.15 Uhr - RTL zeigt Europa-League-Partie Leverkusen gegen Marseille",
-  "news_link": "https://de.nachrichten.yahoo.com/ab-20-15-uhr-rtl-144311265.html"
+  "news_title": "Liveticker | Bayer 04 Leverkusen - Olympique Marseille : | 4. Spieltag | Europa League 2026/27",
+  "news_link": "https://www.kicker.de/leverkusen-gegen-marseille-2026-europa-league-5264542/ticker"
  },
  {
   "geo": "US",
-  "term": "monaco vs nordsjælland",
-  "traffic": 500,
+  "term": "smuggling",
+  "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Monaco vs Nordsjælland: UEFA Conference League stats & head-to-head",
-  "news_link": "https://www.bbc.com/sport/football/live/c679py38w41yt"
- },
- {
-  "geo": "US",
-  "term": "tilman fertitta",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "How WNBA Owners Spent in 2026 Midterm Elections",
-  "news_link": "https://frontofficesports.com/article/wnba-biggest-political-donations-2026-midterms/"
+  "news_title": "Frog embryo case: Feds drop smuggling charges against Russian scientist at Harvard Medical School",
+  "news_link": "https://www.bostonglobe.com/2026/11/04/metro/frog-embryo-smuggling-russian-scientist-harvard/"
  }
 ]
