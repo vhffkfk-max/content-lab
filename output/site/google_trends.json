@@ -1,8 +1,17 @@
 [
  {
   "geo": "KR",
-  "term": "나스닥",
-  "traffic": 2000,
+  "term": "미국",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "청와대, 미 중간선거 결과에 \"한미동맹, 초당적 지지로 굳건한 관계\"",
+  "news_link": "https://news.jtbc.co.kr/article/NB12326658"
+ },
+ {
+  "geo": "KR",
+  "term": "아이렌",
+  "traffic": 1000,
   "topics": "AI·반도체",
   "econ": true,
   "news_title": "30조 발전소·36조 수주잔고…대미 AI 인프라, 美 의회 변수 노출",
@@ -10,39 +19,12 @@
  },
  {
   "geo": "KR",
-  "term": "상장지수펀드",
-  "traffic": 2000,
-  "topics": "ETF·지수투자",
-  "econ": true,
-  "news_title": "ETF 왕좌 지킨 KODEX200…개미는 TIGER 미국S&P500에 ‘우르르’",
-  "news_link": "https://www.kukinews.com/article/view/kuk202611030175"
- },
- {
-  "geo": "KR",
-  "term": "fear and greed",
-  "traffic": 1000,
+  "term": "nasdaq",
+  "traffic": 200,
   "topics": "급락·변동성",
   "econ": true,
-  "news_title": "Nasdaq plummets into correction territory, Dow drops more than 1,000 points as traders dump tech stocks: Live updates",
+  "news_title": "Nasdaq plummets 4% into correction territory, Dow drops more than 1,000 points as traders dump tech stocks: Live updates",
   "news_link": "https://www.cnbc.com/2026/11/04/stock-market-today-live-updates.html"
- },
- {
-  "geo": "KR",
-  "term": "토스증권",
-  "traffic": 1000,
-  "topics": "국내 대형주",
-  "econ": true,
-  "news_title": "[카카오페이] 카카오페이, 영업이익 105% 급증…스테이블코인이 다음 성장동력 될까?(2026년_3Q)",
-  "news_link": "https://contents.premium.naver.com/bilanxlyc/curiousir/contents/261105162046929ye"
- },
- {
-  "geo": "KR",
-  "term": "qqq",
-  "traffic": 200,
-  "topics": "ETF·지수투자",
-  "econ": true,
-  "news_title": "Why is Invesco QQQ Trust ETF sliding today?",
-  "news_link": "https://www.investing.com/news/stock-market-news/why-is-invesco-qqq-trust-etf-sliding-today-93CH-5005013"
  },
  {
   "geo": "KR",
@@ -55,30 +37,48 @@
  },
  {
   "geo": "KR",
-  "term": "엔비디아 주가",
+  "term": "마이크론 주가",
   "traffic": 200,
-  "topics": "AI·반도체",
+  "topics": "AI·반도체, 급락·변동성",
   "econ": true,
-  "news_title": "엔비디아, 나흘 연속 하락 딛고 반등…AI 반도체 투자심리 다시 살아나나",
-  "news_link": "https://www.jemin.com/news/articleView.html?idxno=846079"
+  "news_title": "마이크론, 메모리 가격 급등에도 주가 급락…AI 호황 속 커지는 반도체 시장의 역설",
+  "news_link": "https://www.jemin.com/news/articleView.html?idxno=846205"
  },
  {
   "geo": "KR",
-  "term": "voo",
-  "traffic": 100,
-  "topics": "ETF·지수투자",
+  "term": "비트코인",
+  "traffic": 200,
+  "topics": "환율·달러, 비트코인, 급락·변동성",
   "econ": true,
-  "news_title": "União Europeia em alerta devido a ameaças de bombardeio a vários voos.",
-  "news_link": "https://www.vietnam.vn/pt/eu-canh-giac-truoc-cac-loi-de-doa-danh-bom-hang-loat-chuyen-bay"
+  "news_title": "기요사키, 비트코인(BTC) 7만 5,000달러 부근 폭락에 추가 매수",
+  "news_link": "https://www.coinreaders.com/267834"
  },
  {
   "geo": "KR",
   "term": "어선",
-  "traffic": 100,
+  "traffic": 200,
   "topics": "",
   "econ": false,
   "news_title": "울릉도 공해상 표류 북한 어선 발견…당국 조사中",
   "news_link": "https://www.yna.co.kr/view/AKR20261105174600504"
+ },
+ {
+  "geo": "KR",
+  "term": "qld",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "Education ministers agree to biggest school system shake-up in years",
+  "news_link": "https://www.abc.net.au/news/2026-11-05/education-ministers-agree-to-biggest-shake-up-in-years-of-school/107348312"
+ },
+ {
+  "geo": "KR",
+  "term": "샌디스크 주가",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "",
+  "news_link": ""
  },
  {
   "geo": "KR",
@@ -91,24 +91,6 @@
  },
  {
   "geo": "US",
-  "term": "des moines post office",
-  "traffic": 5000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Multiple people injured in shooting at Iowa post office, suspect detained",
-  "news_link": "https://www.kcrg.com/2026/11/05/multiple-people-injured-shooting-iowa-post-office/"
- },
- {
-  "geo": "US",
-  "term": "tesla stock",
-  "traffic": 5000,
-  "topics": "테슬라",
-  "econ": true,
-  "news_title": "Opinion | Elon Musk’s Very Bad Night",
-  "news_link": "https://www.nytimes.com/2026/11/05/opinion/elon-musk-midterms-trump-results.html"
- },
- {
-  "geo": "US",
   "term": "melania trump",
   "traffic": 2000,
   "topics": "정치·관세",
@@ -118,65 +100,83 @@
  },
  {
   "geo": "US",
-  "term": "spcx",
-  "traffic": 2000,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "SpaceX (SPCX) Stock May Trade Below Fair Value On Fresh AI Compute News",
-  "news_link": "https://finance.yahoo.com/markets/stocks/articles/spacex-spcx-stock-may-trade-121235029.html"
- },
- {
-  "geo": "US",
-  "term": "stock market crash",
-  "traffic": 2000,
-  "topics": "급락·변동성",
-  "econ": true,
-  "news_title": "Prediction: A Stock Market Crash Is Coming. Here's What Investors Should Do Based on Nearly 70 Years' Worth of History.",
-  "news_link": "https://www.fool.com/investing/2026/11/05/prediction-stock-market-crash-investors-70-years/"
- },
- {
-  "geo": "US",
-  "term": "vix",
-  "traffic": 2000,
-  "topics": "급락·변동성",
-  "econ": true,
-  "news_title": "Wall Street's Fear Index is doing something strange. Here's what it means for stocks",
-  "news_link": "https://www.cnbc.com/2026/11/02/wall-streets-fear-index-is-doing-something-strange-heres-what-it-means-for-stocks.html"
- },
- {
-  "geo": "US",
-  "term": "coreweave stock",
+  "term": "naomi watts",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Data centers were on the ballot, and voters sent unmistakable message",
-  "news_link": "https://www.foxbusiness.com/politics/data-centers-ballot-voters-sent-unmistakable-message"
+  "news_title": "Naomi Watts Pairs Balmain with DeMellier",
+  "news_link": "https://wwd.com/pop-culture/celebrity-news/naomi-watts-demellier-bag-balmain-dress-new-york-city-1239400059/"
  },
  {
   "geo": "US",
-  "term": "be stock",
+  "term": "bill skarsgård",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Bloom Energy Stock In Focus After California Power Deal",
-  "news_link": "https://finance.yahoo.com/markets/stocks/articles/bloom-energy-stock-focus-california-201642782.html"
+  "news_title": "Nicolas Cage returns as arms dealer Yuri Orlov in 'Lords of War' sequel arriving in 2027",
+  "news_link": "https://www.foxnews.com/outkick-culture/nicolas-cage-returns-arms-dealer-yuri-orlov-lords-war-sequel-2027"
  },
  {
   "geo": "US",
-  "term": "dallas jenkins",
+  "term": "harmeet dhillon",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "‘The Chosen’ Season 6 Upsets Fans With Native American And African Angels",
-  "news_link": "https://www.forbes.com/sites/paultassi/2026/11/03/the-chosen-season-6-upsets-fans-with-native-american-african-angels/"
+  "news_title": "Justice Department Civil Rights Head Dhillon Plans to Resign",
+  "news_link": "https://news.bloomberglaw.com/us-law-week/justice-department-civil-rights-head-dhillon-plans-to-resign"
  },
  {
   "geo": "US",
-  "term": "nuno borges",
+  "term": "ignacio buse",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Nuno Borges supera promessa francesa no Masters 1000 de Paris",
-  "news_link": "https://www.rfi.fr/pt/fran%C3%A7a/20261103-nuno-borges-supera-promessa-francesa-no-masters-1000-de-paris"
+  "news_title": "Borges vs. Buse Prediction at the Rolex Paris Masters – Thursday, November 5",
+  "news_link": "https://www.bleachernation.com/picks/2026/11/04/borges-vs-buse-prediction-at-the-rolex-paris-masters-thursday-november-5/"
+ },
+ {
+  "geo": "US",
+  "term": "milan vs ferencváros",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Ruben Amorim not satisfied with Milan's start: 'We can do better'",
+  "news_link": "https://www.espn.com/soccer/story/_/id/50380347/ruben-amorim-ac-milan-season-start-europa-league-ferencvaros"
+ },
+ {
+  "geo": "US",
+  "term": "niecy nash",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Niecy Nash-Betts Blends Polka Dot Trend With Dalmatian Print Pumps on ‘Good Morning America’",
+  "news_link": "https://wwd.com/footwear-news/shoe-trends/niecy-nash-dalmatian-print-pumps-good-morning-america-1239400157/"
+ },
+ {
+  "geo": "US",
+  "term": "real sociedad vs ol",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Real Sociedad vs Olympique Lyonnais: UEFA Europa League stats & head-to-head",
+  "news_link": "https://www.bbc.com/sport/football/live/cm2keyvgjwqnt"
+ },
+ {
+  "geo": "US",
+  "term": "rubio",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "House conservative emerges with 2028 presidential pick after GOP's midterm massacre: 'I am all in'",
+  "news_link": "https://www.foxnews.com/politics/house-conservative-emerges-2028-presidential-pick-after-gops-midterm-massacre-i-am-all-in"
+ },
+ {
+  "geo": "US",
+  "term": "tuten",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Wednesday Quick Hits: Tuten a \"Game-Time Decision\" Ahead of Week 9 vs. Ravens",
+  "news_link": "https://www.jaguars.com/news/wednesday-quick-hits-tuten-a-game-time-decision-ahead-of-week-9-vs-ravens"
  }
 ]
