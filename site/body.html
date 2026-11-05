@@ -2017,6 +2017,30 @@ a.row:hover .row-main{text-decoration:underline}
     if (btn) btn.disabled = !!q.busy;
     if (st) { st.className = q.err ? 'warn' : 'note'; st.textContent = q.msg || ''; }
   }
+  // 요청 시각을 저장해 두어, 새로고침해도 진행 상태를 보여 주고 새 글을 계속 찾는다
+  function trdWatch(key, f, since) {
+    const set = (msg, busy, err) => { trdReq[key] = { msg, busy, err }; trdPaint(key); };
+    const started = new Date(since).getTime(), at = new Date(since).toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit', hour12: false });
+    const stop = () => { clearInterval(timer); store.set(`trdReq:${key}`, ''); };
+    const check = async () => {
+      if (Date.now() - started > 25 * 60e3) { stop(); return set('25분이 지나도 새 글이 안 보여요. PC가 꺼졌거나 Claude 사용량이 찼을 수 있어요. 잠시 뒤 다시 눌러 주세요.', false, true); }
+      try {
+        const live = await (await fetch(`${TRD_RAW}?t=${Date.now()}`, { cache: 'no-store' })).json();
+        if (!(live.posts || []).some(p => p.made_at && new Date(p.made_at) >= new Date(since) && (!f || p.room === f.room))) return;
+        stop();
+        trdLive = live;
+        trdReq[key] = { msg: '새 글이 나왔어요. 올리기 전 확인 칸을 봐 주세요.' };
+        drawTraderPosts();
+      } catch (e) { /* 다음 차례에 다시 확인 */ }
+    };
+    set(`${at}에 요청했어요. 지금 쓰는 중이고 보통 5~15분 걸려요. 나오면 이 화면에 바로 떠요.`, true);
+    const timer = setInterval(check, 30e3);
+    check();
+  }
+  function trdResume(key, f) {
+    const since = store.get(`trdReq:${key}`);
+    if (since && !trdReq[key]) trdWatch(key, f, since);
+  }
   async function requestTrdPosts(f) {
     const key = f ? f.id : 'all', set = (msg, busy, err) => { trdReq[key] = { msg, busy, err }; trdPaint(key); };
     if (trdReq[key] && trdReq[key].busy) return;
@@ -2030,18 +2054,8 @@ a.row:hover .row-main{text-decoration:underline}
       const since = new Date().toISOString();
       const r = await ghApi('actions/workflows/telegram.yml/dispatches', { method: 'POST', body: JSON.stringify({ ref: 'main', inputs: f ? { trd_room: f.id } : { traders: 'true' } }) });
       if (r.status !== 204) return set(ghFail(r.status), false, true);
-      set('요청했어요. PC가 켜져 있으면 보통 5~15분 안에 글이 나와요. 이 화면을 닫아도 작성은 계속돼요.', true);
-      const started = Date.now(), timer = setInterval(async () => {
-        if (Date.now() - started > 25 * 60e3) { clearInterval(timer); return set('25분이 지나도 새 글이 안 보여요. PC가 꺼졌거나 Claude 사용량이 찼을 수 있어요. 잠시 뒤 다시 눌러 주세요.', false, true); }
-        try {
-          const live = await (await fetch(`${TRD_RAW}?t=${Date.now()}`, { cache: 'no-store' })).json();
-          if (!(live.posts || []).some(p => p.made_at && new Date(p.made_at) >= new Date(since) && (!f || p.room === f.room))) return;
-          clearInterval(timer);
-          trdLive = live;
-          trdReq[key] = { msg: '새 글이 나왔어요. 올리기 전 확인 칸을 봐 주세요.' };
-          drawTraderPosts();
-        } catch (e) { /* 다음 차례에 다시 확인 */ }
-      }, 30e3);
+      store.set(`trdReq:${key}`, since);
+      trdWatch(key, f, since);
     } catch (e) { set('요청 실패 — 인터넷 연결을 확인해 주세요', false, true); }
   }
   // 텔레그램에서 보이는 폭으로 미리 보기
@@ -2062,6 +2076,7 @@ a.row:hover .row-main{text-decoration:underline}
     allBtn.dataset.trdBtn = 'all'; allSt.dataset.trdSt = 'all';
     allBtn.onclick = () => requestTrdPosts(null);
     trdPaint('all');
+    trdResume('all', null);
     (F ? F.folders : []).forEach(f => {
       const box = document.querySelector(`[data-trdf="${f.id}"]`);
       if (!box) return;
@@ -2105,6 +2120,7 @@ a.row:hover .row-main{text-decoration:underline}
       }
       box.replaceChildren(...parts);
       trdPaint(f.id);
+      trdResume(f.id, f);
     });
   }
 

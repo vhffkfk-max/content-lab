@@ -27,6 +27,8 @@ MODEL = "claude-opus-5-5"   # 텔레그램 문구 = Opus (2026-10-26 대표 결�
 SITE = OUTPUT_DIR / "site"
 OUT = SITE / "trd_posts.json"
 MAX_LINE = 34   # 이보다 긴 줄은 폰에서 접혀 보여서 문장마다 나눈다
+STUDY_ROOM = "기초가이드 & 공부방"
+STUDY_KEEP = 60   # 공부 주제가 겹치지 않게 최근 며칠치를 기억한다
 REFRESH_HOURS = (7, 18)   # 07시: 하루 글 전부 · 18시: 저녁 글만 최신 뉴스로 (tg_analyze 뉴스 갱신 시각과 맞춤)
 
 # 방별로 올릴 글 — (방 이름, 시각, 종류, 쓰는 법)
@@ -41,7 +43,7 @@ SLOTS = [
     ("수익 인증방", "16:00", "수익 인증 미션", "수익왕 연결: 수익왕은 한 달 동안 꾸준히 인증한 분을 뽑는다는 한 줄 + 오늘 인증 양식(사진과 함께 티커/포지션, 진입 근거, 결과와 복기 한 줄). 지어낸 수익·회원 사례·수익 보장 표현 금지"),
     ("중요 뉴스 및 중요 한마디", "18:00", "저녁 관전 포인트", "오늘 밤 미장·코인에서 볼 일정·뉴스 3개 + 한마디"),
     ("소통방", "20:00", "저녁 토론거리", "소통방 소재 중 오늘 가장 큰 화제 하나를 쉽게 풀고 '어떻게 보시나요'로 끝내기 + 좋은 정보는 퍼온 것도 정보왕에 인정된다는 한 줄. 3~5줄"),
-    ("기초가이드 & 공부방", "21:00", "오늘의 개념", "회원이 자주 묻는 비중·평단·추매·손절 또는 오늘 뉴스 용어 중 하나를 초보도 알게 쉽게, 오늘 시세를 예시로 + '궁금한 점은 답장으로'"),
+    ("기초가이드 & 공부방", "21:00", "오늘 꼭 공부할 것", "회원이 매일 하나씩 공부하는 글. 첫 줄은 '📚 오늘 꼭 공부해볼 것: 개념 이름'. 개념은 딱 하나(비중·평단·추매·손절·차트·수급 또는 오늘 뉴스 용어). 순서: 👉 한 줄 뜻 / ✏️ 초보도 알게 쉽게 2~3줄 / 📊 오늘 시세로 든 예시 / ✅ 오늘 직접 해볼 것 1~2개(차트·뉴스에서 찾아보기, 매수·매도 권유 금지) / 💬 궁금한 점은 답장으로. '최근 공부 주제'에 있는 개념은 다시 쓰지 말 것. title 은 개념 이름만"),
     ("코인 관점 공유방", "22:00", "밤 코인", "미장 개장 뒤 코인 흐름, 밤사이 볼 가격대·일정 + 질문 1개"),
 ]
 
@@ -185,6 +187,8 @@ def main():
     ctx = {"now": now.strftime("%Y-%m-%d (%a) %H:%M KST"), "시세": quotes, "오늘 뉴스": news, "폴더 자료": folders,
            "방 통계": {k: v for k, v in rooms_context().items() if not rooms or k in rooms},
            "써야 할 글": [{"no": i, "room": r, "time": t, "kind": k, "how": how} for i, (r, t, k, how) in enumerate(todo, 1)]}
+    if any(x[0] == STUDY_ROOM for x in todo):
+        ctx["최근 공부 주제"] = [x["title"] for x in old.get("study_log", []) if x["date"] != today][-STUDY_KEEP:]
     prompt = "자료:\n" + json.dumps(ctx, ensure_ascii=False, indent=1) + "\n\n'써야 할 글'의 no 마다 하나씩, 빠짐없이 쓰세요."
     if manual:
         prompt += "\n운영자가 버튼을 눌러 지금 바로 쓰는 글이에요. time 이 now 보다 지난 글은 지금 올려도 맞도록 지금 시점 기준으로 쓰세요."
@@ -225,9 +229,13 @@ def main():
     else:
         keep = [p for p in old.get("posts", []) if written_today and not args.force and p["time"] <= hm and hm >= "07:00"]
     posts = sorted(keep + new, key=lambda p: p["time"])
+    study_log = old.get("study_log", [])
+    for p in new:
+        if p["room"] == STUDY_ROOM:
+            study_log = [x for x in study_log if x["date"] != today] + [{"date": today, "title": p["title"]}]
     OUT.write_text(json.dumps({"date": today, "generated_at": old.get("generated_at", "") if rooms else now.isoformat(timespec="seconds"),
                                "theme": old.get("theme", a.theme) if rooms and same_day else a.theme,
-                               "market": {k: v for k, v in quotes.items()}, "posts": posts, "news_key": old.get("news_key", "") if rooms else news_key},
+                               "market": {k: v for k, v in quotes.items()}, "posts": posts, "study_log": study_log[-STUDY_KEEP:], "news_key": old.get("news_key", "") if rooms else news_key},
                               ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"✅ 트레이더스 올릴 글 {len(new)}개 새로 (유지 {len(keep)}개) · 입력 {r.usage.input_tokens:,} / 출력 {r.usage.output_tokens:,} 토큰")
 
