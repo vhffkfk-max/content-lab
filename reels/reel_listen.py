@@ -202,6 +202,8 @@ def poll(jobs, seen, etag):
 
 
 def main():
+    if ROOT.name != "content-lab-reel":   # 일감마다 reset --hard 를 하므로 개발 폴더에서 돌면 작업 중인 코드가 사라진다
+        sys.exit("전용 폴더(content-lab-reel)에서만 실행해요: reels/reel_listen_install.ps1")
     from common import load_env
     LOG.parent.mkdir(parents=True, exist_ok=True)
     load_env()
