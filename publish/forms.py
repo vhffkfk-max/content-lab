@@ -183,7 +183,7 @@ CSS = """
 def foot(n, total, theme_logo=True, page_no=True):
     logo = f'<img src="{LOGO}">' if LOGO and theme_logo else ""
     pn = f'<div class="pn">{n}</div>' if page_no else ""
-    return f'<div class="foot">{logo}핫코노미</div>{pn}'
+    return f'<div class="foot">{logo}핫코노미<span style="font-weight:500;opacity:.75">@hotconomy</span></div>{pn}'
 
 
 # ── 차트 (SVG) ──
@@ -214,14 +214,14 @@ def line_svg(values, w=1080, h=300, color="#ff4d2e", fill=True):
 
 def bars_html(items, maxw=430, unit=""):
     """items: [{"label","value","text"(표시값),"hi":bool}]"""
-    top = max(i["value"] for i in items) or 1
+    top = max(abs(i["value"]) for i in items) or 1   # 등락률은 음수도 많다. 길이는 크기로
     rows = []
     for it in items:
-        bw = max(8, it["value"] / top * maxw)
+        bw = max(8, abs(it["value"]) / top * maxw)
         col = "#ff4d4f" if it.get("hi") else "#5ec4b6"
         rows.append(f'<div style="display:flex;align-items:center;margin-bottom:44px"><div style="width:230px;font-size:42px;'
                     f'font-weight:{800 if it.get("hi") else 500};text-align:right;padding-right:22px">{html.escape(it["label"])}</div>'
-                    f'<div style="height:92px;width:{bw:.0f}px;background:{col};border-radius:0 8px 8px 0"></div>'
+                    f'<div style="flex:none;height:92px;width:{bw:.0f}px;background:{col};border-radius:0 8px 8px 0"></div>'
                     f'<div style="font-size:46px;font-weight:900;padding-left:20px;white-space:nowrap;color:{col}">{html.escape(it.get("text", str(it["value"]) + unit))}</div></div>')
     return "".join(rows)
 
@@ -447,7 +447,7 @@ def end_slide(e, n, theme):
     return (f'<div class="endbox">{logo}<div class="center t-l" style="font-size:{fit(e.get("title", ""), top=80, low=58)}px">{md(e.get("title", "정리하면"))}</div>'
             f'<div class="endchecks">{checks}</div>{kw}'
             f'<div class="btns"><div class="btn o">🔖 저장해두기</div><div class="btn f">팔로우 하기</div></div></div>'
-            f'<div class="disc">{DISCLAIMER}</div>')
+            f'<div class="disc">@hotconomy | {DISCLAIMER}</div>')
 
 
 def make(post, out_dir, name, demo=False):

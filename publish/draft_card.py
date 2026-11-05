@@ -23,7 +23,7 @@ from datetime import datetime, timedelta, timezone
 
 from common import OUTPUT_DIR, ROOT, load_env
 from generate_drafts import NOT_MINE, risky_phrases
-from publish import card_learn, forms, notify
+from publish import caption_check, card_learn, forms, notify
 
 MODEL = "claude-opus-5-5"
 KST = timezone(timedelta(hours=9))
@@ -135,7 +135,8 @@ SYSTEM = """당신은 한국 경제 인스타그램 @hotconomy(핫코노미)의 
 - 가운뎃점(·) 대신 쉼표를 씁니다. 과한 이모지, '~해보세요!' 남발, 뻔한 마무리 같은 AI 티 나는 표현을 쓰지 않습니다.
 - 한 장에 메시지 하나. 제목은 2줄 안쪽, 줄당 10~16자. 줄바꿈은 \\n, 강조할 핵심 단어(숫자, %)만 **이렇게** 감쌉니다(장마다 1곳).
 - 1장(표지)은 스크롤을 멈추게 하는 훅, 가운데 장은 핵심 하나씩, 마지막 장(end)은 한 줄 요약 체크 3개와 질문형 제목.
-- 표지 + 본문 + 마지막 장을 합쳐 5~7장(최대 10장). slides 는 본문 장만 넣습니다(표지·마지막 장 제외, 3~5개).
+- 표지 + 본문 + 마지막 장을 합쳐 6~8장(최대 10장). slides 는 본문 장만 넣습니다(표지·마지막 장 제외, 4~6개). 폼 설명에 장수가 따로 있으면 그걸 따릅니다.
+- 재료가 모자라면 장을 채우려고 지어내거나 같은 말을 반복하지 말고 5장까지 줄입니다.
 
 디자인 규칙 (같은 계정의 잘 된 글과 안 된 글을 비교한 결과):
 - 표지 제목은 주제 요약이 아니라 사건입니다. 누가, 얼마나, 무슨 반전인지 구체적으로 씁니다. '수출 전망 정리' (X) → '수출 1조 달러, 세계 4번째 눈앞' (O)
@@ -155,6 +156,7 @@ SYSTEM = """당신은 한국 경제 인스타그램 @hotconomy(핫코노미)의 
 
 캡션 규칙:
 - 첫 줄 훅(40자 이내) → 핵심 3줄 → 행동 유도 하나(댓글 키워드) → 빈 줄 → '(정보 제공용이며 투자 권유가 아닙니다)'.
+- '~요'체로 통일하고 문장 길이를 섞습니다. 사람들이 검색할 말(종목, 주제어)을 문장 안에 자연스럽게 넣습니다. 본문에 주소를 넣지 않습니다. 행동 유도는 end.keyword 를 쓴 것 하나만 둡니다.
 - 해시태그 3~5개(인스타 공식 상한 5개): #핫코노미 1개 + 주제 태그 + 대형 태그 1개. 다른 계정, 매체, 회사 이름 태그 금지.
 - youtube: 쇼츠용 제목(40자 이내)과 설명(2~3줄 + 면책 문구).
 
@@ -354,6 +356,7 @@ def main():
         warns += [f"발언이 재료에서 그대로 안 나와요: {q}" for q in (d.get("quote", "") for d in [post["cover"], *post.get("slides", [])])
                   if q and re.sub(r"\s|\*\*", "", q) not in src]
     post["hashtags"] = hashtags(post.get("hashtags", []))
+    post["caption"] = caption_check.clean(post["caption"])
     did = f"{now:%Y%m%d-%H%M}-{post['form']}"
     files = forms.make(post, OUT / did, did)
     from publish.layout_check import check as layout_check
@@ -369,11 +372,13 @@ def main():
         except Exception as e:
             print("⚠️ 캔바 사본 실패 (초안은 그대로):", e)
     credits = photo_credit_lines(post)
+    bad, notes = caption_check.check(post["caption"], post.get("end", {}).get("keyword", ""))
+    warns += bad
     caption = post["caption"].rstrip() + (f"\n\n{credits}" if credits else "") + "\n\n" + " ".join(post["hashtags"])
     queue["items"].append({"id": did, "account": "hotconomy", "type": "carousel", "topic": topic, "form": post["form"],
                            "title": post.get("title", topic), "caption": caption, "youtube": post.get("youtube", {}),
                            "files": [str(f.relative_to(ROOT)).replace("\\", "/") for f in files], "tickers": tickers,
-                           "sources": post.get("sources", []), "photo_credits": post.get("photo_credits", []), "warnings": warns, "status": "drafted", "risk": None,
+                           "sources": post.get("sources", []), "photo_credits": post.get("photo_credits", []), "warnings": warns, "caption_notes": notes, "status": "drafted", "risk": None,
                            "published": {}, "canva": canva, "created_at": now.isoformat(timespec="seconds"),
                            "design_why": {"form": forms.FORM_NAMES[post["form"]], "note": post.get("design_note", ""), "evidence": forms.FORM_WHY.get(post["form"], "")},
                            "series": "short" if a.short else "deep", "auto": a.auto, "hot_title": hot["title"] if hot else None})
@@ -388,6 +393,8 @@ def main():
             head += f"\n왜 이렇게: {post['design_note']}"
         if warns:
             head += "\n⚠️ " + "\n⚠️ ".join(warns)
+        if notes:
+            head += "\n✏️ 캡션 참고: " + " / ".join(notes)
         notify.send_photos(files, head)
         if canva:   # 주소가 길어서 사진 설명(1024자 제한) 대신 따로 보냄
             notify.send("🎨 캔바에서 고치기 ('핫코노미 · 발행 대기' 폴더)\n" + canva["edit_url"])
