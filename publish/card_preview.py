@@ -3,12 +3,13 @@
     push("20261105-1101-news", files)     # 초안 1개 (draft_card 가 부름)
     python -m publish.card_preview        # 최근 7일 초안을 한 번에 채움
 
-- 폭 540px 저화질만 올린다. 원본은 지금처럼 텔레그램·PC에 있다.
+- 폭 540px 저화질은 화면용(<id>/<n>.jpg, 7일), 원본은 사이트 '이미지 저장'용(<id>/full/<n>.jpg, 3일).
 - 가지에는 커밋을 하나만 둔다(부모 없는 커밋을 덮어씀). 지난 그림이 기록에 쌓이지 않아 저장소가 안 커지고, main 과 작업 폴더는 건드리지 않는다.
 - 공개 저장소라 주소를 알면 볼 수 있다. 사이트 목록은 암호 뒤에 있지만 그림 자체는 비공개가 아니다.
 """
 import io
 import os
+import pathlib
 import re
 import subprocess
 import sys
@@ -22,6 +23,7 @@ from common import ROOT
 BRANCH = "card-previews"
 WIDTH, QUALITY = 540, 72
 KEEP_DAYS = 7
+KEEP_FULL_DAYS = 3   # 원본은 무거워서 짧게
 IDENT = ["-c", "user.name=content-lab-bot", "-c", "user.email=content-lab-bot@users.noreply.github.com"]
 
 
@@ -44,10 +46,20 @@ def _expired(path, cutoff):
     return bool(m) and m[1] < cutoff
 
 
+def _gone(name, cutoff, full_cutoff):
+    return _expired(name, full_cutoff if "/full/" in name else cutoff)
+
+
 def push(drafts):
     """drafts: {초안 id: [그림 경로...]} → '완료' / '실패: ...'. 다른 PC 폴더가 올린 것도 지우지 않게 가지의 현재 내용 위에 얹는다."""
-    blobs = {f"{did}/{i}.jpg": small(f) for did, files in drafts.items() for i, f in enumerate(files, 1)}
     cutoff = f"{datetime.now() - timedelta(days=KEEP_DAYS):%Y%m%d}"
+    full_cutoff = f"{datetime.now() - timedelta(days=KEEP_FULL_DAYS):%Y%m%d}"
+    blobs = {}
+    for did, files in drafts.items():
+        for i, f in enumerate(files, 1):
+            blobs[f"{did}/{i}.jpg"] = small(f)
+            if not _expired(did, full_cutoff):
+                blobs[f"{did}/full/{i}.jpg"] = pathlib.Path(f).read_bytes()
     out = "올릴 것 없음"
     for _ in range(3):   # 그사이 다른 곳이 먼저 올렸으면 새로 받아 다시
         code, out = git("ls-remote", "origin", f"refs/heads/{BRANCH}")
@@ -63,7 +75,7 @@ def push(drafts):
                 git("read-tree", "FETCH_HEAD", env=env)
             _, names = git("ls-files", env=env)
             for name in names.splitlines():
-                if _expired(name, cutoff):
+                if _gone(name, cutoff, full_cutoff):
                     git("update-index", "--force-remove", name, env=env)
             for name, data in blobs.items():
                 code, sha = git("hash-object", "-w", "--stdin", data=data)

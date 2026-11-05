@@ -344,7 +344,7 @@ a.row:hover .row-main{text-decoration:underline}
         <li><button type="button" data-ch="instagram"><i class="dot" style="background:var(--ch-instagram)"></i>인스타 · 한국</button>
           <ul class="subnav" data-for="instagram">
             <li><a href="#today">오늘 할 일</a></li>
-            <li><a href="#ig-publish">카드뉴스 발행</a></li>
+            <li><a href="#ig-publish">카드뉴스 검수</a></li>
             <li><a href="#recommend">추천 콘텐츠</a></li>
             <li><a href="#week">이번 주 계획</a></li>
             <li><a href="#competitors">경쟁 동향</a></li>
@@ -513,8 +513,8 @@ a.row:hover .row-main{text-decoration:underline}
           <div class="col">
             <section class="sec" id="today" aria-label="오늘 할 일"><div class="today" id="today-box"></div></section>
             <section class="sec" id="ig-publish">
-              <h2>카드뉴스 발행</h2>
-              <p class="note">캔바에서 고친 뒤 확인 칸을 체크하고 발행을 누르세요. PC가 5분마다 요청을 확인해서 @hotconomy 에 올려요. 고친 내용이 있으면 고친 이미지로 올라가요.</p>
+              <h2>카드뉴스 검수</h2>
+              <p class="note">카드와 캡션을 확인하고 BGM을 들어 본 뒤, 이미지를 저장해 폰 인스타 앱으로 올리세요. 앱에서 첫 장의 ⤢를 눌러 4:5로 맞춰야 안 잘려요. 캔바에서 고쳤다면 캔바에서 내려받아 주세요. 여기서 인스타로 바로 올라가지는 않아요.</p>
               <div class="actions" style="margin-bottom:10px"><button type="button" class="btn small" id="pub-refresh">목록 새로고침</button></div>
               <div class="recs" id="pub-list"></div>
             </section>
@@ -1217,11 +1217,9 @@ a.row:hover .row-main{text-decoration:underline}
     return b;
   }
 
-  // 카드뉴스 발행 → 깃허브 card-publish.yml 이 내 PC에 요청 → PC(publish_card.py)가 @hotconomy 에 올림
-  // → 큐(data/publish_queue.json)를 20초마다 읽어 결과를 이 칸에 띄움. 창을 닫아도 요청은 이 브라우저에 남아 다시 열면 이어서 기다림.
-  const PUB_WAIT_MIN = 20, pubChecked = new Set();
-  const pubPending = { get: () => { try { return JSON.parse(store.get('pub_pending') || '{}'); } catch (e) { return {}; } },
-    set: o => store.set('pub_pending', JSON.stringify(o)) };
+  // 카드뉴스 검수: 큐(data/publish_queue.json)를 읽어 보여 준다. 인스타 올리기는 사람이 폰 앱으로 한다(캐러셀은 API로 음악을 못 붙임, 2026-11-05 자동발행 제거).
+  const cardPosted = { get: () => { try { return JSON.parse(store.get('card_posted') || '{}'); } catch (e) { return {}; } },
+    set: o => store.set('card_posted', JSON.stringify(o)) };
   function setupCardPublish() {
     const box = document.getElementById('pub-list'), refresh = document.getElementById('pub-refresh');
     if (!box) return;
@@ -1238,17 +1236,44 @@ a.row:hover .row-main{text-decoration:underline}
       const w = el('div', 'empty', '암호를 넣은 브라우저에서 목록을 볼 수 있어요. '); w.append(b);
       box.replaceChildren(w);
     };
-    async function request(it, btn) {
-      if (!store.get('lab_owner_key') && !(await connectLab(true))) return;
-      if (!confirm(`'${it.title || it.id}' 을(를) @hotconomy 에 바로 올릴까요?\n올린 뒤에는 여기서 되돌릴 수 없어요.`)) return;
-      btn.disabled = true; btn.textContent = '요청하는 중…';
-      try {
-        const r = await ghApi('actions/workflows/card-publish.yml/dispatches', { method: 'POST', key: store.get('lab_owner_key'), body: JSON.stringify({ ref: 'main', inputs: { id: it.id } }) });
-        if (r.status === 204) { pubPending.set({ ...pubPending.get(), [it.id]: Date.now() }); load(); return; }
-        if (r.status === 401 || r.status === 403) { store.set('lab_owner_key', ''); alert('발행 암호가 맞지 않아요. 버튼을 다시 누르면 다시 물어봐요.'); }
-        else alert(ghFail(r.status));
-      } catch (e) { alert('발행 요청 실패 — 인터넷 연결을 확인해 주세요'); }
-      btn.disabled = !pubChecked.has(it.id); btn.textContent = '인스타에 발행';
+    // 원본은 card-previews 가지 <id>/full/ (최근 3일). 폰은 공유창으로 사진에 저장: 내려받은 뒤 한 번 더 눌러야 브라우저가 허용한다. PC는 파일로 바로 내려받는다.
+    function cardSave(it) {
+      const n = (it.files || []).length;
+      const btn = el('button', 'btn small primary', `이미지 ${n}장 저장`); btn.type = 'button';
+      const phone = window.matchMedia('(pointer: coarse)').matches && !!navigator.canShare;
+      let files = null;
+      const deliver = async () => {
+        if (phone && navigator.canShare({ files })) {
+          try { await navigator.share({ files }); } catch (e) { if (e.name !== 'AbortError') alert('저장 창을 열지 못했어요. 그림을 길게 눌러 저장해 주세요.'); }
+          return;
+        }
+        for (const f of files) {
+          const a = el('a'), url = URL.createObjectURL(f);
+          a.href = url; a.download = f.name; document.body.append(a); a.click(); a.remove();
+          await new Promise(r => setTimeout(r, 400));
+          URL.revokeObjectURL(url);
+        }
+      };
+      btn.addEventListener('click', async () => {
+        if (files) return deliver();
+        btn.disabled = true; btn.textContent = '원본 받는 중…';
+        try {
+          files = await Promise.all(Array.from({ length: n }, async (_, k) => {
+            const r = await fetch(`https://raw.githubusercontent.com/vhffkfk-max/content-lab/card-previews/${encodeURIComponent(it.id)}/full/${k + 1}.jpg`);
+            if (!r.ok) throw new Error(String(r.status));
+            return new File([await r.blob()], `${it.id}-${k + 1}.jpg`, { type: 'image/jpeg' });
+          }));
+        } catch (e) {
+          files = null; btn.disabled = false; btn.textContent = `이미지 ${n}장 저장`;
+          alert('원본을 못 받았어요. 원본은 최근 3일 치만 있어요. 텔레그램으로 온 이미지를 써 주세요.');
+          return;
+        }
+        btn.disabled = false;
+        if (phone) { btn.textContent = '사진에 저장하기'; return; }
+        btn.textContent = `이미지 ${n}장 저장`;
+        deliver();
+      });
+      return btn;
     }
     // 미리보기는 card-previews 가지의 저화질 그림(publish/card_preview.py). 오래된 초안은 없어서 그림이 안 오면 칸을 지움.
     function cardStrip(it) {
@@ -1264,7 +1289,7 @@ a.row:hover .row-main{text-decoration:underline}
       }
       return s;
     }
-    function card(it, waitedAt) {
+    function card(it) {
       const c = el('article', 'card rec'), chips = el('div', 'chips'), ig = (it.published || {}).instagram;
       chips.append(el('span', 'pill neutral', it.form || '카드'), el('span', 'pill neutral', (it.created_at || '').slice(5, 16).replace('T', ' ')));
       c.append(chips, el('h3', 'rec-title', it.title || it.topic || it.id));
@@ -1281,7 +1306,7 @@ a.row:hover .row-main{text-decoration:underline}
       if (bgm && (bgm.mood || (bgm.search || []).length)) {
         const b = el('div', 'box');
         b.textContent = [bgm.mood && `분위기: ${bgm.mood}`, (bgm.search || []).length && `앱 검색어: ${bgm.search.join(', ')}`, bgm.avoid && `피하기: ${bgm.avoid}`].filter(Boolean).join('\n');
-        c.append(el('p', 'sub', 'BGM 추천 (들어 보고 골라 주세요)'), b);
+        c.append(el('p', 'sub', 'BGM 추천 (들어 보고 폰 앱에서 골라 주세요)'), b);
         if ((bgm.tracks || []).length) {
           const list = el('div', 'bgm-tracks');
           bgm.tracks.forEach(t => {
@@ -1298,23 +1323,27 @@ a.row:hover .row-main{text-decoration:underline}
       const why = it.design_why;
       if (why) { const w = el('details', 'more'); w.append(el('summary', null, '왜 이렇게 만들었나요'), el('div', 'box', [why.note, why.evidence && `근거: ${why.evidence}`].filter(Boolean).join('\n\n'))); c.append(w); }
       const more = el('details', 'more'); more.append(el('summary', null, '캡션 보기'), el('div', 'box', it.caption || '')); c.append(more);
-      const acts = el('div', 'actions'), err = it.publish_error;
+      const acts = el('div', 'actions');
       if (it.canva && it.canva.id) { const a = el('a', 'btn small', '캔바에서 고치기'); a.href = `https://www.canva.com/design/${encodeURIComponent(it.canva.id)}/edit`; a.target = '_blank'; a.rel = 'noopener'; acts.append(a); }
       c.append(acts);
-      if (it.warnings && it.warnings.length) { c.append(el('p', 'warn', `경고가 있어 발행할 수 없어요: ${it.warnings.join(' / ')}`)); return c; }
-      if (waitedAt) {
-        const mins = Math.floor((Date.now() - waitedAt) / 60000);
-        c.append(el('p', 'sub', `PC가 올리는 중이에요 · ${mins}분째. 보통 10분 안쪽이고, 끝나면 텔레그램으로도 알려 줘요.`));
-        return c;
-      }
-      if (err) c.append(el('p', 'warn', `지난 발행 실패 (${(err.at || '').slice(5, 16).replace('T', ' ')}): ${err.reason}`));
-      const label = el('label', 'pub-check'), check = el('input'), btn = el('button', 'btn small primary', '인스타에 발행');
-      check.type = 'checkbox'; check.checked = pubChecked.has(it.id); btn.type = 'button'; btn.disabled = !check.checked;
-      check.addEventListener('change', () => { if (check.checked) pubChecked.add(it.id); else pubChecked.delete(it.id); btn.disabled = !check.checked; });
-      btn.addEventListener('click', () => request(it, btn));
-      label.append(check, el('span', null, '카드와 캡션을 확인했어요'));
-      c.append(el('p', 'sub', '이 버튼은 음악 없이 바로 올라가요. 음악을 넣으려면 폰 앱으로 올려 주세요.'));
-      const go = el('div', 'actions'); go.style.alignItems = 'center'; go.append(label, btn); c.append(go);
+      if (it.warnings && it.warnings.length) { c.append(el('p', 'warn', `경고가 있어 저장 버튼을 숨겼어요. 먼저 고쳐 주세요: ${it.warnings.join(' / ')}`)); return c; }
+      if ((it.files || []).length) acts.append(cardSave(it));
+      const copy = el('button', 'btn small', '캡션 복사'); copy.type = 'button';
+      copy.addEventListener('click', async () => {
+        try { await navigator.clipboard.writeText(it.caption || ''); copy.textContent = '복사했어요'; setTimeout(() => { copy.textContent = '캡션 복사'; }, 1500); }
+        catch (e) { alert('복사하지 못했어요. 캡션 보기에서 직접 복사해 주세요.'); }
+      });
+      acts.append(copy);
+      const label = el('label', 'pub-check'), check = el('input');
+      check.type = 'checkbox'; check.checked = !!cardPosted.get()[it.id];
+      if (check.checked) c.style.opacity = '.55';
+      check.addEventListener('change', () => {
+        const o = cardPosted.get();
+        if (check.checked) o[it.id] = 1; else delete o[it.id];
+        cardPosted.set(o); c.style.opacity = check.checked ? '.55' : '';
+      });
+      label.append(check, el('span', null, '폰으로 올렸어요 (이 브라우저에만 표시)'));
+      c.append(label);
       return c;
     }
     async function load() {
@@ -1327,22 +1356,10 @@ a.row:hover .row-main{text-decoration:underline}
         if (!box.children.length) empty(box, '목록을 못 읽었어요. 잠시 뒤 새로고침해 주세요.');
         timer = setTimeout(load, 20000); return;
       }
-      const pending = pubPending.get(), done = [], late = [];
-      Object.entries(pending).forEach(([id, t]) => {
-        const it = items.find(x => x.id === id), err = it && it.publish_error;
-        const failed = err && Date.parse(err.at) >= t;
-        if (!it || it.status === 'published' || failed) done.push(id);
-        else if (Date.now() - t >= PUB_WAIT_MIN * 60000) late.push(it);
-      });
-      done.forEach(id => { delete pending[id]; pubChecked.delete(id); });
-      late.forEach(it => { delete pending[it.id]; });
-      pubPending.set(pending);
       const open = items.filter(x => x.status === 'drafted').slice(-12).reverse();
       const shipped = items.filter(x => (x.published || {}).instagram).slice(-5).reverse();
-      const cards = [...open, ...shipped].map(it => card(it, pending[it.id]));
-      if (late.length) { const w = el('p', 'warn', `${PUB_WAIT_MIN}분이 지나도 발행 결과가 안 왔어요: ${late.map(x => x.title || x.id).join(', ')}. PC가 꺼져 있었을 수 있어요. 요청한 지 6시간이 지나면 PC가 켜져도 올리지 않아요. 인스타를 먼저 확인한 뒤 다시 눌러 주세요.`); cards.unshift(w); }
-      if (cards.length) box.replaceChildren(...cards); else empty(box, '발행할 초안이 아직 없어요. 초안을 만들면 여기에 올라와요.');
-      if (Object.keys(pending).length) timer = setTimeout(load, 20000);
+      const cards = [...open, ...shipped].map(it => card(it));
+      if (cards.length) box.replaceChildren(...cards); else empty(box, '검수할 초안이 아직 없어요. 초안을 만들면 여기에 올라와요.');
     }
     refresh.addEventListener('click', load);
     fb.listeners.push(() => { if (fb.key && !box.querySelector('article')) load(); });
