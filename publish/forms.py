@@ -26,13 +26,14 @@ DISCLAIMER = "정보 제공용이며 투자 권유가 아닙니다"
 
 # 소재 종류 → 어울리는 폼 (앞쪽일수록 우선)
 KINDS = {
-    "속보": ["news", "bignum"], "급등락": ["news", "bignum", "bars"], "이슈": ["news", "editorial"], "인물": ["news", "editorial"],
+    "속보": ["breaking", "news", "bignum"], "급등락": ["breaking", "bignum", "bars", "news"], "이슈": ["news", "quote", "paper", "editorial"], "인물": ["quote", "news", "editorial"],
     "기업": ["news", "bignum"], "숫자": ["bignum", "bars", "news"], "실적": ["bignum", "bars", "news"], "지표": ["bignum", "bars"],
-    "순위": ["bars", "bignum"], "비교": ["bars", "editorial"], "트렌드": ["editorial", "news"], "생활": ["editorial", "news"],
-    "절약": ["editorial", "bars"], "정리": ["editorial", "news"], "입문": ["editorial", "bignum"], "썰": ["editorial", "news"],
+    "순위": ["list", "bars", "bignum"], "비교": ["bars", "list", "editorial"], "트렌드": ["editorial", "news"], "생활": ["editorial", "news"],
+    "절약": ["editorial", "bars"], "정리": ["paper", "list", "editorial", "news"], "입문": ["editorial", "bignum"], "썰": ["editorial", "news"],
 }
-# 새 초안에 쓰는 폼. 나머지(breaking, list, photo, story, paper, steps, quote, hot, scene)는 옛 초안을 다시 그릴 때만 쓴다.
-ACTIVE = ["news", "editorial", "bignum", "bars"]
+# 새 초안에 쓰는 8가지. 나머지(photo, scene 은 news 와 비슷, story 는 그림 도구 없음, steps 는 앱 화면을 지어내게 됨, hot)는 옛 초안을 다시 그릴 때만 쓴다.
+# 최근 4개 글에 쓴 폼은 draft_card 가 뺀다. 모두 같은 규칙이라 한 폼이 연달아 나오지 않는다.
+ACTIVE = ["news", "bignum", "breaking", "editorial", "list", "bars", "quote", "paper"]
 # 사진을 위키미디어에서 찾아 채우는 폼
 PHOTO_FORMS = {"scene", "news", "editorial"}
 FORM_NAMES = {"breaking": "속보형", "bignum": "숫자 한 방형", "bars": "막대 비교형", "list": "TOP N 리스트형",
@@ -43,6 +44,10 @@ FORM_WHY = {
     "news": "같은 계정 비교: 한경미디어 얼굴 사진+큰 제목 4,568 좋아요, 글자만 있는 '이슈 한 입' 10. 크립토데일리 51,302. 매일경제, 머니투데이도 같은 구성이 계정 중앙값의 18~24배.",
     "editorial": "friendsthatinvest 47,989 좋아요(계정 중앙값의 10배): 밝은 바탕, 큰 세리프 제목, 내용을 보여 주는 사진 한 장, 설명은 한두 줄.",
     "bignum": "크립토데일리 '$1,045,000,000,000' 표지처럼 숫자를 크게 보여 주는 구성 (계정 중앙값의 32배). 숫자 하나가 곧 훅.",
+    "breaking": "속보 소재를 빨간 띠로 바로 알아보게. 다양성을 위해 넣었고 아직 @hotconomy 성적이 없음 (card_learn 이 쌓아서 판단)",
+    "list": "여러 사실을 값과 함께 줄 세워 저장하기 좋게. 다양성을 위해 넣었고 아직 @hotconomy 성적이 없음 (card_learn 이 쌓아서 판단)",
+    "quote": "실제 발언 한마디가 사건일 때. 다양성을 위해 넣었고 아직 @hotconomy 성적이 없음 (card_learn 이 쌓아서 판단)",
+    "paper": "신문 1면처럼 사실 3개를 한 장에. 다양성을 위해 넣었고 아직 @hotconomy 성적이 없음 (card_learn 이 쌓아서 판단)",
     "bars": "personalfinanceclub 'Elon's Trillion' 309,394 좋아요(계정 중앙값의 80배): 막대로 규모 차이를 눈으로 보여 줌.",
 }
 
@@ -50,9 +55,9 @@ FORM_WHY = {
 def pick_form(kind, recent=()):
     cands = KINDS.get(kind) or ["news", "editorial"]
     for f in cands:
-        if f == "news" or f not in list(recent)[-2:]:
+        if f not in list(recent)[-4:]:
             return f
-    return cands[0]
+    return next((f for f in ACTIVE if f not in list(recent)[-4:]), cands[0])
 
 
 def fit(text, width=936, top=110, low=60, ratio=.97):
@@ -100,8 +105,8 @@ CSS = """
 /* 리스트 */
 .row{display:flex;align-items:center;gap:30px;margin-bottom:46px}
 .ico{width:130px;height:130px;border-radius:50%;background:#ffffff14;display:flex;align-items:center;justify-content:center;font-size:70px;flex:none}
-.row .nm{font-size:46px;font-weight:800;line-height:1.3}
-.row .sm{font-size:32px;color:var(--sub);margin-top:4px}
+.row .nm{font-size:54px;font-weight:800;line-height:1.25}
+.row .sm{font-size:36px;color:var(--sub);margin-top:6px;line-height:1.35}
 .row .val{margin-left:auto;font-size:46px;font-weight:900;color:var(--hl);text-align:right;white-space:nowrap}
 /* 사진 */
 .ph{position:absolute;left:0;top:0;width:1080px;height:1010px;object-fit:cover}
@@ -114,9 +119,12 @@ CSS = """
 /* 신문 */
 .frame{position:absolute;inset:44px;border:3px solid #222;outline:1px solid #222;outline-offset:8px}
 .mast{display:inline-block;border:3px solid #222;padding:10px 40px;font-family:HSerif,'Noto Serif CJK KR',serif;font-weight:900;font-size:62px}
-.news{font-size:54px;font-weight:800;line-height:1.35;margin-bottom:34px}
+.pp{position:absolute;left:96px;right:96px;top:96px;bottom:130px;display:flex;flex-direction:column;gap:30px}
+.heads{flex:1;display:flex;flex-direction:column;justify-content:space-evenly}
+.news{font-size:62px;font-weight:800;line-height:1.3;display:flex;gap:24px;padding-top:26px;border-top:2px solid #222}
+.nno{font-family:HSerif,'Noto Serif CJK KR',serif;font-weight:900;color:#d8262b;flex:none}
 .news u{text-decoration:none;box-shadow:inset 0 -14px 0 #d8262b55}
-.term{font-size:40px;line-height:1.55;margin-bottom:26px}
+.term{font-size:48px;line-height:1.45;padding-top:24px;border-top:2px solid #222}
 .term b{color:#1f5fbf}
 /* 단계 */
 .ui{position:absolute;left:110px;right:110px;background:#f3f4f7;border-radius:36px;padding:44px;box-shadow:0 10px 40px #0001}
@@ -124,6 +132,7 @@ CSS = """
 .ui .r.on{outline:5px solid var(--ac);font-weight:800}
 .dot{width:46px;height:46px;border-radius:50%;background:var(--ac);color:#fff;font-weight:900;font-size:28px;display:flex;align-items:center;justify-content:center;flex:none}
 /* 인사이트 */
+.qm{font-size:130px;line-height:1.3;color:#e3262b}
 .glow{position:absolute;inset:0;background:radial-gradient(circle at 50% 42%,#3a1416 0,#0b0b0d 60%)}
 /* 기본형 */
 .hotbg{position:absolute;inset:0;background:radial-gradient(circle at 92% 8%,#7a1418 0,#0b0b0d00 48%),radial-gradient(circle at 5% 100%,#5a2a0a 0,#0b0b0d00 40%)}
@@ -232,9 +241,12 @@ def img_or_chart(spec, h=1010):
 
 # ── 폼별 표지·본문 ──
 def f_breaking(c, s, n, t):
-    """표지 c: title, chart{candles}, price(가격 라벨). 본문 s: tag, title, text, chart(선택)."""
+    """표지 c: title(한 줄 10자 안쪽 2~3줄), chart{"ticker"}(이 사건과 직접 관련된 시세가 있을 때만, 없으면 chart 를 빼면 큰 제목만 나옴). 본문 s: tag, title, text, chart(선택)."""
     tick = "BREAKING NEWS&nbsp;&nbsp;&nbsp;" * 4
     if s is None:
+        if not c.get("chart", {}).get("candles"):
+            return (f'<div class="glow" style="background:radial-gradient(circle at 50% 48%,#5a1014 0,#0b0b0d 68%)"></div><div class="ticker">{tick}</div><div class="vc center" style="top:120px"><div class="t-xl" '
+                    f'style="font-size:{fit(c["title"], top=150, low=70)}px">{md(c["title"])}</div></div>')
         svg, py, px_ = candles_svg(c["chart"]["candles"], 900, 680)
         price = f'<div class="pricebox" style="left:{min(px_ + 60, 820):.0f}px;top:{py + 96 - 30:.0f}px">{html.escape(c.get("price", ""))}</div>' if c.get("price") else ""
         return (f'<div class="ticker">{tick}</div><div style="position:absolute;top:110px;left:20px">{svg}</div>{price}'
@@ -242,8 +254,12 @@ def f_breaking(c, s, n, t):
     chart = ""
     if s.get("chart") and len(s.get("text", "")) < 70:   # 글이 길면 차트를 빼서 겹치지 않게
         chart = f'<div style="position:absolute;left:0;top:880px;opacity:.9">{line_svg(s["chart"]["line"], 1080, 330, "#ff2e4d")}</div>'
-    return (f'<div class="ticker" style="height:70px;line-height:70px;font-size:38px">{tick}</div>'
-            f'<div class="stack" style="top:150px"><div><span class="chip">{html.escape(s.get("tag", "무슨 일?"))}</span></div>'
+    head = f'<div class="ticker" style="height:70px;line-height:70px;font-size:38px">{tick}</div>'
+    chip = f'<div><span class="chip">{html.escape(s.get("tag", "무슨 일?"))}</span></div>'
+    if not chart:   # 차트가 없으면 글을 키워 가운데로 (아래가 비지 않게)
+        return (head + f'<div class="vc" style="top:90px;gap:44px">{chip}<div class="t-l" style="font-size:{fit(s["title"], top=108, low=72)}px">{md(s["title"])}</div>'
+                f'<div class="b-l" style="font-size:54px;line-height:1.5">{md(s.get("text", ""))}</div></div>')
+    return (head + f'<div class="stack" style="top:150px">{chip}'
             f'<div class="t-l">{md(s["title"])}</div><div class="b-l">{md(s.get("text", ""))}</div></div>{chart}')
 
 
@@ -268,14 +284,14 @@ def f_bars(c, s, n, t):
 
 
 def f_list(c, s, n, t):
-    """표지 c: title, sub, count(숫자). 본문 s: title, items[{icon,name,sub,value}] (최대 3개)."""
+    """사실 여러 개를 값과 함께 줄 세울 때. 표지 c: title, sub, count(항목 수 숫자). 본문 s: title, items[{name,sub,value}]. 한 장에 항목을 꼭 2~3개 넣어 본문은 2~3장으로 쓴다(한 장에 1개면 비어 보임). value 는 숫자나 짧은 값, 항목과 값은 재료에 있는 것만 쓴다."""
     if s is None:
-        return (f'<div class="stack" style="top:170px"><div class="b-m" style="font-size:44px">{md(c.get("sub", ""))}</div>'
-                f'<div class="t-xl" style="font-size:{100 if len(c["title"]) < 20 else 84}px">{md(c["title"])}</div></div>'
-                f'<div style="position:absolute;right:60px;top:860px;font-size:300px;font-weight:900;color:#e3262b;opacity:.9;line-height:1">{html.escape(str(c.get("count", "")))}</div>')
-    rows = "".join(f'<div class="row"><div class="ico">{it.get("icon", "•")}</div><div><div class="nm">{md(it["name"])}</div>'
-                   f'<div class="sm">{md(it.get("sub", ""))}</div></div><div class="val">{html.escape(it.get("value", ""))}</div></div>' for it in s["items"][:3])
-    return f'<div class="stack" style="top:150px;gap:60px"><div class="t-m">{md(s["title"])}</div><div>{rows}</div></div>'
+        return (f'<div class="vc"><div class="b-m" style="font-size:48px">{md(c.get("sub", ""))}</div>'
+                f'<div style="font-size:280px;font-weight:900;color:#e3262b;line-height:1.35;letter-spacing:-8px">{html.escape(str(c.get("count", "")))}</div>'
+                f'<div class="t-xl" style="font-size:{fit(c["title"], top=124, low=84)}px">{md(c["title"])}</div></div>')
+    rows = "".join(f'<div class="row"><div class="ico">{it.get("icon") or i}</div><div><div class="nm">{md(it["name"])}</div>'
+                   f'<div class="sm">{md(it.get("sub", ""))}</div></div><div class="val">{html.escape(it.get("value", ""))}</div></div>' for i, it in enumerate(s["items"][:3], 1))
+    return f'<div class="vc" style="gap:70px"><div class="t-l" style="font-size:{fit(s["title"], top=88, low=62)}px">{md(s["title"])}</div><div>{rows}</div></div>'
 
 
 def f_photo(c, s, n, t):
@@ -365,18 +381,17 @@ def f_news(c, s, n, t):
 
 
 def f_paper(c, s, n, t):
-    """표지 c: date, headlines[3](**강조**는 밑줄). 본문 s: title, terms[{term,desc}] 또는 headlines."""
+    """신문 1면처럼 사실 3개를 한 번에. 표지 c: date, headlines[3](재료의 사실 3개, 한 줄 20자 안쪽, **강조**는 밑줄). 본문 s: title, terms[{term,desc}](용어 풀이) 또는 headlines. 한 장에 꼭 2~3개 넣는다(1개면 비어 보임)."""
     fr = '<div class="frame"></div>'
     if s is None:
-        heads = "".join(f'<div class="news">{i}. {md(h).replace("<b class=\"hl\">", "<u>").replace("</b>", "</u>")}</div>' for i, h in enumerate(c["headlines"][:3], 1))
-        return (fr + f'<div class="pad center" style="top:110px;font-size:34px;font-weight:700">{html.escape(c.get("date", ""))}</div>'
-                f'<div class="pad center" style="top:170px"><span class="mast">핫코노미 경제신문</span></div>'
-                f'<div class="pad" style="top:380px;left:110px;right:110px">{heads}</div>')
+        heads = "".join(f'<div class="news"><span class="nno">{i}</span><span>{md(h).replace("<b class=\"hl\">", "<u>").replace("</b>", "</u>")}</span></div>' for i, h in enumerate(c["headlines"][:3], 1))
+        return (fr + f'<div class="pp"><div class="center" style="font-size:38px;font-weight:700">{html.escape(c.get("date", ""))}</div>'
+                f'<div class="center"><span class="mast">핫코노미 경제신문</span></div><div class="heads">{heads}</div></div>')
     if s.get("terms"):
-        body = "".join(f'<div class="term">• <b>{html.escape(x["term"])}</b> : {md(x["desc"])}</div>' for x in s["terms"])
+        body = "".join(f'<div class="term"><b>{html.escape(x["term"])}</b><br>{md(x["desc"])}</div>' for x in s["terms"])
     else:
-        body = "".join(f'<div class="term">• {md(h)}</div>' for h in s.get("headlines", []))
-    return fr + f'<div class="pad center" style="top:130px;font-size:56px;font-weight:800">[{md(s["title"])}]</div><div class="pad" style="top:300px;left:110px;right:110px">{body}</div>'
+        body = "".join(f'<div class="term">{md(h)}</div>' for h in s.get("headlines", []))
+    return fr + f'<div class="pp"><div class="center" style="font-size:{fit(s["title"], 860, 72, 52)}px;font-weight:800">[{md(s["title"])}]</div><div class="heads">{body}</div></div>'
 
 
 def f_steps(c, s, n, t):
@@ -393,12 +408,15 @@ def f_steps(c, s, n, t):
 
 
 def f_quote(c, s, n, t):
-    """표지 c: label, quote, by. 본문 s: quote, by(선택)."""
+    """누군가의 한마디가 사건일 때. 표지 c: label, quote, by. 본문 s: quote, by(선택), text(선택, 왜 중요한지 60자 안쪽). quote 는 재료에 그대로 나온 실제 발언(누가 한 말의 문장)만 쓴다. 지어내거나 고쳐 쓰면 안 되고, 수치나 기사 제목은 발언이 아니며, 장마다 다른 발언을 쓴다. 발언이 없거나 하나뿐이면 이 폼을 고르지 않는다."""
     d = c if s is None else s
-    lab = f'<div class="pad center" style="top:150px;font-size:30px;color:var(--sub);letter-spacing:6px">{html.escape(c.get("label", "INSIGHT"))}</div>' if s is None else ""
-    return ('<div class="glow"></div>' + lab +
-            f'<div class="pad center serif" style="top:{380 if s is None else 420}px;font-size:{72 if s is None else 58}px;font-weight:700;line-height:1.45">{md(d["quote"])}</div>'
-            f'<div class="pad center" style="top:1010px;font-size:34px;color:var(--sub)">{html.escape(d.get("by", ""))}</div>')
+    lab = f'<div class="center" style="font-size:34px;color:var(--sub);letter-spacing:6px">{html.escape(c.get("label", "INSIGHT"))}</div>' if s is None else ""
+    by = f'<div class="center" style="font-size:42px;color:var(--sub)">{html.escape(d.get("by", ""))}</div>' if d.get("by") else ""
+    text = f'<div class="center b-l" style="color:var(--fg)">{md(s.get("text", ""))}</div>' if s and s.get("text") else ""
+    words = len(re.sub(r"\*\*", "", d["quote"]))
+    size = (92 if words < 34 else 76) if s is None else (76 if words < 34 else 62)
+    return ('<div class="glow"></div><div class="vc" style="gap:44px">' + lab + '<div class="center serif qm">“</div>'
+            f'<div class="center serif" style="font-size:{size}px;font-weight:700;line-height:1.4">{md(d["quote"])}</div>{by}{text}</div>')
 
 
 def f_hot(c, s, n, t):

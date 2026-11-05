@@ -8,7 +8,7 @@
 
 숫자 원칙: 시세 숫자는 코드가 야후 차트에서 가져와 넣고, 사실은 모아 둔 뉴스 제목에 있는 것만 쓴다.
   Claude 는 폼을 고르고 글만 쓴다. 차트 자리는 {"ticker": "TSLA"} 로 남기면 코드가 실제 시세로 채운다.
-폼 돌려쓰기: forms.ACTIVE 중 최근 2개 게시물에 쓴 폼은 뺀다 (사진 뉴스형은 사진이 매번 달라서 예외). 왜 이 폼인지는 큐 design_why 에 남긴다.
+폼 돌려쓰기: forms.ACTIVE 8가지 중 최근 4개 게시물에 쓴 폼은 뺀다 (예외 없음. 사진 뉴스형만 예외로 뒀더니 하루 8개가 전부 같은 모양이 됨, 2026-11-04). 왜 이 폼인지는 큐 design_why 에 남긴다.
 학습(publish/card_learn.py): 대표가 캔바에서 고친 습관 규칙과 폼별 48시간 성적이 프롬프트에 들어가고, 성적이 계속 나쁜 폼은 후보에서 빠진다.
 결과: output/cardnews/drafts/<id>/ 에 JPG, 큐에 status=drafted 로 저장, 텔레그램 봇으로 앨범 + 캡션.
   + 캔바 '핫코노미 · 발행 대기' 폴더에 고칠 수 있는 사본(publish/canva_copy.py), 편집 링크는 큐 canva.edit_url·텔레그램으로.
@@ -139,7 +139,9 @@ SYSTEM = """당신은 한국 경제 인스타그램 @hotconomy(핫코노미)의 
 
 디자인 규칙 (같은 계정의 잘 된 글과 안 된 글을 비교한 결과):
 - 표지 제목은 주제 요약이 아니라 사건입니다. 누가, 얼마나, 무슨 반전인지 구체적으로 씁니다. '수출 전망 정리' (X) → '수출 1조 달러, 세계 4번째 눈앞' (O)
-- 표지에 그 일의 주인공(인물 얼굴, 고유한 제품, 회사)을 보여 줄 수 있으면 사진 뉴스형(news)을 먼저 고려합니다. 글자만 있는 표지는 숫자 하나가 곧 훅일 때만(bignum).
+- [쓸 수 있는 폼] 안에서 이 소재를 가장 잘 살리는 폼을 고릅니다. 사진 뉴스형이 없으면 없는 대로, 다른 폼으로 사건이 살아나게 씁니다. 빠른 사건은 속보형, 숫자가 훅이면 숫자형, 사실 여러 개는 리스트형이나 신문형, 실제 발언이 있으면 인사이트형입니다.
+- 어떤 폼이든 재료에 없는 사실, 수치, 발언을 채우려고 지어내지 않습니다.
+- 2번째 장은 표지를 안 본 사람에게 먼저 보일 수 있습니다. 앞 장 없이도 무슨 일인지 알게 씁니다.
 - 본문 한 장에 사실 하나만, 큰 글씨로 읽히게 짧게 씁니다. 긴 문단을 쓰지 않습니다.
 - 모든 장이 표지의 사건 하나를 따라갑니다. 그 사건과 직접 이어지지 않는 다른 종목의 등락이나 그날 시황으로 새지 않습니다.
 - design_note 에 이번 글에 왜 이 폼과 이 표지를 골랐는지 한두 문장으로 적습니다(예: '주인공이 분명한 사건이라 얼굴 표지로, 숫자 28%를 제목에 넣어 멈추게 함').
@@ -215,9 +217,6 @@ def fill_charts(post, mk):
     walk(post["cover"], True)
     for s in post.get("slides", []):
         walk(s, False)
-    if post["form"] == "breaking" and "candles" not in post["cover"].get("chart", {}):
-        t = next(iter(used), None) or next(iter(mk))
-        post["cover"]["chart"], post["cover"]["price"] = {"candles": mk[t]["ohlc"]}, f"{mk[t]['d1']:+.2f}%"
     return sorted(used)
 
 
@@ -331,8 +330,8 @@ def main():
     if a.short and not a.topic and not hot:
         a.short = False   # 지금 발행할 거리가 없으면 보통 초안으로
     topic = hot["title"] if hot else pick_topic(queue, a.topic)
-    recent = [i["form"] for i in queue["items"] if i.get("form")][-3:]
-    allowed = card_learn.prune([k for k in forms.ACTIVE if k == "news" or k not in recent[-2:]])   # 성적이 계속 나쁜 폼은 뺌
+    recent = [i["form"] for i in queue["items"] if i.get("form")][-4:]
+    allowed = card_learn.prune([k for k in forms.ACTIVE if k not in recent])   # 성적이 계속 나쁜 폼은 뺌
     now = datetime.now(KST)
     print(f"📰 주제: {topic} / 최근 폼 {recent or '없음'} 제외")
     mk, news = market(), headlines(topic)
@@ -344,12 +343,16 @@ def main():
         print(SYSTEM, "\n\n", prompt)
         return
     post = clean(ask_claude(prompt))
-    if post.get("form") not in allowed:
+    if post.get("form") not in forms.ACTIVE:   # 돌려쓰기를 어겨도 8가지 안이면 그대로 (글 칸이 그 폼에 맞춰 쓰였음)
         post["form"] = forms.pick_form(post.get("kind", ""), recent)
     post["slides"] = post.get("slides", [])[:3 if a.short else MAX_SLIDES - 2]
     tickers = fill_charts(post, mk)
     post["photo_credits"] = fill_photos(post)
     warns = check(post)
+    if post["form"] == "quote":   # 재료에 없는 발언은 사람이 꼭 보게
+        src = re.sub(r"\s", "", str(news))
+        warns += [f"발언이 재료에서 그대로 안 나와요: {q}" for q in (d.get("quote", "") for d in [post["cover"], *post.get("slides", [])])
+                  if q and re.sub(r"\s|\*\*", "", q) not in src]
     post["hashtags"] = hashtags(post.get("hashtags", []))
     did = f"{now:%Y%m%d-%H%M}-{post['form']}"
     files = forms.make(post, OUT / did, did)
