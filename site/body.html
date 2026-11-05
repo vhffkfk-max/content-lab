@@ -1236,7 +1236,7 @@ a.row:hover .row-main{text-decoration:underline}
       const w = el('div', 'empty', '암호를 넣은 브라우저에서 목록을 볼 수 있어요. '); w.append(b);
       box.replaceChildren(w);
     };
-    // 원본은 card-previews 가지 <id>/full/ (최근 3일). 폰은 공유창으로 사진에 저장: 내려받은 뒤 한 번 더 눌러야 브라우저가 허용한다. PC는 파일로 바로 내려받는다.
+    // 원본은 card-previews 가지 <id>/full/ (최근 2일). 폰은 공유창으로 사진에 저장: 내려받은 뒤 한 번 더 눌러야 브라우저가 허용한다. PC는 파일로 바로 내려받는다.
     function cardSave(it) {
       const n = (it.files || []).length;
       const btn = el('button', 'btn small primary', `이미지 ${n}장 저장`); btn.type = 'button';
@@ -1265,7 +1265,7 @@ a.row:hover .row-main{text-decoration:underline}
           }));
         } catch (e) {
           files = null; btn.disabled = false; btn.textContent = `이미지 ${n}장 저장`;
-          alert('원본을 못 받았어요. 원본은 최근 3일 치만 있어요. 텔레그램으로 온 이미지를 써 주세요.');
+          alert('원본을 못 받았어요. 원본은 최근 2일 치만 있어요. 텔레그램으로 온 이미지를 써 주세요.');
           return;
         }
         btn.disabled = false;
@@ -1356,7 +1356,7 @@ a.row:hover .row-main{text-decoration:underline}
         if (!box.children.length) empty(box, '목록을 못 읽었어요. 잠시 뒤 새로고침해 주세요.');
         timer = setTimeout(load, 20000); return;
       }
-      const open = items.filter(x => x.status === 'drafted').slice(-12).reverse();
+      const open = items.filter(x => x.status === 'drafted').slice(-24).reverse();
       const shipped = items.filter(x => (x.published || {}).instagram).slice(-5).reverse();
       const cards = [...open, ...shipped].map(it => card(it));
       if (cards.length) box.replaceChildren(...cards); else empty(box, '검수할 초안이 아직 없어요. 초안을 만들면 여기에 올라와요.');

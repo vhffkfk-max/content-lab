@@ -1,9 +1,9 @@
 """카드 초안 미리보기 → 저장소 card-previews 가지 (연구소 사이트 '카드뉴스 발행'이 보여 줌).
 
     push("20261105-1101-news", files)     # 초안 1개 (draft_card 가 부름)
-    python -m publish.card_preview        # 최근 7일 초안을 한 번에 채움
+    python -m publish.card_preview        # 보관 기간 안의 초안을 한 번에 채움
 
-- 폭 540px 저화질은 화면용(<id>/<n>.jpg, 7일), 원본은 사이트 '이미지 저장'용(<id>/full/<n>.jpg, 3일).
+- 폭 540px 저화질은 화면용(<id>/<n>.jpg, 3일), 원본은 사이트 '이미지 저장'용(<id>/full/<n>.jpg, 2일). 1시간마다 만들어서 짧게 둔다.
 - 가지에는 커밋을 하나만 둔다(부모 없는 커밋을 덮어씀). 지난 그림이 기록에 쌓이지 않아 저장소가 안 커지고, main 과 작업 폴더는 건드리지 않는다.
 - 공개 저장소라 주소를 알면 볼 수 있다. 사이트 목록은 암호 뒤에 있지만 그림 자체는 비공개가 아니다.
 """
@@ -22,8 +22,8 @@ from common import ROOT
 
 BRANCH = "card-previews"
 WIDTH, QUALITY = 540, 72
-KEEP_DAYS = 7
-KEEP_FULL_DAYS = 3   # 원본은 무거워서 짧게
+KEEP_DAYS = 3
+KEEP_FULL_DAYS = 2   # 원본은 무거워서 짧게
 IDENT = ["-c", "user.name=content-lab-bot", "-c", "user.email=content-lab-bot@users.noreply.github.com"]
 
 
