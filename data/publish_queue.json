@@ -3720,6 +3720,400 @@
      "path": "20261105-2102-i3/3-news-myeongjo.jpg"
     }
    ]
+  },
+  {
+   "title": "영국, 3년 만에 금리 인상 연 4%",
+   "concept": "이란전발 에너지 물가 때문에 영란은행이 금리를 올렸다는 보도로, 주식이 흔들린 날 다른 방향으로 간 나라를 짚는다",
+   "why_now": "21:17 기사로 12곳이 다뤘고 CNBC, Bloomberg, FT도 동시에 보도했다. 오늘 아직 다루지 않은 새 소식이다.",
+   "tag": "해외금리",
+   "sources": [
+    "https://biz.chosun.com/international/international_economy/2026/11/05/ZSZICEZU6FETTKPATSSTIGRFFI/",
+    "https://www.cnbc.com/2026/11/05/interest-rates-inflation-uk.html",
+    "https://www.bloomberg.com/news/articles/2026-11-05/bank-of-england-unanimously-hikes-rates-warns-of-4-9-inflation"
+   ],
+   "bg": "Bank of England building",
+   "bg_alt": "Bank of England London",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "영국이 3년 만에\n금리를 **0.25%p**\n올렸습니다",
+     "number": "연 4%",
+     "label": "영란은행 기준금리",
+     "sub": "3년여 만의 인상"
+    },
+    {
+     "type": "질문형",
+     "title": "물가 때문에 영국이\n금리를 **올렸다면**\n다음은 어디일까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "증시가 흔들린 날\n금리를 올린 나라가\n**나왔습니다**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261105-2201-i1",
+   "created_at": "2026-11-05T22:01:31+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261105-2201-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261105-2201-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261105-2201-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261105-2201-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261105-2201-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261105-2201-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261105-2201-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261105-2201-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261105-2201-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261105-2201-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261105-2201-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261105-2201-i1/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "월간 경상수지 흑자 첫 600억달러 돌파",
+   "concept": "코스피가 폭락한 날 나온 사상 최대 경상수지 흑자로 주가와 실물 숫자가 엇갈린 하루를 대비해 보여준다",
+   "why_now": "20:47 기사로 3곳이 다뤘고 코스피 5.28% 하락과 같은 날 나온 반대 방향의 숫자다. 해당 월과 단위는 확인이 필요하다.",
+   "tag": "경상수지",
+   "sources": [
+    "https://biz.heraldcorp.com/article/10926967",
+    "https://v.daum.net/v/20261105204711184"
+   ],
+   "bg": "Korea container port",
+   "bg_alt": "Busan port containers",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "월간 경상수지 흑자\n사상 처음으로\n**600억달러** 돌파",
+     "number": "600억달러",
+     "label": "월간 경상수지 흑자",
+     "sub": "사상 처음 돌파"
+    },
+    {
+     "type": "질문형",
+     "title": "코스피 폭락한 날\n나라 곳간은\n**왜** 역대급일까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "주가는 5%대 폭락\n경상수지는\n**사상 최대**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/05",
+     "headlines": [
+      "경상수지 흑자 600억달러 첫 돌파",
+      "코스피 5.28% 하락, 5,383.8 마감",
+      "코스닥도 5.11% 하락, 678.41"
+     ]
+    }
+   },
+   "id": "20261105-2201-i2",
+   "created_at": "2026-11-05T22:01:31+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261105-2201-i2/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261105-2201-i2/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261105-2201-i2/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261105-2201-i2/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261105-2201-i2/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261105-2201-i2/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261105-2201-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261105-2201-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261105-2201-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261105-2201-i2/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261105-2201-i2/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261105-2201-i2/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261105-2201-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261105-2201-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261105-2201-i2/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261105-2201-i2/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261105-2201-i2/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261105-2201-i2/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "브렌트유 100달러 아래, 그래도 금리 변수",
+   "concept": "이란 종전 기대로 유가가 급락했지만 유가가 다시 오르면 금리가 더 높아질 수 있다는 MarketWatch 분석을 함께 푼다",
+   "why_now": "영국 금리 인상으로 물가와 금리가 화제인 가운데, 브렌트유 급락 보도와 MarketWatch 분석이 같은 시간대에 나왔다.",
+   "tag": "유가",
+   "sources": [
+    "https://www.marketwatch.com/story/interest-rates-could-go-significantly-higher-if-oil-prices-keep-climbing-even-if-the-i",
+    "https://www.cnbc.com/2026/11/05/interest-rates-inflation-uk.html"
+   ],
+   "bg": "Brent crude oil",
+   "bg_alt": "oil refinery tanker",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "브렌트유가\n**100달러** 아래로\n내려왔습니다",
+     "number": "100달러",
+     "label": "브렌트유",
+     "sub": "이란 종전 기대에 하락"
+    },
+    {
+     "type": "질문형",
+     "title": "유가가 급락했는데\n금리는 왜 **더 오를**\n수 있다는 걸까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "전쟁이 끝나도\n금리는 **높아질**\n수 있다는 경고",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261105-2201-i3",
+   "created_at": "2026-11-05T22:01:31+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261105-2201-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261105-2201-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261105-2201-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261105-2201-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261105-2201-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261105-2201-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261105-2201-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261105-2201-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261105-2201-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261105-2201-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261105-2201-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261105-2201-i3/3-news-myeongjo.jpg"
+    }
+   ]
   }
  ]
 }
