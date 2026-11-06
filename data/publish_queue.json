@@ -8133,6 +8133,351 @@
      "path": "20261106-1601-i3/3-paper-gowun.jpg"
     }
    ]
+  },
+  {
+   "title": "엔비디아, 네이버에 1.3조 납입 완료",
+   "concept": "증시가 흔들린 날 엔비디아가 한국 기업에 1조 3,412억 원을 넣고 지분 4.13%를 확보했다는 사실 하나만 끌고 간다. 지분 확보 배경과 협력 내용은 확인된 것만 쓴다. (공식: 한 글에 한 사건만)",
+   "why_now": "15:57 연합뉴스와 뉴시스가 납입 완료를 보도했다. 반도체와 AI 주식이 급락한 날이라 대비되는 소식이고, 앞서 보낸 글에는 없던 내용이다.",
+   "tag": "속보",
+   "sources": [
+    "https://www.yna.co.kr/view/AKR20261106136800017"
+   ],
+   "bg": "Jensen Huang Nvidia",
+   "bg_alt": "Naver headquarters building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "엔비디아가 네이버에\n**1조 3,412억** 납입\n지분 4.13% 확보",
+     "number": "1조 3,412억",
+     "label": "엔비디아가 네이버에 납입",
+     "sub": "지분 4.13% 확보"
+    },
+    {
+     "type": "질문형",
+     "title": "반도체가 무너진 날\n엔비디아는 왜\n**네이버**에 넣었나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "코스피가 6% 빠진 날\n엔비디아는 **1.3조**\n한국에 넣었다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261106-1706-i1",
+   "created_at": "2026-11-06T17:06:37+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261106-1706-i1/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261106-1706-i1/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261106-1706-i1/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261106-1706-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261106-1706-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261106-1706-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261106-1706-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261106-1706-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261106-1706-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261106-1706-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261106-1706-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261106-1706-i1/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "내 퇴직연금도 흔들렸나, 계좌 비중 점검",
+   "concept": "지수 시황이 아니라 내 노후 자금 관점으로 푼다. '퇴직연금 1억 녹아내린다' 보도 제목과 삼성전자, SK하이닉스 급락을 짚고, 오늘 수익률보다 내 계좌 구성부터 확인하자는 보도 정리로 끝낸다. 이틀간 11% 폭락은 연합뉴스 종합 기사 기준이고 확정 단서를 단다. (공식: 근거 한 장과 단서 한 줄)",
+   "why_now": "퇴직연금 관련 기사를 3곳이 다뤘고 연합뉴스는 이틀간 11% 폭락이라고 전했다. 지수 시황은 이미 보냈지만 이 글은 내 노후 자금 각도라 겹치지 않는다.",
+   "tag": "노후자금",
+   "sources": [
+    "https://v.daum.net/v/20261106160821651",
+    "https://www.newsis.com/view/NISX20261106_0003858205",
+    "https://v.daum.net/v/20261106161336923"
+   ],
+   "bg": "retirement pension savings",
+   "bg_alt": "Korean won banknotes",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "이틀간 코스피 **11%**\n폭락했다는 보도\n내 퇴직연금은",
+     "number": "-6.02%",
+     "label": "6일 코스피 하루 하락률",
+     "sub": "5,059.69 마감, 이틀 11%는 보도 기준"
+    },
+    {
+     "type": "질문형",
+     "title": "코스피 폭락한 날\n내 퇴직연금 계좌는\n**어디**에 담겼나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "오늘 수익률보다\n먼저 볼 건 따로 있다\n내 계좌 **비중**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "editorial",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261106-1706-i2",
+   "created_at": "2026-11-06T17:06:37+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261106-1706-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261106-1706-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261106-1706-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261106-1706-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261106-1706-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261106-1706-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261106-1706-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261106-1706-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261106-1706-i2/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "비트코인 ETF 하루 4억 달러 순유출",
+   "concept": "주식이 빠진 날 코인 ETF에서도 돈이 빠져나갔다는 흐름을 비트코인 ETF와 이더리움 ETF 순유출액 비교로 보여 준다. ETF 집계 기준일은 확인 전이라는 단서를 단다. (공식: 없음)",
+   "why_now": "14:30 비트코인 ETF 4억3,020만 달러, 이더리움 ETF 9,990만 달러 순유출이 보도됐다. 비트코인과 이더리움은 24시간 5.66%, 7.71% 하락했다는 보도도 이어졌다. 코인 주제로는 트럼프 코인 외에 새 소식이다.",
+   "tag": "코인",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMiSkFVX3lxTFByZjFYbUpNNWdFbjd0a1FObExoOFNsSk92OGJULUtfMG45UWZQd0FxRDdQc3JkdjVxcmx",
+    "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9GR2RVRU5yTVFZX04wSGVZQVpxdkxOaTJrMnUtcjBrcUN4QnZRdFVyeXF1ZEhNU3JaSjJ"
+   ],
+   "bg": "bitcoin coin",
+   "bg_alt": "Bitcoin ETF chart",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "비트코인 ETF에서\n**4억 3,020만** 달러\n하루 새 순유출",
+     "number": "4억 3,020만 달러",
+     "label": "비트코인 현물 ETF 순유출",
+     "sub": "이더리움 ETF도 9,990만 달러 순유출"
+    },
+    {
+     "type": "질문형",
+     "title": "주식 폭락한 날\n코인은 **피난처**가 됐을까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "주식 대신 코인으로?\n코인도 같이 **팔렸다**\n이더리움 -7.71%",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bars",
+    "bignum"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "ETF 순유출액, 만 달러 기준 (집계 기준일 확인 전)",
+     "bars": [
+      {
+       "label": "비트코인 ETF",
+       "value": 43020,
+       "hi": true
+      },
+      {
+       "label": "이더리움 ETF",
+       "value": 9990
+      }
+     ]
+    }
+   },
+   "id": "20261106-1706-i3",
+   "created_at": "2026-11-06T17:06:37+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261106-1706-i3/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261106-1706-i3/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261106-1706-i3/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261106-1706-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261106-1706-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261106-1706-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261106-1706-i3/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261106-1706-i3/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261106-1706-i3/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261106-1706-i3/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261106-1706-i3/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261106-1706-i3/3-bars-dohyeon.jpg"
+    }
+   ]
   }
  ]
 }
