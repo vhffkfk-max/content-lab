@@ -78,6 +78,14 @@ def freshness(cwd):
         code, ts = git("log", "-1", "--format=%ct", "origin/main", "--", path, cwd=cwd)
         age = int((now - int(ts)) / 60) if code == 0 and ts.strip().isdigit() else None
         out.append({"name": name, "file": path.split("/")[-1], "age_min": age, "limit": limit, "stale": age is None or age > limit})
+    # X 크롤러: 원자료 파일은 30분마다 올라가도 X 새 글이 0개일 수 있어(10/31~11/06 로그인·화면 문제) 가장 새 X 글 시각으로 본다
+    try:
+        x = json.loads((Path(cwd) / "data" / "free_crawl.json").read_text(encoding="utf-8")).get("x") or []
+        newest = max((p.get("created_at") or 0) for p in x) if x else 0
+        age = int((now - newest) / 60) if newest else None
+        out.append({"name": "X 크롤러 새 글", "file": "free_crawl.json#x", "age_min": age, "limit": 360, "stale": age is None or age > 360})
+    except (OSError, ValueError):
+        pass
     return out
 
 

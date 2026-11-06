@@ -16,6 +16,7 @@
 import csv
 import logging
 import os
+import re
 import time
 from datetime import datetime, timezone
 from urllib.parse import quote
@@ -117,11 +118,18 @@ def save(c, posts, source, now):
     return new
 
 
+SEEN = {"pages": 0, "json": 0, "raw": 0, "posts": 0, "title": ""}   # 이번 바퀴 진단: 글이 0개면 무엇이 왔는지 로그에 남김 (2026-11-06: 10/31 이후 0개)
+
+
 def visit(url, scrolls=2):
     html, bodies = lb.visit(url, scrolls=scrolls, wait_ms=6000)
     if html is None:
         return None
-    posts = [p for p in (parse(t) for t in _tweets(bodies, [])) if p]
+    raw = _tweets(bodies, [])
+    posts = [p for p in (parse(t) for t in raw) if p]
+    m = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
+    SEEN.update(pages=SEEN["pages"] + 1, json=SEEN["json"] + len(bodies), raw=SEEN["raw"] + len(raw), posts=SEEN["posts"] + len(posts),
+                title=(m.group(1).strip()[:60] if m else ""))
     return list({p["id"]: p for p in posts}.values())
 
 
@@ -216,7 +224,10 @@ def tick(c):
     now = int(time.time())
     start = time.time()
     init(c)
+    SEEN.update(pages=0, json=0, raw=0, posts=0, title="")
     na, new = scan_accounts(c, now)
+    if SEEN["pages"] and not SEEN["posts"]:
+        log.info("X 글을 못 읽었어요: 화면 %d개 · JSON %d개 · 글 덩어리 %d개 · 제목 %r", SEEN["pages"], SEEN["json"], SEEN["raw"], SEEN["title"])
     word, found = discover(c, now)
     log.info("X 계정 %d곳(새 글 %d)%s · %d초", na, new, f" · 검색 '{word}' 계정 {found}곳" if word else "", time.time() - start)
 
