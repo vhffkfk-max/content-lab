@@ -1,6 +1,15 @@
 [
  {
   "geo": "KR",
+  "term": "나나",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "나나 “제가 도덕적 물의 일으켰나”…악플러에 일침 무슨 일?",
+  "news_link": "https://www.donga.com/news/Culture/article/all/20261106/134976663/2"
+ },
+ {
+  "geo": "KR",
   "term": "김구라",
   "traffic": 2000,
   "topics": "",
@@ -10,21 +19,30 @@
  },
  {
   "geo": "KR",
-  "term": "매일경제",
+  "term": "래미안원베일리",
   "traffic": 1000,
-  "topics": "국내 대형주, 급락·변동성",
+  "topics": "부동산",
   "econ": true,
-  "news_title": "폭락장에도 꿋꿋…노무라 “코스피 목표 1만 유지…상승 동력 4가지 있어”",
-  "news_link": "https://www.mk.co.kr/news/stock/12200293"
+  "news_title": "집 안가보고 잡던 원베일리도 14.5억 ‘뚝’, 강남 아파트 시련의 계절 왔다",
+  "news_link": "https://www.mk.co.kr/news/economy/12200273"
  },
  {
   "geo": "KR",
   "term": "징역형",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "모르는 여중생 뺨 때린 40대 남성...1심 벌금→2심 징역형, 왜?",
+  "news_link": "https://www.ytn.co.kr/_cs/_ln_0103_202611060851275372_005.html"
+ },
+ {
+  "geo": "KR",
+  "term": "엘니뇨",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "식당서 여중생 뺨 때린 40대…2심 “벌금형 가볍다” 징역형에 집유",
-  "news_link": "https://www.donga.com/news/Society/article/all/20261106/134976304/2"
+  "news_title": "’역대 최강 엘니뇨’ 온다…올겨울 포근하고 눈·비 많을 듯",
+  "news_link": "https://www.yonhapnewstv.co.kr/news/AKR20261106101553uEs"
  },
  {
   "geo": "KR",
@@ -46,12 +64,12 @@
  },
  {
   "geo": "KR",
-  "term": "연천군",
+  "term": "안산소방서",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "장흥 오리농장서 조류인플루엔자 확인...24시간 이동 중지",
-  "news_link": "https://m.science.ytn.co.kr/program/view_today.php?s_mcd=0082&key=202611061104144423"
+  "news_title": "인천소방본부, ‘우리동네 119체험관’ 운영…어린이 안전교육 강화",
+  "news_link": "https://www.kyeonggi.com/article/20261105580373"
  },
  {
   "geo": "KR",
@@ -59,7 +77,7 @@
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "[美블루쓰나미] 마스가 늦어져도 간다…한화 '美 조선소 인력 7500명' 승부수",
+  "news_title": "[단독]마스가 늦어져도 간다…한화, 美조선소 인력 7500명으로 확대 추진",
   "news_link": "https://view.asiae.co.kr/article/2026110609134821645"
  },
  {
@@ -72,111 +90,93 @@
   "news_link": "http://incheonilbo.com/news/articleView.html?idxno=1336140"
  },
  {
-  "geo": "KR",
-  "term": "국제결혼",
-  "traffic": 100,
+  "geo": "US",
+  "term": "stephen curry",
+  "traffic": 5000,
   "topics": "",
   "econ": false,
-  "news_title": "아뜨리앙 클라르하임, `2026 고객신뢰도 1위 프리미엄 브랜드` 침구 부문 대상",
-  "news_link": "https://mydaily.co.kr/page/view/2026110612415592245"
- },
- {
-  "geo": "KR",
-  "term": "래미안원베일리",
-  "traffic": 100,
-  "topics": "초보·투자마인드, 연금·절세, 부동산, 급락·변동성",
-  "econ": true,
-  "news_title": "[르포] 강남 은마아파트 가보니 “분담금에 세금 겹쳐 급락했지만… 매수는 현금부자만”",
-  "news_link": "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202611041530490450645"
+  "news_title": "Steph Curry’s post after wife Ayesha’s viral kissing scene speaks volumes",
+  "news_link": "https://nypost.com/2026/11/05/sports/steph-curry-wife-ayesha-viral-kissing-scene/"
  },
  {
   "geo": "US",
-  "term": "travis hunter",
+  "term": "bam adebayo",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "“Hurt Like Heck”: Travis Hunter's Wife Leanna Lenee Shares Painful Truth About Her Jaguars-Colts Game Day Outfit",
-  "news_link": "https://sports.yahoo.com/articles/hurt-heck-travis-hunters-wife-155121009.html"
+  "news_title": "Where Are They Now: Adebayo's season-high 35 lifts Heat past Clippers in OT",
+  "news_link": "https://www.thewashingtondailynews.com/sports/where-are-they-now-adebayos-season-high-35-lifts-heat-past-clippers-in-ot-a7049da7"
  },
  {
   "geo": "US",
-  "term": "adam driver",
+  "term": "giannis antetokounmpo",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Is Giannis Antetokounmpo Playing Tonight? (Injury Update Betting Impact for Heat vs. Warriors)",
+  "news_link": "https://www.si.com/betting/giannis-antetokounmpo-injury-update-betting-impact-for-heat-vs-warriors-nov-5"
+ },
+ {
+  "geo": "US",
+  "term": "brandin podziemski",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Adam Driver Says ‘The Ship Has Sailed’ on ‘The Hunt for Ben Solo’ and He’s Done Playing Kylo Ren: ‘It’s Over’",
-  "news_link": "https://variety.com/2026/film/news/adam-driver-the-hunt-for-ben-solo-kylo-ren-1236939988/"
+  "news_title": "Brandin Podziemski is already quietly justifying his Warriors extension",
+  "news_link": "https://bluemanhoop.com/brandin-podziemski-is-already-quietly-justifying-his-warriors-extension"
  },
  {
   "geo": "US",
-  "term": "al horford",
+  "term": "bryce james",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Sonny Gray Predicted To Leave Red Sox To Join NL Contender",
-  "news_link": "https://sports.yahoo.com/articles/sonny-gray-predicted-leave-red-014354027.html"
+  "news_title": "Bryce James stats: Lebron James' son makes first college start for Arizona",
+  "news_link": "https://www.usatoday.com/story/sports/ncaab/big12/2026/11/03/bryce-james-arizona-basketball-first-start-stats/92579162007/"
  },
  {
   "geo": "US",
-  "term": "arizona basketball",
+  "term": "charles bassey",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "RJ Godfrey's attorneys sue Arizona Regents for not certifying him under NCAA bylaws",
-  "news_link": "https://tucson.com/sports/arizonawildcats/basketball/article_d591f930-db85-4d24-92c4-da2d585336c7.html"
+  "news_title": "How Warriors energizer Charles ‘Basketball’ Bassey is trying to seize center opportunity",
+  "news_link": "https://www.sfchronicle.com/sports/warriors/article/warriors-energizer-charles-bassey-trying-seize-22508552.php"
  },
  {
   "geo": "US",
-  "term": "ethan hawke",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Levon Hawke to Star With Anthony Hopkins in Indie Drama ‘Twenty-Seven’ (EXCLUSIVE)",
-  "news_link": "https://variety.com/2026/film/news/levon-hawke-anthony-hopkins-twenty-seven-gregory-caruso-1236940057/"
- },
- {
-  "geo": "US",
-  "term": "solo leveling season 3 release date",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Solo Leveling Officially Returns Next Week With 3 New Episodes",
-  "news_link": "https://www.cbr.com/solo-leveling-ragnarok-webtoon-november-5-release-date/"
- },
- {
-  "geo": "US",
-  "term": "burt reynolds",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Toy Robot's Dec Releases: Passenger 57, Sharky's Machine & Detroit Rock City Arrive on 4K!",
-  "news_link": "https://whysoblu.com/toy-robots-dec-releases-passenger-57-sharkys-machine-detroit-rock-city-arrive-on-4k/"
- },
- {
-  "geo": "US",
-  "term": "maya hawke",
+  "term": "dan koh",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Maya Hawke Boards ‘Magic: The Gathering’ Movie From Legendary And Hasbro",
-  "news_link": "https://deadline.com/2026/11/maya-hawke-magic-the-gathering-movie-1237213391/"
+  "news_title": "Koh sails to victory in Sixth District House race",
+  "news_link": "https://www.bostonglobe.com/2026/11/03/metro/koh-wins-sixth-district-house-asian-american/"
  },
  {
   "geo": "US",
-  "term": "terence crawford",
+  "term": "jordan rodgers",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Terence Crawford names the man he would face if weight wasn't an issue: \"He talks too much\"",
-  "news_link": "https://boxingnewsonline.net/news/crawford-on-fight-he-takes-at-any-weight/"
+  "news_title": "Aaron Rodgers’ brother Jordan makes rare comment about quarterback after it’s revealed he’s only ‘cordial’ with him",
+  "news_link": "https://pagesix.com/2026/11/05/celebrity-news/aaron-rodgers-brother-jordan-makes-rare-comment-about-quarterback/"
  },
  {
   "geo": "US",
-  "term": "tim hardaway jr.",
+  "term": "kiyomi mcmiller",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Erik Spoelstra sends Tim Hardaway Jr. a pointed message with second-half benching",
-  "news_link": "https://allucanheat.com/erik-spoelstra-sends-tim-hardaway-jr-a-pointed-message-with-second-half-benching"
+  "news_title": "McMiller erupts for career-high 42 in 95-65 win over UCF",
+  "news_link": "https://floridagators.com/news/2026/11/5/womens-basketball-mcmiller-erupts-for-42-in-gators-95-65-win-over-ucf"
+ },
+ {
+  "geo": "US",
+  "term": "sam nivola",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Sam Nivola Is Serving Bedroom Eyes and Major Temptation in ‘PHONY’",
+  "news_link": "https://instinctmagazine.com/sam-nivola-bedroom-eyes-phony/"
  }
 ]
