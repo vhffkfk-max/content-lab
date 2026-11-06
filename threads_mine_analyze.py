@@ -87,7 +87,9 @@ def main():
               for h in [r for r in load("thx_rank") if r.get("list") == "views"][:8]]
     ctx = {"account": meta[0] if meta else {}, "feed_first12": feed[0] if feed else {}, "posts": items,
            "today_info": today_info, "engage_targets": engage, "last_watch_items": prev.get("watch_items", [])}
-    digest = hashlib.sha1(json.dumps([(i["text"][:80], i["views"]) for i in items], ensure_ascii=False).encode()).hexdigest()
+    # 조회수는 매시간 조금씩 늘어나므로 25% 단위로 묶어 본다 — 새 글이 생기거나 숫자가 크게 움직일 때만 다시 진단 (2026-11-07 토큰 절약)
+    rough = lambda v: round(__import__("math").log((v or 0) + 1, 1.25))
+    digest = hashlib.sha1(json.dumps([(i["text"][:80], rough(i["views"])) for i in items], ensure_ascii=False).encode()).hexdigest()
     prompt = "황소개미 계정 데이터:\n" + json.dumps(ctx, ensure_ascii=False, indent=1)
     from feedback import feedback_prompt
     prompt += feedback_prompt(["황소개미 진단"])

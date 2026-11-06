@@ -13,7 +13,12 @@ import json
 import os
 import shutil
 import subprocess
+import sys
 import tempfile
+import time
+import urllib.error
+import urllib.request
+from datetime import datetime
 from types import SimpleNamespace
 
 TIMEOUT = 20 * 60
@@ -51,7 +56,90 @@ def _prompt(messages):
     return "\n\n".join(f"[{who.get(m['role'], m['role'])}]\n{_text(m['content'])}" for m in messages) + "\n\n[마지막 사용자 요청에 답하세요]"
 
 
+# ── PC 무료 AI (Ollama) ─────────────────────────────────────────────
+# 2026-11-07 대표 결정: 매시간 도는 분석(요약·진단)은 이 PC 그래픽카드의 무료 AI 로 돌려 Max 한도를 아낀다.
+# 독자에게 나가는 글(기획안·텔레그램 문구·쓰레드 글 등)은 그대로 Claude.
+# 무료 AI 가 꺼져 있거나 답이 형식에 안 맞으면 자동으로 Claude 로 넘어간다 (사이트가 멈추지 않게).
+# PC 에서만 바꾸기: ~/.content-lab-ai/llm_route.json  {"off": true} → 전부 Claude / {"local": ["a.py", ...], "model": "qwen3:8b"}
+LOCAL_URL = os.environ.get("OLLAMA_HOST", "http://127.0.0.1:11434").rstrip("/")
+LOCAL_MODEL = "qwen3:8b"
+LOCAL_SCRIPTS = set()   # 2026-11-07 시험 결과: 이 PC(그래픽카드 8GB를 다른 프로그램이 대부분 씀)에서는 느리고 품질이 낮아 기본은 끔
+LOCAL_MAX_PROMPT = 30000          # 이보다 긴 자료(추정 토큰)는 8GB 그래픽카드에 안 들어가서 Claude 로
+LOCAL_TIMEOUT = 15 * 60
+_HOME = os.path.join(os.path.expanduser("~"), ".content-lab-ai")
+
+
+def _local_log(msg):
+    try:
+        os.makedirs(_HOME, exist_ok=True)
+        with open(os.path.join(_HOME, "llm_local.log"), "a", encoding="utf-8") as f:
+            f.write(f"{datetime.now():%m/%d %H:%M:%S} {os.path.basename(sys.argv[0] or '?')} {msg}\n")
+    except OSError:
+        pass
+
+
+def _route():
+    """(무료 AI 를 쓸지, 모델 이름). 깃허브 서버·설정 off·목록 밖 프로그램이면 Claude."""
+    if os.environ.get("GITHUB_ACTIONS") or os.environ.get("LLM_BACKEND") == "claude":
+        return False, None
+    cfg = {}
+    try:
+        with open(os.path.join(_HOME, "llm_route.json"), encoding="utf-8") as f:
+            cfg = json.load(f)
+    except (OSError, ValueError):
+        pass
+    if cfg.get("off"):
+        return False, None
+    scripts = set(cfg.get("local") or LOCAL_SCRIPTS)
+    me = os.path.basename(sys.argv[0] or "")
+    return (os.environ.get("LLM_BACKEND") == "local" or me in scripts), cfg.get("model") or LOCAL_MODEL
+
+
+def _local(model, system, messages, schema):
+    sys_text = system if isinstance(system, str) else _text(system or [])
+    user = _prompt(messages)
+    est = (len(sys_text) + len(user)) // 2          # 한글 기준 대략 2글자 = 1토큰보다 넉넉하게
+    if est > LOCAL_MAX_PROMPT:
+        raise APIConnectionError(f"자료가 길어요(약 {est:,}토큰)")
+    if schema is not None:
+        sys_text += "\n\n반드시 주어진 JSON 형식으로만, 한국어로 답하세요."
+    body = {"model": model, "stream": False, "think": False,
+            "messages": [{"role": "system", "content": sys_text}, {"role": "user", "content": user}],
+            "options": {"num_ctx": min(40960, max(8192, int(est * 1.15) + 8192)), "temperature": 0.4}}
+    if schema is not None:
+        body["format"] = schema.model_json_schema()
+    req = urllib.request.Request(LOCAL_URL + "/api/chat", data=json.dumps(body, ensure_ascii=False).encode("utf-8"),
+                                 headers={"Content-Type": "application/json"})
+    t = time.time()
+    try:
+        with urllib.request.urlopen(req, timeout=LOCAL_TIMEOUT) as r:
+            d = json.loads(r.read().decode("utf-8"))
+    except (urllib.error.URLError, TimeoutError, OSError) as e:
+        raise APIConnectionError(f"무료 AI 연결 실패: {e}")
+    text = (d.get("message") or {}).get("content") or ""
+    parsed = None
+    if schema is not None:
+        try:
+            parsed = schema.model_validate(json.loads(text))
+        except Exception as e:  # 형식이 틀리면 Claude 로
+            raise APIStatusError(f"무료 AI 답 형식 오류: {str(e)[:160]}")
+    usage = SimpleNamespace(input_tokens=d.get("prompt_eval_count", 0), output_tokens=d.get("eval_count", 0), backend="local")
+    _local_log(f"무료AI {model} 입력 {usage.input_tokens:,} 출력 {usage.output_tokens:,} {time.time() - t:.0f}초 ✓")
+    return SimpleNamespace(parsed_output=parsed, stop_reason="end_turn", usage=usage,
+                           content=[SimpleNamespace(type="text", text=text)])
+
+
 def _run(model, system, messages, schema=None, effort=None):
+    use_local, local_model = _route()
+    if use_local:
+        try:
+            return _local(local_model, system, messages, schema)
+        except (APIConnectionError, APIStatusError) as e:
+            _local_log(f"→ Claude 로 넘김 ({e})")
+    return _claude(model, system, messages, schema, effort)
+
+
+def _claude(model, system, messages, schema=None, effort=None):
     cli = _cli()
     if not cli:
         raise APIConnectionError("claude 명령을 찾지 못했어요 (Claude Code 설치·로그인 필요)")

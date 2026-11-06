@@ -94,7 +94,9 @@ def main():
     keys = ("author", "lang", "press", "followers", "views", "spread", "rate", "likes", "replies", "reposts", "quotes", "shares", "memo", "draft")
     items = [{"no": i, "lists": [LISTS[k] for k in p["lists"]], **{k: p[k] for k in keys if p.get(k) not in (None, "")},
               "text": p["text"][:1200]} for i, p in enumerate(posts, 1)]
-    digest = hashlib.sha1(json.dumps(items, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+    # 반응 숫자는 매시간 조금씩 바뀌므로 25% 단위로 묶어 본다 — 글이 바뀌거나 숫자가 크게 움직일 때만 다시 분석 (2026-11-07 토큰 절약)
+    rough = lambda v: round(__import__("math").log(v + 1, 1.25)) if isinstance(v, (int, float)) and not isinstance(v, bool) and v >= 0 else v
+    digest = hashlib.sha1(json.dumps([{k: rough(v) for k, v in i.items()} for i in items], ensure_ascii=False, sort_keys=True).encode()).hexdigest()
     prompt = "분석할 쓰레드 글:\n" + json.dumps(items, ensure_ascii=False, indent=1)
     from feedback import feedback_prompt
     prompt += feedback_prompt(["쓰레드", "해외 쓰레드", "쓰레드(모은 글)"])   # 사이트에서 남긴 후기
