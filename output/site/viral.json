@@ -1,6 +1,6 @@
 {
  "made_at": "2026-11-06T22:29:38.435897+09:00",
- "checked_at": "2026-11-06T23:33+09:00",
+ "checked_at": "2026-11-07T00:14+09:00",
  "days": 45,
  "min_x": 3,
  "funnel": {
@@ -127,10 +127,10 @@
    ],
    "counter": [],
    "test": {
-    "n": 1,
+    "n": 2,
     "right": 1,
-    "rate": 1.0,
-    "base_rate": 1.0,
+    "rate": 0.5,
+    "base_rate": 0.5,
     "lift": 0.0,
     "fixed": 0,
     "broke": 0,
@@ -198,7 +198,16 @@
      "kind": "카드뉴스"
     }
    ],
-   "test": null
+   "test": {
+    "n": 4,
+    "right": 2,
+    "rate": 0.5,
+    "base_rate": 0.25,
+    "lift": 0.25,
+    "fixed": 2,
+    "broke": 1,
+    "status": "검증 중"
+   }
   },
   {
    "name": "전망 말고 벌어진 일",
@@ -254,7 +263,16 @@
      "kind": "릴스"
     }
    ],
-   "test": null
+   "test": {
+    "n": 8,
+    "right": 3,
+    "rate": 0.38,
+    "base_rate": 0.38,
+    "lift": 0.0,
+    "fixed": 1,
+    "broke": 1,
+    "status": "검증 실패"
+   }
   },
   {
    "name": "무슨 일 → 얼마나 → 왜 → 수습 → 당사자 한마디",
@@ -303,10 +321,10 @@
    ],
    "counter": [],
    "test": {
-    "n": 3,
-    "right": 3,
-    "rate": 1.0,
-    "base_rate": 1.0,
+    "n": 6,
+    "right": 4,
+    "rate": 0.67,
+    "base_rate": 0.67,
     "lift": 0.0,
     "fixed": 0,
     "broke": 0,
@@ -368,10 +386,10 @@
     }
    ],
    "test": {
-    "n": 3,
-    "right": 2,
-    "rate": 0.67,
-    "base_rate": 0.67,
+    "n": 6,
+    "right": 5,
+    "rate": 0.83,
+    "base_rate": 0.83,
     "lift": 0.0,
     "fixed": 0,
     "broke": 0,
@@ -425,14 +443,14 @@
    ],
    "counter": [],
    "test": {
-    "n": 6,
-    "right": 5,
-    "rate": 0.83,
-    "base_rate": 1.0,
-    "lift": -0.17,
+    "n": 8,
+    "right": 6,
+    "rate": 0.75,
+    "base_rate": 0.88,
+    "lift": -0.13,
     "fixed": 0,
     "broke": 1,
-    "status": "검증 중"
+    "status": "효과 없음"
    }
   },
   {
@@ -475,14 +493,14 @@
    ],
    "counter": [],
    "test": {
-    "n": 6,
-    "right": 5,
-    "rate": 0.83,
-    "base_rate": 1.0,
-    "lift": -0.17,
-    "fixed": 0,
+    "n": 13,
+    "right": 9,
+    "rate": 0.69,
+    "base_rate": 0.69,
+    "lift": 0.0,
+    "fixed": 1,
     "broke": 1,
-    "status": "검증 중"
+    "status": "효과 없음"
    }
   },
   {
@@ -533,14 +551,14 @@
     }
    ],
    "test": {
-    "n": 5,
-    "right": 4,
-    "rate": 0.8,
-    "base_rate": 1.0,
-    "lift": -0.2,
-    "fixed": 0,
-    "broke": 1,
-    "status": "검증 중"
+    "n": 10,
+    "right": 6,
+    "rate": 0.6,
+    "base_rate": 0.6,
+    "lift": 0.0,
+    "fixed": 2,
+    "broke": 2,
+    "status": "효과 없음"
    }
   },
   {
@@ -792,39 +810,46 @@
     }
    ],
    "test": {
-    "n": 7,
-    "right": 7,
-    "rate": 1.0,
-    "base_rate": 1.0,
+    "n": 10,
+    "right": 8,
+    "rate": 0.8,
+    "base_rate": 0.8,
     "lift": 0.0,
     "fixed": 0,
     "broke": 0,
-    "status": "검증 중"
+    "status": "효과 없음"
    }
   }
  ],
  "lab": {
-  "tests": 16,
-  "with_rate": 0.69,
-  "without_rate": 0.75,
-  "panel_rate": 0.62,
+  "tests": 28,
+  "with_rate": 0.61,
+  "without_rate": 0.61,
+  "panel_rate": 0.5,
   "카드뉴스": {
-   "tests": 11,
-   "with_rate": 0.82,
-   "without_rate": 0.91,
-   "panel_rate": 0.73
+   "tests": 20,
+   "with_rate": 0.6,
+   "without_rate": 0.6,
+   "panel_rate": 0.5
   },
   "릴스": {
-   "tests": 5,
-   "with_rate": 0.4,
-   "without_rate": 0.4,
-   "panel_rate": 0.4
+   "tests": 8,
+   "with_rate": 0.62,
+   "without_rate": 0.62,
+   "panel_rate": 0.5
   },
-  "formula_gain": -0.06,
-  "writer_rounds": 2,
-  "writer_gain": 0.67
+  "formula_gain": 0.0,
+  "writer_rounds": 3,
+  "writer_gain": 0.39
  },
- "writer_lessons": [],
+ "writer_lessons": [
+  "낯선 숫자(예: 300%)는 그대로 던지지 말고, 무슨 뜻인지와 생활·물가·계좌로 이어지는 길을 한 장에 쉬운 말로 풀어 쓴다.",
+  "발언의 조건(예: 미국에 공장이 있느냐)을 따로 세우고, 기업 대응 같은 다른 사실을 그 조건에 바로 붙여 왜 나온 일인지 보이게 한다.",
+  "시장 숫자(코스피, 환율)는 기준 시점과 함께 보여주되, 재료에 근거가 없으면 관세 때문이라고 연결하지 말고 '원인은 확인 안 됨'이라고 적는다.",
+  "종목 추천, 시행 가능성 수치 등 재료에 없는 내용은 독자가 원해도 지어내지 않는다. 모르는 부분은 모른다고 밝힌다.",
+  "'보도, 확정 아님' 같은 단서는 줄마다 반복하지 말고 꼭 필요한 곳에 한 줄만 남긴다.",
+  "한 글에 한 사건만 다루고, 근거는 한 장, 단서는 한 줄로 정리한다."
+ ],
  "pairs": [
   {
    "code": "DfLK8TCluoh",
