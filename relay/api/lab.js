@@ -88,12 +88,14 @@ export default async function handler(req, res) {
   const key = req.headers['x-lab-key'], { LAB_KEY, LAB_OWNER_KEY, LAB_GH_TOKEN } = process.env;
   if (!LAB_GH_TOKEN || !LAB_KEY || !LAB_OWNER_KEY) return res.status(503).json({ error: 'not_configured' });
   const isOwner = same(key, LAB_OWNER_KEY);
-  if (!isOwner && !same(key, LAB_KEY)) {
+  const path = String(req.query.path || ''), rule = route(req.method, path);
+  // 영상 연구소 요청은 암호 없이 받는다 (대표 혼자 쓰는 기능, 2026-11-06 대표 요청). 형식은 reelFile 이 다시 만들고,
+  // 하루 처리량은 PC(reels/reel_listen.py)가 막는다. 인스타 발행 등 다른 요청은 그대로 암호가 필요하다.
+  const open = !!rule && !!(rule.reel || rule.reelStatus || rule.reelData);
+  if (!open && !isOwner && !same(key, LAB_KEY)) {
     await new Promise(r => setTimeout(r, 800));   // 암호 맞히기를 느리게
     return res.status(401).json({ error: 'bad_key' });
   }
-
-  const path = String(req.query.path || ''), rule = route(req.method, path);
   if (!rule) return res.status(404).json({ error: 'not_allowed' });
   if (rule.owner && !isOwner) return res.status(403).json({ error: 'owner_only' });
   if (rule.check) return res.status(204).end();

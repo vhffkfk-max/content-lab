@@ -204,6 +204,10 @@ def poll(jobs, seen, etag):
         if old or q.get("error"):   # PC가 꺼져 있던 사이 쌓인 요청·지난 실패 기록
             change(name, "DELETE", "reel request expired")
             continue
+        if over_limit(q.get("action", "")):
+            log("하루 한도 넘음:", q["rid"], q.get("action"))
+            change(name, "PUT", "reel request over limit", error="오늘 처리할 수 있는 횟수를 넘었어요. 내일 다시 눌러 주세요.")
+            continue
         change(name, "PUT", "reel request picked", picked=datetime.now(KST).isoformat(timespec="seconds"))
         log("요청 받음:", q["rid"], q["action"])
         jobs.put((name, q))
@@ -212,6 +216,20 @@ def poll(jobs, seen, etag):
 
 
 AUTO_STATE = pathlib.Path.home() / ".content-lab-ai" / "reel_auto.json"
+LIMIT_STATE = pathlib.Path.home() / ".content-lab-ai" / "reel_limits.json"
+DAILY = {"board": 15, "make": 12, "save": 150, "voice": 150}   # 사이트 요청은 암호가 없어서 하루 처리량을 막는다 (자동 보드는 따로)
+
+
+def over_limit(action):
+    """오늘 이 일을 너무 많이 받았으면 True. 받은 횟수를 센다."""
+    today = datetime.now(KST).strftime("%Y%m%d")
+    state = json.loads(LIMIT_STATE.read_text(encoding="utf-8")) if LIMIT_STATE.exists() else {}
+    counts = state.get(today, {})
+    if counts.get(action, 0) >= DAILY.get(action, 0):
+        return True
+    counts[action] = counts.get(action, 0) + 1
+    LIMIT_STATE.write_text(json.dumps({today: counts}), encoding="utf-8")
+    return False
 SUGGEST_EVERY_S = 30 * 60
 
 

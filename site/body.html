@@ -1248,7 +1248,6 @@ a.row:hover .row-main{text-decoration:underline}
     vl.cur = d; vl.dirty = false; d.cuts.forEach((c, i) => { c.i = i; }); vlDraw();
   }
   async function vlSend(action, fields) {
-    if (!fb.key && !(await connectLab())) return false;
     const rid = Math.random().toString(36).slice(2, 12);
     const r = await ghApi('reel-request', { method: 'POST', body: JSON.stringify({ rid, action, ...fields }) });
     if (r.status !== 201) { alert(ghFail(r.status)); return false; }
@@ -1385,9 +1384,8 @@ a.row:hover .row-main{text-decoration:underline}
     form.addEventListener('submit', async e => { e.preventDefault(); const topic = inp.value.trim(); if (topic.length < 2) return alert('주제를 2글자 이상 넣어 주세요.'); if (await vlSend('board', { topic })) inp.value = ''; });
     const status = el('div'); status.id = 'vl-status';
     const list = el('div', 'vl-list');
-    if (!fb.key) { const b = el('button', 'btn', '암호 넣고 보드 보기'); b.type = 'button'; b.addEventListener('click', async () => { if (await connectLab()) vlStart(true); }); list.append(b); }
     vl.list.forEach(x => { const b = el('button', 'vl-item' + (vl.cur && vl.cur.id === x.id ? ' on' : '')); b.type = 'button'; b.append(el('b', '', x.topic), el('span', 'sub', `${x.updated}${x.auto ? ' · 자동' : ''}${x.video ? ' · 영상 있음' : ''}${x.blocked ? ' · 문제 있음' : ''}`)); b.addEventListener('click', () => vlOpen(x.id).catch(e => alert(e.message))); list.append(b); });
-    if (fb.key && !vl.list.length) list.append(el('p', 'sub', '아직 보드가 없어요. 주제를 넣어 첫 보드를 만들어 보세요.'));
+    if (!vl.list.length) list.append(el('p', 'sub', '아직 보드가 없어요. 주제를 넣어 첫 보드를 만들어 보세요.'));
     root.replaceChildren(tabs, form, sug, status, list, ...(vl.cur ? [vlBoard()] : []));
     vlDrawBar(); vlDrawStatus();
   }
@@ -1395,7 +1393,6 @@ a.row:hover .row-main{text-decoration:underline}
     if (vl.started && !force) { vlDraw(); return; }
     vl.started = true;
     vlDraw();
-    if (!fb.key) return;
     try { await vlLoadList(); } catch (e) { vlRoot().prepend(el('p', 'warn', e.message)); }
     vlPending.get().forEach(vlWatch);
     vlDraw();
