@@ -172,6 +172,9 @@ def run(name, q):
         else:
             raise ValueError("모르는 요청")
     if out:
+        if action == "board":
+            import suggest
+            suggest.save()   # 방금 만든 주제가 추천 칩에 남아 있지 않게
         with PUSH_LOCK:   # 두 줄이 동시에 가지를 덮어쓰지 않게
             log("미리보기:", preview.push())
     log(q["rid"], action, f"{time.time() - t0:.0f}초", msg or "완료")

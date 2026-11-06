@@ -47,6 +47,7 @@
 .vl-head h2{margin:10px 0 2px;font-size:20px}.vl-box{margin-top:12px;padding:12px 14px;border:1px solid var(--border);border-radius:10px;background:var(--surface)}.vl-box ul{margin:6px 0 0;padding-left:18px}.vl-box.bad{border-color:#c0392b}.vl-box.warn{border-color:#b8860b}.vl-box.ok{border-color:#2e8b57}.vl-box summary{cursor:pointer;font-weight:700}
 .vl-video{display:block;width:100%;max-width:300px;aspect-ratio:9/16;margin:10px 0 4px;border-radius:10px;background:#000}
 .vl-fmts{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:10px}.vl-fmt{text-align:left;padding:6px;border-radius:10px;border:1px solid var(--border);background:var(--ground);color:var(--text);cursor:pointer;font:inherit}.vl-fmt.on{border-color:var(--accent);box-shadow:inset 0 0 0 2px var(--accent)}.vl-fmt-imgs{display:flex;gap:3px}.vl-fmt-imgs img{flex:1;min-width:0;aspect-ratio:9/16;object-fit:cover;border-radius:6px;background:var(--raised)}.vl-fmt b{display:block;font-size:13px;margin-top:6px}.vl-fmt span{display:block;font-size:11.5px;color:var(--muted);line-height:1.35;margin-top:2px}
+.vl-zoom{position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.82);display:flex;align-items:center;justify-content:center;padding:16px}.vl-zoom[hidden]{display:none}.vl-zoom-card{max-width:min(980px,96vw);max-height:96vh;display:flex;flex-direction:column;gap:10px;background:var(--surface);border-radius:14px;padding:12px}.vl-zoom-imgs{display:flex;gap:10px;justify-content:center;min-height:0}.vl-zoom-imgs img{max-height:min(78vh,860px);max-width:46vw;aspect-ratio:9/16;object-fit:contain;border-radius:10px;background:#000}.vl-zoom-bar{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}.vl-zoom-bar .sub{flex:1;min-width:200px;margin:0}.vl-zoom-btns{display:flex;gap:8px;margin-left:auto}.vl-job.ok{background:#e6f4ea;color:#1e5c33;font-weight:700}.vl-chip.made{border-style:solid;opacity:.75}.vl-chip em{display:block;font-style:normal;font-size:11.5px;color:var(--accent);margin-top:3px}
 .vl-pre{white-space:pre-wrap;font:inherit;font-size:13px;margin:8px 0 0}.vl-hook{display:flex;gap:10px;align-items:center;padding:7px 0;border-top:1px solid var(--rule)}.vl-hook:first-of-type{border-top:0}.vl-hook b{min-width:44px;color:var(--accent)}.vl-hook span{flex:1}
 .vl-cuts{display:grid;grid-template-columns:repeat(auto-fill,minmax(420px,1fr));gap:12px;margin-top:12px}.vl-cut{display:grid;grid-template-columns:140px minmax(0,1fr);gap:12px;padding:12px;border:1px solid var(--border);border-radius:10px;background:var(--surface)}.vl-cut.dirty{border-color:var(--accent)}.vl-cut img,.vl-noimg{width:140px;aspect-ratio:9/16;border-radius:8px;object-fit:cover;display:block;background:var(--raised)}.vl-noimg{display:grid;place-items:center;font-size:12px;color:var(--muted)}
 .vl-cut-head{display:flex;gap:8px;align-items:baseline}.vl-field{display:block;margin-top:7px;font-size:12px;color:var(--muted)}.vl-field textarea{display:block;width:100%;margin-top:3px;padding:6px 8px;border-radius:7px;border:1px solid var(--control);background:var(--ground);color:var(--text);font:inherit;font-size:13.5px;line-height:1.4;resize:vertical}.vl-heard{margin:3px 0 0;font-size:12px;color:var(--faint)}.vl-tools{display:flex;gap:5px;flex-wrap:wrap;margin-top:9px}
@@ -1347,6 +1348,8 @@ html,body{font-size:16px;line-height:1.75}
       await vlLoadList().catch(() => {});
       const target = q.id || (vl.list.find(x => x.rid === q.rid) || {}).id;
       if (target) await vlOpen(target, true).catch(() => {});
+      const DONE = { board: '컷 보드가 만들어졌어요. 아래에 열어 뒀어요.', make: '영상을 만들었어요. 텔레그램과 바탕화면 릴스 완성영상 폴더에도 있어요.', save: '수정을 반영했어요.', format: '형식을 바꿨어요.' };
+      if (DONE[q.action]) { vl.done = { text: DONE[q.action], t: Date.now() }; if (q.action === 'board' || q.action === 'make') setTimeout(() => document.querySelector('.vl-board')?.scrollIntoView({ behavior: 'smooth' }), 300); }
       vlDraw();
       if (q.action === 'voice' && vl.cur && vl.cur.cuts[q.cut] && vl.cur.cuts[q.cut].voice) { new Audio(vlUrl(vl.cur.cuts[q.cut].voice, Date.now())).play().catch(() => {}); }
     };
@@ -1370,6 +1373,18 @@ html,body{font-size:16px;line-height:1.75}
     };
     tick();
   }
+  function vlZoom(title, srcs, why, action) {   // 눌러서 크게 보기 (형식 견본·컷 이미지)
+    let box = document.getElementById('vl-zoom');
+    if (!box) { box = el('div', 'vl-zoom'); box.id = 'vl-zoom'; box.addEventListener('click', e => { if (e.target === box) box.hidden = true; }); document.addEventListener('keydown', e => { if (e.key === 'Escape') box.hidden = true; }); document.body.append(box); }
+    const card = el('div', 'vl-zoom-card'), imgs = el('div', 'vl-zoom-imgs'), bar = el('div', 'vl-zoom-bar'), close = el('button', 'btn', '닫기');
+    srcs.forEach(s => { const im = el('img'); im.src = s; im.alt = title; imgs.append(im); });
+    close.type = 'button'; close.addEventListener('click', () => { box.hidden = true; });
+    bar.append(el('b', '', title), ...(why ? [el('span', 'sub', why)] : []));
+    const btns = el('div', 'vl-zoom-btns');
+    if (action) { const go = el('button', 'btn primary', action.label); go.type = 'button'; go.addEventListener('click', () => { box.hidden = true; action.run(); }); btns.append(go); }
+    btns.append(close); bar.append(btns);
+    card.append(imgs, bar); box.replaceChildren(card); box.hidden = false;
+  }
   function vlBusy() { return vlPending.get().some(q => vl.watching.has(q.rid)); }
   function vlDrawStatus() {
     const box = document.getElementById('vl-status'); if (!box) return;
@@ -1380,7 +1395,8 @@ html,body{font-size:16px;line-height:1.75}
       const what = j.topic || (vl.list.find(x => x.id === j.id) || {}).topic || j.id;
       return `${j.auto ? '자동 ' : ''}${NAME[j.action] || j.action} · ${what} · ${j.picked ? `PC가 만드는 중 · ${took}` : 'PC 차례를 기다리는 중'}`;
     });
-    box.replaceChildren(...mine.map(([, t]) => el('p', 'vl-job', t)), ...others.map(t => el('p', 'vl-job', t)));
+    const done = vl.done && Date.now() - vl.done.t < 60000 ? [el('p', 'vl-job ok', vl.done.text)] : [];
+    box.replaceChildren(...done, ...mine.map(([, t]) => el('p', 'vl-job', t)), ...others.map(t => el('p', 'vl-job', t)));
     const go = document.getElementById('vl-make'), sv = document.getElementById('vl-save');
     if (go) go.disabled = vl.dirty || vlBlocked() || vlBusy();
     if (sv) sv.disabled = !vl.dirty || vlBusy();
@@ -1399,7 +1415,7 @@ html,body{font-size:16px;line-height:1.75}
     const card = el('article', 'vl-cut' + (c.edited ? ' dirty' : '')), left = el('a'), body = el('div', 'vl-cut-body');
     if (c.image) {
       const img = el('img'); img.loading = 'lazy'; img.alt = `컷 ${i + 1}`; img.src = vlUrl(c.image, c.v);
-      left.href = img.src; left.target = '_blank'; left.rel = 'noopener'; left.append(img);
+      left.href = img.src; left.append(img); left.addEventListener('click', e => { e.preventDefault(); vlZoom(`컷 ${i + 1}`, [img.src], c.say_text || ''); });
     } else left.append(el('div', 'vl-noimg', '이미지 없음'));
     const head = el('div', 'vl-cut-head'); head.append(el('b', '', `컷 ${i + 1}`), el('span', 'sub', { number: '큰 숫자', word: '큰 글자', chart: '차트', bars: '비교 막대', list: '목록' }[c.kind] || ''));
     body.append(head, vlField(c, 'say', '대본 (읽는 글)', card, 2));
@@ -1456,7 +1472,7 @@ html,body{font-size:16px;line-height:1.75}
         const b = el('button', 'vl-fmt' + (f.key === cur ? ' on' : '')); b.type = 'button'; b.title = f.why;
         const imgs = el('div', 'vl-fmt-imgs'); f.images.forEach(x => { const im = el('img'); im.loading = 'lazy'; im.alt = f.name; im.src = vlUrl(x.path, x.v); imgs.append(im); });
         b.append(imgs, el('b', '', f.key === cur ? `✓ ${f.name}` : f.name), el('span', '', f.why));
-        b.addEventListener('click', () => { if (f.key === cur) return; if (vl.dirty) return alert('수정을 먼저 반영해 주세요.'); if (confirm(`'${f.name}'으로 바꿀까요? 컷 이미지를 다시 그려요.`)) vlSend('format', { id: d.id, format: f.key }); });
+        b.addEventListener('click', () => vlZoom(f.name, f.images.map(x => vlUrl(x.path, x.v)), f.why, f.key === cur ? null : { label: '이 형식으로 바꾸기', run: () => { if (vl.dirty) return alert('수정을 먼저 반영해 주세요.'); vlSend('format', { id: d.id, format: f.key }); } }));
         grid.append(b);
       });
       p.append(grid); box.append(p);
@@ -1481,7 +1497,13 @@ html,body{font-size:16px;line-height:1.75}
       vl.suggest.forEach(x => {
         const b = el('button', 'vl-chip'); b.type = 'button'; b.title = `${x.title}\n${x.why}`;
         b.append(el('b', '', x.keyword), el('span', '', x.title));
-        b.addEventListener('click', () => { if (confirm(`'${x.keyword}' 주제로 컷 보드를 만들까요?\n${x.title}`)) vlSend('board', { topic: x.keyword }); });
+        const made = vl.list.find(y => y.topic === x.keyword);
+        if (made) { b.classList.add('made'); b.append(el('em', '', '이미 만든 보드 있음 · 눌러서 열기')); }
+        b.addEventListener('click', () => {
+          if (made && !confirm(`'${x.keyword}' 보드가 이미 있어요 (${made.updated}).\n확인: 새로 하나 더 만들기 / 취소: 있는 보드 열기`)) { vlOpen(made.id).then(() => document.querySelector('.vl-board')?.scrollIntoView({ behavior: 'smooth' })).catch(e => alert(e.message)); return; }
+          if (!made && !confirm(`'${x.keyword}' 주제로 컷 보드를 만들까요?\n${x.title}`)) return;
+          vlSend('board', { topic: x.keyword });
+        });
         sug.append(b);
       });
     }
