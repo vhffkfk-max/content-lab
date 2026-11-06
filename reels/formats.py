@@ -4,10 +4,11 @@
 - 사진은 카드뉴스와 같은 publish/photos.py: 위키미디어 공용의 상업 이용 가능 사진(CC BY·BY-SA·CC0·퍼블릭 도메인)만,
   후보를 Claude 가 눈으로 보고 고른다. 출처는 올릴 글 끝에 모아 적는다 (CC BY 는 출처 표시가 조건).
 """
-from concurrent.futures import ThreadPoolExecutor
+import time
 
 from pydantic import BaseModel
 
+MAIN_REPEAT = 3   # 대표 사진을 쓰는 컷 수 상한
 PHOTO_MODEL = "claude-sonnet-5-5"   # 사진 검색어만 정하는 가벼운 일
 
 # key: (이름, 어떤 영상에 어울리나, CSS). 순서가 사이트에 보이는 순서.
@@ -104,10 +105,12 @@ body.fmt-kinetic section:has(.ph) .emo{display:none}
 """),
 }
 DEFAULT = "photo"
+# 모든 형식 공통: 오른쪽 위 기준일·면책 문구는 화면에서 빼고 올릴 글 끝에만 둔다 (대표 요청 2026-11-06, 짜쳐 보인다). AI 음성 표시는 캡션과 플랫폼 AI 표시로 한다.
+COMMON = "body #warn,body #head span{display:none!important}body #warn,body #head span{text-shadow:0 1px 4px rgba(0,0,0,.85),0 0 2px rgba(0,0,0,.9);color:#fff}body.fmt-paper #warn,body.fmt-paper #head span,body.fmt-minimal #warn,body.fmt-minimal #head span{text-shadow:none;color:#444}\n"
 
 
 def css():
-    return "".join(c for _, _, c in FORMATS.values())
+    return COMMON + "".join(c for _, _, c in FORMATS.values())
 
 
 class PhotoPlan(BaseModel):
@@ -147,9 +150,20 @@ def fetch(topic, cuts):
         except Exception:
             return None
 
-    with ThreadPoolExecutor(max_workers=4) as pool:
-        got = list(pool.map(one, zip(queries, cuts)))
-    out = [g or main for g in got]
+    got = []
+    for args in zip(queries, cuts):   # 위키미디어가 동시 요청을 막아서(429) 한 장씩 쉬어 가며 받는다
+        got.append(one(args))
+        if args[0]:
+            time.sleep(1.5)
+    out, main_left = [], MAIN_REPEAT
+    for i, g in enumerate(got):
+        if g:
+            out.append(g)
+        elif main and main_left and (i == 0 or i % 4 == 0):   # 대표 사진은 첫 컷과 4컷마다, 최대 3컷만 (같은 사진 반복 방지)
+            out.append(main)
+            main_left -= 1
+        else:
+            out.append(None)
     return {"subject": subject, "queries": queries, "photos": out}
 
 

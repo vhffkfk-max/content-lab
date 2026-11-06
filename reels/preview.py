@@ -96,7 +96,7 @@ def view(d):
         files[f"{d.name}/video.mp4"] = video.read_bytes()
     board = {"id": d.name, "topic": st["topic"], "edited": st.get("edited", False), "cuts": cuts, "board": {k: b.get(k) for k in ("updated", "basis", "block", "problems", "seconds", "hooks", "changes", "video", "miss", "rid", "caption", "auto")},
              "ig_title": s.ig_title, "yt_title": s.yt_title, "summary": s.summary, "question": s.question,
-             "format": fmt, "formats": samples, "photo_count": sum(1 for p in (st.get("photos") or []) if p),
+             "format": fmt, "formats": samples, "photo_count": sum(1 for p in (st.get("photos") or []) if p), "photo_unique": len({p["url"] for p in (st.get("photos") or []) if p and p.get("url")}),
              "video_file": f"{d.name}/video.mp4" if video else None, "video_v": hashlib.md5(files[f"{d.name}/video.mp4"]).hexdigest()[:8] if video else "",
              "upload": upload.read_text(encoding="utf-8") if b.get("video") and upload.exists() else "",
              "sources": [{"source": r.get("source", ""), "title": r["title"], "link": r.get("link", "")} for r in st.get("news", [])[:12]]}

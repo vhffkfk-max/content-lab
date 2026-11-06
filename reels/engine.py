@@ -304,7 +304,7 @@ window.seek=t=>{
   const i=TL.findIndex(s=>t<s.end);const k=i<0?TL.length-1:i;const sc=TL[k];
   S.forEach((e,j)=>e.style.display=j===k?'flex':'none');
   const el=S[k],l=t-sc.start;document.body.style.background=el.dataset.bg||'#0B0B0D';el.style.transform=`scale(${1+.07*(1-ease(l/.16))})`;document.getElementById('flash').style.opacity=k?Math.max(0,.28*(1-l/.09)):0;
-  el.querySelectorAll('.a').forEach(a=>{const p=ease((l-+(a.dataset.d||0))/.12);a.style.opacity=p;a.style.transform=`translateY(${(1-p)*24}px)`});
+  el.querySelectorAll('.a').forEach(a=>{const p=k===0&&!+(a.dataset.d||0)?1:ease((l-+(a.dataset.d||0))/.12);a.style.opacity=p;a.style.transform=`translateY(${(1-p)*24}px)`});
   el.querySelectorAll('[data-count]').forEach(n=>{const d=+(n.dataset.d||0),p=ease((l-d)/.3),v=Math.abs(+n.dataset.count)*p;n.textContent=(n.dataset.sign||'')+v.toFixed(1)+'%'});
   el.querySelectorAll('.fill').forEach(f=>{f.style.width=(+f.dataset.w*ease((l-+f.dataset.d)/.25))+'px'});
   const ln=el.querySelector('#line');if(ln){const p=ease(l/.7);ln.style.strokeDasharray=1;ln.style.strokeDashoffset=1-p;el.querySelector('#dot').style.opacity=p>.97?1:0}
@@ -362,9 +362,9 @@ def shoot(page_file, total, video, only=None, prefix=""):
                 continue
             pg.evaluate(f"seek({s['end'] - 0.1})")
             pg.screenshot(path=str(stills / f"{prefix}{s['id']}.jpg"), type="jpeg", quality=88)
-            over = pg.evaluate("(()=>{const e=S.find(x=>x.style.display!=='none'),c=document.getElementById('cap').firstElementChild;e.querySelectorAll('.ph').forEach(p=>p.style.display='none');const r=[e.scrollHeight>e.clientHeight+2||e.scrollWidth>e.clientWidth+2,c&&c.offsetHeight>185];e.querySelectorAll('.ph').forEach(p=>p.style.display='');return r})()")
+            over = pg.evaluate("(()=>{const e=S.find(x=>x.style.display!=='none'),c=document.getElementById('cap').firstElementChild;const tr=e.style.transform;e.style.transform='none';const box=e.getBoundingClientRect();const rs=[...e.children].filter(x=>!x.classList.contains('ph')).map(x=>x.getBoundingClientRect()).filter(r=>r.width>0&&r.height>0);e.style.transform=tr;const bot=Math.max(0,...rs.map(r=>r.bottom)),top=Math.min(9999,...rs.map(r=>r.top));const cap=c?c.getBoundingClientRect():null;return [bot>box.bottom+4||top<box.top-4,!!cap&&(cap.height>190||(bot>cap.top+4&&cap.height>0))]})()")
             if over[0] or over[1]:
-                problems.append(f"{s['id']}: {'화면' if over[0] else ''} {'자막' if over[1] else ''} 넘침")
+                problems.append(f"{s['id']}: " + " · ".join(x for x, bad in (("글이 화면 밖으로 넘침", over[0]), ("자막과 겹침", over[1])) if bad))
         b.close()
     if video:
         frames = OUT / "frames"

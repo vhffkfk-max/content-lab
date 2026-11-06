@@ -88,9 +88,12 @@ class Script(BaseModel):
 SYSTEM = """당신은 경제 인스타그램 @hotconomy 의 릴스·쇼츠 대본 작가입니다.
 독자: 오늘 무슨 경제 뉴스가 터졌는지 빠르게 알고 싶은 사람. 말투: 뉴스를 전하는 짧은 해요체. 주제 요약보다 사건과 반전.
 
-[구성] 8~15컷, 합쳐서 20~35초. 하나의 사건만 다룬다.
-1컷(후킹): 인사 없이 바로 시작. 숫자와 반전을 한 문장에 넣는다 (예: "나스닥은 올랐는데 코스피는 [pct:코스피] 폭락했어요"). 2컷: 시청자에게 왜 중요한지 한 줄. 중간: 사실 3개, 원인, 아직 모르는 것. 끝: 댓글 요청 1개만, 후킹의 낱말 하나를 되풀이해 처음으로 이어지게.
-hooks: 공식이 다른 후킹 후보 3개를 쓴다. cuts 의 1컷은 그중 가장 센 것.
+[구성] 8~15컷, 합쳐서 25~40초. 하나의 사건만 다룬다 (모음·브리핑 금지: 연구소 자료에서 모음형 0.7배, 단독형 4배).
+1컷(후킹): 인사 없이 결과부터. 셋 중 하나: ①실명 주인공의 실제 한마디·행동 ②전에는 A → 지금은 B 숫자 낙차 ③결과 단정문. 질문으로 시작하지 않는다 (질문형 첫 줄 0.76배). 맥락 없이는 의미를 모르는 숫자(1340원, 4.13%)는 '최고'·'반토막'처럼 뜻을 함께 쓴다.
+2컷: 내 돈·내 회사에 왜 중요한지 한 줄. 중간: 사실 3개, 원인, 아직 모르는 것. 전문용어는 한 영상에 하나만, 쓰면 바로 풀어 쓴다.
+끝: '댓글'이라는 말을 넣어 둘 중 하나를 고르게 묻는다 (예: "OO일까요, OO일까요? 댓글로 알려 주세요"). 후킹의 낱말 하나를 되풀이해 처음으로 이어지게.
+말끝: "~요"로 끝나는 문장이 세 번 넘게 이어지지 않게 명사형·짧은 끊음("2천억, 멈췄다.")을 섞는다.
+hooks: 위 ①②③ 공식으로 하나씩 3개. cuts 의 1컷은 그중 가장 센 것.
 
 [컷 규칙]
 - 화면 글자(kick, big, items)는 6낱말 이내.
@@ -119,8 +122,8 @@ hooks: 공식이 다른 후킹 후보 3개를 쓴다. cuts 의 1컷은 그중 �
 - say 와 cap 의 숫자는 같은 값이어야 한다 (614.6억이면 둘 다 육백십사 점 육억).
 
 [제목]
-ig_title: 40자 이내, 사건과 반전. yt_title: 45자 이내, 끝에 #Shorts 를 넣지 않는다.
-summary: 사실 3~5줄. question: 댓글 질문. hashtags: 3~5개."""
+ig_title: 40자 이내. 1컷과 같은 사실을 '누가 무엇을 했더니 어떻게 됐다' 한 문장으로, 실명과 숫자를 우선. yt_title: 45자 이내, 끝에 #Shorts 를 넣지 않는다.
+summary: 사실 4~6줄 (캡션 전체 300~600자가 성적이 좋다), 근거 기관·언론 이름을 한 줄에 넣는다. question: '댓글'이라는 말이 든 질문. hashtags: 3~5개."""
 
 
 # ── 재료 ──
@@ -277,7 +280,13 @@ def gather(topic, seeds=()):
         for r, url, b in articles_by_browser(rest, 5 - len(bodies)):
             if b and any(t.lower() in b.lower() for t in tokens(topic)):
                 bodies.append({"title": r["title"], "source": r.get("source", ""), "link": url, "body": b})
-    return news[:25], bodies
+    uniq, seen_links = [], set()
+    for b in bodies:   # 같은 기사가 두 번 들어가지 않게
+        key = b["link"].split("?")[0]
+        if key not in seen_links and b["body"][:200] not in {x["body"][:200] for x in uniq}:
+            seen_links.add(key)
+            uniq.append(b)
+    return news[:25], uniq
 
 
 # ── 시세 ──
@@ -357,6 +366,14 @@ def texts(s):
         yield "제목·요약", f
 
 
+def num_key(n):
+    """숫자 비교용: 쉼표·끝자리 0을 지운다 (14.40 = 14.4, 1,357.00 = 1357)."""
+    n = n.replace(",", "").rstrip(".")
+    if "." in n:
+        n = n.rstrip("0").rstrip(".")
+    return n
+
+
 def hook_score(line):
     """ig-reel 스킬의 후킹 점수기. 스킬이 없으면 None."""
     tool = pathlib.Path.home() / ".claude/skills/ig-reel/hookscore.py"
@@ -371,7 +388,7 @@ def check(s, q, news, bodies):
     """막아야 하는 문제 / 참고할 문제."""
     block, warn = [], []
     src = " ".join(r["title"] for r in news) + " " + " ".join(b["body"] for b in bodies)
-    src_nums = set(re.findall(r"\d[\d,.]*\d|\d", src))
+    src_nums = {num_key(n) for n in re.findall(r"\d[\d,.]*\d|\d", src)}
     for where, t in texts(s):
         for name in PH.findall(t):
             if name not in q:
@@ -380,7 +397,7 @@ def check(s, q, news, bodies):
         for name in q:   # S&P500 처럼 이름에 든 숫자는 빼고 본다
             plain = plain.replace(name, "")
         for num in re.findall(r"\d[\d,.]*\d|\d", plain):
-            if num not in src_nums and num not in ("1", "2", "3"):
+            if num_key(num) not in src_nums and num not in ("1", "2", "3"):
                 block.append(f"{where}: 기사에서 확인 안 되는 숫자 {num} ({t})")
         if ADVICE.search(t):
             block.append(f"{where}: 투자 권유로 보이는 표현 ({t})")
@@ -414,7 +431,10 @@ def check(s, q, news, bodies):
         if len(PH.sub("00", c.say)) > 32:
             warn.append(f"컷{i}: 말이 길어요 ({c.say})")
     if s.cuts:
-        score = hook_score(to_say(s.cuts[0].say, q).replace("*", "")) if not any(n not in q for n in PH.findall(s.cuts[0].say)) else None
+        c0 = s.cuts[0]
+        known = not any(n not in q for n in PH.findall(c0.say + c0.cap))
+        scores = [x for x in (hook_score(to_say(c0.say, q).replace("*", "")), hook_score(to_text(c0.cap, q))) if x is not None] if known else []
+        score = max(scores) if scores else None   # 한글로 읽는 숫자(육백십팔조)는 점수기가 숫자로 못 알아봐서 자막(618조)으로도 매긴다
         if score is not None and score < 50:
             block.append(f"컷1: 후킹 점수 {score:.0f}점 (50점 미만). 숫자와 반전이 더 분명한 첫 문장으로 ({s.cuts[0].say})")
         warn.append(f"후킹 점수: {score}" if score is not None else "후킹 점수: 측정 안 됨")
@@ -486,6 +506,15 @@ def photo_html(i):
 
 
 def scene(i, c, q):
+    try:
+        return scene_inner(i, c, q)
+    except (KeyError, ValueError, ZeroDivisionError):   # 시세표에 없는 종목 등: 이 컷만 글자 컷으로
+        from types import SimpleNamespace
+        alt = SimpleNamespace(**{**c.model_dump(), "kind": "word", "big": c.big or c.cap or c.say})
+        return scene_inner(i, alt, q)
+
+
+def scene_inner(i, c, q):
     t = lambda x: to_text(x, q)
     kick = f'<div class="a kick">{html.escape(t(c.kick))}</div>' if c.kick else ""
     bg = BG[c.bg]
@@ -514,7 +543,7 @@ def scene(i, c, q):
         rows = "".join(bar(html.escape(n), q[n]["pct"], lim, round(j * .12, 2)) for j, n in enumerate(c.tickers))
         body = f'{kick}<div class="rows">{rows}</div>'
     elif c.kind == "list":
-        size = min(100, int(860 / (max(len(t(x)) for x in c.items) + 2)))
+        size = min(100, int(860 / (max([len(t(x)) for x in c.items] or [4]) + 2)))
         body = emo + kick + "".join(f'<div class="a chk card2" data-d="{j * .22:.2f}" style="font-size:{size}px"><b>{j + 1}</b>{html.escape(t(x))}</div>' for j, x in enumerate(c.items[:3]))
     else:
         big = t(c.big).replace("\\n", "\n")
@@ -562,20 +591,28 @@ const fx=document.getElementById('fx'),glow=document.getElementById('glow'),rays
 const rnd=n=>{const x=Math.sin(n*127.1)*43758.5453;return x-Math.floor(x)};
 const P=[...Array(34)].map((_,i)=>{const d=document.createElement('div');d.className='pt';d.style.fontSize=(22+rnd(i+1)*62)+'px';fx.appendChild(d);return{d,x:rnd(i+11)*1080,y:rnd(i+21),v:.14+rnd(i+31)*.4,o:.16+rnd(i+41)*.42}});
 const base=window.seek;let lastDir=null;
+function autofit(){   // 컷의 글(사진 칸 빼고)이 자막 위(1060px)와 머리글 아래(350px) 안에 들어오게 줄인다
+  S.forEach(e=>{const d=e.style.display,tr=e.style.transform;e.style.display='flex';e.style.transform='none';
+    const kids=[...e.children].filter(c=>!c.classList.contains('ph'));
+    const box=e.getBoundingClientRect();
+    for(let n=0;n<14&&kids.length;n++){const rs=kids.map(c=>c.getBoundingClientRect()).filter(r=>r.width>0&&r.height>0);if(!rs.length)break;const bot=Math.max(...rs.map(r=>r.bottom)),top=Math.min(...rs.map(r=>r.top));
+      if(bot<=box.bottom+2&&top>=box.top-2)break;kids.forEach(c=>{c.style.zoom=((parseFloat(getComputedStyle(c).zoom)||1)*.92).toFixed(3)})}
+    e.style.display=d;e.style.transform=tr})}
 window.seek=t=>{
+  if(!window.__fitted){autofit();window.__fitted=1}
   base(t);
   const i=TL.findIndex(s=>t<s.end),k=i<0?TL.length-1:i,sc=TL[k],el=S[k],l=t-sc.start,dur=sc.end-sc.start,dir=el.dataset.dir;
   const nx=Math.sin(t*.9)*170,ny=Math.cos(t*.7)*190,col=el.dataset.bg==='#E3262B'?'rgba(255,190,90,.5)':dir==='down'?'rgba(50,120,255,.42)':dir==='up'?'rgba(255,60,70,.42)':'rgba(255,170,40,.26)';
   glow.style.background=`radial-gradient(circle,${col},transparent 66%)`;glow.style.transform=`translate(${nx}px,${ny}px)`;
   grid.style.transform=`translate(${(t*46)%90}px,${(dir==='down'?1:-1)*(t*46)%90}px)`;
-  const numeric=el.querySelector('.big.mega,.why2,.ln.num');rays.style.opacity=numeric?1:0;rays.style.transform=`rotate(${t*26}deg)`;
+  const numeric=el.querySelector('.big.mega,.why2,.ln.num');rays.style.opacity=0;rays.style.transform=`rotate(${t*26}deg)`;
   if(dir!==lastDir){P.forEach(p=>{p.d.textContent=dir==='down'?'▼':dir==='up'?'▲':'✦';p.d.style.color=dir==='down'?'#62ACFF':dir==='up'?'#FF4B4F':'#FFC23A'});lastDir=dir}
   const sign=dir==='down'?1:-1;P.forEach(p=>{const y=((p.y+sign*t*p.v)%1+1)%1*1980-60;p.d.style.opacity=el.dataset.bg==='#E3262B'?p.o*.35:p.o;p.d.style.transform=`translate(${p.x+Math.sin(t+p.y*9)*24}px,${y}px)`});
-  const wp=Math.min(l/.26,1);if(k&&wp<1){w1.style.display=w2.style.display='block';const e=wp*wp*(3-2*wp);w1.style.transform=`translateX(${-1700+e*3400}px) skewX(-14deg)`;w2.style.transform=`translateX(${-2050+e*3400}px) skewX(-14deg)`}else{w1.style.display=w2.style.display='none'}
+  const wp=Math.min(l/.26,1);if(k===1&&wp<1){w1.style.display=w2.style.display='block';const e=wp*wp*(3-2*wp);w1.style.transform=`translateX(${-1700+e*3400}px) skewX(-14deg)`;w2.style.transform=`translateX(${-2050+e*3400}px) skewX(-14deg)`}else{w1.style.display=w2.style.display='none'}
   const hit=l>.12&&l<.4?(1-(l-.12)/.28)*(numeric?16:7):0;
   el.style.transform=`scale(${1+.07*(1-ease(l/.16))+.04*l/dur}) translate(${Math.sin(t*91)*hit}px,${Math.cos(t*77)*hit}px)`;
-  el.querySelectorAll('.ln').forEach(n=>{const j=+n.dataset.j,q=ease((l-.06-j*.11)/.13);n.style.opacity=q;n.style.transform=`scale(${1.5-.5*q})`;if(n.classList.contains('mark'))n.style.backgroundSize=`${ease((l-.3-j*.11)/.3)*100}% 100%`});
-  el.querySelectorAll('.slam').forEach(n=>{const q=ease((l-.04)/.15);n.style.transform=`scale(${1.7-.7*q})`;n.style.opacity=q});
+  el.querySelectorAll('.ln').forEach(n=>{const j=+n.dataset.j,q=k===0?1:ease((l-.06-j*.11)/.13);n.style.opacity=q;n.style.transform=`scale(${1.5-.5*q})`;if(n.classList.contains('mark'))n.style.backgroundSize=`${ease((l-.3-j*.11)/.3)*100}% 100%`});
+  el.querySelectorAll('.slam').forEach(n=>{const q=k===0?1:ease((l-.04)/.15);n.style.transform=`scale(${1.7-.7*q})`;n.style.opacity=q});
   el.querySelectorAll('.emo').forEach(n=>{const q=ease((l-.1)/.18);n.style.opacity=q;n.style.transform=`scale(${.2+.8*q+Math.sin(l*7)*.05}) rotate(${Math.sin(l*5)*8}deg)`});
   const ar=el.querySelector('#area');if(ar)ar.style.clipPath=`inset(0 ${(1-ease(l/.7))*100}% 0 0)`;
   const dot=el.querySelector('#dot');if(dot&&dot.style.opacity==='1')dot.setAttribute('r',16+Math.abs(Math.sin(l*6))*9);
@@ -642,7 +679,7 @@ def round_trip(out, s, q):
         r = subprocess.run([str(ASR_PY), str(RT), str(out / "voice_only.m4a")], capture_output=True, text=True, encoding="utf-8", errors="replace", env=env)
     heard = (r.stdout.strip().splitlines() or [""])[-1].split("|", 1)[-1].strip()
     want = [n for c in s.cuts for n in re.findall(r"\d[\d,.]*", to_text(c.cap, q))]
-    norm = lambda x: x.replace(",", "").rstrip(".")
+    norm = num_key
     got = Counter(norm(n) for n in re.findall(r"\d[\d,.]*", heard))
     miss = []
     for n in want:   # 같은 숫자가 두 번 나오면 두 번 다 들려야 한다
@@ -750,7 +787,7 @@ def render_board(out, s, q, basis, block, warn):
     hooks = []
     for h in s.hooks:
         known = not any(n not in q for n in PH.findall(h))
-        hooks.append({"say": h, "text": to_text(h, q) if known else h, "score": hook_score(to_say(h, q).replace("*", "")) if known else None})
+        hooks.append({"say": h, "text": to_text(h, q) if known else h, "score": max([x for x in (hook_score(to_say(h, q).replace("*", "")), hook_score(to_text(h, q))) if x is not None], default=None) if known else None})
     write_board(out, updated=datetime.now(KST).strftime("%m/%d %H:%M"), basis=basis, block=block, warn=warn, problems=problems, seconds=round(t, 1), hooks=hooks,
                 changes=[], caption=caption_notes(s, q, basis), video=(out / "영상.mp4").exists() and (out / "영상.mp4").stat().st_mtime > (out / "대본.json").stat().st_mtime)
 
@@ -830,6 +867,12 @@ def main():
         slug = re.sub(r"[^0-9A-Za-z가-힣]+", "_", topic)[:30]
         out = REELS_DIR / f"{datetime.now(KST):%Y%m%d_%H%M}_{slug}"
         seeds = json.loads(pathlib.Path(a.seed).read_text(encoding="utf-8")) if a.seed else []
+        if not seeds:
+            try:
+                import suggest
+                seeds = suggest.seed_for(topic)
+            except Exception:
+                seeds = []
         news, bodies = gather(topic, seeds)
         q, basis = quotes(topic)
         print(f"기사 제목 {len(news)}건, 본문 {len(bodies)}건, 시세 {len(q)}개 | {basis}")
@@ -856,7 +899,7 @@ def main():
         if not block:
             block = review(topic, s, q, basis, news, bodies)
 
-    save_state(out, topic=topic, script=s.model_dump(), news=news, bodies=bodies, quotes=q, basis=basis, review=[], edited=False)
+    save_state(out, topic=topic, script=s.model_dump(), news=news, bodies=bodies, quotes=q, basis=basis, review=[x for x in block if not x.startswith("컷1: 후킹")], edited=False)
     if a.board:
         ensure_photos(out, topic, s)
         render_board(out, s, q, basis, block, warn)
@@ -902,7 +945,7 @@ def main():
         f.write("\n" + "\n".join(extra))
     print("\n".join(extra))
     print("완성 영상 폴더:", collect(out, topic))
-    write_board(out, video=True, seconds=round(total, 1), problems=problems, heard=heard, miss=miss, caption=caption_notes(s, q, basis))
+    write_board(out, video=True, block=[], changes=[], seconds=round(total, 1), problems=problems, heard=heard, miss=miss, caption=caption_notes(s, q, basis))
     print("끝났어요. 영상을 확인한 뒤 직접 올려 주세요 (자동 게시 안 함).")
 
 

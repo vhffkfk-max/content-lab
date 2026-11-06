@@ -497,6 +497,7 @@ html,body{font-size:16px;line-height:1.75}
             <li><a href="#vr-sum">핵심</a></li>
             <li><a href="#vr-formulas">공식</a></li>
             <li><a href="#vr-pairs">글별 비교</a></li>
+            <li><a href="#vr-lab">연구실 검증</a></li>
             <li><a href="#vr-limits">한계</a></li>
           </ul></li>
         <li><button type="button" data-ch="feedback"><i class="dot" style="background:var(--accent)"></i>후기·기록</button>
@@ -944,6 +945,7 @@ html,body{font-size:16px;line-height:1.75}
         <section class="sec" id="vr-sum"><h2>핵심</h2><div class="card"><ul class="learn" id="vr-sum-list"></ul></div></section>
         <section class="sec" id="vr-formulas"><h2>공식</h2><p class="note">위에서부터 핫코노미에 잘 맞는 순서예요. 근거는 이 공식이 보인 뜬 글 수, 예외는 어긋난 글 수예요. 원인이 증명된 것이 아니라 시험해 볼 가설이에요.</p><div class="recs" id="vr-formula-list"></div></section>
         <section class="sec" id="vr-pairs"><h2>글별 비교</h2><p class="note">뜬 글 하나와 같은 계정의 평범한 글 하나를 나란히 본 결과예요. 주제 힘이 '높음'이면 형식보다 사건 자체 덕일 수 있어요.</p><div class="card"><div class="rows" id="vr-pair-list"></div></div></section>
+        <section class="sec" id="vr-lab"><h2>연구실 검증</h2><p class="note">테스터가 공식을 만들 때 안 쓴 과거 글로 블라인드 시험을 봐요. 같은 계정의 뜬 글과 평범한 글을 숫자 없이 보여 주고 어느 쪽이 떴을지 고르게 해요(찍으면 50%). 공식을 볼 때와 안 볼 때의 정답률 차이가 공식의 실제 쓸모예요. 독자 패널(가상 독자 3명)도 같은 시험을 보고, 작가는 패널 반응으로 초안을 고쳐 써요. 하루 한 번.</p><div class="kpis" id="vr-lab-kpis"></div><div class="grid" style="margin-top:12px"><div class="card"><h3>작가 교훈 (다음 초안에 들어감)</h3><div class="rows" id="vr-lessons"></div></div><div class="card"><h3>읽는 법</h3><div class="rows" id="vr-lab-how"></div></div></div></section>
         <section class="sec" id="vr-limits"><h2>한계</h2><div class="grid"><div class="card"><h3>따라 해도 소용없는 요인</h3><div class="rows" id="vr-nocopy"></div></div><div class="card"><h3>믿을 때 주의할 점</h3><div class="rows" id="vr-limit-list"></div></div></div></section>
       </div>
 
@@ -1467,7 +1469,7 @@ html,body{font-size:16px;line-height:1.75}
     }
     if ((d.formats || []).some(f => f.images.length)) {
       const p = el('div', 'vl-box'), grid = el('div', 'vl-fmts'), cur = d.format;
-      p.append(el('b', '', '영상 형식 고르기'), el('p', 'sub', `대본은 그대로 두고 화면만 바뀌어요. 사진 ${d.photo_count || 0}/${d.cuts.length}컷 (위키미디어 공용, 출처는 올릴 글 끝에 자동으로 붙어요).`));
+      p.append(el('b', '', '영상 형식 고르기'), el('p', 'sub', `대본은 그대로 두고 화면만 바뀌어요. 사진 ${d.photo_count || 0}/${d.cuts.length}컷, 서로 다른 사진 ${d.photo_unique ?? '-'}장 (위키미디어 공용, 출처는 올릴 글 끝에 자동으로 붙어요). 맞는 사진이 없는 컷은 사진 없이 글자로 보여 줘요.`));
       d.formats.forEach(f => {
         const b = el('button', 'vl-fmt' + (f.key === cur ? ' on' : '')); b.type = 'button'; b.title = f.why;
         const imgs = el('div', 'vl-fmt-imgs'); f.images.forEach(x => { const im = el('img'); im.loading = 'lazy'; im.alt = f.name; im.src = vlUrl(x.path, x.v); imgs.append(im); });
@@ -3528,6 +3530,9 @@ html,body{font-size:16px;line-height:1.75}
       const c = el('div', 'card'), chips = el('div', 'chips');
       chips.append(el('span', f.fit === '잘 맞음' ? 'pill positive' : f.fit === '조건부' ? 'pill warning' : 'pill neutral', `핫코노미: ${f.fit}`),
         el('span', 'pill neutral', f.kind), el('span', 'pill accent', `근거 ${f.evidence.length} · 예외 ${f.counter.length}`));
+      const T = f.test;
+      if (T && T.n) chips.append(el('span', T.status === '검증됨' ? 'pill positive' : T.status === '검증 실패' ? 'pill warning' : 'pill neutral', `시험 ${T.n}번 중 ${T.right}번 맞음 · ${T.status}`));
+      else chips.append(el('span', 'pill neutral', '시험 전'));
       const links = el('div', 'sub');
       links.append('근거: ', ...f.evidence.flatMap((r, i) => { const a = el('a', null, `@${r.author} ${r.x}배`); a.href = igLink(r.url) || '#'; a.target = '_blank'; a.rel = 'noopener'; return i ? [', ', a] : [a]; }));
       if (f.counter.length) links.append(` · 예외: ${refs(f.counter)}`);
@@ -3541,6 +3546,16 @@ html,body{font-size:16px;line-height:1.75}
       `@${p.author} · ${p.topic || ''} · ${p.kind === '릴스' ? '조회' : '좋아요+댓글'} ${fmtN(p.metric)} (비교 글 ${fmtN(p.ctrl.metric)}, 평소의 ${p.ctrl.x}배) · 뜬 글에만: ${(p.differences || []).join(' / ')} · 가져올 것: ${p.copyable}`, p.url), 8);
     const li = (id, xs) => document.getElementById(id).replaceChildren(...(xs || []).map(tx => el('div', 'row', tx)));
     li('vr-nocopy', V.not_copyable); li('vr-limit-list', V.limits);
+    const L = V.lab, pc = v => v == null ? '–' : `${Math.round(v * 100)}%`;
+    if (L && L.tests) {
+      document.getElementById('vr-lab-kpis').replaceChildren(
+        kpi('푼 문제', fmtN(L.tests), `카드뉴스 ${(L['카드뉴스'] || {}).tests || 0} · 릴스 ${(L['릴스'] || {}).tests || 0}`),
+        kpi('공식 보고 맞힘', pc(L.with_rate), `공식 없이 ${pc(L.without_rate)}`),
+        kpi('공식의 쓸모', L.formula_gain == null ? '–' : `${L.formula_gain > 0 ? '+' : ''}${Math.round(L.formula_gain * 100)}%p`, '공식 보고 − 공식 없이'),
+        kpi('독자 패널 맞힘', pc(L.panel_rate), `작가 고쳐 쓰기 ${L.writer_rounds || 0}회 · 평균 ${L.writer_gain == null ? '–' : (L.writer_gain > 0 ? '+' : '') + L.writer_gain}점`));
+    } else document.getElementById('vr-lab-kpis').replaceChildren(el('p', 'note', '첫 시험을 준비 중이에요.'));
+    li('vr-lessons', (V.writer_lessons || []).length ? V.writer_lessons : ['고쳐 쓰기 기록이 3번 쌓이면 교훈이 생겨요.']);
+    li('vr-lab-how', ['정답률이 50%에 가까우면 찍는 것과 같아요. 문제가 30개는 넘어야 믿을 만해요.', '공식의 쓸모가 0 이하면 공식이 판단에 도움이 안 된다는 뜻이라, 분석가가 공식을 고치거나 버리게 성적을 넘겨요.', '시험에서 5번 넘게 쓰였는데 절반도 못 맞힌 공식은 검증 실패로 표시하고 제작기 참고에서 빼요.', '독자 패널은 가상 인물이라, 패널 정답률이 낮으면 패널 의견은 가볍게 보세요.']);
   }
 
   // ── 마케팅 코치 (growth_coach.py) ──
