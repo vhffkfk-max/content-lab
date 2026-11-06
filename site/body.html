@@ -928,7 +928,7 @@ a.row:hover .row-main{text-decoration:underline}
           <h2>차트리포트 이미지</h2>
           <p class="note">종목을 넣으면 실제 시세(미국 야후·국내 네이버·코인 바이낸스)로 피보나치·이평선·지지선·추세선을 그려 PC용·모바일용 이미지와 설명 글을 만들어요. 텔레그램 봇으로 이미지 → 설명 글 순서로 오고, 여기에도 올라와요. 매일 아침 8시에 오늘 문구의 다음 차트 글 종목으로 자동으로 만들고, 칸을 비우고 누르면 그 종목으로 지금 바로 만들어요. 봉은 옆에서 고르면 돼요 (자동은 일봉, 국내 분봉은 조금 늦은 시세). 추세는 20선·240선과 ATR, 하이킨아시로 보고, 1시간봉 이상은 하이킨아시 캔들로 그려요. 1분봉·15분봉에는 RSI·볼린저밴드·거래량 분석이 함께 들어가고, 단타는 15분봉과 1분봉을 한 글로 묶어요.</p>
           <div class="chips" style="gap:8px;align-items:center;margin:4px 0 14px">
-            <input id="cr-input" type="text" placeholder="종목 (예: 테슬라, 삼성전자, 이더리움, AAPLUSDT.P — 쉼표로 5개까지 · 비우면 오늘 차트 글 종목)" style="flex:1;min-width:240px;padding:9px 12px;border-radius:10px;border:1px solid var(--line, #d0d4dc);font:inherit">
+            <input id="cr-input" type="text" placeholder="종목 (예: 테슬라, 삼성전자, 이더리움, AAPLUSDT.P, 나스닥, 금, 환율, NQ1! — 쉼표로 5개까지 · 비우면 오늘 차트 글 종목)" style="flex:1;min-width:240px;padding:9px 12px;border-radius:10px;border:1px solid var(--line, #d0d4dc);font:inherit">
             <select id="cr-tf" aria-label="봉 종류" style="padding:9px 12px;border-radius:10px;border:1px solid var(--line, #2a2f3a);background:transparent;color:inherit;font:inherit"><option value="scalp">단타 (15분+1분)</option><option value="1m">1분봉</option><option value="15m">15분봉</option><option value="1h">1시간봉</option><option value="4h">4시간봉</option><option value="1d" selected>일봉</option><option value="1w">주봉</option></select>
             <button class="btn primary" id="cr-run" type="button">차트 만들기</button>
           </div>
@@ -2137,6 +2137,28 @@ a.row:hover .row-main{text-decoration:underline}
     wrap.append(links, el('div', 'box', r.text));
     return wrap;
   }
+  // 요청한 차트가 저장소에 올라오면 페이지를 새로 고치지 않아도 맨 위에 붙임 (이미지는 사이트 반영 전이라 저장소 원본 주소로)
+  async function waitChart(t0, label, show) {
+    const RAW = 'https://raw.githubusercontent.com/vhffkfk-max/content-lab/main/output/site/';
+    const fix = r => { const x = { ...r }; for (const k of ['pc', 'mobile', 'pc2', 'mobile2']) if (x[k]) x[k] = RAW + x[k]; return x; };
+    while (Date.now() - t0 < 20 * 60 * 1000) {
+      const min = Math.floor((Date.now() - t0) / 60000);
+      show(`요청했어요 (${label}). PC가 만드는 중이에요 — ${min}분 지남 (보통 4~7분). 다 되면 이 아래 맨 위에 바로 붙고 텔레그램 봇으로도 와요.`);
+      await new Promise(res => setTimeout(res, 20000));
+      try {
+        const d = await (await fetch(`${RAW}chart_reports.json?t=${Date.now()}`, { cache: 'no-store' })).json();
+        const fresh = (d.items || []).filter(r => Date.parse(r.made_at) >= t0 - 60000);
+        if (fresh.length) {
+          const keys = new Set(fresh.map(r => r.made_at + r.symbol));
+          drawCharts([...fresh.map(fix), ...chartItems.filter(r => !keys.has(r.made_at + r.symbol))]);
+          show(`다 됐어요 (${label}) — 아래 맨 위에 올라왔어요.`);
+          document.getElementById('tg-chart-list')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return;
+        }
+      } catch (e) { /* 잠깐 끊겨도 계속 기다림 */ }
+    }
+    show(`20분이 지나도 안 왔어요 (${label}). PC가 꺼져 있거나 종목 이름을 못 찾았을 수 있어요 — 텔레그램 봇 메시지를 확인해 주세요.`, 'err');
+  }
   function setupChartRequest() {
     const inp = document.getElementById('cr-input'), btn = document.getElementById('cr-run'), st = document.getElementById('cr-status');
     if (!btn) return;
@@ -2149,7 +2171,7 @@ a.row:hover .row-main{text-decoration:underline}
       show('요청하는 중이에요…');
       try {
         const r = await ghApi('actions/workflows/telegram.yml/dispatches', { method: 'POST', body: JSON.stringify({ ref: 'main', inputs: { chart: chart || `auto${tag}` } }) });
-        if (r.status === 204) show(`요청했어요 (${label}). PC가 켜져 있으면 5~10분 안에 텔레그램 봇으로 이미지와 설명 글이 오고, 이 칸에도 올라와요.`);
+        if (r.status === 204) waitChart(Date.now(), label, show);
         else show(ghFail(r.status), 'err');
       } catch (e) { show('요청 실패 — 인터넷 연결을 확인해 주세요', 'err'); }
     };
@@ -2190,9 +2212,11 @@ a.row:hover .row-main{text-decoration:underline}
       c.append(chips, block); c.style.gap = '10px'; return c;
     }));
   }
+  let chartItems = [];
   function drawCharts(CR) {
     const box = document.getElementById('tg-chart-list');
     if (!box) return;
+    chartItems = CR;
     if (!CR.length) return empty(box, '차트 글 칸이 생기면 PC가 실제 시세로 이미지를 만들어 여기에 올려요.');
     box.replaceChildren(...CR.map(r => {
       const c = el('article', 'card rec'), chips = el('div', 'chips');

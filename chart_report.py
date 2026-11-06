@@ -38,6 +38,39 @@ UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.3
 COINS = {"비트코인": "BTC", "비트": "BTC", "btc": "BTC", "이더리움": "ETH", "이더": "ETH", "eth": "ETH", "리플": "XRP", "xrp": "XRP",
          "솔라나": "SOL", "sol": "SOL", "도지코인": "DOGE", "도지": "DOGE", "doge": "DOGE"}
 COIN_NAMES = {"BTC": "비트코인", "ETH": "이더리움", "XRP": "리플", "SOL": "솔라나", "DOGE": "도지코인"}
+# 지수·선물·환율·원자재 (트레이딩뷰 이름과 한글 이름 → 야후 코드, 표시 티커, 이름, 단위)
+WORLD = [
+    (("나스닥", "나스닥지수", "나스닥종합", "IXIC", "NASDAQ", "COMP"), "^IXIC", "IXIC", "나스닥 종합", "pt"),
+    (("나스닥100", "NDX", "NAS100", "US100", "NASDAQ100"), "^NDX", "NDX", "나스닥100", "pt"),
+    (("S&P500", "SP500", "에스앤피", "에스앤피500", "SPX", "US500", "GSPC"), "^GSPC", "SPX", "S&P500", "pt"),
+    (("다우", "다우지수", "DJI", "US30", "DOW"), "^DJI", "DJI", "다우존스", "pt"),
+    (("러셀", "러셀2000", "RUT", "US2000"), "^RUT", "RUT", "러셀2000", "pt"),
+    (("필라델피아반도체", "반도체지수", "SOX"), "^SOX", "SOX", "필라델피아 반도체", "pt"),
+    (("코스피", "KOSPI", "KS11"), "^KS11", "KOSPI", "코스피", "pt"),
+    (("코스닥", "KOSDAQ", "KQ11"), "^KQ11", "KOSDAQ", "코스닥", "pt"),
+    (("코스피200", "KOSPI200", "KS200"), "^KS200", "KOSPI200", "코스피200", "pt"),
+    (("닛케이", "니케이", "NI225", "N225", "JP225"), "^N225", "NI225", "닛케이225", "pt"),
+    (("항셍", "HSI", "HK50"), "^HSI", "HSI", "항셍", "pt"),
+    (("VIX", "공포지수", "빅스"), "^VIX", "VIX", "VIX", "pt"),
+    (("미국10년물", "미국채10년", "10년물", "US10Y", "TNX"), "^TNX", "US10Y", "미국 10년물 금리", "%"),
+    (("달러인덱스", "DXY", "DX"), "DX-Y.NYB", "DXY", "달러인덱스", "pt"),
+    (("환율", "원달러", "달러원", "원달러환율", "USDKRW"), "KRW=X", "USDKRW", "원/달러 환율", "원"),
+    (("엔달러", "달러엔", "USDJPY"), "JPY=X", "USDJPY", "달러/엔", "엔"),
+    (("유로달러", "EURUSD"), "EURUSD=X", "EURUSD", "유로/달러", ""),
+    (("금", "금값", "금선물", "GOLD", "XAUUSD", "GC", "GC1!"), "GC=F", "GC1!", "금 선물", "달러"),
+    (("은", "은선물", "SILVER", "XAGUSD", "SI", "SI1!"), "SI=F", "SI1!", "은 선물", "달러"),
+    (("유가", "WTI", "국제유가", "원유", "USOIL", "CL", "CL1!"), "CL=F", "CL1!", "WTI 원유 선물", "달러"),
+    (("브렌트", "브렌트유", "UKOIL", "BRENT", "BRN1!", "BZ1!"), "BZ=F", "BRN1!", "브렌트유 선물", "달러"),
+    (("천연가스", "NATGAS", "NG", "NG1!"), "NG=F", "NG1!", "천연가스 선물", "달러"),
+    (("구리", "COPPER", "HG", "HG1!"), "HG=F", "HG1!", "구리 선물", "달러"),
+    (("나스닥선물", "NQ", "NQ1!", "NQ=F"), "NQ=F", "NQ1!", "나스닥100 선물", "pt"),
+    (("S&P선물", "에스앤피선물", "ES", "ES1!", "ES=F"), "ES=F", "ES1!", "S&P500 선물", "pt"),
+    (("다우선물", "YM", "YM1!"), "YM=F", "YM1!", "다우 선물", "pt"),
+    (("러셀선물", "RTY", "RTY1!"), "RTY=F", "RTY1!", "러셀2000 선물", "pt"),
+]
+WORLD_KEY = {k.upper().replace(" ", ""): (yf, sym, name, unit) for keys, yf, sym, name, unit in WORLD for k in keys}
+WORLD_YF = {yf: (yf, sym, name, unit) for keys, yf, sym, name, unit in WORLD}
+CUR = {"USD": "달러", "KRW": "원", "JPY": "엔", "HKD": "홍콩달러", "EUR": "유로", "CNY": "위안", "GBP": "파운드", "TWD": "대만달러"}
 FIB = [(0, "#9598a1"), (0.236, "#c9716e"), (0.382, "#c9a35a"), (0.5, "#7fae7a"), (0.618, "#4f9e93"), (0.786, "#6a9fc9"), (1, "#9598a1")]
 MA = [(20, "#d9a441"), (240, "#4c8bf5")]   # 추세는 20선·240선으로 봄
 # 봉 종류: name 글에 쓰는 이름 · short 차트 머리글 · show 화면에 보일 봉 수 (일봉은 코인 365 · 주식 260)
@@ -49,8 +82,25 @@ SCALP = {"1m": 60, "15m": 900}   # 단타용 봉: RSI·볼린저밴드·거래�
 
 
 # ── 종목 찾기·시세 ──
+def world(yf, sym, name, unit):
+    return {"kind": "us", "yf": yf, "symbol": sym, "name": name, "unit_fixed": unit, "exchange": ""}
+
+
 def resolve(q):
     key = q.strip()
+    if ":" in key:   # 트레이딩뷰식 'NASDAQ:TSLA' · 'KRX:000660' · 'UPBIT:BTCKRW' · 'TVC:DXY' → 거래소 떼고 종목만
+        ex, key = (x.strip() for x in key.split(":", 1))
+        m = re.fullmatch(r"([A-Z0-9]{2,10})(KRW|USDT|USDC|USD|BUSD)", key.upper())
+        if ex.upper() in ("UPBIT", "BITHUMB", "BINANCE", "BYBIT", "OKX", "COINBASE", "BITGET") and m and not key.upper().endswith(".P"):
+            key = m[1].lower() if m[1].lower() in COINS else key   # 현물 코인은 바이낸스 현물로
+    w = WORLD_KEY.get(key.upper().replace(" ", ""))
+    if w:
+        return world(*w)
+    if re.fullmatch(r"\^[A-Za-z0-9.]{1,10}|[A-Za-z0-9]{1,6}=[FX]|[A-Za-z]{2,6}1!|[A-Za-z0-9]{1,6}\.[A-Za-z]{1,3}", key) and not re.fullmatch(r"[A-Za-z]{1,5}\.[AB]", key):
+        yf = re.sub(r"1!$", "=F", key.upper())   # 야후 코드 그대로 (^GSPC · GC=F · KRW=X · 7203.T · 0700.HK), 트레이딩뷰 연속선물 XX1! → XX=F
+        if yf in WORLD_YF:
+            return world(*WORLD_YF[yf])
+        return {"kind": "us", "yf": yf, "symbol": key.upper(), "name": key.upper(), "exchange": "", **({"unit_fixed": "pt"} if yf.startswith("^") else {})}
     m = re.fullmatch(r"(?:BINANCE:)?([A-Z0-9]{1,16})USDT(?:\.P|PERP)?", key.upper())   # 바이낸스 무기한 선물 (AAPLUSDT.P · BTCUSDT · BINANCE:ETHUSDT.P)
     if m:
         return {"kind": "coin", "perp": True, "symbol": m[1] + "USDT", "name": f"{m[1]} 선물", "exchange": "BINANCE PERP"}
@@ -64,7 +114,7 @@ def resolve(q):
         return {"kind": "us", "symbol": key.upper(), "name": key.upper(), "exchange": ""}
     items = naver_ac(key)
     if not items:
-        raise SystemExit(f"'{q}' 종목을 찾지 못했어요 — 티커(IONQ), 6자리 코드(000660), 바이낸스 선물(AAPLUSDT.P)로 넣어 주세요.")
+        raise SystemExit(f"'{q}' 종목을 찾지 못했어요 — 티커(IONQ), 6자리 코드(000660), 바이낸스 선물(AAPLUSDT.P), 지수·선물(나스닥, GC1!, ^GSPC)로 넣어 주세요.")
     it = items[0]
     if it.get("nationCode") == "KOR":
         return {"kind": "kr", "symbol": it["code"], "name": it["name"], "exchange": it.get("typeName") or "KRX"}
@@ -111,6 +161,7 @@ def yahoo_rows(symbol, tf, a=None):
     meta, q = r["meta"], r["indicators"]["quote"][0]
     if a is not None:
         a["exchange"] = a["exchange"] or meta.get("fullExchangeName", "")
+        a["currency"] = meta.get("currency") or "USD"
     off = meta.get("gmtoffset", 0)
     src = [list(x) for x in zip(r["timestamp"], q["open"], q["high"], q["low"], q["close"], q["volume"])]
     last = src[-1]
@@ -135,8 +186,12 @@ def fetch(a, tf="1d"):
         rows = [bar(x[0] / 1000, float(x[1]), float(x[2]), float(x[3]), float(x[4]), float(x[5]), tf, 0) for x in k.json()]
         a["unit"], a["src"] = "달러", "바이낸스 USDT 무기한"
     elif a["kind"] == "us":
-        rows = yahoo_rows(a["symbol"], tf, a)
-        a["unit"], a["src"] = "달러", "야후 파이낸스"
+        try:
+            rows = yahoo_rows(a.get("yf") or a["symbol"].replace(".", "-"), tf, a)   # BRK.B → 야후 BRK-B
+        except (KeyError, IndexError, TypeError, ValueError):
+            raise SystemExit(f"야후 파이낸스에서 '{a['symbol']}' 시세를 못 찾았어요 — 티커나 코드를 다시 확인해 주세요.")
+        a["unit"] = a["unit_fixed"] if "unit_fixed" in a else CUR.get(a.get("currency"), a.get("currency") or "달러")
+        a["src"] = "야후 파이낸스"
     elif a["kind"] == "kr" and tf in INTRADAY:   # 네이버는 분봉을 길게 안 줌 → 야후 (국내 분봉은 조금 늦음)
         rows = []
         for suffix in (".KQ", ".KS") if "코스닥" in (a.get("exchange") or "") else (".KS", ".KQ"):
@@ -192,7 +247,7 @@ def live_of(a, rows, tf="1d"):
             live["label"] = "장중"
     else:
         try:
-            r = requests.get(f"https://query1.finance.yahoo.com/v8/finance/chart/{a['symbol']}", headers=UA, timeout=30,
+            r = requests.get(f"https://query1.finance.yahoo.com/v8/finance/chart/{a.get('yf') or a['symbol'].replace('.', '-')}", headers=UA, timeout=30,
                              params={"range": "1d", "interval": "5m", "includePrePost": "true"}).json()["chart"]["result"][0]
             meta, per = r["meta"], r["meta"]["currentTradingPeriod"]
             ts = now.timestamp()
