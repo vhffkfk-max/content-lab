@@ -122,11 +122,31 @@ def _with_user(o, user, out):
     return out
 
 
+def _embedded(html, needle):
+    """화면(HTML)에 미리 들어 있는 자료 덩어리. 2026-11-05 오후부터 인스타가 계정 글 목록을 따로 불러오지 않고
+    처음 화면 <script type="application/json"> 안에 넣어 보내서, 불러온 자료만 보면 글이 0개였다."""
+    out = []
+    for m in re.finditer(r'<script type="application/json"[^>]*>(.*?)</script>', html or "", re.S):
+        if needle in m.group(1):
+            try:
+                out.append(json.loads(m.group(1)))
+            except ValueError:
+                pass
+    return out
+
+
+SEEN = {"pages": 0, "json": 0, "posts": 0, "title": ""}   # 이번 바퀴 진단: 글이 0개면 무엇이 왔는지 로그에 남김 (2026-11-06: 11/05 14시 이후 0개)
+
+
 def logged_profile(user):
     """로그인 크롬: 계정 화면(최근 글) + 릴스 탭(재생수) → (팔로워, {code: 글 정보}, 비슷한 계정들)."""
     html, bodies = lb.visit(f"https://www.instagram.com/{user}/", scrolls=0)
     if html is None:
         return None
+    bodies = bodies + _embedded(html, "user_timeline_graphql_connection") + _embedded(html, "follower_count")
+    t = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
+    SEEN.update(pages=SEEN["pages"] + 1, json=SEEN["json"] + len(bodies), title=(t.group(1).strip()[:60] if t else ""),
+                posts=SEEN["posts"] + sum(len(conn.get("edges") or []) for conn in lb.find_key(bodies, "xdt_api__v1__feed__user_timeline_graphql_connection", [])))
     me = [d for d in _with_user(bodies, user, []) if d.get("follower_count") is not None]
     posts = {}
     for conn in lb.find_key(bodies, "xdt_api__v1__feed__user_timeline_graphql_connection", []):
@@ -145,7 +165,8 @@ def logged_profile(user):
         for group in lb.find_key(ch, "users", []):
             similar += [u.get("username") for u in group if isinstance(u, dict)] if isinstance(group, list) else []
     if any(p["kind"] == "릴스" for p in posts.values()):
-        _, rb = lb.visit(f"https://www.instagram.com/{user}/reels/", scrolls=0)
+        rh, rb = lb.visit(f"https://www.instagram.com/{user}/reels/", scrolls=0)
+        rb = rb + _embedded(rh, "play_count")
         for m in _with(rb, "play_count", []):
             if m["code"] in posts and m.get("play_count"):
                 posts[m["code"]]["views"] = m["play_count"]
@@ -397,7 +418,10 @@ def tick(c):
     if now < kv(c, "ig_pause_until"):
         na = new = nd = ok = 0
     else:
+        SEEN.update(pages=0, json=0, posts=0, title="")
         na, new = scan_accounts(c, now)
+        if SEEN["pages"] and not SEEN["posts"]:
+            log.info("인스타 글을 못 읽었어요: 화면 %d개 · JSON %d개 · 제목 %r", SEEN["pages"], SEEN["json"], SEEN["title"])
         nd, ok = measure(c, now)
     rows = export(c, now)
     sent = alert(c, rows)
