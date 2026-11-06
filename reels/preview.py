@@ -19,6 +19,7 @@ from PIL import Image
 
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path[:0] = [str(HERE), str(HERE.parent)]
+import formats  # noqa: E402
 import make_reel as mr  # noqa: E402
 from common import ROOT  # noqa: E402
 
@@ -78,12 +79,24 @@ def view(d):
         cuts.append({"kind": c.kind, "say": c.say, "cap": c.cap, "kick": c.kick, "big": c.big.replace("\\n", "\n"), "items": c.items,
                      "say_text": mr.to_say(c.say, q).replace("*", "") if known(c.say) else c.say,
                      "image": name, "v": hashlib.md5(files[name]).hexdigest()[:8] if name else "", "voice": f"{d.name}/v{i - 1}.mp3" if fresh else None})
+    fmt = st.get("format") or formats.DEFAULT
+    samples = []
+    for key, (name, why, _) in formats.FORMATS.items():
+        imgs = []
+        for cid in b.get("samples") or ["c1"]:
+            f = d / "stills" / f"fmt-{key}-{cid}.jpg"
+            if f.exists():
+                data = small(f)
+                files[f"{d.name}/fmt-{key}-{cid}.jpg"] = data
+                imgs.append({"path": f"{d.name}/fmt-{key}-{cid}.jpg", "v": hashlib.md5(data).hexdigest()[:8]})
+        samples.append({"key": key, "name": name, "why": why, "images": imgs})
     upload = d / "업로드글.txt"
     video = site_video(d) if b.get("video") else None
     if video:
         files[f"{d.name}/video.mp4"] = video.read_bytes()
     board = {"id": d.name, "topic": st["topic"], "edited": st.get("edited", False), "cuts": cuts, "board": {k: b.get(k) for k in ("updated", "basis", "block", "problems", "seconds", "hooks", "changes", "video", "miss", "rid", "caption", "auto")},
              "ig_title": s.ig_title, "yt_title": s.yt_title, "summary": s.summary, "question": s.question,
+             "format": fmt, "formats": samples, "photo_count": sum(1 for p in (st.get("photos") or []) if p),
              "video_file": f"{d.name}/video.mp4" if video else None, "video_v": hashlib.md5(files[f"{d.name}/video.mp4"]).hexdigest()[:8] if video else "",
              "upload": upload.read_text(encoding="utf-8") if b.get("video") and upload.exists() else "",
              "sources": [{"source": r.get("source", ""), "title": r["title"], "link": r.get("link", "")} for r in st.get("news", [])[:12]]}
@@ -140,7 +153,9 @@ def apply_edit(d, payload):
     if not 1 <= len(cuts) <= 20:
         raise ValueError("컷은 1~20개여야 해요")
     st["script"]["cuts"] = cuts
-    mr.save_state(d, script=st["script"], edited=True, review=[])
+    old_photos = st.get("photos")
+    photos = [old_photos[int(row["i"])] if old_photos and int(row["i"]) < len(old_photos) else None for row in payload] if old_photos is not None else None
+    mr.save_state(d, script=st["script"], edited=True, review=[], photos=photos)
     mr.write_board(d, video=False)
 
 

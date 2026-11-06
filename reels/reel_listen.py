@@ -145,6 +145,14 @@ def run(name, q):
             preview.apply_edit(out, q["cuts"])
             code, lines = maker("--stills", script)
             msg = plain(lines) if code else None
+        elif action == "format":
+            import formats
+            if q.get("format") not in formats.FORMATS:
+                raise ValueError("모르는 형식")
+            mr.save_state(out, format=q["format"])
+            mr.write_board(out, video=False)
+            code, lines = maker("--stills", script)
+            msg = plain(lines) if code else None
         elif action == "voice":
             import engine
             st = mr.load_state(out)
@@ -175,7 +183,7 @@ def run(name, q):
         change(name, "DELETE", "reel request done")
 
 
-FAST = ("save", "voice")   # 몇 초~수십 초 걸리는 일: 보드·영상(몇 분)을 기다리지 않게 따로 줄을 세운다
+FAST = ("save", "voice", "format")   # 몇 초~수십 초 걸리는 일: 보드·영상(몇 분)을 기다리지 않게 따로 줄을 세운다
 PUSH_LOCK = threading.Lock()
 
 
@@ -224,7 +232,7 @@ def poll(lines, seen, etag):
 
 AUTO_STATE = pathlib.Path.home() / ".content-lab-ai" / "reel_auto.json"
 LIMIT_STATE = pathlib.Path.home() / ".content-lab-ai" / "reel_limits.json"
-DAILY = {"board": 15, "make": 12, "save": 150, "voice": 150}   # 사이트 요청은 암호가 없어서 하루 처리량을 막는다 (자동 보드는 따로)
+DAILY = {"board": 15, "make": 12, "save": 150, "voice": 150, "format": 150}   # 사이트 요청은 암호가 없어서 하루 처리량을 막는다 (자동 보드는 따로)
 
 
 def over_limit(action):

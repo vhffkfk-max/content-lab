@@ -29,6 +29,7 @@ from pydantic import BaseModel
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import engine  # noqa: E402
+import formats  # noqa: E402
 import llm  # noqa: E402
 from common import OUTPUT_DIR, ROOT  # noqa: E402
 from engine import CSS, JS, KST, UA, bar, naver, pct, read_pct, sparkline, yahoo  # noqa: E402
@@ -474,6 +475,14 @@ def lines_html(big):
     return "".join(out)
 
 
+STYLE = {"format": formats.DEFAULT, "photos": []}   # 보드마다 main 에서 대본.json 값으로 바꾼다
+
+
+def photo_html(i):
+    ph = (STYLE["photos"] or [None] * i)[i - 1] if i - 1 < len(STYLE["photos"] or []) else None
+    return f'<div class="ph" style="background-image:url(\'{html.escape(ph["uri"])}\')"></div>' if ph and ph.get("uri") else ""
+
+
 def scene(i, c, q):
     t = lambda x: to_text(x, q)
     kick = f'<div class="a kick">{html.escape(t(c.kick))}</div>' if c.kick else ""
@@ -511,7 +520,7 @@ def scene(i, c, q):
             body = f'<div class="a why2"><span class="ln" data-j="0">{html.escape(big)}</span></div>'
         else:
             body = f'{emo}{kick}<div class="a q" style="font-size:{fit(big)}px">{lines_html(big)}</div>'
-    return f'<section id="c{i}" data-bg="{bg}" data-dir="{direction(c, q)}">{body}</section>'
+    return f'<section id="c{i}" data-bg="{bg}" data-dir="{direction(c, q)}">{photo_html(i)}{body}</section>'
 
 
 EXTRA = """
@@ -584,7 +593,7 @@ def build_page(out, s, q, scenes, basis):
     tl = [{"id": x["id"], "start": x["start"], "end": x["end"], "caps": x["caps"]} for x in scenes]
     js = JS + FX
     secs = "".join(scene(i, c, q) for i, c in enumerate(s.cuts, 1))
-    doc = f"""<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>{font_css()}{CSS}{EXTRA}</style></head><body>
+    doc = f"""<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>{font_css()}{CSS}{EXTRA}{formats.css()}</style></head><body class="fmt-{STYLE['format']}">
 <div id="fx"><div id="grid"></div><div id="glow"></div><div id="rays"></div></div><div id="bigword">{html.escape(s.hashtags[0].lstrip("#") if s.hashtags else "HOTCONOMY")} · @HOTCONOMY · </div><div id="wipe1"></div><div id="wipe2"></div><div id="bar"></div><div id="head"><img src="{logo}"><span>{basis}</span></div>{secs}<div id="cap"></div>
 <div id="warn">정보 제공 목적 · 투자 권유 아님 · AI 음성</div>{tape_html}<div id="flash"></div>
 <script>const TL={json.dumps(tl, ensure_ascii=False)};{js}</script></body></html>"""
@@ -597,6 +606,8 @@ def upload_text(s, q, basis, used):
     t = lambda x: clean(to_text(x, q))
     note = "정보 제공 목적의 콘텐츠이며 투자 권유가 아닙니다. 투자 판단과 책임은 본인에게 있습니다.\nAI 음성으로 제작했습니다."
     src = "시세: 네이버 금융, 야후 파이낸스\n" if used else ""
+    pics = formats.credits(STYLE["photos"])
+    src += ("사진: " + " · ".join(pics) + "\n") if pics else ""
     body = f"({basis})\n\n" + "\n".join(f"· {t(x)}" for x in s.summary) + f"\n\n{t(s.question)}\n\n{src}{note}"
     tags = " ".join(x if x.startswith("#") else "#" + x for x in s.hashtags[:5])
     return f"""[인스타그램 릴스 — 본문]
@@ -681,6 +692,43 @@ def caption_notes(s, q, basis):
         return {"block": [], "notes": [f"점검하지 못했어요: {e}"]}
 
 
+def ensure_photos(out, topic, s):
+    """컷 사진이 아직 없으면 찾아서 대본.json 에 둔다 (대본은 바꾸지 않음)."""
+    st = load_state(out)
+    if st.get("photos") is None or len(st["photos"]) != len(s.cuts):
+        try:
+            got = formats.fetch(topic, s.cuts)
+            st = save_state(out, photos=got["photos"], photo_subject=got["subject"], photo_queries=got["queries"])
+            print("사진:", sum(1 for p in got["photos"] if p), "/", len(s.cuts), "컷")
+        except Exception as e:
+            print("사진을 찾지 못했어요:", e)
+            st = save_state(out, photos=[None] * len(s.cuts))
+    STYLE.update(format=st.get("format") or formats.DEFAULT, photos=st.get("photos") or [])
+
+
+def render_samples(out, s, q, basis):
+    """형식 8개를 첫 컷과 사진이 있는 컷 하나로 그려 사이트에서 고르게 한다."""
+    keep = STYLE["format"]
+    t, scenes = 0.15, []
+    for i, c in enumerate(s.cuts, 1):
+        dur = estimate(to_say(c.say, q) if not any(n not in q for n in PH.findall(c.say)) else c.say)
+        cap = to_text(c.cap, q) if not any(n not in q for n in PH.findall(c.cap)) else c.cap
+        scenes.append({"id": f"c{i}", "start": t, "end": t + dur, "caps": [{"t": t, "e": t + dur, "text": cap}]})
+        t += dur + .05
+    pics = [i for i, p in enumerate(STYLE["photos"] or [], 1) if p]
+    show = ["c1"] + ([f"c{pics[1] if len(pics) > 1 and pics[0] == 1 else pics[0]}"] if pics else [])
+    engine.OUT = out
+    for key in formats.FORMATS:
+        STYLE["format"] = key
+        try:
+            page, _, _ = build_page(out, s, q, scenes, basis)
+            engine.shoot(page, t, False, only=show[:2], prefix=f"fmt-{key}-")
+        except KeyError:
+            pass
+    STYLE["format"] = keep
+    write_board(out, samples=show[:2])
+
+
 def render_board(out, s, q, basis, block, warn):
     """음성·영상 없이 컷 이미지만 만든다. 영상과 같은 화면 코드라 보이는 그대로 나온다."""
     engine.OUT = out
@@ -714,12 +762,15 @@ def main():
     ap.add_argument("--stills", help="대본.json 을 고친 뒤 컷 이미지만 다시 만든다")
     ap.add_argument("--seed", help="출처 기사 주소 목록 JSON 파일 (추천 주제에서 보드를 만들 때)")
     ap.add_argument("--auto", action="store_true", help="정해진 시간에 PC가 스스로 만든 보드")
+    ap.add_argument("--samples", action="store_true", help="형식 8개 견본도 다시 그린다")
     ap.add_argument("--accept-market", action="store_true", help="보드를 본 뒤 시세가 바뀌어도 새 숫자로 만든다")
     a = ap.parse_args()
     if a.stills:
         out = pathlib.Path(a.stills).resolve().parent
         saved = load_state(out)
         s = Script(**saved["script"])
+        ensure_photos(out, saved["topic"], s)
+        new_samples = not list((out / "stills").glob("fmt-*.jpg"))
         if saved.get("quotes"):
             q, basis = saved["quotes"], saved["basis"]
         else:
@@ -727,6 +778,8 @@ def main():
             save_state(out, quotes=q, basis=basis)
         block, warn = check(s, q, saved["news"], saved["bodies"])
         render_board(out, s, q, basis, block + saved.get("review", []), warn)
+        if new_samples or a.samples:
+            render_samples(out, s, q, basis)
         print("컷 이미지를 다시 만들었어요:", out)
         return
     if a.from_script:
@@ -788,7 +841,9 @@ def main():
 
     save_state(out, topic=topic, script=s.model_dump(), news=news, bodies=bodies, quotes=q, basis=basis, review=[], edited=False)
     if a.board:
+        ensure_photos(out, topic, s)
         render_board(out, s, q, basis, block, warn)
+        render_samples(out, s, q, basis)
         if a.auto:
             write_board(out, auto=True)
         print("폴더:", out)
@@ -809,6 +864,7 @@ def main():
         return
 
     engine.OUT = out
+    ensure_photos(out, topic, s)
     clock = [time.time()]
     lap = lambda name: (print(f"[시간] {name} {time.time() - clock[0]:.0f}초"), clock.__setitem__(0, time.time()))
     scenes = [{"id": f"c{i}", "lines": [{"say": to_say(c.say, q), "cap": [to_text(c.cap, q)]}]} for i, c in enumerate(s.cuts, 1)]

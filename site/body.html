@@ -46,6 +46,7 @@
 .vl-list{display:flex;gap:8px;overflow-x:auto;padding:4px 0 10px}.vl-item{flex:none;text-align:left;padding:9px 12px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;font:inherit}.vl-item.on{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}.vl-item b,.vl-item span{display:block}.vl-item span{font-size:12px}
 .vl-head h2{margin:10px 0 2px;font-size:20px}.vl-box{margin-top:12px;padding:12px 14px;border:1px solid var(--border);border-radius:10px;background:var(--surface)}.vl-box ul{margin:6px 0 0;padding-left:18px}.vl-box.bad{border-color:#c0392b}.vl-box.warn{border-color:#b8860b}.vl-box.ok{border-color:#2e8b57}.vl-box summary{cursor:pointer;font-weight:700}
 .vl-video{display:block;width:100%;max-width:300px;aspect-ratio:9/16;margin:10px 0 4px;border-radius:10px;background:#000}
+.vl-fmts{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:10px}.vl-fmt{text-align:left;padding:6px;border-radius:10px;border:1px solid var(--border);background:var(--ground);color:var(--text);cursor:pointer;font:inherit}.vl-fmt.on{border-color:var(--accent);box-shadow:inset 0 0 0 2px var(--accent)}.vl-fmt-imgs{display:flex;gap:3px}.vl-fmt-imgs img{flex:1;min-width:0;aspect-ratio:9/16;object-fit:cover;border-radius:6px;background:var(--raised)}.vl-fmt b{display:block;font-size:13px;margin-top:6px}.vl-fmt span{display:block;font-size:11.5px;color:var(--muted);line-height:1.35;margin-top:2px}
 .vl-pre{white-space:pre-wrap;font:inherit;font-size:13px;margin:8px 0 0}.vl-hook{display:flex;gap:10px;align-items:center;padding:7px 0;border-top:1px solid var(--rule)}.vl-hook:first-of-type{border-top:0}.vl-hook b{min-width:44px;color:var(--accent)}.vl-hook span{flex:1}
 .vl-cuts{display:grid;grid-template-columns:repeat(auto-fill,minmax(420px,1fr));gap:12px;margin-top:12px}.vl-cut{display:grid;grid-template-columns:140px minmax(0,1fr);gap:12px;padding:12px;border:1px solid var(--border);border-radius:10px;background:var(--surface)}.vl-cut.dirty{border-color:var(--accent)}.vl-cut img,.vl-noimg{width:140px;aspect-ratio:9/16;border-radius:8px;object-fit:cover;display:block;background:var(--raised)}.vl-noimg{display:grid;place-items:center;font-size:12px;color:var(--muted)}
 .vl-cut-head{display:flex;gap:8px;align-items:baseline}.vl-field{display:block;margin-top:7px;font-size:12px;color:var(--muted)}.vl-field textarea{display:block;width:100%;margin-top:3px;padding:6px 8px;border-radius:7px;border:1px solid var(--control);background:var(--ground);color:var(--text);font:inherit;font-size:13.5px;line-height:1.4;resize:vertical}.vl-heard{margin:3px 0 0;font-size:12px;color:var(--faint)}.vl-tools{display:flex;gap:5px;flex-wrap:wrap;margin-top:9px}
@@ -362,8 +363,6 @@ html,body{font-size:16px;line-height:1.75}
 .sec-tabs button[aria-current="true"]{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
 .sec-tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 @media (max-width:860px){.sec-tabs{top:48px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.sec-tabs::-webkit-scrollbar{display:none}}
-.fresh{display:flex;flex-wrap:wrap;gap:4px 16px;align-items:baseline;padding:12px 18px;border-radius:var(--radius-card);background:var(--pill-positive-bg);color:var(--pill-positive-ink);font-size:14px}
-.fresh.bad{background:var(--pill-negative-bg);color:var(--pill-negative-ink)}
 /* 처음 화면 바로가기 */
 .quick{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
 .quick button{all:unset;box-sizing:border-box;cursor:pointer;display:grid;gap:4px;padding:18px 20px;border-radius:var(--radius-card);border:1px solid var(--border);background:var(--surface)}
@@ -553,7 +552,6 @@ html,body{font-size:16px;line-height:1.75}
         <div class="title-row">
           <div><h1>오늘 뭐 할까요?</h1><p id="home-sub">오늘 할 일만 골랐어요. 하나 골라서 버튼을 누르세요.</p></div>
         </div>
-        <section class="sec" id="home-fresh-sec" hidden><div class="fresh" id="home-fresh"></div></section>
         <section class="sec" id="home-quick-sec"><h2>바로가기</h2><div class="quick" id="home-quick"></div></section>
         <section class="sec" id="home-check" aria-label="연구소 활용 체크"><div class="uc-strip" id="home-check-box"></div></section>
         <section class="sec" id="home-jobs-sec">
@@ -1306,7 +1304,7 @@ html,body{font-size:16px;line-height:1.75}
   const vlPending = { get: () => { try { return JSON.parse(store.get('vl_pending') || '[]'); } catch (e) { return []; } }, set: a => store.set('vl_pending', JSON.stringify(a.slice(-8))) };
   const vlUrl = (path, v) => VL_RAW + path.split('/').map(encodeURIComponent).join('/') + (v ? `?v=${v}` : '');
   const vlRoot = () => document.getElementById('vl-root');
-  const VL_NAMES = { board: '대본과 컷 이미지를 만드는 중이에요 (보통 1~4분)', save: '컷 이미지를 다시 그리는 중이에요', voice: '이 컷의 음성을 만드는 중이에요', make: '영상을 만드는 중이에요 (보통 1~3분)' };
+  const VL_NAMES = { format: '형식을 바꿔 컷 이미지를 다시 그리는 중이에요', board: '대본과 컷 이미지를 만드는 중이에요 (보통 1~4분)', save: '컷 이미지를 다시 그리는 중이에요', voice: '이 컷의 음성을 만드는 중이에요', make: '영상을 만드는 중이에요 (보통 1~3분)' };
   async function vlData(path) {
     const r = await ghApi(`reel-data/${path.split('/').map(encodeURIComponent).join('/')}`);
     if (r.status === 404) return null;
@@ -1373,7 +1371,7 @@ html,body{font-size:16px;line-height:1.75}
   function vlDrawStatus() {
     const box = document.getElementById('vl-status'); if (!box) return;
     const mine = [...vl.status.entries()];
-    const NAME = { board: '보드 만들기', save: '수정 반영', voice: '듣기', make: '영상 만들기' };
+    const NAME = { board: '보드 만들기', save: '수정 반영', voice: '듣기', make: '영상 만들기', format: '형식 바꾸기' };
     const others = vl.jobs.filter(j => !vl.status.has(j.rid) && !j.error).map(j => {
       const secs = Math.max(0, Math.round((Date.now() - new Date(j.at).getTime()) / 1000)), took = secs >= 60 ? `${Math.floor(secs / 60)}분째` : `${secs}초째`;
       const what = j.topic || (vl.list.find(x => x.id === j.id) || {}).topic || j.id;
@@ -1447,6 +1445,18 @@ html,body{font-size:16px;line-height:1.75}
       const p = el('div', 'vl-box'); p.append(el('b', '', '첫 문장 후보 (후킹 점수)'));
       b.hooks.forEach(x => { const r = el('div', 'vl-hook'), u = el('button', 'btn small', '이걸로'); u.type = 'button'; u.addEventListener('click', () => { const c = d.cuts[0]; c.say = x.say; c.cap = x.text.replaceAll('*', ''); c.edited = true; vl.dirty = true; vlDraw(); }); r.append(el('b', '', x.score == null ? '-' : `${Math.round(x.score)}점`), el('span', '', x.text.replaceAll('*', '')), u); p.append(r); });
       box.append(p);
+    }
+    if ((d.formats || []).some(f => f.images.length)) {
+      const p = el('div', 'vl-box'), grid = el('div', 'vl-fmts'), cur = d.format;
+      p.append(el('b', '', '영상 형식 고르기'), el('p', 'sub', `대본은 그대로 두고 화면만 바뀌어요. 사진 ${d.photo_count || 0}/${d.cuts.length}컷 (위키미디어 공용, 출처는 올릴 글 끝에 자동으로 붙어요).`));
+      d.formats.forEach(f => {
+        const b = el('button', 'vl-fmt' + (f.key === cur ? ' on' : '')); b.type = 'button'; b.title = f.why;
+        const imgs = el('div', 'vl-fmt-imgs'); f.images.forEach(x => { const im = el('img'); im.loading = 'lazy'; im.alt = f.name; im.src = vlUrl(x.path, x.v); imgs.append(im); });
+        b.append(imgs, el('b', '', f.key === cur ? `✓ ${f.name}` : f.name), el('span', '', f.why));
+        b.addEventListener('click', () => { if (f.key === cur) return; if (vl.dirty) return alert('수정을 먼저 반영해 주세요.'); if (confirm(`'${f.name}'으로 바꿀까요? 컷 이미지를 다시 그려요.`)) vlSend('format', { id: d.id, format: f.key }); });
+        grid.append(b);
+      });
+      p.append(grid); box.append(p);
     }
     const cuts = el('div', 'vl-cuts'); d.cuts.forEach((c, i) => cuts.append(vlCut(c, i))); box.append(cuts);
     const dt = el('details', 'vl-box'); dt.append(el('summary', '', `근거 기사 ${d.sources.length}건`)); const ul = el('ul');
@@ -1850,21 +1860,6 @@ html,body{font-size:16px;line-height:1.75}
       b.addEventListener('click', () => openFolder(id));
       return b;
     }).filter(Boolean));
-  }
-
-  // 1시간 기준 갱신 상태 (hourly_lab.py 가 매시간 올리는 hourly_meta.json) — 멈춘 자료가 있으면 빨간 줄
-  function drawFresh() {
-    const M = rows('hourly_meta'), sec = document.getElementById('home-fresh-sec'), box = document.getElementById('home-fresh');
-    if (!M || Array.isArray(M) || !M.at) return;
-    sec.hidden = false;
-    const at = new Date(M.at), mins = Math.round((Date.now() - at) / 60000), late = mins > 90;
-    const stale = (M.fresh || []).filter(f => f.stale && f.file !== 'hourly_meta.json');
-    const bad = (M.steps || []).filter(x => !x.ok).map(x => x.step.split(' ')[0].replace('.py', ''));
-    box.classList.toggle('bad', late || stale.length > 0 || bad.length > 0);
-    box.replaceChildren(
-      el('b', null, late ? `매시간 분석이 ${mins}분째 멈췄어요` : `매시간 분석 · ${M.at.slice(11, 16)} (${mins}분 전) · 자료 ${(M.updated || []).length}개 새로`),
-      el('span', null, stale.length ? `멈춘 자료: ${stale.map(f => `${f.name} ${f.age_min ?? '?'}분`).join(' · ')}` : '수집·분석 모두 1시간 안에 갱신됐어요'),
-      ...(bad.length ? [el('span', null, `실패한 단계: ${bad.join(', ')}`)] : []));
   }
 
   function drawHome(recs) {
@@ -3766,7 +3761,7 @@ html,body{font-size:16px;line-height:1.75}
     fbInit();
     if (!setupRefresh.done) { setupRefresh(); setupRefresh.done = true; }
     const recs = grouped();
-    buildTabs(); drawHome(recs); drawFresh(); drawQuick(); drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors(); drawAccRank();
+    buildTabs(); drawHome(recs); drawQuick(); drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors(); drawAccRank();
     drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawX(); drawFeedback(); drawMalheeVar(); drawRewrites(); drawThreadsMine(); drawSlides(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics(); drawTraders(); drawTraderPosts(); drawGrowth(); drawViral(); drawAudit();
     const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/), g = location.hash.match(/^#go-([\w-]+)$/);
     setChannel(ch ? ch[1] : m ? 'instagram' : 'home');

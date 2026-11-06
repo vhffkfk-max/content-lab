@@ -346,7 +346,7 @@ def encode(frames, out_file):
     return "x264"
 
 
-def shoot(page_file, total, video):
+def shoot(page_file, total, video, only=None, prefix=""):
     from playwright.sync_api import sync_playwright
     with sync_playwright() as pw:
         b = pw.chromium.launch(channel="chrome", args=CHROME_ARGS)
@@ -358,9 +358,11 @@ def shoot(page_file, total, video):
         tl = pg.evaluate("TL")
         problems = []
         for s in tl:
+            if only and s["id"] not in only:
+                continue
             pg.evaluate(f"seek({s['end'] - 0.1})")
-            pg.screenshot(path=str(stills / f"{s['id']}.jpg"), type="jpeg", quality=88)
-            over = pg.evaluate("(()=>{const e=S.find(x=>x.style.display!=='none'),c=document.getElementById('cap').firstElementChild;return [e.scrollHeight>e.clientHeight+2||e.scrollWidth>e.clientWidth+2,c&&c.offsetHeight>185]})()")
+            pg.screenshot(path=str(stills / f"{prefix}{s['id']}.jpg"), type="jpeg", quality=88)
+            over = pg.evaluate("(()=>{const e=S.find(x=>x.style.display!=='none'),c=document.getElementById('cap').firstElementChild;e.querySelectorAll('.ph').forEach(p=>p.style.display='none');const r=[e.scrollHeight>e.clientHeight+2||e.scrollWidth>e.clientWidth+2,c&&c.offsetHeight>185];e.querySelectorAll('.ph').forEach(p=>p.style.display='');return r})()")
             if over[0] or over[1]:
                 problems.append(f"{s['id']}: {'화면' if over[0] else ''} {'자막' if over[1] else ''} 넘침")
         b.close()
