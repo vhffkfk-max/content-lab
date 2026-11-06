@@ -555,6 +555,7 @@ def scene_inner(i, c, q):
 
 
 EXTRA = """
+#headline{position:absolute;left:65px;right:65px;top:960px;z-index:4;text-align:left;text-shadow:0 2px 10px rgba(0,0,0,.6)}#headline .h1{font-size:48px;font-weight:700;color:#fff;line-height:1.25}#headline .h2{font-size:74px;font-weight:900;color:#E3262B;line-height:1.18;letter-spacing:-1px}
 #fx{position:absolute;inset:0;overflow:hidden}
 #grid{position:absolute;inset:-200px;background-image:linear-gradient(rgba(255,255,255,.055) 2px,transparent 2px),linear-gradient(90deg,rgba(255,255,255,.055) 2px,transparent 2px);background-size:90px 90px}
 #glow{position:absolute;width:1500px;height:1500px;left:-210px;top:-60px;border-radius:50%}
@@ -622,6 +623,22 @@ window.seek=t=>{
 """
 
 
+def headline_html(s):
+    """뉴스 프레임형의 고정 제목: 인스타 제목을 두 줄로 나눠 둘째 줄을 빨강으로 (한경·매경 표지처럼)."""
+    title = clean(s.ig_title or "").strip()
+    if not title:
+        return ""
+    parts = re.split(r"(?<=[,，…])\s*|\s+(?=[\"“'‘])", title, maxsplit=1)
+    if len(parts) < 2:
+        words = title.split()
+        cut = max(1, len(words) // 2)
+        parts = [" ".join(words[:cut]), " ".join(words[cut:])]
+    one, two = (x.strip(" ,") for x in parts[:2])
+    size = min(74, int(930 / max(len(two), 1) * 1.05))
+    return (f'<div id="headline"><div class="h1">{html.escape(one)}</div>'
+            f'<div class="h2" style="font-size:{size}px">{html.escape(two)}</div></div>')
+
+
 def build_page(out, s, q, scenes, basis):
     logo = (ROOT / "assets" / "brand" / "hotconomy_logo.png").as_uri()
     used = list(dict.fromkeys([m for _, x in texts(s) for m in PH.findall(x)] + [n for c in s.cuts for n in ([c.ticker] if c.ticker else c.tickers)]))
@@ -633,7 +650,7 @@ def build_page(out, s, q, scenes, basis):
     js = JS + FX
     secs = "".join(scene(i, c, q) for i, c in enumerate(s.cuts, 1))
     doc = f"""<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>{font_css()}{CSS}{EXTRA}{formats.css()}</style></head><body class="fmt-{STYLE['format']}">
-<div id="fx"><div id="grid"></div><div id="glow"></div><div id="rays"></div></div><div id="bigword">{html.escape(s.hashtags[0].lstrip("#") if s.hashtags else "HOTCONOMY")} · @HOTCONOMY · </div><div id="wipe1"></div><div id="wipe2"></div><div id="bar"></div><div id="head"><img src="{logo}"><span>{basis}</span></div>{secs}<div id="cap"></div>
+<div id="fx"><div id="grid"></div><div id="glow"></div><div id="rays"></div></div><div id="bigword">{html.escape(s.hashtags[0].lstrip("#") if s.hashtags else "HOTCONOMY")} · @HOTCONOMY · </div><div id="wipe1"></div><div id="wipe2"></div><div id="bar"></div><div id="head"><img src="{logo}"><span>{basis}</span></div>{headline_html(s)}{secs}<div id="cap"></div>
 <div id="warn">정보 제공 목적 · 투자 권유 아님 · AI 음성</div>{tape_html}<div id="flash"></div>
 <script>const TL={json.dumps(tl, ensure_ascii=False)};{js}</script></body></html>"""
     p = out / "page.html"

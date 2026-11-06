@@ -13,6 +13,22 @@ PHOTO_MODEL = "claude-sonnet-5-5"   # 사진 검색어만 정하는 가벼운 �
 
 # key: (이름, 어떤 영상에 어울리나, CSS). 순서가 사이트에 보이는 순서.
 FORMATS = {
+    "frame": ("뉴스 프레임형", "연구소에 모은 상위 릴스(조선비즈 66~111배)의 구성: 검은 바탕 가운데 큰 사진, 사진 아래 고정 두 줄 제목(흰색+빨강), 장식 없음", """
+body.fmt-frame{background:#000!important}
+body.fmt-frame #fx,body.fmt-frame #flash,body.fmt-frame #wipe1,body.fmt-frame #wipe2{display:none}
+body.fmt-frame #head{top:196px;justify-content:flex-end}body.fmt-frame #head img{height:66px}
+body.fmt-frame #bar{height:6px;background:#E3262B}
+body.fmt-frame section{left:0;right:0;top:300px;height:860px;padding:40px 65px 250px;background:#111;overflow:hidden}
+body.fmt-frame section:has(.ph)>*:not(.ph){display:none}
+body.fmt-frame .ph{position:absolute;inset:0;background-size:cover;background-position:center;z-index:-1}
+body.fmt-frame section::after{content:'';position:absolute;left:0;right:0;bottom:0;height:420px;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.92));z-index:-1}
+body.fmt-frame #headline{display:block}
+body.fmt-frame .kick{background:transparent;color:#bbb!important;padding:0;font-size:40px}
+body.fmt-frame #cap{top:1176px;height:150px}
+body.fmt-frame #cap>div{background:none;border:0;padding:0;font-size:50px;font-weight:700;text-shadow:none;color:#fff}
+body.fmt-frame #cap em{color:#ff5a5f}
+body.fmt-frame .ln.num,body.fmt-frame .big,body.fmt-frame .num{color:#fff;text-shadow:none}body.fmt-frame .big.dn{color:#62ACFF}body.fmt-frame .big.up{color:#ff5a5f}body.fmt-frame .ln.mark{background-image:linear-gradient(transparent 62%,rgba(227,38,43,.9) 62%,rgba(227,38,43,.9) 94%,transparent 94%)}body.fmt-frame .card2 b{background:#E3262B}
+"""),
     "neon": ("다이내믹 네온형", "숫자·시세가 많은 급등락 소식. 지금까지 쓰던 기본 화면", """
 body.fmt-neon .ph{position:absolute;left:-30px;right:-30px;top:-20px;bottom:-20px;background-size:cover;background-position:center;border-radius:28px;opacity:.42;z-index:-1}
 body.fmt-neon .ph::after{content:'';position:absolute;inset:0;border-radius:28px;background:linear-gradient(180deg,rgba(11,11,13,.15),rgba(11,11,13,.88))}
@@ -62,16 +78,6 @@ body.fmt-split section:has(.ph){justify-content:flex-start;padding-top:380px}
 body.fmt-split section:has(.ph) .emo{display:none}
 body.fmt-split section:has(.ph)>*:not(.ph){zoom:.78}
 """),
-    "data": ("데이터 터미널형", "지수·환율·금리처럼 숫자가 주인공. 남색 화면과 또렷한 고딕", """
-body.fmt-data{background:#06101f!important}
-body.fmt-data #rays,body.fmt-data #bigword{display:none}
-body.fmt-data #grid{background-image:linear-gradient(rgba(90,162,255,.12) 2px,transparent 2px),linear-gradient(90deg,rgba(90,162,255,.12) 2px,transparent 2px);background-size:60px 60px}
-body.fmt-data .q,body.fmt-data .big,body.fmt-data .num,body.fmt-data .wave{font-family:HPlex,HSans,sans-serif}
-body.fmt-data .kick{background:transparent;color:#FFC23A!important;border:3px solid #FFC23A}
-body.fmt-data .ph{position:absolute;left:-20px;right:-20px;top:-20px;bottom:-20px;background-size:cover;background-position:center;opacity:.22;filter:grayscale(1);z-index:-1;border-radius:16px}
-body.fmt-data .ph::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(6,16,31,.55) 0 3px,transparent 3px 6px)}
-body.fmt-data #cap>div{border-color:#5AA2FF}
-"""),
     "minimal": ("미니멀 화이트형", "생활 속 돈 이야기·쉬운 설명. 흰 바탕에 큰 검은 글씨", """
 body.fmt-minimal{background:#f7f6f3!important;color:#111}
 body.fmt-minimal #fx,body.fmt-minimal #flash,body.fmt-minimal #bigword{display:none}
@@ -104,9 +110,9 @@ body.fmt-kinetic section:has(.ph){justify-content:flex-end}
 body.fmt-kinetic section:has(.ph) .emo{display:none}
 """),
 }
-DEFAULT = "photo"
-# 모든 형식 공통: 오른쪽 위 기준일·면책 문구는 화면에서 빼고 올릴 글 끝에만 둔다 (대표 요청 2026-11-06, 짜쳐 보인다). AI 음성 표시는 캡션과 플랫폼 AI 표시로 한다.
-COMMON = "body #warn,body #head span{display:none!important}body #warn,body #head span{text-shadow:0 1px 4px rgba(0,0,0,.85),0 0 2px rgba(0,0,0,.9);color:#fff}body.fmt-paper #warn,body.fmt-paper #head span,body.fmt-minimal #warn,body.fmt-minimal #head span{text-shadow:none;color:#444}\n"
+DEFAULT = "frame"   # 연구소 상위 릴스 벤치마크 (2026-11-06 대표 요청: 잘 된 글의 색을 가져가자)
+# 모든 형식 공통: 해시태그 띠·큰 워터마크·이모지·반짝이는 상위 글 어디에도 없어 뺀다. 오른쪽 위 기준일·면책 문구는 화면에서 빼고 올릴 글 끝에만 둔다 (대표 요청 2026-11-06, 짜쳐 보인다). AI 음성 표시는 캡션과 플랫폼 AI 표시로 한다.
+COMMON = "#headline{display:none}body #tape,body #bigword,body .emo,body #fx .pt{display:none!important}body #warn,body #head span{display:none!important}body #warn,body #head span{text-shadow:0 1px 4px rgba(0,0,0,.85),0 0 2px rgba(0,0,0,.9);color:#fff}body.fmt-paper #warn,body.fmt-paper #head span,body.fmt-minimal #warn,body.fmt-minimal #head span{text-shadow:none;color:#444}\n"
 
 
 def css():
