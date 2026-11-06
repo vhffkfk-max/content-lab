@@ -1,12 +1,12 @@
 {
- "at": "2026-11-07T03:06+09:00",
- "took_sec": 340,
+ "at": "2026-11-07T04:07+09:00",
+ "took_sec": 374,
  "steps": [
   {
    "step": "free_import.py",
    "ok": true,
    "sec": 6,
-   "note": "무료 크롤러 → 인스타 글 1192개 · 쓰레드 글 6461개 · X 글 0개 · 인스타 계정 팔로워 126곳 (PC가 0.2시간 전에 올림)"
+   "note": "무료 크롤러 → 인스타 글 1190개 · 쓰레드 글 6467개 · X 글 0개 · 인스타 계정 팔로워 126곳 (PC가 0.6시간 전에 올림)"
   },
   {
    "step": "threads_viral.py --export",
@@ -35,8 +35,8 @@
   {
    "step": "threads_analyze.py",
    "ok": true,
-   "sec": 81,
-   "note": "✅ 쓰레드 글 40개 분석 · 공식 5개 (입력 15,417 / 출력 11,270 토큰)"
+   "sec": 61,
+   "note": "✅ 쓰레드 글 40개 분석 · 공식 4개 (입력 15,418 / 출력 7,998 토큰)"
   },
   {
    "step": "x_analyze.py",
@@ -47,8 +47,8 @@
   {
    "step": "threads_mine_analyze.py",
    "ok": true,
-   "sec": 222,
-   "note": "✅ 황소개미 진단 (등급 D+, AI 티 2.7) · 입력 77,478 / 출력 29,569 토큰"
+   "sec": 265,
+   "note": "✅ 황소개미 진단 (등급 C-, AI 티 45.0) · 입력 44,847 / 출력 34,927 토큰"
   },
   {
    "step": "generate_drafts.py",
@@ -59,8 +59,8 @@
   {
    "step": "import_ideas.py",
    "ok": true,
-   "sec": 14,
-   "note": "✅ 한국 미출시 해외 아이디어 0개 (입력 35,920 / 출력 2,113 토큰)"
+   "sec": 25,
+   "note": "✅ 한국 미출시 해외 아이디어 1개 (입력 35,919 / 출력 4,369 토큰)"
   }
  ],
  "updated": [
@@ -70,7 +70,6 @@
   "acc_rank_meta",
   "acc_tops",
   "accounts",
-  "calendar",
   "fo_topics",
   "ig_slides",
   "imports",
@@ -99,56 +98,56 @@
   {
    "name": "매시간 분석",
    "file": "hourly_meta.json",
-   "age_min": 52,
+   "age_min": 54,
    "limit": 90,
    "stale": false
   },
   {
    "name": "뉴스 수집(30분)",
    "file": "live_meta.json",
-   "age_min": 7,
+   "age_min": 32,
    "limit": 90,
    "stale": false
   },
   {
    "name": "쓰레드 실시간 추적(30분)",
    "file": "thx_live_meta.json",
-   "age_min": 7,
+   "age_min": 32,
    "limit": 90,
    "stale": false
   },
   {
    "name": "인스타 실시간 추적(30분)",
    "file": "igx_live_meta.json",
-   "age_min": 7,
+   "age_min": 32,
    "limit": 90,
    "stale": false
   },
   {
    "name": "무료 크롤러 원자료(30분)",
    "file": "free_crawl.json",
-   "age_min": 7,
+   "age_min": 32,
    "limit": 90,
    "stale": false
   },
   {
    "name": "텔레그램 수집(30분)",
    "file": "tg_meta.json",
-   "age_min": 23,
+   "age_min": 22,
    "limit": 90,
    "stale": false
   },
   {
    "name": "뜬 글 공식(릴스·카드뉴스, 매시간)",
    "file": "viral.json",
-   "age_min": 41,
+   "age_min": 33,
    "limit": 120,
    "stale": false
   },
   {
    "name": "지금 쓸 거리(2시간)",
    "file": "hot_now.json",
-   "age_min": 207,
+   "age_min": 267,
    "limit": 150,
    "stale": true
   },
