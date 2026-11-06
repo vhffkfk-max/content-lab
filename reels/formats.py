@@ -8,7 +8,7 @@ import time
 
 from pydantic import BaseModel
 
-MAIN_REPEAT = 3   # 대표 사진을 쓰는 컷 수 상한
+MAIN_REPEAT = 2   # 대표 사진을 쓰는 컷 수 상한 (시청자 2차: 같은 사진 최대 2회)
 PHOTO_MODEL = "claude-sonnet-5-5"   # 사진 검색어만 정하는 가벼운 일
 
 # key: (이름, 어떤 영상에 어울리나, CSS). 순서가 사이트에 보이는 순서.
@@ -16,15 +16,18 @@ FORMATS = {
     "frame": ("뉴스 프레임형", "연구소에 모은 상위 릴스(조선비즈 66~111배)의 구성: 검은 바탕 가운데 큰 사진, 사진 아래 고정 두 줄 제목(흰색+빨강), 장식 없음", """
 body.fmt-frame{background:#000!important}
 body.fmt-frame #fx,body.fmt-frame #flash,body.fmt-frame #wipe1,body.fmt-frame #wipe2{display:none}
-body.fmt-frame #head{top:196px;justify-content:flex-end}body.fmt-frame #head img{height:66px}
+body.fmt-frame #head{top:262px;justify-content:flex-end;z-index:5}body.fmt-frame #head img{height:66px}
 body.fmt-frame #bar{height:6px;background:#E3262B}
-body.fmt-frame section{left:0;right:0;top:300px;height:860px;padding:40px 65px 250px;background:#111;overflow:hidden}
-body.fmt-frame section:has(.ph)>*:not(.ph){display:none}
+body.fmt-frame section{left:0;right:0;top:240px;height:1160px;padding:60px 65px 330px;background:#111;overflow:hidden}
+body.fmt-frame section:has(.ph:not(.blur))>*:not(.ph){display:none}
 body.fmt-frame .ph{position:absolute;inset:0;background-size:cover;background-position:center;z-index:-1}
-body.fmt-frame section::after{content:'';position:absolute;left:0;right:0;bottom:0;height:420px;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.92));z-index:-1}
+body.fmt-frame section::after{content:'';position:absolute;left:0;right:0;bottom:0;height:560px;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.94) 70%);z-index:-1}
+body.fmt-frame .ph.blur{filter:blur(22px) brightness(.42);transform:scale(1.12)}
+body.fmt-frame .a,body.fmt-frame .ln,body.fmt-frame .slam{opacity:1!important;transform:none!important}
+body.fmt-frame .card2{background:none;border:0;padding:6px 0}body.fmt-frame .card2 b{display:none}body.fmt-frame .ln.mark{background-image:none}
 body.fmt-frame #headline{display:block}
 body.fmt-frame .kick{background:transparent;color:#bbb!important;padding:0;font-size:40px}
-body.fmt-frame #cap{top:1176px;height:150px}
+body.fmt-frame #cap{top:1290px;height:96px}body.fmt-frame #headline{top:1105px}
 body.fmt-frame #cap>div{background:none;border:0;padding:0;font-size:50px;font-weight:700;text-shadow:none;color:#fff}
 body.fmt-frame #cap em{color:#ff5a5f}
 body.fmt-frame .ln.num,body.fmt-frame .big,body.fmt-frame .num{color:#fff;text-shadow:none}body.fmt-frame .big.dn{color:#62ACFF}body.fmt-frame .big.up{color:#ff5a5f}body.fmt-frame .ln.mark{background-image:linear-gradient(transparent 62%,rgba(227,38,43,.9) 62%,rgba(227,38,43,.9) 94%,transparent 94%)}body.fmt-frame .card2 b{background:#E3262B}

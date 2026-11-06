@@ -122,7 +122,7 @@ hooks: 위 ①②③ 공식으로 하나씩 3개. cuts 의 1컷은 그중 가장
 - say 와 cap 의 숫자는 같은 값이어야 한다 (614.6억이면 둘 다 육백십사 점 육억).
 
 [제목]
-ig_title: 40자 이내. 1컷과 같은 사실을 '누가 무엇을 했더니 어떻게 됐다' 한 문장으로, 실명과 숫자를 우선. yt_title: 45자 이내, 끝에 #Shorts 를 넣지 않는다.
+ig_title: 40자 이내. 영상 내내 화면에 고정되는 두 줄 제목이 된다: 앞부분은 따옴표로 감싼 실제 한마디나 핵심 사실, 쉼표 뒤는 결과(14자 이내, 갈등·반전). 예: "2천억은 못 걷는다", 쿠팡 과징금 법원이 멈췄다. 실명과 숫자를 우선. yt_title: 45자 이내, 끝에 #Shorts 를 넣지 않는다.
 summary: 사실 4~6줄 (캡션 전체 300~600자가 성적이 좋다), 근거 기관·언론 이름을 한 줄에 넣는다. question: '댓글'이라는 말이 든 질문. hashtags: 3~5개."""
 
 
@@ -502,7 +502,14 @@ STYLE = {"format": formats.DEFAULT, "photos": []}   # 보드마다 main 에서 �
 
 def photo_html(i):
     ph = (STYLE["photos"] or [None] * i)[i - 1] if i - 1 < len(STYLE["photos"] or []) else None
-    return f'<div class="ph" style="background-image:url(\'{html.escape(ph["uri"])}\')"></div>' if ph and ph.get("uri") else ""
+    if ph and ph.get("uri"):
+        return f'<div class="ph" style="background-image:url(\'{html.escape(ph["uri"])}\')"></div>'
+    near = [p for p in (STYLE["photos"] or []) if p and p.get("uri")]
+    if near and STYLE["format"] == "frame":   # 사진이 없는 컷은 이 영상의 사진을 흐리게 깔고 글을 얹는다
+        back = (STYLE["photos"][:i - 1][::-1] + STYLE["photos"][i:])
+        pick = next((p for p in back if p and p.get("uri")), near[0])
+        return f'<div class="ph blur" style="background-image:url(\'{html.escape(pick["uri"])}\')"></div>'
+    return ""
 
 
 def scene(i, c, q):
@@ -617,6 +624,7 @@ window.seek=t=>{
   el.querySelectorAll('.emo').forEach(n=>{const q=ease((l-.1)/.18);n.style.opacity=q;n.style.transform=`scale(${.2+.8*q+Math.sin(l*7)*.05}) rotate(${Math.sin(l*5)*8}deg)`});
   const ar=el.querySelector('#area');if(ar)ar.style.clipPath=`inset(0 ${(1-ease(l/.7))*100}% 0 0)`;
   const dot=el.querySelector('#dot');if(dot&&dot.style.opacity==='1')dot.setAttribute('r',16+Math.abs(Math.sin(l*6))*9);
+  cap.style.visibility=document.body.classList.contains('fmt-frame')&&!el.querySelector('.ph:not(.blur)')&&el.querySelector('.q,.big,.chk,.chart,.rows')?'hidden':'visible';
   const c=cap.firstElementChild;if(c){const cue=CAPS.find(x=>t>=x.t&&t<x.e),q=cue?ease((t-cue.t)/.12):1;c.style.transform=`scale(${.82+.18*q})`}
   if(bw)bw.style.transform=`translateX(${-(t*70)%900}px)`;
 };
