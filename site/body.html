@@ -321,6 +321,56 @@ a.row:hover .row-main{text-decoration:underline}
 .fold.fold1{-webkit-line-clamp:1}
 .fold-btn{all:unset;cursor:pointer;font-size:13px;color:var(--accent-ink);margin-top:-4px;justify-self:start}
 .fold-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* ── 2026-11-06 읽기 쉽게 개편: 글자 크게, 줄 간격 넓게, 긴 문단은 한 문장씩 줄로, 메뉴는 얕게 ── */
+html,body{font-size:16px;line-height:1.75}
+.page{gap:40px}
+.view{gap:36px}
+.sec{gap:14px}
+.sec>h2{font-size:21px;font-weight:700;letter-spacing:-.01em}
+.card{padding:26px 28px}
+.card h3{font-size:18px;line-height:1.45}
+.card p{max-width:72ch}
+.note{font-size:14px;line-height:1.65;max-width:72ch}
+.sub{font-size:13.5px;line-height:1.6}
+.row{padding:14px 0;gap:4px}
+.row-sub{font-size:13px}
+.recs{gap:18px}
+.rec-title{font-size:18px}
+.title-row h1{font-size:30px}
+.title-row p{font-size:14px;max-width:80ch}
+/* 긴 문단 → 꼬리표 + 한 줄씩 */
+.rd{display:grid;gap:8px;margin:16px 0 0;max-width:72ch}
+.rd:first-child{margin-top:0}
+.rd-lbl{display:inline-flex;justify-self:start;font-size:13px;font-weight:700;color:var(--accent-ink);background:var(--accent-soft);border-radius:999px;padding:1px 11px;line-height:24px}
+.rd ul,.rd ol{margin:0;padding:0;list-style:none;display:grid;gap:9px}
+.rd li{position:relative;padding-left:18px;line-height:1.7}
+.rd ul li::before{content:"";position:absolute;left:3px;top:.72em;width:6px;height:6px;border-radius:50%;background:var(--accent-track)}
+.rd ul li:first-child{font-weight:600}
+.rd ul li:first-child::before{background:var(--accent)}
+.rd ol{counter-reset:rd}
+.rd ol li{padding-left:30px;counter-increment:rd}
+.rd ol li::before{content:counter(rd);position:absolute;left:0;top:.18em;width:21px;height:21px;border-radius:6px;background:var(--accent-soft);color:var(--accent-ink);font-size:12px;font-weight:700;display:grid;place-items:center}
+.rd-lead{margin:0;font-weight:600}
+/* 하위 메뉴는 왼쪽 목록 대신 화면 위 탭으로 */
+.subnav{display:none!important}
+.nav button,.nav a{min-height:40px;font-size:15px}
+.sec-tabs{display:flex;gap:8px;flex-wrap:wrap;position:sticky;top:0;z-index:15;margin:-16px 0 -8px;padding:12px 0;background:var(--ground);border-bottom:1px solid var(--border)}
+.sec-tabs button{all:unset;cursor:pointer;font-size:14px;line-height:22px;padding:7px 15px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--text);white-space:nowrap}
+.sec-tabs button:hover{border-color:var(--control)}
+.sec-tabs button[aria-current="true"]{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+.sec-tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (max-width:860px){.sec-tabs{top:48px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.sec-tabs::-webkit-scrollbar{display:none}}
+/* 처음 화면 바로가기 */
+.quick{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.quick button{all:unset;box-sizing:border-box;cursor:pointer;display:grid;gap:4px;padding:18px 20px;border-radius:var(--radius-card);border:1px solid var(--border);background:var(--surface)}
+.quick button:hover{border-color:var(--accent)}
+.quick button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.quick b{font-size:16px;display:flex;align-items:center;gap:8px}
+.quick span{font-size:13px;color:var(--muted)}
+.job{padding:24px 28px}
+.job h3{font-size:20px}
+@media (max-width:640px){.card{padding:20px}.job{padding:20px}.title-row h1{font-size:25px}}
 </style>
 
 <div class="app">
@@ -500,6 +550,7 @@ a.row:hover .row-main{text-decoration:underline}
         <div class="title-row">
           <div><h1>오늘 뭐 할까요?</h1><p id="home-sub">오늘 할 일만 골랐어요. 하나 골라서 버튼을 누르세요.</p></div>
         </div>
+        <section class="sec" id="home-quick-sec"><h2>바로가기</h2><div class="quick" id="home-quick"></div></section>
         <section class="sec" id="home-check" aria-label="연구소 활용 체크"><div class="uc-strip" id="home-check-box"></div></section>
         <section class="sec" id="home-jobs-sec">
           <h2>지금 쓸 거리</h2>
@@ -1247,7 +1298,7 @@ a.row:hover .row-main{text-decoration:underline}
   // ── 영상 연구소: 대본·컷 이미지를 먼저 보고, 고친 뒤 버튼을 눌렀을 때만 영상을 만든다 ──
   // 요청 → 중간 서버(relay) → lab-requests 가지 → 내 PC(reels/reel_listen.py). 결과는 reel-previews 가지. 영상은 텔레그램으로.
   const VL_RAW = 'https://raw.githubusercontent.com/vhffkfk-max/content-lab/reel-previews/';
-  const vl = { list: [], suggest: [], autoTimes: [], suggestAt: '', cur: null, dirty: false, started: false, watching: new Set(), status: new Map() };
+  const vl = { jobs: [], jobsTimer: null, list: [], suggest: [], autoTimes: [], suggestAt: '', cur: null, dirty: false, started: false, watching: new Set(), status: new Map() };
   const vlPending = { get: () => { try { return JSON.parse(store.get('vl_pending') || '[]'); } catch (e) { return []; } }, set: a => store.set('vl_pending', JSON.stringify(a.slice(-8))) };
   const vlUrl = (path, v) => VL_RAW + path.split('/').map(encodeURIComponent).join('/') + (v ? `?v=${v}` : '');
   const vlRoot = () => document.getElementById('vl-root');
@@ -1271,6 +1322,16 @@ a.row:hover .row-main{text-decoration:underline}
     if (r.status !== 201) { alert(ghFail(r.status)); return false; }
     vlPending.set([...vlPending.get(), { rid, action, id: fields.id || '', topic: fields.topic || '', cut: fields.cut, t: Date.now() }]);
     vlWatch(vlPending.get().slice(-1)[0]); return true;
+  }
+  async function vlJobs() {   // 다른 기기에서 누른 일·자동 보드도 보이게
+    try {
+      const r = await ghApi('reel-jobs'); if (!r.ok) return;
+      const before = new Set(vl.jobs.map(j => j.rid)), now = (await r.json()).jobs || [];
+      const ended = [...before].filter(rid => !now.some(j => j.rid === rid) && !vl.watching.has(rid));
+      vl.jobs = now;
+      if (ended.length) { await vlLoadList(); if (vl.cur && !vl.dirty) await vlOpen(vl.cur.id, true); else vlDraw(); }
+      else vlDrawStatus();
+    } catch (e) { /* 다음 차례에 다시 */ }
   }
   function vlWatch(q) {
     if (vl.watching.has(q.rid)) return;
@@ -1307,7 +1368,14 @@ a.row:hover .row-main{text-decoration:underline}
   function vlBusy() { return vlPending.get().some(q => vl.watching.has(q.rid)); }
   function vlDrawStatus() {
     const box = document.getElementById('vl-status'); if (!box) return;
-    box.replaceChildren(...[...vl.status.values()].map(t => el('p', 'vl-job', t)));
+    const mine = [...vl.status.entries()];
+    const NAME = { board: '보드 만들기', save: '수정 반영', voice: '듣기', make: '영상 만들기' };
+    const others = vl.jobs.filter(j => !vl.status.has(j.rid) && !j.error).map(j => {
+      const secs = Math.max(0, Math.round((Date.now() - new Date(j.at).getTime()) / 1000)), took = secs >= 60 ? `${Math.floor(secs / 60)}분째` : `${secs}초째`;
+      const what = j.topic || (vl.list.find(x => x.id === j.id) || {}).topic || j.id;
+      return `${j.auto ? '자동 ' : ''}${NAME[j.action] || j.action} · ${what} · ${j.picked ? `PC가 만드는 중 · ${took}` : 'PC 차례를 기다리는 중'}`;
+    });
+    box.replaceChildren(...mine.map(([, t]) => el('p', 'vl-job', t)), ...others.map(t => el('p', 'vl-job', t)));
     const go = document.getElementById('vl-make'), sv = document.getElementById('vl-save');
     if (go) go.disabled = vl.dirty || vlBlocked() || vlBusy();
     if (sv) sv.disabled = !vl.dirty || vlBusy();
@@ -1413,6 +1481,7 @@ a.row:hover .row-main{text-decoration:underline}
     vlDraw();
     try { await vlLoadList(); } catch (e) { vlRoot().prepend(el('p', 'warn', e.message)); }
     vlPending.get().forEach(vlWatch);
+    if (!vl.jobsTimer) { vlJobs(); vl.jobsTimer = setInterval(() => { if (!document.querySelector('.view[data-view="video"]').hidden) vlJobs(); }, 8000); }
     vlDraw();
   }
 
@@ -1757,6 +1826,27 @@ a.row:hover .row-main{text-decoration:underline}
   function goBtn(label, ch, id, kind = 'btn small') {
     const b = el('button', kind, label); b.type = 'button'; b.addEventListener('click', () => goTo(ch, id)); return b;
   }
+  // 바로가기: 이 기기에서 최근 14일 많이 연 폴더 순(없으면 팀이 많이 쓰는 기본 목록) — 처음 화면에서 한 번에 들어간다
+  const QUICK_DEFAULT = ['tg-charts', 'tg-rw', 'tg-futures', 'ig-publish', 'recommend', 'trdf-stock', 'trdf-news', 'g-opps'];
+  function drawQuick() {
+    const box = document.getElementById('home-quick'); if (!box) return;
+    const byName = {};
+    document.querySelectorAll('.subnav').forEach(u => u.querySelectorAll('a').forEach(a => { byName[`${NAMES[u.dataset.for]}/${a.textContent}`] = a.getAttribute('href').slice(1); }));
+    const sum = {}, d = use.data(), days = Object.keys(d).sort().slice(-14);
+    days.forEach(k => Object.entries(d[k]).forEach(([key, s]) => { const id = byName[key]; if (id) sum[id] = (sum[id] || 0) + s; }));
+    const ids = Object.entries(sum).filter(([, s]) => s >= 30).sort((a, b) => b[1] - a[1]).map(([id]) => id);
+    QUICK_DEFAULT.forEach(id => { if (!ids.includes(id)) ids.push(id); });
+    box.replaceChildren(...ids.slice(0, 8).map(id => {
+      const a = document.querySelector(`.subnav a[href="#${id}"]`), sec = document.getElementById(id);
+      if (!a || !sec) return null;
+      const ch = a.closest('.subnav').dataset.for, b = el('button'), t = el('b'), i = el('i', 'dot');
+      i.style.background = getComputedStyle(document.querySelector(`#channel-nav button[data-ch="${ch}"] .dot`)).backgroundColor;
+      t.append(i, a.textContent); b.type = 'button'; b.append(t, el('span', null, NAMES[ch]));
+      b.addEventListener('click', () => openFolder(id));
+      return b;
+    }).filter(Boolean));
+  }
+
   function drawHome(recs) {
     const jobs = [], next = [], dot = c => { const i = el('i', 'dot'); i.style.background = c === 'accent' ? 'var(--accent)' : `var(--ch-${c})`; return i; };
     // 지금 쓸 거리: 30분마다 확인해 새 소식이면 바뀌는 3개 (hot_now.py). 설명은 한 줄만 보이고 눌러서 펼침
@@ -1861,18 +1951,45 @@ a.row:hover .row-main{text-decoration:underline}
   }
 
   // 긴 설명 글은 3줄(섹션 첫 안내는 1줄)만 보이고 '더 보기'로 펼친다. 화면을 바꿀 때마다 새로 그려진 글에 적용.
-  function foldLongText(root) {
+  // (2026-11-06 개편) 긴 문단을 접지 않고 읽기 쉽게 바꾼다: 앞의 굵은 꼬리표는 따로 한 줄, 본문은 문장마다 한 줄,
+  // '1) 2) 3)' 은 번호 목록. 글자만 있는 문단만 바꾸고(링크·버튼 섞인 건 그대로) 설명용 작은 글(.note 등)은 건드리지 않는다.
+  function splitSentences(t) {
+    return t.split(/(?<=[.!?])\s+(?=[가-힣A-Za-z0-9"'“‘(\[])/).map(s => s.trim()).filter(Boolean);
+  }
+  function readable(root) {
     if (!root) return;
     root.querySelectorAll('p').forEach(p => {
-      if (p.dataset.fold || p.closest('.box, .job, .title-row, dialog')) return;
-      const intro = p.classList.contains('note') && p.previousElementSibling && /^H[23]$/.test(p.previousElementSibling.tagName);
-      if (p.textContent.length < (intro ? 70 : 180)) return;
-      p.dataset.fold = '1'; p.classList.add('fold'); if (intro) p.classList.add('fold1');
-      const b = el('button', 'fold-btn', intro ? '설명 보기' : '더 보기'); b.type = 'button';
-      b.addEventListener('click', () => { const open = p.classList.toggle('fold'); b.textContent = open ? (intro ? '설명 보기' : '더 보기') : '접기'; });
-      p.after(b);
+      if (p.dataset.rd || p.closest('.box, .job, .title-row, dialog, .rd, .vl-box, .job-th, .uc-strip, .today-top')) return;
+      if (p.className && !/^(why1?|fold)$/.test(p.className)) return;
+      p.dataset.rd = '1';
+      const kids = [...p.childNodes];
+      let label = '', rest = kids;
+      if (kids[0] && kids[0].nodeName === 'B') { label = kids[0].textContent.trim(); rest = kids.slice(1); }
+      if (!rest.length || rest.some(n => n.nodeType !== 3)) return;
+      const text = rest.map(n => n.textContent).join('').trim();
+      if (!label && text.length < 120) return;
+      const box = el('div', 'rd');
+      if (label) box.append(el('span', 'rd-lbl', label.replace(/[:：]$/, '')));
+      if (/(^|\s)1\)\s/.test(text) && /\s2\)\s/.test(text)) {
+        const parts = text.split(/\s(?=\d{1,2}\)\s)/), lead = /^1\)\s/.test(parts[0]) ? '' : parts.shift();
+        if (lead) box.append(el('p', 'rd-lead', lead));
+        const ol = el('ol');
+        parts.forEach(s => ol.append(el('li', null, s.replace(/^\d{1,2}\)\s*/, ''))));
+        box.append(ol);
+      } else {
+        const ss = splitSentences(text);
+        if (ss.length < 2) { if (!label) return; box.append(el('p', null, text)); }
+        else { const ul = el('ul'); ss.forEach(s => ul.append(el('li', null, s))); box.append(ul); }
+      }
+      p.replaceWith(box);
     });
   }
+  const foldLongText = readable;
+  let rdTimer = 0;
+  new MutationObserver(() => {   // 버튼·새로고침으로 나중에 그려진 글도 같은 모양으로
+    cancelAnimationFrame(rdTimer);
+    rdTimer = requestAnimationFrame(() => readable(document.querySelector('.view:not([hidden])')));
+  }).observe(document.querySelector('main.canvas'), { childList: true, subtree: true });
 
   function drawRecs(recs) {
     const box = document.getElementById('rec-list');
@@ -3543,10 +3660,33 @@ a.row:hover .row-main{text-decoration:underline}
   // ── 폴더 보기: 메뉴 하위 항목을 누르면 그 자료만 ──
   let focused = null;
   const focusBar = el('div', 'focus-bar');
+  // 채널 화면 맨 위 탭: 왼쪽 하위 메뉴를 펼치지 않아도 한 번에 원하는 폴더로
+  function buildTabs() {
+    document.querySelectorAll('.subnav').forEach(u => {
+      const view = document.querySelector(`.view[data-view="${u.dataset.for}"]`), head = view && view.querySelector('.title-row');
+      if (!head || view.querySelector('.sec-tabs')) return;
+      const bar = el('nav', 'sec-tabs'); bar.setAttribute('aria-label', '이 채널 폴더');
+      const tab = (label, id) => {
+        const b = el('button', null, label); b.type = 'button'; b.dataset.tab = id || '';
+        b.addEventListener('click', () => {
+          if (id) return openFolder(id);
+          unfocus(); spy(); scrollTo({ top: 0 });
+          try { history.replaceState(null, '', '#ch-' + view.dataset.view); } catch (e) {}
+        });
+        return b;
+      };
+      bar.append(tab('전체'), ...[...u.querySelectorAll('a')].map(a => tab(a.textContent, a.getAttribute('href').slice(1))));
+      head.after(bar);
+    });
+    markTabs();
+  }
+  function markTabs() {
+    document.querySelectorAll('.sec-tabs button').forEach(b => b.setAttribute('aria-current', String(b.dataset.tab === (focused || ''))));
+  }
   function unfocus() {
     document.querySelectorAll('[data-fold]').forEach(n => n.removeAttribute('data-fold'));
     document.querySelectorAll('.grid.one-col').forEach(n => n.classList.remove('one-col'));
-    focusBar.remove(); focused = null; use.page();
+    focusBar.remove(); focused = null; markTabs(); use.page();
   }
   function focusSec(id) {
     const t = document.getElementById(id), view = t && t.closest('.view');
@@ -3555,7 +3695,7 @@ a.row:hover .row-main{text-decoration:underline}
     unfocus();
     for (let n = t; n.parentElement && n !== view; n = n.parentElement)
       [...n.parentElement.children].forEach(s => {
-        if (s !== n && !s.matches('.title-row')) s.setAttribute('data-fold', '');
+        if (s !== n && !s.matches('.title-row, .sec-tabs')) s.setAttribute('data-fold', '');
         if (n.parentElement.classList.contains('grid')) n.parentElement.classList.add('one-col');
       });
     if (id === 'analysis') document.getElementById('analysis-more').open = true;
@@ -3566,8 +3706,8 @@ a.row:hover .row-main{text-decoration:underline}
     const name = links[i] ? links[i].textContent : '';
     focusBar.replaceChildren(el('span', null, '폴더'), el('b', null, name), el('span', 'grow'),
       ...(links[i - 1] ? [go(links[i - 1], '← ' + links[i - 1].textContent)] : []), ...(links[i + 1] ? [go(links[i + 1], links[i + 1].textContent + ' →')] : []), all);
-    view.querySelector('.title-row').after(focusBar);
-    focused = id;
+    if (!view.querySelector('.sec-tabs')) view.querySelector('.title-row').after(focusBar);
+    focused = id; markTabs();
     if (id === 'fb-usage') drawUsage();
     links.forEach(a => a.setAttribute('aria-current', String(a.getAttribute('href') === '#' + id)));
     use.page();
@@ -3606,7 +3746,7 @@ a.row:hover .row-main{text-decoration:underline}
     fbInit();
     if (!setupRefresh.done) { setupRefresh(); setupRefresh.done = true; }
     const recs = grouped();
-    drawHome(recs); drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors(); drawAccRank();
+    buildTabs(); drawHome(recs); drawQuick(); drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors(); drawAccRank();
     drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawX(); drawFeedback(); drawMalheeVar(); drawRewrites(); drawThreadsMine(); drawSlides(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics(); drawTraders(); drawTraderPosts(); drawGrowth(); drawViral(); drawAudit();
     const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/), g = location.hash.match(/^#go-([\w-]+)$/);
     setChannel(ch ? ch[1] : m ? 'instagram' : 'home');

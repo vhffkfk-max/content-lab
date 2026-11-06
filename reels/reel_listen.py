@@ -211,7 +211,7 @@ def poll(lines, seen, etag):
         if old or q.get("error"):   # PC가 꺼져 있던 사이 쌓인 요청·지난 실패 기록
             change(name, "DELETE", "reel request expired")
             continue
-        if over_limit(q.get("action", "")):
+        if not q.get("auto") and over_limit(q.get("action", "")):
             log("하루 한도 넘음:", q["rid"], q.get("action"))
             change(name, "PUT", "reel request over limit", error="오늘 처리할 수 있는 횟수를 넘었어요. 내일 다시 눌러 주세요.")
             continue
@@ -267,7 +267,13 @@ def refresh(jobs):
     if slot and rows:
         top = rows[0]
         log("자동 보드:", slot, top["keyword"])
-        jobs.put((None, {"rid": f"auto{datetime.now(KST):%H%M}", "action": "board", "topic": top["keyword"], "seeds": top["links"], "auto": True, "at": datetime.now(KST).isoformat()}))
+        rid = f"auto{datetime.now(KST):%m%d%H%M}"
+        body = {"rid": rid, "action": "board", "topic": top["keyword"], "seeds": top["links"], "auto": True, "at": datetime.now(KST).isoformat(timespec="seconds")}
+        r = api("PUT", f"{API}/{rid}.json", json={"message": "reel auto board", "branch": BRANCH,   # 사이트 진행 목록에 보이게 요청함에 넣는다
+                                                   "content": base64.b64encode(json.dumps(body, ensure_ascii=False).encode("utf-8")).decode("ascii")})
+        if r.status_code not in (200, 201):
+            log("자동 보드 요청 실패:", r.status_code)
+            jobs.put((None, body))
     elif changed:
         with PUSH_LOCK:
             log("추천 갱신:", ", ".join(r["keyword"] for r in rows), preview.push())

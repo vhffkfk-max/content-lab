@@ -32,6 +32,7 @@ export function route(method, path) {
   if (method === 'GET' && p === 'owner') return { owner: true, check: true };   // 발행 암호 확인용, 깃허브로 안 보냄
   let m;
   if (p === 'reel-request') return method === 'POST' && !query ? { reel: true } : null;
+  if (p === 'reel-jobs') return method === 'GET' && !query ? { reelJobs: true } : null;
   if ((m = p.match(/^reel-request\/([a-z0-9]+)$/))) return method === 'GET' && RID.test(m[1]) ? { reelStatus: m[1] } : null;
   if ((m = p.match(/^reel-data\/(index\.json|([^/]+)\/board\.json)$/))) {
     const id = m[2] && decodeURIComponent(m[2]);
@@ -91,7 +92,7 @@ export default async function handler(req, res) {
   const path = String(req.query.path || ''), rule = route(req.method, path);
   // 영상 연구소 요청은 암호 없이 받는다 (대표 혼자 쓰는 기능, 2026-11-06 대표 요청). 형식은 reelFile 이 다시 만들고,
   // 하루 처리량은 PC(reels/reel_listen.py)가 막는다. 인스타 발행 등 다른 요청은 그대로 암호가 필요하다.
-  const open = !!rule && !!(rule.reel || rule.reelStatus || rule.reelData);
+  const open = !!rule && !!(rule.reel || rule.reelStatus || rule.reelData || rule.reelJobs);
   if (!open && !isOwner && !same(key, LAB_KEY)) {
     await new Promise(r => setTimeout(r, 800));   // 암호 맞히기를 느리게
     return res.status(401).json({ error: 'bad_key' });
@@ -118,6 +119,20 @@ export default async function handler(req, res) {
       content: Buffer.from(JSON.stringify(file)).toString('base64') }) });
     if (r.status === 401) return res.status(502).json({ error: 'github_token' });
     return r.ok ? res.status(201).json({ rid: file.rid }) : res.status(r.status).json({ error: 'github' });
+  }
+  if (rule.reelJobs) {   // 어느 기기에서 열어도 PC가 하는 일·기다리는 일이 보이게
+    const r = await gh(`contents/${REEL_DIR}?ref=${THREAD_BRANCH}`);
+    if (r.status === 401) return res.status(502).json({ error: 'github_token' });
+    if (r.status === 404) return res.status(200).json({ jobs: [] });
+    if (!r.ok) return res.status(502).json({ error: 'github' });
+    const files = (await r.json()).filter(f => f.name.endsWith('.json')).slice(0, 12);
+    const jobs = (await Promise.all(files.map(async f => {
+      const x = await gh(`contents/${REEL_DIR}/${f.name}?ref=${THREAD_BRANCH}`);
+      if (!x.ok) return null;
+      const q = JSON.parse(Buffer.from((await x.json()).content, 'base64').toString('utf-8'));
+      return { rid: q.rid, action: q.action, topic: q.topic || '', id: q.id || '', at: q.at, picked: q.picked || null, error: q.error || null, auto: !!q.auto };
+    }))).filter(Boolean).sort((a, b) => String(a.at).localeCompare(String(b.at)));
+    return res.status(200).json({ jobs });
   }
   if (rule.reelStatus) {
     const r = await gh(`contents/${REEL_DIR}/${rule.reelStatus}.json?ref=${THREAD_BRANCH}`);
