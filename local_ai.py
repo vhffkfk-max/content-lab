@@ -142,12 +142,32 @@ def auto_ideas(state, did):
     did.append("카드뉴스 추천안")
 
 
+DAILY_REQ = {"draft": 30, "daily": 3, "social": 6, "tg": 10, "trd": 10, "chart": 20, "thpost": 40, "refresh_canva": 3}
+
+
+def cap_requests(state, todo):
+    """하루 한도를 넘은 요청은 건너뜀 (2026-11-06 사이트 암호를 없애서). 건너뛴 요청도 처리한 것으로 적어 다시 보지 않는다."""
+    today = datetime.now(KST).strftime("%Y-%m-%d")
+    if state.get("req_count", {}).get("day") != today:
+        state["req_count"] = {"day": today}
+    count, keep = state["req_count"], []
+    for r in todo:
+        n = count.get(r["job"], 0)
+        if n >= DAILY_REQ.get(r["job"], 10):
+            log("⏭ 하루 한도 넘은 요청 건너뜀:", r["job"], r.get("args", {}))
+            continue
+        count[r["job"]] = n + 1
+        keep.append(r)
+    return keep
+
+
 def run_cycle():
     state = json.loads(STATE.read_text(encoding="utf-8")) if STATE.exists() else {"done": []}
     reqs = json.loads((ROOT / "data" / "ai_requests.json").read_text(encoding="utf-8")) if (ROOT / "data" / "ai_requests.json").exists() else []
     if not STATE.exists():   # 처음 설치: 지난 요청은 건너뜀
         state["done"] = [r["id"] for r in reqs]
-    todo = [r for r in reqs if r["id"] not in state["done"]]
+    todo_all = [r for r in reqs if r["id"] not in state["done"]]
+    todo = cap_requests(state, todo_all)   # 사이트가 암호 없이 요청을 받아서 하루 처리량을 막는다
     latest = {r["job"]: r for r in todo}   # 같은 일은 마지막 요청 하나만 (draft 는 주제별로 따로)
     did = []
 
@@ -242,7 +262,7 @@ def run_cycle():
     if slot_once(state, "learn", tuple(range(8, 24))):   # 1시간마다: 캔바에서 고친 것·48시간 성적 배우기 (publish/card_learn.py)
         py("-m", "publish.card_learn")
 
-    state["done"] = (state["done"] + [r["id"] for r in todo])[-200:]
+    state["done"] = (state["done"] + [r["id"] for r in todo_all])[-200:]
     STATE.write_text(json.dumps(state), encoding="utf-8")
     return did
 

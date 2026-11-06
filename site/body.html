@@ -2793,13 +2793,13 @@ html,body{font-size:16px;line-height:1.75}
   // ── 후기·기록: 글마다 도움됨/안 됨·메모·콘텐츠 씀 → 저장소 data/feedback.json 에 바로 저장 ──
   // 암호를 넣은 브라우저면 저장소에 저장 → 매일 Claude 추천에 반영. 없으면 이 브라우저에만 임시 저장.
   const LAB_API = 'https://content-lab-relay.vercel.app/api/lab', FB_PATH = 'data/feedback.json';
-  const fb = { data: { items: {}, contents: [] }, key: store.get('lab_key') || '', listeners: [] };
+  const fb = { data: { items: {}, contents: [] }, key: store.get('lab_key') || 'open', listeners: [] };   // 암호 없이 씀 (2026-11-06 대표 요청). 중간 서버가 키를 보지 않는다
   if (store.get('gh_token')) store.set('gh_token', '');   // 예전에 이 브라우저에 넣어 둔 깃허브 토큰은 이제 안 씀
   // 버튼 요청은 중간 서버(relay/api/lab.js)로 → 암호 확인 후 서버가 깃허브에 대신 요청. 깃허브 토큰은 서버에만 있음.
   const ghApi = (path, { raw, key, ...init } = {}) => fetch(`${LAB_API}?path=${encodeURIComponent(path)}`, { ...init, cache: 'no-store',
     headers: { 'Content-Type': 'application/json', 'x-lab-key': key || fb.key, ...(raw ? { 'x-lab-accept': 'raw' } : {}) } });
   const ghFail = status => {
-    if (status === 401) { store.set('lab_key', ''); fb.key = ''; return '암호가 맞지 않아요. 버튼을 다시 누르면 다시 물어봐요.'; }
+    if (status === 401) { store.set('lab_key', ''); fb.key = 'open'; return '암호가 맞지 않아요. 버튼을 다시 누르면 다시 물어봐요.'; }
     if (status === 502) return '서버의 깃허브 토큰이 만료됐어요. PC에서 relay/setup.py 를 다시 실행해 주세요.';
     return `요청 실패 (${status})`;
   };

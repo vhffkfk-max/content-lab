@@ -24,6 +24,8 @@ KST = timezone(timedelta(hours=9))
 REPO, BRANCH, FOLDER = "vhffkfk-max/content-lab", "lab-requests", "requests/thpost"
 API = f"https://api.github.com/repos/{REPO}/contents/{FOLDER}"
 POLL_S = 5
+DAILY_MAX = 40          # 사이트가 암호 없이 요청을 받아서(2026-11-06) 하루 처리량을 막는다
+LIMIT_STATE = Path.home() / ".content-lab-ai" / "thread_limits.json"
 MAX_AGE_MIN = 20       # 사이트가 기다리는 시간과 같음. 이보다 오래된 요청은 쓰지 않고 지움
 JOB_TIMEOUT_S = 10 * 60
 LOG = Path.home() / ".content-lab-ai" / "thread_listen.log"
@@ -112,6 +114,17 @@ def worker(jobs):
             change(name, "PUT", "thread request failed", error="PC에서 글을 쓰다가 멈췄어요. 다시 눌러 주세요.")
 
 
+def over_limit():
+    """오늘 받은 요청이 한도를 넘었으면 True. 받은 횟수를 센다."""
+    today = datetime.now(KST).strftime("%Y%m%d")
+    state = json.loads(LIMIT_STATE.read_text(encoding="utf-8")) if LIMIT_STATE.exists() else {}
+    n = state.get(today, 0)
+    if n >= DAILY_MAX:
+        return True
+    LIMIT_STATE.write_text(json.dumps({today: n + 1}), encoding="utf-8")
+    return False
+
+
 def poll(jobs, seen, etag):
     r = api("GET", API, params={"ref": BRANCH}, headers={"If-None-Match": etag} if etag else {})
     if r.status_code == 304:
@@ -127,6 +140,10 @@ def poll(jobs, seen, etag):
         old = datetime.now(KST) - datetime.fromisoformat(q["at"]) > timedelta(minutes=MAX_AGE_MIN)
         if old or q.get("error"):   # PC가 꺼져 있던 사이 쌓인 요청·지난 실패 기록
             change(name, "DELETE", "thread request expired")
+            continue
+        if over_limit():
+            log("하루 한도 넘음:", q["rid"])
+            change(name, "PUT", "thread request over limit", error="오늘 처리할 수 있는 횟수를 넘었어요. 내일 다시 눌러 주세요.")
             continue
         change(name, "PUT", "thread request picked", picked=datetime.now(KST).isoformat(timespec="seconds"))   # 사이트에 '받았어요' 표시
         log("요청 받음:", q["rid"], q["styles"], f"{q['idx'] + 1}번")
