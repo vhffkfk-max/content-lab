@@ -411,6 +411,69 @@ img,video,canvas,svg{max-width:100%;height:auto}
   .to-top[hidden]{display:none}
   .side{padding-bottom:calc(90px + env(safe-area-inset-bottom,0px))}
 }
+/* ── 2026-11-06 리뉴얼(CONTENT LAB 명세): 6개 상위 메뉴 · KPI · 쓰레드 카드 · 상세 패널 · 발행 캘린더 ── */
+.nav-group{margin:14px 12px 4px;font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--faint);list-style:none}
+.nav-group:first-child{margin-top:4px}
+.kpi4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.kpi4 a{display:block;padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--surface);color:inherit;text-decoration:none}
+.kpi4 a:hover{border-color:var(--control)}
+.kpi4 a:focus-visible,.tcard:focus-visible,.lab-tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.kpi4 b{display:block;font-size:28px;line-height:1.2;font-variant-numeric:tabular-nums}
+.kpi4 b.na{font-size:16px;color:var(--faint);font-weight:600;padding:6px 0}
+.kpi4 span{font-size:13px;color:var(--muted)}
+.kpi4 small{display:block;font-size:12px;color:var(--faint);margin-top:4px}
+.lab-tabs{display:flex;gap:4px;padding:4px;background:var(--raised);border-radius:10px;overflow-x:auto;margin-bottom:12px}
+.lab-tabs button{flex:1 0 auto;border:0;background:none;padding:8px 14px;border-radius:8px;font:inherit;font-size:14px;color:var(--muted);cursor:pointer;white-space:nowrap}
+.lab-tabs button[aria-selected="true"]{background:var(--surface);color:var(--text);font-weight:700;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.lab-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+.lab-bar input,.lab-bar select{font:inherit;font-size:14px;padding:8px 10px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text)}
+.lab-bar input{flex:1 1 220px;min-width:0}
+.lab-bar .note{margin:0}
+.tcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.tcard{display:flex;flex-direction:column;gap:8px;padding:14px;border:1px solid var(--border);border-radius:12px;background:var(--surface);cursor:pointer;text-align:left;font:inherit;color:inherit;width:100%}
+.tcard:hover{border-color:var(--control)}
+.tcard[aria-current="true"]{border-color:var(--accent)}
+.tcard .who{display:flex;gap:6px;align-items:baseline;font-size:13px;color:var(--muted);min-width:0}
+.tcard .who b{color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tcard .who .grow{flex:1}
+.tcard .txt{margin:0;font-size:15px;line-height:1.6;white-space:pre-line;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:4.8em}
+.tcard .mets{display:flex;gap:6px;flex-wrap:wrap;font-size:13px}
+.tcard .mets span{background:var(--raised);padding:2px 8px;border-radius:6px;font-variant-numeric:tabular-nums}
+.tcard .mets em{font-style:normal;color:var(--faint);margin-right:3px}
+.tcard .foot{display:flex;gap:6px;flex-wrap:wrap;align-items:center;font-size:12px;color:var(--faint)}
+.bdg{display:inline-block;font-size:11px;font-weight:700;padding:2px 7px;border-radius:999px;border:1px solid currentColor;line-height:1.4}
+.bdg.obs{color:var(--positive)}.bdg.rule{color:var(--muted)}.bdg.ai{color:var(--accent)}
+.lab-empty{padding:24px;border:1px dashed var(--border);border-radius:12px;color:var(--muted);text-align:center}
+.lab-more{margin-top:12px}
+/* 상세 패널 */
+.dp-back{position:fixed;inset:0;background:rgba(15,18,23,.32);z-index:60}
+.dp{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);background:var(--surface);border-left:1px solid var(--border);z-index:61;
+  overflow-y:auto;padding:20px 20px calc(24px + env(safe-area-inset-bottom,0px));box-shadow:-8px 0 24px rgba(0,0,0,.08)}
+.dp h2{font-size:18px;margin:0}
+.dp .dp-head{display:flex;gap:8px;align-items:flex-start;margin-bottom:12px}
+.dp .dp-head div{flex:1;min-width:0}
+.dp .dp-head p{margin:2px 0 0;font-size:13px;color:var(--muted)}
+.dp .full{white-space:pre-line;font-size:15px;line-height:1.7;padding:14px;background:var(--raised);border-radius:10px;margin:0 0 14px}
+.dp h3{font-size:14px;margin:18px 0 8px;display:flex;gap:6px;align-items:center}
+.dp dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0;font-size:14px}
+.dp dt{color:var(--muted)}.dp dd{margin:0;font-variant-numeric:tabular-nums;text-align:right}
+.dp abbr{text-decoration:underline dotted;cursor:help}
+.dp .acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.dp ul{margin:0;padding-left:18px;font-size:14px;line-height:1.7}
+.spark{display:flex;align-items:flex-end;gap:3px;height:40px;margin-top:6px}
+.spark i{flex:1;background:var(--accent-track);border-radius:3px 3px 0 0;min-height:2px}
+.spark i:last-child{background:var(--accent)}
+/* 발행 캘린더 */
+.calg{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.calg article{padding:14px;border:1px solid var(--border);border-radius:12px;background:var(--surface)}
+.calg article.today{border-color:var(--accent)}
+.calg .d{font-size:13px;color:var(--muted)}
+.calg .d b{font-size:18px;color:var(--text);margin-right:6px}
+.calg h3{font-size:15px;margin:8px 0 6px;line-height:1.5}
+.calg p{margin:0;font-size:13px;color:var(--muted)}
+@media (max-width:1279px){.kpi4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:767px){.dp{width:100vw;border-left:0}.tcards{grid-template-columns:1fr}.kpi4 b{font-size:24px}}
+
 </style>
 
 <div class="app">
@@ -436,6 +499,7 @@ img,video,canvas,svg{max-width:100%;height:auto}
         <li class="nav-label" style="margin-top:10px">만들기</li>
         <li><button type="button" data-ch="threads"><i class="dot" style="background:var(--ch-threads)"></i>쓰레드<span class="soon" id="th-badge">심사 중</span></button>
           <ul class="subnav" data-for="threads">
+            <li><a href="#th-insight">인사이트 카드</a></li>
             <li><a href="#th-mine">황소개미 진단</a></li>
             <li><a href="#th-top">따라 할 글 TOP 5</a></li>
             <li><a href="#th-rank">반응 랭킹·이유</a></li>
@@ -535,6 +599,7 @@ img,video,canvas,svg{max-width:100%;height:auto}
             <li><a href="#vr-lab">연구실 검증</a></li>
             <li><a href="#vr-limits">한계</a></li>
           </ul></li>
+        <li><button type="button" data-ch="calendar"><i class="dot" style="background:var(--accent)"></i>발행 캘린더</button></li>
         <li><button type="button" data-ch="feedback"><i class="dot" style="background:var(--accent)"></i>후기·기록</button>
           <ul class="subnav" data-for="feedback">
             <li><a href="#fb-done">만든 콘텐츠</a></li>
@@ -591,6 +656,8 @@ img,video,canvas,svg{max-width:100%;height:auto}
         <div class="title-row">
           <div><h1>오늘 뭐 할까요?</h1><p id="home-sub">오늘 할 일만 골랐어요. 하나 골라서 버튼을 누르세요.</p></div>
         </div>
+        <section class="sec" id="home-kpi-sec" aria-label="오늘의 숫자"><div class="kpi4" id="home-kpi"></div></section>
+        <section class="sec" id="home-hot-sec"><h2>지금 주목할 콘텐츠</h2><p class="note">쓰레드 바이럴 TOP·급상승에서 골랐어요. 카드를 누르면 오른쪽에 자세히 열려요.</p><div class="tcards" id="home-hot"></div></section>
         <section class="sec" id="home-fresh-sec" hidden><div class="fresh" id="home-fresh"></div></section>
         <section class="sec" id="home-quick-sec"><h2>바로가기</h2><div class="quick" id="home-quick"></div></section>
         <section class="sec" id="home-check" aria-label="연구소 활용 체크"><div class="uc-strip" id="home-check-box"></div></section>
@@ -610,6 +677,11 @@ img,video,canvas,svg{max-width:100%;height:auto}
       </div>
 
       <!-- 활용 체크: 연구소 추천을 실제 글·AI 대화에 썼는지 (usage_audit.py, 3시간마다) -->
+      <div class="view" data-view="calendar" hidden>
+        <div class="title-row"><div><h1>발행 캘린더</h1><p>지난 반응 데이터로 고른 7일 발행 계획이에요. 실제 올린 글은 <b>성과 분석 → 활용 체크</b>에서 맞춰 봐요.</p></div></div>
+        <section class="sec" id="cal-week"><h2>이번 주 발행 계획</h2><div class="calg" id="cal-grid"></div></section>
+        <section class="sec" id="cal-links"><h2>다른 계획 보기</h2><p class="note"><a href="#go-week">인스타 이번 주 계획</a> · <a href="#go-gr-cal">마케팅 코치 7일 계획</a> · <a href="#go-tg-today">텔레그램 오늘 올릴 문구</a></p></section>
+      </div>
       <div class="view" data-view="usage" hidden>
         <div class="title-row">
           <div><h1>활용 체크</h1><p id="uc-sub">—</p></div>
@@ -821,6 +893,7 @@ img,video,canvas,svg{max-width:100%;height:auto}
           <div><h1>쓰레드</h1><p>경제 키워드·참고 계정의 쓰레드 글을 <b>조회수·팔로워 수</b>와 함께 매일 모아, 팔로워 밖으로 퍼진 글을 찾고 Claude가 우리 말투로 바꿔 써요.</p></div>
           <div class="actions" id="th-actions"></div>
         </div>
+        <section class="sec" id="th-insight"><h2>쓰레드 인사이트</h2><div id="th-insight-box"></div></section>
         <div class="kpis" id="tx-kpis"></div>
         <p class="note" id="tx-dropped"></p>
         <details class="card" style="margin-top:8px"><summary><b>지표 읽는 법</b></summary>
@@ -3775,7 +3848,7 @@ img,video,canvas,svg{max-width:100%;height:auto}
   document.getElementById('side-hide').addEventListener('click', () => setSide(true));
   document.getElementById('side-show').addEventListener('click', () => setSide(false));
   if (store.get('side_hidden') === '1') setSide(true);
-  const NAMES = { video: '영상 연구소', home: '오늘 할 일', instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드', x: 'X · 트루스소셜', telegram: '텔레그램 · 말희아빠', traders: '텔레그램 · 트레이더스', feedback: '후기·기록', growth: '마케팅 코치', viral: '뜬 글 공식', usage: '활용 체크' };
+  const NAMES = { calendar: '발행 캘린더', video: '영상 연구소', home: '오늘 할 일', instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드', x: 'X · 트루스소셜', telegram: '텔레그램 · 말희아빠', traders: '텔레그램 · 트레이더스', feedback: '후기·기록', growth: '마케팅 코치', viral: '뜬 글 공식', usage: '활용 체크' };
   // ── 폰: 채널을 열면 '전체' 대신 한 칸만 (이 기기에서 많이 본 칸, 없으면 첫 칸). 위 탭으로 다른 칸·전체로 이동 ──
   const isPhone = () => matchMedia('(max-width:860px)').matches;
   function phoneFolder(ch) {
@@ -3800,6 +3873,7 @@ img,video,canvas,svg{max-width:100%;height:auto}
   addEventListener('scroll', () => { toTop.hidden = scrollY < 1200; }, { passive: true });
 
   function setChannel(ch) {
+    if (document.querySelector('.dp')) closeDetail();
     markMnav(ch);
     document.querySelectorAll('#channel-nav > li > button').forEach(b => b.setAttribute('aria-current', String(b.dataset.ch === ch)));
     document.querySelectorAll('.subnav').forEach(u => { u.hidden = u.dataset.for !== ch; });
@@ -3895,17 +3969,225 @@ img,video,canvas,svg{max-width:100%;height:auto}
       T.length ? `급상승 검색어: ${T.map(t => t.term).join(', ')}` : '', `${pageUrl()}#ch-google`].filter(Boolean).join('\n'), '뉴스 화제를 복사했어요');
   });
 
+  // ── 2026-11-06 리뉴얼(CONTENT LAB 명세) ──
+  // 실제 데이터만 쓴다. 없는 값은 '미수집', 연결 안 된 값은 '측정 불가'.
+  const nf = v => v == null || v === '' ? null : Number(v).toLocaleString('ko-KR');
+  const NAV_GROUPS = [
+    ['대시보드', ['home']],
+    ['트렌드 발견', ['threads', 'google', 'foreign', 'x', 'youtube']],
+    ['계정 분석', ['accounts']],
+    ['콘텐츠 제작', ['instagram', 'telegram', 'traders', 'video', 'viral', 'growth']],
+    ['성과 분석', ['usage', 'feedback']],
+    ['발행 캘린더', ['calendar']],
+  ];
+  function regroupNav() {
+    const ul = document.getElementById('channel-nav');
+    if (!ul || ul.dataset.grouped) return;
+    const items = {};
+    ul.querySelectorAll(':scope > li').forEach(li => {
+      const b = li.querySelector(':scope > button');
+      if (b) items[b.dataset.ch] = li; else li.remove();
+    });
+    NAV_GROUPS.forEach(([label, chs]) => {
+      const h = el('li', 'nav-group', label); h.setAttribute('role', 'presentation'); ul.append(h);
+      chs.forEach(c => { if (items[c]) { ul.append(items[c]); delete items[c]; } });
+    });
+    Object.values(items).forEach(li => ul.append(li));   // 빠뜨린 메뉴가 없게
+    ul.dataset.grouped = '1';
+  }
+  // 상세 패널
+  let dpLast = null;
+  function closeDetail() {
+    document.querySelectorAll('.dp,.dp-back').forEach(n => n.remove());
+    document.querySelectorAll('.tcard[aria-current="true"]').forEach(c => c.removeAttribute('aria-current'));
+    if (dpLast && document.contains(dpLast)) dpLast.focus();
+    dpLast = null;
+  }
+  addEventListener('keydown', e => { if (e.key === 'Escape' && document.querySelector('.dp')) closeDetail(); });
+  function metricRows(p) {
+    const pct = v => v == null ? null : v + '%';
+    return [
+      ['조회', nf(p.views)], ['좋아요', nf(p.likes)], ['답글', nf(p.replies)], ['리포스트', nf(p.reposts)],
+      ['팔로워', nf(p.followers)],
+      ['확산배수', p.spread == null ? null : p.spread + '배', '조회 ÷ 팔로워(팔로워가 300보다 적으면 300으로 계산). 5배 이상이면 팔로워 밖으로 퍼진 글'],
+      ['반응률', pct(p.rate), '(좋아요 + 2×답글 + 3×리포스트·인용·공유) ÷ 조회'],
+      ['시간당 조회', nf(p.vph || p.velocity), '조회 ÷ 올린 뒤 지난 시간'],
+    ].filter(r => r[1] != null || ['조회', '확산배수', '반응률'].includes(r[0]));
+  }
+  function openDetail(p, src, card) {
+    closeDetail();
+    dpLast = card || document.activeElement;
+    if (card) card.setAttribute('aria-current', 'true');
+    const back = el('div', 'dp-back'); back.addEventListener('click', closeDetail);
+    const dp = el('aside', 'dp'); dp.setAttribute('role', 'dialog'); dp.setAttribute('aria-modal', 'true'); dp.setAttribute('aria-label', '게시물 상세');
+    const head = el('div', 'dp-head'), hd = el('div');
+    hd.append(el('h2', null, '@' + (p.username || '알 수 없음')), el('p', null, `${src.label} · 게시 ${p.time || '시각 미수집'}`));
+    const x = el('button', 'btn small', '닫기'); x.type = 'button'; x.addEventListener('click', closeDetail);
+    head.append(hd, x);
+    dp.append(head, el('p', 'full', p.text || '(본문 미수집)'));
+    const h1 = el('h3', null, '실측 지표 '); h1.append(el('span', 'bdg obs', '관측 데이터'));
+    const dl = el('dl');
+    metricRows(p).forEach(([k, v, tip]) => {
+      const dt = el('dt');
+      if (tip) { const a = el('abbr', null, k); a.title = tip; dt.append(a); } else dt.textContent = k;
+      dl.append(dt, el('dd', null, v == null ? '미수집' : v));
+    });
+    dp.append(h1, dl);
+    const seen = p.checked || src.collected;
+    dp.append(el('p', 'note', `수집 시각: ${seen || '알 수 없음'}${p.checks ? ` · ${p.checks}번 관찰` : ''}${p.source ? ` · 출처 ${p.source}` : ''}`));
+    if (Array.isArray(p.trend) && p.trend.length > 1) {
+      const max = Math.max(...p.trend, 1), sp = el('div', 'spark');
+      sp.setAttribute('role', 'img'); sp.setAttribute('aria-label', '관찰할 때마다 조회수: ' + p.trend.map(nf).join(' → '));
+      p.trend.forEach(v => { const i = el('i'); i.style.height = Math.max(4, v / max * 100) + '%'; i.title = nf(v); sp.append(i); });
+      const h = el('h3', null, '조회수 변화 '); h.append(el('span', 'bdg obs', '관측 데이터'));
+      dp.append(h, sp);
+    }
+    const media = typeof p.media === 'string' ? p.media : p.media === true ? '사진·영상 있음' : p.media === false ? '글만' : null;
+    const tags = [['첫 줄', p.hook], ['길이', p.length || (p.len ? p.len + '자' : null)], ['형식', media], ['주제', p.topics], ['나이', p.age], ['등급', p.grade]].filter(t => t[1]);
+    if (tags.length) {
+      const h = el('h3', null, '자동 분류 '); h.append(el('span', 'bdg rule', '규칙 기반'));
+      const d2 = el('dl'); tags.forEach(([k, v]) => d2.append(el('dt', null, k), el('dd', null, v)));
+      dp.append(h, d2);
+    }
+    if (src.ai && src.ai.length) {
+      const h = el('h3', null, '이 목록에 대한 AI 해석 '); h.append(el('span', 'bdg ai', 'AI 추정'));
+      const ul = el('ul'); src.ai.slice(0, 3).forEach(t => ul.append(el('li', null, t)));
+      dp.append(h, ul, el('p', 'note', '글 하나를 따로 분석한 게 아니라 같은 목록 전체를 보고 쓴 해석이에요. 확인된 사실이 아니라 가설로 보세요.'));
+    }
+    const acts = el('div', 'acts');
+    if (p.url) { const a = el('a', 'btn primary', '원문 열기'); a.href = p.url; a.target = '_blank'; a.rel = 'noopener noreferrer'; acts.append(a); }
+    const cp = el('button', 'btn', '본문 복사'); cp.type = 'button'; cp.addEventListener('click', () => copyText(p.text || '', '본문을 복사했어요'));
+    const go = el('button', 'btn', '따라 쓸 글 TOP 5'); go.type = 'button';
+    go.addEventListener('click', () => { closeDetail(); setChannel('threads'); openFolder('th-top'); });
+    acts.append(cp, go);
+    dp.append(acts);
+    document.body.append(back, dp);
+    x.focus();
+  }
+  function tCard(p, src) {
+    const c = el('button', 'tcard'); c.type = 'button';
+    const who = el('div', 'who');
+    who.append(el('b', null, '@' + (p.username || '?')), el('span', null, p.followers != null ? `팔로워 ${nf(p.followers)}` : ''), el('span', 'grow'), el('span', null, p.time || ''));
+    const m = el('div', 'mets');
+    const met = (k, v) => { const s = el('span'); s.append(el('em', null, k), document.createTextNode(v == null ? '미수집' : v)); m.append(s); };
+    met('조회', nf(p.views)); met('확산', p.spread == null ? null : p.spread + '배');
+    if (src.key === 'live') met('시간당', nf(p.vph)); else met('반응률', p.rate == null ? null : p.rate + '%');
+    const f = el('div', 'foot'); f.append(el('span', 'bdg obs', '관측'));
+    if (p.topics) f.append(el('span', null, p.topics));
+    if (p.grade) f.append(el('span', null, '· ' + p.grade));
+    c.append(who, el('p', 'txt', p.text || '(본문 미수집)'), m, f);
+    c.setAttribute('aria-label', `@${p.username || '?'} 글 상세 보기`);
+    c.addEventListener('click', () => openDetail(p, src, c));
+    return c;
+  }
+  const stamp = v => { const d = new Date(v); if (!v || isNaN(d)) return ''; return d.toLocaleString('ko-KR', { timeZone: 'Asia/Seoul', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false }); };
+  function labSources() {
+    const one = id => { const d = rows(id); return (Array.isArray(d) ? d[0] : d) || {}; };
+    const aiP = one('threads_ai').patterns || [];
+    const aiFor = name => (aiP.find(x => (x.list || '').includes(name)) || {}).reasons || null;
+    const col = stamp(one('thx_meta').collected);
+    const mm = one('thm_meta');
+    return [
+      { key: 'top', label: '바이럴 TOP', rows: rows('thx_top') || [], collected: col, ai: aiFor('조회수'), note: '나이대가 같은 글끼리 비교한 점수 순' },
+      { key: 'rising', label: '급상승', rows: rows('thx_rising') || [], collected: col, ai: null, note: '시간당 조회 속도가 빠른 글' },
+      { key: 'live', label: '지금 크는 글', rows: rows('thx_live') || [], collected: null, ai: null, note: 'PC가 여러 번 다시 본 글 · 시간당 조회 기준' },
+      { key: 'viral', label: '10만+', rows: rows('thx_viral') || [], collected: stamp(one('thx_viral_meta').updated), ai: null, note: '조회 10만 이상 모음' },
+      { key: 'mine', label: '내 계정', rows: rows('thm_posts') || [], collected: stamp(mm.collected || mm.updated || mm.at), ai: null, note: '황소개미 계정 최근 글 · 조회는 쓰레드가 알려 줄 때만 보여요' },
+    ];
+  }
+  const labState = { tab: 'top', q: '', sort: 'default', shown: 24 };
+  function drawThreadsInsight() {
+    const box = document.getElementById('th-insight-box'); if (!box) return;
+    const S = labSources(), src = S.find(s => s.key === labState.tab) || S[0];
+    const tabs = el('div', 'lab-tabs'); tabs.setAttribute('role', 'tablist'); tabs.setAttribute('aria-label', '쓰레드 목록');
+    S.forEach(s => {
+      const b = el('button', null, `${s.label} ${s.rows.length}`); b.type = 'button'; b.setAttribute('role', 'tab');
+      b.setAttribute('aria-selected', String(s.key === src.key));
+      b.addEventListener('click', () => { labState.tab = s.key; labState.shown = 24; drawThreadsInsight(); });
+      tabs.append(b);
+    });
+    const bar = el('div', 'lab-bar');
+    const q = el('input'); q.type = 'search'; q.placeholder = '본문·계정·주제 검색'; q.value = labState.q; q.setAttribute('aria-label', '게시물 검색');
+    const sel = el('select'); sel.setAttribute('aria-label', '정렬');
+    [['default', '기본 순서'], ['views', '조회 많은 순'], ['spread', '확산배수 높은 순'], ['rate', '반응률 높은 순'], ['time', '최근 올린 순']].forEach(([v, t]) => { const o = el('option', null, t); o.value = v; sel.append(o); });
+    sel.value = labState.sort;
+    bar.append(q, sel);
+    const info = el('p', 'note', `${src.note}${src.collected ? ` · 수집 ${src.collected}` : ''}`);
+    const list = el('div');
+    function drawList() {
+      const k = labState.q.trim().toLowerCase();
+      let r = src.rows.filter(p => !k || [p.text, p.username, p.topics].join(' ').toLowerCase().includes(k));
+      const num = v => v == null ? -1 : +v;
+      if (labState.sort === 'time') r = [...r].sort((a, b) => String(b.time || '').localeCompare(String(a.time || '')));
+      else if (labState.sort !== 'default') r = [...r].sort((a, b) => num(b[labState.sort]) - num(a[labState.sort]));
+      list.replaceChildren();
+      if (!src.rows.length) { list.append(el('div', 'lab-empty', '아직 이 목록에 모인 글이 없어요. 매시간 수집이 돌면 채워져요.')); return; }
+      if (!r.length) { list.append(el('div', 'lab-empty', '검색에 맞는 글이 없어요.')); return; }
+      const g = el('div', 'tcards'); r.slice(0, labState.shown).forEach(p => g.append(tCard(p, src))); list.append(g);
+      if (r.length > labState.shown) {
+        const more = el('button', 'btn lab-more', `더 보기 (${r.length - labState.shown}개 남음)`); more.type = 'button';
+        more.addEventListener('click', () => { labState.shown += 24; drawList(); }); list.append(more);
+      }
+    }
+    q.addEventListener('input', () => { labState.q = q.value; labState.shown = 24; drawList(); });
+    sel.addEventListener('change', () => { labState.sort = sel.value; drawList(); });
+    box.replaceChildren(tabs, bar, info, list); drawList();
+  }
+  function drawDashboard() {
+    const k = document.getElementById('home-kpi'); if (!k) return;
+    const top = rows('thx_top') || [], rise = rows('thx_rising') || [], recs = rows('recs') || [], drafts = rows('drafts') || [];
+    const kpi = (n, label, sub, ch, sec, tab) => {
+      const a = el('a'); a.href = '#ch-' + ch;
+      a.append(n == null ? el('b', 'na', '측정 불가') : el('b', null, nf(n)), el('span', null, label), el('small', null, sub));
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        if (tab) { labState.tab = tab; drawThreadsInsight(); }
+        setChannel(ch); if (sec) openFolder(sec); else scrollTo({ top: 0 });
+      });
+      k.append(a);
+    };
+    k.replaceChildren();
+    kpi(top.length, '주목 콘텐츠', '쓰레드 바이럴 TOP', 'threads', 'th-insight', 'top');
+    kpi(rise.length, '급상승 콘텐츠', '쓰레드 · 조회 속도 빠른 글', 'threads', 'th-insight', 'rising');
+    kpi(recs.length, '제작 후보', `인스타 추천 주제 · 초안 문장 ${nf(drafts.length)}개`, 'instagram', 'recommend');
+    kpi(null, '검수·발행 대기', '카드뉴스 검수 화면에서 로그인 후 확인', 'instagram', 'ig-publish');
+    const hot = document.getElementById('home-hot'); if (!hot) return;
+    const S = labSources(), seen = new Set(), pick = [];
+    [...S[0].rows.map(p => [p, S[0]]), ...S[1].rows.map(p => [p, S[1]])].forEach(([p, s]) => { if (pick.length < 4 && !seen.has(p.url)) { seen.add(p.url); pick.push([p, s]); } });
+    hot.replaceChildren(...(pick.length ? pick.map(([p, s]) => tCard(p, s)) : [el('div', 'lab-empty', '주목 콘텐츠 데이터가 아직 없어요.')]));
+  }
+  function drawCalendar() {
+    const g = document.getElementById('cal-grid'); if (!g) return;
+    const C = rows('calendar') || [], today = isoDay(kst());
+    if (!C.length) { g.replaceChildren(el('div', 'lab-empty', '발행 계획 데이터가 아직 없어요.')); return; }
+    g.replaceChildren(...C.map(c => {
+      const a = el('article'); if (c.date === today) a.classList.add('today');
+      const d = el('div', 'd'); d.append(el('b', null, (c.date || '').slice(5).replace('-', '/')), document.createTextNode(`${c.weekday || ''}요일 · ${c.slot || ''}`));
+      const f = el('div', 'foot'); f.style.marginTop = '8px'; f.append(el('span', 'bdg rule', '데이터 기반 추천'));
+      a.append(d, el('h3', null, (c.title || c.topic || '').replace(/^"|"$/g, '')), el('p', null, `${c.format || ''} · 주제 ${c.topic || ''} · 확신 ${c.confidence || '-'}`));
+      if (c.slot_basis) a.append(el('p', null, `시간 근거: ${c.slot_basis}`));
+      a.append(f);
+      return a;
+    }));
+  }
+  function drawLab2() { drawDashboard(); drawThreadsInsight(); drawCalendar(); }
+
   dash.onData(() => {
     fbInit();
     if (!setupRefresh.done) { setupRefresh(); setupRefresh.done = true; }
     const recs = grouped();
-    buildTabs(); drawHome(recs); drawFresh(); drawQuick(); drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors(); drawAccRank();
+    regroupNav(); buildTabs(); drawLab2(); drawHome(recs); drawFresh(); drawQuick(); drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors(); drawAccRank();
     drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawX(); drawFeedback(); drawMalheeVar(); drawRewrites(); drawThreadsMine(); drawSlides(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics(); drawTraders(); drawTraderPosts(); drawGrowth(); drawViral(); drawAudit();
     const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/), g = location.hash.match(/^#go-([\w-]+)$/);
-    setChannel(ch ? ch[1] : m ? 'instagram' : 'home');
+    const known = ch && document.querySelector(`.view[data-view="${ch[1]}"]`);
+    if (ch && !known) setTimeout(() => toast('없는 주소라 첫 화면으로 왔어요'), 300);
+    setChannel(known ? ch[1] : m ? 'instagram' : 'home');
     if (g && document.getElementById(g[1])) focusSec(g[1]); else if (ch) phoneFolder(ch[1]);
     if (m) openPlan(+m[1]);
     use.start(); drawUsage();
+    document.querySelectorAll('#cal-links a').forEach(a => a.addEventListener('click', e => {
+      e.preventDefault(); const id = a.getAttribute('href').slice(4), v = document.getElementById(id)?.closest('.view');
+      if (v) { setChannel(v.dataset.view); openFolder(id); } }));
   });
 })();
 </script>
