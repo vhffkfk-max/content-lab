@@ -15,6 +15,7 @@ import html
 import json
 import pathlib
 import re
+import shutil
 import subprocess
 import sys
 import urllib.parse
@@ -39,6 +40,7 @@ from publish.render import font_css  # noqa: E402
 MODEL = "claude-opus-5-5"
 ASR_PY = pathlib.Path.home() / "voice-lab/asr/Scripts/python.exe"
 REELS_DIR = pathlib.Path.home() / "content-lab-reels"
+FINISHED_DIR = pathlib.Path.home() / "Desktop" / "릴스 완성영상"   # 완성 영상만 한곳에 (대표 요청 2026-11-06)
 GPU_PY = pathlib.Path.home() / "voice-lab/sv/Scripts/python.exe"
 RT = pathlib.Path.home() / "voice-lab/work/rt2.py"
 BASE = {"코스피": "^KS11", "코스닥": "^KQ11", "삼성전자": "005930.KS", "SK하이닉스": "000660.KS", "원/달러 환율": "KRW=X",
@@ -753,6 +755,19 @@ def render_board(out, s, q, basis, block, warn):
                 changes=[], caption=caption_notes(s, q, basis), video=(out / "영상.mp4").exists() and (out / "영상.mp4").stat().st_mtime > (out / "대본.json").stat().st_mtime)
 
 
+def collect(out, topic):
+    """완성 영상과 올릴 글을 '릴스 완성영상' 폴더에 모은다. 같은 보드를 다시 만들면 덮어쓴다."""
+    FINISHED_DIR.mkdir(parents=True, exist_ok=True)
+    fmt = formats.FORMATS.get(STYLE["format"], ("",))[0]
+    base = re.sub(r'[\\/:*?"<>|]+', " ", f"{out.name[:13]} {topic} ({fmt})").strip()
+    for old in FINISHED_DIR.glob(f"{out.name[:13]} *"):
+        old.unlink()
+    shutil.copy2(out / "영상.mp4", FINISHED_DIR / f"{base}.mp4")
+    if (out / "업로드글.txt").exists():
+        shutil.copy2(out / "업로드글.txt", FINISHED_DIR / f"{base} 올릴글.txt")
+    return FINISHED_DIR / f"{base}.mp4"
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("topic", nargs="?")
@@ -884,6 +899,7 @@ def main():
     with (out / "확인목록.txt").open("a", encoding="utf-8") as f:
         f.write("\n" + "\n".join(extra))
     print("\n".join(extra))
+    print("완성 영상 폴더:", collect(out, topic))
     write_board(out, video=True, seconds=round(total, 1), problems=problems, heard=heard, miss=miss, caption=caption_notes(s, q, basis))
     print("끝났어요. 영상을 확인한 뒤 직접 올려 주세요 (자동 게시 안 함).")
 
