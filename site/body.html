@@ -363,6 +363,8 @@ html,body{font-size:16px;line-height:1.75}
 .sec-tabs button[aria-current="true"]{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
 .sec-tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 @media (max-width:860px){.sec-tabs{top:48px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.sec-tabs::-webkit-scrollbar{display:none}}
+.fresh{display:flex;flex-wrap:wrap;gap:4px 16px;align-items:baseline;padding:12px 18px;border-radius:var(--radius-card);background:var(--pill-positive-bg);color:var(--pill-positive-ink);font-size:14px}
+.fresh.bad{background:var(--pill-negative-bg);color:var(--pill-negative-ink)}
 /* 처음 화면 바로가기 */
 .quick{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
 .quick button{all:unset;box-sizing:border-box;cursor:pointer;display:grid;gap:4px;padding:18px 20px;border-radius:var(--radius-card);border:1px solid var(--border);background:var(--surface)}
@@ -552,6 +554,7 @@ html,body{font-size:16px;line-height:1.75}
         <div class="title-row">
           <div><h1>오늘 뭐 할까요?</h1><p id="home-sub">오늘 할 일만 골랐어요. 하나 골라서 버튼을 누르세요.</p></div>
         </div>
+        <section class="sec" id="home-fresh-sec" hidden><div class="fresh" id="home-fresh"></div></section>
         <section class="sec" id="home-quick-sec"><h2>바로가기</h2><div class="quick" id="home-quick"></div></section>
         <section class="sec" id="home-check" aria-label="연구소 활용 체크"><div class="uc-strip" id="home-check-box"></div></section>
         <section class="sec" id="home-jobs-sec">
@@ -1860,6 +1863,21 @@ html,body{font-size:16px;line-height:1.75}
       b.addEventListener('click', () => openFolder(id));
       return b;
     }).filter(Boolean));
+  }
+
+  // 1시간 기준 갱신 상태 (hourly_lab.py 가 매시간 올리는 hourly_meta.json) — 멈춘 자료가 있으면 빨간 줄
+  function drawFresh() {
+    const M = rows('hourly_meta'), sec = document.getElementById('home-fresh-sec'), box = document.getElementById('home-fresh');
+    if (!M || Array.isArray(M) || !M.at) return;
+    sec.hidden = false;
+    const at = new Date(M.at), mins = Math.round((Date.now() - at) / 60000), late = mins > 90;
+    const stale = (M.fresh || []).filter(f => f.stale && f.file !== 'hourly_meta.json');
+    const bad = (M.steps || []).filter(x => !x.ok).map(x => x.step.split(' ')[0].replace('.py', ''));
+    box.classList.toggle('bad', late || stale.length > 0 || bad.length > 0);
+    box.replaceChildren(
+      el('b', null, late ? `매시간 분석이 ${mins}분째 멈췄어요` : `매시간 분석 · ${M.at.slice(11, 16)} (${mins}분 전) · 자료 ${(M.updated || []).length}개 새로`),
+      el('span', null, stale.length ? `멈춘 자료: ${stale.map(f => `${f.name} ${f.age_min ?? '?'}분`).join(' · ')}` : '수집·분석 모두 1시간 안에 갱신됐어요'),
+      ...(bad.length ? [el('span', null, `실패한 단계: ${bad.join(', ')}`)] : []));
   }
 
   function drawHome(recs) {
@@ -3761,7 +3779,7 @@ html,body{font-size:16px;line-height:1.75}
     fbInit();
     if (!setupRefresh.done) { setupRefresh(); setupRefresh.done = true; }
     const recs = grouped();
-    buildTabs(); drawHome(recs); drawQuick(); drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors(); drawAccRank();
+    buildTabs(); drawHome(recs); drawFresh(); drawQuick(); drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors(); drawAccRank();
     drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawX(); drawFeedback(); drawMalheeVar(); drawRewrites(); drawThreadsMine(); drawSlides(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics(); drawTraders(); drawTraderPosts(); drawGrowth(); drawViral(); drawAudit();
     const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/), g = location.hash.match(/^#go-([\w-]+)$/);
     setChannel(ch ? ch[1] : m ? 'instagram' : 'home');
