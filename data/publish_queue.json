@@ -6081,6 +6081,372 @@
      "path": "20261106-1101-i3/3-breaking-dohyeon.jpg"
     }
    ]
+  },
+  {
+   "title": "반포 재건축 가구당 2억 재초환 통지",
+   "concept": "재초환이 뭔지부터 풀고, 반포현대에 통지되는 가구당 2억원대 부담금이 얼마인지 보여 주는 보도형",
+   "why_now": "서초구가 9일 반포현대에 재초환 부담금을 사전 통지하고, 가구당 평균 2억원대라는 보도가 나왔습니다. 폭락장 뉴스 사이에서 부동산 소식으로 주제를 나눌 수 있습니다.",
+   "tag": "부동산",
+   "sources": [
+    "https://biz.chosun.com/real_estate/real_estate_general/2026/11/06/B3CBN7HO5JHJJDDQ5L7W4PMEGE/",
+    "https://v.daum.net/v/20261106084202646"
+   ],
+   "bg": "Banpo apartment Seoul",
+   "bg_alt": "Seoul apartment complex",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "반포 재건축 가구당\n**2억**원대 청구서\n9일 사전 통지",
+     "number": "2억원대",
+     "label": "가구당 평균 재초환 부담금",
+     "sub": "서초구, 9일 반포현대에 사전 통지"
+    },
+    {
+     "type": "질문형",
+     "title": "재건축 이익\n**얼마나** 토해내나\n반포현대에 날아온 통지",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "재건축 기대했던\n반포현대에 날아온\n**2억**원대 청구서",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261106-1204-i1",
+   "created_at": "2026-11-06T12:04:12+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261106-1204-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261106-1204-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261106-1204-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-1204-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-1204-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-1204-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-1204-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-1204-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-1204-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-1204-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-1204-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-1204-i1/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "TPG 롯데렌탈 공개매수, 폭락장 속 10%대 상승",
+   "concept": "코스피가 5000선 아래로 무너진 날 롯데렌탈 주가만 오른 반전과, TPG의 공개매수 후 상장폐지 추진을 속보로 전달",
+   "why_now": "11:18 기사로 9곳이 다뤘습니다. 코스피가 급락하는 가운데 롯데렌탈 주가는 10%대 올랐습니다.",
+   "tag": "기업, M&A",
+   "sources": [
+    "https://www.mt.co.kr/stock/2026/11/06/2026110609352846387",
+    "https://www.yna.co.kr/view/AKR20261106051000030"
+   ],
+   "bg": "TPG Capital",
+   "bg_alt": "Lotte Rental car",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "코스피 무너진 날\n롯데렌탈 주가는\n**10%대** 올랐다",
+     "number": "10%대",
+     "label": "롯데렌탈 주가 상승",
+     "sub": "코스피가 5000선 아래로 무너진 날"
+    },
+    {
+     "type": "질문형",
+     "title": "TPG는 왜 지금\n롯데렌탈 지분을\n**공개매수**할까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "증시가 무너진 날\n롯데렌탈 홀로\n**급등**한 이유",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261106-1204-i2",
+   "created_at": "2026-11-06T12:04:12+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261106-1204-i2/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261106-1204-i2/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261106-1204-i2/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-1204-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-1204-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-1204-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261106-1204-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261106-1204-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261106-1204-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-1204-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-1204-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-1204-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261106-1204-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261106-1204-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261106-1204-i2/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-1204-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-1204-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-1204-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "KB국민은행 아동수당 파킹통장 최고 3.1%",
+   "concept": "폭락장에서 안전한 이자 상품을 찾는 흐름과 연결해, 아동수당 전용 파킹통장이 무엇인지 쉽게 풀기",
+   "why_now": "11:26 기준 19곳이 다뤘습니다. 증시가 흔들리는 날 안전한 이자 상품에 관심이 몰리는 흐름과 맞습니다.",
+   "tag": "금융, 생활",
+   "sources": [
+    "https://biz.heraldcorp.com/article/10928418",
+    "https://www.newsis.com/view/NISX20261106_0003857594"
+   ],
+   "bg": "KB Kookmin Bank headquarters",
+   "bg_alt": "KB Kookmin Bank sign",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "아동수당 받으면\n최고 연 **3.1%**\nKB 파킹통장",
+     "number": "3.1%",
+     "label": "KB국민은행 아동수당 파킹통장 최고금리",
+     "sub": "우대 조건과 한도는 은행 공지 확인"
+    },
+    {
+     "type": "질문형",
+     "title": "아동수당 쉬는 돈\n어디에 둘까\n**파킹통장** 나왔다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "폭락장에 눈길 끈\n아동수당 전용\n**파킹통장**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "editorial",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261106-1204-i3",
+   "created_at": "2026-11-06T12:04:12+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261106-1204-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261106-1204-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261106-1204-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261106-1204-i3/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261106-1204-i3/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261106-1204-i3/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261106-1204-i3/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261106-1204-i3/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261106-1204-i3/3-breaking-dohyeon.jpg"
+    }
+   ]
   }
  ]
 }
