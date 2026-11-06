@@ -5304,6 +5304,390 @@
      "path": "20261106-0901-i3/3-bars-dohyeon.jpg"
     }
    ]
+  },
+  {
+   "title": "코스피 서킷브레이커, 시총 400조 증발",
+   "concept": "개장 직후 서킷브레이커 발동, 20분 매매중단 후 재개, 5000선 회복 뒤 등락까지 흐름을 시간순 보도로 정리",
+   "why_now": "오늘 아침 코스피 5000선 붕괴와 서킷브레이커 기사가 가장 많이 나왔고, 시총이 하루새 400조원 증발했다는 보도가 이어졌다. 정확한 낙폭과 발동 시각은 확인 후 반영한다.",
+   "tag": "증시",
+   "sources": [
+    "https://www.mt.co.kr/stock/2026/11/06/2026110609164854291",
+    "https://www.hankyung.com/article/2026110699936",
+    "https://www.newsis.com/view/NISX20261106_0003857488"
+   ],
+   "bg": "Korea Exchange Seoul",
+   "bg_alt": "KOSPI trading screen",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "개장 3분 만에\n서킷브레이커 발동\n시총 **400조** 증발",
+     "number": "400조원",
+     "label": "코스피 시가총액, 하루새",
+     "sub": "서킷브레이커 20분 매매중단 뒤 재개"
+    },
+    {
+     "type": "질문형",
+     "title": "코스피 5000이\n9개월 만에 깨졌다\n**왜** 하필 오늘일까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "매매 20분 중단 뒤\n**5000선** 회복했지만\n등락은 이어졌다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261106-1001-i1",
+   "created_at": "2026-11-06T10:01:42+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261106-1001-i1/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261106-1001-i1/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261106-1001-i1/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261106-1001-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261106-1001-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261106-1001-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261106-1001-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261106-1001-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261106-1001-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261106-1001-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261106-1001-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261106-1001-i1/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "폭락장에 나온 하나금융 배당 확대 약속",
+   "concept": "코스피가 무너진 날 하나금융이 창사 이래 첫 개인주주 간담회에서 내놓은 주주환원 약속을 보도 중심으로 정리",
+   "why_now": "코스피가 5000선 아래로 밀린 날 나온 소식이라 폭락 뉴스 속에서 대비되는 사건이다. 주당 배당금과 적용 시점은 아직 확인되지 않아 업데이트가 필요하다.",
+   "tag": "금융",
+   "sources": [
+    "https://www.newsis.com/view/NISX20261106_0003857455",
+    "https://www.mt.co.kr/finance/2026/11/06/2026110608560180866"
+   ],
+   "bg": "Hana Financial Group",
+   "bg_alt": "Hana Bank headquarters Seoul",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "하나금융 배당\n매년 **10%** 이상\n확대하겠다 약속",
+     "number": "10%",
+     "label": "하나금융, 매년 배당금 확대",
+     "sub": "창사 이래 첫 개인주주 간담회에서 밝혔다"
+    },
+    {
+     "type": "질문형",
+     "title": "코스피 무너진 날\n하나금융은 왜\n**배당**을 꺼냈나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "코스피 5000 붕괴\n그날 개인주주에게\n내민 **배당** 카드",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261106-1001-i2",
+   "created_at": "2026-11-06T10:01:42+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-1001-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-1001-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-1001-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261106-1001-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261106-1001-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261106-1001-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-1001-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-1001-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-1001-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-1001-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-1001-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-1001-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "아이폰 듀오 AS 대란, 애플 신뢰 추락",
+   "concept": "수리 요청이 몰려 감당이 어렵다는 보도를 중심으로, 새 기기를 산 소비자가 겪는 AS 문제를 짚는 소비자 시점의 카드뉴스",
+   "why_now": "오늘 오전 아이폰 듀오 AS 대란과 신뢰 추락을 다룬 기사가 나왔다. 재료에는 제목만 있어 수리 건수와 대기 기간 등 세부 내용은 본문 확인 후 쓴다.",
+   "tag": "소비",
+   "sources": [
+    "https://v.daum.net/v/20261106095414755"
+   ],
+   "bg": "iPhone Duo Apple",
+   "bg_alt": "Apple Store",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "애플 아이폰 듀오\n수리 요청 폭주\nAS **감당 불가**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "아이폰 듀오 AS는\n왜 이렇게 밀렸나\n**신뢰**까지 흔들",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "수리 요청 너무 많아\n감당 불가라는 애플\n**신뢰**가 추락했다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "editorial",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261106-1001-i3",
+   "created_at": "2026-11-06T10:01:42+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261106-1001-i3/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261106-1001-i3/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261106-1001-i3/1-editorial-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-1001-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-1001-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-1001-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261106-1001-i3/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261106-1001-i3/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261106-1001-i3/2-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-1001-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-1001-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-1001-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261106-1001-i3/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261106-1001-i3/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261106-1001-i3/3-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-1001-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-1001-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-1001-i3/3-news-myeongjo.jpg"
+    }
+   ]
   }
  ]
 }
