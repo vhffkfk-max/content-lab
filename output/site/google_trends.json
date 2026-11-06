@@ -1,12 +1,12 @@
 [
  {
   "geo": "KR",
-  "term": "서킷브레이커",
-  "traffic": 20000,
+  "term": "삼성전자 주가",
+  "traffic": 2000,
   "topics": "국내 대형주, 급락·변동성",
   "econ": true,
-  "news_title": "[속보]코스피, 8% 폭락에 서킷브레이커…5000선 붕괴",
-  "news_link": "https://www.khan.co.kr/article/202611060908001"
+  "news_title": "10% 가까이 급락한 삼성전자",
+  "news_link": "https://www.newsis.com/view/NISI20261106_0021521479"
  },
  {
   "geo": "KR",
@@ -14,8 +14,8 @@
   "traffic": 2000,
   "topics": "국내 대형주",
   "econ": true,
-  "news_title": "라이프운용, 삼성전자에 주주서한…\"주주환원 유보, 독립 검토 필요\"",
-  "news_link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4443127"
+  "news_title": "삼성전자 주주환원 유보에 증여세 논란…이사회 독립성 시험대",
+  "news_link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4443191"
  },
  {
   "geo": "KR",
@@ -28,21 +28,21 @@
  },
  {
   "geo": "KR",
+  "term": "최원태",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "“한국시리즈만 기다렸다” kt, 뜨거운 방망이로 기선제압",
+  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8703094"
+ },
+ {
+  "geo": "KR",
   "term": "군함",
   "traffic": 1000,
   "topics": "",
   "econ": false,
   "news_title": "“전투기에 조기경보기·공중급유기까지 총동원”…대만 주변 하늘을 집어삼킨 중국의 무력시위 [밀리터리노트]",
   "news_link": "https://www.seoul.co.kr/news/international/china/2026/11/05/20261105500075"
- },
- {
-  "geo": "KR",
-  "term": "최원태",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "“한국시리즈만 기다렸다” kt, 뜨거운 방망이로 기선제압",
-  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8703094"
  },
  {
   "geo": "KR",
@@ -55,15 +55,6 @@
  },
  {
   "geo": "KR",
-  "term": "나스닥 선물",
-  "traffic": 500,
-  "topics": "정치·관세",
-  "econ": true,
-  "news_title": "트럼프는 충성심 따졌지만, 슈머는 인재 찾아 삼고초려…엇갈린 선거 성적표",
-  "news_link": "https://www.khan.co.kr/article/202611060600091"
- },
- {
-  "geo": "KR",
   "term": "kospi",
   "traffic": 200,
   "topics": "AI·반도체, 국내 대형주, 정치·관세",
@@ -73,62 +64,26 @@
  },
  {
   "geo": "KR",
-  "term": "바이퍼",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "LCK 챔피언의 압도적 경기력…젠지, 라이언 꺾고 월즈 4강 진출",
-  "news_link": "https://www.yna.co.kr/view/AKR20261105048100017"
- },
- {
-  "geo": "KR",
   "term": "금값",
-  "traffic": 100,
+  "traffic": 200,
   "topics": "AI·반도체",
   "econ": true,
   "news_title": "'블루웨이브'에 금·은 가격 회복세…구리는 ‘AI 우려'에 주춤",
   "news_link": "https://marketin.edaily.co.kr/News/ReadE?newsId=03575206645643096"
  },
  {
-  "geo": "US",
-  "term": "kospi",
-  "traffic": 2000,
-  "topics": "AI·반도체, 국내 대형주",
+  "geo": "KR",
+  "term": "달러 환율",
+  "traffic": 200,
+  "topics": "환율·달러",
   "econ": true,
-  "news_title": "Korean Chip Stocks Sink 10% in Pre-Market as AI Fears Deepen",
-  "news_link": "https://www.bloomberg.com/news/articles/2026-11-05/korean-chip-stocks-sink-10-in-pre-market-as-ai-fears-deepen"
+  "news_title": "'블루쓰나미'에 외환시장도 요동…원/달러 환율, 15원가량 급등 - 머니투데이",
+  "news_link": "https://www.mt.co.kr/economy/2026/11/06/2026110608332315358"
  },
  {
-  "geo": "US",
-  "term": "ravens schedule",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Nate Wiggins Inactive vs. Jaguars",
-  "news_link": "https://www.baltimoreravens.com/news/nate-wiggins-inactive-for-jaguars-week-9-austin-reed-backup-quarterback"
- },
- {
-  "geo": "US",
-  "term": "derrick henry",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Why Ravens should trade Derrick Henry: Don't let Baltimore's QB woes drag down 'King Henry'",
-  "news_link": "https://www.cbssports.com/nfl/news/nfl-trade-deadline-why-ravens-should-trade-derrick-henry/"
- },
- {
-  "geo": "US",
-  "term": "columbus blue jackets",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Game Day Guide: Stars at Blue Jackets",
-  "news_link": "https://www.nhl.com/stars/news/game-day-guide-dallas-stars-at-columbus-blue-jackets-110526"
- },
- {
-  "geo": "US",
-  "term": "erin burnett",
-  "traffic": 500,
+  "geo": "KR",
+  "term": "토스",
+  "traffic": 200,
   "topics": "",
   "econ": false,
   "news_title": "",
@@ -136,47 +91,92 @@
  },
  {
   "geo": "US",
-  "term": "jodie sweetin",
-  "traffic": 500,
+  "term": "who is playing thursday night football",
+  "traffic": 5000,
   "topics": "",
   "econ": false,
-  "news_title": "Jodie Sweetin details learning ‘humility’ after not being able to pay for items at Target",
-  "news_link": "https://www.yahoo.com/entertainment/celebrity/interviews/articles/jodie-sweetin-details-learning-humility-225734013.html"
+  "news_title": "Is there a Thursday Night Football game tonight? NFL Week 9 schedule",
+  "news_link": "https://www.usatoday.com/story/sports/nfl/2026/11/05/thursday-night-football-game-tonight-nfl-schedule-week-9/92617167007/"
  },
  {
   "geo": "US",
-  "term": "mercyhurst vs notre dame",
-  "traffic": 500,
+  "term": "duke basketball",
+  "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "Game Thread | Mercyhurst at Notre Dame",
-  "news_link": "https://irishsportsdaily.com/s/28483/game-thread-mercyhurst-at-notre-dame"
+  "news_title": "The Bilas Index: The best men's basketball teams in 2026-27",
+  "news_link": "https://www.espn.com/mens-college-basketball/story/_/id/50382900/bilas-index-best-teams-men-basketball"
  },
  {
   "geo": "US",
-  "term": "nate boerkircher",
-  "traffic": 500,
+  "term": "jimmy",
+  "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "Jaguars 42-7 Colts (Nov 1, 2026) Game Recap",
-  "news_link": "https://www.espn.com/nfl/recap/_/gameId/401873028"
+  "news_title": "Late Night Gets Carried Away by the Blue Wave",
+  "news_link": "https://www.nytimes.com/2026/11/05/arts/television/latenight-midterms-blue-wave.html"
  },
  {
   "geo": "US",
-  "term": "pitt basketball",
-  "traffic": 500,
+  "term": "toledo vs mi state",
+  "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Matchup preview: Pitt battles Buffalo in second game of the season",
-  "news_link": "https://247sports.com/college/pittsburgh/article/pitt-panthers-basketball-buffalo-bulls-matchup-preview-jeff-capel-naithan-george-jj-starling-292215519/"
+  "news_title": "3 tall hurdles the Mavericks have to jump when they visit the rival San Antonio Spurs",
+  "news_link": "https://www.mavsmoneyball.com/dallas-mavericks-game-coverage/63608/mavericks-vs-spurs-preview-dallas-looks-to-bounce-back-at-rival-san-antonio-cooper-flagg-kyrie-irving"
  },
  {
   "geo": "US",
-  "term": "yellowjackets",
+  "term": "cable tv",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "‘Yellowjackets’ Trailer: The Team Adjusts To Civilization With Creepy Alanis Morissette Soundtrack In Final Season",
-  "news_link": "https://deadline.com/2026/11/yellowjackets-trailer-creepy-alanis-morissette-soundtrack-1237213999/"
+  "news_title": "Will live TV cost you more if you cut the cord?",
+  "news_link": "https://www.kvue.com/article/money/consumer/streaming-services-consumer-reports-switching-from-live-television/269-e9ea4082-99c1-4b3a-ad83-df7ce20a0946"
+ },
+ {
+  "geo": "US",
+  "term": "coastal carolina vs duke",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Duke Returns to Cameron Thursday versus Coastal Carolina - Duke University",
+  "news_link": "https://goduke.com/news/2026/11/4/mens-basketball-duke-returns-to-cameron-thursday-versus-coastal-carolina"
+ },
+ {
+  "geo": "US",
+  "term": "illini basketball",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "How to Watch Penn vs. Illinois: TV Channel, Live Stream, Time",
+  "news_link": "https://www.foxsports.com/stories/mens-college-basketball/how-watch-penn-vs-illinois-tv-channel-live-stream-time-nov-5-2026"
+ },
+ {
+  "geo": "US",
+  "term": "magic vs suns",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Magic vs. Suns prediction, odds, time: 2026 NBA picks for Thursday, Nov. 5 from proven model",
+  "news_link": "https://www.cbssports.com/betting/news/magic-suns-prediction-odds-time-2026-nba-picks-thursday-november-5-best-bets/"
+ },
+ {
+  "geo": "US",
+  "term": "sidney crosby",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "What I’m hearing about Penguins, Sidney Crosby’s contract, owner finances",
+  "news_link": "https://www.nytimes.com/athletic/7755969/2026/11/05/penguins-sidney-crosby-contract-nhl-owners/"
+ },
+ {
+  "geo": "US",
+  "term": "justin brazeau",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Penguins recall forward Justin Brazeau from conditioning assignment",
+  "news_link": "https://triblive.com/sports/penguins-recall-forward-justin-brazeau-from-conditioning-assignment/"
  }
 ]
