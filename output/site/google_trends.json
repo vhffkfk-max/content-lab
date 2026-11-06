@@ -1,6 +1,15 @@
 [
  {
   "geo": "KR",
+  "term": "장윤정",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "“벌써 이렇게 컸어” 장윤정, 연우·하영 남매 자랑에 ‘광대 승천’",
+  "news_link": "https://sports.khan.co.kr/article/202611052015013"
+ },
+ {
+  "geo": "KR",
   "term": "삼성전자 주가",
   "traffic": 2000,
   "topics": "국내 대형주, 급락·변동성",
@@ -19,15 +28,6 @@
  },
  {
   "geo": "KR",
-  "term": "장윤정",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "“벌써 이렇게 컸어” 장윤정, 연우·하영 남매 자랑에 ‘광대 승천’",
-  "news_link": "https://sports.khan.co.kr/article/202611052015013"
- },
- {
-  "geo": "KR",
   "term": "최원태",
   "traffic": 2000,
   "topics": "",
@@ -37,21 +37,21 @@
  },
  {
   "geo": "KR",
+  "term": "하이닉스 주가",
+  "traffic": 2000,
+  "topics": "AI·반도체, 급락·변동성",
+  "econ": true,
+  "news_title": "SK하이닉스 주가가 오늘 급락한 이유는?",
+  "news_link": "https://kr.investing.com/news/stock-market-news/article-93CH-2160717"
+ },
+ {
+  "geo": "KR",
   "term": "군함",
   "traffic": 1000,
   "topics": "",
   "econ": false,
   "news_title": "“전투기에 조기경보기·공중급유기까지 총동원”…대만 주변 하늘을 집어삼킨 중국의 무력시위 [밀리터리노트]",
   "news_link": "https://www.seoul.co.kr/news/international/china/2026/11/05/20261105500075"
- },
- {
-  "geo": "KR",
-  "term": "하이닉스 주가",
-  "traffic": 1000,
-  "topics": "AI·반도체, 급락·변동성",
-  "econ": true,
-  "news_title": "SK하이닉스 주가가 오늘 급락한 이유는?",
-  "news_link": "https://kr.investing.com/news/stock-market-news/article-93CH-2160717"
  },
  {
   "geo": "KR",
@@ -109,21 +109,48 @@
  },
  {
   "geo": "US",
-  "term": "jimmy",
+  "term": "magic vs suns",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "Late Night Gets Carried Away by the Blue Wave",
-  "news_link": "https://www.nytimes.com/2026/11/05/arts/television/latenight-midterms-blue-wave.html"
+  "news_title": "Magic vs. Suns prediction, odds, time: 2026 NBA picks for Thursday, Nov. 5 from proven model",
+  "news_link": "https://www.cbssports.com/betting/news/magic-suns-prediction-odds-time-2026-nba-picks-thursday-november-5-best-bets/"
  },
  {
   "geo": "US",
   "term": "toledo vs mi state",
-  "traffic": 1000,
+  "traffic": 2000,
   "topics": "",
   "econ": false,
   "news_title": "3 tall hurdles the Mavericks have to jump when they visit the rival San Antonio Spurs",
   "news_link": "https://www.mavsmoneyball.com/dallas-mavericks-game-coverage/63608/mavericks-vs-spurs-preview-dallas-looks-to-bounce-back-at-rival-san-antonio-cooper-flagg-kyrie-irving"
+ },
+ {
+  "geo": "US",
+  "term": "austin reed",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Ravens put Lamar Jackson, Tyler Huntley on IR; sign Austin Reed to active roster",
+  "news_link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/ravens-put-lamar-jackson-tyler-huntley-on-ir-sign-austin-reed-to-active-roster"
+ },
+ {
+  "geo": "US",
+  "term": "coastal carolina vs duke",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Duke Returns to Cameron Thursday versus Coastal Carolina - Duke University",
+  "news_link": "https://goduke.com/news/2026/11/4/mens-basketball-duke-returns-to-cameron-thursday-versus-coastal-carolina"
+ },
+ {
+  "geo": "US",
+  "term": "illinois basketball",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "How to Watch Penn vs. Illinois: TV Channel, Live Stream, Time",
+  "news_link": "https://www.foxsports.com/stories/mens-college-basketball/how-watch-penn-vs-illinois-tv-channel-live-stream-time-nov-5-2026"
  },
  {
   "geo": "US",
@@ -136,47 +163,20 @@
  },
  {
   "geo": "US",
-  "term": "coastal carolina vs duke",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Duke Returns to Cameron Thursday versus Coastal Carolina - Duke University",
-  "news_link": "https://goduke.com/news/2026/11/4/mens-basketball-duke-returns-to-cameron-thursday-versus-coastal-carolina"
- },
- {
-  "geo": "US",
-  "term": "illini basketball",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "How to Watch Penn vs. Illinois: TV Channel, Live Stream, Time",
-  "news_link": "https://www.foxsports.com/stories/mens-college-basketball/how-watch-penn-vs-illinois-tv-channel-live-stream-time-nov-5-2026"
- },
- {
-  "geo": "US",
-  "term": "magic vs suns",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Magic vs. Suns prediction, odds, time: 2026 NBA picks for Thursday, Nov. 5 from proven model",
-  "news_link": "https://www.cbssports.com/betting/news/magic-suns-prediction-odds-time-2026-nba-picks-thursday-november-5-best-bets/"
- },
- {
-  "geo": "US",
-  "term": "sidney crosby",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "What I’m hearing about Penguins, Sidney Crosby’s contract, owner finances",
-  "news_link": "https://www.nytimes.com/athletic/7755969/2026/11/05/penguins-sidney-crosby-contract-nhl-owners/"
- },
- {
-  "geo": "US",
-  "term": "justin brazeau",
+  "term": "melissa joan hart",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Penguins recall forward Justin Brazeau from conditioning assignment",
-  "news_link": "https://triblive.com/sports/penguins-recall-forward-justin-brazeau-from-conditioning-assignment/"
+  "news_title": "Melissa Joan Hart Is ‘Fearful’ of Having Hot Flashes On Set: ‘A Furnace Inside You That You Can’t Control’ (Exclusive)",
+  "news_link": "https://people.com/melissa-joan-hart-is-fearful-of-having-hot-flashes-on-set-exclusive-12229892"
+ },
+ {
+  "geo": "US",
+  "term": "take me home for christmas olivia rodrigo",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Olivia Rodrigo Unwraps Holiday Single ‘Take Me Home (4 Christmas)’: Stream It Now",
+  "news_link": "https://www.yahoo.com/entertainment/music/new-albums/articles/olivia-rodrigo-unwraps-holiday-single-010025706.html"
  }
 ]
