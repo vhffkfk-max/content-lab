@@ -137,6 +137,8 @@ def outer(force):
             code, out = git("clone", "-q", "--depth", "50", REPO, str(CLONE), cwd=Path.home())
             if code != 0:
                 return log(f"⚠️ 전용 폴더 만들기 실패: {out[-200:]}")
+        git("config", "user.name", "content-lab-bot", cwd=CLONE)   # repo_sync.publish 의 commit-tree 가 이름을 요구함 (11/06 첫 실행 실패)
+        git("config", "user.email", "content-lab-bot@users.noreply.github.com", cwd=CLONE)
         git("fetch", "-q", "--depth", "50", "origin", "main", cwd=CLONE)
         git("reset", "-q", "--hard", "origin/main", cwd=CLONE)
         (CLONE / "data").mkdir(exist_ok=True)
