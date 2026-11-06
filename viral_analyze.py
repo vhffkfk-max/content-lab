@@ -170,7 +170,7 @@ def _ad_codes():
     if not path.exists():
         return set()
     c = _ro(path)
-    codes = {r[0] for r in c.execute("SELECT code FROM ad_posts")}
+    codes = {r[0] for r in c.execute("SELECT code FROM ad_posts WHERE ad_level<>'제외'")}   # 다시 검토해 광고 아닌 글은 분석에 다시 넣음
     c.close()
     return codes
 
