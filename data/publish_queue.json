@@ -6447,6 +6447,417 @@
      "path": "20261106-1204-i3/3-breaking-dohyeon.jpg"
     }
    ]
+  },
+  {
+   "title": "신용융자 담보비율 140% 3개월 면제",
+   "concept": "폭락장에서 나온 정부의 첫 구체 대책을 반대매매 개념과 함께 짧게 보도로 풀기",
+   "why_now": "코스피 5000선 붕괴와 서킷브레이커 직후 나온 첫 대책이고, 11곳이 보도했다. F4는 변동성이 더 커지면 추가 조치를 하겠다고 밝혔다.",
+   "tag": "증시 대책",
+   "sources": [
+    "https://v.daum.net/v/20261106120021856",
+    "https://view.asiae.co.kr/article/2026110611472351961",
+    "https://www.yna.co.kr/view/AKR20261106089800002"
+   ],
+   "bg": "Korea Exchange Seoul",
+   "bg_alt": "KOSPI stock board",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "빚투 반대매매 막는다\n담보비율 **140%** 의무\n3개월 동안 면제",
+     "number": "140%",
+     "label": "신용융자 담보비율 유지의무",
+     "sub": "3개월 면제, 대상과 적용 시점은 확인 필요"
+    },
+    {
+     "type": "질문형",
+     "title": "코스피 5000 붕괴에\n빚투 **반대매매** 막을까\n정부 첫 대책 나왔다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "서킷브레이커 뒤\n정부가 꺼낸 카드는\n**담보비율** 면제",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261106-1301-i1",
+   "created_at": "2026-11-06T13:01:28+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261106-1301-i1/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261106-1301-i1/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261106-1301-i1/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261106-1301-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261106-1301-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261106-1301-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261106-1301-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261106-1301-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261106-1301-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261106-1301-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261106-1301-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261106-1301-i1/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "25억 초과 주담대 금지설, 정부 사실무근",
+   "concept": "퍼진 소문과 정부 입장을 구분해 보여 주고, 공식 발표부터 확인하라는 쪽으로 정리",
+   "why_now": "12시 전후 뉴시스, 머니투데이, 연합인포맥스 등이 정부의 11월 추가 규제 사실무근과 수사 의뢰 방침을 보도했다. 증시가 흔들리는 날이라 부동산 소문이 퍼지기 쉽다.",
+   "tag": "부동산 정책",
+   "sources": [
+    "https://www.newsis.com/view/NISX20261106_0003857823",
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443474",
+    "https://www.donga.com/news/Economy/article/all/20261106/134977628/1"
+   ],
+   "bg": "Seoul apartment complex",
+   "bg_alt": "Raemian One Bailey apartment",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "**25억** 초과 주담대\n금지한다는 소문에\n정부 수사 의뢰 예고",
+     "number": "25억",
+     "label": "주담대 금지설이 돈 기준선",
+     "sub": "정부 \"11월 추가 규제는 사실무근\""
+    },
+    {
+     "type": "질문형",
+     "title": "25억 넘으면 대출\n정말 **막히는** 걸까\n정부가 직접 답했다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "시장 흔든 규제설\n정부는 **사실무근**\n유포는 수사 의뢰",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "paper",
+    "news"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/06",
+     "headlines": [
+      "11월 추가 규제는 사실무근",
+      "소문 유포는 수사 의뢰 예정",
+      "강남3구 하락거래 16건"
+     ]
+    }
+   },
+   "id": "20261106-1301-i2",
+   "created_at": "2026-11-06T13:01:28+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261106-1301-i2/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261106-1301-i2/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261106-1301-i2/1-paper-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-1301-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-1301-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-1301-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261106-1301-i2/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261106-1301-i2/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261106-1301-i2/2-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-1301-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-1301-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-1301-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261106-1301-i2/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261106-1301-i2/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261106-1301-i2/3-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-1301-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-1301-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-1301-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "70달러 찍던 트럼프 코인, 1.1달러로",
+   "concept": "정치 이슈로 오른 코인이 중간선거 참패 뒤 꺾인 흐름을 보도 중심으로 풀기",
+   "why_now": "연합뉴스, 인베스팅닷컴 등 4곳이 다뤘고, 중간선거 참패 직후 급락했다. 비트코인 하락과 코인 시장 흔들림 기사도 함께 나오는 중이다.",
+   "tag": "가상자산",
+   "sources": [
+    "https://www.yna.co.kr/view/AKR20261106050100009",
+    "https://kr.investing.com/news/cryptocurrency-news/article-2163264",
+    "https://kr.investing.com/news/stock-market-news/article-2163243"
+   ],
+   "bg": "Donald Trump",
+   "bg_alt": "TRUMP meme coin",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "70달러 찍던 트럼프 코인\n**1.1달러**까지\n떨어졌다",
+     "number": "1.1달러",
+     "label": "트럼프 코인 가격",
+     "sub": "70달러 찍던 코인, 중간선거 참패 뒤 급락"
+    },
+    {
+     "type": "질문형",
+     "title": "트럼프 코인은 왜\n선거 참패에 **무너졌나**\n정치로 오른 대가",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "정치로 오른 코인\n정치가 꺾이자\n**1.1달러** 추락",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "bars"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "트럼프 코인 가격, 달러",
+     "bars": [
+      {
+       "label": "고점 70달러대",
+       "value": 70
+      },
+      {
+       "label": "급락 후",
+       "value": 1.1,
+       "hi": true
+      }
+     ]
+    }
+   },
+   "id": "20261106-1301-i3",
+   "created_at": "2026-11-06T13:01:28+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261106-1301-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261106-1301-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261106-1301-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261106-1301-i3/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261106-1301-i3/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261106-1301-i3/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261106-1301-i3/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261106-1301-i3/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261106-1301-i3/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261106-1301-i3/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261106-1301-i3/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261106-1301-i3/3-bars-dohyeon.jpg"
+    }
+   ]
   }
  ]
 }
