@@ -2208,7 +2208,8 @@
    "risk": null,
    "published": {},
    "canva": {
-    "id": "DAHaCNHMWT8"
+    "id": "DAHaCNHMWT8",
+    "learned_at": 1793943386
    },
    "created_at": "2026-11-05T17:00:58+09:00",
    "design_why": {
@@ -7767,6 +7768,369 @@
      "form": "breaking",
      "font": "dohyeon",
      "path": "20261106-1501-i3/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "코스피 6% 급락 마감, 5천선 사수",
+   "concept": "마감 숫자로 낙폭을 보여주고, 장중 5천선이 깨졌다가 매수로 회복한 반전을 풀어낸다",
+   "why_now": "마감 결과가 막 확정됐고 4곳 이상이 동시에 보도했다. 앞서 낸 서킷브레이커 소식과 달리 확정된 종가라서 새 소식이다.",
+   "tag": "증시 마감",
+   "sources": [
+    "https://v.daum.net/v/20261106154203433",
+    "https://www.newsis.com/view/NISX20261106_0003858205",
+    "https://www.etoday.co.kr/news/view/2645161"
+   ],
+   "bg": "KOSPI trading screen",
+   "bg_alt": "Korea Exchange building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "코스피 **6%** 급락,\n하이닉스는 10%대 폭락",
+     "number": "-6.02%",
+     "label": "코스피 마감",
+     "sub": "5,059.69, 5천선 간신히 사수"
+    },
+    {
+     "type": "질문형",
+     "title": "5천선이 무너졌다가\n어떻게 **살아났나**",
+     "number": "",
+     "label": "",
+     "sub": "장중 붕괴 뒤 기관, 개인 매수로 회복"
+    },
+    {
+     "type": "반전형",
+     "title": "장중 5천선 **붕괴**,\n마감은 5059로 사수",
+     "number": "",
+     "label": "",
+     "sub": "미국 AI 데이터센터 규제 공포가 반도체주를 흔들었다"
+    }
+   ],
+   "forms": [
+    "bignum",
+    "bars"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "11월 6일 하락률(%)",
+     "bars": [
+      {
+       "label": "코스피",
+       "value": 6.02
+      },
+      {
+       "label": "코스닥",
+       "value": 5.03
+      },
+      {
+       "label": "삼성전자",
+       "value": 6.35
+      },
+      {
+       "label": "SK하이닉스",
+       "value": 10.44,
+       "hi": true
+      }
+     ]
+    }
+   },
+   "id": "20261106-1601-i1",
+   "created_at": "2026-11-06T16:01:29+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261106-1601-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261106-1601-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261106-1601-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261106-1601-i1/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261106-1601-i1/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261106-1601-i1/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261106-1601-i1/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261106-1601-i1/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261106-1601-i1/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261106-1601-i1/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261106-1601-i1/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261106-1601-i1/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "쿠팡 과징금 2011억 원 효력 정지",
+   "concept": "효력 정지와 과징금 취소는 다르다는 점을 짚으며, 확인된 사실과 아직 확인 안 된 부분을 구분해 속보로 푼다",
+   "why_now": "14:08 동아, 한경, 머니투데이 등 4곳이 속보로 막 다뤘고, 우리 계정에서는 아직 안 보낸 새 소식이다.",
+   "tag": "기업 속보",
+   "sources": [
+    "https://www.donga.com/news/Society/article/all/20261106/134978289/2",
+    "https://www.hankyung.com/article/2026110607997"
+   ],
+   "bg": "Coupang headquarters",
+   "bg_alt": "Coupang logo",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "쿠팡에 부과된 과징금\n**2011억** 원 멈췄다",
+     "number": "2011억원",
+     "label": "쿠팡 과징금",
+     "sub": "이용자 방문기록 무단 수집 건, 효력 정지"
+    },
+    {
+     "type": "질문형",
+     "title": "쿠팡 과징금 2011억\n정말 **사라진** 걸까",
+     "number": "",
+     "label": "",
+     "sub": "효력이 멈춘 것일 뿐 과징금이 없어진 것은 아니다"
+    },
+    {
+     "type": "반전형",
+     "title": "방문기록 무단 수집\n과징금은 **멈췄다**",
+     "number": "",
+     "label": "",
+     "sub": "본안 판단은 따로 이어질 것으로 보인다"
+    }
+   ],
+   "forms": [
+    "breaking",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261106-1601-i2",
+   "created_at": "2026-11-06T16:01:29+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261106-1601-i2/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261106-1601-i2/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261106-1601-i2/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261106-1601-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261106-1601-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261106-1601-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261106-1601-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261106-1601-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261106-1601-i2/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "래미안 원베일리 14.5억 낮게 거래",
+   "concept": "강남 대표 단지의 하락 거래를 보여주되, 개별 거래이고 서울 외곽은 오르는 엇갈림도 함께 전한다",
+   "why_now": "오늘 3곳 이상이 원베일리 하락 거래와 강남3구 하락 거래 16건을 보도했다. 증시 급락과 같은 날 나온 부동산 신호다.",
+   "tag": "부동산",
+   "sources": [
+    "https://www.donga.com/news/Economy/article/all/20261106/134977628/1",
+    "https://www.yna.co.kr/view/AKR20261106082600003"
+   ],
+   "bg": "Raemian One Bailey apartment",
+   "bg_alt": "Banpo Seoul apartment complex",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "래미안 원베일리\n직전보다 **14.5억** 낮게",
+     "number": "14.5억",
+     "label": "원베일리 직전 거래 대비",
+     "sub": "강남3구 하락 거래 16건 확인"
+    },
+    {
+     "type": "질문형",
+     "title": "강남 대장 아파트\n왜 **낮은 가격**에 팔렸나",
+     "number": "",
+     "label": "",
+     "sub": "개별 거래라 시장 전체 추세로 단정하기는 어렵다"
+    },
+    {
+     "type": "반전형",
+     "title": "서울 외곽은 오르는데\n강남은 **하락 거래**",
+     "number": "",
+     "label": "",
+     "sub": "서울 안에서도 흐름이 엇갈린다"
+    }
+   ],
+   "forms": [
+    "bignum",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/06",
+     "headlines": [
+      "원베일리 14.5억 낮게 거래",
+      "강남3구 하락 거래 16건 확인",
+      "서울 외곽은 오르는 등 엇갈림"
+     ]
+    }
+   },
+   "id": "20261106-1601-i3",
+   "created_at": "2026-11-06T16:01:29+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261106-1601-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261106-1601-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261106-1601-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261106-1601-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261106-1601-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261106-1601-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261106-1601-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261106-1601-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261106-1601-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261106-1601-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261106-1601-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261106-1601-i3/3-paper-gowun.jpg"
     }
    ]
   }
