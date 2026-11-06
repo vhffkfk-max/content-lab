@@ -1,12 +1,21 @@
 [
  {
   "geo": "KR",
+  "term": "임형주",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "[OBITUARY] 더없이 따뜻했던 배우 최불암을 기리며, 배우 최불암(1939~2026)",
+  "news_link": "https://cine21.com/news/view/?mag_id=111222"
+ },
+ {
+  "geo": "KR",
   "term": "숲",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "숲에서 시작하는 여행, '대한민국 구석구석'에서 만나보세요!",
-  "news_link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156788202&pWise=sub&pWiseSub=C4"
+  "news_title": "황금빛 단풍에 예술 한 스푼…서울대공원 가을축제 ‘예술로 물드는 숲’",
+  "news_link": "https://go.seoul.co.kr/news/newsView.php?id=20261106500191"
  },
  {
   "geo": "KR",
@@ -32,8 +41,8 @@
   "traffic": 1000,
   "topics": "정치·관세",
   "econ": true,
-  "news_title": "Judge blocks construction on Trump's 250-foot arch for now",
-  "news_link": "https://www.cbsnews.com/news/trump-arch-approval-national-capital-planning-commission/"
+  "news_title": "Judge Promptly Blocks Work on Trump’s Triumphal Arch After It’s Approved",
+  "news_link": "https://www.nytimes.com/2026/11/05/us/politics/trump-triumphal-arch-planning-commission.html"
  },
  {
   "geo": "KR",
@@ -50,26 +59,8 @@
   "traffic": 500,
   "topics": "국내 대형주",
   "econ": true,
-  "news_title": "'20만전자' 무너지자…삼성전자 노태문, '3000주' 6억3000만원 규모 추가 매입",
-  "news_link": "https://www.etnews.com/20261106000363"
- },
- {
-  "geo": "KR",
-  "term": "이혜정",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "이혜정, 2년 전 절연한 아들 생각에 눈물…“언젠가는 화해하겠지”",
-  "news_link": "https://www.segye.com/newsView/20261106503569"
- },
- {
-  "geo": "KR",
-  "term": "장찬희",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "대반전! 삼성, 4차전 선발 장찬희 깜짝 예고! → KT는 예상대로 로건 [KS3 현장]",
-  "news_link": "https://www.chosun.com/sports/baseball/2026/11/06/MFTGMNJXGBTDSMLDG5SDONRUGM/"
+  "news_title": "삼성전자 노태문 대표이사, 자사주 3천 주 매입‥6억 3천만 원 규모",
+  "news_link": "https://imnews.imbc.com/news/2026/econo/article/6863796_36932.html"
  },
  {
   "geo": "KR",
@@ -82,30 +73,39 @@
  },
  {
   "geo": "KR",
+  "term": "일론 머스크",
+  "traffic": 100,
+  "topics": "테슬라",
+  "econ": true,
+  "news_title": "머스크, X에 ‘테슬라 태극기’ 공유…한국시장 1위 질주 ‘자축’",
+  "news_link": "https://www.khan.co.kr/article/202611062104001"
+ },
+ {
+  "geo": "KR",
   "term": "화장실",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "‘활주로 뷰’ 인천공항 화장실, 가장 아름답다",
-  "news_link": "https://www.donga.com/news/Society/article/all/20261105/134974403/2"
+  "news_title": "부산교통공사, 노포역 화장실 전국 75곳 중 동상…16번째 수상",
+  "news_link": "https://www.newstown.co.kr/news/articleView.html?idxno=721088"
  },
  {
   "geo": "US",
-  "term": "thomas markle",
+  "term": "meghan markle",
   "traffic": 20000,
   "topics": "",
   "econ": false,
-  "news_title": "Thomas Markle, father of Meghan, arrested on charges related to child sexual abuse material, AP sources say",
+  "news_title": "Thomas Markle, father of Meghan, arrested after feds find sexually explicit photos of him with minors, DOJ says",
   "news_link": "https://www.cnn.com/2026/11/06/us/thomas-markle-arrest"
  },
  {
   "geo": "US",
-  "term": "djia today",
-  "traffic": 10000,
-  "topics": "금리·연준",
-  "econ": true,
-  "news_title": "Democratic sweep gives markets a reason to rethink path of interest rates",
-  "news_link": "https://www.cnbc.com/2026/11/06/oil-prices-interest-rates-midterms.html"
+  "term": "treveyon henderson",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Patriots' TreVeyon Henderson affected by neurological symptoms",
+  "news_link": "https://www.espn.com/nfl/story/_/id/50400016/patriots-treveyon-henderson-affected-neurological-symptoms"
  },
  {
   "geo": "US",
@@ -118,30 +118,21 @@
  },
  {
   "geo": "US",
-  "term": "treveyon henderson",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Patriots' TreVeyon Henderson affected by neurological symptoms",
-  "news_link": "https://www.espn.com/nfl/story/_/id/50400016/patriots-treveyon-henderson-affected-neurological-symptoms"
- },
- {
-  "geo": "US",
-  "term": "luca van assche",
+  "term": "katherine ryan",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "November 6, 2026: Casper Ruud vs Nuno Borges Quarter Finals match Tennis Prediction Market",
-  "news_link": "https://robinhood.com/us/en/prediction-markets/tennis/events/casper-ruud-vs-nuno-borges-quarter-finals-match-nov-06-2026/"
+  "news_title": "Russell Brand faces 'significant' prison sentence after rape and sexual assault conviction",
+  "news_link": "https://www.yahoo.com/news/world/article/russell-brand-faces-significant-prison-sentence-after-rape-and-sexual-assault-conviction-110123123.html"
  },
  {
   "geo": "US",
-  "term": "rinky hijikata",
+  "term": "megan markle",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Novak Djokovic: Serb's season over as defeat in Paris means he will miss ATP Finals",
-  "news_link": "https://www.bbc.com/sport/tennis/articles/ckn8we5p1ydeo"
+  "news_title": "Exclusive | Meghan Markle's Hollywood reputation 'unraveling in real time' as latest drama 'weakens' career hopes",
+  "news_link": "https://pagesix.com/2026/11/06/royal-family/meghan-markles-hollywood-reputation-unraveling-in-real-time-as-latest-drama-weakens-career-hopes/"
  },
  {
   "geo": "US",
@@ -149,8 +140,8 @@
   "traffic": 500,
   "topics": "AI·반도체",
   "econ": true,
-  "news_title": "Broadcom Stock Could Be Approaching a Major Turning Point. Here’s the Price Target",
-  "news_link": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stock-could-approaching-major-130307410.html"
+  "news_title": "Is Broadcom Stock a Buy Now?",
+  "news_link": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stock-buy-now-182000414.html"
  },
  {
   "geo": "US",
@@ -167,16 +158,25 @@
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Why It’s Time to Buy the Pullback in Dell Stock",
-  "news_link": "https://www.barchart.com/story/news/8674065/why-its-time-to-buy-the-pullback-in-dell-stock"
+  "news_title": "Dell Technologies (DELL) Shares Just Moved, So What Is Driving Attention Now?",
+  "news_link": "https://finance.yahoo.com/technology/ai/articles/dell-technologies-dell-shares-just-121309049.html"
+ },
+ {
+  "geo": "US",
+  "term": "sarah friar",
+  "traffic": 500,
+  "topics": "AI·반도체, 정치·관세",
+  "econ": true,
+  "news_title": "OpenAI will keep investing in AI data centers despite election results, CFO tells CNBC",
+  "news_link": "https://www.cnbc.com/2026/11/06/open-ai-data-centers-election.html"
  },
  {
   "geo": "US",
   "term": "vxus",
   "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Vanguard's VXUS Vs. VEU: Buy The One Without Small Caps (NYSEARCA:VEU)",
-  "news_link": "https://seekingalpha.com/article/4964073-vanguards-vxus-vs-veu-buy-one-without-small-caps"
+  "topics": "ETF·지수투자",
+  "econ": true,
+  "news_title": "SPDW vs VXUS: Is a State Street or Vanguard International ETF the Better Fit for Your Portfolio?",
+  "news_link": "https://finance.yahoo.com/markets/stocks/articles/spdw-vs-vxus-state-street-190302458.html"
  }
 ]
