@@ -2526,400 +2526,6 @@
  ],
  "ideas": [
   {
-   "title": "영국, 3년 만에 금리 인상 연 4%",
-   "concept": "이란전발 에너지 물가 때문에 영란은행이 금리를 올렸다는 보도로, 주식이 흔들린 날 다른 방향으로 간 나라를 짚는다",
-   "why_now": "21:17 기사로 12곳이 다뤘고 CNBC, Bloomberg, FT도 동시에 보도했다. 오늘 아직 다루지 않은 새 소식이다.",
-   "tag": "해외금리",
-   "sources": [
-    "https://biz.chosun.com/international/international_economy/2026/11/05/ZSZICEZU6FETTKPATSSTIGRFFI/",
-    "https://www.cnbc.com/2026/11/05/interest-rates-inflation-uk.html",
-    "https://www.bloomberg.com/news/articles/2026-11-05/bank-of-england-unanimously-hikes-rates-warns-of-4-9-inflation"
-   ],
-   "bg": "Bank of England building",
-   "bg_alt": "Bank of England London",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "영국이 3년 만에\n금리를 **0.25%p**\n올렸습니다",
-     "number": "연 4%",
-     "label": "영란은행 기준금리",
-     "sub": "3년여 만의 인상"
-    },
-    {
-     "type": "질문형",
-     "title": "물가 때문에 영국이\n금리를 **올렸다면**\n다음은 어디일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "증시가 흔들린 날\n금리를 올린 나라가\n**나왔습니다**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261105-2201-i1",
-   "created_at": "2026-11-05T22:01:31+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261105-2201-i1/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261105-2201-i1/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261105-2201-i1/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261105-2201-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261105-2201-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261105-2201-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261105-2201-i1/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261105-2201-i1/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261105-2201-i1/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261105-2201-i1/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261105-2201-i1/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261105-2201-i1/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "월간 경상수지 흑자 첫 600억달러 돌파",
-   "concept": "코스피가 폭락한 날 나온 사상 최대 경상수지 흑자로 주가와 실물 숫자가 엇갈린 하루를 대비해 보여준다",
-   "why_now": "20:47 기사로 3곳이 다뤘고 코스피 5.28% 하락과 같은 날 나온 반대 방향의 숫자다. 해당 월과 단위는 확인이 필요하다.",
-   "tag": "경상수지",
-   "sources": [
-    "https://biz.heraldcorp.com/article/10926967",
-    "https://v.daum.net/v/20261105204711184"
-   ],
-   "bg": "Korea container port",
-   "bg_alt": "Busan port containers",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "월간 경상수지 흑자\n사상 처음으로\n**600억달러** 돌파",
-     "number": "600억달러",
-     "label": "월간 경상수지 흑자",
-     "sub": "사상 처음 돌파"
-    },
-    {
-     "type": "질문형",
-     "title": "코스피 폭락한 날\n나라 곳간은\n**왜** 역대급일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "주가는 5%대 폭락\n경상수지는\n**사상 최대**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/05",
-     "headlines": [
-      "경상수지 흑자 600억달러 첫 돌파",
-      "코스피 5.28% 하락, 5,383.8 마감",
-      "코스닥도 5.11% 하락, 678.41"
-     ]
-    }
-   },
-   "id": "20261105-2201-i2",
-   "created_at": "2026-11-05T22:01:31+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261105-2201-i2/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261105-2201-i2/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261105-2201-i2/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261105-2201-i2/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261105-2201-i2/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261105-2201-i2/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261105-2201-i2/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261105-2201-i2/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261105-2201-i2/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261105-2201-i2/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261105-2201-i2/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261105-2201-i2/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261105-2201-i2/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261105-2201-i2/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261105-2201-i2/3-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261105-2201-i2/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261105-2201-i2/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261105-2201-i2/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "브렌트유 100달러 아래, 그래도 금리 변수",
-   "concept": "이란 종전 기대로 유가가 급락했지만 유가가 다시 오르면 금리가 더 높아질 수 있다는 MarketWatch 분석을 함께 푼다",
-   "why_now": "영국 금리 인상으로 물가와 금리가 화제인 가운데, 브렌트유 급락 보도와 MarketWatch 분석이 같은 시간대에 나왔다.",
-   "tag": "유가",
-   "sources": [
-    "https://www.marketwatch.com/story/interest-rates-could-go-significantly-higher-if-oil-prices-keep-climbing-even-if-the-i",
-    "https://www.cnbc.com/2026/11/05/interest-rates-inflation-uk.html"
-   ],
-   "bg": "Brent crude oil",
-   "bg_alt": "oil refinery tanker",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "브렌트유가\n**100달러** 아래로\n내려왔습니다",
-     "number": "100달러",
-     "label": "브렌트유",
-     "sub": "이란 종전 기대에 하락"
-    },
-    {
-     "type": "질문형",
-     "title": "유가가 급락했는데\n금리는 왜 **더 오를**\n수 있다는 걸까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "전쟁이 끝나도\n금리는 **높아질**\n수 있다는 경고",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261105-2201-i3",
-   "created_at": "2026-11-05T22:01:31+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261105-2201-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261105-2201-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261105-2201-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261105-2201-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261105-2201-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261105-2201-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261105-2201-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261105-2201-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261105-2201-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261105-2201-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261105-2201-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261105-2201-i3/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
    "title": "나스닥 -5.5% 검은 목요일",
    "concept": "선거 훈풍이 하루 만에 끝나고 나스닥, 엔비디아, 테슬라가 얼마나 빠졌는지 수치로 보여주는 속보형 정리",
    "why_now": "머니투데이와 마켓워치가 오늘 아침 뉴욕 마감을 보도했다. 나스닥은 5.52% 내려 조정 구간에 들어갔고, 기술주는 2020년 이후 최악의 하루를 기록했다. 어제 코스피 급락의 배경이 오늘 뉴욕에서 더 커졌다.",
@@ -8181,6 +7787,453 @@
      "form": "breaking",
      "font": "dohyeon",
      "path": "20261106-2001-i3/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "일자리 16.5만개인데 금리 인상 베팅 늘었다",
+   "concept": "예상 6.5만개의 2배가 넘는 고용 호조가 왜 금리 인상 베팅으로 이어졌는지, 연준이 금리를 내릴 이유가 줄어든다는 흐름으로 푼다. 예상치와 실제치를 막대 두 개로 나란히 보여준다. 구체적 인상 확률은 재료에 없어 쓰지 않는다. (공식: 두 쪽 대결을 색 두 개로)",
+   "why_now": "로이터가 고용지표 직후 트레이더들이 연준 금리 인상 베팅을 늘렸다고 보도했다. 나스닥이 1% 반등하는 와중에도 인상 확률이 올랐고, 코스피가 급락한 직후라 금리 방향에 관심이 크다.",
+   "tag": "미국 고용, 금리",
+   "sources": [
+    "https://www.cnbc.com/2026/11/06/jobs-report-october-2026.html",
+    "https://v.daum.net/v/20261107070020227"
+   ],
+   "bg": "Federal Reserve building",
+   "bg_alt": "Wall Street trading floor",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "일자리 16.5만개\n예상의 2배 넘었는데\n**금리 인상** 베팅 늘었다",
+     "number": "16.5만개",
+     "label": "미국 10월 일자리",
+     "sub": "예상 6.5만개의 2배 넘게 웃돌았다"
+    },
+    {
+     "type": "질문형",
+     "title": "일자리 호조인데\n왜 트레이더는\n**금리 인상**에 베팅했나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "일자리 호조의 반전\n금리 내릴 이유 줄고\n**인상 확률** 올랐다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bars",
+    "bignum"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "미국 10월 일자리, 만 개",
+     "bars": [
+      {
+       "label": "예상",
+       "value": 6.5
+      },
+      {
+       "label": "실제",
+       "value": 16.5,
+       "hi": true
+      }
+     ]
+    }
+   },
+   "id": "20261107-0706-i1",
+   "created_at": "2026-11-07T07:06:52+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261107-0706-i1/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261107-0706-i1/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261107-0706-i1/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261107-0706-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261107-0706-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261107-0706-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261107-0706-i1/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261107-0706-i1/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261107-0706-i1/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261107-0706-i1/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261107-0706-i1/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261107-0706-i1/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "급락장 빚투, 증권사 반대매매 유예",
+   "concept": "증권사들이 신용융자 담보비율을 낮추고 반대매매를 유예한다는 후속 조치를 정리한다. 마지막 장에서 유예가 빚을 없애주는 것이 아니라는 점을 짚는다. 세부 비율과 적용 기간은 확인 전이라 단정하지 않는다. (공식: 없음)",
+   "why_now": "연합뉴스가 증권사별 담보비율 인하와 반대매매 유예를 보도했고 YTN은 당국이 필요하면 추가 조치를 하겠다고 전했다. 외국인이 6거래일 연속 순매도한 급락장이라 빚투 계좌의 관심이 크다.",
+   "tag": "빚투, 신용융자",
+   "sources": [
+    "https://v.daum.net/v/20261106224723303",
+    "https://v.daum.net/v/20261106224313266"
+   ],
+   "bg": "KOSPI trading screen",
+   "bg_alt": "Korea Exchange building Seoul",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "외국인 6거래일 매도\n빚투 반대매매를\n증권사가 **유예**했다",
+     "number": "6거래일",
+     "label": "외국인 연속 순매도",
+     "sub": "증권사들, 담보비율 낮추고 반대매매 유예"
+    },
+    {
+     "type": "질문형",
+     "title": "급락장 증권사들이\n왜 반대매매를\n**유예**하기로 했나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "빚은 그대로인데\n반대매매는 미뤄졌다\n**유예**는 면제가 아니다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "list",
+    "paper"
+   ],
+   "extra": {
+    "list": {
+     "sub": "급락장 빚투 대응 정리",
+     "count": 4
+    },
+    "paper": {
+     "date": "11/07",
+     "headlines": [
+      "증권사, 신용융자 담보비율 인하",
+      "반대매매 유예, 세부는 확인 중",
+      "외국인 6거래일 연속 순매도"
+     ]
+    }
+   },
+   "id": "20261107-0706-i2",
+   "created_at": "2026-11-07T07:06:52+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "list",
+     "font": "noto",
+     "path": "20261107-0706-i2/1-list-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "list",
+     "font": "black",
+     "path": "20261107-0706-i2/1-list-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "list",
+     "font": "plex",
+     "path": "20261107-0706-i2/1-list-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261107-0706-i2/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261107-0706-i2/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261107-0706-i2/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "list",
+     "font": "noto",
+     "path": "20261107-0706-i2/2-list-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "list",
+     "font": "black",
+     "path": "20261107-0706-i2/2-list-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "list",
+     "font": "plex",
+     "path": "20261107-0706-i2/2-list-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261107-0706-i2/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261107-0706-i2/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261107-0706-i2/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "list",
+     "font": "noto",
+     "path": "20261107-0706-i2/3-list-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "list",
+     "font": "black",
+     "path": "20261107-0706-i2/3-list-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "list",
+     "font": "plex",
+     "path": "20261107-0706-i2/3-list-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261107-0706-i2/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261107-0706-i2/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261107-0706-i2/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "미 의회, 젠슨 황에 소환장",
+   "concept": "미 의회가 엔비디아 CEO에게 소환장을 보냈다는 YTN 보도를 속보로 전한다. 젠슨 황을 주인공으로 두고 의혹 제기, 해명 요구 순서로 장마다 한 걸음씩 풀어간다. 사실 여부와 일정은 확인 전이라 단정하지 않는다. (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "YTN이 23:01에 보도했고 아직 한 곳만 다룬 소식이다. AI 대장주 CEO의 의회 소환 이슈라 시장 관심이 높을 수 있다.",
+   "tag": "엔비디아, 미 의회",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9iYUZ4a1FJSDhFWkxLMDI4S3J1cmd5dTVzZ3NLU05VQUdjTGtQNHFpR3BVeEZiSUdQdnB"
+   ],
+   "bg": "Jensen Huang",
+   "bg_alt": "Nvidia headquarters",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "미 의회가 엔비디아\n젠슨 황 CEO에게\n**소환장**을 보냈다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "젠슨 황 CEO는 왜\n미 의회 **소환장**을\n받게 됐을까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "AI 대장주 CEO가\n이번엔 주가 아닌\n**소환장**을 받았다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261107-0706-i3",
+   "created_at": "2026-11-07T07:06:52+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-0706-i3/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-0706-i3/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-0706-i3/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261107-0706-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261107-0706-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261107-0706-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-0706-i3/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-0706-i3/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-0706-i3/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261107-0706-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261107-0706-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261107-0706-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-0706-i3/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-0706-i3/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-0706-i3/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261107-0706-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261107-0706-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261107-0706-i3/3-news-myeongjo.jpg"
     }
    ]
   }
