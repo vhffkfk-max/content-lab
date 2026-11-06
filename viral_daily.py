@@ -1,6 +1,8 @@
-"""뜬 글 공식·광고 DB 하루 한 번 (threads_watch.py 의 side_jobs 가 30분마다 따로 띄움 → 크롤러를 붙잡지 않음).
+"""뜬 글 공식·광고 DB 매시간 (threads_watch.py 의 side_jobs 가 30분마다 따로 띄움 → 크롤러를 붙잡지 않음).
 
-    python viral_daily.py           # 오늘 아직 안 했고 05시가 지났으면 실행, 아니면 바로 끝
+2026-11-06 대표 지시: 하루 1번 → 1시간마다. 이미 비교한 글은 다시 묻지 않고, 새로 뜬 글이 없으면 공식(Opus)도 그대로라 Max 사용량은 새 글만큼만.
+
+    python viral_daily.py           # 이번 시각(시 단위)에 아직 안 했으면 실행, 아니면 바로 끝
     python viral_daily.py --force   # 지금 바로
 
 순서: viral_ads.py (광고 판단·DB·다시 재기) → viral_analyze.py (뜬 글 짝 비교·공식) → output/site/viral.json 만 깃허브에 올림.
@@ -23,7 +25,6 @@ OUT = OUTPUT_DIR / "viral"
 STATE = OUT / "daily_state.json"
 LOCK = OUT / "daily.lock"
 LOG = OUT / "daily.log"
-START_HOUR = 5
 LOCK_STALE_S = 4 * 3600
 
 
@@ -51,9 +52,9 @@ def main():
     a = ap.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
     now = datetime.now(KST)
-    today = now.strftime("%Y-%m-%d")
+    slot = now.strftime("%Y-%m-%d-%H")   # 1시간에 한 번
     state = json.loads(STATE.read_text(encoding="utf-8")) if STATE.exists() else {}
-    if not a.force and (state.get("done") == today or now.hour < START_HOUR):
+    if not a.force and state.get("done") == slot:
         return
     if LOCK.exists() and time.time() - LOCK.stat().st_mtime < LOCK_STALE_S:
         return   # 다른 실행이 아직 도는 중
@@ -63,9 +64,9 @@ def main():
         ads_ok = step("viral_ads.py", 60 * 60)
         ok = step("viral_analyze.py", 2 * 60 * 60)
         if ok:
-            log(f"사이트 올리기 {repo_sync.publish(['output/site/viral.json'], 'data: 뜬 글 공식 ' + now.strftime('%m/%d'))}")
-        # 실패해도 오늘은 한 번만 시도 (Max 한도를 붙잡지 않게). 다음 날 다시
-        STATE.write_text(json.dumps({"done": today, "ads_ok": ads_ok, "analyze_ok": ok, "at": now.isoformat()}, ensure_ascii=False), encoding="utf-8")
+            log(f"사이트 올리기 {repo_sync.publish(['output/site/viral.json'], 'data: 뜬 글 공식 ' + now.strftime('%m/%d %H시'))}")
+        # 실패해도 이번 시각엔 한 번만 시도 (Max 한도를 붙잡지 않게). 다음 시각에 다시
+        STATE.write_text(json.dumps({"done": slot, "ads_ok": ads_ok, "analyze_ok": ok, "at": now.isoformat()}, ensure_ascii=False), encoding="utf-8")
         log(f"끝 (광고 {ads_ok}, 공식 {ok})")
     finally:
         LOCK.unlink(missing_ok=True)

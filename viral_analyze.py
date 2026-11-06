@@ -1,4 +1,4 @@
-"""경제 카드뉴스·릴스가 왜 떴는지 분석해서 핫코노미용 공식 모음을 만든다 (1단계: PC에서 손으로 실행, 배포 안 함).
+"""경제 카드뉴스·릴스가 왜 떴는지 분석해서 핫코노미용 공식 모음을 만든다 (viral_daily.py 가 매시간 실행 → 사이트 '뜬 글 공식').
 
     python viral_analyze.py --select            # 뜬 글·비교 글 고르기까지만 (자료 안 받음)
     python viral_analyze.py --limit 2           # 앞에서 2쌍만 시험
@@ -543,7 +543,7 @@ def site_export():
         return {"code": code, "author": h["author"], "x": h["x"], "url": h["url"], "kind": h["kind"]}
 
     keep = ("hook_type", "hook_hit", "differences", "why", "topic_power", "copyable", "structure")
-    out = {"made_at": d["made_at"], "days": DAYS, "min_x": MIN_X, "funnel": d["funnel"], "summary": d["summary"],
+    out = {"made_at": d["made_at"], "checked_at": datetime.now(KST).isoformat(timespec="minutes"), "days": DAYS, "min_x": MIN_X, "funnel": d["funnel"], "summary": d["summary"],
            "not_copyable": d["not_copyable"], "limits": d["limits"], "numbers": d["numbers"],
            "formulas": [{**{k: f[k] for k in ("name", "kind", "what", "fit", "fit_why", "how", "example_hook")},
                          "evidence": [ref(c) for c in f["evidence"] if c in by], "counter": [ref(c) for c in f["counter"] if c in by]} for f in d["formulas"]],
@@ -593,6 +593,12 @@ def main():
     if len(rows) < 2:
         sys.exit("비교가 끝난 글이 너무 적어 공식을 못 만들어요")
     rows.sort(key=lambda r: -r["hit"]["x"])
+    prev = json.loads((OUT / "formulas.json").read_text(encoding="utf-8")) if (OUT / "formulas.json").exists() else None
+    if prev and not a.limit and {r["hit"]["code"] for r in rows} == {p["hit"]["code"] for p in prev.get("pairs", [])}:
+        # 매시간 돌지만 새로 뜬 글이 없으면 공식 묶음(Opus)을 다시 부르지 않는다 — 확인 시각만 사이트에 남김
+        log.info("새로 뜬 글 없음 — 공식은 그대로, 확인 시각만 갱신")
+        site_export()
+        return
     syn = synthesize(rows)
     nums = numbers(rows)
     (OUT / "formulas.json").write_text(json.dumps(

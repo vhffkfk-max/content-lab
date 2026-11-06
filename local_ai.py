@@ -280,6 +280,11 @@ def main():
     LOCK.parent.mkdir(parents=True, exist_ok=True)
     if "--run" not in sys.argv:
         watch_crawlers()
+        try:   # 매시간 분석 (hourly_lab.py): 오래 걸려서 따로 띄움 — 이 5분 작업(말희아빠·시황 변환)을 막지 않게. 차례·잠금은 스스로 봄
+            subprocess.Popen([sys.executable, "hourly_lab.py"], cwd=ROOT, env=ENV, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                             creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0) | getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0))
+        except OSError as e:
+            log("⚠️ 매시간 분석 띄우기 실패:", e)
         # 1) 작업 폴더를 저장소 최신으로 맞춘 뒤, 새 코드로 다시 실행
         if LOCK.exists() and time.time() - LOCK.stat().st_mtime < 90 * 60:
             return
