@@ -50,6 +50,20 @@ def main():
     contact = cfg.get("contact_email") or "운영팀 문의 메일 (등록 예정)"
     for page in (ROOT / "site" / "pages").glob("*.html"):
         (out / page.name).write_text(page.read_text(encoding="utf-8").replace("CONTACT_EMAIL", contact), encoding="utf-8")
+    # 폰 홈 화면에 앱처럼 추가 (2026-11-06): 아이콘·매니페스트
+    logo = ROOT / "assets" / "brand" / "hotconomy_logo.png"
+    try:
+        from PIL import Image
+        for size in (192, 512):
+            Image.open(logo).convert("RGBA").resize((size, size)).save(out / f"icon-{size}.png")
+    except Exception:
+        for size in (192, 512):
+            if logo.exists():
+                (out / f"icon-{size}.png").write_bytes(logo.read_bytes())
+    (out / "manifest.webmanifest").write_text(json.dumps({
+        "name": "말희아빠 & 파로파트너스 컨텐츠 연구소", "short_name": "연구소", "start_url": "./", "scope": "./", "display": "standalone",
+        "background_color": "#fbf7f8", "theme_color": "#b8336a",
+        "icons": [{"src": f"icon-{n}.png", "sizes": f"{n}x{n}", "type": "image/png"} for n in (192, 512)]}, ensure_ascii=False), encoding="utf-8")
     for name in ("charts", "futures"):   # 차트리포트(chart_report.py)·선물 브리핑(futures_brief.py) 이미지
         if (site / name).exists():
             (out / name).mkdir(exist_ok=True)
