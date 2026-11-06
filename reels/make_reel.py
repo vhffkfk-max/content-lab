@@ -230,7 +230,10 @@ def articles_by_browser(rows, want):
     return out
 
 
-def gather(topic):
+def gather(topic, seeds=()):
+    """seeds: 추천 글감의 출처 기사 주소. 주제와 맞는 기사라 관련도·날짜 검사 없이 먼저 읽는다."""
+    now = datetime.now(KST).strftime("%m/%d %H:%M")
+    seeded = [{"title": "", "source": urllib.parse.urlparse(u).netloc, "published": now, "link": u, "seed": True} for u in seeds]
     rows, seen = bing_news(topic) + [r for r in press_rows() if "news.google" not in r.get("link", "")] + google_news(topic), set()
     news = []
     for r in rows:
@@ -238,6 +241,28 @@ def gather(topic):
             seen.add(r["title"])
             news.append(r)
     bodies = []
+    direct = [r for r in seeded if "news.google" not in r["link"]]
+    for r in direct[:5]:
+        doc = ""
+        try:
+            got = requests.get(r["link"], headers=UA, timeout=15)
+            got.encoding = got.apparent_encoding
+            doc = got.text
+        except requests.RequestException:
+            continue
+        b = page_text(doc)
+        m = re.search(r"<title[^>]*>(.*?)</title>", doc, re.S | re.I)
+        r["title"] = html.unescape(re.sub(r"\s+", " ", m[1])).strip()[:120] if m else r["source"]
+        if b:
+            bodies.append({"title": r["title"], "source": r["source"], "link": r["link"], "body": b})
+            news.insert(0, r)
+    google_seeds = [r for r in seeded if "news.google" in r["link"]]
+    if google_seeds and len(bodies) < 3:
+        for r, url, b in articles_by_browser(google_seeds, 3 - len(bodies)):
+            if b:
+                r.update(title=r["title"] or urllib.parse.urlparse(url).netloc, link=url)
+                bodies.append({"title": r["title"], "source": urllib.parse.urlparse(url).netloc, "link": url, "body": b})
+                news.insert(0, r)
     for r in sorted(news, key=lambda x: "news.google" in x.get("link", ""))[:15]:
         b = article(r.get("link", ""))
         if b and any(t.lower() in b.lower() for t in tokens(topic)):
@@ -641,6 +666,18 @@ def estimate(say):
     return round(len(re.findall(r"[가-힣]", say)) / 8.2 + .2, 2)
 
 
+def caption_notes(s, q, basis):
+    """올릴 인스타 글을 ig-caption 기준(publish/caption_check.py)으로 미리 점검한다. 막지는 않고 보여만 준다."""
+    from publish.caption_check import check as caption_check
+    try:
+        text = upload_text(s, q, basis, used_names(s))
+        ig = text.split("[유튜브 쇼츠")[0].split("\n", 1)[1].strip()
+        block, notes = caption_check(ig, keyword=(s.hashtags[0].lstrip("#") if s.hashtags else ""))
+        return {"block": block, "notes": notes}
+    except (KeyError, IndexError, ValueError) as e:
+        return {"block": [], "notes": [f"점검하지 못했어요: {e}"]}
+
+
 def render_board(out, s, q, basis, block, warn):
     """음성·영상 없이 컷 이미지만 만든다. 영상과 같은 화면 코드라 보이는 그대로 나온다."""
     engine.OUT = out
@@ -662,7 +699,7 @@ def render_board(out, s, q, basis, block, warn):
         known = not any(n not in q for n in PH.findall(h))
         hooks.append({"say": h, "text": to_text(h, q) if known else h, "score": hook_score(to_say(h, q).replace("*", "")) if known else None})
     write_board(out, updated=datetime.now(KST).strftime("%m/%d %H:%M"), basis=basis, block=block, warn=warn, problems=problems, seconds=round(t, 1), hooks=hooks,
-                changes=[], video=(out / "영상.mp4").exists() and (out / "영상.mp4").stat().st_mtime > (out / "대본.json").stat().st_mtime)
+                changes=[], caption=caption_notes(s, q, basis), video=(out / "영상.mp4").exists() and (out / "영상.mp4").stat().st_mtime > (out / "대본.json").stat().st_mtime)
 
 
 def main():
@@ -672,6 +709,8 @@ def main():
     ap.add_argument("--from-script")
     ap.add_argument("--board", action="store_true", help="대본과 컷 이미지까지만 만든다")
     ap.add_argument("--stills", help="대본.json 을 고친 뒤 컷 이미지만 다시 만든다")
+    ap.add_argument("--seed", help="출처 기사 주소 목록 JSON 파일 (추천 주제에서 보드를 만들 때)")
+    ap.add_argument("--auto", action="store_true", help="정해진 시간에 PC가 스스로 만든 보드")
     ap.add_argument("--accept-market", action="store_true", help="보드를 본 뒤 시세가 바뀌어도 새 숫자로 만든다")
     a = ap.parse_args()
     if a.stills:
@@ -717,7 +756,8 @@ def main():
         topic = a.topic
         slug = re.sub(r"[^0-9A-Za-z가-힣]+", "_", topic)[:30]
         out = REELS_DIR / f"{datetime.now(KST):%Y%m%d_%H%M}_{slug}"
-        news, bodies = gather(topic)
+        seeds = json.loads(pathlib.Path(a.seed).read_text(encoding="utf-8")) if a.seed else []
+        news, bodies = gather(topic, seeds)
         q, basis = quotes(topic)
         print(f"기사 제목 {len(news)}건, 본문 {len(bodies)}건, 시세 {len(q)}개 | {basis}")
         if len(news) < 3 or not bodies:
@@ -746,6 +786,8 @@ def main():
     save_state(out, topic=topic, script=s.model_dump(), news=news, bodies=bodies, quotes=q, basis=basis, review=[], edited=False)
     if a.board:
         render_board(out, s, q, basis, block, warn)
+        if a.auto:
+            write_board(out, auto=True)
         print("폴더:", out)
         print("컷 보드를 만들었어요. 영상은 아직 만들지 않았어요.")
         return
@@ -783,7 +825,7 @@ def main():
     with (out / "확인목록.txt").open("a", encoding="utf-8") as f:
         f.write("\n" + "\n".join(extra))
     print("\n".join(extra))
-    write_board(out, video=True, seconds=round(total, 1), problems=problems, heard=heard, miss=miss)
+    write_board(out, video=True, seconds=round(total, 1), problems=problems, heard=heard, miss=miss, caption=caption_notes(s, q, basis))
     print("끝났어요. 영상을 확인한 뒤 직접 올려 주세요 (자동 게시 안 함).")
 
 

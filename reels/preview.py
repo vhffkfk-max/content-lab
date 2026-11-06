@@ -25,6 +25,7 @@ from common import ROOT  # noqa: E402
 BRANCH = "reel-previews"
 WIDTH, QUALITY = 540, 74
 KEEP_DAYS, KEEP_BOARDS = 10, 20
+AUTO_TIMES = ["08:40", "12:10", "16:10"]   # reel_listen.py 가 이 시각에 추천 1위로 보드를 미리 만든다
 IDENT = ["-c", "user.name=content-lab-bot", "-c", "user.email=content-lab-bot@users.noreply.github.com"]
 NO_WINDOW = getattr(subprocess, "CREATE_NO_WINDOW", 0)
 TEXT_LIMIT = 240
@@ -66,12 +67,12 @@ def view(d):
                      "say_text": mr.to_say(c.say, q).replace("*", "") if known(c.say) else c.say,
                      "image": name, "v": hashlib.md5(files[name]).hexdigest()[:8] if name else "", "voice": f"{d.name}/v{i - 1}.mp3" if fresh else None})
     upload = d / "업로드글.txt"
-    board = {"id": d.name, "topic": st["topic"], "edited": st.get("edited", False), "cuts": cuts, "board": {k: b.get(k) for k in ("updated", "basis", "block", "problems", "seconds", "hooks", "changes", "video", "miss", "rid")},
+    board = {"id": d.name, "topic": st["topic"], "edited": st.get("edited", False), "cuts": cuts, "board": {k: b.get(k) for k in ("updated", "basis", "block", "problems", "seconds", "hooks", "changes", "video", "miss", "rid", "caption", "auto")},
              "ig_title": s.ig_title, "yt_title": s.yt_title, "summary": s.summary, "question": s.question,
              "upload": upload.read_text(encoding="utf-8") if b.get("video") and upload.exists() else "",
              "sources": [{"source": r.get("source", ""), "title": r["title"], "link": r.get("link", "")} for r in st.get("news", [])[:12]]}
     files[f"{d.name}/board.json"] = json.dumps(board, ensure_ascii=False).encode("utf-8")
-    item = {"id": d.name, "topic": st["topic"], "updated": b.get("updated", ""), "video": bool(b.get("video")), "blocked": bool(b.get("block") or b.get("problems")), "rid": b.get("rid", "")}
+    item = {"id": d.name, "topic": st["topic"], "updated": b.get("updated", ""), "video": bool(b.get("video")), "blocked": bool(b.get("block") or b.get("problems")), "rid": b.get("rid", ""), "auto": bool(b.get("auto"))}
     return item, files
 
 
@@ -88,7 +89,12 @@ def push():
         item, files = view(d)
         items.append(item)
         blobs.update(files)
-    blobs["index.json"] = json.dumps({"boards": items}, ensure_ascii=False).encode("utf-8")
+    try:
+        sug = json.loads((mr.REELS_DIR / "suggest.json").read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        sug = {"items": []}
+    suggest = [{k: r.get(k, "") for k in ("keyword", "title", "why", "at", "from")} for r in sug.get("items", [])]
+    blobs["index.json"] = json.dumps({"boards": items, "suggest": suggest, "suggest_updated": sug.get("updated", ""), "auto_times": AUTO_TIMES}, ensure_ascii=False).encode("utf-8")
     with tempfile.TemporaryDirectory() as tmp:
         env = {**os.environ, "GIT_INDEX_FILE": os.path.join(tmp, "index")}
         for path, data in blobs.items():

@@ -123,7 +123,14 @@ def run(name, q):
     import preview
     action, t0, msg, out = q["action"], time.time(), None, None
     if action == "board":
-        code, lines = maker(q["topic"], "--board")
+        import suggest
+        seeds = q.get("seeds") or suggest.seed_for(q["topic"])
+        extra = []
+        if seeds:
+            f = mr.REELS_DIR / "seed.json"
+            f.write_text(json.dumps(seeds), encoding="utf-8")
+            extra = ["--seed", str(f)]
+        code, lines = maker(q["topic"], "--board", *extra, *(["--auto"] if q.get("auto") else []))
         found = next((x for x in lines if x.startswith("폴더: ")), None)
         if code or not found:
             msg = plain(lines)
@@ -159,6 +166,8 @@ def run(name, q):
     if out:
         log("미리보기:", preview.push())
     log(q["rid"], action, f"{time.time() - t0:.0f}초", msg or "완료")
+    if name is None:   # PC가 스스로 만든 일 (요청 파일 없음)
+        return
     if msg:
         change(name, "PUT", "reel request failed", error=msg)
     else:
@@ -175,7 +184,8 @@ def worker(jobs):
             run(name, q)
         except Exception as e:
             log("오류", name, repr(e)[:400])
-            change(name, "PUT", "reel request failed", error="PC에서 만들다가 멈췄어요. 다시 눌러 주세요.")
+            if name:
+                change(name, "PUT", "reel request failed", error="PC에서 만들다가 멈췄어요. 다시 눌러 주세요.")
 
 
 def poll(jobs, seen, etag):
@@ -201,6 +211,42 @@ def poll(jobs, seen, etag):
     return r.headers.get("ETag") if r.status_code in (200, 404) else None
 
 
+AUTO_STATE = pathlib.Path.home() / ".content-lab-ai" / "reel_auto.json"
+SUGGEST_EVERY_S = 30 * 60
+
+
+def auto_due():
+    """정해진 시각(preview.AUTO_TIMES)이 지났고 오늘 아직 안 만든 차례 하나. PC가 꺼져 있다 켜지면 2시간 안의 차례만."""
+    import preview
+    now = datetime.now(KST)
+    state = json.loads(AUTO_STATE.read_text(encoding="utf-8")) if AUTO_STATE.exists() else {}
+    done = state.get(now.strftime("%Y%m%d"), [])
+    for hhmm in preview.AUTO_TIMES:
+        h, m = map(int, hhmm.split(":"))
+        at = now.replace(hour=h, minute=m, second=0, microsecond=0)
+        if hhmm not in done and at <= now < at + timedelta(hours=2):
+            state = {now.strftime("%Y%m%d"): done + [hhmm]}
+            AUTO_STATE.write_text(json.dumps(state), encoding="utf-8")
+            return hhmm
+    return None
+
+
+def refresh(jobs):
+    """추천 주제 새로 고르기 (Claude 호출 없음) + 정해진 시각이면 추천 1위로 보드 미리 만들기."""
+    import preview
+    import suggest
+    git("fetch", "-q", "--depth", "1", "origin", "main")
+    git("reset", "-q", "--hard", "origin/main")
+    rows, changed = suggest.save()
+    slot = auto_due()
+    if slot and rows:
+        top = rows[0]
+        log("자동 보드:", slot, top["keyword"])
+        jobs.put((None, {"rid": f"auto{datetime.now(KST):%H%M}", "action": "board", "topic": top["keyword"], "seeds": top["links"], "auto": True, "at": datetime.now(KST).isoformat()}))
+    elif changed:
+        log("추천 갱신:", ", ".join(r["keyword"] for r in rows), preview.push())
+
+
 def main():
     if ROOT.name != "content-lab-reel":   # 일감마다 reset --hard 를 하므로 개발 폴더에서 돌면 작업 중인 코드가 사라진다
         sys.exit("전용 폴더(content-lab-reel)에서만 실행해요: reels/reel_listen_install.ps1")
@@ -212,12 +258,29 @@ def main():
     log("시작")
     jobs, seen, etag = queue.Queue(), set(), None
     threading.Thread(target=worker, args=(jobs,), daemon=True).start()
+    last = 0
     while True:
         try:
             etag = poll(jobs, seen, etag)
+            if jobs.empty() and (time.time() - last > SUGGEST_EVERY_S or auto_peek()):
+                last = time.time()
+                refresh(jobs)
         except Exception as e:   # 인터넷이 잠깐 끊겨도 계속
             log("오류", repr(e)[:300])
         time.sleep(POLL_S)
+
+
+def auto_peek():
+    """차례가 왔는지만 본다 (상태는 바꾸지 않음)."""
+    import preview
+    now = datetime.now(KST)
+    done = (json.loads(AUTO_STATE.read_text(encoding="utf-8")) if AUTO_STATE.exists() else {}).get(now.strftime("%Y%m%d"), [])
+    for hhmm in preview.AUTO_TIMES:
+        h, m = map(int, hhmm.split(":"))
+        at = now.replace(hour=h, minute=m, second=0, microsecond=0)
+        if hhmm not in done and at <= now < at + timedelta(hours=2):
+            return True
+    return False
 
 
 if __name__ == "__main__":

@@ -42,6 +42,7 @@
 .vl-tabs{display:flex;gap:6px;margin:0 0 12px}.vl-tab{padding:6px 14px;border-radius:999px;border:1px solid var(--border);color:var(--muted);font-size:13px}.vl-tab.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
 .vl-new{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}.vl-new input{flex:1;min-width:200px;min-height:36px;padding:0 12px;border-radius:var(--radius,8px);border:1px solid var(--control);background:var(--surface);color:var(--text);font:inherit}
 .vl-job{margin:6px 0;padding:9px 12px;border-radius:8px;background:var(--accent-soft);color:var(--accent-ink);font-size:13px}
+.vl-suggest{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 10px}.vl-suggest .sub{flex-basis:100%;margin:0}.vl-chip{text-align:left;max-width:300px;padding:8px 11px;border-radius:9px;border:1px dashed var(--accent);background:var(--accent-soft);color:var(--text);cursor:pointer;font:inherit}.vl-chip b{display:block;font-size:13.5px}.vl-chip span{display:block;font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .vl-list{display:flex;gap:8px;overflow-x:auto;padding:4px 0 10px}.vl-item{flex:none;text-align:left;padding:9px 12px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;font:inherit}.vl-item.on{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}.vl-item b,.vl-item span{display:block}.vl-item span{font-size:12px}
 .vl-head h2{margin:10px 0 2px;font-size:20px}.vl-box{margin-top:12px;padding:12px 14px;border:1px solid var(--border);border-radius:10px;background:var(--surface)}.vl-box ul{margin:6px 0 0;padding-left:18px}.vl-box.bad{border-color:#c0392b}.vl-box.warn{border-color:#b8860b}.vl-box.ok{border-color:#2e8b57}.vl-box summary{cursor:pointer;font-weight:700}
 .vl-pre{white-space:pre-wrap;font:inherit;font-size:13px;margin:8px 0 0}.vl-hook{display:flex;gap:10px;align-items:center;padding:7px 0;border-top:1px solid var(--rule)}.vl-hook:first-of-type{border-top:0}.vl-hook b{min-width:44px;color:var(--accent)}.vl-hook span{flex:1}
@@ -1228,7 +1229,7 @@ a.row:hover .row-main{text-decoration:underline}
   // ── 영상 연구소: 대본·컷 이미지를 먼저 보고, 고친 뒤 버튼을 눌렀을 때만 영상을 만든다 ──
   // 요청 → 중간 서버(relay) → lab-requests 가지 → 내 PC(reels/reel_listen.py). 결과는 reel-previews 가지. 영상은 텔레그램으로.
   const VL_RAW = 'https://raw.githubusercontent.com/vhffkfk-max/content-lab/reel-previews/';
-  const vl = { list: [], cur: null, dirty: false, started: false, watching: new Set(), status: new Map() };
+  const vl = { list: [], suggest: [], autoTimes: [], suggestAt: '', cur: null, dirty: false, started: false, watching: new Set(), status: new Map() };
   const vlPending = { get: () => { try { return JSON.parse(store.get('vl_pending') || '[]'); } catch (e) { return []; } }, set: a => store.set('vl_pending', JSON.stringify(a.slice(-8))) };
   const vlUrl = (path, v) => VL_RAW + path.split('/').map(encodeURIComponent).join('/') + (v ? `?v=${v}` : '');
   const vlRoot = () => document.getElementById('vl-root');
@@ -1239,7 +1240,7 @@ a.row:hover .row-main{text-decoration:underline}
     if (!r.ok) throw new Error(ghFail(r.status));
     return r.json();
   }
-  async function vlLoadList() { const d = await vlData('index.json'); vl.list = d ? d.boards : []; }
+  async function vlLoadList() { const d = await vlData('index.json'); vl.list = d ? d.boards : []; vl.suggest = (d && d.suggest) || []; vl.autoTimes = (d && d.auto_times) || []; vl.suggestAt = (d && d.suggest_updated) || ''; }
   async function vlOpen(id, force) {
     if (vl.dirty && !force && !confirm('반영하지 않은 수정이 있어요. 버릴까요?')) return;
     const d = await vlData(`${id}/board.json`);
@@ -1344,6 +1345,13 @@ a.row:hover .row-main{text-decoration:underline}
     const problems = [...(b.block || []), ...(b.problems || [])];
     if (problems.length) { const p = el('div', 'vl-box bad'); p.append(el('b', '', '고쳐야 할 문제')); const ul = el('ul'); problems.forEach(x => ul.append(el('li', '', x))); p.append(ul); box.append(p); }
     if ((b.changes || []).length) { const p = el('div', 'vl-box warn'); p.append(el('b', '', '보드를 본 뒤 시세가 바뀌었어요')); const ul = el('ul'); b.changes.forEach(x => ul.append(el('li', '', `${x.name}: ${x.old} → ${x.new}`))); p.append(ul); box.append(p); }
+    const cap = b.caption || {};
+    if ((cap.block || []).length || (cap.notes || []).length) {
+      const p = el('details', 'vl-box' + ((cap.block || []).length ? ' warn' : '')), ul = el('ul');
+      p.append(el('summary', '', `올릴 글 점검: 고칠 것 ${(cap.block || []).length}건 · 참고 ${(cap.notes || []).length}건`));
+      (cap.block || []).forEach(x => ul.append(el('li', '', `고칠 것: ${x}`))); (cap.notes || []).forEach(x => ul.append(el('li', '', `참고: ${x}`)));
+      p.append(ul); box.append(p);
+    }
     if (b.video) { const p = el('div', 'vl-box ok'); p.append(el('b', '', '영상을 만들어 텔레그램으로 보냈어요')); if (d.upload) { const dt = el('details'); dt.append(el('summary', '', '올릴 제목·설명 보기'), el('pre', 'vl-pre', d.upload)); p.append(dt); } box.append(p); }
     if ((b.hooks || []).length) {
       const p = el('div', 'vl-box'); p.append(el('b', '', '첫 문장 후보 (후킹 점수)'));
@@ -1363,13 +1371,24 @@ a.row:hover .row-main{text-decoration:underline}
     const form = el('form', 'vl-new'), inp = el('input'), go = el('button', 'btn primary', '컷 보드 만들기');
     inp.placeholder = '주제 (예: 코스피 급락)'; inp.maxLength = 60; inp.setAttribute('aria-label', '주제'); go.type = 'submit';
     form.append(inp, go);
+    const sug = el('div', 'vl-suggest');
+    if (vl.suggest.length) {
+      const head = el('p', 'sub', `추천 주제 (${vl.suggestAt} 기준, 지금 쓸 거리에서 골랐어요). 누르면 출처 기사로 보드를 만들어요.${vl.autoTimes.length ? ` 매일 ${vl.autoTimes.join(' · ')}에는 1위 주제로 보드를 미리 만들어 둬요.` : ''}`);
+      sug.append(head);
+      vl.suggest.forEach(x => {
+        const b = el('button', 'vl-chip'); b.type = 'button'; b.title = `${x.title}\n${x.why}`;
+        b.append(el('b', '', x.keyword), el('span', '', x.title));
+        b.addEventListener('click', () => { if (confirm(`'${x.keyword}' 주제로 컷 보드를 만들까요?\n${x.title}`)) vlSend('board', { topic: x.keyword }); });
+        sug.append(b);
+      });
+    }
     form.addEventListener('submit', async e => { e.preventDefault(); const topic = inp.value.trim(); if (topic.length < 2) return alert('주제를 2글자 이상 넣어 주세요.'); if (await vlSend('board', { topic })) inp.value = ''; });
     const status = el('div'); status.id = 'vl-status';
     const list = el('div', 'vl-list');
     if (!fb.key) { const b = el('button', 'btn', '암호 넣고 보드 보기'); b.type = 'button'; b.addEventListener('click', async () => { if (await connectLab()) vlStart(true); }); list.append(b); }
-    vl.list.forEach(x => { const b = el('button', 'vl-item' + (vl.cur && vl.cur.id === x.id ? ' on' : '')); b.type = 'button'; b.append(el('b', '', x.topic), el('span', 'sub', `${x.updated}${x.video ? ' · 영상 있음' : ''}${x.blocked ? ' · 문제 있음' : ''}`)); b.addEventListener('click', () => vlOpen(x.id).catch(e => alert(e.message))); list.append(b); });
+    vl.list.forEach(x => { const b = el('button', 'vl-item' + (vl.cur && vl.cur.id === x.id ? ' on' : '')); b.type = 'button'; b.append(el('b', '', x.topic), el('span', 'sub', `${x.updated}${x.auto ? ' · 자동' : ''}${x.video ? ' · 영상 있음' : ''}${x.blocked ? ' · 문제 있음' : ''}`)); b.addEventListener('click', () => vlOpen(x.id).catch(e => alert(e.message))); list.append(b); });
     if (fb.key && !vl.list.length) list.append(el('p', 'sub', '아직 보드가 없어요. 주제를 넣어 첫 보드를 만들어 보세요.'));
-    root.replaceChildren(tabs, form, status, list, ...(vl.cur ? [vlBoard()] : []));
+    root.replaceChildren(tabs, form, sug, status, list, ...(vl.cur ? [vlBoard()] : []));
     vlDrawBar(); vlDrawStatus();
   }
   async function vlStart(force) {
