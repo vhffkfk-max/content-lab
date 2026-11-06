@@ -6858,6 +6858,445 @@
      "path": "20261106-1301-i3/3-bars-dohyeon.jpg"
     }
    ]
+  },
+  {
+   "title": "머스크 회사 이틀 만에 618조 증발",
+   "concept": "테슬라와 스페이스X 시총 증발, 스페이스X 부도 위험 최고치, 합병 차질 가능성을 서학개미 계좌와 연결해 보도 중심으로 정리",
+   "why_now": "오후 1시 전후 여러 매체가 테슬라와 스페이스X 시총 증발을 다뤘고, 인베스팅닷컴은 스페이스X 부도 위험 지표가 사상 최고치라고 전했다. 오늘 다룬 주제에 없던 새 소식이다. 매체별로 515조 원 등 수치가 달라 확인 표기가 필요하다.",
+   "tag": "미국 증시",
+   "sources": [
+    "https://www.newsis.com/view/NISX20261106_0003857506",
+    "https://kr.investing.com/news/stock-market-news/article-2163176"
+   ],
+   "bg": "Elon Musk",
+   "bg_alt": "SpaceX Starship",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "머스크 회사 이틀간\n**618조원** 증발\n스페이스X 부도위험 최고",
+     "number": "618조원",
+     "label": "테슬라, 스페이스X 시총 이틀 증발",
+     "sub": "매체별 수치 차이 있음"
+    },
+    {
+     "type": "질문형",
+     "title": "테슬라 서학개미 계좌\n오늘 또 흔들릴까\n**합병**도 차질 우려",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "민주당 압승 뒤\n머스크 회사 두 곳이\n이틀 만에 **휘청**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261106-1401-i1",
+   "created_at": "2026-11-06T14:01:40+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261106-1401-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261106-1401-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261106-1401-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-1401-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-1401-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-1401-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-1401-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-1401-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-1401-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-1401-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-1401-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-1401-i1/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "코스피 5000 붕괴에도 노무라 목표 1만",
+   "concept": "폭락 직후 나온 노무라의 목표치 유지를 보도하되, 한 증권사의 전망일 뿐이라는 단서와 시총 40%대 하락 수치를 함께 제시",
+   "why_now": "코스피 5000선 붕괴 직후 이투데이, 이데일리, 매일경제 등이 13시 30분대에 노무라의 목표치 유지를 보도했다. 폭락 직후 시장이 가장 궁금해하는 질문에 답하는 소식이다.",
+   "tag": "국내 증시",
+   "sources": [
+    "https://www.etoday.co.kr/news/view/2645055",
+    "https://v.daum.net/v/20261106133317810"
+   ],
+   "bg": "Nomura Securities",
+   "bg_alt": "Korea Exchange building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "코스피 5000 붕괴에도\n노무라는 목표치\n**1만** 그대로 유지",
+     "number": "1만",
+     "label": "노무라 코스피 목표치",
+     "sub": "5000선 붕괴 뒤에도 유지"
+    },
+    {
+     "type": "질문형",
+     "title": "5000 깨진 코스피\n노무라는 왜 아직\n**1만**이라 할까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "코스피 시총 40% 빠졌는데\n노무라 목표는 **그대로**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/06",
+     "headlines": [
+      "코스피 5000선 붕괴",
+      "노무라 목표 1만 유지",
+      "시총 고점 대비 40%↓"
+     ]
+    }
+   },
+   "id": "20261106-1401-i2",
+   "created_at": "2026-11-06T14:01:40+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-1401-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-1401-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-1401-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261106-1401-i2/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261106-1401-i2/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261106-1401-i2/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-1401-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-1401-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-1401-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261106-1401-i2/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261106-1401-i2/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261106-1401-i2/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261106-1401-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261106-1401-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261106-1401-i2/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261106-1401-i2/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261106-1401-i2/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261106-1401-i2/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "25억 초과 주담대 금지설, 정부 사실무근",
+   "concept": "퍼진 소문과 정부의 부인, 수사 의뢰 방침을 정리하고, 같은 날 나온 강남 하락 거래 소식과 함께 보여주기",
+   "why_now": "뉴시스, 머니투데이, 연합인포맥스 등이 정부의 11월 추가 규제 사실무근, 소문 유포 수사 의뢰 방침을 보도했다. 증시 급락으로 시장이 예민한 날 나온 소식이고, 래미안 원베일리 14.5억 낮은 거래 기사도 같은 날 나왔다.",
+   "tag": "부동산",
+   "sources": [
+    "https://www.newsis.com/view/NISX20261106_0003857823",
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443474",
+    "https://www.donga.com/news/Economy/article/all/20261106/134977628/1"
+   ],
+   "bg": "Seoul apartment complex",
+   "bg_alt": "Financial Services Commission Korea",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "25억 초과 주담대 금지\n정부 **사실무근**\n소문 유포는 수사 의뢰",
+     "number": "25억",
+     "label": "초과 주담대 금지설",
+     "sub": "정부 11월 추가 규제 사실무근"
+    },
+    {
+     "type": "질문형",
+     "title": "주담대 25억 초과 금지\n진짜 나오나 했더니\n정부 답은 **사실무근**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "규제 소문 돈 같은 날\n원베일리는 14.5억\n낮게 **거래**됐다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/06",
+     "headlines": [
+      "25억 초과 주담대 금지설 부인",
+      "11월 추가 규제 사실무근",
+      "원베일리 14.5억 낮게 거래"
+     ]
+    }
+   },
+   "id": "20261106-1401-i3",
+   "created_at": "2026-11-06T14:01:40+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261106-1401-i3/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261106-1401-i3/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261106-1401-i3/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261106-1401-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261106-1401-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261106-1401-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261106-1401-i3/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261106-1401-i3/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261106-1401-i3/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261106-1401-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261106-1401-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261106-1401-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261106-1401-i3/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261106-1401-i3/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261106-1401-i3/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261106-1401-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261106-1401-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261106-1401-i3/3-paper-gowun.jpg"
+    }
+   ]
   }
  ]
 }
