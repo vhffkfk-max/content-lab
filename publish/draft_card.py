@@ -23,6 +23,7 @@ from datetime import datetime, timedelta, timezone
 
 from common import OUTPUT_DIR, ROOT, load_env
 from generate_drafts import NOT_MINE, risky_phrases
+import viral_rules
 from publish import caption_check, card_learn, forms, notify
 
 MODEL = "claude-opus-5-5"
@@ -187,7 +188,8 @@ def build_prompt(topic, news, mk, plan, allowed, today):
     plan_txt = "\n".join(f"- {r['label']}: {r['text']}" for r in plan if r["part"] in ("structure", "carousel", "caption"))[:3000] or "- (없음)"
     return (f"오늘: {today}\n주제: {topic}\n\n[뉴스] (최근 수집, 이 안의 사실만 사용)\n{news_txt}\n\n[시세] (코드가 가져온 실제 값)\n{mk_txt}\n\n"
             f"[연구소 기획안] (방향 참고용, [확인] 칸은 위 재료로 채울 수 있을 때만)\n{plan_txt}\n\n[쓸 수 있는 폼] (최근 게시물에 쓴 폼은 빠져 있음)\n{form_specs(allowed)}"
-            + (f"\n\n{learned}" if (learned := card_learn.prompt_notes(allowed)) else ""))
+            + (f"\n\n{learned}" if (learned := card_learn.prompt_notes(allowed)) else "")
+            + (f"\n\n{viral}" if (viral := viral_rules.prompt_notes("카드뉴스")) else ""))   # 뜬 글 공식 (viral_analyze.py, 매일 갱신)
 
 
 # ── 결과 다듬기 ──
@@ -437,7 +439,8 @@ def main():
                            "files": [str(f.relative_to(ROOT)).replace("\\", "/") for f in files], "tickers": tickers,
                            "sources": post.get("sources", []), "photo_credits": post.get("photo_credits", []), "warnings": warns, "caption_notes": notes, "bgm": bgm, "status": "drafted", "risk": None,
                            "published": {}, "canva": canva, "created_at": now.isoformat(timespec="seconds"),
-                           "design_why": {"form": forms.FORM_NAMES[post["form"]], "note": post.get("design_note", ""), "evidence": forms.FORM_WHY.get(post["form"], "")},
+                           "design_why": {"form": forms.FORM_NAMES[post["form"]], "note": post.get("design_note", ""), "evidence": forms.FORM_WHY.get(post["form"], ""),
+                                          "formula": viral_rules.used_formula(post.get("design_note", ""))},   # 쓴 뜬 글 공식 → 나중에 48시간 성적과 맞춰 봄
                            "series": "short" if a.short else "deep", "auto": a.auto, "font": post.get("font", ""), "idea": chosen["idea"]["id"] if chosen else "", "hot_title": hot["title"] if hot else None})
     QUEUE.parent.mkdir(parents=True, exist_ok=True)
     QUEUE.write_text(json.dumps(queue, ensure_ascii=False, indent=1), encoding="utf-8")

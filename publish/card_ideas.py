@@ -16,6 +16,7 @@ import tempfile
 from datetime import datetime, timedelta, timezone
 
 from common import OUTPUT_DIR, load_env
+import viral_rules
 from publish import card_preview, draft_card as dc, forms, notify
 
 KST = timezone(timedelta(hours=9))
@@ -188,6 +189,9 @@ def main():
     if not prompt:
         print("재료가 없어서 건너뜀")
         return 0
+    viral = viral_rules.prompt_notes("카드뉴스", record=False)   # 뜬 글 공식: 주제·표지 문구 고를 때 참고 (viral_analyze.py, 매일 갱신)
+    if viral:
+        prompt += "\n\n" + viral + "\n- 주제와 표지 문구를 고를 때 참고하고, concept 끝에 '(공식: 이름)' 으로 쓴 공식을 적습니다. 안 맞으면 '(공식: 없음)'."
     res = dc.ask_claude(prompt, system=SYSTEM, model=MODEL)
     now = datetime.now(KST)
     ideas, blobs = [], {}

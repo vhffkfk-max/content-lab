@@ -333,7 +333,10 @@ def prompt(topic, news, bodies, q, basis, errors=None):
     heads = "\n".join(f"- [{r.get('published', '')}] {r.get('source', '')}: {r['title']}" for r in news)
     arts = "\n\n".join(f"({b['source']}) {b['title']}\n{b['body']}" for b in bodies)
     fix = ("\n\n[지난 대본의 문제, 반드시 고치기]\n" + "\n".join(errors)) if errors else ""
-    return f"주제: {topic}\n오늘: {datetime.now(KST):%Y-%m-%d}\n\n[시세표] {basis}\n{table(q)}\n\n[기사 제목]\n{heads}\n\n[기사 본문]\n{arts}{fix}"
+    from viral_rules import prompt_notes   # 뜬 글 공식 (viral_analyze.py, 매일 갱신). 없으면 빈 글자
+    viral = prompt_notes("릴스", record=False)
+    viral = f"\n\n{viral}" if viral else ""
+    return f"주제: {topic}\n오늘: {datetime.now(KST):%Y-%m-%d}\n\n[시세표] {basis}\n{table(q)}\n\n[기사 제목]\n{heads}\n\n[기사 본문]\n{arts}{viral}{fix}"
 
 
 def write_script(topic, news, bodies, q, basis, errors=None):
