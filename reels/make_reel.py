@@ -760,11 +760,13 @@ def collect(out, topic):
     FINISHED_DIR.mkdir(parents=True, exist_ok=True)
     fmt = formats.FORMATS.get(STYLE["format"], ("",))[0]
     base = re.sub(r'[\\/:*?"<>|]+', " ", f"{out.name[:13]} {topic} ({fmt})").strip()
-    for old in FINISHED_DIR.glob(f"{out.name[:13]} *"):
+    texts = FINISHED_DIR / "올릴 글"   # 바깥에는 영상만 둔다 (대표 요청)
+    texts.mkdir(exist_ok=True)
+    for old in [*FINISHED_DIR.glob(f"{out.name[:13]} *"), *texts.glob(f"{out.name[:13]} *")]:
         old.unlink()
     shutil.copy2(out / "영상.mp4", FINISHED_DIR / f"{base}.mp4")
     if (out / "업로드글.txt").exists():
-        shutil.copy2(out / "업로드글.txt", FINISHED_DIR / f"{base} 올릴글.txt")
+        shutil.copy2(out / "업로드글.txt", texts / f"{base} 올릴글.txt")
     return FINISHED_DIR / f"{base}.mp4"
 
 
