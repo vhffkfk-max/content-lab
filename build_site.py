@@ -55,7 +55,29 @@ def main():
             (out / name).mkdir(exist_ok=True)
             for p in (site / name).glob("*.jpg"):
                 (out / name / p.name).write_bytes(p.read_bytes())
+    print("카드 그림:", copy_previews(out))
     print(f"✅ 사이트 생성: {out / 'index.html'} ({len(html.encode()) // 1024}KB)")
+
+
+def copy_previews(out):
+    """card-previews 가지(카드 미리보기·시안·원본, publish/card_preview.py)를 public/previews 로. 사이트와 같은 주소라
+    raw.githubusercontent.com 이 막힌 곳에서도 보인다. 못 받아도 사이트는 그대로 만든다(그림은 깃허브 주소로 다시 시도)."""
+    import io
+    import shutil
+    import subprocess
+    import tarfile
+    run = lambda *a: subprocess.run(["git", *a], cwd=ROOT, capture_output=True)
+    if run("fetch", "-q", "--depth", "1", "origin", "card-previews").returncode != 0:
+        return "못 받음"
+    tar = run("archive", "--format=tar", "FETCH_HEAD")
+    if tar.returncode != 0:
+        return "못 받음"
+    dest = out / "previews"
+    shutil.rmtree(dest, ignore_errors=True)
+    with tarfile.open(fileobj=io.BytesIO(tar.stdout)) as t:
+        names = [m for m in t.getmembers() if m.isfile() and m.name.endswith(".jpg") and ".." not in m.name and not m.name.startswith("/")]
+        t.extractall(dest, members=names)
+    return f"{len(names)}장"
 
 
 if __name__ == "__main__":

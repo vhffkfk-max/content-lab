@@ -1599,8 +1599,8 @@ html,body{font-size:16px;line-height:1.75}
         grid.replaceChildren(...list.map(p => {
           const b = el('button', 'look'), img = el('img'), label = `${FORM_NAME[p.form] || p.form} · ${FONT_NAME[p.font] || p.font}`;
           b.type = 'button'; b.setAttribute('aria-pressed', String(look === p));
-          img.src = `https://raw.githubusercontent.com/vhffkfk-max/content-lab/card-previews/${p.path}`; img.alt = label; img.loading = 'lazy';
-          img.addEventListener('error', () => b.remove());
+          img.alt = label; img.loading = 'lazy';
+          prevImg(img, p.path, () => b.remove());
           b.append(img, el('span', null, label));
           b.addEventListener('click', () => { look = p; go.disabled = false; drawLooks(); });
           return b;
@@ -1654,7 +1654,7 @@ html,body{font-size:16px;line-height:1.75}
         btn.disabled = true; btn.textContent = '원본 받는 중…';
         try {
           files = await Promise.all(Array.from({ length: n }, async (_, k) => {
-            const r = await fetch(`https://raw.githubusercontent.com/vhffkfk-max/content-lab/card-previews/${encodeURIComponent(it.id)}/full/${k + 1}.jpg`);
+            const r = await prevFetch(`${encodeURIComponent(it.id)}/full/${k + 1}.jpg`);
             if (!r.ok) throw new Error(String(r.status));
             return new File([await r.blob()], `${it.id}-${k + 1}.jpg`, { type: 'image/jpeg' });
           }));
@@ -1670,16 +1670,31 @@ html,body{font-size:16px;line-height:1.75}
       });
       return btn;
     }
-    // 미리보기는 card-previews 가지의 저화질 그림(publish/card_preview.py). 오래된 초안은 없어서 그림이 안 오면 칸을 지움.
+    // 카드 그림은 card-previews 가지(publish/card_preview.py). 사이트와 같은 주소(previews/, build_site.py 가 배포 때 복사)를 먼저 보고,
+    // 배포 전이라 없으면 깃허브 원본 주소로. raw.githubusercontent.com 이 막힌 컴퓨터·회선에서도 보이게 (2026-11-06 다른 PC에서 시안이 안 보임).
+    const PREV_BASES = ['previews/', 'https://raw.githubusercontent.com/vhffkfk-max/content-lab/card-previews/'];
+    function prevImg(img, path, gone) {
+      let k = 0;
+      const next = () => { if (k < PREV_BASES.length) img.src = PREV_BASES[k++] + path; else gone(); };
+      img.addEventListener('error', next);
+      next();
+    }
+    async function prevFetch(path) {
+      for (const b of PREV_BASES) {
+        try { const r = await fetch(new URL(b + path, location.href)); if (r.ok) return r; } catch (e) {}
+      }
+      return { ok: false, status: 404 };
+    }
     function cardStrip(it) {
       const n = (it.files || []).length;
       if (!n) return null;
       const s = el('div', 'card-strip');
       for (let i = 1; i <= n; i++) {
-        const a = el('a'), img = el('img'), src = `https://raw.githubusercontent.com/vhffkfk-max/content-lab/card-previews/${encodeURIComponent(it.id)}/${i}.jpg`;
-        img.src = src; img.alt = `${it.title || it.id} ${i}장`; if (i > 2) img.loading = 'lazy';
-        img.addEventListener('error', () => { a.remove(); if (!s.children.length) s.remove(); });
-        a.href = src; a.target = '_blank'; a.rel = 'noopener';
+        const a = el('a'), img = el('img');
+        img.alt = `${it.title || it.id} ${i}장`; if (i > 2) img.loading = 'lazy';
+        img.addEventListener('load', () => { a.href = img.currentSrc; });
+        prevImg(img, `${encodeURIComponent(it.id)}/${i}.jpg`, () => { a.remove(); if (!s.children.length) s.remove(); });
+        a.target = '_blank'; a.rel = 'noopener';
         a.append(img); s.append(a);
       }
       return s;
