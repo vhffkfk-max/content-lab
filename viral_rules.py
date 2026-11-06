@@ -35,8 +35,12 @@ def rules(kind):
     d = load()
     if not d:
         return []
-    picked = [f for f in d.get("formulas", []) if f.get("fit") in ("잘 맞음", "조건부") and f.get("kind") in (kind, "공통")]
-    picked.sort(key=lambda f: (f["fit"] != "잘 맞음", -(len(f.get("evidence", [])) - len(f.get("counter", [])))))
+    # 테스터(viral_lab.py) 블라인드 시험에서 계속 틀린 공식은 빼고, 검증된 공식을 앞에 둔다
+    picked = [f for f in d.get("formulas", []) if f.get("fit") in ("잘 맞음", "조건부") and f.get("kind") in (kind, "공통")
+              and (f.get("test") or {}).get("status") != "검증 실패"]
+    order = {"검증됨": 0, "애매함": 2}
+    picked.sort(key=lambda f: (order.get((f.get("test") or {}).get("status"), 1), f["fit"] != "잘 맞음",
+                               -(len(f.get("evidence", [])) - len(f.get("counter", [])))))
     return picked[:MAX_RULES]
 
 
@@ -50,7 +54,13 @@ def prompt_notes(kind, record=True):
              *(["- design_note 끝에 '공식: 이름' 으로 쓴 공식 이름을 적습니다(안 썼으면 '공식: 없음')."] if record else [])]
     for f in rs:
         tag = "" if f["fit"] == "잘 맞음" else " (조건부: " + f.get("fit_why", "")[:80] + ")"
-        lines.append(f"- {f['name']}{tag}: {f['what']} 쓰는 법: {f['how']} (근거 {len(f.get('evidence', []))}개, 예외 {len(f.get('counter', []))}개)")
+        t = f.get("test") or {}
+        tested = f", 블라인드 시험 {t['n']}번 중 {t['right']}번 맞음" if t.get("n") else ""
+        lines.append(f"- {f['name']}{tag}: {f['what']} 쓰는 법: {f['how']} (근거 {len(f.get('evidence', []))}개, 예외 {len(f.get('counter', []))}개{tested})")
+    les = (load() or {}).get("writer_lessons") or []
+    if les and kind == "카드뉴스":   # 작가가 독자 패널 피드백으로 고쳐 쓰며 쌓은 교훈 (viral_lab.py)
+        lines.append("[작가 교훈] (가상 독자 패널 피드백으로 고쳐 쓴 기록에서 반복된 것. 사실 규칙이 우선)")
+        lines += [f"- {x}" for x in les]
     return "\n".join(lines)
 
 

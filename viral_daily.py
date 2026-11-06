@@ -35,7 +35,7 @@ def log(msg):
 
 def step(script, limit):
     try:
-        r = subprocess.run([sys.executable, script], cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace",
+        r = subprocess.run([sys.executable, *script.split()], cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace",
                            timeout=limit, env={**os.environ, "PYTHONIOENCODING": "utf-8"}, creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
     except subprocess.TimeoutExpired:
         log(f"{script} 시간 초과")
@@ -63,6 +63,9 @@ def main():
         log("시작")
         ads_ok = step("viral_ads.py", 60 * 60)
         ok = step("viral_analyze.py", 2 * 60 * 60)
+        # 연구실(테스터·독자 패널·작가)은 하루 1번 — 스스로 차례를 보고 아니면 바로 끝남. 끝나면 검증 성적을 사이트 파일에 다시 넣음
+        if step("viral_lab.py", 90 * 60) and ok:
+            step("viral_analyze.py --site", 5 * 60)
         if ok:
             log(f"사이트 올리기 {repo_sync.publish(['output/site/viral.json'], 'data: 뜬 글 공식 ' + now.strftime('%m/%d %H시'))}")
         # 실패해도 이번 시각엔 한 번만 시도 (Max 한도를 붙잡지 않게). 다음 시각에 다시

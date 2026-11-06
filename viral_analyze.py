@@ -57,6 +57,7 @@ MAX_PAIRS = 20        # 형식마다 이만큼만 (Max 구독 한도를 다른 �
 SLIDES_MAX = 10
 EMPTY_STOP = 3        # 빈 화면이 연달아 오면 멈춤 (막히지 않게, 우회하지 않음)
 HAIKU, SONNET, OPUS = "claude-haiku-5-5", "claude-sonnet-5-5", "claude-opus-5-5"
+LAB_FILE = OUTPUT_DIR / "viral" / "lab.json"   # viral_lab.py 의 검증 성적
 log = logging.getLogger("viral")
 
 
@@ -446,8 +447,16 @@ def synthesize(rows):
     data = [{"code": r["hit"]["code"], "account": r["hit"]["author"], "kind": r["hit"]["kind"], "x": r["hit"]["x"], "metric": r["hit"]["metric"], "topic": r["hit"].get("topic"),
              "stats": _stats(r["hit"]), "ctrl_stats": _stats(r["ctrl"]), **r["result"]} for r in rows]
     system = SYN_SYS.format(brand=BRAND.read_text(encoding="utf-8"), design=DESIGN.read_text(encoding="utf-8")[:3500])
+    # 공식 이름을 실행마다 바꾸면 검증(viral_lab.py)이 쌓이지 않는다 → 이전 공식과 검증 성적을 보여 주고 같은 내용이면 같은 이름을 쓰게 함
+    prev = json.loads((OUT / "formulas.json").read_text(encoding="utf-8")).get("formulas", []) if (OUT / "formulas.json").exists() else []
+    tests = (json.loads(LAB_FILE.read_text(encoding="utf-8")).get("formulas", {}) if LAB_FILE.exists() else {})
+    prev_txt = [{"name": f["name"], "what": f["what"], "kind": f["kind"], "검증": tests.get(f["name"])} for f in prev]
+    lab_sum = json.loads(LAB_FILE.read_text(encoding="utf-8")).get("summary") if LAB_FILE.exists() else None
+    content = json.dumps({"짝 비교": data, "이전 공식 (같은 내용이면 이 이름을 그대로 쓰세요. 검증에서 계속 틀린 공식은 버리거나 고치세요)": prev_txt,
+                          "테스터 블라인드 시험 요약 (공식을 보고 고른 정답률 with_rate 가 공식 없이 without_rate 보다 낮으면, 공식이 판단을 돕지 못한다는 뜻 — 더 구체적이고 구별력 있게 고치세요)": lab_sum},
+                         ensure_ascii=False)
     out = llm.Anthropic().messages.parse(model=OPUS, system=system, output_format=Synthesis, output_config={"effort": "high"},
-                                         messages=[{"role": "user", "content": json.dumps(data, ensure_ascii=False)}]).parsed_output.model_dump()
+                                         messages=[{"role": "user", "content": content}]).parsed_output.model_dump()
     known = {r["hit"]["code"] for r in rows}
     kept = []
     for f in out["formulas"]:   # 근거 수는 Claude 말이 아니라 실제 있는 글로 다시 센다
@@ -537,6 +546,7 @@ def site_export():
     """연구소 사이트용 (공개 저장소에 올라감): 남의 이미지·대본·캡션 원문은 빼고 링크·분석 글만."""
     d = json.loads((OUT / "formulas.json").read_text(encoding="utf-8"))
     by = {p["hit"]["code"]: p for p in d["pairs"]}
+    lab = json.loads(LAB_FILE.read_text(encoding="utf-8")) if LAB_FILE.exists() else {}   # 검증·독자 패널·작가 결과 (viral_lab.py)
 
     def ref(code):
         h = by[code]["hit"]
@@ -546,7 +556,9 @@ def site_export():
     out = {"made_at": d["made_at"], "checked_at": datetime.now(KST).isoformat(timespec="minutes"), "days": DAYS, "min_x": MIN_X, "funnel": d["funnel"], "summary": d["summary"],
            "not_copyable": d["not_copyable"], "limits": d["limits"], "numbers": d["numbers"],
            "formulas": [{**{k: f[k] for k in ("name", "kind", "what", "fit", "fit_why", "how", "example_hook")},
-                         "evidence": [ref(c) for c in f["evidence"] if c in by], "counter": [ref(c) for c in f["counter"] if c in by]} for f in d["formulas"]],
+                         "evidence": [ref(c) for c in f["evidence"] if c in by], "counter": [ref(c) for c in f["counter"] if c in by],
+                         "test": lab.get("formulas", {}).get(f["name"])} for f in d["formulas"]],
+           "lab": lab.get("summary"), "writer_lessons": lab.get("writer_lessons", []),
            "pairs": [{**ref(p["hit"]["code"]), "metric": p["hit"]["metric"], "topic": p["hit"].get("topic"),
                       "ctrl": {"url": p["ctrl"]["url"], "x": p["ctrl"]["x"], "metric": p["ctrl"]["metric"]}, **{k: p[k] for k in keep}} for p in d["pairs"]]}
     SITE_FILE.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
