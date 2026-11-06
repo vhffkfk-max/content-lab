@@ -14,8 +14,8 @@
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "황금빛 단풍에 예술 한 스푼…서울대공원 가을축제 ‘예술로 물드는 숲’",
-  "news_link": "https://go.seoul.co.kr/news/newsView.php?id=20261106500191"
+  "news_title": "김상욱 울산시장, 중국 양장시 방문…해상풍력 시찰",
+  "news_link": "https://www.yna.co.kr/view/AKR20261105175500057"
  },
  {
   "geo": "KR",
@@ -23,8 +23,8 @@
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "‘여성 학대 의혹’ 유튜버 카광, 채널 삭제 이어 ‘출국금지’… 경찰 수사 본격화",
-  "news_link": "https://sports.khan.co.kr/article/202611061749003"
+  "news_title": "인기 유튜버, 女 학대 생중계 논란…16년 전 파묘 (궁금한 이야기Y)",
+  "news_link": "https://sports.donga.com/ent/article/all/20261106/134981087/1"
  },
  {
   "geo": "KR",
@@ -32,8 +32,8 @@
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "‘스코어카드 반대로 썼다’… 장유빈 KPGA 최종전 실격, 상금·대상 2관왕 무산",
-  "news_link": "https://www.chosun.com/national/people/2026/11/06/WUGH7AT4N5DH5IDTBW6OFLVDZE/"
+  "news_title": "황재민, 초속 13ｍ 강풍에도 66타…KPGA 투어챔피언십 2R 선두",
+  "news_link": "https://www.yna.co.kr/view/AKR20261106162900007"
  },
  {
   "geo": "KR",
@@ -65,7 +65,7 @@
  {
   "geo": "KR",
   "term": "삼성증권",
-  "traffic": 100,
+  "traffic": 200,
   "topics": "AI·반도체",
   "econ": true,
   "news_title": "한미약품, 두 번째 'Bio Innovation Day' 개최···신약·AI 헬스케어 교류의 장",
@@ -100,6 +100,15 @@
  },
  {
   "geo": "US",
+  "term": "school",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Peninsula high school rivalry coming to Stanford Stadium",
+  "news_link": "https://www.mercurynews.com/2026/11/06/sacred-heart-prep-menlo-school-rivalry-stanford-stadium/"
+ },
+ {
+  "geo": "US",
   "term": "treveyon henderson",
   "traffic": 5000,
   "topics": "",
@@ -109,12 +118,12 @@
  },
  {
   "geo": "US",
-  "term": "school",
-  "traffic": 2000,
+  "term": "djia today",
+  "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Peninsula high school rivalry coming to Stanford Stadium",
-  "news_link": "https://www.mercurynews.com/2026/11/06/sacred-heart-prep-menlo-school-rivalry-stanford-stadium/"
+  "news_title": "Exclusive | Major Investors Are Skeptical Anthropic IPO Can Achieve $1.5 Trillion Valuation",
+  "news_link": "https://www.wsj.com/finance/major-investors-are-skeptical-anthropic-ipo-can-achieve-1-5-trillion-valuation-ca965d8b"
  },
  {
   "geo": "US",
@@ -127,21 +136,12 @@
  },
  {
   "geo": "US",
-  "term": "megan markle",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Exclusive | Meghan Markle's Hollywood reputation 'unraveling in real time' as latest drama 'weakens' career hopes",
-  "news_link": "https://pagesix.com/2026/11/06/royal-family/meghan-markles-hollywood-reputation-unraveling-in-real-time-as-latest-drama-weakens-career-hopes/"
- },
- {
-  "geo": "US",
   "term": "broadcom stock",
   "traffic": 500,
   "topics": "AI·반도체",
   "econ": true,
-  "news_title": "Is Broadcom Stock a Buy Now?",
-  "news_link": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stock-buy-now-182000414.html"
+  "news_title": "Broadcom Stock Has Had Only 2 Losing Years Since 2009. 2026 Is on Pace to Be the 3rd.",
+  "news_link": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stock-had-only-2-090102789.html"
  },
  {
   "geo": "US",
@@ -158,8 +158,8 @@
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Dell Technologies (DELL) Shares Just Moved, So What Is Driving Attention Now?",
-  "news_link": "https://finance.yahoo.com/technology/ai/articles/dell-technologies-dell-shares-just-121309049.html"
+  "news_title": "Why It’s Time to Buy the Pullback in Dell Stock",
+  "news_link": "https://www.barchart.com/story/news/8674065/why-its-time-to-buy-the-pullback-in-dell-stock"
  },
  {
   "geo": "US",
