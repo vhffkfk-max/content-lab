@@ -10,8 +10,8 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 3.41,
   "kr_n": 26,
-  "foreign_avg": 1.28,
-  "foreign_n": 32
+  "foreign_avg": 1.31,
+  "foreign_n": 34
  },
  {
   "rank": 2,
@@ -22,10 +22,10 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.76,
-  "kr_n": 12,
-  "foreign_avg": 1.7,
-  "foreign_n": 130
+  "kr_avg": 1.88,
+  "kr_n": 11,
+  "foreign_avg": 1.69,
+  "foreign_n": 131
  },
  {
   "rank": 3,
@@ -36,10 +36,10 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "인용형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.53,
-  "kr_n": 201,
-  "foreign_avg": 1.0,
-  "foreign_n": 108
+  "kr_avg": 1.52,
+  "kr_n": 202,
+  "foreign_avg": 0.99,
+  "foreign_n": 112
  },
  {
   "rank": 4,
@@ -52,7 +52,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 1.96,
   "kr_n": 26,
-  "foreign_avg": 1.6,
+  "foreign_avg": 1.61,
   "foreign_n": 17
  },
  {
@@ -66,8 +66,8 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 1.86,
   "kr_n": 25,
-  "foreign_avg": 0.89,
-  "foreign_n": 18
+  "foreign_avg": 0.87,
+  "foreign_n": 19
  },
  {
   "rank": 6,
@@ -75,30 +75,16 @@
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
   "title_idea": "숫자 하나로 보는 연금·절세",
-  "format": "캐러셀(카드뉴스)",
+  "format": "단일 이미지",
   "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
   "kr_avg": 1.55,
   "kr_n": 38,
-  "foreign_avg": 1.51,
-  "foreign_n": 27
+  "foreign_avg": 1.48,
+  "foreign_n": 29
  },
  {
   "rank": 7,
-  "topic": "부동산",
-  "kind": "국내 검증 주제",
-  "confidence": "높음",
-  "title_idea": "숫자 하나로 보는 부동산",
-  "format": "릴스",
-  "hook": "숫자 강조형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 1.45,
-  "kr_n": 117,
-  "foreign_avg": 0.38,
-  "foreign_n": 8
- },
- {
-  "rank": 8,
   "topic": "ETF·지수투자",
   "kind": "해외 선행 주제 (선점 기회)",
   "confidence": "높음",
@@ -106,9 +92,23 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.07,
-  "kr_n": 26,
+  "kr_avg": 1.03,
+  "kr_n": 27,
   "foreign_avg": 1.33,
   "foreign_n": 47
+ },
+ {
+  "rank": 8,
+  "topic": "부동산",
+  "kind": "국내 검증 주제",
+  "confidence": "높음",
+  "title_idea": "숫자 하나로 보는 부동산",
+  "format": "릴스",
+  "hook": "숫자 강조형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 1.47,
+  "kr_n": 117,
+  "foreign_avg": 0.38,
+  "foreign_n": 8
  }
 ]
