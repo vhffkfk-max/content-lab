@@ -46,6 +46,18 @@ def small(path):
     return b.getvalue()
 
 
+def site_video(d):
+    """사이트에서 볼 720p 영상 (원본 약 20MB → 3~5MB). 원본이 바뀌었을 때만 다시 만든다."""
+    src, out = d / "영상.mp4", d / "preview" / "site.mp4"
+    if not src.exists():
+        return None
+    if not out.exists() or out.stat().st_mtime < src.stat().st_mtime:
+        out.parent.mkdir(exist_ok=True)
+        subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", str(src), "-vf", "scale=720:-2", "-c:v", "libx264", "-preset", "slow", "-crf", "29",
+                        "-c:a", "aac", "-b:a", "96k", "-movflags", "+faststart", str(out)], check=True, creationflags=NO_WINDOW)
+    return out
+
+
 def view(d):
     """사이트가 읽을 보드 내용과 올릴 파일들."""
     st, b = mr.load_state(d), json.loads((d / "board.json").read_text(encoding="utf-8"))
@@ -67,8 +79,12 @@ def view(d):
                      "say_text": mr.to_say(c.say, q).replace("*", "") if known(c.say) else c.say,
                      "image": name, "v": hashlib.md5(files[name]).hexdigest()[:8] if name else "", "voice": f"{d.name}/v{i - 1}.mp3" if fresh else None})
     upload = d / "업로드글.txt"
+    video = site_video(d) if b.get("video") else None
+    if video:
+        files[f"{d.name}/video.mp4"] = video.read_bytes()
     board = {"id": d.name, "topic": st["topic"], "edited": st.get("edited", False), "cuts": cuts, "board": {k: b.get(k) for k in ("updated", "basis", "block", "problems", "seconds", "hooks", "changes", "video", "miss", "rid", "caption", "auto")},
              "ig_title": s.ig_title, "yt_title": s.yt_title, "summary": s.summary, "question": s.question,
+             "video_file": f"{d.name}/video.mp4" if video else None, "video_v": hashlib.md5(files[f"{d.name}/video.mp4"]).hexdigest()[:8] if video else "",
              "upload": upload.read_text(encoding="utf-8") if b.get("video") and upload.exists() else "",
              "sources": [{"source": r.get("source", ""), "title": r["title"], "link": r.get("link", "")} for r in st.get("news", [])[:12]]}
     files[f"{d.name}/board.json"] = json.dumps(board, ensure_ascii=False).encode("utf-8")
