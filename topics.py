@@ -66,6 +66,16 @@ def tagcount_of(caption):
     n = len(re.findall(r"#[\w가-힣]+", caption or ""))
     return "해시태그 0개" if n == 0 else "1~3개" if n <= 3 else "4~8개" if n <= 8 else "9개 이상"
 
+# 캡션에 광고·협찬을 직접 밝힌 글 (viral_analyze 에서 빼고 viral_ads 로 모은다)
+AD_PAT = re.compile(r"#\s*(?:유료광고|광고|협찬|ad|ads|sponsored|paidpartnership|partner)(?![\w가-힣])|유료\s*광고|유료\s*파트너십|협찬|\[광고\]|\(광고\)|광고를? 포함|제공받아|\bsponsored\b|paid partnership", re.I)
+
+
+def ad_signal(caption):
+    """광고 표시 글이면 찾은 표시, 아니면 빈 글자."""
+    m = AD_PAT.search(caption or "")
+    return m.group(0) if m else ""
+
+
 # 경품·이벤트·광고성 게시물은 반응이 인위적으로 커서 분석에서 뺀다
 PROMO_PATS = [re.compile(p, re.I) for p in [r"#event", r"이벤트", r"경품", r"추첨", r"당첨", r"giveaway", r"에어드랍", r"선착순", r"응모"]]
 

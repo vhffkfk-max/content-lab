@@ -437,6 +437,13 @@ a.row:hover .row-main{text-decoration:underline}
             <li><a href="#gr-cal">7일 계획</a></li>
             <li><a href="#gr-comm">팬 만들기</a></li>
           </ul></li>
+        <li><button type="button" data-ch="viral"><i class="dot" style="background:var(--ch-instagram)"></i>뜬 글 공식</button>
+          <ul class="subnav" data-for="viral">
+            <li><a href="#vr-sum">핵심</a></li>
+            <li><a href="#vr-formulas">공식</a></li>
+            <li><a href="#vr-pairs">글별 비교</a></li>
+            <li><a href="#vr-limits">한계</a></li>
+          </ul></li>
         <li><button type="button" data-ch="feedback"><i class="dot" style="background:var(--accent)"></i>후기·기록</button>
           <ul class="subnav" data-for="feedback">
             <li><a href="#fb-done">만든 콘텐츠</a></li>
@@ -870,6 +877,17 @@ a.row:hover .row-main{text-decoration:underline}
         <section class="sec" id="gr-hooks"><h2>첫 줄·카피</h2><div class="card"><div class="rows" id="gr-hook-list"></div></div></section>
         <section class="sec" id="gr-cal"><h2>7일 계획</h2><div class="card"><div class="rows" id="gr-cal-list"></div></div></section>
         <section class="sec" id="gr-comm"><h2>팬 만들기</h2><div class="grid"><div class="card"><h3>커뮤니티·댓글</h3><div class="rows" id="gr-comm-list"></div></div><div class="card"><h3>연구소 사이트 이렇게 써 보세요</h3><div class="rows" id="gr-site-list"></div></div></div></section>
+      </div>
+
+      <div class="view" data-view="viral" hidden>
+        <div class="title-row">
+          <div><h1>뜬 글 공식</h1><p id="vr-sub">경제 카드뉴스·릴스 중 그 계정 평소보다 크게 뜬 글을, 같은 계정의 평범한 글과 짝지어 차이를 찾고 핫코노미에 맞는 공식으로 묶어요. PC가 매일 아침 새로 뜬 글만 더해 다시 묶어요. 광고·협찬 글은 빼고 봐요.</p></div>
+        </div>
+        <div class="kpis" id="vr-kpis"></div>
+        <section class="sec" id="vr-sum"><h2>핵심</h2><div class="card"><ul class="learn" id="vr-sum-list"></ul></div></section>
+        <section class="sec" id="vr-formulas"><h2>공식</h2><p class="note">위에서부터 핫코노미에 잘 맞는 순서예요. 근거는 이 공식이 보인 뜬 글 수, 예외는 어긋난 글 수예요. 원인이 증명된 것이 아니라 시험해 볼 가설이에요.</p><div class="recs" id="vr-formula-list"></div></section>
+        <section class="sec" id="vr-pairs"><h2>글별 비교</h2><p class="note">뜬 글 하나와 같은 계정의 평범한 글 하나를 나란히 본 결과예요. 주제 힘이 '높음'이면 형식보다 사건 자체 덕일 수 있어요.</p><div class="card"><div class="rows" id="vr-pair-list"></div></div></section>
+        <section class="sec" id="vr-limits"><h2>한계</h2><div class="grid"><div class="card"><h3>따라 해도 소용없는 요인</h3><div class="rows" id="vr-nocopy"></div></div><div class="card"><h3>믿을 때 주의할 점</h3><div class="rows" id="vr-limit-list"></div></div></div></section>
       </div>
 
       <div class="view" data-view="feedback" hidden>
@@ -1830,6 +1848,7 @@ a.row:hover .row-main{text-decoration:underline}
       ['telegram', 'telegram', '텔레그램 · 말희아빠', '오늘 올릴 문구와 시황 자동 변환, 방별 성과'],
       ['traders', 'traders', '텔레그램 · 트레이더스', '폴더 8칸별 넣을 것과 이유, 오늘 올릴 글, 크롤링 소재'],
       ['growth', 'accent', '마케팅 코치', '이번 주 막힌 곳, 성장 실험 3개, 첫 줄 카피, 7일 계획'],
+      ['viral', 'instagram', '뜬 글 공식', '경제 카드뉴스·릴스가 왜 떴는지, 핫코노미에 맞는 공식'],
       ['feedback', 'accent', '후기·기록', '도움 된 글과 만든 콘텐츠 기록, 내 이용 시간'],
       ['usage', 'accent', '활용 체크', '연구소 추천을 실제 글·GPT·Claude 대화에 썼는지 3시간마다 확인'],
     ];
@@ -3316,6 +3335,42 @@ a.row:hover .row-main{text-decoration:underline}
     box.replaceChildren(kpis, grid);
   }
 
+  // ── 뜬 글 공식 (viral_analyze.py, PC가 매일 아침) ──
+  function drawViral() {
+    const V = rows('viral');
+    const list = document.getElementById('vr-formula-list');
+    if (!V || !V.formulas) { list.replaceChildren(el('p', 'note', '첫 분석을 만드는 중이에요. PC가 매일 아침 5시 이후 만들어 올려요.')); return; }
+    const t = new Date(V.made_at);
+    document.getElementById('vr-sub').textContent = `${t.getMonth() + 1}월 ${t.getDate()}일 ${t.getHours()}시 분석 · 최근 ${V.days}일 경제 글 중 계정 평소의 ${V.min_x}배 이상 · 광고·협찬 글 제외 · 매일 아침 새로`;
+    const F = V.funnel || {}, pairs = V.pairs || [], fit = V.formulas.filter(f => f.fit === '잘 맞음').length;
+    const strong = pairs.filter(p => p.topic_power === '높음').length;
+    document.getElementById('vr-kpis').replaceChildren(
+      kpi('비교한 쌍', fmtN(pairs.length), `카드뉴스 ${pairs.filter(p => p.kind === '카드뉴스').length} · 릴스 ${pairs.filter(p => p.kind === '릴스').length}`),
+      kpi('공식', fmtN(V.formulas.length), `핫코노미에 잘 맞음 ${fit}`),
+      kpi('주제 힘이 큰 글', `${strong}/${pairs.length}`, '많을수록 형식보다 사건 덕'),
+      kpi('살펴본 글', fmtN(F['수집 글']), `평소의 ${V.min_x}배 이상 ${fmtN(F[`평소의 ${V.min_x}배+ (최근 ${V.days}일)`])}개`));
+    document.getElementById('vr-sum-list').replaceChildren(...(V.summary || []).map((s, i) => { const li = el('li'); li.append(el('b', null, String(i + 1)), el('span', null, s)); return li; }));
+    const line = (b, tx) => { const p = el('p'); p.append(el('b', null, b), document.createTextNode(' ' + tx)); p.style.margin = '6px 0'; return p; };
+    const refs = xs => xs.map(r => `@${r.author} ${r.x}배`).join(', ');
+    list.replaceChildren(...V.formulas.map(f => {
+      const c = el('div', 'card'), chips = el('div', 'chips');
+      chips.append(el('span', f.fit === '잘 맞음' ? 'pill positive' : f.fit === '조건부' ? 'pill warning' : 'pill neutral', `핫코노미: ${f.fit}`),
+        el('span', 'pill neutral', f.kind), el('span', 'pill accent', `근거 ${f.evidence.length} · 예외 ${f.counter.length}`));
+      const links = el('div', 'sub');
+      links.append('근거: ', ...f.evidence.flatMap((r, i) => { const a = el('a', null, `@${r.author} ${r.x}배`); a.href = igLink(r.url) || '#'; a.target = '_blank'; a.rel = 'noopener'; return i ? [', ', a] : [a]; }));
+      if (f.counter.length) links.append(` · 예외: ${refs(f.counter)}`);
+      c.append(el('h3', null, f.name), chips, line('무엇', f.what), line('쓰는 법', f.how), el('p', 'sub', f.fit_why));
+      if (f.example_hook) { const ex = el('div', 'box', f.example_hook); c.append(ex, copyBtn('첫 문장 예시 복사', f.example_hook)); }
+      c.append(links);
+      return c;
+    }));
+    listWithMore(document.getElementById('vr-pair-list'), pairs, p => rowLink(
+      [el('span', 'pill accent', `평소의 ${p.x}배`), ' ', el('span', 'pill neutral', p.kind), ' ', el('span', p.topic_power === '높음' ? 'pill warning' : 'pill neutral', `주제 힘 ${p.topic_power}`), ' ', `${p.hook_type} · ${p.why}`],
+      `@${p.author} · ${p.topic || ''} · ${p.kind === '릴스' ? '조회' : '좋아요+댓글'} ${fmtN(p.metric)} (비교 글 ${fmtN(p.ctrl.metric)}, 평소의 ${p.ctrl.x}배) · 뜬 글에만: ${(p.differences || []).join(' / ')} · 가져올 것: ${p.copyable}`, p.url), 8);
+    const li = (id, xs) => document.getElementById(id).replaceChildren(...(xs || []).map(tx => el('div', 'row', tx)));
+    li('vr-nocopy', V.not_copyable); li('vr-limit-list', V.limits);
+  }
+
   // ── 마케팅 코치 (growth_coach.py) ──
   function drawGrowth() {
     const G = rows('growth_plan');
@@ -3474,7 +3529,7 @@ a.row:hover .row-main{text-decoration:underline}
   document.getElementById('side-hide').addEventListener('click', () => setSide(true));
   document.getElementById('side-show').addEventListener('click', () => setSide(false));
   if (store.get('side_hidden') === '1') setSide(true);
-  const NAMES = { video: '영상 연구소', home: '오늘 할 일', instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드', x: 'X · 트루스소셜', telegram: '텔레그램 · 말희아빠', traders: '텔레그램 · 트레이더스', feedback: '후기·기록', growth: '마케팅 코치', usage: '활용 체크' };
+  const NAMES = { video: '영상 연구소', home: '오늘 할 일', instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드', x: 'X · 트루스소셜', telegram: '텔레그램 · 말희아빠', traders: '텔레그램 · 트레이더스', feedback: '후기·기록', growth: '마케팅 코치', viral: '뜬 글 공식', usage: '활용 체크' };
   function setChannel(ch) {
     document.querySelectorAll('#channel-nav > li > button').forEach(b => b.setAttribute('aria-current', String(b.dataset.ch === ch)));
     document.querySelectorAll('.subnav').forEach(u => { u.hidden = u.dataset.for !== ch; });
@@ -3552,7 +3607,7 @@ a.row:hover .row-main{text-decoration:underline}
     if (!setupRefresh.done) { setupRefresh(); setupRefresh.done = true; }
     const recs = grouped();
     drawHome(recs); drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors(); drawAccRank();
-    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawX(); drawFeedback(); drawMalheeVar(); drawRewrites(); drawThreadsMine(); drawSlides(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics(); drawTraders(); drawTraderPosts(); drawGrowth(); drawAudit();
+    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawX(); drawFeedback(); drawMalheeVar(); drawRewrites(); drawThreadsMine(); drawSlides(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics(); drawTraders(); drawTraderPosts(); drawGrowth(); drawViral(); drawAudit();
     const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/), g = location.hash.match(/^#go-([\w-]+)$/);
     setChannel(ch ? ch[1] : m ? 'instagram' : 'home');
     if (g && document.getElementById(g[1])) focusSec(g[1]);

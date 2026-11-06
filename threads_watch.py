@@ -385,6 +385,12 @@ THM_FILES = ["output/site/thm_meta.json", "output/site/thm_posts.json", "output/
 
 def side_jobs():
     """30분마다 같이: 뉴스 새로 모으기(깃허브 5분 예약은 실제로 몇 시간씩 밀려서 PC가 맡음) + 2시간마다 '지금 발행할 거리'·황소개미 진단."""
+    try:   # 뜬 글 공식·광고 DB: 하루 한 번, 오래 걸려서 기다리지 않고 따로 띄움 (스스로 차례·중복 실행을 봄)
+        subprocess.Popen([sys.executable, "viral_daily.py"], cwd=ROOT, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                         env={**os.environ, "PYTHONIOENCODING": "utf-8"},
+                         creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0) | getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0))
+    except OSError as e:
+        log.info("viral_daily 띄우기 실패: %r", e)
     for args, limit in ((["live_news.py"], 300), (["hot_now.py"], 900), (["mine_live.py"], 1200), (["usage_audit.py"], 900)):
         try:
             r = subprocess.run([sys.executable, *args], cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace",

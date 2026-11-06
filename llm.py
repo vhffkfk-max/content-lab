@@ -108,6 +108,37 @@ def look(model, prompt, image):
     return d.get("result") or ""
 
 
+def look_json(model, prompt, images, schema, system=None, timeout=420):
+    """그림 여러 장을 보여 주고 schema(pydantic) 모양으로 답을 받는다 (Read 도구만 허용)."""
+    cli = _cli()
+    if not cli:
+        raise APIConnectionError("claude 명령을 찾지 못했어요")
+    env = {k: v for k, v in os.environ.items() if k not in ("ANTHROPIC_API_KEY", "ANTHROPIC_AUTH_TOKEN")}
+    listing = "\n".join(str(i) for i in images)
+    with tempfile.TemporaryDirectory() as tmp:
+        cmd = [cli, "-p", "--model", model, "--tools", "Read", "--allowedTools", "Read", "--strict-mcp-config", "--setting-sources", "",
+               "--no-session-persistence", "--output-format", "json", "--json-schema", json.dumps(schema.model_json_schema(), ensure_ascii=False)]
+        if system:
+            sp = os.path.join(tmp, "system.txt")
+            with open(sp, "w", encoding="utf-8") as f:
+                f.write(system)
+            cmd += ["--system-prompt-file", sp]
+        try:
+            p = subprocess.run(cmd, input=f"{prompt}\n\n그림 파일(모두 Read 로 열어 보세요):\n{listing}", capture_output=True, text=True,
+                               encoding="utf-8", errors="replace", timeout=timeout, cwd=tmp, env=env,
+                               creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
+        except subprocess.TimeoutExpired:
+            raise APIConnectionError(f"그림 분석이 {timeout}초 안에 끝나지 않았어요")
+    try:
+        d = json.loads(p.stdout)
+    except json.JSONDecodeError:
+        raise APIStatusError(f"Claude Code 실행 실패({p.returncode}): {(p.stderr or p.stdout)[-400:]}")
+    if d.get("is_error"):
+        raise APIStatusError(str(d.get("result"))[:300])
+    raw = d.get("structured_output")
+    return schema.model_validate(raw if raw is not None else json.loads(d.get("result") or "null"))
+
+
 class _Stream:
     def __init__(self, r):
         self.r = r
