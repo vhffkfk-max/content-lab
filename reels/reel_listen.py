@@ -164,7 +164,8 @@ def run(name, q):
         else:
             raise ValueError("모르는 요청")
     if out:
-        log("미리보기:", preview.push())
+        with PUSH_LOCK:   # 두 줄이 동시에 가지를 덮어쓰지 않게
+            log("미리보기:", preview.push())
     log(q["rid"], action, f"{time.time() - t0:.0f}초", msg or "완료")
     if name is None:   # PC가 스스로 만든 일 (요청 파일 없음)
         return
@@ -174,13 +175,19 @@ def run(name, q):
         change(name, "DELETE", "reel request done")
 
 
-def worker(jobs):
+FAST = ("save", "voice")   # 몇 초~수십 초 걸리는 일: 보드·영상(몇 분)을 기다리지 않게 따로 줄을 세운다
+PUSH_LOCK = threading.Lock()
+
+
+def worker(jobs, fresh=True):
+    """fresh: 일감 전에 저장소 최신으로 맞추기. 짧은 일 줄은 긴 일이 쓰는 파일을 건드리지 않게 맞추지 않는다."""
     while True:
         name, q = jobs.get()
         try:
-            git("fetch", "-q", "--depth", "1", "origin", "main")
-            git("reset", "-q", "--hard", "origin/main")
-            git("clean", "-qfd", "output/site")
+            if fresh:
+                git("fetch", "-q", "--depth", "1", "origin", "main")
+                git("reset", "-q", "--hard", "origin/main")
+                git("clean", "-qfd", "output/site")
             run(name, q)
         except Exception as e:
             log("오류", name, repr(e)[:400])
@@ -188,7 +195,7 @@ def worker(jobs):
                 change(name, "PUT", "reel request failed", error="PC에서 만들다가 멈췄어요. 다시 눌러 주세요.")
 
 
-def poll(jobs, seen, etag):
+def poll(lines, seen, etag):
     r = api("GET", API, params={"ref": BRANCH}, headers={"If-None-Match": etag} if etag else {})
     if r.status_code == 304:
         return etag
@@ -210,7 +217,7 @@ def poll(jobs, seen, etag):
             continue
         change(name, "PUT", "reel request picked", picked=datetime.now(KST).isoformat(timespec="seconds"))
         log("요청 받음:", q["rid"], q["action"])
-        jobs.put((name, q))
+        (lines[1] if q["action"] in FAST else lines[0]).put((name, q))
     seen &= set(names)
     return r.headers.get("ETag") if r.status_code in (200, 404) else None
 
@@ -262,7 +269,8 @@ def refresh(jobs):
         log("자동 보드:", slot, top["keyword"])
         jobs.put((None, {"rid": f"auto{datetime.now(KST):%H%M}", "action": "board", "topic": top["keyword"], "seeds": top["links"], "auto": True, "at": datetime.now(KST).isoformat()}))
     elif changed:
-        log("추천 갱신:", ", ".join(r["keyword"] for r in rows), preview.push())
+        with PUSH_LOCK:
+            log("추천 갱신:", ", ".join(r["keyword"] for r in rows), preview.push())
 
 
 def main():
@@ -274,12 +282,13 @@ def main():
     load_env(DEV_ENV)   # 이 폴더는 저장소 복사본이라 .env 가 없다 (텔레그램 봇 설정)
     login()
     log("시작")
-    jobs, seen, etag = queue.Queue(), set(), None
+    jobs, quick, seen, etag = queue.Queue(), queue.Queue(), set(), None
     threading.Thread(target=worker, args=(jobs,), daemon=True).start()
+    threading.Thread(target=worker, args=(quick, False), daemon=True).start()
     last = 0
     while True:
         try:
-            etag = poll(jobs, seen, etag)
+            etag = poll((jobs, quick), seen, etag)
             if jobs.empty() and (time.time() - last > SUGGEST_EVERY_S or auto_peek()):
                 last = time.time()
                 refresh(jobs)
