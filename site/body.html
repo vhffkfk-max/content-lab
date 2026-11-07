@@ -47,7 +47,7 @@
 .vl-head h2{margin:10px 0 2px;font-size:20px}.vl-box{margin-top:12px;padding:12px 14px;border:1px solid var(--border);border-radius:10px;background:var(--surface)}.vl-box ul{margin:6px 0 0;padding-left:18px}.vl-box.bad{border-color:#c0392b}.vl-box.warn{border-color:#b8860b}.vl-box.ok{border-color:#2e8b57}.vl-box summary{cursor:pointer;font-weight:700}
 .vl-video{display:block;width:100%;max-width:300px;aspect-ratio:9/16;margin:10px 0 4px;border-radius:10px;background:#000}
 .vl-fmts{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:10px}.vl-fmt{text-align:left;padding:6px;border-radius:10px;border:1px solid var(--border);background:var(--ground);color:var(--text);cursor:pointer;font:inherit}.vl-fmt.on{border-color:var(--accent);box-shadow:inset 0 0 0 2px var(--accent)}.vl-fmt-imgs{display:flex;gap:3px}.vl-fmt-imgs img{flex:1;min-width:0;aspect-ratio:9/16;object-fit:cover;border-radius:6px;background:var(--raised)}.vl-fmt b{display:block;font-size:13px;margin-top:6px}.vl-fmt span{display:block;font-size:11.5px;color:var(--muted);line-height:1.35;margin-top:2px}
-.vl-zoom{position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.82);display:flex;align-items:center;justify-content:center;padding:16px}.vl-zoom[hidden]{display:none}.vl-zoom-card{max-width:min(980px,96vw);max-height:96vh;display:flex;flex-direction:column;gap:10px;background:var(--surface);border-radius:14px;padding:12px}.vl-zoom-imgs{display:flex;gap:10px;justify-content:center;min-height:0}.vl-zoom-imgs img{max-height:min(78vh,860px);max-width:46vw;aspect-ratio:9/16;object-fit:contain;border-radius:10px;background:#000}.vl-zoom-bar{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}.vl-zoom-bar .sub{flex:1;min-width:200px;margin:0}.vl-zoom-btns{display:flex;gap:8px;margin-left:auto}.vl-job.ok{background:#e6f4ea;color:#1e5c33;font-weight:700}.vl-chip.made{border-style:solid;opacity:.75}.vl-chip em{display:block;font-style:normal;font-size:11.5px;color:var(--accent);margin-top:3px}
+.vl-zoom{position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.82);display:flex;align-items:center;justify-content:center;padding:16px}.vl-zoom[hidden]{display:none}.vl-zoom-card{max-width:min(980px,96vw);max-height:96vh;display:flex;flex-direction:column;gap:10px;background:var(--surface);border-radius:14px;padding:12px}.vl-zoom-imgs{display:flex;gap:10px;justify-content:center;min-height:0}.vl-zoom-imgs img{max-height:min(78vh,860px);max-width:46vw;aspect-ratio:9/16;object-fit:contain;border-radius:10px;background:#000}.vl-zoom-bar{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}.vl-zoom-bar .sub{flex:1;min-width:200px;margin:0}.vl-zoom-btns{display:flex;gap:8px;margin-left:auto}.vl-job.ok{background:#e6f4ea;color:#1e5c33;font-weight:700}.vl-hot{border:2px solid #e0392b;border-radius:12px;padding:12px 14px;margin:0 0 14px;background:rgba(224,57,43,.06)}.vl-hot h3{margin:0 0 4px;font-size:16px}.vl-hot .sub{margin:0 0 8px}.vl-chip.hot{border-color:#e0392b;background:rgba(224,57,43,.08)}.vl-chip.made{border-style:solid;opacity:.75}.vl-chip em{display:block;font-style:normal;font-size:11.5px;color:var(--accent);margin-top:3px}
 .vl-pre{white-space:pre-wrap;font:inherit;font-size:13px;margin:8px 0 0}.vl-hook{display:flex;gap:10px;align-items:center;padding:7px 0;border-top:1px solid var(--rule)}.vl-hook:first-of-type{border-top:0}.vl-hook b{min-width:44px;color:var(--accent)}.vl-hook span{flex:1}
 .vl-cuts{display:grid;grid-template-columns:repeat(auto-fill,minmax(420px,1fr));gap:12px;margin-top:12px}.vl-cut{display:grid;grid-template-columns:140px minmax(0,1fr);gap:12px;padding:12px;border:1px solid var(--border);border-radius:10px;background:var(--surface)}.vl-cut.dirty{border-color:var(--accent)}.vl-cut img,.vl-noimg{width:140px;aspect-ratio:9/16;border-radius:8px;object-fit:cover;display:block;background:var(--raised)}.vl-noimg{display:grid;place-items:center;font-size:12px;color:var(--muted)}
 .vl-cut-head{display:flex;gap:8px;align-items:baseline}.vl-field{display:block;margin-top:7px;font-size:12px;color:var(--muted)}.vl-field textarea{display:block;width:100%;margin-top:3px;padding:6px 8px;border-radius:7px;border:1px solid var(--control);background:var(--ground);color:var(--text);font:inherit;font-size:13.5px;line-height:1.4;resize:vertical}.vl-heard{margin:3px 0 0;font-size:12px;color:var(--faint)}.vl-tools{display:flex;gap:5px;flex-wrap:wrap;margin-top:9px}
@@ -1678,7 +1678,7 @@ ul.gd-card{padding-left:36px;line-height:1.8}
       await vlLoadList().catch(() => {});
       const target = q.id || (vl.list.find(x => x.rid === q.rid) || {}).id;
       if (target) await vlOpen(target, true).catch(() => {});
-      const DONE = { board: '컷 보드가 만들어졌어요. 아래에 열어 뒀어요.', make: '영상을 만들었어요. 텔레그램과 바탕화면 릴스 완성영상 폴더에도 있어요.', save: '수정을 반영했어요.', format: '형식을 바꿨어요.' };
+      const DONE = { hot: '핫코노미 A 영상을 만들었어요. 텔레그램과 바탕화면 릴스 완성영상 폴더에 있어요.', board: '컷 보드가 만들어졌어요. 아래에 열어 뒀어요.', make: '영상을 만들었어요. 텔레그램과 바탕화면 릴스 완성영상 폴더에도 있어요.', save: '수정을 반영했어요.', format: '형식을 바꿨어요.' };
       if (DONE[q.action]) { vl.done = { text: DONE[q.action], t: Date.now() }; if (q.action === 'board' || q.action === 'make') setTimeout(() => document.querySelector('.vl-board')?.scrollIntoView({ behavior: 'smooth' }), 300); }
       vlDraw();
       if (q.action === 'voice' && vl.cur && vl.cur.cuts[q.cut] && vl.cur.cuts[q.cut].voice) { new Audio(vlUrl(vl.cur.cuts[q.cut].voice, Date.now())).play().catch(() => {}); }
@@ -1719,7 +1719,7 @@ ul.gd-card{padding-left:36px;line-height:1.8}
   function vlDrawStatus() {
     const box = document.getElementById('vl-status'); if (!box) return;
     const mine = [...vl.status.entries()];
-    const NAME = { board: '보드 만들기', save: '수정 반영', voice: '듣기', make: '영상 만들기', format: '형식 바꾸기' };
+    const NAME = { board: '보드 만들기', save: '수정 반영', voice: '듣기', make: '영상 만들기', format: '형식 바꾸기', hot: '핫코노미 A 영상' };
     const others = vl.jobs.filter(j => !vl.status.has(j.rid) && !j.error).map(j => {
       const secs = Math.max(0, Math.round((Date.now() - new Date(j.at).getTime()) / 1000)), took = secs >= 60 ? `${Math.floor(secs / 60)}분째` : `${secs}초째`;
       const what = j.topic || (vl.list.find(x => x.id === j.id) || {}).topic || j.id;
@@ -1838,11 +1838,25 @@ ul.gd-card{padding-left:36px;line-height:1.8}
       });
     }
     form.addEventListener('submit', async e => { e.preventDefault(); const topic = inp.value.trim(); if (topic.length < 2) return alert('주제를 2글자 이상 넣어 주세요.'); if (await vlSend('board', { topic })) inp.value = ''; });
+    // 핫코노미 전용 영상 · 버전 A: 핫코노미·궁금이 대화 캐릭터 영상을 주제만으로 바로 만든다 (보드 없이, 사실 검사 통과 시)
+    const hot = el('div', 'vl-hot'), hf = el('form', 'vl-new'), hin = el('input'), hgo = el('button', 'btn primary', '핫코노미 A 영상 만들기');
+    hot.append(el('h3', '', '🔥 핫코노미 전용 영상 · 버전 A'), el('p', 'sub', '핫코노미(설명)와 궁금이(질문)가 대화하는 40~55초 영상을 바로 만들어요. 첫 1초 훅·자막·차트·목소리까지 자동, 기사에 없는 숫자나 투자 권유가 있으면 멈춰요. 아래 추천 글감을 누르거나 주제를 넣으세요. 5~10분 걸리고 영상은 텔레그램으로 와요.'));
+    hin.placeholder = '주제 (예: 대출금리 엇갈림)'; hin.maxLength = 60; hin.setAttribute('aria-label', '핫코노미 영상 주제'); hgo.type = 'submit'; hf.append(hin, hgo); hot.append(hf);
+    const hsug = el('div', 'vl-suggest');
+    vl.suggest.forEach(x => {
+      const b = el('button', 'vl-chip hot'); b.type = 'button'; b.title = `${x.title}
+${x.why}`; b.append(el('b', '', x.keyword), el('span', '', x.title));
+      b.addEventListener('click', () => { if (confirm(`'${x.keyword}' 주제로 핫코노미 A 영상을 만들까요?
+${x.title}`)) vlSend('hot', { topic: x.keyword }); });
+      hsug.append(b);
+    });
+    hot.append(hsug);
+    hf.addEventListener('submit', async e => { e.preventDefault(); const topic = hin.value.trim(); if (topic.length < 2) return alert('주제를 2글자 이상 넣어 주세요.'); if (await vlSend('hot', { topic })) hin.value = ''; });
     const status = el('div'); status.id = 'vl-status';
     const list = el('div', 'vl-list');
     vl.list.forEach(x => { const b = el('button', 'vl-item' + (vl.cur && vl.cur.id === x.id ? ' on' : '')); b.type = 'button'; b.append(el('b', '', x.topic), el('span', 'sub', `${x.updated}${x.auto ? ' · 자동' : ''}${x.video ? ' · 영상 있음' : ''}${x.blocked ? ' · 문제 있음' : ''}`)); b.addEventListener('click', () => vlOpen(x.id).catch(e => alert(e.message))); list.append(b); });
     if (!vl.list.length) list.append(el('p', 'sub', '아직 보드가 없어요. 주제를 넣어 첫 보드를 만들어 보세요.'));
-    root.replaceChildren(tabs, form, sug, status, list, ...(vl.cur ? [vlBoard()] : []));
+    root.replaceChildren(tabs, hot, form, sug, status, list, ...(vl.cur ? [vlBoard()] : []));
     vlDrawBar(); vlDrawStatus();
   }
   async function vlStart(force) {

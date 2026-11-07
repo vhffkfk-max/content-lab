@@ -118,6 +118,36 @@ def send_video(d):
     return ok
 
 
+HOT_MAKER = pathlib.Path.home() / "Desktop" / "솔개" / "hotconomy-reels" / "src" / "auto.py"   # 핫코노미 전용 영상 버전 A (PC에만 있는 제작기)
+
+
+def hot_video(q):
+    """핫코노미 A: 주제 → 기사 → 대본(사실 검사) → 영상 → 텔레그램. 실패하면 사람이 읽을 한 줄을 돌려준다."""
+    import suggest
+    from publish.notify import send, send_video as tg_video
+    seeds = q.get("seeds") or suggest.seed_for(q["topic"])
+    args = [sys.executable, str(HOT_MAKER), q["topic"], "--lab", str(ROOT)]
+    if seeds:
+        f = pathlib.Path.home() / ".content-lab-ai" / "hot_seed.json"
+        f.write_text(json.dumps(seeds), encoding="utf-8")
+        args += ["--seed", str(f)]
+    try:
+        p = subprocess.run(args, cwd=HOT_MAKER.parent.parent, env=ENV, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=JOB_TIMEOUT_S, creationflags=NO_WINDOW)
+    except subprocess.TimeoutExpired:
+        return "20분 안에 끝나지 않았어요."
+    lines = [x for x in (p.stdout + p.stderr).splitlines() if x.strip()]
+    found = next((x for x in lines if x.startswith("완성: ")), None)
+    if p.returncode or not found:
+        return plain(lines)
+    video = pathlib.Path(found[4:].strip())
+    upload = video.with_name(video.stem + "_업로드글.txt")
+    if not tg_video(video, f"핫코노미 A 영상이 나왔어요: {q['topic']}\n확인한 뒤 직접 올려 주세요."):
+        return "영상은 만들었지만 텔레그램 전송에 실패했어요. 바탕화면 릴스 완성영상 폴더에서 확인해 주세요."
+    if upload.exists():
+        send(upload.read_text(encoding="utf-8"))
+    return None
+
+
 def run(name, q):
     import make_reel as mr
     import preview
@@ -137,6 +167,8 @@ def run(name, q):
         else:
             out = pathlib.Path(found[4:].strip())
             mr.write_board(out, rid=q["rid"])
+    elif action == "hot":
+        msg = hot_video(q)
     else:
         out = folder(q["id"])
         mr.write_board(out, rid=q["rid"])
@@ -235,7 +267,7 @@ def poll(lines, seen, etag):
 
 AUTO_STATE = pathlib.Path.home() / ".content-lab-ai" / "reel_auto.json"
 LIMIT_STATE = pathlib.Path.home() / ".content-lab-ai" / "reel_limits.json"
-DAILY = {"board": 15, "make": 12, "save": 150, "voice": 150, "format": 150}   # 사이트 요청은 암호가 없어서 하루 처리량을 막는다 (자동 보드는 따로)
+DAILY = {"board": 15, "make": 12, "hot": 10, "save": 150, "voice": 150, "format": 150}   # 사이트 요청은 암호가 없어서 하루 처리량을 막는다 (자동 보드는 따로)
 
 
 def over_limit(action):
