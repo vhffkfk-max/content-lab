@@ -2686,369 +2686,6 @@
  ],
  "ideas": [
   {
-   "title": "코스피 6% 급락 마감, 5천선 사수",
-   "concept": "마감 숫자로 낙폭을 보여주고, 장중 5천선이 깨졌다가 매수로 회복한 반전을 풀어낸다",
-   "why_now": "마감 결과가 막 확정됐고 4곳 이상이 동시에 보도했다. 앞서 낸 서킷브레이커 소식과 달리 확정된 종가라서 새 소식이다.",
-   "tag": "증시 마감",
-   "sources": [
-    "https://v.daum.net/v/20261106154203433",
-    "https://www.newsis.com/view/NISX20261106_0003858205",
-    "https://www.etoday.co.kr/news/view/2645161"
-   ],
-   "bg": "KOSPI trading screen",
-   "bg_alt": "Korea Exchange building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "코스피 **6%** 급락,\n하이닉스는 10%대 폭락",
-     "number": "-6.02%",
-     "label": "코스피 마감",
-     "sub": "5,059.69, 5천선 간신히 사수"
-    },
-    {
-     "type": "질문형",
-     "title": "5천선이 무너졌다가\n어떻게 **살아났나**",
-     "number": "",
-     "label": "",
-     "sub": "장중 붕괴 뒤 기관, 개인 매수로 회복"
-    },
-    {
-     "type": "반전형",
-     "title": "장중 5천선 **붕괴**,\n마감은 5059로 사수",
-     "number": "",
-     "label": "",
-     "sub": "미국 AI 데이터센터 규제 공포가 반도체주를 흔들었다"
-    }
-   ],
-   "forms": [
-    "bignum",
-    "bars"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "11월 6일 하락률(%)",
-     "bars": [
-      {
-       "label": "코스피",
-       "value": 6.02
-      },
-      {
-       "label": "코스닥",
-       "value": 5.03
-      },
-      {
-       "label": "삼성전자",
-       "value": 6.35
-      },
-      {
-       "label": "SK하이닉스",
-       "value": 10.44,
-       "hi": true
-      }
-     ]
-    }
-   },
-   "id": "20261106-1601-i1",
-   "created_at": "2026-11-06T16:01:29+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261106-1601-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261106-1601-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261106-1601-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261106-1601-i1/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261106-1601-i1/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261106-1601-i1/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261106-1601-i1/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261106-1601-i1/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261106-1601-i1/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261106-1601-i1/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261106-1601-i1/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261106-1601-i1/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "쿠팡 과징금 2011억 원 효력 정지",
-   "concept": "효력 정지와 과징금 취소는 다르다는 점을 짚으며, 확인된 사실과 아직 확인 안 된 부분을 구분해 속보로 푼다",
-   "why_now": "14:08 동아, 한경, 머니투데이 등 4곳이 속보로 막 다뤘고, 우리 계정에서는 아직 안 보낸 새 소식이다.",
-   "tag": "기업 속보",
-   "sources": [
-    "https://www.donga.com/news/Society/article/all/20261106/134978289/2",
-    "https://www.hankyung.com/article/2026110607997"
-   ],
-   "bg": "Coupang headquarters",
-   "bg_alt": "Coupang logo",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "쿠팡에 부과된 과징금\n**2011억** 원 멈췄다",
-     "number": "2011억원",
-     "label": "쿠팡 과징금",
-     "sub": "이용자 방문기록 무단 수집 건, 효력 정지"
-    },
-    {
-     "type": "질문형",
-     "title": "쿠팡 과징금 2011억\n정말 **사라진** 걸까",
-     "number": "",
-     "label": "",
-     "sub": "효력이 멈춘 것일 뿐 과징금이 없어진 것은 아니다"
-    },
-    {
-     "type": "반전형",
-     "title": "방문기록 무단 수집\n과징금은 **멈췄다**",
-     "number": "",
-     "label": "",
-     "sub": "본안 판단은 따로 이어질 것으로 보인다"
-    }
-   ],
-   "forms": [
-    "breaking",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261106-1601-i2",
-   "created_at": "2026-11-06T16:01:29+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261106-1601-i2/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261106-1601-i2/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261106-1601-i2/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261106-1601-i2/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261106-1601-i2/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261106-1601-i2/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261106-1601-i2/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261106-1601-i2/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261106-1601-i2/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "래미안 원베일리 14.5억 낮게 거래",
-   "concept": "강남 대표 단지의 하락 거래를 보여주되, 개별 거래이고 서울 외곽은 오르는 엇갈림도 함께 전한다",
-   "why_now": "오늘 3곳 이상이 원베일리 하락 거래와 강남3구 하락 거래 16건을 보도했다. 증시 급락과 같은 날 나온 부동산 신호다.",
-   "tag": "부동산",
-   "sources": [
-    "https://www.donga.com/news/Economy/article/all/20261106/134977628/1",
-    "https://www.yna.co.kr/view/AKR20261106082600003"
-   ],
-   "bg": "Raemian One Bailey apartment",
-   "bg_alt": "Banpo Seoul apartment complex",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "래미안 원베일리\n직전보다 **14.5억** 낮게",
-     "number": "14.5억",
-     "label": "원베일리 직전 거래 대비",
-     "sub": "강남3구 하락 거래 16건 확인"
-    },
-    {
-     "type": "질문형",
-     "title": "강남 대장 아파트\n왜 **낮은 가격**에 팔렸나",
-     "number": "",
-     "label": "",
-     "sub": "개별 거래라 시장 전체 추세로 단정하기는 어렵다"
-    },
-    {
-     "type": "반전형",
-     "title": "서울 외곽은 오르는데\n강남은 **하락 거래**",
-     "number": "",
-     "label": "",
-     "sub": "서울 안에서도 흐름이 엇갈린다"
-    }
-   ],
-   "forms": [
-    "bignum",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/06",
-     "headlines": [
-      "원베일리 14.5억 낮게 거래",
-      "강남3구 하락 거래 16건 확인",
-      "서울 외곽은 오르는 등 엇갈림"
-     ]
-    }
-   },
-   "id": "20261106-1601-i3",
-   "created_at": "2026-11-06T16:01:29+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261106-1601-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261106-1601-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261106-1601-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261106-1601-i3/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261106-1601-i3/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261106-1601-i3/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261106-1601-i3/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261106-1601-i3/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261106-1601-i3/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261106-1601-i3/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261106-1601-i3/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261106-1601-i3/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "엔비디아, 네이버에 1.3조 납입 완료",
    "concept": "증시가 흔들린 날 엔비디아가 한국 기업에 1조 3,412억 원을 넣고 지분 4.13%를 확보했다는 사실 하나만 끌고 간다. 지분 확보 배경과 협력 내용은 확인된 것만 쓴다. (공식: 한 글에 한 사건만)",
    "why_now": "15:57 연합뉴스와 뉴시스가 납입 완료를 보도했다. 반도체와 AI 주식이 급락한 날이라 대비되는 소식이고, 앞서 보낸 글에는 없던 내용이다.",
@@ -8304,6 +7941,388 @@
      "form": "news",
      "font": "myeongjo",
      "path": "20261107-1606-i3/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "금값 급락에도 중국은 24개월째 매입",
+   "concept": "금값이 내려간 시기에도 매입을 멈추지 않은 중국 인민은행 하나만 주인공으로 두고, 24개월 연속과 올해 129t 매입을 장마다 이어 갑니다. 세계은행 전망은 확인된 사실로만 마지막에 붙입니다. (공식: 한 글에 사건 하나)",
+   "why_now": "16:39 기준 여러 매체가 24개월 연속 금 매입을 보도했습니다. 금 선물은 11/06 전일 대비 -0.94%였고, 주식 급락장이라 안전자산 관심이 높습니다.",
+   "tag": "금, 중국",
+   "sources": [
+    "https://v.daum.net/v/20261107163903707",
+    "https://v.daum.net/v/20261107163840702"
+   ],
+   "bg": "People's Bank of China building",
+   "bg_alt": "gold bars",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "중국 중앙은행\n금 **24개월** 연속\n올해만 129t 매입",
+     "number": "24개월",
+     "label": "중국 인민은행 금 매입 연속 기록",
+     "sub": "올해 129t 사들여 세계 1위 유지"
+    },
+    {
+     "type": "질문형",
+     "title": "금값이 떨어졌는데\n중국은 왜 계속\n**사들였나** 24개월",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "금값 급락에도\n중국은 **멈추지**\n않고 24개월 샀다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261107-1706-i1",
+   "created_at": "2026-11-07T17:06:34+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261107-1706-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261107-1706-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261107-1706-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261107-1706-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261107-1706-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261107-1706-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261107-1706-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261107-1706-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261107-1706-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261107-1706-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261107-1706-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261107-1706-i1/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "코스피 급락 주간, 서학개미 미국주식 3조 순매수",
+   "concept": "코스피가 주간 11.7% 급락하고 5,000선을 겨우 지킨 같은 주에 개인이 미국 주식을 약 3조원어치 순매수했다는 낙차를 중심에 둡니다. 돈이 옮겨 간 곳이 안전한지는 별개라는 점과 계좌 쏠림 점검은 마지막 장에 한 줄로 둡니다. (공식: 전후 낙차 한 줄 표지)",
+   "why_now": "14:39과 14:52, 16:02에 SBS Biz, 이투데이, 한국경제 등이 연달아 다뤘습니다. 코스피 급락과 맞물려 관심이 큰데, 아직 다루지 않은 주제입니다.",
+   "tag": "서학개미, 증시",
+   "sources": [
+    "https://www.hankyung.com/article/2026110721637",
+    "https://www.etoday.co.kr/news/view/2645300",
+    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008835191&plink=RSSLINK&cooper=RSSREADER"
+   ],
+   "bg": "New York Stock Exchange trader",
+   "bg_alt": "KOSPI stock board Seoul",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "코스피 11.7% 급락\n한 주 만에 개인\n미국주식 **3조** 샀다",
+     "number": "3조원",
+     "label": "11월 첫 주 개인 미국 주식 순매수",
+     "sub": "같은 기간 코스피는 주간 11.7% 급락"
+    },
+    {
+     "type": "질문형",
+     "title": "코스피 무너지는 주\n개인은 왜 미국으로\n**3조** 옮겼나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "코스피 5,000선 사수\n그 주에 개인은\n미국에 **3조** 넣었다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261107-1706-i2",
+   "created_at": "2026-11-07T17:06:34+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261107-1706-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261107-1706-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261107-1706-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-1706-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-1706-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-1706-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-1706-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-1706-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-1706-i2/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "세계 식량가격 4개월 만에 하락, 설탕만 상승",
+   "concept": "10월 세계식량가격지수가 4개월 만에 내렸지만 곡물은 4.5% 내리고 설탕은 6.6% 오른 엇갈림을 풀어 줍니다. 국제 가격이 국내 장바구니에 반영되기까지 시차가 있다는 점은 확인 표시와 함께 한 줄만 남깁니다. (공식: 한 글에 사건 하나)",
+   "why_now": "16:01 동아일보, 뉴시스 등 5곳이 다뤘습니다. 증시 기사가 많은 날에 생활물가와 이어지는 소재라 겹치지 않습니다.",
+   "tag": "물가, 식량",
+   "sources": [
+    "https://www.newsis.com/view/NISX20261107_0003858910",
+    "https://www.donga.com/news/Economy/article/all/20261107/134983538/1"
+   ],
+   "bg": "wheat grain harvest field",
+   "bg_alt": "sugar cane field",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "곡물 **4.5%** 내렸는데\n설탕은 6.6% 올랐다\n세계 식량가격 반전",
+     "number": "4.5%",
+     "label": "10월 곡물 가격 하락폭",
+     "sub": "같은 달 설탕은 6.6% 상승"
+    },
+    {
+     "type": "질문형",
+     "title": "식량가격 4개월 만에\n내렸는데 왜 설탕은\n**6.6%** 올랐나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "4개월 만에 내린\n세계 식량가격\n설탕만 **거꾸로** 갔다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bars",
+    "editorial"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "10월 품목별 변동률(%), 곡물은 하락, 설탕은 상승",
+     "bars": [
+      {
+       "label": "곡물",
+       "value": 4.5
+      },
+      {
+       "label": "설탕",
+       "value": 6.6,
+       "hi": true
+      }
+     ]
+    }
+   },
+   "id": "20261107-1706-i3",
+   "created_at": "2026-11-07T17:06:34+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261107-1706-i3/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261107-1706-i3/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261107-1706-i3/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261107-1706-i3/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261107-1706-i3/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261107-1706-i3/1-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261107-1706-i3/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261107-1706-i3/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261107-1706-i3/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261107-1706-i3/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261107-1706-i3/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261107-1706-i3/2-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261107-1706-i3/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261107-1706-i3/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261107-1706-i3/3-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261107-1706-i3/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261107-1706-i3/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261107-1706-i3/3-editorial-plex.jpg"
     }
    ]
   }
