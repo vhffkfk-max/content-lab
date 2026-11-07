@@ -2526,427 +2526,6 @@
  ],
  "ideas": [
   {
-   "title": "반포 재건축 재초환 가구당 2억대 통지",
-   "concept": "서초구 사전 통지 소식을 재초환 개념 설명과 함께 내 집 얘기처럼 풀기. 첫 사례 여부는 확인 전이라 쓰지 않음",
-   "why_now": "서초구가 9일 반포현대에 재초환 부담금을 사전 통지한다는 보도가 오늘 나왔다. 폭락장 속에서 부동산으로 주제를 분산한다.",
-   "tag": "부동산",
-   "sources": [
-    "https://biz.chosun.com/real_estate/real_estate_general/2026/11/06/B3CBN7HO5JHJJDDQ5L7W4PMEGE/",
-    "https://v.daum.net/v/20261106084202646"
-   ],
-   "bg": "Banpo apartment Seoul",
-   "bg_alt": "Seoul apartment complex",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "반포 재건축 단지\n가구당 **2억**대\n청구서 날아온다",
-     "number": "2억원대",
-     "label": "가구당 평균 재초환 부담금",
-     "sub": "서초구, 9일 반포현대에 사전 통지"
-    },
-    {
-     "type": "질문형",
-     "title": "서초구가 보내는\n**재초환** 청구서\n가구당 얼마일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "집값 올라 웃던\n반포 재건축 집주인\n**2억**대 청구서 받는다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261106-0901-i1",
-   "created_at": "2026-11-06T09:01:33+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261106-0901-i1/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261106-0901-i1/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261106-0901-i1/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261106-0901-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261106-0901-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261106-0901-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261106-0901-i1/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261106-0901-i1/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261106-0901-i1/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261106-0901-i1/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261106-0901-i1/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261106-0901-i1/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "주식 팔고 돈은 국채, 금, 달러로",
-   "concept": "나스닥이 무너진 날 돈이 어디로 쏠렸는지, 시장은 12월 동결에 베팅하는데 연준 위원은 긴축을 말하는 엇갈림을 보여주기",
-   "why_now": "나스닥 5.5% 급락 뒤 국채, 금, 달러로 자금이 몰렸다는 보도가 이어졌다. 오늘 밤 미국 10월 고용보고서가 다음 변수다.",
-   "tag": "글로벌 시장",
-   "sources": [
-    "https://www.yna.co.kr/view/AKR20261106020500009",
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443354",
-    "https://v.daum.net/v/20261106082738278"
-   ],
-   "bg": "Federal Reserve building",
-   "bg_alt": "gold bars",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "나스닥 **-5.5%**\n돈은 국채, 금\n달러로 몰렸다",
-     "number": "-5.5%",
-     "label": "나스닥 하루 낙폭",
-     "sub": "안전자산으로 자금 이동"
-    },
-    {
-     "type": "질문형",
-     "title": "주식이 무너진 날\n**돈**은 어디로\n갔을까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "연준은 긴축 말하는데\n채권시장은 **동결**\n쪽에 베팅했다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "paper",
-    "list"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/06",
-     "headlines": [
-      "나스닥 5.5% 하락",
-      "국채, 금, 달러로 자금 이동",
-      "12월 금리 동결 베팅 증가"
-     ]
-    },
-    "list": {
-     "sub": "주식 급락 뒤 자금이 향한 곳과 변수",
-     "count": 3
-    }
-   },
-   "id": "20261106-0901-i2",
-   "created_at": "2026-11-06T09:01:33+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261106-0901-i2/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261106-0901-i2/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261106-0901-i2/1-paper-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "list",
-     "font": "noto",
-     "path": "20261106-0901-i2/1-list-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "list",
-     "font": "black",
-     "path": "20261106-0901-i2/1-list-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "list",
-     "font": "plex",
-     "path": "20261106-0901-i2/1-list-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261106-0901-i2/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261106-0901-i2/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261106-0901-i2/2-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "list",
-     "font": "noto",
-     "path": "20261106-0901-i2/2-list-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "list",
-     "font": "black",
-     "path": "20261106-0901-i2/2-list-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "list",
-     "font": "plex",
-     "path": "20261106-0901-i2/2-list-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261106-0901-i2/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261106-0901-i2/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261106-0901-i2/3-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "list",
-     "font": "noto",
-     "path": "20261106-0901-i2/3-list-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "list",
-     "font": "black",
-     "path": "20261106-0901-i2/3-list-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "list",
-     "font": "plex",
-     "path": "20261106-0901-i2/3-list-plex.jpg"
-    }
-   ]
-  },
-  {
-   "title": "한 달 새 코스피 -18.85%, 정부는 견고",
-   "concept": "한 달 낙폭(코스피, 코스닥, 삼성전자, SK하이닉스)을 비교하고, 정부의 '펀더멘털 견고' 발언과 시장 흐름의 온도차를 보도로 정리",
-   "why_now": "이형일 차관이 AI 투자 지속 전망과 한국 경제 펀더멘털 견고를 언급한 날, 삼성전자와 SK하이닉스는 전일 각각 -7.57%, -9.46%를 기록했다.",
-   "tag": "국내 증시",
-   "sources": [
-    "https://www.newsis.com/view/NISX20261106_0003857299",
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443377"
-   ],
-   "bg": "Samsung Electronics Seoul",
-   "bg_alt": "SK Hynix semiconductor",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "한 달 새\nSK하이닉스\n**-28.71%**",
-     "number": "-28.71%",
-     "label": "SK하이닉스 1달 등락률",
-     "sub": "삼성전자는 -25.92%"
-    },
-    {
-     "type": "질문형",
-     "title": "한 달 새 20% 가까이\n**코스피** 코스닥\n무슨 일이 있었나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "정부는 견고하다는데\n코스피는 한 달 새\n**-18.85%**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bars",
-    "bignum"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "최근 1달 등락률(%, 낙폭 기준), 코스피 코스닥은 11/04, 종목은 11/05 기준",
-     "bars": [
-      {
-       "label": "코스피",
-       "value": 18.85
-      },
-      {
-       "label": "코스닥",
-       "value": 19.96
-      },
-      {
-       "label": "삼성전자",
-       "value": 25.92
-      },
-      {
-       "label": "SK하이닉스",
-       "value": 28.71,
-       "hi": true
-      }
-     ]
-    }
-   },
-   "id": "20261106-0901-i3",
-   "created_at": "2026-11-06T09:01:33+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261106-0901-i3/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261106-0901-i3/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261106-0901-i3/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261106-0901-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261106-0901-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261106-0901-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261106-0901-i3/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261106-0901-i3/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261106-0901-i3/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261106-0901-i3/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261106-0901-i3/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261106-0901-i3/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
    "title": "코스피 서킷브레이커, 시총 400조 증발",
    "concept": "개장 직후 서킷브레이커 발동, 20분 매매중단 후 재개, 5000선 회복 뒤 등락까지 흐름을 시간순 보도로 정리",
    "why_now": "오늘 아침 코스피 5000선 붕괴와 서킷브레이커 기사가 가장 많이 나왔고, 시총이 하루새 400조원 증발했다는 보도가 이어졌다. 정확한 낙폭과 발동 시각은 확인 후 반영한다.",
@@ -8283,6 +7862,414 @@
      "form": "breaking",
      "font": "dohyeon",
      "path": "20261107-0901-i3/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "미국 일자리 16.5만개, 금리 인상 베팅",
+   "concept": "예상 6.5만개의 2배가 넘는 고용이 왜 호재가 아니라 12월 금리 인상론으로 번졌는지를 환율 1,360원대까지 이어서 풉니다. 전망은 끝 장으로 내리고 이미 나온 숫자와 시장 반응을 앞에 둡니다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "로이터가 고용지표 직후 트레이더들의 금리 인상 베팅이 늘었다고 보도했고, 연합인포맥스는 NDF가 1,363.70원으로 8.05원 올랐다고 전했습니다. 코스피 급락 직후라 금리 방향에 관심이 큽니다.",
+   "tag": "금리,환율",
+   "sources": [
+    "https://www.cnbc.com/2026/11/06/jobs-report-october-2026.html",
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443601",
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443602"
+   ],
+   "bg": "Federal Reserve building",
+   "bg_alt": "US jobs report",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "일자리 **16.5만개**\n예상의 2배 넘었는데\n환율은 1,360원대",
+     "number": "16.5만개",
+     "label": "10월 미국 일자리",
+     "sub": "예상치는 6.5만개"
+    },
+    {
+     "type": "질문형",
+     "title": "일자리 2배 깜짝에\n트레이더들은 왜\n**인상**에 베팅했나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "일자리 좋은데\n증시는 **웃지** 못했다\n12월 인상론 부각",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "bars"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "미국 10월 일자리, 만개",
+     "bars": [
+      {
+       "label": "예상",
+       "value": 6.5
+      },
+      {
+       "label": "실제",
+       "value": 16.5,
+       "hi": true
+      }
+     ]
+    }
+   },
+   "id": "20261107-1001-i1",
+   "created_at": "2026-11-07T10:01:40+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261107-1001-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261107-1001-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261107-1001-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261107-1001-i1/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261107-1001-i1/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261107-1001-i1/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261107-1001-i1/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261107-1001-i1/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261107-1001-i1/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261107-1001-i1/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261107-1001-i1/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261107-1001-i1/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "젠슨 황 곁 中 여성, 美 당국 간첩 판단",
+   "concept": "NYT 인용 보도로 다루고, 당국의 판단과 엔비디아 입장은 확인 전이라고 한 줄만 밝힙니다. 젠슨 황을 주인공으로 두고 대중 칩 규제 논의에 미칠 영향을 마지막에 짚습니다. (공식: 한 글에 사건 하나)",
+   "why_now": "09:17~09:33 사이 파이낸셜뉴스, 채널A, 뉴시스, 중앙일보 등이 동시에 보도했습니다. 엔비디아와 반도체 대중 규제 이슈가 맞물려 반도체 투자자 관심이 큽니다.",
+   "tag": "반도체,속보",
+   "sources": [
+    "https://v.daum.net/v/20261107093041989"
+   ],
+   "bg": "Jensen Huang",
+   "bg_alt": "Nvidia headquarters",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "젠슨 황 술자리 접근\n中 여성 사업가를\n美는 **간첩**으로 봤다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "젠슨 황 술자리에\n접근한 중국 여성\n**정체**는 간첩?",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "엔비디아 CEO 곁\n평범한 사업가가\n**국가안전부** 간첩?",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261107-1001-i2",
+   "created_at": "2026-11-07T10:01:40+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-1001-i2/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-1001-i2/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-1001-i2/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261107-1001-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261107-1001-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261107-1001-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-1001-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-1001-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-1001-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261107-1001-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261107-1001-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261107-1001-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-1001-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-1001-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-1001-i2/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261107-1001-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261107-1001-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261107-1001-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "코스피 주간 11.7% 급락, 서학개미 美주식 2.6조",
+   "concept": "국장이 한 주 만에 11.7% 빠진 동안 서학개미가 미국 주식을 2.6조 원 순매수한 대비를 보여줍니다. 외국인 매도 사실을 곁들이고 바닥 판단은 하지 않습니다. 보도에 따라 3조 원으로 표기된 곳도 있어 수치는 2.6조 기준으로 통일하고 확인이 필요합니다. (공식: 전후 낙차 한 줄 표지)",
+   "why_now": "이투데이가 주간 코스피 11.7% 급락을 보도했고, 연합뉴스는 같은 주 서학개미의 美주식 순매수를 전했습니다. 외국인은 SK하이닉스와 삼성전자를 대거 팔았습니다.",
+   "tag": "증시,서학개미",
+   "sources": [
+    "https://www.yna.co.kr/view/AKR20261106132700008",
+    "https://v.daum.net/v/20261107080704029"
+   ],
+   "bg": "KOSPI trading screen",
+   "bg_alt": "Seoul stock exchange",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "코스피 일주일 11.7%↓\n그 주 서학개미는\n미국에 **2.6조** 샀다",
+     "number": "2.6조원",
+     "label": "11월 첫 주 서학개미 美주식 순매수",
+     "sub": "같은 주 코스피는 11.7% 급락"
+    },
+    {
+     "type": "질문형",
+     "title": "국장이 무너진 주\n서학개미는 어디에\n돈을 **넣었나**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "코스피 일주일 -11.7%\n개미는 도망 대신\n미국 **순매수**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/07",
+     "headlines": [
+      "코스피 주간 11.7% 급락",
+      "서학개미 美주식 2.6조 순매수",
+      "외국인, 하이닉스, 삼성전자 매도"
+     ]
+    }
+   },
+   "id": "20261107-1001-i3",
+   "created_at": "2026-11-07T10:01:40+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261107-1001-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261107-1001-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261107-1001-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261107-1001-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261107-1001-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261107-1001-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261107-1001-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261107-1001-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261107-1001-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261107-1001-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261107-1001-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261107-1001-i3/3-paper-gowun.jpg"
     }
    ]
   }
