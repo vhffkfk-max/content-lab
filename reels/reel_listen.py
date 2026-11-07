@@ -139,6 +139,7 @@ def hot_video(q):
     lines = [x for x in (p.stdout + p.stderr).splitlines() if x.strip()]
     found = next((x for x in lines if x.startswith("완성: ")), None)
     if p.returncode or not found:
+        log("핫코노미 A 실패 출력:", " ⏎ ".join(lines[-15:])[:1500])
         return plain(lines)
     video = pathlib.Path(found[4:].strip())
     upload = video.with_name(video.stem + "_업로드글.txt")
