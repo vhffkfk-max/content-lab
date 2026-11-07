@@ -115,6 +115,7 @@ def item_html(i, it):
     vflags = "".join(f'<div class="flag {f["level"]}">⚠ {e(f["kind"])}{" — “" + e(f["hit"]) + "”" if f["hit"] else ""}</div>' for f in it.get("video_flags", []))
     dup = "".join(f'<div class="flag warn">⚠ 첫 문장이 {e(o)} 계정 글과 겹침</div>' for o in it.get("hook_dupes", []))
     facts = "".join(f'<li>{e(f["text"])} <span class="src">({e(f.get("source") or "-")})</span></li>' for f in it.get("facts", []))
+    market = (f'<p class="sub"><b>글에 준 시세</b> {e(" / ".join(it["market"]))}</p>' if it.get("market") else "")
     links = " ".join(f'<a href="{e(u)}" target="_blank" rel="noopener">원문 {n + 1}</a>' for n, u in enumerate(it.get("sources", [])))
     return f"""<details class="item panel" data-i="{i}"><summary><span class="t">{e(it["title"])}</span>
 <span class="m">{when} · {e(tags)} · {len(it.get("outlets", []))}개 매체 보도</span><span class="f">{badge(allflags)}</span></summary>
@@ -125,7 +126,7 @@ def item_html(i, it):
 {vflags}<p class="sub"><b>첫 3초</b> {e(it["video"]["hook"])}</p>
 <div style="overflow-x:auto"><table><thead><tr><th>구간</th><th>대사</th><th>자막</th><th>화면</th></tr></thead><tbody>{scenes}</tbody></table></div>
 <p class="sub"><b>마지막</b> {e(it["video"]["cta"])} {e(it["video"]["disclaimer"])}</p>
-<div class="row"><h3>원본 소재</h3></div><ul class="facts">{facts or "<li>사실 목록 없음</li>"}</ul><p class="src">{links}</p>
+{market}<div class="row"><h3>원본 소재</h3></div><ul class="facts">{facts or "<li>사실 목록 없음</li>"}</ul><p class="src">{links}</p>
 </div></details>"""
 
 
@@ -133,6 +134,8 @@ def account_page(a, items):
     chips = "".join(f'<li class="chip on">{OUT_LABEL.get(o, o)}</li>' for o in a["outputs"])
     head = (f'<div class="top"><h1>{e(a["name"])}</h1><a href="../">← 계정 목록</a></div>'
             f'<p class="sub">{e(a["group"])} · {e(a.get("handle") or "핸들 미정")}</p><ul class="chips">{chips}</ul>')
+    if a.get("notice"):
+        head += f'<p class="notice">{e(a["notice"])}</p>'
     if a["group"] == "정치":
         head += '<p class="notice">정치 계정은 사실(수치·발언·날짜)이 짝 계정과 같아야 하고, 인용은 출처 확인된 것만 씁니다. 프로필에 운영자 공개 문구를 둡니다.</p>'
         el = election_now()

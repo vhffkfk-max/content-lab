@@ -20,9 +20,11 @@ from pydantic import BaseModel
 
 import llm as anthropic
 import news_pool
+from acclab import sources
 from acclab.common import TAGS, TOPICS, accounts, load, now, save
 
 KEEP = 200
+EXTRA_MAX = 3
 DEDUPE_H = 48
 MODEL = "claude-sonnet-5-5"
 
@@ -31,7 +33,7 @@ RULES = {
     "macro": r"금리|연준|FOMC|파월|물가|CPI|PCE|고용|실업|GDP|경기|환율|원[/·]?달러|달러|국채|유가|인플레|기준금리|한은|한국은행|무역수지|수출",
     "kr_stock": r"코스피|코스닥|삼성전자|하이닉스|증시|상장|공모주|외국인.{0,4}(순매수|순매도)|밸류업|국내 주식|KRX|거래소",
     "us_stock": r"나스닥|S&P|다우|뉴욕증시|미 증시|미국 증시|엔비디아|테슬라|애플|마이크로소프트|아마존|알파벳|메타|월가|팔란티어|브로드컴",
-    "crypto": r"비트코인|이더리움|코인|가상자산|암호화폐|스테이블|리플|솔라나|업비트|빗썸|바이낸스",
+    "crypto": r"비트코인|이더리움|코인|가상자산|암호화폐|스테이블|리플|솔라나|업비트|빗썸|바이낸스|bitcoin|btc|ether|crypto|stablecoin|xrp|solana|binance|coinbase",
     "realestate": r"부동산|아파트|집값|전세|월세|청약|주담대|주택담보|분양|재건축|재개발|DSR|LTV|공시가",
     "policy": r"정부|금융위|금감원|기재부|국토부|세제|세법|규제|법안|개정|정책|대책|지원금|예산|과세|감세|관세",
     "politics_domestic": r"국회|여당|야당|대통령실|국민의힘|민주당|총리|장관 후보|탄핵|특검|선거",
@@ -80,11 +82,16 @@ def route(t):
     return out
 
 
-def candidates(pool, known, n):
-    """많이 다룬 소식부터, 최근 48시간 소재와 겹치지 않는 것."""
+# 추가 소스(acclab/sources.py)에서 먼저 볼 소식 — 시장 전체를 움직이는 것 (개별 알트코인 지표·행사 공지보다 앞)
+PRIORITY = re.compile(r"비트코인|이더리움|ETF|스테이블|규제|SEC|연준|금리|달러|유동성|청산|해킹|bitcoin|ether|ETF|stablecoin|Fed", re.I)
+
+
+def candidates(pool, known, n, prio=None):
+    """많이 다룬 소식부터, 최근 48시간 소재와 겹치지 않는 것. prio 정규식이 있으면 그 단어가 든 소식 먼저."""
     old = [news_pool.grams(t["title"]) for t in known] + [news_pool.grams(t.get("raw_title", "")) for t in known]
     out = []
-    for c in sorted(pool["clusters"], key=lambda c: (-c["n"], -c.get("popular", False))):
+    first = (lambda c: not prio.search(c["title"])) if prio else (lambda c: False)
+    for c in sorted(pool["clusters"], key=lambda c: (-c["n"], first(c), -c.get("popular", False))):
         g = news_pool.grams(c["title"])
         if any(news_pool.same(g, o) for o in old if o):
             continue
@@ -101,7 +108,8 @@ def refine_one(c, use_llm=True):
     from thread_post import materials   # 기사 본문 읽기는 황소개미 쓰레드와 같은 방법 (막힌 매체는 뚫지 않고 검색으로 대체)
     when = now()
     base = {"id": topic_id(c["title"], when), "raw_title": c["title"], "at": when.isoformat(timespec="seconds"),
-            "n": c["n"], "outlets": c["sources"][:8], "links": c["links"][:3], "region": c.get("region", "")}
+            "n": c["n"], "outlets": c["sources"][:8], "links": c["links"][:3], "region": c.get("region", ""),
+            "pool": c.get("pool", "news")}
     if not use_llm:
         return {**base, "title": c["title"], "summary": "", "facts": [], "angles": [], "tags": rule_tags(c["title"]), "impact": min(3, c["n"] // 3),
                 "thin": True}
@@ -140,7 +148,11 @@ def main():
         return 0
     rows = load(TOPICS, [])
     cut = (now() - timedelta(hours=DEDUPE_H)).isoformat()
-    todo = candidates(pool, [t for t in rows if t["at"] >= cut], a.max)
+    known = [t for t in rows if t["at"] >= cut]
+    todo = candidates(pool, known, a.max)
+    for name in sources.FEEDS:   # 계정 전용 추가 소스 (코인 등) — 풀마다 최대 3건, 기존 묶음과 겹치는 소식은 뺌
+        seen = known + [{"title": c["title"]} for c in todo]
+        todo += candidates({"clusters": sources.clusters(name)}, seen, EXTRA_MAX, PRIORITY)
     print(f"새 소식 {len(todo)}건 정제")
 
     def safe(c):

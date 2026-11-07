@@ -87,6 +87,26 @@ def facts_text(t):
     return "\n".join(f"- {f['text']} (시점: {f.get('when') or '-'}, 출처: {f.get('source') or '-'})" for f in t.get("facts", []))
 
 
+def market(kind):
+    """코드가 직접 가져온 시세 (Claude 가 숫자를 지어내지 않게). crypto: 바이낸스 공개 시세, 안 되면 업비트 원화 시세."""
+    if kind != "crypto":
+        return []
+    import requests
+    at = now().strftime("%m/%d %H:%M")
+    try:
+        r = requests.get("https://api.binance.com/api/v3/ticker/24hr", params={"symbols": '["BTCUSDT","ETHUSDT"]'}, timeout=10)
+        r.raise_for_status()
+        return [f"{x['symbol'][:3]} {float(x['lastPrice']):,.0f}달러, 24시간 {float(x['priceChangePercent']):+.2f}% (바이낸스, {at} 기준)" for x in r.json()]
+    except (requests.RequestException, ValueError, KeyError):
+        pass
+    try:
+        r = requests.get("https://api.upbit.com/v1/ticker", params={"markets": "KRW-BTC,KRW-ETH"}, timeout=10)
+        r.raise_for_status()
+        return [f"{x['market'][4:]} {x['trade_price']:,.0f}원, 24시간 {x['signed_change_rate'] * 100:+.2f}% (업비트, {at} 기준)" for x in r.json()]
+    except (requests.RequestException, ValueError, KeyError):
+        return []
+
+
 def others_first_lines(topic_id, slug):
     out = []
     for a in accounts():
@@ -101,6 +121,7 @@ def others_first_lines(topic_id, slug):
 def write(t, acc):
     closing = acc["opinion_note"] if acc.get("group") == "정치" else acc["disclaimer"]
     others = others_first_lines(t["id"], acc["slug"])
+    quotes = market(acc.get("market", ""))
     system = "\n".join([
         f"너는 '{acc['name']}' 계정의 글을 쓴다. 결과는 사람이 거의 고치지 않고 붙여 넣는다.",
         "같은 소재를 여러 계정이 각자 관점으로 쓴다. 사실은 모든 계정이 똑같고, 훅과 해석만 이 계정 페르소나대로 다르게 한다.",
@@ -110,6 +131,7 @@ def write(t, acc):
     prompt = "\n".join([
         "## 소재", f"제목: {t['title']}", f"요약: {t.get('summary', '')}", f"다룬 곳: {t.get('n', 0)}곳 ({', '.join(t.get('outlets', [])[:5])})", "",
         "## 사실 (이것만 숫자·날짜로 씀)", facts_text(t) or "- (사실 목록 없음 — 제목에 있는 사실만)", "",
+        *(["## 지금 시세 (코드가 가져온 숫자. 쓸 때는 시점을 같이 적음)", *[f"- {q}" for q in quotes], ""] if quotes else []),
         "## 해석 포인트 후보 (이 계정에 맞는 것을 골라 씀)", *[f"- {x}" for x in t.get("angles", [])], "",
         *(["## 같은 소재로 다른 계정이 쓴 첫 문장 (이것과 겹치지 않게 다른 훅으로)", *[f"- {line}" for _, line in others], ""] if others else []),
         "위 소재로 main, A, B, C, D, take, video 를 모두 써 줘."])
@@ -121,6 +143,7 @@ def write(t, acc):
         if out is None:
             raise RuntimeError("형식에 맞는 답이 없음")
         res = assemble(t, acc, out, closing, others)
+        res["market"] = quotes
         bad = compliance.stops(sum(res["flags"].values(), []) + res["video_flags"])   # 다섯 형식 + 영상 대본 전부
         if attempt or not bad:
             return res
