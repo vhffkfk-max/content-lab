@@ -48,3 +48,8 @@ output/reels/
 output/viral/
 # 광고 글 DB (PC에만)
 data/ads.db
+
+# 계정별 콘텐츠: PC 결과 사본 (페이지 재료는 output/site/acc_*.json)
+output/*/threads/
+output/*/video/
+data/news_pool.json

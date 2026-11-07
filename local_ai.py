@@ -19,6 +19,10 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
+try:   # 계정별 콘텐츠 결과 파일 (accounts.config.json)
+    _ACCS = json.loads((ROOT / "accounts.config.json").read_text(encoding="utf-8"))["accounts"]
+except (OSError, ValueError, KeyError):
+    _ACCS = []
 KST = timezone(timedelta(hours=9))
 STATE = Path.home() / ".content-lab-ai" / "state.json"
 LOCK = Path.home() / ".content-lab-ai" / "lock"
@@ -26,7 +30,7 @@ LOG = ROOT / "data" / "local_ai.log"
 SITE = "output/site/"
 OUTPUTS = [SITE + f for f in ("tg_ai.json", "tg_rewrites.json", "trd_rooms.json", "trd_posts.json", "drafts.json",
                                "imports.json", "threads_ai.json", "x_ai.json", "thm_ai.json", "growth_plan.json", "thread_posts.json",
-                               "chart_reports.json", "charts", "futures_brief.json", "futures", "malhee_var.json")] + ["data/publish_queue.json", "data/card_style.json", "data/form_stats.json"]
+                               "chart_reports.json", "charts", "futures_brief.json", "futures", "malhee_var.json", "acc_topics.json")] + [SITE + f"acc_{a['slug']}.json" for a in _ACCS] + ["data/publish_queue.json", "data/card_style.json", "data/form_stats.json"]
 ENV = {**os.environ, "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1"}
 CRAWLERS = (("content-lab-telegram-live", "tg_live.py"), ("content-lab-threads-watch", "threads_watch.py"), ("content-lab-thread-listen", "thread_listen.py"))
 TG_BEAT = Path.home() / ".content-lab-ai" / "tg_live.beat"
@@ -258,6 +262,12 @@ def run_cycle():
         did.append(f"카드뉴스 초안 {pick or topic}")
     if not drafts:
         auto_ideas(state, did)
+
+    if slot_once(state, "accounts", (7, 12, 18)):   # 계정별 콘텐츠: 소재 정제 → 준비된 계정 글·영상 대본 (acclab, 계정당 하루 3건)
+        refresh_news()
+        py("news_pool.py")              # 같은 소식 묶음 (수집 소스는 그대로)
+        py("-m", "acclab.run", timeout=30 * 60)
+        did.append("계정별 콘텐츠")
 
     if slot_once(state, "learn", tuple(range(8, 24))):   # 1시간마다: 캔바에서 고친 것·48시간 성적 배우기 (publish/card_learn.py)
         py("-m", "publish.card_learn")

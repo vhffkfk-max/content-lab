@@ -69,6 +69,11 @@ def main():
             (out / name).mkdir(exist_ok=True)
             for p in (site / name).glob("*.jpg"):
                 (out / name / p.name).write_bytes(p.read_bytes())
+    try:   # 계정별 콘텐츠 페이지 (acclab/pages.py) — 실패해도 연구소 사이트는 그대로
+        from acclab import pages
+        print("계정 페이지:", pages.build(out))
+    except Exception as e:
+        print("계정 페이지 실패:", e)
     print("카드 그림:", copy_previews(out))
     print(f"✅ 사이트 생성: {out / 'index.html'} ({len(html.encode()) // 1024}KB)")
 

@@ -568,6 +568,7 @@ ul.gd-card{padding-left:36px;line-height:1.8}
             <li><a href="#uc-ai">GPT·Claude 연결</a></li>
           </ul></li>
         <li class="nav-label" style="margin-top:10px">만들기</li>
+        <li data-nav-key="acc-pages"><a href="accounts/"><i class="dot" style="background:var(--text)"></i>계정별 콘텐츠</a></li>
         <li><button type="button" data-ch="thlab"><i class="dot" style="background:var(--ch-threads)"></i>쓰레드 연구소</button>
           <ul class="subnav" data-for="thlab">
             <li><a href="#tl-sum">한눈에 보기</a></li>
@@ -4219,7 +4220,7 @@ ul.gd-card{padding-left:36px;line-height:1.8}
     ['쓰레드 연구소', ['thlab', 'threads']],
     ['트렌드 발견', ['google', 'foreign', 'x', 'youtube']],
     ['계정 분석', ['accounts']],
-    ['콘텐츠 제작', ['instagram', 'telegram', 'traders', 'video', 'viral', 'growth']],
+    ['콘텐츠 제작', ['acc-pages', 'instagram', 'telegram', 'traders', 'video', 'viral', 'growth']],
     ['성과 분석', ['usage', 'feedback']],
     ['발행 캘린더', ['calendar']],
   ];
@@ -4228,8 +4229,8 @@ ul.gd-card{padding-left:36px;line-height:1.8}
     if (!ul || ul.dataset.grouped) return;
     const items = {};
     ul.querySelectorAll(':scope > li').forEach(li => {
-      const b = li.querySelector(':scope > button');
-      if (b) items[b.dataset.ch] = li; else li.remove();
+      const b = li.querySelector(':scope > button'), key = b ? b.dataset.ch : li.dataset.navKey;   // navKey: 다른 페이지로 가는 링크 (계정별 콘텐츠)
+      if (key) items[key] = li; else li.remove();
     });
     NAV_GROUPS.forEach(([label, chs]) => {
       const h = el('li', 'nav-group', label); h.setAttribute('role', 'presentation'); ul.append(h);

@@ -1,0 +1,38 @@
+{
+ "_안내": "계정 이름·주소(slug)·출력 채널·소재 라우팅을 여기 한 곳에서 관리합니다. 이름이 정해지면 name 만 바꾸세요. ready=false 인 계정은 메인 메뉴에 '준비 중'으로 보입니다.",
+ "election_periods": [
+  {"name": "제23대 국회의원선거 (선거일 전 180일부터 선거일까지)", "from": "2027-10-15", "to": "2028-04-12"}
+ ],
+ "defaults": {
+  "daily_max": 3,
+  "model": "claude-sonnet-5-5",
+  "disclaimer": "(정보 제공용이며 투자 권유가 아닙니다)",
+  "opinion_note": "(개인 의견입니다)"
+ },
+ "accounts": [
+  {"slug": "hotconomy", "name": "핫코노미", "handle": "@hotconomy", "group": "경제", "pool": "economy",
+   "outputs": ["threads", "video"], "voice": "M3", "ready": true,
+   "route": {"tags": ["macro", "kr_stock", "us_stock", "policy"]}},
+  {"slug": "js100x", "name": "자산백배", "handle": "", "group": "경제", "pool": "economy",
+   "outputs": ["threads", "video"], "voice": "", "ready": false,
+   "route": {"tags": ["macro", "kr_stock", "us_stock"], "min_impact": 2}},
+  {"slug": "coin", "name": "코인 계정 (이름 미정)", "handle": "", "group": "경제", "pool": "economy",
+   "outputs": ["threads", "video"], "voice": "", "ready": false,
+   "route": {"tags": ["crypto"], "also": {"macro": ["금리", "달러", "유동성", "연준", "환율"]}}},
+  {"slug": "realestate", "name": "부동산 계정 (이름 미정)", "handle": "", "group": "경제", "pool": "economy",
+   "outputs": ["threads", "video"], "voice": "", "ready": false,
+   "route": {"tags": ["realestate"], "also": {"policy": ["대출", "금리", "세제", "세금", "주담대", "DSR"]}}},
+  {"slug": "opposition", "name": "폭군", "handle": "", "group": "정치", "pool": "politics",
+   "outputs": ["threads", "video"], "voice": "", "ready": false, "pair": "ruling",
+   "route": {"tags": ["politics_domestic", "politics_economy", "policy"]}},
+  {"slug": "ruling", "name": "성군", "handle": "", "group": "정치", "pool": "politics",
+   "outputs": ["threads", "video"], "voice": "", "ready": false, "pair": "opposition",
+   "route": {"tags": ["politics_domestic", "politics_economy", "policy"]}},
+  {"slug": "malhee", "name": "차트보는 말희아빠", "handle": "", "group": "말희아빠 팀", "pool": "stock",
+   "outputs": ["naver_blog"], "voice": "", "ready": false,
+   "route": {"tags": ["kr_stock", "us_stock"]}},
+  {"slug": "onewworld", "name": "오뉴월드 (이름 확인 필요)", "handle": "", "group": "말희아빠 팀", "pool": "stock",
+   "outputs": ["instagram_card", "reels"], "voice": "", "ready": false, "same_as": "malhee",
+   "route": {"tags": ["kr_stock", "us_stock"]}}
+ ]
+}
