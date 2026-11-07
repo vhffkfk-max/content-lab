@@ -50,6 +50,9 @@ def git(*a, check=True):
     return subprocess.run(["git", *ident, *a], cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace", check=check, creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
 
 
+AUTO_CHART = False   # 매일 아침 08시 자동 차트 (11/07 사용자 요청으로 잠시 멈춤 — 시스템 업그레이드 뒤 True 로). 사이트 버튼 차트는 그대로 됨
+
+
 def py(*a, timeout=40 * 60):
     """하위 프로그램 실행 → 종료 코드. 출력은 로그에 마지막 몇 줄만."""
     try:
@@ -211,7 +214,7 @@ def run_cycle():
         else:
             py("chart_report.py", *(["--from-tg", "--force", *(["--tf", tf] if tf else [])] if s == "auto" else [syms, "--send"]), timeout=15 * 60)
         did.append(f"차트 {syms}")
-    if slot_once(state, "chart", (8,)):   # 자동 차트리포트는 하루 1번 아침 08시 (PC가 꺼져 있었으면 켜진 뒤 바로). --force: 어제 문구 그대로여도 매일 새로 만듦
+    if AUTO_CHART and slot_once(state, "chart", (8,)):   # 자동 차트리포트는 하루 1번 아침 08시 (PC가 꺼져 있었으면 켜진 뒤 바로). --force: 어제 문구 그대로여도 매일 새로 만듦
         py("chart_report.py", "--from-tg", "--force", timeout=15 * 60)
         did.append("차트리포트")
     if slot_once(state, "futures", (8.5, 21)):   # BTC·ETH 선물 브리핑 하루 2번 (08:30 · 미국장 전 21시)
