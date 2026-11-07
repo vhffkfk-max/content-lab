@@ -319,6 +319,11 @@ def main():
                              creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0) | getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0))
         except OSError as e:
             log("⚠️ 매시간 분석 띄우기 실패:", e)
+        try:   # 만든 영상·카드를 텔레그램으로 (publish/tg_watch.py) — 잠금과 상관없이 5분마다, 겹치면 스스로 건너뜀
+            subprocess.Popen([sys.executable, "-m", "publish.tg_watch"], cwd=ROOT, env=ENV, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                             creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0) | getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0))
+        except OSError as e:
+            log("⚠️ 텔레그램 자동 전송 띄우기 실패:", e)
         # 1) 작업 폴더를 저장소 최신으로 맞춘 뒤, 새 코드로 다시 실행
         if LOCK.exists() and time.time() - LOCK.stat().st_mtime < 90 * 60:
             return

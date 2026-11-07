@@ -1,4 +1,4 @@
-"""만든 영상·이미지를 텔레그램으로 자동 전송 (2분마다, 작업 스케줄러 content-lab-tg-watch).
+"""만든 영상·이미지를 텔레그램으로 자동 전송 (local_ai.py 가 5분마다 띄움).
 
 어느 제작기로 만들었든 완성 폴더에 새 결과물이 생기면 보낸다.
 이미 보낸 것은 ~/.content-lab-ai/tg_sent.json 에 내용 지문으로 적어 두어 두 번 보내지 않는다
@@ -112,4 +112,12 @@ def main(dry=False):
 
 
 if __name__ == "__main__":
-    print("새 결과물", main(dry="--dry" in sys.argv), "개")
+    lock = notify.SENT.with_name("tg_watch.lock")   # 큰 영상 보내는 중에 다음 차례가 겹치지 않게
+    if "--dry" not in sys.argv and lock.exists() and time.time() - lock.stat().st_mtime < 20 * 60:
+        sys.exit(0)
+    lock.parent.mkdir(parents=True, exist_ok=True)
+    lock.write_text("1")
+    try:
+        print("새 결과물", main(dry="--dry" in sys.argv), "개")
+    finally:
+        lock.unlink(missing_ok=True)
