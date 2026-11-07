@@ -39,5 +39,8 @@ jobs:
           python ai_request.py draft "topic=$TOPIC" "pick=$PICK"
           git add data/ai_requests.json
           git commit -m "ai: PC에 Claude 작업 요청" || echo "변경 없음"
-          git pull --rebase -X theirs --autostash || (git rebase --abort; git pull --no-rebase -X ours --no-edit) || true
-          git push
+          for i in 1 2 3 4 5; do   # PC·다른 봇이 같은 때 올리면 밀림 → 받아서 다시
+            git pull --rebase -X theirs --autostash || (git rebase --abort; git pull --no-rebase -X ours --no-edit) || true
+            git push && break
+            sleep $((i * 4))
+          done
