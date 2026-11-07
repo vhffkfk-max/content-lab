@@ -533,6 +533,21 @@ ul.gd-card{padding-left:36px;line-height:1.8}
 .tl-play h3{margin:0 0 6px;font-size:15px}.tl-play h3::before{content:counter(pb) ". ";color:var(--accent)}
 .tl-play p{margin:0;font-size:14px;color:var(--muted)}
 .tl-ex{margin-top:10px}
+/* 경제 미디어 추천 (2026-11-07, econ-feed/econ_build.py → econ_media) */
+.em-bar{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.em-bar button{border:1px solid var(--border);background:var(--surface);border-radius:999px;padding:4px 12px;font-size:13px;cursor:pointer}
+.em-bar button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.em-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:12px}
+.em-card{border:1px solid var(--border);border-radius:12px;background:var(--surface);padding:16px;min-width:0}
+.em-card h3{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:0 0 6px;font-size:17px}
+.em-card h3 a{color:inherit;text-decoration:none}.em-card h3 a:hover{text-decoration:underline}
+.em-card .one{margin:0 0 10px;font-weight:600;font-size:14px}
+.em-card h4{margin:10px 0 4px;font-size:13px;color:var(--faint)}
+.em-card ul{margin:0;padding-left:18px;font-size:14px;line-height:1.7}
+.em-card .cau{margin-top:8px;font-size:13px}
+.em-card details{margin-top:10px;font-size:13px}.em-card details a{display:block;padding:4px 0;border-top:1px solid var(--rule);color:inherit;overflow-wrap:anywhere}
+.em-card details a em{font-style:normal;color:var(--faint);margin-left:4px}
+
 .tl-ex summary{cursor:pointer;font-size:14px;font-weight:700}
 .tl-ex .tcards{margin-top:8px}
 </style>
@@ -660,6 +675,12 @@ ul.gd-card{padding-left:36px;line-height:1.8}
             <li><a href="#acc-rank">분야별 계정 순위</a></li>
             <li><a href="#my">내 계정</a></li>
             <li><a href="#other">다른 계정 보기</a></li>
+          </ul></li>
+        <li><button type="button" data-ch="econ"><i class="dot" style="background:var(--ch-youtube)"></i>경제 미디어 추천</button>
+          <ul class="subnav" data-for="econ">
+            <li><a href="#em-sum">한눈에 보기</a></li>
+            <li><a href="#em-list">계정별 추천 이유</a></li>
+            <li><a href="#em-how">기준 설명</a></li>
           </ul></li>
         <li><button type="button" data-ch="youtube"><i class="dot" style="background:var(--ch-youtube)"></i>유튜브<span class="soon">준비 중</span></button></li>
         <li class="nav-label" style="margin-top:10px">성장</li>
@@ -1023,6 +1044,12 @@ ul.gd-card{padding-left:36px;line-height:1.8}
         </div>
       </div>
 
+      <div class="view" data-view="econ" hidden>
+        <div class="title-row"><div><h1>경제 미디어 추천</h1><p>경제 <b>유튜브 채널</b>과 <b>X(트위터) 분석 계정</b>의 최근 6개월 글·영상을 모아, 계정마다 숫자와 <b>추천 이유</b>, 따라 할 형식을 정리했어요.</p></div></div>
+        <section class="sec" id="em-sum"><h2>한눈에 보기</h2><div id="em-sum-box"></div></section>
+        <section class="sec" id="em-list"><h2>계정별 추천 이유</h2><div id="em-list-box"></div></section>
+        <section class="sec" id="em-how"><h2>기준 설명</h2><div id="em-how-box"></div></section>
+      </div>
       <div class="view" data-view="accounts" hidden>
         <div class="title-row"><div><h1>계정 분석</h1><p>내 계정은 공식 인사이트(도달·저장·공유·조회수)로, 다른 계정은 공개 반응(좋아요·댓글)으로 분석해요.</p></div></div>
         <section class="sec" id="acc-rank">
@@ -4091,7 +4118,7 @@ ul.gd-card{padding-left:36px;line-height:1.8}
   document.getElementById('side-hide').addEventListener('click', () => setSide(true));
   document.getElementById('side-show').addEventListener('click', () => setSide(false));
   if (store.get('side_hidden') === '1') setSide(true);
-  const NAMES = { thlab: '쓰레드 연구소', guide: '사용 가이드', calendar: '발행 캘린더', video: '영상 연구소', home: '오늘 할 일', instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드', x: 'X · 트루스소셜', telegram: '텔레그램 · 말희아빠', traders: '텔레그램 · 트레이더스', feedback: '후기·기록', growth: '마케팅 코치', viral: '뜬 글 공식', usage: '활용 체크' };
+  const NAMES = { thlab: '쓰레드 연구소', econ: '경제 미디어 추천', guide: '사용 가이드', calendar: '발행 캘린더', video: '영상 연구소', home: '오늘 할 일', instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드', x: 'X · 트루스소셜', telegram: '텔레그램 · 말희아빠', traders: '텔레그램 · 트레이더스', feedback: '후기·기록', growth: '마케팅 코치', viral: '뜬 글 공식', usage: '활용 체크' };
   // ── 폰: 채널을 열면 '전체' 대신 한 칸만 (이 기기에서 많이 본 칸, 없으면 첫 칸). 위 탭으로 다른 칸·전체로 이동 ──
   const isPhone = () => matchMedia('(max-width:860px)').matches;
   function phoneFolder(ch) {
@@ -4219,7 +4246,7 @@ ul.gd-card{padding-left:36px;line-height:1.8}
     ['대시보드', ['home', 'guide']],
     ['쓰레드 연구소', ['thlab', 'threads']],
     ['트렌드 발견', ['google', 'foreign', 'x', 'youtube']],
-    ['계정 분석', ['accounts']],
+    ['계정 분석', ['accounts', 'econ']],
     ['콘텐츠 제작', ['acc-pages', 'instagram', 'telegram', 'traders', 'video', 'viral', 'growth']],
     ['성과 분석', ['usage', 'feedback']],
     ['발행 캘린더', ['calendar']],
@@ -4503,7 +4530,76 @@ ul.gd-card{padding-left:36px;line-height:1.8}
         ...(less.length ? [el('p', 'gd-tip', `잘 터지는데 우리가 거의 안 쓴 형태: ${less.join(', ')}`)] : []));
     } else boxes[4].replaceChildren(el('div', 'lab-empty', '우리 계정 글이 아직 없어요.'));
   }
-  function drawLab2() { drawDashboard(); drawThreadsInsight(); drawCalendar(); drawThLab(); }
+
+  // ── 경제 미디어 추천 (econ-feed/econ_build.py → econ_media) ──
+  function drawEcon() {
+    const box = id => document.getElementById(id);
+    const S = box('em-sum-box'), L = box('em-list-box'), H = box('em-how-box');
+    if (!S) return;
+    const d = rows('econ_media'), D = (Array.isArray(d) ? d[0] : d) || null;
+    if (!D || !(D.accounts || []).length) { [S, L, H].forEach(b => b.replaceChildren(el('div', 'lab-empty', '아직 자료가 없어요.'))); return; }
+    const A = D.accounts, cnt = g => A.filter(a => (a.reco || {}).grade === g).length;
+    S.replaceChildren(
+      el('p', 'note', `${D.since} 이후 6개월 · 유튜브 ${D.n_youtube}곳 · X ${D.n_x}곳 · 글·영상 ${nf(D.n_posts)}개 · 계산 ${D.at}`),
+      (() => { const k = el('div', 'tl-nums'); [['강력 추천', cnt('강력 추천')], ['추천', cnt('추천')], ['참고만', cnt('참고만')]].forEach(([a, b]) => { const s = el('span'); s.append(el('em', null, a), document.createTextNode(b + '곳')); k.append(s); }); return k; })());
+    let plat = 'all', grade = 'all';
+    const bar = el('div', 'em-bar');
+    const opts = [['all', '전체'], ['youtube', '유튜브'], ['x', 'X'], ['g:강력 추천', '강력 추천만'], ['fit:황소개미 쓰레드', '쓰레드용'], ['fit:핫코노미 인스타', '인스타용'], ['fit:말희아빠 텔레그램', '텔레그램용']];
+    const list = el('div', 'em-list');
+    const show = () => {
+      list.replaceChildren(...A.filter(a => {
+        const r = a.reco || {};
+        if (plat === 'youtube' || plat === 'x') return a.platform === plat;
+        if (plat.startsWith('g:')) return r.grade === plat.slice(2);
+        if (plat.startsWith('fit:')) return (r.fit || []).includes(plat.slice(4));
+        return true;
+      }).map(card));
+      bar.querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.k === plat));
+    };
+    opts.forEach(([k, t]) => { const b = el('button', null, t); b.type = 'button'; b.dataset.k = k; b.addEventListener('click', () => { plat = k; show(); }); bar.append(b); });
+    function card(a) {
+      const r = a.reco || {}, c = el('article', 'em-card'), h = el('h3'), link = el('a', null, a.name);
+      link.href = a.url; link.target = '_blank'; link.rel = 'noopener';
+      h.append(link, el('span', 'pill', a.platform === 'youtube' ? '유튜브' : 'X'));
+      if (r.grade) h.append(el('span', 'pill ' + (r.grade === '강력 추천' ? 'positive' : r.grade === '참고만' ? 'warning' : ''), r.grade));
+      c.append(h);
+      if (r.one_line) c.append(el('p', 'one', r.one_line));
+      const ns = el('div', 'tl-nums'), add = (k, v) => { if (v == null || v === '') return; const s = el('span'); s.append(el('em', null, k), document.createTextNode(v)); ns.append(s); };
+      add(a.platform === 'youtube' ? '구독' : '팔로워', nf(a.followers));
+      add('6개월 글', nf(a.posts) + '개' + (a.covers_6m === false ? ' (일부)' : ''));
+      add('주당', a.per_week + '개');
+      if (a.platform === 'youtube') {
+        add('중간 조회', nf(a.med_views)); add('구독 대비', a.views_per_sub_pct != null ? a.views_per_sub_pct + '%' : null);
+        add('최근 30일', nf(a.med_views_30d)); add('터진 영상', a.hit_rate_pct != null ? a.hit_rate_pct + '%' : null); add('중간 길이', a.med_minutes != null ? a.med_minutes + '분' : null);
+      } else {
+        add('중간 좋아요', nf(a.med_likes)); add('중간 조회', nf(a.med_views)); add('1천 조회당 좋아요', a.likes_per_1k_views);
+        add('터진 글', a.hit_rate_pct + '%'); add('번호 매긴 글', a.numbered_pct + '%'); add('중간 길이', nf(a.med_chars) + '자');
+      }
+      c.append(ns);
+      const lst = (title, xs) => { if (!(xs || []).length) return; c.append(el('h4', null, title)); const u = el('ul'); xs.forEach(x => u.append(el('li', null, x))); c.append(u); };
+      lst('추천 이유', r.why); lst('따라 할 것', r.copy_this);
+      if ((r.fit || []).length) { const f = el('div', 'tl-nums'); f.style.marginTop = '8px'; r.fit.forEach(x => f.append(el('span', null, x))); c.append(f); }
+      if (r.caution) c.append(el('p', 'cau warn', '주의: ' + r.caution));
+      if (!r.grade) c.append(el('p', 'note', '추천 이유는 아직 작성 전이에요.'));
+      if ((a.top || []).length) {
+        const det = el('details'); det.append(el('summary', null, '가장 반응 좋았던 5개'));
+        a.top.forEach(t => { const x = el('a', null, t.title); x.href = t.url; x.target = '_blank'; x.rel = 'noopener'; x.append(el('em', null, `${t.date} · ${a.platform === 'youtube' ? '조회 ' + nf(t.views) : '좋아요 ' + nf(t.likes) + ' · 조회 ' + nf(t.views)}`)); det.append(x); });
+        c.append(det);
+      }
+      return c;
+    }
+    L.replaceChildren(bar, list); show();
+    const ul = el('ul', 'learn');
+    [['구독 대비', '6개월 중간 조회 ÷ 구독자. 구독자가 적어도 영상이 잘 퍼지는 채널을 찾는 숫자'],
+     ['터진 영상·글', '그 계정 중간값의 3배 넘게 반응한 비율. 높을수록 "터지는 공식"이 있는 계정'],
+     ['최근 30일', '최근 30일 중간 조회. 6개월 중간값보다 높으면 지금 뜨는 중'],
+     ['1천 조회당 좋아요', 'X에서 본 사람 1천 명 중 좋아요 누른 수. 내용 만족도'],
+     ['등급', '숫자를 근거로 Claude가 매긴 추천 등급. 숫자는 코드가 센 실제 값, 이유 문장은 AI 작성'],
+     ['(일부)', '뉴스 채널처럼 너무 많이 올리는 곳은 6개월 전부가 아니라 최근 400개(X는 300개)만 셈']]
+      .forEach(([k, v], i) => { const li = el('li'); li.append(el('b', null, String(i + 1))); const sp = el('span'); sp.append(el('b', null, k + ' '), document.createTextNode(v)); li.append(sp); ul.append(li); });
+    H.replaceChildren(ul, el('p', 'note', `수집: 유튜브 ${D.yt_collected || '-'} · X ${D.x_collected || '-'}. 인스타·링크드인은 이번 자료에서 빠졌어요.`));
+  }
+  function drawLab2() { drawDashboard(); drawThreadsInsight(); drawCalendar(); drawThLab(); drawEcon(); }
 
   dash.onData(() => {
     fbInit();
