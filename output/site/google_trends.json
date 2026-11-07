@@ -1,6 +1,15 @@
 [
  {
   "geo": "KR",
+  "term": "매일경제신문",
+  "traffic": 20000,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "개장 3분만에 서킷브레이커… 이틀간 삼전 13%-하이닉스 17% 빠져",
+  "news_link": "https://www.donga.com/news/Economy/article/all/20261107/134982636/2"
+ },
+ {
+  "geo": "KR",
   "term": "아들",
   "traffic": 10000,
   "topics": "",
@@ -10,12 +19,21 @@
  },
  {
   "geo": "KR",
+  "term": "국민연금",
+  "traffic": 5000,
+  "topics": "연금·절세",
+  "econ": true,
+  "news_title": "국민연금 한 달 49만원 받는 80세, 나이 들어 가장 큰 후회는…",
+  "news_link": "https://www.chosun.com/economy/startup_story/2026/11/07/MFMQSRXGTJCIFD6JADMYWW4E64/"
+ },
+ {
+  "geo": "KR",
   "term": "공무원",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "“날 쳐다봐서” 공무원 눈에 호신용 스프레이 쏜 40대",
-  "news_link": "https://www.kyeonggi.com/article/20261107580005"
+  "news_title": "\"왜 쳐다봐\" 호신용 스프레이 분사, 공무원 각막염…집유",
+  "news_link": "https://www.newsis.com/view/NISX20261107_0003858784"
  },
  {
   "geo": "KR",
@@ -28,6 +46,15 @@
  },
  {
   "geo": "KR",
+  "term": "노동자",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "제주 노동존중사회 의원연구포럼, 공무직 노동자 근무환경 개선 방안 모색 간담회",
+  "news_link": "https://www.headlinejeju.co.kr/news/articleView.html?idxno=601745"
+ },
+ {
+  "geo": "KR",
   "term": "요즘 남자 라이프 - 신랑수업",
   "traffic": 500,
   "topics": "",
@@ -37,12 +64,12 @@
  },
  {
   "geo": "KR",
-  "term": "노동자",
-  "traffic": 200,
+  "term": "의약품",
+  "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "제주 노동존중사회 의원연구포럼, 공무직 노동자 근무환경 개선 방안 모색 간담회",
-  "news_link": "https://www.headlinejeju.co.kr/news/articleView.html?idxno=601745"
+  "news_title": "식약처, 의약품 허가·심사 수수료 현실화 추진",
+  "news_link": "https://www.ibric.org/bric/trend/results-of-research.do?mode=view&articleNo=10063463&article.offset=0&articleLimit=15"
  },
  {
   "geo": "KR",
@@ -63,120 +90,93 @@
   "news_link": "https://www.khan.co.kr/article/202611061742001"
  },
  {
-  "geo": "KR",
-  "term": "의약품",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "식약처, 의약품 허가·심사 수수료 현실화 추진",
-  "news_link": "https://www.ibric.org/bric/trend/results-of-research.do?mode=view&articleNo=10063463&article.offset=0&articleLimit=15"
- },
- {
-  "geo": "KR",
-  "term": "기초 연구",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "내년 '기초연구' 2조 9102억 투자…지역·청년 연구 지원 확대",
-  "news_link": "https://www.korea.kr/news/policyNewsView.do?newsId=148975126"
- },
- {
-  "geo": "KR",
-  "term": "아프리카",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "국회아프리카포럼, 문병준 前 사우디대사대리 초청 세미나",
-  "news_link": "http://www.jeonpa.co.kr/news/articleView.html?idxno=228027"
- },
- {
   "geo": "US",
-  "term": "iowa basketball",
+  "term": "the day after tomorrow",
   "traffic": 5000,
   "topics": "",
   "econ": false,
-  "news_title": "Iowa 80-39 Eastern Illinois (Nov 5, 2026) Game Recap",
-  "news_link": "https://www.espn.com/womens-college-basketball/recap/_/gameId/401921425"
+  "news_title": "8 Best Movies To Watch If You Love The Day After Tomorrow",
+  "news_link": "https://www.cbr.com/best-movies-for-day-after-tomorrow-fans-list/"
  },
  {
   "geo": "US",
-  "term": "brandon aiyuk drama",
+  "term": "hawks",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "Brandon Aiyuk meets with 49ers, says he's healthy, 'looking to get reinstated'",
-  "news_link": "https://www.espn.com/nfl/story/_/id/50402899/brandon-aiyuk-meets-49ers-looking-get-reinstated"
+  "news_title": "Wizards at Hawks Discussion",
+  "news_link": "https://www.bulletsforever.com/washington-wizards-gamethreads/73890/wizards-at-hawks-discussion"
  },
  {
   "geo": "US",
-  "term": "sharks vs wild",
-  "traffic": 2000,
+  "term": "ice detains wisconsin state trooper",
+  "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Faber | Pregame vs. SJS",
-  "news_link": "https://www.nhl.com/wild/video/faber-pregame-vs-sjs-6408032841112"
+  "news_title": "Wisconsin state trooper detained by ICE",
+  "news_link": "https://abcnews.com/US/wisconsin-state-trooper-detained-ice/story?id=137922819"
  },
  {
   "geo": "US",
-  "term": "alabama basketball",
+  "term": "ku basketball",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Kaufman-Renn hopes to boost Jayhawks with knowledge, experience",
+  "news_link": "https://www2.kusports.com/sports/college/basketball-men/2026/nov/05/kaufman-renn-hopes-to-boost-jayhawks-with-knowledge-experience/"
+ },
+ {
+  "geo": "US",
+  "term": "bo bassett",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "An ‘elite’ foodie and basketball coach returns to Tuscaloosa for clash with Alabama",
-  "news_link": "https://www.al.com/alabamabasketball/2026/11/an-elite-foodie-and-basketball-coach-returns-to-tuscaloosa-for-clash-with-alabama.html"
+  "news_title": "Worlds Fallout + NCAA Week 1 & Cowboy Chaos | FloWrestling Radio Live (Ep. 1,276)",
+  "news_link": "https://www.flowrestling.org/video/16346701-replay-flowrestling-radio-live-nov-2nd-nov-2-9-am"
  },
  {
   "geo": "US",
-  "term": "delta air lines route cancellations",
+  "term": "hugh jackman",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Delta Air Lines Cancels 15 Routes From 3 Busiest Hubs: See Full List Now",
-  "news_link": "https://simpleflying.com/delta-cancels-15-routes-from-3-busiest-hubs/"
+  "news_title": "‘Logan’ Star Dafne Keen Says ‘I Was Offered Cocaine’ as an 11-Year-Old in Hollywood and Hugh Jackman ‘Made Sure No One Abused My Hours’ on Set",
+  "news_link": "https://variety.com/2026/film/news/logan-dafne-keen-cocaine-11-years-old-hollywood-1236939718/"
  },
  {
   "geo": "US",
-  "term": "ducks vs flames",
+  "term": "kingston flemings",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Ducks at Flames projected lineups",
-  "news_link": "https://www.nhl.com/news/anaheim-ducks-calgary-flames-game-preview-november-6-2026"
+  "news_title": "Fantasy Basketball Weekend Streamers: Kingston Flemings, Brayden Burries take over as starters",
+  "news_link": "https://sports.yahoo.com/articles/fantasy-basketball-weekend-streamers-kingston-155254606.html"
  },
  {
   "geo": "US",
-  "term": "etsu vs nc state",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Oregon Ducks Football News",
-  "news_link": "https://www.addictedtoquack.com/morning-quack-fix/64704/oregon-ducks-football-news"
- },
- {
-  "geo": "US",
-  "term": "nc state basketball",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "NC State Welcomes the East Tennessee State University Buccaneers",
-  "news_link": "https://www.backingthepack.com/nc-state-basketball/42143/nc-state-welcomes-the-east-tennessee-state-university-buccaneers"
- },
- {
-  "geo": "US",
-  "term": "fortaleza - medellín",
+  "term": "deandre ayton",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "¡Al todo o nada en Bogotá! El DIM visita a Fortaleza en busca del paso a los cuadrangulares | El Colombiano",
-  "news_link": "https://www.elcolombiano.com/deportes/futbol/dim-vs-fortaleza-clasificacion-cuadrangulares-liga-betplay-2026-FB43245761"
+  "news_title": "Deandre Ayton News: Starting Friday",
+  "news_link": "https://www.rotowire.com/basketball/headlines/deandre-ayton-news-starting-friday-537875"
  },
  {
   "geo": "US",
-  "term": "xavier basketball",
+  "term": "liga mx femenil",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Xavier v. Eastern Michigan: Preview",
-  "news_link": "https://sports.yahoo.com/articles/xavier-v-eastern-michigan-preview-185450202.html"
+  "news_title": "Chivas vs. América: ¿A qué hora y dónde ver EN VIVO Clásico Nacional por la J14 de Liga BBVA Femenil 2026?",
+  "news_link": "https://www.mediotiempo.com/futbol/liga-mx-femenil/chivas-vs-america-a-que-hora-y-donde-ver-j14-clasico-nacional-liga-mx-femenil-2026"
+ },
+ {
+  "geo": "US",
+  "term": "nba cup standings",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Starting 5: Emirates NBA Cup night on the horizon",
+  "news_link": "https://www.nba.com/news/starting-5-november-6-2026"
  }
 ]
