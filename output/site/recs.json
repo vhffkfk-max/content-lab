@@ -8,9 +8,9 @@
   "format": "릴스",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 3.67,
+  "kr_avg": 3.69,
   "kr_n": 26,
-  "foreign_avg": 1.62,
+  "foreign_avg": 1.63,
   "foreign_n": 37
  },
  {
@@ -37,7 +37,7 @@
   "hook": "인용형",
   "slot": "새벽(0~6시)",
   "kr_avg": 1.56,
-  "kr_n": 216,
+  "kr_n": 217,
   "foreign_avg": 1.13,
   "foreign_n": 129
  },
@@ -50,7 +50,7 @@
   "format": "릴스",
   "hook": "짧은 한 줄",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.13,
+  "kr_avg": 2.14,
   "kr_n": 28,
   "foreign_avg": 1.6,
   "foreign_n": 17
@@ -61,10 +61,10 @@
   "kind": "국내 검증 주제",
   "confidence": "높음",
   "title_idea": "숫자 하나로 보는 금리·연준",
-  "format": "단일 이미지",
+  "format": "릴스",
   "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.79,
+  "kr_avg": 1.8,
   "kr_n": 26,
   "foreign_avg": 0.8,
   "foreign_n": 22
@@ -78,7 +78,7 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.54,
+  "kr_avg": 1.56,
   "kr_n": 39,
   "foreign_avg": 1.47,
   "foreign_n": 29
@@ -92,7 +92,7 @@
   "format": "릴스",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.98,
+  "kr_avg": 1.99,
   "kr_n": 61,
   "foreign_avg": 1.94,
   "foreign_n": 16
@@ -107,8 +107,8 @@
   "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
   "kr_avg": 1.45,
-  "kr_n": 120,
-  "foreign_avg": 0.5,
+  "kr_n": 121,
+  "foreign_avg": 0.53,
   "foreign_n": 11
  }
 ]
