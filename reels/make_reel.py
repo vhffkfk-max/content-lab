@@ -657,6 +657,38 @@ def ohne_top(s, out):
     return formats.frame.top_html(f"{now.year}년{now.month}월{now.day}일", title or clean(s.ig_title or ""), re.sub(r"(.*\?).*", r"\1", clean(s.question or "")), q_min=52)   # 질문까지만 ('댓글로 알려 주세요' 빼기)
 
 
+BRAND_CSS = r"""
+#brand{position:absolute;left:0;right:0;top:58px;z-index:9;display:flex;justify-content:center;pointer-events:none}
+#brand span{background:#E3262B;color:#fff;font-weight:900;font-size:38px;padding:8px 24px;border-radius:40px;letter-spacing:.5px;box-shadow:0 4px 18px rgba(0,0,0,.5)}
+#hook{position:absolute;left:40px;right:40px;top:560px;z-index:9;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none}
+#hook b{display:block;background:#E3262B;color:#fff;font-size:104px;font-weight:900;line-height:1.12;padding:22px 34px;border-radius:18px;white-space:pre-line;box-shadow:0 10px 50px rgba(0,0,0,.7);letter-spacing:-2px}
+#hook i{display:block;margin-top:18px;font-style:normal;color:#fff;background:rgba(0,0,0,.78);font-size:46px;font-weight:800;padding:10px 22px;border-radius:12px}
+#cta{position:absolute;left:50px;right:50px;top:1420px;z-index:9;display:none;flex-direction:column;align-items:center;gap:14px;pointer-events:none}
+#cta .q{background:rgba(0,0,0,.86);color:#fff;font-size:42px;font-weight:800;line-height:1.3;padding:14px 22px;border-radius:14px;text-align:center}
+#cta .c{background:#E3262B;color:#fff;font-size:66px;font-weight:900;padding:14px 34px;border-radius:50px;box-shadow:0 8px 30px rgba(0,0,0,.6)}
+#cta .f{color:#fff;font-size:38px;font-weight:800;text-shadow:0 2px 10px #000}
+"""
+BRAND_JS = r"""
+{const hk=document.getElementById('hook'),ct=document.getElementById('cta'),seek0=window.seek;
+window.seek=t=>{seek0(t);
+  if(hk){const on=t<1.7;hk.style.display=on?'flex':'none';if(on){const q=ease(t/.16),sh=t<.55?(1-t/.55)*14:0;hk.style.transform=`translate(${Math.sin(t*93)*sh}px,${Math.cos(t*71)*sh}px) scale(${1.9-.9*q}) rotate(${-4*(1-q)}deg)`;hk.style.opacity=t<1.5?Math.min(1,t/.06+.4):Math.max(0,(1.7-t)/.2)}}
+  if(ct){const L=TL[TL.length-1],s0=L.start+.15,on=t>=s0;ct.style.display=on?'flex':'none';if(on){const q=ease((t-s0)/.3);ct.style.opacity=q;ct.style.transform=`translateY(${(1-q)*160}px) scale(${1+.03*Math.sin((t-s0)*6)})`}}
+};}
+"""
+
+
+def brand_html(s, q):
+    """계정 표시(항상) · 첫 1.7초 훅 · 마지막 컷 댓글 유도 (2026-11-07 대표 지적: 계정 표시 없음, 훅 약함, 댓글 유도 없음)."""
+    c0 = s.cuts[0] if s.cuts else None
+    big = to_text((c0.big or c0.kick or c0.cap), q).replace("\\n", "\n").replace("*", "").strip() if c0 else ""   # 큰 글자 칸의 줄바꿈 표시(\n 글자)를 실제 줄바꿈으로
+    sub = clean(to_text(c0.cap, q)) if c0 and c0.big else ""
+    ques = re.sub(r"\s*댓글.*$", "", clean(to_text(s.question or "", q))).strip()
+    return ('<div id="brand"><span>🔥 핫코노미 @hotconomy</span></div>'
+            + (f'<div id="hook"><b>{html.escape(big)}</b>' + (f'<i>{html.escape(sub)}</i>' if sub else '') + '</div>' if big else '')
+            + '<div id="cta">' + (f'<div class="q">{html.escape(ques)}</div>' if ques else '')
+            + '<div class="c">💬 댓글로 알려 주세요</div><div class="f">팔로우 @hotconomy · 매일 경제 쉽게</div></div>')
+
+
 def build_page(out, s, q, scenes, basis):
     logo = (ROOT / "assets" / "brand" / "hotconomy_logo.png").as_uri()
     used = list(dict.fromkeys([m for _, x in texts(s) for m in PH.findall(x)] + [n for c in s.cuts for n in ([c.ticker] if c.ticker else c.tickers)]))
@@ -665,11 +697,11 @@ def build_page(out, s, q, scenes, basis):
     if not used:
         basis = datetime.now(KST).strftime("%m/%d 뉴스 기준")
     tl = [{"id": x["id"], "start": x["start"], "end": x["end"], "caps": x["caps"]} for x in scenes]
-    js = JS + FX
+    js = JS + FX + BRAND_JS
     secs = "".join(scene(i, c, q) for i, c in enumerate(s.cuts, 1))
-    doc = f"""<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>{font_css()}{CSS}{EXTRA}{formats.css()}</style></head><body class="fmt-{STYLE['format']}">
+    doc = f"""<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>{font_css()}{CSS}{EXTRA}{formats.css()}{BRAND_CSS}</style></head><body class="fmt-{STYLE['format']}">
 <div id="fx"><div id="grid"></div><div id="glow"></div><div id="rays"></div></div><div id="bigword">{html.escape(s.hashtags[0].lstrip("#") if s.hashtags else "HOTCONOMY")} · @HOTCONOMY · </div><div id="wipe1"></div><div id="wipe2"></div><div id="bar"></div><div id="head"><img src="{logo}"><span>{basis}</span></div>{headline_html(s)}{ohne_top(s, out)}{secs}<div id="cap"></div>
-<div id="warn">정보 제공 목적 · 투자 권유 아님 · AI 음성</div>{tape_html}<div id="flash"></div>
+<div id="warn">정보 제공 목적 · 투자 권유 아님 · AI 음성</div>{tape_html}<div id="flash"></div>{brand_html(s, q)}
 <script>const TL={json.dumps(tl, ensure_ascii=False)};{js}</script></body></html>"""
     p = out / "page.html"
     p.write_text(doc, encoding="utf-8")
