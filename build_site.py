@@ -64,6 +64,11 @@ def main():
         "name": "말희아빠 & 파로파트너스 컨텐츠 연구소", "short_name": "연구소", "start_url": "./", "scope": "./", "display": "standalone",
         "background_color": "#fbf7f8", "theme_color": "#b8336a",
         "icons": [{"src": f"icon-{n}.png", "sizes": f"{n}x{n}", "type": "image/png"} for n in (192, 512)]}, ensure_ascii=False), encoding="utf-8")
+    raw = site / "econ_raw"   # 경제 미디어 수집 원본(econ-feed/export_raw.py) — 계정 펼칠 때만 불러옴
+    if raw.exists():
+        (out / "econ_raw").mkdir(exist_ok=True)
+        for p in raw.glob("*.json"):
+            (out / "econ_raw" / p.name).write_bytes(p.read_bytes())
     for name in ("charts", "futures"):   # 차트리포트(chart_report.py)·선물 브리핑(futures_brief.py) 이미지
         if (site / name).exists():
             (out / name).mkdir(exist_ok=True)
