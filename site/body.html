@@ -1057,7 +1057,7 @@ ul.gd-card{padding-left:36px;line-height:1.8}
       </div>
 
       <div class="view" data-view="video" hidden>
-        <div class="title-row"><div><h1>영상 연구소</h1><p>대본과 컷 이미지를 먼저 보고, 고친 뒤 버튼을 눌렀을 때만 영상을 만들어요. 플랫폼에는 올리지 않아요.</p></div></div>
+        <div class="title-row"><div><h1>영상 연구소</h1><p>대본과 컷 이미지를 먼저 보고, 고친 뒤 버튼을 눌렀을 때만 영상을 만들어요. 새 보드는 <b>핫코노미 v2</b>(상위 릴스 벤치마크) 형식으로 만들어지고, 보드마다 다른 형식으로 바꿀 수 있어요. 플랫폼에는 올리지 않아요.</p></div></div>
         <div id="vl-root"></div>
       </div>
       <div class="view" data-view="youtube" hidden>
@@ -1737,7 +1737,7 @@ ul.gd-card{padding-left:36px;line-height:1.8}
   }
   function vlDrawBar() {
     const bar = document.getElementById('vl-bar'); if (!bar || !vl.cur) return;
-    const b = vl.cur.board, changes = (b.changes || []).length > 0, save = el('button', 'btn', '수정 반영'), go = el('button', 'btn primary', changes ? '새 숫자로 영상 만들기' : b.video ? '영상 다시 만들기' : '영상 만들기');
+    const b = vl.cur.board, changes = (b.changes || []).length > 0, save = el('button', 'btn', '수정 반영'), fmtName = ((vl.cur.formats || []).find(f => f.key === vl.cur.format) || {}).name || '핫코노미 v2', go = el('button', 'btn primary', changes ? '새 숫자로 영상 만들기' : `${fmtName.split(' (')[0]}로 영상 ${b.video ? '다시 ' : ''}만들기`);
     save.id = 'vl-save'; go.id = 'vl-make'; save.type = go.type = 'button';
     save.addEventListener('click', async () => {
       const cuts = vl.cur.cuts.map(c => { const o = { i: c.i, say: c.say, cap: c.cap }; if (c.kind === 'word') Object.assign(o, { kick: c.kick, big: c.big }); if (c.kind === 'list') Object.assign(o, { kick: c.kick, items: c.items }); return o; });

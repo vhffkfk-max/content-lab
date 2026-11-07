@@ -13,7 +13,7 @@ PHOTO_MODEL = "claude-sonnet-5-5"   # 사진 검색어만 정하는 가벼운 �
 
 # key: (이름, 어떤 영상에 어울리나, CSS). 순서가 사이트에 보이는 순서.
 FORMATS = {
-    "frame": ("뉴스 프레임형", "연구소에 모은 상위 릴스(조선비즈 66~111배)의 구성: 검은 바탕 가운데 큰 사진, 사진 아래 고정 두 줄 제목(흰색+빨강), 장식 없음", """
+    "frame": ("핫코노미 v2 (뉴스 프레임형)", "기본 형식. 연구소에 모은 상위 릴스(조선비즈 66~111배)의 구성: 검은 바탕 가운데 큰 사진, 사진 아래 고정 두 줄 제목(흰색+빨강), 장식 없음", """
 body.fmt-frame{background:#000!important}
 body.fmt-frame #fx,body.fmt-frame #flash,body.fmt-frame #wipe1,body.fmt-frame #wipe2{display:none!important}
 body.fmt-frame #head{top:262px;justify-content:flex-end;z-index:5}body.fmt-frame #head img{height:66px}
