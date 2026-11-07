@@ -2526,382 +2526,6 @@
  ],
  "ideas": [
   {
-   "title": "선거 참패 이틀 만에 트럼프, 관세 최고 300%",
-   "concept": "선거에서 졌는데도 관세 카드를 접지 않은 트럼프 발언을 보도 중심으로 풀고, 반도체와 자동차 업종이 민감할 수 있다는 점을 짚는다",
-   "why_now": "나스닥이 5.5% 빠진 직후 나온 발언이라 오늘 장의 변수로 바로 이어진다. 이투데이, 연합뉴스, 조선비즈가 아침에 보도했다.",
-   "tag": "관세",
-   "sources": [
-    "https://v.daum.net/v/20261106074905418",
-    "https://biz.chosun.com/international/international_general/2026/11/06/J2D2WX725RCM5KPIXXN4VNOBMA/"
-   ],
-   "bg": "Donald Trump",
-   "bg_alt": "US port containers",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "선거 참패 이틀 만에\n트럼프가 꺼낸 관세는\n최고 **300%**",
-     "number": "300%",
-     "label": "트럼프가 예고한 최고 관세율",
-     "sub": "미국에 공장 지어야 면제 조건도 다시"
-    },
-    {
-     "type": "질문형",
-     "title": "선거에서 졌는데도\n트럼프는 왜 또\n**관세**를 꺼냈나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "선거엔 졌는데\n관세 카드는 안 접고\n**300%**로 돌아왔다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "breaking"
-   ],
-   "extra": {},
-   "id": "20261106-0801-i1",
-   "created_at": "2026-11-06T08:01:50+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261106-0801-i1/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261106-0801-i1/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261106-0801-i1/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261106-0801-i1/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261106-0801-i1/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261106-0801-i1/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261106-0801-i1/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261106-0801-i1/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261106-0801-i1/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "머스크 회사 두 곳, 이틀 새 시총 500조 증발",
-   "concept": "테슬라와 스페이스X 시총이 중간선거 뒤 얼마나 빠졌는지 숫자로 보여주고, 합병 구상이 흔들린다는 해석을 보도로 전한다",
-   "why_now": "연합, 이데일리, KBS 등 4곳이 다뤘고 CNBC가 합산 4200억 달러 이상 증발을 집계했다. 테슬라는 전일 대비 10.77% 내렸다.",
-   "tag": "기업",
-   "sources": [
-    "https://www.yna.co.kr/view/AKR20261106011400009",
-    "https://www.cnbc.com/2026/11/05/tesla-spacex-stocks-fall-after-2026-midterms.html"
-   ],
-   "bg": "Elon Musk",
-   "bg_alt": "Tesla Model Y",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "머스크 회사 두 곳이\n이틀 새 시총\n**500조원** 증발",
-     "number": "500조원",
-     "label": "테슬라, 스페이스X 이틀 시총 증발",
-     "sub": "CNBC 집계 합산 4200억 달러 이상"
-    },
-    {
-     "type": "질문형",
-     "title": "민주당 승리 뒤\n머스크의 합병 구상\n정말 **흔들리나**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "민주당이 이겼는데\n머스크 시총이\n**500조** 사라졌다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261106-0801-i2",
-   "created_at": "2026-11-06T08:01:50+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261106-0801-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261106-0801-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261106-0801-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261106-0801-i2/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261106-0801-i2/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261106-0801-i2/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261106-0801-i2/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261106-0801-i2/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261106-0801-i2/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261106-0801-i2/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261106-0801-i2/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261106-0801-i2/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "서울 아파트값, 오르긴 오르는데 힘이 빠졌다",
-   "concept": "서울 매매 상승폭 둔화, 강남 3구 약세와 경기 남부권 강세를 비교하고, 다음 주 반포현대 재건축초과이익환수금 사전통지를 변수로 짚는다",
-   "why_now": "어젯밤 KBS 등 여러 매체가 서울 아파트 매매 오름세 둔화를 보도했다. 대출 규제와 단기 급등 피로감이 이유로 꼽혔고, 최근 6시간 동안 다루지 않은 주제다.",
-   "tag": "부동산",
-   "sources": [
-    "https://v.daum.net/v/20261105233436332",
-    "https://v.daum.net/v/20261105233725354",
-    "https://v.daum.net/v/20261105220023506"
-   ],
-   "bg": "Seoul apartment skyline",
-   "bg_alt": "Gangnam Seoul apartments",
-   "hooks": [
-    {
-     "type": "사건형",
-     "title": "서울 아파트값\n오르긴 오르는데\n상승 **힘**이 빠졌다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "서울 아파트 강남 3구\n약세의 이유는\n**대출 규제**일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "서울은 주춤한데\n경기 남부권은\n**강세**를 유지한다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "editorial",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/06",
-     "headlines": [
-      "서울 아파트 상승폭 둔화",
-      "강남 3구는 약세",
-      "경기 남부권은 강세 유지"
-     ]
-    }
-   },
-   "id": "20261106-0801-i3",
-   "created_at": "2026-11-06T08:01:50+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261106-0801-i3/1-editorial-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261106-0801-i3/1-editorial-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261106-0801-i3/1-editorial-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261106-0801-i3/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261106-0801-i3/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261106-0801-i3/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261106-0801-i3/2-editorial-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261106-0801-i3/2-editorial-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261106-0801-i3/2-editorial-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261106-0801-i3/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261106-0801-i3/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261106-0801-i3/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261106-0801-i3/3-editorial-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261106-0801-i3/3-editorial-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261106-0801-i3/3-editorial-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261106-0801-i3/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261106-0801-i3/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261106-0801-i3/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "반포 재건축 재초환 가구당 2억대 통지",
    "concept": "서초구 사전 통지 소식을 재초환 개념 설명과 함께 내 집 얘기처럼 풀기. 첫 사례 여부는 확인 전이라 쓰지 않음",
    "why_now": "서초구가 9일 반포현대에 재초환 부담금을 사전 통지한다는 보도가 오늘 나왔다. 폭락장 속에서 부동산으로 주제를 분산한다.",
@@ -8236,6 +7860,429 @@
      "form": "news",
      "font": "myeongjo",
      "path": "20261107-0801-i3/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "일자리 16.5만개, 금리 인상 베팅 늘었다",
+   "concept": "예상 6.5만개의 2배가 넘는 고용이 나왔는데 로이터는 연준 금리 인상 베팅이 늘었다고 전했다. 좋은 소식이 왜 부담이 됐는지 한 사건으로 풀고, 한국에는 달러와 외국인 수급 쪽으로 이어 본다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "로이터가 고용지표 직후 금리 인상 베팅 증가를 보도했고 뉴스1, 조선비즈 등 6곳이 다뤘다. 월요일 코스피와 환율 흐름의 변수라 주말 전에 정리할 만하다.",
+   "tag": "미국 고용",
+   "sources": [
+    "https://www.cnbc.com/2026/11/06/jobs-report-october-2026.html",
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443594"
+   ],
+   "bg": "Jerome Powell",
+   "bg_alt": "Federal Reserve building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "미국 일자리 16.5만개\n예상의 **2배** 넘게 터졌다",
+     "number": "16.5만개",
+     "label": "미국 10월 일자리",
+     "sub": "예상치는 6.5만개였다"
+    },
+    {
+     "type": "질문형",
+     "title": "일자리가 좋았는데\n트레이더들은 왜\n금리 **인상**에 걸었나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "일자리 호재인데\n오른 건 **금리** 인상 베팅",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "bars"
+   ],
+   "extra": {
+    "bignum": {},
+    "bars": {
+     "sub": "미국 10월 일자리, 만 개",
+     "bars": [
+      {
+       "label": "예상",
+       "value": 6.5
+      },
+      {
+       "label": "실제",
+       "value": 16.5,
+       "hi": true
+      }
+     ]
+    }
+   },
+   "id": "20261107-0901-i1",
+   "created_at": "2026-11-07T09:01:34+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261107-0901-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261107-0901-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261107-0901-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261107-0901-i1/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261107-0901-i1/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261107-0901-i1/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261107-0901-i1/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261107-0901-i1/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261107-0901-i1/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261107-0901-i1/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261107-0901-i1/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261107-0901-i1/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "블루웨이브에 AI주 3.2조 달러 흔들렸다",
+   "concept": "민주당 당선인들의 데이터센터 건설 중단 공약이 AI주 급락을 불렀고, 하루 만에 AMD 11% 반등까지 이어진 흐름을 한 사건으로 이어 간다. 다만 나스닥은 4주 연속 주간 하락이라는 점을 마지막에 붙인다. (공식: 한 글에 사건 하나)",
+   "why_now": "뉴욕증시 반등 기사를 4곳 이상이 다뤘고 조선비즈, 경향, 머니투데이가 데이터센터 규제 공약과 AI주 급락을 짚었다. 코스피 오천피 붕괴와도 이어져 국내 관심이 크다.",
+   "tag": "AI주",
+   "sources": [
+    "https://biz.chosun.com/international/international_general/2026/11/07/XPEKSRLRGBGR7EGDMZFNPINIC4/",
+    "https://v.daum.net/v/20261107070942463",
+    "https://www.ft.com/content/088ed252-ea9c-4b61-b2d1-37295fd0f7c2?syn-25a6b1a6=1"
+   ],
+   "bg": "AMD Lisa Su",
+   "bg_alt": "data center servers",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "AI주에서 3.2조 달러\n**증발**했다는 보도",
+     "number": "3.2조 달러",
+     "label": "FT가 전한 AI주 급락 규모",
+     "sub": "데이터센터 규제 공약 여파"
+    },
+    {
+     "type": "질문형",
+     "title": "민주당 당선인들은\n왜 AI주를\n**흔들었나**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "규제 공약에 급락\n하루 만에 AMD **11%**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bars",
+    "news"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "뉴욕증시 반등 폭, %",
+     "bars": [
+      {
+       "label": "AMD",
+       "value": 11,
+       "hi": true
+      },
+      {
+       "label": "반도체",
+       "value": 4.2
+      },
+      {
+       "label": "나스닥",
+       "value": 1.1
+      }
+     ]
+    },
+    "news": {}
+   },
+   "id": "20261107-0901-i2",
+   "created_at": "2026-11-07T09:01:34+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261107-0901-i2/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261107-0901-i2/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261107-0901-i2/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261107-0901-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261107-0901-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261107-0901-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261107-0901-i2/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261107-0901-i2/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261107-0901-i2/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261107-0901-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261107-0901-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261107-0901-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261107-0901-i2/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261107-0901-i2/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261107-0901-i2/3-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261107-0901-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261107-0901-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261107-0901-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "미래에셋증권 해킹, 3.9만명 정보 유출",
+   "concept": "증시 급락 속에 증권사가 이틀 연속 외부 공격을 받아 고객, 임직원 3만9000여명의 정보가 유출됐다는 보도를 중심으로 쓴다. 유출 항목과 대응은 재료에 없어 모른다고 밝히고, 확인된 사실만 이어 간다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "다음 뉴스에 08:21 미래에셋증권 해킹 기사 두 건이 올라왔다. 증권 계좌를 가진 사람이 많아 내 얘기로 읽히는 소재다.",
+   "tag": "증권사 보안",
+   "sources": [
+    "https://v.daum.net/v/20261107082135180",
+    "https://v.daum.net/v/20261107082120178"
+   ],
+   "bg": "Mirae Asset Securities",
+   "bg_alt": "Yeouido Seoul financial district",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "미래에셋증권 해킹\n3.9만명 정보가\n**유출**됐다",
+     "number": "3.9만명",
+     "label": "유출된 고객, 임직원 정보",
+     "sub": "이틀 연속 외부 공격"
+    },
+    {
+     "type": "질문형",
+     "title": "미래에셋증권이\n이틀 연속 당한 공격\n뭘 **털렸나**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "증시가 무너진 주간\n증권사는 **해킹**당했다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "bignum"
+   ],
+   "extra": {
+    "bignum": {}
+   },
+   "id": "20261107-0901-i3",
+   "created_at": "2026-11-07T09:01:34+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-0901-i3/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-0901-i3/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-0901-i3/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261107-0901-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261107-0901-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261107-0901-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-0901-i3/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-0901-i3/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-0901-i3/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-0901-i3/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-0901-i3/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-0901-i3/3-breaking-dohyeon.jpg"
     }
    ]
   }
