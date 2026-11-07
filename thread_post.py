@@ -10,7 +10,7 @@
   근거 기사가 자동 접속을 막으면(매일경제·인베스팅 403) 뚫지 않고, 뉴스 검색 피드(Bing RSS)에서 같은 소식을 다룬 읽히는 기사를 찾아 씀
 - 마케팅 코치 원칙: 글마다 '황소개미 해석 한 줄', AI 티(반전 문구 '~가 아니라 ~다', 번호·기호 나열) 금지 — 걸리면 한 번 다시 쓰게 함
 - 글 쓰기: Claude Opus — 내 PC Claude Code(Max 구독, llm.py)라 API 요금 없음. A·B·C 를 동시에 쓰고, 끝나는 글부터 저장(--push 면 바로 올림)
-→ output/site/thread_posts.json (최근 60개, parts = 칸 목록). 사이트 '지금 쓸 거리' 카드 밑에 뜨고, 활용 체크(usage_audit.py)가 실제 올린 글과 맞춰 봄.
+→ output/site/thread_posts.json (최근 300개, parts = 칸 목록). 사이트 '지금 쓸 거리' 카드 밑에 뜨고, 활용 체크(usage_audit.py)가 실제 올린 글과 맞춰 봄.
 """
 import argparse
 import html
@@ -39,7 +39,7 @@ OUT = SITE / "thread_posts.json"
 GUIDES = [Path.home() / ".content-lab-ai" / "threads_abc.md", ROOT / "config" / "threads_abc.md"]
 DISCLAIMER = "(정보 제공용이며 투자 권유가 아닙니다)"
 MODEL = "claude-opus-5-5"
-KEEP = 60
+KEEP = 300
 SHORT = {"D": 1, "E": 2}   # 짧은 글의 칸 수
 SHORT_FIRST, SHORT_LAST = 60, 300   # 첫 칸·E 둘째 칸 글자 수 상한 (경제 글 4,427개 분석: 첫 칸 40자 안팎이 가장 잘 터짐)
 UA = {"User-Agent": "Mozilla/5.0 (content-lab research bot)"}

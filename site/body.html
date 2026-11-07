@@ -493,6 +493,18 @@ ul.gd-card{padding-left:36px;line-height:1.8}
 .gd-q summary{cursor:pointer;font-weight:700}.gd-q p{margin:8px 0 0;color:var(--muted)}
 .gd-home{display:inline-block;margin-top:6px;font-size:14px}
 @media (max-width:767px){.gd-dict{grid-template-columns:1fr;gap:2px}.gd-dict dd{margin-bottom:8px}}
+
+/* 지난 바레이션 모아보기 (2026-11-07) */
+.thh-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.thh-bar input{flex:1 1 200px;min-width:0;font:inherit;font-size:14px;padding:8px 10px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text)}
+.thh{border:1px solid var(--border);border-radius:12px;background:var(--surface);margin-bottom:8px}
+.thh>summary{cursor:pointer;padding:12px 16px;list-style:none;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.thh>summary::-webkit-details-marker{display:none}
+.thh>summary b{flex:1 1 220px;font-size:15px}
+.thh>summary span{font-size:12px;color:var(--faint)}
+.thh-body{padding:0 16px 14px;display:grid;gap:10px}
+.thh-post{border-top:1px solid var(--rule);padding-top:10px}
+.thh-post .box{white-space:pre-line;margin:6px 0}
 </style>
 
 <div class="app">
@@ -695,6 +707,11 @@ ul.gd-card{padding-left:36px;line-height:1.8}
           <div class="home-jobs" id="home-jobs"></div>
           <div id="home-jobs-old" hidden></div>
         </section>
+        <section class="sec" id="home-thhist">
+          <h2>내가 만든 쓰레드 글 (지난 것까지)</h2>
+          <p class="note">'쓰레드 콘텐츠 만들기'로 만든 글이 글감이 바뀌어도 여기 남아요. 최근 것부터 보여요.</p>
+          <div id="thhist-box"></div>
+        </section>
         <section class="sec" id="home-next-sec">
           <h2>채널별 다음 한 가지</h2>
           <div class="card next-list" id="home-next"></div>
@@ -791,6 +808,7 @@ ul.gd-card{padding-left:36px;line-height:1.8}
           <details class="gd-q"><summary>데이터는 언제 바뀌어요?</summary><p>컴퓨터가 켜져 있으면 <b>매시간</b> 자동으로 바뀌어요. 대시보드의 "데이터 갱신" 줄에서 마지막 시간을 볼 수 있어요. 빨간색이면 늦어진 거예요.</p></details>
           <details class="gd-q"><summary>새로고침했는데 그대로예요.</summary><p>폰은 앱을 완전히 닫았다가 다시 열어 보세요. 그래도 그대로면 그 시간에 새 글이 없었던 거예요.</p></details>
           <details class="gd-q"><summary>버튼을 눌렀는데 "로그인" 얘기가 나와요.</summary><p>카드뉴스 검수, 데이터 새로 불러오기처럼 <b>저장이 필요한 기능</b>은 GitHub 로그인이 필요해요. 보기만 하는 건 로그인 없이 돼요.</p></details>
+          <details class="gd-q"><summary>예전에 만든 쓰레드 글(바레이션)이 사라졌어요.</summary><p>글감은 매시간 바뀌지만 만든 글은 남아요. 첫 화면 아래 <b>"내가 만든 쓰레드 글 (지난 것까지)"</b>에서 검색하고 복사할 수 있어요.</p></details>
           <details class="gd-q"><summary>X(트위터) 글이 안 바뀌어요.</summary><p>X가 로봇 확인을 걸어서 지금 멈춰 있어요. PC에서 <b>crawl_login.py --x</b>로 직접 로그인하면 다시 돌아가요.</p></details>
           <details class="gd-q"><summary>AI 분석은 다 믿어도 돼요?</summary><p>아니요. <span class="bdg ai">AI 추정</span> 표시가 붙은 건 힌트예요. 숫자(<span class="bdg obs">관측 데이터</span>)를 먼저 보세요.</p></details>
           <details class="gd-q"><summary>이 사이트는 다른 사람도 볼 수 있어요?</summary><p>네. 주소를 아는 사람은 누구나 볼 수 있어요. 비밀번호·개인정보는 절대 여기에 적지 마세요.</p></details>
@@ -2026,6 +2044,44 @@ ul.gd-card{padding-left:36px;line-height:1.8}
     const r = await ghApi('contents/output/site/thread_posts.json?ref=main', { raw: true });
     return r.status === 200 ? r.json() : [];
   }
+
+  // 지난 바레이션 모아보기: thread_posts(최근 것) + 이번에 막 받은 글(thLive)을 글감별로 묶어 보여 준다
+  const thhState = { q: '', shown: 10 };
+  function drawThreadHistory() {
+    const box = document.getElementById('thhist-box'); if (!box) return;
+    const seen = new Set(), all = [...thLive, ...(rows('thread_posts') || [])].filter(x => { const k = (x.rid || '') + x.style + x.time; if (seen.has(k)) return false; seen.add(k); return true; });
+    const groups = new Map();
+    all.forEach(x => { const k = x.pick || '(제목 없음)'; if (!groups.has(k)) groups.set(k, []); groups.get(k).push(x); });
+    const bar = el('div', 'thh-bar'), q = el('input'); q.type = 'search'; q.placeholder = '제목·본문 검색'; q.value = thhState.q; q.setAttribute('aria-label', '만든 글 검색');
+    bar.append(q, el('span', 'note', `글감 ${groups.size}개 · 글 ${all.length}개`));
+    const list = el('div');
+    const paint = () => {
+      const k = thhState.q.trim().toLowerCase();
+      const G = [...groups].filter(([t, xs]) => !k || (t + ' ' + xs.map(x => x.text).join(' ')).toLowerCase().includes(k));
+      list.replaceChildren();
+      if (!all.length) return list.append(el('div', 'lab-empty', '아직 만든 쓰레드 글이 없어요. 위 "지금 쓸 거리"에서 A·B·C를 눌러 보세요.'));
+      if (!G.length) return list.append(el('div', 'lab-empty', '검색에 맞는 글이 없어요.'));
+      G.slice(0, thhState.shown).forEach(([title, xs], gi) => {
+        const d = el('details', 'thh'); d.open = gi === 0 && !k ? true : !!k;
+        const sm = el('summary'); sm.append(el('b', null, title), el('span', null, `${xs.map(x => x.style).sort().join('·')} · ${xs[0].time || ''}`));
+        const body = el('div', 'thh-body');
+        [...xs].sort((a, b) => String(a.style).localeCompare(String(b.style))).forEach(x => {
+          const p = el('div', 'thh-post'), chips = el('div', 'chips');
+          chips.append(el('span', 'pill accent', `${x.style} · ${x.label || TH_STYLES[x.style] || ''}`), el('span', 'pill neutral', `${x.time || ''} 만듦`));
+          p.append(chips, el('div', 'box', x.text || ''), copyBtn('복사', x.text || '', 'btn small primary'));
+          if (x.check && x.check.length) p.append(el('p', 'sub', `올리기 전 확인 · ${x.check.join(' · ')}`));
+          body.append(p);
+        });
+        d.append(sm, body); list.append(d);
+      });
+      if (G.length > thhState.shown) {
+        const more = el('button', 'btn lab-more', `더 보기 (${G.length - thhState.shown}개 남음)`); more.type = 'button';
+        more.addEventListener('click', () => { thhState.shown += 10; paint(); }); list.append(more);
+      }
+    };
+    q.addEventListener('input', () => { thhState.q = q.value; thhState.shown = 10; paint(); });
+    box.replaceChildren(bar, list); paint();
+  }
   function threadBlock(p, idx, slot, usedTitles) {
     const wrap = el('div', 'job-th'), bar = el('div', 'job-th-bar'), st = el('div', 'job-th-st'), list = el('div', 'job-th-posts');
     const mine = x => x.pick === p.title;   // 글감이 30분마다 일부만 바뀌므로 제목으로 찾음
@@ -2063,7 +2119,7 @@ ul.gd-card{padding-left:36px;line-height:1.8}
         let picked = false;
         try {
           const got = (await thFetch()).filter(x => x.rid === q.rid && !shown.has(x.style));
-          if (got.length) { got.forEach(x => shown.add(x.style)); thLive.unshift(...got); draw(); }
+          if (got.length) { got.forEach(x => shown.add(x.style)); thLive.unshift(...got); draw(); drawThreadHistory(); }
           const left = q.styles.split('').filter(c => !shown.has(c));
           if (!left.length) { end(); return show(`다 됐어요 — ${q.styles.split('').join('·')} 글을 복사해서 쓰레드에 붙여 넣으세요.`); }
           const r = await ghApi(`thread-request/${q.rid}`);
@@ -4303,7 +4359,7 @@ ul.gd-card{padding-left:36px;line-height:1.8}
     setChannel(known ? ch[1] : m ? 'instagram' : 'home');
     if (g && document.getElementById(g[1])) focusSec(g[1]); else if (ch) phoneFolder(ch[1]);
     if (m) openPlan(+m[1]);
-    use.start(); drawUsage();
+    use.start(); drawUsage(); drawThreadHistory();
     document.getElementById('gd-home-link')?.addEventListener('click', e => { e.preventDefault(); setChannel('guide'); scrollTo({ top: 0 }); try { history.replaceState(null, '', '#ch-guide'); } catch (x) {} });
     document.querySelectorAll('#cal-links a').forEach(a => a.addEventListener('click', e => {
       e.preventDefault(); const id = a.getAttribute('href').slice(4), v = document.getElementById(id)?.closest('.view');
