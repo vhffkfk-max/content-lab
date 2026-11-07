@@ -36,6 +36,7 @@ STEPS = [
     (["export_site.py"], 600),                 # 사이트 자료
     (["account_rank.py"], 900),                # 분야별 계정 순위
     (["threads_analyze.py"], 1800),            # 쓰레드 반응 랭킹·왜 떴나
+    (["threads_types.py"], 1200),              # 쓰레드 연구소: 글 형태 A~I·추천·공략집(하루 한 번 Claude)
     (["x_analyze.py"], 1200),                  # X·트루스 브리핑
     (["threads_mine_analyze.py"], 1200),       # 황소개미 진단
     (["generate_drafts.py"], 1800),            # 인스타 기획안 (3일 재사용)

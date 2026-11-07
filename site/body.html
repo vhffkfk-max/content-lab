@@ -505,6 +505,35 @@ ul.gd-card{padding-left:36px;line-height:1.8}
 .thh-body{padding:0 16px 14px;display:grid;gap:10px}
 .thh-post{border-top:1px solid var(--rule);padding-top:10px}
 .thh-post .box{white-space:pre-line;margin:6px 0}
+
+/* 쓰레드 연구소 (2026-11-07) */
+.tl-tbl{width:100%;border-collapse:collapse;font-size:14px;background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.tl-tbl th,.tl-tbl td{padding:9px 10px;border-bottom:1px solid var(--rule);text-align:right;white-space:nowrap}
+.tl-tbl th:first-child,.tl-tbl td:first-child{text-align:left;white-space:normal}
+.tl-tbl thead th{background:var(--raised);font-size:12px;color:var(--muted);font-weight:700}
+.tl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tl-bar{display:inline-block;height:8px;border-radius:4px;background:var(--accent);vertical-align:middle;margin-right:6px}
+.tl-letter{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:8px;background:var(--accent);color:#fff;font-weight:700;font-size:14px;margin-right:6px;flex:none}
+.tl-type{border:1px solid var(--border);border-radius:12px;background:var(--surface);padding:16px;margin-bottom:12px}
+.tl-type h3{display:flex;align-items:center;margin:0 0 4px;font-size:17px;flex-wrap:wrap;gap:4px}
+.tl-type .desc{margin:0 0 10px;color:var(--muted);font-size:14px}
+.tl-nums{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.tl-nums span{background:var(--raised);padding:3px 9px;border-radius:6px;font-size:13px}
+.tl-nums em{font-style:normal;color:var(--faint);margin-right:4px}
+.tl-ai{border-left:3px solid var(--accent);padding:8px 12px;background:var(--accent-soft);border-radius:0 8px 8px 0;margin:10px 0;font-size:14px}
+.tl-ai ul{margin:4px 0;padding-left:18px;line-height:1.7}
+.tl-ai p{margin:4px 0}
+.tl-picks{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.tl-pick{border:1px solid var(--border);border-radius:12px;background:var(--surface);padding:16px}
+.tl-pick h3{display:flex;align-items:center;margin:0 0 6px;font-size:16px}
+.tl-pick ul{margin:6px 0;padding-left:18px;font-size:14px;line-height:1.7;color:var(--muted)}
+.tl-play{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;counter-reset:pb}
+.tl-play article{border:1px solid var(--border);border-radius:12px;background:var(--surface);padding:14px 16px;counter-increment:pb}
+.tl-play h3{margin:0 0 6px;font-size:15px}.tl-play h3::before{content:counter(pb) ". ";color:var(--accent)}
+.tl-play p{margin:0;font-size:14px;color:var(--muted)}
+.tl-ex{margin-top:10px}
+.tl-ex summary{cursor:pointer;font-size:14px;font-weight:700}
+.tl-ex .tcards{margin-top:8px}
 </style>
 
 <div class="app">
@@ -538,6 +567,14 @@ ul.gd-card{padding-left:36px;line-height:1.8}
             <li><a href="#uc-ai">GPT·Claude 연결</a></li>
           </ul></li>
         <li class="nav-label" style="margin-top:10px">만들기</li>
+        <li><button type="button" data-ch="thlab"><i class="dot" style="background:var(--ch-threads)"></i>쓰레드 연구소</button>
+          <ul class="subnav" data-for="thlab">
+            <li><a href="#tl-sum">한눈에 보기</a></li>
+            <li><a href="#tl-reco">지금 쓸 형태</a></li>
+            <li><a href="#tl-types">형태 도감</a></li>
+            <li><a href="#tl-play">공략집</a></li>
+            <li><a href="#tl-mine">황소개미 성적</a></li>
+          </ul></li>
         <li><button type="button" data-ch="threads"><i class="dot" style="background:var(--ch-threads)"></i>쓰레드<span class="soon" id="th-badge">심사 중</span></button>
           <ul class="subnav" data-for="threads">
             <li><a href="#th-insight">인사이트 카드</a></li>
@@ -1024,6 +1061,14 @@ ul.gd-card{padding-left:36px;line-height:1.8}
       <div class="view" data-view="youtube" hidden>
         <div class="title-row"><div><h1>유튜브</h1><p>경제 유튜브 채널의 인기 영상과 제목·썸네일 문구 패턴을 분석할 예정이에요.</p></div></div>
         <div class="empty">준비 중이에요. 다음 단계에서 공식 YouTube Data API로 연결해요.</div>
+      </div>
+      <div class="view" data-view="thlab" hidden>
+        <div class="title-row"><div><h1>쓰레드 연구소</h1><p>경제 쓰레드 글을 <b>글 형태 A~I</b>로 나눠, 어떤 형태가 왜 잘 되는지 보고 지금 뭘 쓸지 골라 줘요. 매시간 새 글로 다시 계산해요.</p></div></div>
+        <section class="sec" id="tl-sum"><h2>한눈에 보기</h2><div id="tl-sum-box"></div></section>
+        <section class="sec" id="tl-reco"><h2>지금 쓸 형태 추천</h2><div id="tl-reco-box"></div></section>
+        <section class="sec" id="tl-types"><h2>형태 도감 A~I</h2><div id="tl-types-box"></div></section>
+        <section class="sec" id="tl-play"><h2>쓰레드 공략집</h2><div id="tl-play-box"></div></section>
+        <section class="sec" id="tl-mine"><h2>황소개미 형태 성적</h2><div id="tl-mine-box"></div></section>
       </div>
       <div class="view" data-view="threads" hidden>
         <div class="title-row">
@@ -4023,7 +4068,7 @@ ul.gd-card{padding-left:36px;line-height:1.8}
   document.getElementById('side-hide').addEventListener('click', () => setSide(true));
   document.getElementById('side-show').addEventListener('click', () => setSide(false));
   if (store.get('side_hidden') === '1') setSide(true);
-  const NAMES = { guide: '사용 가이드', calendar: '발행 캘린더', video: '영상 연구소', home: '오늘 할 일', instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드', x: 'X · 트루스소셜', telegram: '텔레그램 · 말희아빠', traders: '텔레그램 · 트레이더스', feedback: '후기·기록', growth: '마케팅 코치', viral: '뜬 글 공식', usage: '활용 체크' };
+  const NAMES = { thlab: '쓰레드 연구소', guide: '사용 가이드', calendar: '발행 캘린더', video: '영상 연구소', home: '오늘 할 일', instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드', x: 'X · 트루스소셜', telegram: '텔레그램 · 말희아빠', traders: '텔레그램 · 트레이더스', feedback: '후기·기록', growth: '마케팅 코치', viral: '뜬 글 공식', usage: '활용 체크' };
   // ── 폰: 채널을 열면 '전체' 대신 한 칸만 (이 기기에서 많이 본 칸, 없으면 첫 칸). 위 탭으로 다른 칸·전체로 이동 ──
   const isPhone = () => matchMedia('(max-width:860px)').matches;
   function phoneFolder(ch) {
@@ -4149,7 +4194,8 @@ ul.gd-card{padding-left:36px;line-height:1.8}
   const nf = v => v == null || v === '' ? null : Number(v).toLocaleString('ko-KR');
   const NAV_GROUPS = [
     ['대시보드', ['home', 'guide']],
-    ['트렌드 발견', ['threads', 'google', 'foreign', 'x', 'youtube']],
+    ['쓰레드 연구소', ['thlab', 'threads']],
+    ['트렌드 발견', ['google', 'foreign', 'x', 'youtube']],
     ['계정 분석', ['accounts']],
     ['콘텐츠 제작', ['instagram', 'telegram', 'traders', 'video', 'viral', 'growth']],
     ['성과 분석', ['usage', 'feedback']],
@@ -4345,7 +4391,96 @@ ul.gd-card{padding-left:36px;line-height:1.8}
       return a;
     }));
   }
-  function drawLab2() { drawDashboard(); drawThreadsInsight(); drawCalendar(); }
+
+  // ── 쓰레드 연구소: 글 형태 A~I (threads_types.py → thl_types / thl_reco / thl_ai) ──
+  function drawThLab() {
+    const one = id => { const d = rows(id); return (Array.isArray(d) ? d[0] : d) || null; };
+    const T = one('thl_types'), R = one('thl_reco'), A = one('thl_ai') || {};
+    const boxes = ['tl-sum-box', 'tl-reco-box', 'tl-types-box', 'tl-play-box', 'tl-mine-box'].map(id => document.getElementById(id));
+    if (!boxes[0]) return;
+    if (!T || !T.types) { boxes.forEach(b => b.replaceChildren(el('div', 'lab-empty', '아직 계산 전이에요. 매시간 분석이 돌면 채워져요.'))); return; }
+    const ai = {}; (A.types || []).forEach(x => { ai[x.type] = x; });
+    const types = T.types.filter(t => t.n), m = T.meta || {};
+    const pct = v => v == null ? '미수집' : v + '%';
+    const aiBadge = () => el('span', 'bdg ai', 'AI 추정');
+    // 한눈에
+    const sum = [];
+    sum.push(el('p', 'note', `지난 ${m.days}일 경제 쓰레드 글 ${nf(m.n)}개 · 전체 중간 조회 ${nf(m.med_views)} · '터짐' = ${m.viral_rule} · 계산 ${stamp(m.at)}`));
+    if ((A.summary || []).length) { const d = el('div', 'tl-ai'); const h = el('p'); h.append(el('b', null, 'AI 한 줄 정리 '), aiBadge()); const ul = el('ul'); A.summary.forEach(x => ul.append(el('li', null, x))); d.append(h, ul); sum.push(d); }
+    const maxV = Math.max(...types.map(t => t.viral_pct || 0), 1);
+    const tb = el('table', 'tl-tbl'), th = el('thead'), hr = el('tr');
+    ['형태', '글 수', '중간 조회', '터질 확률', '공유된 글', '댓글 달린 글'].forEach(h => hr.append(el('th', null, h)));
+    th.append(hr); const bd = el('tbody');
+    [...types].sort((a, b) => (b.viral_pct || 0) - (a.viral_pct || 0)).forEach(t => {
+      const tr = el('tr'), c0 = el('td'); c0.append(el('span', 'tl-letter', t.type), document.createTextNode(t.name + (t.small_sample ? ' (표본 적음)' : '')));
+      const cv = el('td'); const bar = el('i', 'tl-bar'); bar.style.width = Math.round((t.viral_pct || 0) / maxV * 60) + 'px'; cv.append(bar, document.createTextNode(pct(t.viral_pct)));
+      tr.append(c0, el('td', null, nf(t.n)), el('td', null, nf(t.med_views)), cv, el('td', null, pct(t.share_rate)), el('td', null, pct(t.reply_pct)));
+      bd.append(tr);
+    });
+    tb.append(th, bd); const wrap = el('div', 'tl-wrap'); wrap.append(tb); sum.push(wrap);
+    sum.push(el('p', 'note', '숫자는 모두 실제로 센 값(관측 데이터)이에요. 형태는 정해진 규칙으로 나눠서 가끔 틀릴 수 있어요.'));
+    boxes[0].replaceChildren(...sum);
+    // 지금 쓸 형태
+    if (R && (R.picks || []).length) {
+      const g = el('div', 'tl-picks');
+      R.picks.forEach((p, i) => {
+        const c = el('article', 'tl-pick'), h = el('h3'); h.append(el('span', 'tl-letter', p.type), document.createTextNode(`${i + 1}순위 · ${p.name}`));
+        c.append(h, el('p', null, `추천 주제: ${p.topic || '자유'}${p.best_length ? ` · 길이 ${p.best_length}` : ''}${(p.best_hours || []).length ? ` · 잘 된 시간 ${p.best_hours.map(x => x + '시').join('·')}` : ''}`));
+        const ul = el('ul'); (p.why || []).forEach(w => ul.append(el('li', null, w))); c.append(ul);
+        const x = ai[p.type]; if (x && x.template) c.append(el('p', 'note', `틀: ${x.template}`));
+        if (p.example) { const b = el('button', 'btn small', '지금 크는 예시 글 보기'); b.type = 'button'; b.addEventListener('click', () => openDetail(p.example, { label: `${p.type} ${p.name} 예시`, collected: R.at, ai: x ? x.why : null }, b)); c.append(b); }
+        g.append(c);
+      });
+      boxes[1].replaceChildren(el('p', 'note', `최근 48시간 빨리 크는 글 ${R.hot_n}개 기준 · 뜨는 주제 ${(R.hot_topics || []).join(', ')} · ${R.at}`), g);
+    } else boxes[1].replaceChildren(el('div', 'lab-empty', '추천을 만들 만큼 최근 글이 아직 없어요.'));
+    // 도감
+    boxes[2].replaceChildren(...T.types.map(t => {
+      const c = el('article', 'tl-type'); c.id = 'tl-type-' + t.type;
+      const h = el('h3'); h.append(el('span', 'tl-letter', t.type), document.createTextNode(t.name));
+      (t.strong || []).forEach(sx => h.append(el('span', 'pill positive', sx + ' 강함')));
+      if (t.small_sample) h.append(el('span', 'pill warning', '표본 적음'));
+      c.append(h, el('p', 'desc', t.desc));
+      if (!t.n) { c.append(el('p', 'note', '이 형태 글이 아직 없어요.')); return c; }
+      const ns = el('div', 'tl-nums');
+      [['글', nf(t.n) + `개 (${t.share}%)`], ['중간 조회', nf(t.med_views)], ['중간 확산', t.med_spread + '배'], ['반응률', pct(t.med_rate)], ['터질 확률', pct(t.viral_pct)], ['공유된 글', pct(t.share_rate)], ['사진·영상', t.media_pct + '%'], ['잘 된 길이', t.best_length]]
+        .forEach(([k, v]) => { const sp = el('span'); sp.append(el('em', null, k), document.createTextNode(v)); ns.append(sp); });
+      c.append(ns);
+      const x = ai[t.type];
+      if (x) {
+        const d = el('div', 'tl-ai'), hp = el('p'); hp.append(el('b', null, '왜 되나 '), aiBadge()); d.append(hp);
+        const ul = el('ul'); (x.why || []).forEach(w => ul.append(el('li', null, w))); d.append(ul);
+        if (x.template) { const p = el('p'); p.append(el('b', null, '틀: '), document.createTextNode(x.template)); d.append(p); }
+        if ((x.hooks || []).length) { const p = el('p'); p.append(el('b', null, '첫 줄 예시: ')); d.append(p); const u2 = el('ul'); x.hooks.forEach(k => { const li = el('li', null, k + ' '); li.append(copyBtn('복사', k)); u2.append(li); }); d.append(u2); }
+        if (x.best_for) { const p = el('p'); p.append(el('b', null, '이럴 때: '), document.createTextNode(x.best_for)); d.append(p); }
+        if (x.avoid) { const p = el('p'); p.append(el('b', null, '하지 말 것: '), document.createTextNode(x.avoid)); d.append(p); }
+        c.append(d);
+      }
+      if ((t.examples || []).length) {
+        const ex = el('details', 'tl-ex'); ex.append(el('summary', null, `잘 된 예시 글 ${t.examples.length}개`));
+        const g = el('div', 'tcards'); const src = { key: 'type', label: `${t.type} ${t.name}`, collected: stamp(m.at), ai: x ? x.why : null };
+        t.examples.forEach(p => g.append(tCard(p, src))); ex.append(g); c.append(ex);
+      }
+      return c;
+    }));
+    // 공략집
+    if ((A.playbook || []).length) {
+      const g = el('div', 'tl-play'); A.playbook.forEach(p => { const a = el('article'); a.append(el('h3', null, p.title), el('p', null, p.body)); g.append(a); });
+      const hd = el('p', 'note'); hd.append(aiBadge(), document.createTextNode(` 위 숫자를 보고 Claude가 쓴 공략이에요. 하루 한 번 새로 써요 · ${stamp(A.at)}`));
+      boxes[3].replaceChildren(hd, g);
+    } else boxes[3].replaceChildren(el('div', 'lab-empty', '공략집은 PC의 Claude가 하루 한 번 써요. 아직 안 썼어요.'));
+    // 황소개미
+    if (R && (R.mine || []).length) {
+      const st = {}; T.types.forEach(t => { st[t.type] = t; });
+      const tb2 = el('table', 'tl-tbl'), h2 = el('thead'), r2 = el('tr'); ['형태', '우리 글 수', '우리 중간 조회', '전체 중간 조회'].forEach(x => r2.append(el('th', null, x))); h2.append(r2);
+      const b2 = el('tbody');
+      R.mine.forEach(mm => { const tr = el('tr'), c0 = el('td'); c0.append(el('span', 'tl-letter', mm.type), document.createTextNode(mm.name)); tr.append(c0, el('td', null, nf(mm.n)), el('td', null, mm.n ? nf(mm.med_views) : '-'), el('td', null, nf((st[mm.type] || {}).med_views))); b2.append(tr); });
+      tb2.append(h2, b2); const w2 = el('div', 'tl-wrap'); w2.append(tb2);
+      const less = R.mine.filter(mm => mm.n <= 2 && (st[mm.type] || {}).viral_pct >= 14).map(mm => `${mm.type} ${mm.name}`);
+      boxes[4].replaceChildren(el('p', 'note', `황소개미(@bullant_economy) 지난 ${m.days}일 글 ${nf(R.mine_n)}개를 같은 규칙으로 나눴어요.`), w2,
+        ...(less.length ? [el('p', 'gd-tip', `잘 터지는데 우리가 거의 안 쓴 형태: ${less.join(', ')}`)] : []));
+    } else boxes[4].replaceChildren(el('div', 'lab-empty', '우리 계정 글이 아직 없어요.'));
+  }
+  function drawLab2() { drawDashboard(); drawThreadsInsight(); drawCalendar(); drawThLab(); }
 
   dash.onData(() => {
     fbInit();
