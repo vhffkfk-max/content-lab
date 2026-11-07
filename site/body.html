@@ -1639,7 +1639,7 @@ ul.gd-card{padding-left:36px;line-height:1.8}
   const vlPending = { get: () => { try { return JSON.parse(store.get('vl_pending') || '[]'); } catch (e) { return []; } }, set: a => store.set('vl_pending', JSON.stringify(a.slice(-8))) };
   const vlUrl = (path, v) => VL_RAW + path.split('/').map(encodeURIComponent).join('/') + (v ? `?v=${v}` : '');
   const vlRoot = () => document.getElementById('vl-root');
-  const VL_NAMES = { photo: '사진을 찾거나 바꾸는 중이에요 (보통 20~40초)', format: '형식을 바꿔 컷 이미지를 다시 그리는 중이에요', board: '대본과 컷 이미지를 만드는 중이에요 (보통 1~4분)', save: '컷 이미지를 다시 그리는 중이에요', voice: '이 컷의 음성을 만드는 중이에요', make: '영상을 만드는 중이에요 (보통 1~3분)' };
+  const VL_NAMES = { hot: '핫코노미 A 영상을 만드는 중이에요 (보통 5~10분)', photo: '사진을 찾거나 바꾸는 중이에요 (보통 20~40초)', format: '형식을 바꿔 컷 이미지를 다시 그리는 중이에요', board: '대본과 컷 이미지를 만드는 중이에요 (보통 1~4분)', save: '컷 이미지를 다시 그리는 중이에요', voice: '이 컷의 음성을 만드는 중이에요', make: '영상을 만드는 중이에요 (보통 1~3분)' };
   async function vlData(path) {
     const r = await ghApi(`reel-data/${path.split('/').map(encodeURIComponent).join('/')}`);
     if (r.status === 404) return null;
@@ -1698,7 +1698,7 @@ ul.gd-card{padding-left:36px;line-height:1.8}
       const secs = Math.round((Date.now() - q.t) / 1000);
       if (secs > 35 * 60) { vl.watching.delete(q.rid); vl.status.delete(q.rid); vlPending.set(vlPending.get().filter(x => x.rid !== q.rid)); vlDraw(); return; }
       const took = secs >= 60 ? `${Math.floor(secs / 60)}분 ${secs % 60}초째` : `${secs}초째`;
-      vl.status.set(q.rid, picked ? `${VL_NAMES[q.action]} · ${took}. 창을 닫아도 계속 만들어요.` : secs < 30 ? 'PC에 요청을 보내는 중이에요…' : `PC가 아직 요청을 못 받았어요 · ${took}. PC가 꺼져 있거나 절전 중일 수 있어요.`);
+      vl.status.set(q.rid, picked ? `${VL_NAMES[q.action] || '만드는 중이에요'} · ${took}. 창을 닫아도 계속 만들어요.` : secs < 30 ? 'PC에 요청을 보내는 중이에요…' : `PC가 아직 요청을 못 받았어요 · ${took}. PC가 꺼져 있거나 절전 중일 수 있어요.`);
       vlDrawStatus();
       setTimeout(tick, wait);
     };

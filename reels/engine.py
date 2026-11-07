@@ -55,6 +55,54 @@ def under_10k(n):
     return out + (DIGIT[n] if n else "")
 
 
+def read_int(n):
+    """9440 → 구천사백사십, 123000000 → 일억 이천삼백만 (만·억·조 단위)."""
+    if n == 0:
+        return "영"
+    out = []
+    for u, name in ((10 ** 12, "조"), (10 ** 8, "억"), (10 ** 4, "만"), (1, "")):
+        d, n = divmod(n, u)
+        if d:
+            out.append(("" if d == 1 and name == "만" else under_10k(d)) + name)
+    return "".join(out)
+
+
+NATIVE_UNIT = "명|개|살|시간|시|가지|번째|번|곳|마리|대|채|잔|권|장"
+NATIVE_ONE = ["", "한", "두", "세", "네", "다섯", "여섯", "일곱", "여덟", "아홉"]
+NATIVE_TEN = ["", "열", "스물", "서른", "마흔", "쉰", "예순", "일흔", "여든", "아흔"]
+LETTER = dict(zip("ABCDEFGHIJKLMNOPQRSTUVWXYZ", "에이 비 씨 디 이 에프 지 에이치 아이 제이 케이 엘 엠 엔 오 피 큐 알 에스 티 유 브이 더블유 엑스 와이 제트".split()))
+
+
+def _native(n):
+    t, o = divmod(n, 10)
+    return ("스무" if t == 2 and not o else NATIVE_TEN[t]) + NATIVE_ONE[o]
+
+
+def _num(m):
+    raw, unit = m[1].replace(",", ""), m[3] or ""
+    whole, _, frac = raw.partition(".")
+    n = int(whole)
+    if not frac and 1 <= n <= 99 and re.match(NATIVE_UNIT, unit) and not unit.startswith("번째") or (unit.startswith("번째") and 1 <= n <= 99 and not frac):
+        word = "첫" if n == 1 and unit.startswith("번째") else _native(n)
+        return word + " " + unit
+    word = read_int(n) + ("".join([" 점 "] + [DIGIT[int(c)] for c in frac]) if frac else "")
+    if unit == "%":
+        return word + " 퍼센트"
+    return word + unit
+
+
+def readable(say):
+    """음성 글을 읽는 형태로: 숫자 → 한글 읽기(9440억 → 구천사백사십억, 12.5% → 십이 점 오 퍼센트, 3명 → 세 명),
+    영어 약자 → 알파벳 이름(SK → 에스케이). [pct:종목] 자리표시와 *강조* 는 그대로 둔다.
+    긴 영어 낱말(약자가 아닌 것)은 바꾸지 않는다 → 검사가 계속 잡아 사람이 고치게."""
+    keep = []
+    s = re.sub(r"\[pct:[^\]]+\]", lambda m: keep.append(m[0]) or chr(0xE000 + len(keep) - 1), say)
+    s = re.sub(r"(\d)\s*[~∼]\s*(?=\d)", r"\1에서 ", s)
+    s = re.sub(r"(\d[\d,]*(\.\d+)?)\s*(%|" + NATIVE_UNIT + r")?", _num, s)
+    s = re.sub(r"\b[A-Z]{1,5}\b|(?<![A-Za-z])[A-Z]{1,5}(?=[가-힣])", lambda m: "".join(LETTER[c] for c in m[0]), s)
+    return re.sub("[\ue000-\ue0ff]", lambda m: keep[ord(m[0]) - 0xE000], s)
+
+
 def read_pct(x):
     x = round(abs(x), 1)
     a, b = int(x), round((x - int(x)) * 10)

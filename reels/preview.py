@@ -19,6 +19,7 @@ from PIL import Image
 
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path[:0] = [str(HERE), str(HERE.parent)]
+import engine  # noqa: E402
 import formats  # noqa: E402
 import make_reel as mr  # noqa: E402
 from common import ROOT  # noqa: E402
@@ -190,6 +191,8 @@ def apply_edit(d, payload):
         for k in ("say", "cap", "kick", "big"):
             if k in row:
                 base[k] = re.sub(r"[\x00-\x09\x0b-\x1f]", "", str(row[k]))[:TEXT_LIMIT].strip()
+        if "say" in row:   # 숫자·영어 약자는 읽는 형태로 (첫 문장 후보를 고르면 화면 표기가 그대로 들어오던 문제, 11/07)
+            base["say"] = engine.readable(base["say"])
         if "big" in row:
             base["big"] = base["big"].replace("\n", "\\n")
         if "items" in row:

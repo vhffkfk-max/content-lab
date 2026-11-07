@@ -812,7 +812,7 @@ def render_board(out, s, q, basis, block, warn, only=None):
     hooks = []
     for h in s.hooks:
         known = not any(n not in q for n in PH.findall(h))
-        hooks.append({"say": h, "text": to_text(h, q) if known else h, "score": max([x for x in (hook_score(to_say(h, q).replace("*", "")), hook_score(to_text(h, q))) if x is not None], default=None) if known else None})
+        hooks.append({"say": engine.readable(h), "text": to_text(h, q) if known else h, "score": max([x for x in (hook_score(to_say(h, q).replace("*", "")), hook_score(to_text(h, q))) if x is not None], default=None) if known else None})
     try:
         photo_note = load_state(out).get("photo_note", "")
     except (OSError, ValueError):
