@@ -2686,417 +2686,6 @@
  ],
  "ideas": [
   {
-   "title": "신용융자 담보비율 140% 3개월 면제",
-   "concept": "폭락장에서 나온 정부의 첫 구체 대책을 반대매매 개념과 함께 짧게 보도로 풀기",
-   "why_now": "코스피 5000선 붕괴와 서킷브레이커 직후 나온 첫 대책이고, 11곳이 보도했다. F4는 변동성이 더 커지면 추가 조치를 하겠다고 밝혔다.",
-   "tag": "증시 대책",
-   "sources": [
-    "https://v.daum.net/v/20261106120021856",
-    "https://view.asiae.co.kr/article/2026110611472351961",
-    "https://www.yna.co.kr/view/AKR20261106089800002"
-   ],
-   "bg": "Korea Exchange Seoul",
-   "bg_alt": "KOSPI stock board",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "빚투 반대매매 막는다\n담보비율 **140%** 의무\n3개월 동안 면제",
-     "number": "140%",
-     "label": "신용융자 담보비율 유지의무",
-     "sub": "3개월 면제, 대상과 적용 시점은 확인 필요"
-    },
-    {
-     "type": "질문형",
-     "title": "코스피 5000 붕괴에\n빚투 **반대매매** 막을까\n정부 첫 대책 나왔다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "서킷브레이커 뒤\n정부가 꺼낸 카드는\n**담보비율** 면제",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261106-1301-i1",
-   "created_at": "2026-11-06T13:01:28+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261106-1301-i1/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261106-1301-i1/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261106-1301-i1/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261106-1301-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261106-1301-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261106-1301-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261106-1301-i1/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261106-1301-i1/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261106-1301-i1/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261106-1301-i1/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261106-1301-i1/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261106-1301-i1/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "25억 초과 주담대 금지설, 정부 사실무근",
-   "concept": "퍼진 소문과 정부 입장을 구분해 보여 주고, 공식 발표부터 확인하라는 쪽으로 정리",
-   "why_now": "12시 전후 뉴시스, 머니투데이, 연합인포맥스 등이 정부의 11월 추가 규제 사실무근과 수사 의뢰 방침을 보도했다. 증시가 흔들리는 날이라 부동산 소문이 퍼지기 쉽다.",
-   "tag": "부동산 정책",
-   "sources": [
-    "https://www.newsis.com/view/NISX20261106_0003857823",
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443474",
-    "https://www.donga.com/news/Economy/article/all/20261106/134977628/1"
-   ],
-   "bg": "Seoul apartment complex",
-   "bg_alt": "Raemian One Bailey apartment",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "**25억** 초과 주담대\n금지한다는 소문에\n정부 수사 의뢰 예고",
-     "number": "25억",
-     "label": "주담대 금지설이 돈 기준선",
-     "sub": "정부 \"11월 추가 규제는 사실무근\""
-    },
-    {
-     "type": "질문형",
-     "title": "25억 넘으면 대출\n정말 **막히는** 걸까\n정부가 직접 답했다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "시장 흔든 규제설\n정부는 **사실무근**\n유포는 수사 의뢰",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "paper",
-    "news"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/06",
-     "headlines": [
-      "11월 추가 규제는 사실무근",
-      "소문 유포는 수사 의뢰 예정",
-      "강남3구 하락거래 16건"
-     ]
-    }
-   },
-   "id": "20261106-1301-i2",
-   "created_at": "2026-11-06T13:01:28+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261106-1301-i2/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261106-1301-i2/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261106-1301-i2/1-paper-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261106-1301-i2/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261106-1301-i2/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261106-1301-i2/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261106-1301-i2/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261106-1301-i2/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261106-1301-i2/2-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261106-1301-i2/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261106-1301-i2/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261106-1301-i2/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261106-1301-i2/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261106-1301-i2/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261106-1301-i2/3-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261106-1301-i2/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261106-1301-i2/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261106-1301-i2/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "70달러 찍던 트럼프 코인, 1.1달러로",
-   "concept": "정치 이슈로 오른 코인이 중간선거 참패 뒤 꺾인 흐름을 보도 중심으로 풀기",
-   "why_now": "연합뉴스, 인베스팅닷컴 등 4곳이 다뤘고, 중간선거 참패 직후 급락했다. 비트코인 하락과 코인 시장 흔들림 기사도 함께 나오는 중이다.",
-   "tag": "가상자산",
-   "sources": [
-    "https://www.yna.co.kr/view/AKR20261106050100009",
-    "https://kr.investing.com/news/cryptocurrency-news/article-2163264",
-    "https://kr.investing.com/news/stock-market-news/article-2163243"
-   ],
-   "bg": "Donald Trump",
-   "bg_alt": "TRUMP meme coin",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "70달러 찍던 트럼프 코인\n**1.1달러**까지\n떨어졌다",
-     "number": "1.1달러",
-     "label": "트럼프 코인 가격",
-     "sub": "70달러 찍던 코인, 중간선거 참패 뒤 급락"
-    },
-    {
-     "type": "질문형",
-     "title": "트럼프 코인은 왜\n선거 참패에 **무너졌나**\n정치로 오른 대가",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "정치로 오른 코인\n정치가 꺾이자\n**1.1달러** 추락",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "bars"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "트럼프 코인 가격, 달러",
-     "bars": [
-      {
-       "label": "고점 70달러대",
-       "value": 70
-      },
-      {
-       "label": "급락 후",
-       "value": 1.1,
-       "hi": true
-      }
-     ]
-    }
-   },
-   "id": "20261106-1301-i3",
-   "created_at": "2026-11-06T13:01:28+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261106-1301-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261106-1301-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261106-1301-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261106-1301-i3/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261106-1301-i3/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261106-1301-i3/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261106-1301-i3/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261106-1301-i3/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261106-1301-i3/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261106-1301-i3/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261106-1301-i3/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261106-1301-i3/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
    "title": "머스크 회사 이틀 만에 618조 증발",
    "concept": "테슬라와 스페이스X 시총 증발, 스페이스X 부도 위험 최고치, 합병 차질 가능성을 서학개미 계좌와 연결해 보도 중심으로 정리",
    "why_now": "오후 1시 전후 여러 매체가 테슬라와 스페이스X 시총 증발을 다뤘고, 인베스팅닷컴은 스페이스X 부도 위험 지표가 사상 최고치라고 전했다. 오늘 다룬 주제에 없던 새 소식이다. 매체별로 515조 원 등 수치가 달라 확인 표기가 필요하다.",
@@ -8315,6 +7904,446 @@
      "form": "breaking",
      "font": "dohyeon",
      "path": "20261107-1301-i3/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "트럼프 이란 방공망 5분 만에 파괴",
+   "concept": "트럼프를 주인공으로 발언, 공습, 직전 휴전 타진 보도, 월요일 장 전 확인할 유가와 환율 순으로 푼다. 공습 규모와 이란 측 반응은 확인 필요라고 한 줄로 밝힌다. (공식: 한 글에 사건 하나)",
+   "why_now": "13:27 머니투데이 등이 막 보도한 새 소식이다. 몇 시간 전까지 이란 핵 활동 축소 검토와 미국, 이란 휴전 타진 보도가 있었던 터라 흐름이 뒤집힐 수 있다. 앞서 다룬 유가 급락의 후속이기도 하다.",
+   "tag": "국제정세",
+   "sources": [
+    "https://www.mt.co.kr/world/2026/11/07/2026110713054620295",
+    "https://v.daum.net/v/20261107132701399",
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443574"
+   ],
+   "bg": "Trump Iran strike",
+   "bg_alt": "Strait of Hormuz tanker",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "방공망 **5분** 만에\n파괴했다는 트럼프\n선거 참패 뒤 첫 공습",
+     "number": "5분",
+     "label": "트럼프가 말한 이란 방공망 파괴 시간",
+     "sub": "중간선거 참패 후 첫 공습이라는 보도"
+    },
+    {
+     "type": "질문형",
+     "title": "휴전 타진 몇 시간 뒤\n왜 **공습**이 나왔나\n협상 기대 뒤 터진 일",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "핵 축소 검토 보도\n몇 시간 뒤 **공습**\n협상 기대가 뒤집혔다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261107-1401-i1",
+   "created_at": "2026-11-07T14:01:34+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-1401-i1/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-1401-i1/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-1401-i1/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261107-1401-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261107-1401-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261107-1401-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-1401-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-1401-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-1401-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261107-1401-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261107-1401-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261107-1401-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-1401-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-1401-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-1401-i1/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261107-1401-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261107-1401-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261107-1401-i1/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "연 4% 예금 두 달 새 20개에서 134개",
+   "concept": "저축은행 연 4% 예금 상품 수가 두 달 만에 20개에서 134개로 늘어난 낙차를 앞세운다. 뒤에서는 예금자보호 5천만 원 한도와 우대금리 포함 여부를 가입 전 확인 사항으로 짚는다. (공식: 전후 낙차 한 줄 표지)",
+   "why_now": "13:14 뉴스웨이가 보도했다. 코스피가 한 주 11.7% 빠지고 12월 금리 인상론까지 나오면서 예금으로 눈이 가는 시점이다.",
+   "tag": "예금",
+   "sources": [
+    "https://v.daum.net/v/20261107131403277"
+   ],
+   "bg": "savings bank deposit",
+   "bg_alt": "bank branch Korea",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "연 4% 예금\n두 달 새 20개에서\n**134개**로 늘었다",
+     "number": "134개",
+     "label": "저축은행 연 4% 예금 상품 수",
+     "sub": "두 달 전에는 20개였습니다"
+    },
+    {
+     "type": "질문형",
+     "title": "왜 지금 저축은행에서\n연 4% 예금이\n**쏟아져** 나왔나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "증시는 한 주 11.7%↓\n연 4% 예금은\n20개에서 **134개**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "bars"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "저축은행 연 4% 예금 상품 수",
+     "bars": [
+      {
+       "label": "두 달 전",
+       "value": 20
+      },
+      {
+       "label": "지금",
+       "value": 134,
+       "hi": true
+      }
+     ]
+    }
+   },
+   "id": "20261107-1401-i2",
+   "created_at": "2026-11-07T14:01:34+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261107-1401-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261107-1401-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261107-1401-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261107-1401-i2/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261107-1401-i2/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261107-1401-i2/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261107-1401-i2/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261107-1401-i2/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261107-1401-i2/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261107-1401-i2/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261107-1401-i2/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261107-1401-i2/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "5000 붕괴했는데 노무라는 1만 유지",
+   "concept": "코스피 5000이 무너진 날 노무라가 1년 목표 1만을 유지했다는 사실을 앞세운다. 근거 3가지를 보여 주고, 증권사 목표는 전망일 뿐이며 지금 변동성은 외국인 매도와 AI 회의론 영향이 크다고 한 줄로 균형을 잡는다. (공식: 이미 일어난 일로)",
+   "why_now": "코스피가 이틀 새 11% 빠진 날 노무라가 목표를 낮추지 않았다는 기사가 아시아경제에 2건 나왔다. 관련 쓰레드 글도 시간당 조회 2,258로 빠르게 크고 있다.",
+   "tag": "증시",
+   "sources": [
+    "https://view.asiae.co.kr/article/2026110711261496170",
+    "https://www.threads.com/@samchoniganda/post/DfakVaLE9U1"
+   ],
+   "bg": "Nomura Securities",
+   "bg_alt": "KOSPI trading screen",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "코스피 5000 붕괴에도\n노무라 목표는\n**1만** 그대로 유지",
+     "number": "1만",
+     "label": "노무라가 유지한 코스피 1년 목표",
+     "sub": "AI 투자, 자사주 소각, 상법 개정을 근거로 꼽았습니다"
+    },
+    {
+     "type": "질문형",
+     "title": "5000 무너진 날\n노무라는 왜 목표를\n**1만**으로 지켰나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "이틀 새 11% 빠졌는데\n노무라는 목표를\n**안 낮췄다**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "list"
+   ],
+   "extra": {
+    "list": {
+     "sub": "노무라가 목표 1만 유지의 근거로 꼽은 것",
+     "count": 3
+    }
+   },
+   "id": "20261107-1401-i3",
+   "created_at": "2026-11-07T14:01:34+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261107-1401-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261107-1401-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261107-1401-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "list",
+     "font": "noto",
+     "path": "20261107-1401-i3/1-list-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "list",
+     "font": "black",
+     "path": "20261107-1401-i3/1-list-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "list",
+     "font": "plex",
+     "path": "20261107-1401-i3/1-list-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261107-1401-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261107-1401-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261107-1401-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "list",
+     "font": "noto",
+     "path": "20261107-1401-i3/2-list-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "list",
+     "font": "black",
+     "path": "20261107-1401-i3/2-list-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "list",
+     "font": "plex",
+     "path": "20261107-1401-i3/2-list-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261107-1401-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261107-1401-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261107-1401-i3/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "list",
+     "font": "noto",
+     "path": "20261107-1401-i3/3-list-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "list",
+     "font": "black",
+     "path": "20261107-1401-i3/3-list-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "list",
+     "font": "plex",
+     "path": "20261107-1401-i3/3-list-plex.jpg"
     }
    ]
   }
