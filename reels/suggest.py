@@ -99,7 +99,20 @@ def seed_for(topic):
         items = json.loads(FILE.read_text(encoding="utf-8")).get("items", [])
     except (OSError, ValueError):
         return []
-    return next((r["links"] for r in items if r["keyword"] == topic), [])
+    hit = next((r["links"] for r in items if topic in (r["keyword"], r.get("title"))), None)
+    if hit is not None:
+        return hit
+    norm = lambda s: " ".join(str(s or "").split())[:60].strip()
+    try:   # 지금 쓸 거리 카드에서 누른 제목 (추천 목록에서 빠진 지난 글감도)
+        hot = json.loads((SITE / "hot_now.json").read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return []
+    for slot in hot:
+        for p in slot.get("picks", []):
+            if norm(p.get("title")) == norm(topic):
+                links = p.get("sources") if isinstance(p.get("sources"), list) else []
+                return [x for x in links if isinstance(x, str) and x.startswith("https://")][:6]
+    return []
 
 
 if __name__ == "__main__":

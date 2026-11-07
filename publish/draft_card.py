@@ -114,6 +114,16 @@ def pick_hot(queue):
     return picks[0] if picks else None
 
 
+def hot_by_title(title):
+    """사이트 '지금 쓸 거리' 카드에서 누른 제목 → 그 글감 (지난 것까지 찾음)."""
+    norm = lambda s: " ".join(str(s or "").split())[:60].strip()
+    try:
+        h = json.loads((SITE / "hot_now.json").read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+    return next((p for run in h for p in run.get("picks", []) if norm(p.get("title")) == norm(title)), None)
+
+
 SHORT = """
 
 [이번 글은 속보형 짧은 카드]
@@ -379,6 +389,8 @@ def main():
     if chosen:
         a.topic, a.short = chosen["idea"]["title"], chosen["short"]
     hot = pick_hot(queue) if a.short and not a.topic else None
+    if a.topic and not chosen and (h := hot_by_title(a.topic)):   # 지금 쓸 거리 카드의 버튼
+        hot, a.short = h, True
     if a.short and not a.topic and not hot:
         a.short = False   # 지금 발행할 거리가 없으면 보통 초안으로
     topic = hot["title"] if hot else pick_topic(queue, a.topic)

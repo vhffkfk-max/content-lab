@@ -278,6 +278,7 @@ a.row:hover .row-main{text-decoration:underline}
 /* 쓰레드 콘텐츠 만들기 (2026-11-01): 지금 쓸 거리마다 황소개미 쓰레드 글 A·B·C */
 .job-th{grid-column:1/-1;display:grid;gap:10px;border-top:1px solid var(--border);padding-top:14px}
 .job-th-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.job-make{margin-top:10px;padding-top:10px;border-top:1px solid var(--rule)}
 .job-th-bar>span{font-size:13px;color:var(--muted);margin-right:4px}
 .job-th-st p{margin:0}
 .job-th-posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:10px}
@@ -2127,6 +2128,27 @@ ul.gd-card{padding-left:36px;line-height:1.8}
     q.addEventListener('input', () => { thhState.q = q.value; thhState.shown = 10; paint(); });
     box.replaceChildren(bar, list); paint();
   }
+
+  // 지금 쓸 거리 → 인스타 카드뉴스 초안(draft-create, PC가 이 글감으로 속보형 3~5장) / 릴스 컷 보드(영상 메뉴와 같은 요청, 이 글감의 출처 기사를 재료로)
+  function makeBar(p) {
+    const bar = el('div', 'job-th-bar job-make'), topic = String(p.title || '').replace(/\s+/g, ' ').trim().slice(0, 60).trim();
+    bar.append(el('span', null, '인스타·영상 만들기'));
+    const card = draftBtn(topic); card.className = 'btn small'; card.textContent = '인스타 카드뉴스 초안';
+    const reel = el('button', 'btn small', '릴스 컷 보드'); reel.type = 'button';
+    reel.addEventListener('click', async () => {
+      if (reel.dataset.done) return goTo('video');
+      if (!fb.key && !(await connectLab())) return;
+      if (topic.length < 2) return alert('제목이 너무 짧아요.');
+      if (!confirm(`'${topic}'로 릴스 컷 보드(대본+컷 이미지)를 만들까요?\n보통 1~4분 걸려요. '영상' 메뉴에서 고치고 영상으로 만들 수 있어요.`)) return;
+      reel.disabled = true; reel.textContent = '요청하는 중…';
+      const ok = await vlSend('board', { topic }).catch(() => false);
+      reel.disabled = false;
+      if (ok) { reel.dataset.done = '1'; reel.textContent = '요청했어요 — 영상 메뉴에서 보기 →'; }
+      else reel.textContent = '릴스 컷 보드';
+    });
+    bar.append(card, reel);
+    return bar;
+  }
   function threadBlock(p, idx, slot, usedTitles) {
     const wrap = el('div', 'job-th'), bar = el('div', 'job-th-bar'), st = el('div', 'job-th-st'), list = el('div', 'job-th-posts');
     const mine = x => x.pick === p.title;   // 글감이 30분마다 일부만 바뀌므로 제목으로 찾음
@@ -2272,7 +2294,7 @@ ul.gd-card{padding-left:36px;line-height:1.8}
       acts.append(copyBtn('초안 복사', p.draft, 'btn primary'));
       const src = (p.sources || [])[0];
       if (src && webLink(src)) { const l = el('a', 'btn small', '근거'); l.href = src; l.target = '_blank'; l.rel = 'noopener'; acts.append(l); }
-      card.append(txt, acts, threadBlock(p, i, run.time, usedTitles));
+      card.append(txt, acts, threadBlock(p, i, run.time, usedTitles), makeBar(p));
       return card;
     };
     if (hn) (hn.picks || []).slice(0, 3).forEach((p, i) => jobs.push(jobCard(p, i, hn)));
