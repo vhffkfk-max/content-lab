@@ -2686,344 +2686,6 @@
  ],
  "ideas": [
   {
-   "title": "삼양식품 3분기 영업익 1,962억, 역대 최대",
-   "concept": "코스피가 6% 빠진 날 나온 실적 하나를 표지부터 끝까지 끌고 간다. 1,962억원, 전년 대비 약 50% 증가를 중심에 두고, 매출액과 해외 비중은 확인 후에만 넣는다. (공식: 한 글에 한 사건만)",
-   "why_now": "16:53~17:45 사이 한국경제, 연합뉴스, 조선비즈 등 5곳이 보도했다. 증시가 폭락한 날 나온 실적이라 대비가 분명하고, 아직 다루지 않은 주제다.",
-   "tag": "기업실적",
-   "sources": [
-    "https://www.hankyung.com/article/202611061146g",
-    "https://www.yna.co.kr/view/AKR20261106131851527"
-   ],
-   "bg": "Samyang Buldak ramen",
-   "bg_alt": "Samyang Foods ramen",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "코스피 -6%인 날\n영업익 **1,962억**\n삼양식품 최대",
-     "number": "1,962억원",
-     "label": "삼양식품 3분기 영업이익",
-     "sub": "전년 대비 약 50% 증가, 역대 최대"
-    },
-    {
-     "type": "질문형",
-     "title": "다 떨어진 날\n삼양식품만\n**왜** 웃었나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "코스피 6% 폭락\n그날 삼양식품은\n**역대 최대** 실적",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261106-1805-i1",
-   "created_at": "2026-11-06T18:05:41+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261106-1805-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261106-1805-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261106-1805-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261106-1805-i1/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261106-1805-i1/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261106-1805-i1/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261106-1805-i1/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261106-1805-i1/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261106-1805-i1/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "하이닉스 -18%, 단일 레버리지 ETF는 -90%",
-   "concept": "주식 이틀 하락폭과 ETF의 고점 대비 하락폭을 나란히 놓아 변동성 상품의 낙차를 보여 준다. 막대 두 개에 색을 하나씩 준다. 두 수치의 기준이 다르다는 점을 단서로 적고, 매수나 매도 판단은 넣지 않는다. (공식: 두 쪽 대결을 색 두 개로)",
-   "why_now": "17:31 연합뉴스, 이투데이, 매일경제 3곳이 보도했다. SK하이닉스는 오늘 10.44% 하락했고 이틀간 18% 빠졌다. 반등을 노린 레버리지 투자자 피해를 다룬 기사도 이어지고 있다.",
-   "tag": "레버리지",
-   "sources": [
-    "https://www.yna.co.kr/view/AKR20261106155400008",
-    "https://www.etoday.co.kr/news/view/2645216",
-    "https://v.daum.net/v/20261106180020136"
-   ],
-   "bg": "SK hynix",
-   "bg_alt": "SK hynix headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "하이닉스 -18%\nETF는 **-90%**\n레버리지의 낙차",
-     "number": "-90%",
-     "label": "하이닉스 단일 레버리지 ETF, 고점 대비 90% 가까이",
-     "sub": "주식은 이틀간 18% 하락"
-    },
-    {
-     "type": "질문형",
-     "title": "주식은 -18%인데\nETF는 왜\n**-90%**일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "반등 베팅 하루 만에\n레버리지 개미들\n**날벼락**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bars",
-    "bignum"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "SK하이닉스 이틀 하락폭 vs 단일 레버리지 ETF 고점 대비 하락폭(%), 기준이 다름",
-     "bars": [
-      {
-       "label": "SK하이닉스 주가",
-       "value": 18
-      },
-      {
-       "label": "단일 레버리지 ETF",
-       "value": 90,
-       "hi": true
-      }
-     ]
-    }
-   },
-   "id": "20261106-1805-i2",
-   "created_at": "2026-11-06T18:05:41+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261106-1805-i2/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261106-1805-i2/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261106-1805-i2/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261106-1805-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261106-1805-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261106-1805-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261106-1805-i2/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261106-1805-i2/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261106-1805-i2/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261106-1805-i2/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261106-1805-i2/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261106-1805-i2/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "폭락장에 확인하는 내 퇴직연금",
-   "concept": "지수 시황이 아니라 내 노후 자금 관점으로 푼다. 코스피 6.02% 급락과 퇴직연금 계좌가 흔들렸다는 보도를 먼저 보여 주고, 같은 날 열린 정부와 금융권 간담회(노동장관 '가입자 이익 최우선' 주문)로 잇는다. 이틀간 11% 폭락은 확인 전에는 쓰지 않는다. 보도 기준임을 작게 단서로 단다. (공식: 근거 한 장과 단서 한 줄)",
-   "why_now": "'퇴직연금 1억 녹아내린다' 기사를 3곳이 다뤘다. 같은 날 노동부와 금감원이 퇴직연금 개편을 앞두고 금융권 대표 9명과 간담회를 열었다는 보도도 나와 시의성이 높다.",
-   "tag": "퇴직연금",
-   "sources": [
-    "https://v.daum.net/v/20261106160821651",
-    "https://www.mt.co.kr/economy/2026/11/06/2026110616161416072",
-    "https://v.daum.net/v/20261106180003125"
-   ],
-   "bg": "Korea retirement pension",
-   "bg_alt": "Seoul financial district",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "코스피 **-6.02%**\n내 퇴직연금\n계좌는 괜찮나",
-     "number": "-6.02%",
-     "label": "6일 코스피 하락률",
-     "sub": "5,059.69에 마감"
-    },
-    {
-     "type": "질문형",
-     "title": "내 퇴직연금\n오늘 얼마나\n**흔들렸나**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "코스피 폭락한 날\n퇴직연금 금융권\n대표 **9명** 소집",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "editorial",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/06",
-     "headlines": [
-      "코스피 6.02% 급락 마감",
-      "노동장관 가입자 이익 최우선",
-      "금융권 대표 9명 간담회"
-     ]
-    }
-   },
-   "id": "20261106-1805-i3",
-   "created_at": "2026-11-06T18:05:41+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261106-1805-i3/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261106-1805-i3/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261106-1805-i3/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261106-1805-i3/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261106-1805-i3/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261106-1805-i3/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261106-1805-i3/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261106-1805-i3/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261106-1805-i3/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "롯데케미칼 3분기 2814억 적자",
    "concept": "매출은 늘었는데 적자폭이 커진 이유를 '스프레드 쇼크'(제품값과 원료값 차이가 좁아짐)로 풀고, 사업재편 보도로 마무리한다. 같은 날 호실적 기업과 갈린 점은 마지막에 짧게 붙인다. (공식: 한 글에 한 사건만)",
    "why_now": "18:25 종합기사가 나왔고 7곳이 다뤘다. 반도체 폭락장에 가려진 화학업종 부진이라 다른 시각을 줄 수 있다.",
@@ -8417,6 +8079,411 @@
      "form": "news",
      "font": "myeongjo",
      "path": "20261107-1810-i3/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "기름값 25주 연속 하락, 체감은 그대로",
+   "concept": "25주 연속 하락이라는 확인된 사실에서 시작해, 휘발유는 여전히 1,800원대이고 중동 변수가 남았다는 흐름으로 푼다. 평균 가격은 확인 후 기재. (공식: 한 글에 사건 하나)",
+   "why_now": "17:14 KBS가 휘발유 25주 연속 하락, 1,800원대 유지를 보도했다. 앞서 나온 유가, 정유주 급락 이슈와 이어지는 생활 밀착 소재다.",
+   "tag": "생활물가",
+   "sources": [
+    "https://v.daum.net/v/20261107171418445",
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443589"
+   ],
+   "bg": "gas station price sign",
+   "bg_alt": "oil refinery",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "기름값 **25주** 연속\n내렸는데도\n휘발유 1,800원대",
+     "number": "25주",
+     "label": "기름값 연속 하락",
+     "sub": "그래도 휘발유는 여전히 1,800원대"
+    },
+    {
+     "type": "질문형",
+     "title": "25주 내린 기름값\n왜 내 **체감**은\n그대로일까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "정유주는 일주일 새\n두 자릿수 **급락**\n휘발유는 1,800원대",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "list"
+   ],
+   "extra": {
+    "list": {
+     "sub": "기름값 25주 연속 하락, 5가지 체크",
+     "count": 5
+    }
+   },
+   "id": "20261107-1901-i1",
+   "created_at": "2026-11-07T19:01:28+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261107-1901-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261107-1901-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261107-1901-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "list",
+     "font": "noto",
+     "path": "20261107-1901-i1/1-list-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "list",
+     "font": "black",
+     "path": "20261107-1901-i1/1-list-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "list",
+     "font": "plex",
+     "path": "20261107-1901-i1/1-list-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "list",
+     "font": "noto",
+     "path": "20261107-1901-i1/2-list-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "list",
+     "font": "black",
+     "path": "20261107-1901-i1/2-list-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "list",
+     "font": "plex",
+     "path": "20261107-1901-i1/2-list-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "list",
+     "font": "noto",
+     "path": "20261107-1901-i1/3-list-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "list",
+     "font": "black",
+     "path": "20261107-1901-i1/3-list-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "list",
+     "font": "plex",
+     "path": "20261107-1901-i1/3-list-plex.jpg"
+    }
+   ]
+  },
+  {
+   "title": "세계 식량가격 4개월 만에 하락, 설탕만 상승",
+   "concept": "10월 세계식량가격지수 하락 속에서 곡물 -4.5%와 설탕 +6.6%를 두 막대로 맞세운다. 국내 장바구니 반영 시차는 확인 필요로 한 줄만 둔다. (공식: 두 쪽 대결을 색 두 개로)",
+   "why_now": "16:01 뉴시스, 동아일보, 헤럴드경제 등 5곳이 다뤘다. 오늘 다른 글감과 겹치지 않고 생활물가 체감이 큰 때다.",
+   "tag": "생활물가",
+   "sources": [
+    "https://www.newsis.com/view/NISX20261107_0003858910",
+    "https://www.donga.com/news/Economy/article/all/20261107/134983538/1"
+   ],
+   "bg": "wheat grain harvest",
+   "bg_alt": "sugar cane",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "세계 식량가격\n4개월 만에 **하락**\n곡물은 -4.5%",
+     "number": "-4.5%",
+     "label": "10월 곡물 가격",
+     "sub": "4개월 만에 내린 식량가격지수"
+    },
+    {
+     "type": "질문형",
+     "title": "국제 가격 내리면\n내 장바구니는\n**언제** 싸질까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "식량가격 4개월 만에\n내렸는데 설탕만\n**6.6%** 올랐다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bars",
+    "editorial"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "10월 변동률(%), 곡물은 하락, 설탕은 상승",
+     "bars": [
+      {
+       "label": "곡물(하락)",
+       "value": 4.5
+      },
+      {
+       "label": "설탕(상승)",
+       "value": 6.6,
+       "hi": true
+      }
+     ]
+    }
+   },
+   "id": "20261107-1901-i2",
+   "created_at": "2026-11-07T19:01:28+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261107-1901-i2/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261107-1901-i2/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261107-1901-i2/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261107-1901-i2/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261107-1901-i2/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261107-1901-i2/1-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261107-1901-i2/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261107-1901-i2/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261107-1901-i2/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261107-1901-i2/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261107-1901-i2/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261107-1901-i2/2-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261107-1901-i2/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261107-1901-i2/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261107-1901-i2/3-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261107-1901-i2/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261107-1901-i2/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261107-1901-i2/3-editorial-plex.jpg"
+    }
+   ]
+  },
+  {
+   "title": "포스코 노조, 임금 잠정합의안 부결",
+   "concept": "140일 교섭 끝 합의안이 조합원 51.7% 반대, 311표 차로 부결된 사실을 속보로 전한다. 재협상 국면이며 생산 차질 여부는 확인 안 됨으로 한 줄만 둔다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "18:24 기준 5곳이 다룬 새 소식이다. 140일 교섭 끝에 나온 합의안이 311표 차로 부결됐고, 최근 발송 목록에는 없는 주제다.",
+   "tag": "속보",
+   "sources": [
+    "https://v.daum.net/v/20261107180839487",
+    "https://v.daum.net/v/20261107174734140",
+    "https://v.daum.net/v/20261107182450698"
+   ],
+   "bg": "POSCO steel mill",
+   "bg_alt": "POSCO headquarters",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "포스코 노조\n**311표** 차로\n합의안 부결",
+     "number": "311표",
+     "label": "140일 교섭 끝 부결 격차",
+     "sub": "조합원 51.7%가 반대"
+    },
+    {
+     "type": "질문형",
+     "title": "조합원 51.7%가\n거부한 합의안\n이제 **재협상**?",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "140일 걸려 만든\n합의안이 **311표**\n차로 무너졌다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261107-1901-i3",
+   "created_at": "2026-11-07T19:01:28+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-1901-i3/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-1901-i3/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-1901-i3/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261107-1901-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261107-1901-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261107-1901-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-1901-i3/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-1901-i3/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-1901-i3/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-1901-i3/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-1901-i3/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-1901-i3/3-breaking-dohyeon.jpg"
     }
    ]
   }
