@@ -20,7 +20,7 @@ const same = (a, b) => !!a && !!b && timingSafeEqual(digest(a), digest(b));
 // 허용 목록에 있는 요청이면 '보낼 수 있음', 아니면 null. owner 는 발행 암호가 필요한 요청.
 // 영상 연구소: 요청은 lab-requests 가지 requests/reel 로, 보드 내용은 reel-previews 가지에서 읽는다
 const REEL_DIR = 'requests/reel', REEL_BRANCH = 'reel-previews', REEL_ID = /^[0-9A-Za-z가-힣_]{1,80}$/;
-const REEL_ACTIONS = ['board', 'save', 'voice', 'make', 'format', 'hot'];   // hot: 핫코노미 전용 영상 버전 A (주제 → 바로 영상)
+const REEL_ACTIONS = ['board', 'save', 'voice', 'make', 'format', 'hot', 'photo'];   // hot: 핫코노미 전용 영상 버전 A (주제 → 바로 영상)
 const REEL_FORMATS = ['frame', 'neon', 'photo', 'breaking', 'paper', 'split', 'minimal', 'kinetic', 'data'];
 const reelText = (v, n) => typeof v === 'string' && v.length <= n;
 const reelCut = c => !!c && Number.isInteger(c.i) && c.i >= 0 && c.i < 30 && reelText(c.say, 240) && reelText(c.cap, 240)
@@ -62,7 +62,7 @@ export function threadFile({ rid, idx, styles, slot } = {}, now = new Date()) {
 }
 
 // 요청 내용은 서버에서 다시 만든다 (정해진 칸·형식만)
-export function reelFile({ rid, action, id, topic, cut, cuts, accept, format } = {}, now = new Date()) {
+export function reelFile({ rid, action, id, topic, cut, cuts, accept, format, op, query, url, data } = {}, now = new Date()) {
   if (!RID.test(rid) || !REEL_ACTIONS.includes(action)) return null;
   const at = new Date(now.getTime() + 9 * 3600e3).toISOString().slice(0, 19) + '+09:00';
   if (action === 'board' || action === 'hot') {
@@ -72,6 +72,14 @@ export function reelFile({ rid, action, id, topic, cut, cuts, accept, format } =
   if (!REEL_ID.test(id || '')) return null;
   if (action === 'make') return { rid, action, id, accept: accept === true, at };
   if (action === 'format') return REEL_FORMATS.includes(format) ? { rid, action, id, format, at } : null;
+  if (action === 'photo') {   // 컷 사진 바꾸기: 찾기(검색어) · 고르기(위키미디어 주소) · 빼기 · 올리기(사진 파일, 3MB 이하)
+    if (!Number.isInteger(cut) || cut < 0 || cut >= 30) return null;
+    if (op === 'search') return reelText(query, 80) && query.trim().length >= 2 ? { rid, action, id, cut, op, query: query.trim(), at } : null;
+    if (op === 'pick') return typeof url === 'string' && url.length <= 600 && /^https:\/\/upload\.wikimedia\.org\//.test(url) ? { rid, action, id, cut, op, url, at } : null;
+    if (op === 'remove') return { rid, action, id, cut, op, at };
+    if (op === 'upload') return typeof data === 'string' && data.length <= 4_000_000 && /^[A-Za-z0-9+/=]+$/.test(data) ? { rid, action, id, cut, op, data, at } : null;
+    return null;
+  }
   if (action === 'voice') return Number.isInteger(cut) && cut >= 0 && cut < 30 ? { rid, action, id, cut, at } : null;
   return Array.isArray(cuts) && cuts.length >= 1 && cuts.length <= 20 && cuts.every(reelCut)
     ? { rid, action, id, cuts: cuts.map(({ i, say, cap, kick, big, items }) => ({ i, say, cap, kick, big, items })), at } : null;

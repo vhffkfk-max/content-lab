@@ -177,6 +177,49 @@ def run(name, q):
             preview.apply_edit(out, q["cuts"])
             code, lines = maker("--stills", script)
             msg = plain(lines) if code else None
+        elif action == "photo":
+            import base64 as b64
+            import io
+            import formats
+            from PIL import Image
+            st = mr.load_state(out)
+            cut = int(q["cut"])
+            photos = list(st.get("photos") or [None] * len(st["script"]["cuts"]))
+            if not 0 <= cut < len(photos):
+                raise ValueError("없는 컷")
+            op = q.get("op")
+            if op == "search":
+                items = formats.candidates(q.get("query", "")[:80])
+                mr.save_state(out, candidates={"cut": cut, "query": q.get("query", ""), "items": items, "at": datetime.now(KST).strftime("%H:%M")})
+                if not items:
+                    msg = "위키미디어 공용에서 상업 이용이 되는 사진을 찾지 못했어요. 다른 검색어(영어)로 찾거나 직접 올려 주세요."
+            else:
+                if op == "pick":
+                    pick = next((x for x in (st.get("candidates") or {}).get("items", []) if x["url"] == q.get("url")), None)
+                    if not pick:
+                        raise ValueError("후보에 없는 사진")
+                    photos[cut] = formats.full(pick)
+                elif op == "remove":
+                    photos[cut] = None
+                elif op == "upload":
+                    raw = b64.b64decode(q.get("data", ""), validate=True)
+                    if len(raw) > 4_000_000:
+                        raise ValueError("사진이 너무 커요")
+                    img = Image.open(io.BytesIO(raw))
+                    img.verify()
+                    img = Image.open(io.BytesIO(raw)).convert("RGB")
+                    img.thumbnail((1800, 1800))
+                    up = out / "user_photos"
+                    up.mkdir(exist_ok=True)
+                    f = up / f"cut{cut}_{q['rid']}.jpg"
+                    img.save(f, "JPEG", quality=88)
+                    photos[cut] = {"uri": f.as_uri(), "url": f"user:{f.name}", "credit": "", "page": "", "user": True}   # 사용권은 올린 사람 책임 (출처 표시 안 함)
+                else:
+                    raise ValueError("모르는 사진 작업")
+                mr.save_state(out, photos=photos)
+                mr.write_board(out, video=False)
+                code, lines = maker("--stills", script, "--cut", str(cut))   # 바꾼 컷만 다시 그린다
+                msg = plain(lines) if code else None
         elif action == "format":
             import formats
             if q.get("format") not in formats.FORMATS:
@@ -218,7 +261,7 @@ def run(name, q):
         change(name, "DELETE", "reel request done")
 
 
-FAST = ("save", "voice", "format")   # 몇 초~수십 초 걸리는 일: 보드·영상(몇 분)을 기다리지 않게 따로 줄을 세운다
+FAST = ("save", "voice", "format", "photo")   # 몇 초~수십 초 걸리는 일: 보드·영상(몇 분)을 기다리지 않게 따로 줄을 세운다
 PUSH_LOCK = threading.Lock()
 
 
@@ -267,7 +310,7 @@ def poll(lines, seen, etag):
 
 AUTO_STATE = pathlib.Path.home() / ".content-lab-ai" / "reel_auto.json"
 LIMIT_STATE = pathlib.Path.home() / ".content-lab-ai" / "reel_limits.json"
-DAILY = {"board": 15, "make": 12, "hot": 10, "save": 150, "voice": 150, "format": 150}   # 사이트 요청은 암호가 없어서 하루 처리량을 막는다 (자동 보드는 따로)
+DAILY = {"board": 15, "make": 12, "hot": 10, "save": 150, "voice": 150, "format": 150, "photo": 200}   # 사이트 요청은 암호가 없어서 하루 처리량을 막는다 (자동 보드는 따로)
 
 
 def over_limit(action):

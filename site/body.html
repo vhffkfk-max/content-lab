@@ -48,6 +48,7 @@
 .vl-video{display:block;width:100%;max-width:300px;aspect-ratio:9/16;margin:10px 0 4px;border-radius:10px;background:#000}
 .vl-fmts{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:10px}.vl-fmt{text-align:left;padding:6px;border-radius:10px;border:1px solid var(--border);background:var(--ground);color:var(--text);cursor:pointer;font:inherit}.vl-fmt.on{border-color:var(--accent);box-shadow:inset 0 0 0 2px var(--accent)}.vl-fmt-imgs{display:flex;gap:3px}.vl-fmt-imgs img{flex:1;min-width:0;aspect-ratio:9/16;object-fit:cover;border-radius:6px;background:var(--raised)}.vl-fmt b{display:block;font-size:13px;margin-top:6px}.vl-fmt span{display:block;font-size:11.5px;color:var(--muted);line-height:1.35;margin-top:2px}
 .vl-zoom{position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.82);display:flex;align-items:center;justify-content:center;padding:16px}.vl-zoom[hidden]{display:none}.vl-zoom-card{max-width:min(980px,96vw);max-height:96vh;display:flex;flex-direction:column;gap:10px;background:var(--surface);border-radius:14px;padding:12px}.vl-zoom-imgs{display:flex;gap:10px;justify-content:center;min-height:0}.vl-zoom-imgs img{max-height:min(78vh,860px);max-width:46vw;aspect-ratio:9/16;object-fit:contain;border-radius:10px;background:#000}.vl-zoom-bar{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}.vl-zoom-bar .sub{flex:1;min-width:200px;margin:0}.vl-zoom-btns{display:flex;gap:8px;margin-left:auto}.vl-job.ok{background:#e6f4ea;color:#1e5c33;font-weight:700}.vl-hot{border:2px solid #e0392b;border-radius:12px;padding:12px 14px;margin:0 0 14px;background:rgba(224,57,43,.06)}.vl-hot h3{margin:0 0 4px;font-size:16px}.vl-hot .sub{margin:0 0 8px}.vl-chip.hot{border-color:#e0392b;background:rgba(224,57,43,.08)}.vl-chip.made{border-style:solid;opacity:.75}.vl-chip em{display:block;font-style:normal;font-size:11.5px;color:var(--accent);margin-top:3px}
+.vl-photo{margin-top:10px;padding:10px;border:1px dashed var(--border);border-radius:9px;background:var(--ground)}.vl-photo .sub{margin:4px 0}.vl-photo-row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.vl-photo-row input[type=text],.vl-photo-row input:not([type]){flex:1;min-width:160px;min-height:32px;padding:0 10px;border-radius:7px;border:1px solid var(--control);background:var(--surface);color:var(--text);font:inherit;font-size:13px}.vl-cands{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:6px;margin-top:6px}.vl-cand{padding:0;border:2px solid transparent;border-radius:7px;background:none;cursor:pointer}.vl-cand:hover{border-color:var(--accent)}.vl-cand img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:5px;display:block}
 .vl-pre{white-space:pre-wrap;font:inherit;font-size:13px;margin:8px 0 0}.vl-hook{display:flex;gap:10px;align-items:center;padding:7px 0;border-top:1px solid var(--rule)}.vl-hook:first-of-type{border-top:0}.vl-hook b{min-width:44px;color:var(--accent)}.vl-hook span{flex:1}
 .vl-cuts{display:grid;grid-template-columns:repeat(auto-fill,minmax(420px,1fr));gap:12px;margin-top:12px}.vl-cut{display:grid;grid-template-columns:140px minmax(0,1fr);gap:12px;padding:12px;border:1px solid var(--border);border-radius:10px;background:var(--surface)}.vl-cut.dirty{border-color:var(--accent)}.vl-cut img,.vl-noimg{width:140px;aspect-ratio:9/16;border-radius:8px;object-fit:cover;display:block;background:var(--raised)}.vl-noimg{display:grid;place-items:center;font-size:12px;color:var(--muted)}
 .vl-cut-head{display:flex;gap:8px;align-items:baseline}.vl-field{display:block;margin-top:7px;font-size:12px;color:var(--muted)}.vl-field textarea{display:block;width:100%;margin-top:3px;padding:6px 8px;border-radius:7px;border:1px solid var(--control);background:var(--ground);color:var(--text);font:inherit;font-size:13.5px;line-height:1.4;resize:vertical}.vl-heard{margin:3px 0 0;font-size:12px;color:var(--faint)}.vl-tools{display:flex;gap:5px;flex-wrap:wrap;margin-top:9px}
@@ -1638,7 +1639,7 @@ ul.gd-card{padding-left:36px;line-height:1.8}
   const vlPending = { get: () => { try { return JSON.parse(store.get('vl_pending') || '[]'); } catch (e) { return []; } }, set: a => store.set('vl_pending', JSON.stringify(a.slice(-8))) };
   const vlUrl = (path, v) => VL_RAW + path.split('/').map(encodeURIComponent).join('/') + (v ? `?v=${v}` : '');
   const vlRoot = () => document.getElementById('vl-root');
-  const VL_NAMES = { format: '형식을 바꿔 컷 이미지를 다시 그리는 중이에요', board: '대본과 컷 이미지를 만드는 중이에요 (보통 1~4분)', save: '컷 이미지를 다시 그리는 중이에요', voice: '이 컷의 음성을 만드는 중이에요', make: '영상을 만드는 중이에요 (보통 1~3분)' };
+  const VL_NAMES = { photo: '사진을 찾거나 바꾸는 중이에요 (보통 20~40초)', format: '형식을 바꿔 컷 이미지를 다시 그리는 중이에요', board: '대본과 컷 이미지를 만드는 중이에요 (보통 1~4분)', save: '컷 이미지를 다시 그리는 중이에요', voice: '이 컷의 음성을 만드는 중이에요', make: '영상을 만드는 중이에요 (보통 1~3분)' };
   async function vlData(path) {
     const r = await ghApi(`reel-data/${path.split('/').map(encodeURIComponent).join('/')}`);
     if (r.status === 404) return null;
@@ -1678,7 +1679,7 @@ ul.gd-card{padding-left:36px;line-height:1.8}
       await vlLoadList().catch(() => {});
       const target = q.id || (vl.list.find(x => x.rid === q.rid) || {}).id;
       if (target) await vlOpen(target, true).catch(() => {});
-      const DONE = { hot: '핫코노미 A 영상을 만들었어요. 텔레그램과 바탕화면 릴스 완성영상 폴더에 있어요.', board: '컷 보드가 만들어졌어요. 아래에 열어 뒀어요.', make: '영상을 만들었어요. 텔레그램과 바탕화면 릴스 완성영상 폴더에도 있어요.', save: '수정을 반영했어요.', format: '형식을 바꿨어요.' };
+      const DONE = { photo: '사진 작업이 끝났어요.', hot: '핫코노미 A 영상을 만들었어요. 텔레그램과 바탕화면 릴스 완성영상 폴더에 있어요.', board: '컷 보드가 만들어졌어요. 아래에 열어 뒀어요.', make: '영상을 만들었어요. 텔레그램과 바탕화면 릴스 완성영상 폴더에도 있어요.', save: '수정을 반영했어요.', format: '형식을 바꿨어요.' };
       if (DONE[q.action]) { vl.done = { text: DONE[q.action], t: Date.now() }; if (q.action === 'board' || q.action === 'make') setTimeout(() => document.querySelector('.vl-board')?.scrollIntoView({ behavior: 'smooth' }), 300); }
       vlDraw();
       if (q.action === 'voice' && vl.cur && vl.cur.cuts[q.cut] && vl.cur.cuts[q.cut].voice) { new Audio(vlUrl(vl.cur.cuts[q.cut].voice, Date.now())).play().catch(() => {}); }
@@ -1719,7 +1720,7 @@ ul.gd-card{padding-left:36px;line-height:1.8}
   function vlDrawStatus() {
     const box = document.getElementById('vl-status'); if (!box) return;
     const mine = [...vl.status.entries()];
-    const NAME = { board: '보드 만들기', save: '수정 반영', voice: '듣기', make: '영상 만들기', format: '형식 바꾸기', hot: '핫코노미 A 영상' };
+    const NAME = { photo: '사진 바꾸기', board: '보드 만들기', save: '수정 반영', voice: '듣기', make: '영상 만들기', format: '형식 바꾸기', hot: '핫코노미 A 영상' };
     const others = vl.jobs.filter(j => !vl.status.has(j.rid) && !j.error).map(j => {
       const secs = Math.max(0, Math.round((Date.now() - new Date(j.at).getTime()) / 1000)), took = secs >= 60 ? `${Math.floor(secs / 60)}분째` : `${secs}초째`;
       const what = j.topic || (vl.list.find(x => x.id === j.id) || {}).topic || j.id;
@@ -1759,8 +1760,47 @@ ul.gd-card{padding-left:36px;line-height:1.8}
       if (c.voice) return new Audio(vlUrl(c.voice, c.v)).play().catch(() => {});
       await vlSend('voice', { id: vl.cur.id, cut: c.i });
     }), btn('↑', () => vlMove(i, -1), '위로'), btn('↓', () => vlMove(i, 1), '아래로'), btn('삭제', () => { if (vl.cur.cuts.length <= 8 && !confirm('컷이 8개보다 적으면 검사에서 막혀요. 그래도 지울까요?')) return; vl.cur.cuts.splice(i, 1); vl.dirty = true; vlDraw(); }));
-    body.append(tools); card.append(left, body);
+    tools.append(btn('사진 바꾸기', () => { vl.photoOpen = vl.photoOpen === c.i ? null : c.i; vlDraw(); }));
+    body.append(tools);
+    if (vl.photoOpen === c.i) body.append(vlPhotoPanel(c));
+    card.append(left, body);
     return card;
+  }
+  function vlPhotoPanel(c) {   // 컷 사진 바꾸기: 위키미디어 후보 찾기·고르기, 빼기, 직접 올리기
+    const d = vl.cur, box = el('div', 'vl-photo'), ph = c.photo;
+    const need = () => { if (vl.dirty) { alert('글 수정을 먼저 반영해 주세요.'); return false; } return true; };
+    box.append(el('p', 'sub', ph ? (ph.user ? '지금 사진: 직접 올린 사진' : `지금 사진: ${ph.credit}`) : '지금 사진: 없음 (뉴스 프레임형은 다른 컷 사진을 흐리게 깔아요)'));
+    const row = el('div', 'vl-photo-row'), q = el('input'), find = el('button', 'btn small primary', '위키미디어에서 찾기');
+    q.placeholder = '영어 검색어 (예: Chey Tae-won)'; q.value = c.photo_query || d.photo_person || ''; q.maxLength = 80; find.type = 'button';
+    find.addEventListener('click', () => { if (!need()) return; if (q.value.trim().length < 2) return alert('검색어를 2글자 이상 넣어 주세요.'); vlSend('photo', { id: d.id, cut: c.i, op: 'search', query: q.value.trim() }); });
+    const off = el('button', 'btn small', '사진 빼기'); off.type = 'button';
+    off.addEventListener('click', () => { if (need() && confirm('이 컷의 사진을 뺄까요?')) vlSend('photo', { id: d.id, cut: c.i, op: 'remove' }); });
+    const upl = el('label', 'btn small', '내 사진 올리기'), file = el('input'); file.type = 'file'; file.accept = 'image/jpeg,image/png,image/webp'; file.hidden = true; upl.append(file);
+    file.addEventListener('change', async () => {
+      const f = file.files[0]; if (!f || !need()) return;
+      if (!confirm('직접 올린 사진은 사용권이 올린 분 책임이에요. 언론사 사진처럼 쓸 권리가 없는 사진은 올리지 마세요. 계속할까요?')) return;
+      try {
+        const img = await createImageBitmap(f), k = Math.min(1, 1600 / Math.max(img.width, img.height)), cv = document.createElement('canvas');
+        cv.width = Math.round(img.width * k); cv.height = Math.round(img.height * k); cv.getContext('2d').drawImage(img, 0, 0, cv.width, cv.height);
+        const data = cv.toDataURL('image/jpeg', .86).split(',')[1];
+        if (data.length > 3900000) return alert('사진이 너무 커요. 더 작은 사진으로 올려 주세요.');
+        vlSend('photo', { id: d.id, cut: c.i, op: 'upload', data });
+      } catch (e) { alert('사진을 읽지 못했어요. JPG·PNG 사진으로 올려 주세요.'); }
+    });
+    row.append(q, find, off, upl); box.append(row);
+    const cand = d.candidates;
+    if (cand && cand.cut === c.i) {
+      box.append(el('p', 'sub', cand.items.length ? `'${cand.query}' 후보 ${cand.items.length}장 (${cand.at} 찾음, 상업 이용 가능한 라이선스만). 눌러서 크게 보고 고르세요.` : `'${cand.query}'로 찾은 사진이 없어요. 다른 검색어로 찾거나 직접 올려 주세요.`));
+      const grid = el('div', 'vl-cands');
+      cand.items.forEach(it => {
+        const b = el('button', 'vl-cand'), im = el('img'); b.type = 'button'; im.loading = 'lazy'; im.src = vlUrl(it.image, it.v); im.alt = it.credit; b.append(im);
+        b.addEventListener('click', () => vlZoom(it.credit, [vlUrl(it.image, it.v)], '위키미디어 공용 사진. 출처는 올릴 글 끝에 자동으로 붙어요.', { label: '이 사진으로', run: () => { if (need()) vlSend('photo', { id: d.id, cut: c.i, op: 'pick', url: it.url }); } }));
+        grid.append(b);
+      });
+      box.append(grid);
+    }
+    box.append(el('p', 'sub', '직접 올린 사진은 사용권이 올린 분 책임이에요. 출처를 밝혀야 하는 사진이면 올릴 글에 직접 적어 주세요.'));
+    return box;
   }
   function vlDrawBar() {
     const bar = document.getElementById('vl-bar'); if (!bar || !vl.cur) return;
@@ -1780,6 +1820,7 @@ ul.gd-card{padding-left:36px;line-height:1.8}
     box.append(head);
     const problems = [...(b.block || []), ...(b.problems || [])];
     if (problems.length) { const p = el('div', 'vl-box bad'); p.append(el('b', '', '고쳐야 할 문제')); const ul = el('ul'); problems.forEach(x => ul.append(el('li', '', x))); p.append(ul); box.append(p); }
+    if (d.photo_note) { const p = el('div', 'vl-box warn'); p.append(el('b', '', '사진 안내'), el('p', 'sub', d.photo_note)); box.append(p); }
     if ((b.changes || []).length) { const p = el('div', 'vl-box warn'); p.append(el('b', '', '보드를 본 뒤 시세가 바뀌었어요')); const ul = el('ul'); b.changes.forEach(x => ul.append(el('li', '', `${x.name}: ${x.old} → ${x.new}`))); p.append(ul); box.append(p); }
     const cap = b.caption || {};
     if ((cap.block || []).length || (cap.notes || []).length) {

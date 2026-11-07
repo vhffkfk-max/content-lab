@@ -123,6 +123,7 @@ def css():
 
 
 class PhotoPlan(BaseModel):
+    person: str = ""
     subject: str
     cuts: list[str]
 
@@ -136,18 +137,23 @@ def plan(topic, cuts):
         system="""경제 뉴스 쇼츠의 배경 사진을 위키미디어 공용에서 찾을 검색어를 정합니다.
 - 검색어는 영어 2~4단어, 실제로 사진이 있을 법한 구체적인 것: 회사 본사 건물, 물류센터, 배송 트럭, 매장, 공장, 법원 건물, 공개 행사의 공인, 도시 풍경.
 - 로고·지도·그래프·문서 화면은 찾지 않습니다. 내용과 상관없는 장식 사진도 고르지 않습니다.
-- subject: 영상 전체의 주인공 사진 검색어 (예: Coupang delivery truck).
+- person: 소식의 주인공이 실명 인물이면 그 사람의 영문 이름만 (예: Chey Tae-won). 기업·제도가 주인공이면 빈 문자열.
+- subject: 영상 전체의 주인공 사진 검색어. 인물 소식이면 그 사람 이름 그대로 (예: Chey Tae-won), 아니면 장소·사물 (예: Coupang delivery truck).
 - cuts: 컷 수와 같은 개수. 그 컷에 더 맞는 사진이 있으면 검색어, 숫자·질문처럼 사진이 필요 없으면 빈 문자열.""",
         messages=[{"role": "user", "content": f"주제: {topic}\n컷:\n{lines}"}])
     p = r.parsed_output
-    return p.subject, (p.cuts + [""] * len(cuts))[:len(cuts)]
+    return p.person.strip(), p.subject, (p.cuts + [""] * len(cuts))[:len(cuts)]
 
 
 def fetch(topic, cuts):
     """→ 컷마다 {"uri","credit","page"} 또는 None. 주제 사진을 먼저 찾고, 컷 사진이 없으면 주제 사진을 쓴다."""
     from publish import photos
-    subject, queries = plan(topic, cuts)
-    main = photos.find(subject, about=f"{topic} 영상의 대표 사진") if subject else None
+    person, subject, queries = plan(topic, cuts)
+    face = None
+    if person:   # 인물 소식은 그 사람 얼굴을 표지(1컷)에 먼저 (대표 요청 2026-11-07: 최태원 보드 첫 컷이 건물이었음)
+        face = photos.find(person, about=f"{person}의 얼굴이 잘 보이는 인물 사진. 건물·로고·행사장 전경은 고르지 않음")
+        time.sleep(1.5)
+    main = face or (photos.find(subject, about=f"{topic} 영상의 대표 사진") if subject and subject != person else None)
     used = {main["url"]} if main else set()
 
     def one(args):
@@ -165,6 +171,9 @@ def fetch(topic, cuts):
         if args[0]:
             time.sleep(1.5)
     out, main_left = [], MAIN_REPEAT
+    if face:   # 1컷은 인물 사진으로 고정
+        got[0] = face
+        main_left -= 1
     for i, g in enumerate(got):
         if g:
             out.append(g)
@@ -173,7 +182,65 @@ def fetch(topic, cuts):
             main_left -= 1
         else:
             out.append(None)
-    return {"subject": subject, "queries": queries, "photos": out}
+    note = (f"위키미디어 공용에서 {person}의 무료 사진을 찾지 못했어요. 컷의 '사진 바꾸기'로 직접 올릴 수 있어요." if person and not face else "")
+    return {"subject": subject, "person": person, "queries": queries, "photos": out, "note": note}
+
+
+def candidates(query, n=8):
+    """사이트 '사진 바꾸기'의 후보: 위키미디어 공용, 상업 이용 가능 라이선스만. 빠르게 작은 미리보기만 받는다."""
+    import hashlib
+    import json as _json
+    import re as _re
+    import urllib.parse
+    import urllib.request
+    from publish import photos
+    q = urllib.parse.urlencode({"action": "query", "format": "json", "generator": "search", "gsrnamespace": 6, "gsrlimit": 40,
+                                "gsrsearch": f"{query} filetype:bitmap", "prop": "imageinfo", "iiprop": "url|size|extmetadata", "iiurlwidth": 480,
+                                "iiextmetadatafilter": "LicenseShortName|Artist"})
+    try:
+        pages = _json.loads(photos._get(f"{photos.API}?{q}")).get("query", {}).get("pages", {})
+    except Exception:
+        return []
+    words = [w.lower() for w in _re.findall(r"[A-Za-z]{3,}|[가-힣]{2,}", query)]
+    out = []
+    for p in sorted(pages.values(), key=lambda p: p.get("index", 0)):
+        info = (p.get("imageinfo") or [{}])[0]
+        meta = info.get("extmetadata") or {}
+        lic = (meta.get("LicenseShortName") or {}).get("value", "").strip()
+        title = p.get("title", "")
+        if not photos.OK_LICENSE.match(lic) or photos.SKIP_TITLE.search(title) or (info.get("width") or 0) < 700:
+            continue
+        if words and not any(w in title.lower() for w in words):   # 엉뚱한 사진(1529년 그림 등) 거르기
+            continue
+        thumb = info.get("thumburl")
+        if not thumb:
+            continue
+        path = photos.CACHE / f"cand_{hashlib.sha1(thumb.encode()).hexdigest()[:16]}.jpg"
+        if not path.exists():
+            try:
+                photos.CACHE.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(photos._get(thumb, 20))
+            except Exception:
+                continue
+        artist = _re.sub(r"<[^>]+>", "", (meta.get("Artist") or {}).get("value", "")).strip()
+        row = {"url": info.get("url"), "width": info.get("width"), "height": info.get("height"), "license": lic, "artist": artist, "page": info.get("descriptionurl", ""), "title": title}
+        out.append({"uri": path.as_uri(), "url": row["url"], "credit": photos.credit(row), "page": row["page"], "path": str(path),
+                    "full": info.get("thumburl", "").replace("480px-", "1400px-") if "480px-" in thumb else row["url"]})
+        if len(out) >= n:
+            break
+    return out
+
+
+def full(item):
+    """고른 후보의 큰 사진(1400px)을 받아 {uri,url,credit,page}로."""
+    from publish import photos
+    p = photos._save(item.get("full") or item["url"]) or pathlib_path(item["path"])
+    return {"uri": p.as_uri(), "url": item["url"], "credit": item["credit"], "page": item["page"]}
+
+
+def pathlib_path(x):
+    import pathlib
+    return pathlib.Path(x)
 
 
 def credits(photos):

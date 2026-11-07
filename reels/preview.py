@@ -40,6 +40,22 @@ def git(*args, env=None, data=None):
 
 
 def small(path):
+    path = pathlib.Path(path)
+    cache = path.parent / ".small" / f"{path.stem}_{int(path.stat().st_mtime)}.jpg"
+    if cache.exists():
+        return cache.read_bytes()
+    data = _small(path)
+    try:
+        cache.parent.mkdir(exist_ok=True)
+        for old in cache.parent.glob(f"{path.stem}_*.jpg"):
+            old.unlink()
+        cache.write_bytes(data)
+    except OSError:
+        pass
+    return data
+
+
+def _small(path):
     im = Image.open(path).convert("RGB")
     im = im.resize((WIDTH, round(im.height * WIDTH / im.width)), Image.LANCZOS)
     b = io.BytesIO()
@@ -76,7 +92,8 @@ def view(d):
         fresh = voice.exists() and voice.stat().st_mtime > (d / "대본.json").stat().st_mtime
         if fresh:
             files[f"{d.name}/v{i - 1}.mp3"] = voice.read_bytes()
-        cuts.append({"kind": c.kind, "say": c.say, "cap": c.cap, "kick": c.kick, "big": c.big.replace("\\n", "\n"), "items": c.items,
+        ph = (st.get("photos") or [None] * len(s.cuts))[i - 1] if i - 1 < len(st.get("photos") or []) else None
+        cuts.append({"photo": {"credit": ph.get("credit", ""), "user": bool(ph.get("user"))} if ph else None, "photo_query": (st.get("photo_queries") or [""] * len(s.cuts))[i - 1] if i - 1 < len(st.get("photo_queries") or []) else "", "kind": c.kind, "say": c.say, "cap": c.cap, "kick": c.kick, "big": c.big.replace("\\n", "\n"), "items": c.items,
                      "say_text": mr.to_say(c.say, q).replace("*", "") if known(c.say) else c.say,
                      "image": name, "v": hashlib.md5(files[name]).hexdigest()[:8] if name else "", "voice": f"{d.name}/v{i - 1}.mp3" if fresh else None})
     fmt = st.get("format") or formats.DEFAULT
@@ -96,6 +113,7 @@ def view(d):
         files[f"{d.name}/video.mp4"] = video.read_bytes()
     board = {"id": d.name, "topic": st["topic"], "edited": st.get("edited", False), "cuts": cuts, "board": {k: b.get(k) for k in ("updated", "basis", "block", "problems", "seconds", "hooks", "changes", "video", "miss", "rid", "caption", "auto")},
              "ig_title": s.ig_title, "yt_title": s.yt_title, "summary": s.summary, "question": s.question,
+             "photo_note": st.get("photo_note", ""), "photo_person": st.get("photo_person", ""), "candidates": cand_view(d, st, files),
              "format": fmt, "formats": samples, "photo_count": sum(1 for p in (st.get("photos") or []) if p), "photo_unique": len({p["url"] for p in (st.get("photos") or []) if p and p.get("url")}),
              "video_file": f"{d.name}/video.mp4" if video else None, "video_v": hashlib.md5(files[f"{d.name}/video.mp4"]).hexdigest()[:8] if video else "",
              "upload": upload.read_text(encoding="utf-8") if b.get("video") and upload.exists() else "",
@@ -103,6 +121,21 @@ def view(d):
     files[f"{d.name}/board.json"] = json.dumps(board, ensure_ascii=False).encode("utf-8")
     item = {"id": d.name, "topic": st["topic"], "updated": b.get("updated", ""), "video": bool(b.get("video")), "blocked": bool(b.get("block") or b.get("problems")), "rid": b.get("rid", ""), "auto": bool(b.get("auto"))}
     return item, files
+
+
+def cand_view(d, st, files):
+    """'사진 바꾸기' 후보 (마지막으로 찾은 컷 하나)."""
+    c = st.get("candidates")
+    if not c:
+        return None
+    items = []
+    for k, it in enumerate(c.get("items", [])):
+        p = pathlib.Path(it.get("path", ""))
+        if p.exists():
+            name = f"{d.name}/cand-{c['cut']}-{k}.jpg"
+            files[name] = small(p)
+            items.append({"n": k, "url": it["url"], "image": name, "v": hashlib.md5(files[name]).hexdigest()[:8], "credit": it.get("credit", "")})
+    return {"cut": c["cut"], "query": c.get("query", ""), "items": items, "at": c.get("at", "")}
 
 
 def recent():
@@ -126,12 +159,24 @@ def push():
     blobs["index.json"] = json.dumps({"boards": items, "suggest": suggest, "suggest_updated": sug.get("updated", ""), "auto_times": AUTO_TIMES}, ensure_ascii=False).encode("utf-8")
     with tempfile.TemporaryDirectory() as tmp:
         env = {**os.environ, "GIT_INDEX_FILE": os.path.join(tmp, "index")}
-        for path, data in blobs.items():
-            sha = git("hash-object", "-w", "--stdin", data=data)
-            git("update-index", "--add", "--cacheinfo", f"100644,{sha},{path}", env=env)
+        # 파일마다 git 을 두 번씩 부르면 1000번 가까이 돼 50초가 걸렸다: 임시 파일로 쓰고 두 번에 몰아서
+        names = list(blobs)
+        for k, path in enumerate(names):
+            pathlib.Path(tmp, f"b{k}").write_bytes(blobs[path])
+        shas = git("hash-object", "-w", "--stdin-paths", data="\n".join(os.path.join(tmp, f"b{k}") for k in range(len(names))).encode("utf-8")).split()
+        assert len(shas) == len(names)
+        git("update-index", "--add", "--index-info", env=env, data="".join(f"100644 {s}\t{p}\n" for s, p in zip(shas, names)).encode("utf-8"))
         tree = git("write-tree", env=env)
     commit = git("commit-tree", tree, "-m", f"reel previews {datetime.now():%m/%d %H:%M}")
-    git("push", "-q", "-f", "origin", f"{commit}:refs/heads/{BRANCH}")
+    for n in range(3):   # GitHub 쪽 일시 오류(unpack failed 등)는 잠깐 쉬고 다시
+        try:
+            git("push", "-q", "-f", "origin", f"{commit}:refs/heads/{BRANCH}")
+            break
+        except RuntimeError:
+            if n == 2:
+                raise
+            import time
+            time.sleep(5 * (n + 1))
     return f"보드 {len(items)}개"
 
 

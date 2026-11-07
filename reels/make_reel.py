@@ -762,7 +762,7 @@ def ensure_photos(out, topic, s):
     if st.get("photos") is None or len(st["photos"]) != len(s.cuts):
         try:
             got = formats.fetch(topic, s.cuts)
-            st = save_state(out, photos=got["photos"], photo_subject=got["subject"], photo_queries=got["queries"])
+            st = save_state(out, photos=got["photos"], photo_subject=got["subject"], photo_queries=got["queries"], photo_person=got.get("person", ""), photo_note=got.get("note", ""))
             print("사진:", sum(1 for p in got["photos"] if p), "/", len(s.cuts), "컷")
         except Exception as e:
             print("사진을 찾지 못했어요:", e)
@@ -793,7 +793,7 @@ def render_samples(out, s, q, basis):
     write_board(out, samples=show[:2])
 
 
-def render_board(out, s, q, basis, block, warn):
+def render_board(out, s, q, basis, block, warn, only=None):
     """음성·영상 없이 컷 이미지만 만든다. 영상과 같은 화면 코드라 보이는 그대로 나온다."""
     engine.OUT = out
     t, scenes = 0.15, []
@@ -806,14 +806,18 @@ def render_board(out, s, q, basis, block, warn):
     problems = []
     try:
         page, _, _ = build_page(out, s, q, scenes, basis)
-        problems = engine.shoot(page, t, False)
+        problems = engine.shoot(page, t, False, only=only)
     except KeyError as e:
         problems = [f"시세표에 없는 이름 때문에 컷 이미지를 못 만들었어요: {e}"]
     hooks = []
     for h in s.hooks:
         known = not any(n not in q for n in PH.findall(h))
         hooks.append({"say": h, "text": to_text(h, q) if known else h, "score": max([x for x in (hook_score(to_say(h, q).replace("*", "")), hook_score(to_text(h, q))) if x is not None], default=None) if known else None})
-    write_board(out, updated=datetime.now(KST).strftime("%m/%d %H:%M"), basis=basis, block=block, warn=warn, problems=problems, seconds=round(t, 1), hooks=hooks,
+    try:
+        photo_note = load_state(out).get("photo_note", "")
+    except (OSError, ValueError):
+        photo_note = ""
+    write_board(out, photo_note=photo_note, updated=datetime.now(KST).strftime("%m/%d %H:%M"), basis=basis, block=block, warn=warn, problems=problems, seconds=round(t, 1), hooks=hooks,
                 changes=[], caption=caption_notes(s, q, basis), video=(out / "영상.mp4").exists() and (out / "영상.mp4").stat().st_mtime > (out / "대본.json").stat().st_mtime)
 
 
@@ -842,6 +846,7 @@ def main():
     ap.add_argument("--seed", help="출처 기사 주소 목록 JSON 파일 (추천 주제에서 보드를 만들 때)")
     ap.add_argument("--auto", action="store_true", help="정해진 시간에 PC가 스스로 만든 보드")
     ap.add_argument("--samples", action="store_true", help="형식 8개 견본도 다시 그린다")
+    ap.add_argument("--cut", type=int, help="이 컷(0부터)만 다시 그린다")
     ap.add_argument("--accept-market", action="store_true", help="보드를 본 뒤 시세가 바뀌어도 새 숫자로 만든다")
     a = ap.parse_args()
     if a.stills:
@@ -856,7 +861,7 @@ def main():
             q, basis = quotes(saved["topic"])
             save_state(out, quotes=q, basis=basis)
         block, warn = check(s, q, saved["news"], saved["bodies"])
-        render_board(out, s, q, basis, block + saved.get("review", []), warn)
+        render_board(out, s, q, basis, block + saved.get("review", []), warn, only=[f"c{a.cut + 1}"] if a.cut is not None else None)
         if new_samples or a.samples:
             render_samples(out, s, q, basis)
         print("컷 이미지를 다시 만들었어요:", out)
