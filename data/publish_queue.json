@@ -2526,390 +2526,6 @@
  ],
  "ideas": [
   {
-   "title": "코스피 서킷브레이커, 시총 400조 증발",
-   "concept": "개장 직후 서킷브레이커 발동, 20분 매매중단 후 재개, 5000선 회복 뒤 등락까지 흐름을 시간순 보도로 정리",
-   "why_now": "오늘 아침 코스피 5000선 붕괴와 서킷브레이커 기사가 가장 많이 나왔고, 시총이 하루새 400조원 증발했다는 보도가 이어졌다. 정확한 낙폭과 발동 시각은 확인 후 반영한다.",
-   "tag": "증시",
-   "sources": [
-    "https://www.mt.co.kr/stock/2026/11/06/2026110609164854291",
-    "https://www.hankyung.com/article/2026110699936",
-    "https://www.newsis.com/view/NISX20261106_0003857488"
-   ],
-   "bg": "Korea Exchange Seoul",
-   "bg_alt": "KOSPI trading screen",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "개장 3분 만에\n서킷브레이커 발동\n시총 **400조** 증발",
-     "number": "400조원",
-     "label": "코스피 시가총액, 하루새",
-     "sub": "서킷브레이커 20분 매매중단 뒤 재개"
-    },
-    {
-     "type": "질문형",
-     "title": "코스피 5000이\n9개월 만에 깨졌다\n**왜** 하필 오늘일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "매매 20분 중단 뒤\n**5000선** 회복했지만\n등락은 이어졌다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261106-1001-i1",
-   "created_at": "2026-11-06T10:01:42+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261106-1001-i1/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261106-1001-i1/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261106-1001-i1/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261106-1001-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261106-1001-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261106-1001-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261106-1001-i1/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261106-1001-i1/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261106-1001-i1/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261106-1001-i1/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261106-1001-i1/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261106-1001-i1/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "폭락장에 나온 하나금융 배당 확대 약속",
-   "concept": "코스피가 무너진 날 하나금융이 창사 이래 첫 개인주주 간담회에서 내놓은 주주환원 약속을 보도 중심으로 정리",
-   "why_now": "코스피가 5000선 아래로 밀린 날 나온 소식이라 폭락 뉴스 속에서 대비되는 사건이다. 주당 배당금과 적용 시점은 아직 확인되지 않아 업데이트가 필요하다.",
-   "tag": "금융",
-   "sources": [
-    "https://www.newsis.com/view/NISX20261106_0003857455",
-    "https://www.mt.co.kr/finance/2026/11/06/2026110608560180866"
-   ],
-   "bg": "Hana Financial Group",
-   "bg_alt": "Hana Bank headquarters Seoul",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "하나금융 배당\n매년 **10%** 이상\n확대하겠다 약속",
-     "number": "10%",
-     "label": "하나금융, 매년 배당금 확대",
-     "sub": "창사 이래 첫 개인주주 간담회에서 밝혔다"
-    },
-    {
-     "type": "질문형",
-     "title": "코스피 무너진 날\n하나금융은 왜\n**배당**을 꺼냈나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "코스피 5000 붕괴\n그날 개인주주에게\n내민 **배당** 카드",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261106-1001-i2",
-   "created_at": "2026-11-06T10:01:42+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261106-1001-i2/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261106-1001-i2/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261106-1001-i2/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261106-1001-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261106-1001-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261106-1001-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261106-1001-i2/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261106-1001-i2/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261106-1001-i2/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261106-1001-i2/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261106-1001-i2/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261106-1001-i2/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "아이폰 듀오 AS 대란, 애플 신뢰 추락",
-   "concept": "수리 요청이 몰려 감당이 어렵다는 보도를 중심으로, 새 기기를 산 소비자가 겪는 AS 문제를 짚는 소비자 시점의 카드뉴스",
-   "why_now": "오늘 오전 아이폰 듀오 AS 대란과 신뢰 추락을 다룬 기사가 나왔다. 재료에는 제목만 있어 수리 건수와 대기 기간 등 세부 내용은 본문 확인 후 쓴다.",
-   "tag": "소비",
-   "sources": [
-    "https://v.daum.net/v/20261106095414755"
-   ],
-   "bg": "iPhone Duo Apple",
-   "bg_alt": "Apple Store",
-   "hooks": [
-    {
-     "type": "사건형",
-     "title": "애플 아이폰 듀오\n수리 요청 폭주\nAS **감당 불가**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "아이폰 듀오 AS는\n왜 이렇게 밀렸나\n**신뢰**까지 흔들",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "수리 요청 너무 많아\n감당 불가라는 애플\n**신뢰**가 추락했다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "editorial",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261106-1001-i3",
-   "created_at": "2026-11-06T10:01:42+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261106-1001-i3/1-editorial-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261106-1001-i3/1-editorial-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261106-1001-i3/1-editorial-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261106-1001-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261106-1001-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261106-1001-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261106-1001-i3/2-editorial-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261106-1001-i3/2-editorial-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261106-1001-i3/2-editorial-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261106-1001-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261106-1001-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261106-1001-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261106-1001-i3/3-editorial-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261106-1001-i3/3-editorial-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261106-1001-i3/3-editorial-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261106-1001-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261106-1001-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261106-1001-i3/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
    "title": "서학개미 하루 최소 13조 손실 추정",
    "concept": "나스닥 -5.52% 폭락을 개인 투자자 손실 규모로 보여 주고, 미국 AI주와 삼성전자, SK하이닉스가 한 계좌에서 겹칠 수 있다는 점을 짚는다",
    "why_now": "연합뉴스와 매일경제가 오늘 오전 보도했다. 시장 폭락 소식은 많았지만 개인 투자자 손실로 푼 글은 아직 없다. 13조원은 보도 기준 최소 추정치로 표기한다.",
@@ -8270,6 +7886,392 @@
      "form": "paper",
      "font": "gowun",
      "path": "20261107-1001-i3/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "반도체 도시 지방소득세 최대 12배",
+   "concept": "주가는 휘청이는데 화성, 평택, 수원, 용인의 내년 지방소득세는 최대 12배 늘 전망이라는 대비로 풉니다. 삼성전자와 SK하이닉스 실적이 지방 재정으로 이어지는 구조를 보여 주고, 마지막 장에서 업황 의존 위험과 내년 실적이 관건이라는 점으로 닫습니다. 도시별 증가액과 기준 연도는 확인 후 씁니다. (공식: 전후 낙차 한 줄 표지)",
+   "why_now": "아시아경제와 연합뉴스 등 여러 곳이 오전에 다뤘고, 코스피 급락 속에서 반도체 실적의 다른 면을 보여 줍니다. 앞선 발송 목록에는 없는 주제입니다.",
+   "tag": "반도체",
+   "sources": [
+    "https://view.asiae.co.kr/article/2026110709421783324",
+    "https://v.daum.net/v/20261107094421148"
+   ],
+   "bg": "Samsung Electronics Hwaseong",
+   "bg_alt": "SK hynix Icheon campus",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "주가는 휘청이는데\n화성, 평택 세금은\n내년 최대 **12배**",
+     "number": "12배",
+     "label": "내년 지방소득세 증가 전망",
+     "sub": "화성, 평택, 수원, 용인"
+    },
+    {
+     "type": "질문형",
+     "title": "삼성전자와 하이닉스가\n어느 도시 곳간을\n**가득** 채웠을까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "주가는 빠지는데\n반도체 도시 살림은\n오히려 **불어난다**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261107-1101-i1",
+   "created_at": "2026-11-07T11:01:44+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261107-1101-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261107-1101-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261107-1101-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-1101-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-1101-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-1101-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-1101-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-1101-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-1101-i1/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "머스크 \"한 시대의 끝\", 사이버트럭 단종 예고",
+   "concept": "머스크가 직접 '한 시대의 끝'이라고 말한 사건을 중심으로, 판매량 48% 급감(확인 필요)과 로보택시 등 AI 사업으로의 전환을 한 걸음씩 잇습니다. 한국 투자자 관점은 마지막 장에 한 줄만 둡니다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "14곳이 다뤘고, 오전 7시대의 '생산 축소'에서 머스크 본인의 단종 예고로 한 단계 나아간 소식입니다. 이미 다룬 '머스크 회사 618조 증발'과는 다른 사건입니다.",
+   "tag": "테슬라",
+   "sources": [
+    "https://www.mt.co.kr/world/2026/11/07/2026110707591251436",
+    "https://biz.chosun.com/industry/car/2026/11/07/6MO2PA44TBC3VH7CB2ZMNVX5VY/"
+   ],
+   "bg": "Elon Musk Cybertruck",
+   "bg_alt": "Tesla Cybertruck",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "판매량 **48%** 급감\n테슬라 사이버트럭\n결국 단종 수순으로",
+     "number": "-48%",
+     "label": "사이버트럭 판매량(보도 기준)",
+     "sub": "머스크 \"한 시대의 끝\""
+    },
+    {
+     "type": "질문형",
+     "title": "머스크는 왜 직접\n테슬라 사이버트럭에\n**한 시대의 끝**이라 했나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "사이버트럭은 접고\n머스크는 **로보택시**\n쪽으로 무게 옮긴다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "quote"
+   ],
+   "extra": {
+    "quote": {
+     "label": "머스크",
+     "quote": "한 시대의 끝",
+     "by": "일론 머스크"
+    }
+   },
+   "id": "20261107-1101-i2",
+   "created_at": "2026-11-07T11:01:44+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-1101-i2/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-1101-i2/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-1101-i2/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261107-1101-i2/1-quote-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261107-1101-i2/1-quote-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261107-1101-i2/1-quote-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-1101-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-1101-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-1101-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261107-1101-i2/2-quote-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261107-1101-i2/2-quote-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261107-1101-i2/2-quote-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-1101-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-1101-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-1101-i2/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261107-1101-i2/3-quote-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261107-1101-i2/3-quote-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261107-1101-i2/3-quote-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "앤트로픽 IPO 몸값 한 달 새 45% 하락",
+   "concept": "앤트로픽 IPO 예상 기업가치가 2조 달러에서 1.1조 달러로 낮아졌다는 보도를 중심으로, 여전히 큰 숫자이지만 시장이 AI 기대감에 매기던 값을 다시 계산한다는 흐름을 풉니다. 이번 주 코스피 급락도 AI 투자 우려에서 시작됐다는 점을 마지막 장에 한 줄로 잇습니다. 수치는 보도 기준으로 확인 표기를 하나만 남깁니다. (공식: 전후 낙차 한 줄 표지)",
+   "why_now": "AI타임스 등 2곳이 오전 10시에 보도한 새 소식입니다. AI 거품 우려로 코스피가 11.7% 급락한 흐름의 연장이고, 최근 발송 목록에는 없는 주제입니다.",
+   "tag": "AI",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMiakFVX3lxTFBFYk5MdmJBbGpiZFB5VXJVYktDdUJYQ1RWdUVTUFB1VUc3SHlFeWFTTFhsMC1fd3ZCeFN"
+   ],
+   "bg": "Dario Amodei Anthropic",
+   "bg_alt": "Anthropic headquarters",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "IPO 몸값이 한 달 만에\n**2조**에서 1.1조 달러로",
+     "number": "-45%",
+     "label": "앤트로픽 예상 기업가치, 한 달 새",
+     "sub": "2조 달러에서 1.1조 달러로"
+    },
+    {
+     "type": "질문형",
+     "title": "앤트로픽 몸값은\n왜 한 달 만에\n**반토막** 가까이 됐나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "몸값 45% 빠졌어도\n앤트로픽은 여전히\n**1.1조** 달러",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bars",
+    "bignum"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "앤트로픽 IPO 예상 기업가치, 조 달러(보도 기준)",
+     "bars": [
+      {
+       "label": "한 달 전",
+       "value": 2
+      },
+      {
+       "label": "지금",
+       "value": 1.1,
+       "hi": true
+      }
+     ]
+    }
+   },
+   "id": "20261107-1101-i3",
+   "created_at": "2026-11-07T11:01:44+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261107-1101-i3/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261107-1101-i3/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261107-1101-i3/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261107-1101-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261107-1101-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261107-1101-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261107-1101-i3/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261107-1101-i3/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261107-1101-i3/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261107-1101-i3/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261107-1101-i3/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261107-1101-i3/3-bars-dohyeon.jpg"
     }
    ]
   }
