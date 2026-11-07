@@ -8,6 +8,40 @@ import json
 import os
 import urllib.error
 import urllib.request
+from pathlib import Path
+
+SENT = Path.home() / ".content-lab-ai" / "tg_sent.json"   # 보낸 파일 장부 (publish.tg_watch 가 같은 것을 두 번 안 보내게)
+
+
+def key(path):
+    """파일 내용 지문: 크기 + 앞뒤 1MB. 이름이 달라도 같은 영상이면 같다."""
+    import hashlib
+    p = Path(path)
+    size = p.stat().st_size
+    h = hashlib.sha1()
+    with open(p, "rb") as f:
+        h.update(f.read(1 << 20))
+        if size > 2 << 20:
+            f.seek(-(1 << 20), 2)
+            h.update(f.read())
+    return f"{size}:{h.hexdigest()[:16]}"
+
+
+def load_sent():
+    try:
+        return set(json.loads(SENT.read_text(encoding="utf-8")))
+    except (OSError, ValueError):
+        return set()
+
+
+def mark(paths):
+    """보낸 파일을 장부에 적는다 (실패해도 전송은 그대로)."""
+    try:
+        sent = load_sent() | {key(p) for p in paths}
+        SENT.parent.mkdir(parents=True, exist_ok=True)
+        SENT.write_text(json.dumps(sorted(sent)[-5000:]), encoding="utf-8")
+    except OSError as e:
+        print("⚠️ 보낸 장부 기록 실패:", e)
 
 
 def send(text, silent=False):
@@ -39,7 +73,9 @@ def send_video(path, caption=""):
         with open(path, "rb") as f:
             r = requests.post(f"https://api.telegram.org/bot{token}/sendVideo", data={"chat_id": chat, "caption": caption[:1000], "supports_streaming": "true"},
                               files={"video": f}, timeout=180)
-        return r.json().get("ok", False)
+        ok = r.json().get("ok", False)
+        ok and mark([path])
+        return ok
     except requests.RequestException as e:
         print("⚠️ 텔레그램 영상 전송 실패:", e)
         return False
@@ -58,7 +94,9 @@ def send_photos(paths, caption=""):
     try:
         r = requests.post(f"https://api.telegram.org/bot{token}/sendMediaGroup",
                           data={"chat_id": chat, "media": json.dumps(media)}, files=files, timeout=60)
-        return r.json().get("ok", False)
+        ok = r.json().get("ok", False)
+        ok and mark(paths)
+        return ok
     except requests.RequestException as e:
         print("⚠️ 텔레그램 이미지 보내기 실패:", e)
         return False
