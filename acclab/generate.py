@@ -59,6 +59,7 @@ RULES = """## 쓰레드 기본형 (main) — 이 모양 그대로
 ## 공통 규칙
 - 문단 구분은 빈 줄만. "1/", "2/" 같은 번호나 숫자 이모지 머리 금지 (B 리스트형의 "1." 번호만 허용)
 - [ ] 같은 빈칸 표시, '[확인]', '확인 필요' 금지. 모르는 숫자는 빼고 쓴다
+- 날짜는 사실 문장에 있는 표현 그대로 (시점 칸의 연도를 덧붙이지 않음). '로이터 보도 기준' 같은 출처 설명 문장은 쓰지 않는다
 - 수치·날짜·출처는 아래 '사실' 목록에 있는 것만 그대로. 계산·환산·반올림해서 새 숫자를 만들지 않는다
 - AI 티 금지: '결론적으로', '살펴보겠습니다', '~것으로 보입니다', '~가 아니라 ~다' 반전 문구, 과한 감탄
 - 매수·매도 지시, 수익 보장, 확정 예측, 특정 종목·코인·단지 추천 금지
@@ -120,7 +121,7 @@ def write(t, acc):
         if out is None:
             raise RuntimeError("형식에 맞는 답이 없음")
         res = assemble(t, acc, out, closing, others)
-        bad = [f for f in compliance.stops(res["flags"]["main"] + res["video_flags"])]
+        bad = compliance.stops(sum(res["flags"].values(), []) + res["video_flags"])   # 다섯 형식 + 영상 대본 전부
         if attempt or not bad:
             return res
         why = ", ".join(sorted({f"{f['kind']}({f['hit']})" if f["hit"] else f["kind"] for f in bad}))

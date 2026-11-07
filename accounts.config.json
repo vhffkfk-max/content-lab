@@ -14,7 +14,7 @@
    "outputs": ["threads", "video"], "voice": "M3", "ready": true,
    "route": {"tags": ["macro", "kr_stock", "us_stock", "policy"]}},
   {"slug": "js100x", "name": "자산백배", "handle": "", "group": "경제", "pool": "economy",
-   "outputs": ["threads", "video"], "voice": "", "ready": false,
+   "outputs": ["threads", "video"], "voice": "F1", "ready": true,
    "route": {"tags": ["macro", "kr_stock", "us_stock"], "min_impact": 2}},
   {"slug": "coin", "name": "코인 계정 (이름 미정)", "handle": "", "group": "경제", "pool": "economy",
    "outputs": ["threads", "video"], "voice": "", "ready": false,
