@@ -21,7 +21,7 @@ const same = (a, b) => !!a && !!b && timingSafeEqual(digest(a), digest(b));
 // 영상 연구소: 요청은 lab-requests 가지 requests/reel 로, 보드 내용은 reel-previews 가지에서 읽는다
 const REEL_DIR = 'requests/reel', REEL_BRANCH = 'reel-previews', REEL_ID = /^[0-9A-Za-z가-힣_]{1,80}$/;
 const REEL_ACTIONS = ['board', 'save', 'voice', 'make', 'format', 'hot', 'photo'];   // hot: 핫코노미 전용 영상 버전 A (주제 → 바로 영상)
-const REEL_FORMATS = ['frame', 'neon', 'photo', 'breaking', 'paper', 'split', 'minimal', 'kinetic', 'data'];
+const REEL_FORMATS = ['frame', 'neon', 'photo', 'breaking', 'paper', 'split', 'minimal', 'kinetic', 'data', 'ohne'];
 const reelText = (v, n) => typeof v === 'string' && v.length <= n;
 const reelCut = c => !!c && Number.isInteger(c.i) && c.i >= 0 && c.i < 30 && reelText(c.say, 240) && reelText(c.cap, 240)
   && (c.kick === undefined || reelText(c.kick, 240)) && (c.big === undefined || reelText(c.big, 240))

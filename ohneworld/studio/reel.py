@@ -14,7 +14,7 @@ import shutil
 import subprocess
 import sys
 
-from studio import facts
+from studio import facts, frame
 from studio.material import md5
 from studio.paths import CONFIG, font_css
 
@@ -22,25 +22,14 @@ sys.path.insert(0, str(pathlib.Path(__file__).parent / "vendor"))
 import engine  # noqa: E402
 
 BG_DARK = "#000000"
-WIN_TOP, WIN_H = 520, 830          # 가운데 칸 (화면 폭 전체)
-CAP_Y = 1445                        # 말풍선 자막 가운데 높이
+WIN_TOP, WIN_H, CAP_Y = frame.WIN_TOP, frame.WIN_H, frame.CAP_Y   # 틀 자리는 studio/frame.py 한 곳에서 (영상 연구소 '오뉴월드형'과 공유)
 
-# 오뉴월드 릴스 틀 (2026-11-06 실제 릴스 확인): 위 날짜+제목, 가운데 차트 칸, 아래 말풍선 자막 + 고정 질문. 바탕 검정.
-EXTRA = """
-body{word-break:keep-all;background:#000!important}
+# 오뉴월드 릴스 틀은 frame.css() (위 날짜+제목, 가운데 칸, 아래 말풍선 자막 + 고정 질문, 바탕 검정). 여기는 오뉴월드 장면 꾸밈만.
+EXTRA = frame.css() + """
 #head,#tape,#paper{display:none}
-#date{position:absolute;right:70px;top:300px;font-size:42px;font-weight:800;color:#fff;z-index:4;letter-spacing:-1px}
-#rtitle,#rq{position:absolute;left:30px;right:30px;text-align:center;z-index:4;color:#fff;font-weight:900;letter-spacing:-3px;line-height:1.1;white-space:nowrap}
-#rtitle{top:362px}#rq{top:1515px}
-#rtitle span,#rq span{display:inline-block;padding:0 14px 6px;background:linear-gradient(transparent 72%,#E3141B 72%,#E3141B 96%,transparent 96%);text-shadow:0 5px 0 #000,0 0 18px rgba(0,0,0,.9)}
 #warn{top:250px!important;left:70px!important;right:70px!important;text-align:left!important;font-size:25px;color:#9a9aa2!important;z-index:4}
-section{top:520px;height:830px;left:0;right:0;z-index:2;overflow:hidden;justify-content:center;align-items:center;gap:20px}
 section.lit{background:#fff}
-section.dark{background:repeating-conic-gradient(from 0deg at 50% 50%,rgba(255,170,60,.13) 0 6deg,transparent 6deg 15deg),radial-gradient(circle at 50% 50%,#3a1606 0%,#120704 55%,#050302 100%)}
-#cap{top:1395px;height:110px;left:60px;right:60px;z-index:4;font-size:44px;line-height:1.2}
-#cap>div{background:#fff;color:#111;padding:14px 34px;border-radius:22px;text-shadow:none;font-weight:800;border:3px solid #111}
-#cap em{color:#E3141B;font-style:normal}
-#bar{background:#E3141B;height:10px;z-index:6}
+""" + "section.dark{background:" + frame.DARK_BG + "}" + """
 #flash{z-index:5}
 .burst{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 45%,rgba(255,120,20,.55) 75%,rgba(255,60,0,.9) 100%);mix-blend-mode:screen}
 .bignum{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;font-weight:900;letter-spacing:-6px;line-height:1;color:#FF2A2A;-webkit-text-stroke:7px #FFD23A;paint-order:stroke fill;text-shadow:0 0 40px rgba(255,80,0,.9),0 0 90px rgba(255,40,0,.6)}
@@ -123,8 +112,7 @@ def build_page(out, s, scenes, charts, cover, hide_cap=False, note="", marks=Non
     title = getattr(s, "reel_title", "") or s.keyword
     question = getattr(s, "reel_question", "") or s.cover_sub
     doc = f"""<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>{font_css()}{engine.CSS}{EXTRA}{hide}</style></head><body>
-<div id="bar"></div><div id="date">{e(date_text(s))}</div><div id="rtitle" style="font-size:{fit_keyword(title, 104, 1000)}px"><span>{e(title)}</span></div>{secs}<div id="cap"></div>
-<div id="rq" style="font-size:{fit_keyword(question, 92, 1000)}px"><span>{e(question)}</span></div>
+<div id="bar"></div>{frame.top_html(date_text(s), title, question)}{secs}<div id="cap"></div>
 <div id="warn">{e(s.basis)} · 정보 제공 목적 · 투자 권유 아님 · AI 음성 · @oh_neworld</div><div id="tape"><div></div></div><div id="flash"></div>
 <script>const TL={json.dumps(tl, ensure_ascii=False)};{engine.JS}{FX}</script></body></html>"""
     p = out / ("page_자막없음.html" if hide_cap else "page.html")

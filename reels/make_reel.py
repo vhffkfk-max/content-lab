@@ -647,6 +647,16 @@ def headline_html(s):
             f'<div class="h2" style="font-size:{size}px">{html.escape(two)}</div></div>')
 
 
+def ohne_top(s, out):
+    """오뉴월드형의 날짜·제목·고정 질문 (오뉴월드 제작기와 같은 틀 코드). 다른 형식에서는 CSS 로 숨는다."""
+    now = datetime.now(KST)
+    try:   # 제목은 짧은 핵심어 (오뉴월드 릴스처럼): 보드 주제
+        title = load_state(out).get("topic", "")
+    except (OSError, ValueError):
+        title = ""
+    return formats.frame.top_html(f"{now.year}년{now.month}월{now.day}일", title or clean(s.ig_title or ""), re.sub(r"(.*\?).*", r"\1", clean(s.question or "")), q_min=52)   # 질문까지만 ('댓글로 알려 주세요' 빼기)
+
+
 def build_page(out, s, q, scenes, basis):
     logo = (ROOT / "assets" / "brand" / "hotconomy_logo.png").as_uri()
     used = list(dict.fromkeys([m for _, x in texts(s) for m in PH.findall(x)] + [n for c in s.cuts for n in ([c.ticker] if c.ticker else c.tickers)]))
@@ -658,7 +668,7 @@ def build_page(out, s, q, scenes, basis):
     js = JS + FX
     secs = "".join(scene(i, c, q) for i, c in enumerate(s.cuts, 1))
     doc = f"""<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>{font_css()}{CSS}{EXTRA}{formats.css()}</style></head><body class="fmt-{STYLE['format']}">
-<div id="fx"><div id="grid"></div><div id="glow"></div><div id="rays"></div></div><div id="bigword">{html.escape(s.hashtags[0].lstrip("#") if s.hashtags else "HOTCONOMY")} · @HOTCONOMY · </div><div id="wipe1"></div><div id="wipe2"></div><div id="bar"></div><div id="head"><img src="{logo}"><span>{basis}</span></div>{headline_html(s)}{secs}<div id="cap"></div>
+<div id="fx"><div id="grid"></div><div id="glow"></div><div id="rays"></div></div><div id="bigword">{html.escape(s.hashtags[0].lstrip("#") if s.hashtags else "HOTCONOMY")} · @HOTCONOMY · </div><div id="wipe1"></div><div id="wipe2"></div><div id="bar"></div><div id="head"><img src="{logo}"><span>{basis}</span></div>{headline_html(s)}{ohne_top(s, out)}{secs}<div id="cap"></div>
 <div id="warn">정보 제공 목적 · 투자 권유 아님 · AI 음성</div>{tape_html}<div id="flash"></div>
 <script>const TL={json.dumps(tl, ensure_ascii=False)};{js}</script></body></html>"""
     p = out / "page.html"

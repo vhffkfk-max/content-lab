@@ -112,14 +112,47 @@ body.fmt-kinetic .ph{position:absolute;left:-65px;right:-65px;top:-360px;height:
 body.fmt-kinetic section:has(.ph){justify-content:flex-end}
 body.fmt-kinetic section:has(.ph) .emo{display:none}
 """),
+    "ohne": ("오뉴월드형", "오뉴월드 릴스 틀: 검정 바탕, 위 날짜·굵은 흰 제목(빨간 밑줄), 가운데 고정 칸(사진은 자르지 않고 원본 비율), 아래 흰 말풍선 자막과 고정 질문. 빨간 동그라미·화살표·손글씨 라벨로 강조", ""),   # CSS 는 아래 OHNE (오뉴월드 틀 공유)
 }
 DEFAULT = "frame"   # 연구소 상위 릴스 벤치마크 (2026-11-06 대표 요청: 잘 된 글의 색을 가져가자)
 # 모든 형식 공통: 해시태그 띠·큰 워터마크·이모지·반짝이는 상위 글 어디에도 없어 뺀다. 오른쪽 위 기준일·면책 문구는 화면에서 빼고 올릴 글 끝에만 둔다 (대표 요청 2026-11-06, 짜쳐 보인다). AI 음성 표시는 캡션과 플랫폼 AI 표시로 한다.
 COMMON = "#headline{display:none}body #tape,body #bigword,body .emo,body #fx .pt{display:none!important}body #warn,body #head span{display:none!important}body #warn,body #head span{text-shadow:0 1px 4px rgba(0,0,0,.85),0 0 2px rgba(0,0,0,.9);color:#fff}body.fmt-paper #warn,body.fmt-paper #head span,body.fmt-minimal #warn,body.fmt-minimal #head span{text-shadow:none;color:#444}\n"
 
 
+def _frame():
+    """오뉴월드 틀 모듈 (ohneworld/studio/frame.py). 오뉴월드 제작기와 같은 코드를 쓴다."""
+    import importlib.util
+    import pathlib
+    f = pathlib.Path(__file__).resolve().parent.parent / "ohneworld" / "studio" / "frame.py"
+    spec = importlib.util.spec_from_file_location("ohne_frame", f)
+    m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m)
+    return m
+
+
+frame = _frame()
+O = "body.fmt-ohne"
+OHNE = frame.font_face() + frame.css(O + " ", O) + f"""
+{O} #fx,{O} #wipe1,{O} #wipe2,{O} #head,{O} #headline{{display:none!important}}
+{O} #date,{O} #rtitle,{O} #rq{{display:block}}{O} #rq{{top:1540px}}
+{O} section{{padding:36px 60px;background:{frame.DARK_BG}}}
+{O} .ph{{position:absolute;inset:0;background-color:#000;background-size:contain;background-repeat:no-repeat;background-position:center;z-index:-1}}
+{O} section:has(.ph:not(.blur))>*:not(.ph):not(.kick){{display:none}}
+{O} section:has(.ph:not(.blur)) .kick{{position:absolute;left:40px;bottom:26px;background:#fff!important;border-radius:12px;padding:2px 22px}}
+{O} .kick{{background:none;align-self:center;font-family:Hand,HSans,sans-serif;color:{frame.RED}!important;font-size:66px;padding:0;transform:rotate(-4deg)}}
+{O} .kick::after{{content:' ↘';font-family:HSans,sans-serif;font-weight:900}}
+{O} .big,{O} .why2 .ln{{position:relative;color:#fff;text-shadow:none}}
+{O} .big::after,{O} .why2 .ln::after{{content:'';position:absolute;left:-46px;right:-46px;top:-26px;bottom:-26px;border:9px solid {frame.RED};border-radius:50%;transform:rotate(-5deg)}}
+{O} .q .ln:last-child{{background:linear-gradient(transparent 70%,{frame.RED} 70%,{frame.RED} 94%,transparent 94%)}}
+{O} .ln.num,{O} .num{{color:#fff}}{O} .up{{color:#FF4B4F}}{O} .dn{{color:#5AA2FF}}
+{O} .chart #dot{{r:20px;fill:none;stroke:{frame.RED};stroke-width:9px}}
+{O} .card2{{background:#fff;color:#111;border:3px solid #111}}{O} .card2 b{{background:{frame.RED};color:#fff}}
+"""
+FORMATS["ohne"] = (*FORMATS["ohne"][:2], OHNE)
+
+
 def css():
-    return COMMON + "".join(c for _, _, c in FORMATS.values())
+    return COMMON + "#date,#rtitle,#rq{display:none}" + "".join(c for _, _, c in FORMATS.values())
 
 
 class PhotoPlan(BaseModel):
