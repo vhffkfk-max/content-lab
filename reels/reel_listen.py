@@ -126,13 +126,14 @@ def hot_video(q):
     import suggest
     from publish.notify import send, send_video as tg_video
     seeds = q.get("seeds") or suggest.seed_for(q["topic"])
-    args = [sys.executable, str(HOT_MAKER), q["topic"], "--lab", str(ROOT)]
+    py = pathlib.Path(sys.executable).with_name("python.exe")   # pythonw 로 부르면 기사 수집(브라우저)이 실패해 일반 파이썬으로 (창은 안 띄움)
+    args = [str(py if py.exists() else sys.executable), str(HOT_MAKER), q["topic"], "--lab", str(ROOT)]
     if seeds:
         f = pathlib.Path.home() / ".content-lab-ai" / "hot_seed.json"
         f.write_text(json.dumps(seeds), encoding="utf-8")
         args += ["--seed", str(f)]
     try:
-        p = subprocess.run(args, cwd=HOT_MAKER.parent.parent, env=ENV, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=JOB_TIMEOUT_S, creationflags=NO_WINDOW)
+        p = subprocess.run(args, cwd=HOT_MAKER.parent.parent, env=ENV, stdin=subprocess.DEVNULL, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=JOB_TIMEOUT_S, creationflags=NO_WINDOW)
     except subprocess.TimeoutExpired:
         return "20분 안에 끝나지 않았어요."
     lines = [x for x in (p.stdout + p.stderr).splitlines() if x.strip()]
