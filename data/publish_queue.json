@@ -2686,320 +2686,6 @@
  ],
  "ideas": [
   {
-   "title": "TSMC 한때 하한가, AI 쇼크 번진 아시아 반도체",
-   "concept": "TSMC 급락에서 코스피 낙폭, SK하이닉스 외국인 지분율 5년 만에 최저까지 하루 흐름으로 정리. 엔비디아의 협력 지속 발언도 함께 전달",
-   "why_now": "14:39 TSMC 한때 하한가 보도가 나왔고, 코스피는 서킷브레이커 뒤 5100선을 회복했지만 4.84% 하락 중입니다. 아직 계정에서 다루지 않은 새 소식입니다.",
-   "tag": "반도체",
-   "sources": [
-    "https://v.daum.net/v/20261106143903093",
-    "https://www.yna.co.kr/view/AKR20261106111400009",
-    "https://www.etoday.co.kr/news/view/2645064"
-   ],
-   "bg": "TSMC headquarters",
-   "bg_alt": "TSMC chip wafer",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "코스피 서킷브레이커\n뒤에도 **4.84%** 하락\n아시아 반도체 휘청",
-     "number": "-4.84%",
-     "label": "코스피 장중 낙폭",
-     "sub": "5100선 회복했지만 장 마감 기준 아님"
-    },
-    {
-     "type": "질문형",
-     "title": "TSMC마저 **하한가**\n삼성, 하이닉스는\n무사할 수 있을까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "엔비디아 협력 지속\n외국인 지분율은\n5년 만에 **최저**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261106-1501-i1",
-   "created_at": "2026-11-06T15:01:30+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261106-1501-i1/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261106-1501-i1/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261106-1501-i1/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261106-1501-i1/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261106-1501-i1/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261106-1501-i1/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261106-1501-i1/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261106-1501-i1/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261106-1501-i1/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "쿠팡 과징금 2011억 원 효력 정지",
-   "concept": "효력 정지와 과징금 소멸의 차이를 짚고, 누가 정지했는지와 기간은 확인 중이라는 점을 분명히 밝히는 속보",
-   "why_now": "14:08 동아, 한경, 머니투데이 등 4곳이 속보로 다뤘고 아직 계정에서 보내지 않은 소식입니다.",
-   "tag": "기업, 규제",
-   "sources": [
-    "https://www.donga.com/news/Society/article/all/20261106/134978289/2",
-    "https://www.hankyung.com/article/2026110607997"
-   ],
-   "bg": "Coupang logo",
-   "bg_alt": "Coupang delivery",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "쿠팡 과징금 **2011억**원\n효력이 일단 멈췄다",
-     "number": "2011억원",
-     "label": "방문기록 무단 수집 과징금",
-     "sub": "효력 정지, 과징금이 없어진 것은 아님"
-    },
-    {
-     "type": "질문형",
-     "title": "방문기록 무단 수집\n과징금은 **사라진** 걸까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "2011억 과징금\n멈췄지만 **끝난 건** 아니다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261106-1501-i2",
-   "created_at": "2026-11-06T15:01:30+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261106-1501-i2/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261106-1501-i2/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261106-1501-i2/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261106-1501-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261106-1501-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261106-1501-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261106-1501-i2/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261106-1501-i2/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261106-1501-i2/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261106-1501-i2/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261106-1501-i2/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261106-1501-i2/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "달러-원 1,360원 돌파, 10월 2일 이후 최고",
-   "concept": "증시 급락과 같은 날 오른 환율이 서학개미 평가액과 여행, 수입 물가에 어떻게 엇갈리는지 설명",
-   "why_now": "14:04 연합인포맥스가 1,360원 돌파를 보도했고 14:36에는 한 달 만에 최고라고 전했습니다. 시세는 1,361.28원으로 전일 대비 +1.58%입니다.",
-   "tag": "환율",
-   "sources": [
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443496",
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443506",
-    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008833876&plink=RSSLINK&cooper=RSSREADER"
-   ],
-   "bg": "dollar won currency",
-   "bg_alt": "Korean won bills",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "달러-원 **1,360원** 돌파\n10월 2일 이후 최고",
-     "number": "1,360원",
-     "label": "달러-원 환율",
-     "sub": "오전만 해도 1,350원 중후반"
-    },
-    {
-     "type": "질문형",
-     "title": "환율이 1,360원인데\n서학개미는 **이득**일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "미국 증시는 폭락\n그런데 **달러**는 올랐다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "editorial"
-   ],
-   "extra": {},
-   "id": "20261106-1501-i3",
-   "created_at": "2026-11-06T15:01:30+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261106-1501-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261106-1501-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261106-1501-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261106-1501-i3/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261106-1501-i3/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261106-1501-i3/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261106-1501-i3/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261106-1501-i3/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261106-1501-i3/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
    "title": "코스피 6% 급락 마감, 5천선 사수",
    "concept": "마감 숫자로 낙폭을 보여주고, 장중 5천선이 깨졌다가 매수로 회복한 반전을 풀어낸다",
    "why_now": "마감 결과가 막 확정됐고 4곳 이상이 동시에 보도했다. 앞서 낸 서킷브레이커 소식과 달리 확정된 종가라서 새 소식이다.",
@@ -8253,6 +7939,371 @@
      "form": "editorial",
      "font": "plex",
      "path": "20261107-1501-i3/3-editorial-plex.jpg"
+    }
+   ]
+  },
+  {
+   "title": "코스피 급락 후 본전까지 걸린 시간",
+   "concept": "최근 5년 급락 중 10번은 아직 본전을 못 찾았다는 보도를 중심으로, '본전만 오면 판다'는 말과 실제 회복 기간을 대비해 푼다. 세부 회복 일수는 원문 확인 후에만 쓴다. (공식: 한 글에 사건 하나)",
+   "why_now": "코스피가 5000선 아래로 내려오자 뉴시스와 자본시장뉴스가 같은 날 급락 후 회복 기간을 다뤘다. 아직 다루지 않은 각도다.",
+   "tag": "증시",
+   "sources": [
+    "https://v.daum.net/v/20261107150145842",
+    "https://www.newsis.com/view/NISX20261106_0003858348"
+   ],
+   "bg": "Korea stock exchange traders",
+   "bg_alt": "KOSPI screen Seoul",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "최근 5년 급락 중\n**10번**은 아직\n본전 못 찾았다",
+     "number": "10번",
+     "label": "최근 5년 코스피 급락 중",
+     "sub": "아직 본전을 못 찾았다"
+    },
+    {
+     "type": "질문형",
+     "title": "본전만 오면 판다던\n그 **본전**은\n언제 왔나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "급락 뒤 회복 기간은\n매번 **달랐다**\n10번은 아직 그대로",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261107-1606-i1",
+   "created_at": "2026-11-07T16:06:32+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261107-1606-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261107-1606-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261107-1606-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-1606-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-1606-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-1606-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-1606-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-1606-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-1606-i1/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "강남도 아닌데 고액 월세, 노도강, 금관구",
+   "concept": "서울 집값 91주 연속 상승 기록과 함께, 강남 밖 지역에서도 고액 월세 거래가 나온다는 보도를 생활 시선으로 푼다. 구체 금액과 건수는 원문 확인 후에만 쓴다. (공식: 없음)",
+   "why_now": "매일경제, 동아일보, 뉴시스가 다뤘고, 증시 기사 일색인 화면에서 내 동네 얘기라 차별점이 있다.",
+   "tag": "부동산",
+   "sources": [
+    "https://www.donga.com/news/Economy/article/all/20261107/134983272/1",
+    "https://v.daum.net/v/20261107142700172"
+   ],
+   "bg": "Seoul apartment complex",
+   "bg_alt": "Seoul residential street",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "서울 집값 **91주**\n연속 상승 끝에\n월세도 번졌다",
+     "number": "91주",
+     "label": "서울 집값 연속 상승",
+     "sub": "역대 최장 기록"
+    },
+    {
+     "type": "질문형",
+     "title": "강남도 아닌데\n월세 **300만원**\n실화인가",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "강남 얘기인 줄 알았는데\n노원, 금천에서도\n**고액 월세**가 나왔다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "editorial",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261107-1606-i2",
+   "created_at": "2026-11-07T16:06:32+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261107-1606-i2/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261107-1606-i2/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261107-1606-i2/1-editorial-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261107-1606-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261107-1606-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261107-1606-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261107-1606-i2/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261107-1606-i2/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261107-1606-i2/2-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261107-1606-i2/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261107-1606-i2/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261107-1606-i2/3-editorial-plex.jpg"
+    }
+   ]
+  },
+  {
+   "title": "월가 헤지펀드, 투자 철수와 감원",
+   "concept": "美 증시 급락이 큰손 헤지펀드의 투자 철수와 감원으로 번졌다는 매일경제 보도를 한 사건으로 풀고, 규모는 원문 확인 후에만 쓴다. (공식: 한 글에 사건 하나)",
+   "why_now": "15:36에 나온 새 기사로, 블루웨이브 충격이 증시를 넘어 금융업 일자리로 번졌다는 새 파장이다.",
+   "tag": "미국 증시",
+   "sources": [
+    "https://www.mk.co.kr/news/stock/12201467"
+   ],
+   "bg": "Wall Street trading floor",
+   "bg_alt": "New York Stock Exchange building",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "월가 헤지펀드\n투자 **철수**에 이어\n감원까지 시작했다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "주식만 아픈 줄 알았는데\n월가 **감원**은\n왜 시작됐나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "블루웨이브 충격이\n월가 **일자리**까지\n번졌다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261107-1606-i3",
+   "created_at": "2026-11-07T16:06:32+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-1606-i3/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-1606-i3/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-1606-i3/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261107-1606-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261107-1606-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261107-1606-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-1606-i3/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-1606-i3/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-1606-i3/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261107-1606-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261107-1606-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261107-1606-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261107-1606-i3/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261107-1606-i3/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261107-1606-i3/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261107-1606-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261107-1606-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261107-1606-i3/3-news-myeongjo.jpg"
     }
    ]
   }
