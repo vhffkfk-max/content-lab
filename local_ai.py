@@ -51,6 +51,7 @@ def git(*a, check=True):
 
 
 AUTO_CHART = False   # 매일 아침 08시 자동 차트 (11/07 사용자 요청으로 잠시 멈춤 — 시스템 업그레이드 뒤 True 로). 사이트 버튼 차트는 그대로 됨
+AUTO_FUTURES = False   # 선물 브리핑 자동 08:30·21시 (11/07 사용자 요청으로 잠시 멈춤 — 업그레이드 뒤 True 로). 사이트 버튼은 그대로 됨
 
 
 def py(*a, timeout=40 * 60):
@@ -217,7 +218,7 @@ def run_cycle():
     if AUTO_CHART and slot_once(state, "chart", (8,)):   # 자동 차트리포트는 하루 1번 아침 08시 (PC가 꺼져 있었으면 켜진 뒤 바로). --force: 어제 문구 그대로여도 매일 새로 만듦
         py("chart_report.py", "--from-tg", "--force", timeout=15 * 60)
         did.append("차트리포트")
-    if slot_once(state, "futures", (8.5, 21)):   # BTC·ETH 선물 브리핑 하루 2번 (08:30 · 미국장 전 21시)
+    if AUTO_FUTURES and slot_once(state, "futures", (8.5, 21)):   # BTC·ETH 선물 브리핑 하루 2번 (08:30 · 미국장 전 21시)
         py("futures_brief.py", "--send", timeout=15 * 60)
         did.append("선물 브리핑")
 
