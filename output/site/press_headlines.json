@@ -1,6 +1,46 @@
 [
  {
   "source": "다음 뉴스",
+  "section": "국민일보",
+  "region": "KR",
+  "title": "‘640대’ 코스닥 어쩌나…계엄 직후보다 더 낮아졌다",
+  "link": "https://v.daum.net/v/20261107093533053",
+  "topics": "국내 대형주",
+  "popular": false,
+  "published": "11/07 09:35"
+ },
+ {
+  "source": "다음 뉴스",
+  "section": "투데이신문",
+  "region": "KR",
+  "title": "미래에셋증권, 3만 9000명 개인정보 유출...“사칭 2차 피해 주의 당부”",
+  "link": "https://v.daum.net/v/20261107093505046",
+  "topics": "",
+  "popular": false,
+  "published": "11/07 09:35"
+ },
+ {
+  "source": "다음 뉴스",
+  "section": "투데이신문",
+  "region": "KR",
+  "title": "1인당 소득 4만달러 시대 온다는데…가계는 물가·집값에 제자리",
+  "link": "https://v.daum.net/v/20261107093503045",
+  "topics": "물가·경기, 환율·달러, 부동산",
+  "popular": false,
+  "published": "11/07 09:35"
+ },
+ {
+  "source": "다음 뉴스",
+  "section": "서울경제",
+  "region": "KR",
+  "title": "“세금 성실히 낸 내국인은 기초연금 깎여...복수 국적자는 검증 사각지대서 온전한 급여 받아”",
+  "link": "https://v.daum.net/v/20261107093425039",
+  "topics": "연금·절세",
+  "popular": false,
+  "published": "11/07 09:34"
+ },
+ {
+  "source": "다음 뉴스",
   "section": "아주경제",
   "region": "KR",
   "title": "테슬라 사이버트럭 역사 속으로…머스크 \"한 시대의 끝\"",
@@ -20,16 +60,6 @@
   "published": "11/07 09:33"
  },
  {
-  "source": "서울경제",
-  "section": "경제",
-  "region": "KR",
-  "title": "“세금 성실히 낸 내국인은 기초연금 깎여...복수 국적자는 검증 사각지대서 온전한 급여 받아”",
-  "link": "https://www.sedaily.com/article/20111411",
-  "topics": "연금·절세",
-  "popular": false,
-  "published": "11/07 09:32"
- },
- {
   "source": "다음 뉴스",
   "section": "이데일리",
   "region": "KR",
@@ -40,41 +70,11 @@
   "published": "11/07 09:32"
  },
  {
-  "source": "다음 뉴스",
-  "section": "뉴시스",
-  "region": "KR",
-  "title": "무형유산 '장 담그기' 명인 기순도 \"장은 곧 한국의 영혼\"[현장]",
-  "link": "https://v.daum.net/v/20261107093133995",
-  "topics": "",
-  "popular": false,
-  "published": "11/07 09:31"
- },
- {
   "source": "머니투데이",
   "section": "전체",
   "region": "KR",
   "title": "\"암인데 당장 치료 안 해도 된다고?\"…남성 암 1위 전립선암의 두 얼굴",
   "link": "https://www.mt.co.kr/thebio/2026/11/07/2026110615570584763",
-  "topics": "",
-  "popular": false,
-  "published": "11/07 09:30"
- },
- {
-  "source": "다음 뉴스",
-  "section": "파이낸셜뉴스",
-  "region": "KR",
-  "title": "\"젠슨 황 곁 中 여성은 중국 간첩\"",
-  "link": "https://v.daum.net/v/20261107093041989",
-  "topics": "AI·반도체",
-  "popular": false,
-  "published": "11/07 09:30"
- },
- {
-  "source": "다음 뉴스",
-  "section": "이데일리",
-  "region": "KR",
-  "title": "“이사회 장악 아냐” 오스코텍 2세 김성연, 경영 참여 본격화[화제의 바이오人]",
-  "link": "https://v.daum.net/v/20261107093019982",
   "topics": "",
   "popular": false,
   "published": "11/07 09:30"
@@ -373,7 +373,7 @@
   "source": "뉴시스",
   "section": "금융",
   "region": "KR",
-  "title": "미래에셋證도 뚫려…계열사 4곳 해킹에 그룹 보안관리 도마(종합)",
+  "title": "미래에셋證도 뚫려…잇단 해킹 피해에 증권가 '비상'(종합)",
   "link": "https://www.newsis.com/view/NISX20261107_0003858758",
   "topics": "",
   "popular": false,
@@ -700,6 +700,16 @@
   "published": "11/07 07:29"
  },
  {
+  "source": "매일경제",
+  "section": "증권",
+  "region": "KR",
+  "title": "증시 폭락에 트럼프 “멍청한 민주당 때문…이들에 투표한 스스로를 탓해야”",
+  "link": "https://www.mk.co.kr/news/stock/12200996",
+  "topics": "급락·변동성, 정치·관세",
+  "popular": false,
+  "published": "11/07 07:27"
+ },
+ {
   "source": "한국경제",
   "section": "증권",
   "region": "KR",
@@ -880,6 +890,16 @@
   "published": "11/07 07:01"
  },
  {
+  "source": "매일경제",
+  "section": "증권",
+  "region": "KR",
+  "title": "한국금융IT, 신개념 ‘AI 조건검색’ 개발",
+  "link": "https://www.mk.co.kr/news/stock/12200973",
+  "topics": "AI·반도체",
+  "popular": false,
+  "published": "11/07 07:00"
+ },
+ {
   "source": "이데일리",
   "section": "증권",
   "region": "KR",
@@ -938,6 +958,16 @@
   "topics": "테슬라",
   "popular": false,
   "published": "11/07 06:45"
+ },
+ {
+  "source": "매일경제",
+  "section": "경제",
+  "region": "KR",
+  "title": "다카이치 “日銀 ETF 매각 이익으로 반도체·AI 투자”",
+  "link": "https://www.mk.co.kr/news/world/12200962",
+  "topics": "AI·반도체, ETF·지수투자",
+  "popular": false,
+  "published": "11/07 06:44"
  },
  {
   "source": "CNBC",
@@ -1108,26 +1138,6 @@
   "topics": "",
   "popular": false,
   "published": "11/07 06:00"
- },
- {
-  "source": "매일경제",
-  "section": "경제",
-  "region": "KR",
-  "title": "“혼자 늙는 것도 서러운데, 다 가져가야만 했냐”…고령 1인가구 보험료 ‘쑥’",
-  "link": "https://www.mk.co.kr/news/economy/12201283",
-  "topics": "",
-  "popular": false,
-  "published": "11/07 05:59"
- },
- {
-  "source": "매일경제",
-  "section": "경제",
-  "region": "KR",
-  "title": "“고객님, 원가 너무 올라서” 하며 가격 올리더니…재료값 떨어져도 그대로?",
-  "link": "https://www.mk.co.kr/news/economy/12201282",
-  "topics": "",
-  "popular": false,
-  "published": "11/07 05:59"
  },
  {
   "source": "MarketWatch",
@@ -1348,16 +1358,6 @@
   "topics": "",
   "popular": false,
   "published": "11/06 22:31"
- },
- {
-  "source": "매일경제",
-  "section": "증권",
-  "region": "KR",
-  "title": "증시 폭락에 트럼프 “멍청한 민주당 때문…이들에 투표한 스스로를 탓해야”",
-  "link": "https://www.mk.co.kr/news/stock/12200996",
-  "topics": "급락·변동성, 정치·관세",
-  "popular": false,
-  "published": "11/06 22:27"
  },
  {
   "source": "CoinDesk",
