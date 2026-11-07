@@ -1,0 +1,27 @@
+{
+  "_설명": "실제 백업을 받아 칸 이름이 다르면 여기만 고치면 됩니다. 아직 실제 백업을 보지 못한 추정값입니다.",
+  "naver": {
+    "post_tags": ["post", "item", "entry", "article"],
+    "title": ["title", "subject", "postTitle", "제목"],
+    "date": ["date", "pubDate", "publishDate", "addDate", "createdAt", "created_at", "postDate", "작성일", "날짜"],
+    "body": ["content", "contents", "body", "description", "text", "postContent", "본문", "내용"],
+    "images": ["images", "image", "photos", "imageUrl", "imagePath", "사진", "이미지"],
+    "videos": ["videos", "video", "videoUrl", "동영상"],
+    "id": ["logNo", "postId", "post_id", "id", "guid", "글번호"],
+    "skip_paths": ["댓글", "방명록", "이웃", "서로이웃", "쪽지", "안부", "comment", "guestbook", "neighbor", "buddy", "message"]
+  },
+  "instagram": {
+    "read_files": "^(posts?|reels?|igtv_videos?)(_\\d+)?\\.json$",
+    "insights_files": "^(posts?|reels?)(_\\d+)?\\.json$",
+    "insights_dir": "past_instagram_insights",
+    "skip_paths": ["messages", "inbox", "message_requests", "comments", "followers_and_following", "connections", "personal_information", "security_and_login_information", "ads_information", "ads_and_topics", "apps_and_websites_off_of_instagram", "apps_and_websites", "preferences", "logged_information/link_history", "story_interactions", "likes", "saved", "shopping", "monetization", "searches", "stories"],
+    "metric_names": {
+      "reach": ["Accounts reached", "Reach", "도달", "도달한 계정"],
+      "impressions": ["Impressions", "노출", "조회", "Views"],
+      "saved": ["Saves", "Saved", "저장"],
+      "likes": ["Likes", "좋아요"],
+      "comments": ["Comments", "댓글"],
+      "shares": ["Shares", "공유"]
+    }
+  }
+}
