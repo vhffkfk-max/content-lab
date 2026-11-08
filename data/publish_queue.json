@@ -2936,318 +2936,6 @@
  ],
  "ideas": [
   {
-   "title": "미래에셋증권 고객 3,800명 계좌번호 유출",
-   "concept": "업계 1위가 휴대폰 인증 로그인에서 뚫린 사건을 유출 규모, 원인, 증권가 점검, 내 계좌에서 할 일 순서로 푼다. 피해 범위와 보상은 추가 발표 전이라 확인 중이라고 밝힌다. (공식: 한 글에 사건 하나)",
-   "why_now": "11시 22분 이후 동아일보, 이투데이, SBS Biz 등 5곳이 보도했다. 3,800명 계좌번호 유출과 휴대폰 인증 로그인이라는 원인이 새로 나왔고, 뉴스1과 뉴시스는 증권가 전체가 비상이라고 전했다.",
-   "tag": "증권 보안",
-   "sources": [
-    "https://www.donga.com/news/Society/article/all/20261107/134983071/2",
-    "https://www.newsis.com/view/NISX20261107_0003858758"
-   ],
-   "bg": "Mirae Asset Securities building",
-   "bg_alt": "Mirae Asset Securities logo",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "미래에셋증권 고객\n**3,800명** 계좌번호가\n밖으로 나갔다",
-     "number": "3,800명",
-     "label": "미래에셋증권 계좌번호 유출",
-     "sub": "뚫린 곳은 휴대폰 인증 로그인"
-    },
-    {
-     "type": "질문형",
-     "title": "업계 1위 미래에셋은\n어디서 **뚫렸을까**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "업계 1위 미래에셋이\n뚫린 곳은 결국\n**휴대폰 인증** 로그인",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261107-1205-i1",
-   "created_at": "2026-11-07T12:05:16+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261107-1205-i1/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261107-1205-i1/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261107-1205-i1/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261107-1205-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261107-1205-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261107-1205-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261107-1205-i1/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261107-1205-i1/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261107-1205-i1/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261107-1205-i1/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261107-1205-i1/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261107-1205-i1/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "5억 모았는데 5000만원 남았다",
-   "concept": "미국 주식에 레버리지로 투자한 직장인 사례에서 출발해, 레버리지가 내릴 때 손실도 키운다는 점과 서학개미 매수 흐름을 잇는다. 마지막 장은 내가 감당할 손실 한도부터 확인하라는 안내로 닫고, 종목이나 기간은 확인 중이라고 밝힌다. (공식: 한 글에 사건 하나)",
-   "why_now": "11시 3분 동아일보와 뉴시스가 보도했다. 코스피가 닷새 급락하고 서학개미가 미국 주식을 약 3조 원 사들인 가운데 레버리지 위험이 현실이 된 사례다.",
-   "tag": "레버리지 투자",
-   "sources": [
-    "https://www.donga.com/news/Economy/article/all/20261107/134983185/1",
-    "https://www.newsis.com/view/NISX20261107_0003858802"
-   ],
-   "bg": "Wall Street trader screen",
-   "bg_alt": "Nasdaq stock market board",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "코스피 닷새 급락 때\n서학개미 **3조원**이\n미국 주식으로 갔다",
-     "number": "3조원",
-     "label": "서학개미 미국 주식 순매수",
-     "sub": "연합뉴스 11월 첫 주 집계는 2.6조 원"
-    },
-    {
-     "type": "질문형",
-     "title": "급락장에 서학개미는\n어느 쪽에 **베팅**했나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "5억 모은 직장인 계좌엔\n**5000만원**만 남았다",
-     "number": "5000만원",
-     "label": "미국 주식 레버리지 투자 후",
-     "sub": "5억 모았던 직장인의 사례"
-    }
-   ],
-   "forms": [
-    "bignum",
-    "editorial"
-   ],
-   "extra": {},
-   "id": "20261107-1205-i2",
-   "created_at": "2026-11-07T12:05:16+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261107-1205-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261107-1205-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261107-1205-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261107-1205-i2/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261107-1205-i2/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261107-1205-i2/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261107-1205-i2/3-bignum-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261107-1205-i2/3-bignum-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261107-1205-i2/3-bignum-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "TSMC, 엔비디아 요청에 메모리 진출 검토",
-   "concept": "TSMC가 엔비디아 요청으로 첨단 메모리 진출을 검토한다는 보도를 중심으로, 삼성전자와 SK하이닉스에 경쟁자가 늘 수 있다는 점을 풀어 쓴다. 아직 검토 단계라 양산까지는 시간이 걸릴 수 있다고 한 줄로 밝힌다. (공식: 주인공이 분명한 질문 표지)",
-   "why_now": "11시 38분 서울경제, 연합인포맥스, AI타임스 3곳이 보도했다. 정치 불확실성과 AI 거품론으로 한국 반도체주가 크게 흔들린 날이라 경쟁 구도 변화에 시장이 민감하다.",
-   "tag": "반도체",
-   "sources": [
-    "https://www.sedaily.com/article/20111434",
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443572"
-   ],
-   "bg": "Jensen Huang Nvidia",
-   "bg_alt": "TSMC fab",
-   "hooks": [
-    {
-     "type": "사건형",
-     "title": "TSMC가 엔비디아 요청에\n첨단 메모리 진출을\n**검토**에 들어갔다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "TSMC가 메모리 진출을\n**검토**한 이유는?",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "흔들리는 삼성, 하이닉스\n이번엔 TSMC가\n**경쟁자**로 거론된다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "breaking"
-   ],
-   "extra": {},
-   "id": "20261107-1205-i3",
-   "created_at": "2026-11-07T12:05:16+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261107-1205-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261107-1205-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261107-1205-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261107-1205-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261107-1205-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261107-1205-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261107-1205-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261107-1205-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261107-1205-i3/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
    "title": "테슬라 사이버트럭 생산 중단",
    "concept": "테슬라가 사이버트럭 생산을 멈췄고 머스크가 '한 시대의 끝'이라고 했다는 한 사건으로 간다. 판매 48% 급감 보도, 로보택시로의 전환, 한국 수입차 1위와의 거리 순서로 한 걸음씩 잇고, 한국 영향은 아직 모른다고 밝힌다. (공식: 표지는 이미 일어난 일로)",
    "why_now": "17곳이 11시 40분 전후로 보도했고, 앞서 보낸 단종 예고에서 생산 중단으로 한 단계 나아갔다. 한국은 테슬라가 9개월 연속 수입차 1위라 독자와 가깝다.",
@@ -8639,6 +8327,378 @@
      "form": "paper",
      "font": "gowun",
      "path": "20261108-1301-i3/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "금감원, 빚투 담보비율 의무 3개월 면제",
+   "concept": "코스피 급락 직후 반대매매 우려에 나온 조치를 보도 중심으로 풀고, 빚이 사라지는 건 아니라는 점과 면제가 끝나면 부담이 돌아온다는 점을 짚는다. 적용 대상과 시작일은 원문 확인이 필요하다고 한 줄만 밝힌다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "11곳이 다룬 새 소식이다. 코스피가 급락한 직후라 빚투 강제청산 우려가 커진 시점이다. 조선비즈는 내년 1월까지 면제한다고 보도했다.",
+   "tag": "증시",
+   "sources": [
+    "https://www.newsis.com/view/NISX20261106_0003858573",
+    "https://www.mt.co.kr/stock/2026/11/08/2026110619030119159",
+    "https://biz.chosun.com/stock/stock_general/2026/11/08/3N3FO3SK6RHQZG2FLCL37RLIZU/"
+   ],
+   "bg": "KOSPI trading screen",
+   "bg_alt": "Financial Supervisory Service building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "빚투 반대매매 압박에\n금감원이 담보 의무를\n**3개월** 면제했어요",
+     "number": "3개월",
+     "label": "담보비율 유지의무 면제",
+     "sub": "내년 1월까지, 반대매매 우려 속"
+    },
+    {
+     "type": "질문형",
+     "title": "빚투 강제청산,\n금감원은 왜 갑자기\n**3개월** 멈췄을까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "빚은 그대로인데\n강제 매도만 **멈췄어요**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261108-1401-i1",
+   "created_at": "2026-11-08T14:01:39+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261108-1401-i1/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261108-1401-i1/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261108-1401-i1/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261108-1401-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261108-1401-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261108-1401-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261108-1401-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261108-1401-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261108-1401-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261108-1401-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261108-1401-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261108-1401-i1/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "젠슨 황 딸 방한 취소, 배경훈 면담 무산",
+   "concept": "황 딸 방한이 취소되면서 부총리 면담과 기업 협력 일정이 같이 무산된 사실을 중심으로 푼다. 중국 스파이 의혹 보도와 엮는 시각이 있지만 공식 확인된 이유는 아니라고 한 줄만 밝히고, 내일 AI 데이 서울을 다음에 볼 변수로 남긴다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "16곳이 다룬 새 소식이다. 엔비디아 AI 데이 서울이 내일 9일 개막해 시점이 맞는다.",
+   "tag": "테크",
+   "sources": [
+    "https://biz.chosun.com/it-science/ict/2026/11/08/L22RCPNIPBFTTL466CDXONUPRU/",
+    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008835855&plink=RSSLINK&cooper=RSSREADER"
+   ],
+   "bg": "Jensen Huang Nvidia",
+   "bg_alt": "Nvidia headquarters",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "젠슨 황 딸 방한이\n취소됐어요\n**배경훈** 면담도 무산",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "엔비디아 행사 하루 전\n황 딸은 왜 안 올까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "AI 데이 서울 하루 전\n황 딸 방한 일정이\n전부 **무산**됐어요",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "breaking"
+   ],
+   "extra": {},
+   "id": "20261108-1401-i2",
+   "created_at": "2026-11-08T14:01:39+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-1401-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-1401-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-1401-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-1401-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-1401-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-1401-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-1401-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-1401-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-1401-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "라가르드 ECB 총재, 12월 금리 인상에 무게",
+   "concept": "라가르드의 발언 한 줄을 앞세우고, 한국 투자자에게 닿는 길(위험자산, 환율, 외국인 자금)을 쉬운 말로 한 장에 풀어 쓴다. 인상 폭과 세부 발언은 원문 확인이 필요하다고 한 줄만 밝힌다. (공식: 없음)",
+   "why_now": "13:12 연합인포맥스 등 2곳이 보도했다. 증시가 급락한 상황에서 유럽의 금리 인상 기조가 이어질 수 있다는 신호라 관심이 높다.",
+   "tag": "금리",
+   "sources": [
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443607"
+   ],
+   "bg": "Christine Lagarde",
+   "bg_alt": "European Central Bank building",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "라가르드 ECB 총재\n12월 금리 인상에\n**무게**를 뒀어요",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "유럽도 금리를 안 내리면\n한국 증시에 **부담**일까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "증시 급락 속에서도\n라가르드는 **인상**에 무게",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "quote",
+    "news"
+   ],
+   "extra": {
+    "quote": {
+     "label": "ECB 총재 발언",
+     "quote": "방향이 바뀌려면 상당한 변화가 필요하다",
+     "by": "라가르드 ECB 총재"
+    }
+   },
+   "id": "20261108-1401-i3",
+   "created_at": "2026-11-08T14:01:39+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261108-1401-i3/1-quote-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261108-1401-i3/1-quote-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261108-1401-i3/1-quote-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-1401-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-1401-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-1401-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261108-1401-i3/2-quote-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261108-1401-i3/2-quote-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261108-1401-i3/2-quote-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-1401-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-1401-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-1401-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261108-1401-i3/3-quote-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261108-1401-i3/3-quote-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261108-1401-i3/3-quote-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-1401-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-1401-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-1401-i3/3-news-myeongjo.jpg"
     }
    ]
   }
