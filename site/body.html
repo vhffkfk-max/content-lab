@@ -593,6 +593,7 @@ ul.gd-card{padding-left:36px;line-height:1.8}
             <li><a href="#uc-ai">GPT·Claude 연결</a></li>
           </ul></li>
         <li class="nav-label" style="margin-top:10px">내 채널</li>
+        <li><button type="button" data-ch="c-bull"><i class="dot" style="background:#8B5E34"></i>황소개미</button></li>
         <li><button type="button" data-ch="c-hot"><i class="dot" style="background:#E5484D"></i>핫코노미</button></li>
         <li><button type="button" data-ch="c-asset"><i class="dot" style="background:#1F8A5B"></i>자산백배</button></li>
         <li><button type="button" data-ch="c-chart"><i class="dot" style="background:#3E63DD"></i>차트덕후</button></li>
@@ -1100,6 +1101,10 @@ ul.gd-card{padding-left:36px;line-height:1.8}
         </section>
       </div>
 
+      <div class="view" data-view="c-bull" hidden>
+        <div class="title-row"><div><h1>황소개미</h1><p>이 채널의 인스타그램, 쓰레드, 영상을 여기서 만들어요. 올리기 전에 꼭 확인해 주세요.</p></div></div>
+        <div id="c-bull-root"></div>
+      </div>
       <div class="view" data-view="c-hot" hidden>
         <div class="title-row"><div><h1>핫코노미</h1><p>이 채널의 인스타그램, 쓰레드, 영상을 여기서 만들어요. 올리기 전에 꼭 확인해 주세요.</p></div></div>
         <div id="c-hot-root"></div>
@@ -1939,6 +1944,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
   }
   // ── 내 채널: 채널마다 인스타그램·쓰레드·영상을 한곳에서 만든다 ──
   const CHANNELS = {
+    'c-bull': { name: '황소개미', sub: '@bullant_economy', first: 'thread', insta: { wait: '황소개미는 지금 쓰레드 계정이라 인스타 제작기가 없어요.' }, thread: { lab: true }, video: { wait: '황소개미 영상 제작기가 아직 없어요.' } },
     'c-hot': { name: '핫코노미', sub: '@hotconomy', insta: { draft: true }, thread: { slug: 'hotconomy' }, video: { action: 'hot', label: '핫코노미 영상 만들기', ph: '주제 (예: 대출금리 엇갈림)', note: '핫코노미와 궁금이가 대화하는 40~55초 영상이에요. 5~10분 걸리고 텔레그램으로 와요.' } },
     'c-asset': { name: '자산백배', sub: '@100x.asset', insta: { wait: '자산백배 전용 카드 틀이 아직 없어요. 지금 카드 자동화는 핫코노미 디자인으로만 나와요.' }, thread: { slug: 'js100x' }, video: { action: 'asset', angle: true, label: '자산백배 영상 만들기', ph: '주제 (예: 예금 금리 은행)', note: '훅 다음에 표 한 장으로 셋을 비교하는 30초 안팎 영상이에요. 최근 36시간 기사에서 셋을 비교할 수 있어야 만들어지고, 5~10분 뒤 텔레그램으로 와요.' } },
     'c-chart': { name: '차트덕후', sub: '차트 공부 계정', insta: { wait: '차트덕후 카드 제작기가 아직 없어요.' }, thread: { wait: '차트덕후 글쓰기 기준이 아직 연결되지 않았어요.' }, video: { wait: '차트덕후 영상 제작기가 아직 없어요.' } },
@@ -1995,6 +2001,12 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     return box;
   }
   function chanThread(c, x) {
+    if (x.lab) {
+      const box = el('div', 'vl-hot'), go = el('button', 'btn primary', '쓰레드 연구소 열기'); go.type = 'button';
+      go.addEventListener('click', () => document.querySelector('#channel-nav button[data-ch="thlab"]').click());
+      box.append(el('h3', '', c.name + ' 쓰레드'), el('p', 'sub', '황소개미 글은 쓰레드 연구소에서 추천 글감을 고르고 A·B·C 형식으로 만들어요.'), go);
+      return box;
+    }
     const box = el('div', 'vl-hot'), a = el('a', 'btn primary', '오늘 만든 쓰레드 글 보기');
     a.href = `accounts/${x.slug}/`; a.target = '_blank'; a.rel = 'noopener';
     box.append(el('h3', '', c.name + ' 쓰레드'), el('p', 'sub', '이 계정 기준으로 하루 세 번(7시·12시·18시) 글을 자동으로 만들어 둬요. 주제를 직접 넣어 만드는 기능은 아직 없어요.'), a);
@@ -2002,7 +2014,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
   }
   function chanDraw(ch) {
     const c = CHANNELS[ch], root = document.getElementById(ch + '-root'); if (!c || !root) return;
-    const cur = chanTab[ch] || 'video', bar = el('div', 'tabs'), panel = el('div'); panel.style.marginTop = '14px';
+    const cur = chanTab[ch] || c.first || 'video', bar = el('div', 'tabs'), panel = el('div'); panel.style.marginTop = '14px';
     [['insta', '인스타그램'], ['thread', '쓰레드'], ['video', '영상']].forEach(([k, label]) => {
       const b = el('button', null, label); b.type = 'button'; b.setAttribute('aria-selected', String(k === cur));
       b.addEventListener('click', () => { chanTab[ch] = k; chanDraw(ch); }); bar.append(b);
@@ -4284,7 +4296,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
   document.getElementById('side-hide').addEventListener('click', () => setSide(true));
   document.getElementById('side-show').addEventListener('click', () => setSide(false));
   if (store.get('side_hidden') === '1') setSide(true);
-  const NAMES = { thlab: '쓰레드 연구소', econ: '경제 미디어 추천', guide: '사용 가이드', calendar: '발행 캘린더', video: '영상 연구소', 'c-hot': '핫코노미', 'c-asset': '자산백배', 'c-chart': '차트덕후', 'c-malhee': '말희아빠', home: '오늘 할 일', instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드', x: 'X · 트루스소셜', telegram: '텔레그램 · 말희아빠', traders: '텔레그램 · 트레이더스', feedback: '후기·기록', growth: '마케팅 코치', viral: '뜬 글 공식', usage: '활용 체크' };
+  const NAMES = { thlab: '쓰레드 연구소', econ: '경제 미디어 추천', guide: '사용 가이드', calendar: '발행 캘린더', video: '영상 연구소', 'c-bull': '황소개미', 'c-hot': '핫코노미', 'c-asset': '자산백배', 'c-chart': '차트덕후', 'c-malhee': '말희아빠', home: '오늘 할 일', instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드', x: 'X · 트루스소셜', telegram: '텔레그램 · 말희아빠', traders: '텔레그램 · 트레이더스', feedback: '후기·기록', growth: '마케팅 코치', viral: '뜬 글 공식', usage: '활용 체크' };
   // ── 폰: 채널을 열면 '전체' 대신 한 칸만 (이 기기에서 많이 본 칸, 없으면 첫 칸). 위 탭으로 다른 칸·전체로 이동 ──
   const isPhone = () => matchMedia('(max-width:860px)').matches;
   function phoneFolder(ch) {
@@ -4411,7 +4423,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
   const nf = v => v == null || v === '' ? null : Number(v).toLocaleString('ko-KR');
   const NAV_GROUPS = [
     ['대시보드', ['home', 'guide']],
-    ['내 채널', ['c-hot', 'c-asset', 'c-chart', 'c-malhee']],
+    ['내 채널', ['c-bull', 'c-hot', 'c-asset', 'c-chart', 'c-malhee']],
     ['쓰레드 연구소', ['thlab', 'threads']],
     ['트렌드 발견', ['google', 'foreign', 'x', 'youtube']],
     ['계정 분석', ['accounts', 'econ']],
