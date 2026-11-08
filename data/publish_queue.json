@@ -2936,354 +2936,6 @@
  ],
  "ideas": [
   {
-   "title": "강남 아닌 노도강, 금관구도 월세 300만원",
-   "concept": "강남이 아닌 노원, 도봉, 강북, 금천, 관악, 구로에서도 고액 월세 거래가 나온다는 보도를 내 동네 월세 얘기로 풀고, 집값 91주 연속 상승과 전월세 쏠림 흐름을 한 줄로 잇는다. 구체 금액과 건수는 원문 확인 후 쓴다. (공식: 한 글에 사건 하나)",
-   "why_now": "동아일보, 매일경제, 뉴시스가 다뤘고 서울 집값 91주 연속 상승 보도와 맞물린다. 증시 기사가 몰린 화면에서 생활 밀착 주제라 차별점이 있다.",
-   "tag": "부동산",
-   "sources": [
-    "https://www.donga.com/news/Economy/article/all/20261107/134983272/1",
-    "https://v.daum.net/v/20261107142700172"
-   ],
-   "bg": "Seoul apartment complex",
-   "bg_alt": "Nowon Seoul apartments",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "강남도 아닌데\n월세 **300만원**\n금관구까지 갔다",
-     "number": "300만원",
-     "label": "강남이 아닌 곳의 월세",
-     "sub": "노도강, 금관구에서도 나왔다"
-    },
-    {
-     "type": "질문형",
-     "title": "노도강 금관구\n집주인도 놀랄\n**월세**는 얼마일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "강남이 아닌데\n노도강에서도\n**300만원** 월세가 나왔다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "editorial",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261107-1501-i1",
-   "created_at": "2026-11-07T15:01:39+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261107-1501-i1/1-editorial-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261107-1501-i1/1-editorial-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261107-1501-i1/1-editorial-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261107-1501-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261107-1501-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261107-1501-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261107-1501-i1/2-editorial-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261107-1501-i1/2-editorial-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261107-1501-i1/2-editorial-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261107-1501-i1/3-editorial-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261107-1501-i1/3-editorial-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261107-1501-i1/3-editorial-plex.jpg"
-    }
-   ]
-  },
-  {
-   "title": "한진칼우 194% 폭등, 0.11%P 지분싸움",
-   "concept": "지수가 급락한 날 한진칼 우선주만 3배 가까이 오른 장면을 사건 하나로 잡는다. 0.11%P 지분 차이, 경영권 프리미엄 분석, 변동성 주의 순서로 푼다. 기간과 종가는 원문 확인 후 쓴다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "매일경제가 14:30에 보도한 새 소식이다. 증시가 급락하는 날 우선주가 3배 가까이 오른 점이 눈에 띈다.",
-   "tag": "증시",
-   "sources": [
-    "https://www.mk.co.kr/news/stock/12201451",
-    "https://v.daum.net/v/20261107143004212"
-   ],
-   "bg": "Cho Won-tae Hanjin",
-   "bg_alt": "Korean Air airplane",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "0.11%P 지분 차이에\n한진칼 우선주가\n**194%** 폭등했다",
-     "number": "194%",
-     "label": "한진칼 우선주 상승률",
-     "sub": "지분 차이는 0.11%P"
-    },
-    {
-     "type": "질문형",
-     "title": "지수는 급락하는데\n우선주만 3배 가까이\n**프리미엄** 어디까지?",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "증시는 무너졌는데\n한진칼 우선주만\n**194%** 올랐다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261107-1501-i2",
-   "created_at": "2026-11-07T15:01:39+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261107-1501-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261107-1501-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261107-1501-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261107-1501-i2/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261107-1501-i2/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261107-1501-i2/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261107-1501-i2/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261107-1501-i2/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261107-1501-i2/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261107-1501-i2/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261107-1501-i2/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261107-1501-i2/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "코스피 급락장에 서학개미 일주일 3조 매수",
-   "concept": "국내 증시가 흔들리는 동안 개인 투자자가 미국 주식을 일주일 새 3조원 순매수했다는 보도를 반전 구도로 푼다. 코스피 한 달 -25.64% 시세와 나란히 보여 주고, 종목 추천은 하지 않는다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "SBS Biz와 이투데이가 같은 시간대에 다뤘고 아직 보낸 적 없는 주제다. 코스피 급락 직후 개인 자금이 어디로 움직였는지 보여 준다.",
-   "tag": "투자자 동향",
-   "sources": [
-    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008835121&plink=RSSLINK&cooper=RSSREADER",
-    "https://www.etoday.co.kr/news/view/2645300"
-   ],
-   "bg": "Wall Street New York Stock Exchange",
-   "bg_alt": "Korean investor trading screen",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "코스피 급락 속\n서학개미 일주일\n**3조원** 순매수했다",
-     "number": "3조원",
-     "label": "서학개미 일주일 순매수",
-     "sub": "국내 증시가 흔들린 한 주"
-    },
-    {
-     "type": "질문형",
-     "title": "국내 증시 흔들리자\n개미들은 어디로\n**미국 주식**이었나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "코스피는 무너졌는데\n서학개미는 일주일 새\n**3조원** 사들였다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "editorial"
-   ],
-   "extra": {},
-   "id": "20261107-1501-i3",
-   "created_at": "2026-11-07T15:01:39+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261107-1501-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261107-1501-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261107-1501-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261107-1501-i3/1-editorial-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261107-1501-i3/1-editorial-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261107-1501-i3/1-editorial-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261107-1501-i3/2-editorial-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261107-1501-i3/2-editorial-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261107-1501-i3/2-editorial-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261107-1501-i3/3-editorial-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261107-1501-i3/3-editorial-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261107-1501-i3/3-editorial-plex.jpg"
-    }
-   ]
-  },
-  {
    "title": "코스피 급락 후 본전까지 걸린 시간",
    "concept": "최근 5년 급락 중 10번은 아직 본전을 못 찾았다는 보도를 중심으로, '본전만 오면 판다'는 말과 실제 회복 기간을 대비해 푼다. 세부 회복 일수는 원문 확인 후에만 쓴다. (공식: 한 글에 사건 하나)",
    "why_now": "코스피가 5000선 아래로 내려오자 뉴시스와 자본시장뉴스가 같은 날 급락 후 회복 기간을 다뤘다. 아직 다루지 않은 각도다.",
@@ -8627,6 +8279,381 @@
      "form": "news",
      "font": "myeongjo",
      "path": "20261108-1601-i3/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "증시 급락 속 한은 금리 인상 셈법",
+   "concept": "코스피 한 주 11% 하락과 물가, 환율 부담 사이에서 한은이 처한 딜레마를 집값, 빚투, 미국 CPI 순서로 풀기 (공식: 없음)",
+   "why_now": "증시 급락에 한은 금리 인상 셈법이 복잡해졌다는 기사가 나왔다. 다음 주 미국 CPI와 PPI 발표, 12월 FOMC를 앞두고 있다. 한은 관점은 아직 다루지 않았다.",
+   "tag": "금리",
+   "sources": [
+    "https://www.fnnews.com/news/202611081514308869",
+    "https://news.google.com/rss/articles/CBMiWkFVX3lxTE91YmpPRmRyMGdWX3BtTllIMUJiejlzZ3NkZzEzX3dkRUIxSENkZ2N2UWdiWEpmNXljd29"
+   ],
+   "bg": "Bank of Korea building",
+   "bg_alt": "Bank of Korea Seoul",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "코스피 한 주 새 11%↓\n844곳이 **연중** 최저가\n한은 금리 고민 커졌다",
+     "number": "-11%",
+     "label": "코스피 한 주 새",
+     "sub": "844개 상장사가 연중 최저가를 찍었다"
+    },
+    {
+     "type": "질문형",
+     "title": "증시는 무너지는데\n한은은 **금리**를\n올릴 수 있을까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "금리 올리면\n집값엔 약이어도\n빚투 개미엔 **부담**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/08",
+     "headlines": [
+      "코스피 한 주 새 11% 넘게 하락",
+      "844개 상장사 연중 최저가",
+      "미국 CPI 다음 주, FOMC 전 마지막"
+     ]
+    }
+   },
+   "id": "20261108-1701-i1",
+   "created_at": "2026-11-08T17:01:35+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-1701-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-1701-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-1701-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261108-1701-i1/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261108-1701-i1/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261108-1701-i1/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-1701-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-1701-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-1701-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261108-1701-i1/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261108-1701-i1/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261108-1701-i1/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-1701-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-1701-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-1701-i1/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261108-1701-i1/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261108-1701-i1/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261108-1701-i1/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "삼성과 SK 현금 329조, 외국인은 7.6조 매도",
+   "concept": "외국인이 7.6조원 판 주에 나온 현금 329조원이라는 대비를 숫자 한 방으로 보여주고, 쓰임새는 전망치로 한 번만 단서를 달기 (공식: 큰 숫자 하나를 빨간 한 줄로)",
+   "why_now": "증시가 11% 넘게 빠지고 외국인이 삼성전자와 SK하이닉스를 7.6조원 판 주에 나온 숫자다. 월요일 반등 여부가 관심이고, 관련 글이 가장 빠르게 조회를 얻고 있다.",
+   "tag": "기업",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMiVkFVX3lxTE52Q1BzMG5YeHJacDdQcFFsS2p3Q3BGeUNia1R6aUVJVnd1Zm5CbHJMWFBUbGVsZVVwWGU",
+    "https://v.daum.net/v/20261108163404848"
+   ],
+   "bg": "Samsung Electronics headquarters",
+   "bg_alt": "SK hynix headquarters",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "삼성과 SK가 쌓은 현금\n**329조**원\n외국인은 7.6조 팔았다",
+     "number": "329조원",
+     "label": "삼성전자와 SK하이닉스 현금",
+     "sub": "삼성전자 혼자 215조원"
+    },
+    {
+     "type": "질문형",
+     "title": "삼성 혼자 현금 215조\n주주환원일까\n미래 **투자**일까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "외국인이 7.6조 판 주\n두 회사 금고엔\n현금 **329조**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261108-1701-i2",
+   "created_at": "2026-11-08T17:01:35+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261108-1701-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261108-1701-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261108-1701-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-1701-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-1701-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-1701-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-1701-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-1701-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-1701-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-1701-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-1701-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-1701-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "내년 초등 입학생 사상 첫 30만명 붕괴",
+   "concept": "입학생이 처음 30만명 밑으로 내려간 사건에 OECD 최고 수준이라는 미래 부양부담을 붙여 내 얘기로 풀기 (공식: 표지는 이미 일어난 일로)",
+   "why_now": "매일경제와 SBS Biz가 오늘 오후 같은 시각에 내년 초등 입학생이 사상 처음 30만명 밑으로 떨어진다고 보도했다. 증시와 집값 소식 사이에서 다른 결의 경제 이슈다.",
+   "tag": "저출생",
+   "sources": [
+    "https://www.mk.co.kr/news/economy/12201756",
+    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008836043&plink=RSSLINK&cooper=RSSREADER"
+   ],
+   "bg": "elementary school students Korea",
+   "bg_alt": "empty classroom Korea",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "내년 초등 입학생\n사상 처음\n**30만**명 밑으로",
+     "number": "30만명",
+     "label": "내년 초등 입학생",
+     "sub": "사상 처음 30만명 밑으로 내려갔다"
+    },
+    {
+     "type": "질문형",
+     "title": "입학생이 처음\n30만 밑인데\n부양은 **누가** 질까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "아이는 줄어드는데\n미래 부양부담은\n**OECD** 최고",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "editorial"
+   ],
+   "extra": {},
+   "id": "20261108-1701-i3",
+   "created_at": "2026-11-08T17:01:35+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261108-1701-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261108-1701-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261108-1701-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261108-1701-i3/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261108-1701-i3/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261108-1701-i3/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261108-1701-i3/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261108-1701-i3/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261108-1701-i3/3-breaking-dohyeon.jpg"
     }
    ]
   }
