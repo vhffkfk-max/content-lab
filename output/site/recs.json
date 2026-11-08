@@ -57,20 +57,6 @@
  },
  {
   "rank": 5,
-  "topic": "금리·연준",
-  "kind": "국내 검증 주제",
-  "confidence": "높음",
-  "title_idea": "숫자 하나로 보는 금리·연준",
-  "format": "릴스",
-  "hook": "숫자 강조형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 1.71,
-  "kr_n": 27,
-  "foreign_avg": 0.81,
-  "foreign_n": 23
- },
- {
-  "rank": 6,
   "topic": "연금·절세",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
@@ -84,7 +70,7 @@
   "foreign_n": 30
  },
  {
-  "rank": 7,
+  "rank": 6,
   "topic": "급락·변동성",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
@@ -98,17 +84,31 @@
   "foreign_n": 16
  },
  {
-  "rank": 8,
-  "topic": "부동산",
+  "rank": 7,
+  "topic": "금리·연준",
   "kind": "국내 검증 주제",
   "confidence": "높음",
-  "title_idea": "숫자 하나로 보는 부동산",
-  "format": "캐러셀(카드뉴스)",
+  "title_idea": "숫자 하나로 보는 금리·연준",
+  "format": "릴스",
   "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.43,
-  "kr_n": 126,
-  "foreign_avg": 0.77,
-  "foreign_n": 10
+  "kr_avg": 1.71,
+  "kr_n": 27,
+  "foreign_avg": 0.81,
+  "foreign_n": 23
+ },
+ {
+  "rank": 8,
+  "topic": "2차전지",
+  "kind": "해외 벤치마킹 주제 (방식 바꾸면 기회)",
+  "confidence": "높음",
+  "title_idea": "2차전지 한 장으로 총정리",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "정리·요약형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 0.78,
+  "kr_n": 10,
+  "foreign_avg": 2.21,
+  "foreign_n": 5
  }
 ]
