@@ -2936,429 +2936,6 @@
  ],
  "ideas": [
   {
-   "title": "일자리 16.5만개, 금리 인상 베팅 늘었다",
-   "concept": "예상 6.5만개의 2배가 넘는 고용이 나왔는데 로이터는 연준 금리 인상 베팅이 늘었다고 전했다. 좋은 소식이 왜 부담이 됐는지 한 사건으로 풀고, 한국에는 달러와 외국인 수급 쪽으로 이어 본다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "로이터가 고용지표 직후 금리 인상 베팅 증가를 보도했고 뉴스1, 조선비즈 등 6곳이 다뤘다. 월요일 코스피와 환율 흐름의 변수라 주말 전에 정리할 만하다.",
-   "tag": "미국 고용",
-   "sources": [
-    "https://www.cnbc.com/2026/11/06/jobs-report-october-2026.html",
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443594"
-   ],
-   "bg": "Jerome Powell",
-   "bg_alt": "Federal Reserve building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "미국 일자리 16.5만개\n예상의 **2배** 넘게 터졌다",
-     "number": "16.5만개",
-     "label": "미국 10월 일자리",
-     "sub": "예상치는 6.5만개였다"
-    },
-    {
-     "type": "질문형",
-     "title": "일자리가 좋았는데\n트레이더들은 왜\n금리 **인상**에 걸었나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "일자리 호재인데\n오른 건 **금리** 인상 베팅",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "bars"
-   ],
-   "extra": {
-    "bignum": {},
-    "bars": {
-     "sub": "미국 10월 일자리, 만 개",
-     "bars": [
-      {
-       "label": "예상",
-       "value": 6.5
-      },
-      {
-       "label": "실제",
-       "value": 16.5,
-       "hi": true
-      }
-     ]
-    }
-   },
-   "id": "20261107-0901-i1",
-   "created_at": "2026-11-07T09:01:34+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261107-0901-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261107-0901-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261107-0901-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261107-0901-i1/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261107-0901-i1/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261107-0901-i1/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261107-0901-i1/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261107-0901-i1/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261107-0901-i1/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261107-0901-i1/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261107-0901-i1/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261107-0901-i1/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "블루웨이브에 AI주 3.2조 달러 흔들렸다",
-   "concept": "민주당 당선인들의 데이터센터 건설 중단 공약이 AI주 급락을 불렀고, 하루 만에 AMD 11% 반등까지 이어진 흐름을 한 사건으로 이어 간다. 다만 나스닥은 4주 연속 주간 하락이라는 점을 마지막에 붙인다. (공식: 한 글에 사건 하나)",
-   "why_now": "뉴욕증시 반등 기사를 4곳 이상이 다뤘고 조선비즈, 경향, 머니투데이가 데이터센터 규제 공약과 AI주 급락을 짚었다. 코스피 오천피 붕괴와도 이어져 국내 관심이 크다.",
-   "tag": "AI주",
-   "sources": [
-    "https://biz.chosun.com/international/international_general/2026/11/07/XPEKSRLRGBGR7EGDMZFNPINIC4/",
-    "https://v.daum.net/v/20261107070942463",
-    "https://www.ft.com/content/088ed252-ea9c-4b61-b2d1-37295fd0f7c2?syn-25a6b1a6=1"
-   ],
-   "bg": "AMD Lisa Su",
-   "bg_alt": "data center servers",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "AI주에서 3.2조 달러\n**증발**했다는 보도",
-     "number": "3.2조 달러",
-     "label": "FT가 전한 AI주 급락 규모",
-     "sub": "데이터센터 규제 공약 여파"
-    },
-    {
-     "type": "질문형",
-     "title": "민주당 당선인들은\n왜 AI주를\n**흔들었나**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "규제 공약에 급락\n하루 만에 AMD **11%**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bars",
-    "news"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "뉴욕증시 반등 폭, %",
-     "bars": [
-      {
-       "label": "AMD",
-       "value": 11,
-       "hi": true
-      },
-      {
-       "label": "반도체",
-       "value": 4.2
-      },
-      {
-       "label": "나스닥",
-       "value": 1.1
-      }
-     ]
-    },
-    "news": {}
-   },
-   "id": "20261107-0901-i2",
-   "created_at": "2026-11-07T09:01:34+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261107-0901-i2/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261107-0901-i2/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261107-0901-i2/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261107-0901-i2/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261107-0901-i2/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261107-0901-i2/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261107-0901-i2/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261107-0901-i2/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261107-0901-i2/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261107-0901-i2/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261107-0901-i2/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261107-0901-i2/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261107-0901-i2/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261107-0901-i2/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261107-0901-i2/3-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261107-0901-i2/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261107-0901-i2/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261107-0901-i2/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "미래에셋증권 해킹, 3.9만명 정보 유출",
-   "concept": "증시 급락 속에 증권사가 이틀 연속 외부 공격을 받아 고객, 임직원 3만9000여명의 정보가 유출됐다는 보도를 중심으로 쓴다. 유출 항목과 대응은 재료에 없어 모른다고 밝히고, 확인된 사실만 이어 간다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "다음 뉴스에 08:21 미래에셋증권 해킹 기사 두 건이 올라왔다. 증권 계좌를 가진 사람이 많아 내 얘기로 읽히는 소재다.",
-   "tag": "증권사 보안",
-   "sources": [
-    "https://v.daum.net/v/20261107082135180",
-    "https://v.daum.net/v/20261107082120178"
-   ],
-   "bg": "Mirae Asset Securities",
-   "bg_alt": "Yeouido Seoul financial district",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "미래에셋증권 해킹\n3.9만명 정보가\n**유출**됐다",
-     "number": "3.9만명",
-     "label": "유출된 고객, 임직원 정보",
-     "sub": "이틀 연속 외부 공격"
-    },
-    {
-     "type": "질문형",
-     "title": "미래에셋증권이\n이틀 연속 당한 공격\n뭘 **털렸나**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "증시가 무너진 주간\n증권사는 **해킹**당했다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "bignum"
-   ],
-   "extra": {
-    "bignum": {}
-   },
-   "id": "20261107-0901-i3",
-   "created_at": "2026-11-07T09:01:34+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261107-0901-i3/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261107-0901-i3/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261107-0901-i3/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261107-0901-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261107-0901-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261107-0901-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261107-0901-i3/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261107-0901-i3/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261107-0901-i3/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261107-0901-i3/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261107-0901-i3/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261107-0901-i3/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
    "title": "미국 일자리 16.5만개, 금리 인상 베팅",
    "concept": "예상 6.5만개의 2배가 넘는 고용이 왜 호재가 아니라 12월 금리 인상론으로 번졌는지를 환율 1,360원대까지 이어서 풉니다. 전망은 끝 장으로 내리고 이미 나온 숫자와 시장 반응을 앞에 둡니다. (공식: 표지는 이미 일어난 일로)",
    "why_now": "로이터가 고용지표 직후 트레이더들의 금리 인상 베팅이 늘었다고 보도했고, 연합인포맥스는 NDF가 1,363.70원으로 8.05원 올랐다고 전했습니다. 코스피 급락 직후라 금리 방향에 관심이 큽니다.",
@@ -8705,6 +8282,454 @@
      "form": "paper",
      "font": "gowun",
      "path": "20261108-1006-i3/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "햇살론 예산 2455억 증액 추진",
+   "concept": "금융위가 햇살론 예산을 늘리고 '빚 갚으면 이자 환급'까지 거론한 소식을 속보로 전하고, 대상과 시행 시기는 확정 전이라고 한 번만 밝힌다. (공식: 없음)",
+   "why_now": "급락장과 빚투 얘기가 많은 오전에 조선비즈 등 3곳이 10시 33분에 보도한 서민 대출 소식이다. 오늘 아직 다루지 않았다.",
+   "tag": "서민금융",
+   "sources": [
+    "https://biz.chosun.com/stock/stock_general/2026/11/08/HE3GGMZUGU3TGNJQMVSTSYLBMQ/",
+    "https://v.daum.net/v/20261108103218805",
+    "https://v.daum.net/v/20261108103330830"
+   ],
+   "bg": "Financial Services Commission Seoul",
+   "bg_alt": "Korean won banknotes",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "금융위, 햇살론 예산\n**2455억원** 늘린다\n이자 돌려주는 방안도",
+     "number": "2455억원",
+     "label": "햇살론 예산 증액 추진",
+     "sub": "빚 갚으면 이자 환급안도 거론"
+    },
+    {
+     "type": "질문형",
+     "title": "금융위는 왜 햇살론에\n**2455억원**을 더\n넣으려 할까",
+     "number": "2455억원",
+     "label": "햇살론 증액 요청",
+     "sub": "취약계층 이자 부담을 낮추는 쪽으로 추진"
+    },
+    {
+     "type": "반전형",
+     "title": "빚을 갚으면 오히려\n이자를 **돌려준다**\n햇살론 환급 방안",
+     "number": "",
+     "label": "",
+     "sub": "세부 조건은 확정 발표 전"
+    }
+   ],
+   "forms": [
+    "breaking",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261108-1106-i1",
+   "created_at": "2026-11-08T11:06:44+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261108-1106-i1/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261108-1106-i1/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261108-1106-i1/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261108-1106-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261108-1106-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261108-1106-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261108-1106-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261108-1106-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261108-1106-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261108-1106-i1/2-bignum-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261108-1106-i1/2-bignum-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261108-1106-i1/2-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261108-1106-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261108-1106-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261108-1106-i1/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "삼성전자 현금 200조 첫 돌파",
+   "concept": "주가는 한 달 새 크게 빠졌는데 보유 현금은 처음 200조 원을 넘었다는 대비로 푼다. 주주환원 최대 110조 원은 전망이라고 한 줄로 밝힌다. (공식: 없음)",
+   "why_now": "조선비즈가 09시 53분에 삼성전자 현금 200조 첫 돌파를 보도했다. 급락장 속에서 대비되는 소식이고 오늘 아직 다루지 않았다.",
+   "tag": "기업",
+   "sources": [
+    "https://biz.chosun.com/it-science/ict/2026/11/08/VX3JJC6FH5D7ZLILVI4BIX3CJY/",
+    "https://biz.chosun.com/stock/stock_general/2026/11/08/GYZDAZJVGI2TGNJWGJRDQM3DGQ/"
+   ],
+   "bg": "Samsung Electronics headquarters",
+   "bg_alt": "Samsung semiconductor wafer",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "주가 한 달 -29.7%\n삼성전자 현금은\n처음 **200조** 돌파",
+     "number": "200조원",
+     "label": "삼성전자 보유 현금",
+     "sub": "주가는 11/06 기준 한 달 -29.72%"
+    },
+    {
+     "type": "질문형",
+     "title": "고점 대비 반토막\n삼성전자 곳간엔\n현금이 **얼마**일까",
+     "number": "200조원",
+     "label": "삼성전자 보유 현금",
+     "sub": "처음으로 200조 원을 넘었다"
+    },
+    {
+     "type": "반전형",
+     "title": "주가는 급락인데\n삼성전자 현금은\n처음 **200조** 넘었다",
+     "number": "200조원",
+     "label": "삼성전자 보유 현금",
+     "sub": "주주환원 최대 110조 원 전망도"
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261108-1106-i2",
+   "created_at": "2026-11-08T11:06:44+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261108-1106-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261108-1106-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261108-1106-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-1106-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-1106-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-1106-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261108-1106-i2/2-bignum-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261108-1106-i2/2-bignum-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261108-1106-i2/2-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-1106-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-1106-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-1106-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261108-1106-i2/3-bignum-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261108-1106-i2/3-bignum-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261108-1106-i2/3-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-1106-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-1106-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-1106-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "서울 아파트 매물 석 달 새 33% 증가",
+   "concept": "8, 3 세제 개편 이후 매물이 33% 늘었지만, 강남3구를 뺀 서울은 집값이 올랐다는 엇갈림과 거래 절벽 우려를 보도로 정리한다. (공식: 없음)",
+   "why_now": "조선비즈 등 여러 매체가 같은 아침에 다뤘고, 주식은 급락하는데 집값은 오르는 흐름이라 관심이 높다. 앞서 보낸 전세 품귀, 실거래가 글과는 매물이라는 다른 각도다.",
+   "tag": "부동산",
+   "sources": [
+    "https://biz.chosun.com/real_estate/real_estate_general/2026/11/08/EHJ24ODO7ZH6XMQZOGU4CIKCCA/",
+    "https://v.daum.net/v/20261108103403842"
+   ],
+   "bg": "Seoul apartment complex",
+   "bg_alt": "Seoul skyline apartments",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "서울 아파트 매물\n석 달 만에\n**33%** 늘었다",
+     "number": "33%",
+     "label": "서울 아파트 매물 증가율",
+     "sub": "8, 3 세제 개편 이후 석 달"
+    },
+    {
+     "type": "질문형",
+     "title": "서울 매물 8.5만 건\n쌓였는데 거래는\n**절벽**이라고?",
+     "number": "8.5만건",
+     "label": "서울 아파트 매물",
+     "sub": "거래 절벽 속 5년 전 데자뷔 거론"
+    },
+    {
+     "type": "반전형",
+     "title": "매물은 33% 늘었는데\n강남3구 뺀 서울은\n집값이 **올랐다**",
+     "number": "33%",
+     "label": "석 달 새 매물 증가",
+     "sub": "강남3구 제외 서울은 상승 보도"
+    }
+   ],
+   "forms": [
+    "bignum",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/08",
+     "headlines": [
+      "서울 아파트 매물 석 달 새 33%↑",
+      "8, 3 세제 개편 뒤 매물 늘었다",
+      "강남3구 뺀 서울 집값은 상승"
+     ]
+    }
+   },
+   "id": "20261108-1106-i3",
+   "created_at": "2026-11-08T11:06:44+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261108-1106-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261108-1106-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261108-1106-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261108-1106-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261108-1106-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261108-1106-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261108-1106-i3/2-bignum-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261108-1106-i3/2-bignum-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261108-1106-i3/2-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261108-1106-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261108-1106-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261108-1106-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261108-1106-i3/3-bignum-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261108-1106-i3/3-bignum-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261108-1106-i3/3-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261108-1106-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261108-1106-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261108-1106-i3/3-paper-gowun.jpg"
     }
    ]
   }
