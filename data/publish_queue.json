@@ -3035,372 +3035,6 @@
  ],
  "ideas": [
   {
-   "title": "미래에셋증권 3.9만 명 정보 유출",
-   "concept": "운용, 보험에 이어 증권까지 이어진 유출 소식을 보도 기준으로 짧게 전하고, 내가 지금 할 일(비밀번호 변경, 2단계 인증, 출처 모를 문자와 전화 주의)로 마무리한다. 유출 항목과 규모는 회사 공지 확인으로 남긴다. (공식: 없음)",
-   "why_now": "SBS, MBC, 연합인포맥스가 밤사이 잇달아 보도한 새 소식이고 아직 다룬 적이 없다. 고객 본인에게 바로 닿는 이야기다.",
-   "tag": "금융보안",
-   "sources": [
-    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008835378&plink=RSSLINK&cooper=RSSREADER",
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443599",
-    "https://v.daum.net/v/20261107201500725"
-   ],
-   "bg": "Mirae Asset Securities",
-   "bg_alt": "Mirae Asset Tower Seoul",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "미래에셋증권 고객\n3만 9천여 명 정보\n**유출**, 이번엔 증권",
-     "number": "3.9만 명",
-     "label": "미래에셋증권 정보 유출",
-     "sub": "운용, 보험에 이어 증권까지"
-    },
-    {
-     "type": "질문형",
-     "title": "미래에셋 운용, 보험\n이어 증권까지 뚫렸다\n내 정보는 **무사**할까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "운용, 보험도 모자라\n증권까지 **연달아**\n3만 9천여 명 유출",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261108-0706-i1",
-   "created_at": "2026-11-08T07:06:42+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261108-0706-i1/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261108-0706-i1/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261108-0706-i1/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261108-0706-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261108-0706-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261108-0706-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261108-0706-i1/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261108-0706-i1/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261108-0706-i1/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261108-0706-i1/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261108-0706-i1/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261108-0706-i1/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "방한객 2천만 시대, 9월 관광수지 적자",
-   "concept": "외국인 관광객은 늘었는데 9월 관광수지는 5억 달러 적자라는 반전을 앞세운다. 적자의 원인은 재료에 없으므로 단정하지 않고 원문 확인 항목으로 남긴다. (공식: 없음)",
-   "why_now": "오늘 아침 다음 뉴스에 올라온 새 소식으로 아직 다룬 적이 없다. 외국인 편의점 김밥 구매 기사와 함께 관광 소비 흐름을 보여준다.",
-   "tag": "관광",
-   "sources": [
-    "https://v.daum.net/v/20261108065214890",
-    "https://v.daum.net/v/20261108065309912"
-   ],
-   "bg": "Myeongdong tourists Seoul",
-   "bg_alt": "Incheon airport crowd",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "방한객 2천만 시대\n9월 관광수지\n**5억 달러** 적자",
-     "number": "-5억 달러",
-     "label": "9월 관광수지",
-     "sub": "방한객 2천만명 시대의 그늘"
-    },
-    {
-     "type": "질문형",
-     "title": "방한객 2천만 시대\n그런데 관광수지는\n**적자**라고?",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "외국인 몰려왔는데\n9월 관광수지는\n**5억 달러** 적자",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "editorial"
-   ],
-   "extra": {},
-   "id": "20261108-0706-i2",
-   "created_at": "2026-11-08T07:06:42+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261108-0706-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261108-0706-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261108-0706-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261108-0706-i2/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261108-0706-i2/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261108-0706-i2/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261108-0706-i2/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261108-0706-i2/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261108-0706-i2/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "서울 외곽 전세 품귀, 강남은 매물 쌓임",
-   "concept": "외곽 빌라 전셋값이 1억 올라 전세가 귀해진 반면 강남은 매물이 쌓이는 엇갈림을 세입자 시선으로 푼다. 구체적 지역과 수치는 원문 확인 후 쓴다. (공식: 없음)",
-   "why_now": "머니투데이가 오늘 아침 보도한 새 소식이다. 앞서 다룬 노도강 월세, 아파트 실거래가와는 다른 전세 시장 이야기다.",
-   "tag": "부동산",
-   "sources": [
-    "https://www.mt.co.kr/estate/2026/11/08/2026110613001134196"
-   ],
-   "bg": "Seoul villa apartment street",
-   "bg_alt": "Gangnam Seoul apartments",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "서울 외곽 빌라\n전셋값 **1억** 올랐다\n강남은 매물 쌓인다",
-     "number": "1억원",
-     "label": "빌라 전셋값 상승",
-     "sub": "서울 외곽 전세 품귀"
-    },
-    {
-     "type": "질문형",
-     "title": "강남은 매물 쌓이고\n외곽은 전세 품귀\n내 집은 **어느 쪽**?",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "강남은 매물이 쌓이는데\n외곽 빌라는 전세 **품귀**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "editorial",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261108-0706-i3",
-   "created_at": "2026-11-08T07:06:42+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261108-0706-i3/1-editorial-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261108-0706-i3/1-editorial-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261108-0706-i3/1-editorial-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261108-0706-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261108-0706-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261108-0706-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261108-0706-i3/2-editorial-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261108-0706-i3/2-editorial-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261108-0706-i3/2-editorial-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261108-0706-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261108-0706-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261108-0706-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261108-0706-i3/3-editorial-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261108-0706-i3/3-editorial-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261108-0706-i3/3-editorial-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261108-0706-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261108-0706-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261108-0706-i3/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
    "title": "코스피 한 주 -11.7%, 외국인 7.6조 매도",
    "concept": "한 주 낙폭, 외국인 삼성전자와 SK하이닉스 순매도 7.6조원, 연중 최저가 종목 3곳 중 1곳, ETF 순자산 400조원 붕괴를 숫자로 정리하고 다음 주 변수(미국 10월 물가, 코어위브 실적)로 넘긴다. 투자 권유 아님을 한 줄로 밝힌다. (공식: 없음)",
    "why_now": "연합뉴스 등 3곳 이상이 급락장 기사를 냈고, 주말 주간 전망이 쏟아지는 중이다. 월요일 장 전에 반응이 나올 시점이다.",
@@ -8746,6 +8380,335 @@
      "form": "news",
      "font": "myeongjo",
      "path": "20261108-2206-i3/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "앤트로픽, 가스 발전기 4.6조원 직접 확보",
+   "concept": "AI 경쟁의 병목이 칩에서 전력으로 옮겨 간 장면을 앤트로픽 하나를 주인공으로 풀고, 마지막 장에서 반도체 수요와 데이터센터 규제 변수를 짚는다 (공식: 표지는 이미 일어난 일로)",
+   "why_now": "연합뉴스가 11/09 06:44에 앤트로픽의 데이터센터용 가스 발전기 4.6조원 직접 확보를 보도했고, CNBC도 34억 달러 규모 계약을 전했다. 이미 다룬 상장 일정 기사와는 다른 새 사건이다.",
+   "tag": "AI 인프라",
+   "sources": [
+    "https://www.yna.co.kr/view/AKR20261109007600009",
+    "https://www.cnbc.com/2026/11/08/anthropic-generator-deal-ai-data-centers.html"
+   ],
+   "bg": "Dario Amodei Anthropic",
+   "bg_alt": "Anthropic data center",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "앤트로픽이 직접 산\n데이터센터용 발전기\n값이 **4.6조원**",
+     "number": "4.6조원",
+     "label": "앤트로픽 가스 발전기 직접 확보",
+     "sub": "34억 달러 규모, 연합뉴스와 CNBC 보도 기준"
+    },
+    {
+     "type": "질문형",
+     "title": "AI 경쟁의 병목이\n칩에서 **전기**로\n넘어간 걸까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "칩 싸움인 줄 알았던\nAI 경쟁, 앤트로픽은\n**발전기**부터 샀다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261109-0711-i1",
+   "created_at": "2026-11-09T07:11:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261109-0711-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261109-0711-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261109-0711-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-0711-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-0711-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-0711-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-0711-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-0711-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-0711-i1/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "세계 배 수주 4척 중 3척, 중국이 가져갔다",
+   "concept": "세계 선박 수주에서 중국 비중이 커진 흐름과, 한국 텃밭이던 LNG선까지 영향이 번질 수 있다는 보도를 정리한다. 수치는 기사에 나온 것만 쓰고 기간과 기준은 확인 표기한다 (공식: 없음)",
+   "why_now": "다음 뉴스에 11/09 07:00 전해진 보도로, 오늘 아침 새로 나온 산업 소식이다. 이미 다룬 주제 목록에 조선 수주는 없다.",
+   "tag": "조선, 산업",
+   "sources": [
+    "https://v.daum.net/v/20261109070008989"
+   ],
+   "bg": "container ship shipyard China",
+   "bg_alt": "LNG carrier ship",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "세계 배 수주\n4척 중 **3척**을\n중국이 가져갔다",
+     "number": "4척 중 3척",
+     "label": "전 세계 배 수주 중 중국 몫",
+     "sub": "기간과 기준은 기사 원문 확인"
+    },
+    {
+     "type": "질문형",
+     "title": "한국 텃밭 LNG선까지\n**중국**에 밀리는 걸까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "한국 텃밭이라던\nLNG선마저 **흔들**\n수주 4척 중 3척은 중국",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261109-0711-i2",
+   "created_at": "2026-11-09T07:11:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261109-0711-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261109-0711-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261109-0711-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-0711-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-0711-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-0711-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-0711-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-0711-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-0711-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-0711-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-0711-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-0711-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "경영평가 1위인데 성과급 0원, 법원 판단은",
+   "concept": "우정사업본부 국장이 경영평가 1위를 받고도 성과급을 받지 못해 소송을 낸 사건과 법원의 '처분 위법' 판단을 시간순으로 푼다. 성과급 기준이 왜 갈등이 되는지는 일반 원리로만 설명한다 (공식: A인데 B, 어긋난 두 사실 제목)",
+   "why_now": "조선비즈와 머니투데이가 11/09 07:00에 동시에 보도했다. 같은 시각 다음 뉴스에는 성과급 갈등으로 공장이 멈춘 날이 45% 늘었다는 기사도 올라와 직장인 관심이 높은 주제다.",
+   "tag": "직장, 성과급",
+   "sources": [
+    "https://biz.chosun.com/topics/law_firm/2026/11/09/ZR6QA4KX5JBMNEMSU25BD3LQ6A/",
+    "https://www.mt.co.kr/society/2026/11/09/2026110814102884506"
+   ],
+   "bg": "Korea Post office building",
+   "bg_alt": "post office Korea",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "경영평가 1위 국장\n성과급은 **0원**\n법원은 위법이라 했다",
+     "number": "0원",
+     "label": "경영평가 1위 국장이 받은 성과급",
+     "sub": "법원 판단: 처분 위법"
+    },
+    {
+     "type": "질문형",
+     "title": "1위를 하고도\n성과급이 **0원**이면\n소송밖에 없을까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "경영평가는 **1위**\n받은 성과급은 0원\n법원 판단은 '위법'",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261109-0711-i3",
+   "created_at": "2026-11-09T07:11:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-0711-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-0711-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-0711-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261109-0711-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261109-0711-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261109-0711-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-0711-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-0711-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-0711-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-0711-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-0711-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-0711-i3/3-news-myeongjo.jpg"
     }
    ]
   }
