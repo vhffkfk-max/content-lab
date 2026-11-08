@@ -40,6 +40,11 @@
 .title-row p b{color:var(--text);font-weight:600}
 
 .vl-tabs{display:flex;gap:6px;margin:0 0 12px}.vl-tab{padding:6px 14px;border-radius:999px;border:1px solid var(--border);color:var(--muted);font-size:13px}.vl-tab.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
+.ch-pulse{margin:0 0 12px;padding:10px 12px;border:1px solid var(--border);border-radius:10px}.ch-prow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:14px;margin-bottom:4px}.ch-dot{width:10px;height:10px;border-radius:50%;background:#aaa;flex:none}.ch-dot.green{background:#1F8A5B}.ch-dot.yellow{background:#F5A623}.ch-dot.red{background:#E5484D}
+.ch-step{margin:16px 0 8px;font-size:14px}.ch-topics{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}.ch-chip{all:unset;cursor:pointer;padding:6px 10px;border:1px solid var(--border);border-radius:999px;font-size:13px}.ch-chip[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
+.vl-hot>input{width:100%;box-sizing:border-box;min-height:36px;padding:0 12px;border-radius:8px;border:1px solid var(--border);margin-top:4px}
+.ch-styles{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}.ch-styles.off{opacity:.45}.ch-style{all:unset;cursor:pointer;display:flex;flex-direction:column;gap:3px;padding:8px;border:1px solid var(--border);border-radius:10px;font-size:13px}.ch-style span{font-size:12px;color:var(--muted)}.ch-style[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}.ch-style:focus-visible,.ch-chip:focus-visible{outline:2px solid var(--accent)}
+.ch-mock{aspect-ratio:4/5;background:#14171f;color:#fff;border-radius:6px;overflow:hidden;padding:8px;display:flex;flex-direction:column;gap:6px;justify-content:center;font-weight:800;box-sizing:border-box}.ch-mock .big{font-size:30px;color:#FFC23A;text-align:center}.ch-mock .ln{height:6px;background:#fff6;border-radius:3px}.ch-mock .bar{height:12px;background:#ff4d2e;border-radius:3px}.ch-mock .b2{width:70%;background:#FFC23A}.ch-mock .b3{width:40%;background:#2196f3}.ch-mock .row{padding:4px 6px;background:#fff2;border-radius:4px;font-size:12px}.ch-mock .band{background:#E3262B;padding:4px;font-size:13px;text-align:center}.ch-mock .ttl{font-size:15px;text-align:center}.ch-mock .photo{flex:1;background:linear-gradient(135deg,#567,#233);border-radius:4px}.ch-mock .half{flex:.8}.ch-mock .mast{font-family:serif;text-align:center;border-bottom:2px solid #fff;font-size:15px}.ch-mock .q{font-size:42px;color:#FFC23A;line-height:1}.ch-mock .r{height:14px;border:1px solid #fff8}.ch-mock .board{background:#080c18;border:2px solid #E3262B;color:#FFC23A;text-align:center;font-size:24px;padding:6px}.ch-mock .tick{background:#E3262B;font-size:11px;padding:3px;margin-top:auto}.ch-mock .prog{height:5px;background:#FFC23A;width:60%}.ch-mock .sub{font-size:13px;text-align:center;margin-top:auto}.ch-mock .face{width:44px;height:44px;border-radius:50%;background:#E5484D}.ch-mock .face.b{background:#3E63DD;align-self:flex-end}
 .vl-new{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}.vl-new input{flex:1;min-width:200px;min-height:36px;padding:0 12px;border-radius:var(--radius,8px);border:1px solid var(--control);background:var(--surface);color:var(--text);font:inherit}
 .vl-job{margin:6px 0;padding:9px 12px;border-radius:8px;background:var(--accent-soft);color:var(--accent-ink);font-size:13px}
 .vl-suggest{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 10px}.vl-suggest .sub{flex-basis:100%;margin:0}.vl-chip{text-align:left;max-width:300px;padding:8px 11px;border-radius:9px;border:1px dashed var(--accent);background:var(--accent-soft);color:var(--text);cursor:pointer;font:inherit}.vl-chip b{display:block;font-size:13.5px}.vl-chip span{display:block;font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -1943,12 +1948,14 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     vlDrawBar(); vlDrawStatus();
   }
   // ── 내 채널: 채널마다 인스타그램·쓰레드·영상을 한곳에서 만든다 ──
+  const CH_CARD = { news: ['사진 뉴스형', '사진 위에 큰 제목'], breaking: ['속보형', '빨간 띠로 바로 알아보게'], bignum: ['숫자 한 방형', '핵심 숫자 하나를 크게'], bars: ['막대 비교형', '값을 막대로 비교'], list: ['TOP N 목록형', '저장하기 좋은 순위'], paper: ['신문 1면형', '사실 3개를 한 장에'], editorial: ['에디토리얼', '잡지처럼 차분하게'], quote: ['인사이트형', '실제 발언 한마디'] };
+  const CH_VIDEO = { hot: ['궁금이 대화', '핫코노미와 궁금이의 40~55초 대화', { action: 'hot' }], 'duo-A': ['대화극 기본', '너굴 팀장과 햄찌의 대화', { action: 'duo', style: 'A' }], 'duo-B': ['뉴스 데스크', '위 전광판 숫자 + 아래 속보 띠', { action: 'duo', style: 'B' }], 'duo-C': ['30초 쇼츠', '큰 자막과 진행 막대', { action: 'duo', style: 'C' }], board: ['뉴스 컷 릴스', '영상 연구소에서 컷을 고친 뒤 완성', { action: 'board' }], table: ['표 3자 비교', '훅 다음 표 한 장으로 셋을 비교하는 30초', { action: 'asset' }] };
   const CHANNELS = {
-    'c-bull': { name: '황소개미', sub: '@bullant_economy', first: 'thread', insta: { wait: '황소개미는 지금 쓰레드 계정이라 인스타 제작기가 없어요.' }, thread: { lab: true }, video: { wait: '황소개미 영상 제작기가 아직 없어요.' } },
-    'c-hot': { name: '핫코노미', sub: '@hotconomy', insta: { draft: true }, thread: { slug: 'hotconomy' }, video: { action: 'hot', label: '핫코노미 영상 만들기', ph: '주제 (예: 대출금리 엇갈림)', note: '핫코노미와 궁금이가 대화하는 40~55초 영상이에요. 5~10분 걸리고 텔레그램으로 와요.' } },
-    'c-asset': { name: '자산백배', sub: '@100x.asset', insta: { wait: '자산백배 전용 카드 틀이 아직 없어요. 지금 카드 자동화는 핫코노미 디자인으로만 나와요.' }, thread: { slug: 'js100x' }, video: { action: 'asset', angle: true, label: '자산백배 영상 만들기', ph: '주제 (예: 예금 금리 은행)', note: '훅 다음에 표 한 장으로 셋을 비교하는 30초 안팎 영상이에요. 최근 36시간 기사에서 셋을 비교할 수 있어야 만들어지고, 5~10분 뒤 텔레그램으로 와요.' } },
-    'c-chart': { name: '차트덕후', sub: '차트 공부 계정', insta: { wait: '차트덕후 카드 제작기가 아직 없어요.' }, thread: { wait: '차트덕후 글쓰기 기준이 아직 연결되지 않았어요.' }, video: { wait: '차트덕후 영상 제작기가 아직 없어요.' } },
-    'c-malhee': { name: '말희아빠', sub: '@oh_neworld', insta: { wait: '오뉴월드 카드뉴스는 차트 재료를 PC 폴더에 넣어야 만들 수 있어서, 아직 PC 제작기에서만 돼요.' }, thread: { wait: '말희아빠 쓰레드 기준이 아직 연결되지 않았어요.' }, video: { wait: '오뉴월드 릴스도 차트 재료가 필요해서, 아직 PC 제작기에서만 돼요.' } },
+    'c-bull': { name: '황소개미', brand: 'bull', sub: '@bullant_economy', first: 'thread', insta: { cards: ['bignum', 'bars', 'quote'] }, thread: { lab: true }, video: { styles: ['table'] } },
+    'c-hot': { name: '핫코노미', brand: 'hot', sub: '@hotconomy', insta: { cards: ['news', 'breaking', 'bignum', 'bars', 'editorial'] }, thread: { slug: 'hotconomy' }, video: { styles: ['hot', 'duo-A', 'duo-B', 'duo-C', 'board'] } },
+    'c-asset': { name: '자산백배', brand: 'asset', sub: '@100x.asset', insta: { cards: ['bignum', 'list', 'bars'] }, thread: { slug: 'js100x' }, video: { styles: ['table'], angle: true } },
+    'c-chart': { name: '차트덕후', brand: 'chart', sub: '차트 공부 계정', insta: { cards: ['bars', 'list', 'bignum'] }, thread: { wait: '차트덕후 쓰레드 계정과 글쓰기 기준이 아직 없어요.' }, video: { styles: ['table'] } },
+    'c-malhee': { name: '말희아빠', brand: 'malhee', sub: '@oh_neworld', insta: { cards: ['bignum', 'bars', 'paper'] }, thread: { slug: 'malhee' }, video: { styles: ['table'] } },
   };
   const chanTab = {};
   function chanWait(text) { const b = el('div', 'vl-hot'); b.append(el('h3', '', '준비 중'), el('p', 'sub', text)); return b; }
@@ -1965,38 +1972,88 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
       } catch (e) { /* 잠깐 끊겨도 다음 차례에 다시 본다 */ }
     }, 8000);
   }
-  function chanVideo(c, v) {
-    const box = el('div', 'vl-hot'), f = el('form', 'vl-new'), t = el('input'), go = el('button', 'btn primary', v.label), st = el('p', 'sub');
+  const CH_RAW = 'https://raw.githubusercontent.com/vhffkfk-max/content-lab/main/output/site/';
+  let chTopicsP = null, chPulseP = null;
+  const chJson = f => fetch(`${CH_RAW}${f}?t=${Date.now()}`, { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null);
+  function chTopics() {
+    return chTopicsP = chTopicsP || Promise.all([chJson('hot_now.json'), chJson('recs.json')]).then(([h, r]) => {
+      const out = [], latest = (h || []).slice().sort((a, b) => String(b.at).localeCompare(String(a.at))).find(x => (x.picks || []).length);
+      ((latest && latest.picks) || []).forEach(p => out.push(p.topic));
+      (r || []).slice().sort((a, b) => a.rank - b.rank).forEach(x => out.push(x.topic));
+      return [...new Set(out.filter(Boolean))].slice(0, 8);
+    });
+  }
+  function chMock(k) {
+    const m = el('div', 'ch-mock m-' + k), add = (c, t) => { const d = el('div', c, t || ''); m.append(d); };
+    if (k === 'bignum') { add('big', '+12%'); add('ln'); }
+    else if (k === 'bars' ) { add('bar b1'); add('bar b2'); add('bar b3'); }
+    else if (k === 'list') { ['1', '2', '3'].forEach(n => add('row', n)); }
+    else if (k === 'breaking') { add('band', '속보'); add('ttl', '제목'); add('ln'); }
+    else if (k === 'news') { add('photo'); add('ttl', '제목'); }
+    else if (k === 'paper') { add('mast', '경제신문'); add('ln'); add('ln'); add('ln'); }
+    else if (k === 'editorial') { add('photo half'); add('ln'); add('ln'); }
+    else if (k === 'quote') { add('q', '“'); add('ln'); }
+    else if (k === 'table') { add('ttl', '셋 비교'); ['r', 'r', 'r'].forEach(c => add(c)); }
+    else if (k === 'duo-B') { add('board', '12%'); add('tick', '속보'); }
+    else if (k === 'duo-C') { add('prog'); add('sub', '큰 자막'); }
+    else if (k === 'board') { add('photo'); add('sub', '컷 자막'); }
+    else { add('face a'); add('face b'); add('sub', '대화 자막'); }
+    return m;
+  }
+  function chanFlow(c, kind, it) {
+    const box = el('div', 'vl-hot'), keys = kind === 'insta' ? it.cards : it.styles, names = kind === 'insta' ? CH_CARD : CH_VIDEO;
+    const s = { topic: '', style: keys.length === 1 ? keys[0] : '' };
+    const topics = el('div', 'ch-topics'), t = el('input'), styles = el('div', 'ch-styles'), go = el('button', 'btn primary', kind === 'insta' ? '카드뉴스 초안 만들기' : '영상 만들기'), st = el('p', 'sub');
     let a = null;
-    t.placeholder = v.ph; t.maxLength = 60; t.setAttribute('aria-label', c.name + ' 영상 주제'); go.type = 'submit'; f.append(t);
-    if (v.angle) { a = el('input'); a.placeholder = '비교할 셋 (선택, 예: 저축은행·신협·새마을금고)'; a.maxLength = 60; a.setAttribute('aria-label', '비교할 셋'); f.append(a); }
-    f.append(go); box.append(el('h3', '', c.name + ' 영상'), el('p', 'sub', v.note), f, st);
-    f.addEventListener('submit', async e => {
-      e.preventDefault(); const topic = t.value.trim();
-      if (topic.length < 2) return alert('주제를 2글자 이상 넣어 주세요.');
-      const rid = Math.random().toString(36).slice(2, 12), body = { rid, action: v.action, topic };
-      if (a) body.angle = a.value.trim();
+    go.type = 'button'; t.placeholder = '직접 입력'; t.maxLength = 60; t.setAttribute('aria-label', c.name + ' 소재 직접 입력');
+    const sync = () => {
+      [...topics.children].forEach(b => b.setAttribute('aria-pressed', String(b.textContent === s.topic)));
+      [...styles.children].forEach(b => b.setAttribute('aria-pressed', String(b.dataset.k === s.style)));
+      styles.classList.toggle('off', s.topic.length < 2); go.disabled = s.topic.length < 2 || !s.style;
+    };
+    t.addEventListener('input', () => { s.topic = t.value.trim(); sync(); });
+    chTopics().then(list => { list.forEach(x => { const b = el('button', 'ch-chip', x); b.type = 'button'; b.addEventListener('click', () => { s.topic = x; t.value = ''; sync(); }); topics.append(b); }); if (!list.length) topics.append(el('p', 'sub', '추천 글감을 불러오지 못했어요. 직접 입력해 주세요.')); sync(); });
+    keys.forEach(k => { const b = el('button', 'ch-style'); b.type = 'button'; b.dataset.k = k; b.append(chMock(k), el('b', '', names[k][0]), el('span', '', names[k][1])); b.addEventListener('click', () => { if (s.topic.length < 2) return; s.style = k; sync(); }); styles.append(b); });
+    const step = n => el('h4', 'ch-step', n);
+    box.append(el('h3', '', `${c.name} ${kind === 'insta' ? '카드뉴스' : '영상'}`), step('① 소재 정하기'), topics, t, step('② 스타일 고르기'), styles);
+    if (it.angle) { a = el('input'); a.placeholder = '비교할 셋 (선택, 예: 저축은행·신협·새마을금고)'; a.maxLength = 60; a.setAttribute('aria-label', '비교할 셋'); box.append(a); }
+    box.append(step('③ 초안 만들기'), go, st, el('p', 'sub', '스타일 그림은 형식을 보여 주는 약식 미리보기예요. 플랫폼에 자동으로 올리지 않고 텔레그램으로 보내요.'));
+    go.addEventListener('click', async () => {
       go.disabled = true; st.textContent = '요청 보내는 중…';
       try {
+        if (kind === 'insta') {
+          const r = await ghApi('actions/workflows/draft-create.yml/dispatches', { method: 'POST', body: JSON.stringify({ ref: 'main', inputs: { topic: s.topic, pick: `style:${c.brand}:${s.style}` } }) });
+          st.textContent = r.status === 204 ? '요청했어요. 몇 분 뒤 텔레그램을 확인해 주세요.' : ghFail(r.status); go.disabled = false; return;
+        }
+        const rid = Math.random().toString(36).slice(2, 12), body = { rid, topic: s.topic, ...names[s.style][2] };
+        if (body.action === 'asset') { body.brand = c.brand; body.angle = a ? a.value.trim() : ''; }
         const r = await ghApi('reel-request', { method: 'POST', body: JSON.stringify(body) });
         if (r.status !== 201) { go.disabled = false; st.textContent = ''; return alert(ghFail(r.status)); }
-        t.value = ''; if (a) a.value = ''; st.textContent = '요청했어요. PC가 받으면 여기에 표시돼요.'; chanWatch(rid, st, go);
+        st.textContent = body.action === 'board' ? '요청했어요. 영상 연구소에서 컷을 고칠 수 있어요.' : '요청했어요. PC가 받으면 여기에 표시돼요.'; chanWatch(rid, st, go);
       } catch (err) { go.disabled = false; st.textContent = '요청 실패 — 인터넷 연결을 확인해 주세요'; }
     });
+    sync();
     return box;
   }
-  function chanInsta(c) {
-    const box = el('div', 'vl-hot'), f = el('form', 'vl-new'), t = el('input'), go = el('button', 'btn primary', '카드뉴스 초안 만들기'), st = el('p', 'sub');
-    t.placeholder = '주제 (비우면 오늘 추천 1위)'; t.maxLength = 60; t.setAttribute('aria-label', c.name + ' 카드뉴스 주제'); go.type = 'submit'; f.append(t, go);
-    box.append(el('h3', '', c.name + ' 카드뉴스'), el('p', 'sub', '몇 분 뒤 텔레그램과 인스타 · 한국 메뉴의 완성 카드 검수에서 볼 수 있어요. 인스타에는 올리지 않아요.'), f, st);
-    f.addEventListener('submit', async e => {
-      e.preventDefault(); go.disabled = true; st.textContent = '요청 보내는 중…';
-      try {
-        const r = await ghApi('actions/workflows/draft-create.yml/dispatches', { method: 'POST', body: JSON.stringify({ ref: 'main', inputs: { topic: t.value.trim() } }) });
-        st.textContent = r.status === 204 ? '요청했어요. 몇 분 뒤 텔레그램을 확인해 주세요.' : ghFail(r.status);
-        if (r.status === 204) t.value = '';
-      } catch (err) { st.textContent = '요청 실패 — 인터넷 연결을 확인해 주세요'; }
-      go.disabled = false;
+  function chanPulse(ch) {
+    const box = el('div', 'ch-pulse');
+    chPulseP = chPulseP || chJson('channel_pulse.json');
+    chPulseP.then(d => {
+      const c = d && d.channels && d.channels[ch];
+      if (!c) { box.append(el('p', 'sub', '발행 체크 집계를 기다리는 중이에요.')); return; }
+      const when = x => { const t = new Date(x * 1000); return `${t.getMonth() + 1}/${t.getDate()}`; }, LABEL = { instagram: '인스타그램', threads: '쓰레드' };
+      Object.entries(c).forEach(([p, v]) => {
+        const row = el('div', 'ch-prow'); row.append(el('i', 'ch-dot ' + v.state), el('b', '', LABEL[p]));
+        if (v.state === 'none') row.append(el('span', 'sub', '계정 주소 미설정'));
+        else if (v.state === 'wait') row.append(el('span', 'sub', `@${v.handle} 첫 크롤링 대기 중`));
+        else {
+          const r = (v.recent || [])[0];
+          row.append(el('span', '', `최근 ${v.last_post ? when(v.last_post) : '없음'} · 7일 ${v.d7}/${v.target_7}건 · 30일 ${v.d30}건`));
+          if (r) row.append(el('span', 'sub', `최근 글 조회 ${r.views == null ? '-' : r.views.toLocaleString()} · 좋아요 ${r.likes == null ? '-' : r.likes.toLocaleString()}`));
+        }
+        box.append(row);
+      });
+      box.append(el('p', 'sub', `갱신 ${String(d.updated).slice(5, 16).replace('T', ' ')} · 크롤링으로 잡힌 글만 세요`));
     });
     return box;
   }
@@ -2020,8 +2077,8 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
       b.addEventListener('click', () => { chanTab[ch] = k; chanDraw(ch); }); bar.append(b);
     });
     const it = c[cur];
-    panel.append(it.wait ? chanWait(it.wait) : cur === 'insta' ? chanInsta(c) : cur === 'thread' ? chanThread(c, it) : chanVideo(c, it));
-    root.replaceChildren(bar, panel);
+    panel.append(it.wait ? chanWait(it.wait) : cur === 'thread' ? chanThread(c, it) : chanFlow(c, cur, it));
+    root.replaceChildren(chanPulse(ch), bar, panel);
   }
   async function vlStart(force) {
     if (vl.started && !force) { vlDraw(); return; }

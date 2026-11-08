@@ -1,0 +1,33 @@
+{
+ "_안내": "발행 체크 설정. per_week 를 바꾸면 다음 집계(매시간)부터 적용. 계정 주소를 넣으면 체크 대상이 되고, accounts.csv·threads_accounts.csv 에도 넣어야 크롤링됨.",
+ "targets": {
+  "instagram": {
+   "per_week": 3
+  },
+  "threads": {
+   "per_week": 7
+  }
+ },
+ "channels": {
+  "c-bull": {
+   "instagram": "",
+   "threads": "bullant_economy"
+  },
+  "c-hot": {
+   "instagram": "hotconomy",
+   "threads": ""
+  },
+  "c-asset": {
+   "instagram": "100x.asset",
+   "threads": ""
+  },
+  "c-chart": {
+   "instagram": "",
+   "threads": ""
+  },
+  "c-malhee": {
+   "instagram": "oh_neworld",
+   "threads": ""
+  }
+ }
+}

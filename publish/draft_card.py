@@ -374,6 +374,7 @@ def ask_claude(prompt, system=None, model=None):
 
 
 def main():
+    global SYSTEM, BRAND_TAG
     ap = argparse.ArgumentParser()
     ap.add_argument("--topic")
     ap.add_argument("--dry-run", action="store_true")
@@ -381,9 +382,19 @@ def main():
     ap.add_argument("--no-canva", action="store_true", help="캔바 사본 안 만듦")
     ap.add_argument("--short", action="store_true", help="속보형 3~5장 (지금 발행할 거리에서 주제)")
     ap.add_argument("--auto", action="store_true", help="PC 예약이 만든 것 (하루 개수 세기용)")
+    ap.add_argument("--style", help="사이트 채널에서 고른 것: 계정:폼 (예 asset:bignum). 핫코노미 외 계정은 발행 큐에 넣지 않고 텔레그램으로만 보낸다")
     ap.add_argument("--pick", help="추천안에서 고른 것: 추천안id|표지번호|폼|글꼴|short 또는 long (publish/card_ideas.py)")
     a = ap.parse_args()
     load_env()
+    brand, style_form = (a.style.split(":") + [""])[:2] if a.style else ("hot", "")
+    if brand not in forms.BRANDS:
+        sys.exit(f"모르는 계정: {brand}")
+    b = forms.BRANDS[brand]
+    forms.set_brand(brand)
+    if brand != "hot":
+        SYSTEM = SYSTEM.replace("@hotconomy(핫코노미)", f"{b['handle']}({b['name']})".replace("()", "")).replace("#핫코노미", b["tag"]) + f"\n\n[이 계정의 기준] {b['tone']}"
+        BRAND_TAG = b["tag"]
+        a.no_canva = True
     queue = load_queue()
     chosen = pick_of(queue, a.pick) if a.pick else None
     if chosen:
@@ -395,7 +406,7 @@ def main():
         a.short = False   # 지금 발행할 거리가 없으면 보통 초안으로
     topic = hot["title"] if hot else pick_topic(queue, a.topic)
     recent = [i["form"] for i in queue["items"] if i.get("form")][-4:]
-    allowed = [chosen["form"]] if chosen else card_learn.prune([k for k in forms.ACTIVE if k not in recent])   # 성적이 계속 나쁜 폼은 뺌
+    allowed = [chosen["form"]] if chosen else [style_form] if style_form in forms.ACTIVE else card_learn.prune([k for k in forms.ACTIVE if k not in recent])   # 성적이 계속 나쁜 폼은 뺌
     now = datetime.now(KST)
     print(f"📰 주제: {topic} / 최근 폼 {recent or '없음'} 제외")
     mk, news = market(), headlines(topic)
@@ -412,6 +423,8 @@ def main():
     if chosen:   # 사람이 고른 폼, 표지, 글꼴은 AI가 바꾸지 못하게 덮어쓴다
         post["form"], post["font"] = chosen["form"], chosen["font"]
         post["cover"] = {**(post.get("cover") or {}), **chosen["cover"]}
+    if style_form in forms.ACTIVE:   # 사이트에서 고른 스타일은 AI가 바꾸지 못하게
+        post["form"] = style_form
     if post.get("form") not in forms.ACTIVE:   # 돌려쓰기를 어겨도 8가지 안이면 그대로 (글 칸이 그 폼에 맞춰 쓰였음)
         post["form"] = forms.pick_form(post.get("kind", ""), recent)
     post["slides"] = post.get("slides", [])[:3 if a.short else MAX_SLIDES - 2]
@@ -446,6 +459,13 @@ def main():
     bad, notes = caption_check.check(post["caption"], post.get("end", {}).get("keyword", ""))
     warns += bad
     caption = post["caption"].rstrip() + (f"\n\n{credits}" if credits else "") + "\n\n" + " ".join(post["hashtags"])
+    if brand != "hot":   # 핫코노미 발행 큐에 섞이면 안 된다: 초안만 텔레그램으로
+        print(f"✅ {b['name']} {forms.FORM_NAMES[post['form']]} {len(files)}장 → {OUT / did}")
+        if not a.no_send:
+            head = f"📝 {b['name']} 카드뉴스 초안: {post.get('title', topic)}\n폼: {forms.FORM_NAMES[post['form']]} / {len(files)}장" + ("\n⚠️ " + "\n⚠️ ".join(warns) if warns else "")
+            notify.send_photos(files, head[:1000])
+            notify.send("캡션 초안\n\n" + caption)
+        return
     queue["items"].append({"id": did, "account": "hotconomy", "type": "carousel", "topic": topic, "form": post["form"],
                            "title": post.get("title", topic), "caption": caption, "youtube": post.get("youtube", {}),
                            "files": [str(f.relative_to(ROOT)).replace("\\", "/") for f in files], "tickers": tickers,

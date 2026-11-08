@@ -19,7 +19,7 @@ ACCOUNTS = {
 }
 
 # 사이트 요청은 암호가 없어서 하루 처리량을 막는다 (자동 보드는 따로)
-DAILY = {"board": 15, "make": 12, "hot": 10, "asset": 10, "save": 150, "voice": 150, "format": 150, "photo": 200}
+DAILY = {"board": 15, "make": 12, "hot": 10, "asset": 10, "duo": 10, "save": 150, "voice": 150, "format": 150, "photo": 200}
 
 
 def maker_path(name):

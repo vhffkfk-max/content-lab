@@ -80,6 +80,22 @@ def md(s):
 
 
 LOGO = asset_uri("brand/hotconomy_logo.png")
+# 계정별 카드 (2026-11-09 임의 셋팅, 근거는 브랜드기준/*.md). 핫코노미 외 계정은 로고 없이 이름만 넣는다.
+BRANDS = {
+    "hot": {"name": "핫코노미", "handle": "@hotconomy", "tag": "#핫코노미", "tone": ""},
+    "asset": {"name": "자산백배", "handle": "@100x.asset", "tag": "#자산백배", "tone": "뉴스를 내 돈 관리로 옮겨 주는 생활 경제 계정. 친근한 해요체. 독자는 돈 관리를 배우는 20~40대."},
+    "bull": {"name": "황소개미", "handle": "@bullant_economy", "tag": "#황소개미", "tone": "시장 뉴스가 말하지 않은 빈칸 하나를 숫자로 짚는 해설 계정. 담담한 존댓말. 독자는 주식 시장을 매일 보는 개인 투자자. 생활 재테크 팁은 쓰지 않는다."},
+    "chart": {"name": "차트덕후", "handle": "", "tag": "#차트덕후", "tone": "차트 용어와 읽는 법을 쉽게 풀어 주는 공부 계정. 해요체. 특정 종목의 매수·매도 판단은 쓰지 않는다."},
+    "malhee": {"name": "말희아빠", "handle": "@oh_neworld", "tag": "#말희아빠", "tone": "차트와 수급으로 시장 흐름을 짚는 해설 계정. 해요체. 특정 종목의 매수·매도 판단은 쓰지 않는다."},
+}
+BRAND = BRANDS["hot"]
+
+
+def set_brand(key):
+    global BRAND, LOGO
+    BRAND = BRANDS[key]
+    if key != "hot":
+        LOGO = ""
 
 # 4:5 그대로 올리는 기준으로 꽉 채운다. 폰 업로드에서 ⤢ 를 눌러 4:5로 바꿔야 한다(그대로 1:1이면 위아래 135px가 잘림).
 # 프로필 격자는 3:4로 보여 좌우 34px씩 잘리니, 글은 x 44~1036 안에 둔다.
@@ -189,7 +205,7 @@ CSS = """
 def foot(n, total, theme_logo=True, page_no=True):
     logo = f'<img src="{LOGO}">' if LOGO and theme_logo else ""
     pn = f'<div class="pn">{n}</div>' if page_no else ""
-    return f'<div class="foot">{logo}핫코노미<span style="font-weight:500;opacity:.75">@hotconomy</span></div>{pn}'
+    return f'<div class="foot">{logo}{BRAND["name"]}<span style="font-weight:500;opacity:.75">{BRAND["handle"]}</span></div>{pn}'
 
 
 # ── 차트 (SVG) ──
@@ -392,7 +408,7 @@ def f_paper(c, s, n, t):
     if s is None:
         heads = "".join(f'<div class="news"><span class="nno">{i}</span><span>{md(h).replace("<b class=\"hl\">", "<u>").replace("</b>", "</u>")}</span></div>' for i, h in enumerate(c["headlines"][:3], 1))
         return (fr + f'<div class="pp"><div class="center" style="font-size:38px;font-weight:700">{html.escape(c.get("date", ""))}</div>'
-                f'<div class="center"><span class="mast">핫코노미 경제신문</span></div><div class="heads">{heads}</div></div>')
+                f'<div class="center"><span class="mast">{BRAND["name"]} 경제신문</span></div><div class="heads">{heads}</div></div>')
     if s.get("terms"):
         body = "".join(f'<div class="term"><b>{html.escape(x["term"])}</b><br>{md(x["desc"])}</div>' for x in s["terms"])
     else:
@@ -453,7 +469,7 @@ def end_slide(e, n, theme):
     return (f'<div class="endbox">{logo}<div class="center t-l" style="font-size:{fit(e.get("title", ""), top=80, low=58)}px">{md(e.get("title", "정리하면"))}</div>'
             f'<div class="endchecks">{checks}</div>{kw}'
             f'<div class="btns"><div class="btn o">🔖 저장해두기</div><div class="btn f">팔로우 하기</div></div></div>'
-            f'<div class="disc">@hotconomy | {DISCLAIMER}</div>')
+            f'<div class="disc">{BRAND["handle"] or BRAND["name"]} | {DISCLAIMER}</div>')
 
 
 def make(post, out_dir, name, demo=False):

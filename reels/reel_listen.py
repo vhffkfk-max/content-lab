@@ -154,29 +154,39 @@ def hot_video(q):
 ASSET_DIR = pathlib.Path.home() / "Desktop" / "솔개" / "insta-research"   # 자산백배 3자 비교 릴스 (PC 개발 폴더의 제작기)
 
 
-def asset_video(q):
-    """자산백배: 주제 → 기사 → 대본(사실 검사) → 영상 → 텔레그램. 실패하면 사람이 읽을 한 줄을 돌려준다."""
+def pc_video(script, extra, label, q):
+    """PC 개발 폴더의 제작기로 주제 → 영상 → 텔레그램. 실패하면 사람이 읽을 한 줄을 돌려준다."""
     from publish.notify import send, send_video as tg_video
     py = pathlib.Path(sys.executable).with_name("python.exe")
-    args = [str(py if py.exists() else sys.executable), str(ASSET_DIR / "reels" / "compare_reel.py"), q["topic"]]
-    if q.get("angle"):
-        args += ["--angle", q["angle"]]
+    args = [str(py if py.exists() else sys.executable), str(ASSET_DIR / "reels" / script), q["topic"], *extra]
     try:
-        p = subprocess.run(args, cwd=ASSET_DIR, env={**ENV, "PYTHONIOENCODING": "utf-8"}, stdin=subprocess.DEVNULL, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=JOB_TIMEOUT_S, creationflags=NO_WINDOW)
+        p = subprocess.run(args, cwd=ASSET_DIR, env={**ENV, "PYTHONIOENCODING": "utf-8"}, stdin=subprocess.DEVNULL, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=1200)
     except subprocess.TimeoutExpired:
         return "20분 안에 끝나지 않았어요."
     lines = [x for x in (p.stdout + p.stderr).splitlines() if x.strip()]
     found = next((x for x in lines if x.startswith("완성: ")), None)
     if p.returncode or not found:
-        log("자산백배 실패 출력:", " ⏎ ".join(lines[-15:])[:1500])
+        log(label, "실패 출력:", " ⏎ ".join(lines[-15:])[:1500])
         return plain(lines)
     video = pathlib.Path(found[4:].strip())
     upload = video.with_name(video.stem + "_업로드글.txt")
-    if not tg_video(video, f"자산백배 영상이 나왔어요: {q['topic']}\n확인한 뒤 직접 올려 주세요."):
+    if not tg_video(video, f"{label} 영상이 나왔어요: {q['topic']}\n확인한 뒤 직접 올려 주세요."):
         return "영상은 만들었지만 텔레그램 전송에 실패했어요. 바탕화면 릴스 완성영상 폴더에서 확인해 주세요."
     if upload.exists():
         send(upload.read_text(encoding="utf-8"))
     return None
+
+
+def asset_video(q):
+    """3자 비교 표 릴스 (자산백배 기본, 다른 계정은 brand 로 이름·말투만 바꿈)"""
+    brand = q.get("brand") or "asset"
+    label = {"asset": "자산백배", "bull": "황소개미", "chart": "차트덕후", "malhee": "말희아빠"}.get(brand, "자산백배")
+    return pc_video("compare_reel.py", [*(["--angle", q["angle"]] if q.get("angle") else []), "--brand", brand], label, q)
+
+
+def duo_video(q):
+    """핫코노미 대화극 릴스 (스타일 A~E)"""
+    return pc_video("duo_reel.py", ["--style", q.get("style") or "A"], "핫코노미 대화극", q)
 
 
 def run(name, q):
@@ -202,6 +212,8 @@ def run(name, q):
         msg = hot_video(q)
     elif action == "asset":
         msg = asset_video(q)
+    elif action == "duo":
+        msg = duo_video(q)
     else:
         out = folder(q["id"])
         mr.write_board(out, rid=q["rid"])

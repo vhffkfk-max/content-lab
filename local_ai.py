@@ -30,7 +30,7 @@ LOG = ROOT / "data" / "local_ai.log"
 SITE = "output/site/"
 OUTPUTS = [SITE + f for f in ("tg_ai.json", "tg_rewrites.json", "trd_rooms.json", "trd_posts.json", "drafts.json",
                                "imports.json", "threads_ai.json", "x_ai.json", "thm_ai.json", "growth_plan.json", "thread_posts.json",
-                               "chart_reports.json", "charts", "futures_brief.json", "futures", "malhee_var.json", "acc_topics.json")] + [SITE + f"acc_{a['slug']}.json" for a in _ACCS] + ["data/publish_queue.json", "data/card_style.json", "data/form_stats.json"]
+                               "chart_reports.json", "charts", "futures_brief.json", "futures", "malhee_var.json", "acc_topics.json", "channel_pulse.json")] + [SITE + f"acc_{a['slug']}.json" for a in _ACCS] + ["data/publish_queue.json", "data/card_style.json", "data/form_stats.json"]
 ENV = {**os.environ, "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1"}
 CRAWLERS = (("content-lab-telegram-live", "tg_live.py"), ("content-lab-threads-watch", "threads_watch.py"), ("content-lab-thread-listen", "thread_listen.py"))
 TG_BEAT = Path.home() / ".content-lab-ai" / "tg_live.beat"
@@ -259,10 +259,15 @@ def run_cycle():
         py("-m", "publish.publish_card", r["args"].get("id", ""), "--yes", timeout=15 * 60)
         did.append(f"인스타 발행 {r['args'].get('id', '')}")
 
+    if time.time() - state.get("pulse_at", 0) >= 3600:   # 채널 발행 체크: AI 없이 크롤링 기록만 집계 (매시간)
+        state["pulse_at"] = time.time()
+        py("channel_pulse.py", timeout=120)
+        did.append("발행 체크")
+
     drafts = [r for r in todo if r["job"] == "draft"][-3:]
     for r in drafts:
         topic, pick = r["args"].get("topic", ""), r["args"].get("pick", "")
-        py("-m", "publish.draft_card", *(["--pick", pick] if pick else ["--topic", topic] if topic else []))
+        py("-m", "publish.draft_card", *(["--topic", topic, "--style", pick[6:]] if pick.startswith("style:") else ["--pick", pick] if pick else ["--topic", topic] if topic else []))
         did.append(f"카드뉴스 초안 {pick or topic}")
     if not drafts:
         auto_ideas(state, did)
