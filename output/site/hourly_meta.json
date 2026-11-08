@@ -1,12 +1,12 @@
 {
- "at": "2026-11-09T06:02+09:00",
- "took_sec": 105,
+ "at": "2026-11-09T07:03+09:00",
+ "took_sec": 143,
  "steps": [
   {
    "step": "free_import.py",
    "ok": true,
    "sec": 8,
-   "note": "무료 크롤러 → 인스타 글 1202개 · 쓰레드 글 6096개 · X 글 1721개 · 인스타 계정 팔로워 126곳 (PC가 5.9시간 전에 올림)"
+   "note": "무료 크롤러 → 인스타 글 1202개 · 쓰레드 글 6096개 · X 글 1721개 · 인스타 계정 팔로워 126곳 (PC가 6.9시간 전에 올림 — PC 크롤러가 꺼져 있는지 확인)"
   },
   {
    "step": "threads_viral.py --export",
@@ -41,14 +41,14 @@
   {
    "step": "threads_types.py",
    "ok": true,
-   "sec": 1,
-   "note": "AI 해석: 하루 한 번만 (지난 해석 유지)"
+   "sec": 36,
+   "note": "AI 해석 저장: 9 형태 · 10 공략"
   },
   {
    "step": "x_analyze.py",
    "ok": true,
-   "sec": 37,
-   "note": "✅ X·트루스 글 29개 분석 (입력 8,718 / 출력 7,318 토큰)"
+   "sec": 46,
+   "note": "✅ X·트루스 글 28개 분석 (입력 8,483 / 출력 9,214 토큰)"
   },
   {
    "step": "threads_mine_analyze.py",
@@ -65,21 +65,21 @@
   {
    "step": "import_ideas.py",
    "ok": true,
-   "sec": 39,
-   "note": "✅ 한국 미출시 해외 아이디어 2개 (입력 37,086 / 출력 7,033 토큰)"
+   "sec": 32,
+   "note": "✅ 한국 미출시 해외 아이디어 3개 (입력 37,088 / 출력 6,189 토큰)"
   }
  ],
  "updated": [
   "acc_details",
-  "acc_patterns",
   "acc_rank",
   "acc_rank_meta",
   "accounts",
-  "fo_topics",
   "imports",
+  "patterns",
   "rec_reasons",
   "summary",
   "this_week_accounts",
+  "thl_ai",
   "thl_reco",
   "thl_types",
   "thx_foreign",
@@ -109,56 +109,56 @@
   {
    "name": "뉴스 수집(30분)",
    "file": "live_meta.json",
-   "age_min": 343,
+   "age_min": 403,
    "limit": 90,
    "stale": true
   },
   {
    "name": "쓰레드 실시간 추적(30분)",
    "file": "thx_live_meta.json",
-   "age_min": 343,
+   "age_min": 403,
    "limit": 90,
    "stale": true
   },
   {
    "name": "인스타 실시간 추적(30분)",
    "file": "igx_live_meta.json",
-   "age_min": 343,
+   "age_min": 403,
    "limit": 90,
    "stale": true
   },
   {
    "name": "무료 크롤러 원자료(30분)",
    "file": "free_crawl.json",
-   "age_min": 343,
+   "age_min": 403,
    "limit": 90,
    "stale": true
   },
   {
    "name": "텔레그램 수집(30분)",
    "file": "tg_meta.json",
-   "age_min": 14,
+   "age_min": 13,
    "limit": 90,
    "stale": false
   },
   {
    "name": "뜬 글 공식(릴스·카드뉴스, 매시간)",
    "file": "viral.json",
-   "age_min": 335,
+   "age_min": 395,
    "limit": 120,
    "stale": true
   },
   {
    "name": "지금 쓸 거리(2시간)",
    "file": "hot_now.json",
-   "age_min": 382,
+   "age_min": 442,
    "limit": 150,
    "stale": true
   },
   {
    "name": "X 크롤러 새 글",
    "file": "free_crawl.json#x",
-   "age_min": 379,
+   "age_min": 439,
    "limit": 360,
    "stale": true
   }
