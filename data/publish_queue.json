@@ -2936,392 +2936,6 @@
  ],
  "ideas": [
   {
-   "title": "반도체 도시 지방소득세 최대 12배",
-   "concept": "주가는 휘청이는데 화성, 평택, 수원, 용인의 내년 지방소득세는 최대 12배 늘 전망이라는 대비로 풉니다. 삼성전자와 SK하이닉스 실적이 지방 재정으로 이어지는 구조를 보여 주고, 마지막 장에서 업황 의존 위험과 내년 실적이 관건이라는 점으로 닫습니다. 도시별 증가액과 기준 연도는 확인 후 씁니다. (공식: 전후 낙차 한 줄 표지)",
-   "why_now": "아시아경제와 연합뉴스 등 여러 곳이 오전에 다뤘고, 코스피 급락 속에서 반도체 실적의 다른 면을 보여 줍니다. 앞선 발송 목록에는 없는 주제입니다.",
-   "tag": "반도체",
-   "sources": [
-    "https://view.asiae.co.kr/article/2026110709421783324",
-    "https://v.daum.net/v/20261107094421148"
-   ],
-   "bg": "Samsung Electronics Hwaseong",
-   "bg_alt": "SK hynix Icheon campus",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "주가는 휘청이는데\n화성, 평택 세금은\n내년 최대 **12배**",
-     "number": "12배",
-     "label": "내년 지방소득세 증가 전망",
-     "sub": "화성, 평택, 수원, 용인"
-    },
-    {
-     "type": "질문형",
-     "title": "삼성전자와 하이닉스가\n어느 도시 곳간을\n**가득** 채웠을까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "주가는 빠지는데\n반도체 도시 살림은\n오히려 **불어난다**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261107-1101-i1",
-   "created_at": "2026-11-07T11:01:44+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261107-1101-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261107-1101-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261107-1101-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261107-1101-i1/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261107-1101-i1/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261107-1101-i1/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261107-1101-i1/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261107-1101-i1/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261107-1101-i1/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "머스크 \"한 시대의 끝\", 사이버트럭 단종 예고",
-   "concept": "머스크가 직접 '한 시대의 끝'이라고 말한 사건을 중심으로, 판매량 48% 급감(확인 필요)과 로보택시 등 AI 사업으로의 전환을 한 걸음씩 잇습니다. 한국 투자자 관점은 마지막 장에 한 줄만 둡니다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "14곳이 다뤘고, 오전 7시대의 '생산 축소'에서 머스크 본인의 단종 예고로 한 단계 나아간 소식입니다. 이미 다룬 '머스크 회사 618조 증발'과는 다른 사건입니다.",
-   "tag": "테슬라",
-   "sources": [
-    "https://www.mt.co.kr/world/2026/11/07/2026110707591251436",
-    "https://biz.chosun.com/industry/car/2026/11/07/6MO2PA44TBC3VH7CB2ZMNVX5VY/"
-   ],
-   "bg": "Elon Musk Cybertruck",
-   "bg_alt": "Tesla Cybertruck",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "판매량 **48%** 급감\n테슬라 사이버트럭\n결국 단종 수순으로",
-     "number": "-48%",
-     "label": "사이버트럭 판매량(보도 기준)",
-     "sub": "머스크 \"한 시대의 끝\""
-    },
-    {
-     "type": "질문형",
-     "title": "머스크는 왜 직접\n테슬라 사이버트럭에\n**한 시대의 끝**이라 했나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "사이버트럭은 접고\n머스크는 **로보택시**\n쪽으로 무게 옮긴다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "quote"
-   ],
-   "extra": {
-    "quote": {
-     "label": "머스크",
-     "quote": "한 시대의 끝",
-     "by": "일론 머스크"
-    }
-   },
-   "id": "20261107-1101-i2",
-   "created_at": "2026-11-07T11:01:44+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261107-1101-i2/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261107-1101-i2/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261107-1101-i2/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261107-1101-i2/1-quote-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261107-1101-i2/1-quote-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261107-1101-i2/1-quote-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261107-1101-i2/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261107-1101-i2/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261107-1101-i2/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261107-1101-i2/2-quote-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261107-1101-i2/2-quote-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261107-1101-i2/2-quote-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261107-1101-i2/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261107-1101-i2/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261107-1101-i2/3-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261107-1101-i2/3-quote-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261107-1101-i2/3-quote-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261107-1101-i2/3-quote-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "앤트로픽 IPO 몸값 한 달 새 45% 하락",
-   "concept": "앤트로픽 IPO 예상 기업가치가 2조 달러에서 1.1조 달러로 낮아졌다는 보도를 중심으로, 여전히 큰 숫자이지만 시장이 AI 기대감에 매기던 값을 다시 계산한다는 흐름을 풉니다. 이번 주 코스피 급락도 AI 투자 우려에서 시작됐다는 점을 마지막 장에 한 줄로 잇습니다. 수치는 보도 기준으로 확인 표기를 하나만 남깁니다. (공식: 전후 낙차 한 줄 표지)",
-   "why_now": "AI타임스 등 2곳이 오전 10시에 보도한 새 소식입니다. AI 거품 우려로 코스피가 11.7% 급락한 흐름의 연장이고, 최근 발송 목록에는 없는 주제입니다.",
-   "tag": "AI",
-   "sources": [
-    "https://news.google.com/rss/articles/CBMiakFVX3lxTFBFYk5MdmJBbGpiZFB5VXJVYktDdUJYQ1RWdUVTUFB1VUc3SHlFeWFTTFhsMC1fd3ZCeFN"
-   ],
-   "bg": "Dario Amodei Anthropic",
-   "bg_alt": "Anthropic headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "IPO 몸값이 한 달 만에\n**2조**에서 1.1조 달러로",
-     "number": "-45%",
-     "label": "앤트로픽 예상 기업가치, 한 달 새",
-     "sub": "2조 달러에서 1.1조 달러로"
-    },
-    {
-     "type": "질문형",
-     "title": "앤트로픽 몸값은\n왜 한 달 만에\n**반토막** 가까이 됐나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "몸값 45% 빠졌어도\n앤트로픽은 여전히\n**1.1조** 달러",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bars",
-    "bignum"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "앤트로픽 IPO 예상 기업가치, 조 달러(보도 기준)",
-     "bars": [
-      {
-       "label": "한 달 전",
-       "value": 2
-      },
-      {
-       "label": "지금",
-       "value": 1.1,
-       "hi": true
-      }
-     ]
-    }
-   },
-   "id": "20261107-1101-i3",
-   "created_at": "2026-11-07T11:01:44+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261107-1101-i3/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261107-1101-i3/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261107-1101-i3/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261107-1101-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261107-1101-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261107-1101-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261107-1101-i3/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261107-1101-i3/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261107-1101-i3/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261107-1101-i3/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261107-1101-i3/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261107-1101-i3/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
    "title": "미래에셋증권 고객 3,800명 계좌번호 유출",
    "concept": "업계 1위가 휴대폰 인증 로그인에서 뚫린 사건을 유출 규모, 원인, 증권가 점검, 내 계좌에서 할 일 순서로 푼다. 피해 범위와 보상은 추가 발표 전이라 확인 중이라고 밝힌다. (공식: 한 글에 사건 하나)",
    "why_now": "11시 22분 이후 동아일보, 이투데이, SBS Biz 등 5곳이 보도했다. 3,800명 계좌번호 유출과 휴대폰 인증 로그인이라는 원인이 새로 나왔고, 뉴스1과 뉴시스는 증권가 전체가 비상이라고 전했다.",
@@ -8634,6 +8248,397 @@
      "form": "breaking",
      "font": "dohyeon",
      "path": "20261108-1204-i3/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "강남 10명 중 7명, 집주인에게 돈 빌렸다",
+   "concept": "은행 대출이 막힌 강남에서 집주인이 직접 돈을 빌려주는 방식이 퍼졌다는 보도를 풀고, 생판 모르는 집주인이 24억원을 빌려준 사례를 보여 준다. '10명 중 7명'의 정확한 기준은 본문 확인 후 한 줄로 밝힌다. (공식: 없음)",
+   "why_now": "뉴시스(11:02)와 매일경제(11:07)가 같은 시간대에 강남 부동산의 집주인 대출 현상을 보도했다. 서울 아파트 매물 33% 증가 소식과 이어지지만 대출 방식이라는 새 각도다.",
+   "tag": "부동산",
+   "sources": [
+    "https://www.mk.co.kr/news/realestate/12201619",
+    "https://v.daum.net/v/20261108110236521"
+   ],
+   "bg": "Gangnam Seoul apartments",
+   "bg_alt": "Seoul apartment complex",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "강남 10명 중 7명이\n**집주인**에게 돈 빌렸다",
+     "number": "7명",
+     "label": "강남 10명 중",
+     "sub": "집주인에게 돈을 빌려 집을 샀다"
+    },
+    {
+     "type": "질문형",
+     "title": "은행 대출이 막히자\n24억을 빌려준 건\n**누구**일까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "은행 대출 막히자\n집주인이 **은행**이 됐다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261108-1301-i1",
+   "created_at": "2026-11-08T13:01:38+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261108-1301-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261108-1301-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261108-1301-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-1301-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-1301-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-1301-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-1301-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-1301-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-1301-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-1301-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-1301-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-1301-i1/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "챗GPT 앱 1876만명, 클로드 1년 새 15배",
+   "concept": "주식은 흔들려도 AI 앱 이용자는 늘었다는 대비를 보여 주고, 챗GPT 국내 앱 이용자 1876만명과 클로드 15배 증가를 중심에 둔다. 왜 늘었는지 원인은 재료에 없으니 쓰지 않고, 마지막 장에서 독자에게 어떤 AI를 쓰는지 묻는다. (공식: 큰 숫자 하나를 빨간 한 줄로)",
+   "why_now": "조선비즈 등이 11:19에 보도했다. 증시 급락과 AI 주가 변동이 이어지는 날이라 쓰는 사람은 늘고 있다는 대비가 선명하다.",
+   "tag": "AI",
+   "sources": [
+    "https://biz.chosun.com/it-science/ict/2026/11/08/3SEWDEBSTZAMTBD2YQ5JNTYU7Y/"
+   ],
+   "bg": "ChatGPT app smartphone",
+   "bg_alt": "Claude Anthropic logo",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "챗GPT 앱 1876만명\n클로드는 1년 새\n**15배** 폭증했다",
+     "number": "1876만명",
+     "label": "챗GPT 국내 앱 이용자",
+     "sub": "클로드는 1년 새 15배 늘었다"
+    },
+    {
+     "type": "질문형",
+     "title": "요즘 제일 많이 쓰는\n**AI**는 뭔가요",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "AI 주가는 흔들려도\n쓰는 사람은 **늘었다**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "editorial"
+   ],
+   "extra": {},
+   "id": "20261108-1301-i2",
+   "created_at": "2026-11-08T13:01:38+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261108-1301-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261108-1301-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261108-1301-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261108-1301-i2/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261108-1301-i2/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261108-1301-i2/1-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261108-1301-i2/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261108-1301-i2/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261108-1301-i2/2-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261108-1301-i2/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261108-1301-i2/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261108-1301-i2/3-editorial-plex.jpg"
+    }
+   ]
+  },
+  {
+   "title": "디지털자산기본법 정부안, 거래소 대주주 지분 제한",
+   "concept": "정부안이 이달 공개된다는 보도와 거래소 대주주 지분을 15~20%로 제한하는 안이 유력하다는 내용을 전한다. 확정이 아닌 공개 전 보도라는 단서는 한 번만 두고, 공개되면 세부 내용을 다시 정리한다고 마무리한다. (공식: 없음)",
+   "why_now": "헤럴드경제가 12:19에 정부안 공개 시점과 지분 제한안을 보도했다. 코인 거래대금이 줄어든 시점이라 거래소 규제 소식에 관심이 갈 수 있다. 1곳 보도라 [확인]이 필요하다.",
+   "tag": "가상자산",
+   "sources": [
+    "https://biz.heraldcorp.com/article/10929579"
+   ],
+   "bg": "Upbit Dunamu",
+   "bg_alt": "Seoul crypto exchange",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "거래소 대주주 지분\n**15~20%** 제한 유력",
+     "number": "15~20%",
+     "label": "거래소 대주주 지분 한도안",
+     "sub": "정부안 공개 전 보도, 확정 아님"
+    },
+    {
+     "type": "질문형",
+     "title": "거래소 대주주 지분\n**상한**선이 생기나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "정부안 공개 전인데\n거래소 **대주주** 지분\n제한안이 먼저 나왔다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/08",
+     "headlines": [
+      "디지털자산기본법 정부안 이달 공개",
+      "거래소 대주주 지분 15~20% 제한 유력",
+      "확정 아닌 정부안 공개 전 보도"
+     ]
+    }
+   },
+   "id": "20261108-1301-i3",
+   "created_at": "2026-11-08T13:01:38+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-1301-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-1301-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-1301-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261108-1301-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261108-1301-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261108-1301-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-1301-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-1301-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-1301-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261108-1301-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261108-1301-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261108-1301-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-1301-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-1301-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-1301-i3/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261108-1301-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261108-1301-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261108-1301-i3/3-paper-gowun.jpg"
     }
    ]
   }
