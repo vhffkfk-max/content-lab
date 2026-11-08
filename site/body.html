@@ -592,6 +592,11 @@ ul.gd-card{padding-left:36px;line-height:1.8}
             <li><a href="#uc-src">어떤 추천을 쓰나</a></li>
             <li><a href="#uc-ai">GPT·Claude 연결</a></li>
           </ul></li>
+        <li class="nav-label" style="margin-top:10px">내 채널</li>
+        <li><button type="button" data-ch="c-hot"><i class="dot" style="background:#E5484D"></i>핫코노미</button></li>
+        <li><button type="button" data-ch="c-asset"><i class="dot" style="background:#1F8A5B"></i>자산백배</button></li>
+        <li><button type="button" data-ch="c-chart"><i class="dot" style="background:#3E63DD"></i>차트덕후</button></li>
+        <li><button type="button" data-ch="c-malhee"><i class="dot" style="background:#F5A623"></i>말희아빠</button></li>
         <li class="nav-label" style="margin-top:10px">만들기</li>
         <li data-nav-key="acc-pages"><a href="accounts/"><i class="dot" style="background:var(--text)"></i>계정별 콘텐츠</a></li>
         <li><button type="button" data-ch="thlab"><i class="dot" style="background:var(--ch-threads)"></i>쓰레드 연구소</button>
@@ -1095,6 +1100,22 @@ ul.gd-card{padding-left:36px;line-height:1.8}
         </section>
       </div>
 
+      <div class="view" data-view="c-hot" hidden>
+        <div class="title-row"><div><h1>핫코노미</h1><p>이 채널의 인스타그램, 쓰레드, 영상을 여기서 만들어요. 올리기 전에 꼭 확인해 주세요.</p></div></div>
+        <div id="c-hot-root"></div>
+      </div>
+      <div class="view" data-view="c-asset" hidden>
+        <div class="title-row"><div><h1>자산백배</h1><p>이 채널의 인스타그램, 쓰레드, 영상을 여기서 만들어요. 올리기 전에 꼭 확인해 주세요.</p></div></div>
+        <div id="c-asset-root"></div>
+      </div>
+      <div class="view" data-view="c-chart" hidden>
+        <div class="title-row"><div><h1>차트덕후</h1><p>이 채널의 인스타그램, 쓰레드, 영상을 여기서 만들어요. 올리기 전에 꼭 확인해 주세요.</p></div></div>
+        <div id="c-chart-root"></div>
+      </div>
+      <div class="view" data-view="c-malhee" hidden>
+        <div class="title-row"><div><h1>말희아빠</h1><p>이 채널의 인스타그램, 쓰레드, 영상을 여기서 만들어요. 올리기 전에 꼭 확인해 주세요.</p></div></div>
+        <div id="c-malhee-root"></div>
+      </div>
       <div class="view" data-view="video" hidden>
         <div class="title-row"><div><h1>영상 연구소</h1><p>대본과 컷 이미지를 먼저 보고, 고친 뒤 버튼을 눌렀을 때만 영상을 만들어요. 새 보드는 <b>핫코노미 v2</b>(상위 릴스 벤치마크) 형식으로 만들어지고, 보드마다 다른 형식으로 바꿀 수 있어요. 플랫폼에는 올리지 않아요.</p></div></div>
         <div id="vl-root"></div>
@@ -1915,6 +1936,80 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     if (!vl.list.length) list.append(el('p', 'sub', '아직 보드가 없어요. 주제를 넣어 첫 보드를 만들어 보세요.'));
     root.replaceChildren(tabs, hot, form, sug, status, list, ...(vl.cur ? [vlBoard()] : []));
     vlDrawBar(); vlDrawStatus();
+  }
+  // ── 내 채널: 채널마다 인스타그램·쓰레드·영상을 한곳에서 만든다 ──
+  const CHANNELS = {
+    'c-hot': { name: '핫코노미', sub: '@hotconomy', insta: { draft: true }, thread: { slug: 'hotconomy' }, video: { action: 'hot', label: '핫코노미 영상 만들기', ph: '주제 (예: 대출금리 엇갈림)', note: '핫코노미와 궁금이가 대화하는 40~55초 영상이에요. 5~10분 걸리고 텔레그램으로 와요.' } },
+    'c-asset': { name: '자산백배', sub: '@100x.asset', insta: { wait: '자산백배 전용 카드 틀이 아직 없어요. 지금 카드 자동화는 핫코노미 디자인으로만 나와요.' }, thread: { slug: 'js100x' }, video: { action: 'asset', angle: true, label: '자산백배 영상 만들기', ph: '주제 (예: 예금 금리 은행)', note: '훅 다음에 표 한 장으로 셋을 비교하는 30초 안팎 영상이에요. 최근 36시간 기사에서 셋을 비교할 수 있어야 만들어지고, 5~10분 뒤 텔레그램으로 와요.' } },
+    'c-chart': { name: '차트덕후', sub: '차트 공부 계정', insta: { wait: '차트덕후 카드 제작기가 아직 없어요.' }, thread: { wait: '차트덕후 글쓰기 기준이 아직 연결되지 않았어요.' }, video: { wait: '차트덕후 영상 제작기가 아직 없어요.' } },
+    'c-malhee': { name: '말희아빠', sub: '@oh_neworld', insta: { wait: '오뉴월드 카드뉴스는 차트 재료를 PC 폴더에 넣어야 만들 수 있어서, 아직 PC 제작기에서만 돼요.' }, thread: { wait: '말희아빠 쓰레드 기준이 아직 연결되지 않았어요.' }, video: { wait: '오뉴월드 릴스도 차트 재료가 필요해서, 아직 PC 제작기에서만 돼요.' } },
+  };
+  const chanTab = {};
+  function chanWait(text) { const b = el('div', 'vl-hot'); b.append(el('h3', '', '준비 중'), el('p', 'sub', text)); return b; }
+  function chanWatch(rid, st, go) {
+    let seen = false, tries = 0;
+    const timer = setInterval(async () => {
+      if (++tries > 200) return clearInterval(timer);
+      try {
+        const r = await ghApi('reel-jobs'); if (!r.ok) return;
+        const j = ((await r.json()).jobs || []).find(x => x.rid === rid);
+        if (j && j.error) { clearInterval(timer); st.textContent = '만들지 못했어요: ' + j.error; go.disabled = false; }
+        else if (j) { seen = true; st.textContent = 'PC에서 만드는 중이에요. 창을 닫아도 텔레그램으로 와요.'; }
+        else if (seen || tries > 8) { clearInterval(timer); st.textContent = '끝났어요. 텔레그램을 확인해 주세요.'; go.disabled = false; }
+      } catch (e) { /* 잠깐 끊겨도 다음 차례에 다시 본다 */ }
+    }, 8000);
+  }
+  function chanVideo(c, v) {
+    const box = el('div', 'vl-hot'), f = el('form', 'vl-new'), t = el('input'), go = el('button', 'btn primary', v.label), st = el('p', 'sub');
+    let a = null;
+    t.placeholder = v.ph; t.maxLength = 60; t.setAttribute('aria-label', c.name + ' 영상 주제'); go.type = 'submit'; f.append(t);
+    if (v.angle) { a = el('input'); a.placeholder = '비교할 셋 (선택, 예: 저축은행·신협·새마을금고)'; a.maxLength = 60; a.setAttribute('aria-label', '비교할 셋'); f.append(a); }
+    f.append(go); box.append(el('h3', '', c.name + ' 영상'), el('p', 'sub', v.note), f, st);
+    f.addEventListener('submit', async e => {
+      e.preventDefault(); const topic = t.value.trim();
+      if (topic.length < 2) return alert('주제를 2글자 이상 넣어 주세요.');
+      const rid = Math.random().toString(36).slice(2, 12), body = { rid, action: v.action, topic };
+      if (a) body.angle = a.value.trim();
+      go.disabled = true; st.textContent = '요청 보내는 중…';
+      try {
+        const r = await ghApi('reel-request', { method: 'POST', body: JSON.stringify(body) });
+        if (r.status !== 201) { go.disabled = false; st.textContent = ''; return alert(ghFail(r.status)); }
+        t.value = ''; if (a) a.value = ''; st.textContent = '요청했어요. PC가 받으면 여기에 표시돼요.'; chanWatch(rid, st, go);
+      } catch (err) { go.disabled = false; st.textContent = '요청 실패 — 인터넷 연결을 확인해 주세요'; }
+    });
+    return box;
+  }
+  function chanInsta(c) {
+    const box = el('div', 'vl-hot'), f = el('form', 'vl-new'), t = el('input'), go = el('button', 'btn primary', '카드뉴스 초안 만들기'), st = el('p', 'sub');
+    t.placeholder = '주제 (비우면 오늘 추천 1위)'; t.maxLength = 60; t.setAttribute('aria-label', c.name + ' 카드뉴스 주제'); go.type = 'submit'; f.append(t, go);
+    box.append(el('h3', '', c.name + ' 카드뉴스'), el('p', 'sub', '몇 분 뒤 텔레그램과 인스타 · 한국 메뉴의 완성 카드 검수에서 볼 수 있어요. 인스타에는 올리지 않아요.'), f, st);
+    f.addEventListener('submit', async e => {
+      e.preventDefault(); go.disabled = true; st.textContent = '요청 보내는 중…';
+      try {
+        const r = await ghApi('actions/workflows/draft-create.yml/dispatches', { method: 'POST', body: JSON.stringify({ ref: 'main', inputs: { topic: t.value.trim() } }) });
+        st.textContent = r.status === 204 ? '요청했어요. 몇 분 뒤 텔레그램을 확인해 주세요.' : ghFail(r.status);
+        if (r.status === 204) t.value = '';
+      } catch (err) { st.textContent = '요청 실패 — 인터넷 연결을 확인해 주세요'; }
+      go.disabled = false;
+    });
+    return box;
+  }
+  function chanThread(c, x) {
+    const box = el('div', 'vl-hot'), a = el('a', 'btn primary', '오늘 만든 쓰레드 글 보기');
+    a.href = `accounts/${x.slug}/`; a.target = '_blank'; a.rel = 'noopener';
+    box.append(el('h3', '', c.name + ' 쓰레드'), el('p', 'sub', '이 계정 기준으로 하루 세 번(7시·12시·18시) 글을 자동으로 만들어 둬요. 주제를 직접 넣어 만드는 기능은 아직 없어요.'), a);
+    return box;
+  }
+  function chanDraw(ch) {
+    const c = CHANNELS[ch], root = document.getElementById(ch + '-root'); if (!c || !root) return;
+    const cur = chanTab[ch] || 'video', bar = el('div', 'tabs'), panel = el('div'); panel.style.marginTop = '14px';
+    [['insta', '인스타그램'], ['thread', '쓰레드'], ['video', '영상']].forEach(([k, label]) => {
+      const b = el('button', null, label); b.type = 'button'; b.setAttribute('aria-selected', String(k === cur));
+      b.addEventListener('click', () => { chanTab[ch] = k; chanDraw(ch); }); bar.append(b);
+    });
+    const it = c[cur];
+    panel.append(it.wait ? chanWait(it.wait) : cur === 'insta' ? chanInsta(c) : cur === 'thread' ? chanThread(c, it) : chanVideo(c, it));
+    root.replaceChildren(bar, panel);
   }
   async function vlStart(force) {
     if (vl.started && !force) { vlDraw(); return; }
@@ -4189,7 +4284,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
   document.getElementById('side-hide').addEventListener('click', () => setSide(true));
   document.getElementById('side-show').addEventListener('click', () => setSide(false));
   if (store.get('side_hidden') === '1') setSide(true);
-  const NAMES = { thlab: '쓰레드 연구소', econ: '경제 미디어 추천', guide: '사용 가이드', calendar: '발행 캘린더', video: '영상 연구소', home: '오늘 할 일', instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드', x: 'X · 트루스소셜', telegram: '텔레그램 · 말희아빠', traders: '텔레그램 · 트레이더스', feedback: '후기·기록', growth: '마케팅 코치', viral: '뜬 글 공식', usage: '활용 체크' };
+  const NAMES = { thlab: '쓰레드 연구소', econ: '경제 미디어 추천', guide: '사용 가이드', calendar: '발행 캘린더', video: '영상 연구소', 'c-hot': '핫코노미', 'c-asset': '자산백배', 'c-chart': '차트덕후', 'c-malhee': '말희아빠', home: '오늘 할 일', instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드', x: 'X · 트루스소셜', telegram: '텔레그램 · 말희아빠', traders: '텔레그램 · 트레이더스', feedback: '후기·기록', growth: '마케팅 코치', viral: '뜬 글 공식', usage: '활용 체크' };
   // ── 폰: 채널을 열면 '전체' 대신 한 칸만 (이 기기에서 많이 본 칸, 없으면 첫 칸). 위 탭으로 다른 칸·전체로 이동 ──
   const isPhone = () => matchMedia('(max-width:860px)').matches;
   function phoneFolder(ch) {
@@ -4222,6 +4317,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     document.getElementById('topbar-title').textContent = NAMES[ch];
     foldLongText(document.querySelector(`.view[data-view="${ch}"]`));
     if (ch === 'video') vlStart();
+    if (CHANNELS[ch]) chanDraw(ch);
     unfocus();
     spy();
   }
@@ -4315,6 +4411,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
   const nf = v => v == null || v === '' ? null : Number(v).toLocaleString('ko-KR');
   const NAV_GROUPS = [
     ['대시보드', ['home', 'guide']],
+    ['내 채널', ['c-hot', 'c-asset', 'c-chart', 'c-malhee']],
     ['쓰레드 연구소', ['thlab', 'threads']],
     ['트렌드 발견', ['google', 'foreign', 'x', 'youtube']],
     ['계정 분석', ['accounts', 'econ']],
