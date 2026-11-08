@@ -8,7 +8,7 @@
   "format": "릴스",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 3.36,
+  "kr_avg": 3.35,
   "kr_n": 29,
   "foreign_avg": 1.7,
   "foreign_n": 39
@@ -22,7 +22,7 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.52,
+  "kr_avg": 2.51,
   "kr_n": 12,
   "foreign_avg": 1.67,
   "foreign_n": 139
@@ -36,7 +36,7 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.57,
+  "kr_avg": 1.56,
   "kr_n": 220,
   "foreign_avg": 1.18,
   "foreign_n": 128
@@ -50,13 +50,41 @@
   "format": "릴스",
   "hook": "짧은 한 줄",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.19,
+  "kr_avg": 2.18,
   "kr_n": 27,
   "foreign_avg": 1.52,
   "foreign_n": 18
  },
  {
   "rank": 5,
+  "topic": "금리·연준",
+  "kind": "국내 검증 주제",
+  "confidence": "높음",
+  "title_idea": "숫자 하나로 보는 금리·연준",
+  "format": "릴스",
+  "hook": "숫자 강조형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 1.72,
+  "kr_n": 27,
+  "foreign_avg": 0.8,
+  "foreign_n": 23
+ },
+ {
+  "rank": 6,
+  "topic": "연금·절세",
+  "kind": "국내·해외 모두 강세",
+  "confidence": "높음",
+  "title_idea": "숫자 하나로 보는 연금·절세",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "숫자 강조형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 1.52,
+  "kr_n": 40,
+  "foreign_avg": 1.42,
+  "foreign_n": 30
+ },
+ {
+  "rank": 7,
   "topic": "환율·달러",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
@@ -70,34 +98,6 @@
   "foreign_n": 9
  },
  {
-  "rank": 6,
-  "topic": "금리·연준",
-  "kind": "국내 검증 주제",
-  "confidence": "높음",
-  "title_idea": "숫자 하나로 보는 금리·연준",
-  "format": "릴스",
-  "hook": "숫자 강조형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 1.73,
-  "kr_n": 27,
-  "foreign_avg": 0.8,
-  "foreign_n": 23
- },
- {
-  "rank": 7,
-  "topic": "연금·절세",
-  "kind": "국내·해외 모두 강세",
-  "confidence": "높음",
-  "title_idea": "숫자 하나로 보는 연금·절세",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "숫자 강조형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 1.54,
-  "kr_n": 40,
-  "foreign_avg": 1.42,
-  "foreign_n": 30
- },
- {
   "rank": 8,
   "topic": "급락·변동성",
   "kind": "국내·해외 모두 강세",
@@ -107,7 +107,7 @@
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
   "kr_avg": 1.89,
-  "kr_n": 67,
+  "kr_n": 68,
   "foreign_avg": 1.96,
   "foreign_n": 16
  }
