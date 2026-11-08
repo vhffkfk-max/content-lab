@@ -112,7 +112,7 @@ def view(d):
     video = site_video(d) if b.get("video") else None
     if video:
         files[f"{d.name}/video.mp4"] = video.read_bytes()
-    board = {"id": d.name, "topic": st["topic"], "edited": st.get("edited", False), "cuts": cuts, "board": {k: b.get(k) for k in ("updated", "basis", "block", "problems", "seconds", "hooks", "changes", "video", "miss", "rid", "caption", "auto")},
+    board = {"id": d.name, "topic": st["topic"], "edited": st.get("edited", False), "cuts": cuts, "board": {k: b.get(k) for k in ("updated", "basis", "block", "problems", "seconds", "hooks", "closers", "changes", "video", "miss", "rid", "caption", "auto")},
              "ig_title": s.ig_title, "yt_title": s.yt_title, "summary": s.summary, "question": s.question,
              "photo_note": st.get("photo_note", ""), "photo_person": st.get("photo_person", ""), "candidates": cand_view(d, st, files),
              "format": fmt, "formats": samples, "photo_count": sum(1 for p in (st.get("photos") or []) if p), "photo_unique": len({p["url"] for p in (st.get("photos") or []) if p and p.get("url")}),

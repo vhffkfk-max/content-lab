@@ -118,7 +118,8 @@ def send_video(d):
     return ok
 
 
-HOT_MAKER = pathlib.Path.home() / "Desktop" / "솔개" / "hotconomy-reels" / "src" / "auto.py"   # 핫코노미 전용 영상 버전 A (PC에만 있는 제작기)
+import accounts  # noqa: E402
+HOT_MAKER = accounts.maker_path("핫코노미A")   # 핫코노미 전용 영상 버전 A (PC에만 있는 제작기)
 
 
 def hot_video(q):
@@ -312,7 +313,7 @@ def poll(lines, seen, etag):
 
 AUTO_STATE = pathlib.Path.home() / ".content-lab-ai" / "reel_auto.json"
 LIMIT_STATE = pathlib.Path.home() / ".content-lab-ai" / "reel_limits.json"
-DAILY = {"board": 15, "make": 12, "hot": 10, "save": 150, "voice": 150, "format": 150, "photo": 200}   # 사이트 요청은 암호가 없어서 하루 처리량을 막는다 (자동 보드는 따로)
+DAILY = accounts.DAILY   # 사이트 요청은 암호가 없어서 하루 처리량을 막는다 (자동 보드는 따로)
 
 
 def over_limit(action):

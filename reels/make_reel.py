@@ -77,6 +77,7 @@ class Review(BaseModel):
 
 class Script(BaseModel):
     hooks: list[str] = []
+    closers: list[str] = []
     ig_title: str
     yt_title: str
     summary: list[str]
@@ -94,6 +95,7 @@ SYSTEM = """당신은 경제 인스타그램 @hotconomy 의 릴스·쇼츠 대�
 끝: '댓글'이라는 말을 넣어 둘 중 하나를 고르게 묻는다 (예: "OO일까요, OO일까요? 댓글로 알려 주세요"). 후킹의 낱말 하나를 되풀이해 처음으로 이어지게.
 말끝: "~요"로 끝나는 문장이 세 번 넘게 이어지지 않게 명사형·짧은 끊음("2천억, 멈췄다.")을 섞는다.
 hooks: 위 ①②③ 공식으로 하나씩 3개. cuts 의 1컷은 그중 가장 센 것.
+closers: 마지막 컷 말로 쓸 끝맺음 3개. 모두 '댓글'을 넣어 둘 중 하나를 고르게 묻는다. cuts 의 끝 컷은 그중 가장 좋은 것.
 
 [컷 규칙]
 - 화면 글자(kick, big, items)는 6낱말 이내.
@@ -348,6 +350,9 @@ def prompt(topic, news, bodies, q, basis, errors=None):
     from viral_rules import prompt_notes   # 뜬 글 공식 (viral_analyze.py, 매일 갱신). 없으면 빈 글자
     viral = prompt_notes("릴스", record=False)
     viral = f"\n\n{viral}" if viral else ""
+    import reel_learn
+    learned = reel_learn.prompt_notes()   # 내 릴스 성과 (자료가 쌓이기 전에는 빈 글자)
+    viral += f"\n\n{learned}" if learned else ""
     return f"주제: {topic}\n오늘: {datetime.now(KST):%Y-%m-%d}\n\n[시세표] {basis}\n{table(q)}\n\n[기사 제목]\n{heads}\n\n[기사 본문]\n{arts}{viral}{fix}"
 
 
@@ -851,11 +856,12 @@ def render_board(out, s, q, basis, block, warn, only=None):
     for h in s.hooks:
         known = not any(n not in q for n in PH.findall(h))
         hooks.append({"say": engine.readable(h), "text": to_text(h, q) if known else h, "score": max([x for x in (hook_score(to_say(h, q).replace("*", "")), hook_score(to_text(h, q))) if x is not None], default=None) if known else None})
+    closers = [{"say": engine.readable(h), "text": h} for h in s.closers]   # 사람이 고르는 끝맺음 후보
     try:
         photo_note = load_state(out).get("photo_note", "")
     except (OSError, ValueError):
         photo_note = ""
-    write_board(out, photo_note=photo_note, updated=datetime.now(KST).strftime("%m/%d %H:%M"), basis=basis, block=block, warn=warn, problems=problems, seconds=round(t, 1), hooks=hooks,
+    write_board(out, photo_note=photo_note, updated=datetime.now(KST).strftime("%m/%d %H:%M"), basis=basis, block=block, warn=warn, problems=problems, seconds=round(t, 1), hooks=hooks, closers=closers,
                 changes=[], caption=caption_notes(s, q, basis), video=(out / "영상.mp4").exists() and (out / "영상.mp4").stat().st_mtime > (out / "대본.json").stat().st_mtime)
 
 
@@ -866,9 +872,12 @@ def collect(out, topic):
     base = re.sub(r'[\\/:*?"<>|]+', " ", f"{out.name[:13]} {topic} ({fmt})").strip()
     texts = FINISHED_DIR / "올릴 글"   # 바깥에는 영상만 둔다 (대표 요청)
     texts.mkdir(exist_ok=True)
-    for old in [*FINISHED_DIR.glob(f"{out.name[:13]} *"), *texts.glob(f"{out.name[:13]} *")]:
-        old.unlink()
     shutil.copy2(out / "영상.mp4", FINISHED_DIR / f"{base}.mp4")
+    try:
+        import reel_learn
+        reel_learn.log_made(out, "핫코노미", topic, STYLE["format"])
+    except Exception:   # 기록 실패로 영상 완성을 막지 않는다
+        pass
     if (out / "업로드글.txt").exists():
         shutil.copy2(out / "업로드글.txt", texts / f"{base} 올릴글.txt")
     return FINISHED_DIR / f"{base}.mp4"

@@ -1842,6 +1842,11 @@ ul.gd-card{padding-left:36px;line-height:1.8}
     }
     if (b.video) { const p = el('div', 'vl-box ok'); p.append(el('b', '', '영상을 만들어 텔레그램으로 보냈어요'));
       if (d.video_file) { const v = el('video', 'vl-video'); v.controls = true; v.playsInline = true; v.preload = 'metadata'; v.src = vlUrl(d.video_file, d.video_v); p.append(v, el('p', 'sub', '사이트용 미리보기(720p)예요. 올릴 때는 텔레그램으로 받은 원본을 쓰세요.')); } if (d.upload) { const dt = el('details'); dt.append(el('summary', '', '올릴 제목·설명 보기'), el('pre', 'vl-pre', d.upload)); p.append(dt); } box.append(p); }
+    if ((b.closers || []).length) {
+      const p = el('div', 'vl-box'); p.append(el('b', '', '끝맺음 후보'));
+      b.closers.forEach(x => { const r = el('div', 'vl-hook'), u = el('button', 'btn small', '이걸로'); u.type = 'button'; u.addEventListener('click', () => { const c = d.cuts[d.cuts.length - 1]; c.say = x.say; c.cap = x.text.replaceAll('*', ''); c.edited = true; vl.dirty = true; vlDraw(); }); r.append(el('span', '', x.text.replaceAll('*', '')), u); p.append(r); });
+      box.append(p);
+    }
     if ((b.hooks || []).length) {
       const p = el('div', 'vl-box'); p.append(el('b', '', '첫 문장 후보 (후킹 점수)'));
       b.hooks.forEach(x => { const r = el('div', 'vl-hook'), u = el('button', 'btn small', '이걸로'); u.type = 'button'; u.addEventListener('click', () => { const c = d.cuts[0]; c.say = x.say; c.cap = x.text.replaceAll('*', ''); c.edited = true; vl.dirty = true; vlDraw(); }); r.append(el('b', '', x.score == null ? '-' : `${Math.round(x.score)}점`), el('span', '', x.text.replaceAll('*', '')), u); p.append(r); });

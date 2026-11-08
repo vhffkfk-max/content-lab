@@ -431,3 +431,55 @@ def shoot(page_file, total, video, only=None, prefix=""):
         print(f"화면 {count}장 {t1 - t0:.0f}초 (크롬 {WORKERS}개) · 합치기 {time.time() - t1:.0f}초 ({how})")
         shutil.rmtree(frames, ignore_errors=True)
     return problems
+
+
+# ── 제작기 공통 부품 (뉴스·대화극·비교·핫코노미 A 가 같이 쓴다. 통합 2026-11-08) ──
+def trim_wavs(files):
+    """앞뒤 무음을 자르고 끝을 살짝 줄인다."""
+    for f in files:
+        x = read_wav(f)
+        loud = np.nonzero(np.abs(x) > .006)[0]
+        y = x[max(0, int(loud[0]) - int(.01 * SR)):int(loud[-1]) + int(.05 * SR)].copy()
+        fade = int(.006 * SR)
+        y[-fade:] *= np.linspace(1, 0, fade, dtype=np.float32)
+        write_wav(f, y)
+
+
+def speak_groups(groups, folder, threads=8):
+    """목소리별로 Supertonic 을 동시에 띄운다. groups: [(이름, 목소리, jobs)]. jobs 의 out 파일을 만든다."""
+    procs = []
+    for name, voice, jobs in groups:
+        if not jobs:
+            continue
+        f = pathlib.Path(folder) / f"jobs_{name}.json"
+        f.write_text(json.dumps(jobs, ensure_ascii=False), encoding="utf-8")
+        procs.append(subprocess.Popen([str(TTS_PY), str(pathlib.Path(__file__).resolve().parent / "tts_supertonic.py"), str(f), voice],
+                                      env={**os.environ, "PYTHONIOENCODING": "utf-8", "SUPERTONIC_INTRA_OP_THREADS": str(threads)}))
+    if any(p.wait() for p in procs):
+        raise SystemExit("음성 만들기 실패")
+
+
+def envelope(f, fps=FPS):
+    """입 모양용 음량: 1/fps 초마다 0~9 숫자 한 글자."""
+    x = read_wav(f)
+    hop = SR // fps
+    rms = np.array([np.sqrt(np.mean(x[i:i + hop] ** 2)) for i in range(0, len(x), hop)])
+    v = np.clip(rms / (np.percentile(rms, 92) or 1), 0, 1) ** .7
+    return "".join(str(int(round(a * 9))) if a > .12 else "0" for a in v)
+
+
+def render_video(page, total, out, fps=FPS):
+    """페이지를 크롬 여러 개로 나눠 찍어 mp4 로. → '화면 N장 M초 (인코더)'."""
+    frames = OUT / "frames"
+    shutil.rmtree(frames, ignore_errors=True)
+    frames.mkdir(parents=True)
+    count = int(total * fps)
+    step = count // WORKERS + 1
+    t0 = time.time()
+    with ProcessPoolExecutor(max_workers=WORKERS) as pool:
+        done = sum(pool.map(render_range, [(page.as_uri(), a, min(a + step, count), str(frames)) for a in range(0, count, step)]))
+    if done != count:
+        raise SystemExit(f"화면 {count}장 중 {done}장만 그렸어요.")
+    how = encode(frames, out)
+    shutil.rmtree(frames, ignore_errors=True)
+    return f"화면 {count}장 {time.time() - t0:.0f}초 ({how})"
