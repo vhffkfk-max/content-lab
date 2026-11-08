@@ -3035,411 +3035,6 @@
  ],
  "ideas": [
   {
-   "title": "기름값 25주 연속 하락, 체감은 그대로",
-   "concept": "25주 연속 하락이라는 확인된 사실에서 시작해, 휘발유는 여전히 1,800원대이고 중동 변수가 남았다는 흐름으로 푼다. 평균 가격은 확인 후 기재. (공식: 한 글에 사건 하나)",
-   "why_now": "17:14 KBS가 휘발유 25주 연속 하락, 1,800원대 유지를 보도했다. 앞서 나온 유가, 정유주 급락 이슈와 이어지는 생활 밀착 소재다.",
-   "tag": "생활물가",
-   "sources": [
-    "https://v.daum.net/v/20261107171418445",
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443589"
-   ],
-   "bg": "gas station price sign",
-   "bg_alt": "oil refinery",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "기름값 **25주** 연속\n내렸는데도\n휘발유 1,800원대",
-     "number": "25주",
-     "label": "기름값 연속 하락",
-     "sub": "그래도 휘발유는 여전히 1,800원대"
-    },
-    {
-     "type": "질문형",
-     "title": "25주 내린 기름값\n왜 내 **체감**은\n그대로일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "정유주는 일주일 새\n두 자릿수 **급락**\n휘발유는 1,800원대",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "list"
-   ],
-   "extra": {
-    "list": {
-     "sub": "기름값 25주 연속 하락, 5가지 체크",
-     "count": 5
-    }
-   },
-   "id": "20261107-1901-i1",
-   "created_at": "2026-11-07T19:01:28+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261107-1901-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261107-1901-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261107-1901-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "list",
-     "font": "noto",
-     "path": "20261107-1901-i1/1-list-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "list",
-     "font": "black",
-     "path": "20261107-1901-i1/1-list-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "list",
-     "font": "plex",
-     "path": "20261107-1901-i1/1-list-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "list",
-     "font": "noto",
-     "path": "20261107-1901-i1/2-list-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "list",
-     "font": "black",
-     "path": "20261107-1901-i1/2-list-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "list",
-     "font": "plex",
-     "path": "20261107-1901-i1/2-list-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "list",
-     "font": "noto",
-     "path": "20261107-1901-i1/3-list-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "list",
-     "font": "black",
-     "path": "20261107-1901-i1/3-list-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "list",
-     "font": "plex",
-     "path": "20261107-1901-i1/3-list-plex.jpg"
-    }
-   ]
-  },
-  {
-   "title": "세계 식량가격 4개월 만에 하락, 설탕만 상승",
-   "concept": "10월 세계식량가격지수 하락 속에서 곡물 -4.5%와 설탕 +6.6%를 두 막대로 맞세운다. 국내 장바구니 반영 시차는 확인 필요로 한 줄만 둔다. (공식: 두 쪽 대결을 색 두 개로)",
-   "why_now": "16:01 뉴시스, 동아일보, 헤럴드경제 등 5곳이 다뤘다. 오늘 다른 글감과 겹치지 않고 생활물가 체감이 큰 때다.",
-   "tag": "생활물가",
-   "sources": [
-    "https://www.newsis.com/view/NISX20261107_0003858910",
-    "https://www.donga.com/news/Economy/article/all/20261107/134983538/1"
-   ],
-   "bg": "wheat grain harvest",
-   "bg_alt": "sugar cane",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "세계 식량가격\n4개월 만에 **하락**\n곡물은 -4.5%",
-     "number": "-4.5%",
-     "label": "10월 곡물 가격",
-     "sub": "4개월 만에 내린 식량가격지수"
-    },
-    {
-     "type": "질문형",
-     "title": "국제 가격 내리면\n내 장바구니는\n**언제** 싸질까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "식량가격 4개월 만에\n내렸는데 설탕만\n**6.6%** 올랐다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bars",
-    "editorial"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "10월 변동률(%), 곡물은 하락, 설탕은 상승",
-     "bars": [
-      {
-       "label": "곡물(하락)",
-       "value": 4.5
-      },
-      {
-       "label": "설탕(상승)",
-       "value": 6.6,
-       "hi": true
-      }
-     ]
-    }
-   },
-   "id": "20261107-1901-i2",
-   "created_at": "2026-11-07T19:01:28+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261107-1901-i2/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261107-1901-i2/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261107-1901-i2/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261107-1901-i2/1-editorial-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261107-1901-i2/1-editorial-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261107-1901-i2/1-editorial-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261107-1901-i2/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261107-1901-i2/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261107-1901-i2/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261107-1901-i2/2-editorial-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261107-1901-i2/2-editorial-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261107-1901-i2/2-editorial-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261107-1901-i2/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261107-1901-i2/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261107-1901-i2/3-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261107-1901-i2/3-editorial-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261107-1901-i2/3-editorial-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261107-1901-i2/3-editorial-plex.jpg"
-    }
-   ]
-  },
-  {
-   "title": "포스코 노조, 임금 잠정합의안 부결",
-   "concept": "140일 교섭 끝 합의안이 조합원 51.7% 반대, 311표 차로 부결된 사실을 속보로 전한다. 재협상 국면이며 생산 차질 여부는 확인 안 됨으로 한 줄만 둔다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "18:24 기준 5곳이 다룬 새 소식이다. 140일 교섭 끝에 나온 합의안이 311표 차로 부결됐고, 최근 발송 목록에는 없는 주제다.",
-   "tag": "속보",
-   "sources": [
-    "https://v.daum.net/v/20261107180839487",
-    "https://v.daum.net/v/20261107174734140",
-    "https://v.daum.net/v/20261107182450698"
-   ],
-   "bg": "POSCO steel mill",
-   "bg_alt": "POSCO headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "포스코 노조\n**311표** 차로\n합의안 부결",
-     "number": "311표",
-     "label": "140일 교섭 끝 부결 격차",
-     "sub": "조합원 51.7%가 반대"
-    },
-    {
-     "type": "질문형",
-     "title": "조합원 51.7%가\n거부한 합의안\n이제 **재협상**?",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "140일 걸려 만든\n합의안이 **311표**\n차로 무너졌다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261107-1901-i3",
-   "created_at": "2026-11-07T19:01:28+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261107-1901-i3/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261107-1901-i3/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261107-1901-i3/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261107-1901-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261107-1901-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261107-1901-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261107-1901-i3/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261107-1901-i3/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261107-1901-i3/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261107-1901-i3/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261107-1901-i3/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261107-1901-i3/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
    "title": "미래에셋증권 3.9만 명 정보 유출",
    "concept": "운용, 보험에 이어 증권까지 이어진 유출 소식을 보도 기준으로 짧게 전하고, 내가 지금 할 일(비밀번호 변경, 2단계 인증, 출처 모를 문자와 전화 주의)로 마무리한다. 유출 항목과 규모는 회사 공지 확인으로 남긴다. (공식: 없음)",
    "why_now": "SBS, MBC, 연합인포맥스가 밤사이 잇달아 보도한 새 소식이고 아직 다룬 적이 없다. 고객 본인에게 바로 닿는 이야기다.",
@@ -8732,6 +8327,425 @@
      "form": "paper",
      "font": "gowun",
      "path": "20261108-2107-i3/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "아람코 리야드 사무실 피격, WTI 86달러",
+   "concept": "후티 공격으로 사우디 아람코 사무실이 피해를 입은 사건을 속보로 전하고, 유가가 한국의 환율과 수입 물가로 이어지는 길을 쉬운 말로 한 장 넣는다. 월요일 아침 유가 반응을 다음 변수로 남긴다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "FT와 CNBC가 21:16에 보도한 오늘 밤 새 외부 변수이고, 지금까지 다룬 주제에는 없었다. 닛케이 9.3% 폭락 기사에도 WTI 86달러대가 함께 나왔다. WTI 수치는 원문 확인이 필요하다.",
+   "tag": "속보",
+   "sources": [
+    "https://www.cnbc.com/2026/11/08/saudi-aramco-riyadh-building-attack.html",
+    "https://www.ft.com/content/eeadc13e-b915-4591-ab85-54db81030996?syn-25a6b1a6=1"
+   ],
+   "bg": "Saudi Aramco Riyadh",
+   "bg_alt": "Aramco headquarters building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "아람코 리야드 사무실이\n후티 공격으로 **피격**\nWTI는 86달러대",
+     "number": "86달러",
+     "label": "WTI 유가",
+     "sub": "월요일 아침 유가 반응이 변수"
+    },
+    {
+     "type": "질문형",
+     "title": "아람코 사무실이 맞았다\n내 주유비와 환율은\n이제 **어디로** 갈까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "닛케이 9.3% 폭락에도\n유가는 고공행진 중\nWTI **86달러**대",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261108-2206-i1",
+   "created_at": "2026-11-08T22:06:50+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261108-2206-i1/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261108-2206-i1/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261108-2206-i1/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-2206-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-2206-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-2206-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261108-2206-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261108-2206-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261108-2206-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-2206-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-2206-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-2206-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261108-2206-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261108-2206-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261108-2206-i1/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-2206-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-2206-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-2206-i1/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "반포현대 이어 은마까지 재초환 청구서",
+   "concept": "재건축 초과이익환수금 청구가 반포현대에 이어 은마아파트에서도 현실화됐다는 보도를 정리한다. 재초환이 무엇인지 쉬운 말로 풀고, 조합원에게 입주 전 현금 부담이 생길 수 있다는 점을 짚는다. 정확한 액수와 기준은 원문 확인 후 쓴다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "뉴스웨이가 21:02에 '반포현대 이어 은마까지 수억원대 재초환 청구서 현실화'를 보도했다. 이전에 다룬 적 없는 주제이고, 종부세 공제 논쟁 등 부동산 정책 이슈와 같은 시간대에 이어진다. 보도한 매체가 1곳이라 금액과 부과 기준은 확인이 필요하다.",
+   "tag": "부동산",
+   "sources": [
+    "https://v.daum.net/v/20261108210203157"
+   ],
+   "bg": "Eunma apartment Seoul",
+   "bg_alt": "Seoul apartment complex",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "반포현대에 이어 **은마**까지\n수억 원대 재초환\n청구서가 날아왔다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "내 집 재건축하면\n수억 원을 내야 할까\n**재초환** 청구 현실화",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "집값 올랐다고 좋아했는데\n입주 전에 **수억** 원 청구",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "editorial"
+   ],
+   "extra": {},
+   "id": "20261108-2206-i2",
+   "created_at": "2026-11-08T22:06:50+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-2206-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-2206-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-2206-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261108-2206-i2/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261108-2206-i2/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261108-2206-i2/1-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-2206-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-2206-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-2206-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261108-2206-i2/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261108-2206-i2/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261108-2206-i2/2-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-2206-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-2206-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-2206-i2/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261108-2206-i2/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261108-2206-i2/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261108-2206-i2/3-editorial-plex.jpg"
+    }
+   ]
+  },
+  {
+   "title": "비트코인 하루 10억 달러 청산",
+   "concept": "나스닥 급락에 비트코인이 7만 6,000달러 밑으로 내려가 하루 10억 달러가 청산된 사건을 숫자 한 방으로 보여 준다. 대부분이 롱 포지션이었다는 점과 현물 ETF에서 4억 3,020만 달러가 빠진 점을 한 장씩 놓는다. 청산액과 ETF 유출액은 출처 기사로 다시 확인한다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "위키트리가 나스닥 급락 여파로 비트코인이 7만 6,000달러 밑으로 내려가 하루 10억 달러가 청산됐다고 보도했다. 코인리더스와 토큰포스트 등도 약세장 장기화를 이어서 다뤘다. 최근 보낸 주제에는 이 코인 시세 이야기가 없다.",
+   "tag": "코인",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBvLUJrak5XNkFoemxvNFlTZXBjc3VTa2NiVzhpNlppcEt6eWQybVBjaGlnZVVRZ1pORzR",
+    "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5fQVRnUGFUc09IMm9QZEFVUVlMdFJfZTkwcnNpaDg3RGh5N1pJQnpjeUlTSjNud3BRZGF"
+   ],
+   "bg": "Bitcoin coin",
+   "bg_alt": "Bitcoin price chart",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "나스닥 급락에 비트코인\n하루 **10억 달러** 청산\n7만 6,000달러 아래",
+     "number": "10억 달러",
+     "label": "하루 청산액",
+     "sub": "대부분 오른다에 걸었던 롱 포지션"
+    },
+    {
+     "type": "질문형",
+     "title": "5주 연속 하락 위기\n비트코인은 왜\n주식과 **같이** 흔들릴까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "'오른다'에 걸었더니\n하루 **10억** 달러가\n롱 포지션부터 사라졌다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261108-2206-i3",
+   "created_at": "2026-11-08T22:06:50+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261108-2206-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261108-2206-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261108-2206-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-2206-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-2206-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-2206-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-2206-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-2206-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-2206-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-2206-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-2206-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-2206-i3/3-news-myeongjo.jpg"
     }
    ]
   }
