@@ -2936,371 +2936,6 @@
  ],
  "ideas": [
   {
-   "title": "코스피 급락 후 본전까지 걸린 시간",
-   "concept": "최근 5년 급락 중 10번은 아직 본전을 못 찾았다는 보도를 중심으로, '본전만 오면 판다'는 말과 실제 회복 기간을 대비해 푼다. 세부 회복 일수는 원문 확인 후에만 쓴다. (공식: 한 글에 사건 하나)",
-   "why_now": "코스피가 5000선 아래로 내려오자 뉴시스와 자본시장뉴스가 같은 날 급락 후 회복 기간을 다뤘다. 아직 다루지 않은 각도다.",
-   "tag": "증시",
-   "sources": [
-    "https://v.daum.net/v/20261107150145842",
-    "https://www.newsis.com/view/NISX20261106_0003858348"
-   ],
-   "bg": "Korea stock exchange traders",
-   "bg_alt": "KOSPI screen Seoul",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "최근 5년 급락 중\n**10번**은 아직\n본전 못 찾았다",
-     "number": "10번",
-     "label": "최근 5년 코스피 급락 중",
-     "sub": "아직 본전을 못 찾았다"
-    },
-    {
-     "type": "질문형",
-     "title": "본전만 오면 판다던\n그 **본전**은\n언제 왔나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "급락 뒤 회복 기간은\n매번 **달랐다**\n10번은 아직 그대로",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261107-1606-i1",
-   "created_at": "2026-11-07T16:06:32+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261107-1606-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261107-1606-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261107-1606-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261107-1606-i1/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261107-1606-i1/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261107-1606-i1/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261107-1606-i1/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261107-1606-i1/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261107-1606-i1/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "강남도 아닌데 고액 월세, 노도강, 금관구",
-   "concept": "서울 집값 91주 연속 상승 기록과 함께, 강남 밖 지역에서도 고액 월세 거래가 나온다는 보도를 생활 시선으로 푼다. 구체 금액과 건수는 원문 확인 후에만 쓴다. (공식: 없음)",
-   "why_now": "매일경제, 동아일보, 뉴시스가 다뤘고, 증시 기사 일색인 화면에서 내 동네 얘기라 차별점이 있다.",
-   "tag": "부동산",
-   "sources": [
-    "https://www.donga.com/news/Economy/article/all/20261107/134983272/1",
-    "https://v.daum.net/v/20261107142700172"
-   ],
-   "bg": "Seoul apartment complex",
-   "bg_alt": "Seoul residential street",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "서울 집값 **91주**\n연속 상승 끝에\n월세도 번졌다",
-     "number": "91주",
-     "label": "서울 집값 연속 상승",
-     "sub": "역대 최장 기록"
-    },
-    {
-     "type": "질문형",
-     "title": "강남도 아닌데\n월세 **300만원**\n실화인가",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "강남 얘기인 줄 알았는데\n노원, 금천에서도\n**고액 월세**가 나왔다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "editorial",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261107-1606-i2",
-   "created_at": "2026-11-07T16:06:32+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261107-1606-i2/1-editorial-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261107-1606-i2/1-editorial-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261107-1606-i2/1-editorial-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261107-1606-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261107-1606-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261107-1606-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261107-1606-i2/2-editorial-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261107-1606-i2/2-editorial-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261107-1606-i2/2-editorial-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261107-1606-i2/3-editorial-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261107-1606-i2/3-editorial-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261107-1606-i2/3-editorial-plex.jpg"
-    }
-   ]
-  },
-  {
-   "title": "월가 헤지펀드, 투자 철수와 감원",
-   "concept": "美 증시 급락이 큰손 헤지펀드의 투자 철수와 감원으로 번졌다는 매일경제 보도를 한 사건으로 풀고, 규모는 원문 확인 후에만 쓴다. (공식: 한 글에 사건 하나)",
-   "why_now": "15:36에 나온 새 기사로, 블루웨이브 충격이 증시를 넘어 금융업 일자리로 번졌다는 새 파장이다.",
-   "tag": "미국 증시",
-   "sources": [
-    "https://www.mk.co.kr/news/stock/12201467"
-   ],
-   "bg": "Wall Street trading floor",
-   "bg_alt": "New York Stock Exchange building",
-   "hooks": [
-    {
-     "type": "사건형",
-     "title": "월가 헤지펀드\n투자 **철수**에 이어\n감원까지 시작했다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "주식만 아픈 줄 알았는데\n월가 **감원**은\n왜 시작됐나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "블루웨이브 충격이\n월가 **일자리**까지\n번졌다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261107-1606-i3",
-   "created_at": "2026-11-07T16:06:32+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261107-1606-i3/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261107-1606-i3/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261107-1606-i3/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261107-1606-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261107-1606-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261107-1606-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261107-1606-i3/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261107-1606-i3/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261107-1606-i3/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261107-1606-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261107-1606-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261107-1606-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261107-1606-i3/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261107-1606-i3/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261107-1606-i3/3-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261107-1606-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261107-1606-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261107-1606-i3/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
    "title": "금값 급락에도 중국은 24개월째 매입",
    "concept": "금값이 내려간 시기에도 매입을 멈추지 않은 중국 인민은행 하나만 주인공으로 두고, 24개월 연속과 올해 129t 매입을 장마다 이어 갑니다. 세계은행 전망은 확인된 사실로만 마지막에 붙입니다. (공식: 한 글에 사건 하나)",
    "why_now": "16:39 기준 여러 매체가 24개월 연속 금 매입을 보도했습니다. 금 선물은 11/06 전일 대비 -0.94%였고, 주식 급락장이라 안전자산 관심이 높습니다.",
@@ -8654,6 +8289,408 @@
      "form": "breaking",
      "font": "dohyeon",
      "path": "20261108-1701-i3/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "TSMC 3D D램 생산 검토, 엔비디아 요청설",
+   "concept": "TSMC의 3D D램 검토 보도와 한국일보가 전한 엔비디아 요청설을 짚고, 삼성전자, SK하이닉스 메모리 주도권 해석은 '해석'으로 구분하며 확정된 건 없다는 단서는 마지막 장에 한 번만 둔다 (공식: 없음)",
+   "why_now": "동아일보, 조선비즈에 이어 뉴데일리, 메트로, 한국일보가 후속 보도를 냈다. 코스피 급락 속에 반도체 불안이 커진 시점이다.",
+   "tag": "반도체",
+   "sources": [
+    "https://www.donga.com/news/Economy/article/all/20261108/134985356/1"
+   ],
+   "bg": "Jensen Huang Nvidia",
+   "bg_alt": "TSMC fab building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "엔비디아가 TSMC에\n3D 메모리 생산 요청\n**한국일보** 보도",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "TSMC까지 D램?\n삼전닉스 메모리\n**주도권**은 안전할까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "파운드리 1위가\n**3D D램**까지\n생산을 검토 중",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/08",
+     "headlines": [
+      "TSMC, 3D D램 생산 검토 보도",
+      "한국일보, 엔비디아 요청 보도",
+      "확정 아님, 공식 발표 대기"
+     ]
+    }
+   },
+   "id": "20261108-1806-i1",
+   "created_at": "2026-11-08T18:06:31+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-1806-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-1806-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-1806-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261108-1806-i1/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261108-1806-i1/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261108-1806-i1/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-1806-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-1806-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-1806-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261108-1806-i1/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261108-1806-i1/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261108-1806-i1/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261108-1806-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261108-1806-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261108-1806-i1/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261108-1806-i1/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261108-1806-i1/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261108-1806-i1/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "미래에셋증권 3만5천명, SM엔터 정보 유출",
+   "concept": "미래에셋증권 임직원 3만5천명 정보 유출과 SM엔터 임직원 주민등록번호, 계약서 정보 유출을 한 장씩 속보로 전하고, 유출 범위와 원인은 확인 중이라고 한 줄로 밝힌 뒤 피싱 문자와 전화 주의를 안내한다 (공식: 큰 숫자 하나를 빨간 한 줄로)",
+   "why_now": "17:26 미래에셋증권, 17:31 SM엔터 보도가 연달아 나왔다. 앞서 보낸 주제에는 없던 새 소식이다.",
+   "tag": "속보",
+   "sources": [
+    "https://www.mk.co.kr/news/stock/12201813",
+    "https://biz.chosun.com/topics/topics_social/2026/11/08/2GCLXHKXQZHE5LIPJY6NG6RMGY/"
+   ],
+   "bg": "Mirae Asset Securities",
+   "bg_alt": "SM Entertainment building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "미래에셋증권\n임직원 **3만5천명**\n정보가 유출됐어요",
+     "number": "3만5천명",
+     "label": "미래에셋증권 임직원 정보 유출",
+     "sub": "유출 범위와 원인은 확인 중"
+    },
+    {
+     "type": "질문형",
+     "title": "증권사와 엔터사\n연달아 유출 보도\n**내 정보**는 괜찮을까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "증권사에 이어\n**SM엔터**도 유출\n주민번호, 계약서까지",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261108-1806-i2",
+   "created_at": "2026-11-08T18:06:31+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261108-1806-i2/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261108-1806-i2/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261108-1806-i2/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261108-1806-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261108-1806-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261108-1806-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261108-1806-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261108-1806-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261108-1806-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261108-1806-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261108-1806-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261108-1806-i2/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "코스피 11% 빠진 주, 파킹 ETF에 2.2조",
+   "concept": "주식이 빠진 한 주 동안 잠깐 돈을 맡겨 두는 파킹 ETF에 한 달 새 2조 2천억 원이 들어왔고 ETF 전체 시총은 400조 아래로 내려간 대비를 보여 준다. 특정 상품 추천은 하지 않고 투자 권유가 아니라는 단서를 한 줄 둔다 (공식: 큰 숫자 하나를 빨간 한 줄로)",
+   "why_now": "15:25 한 주 새 코스피 11% 넘게 하락 보도, 17:20 매일경제가 파킹 ETF 2조 2천억 유입을 전했고 17:26에는 ETF 시총이 반년 만에 400조 아래로 내려갔다는 기사도 나왔다.",
+   "tag": "증시",
+   "sources": [
+    "https://www.mk.co.kr/news/business/12201802",
+    "https://www.mk.co.kr/news/stock/12201811",
+    "https://www.fnnews.com/news/202611081514308869"
+   ],
+   "bg": "Korea Exchange KRX",
+   "bg_alt": "KOSPI trading screen",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "코스피 11% 하락 주간\n한 달 새 파킹 ETF에\n**2조 2천억** 유입",
+     "number": "2조 2천억",
+     "label": "한 달 새 파킹 ETF 유입",
+     "sub": "코스피 한 주 11% 넘게 하락"
+    },
+    {
+     "type": "질문형",
+     "title": "주식이 빠질 때\n돈이 몰린 곳은\n**파킹 ETF**?",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "ETF 전체는 400조 아래\n반년 만에 줄었는데\n**파킹 ETF**는 유입",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/08",
+     "headlines": [
+      "코스피 한 주 11% 넘게 하락",
+      "파킹 ETF 한 달 2.2조 유입",
+      "ETF 시총 반년 만에 400조 아래"
+     ]
+    }
+   },
+   "id": "20261108-1806-i3",
+   "created_at": "2026-11-08T18:06:31+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261108-1806-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261108-1806-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261108-1806-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261108-1806-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261108-1806-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261108-1806-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261108-1806-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261108-1806-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261108-1806-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261108-1806-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261108-1806-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261108-1806-i3/3-paper-gowun.jpg"
     }
    ]
   }
