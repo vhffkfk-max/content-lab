@@ -41,6 +41,7 @@
 
 .vl-tabs{display:flex;gap:6px;margin:0 0 12px}.vl-tab{padding:6px 14px;border-radius:999px;border:1px solid var(--border);color:var(--muted);font-size:13px}.vl-tab.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
 .ch-pulse{margin:0 0 12px;padding:10px 12px;border:1px solid var(--border);border-radius:10px}.ch-prow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:14px;margin-bottom:4px}.ch-dot{width:10px;height:10px;border-radius:50%;background:#aaa;flex:none}.ch-dot.green{background:#1F8A5B}.ch-dot.yellow{background:#F5A623}.ch-dot.red{background:#E5484D}
+.fb-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;margin:8px 0}.fb-cmp{display:flex;flex-direction:column;gap:3px;padding:8px;border:1px solid var(--border);border-radius:8px;font-size:14px}.fb-wrap{overflow-x:auto}.fb-table{width:100%;border-collapse:collapse;font-size:13px}.fb-table th,.fb-table td{padding:5px 6px;border-bottom:1px solid var(--border);text-align:left}.fb-table td:nth-child(2){min-width:180px}
 .ch-step{margin:16px 0 8px;font-size:14px}.ch-topics{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}.ch-chip{all:unset;cursor:pointer;padding:6px 10px;border:1px solid var(--border);border-radius:999px;font-size:13px}.ch-chip[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
 .vl-hot>input{width:100%;box-sizing:border-box;min-height:36px;padding:0 12px;border-radius:8px;border:1px solid var(--border);margin-top:4px}
 .ch-styles{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}.ch-styles.off{opacity:.45}.ch-style{all:unset;cursor:pointer;display:flex;flex-direction:column;gap:3px;padding:8px;border:1px solid var(--border);border-radius:10px;font-size:13px}.ch-style span{font-size:12px;color:var(--muted)}.ch-style[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}.ch-style:focus-visible,.ch-chip:focus-visible{outline:2px solid var(--accent)}
@@ -603,6 +604,12 @@ ul.gd-card{padding-left:36px;line-height:1.8}
         <li><button type="button" data-ch="c-asset"><i class="dot" style="background:#1F8A5B"></i>자산백배</button></li>
         <li><button type="button" data-ch="c-chart"><i class="dot" style="background:#3E63DD"></i>차트덕후</button></li>
         <li><button type="button" data-ch="c-malhee"><i class="dot" style="background:#F5A623"></i>말희아빠</button></li>
+        <li class="nav-label" style="margin-top:10px">내 채널 피드백</li>
+        <li><button type="button" data-ch="fb-bull"><i class="dot" style="background:#8B5E34"></i>황소개미</button></li>
+        <li><button type="button" data-ch="fb-hot"><i class="dot" style="background:#E5484D"></i>핫코노미</button></li>
+        <li><button type="button" data-ch="fb-asset"><i class="dot" style="background:#1F8A5B"></i>자산백배</button></li>
+        <li><button type="button" data-ch="fb-chart"><i class="dot" style="background:#3E63DD"></i>차트덕후</button></li>
+        <li><button type="button" data-ch="fb-malhee"><i class="dot" style="background:#F5A623"></i>말희아빠</button></li>
         <li class="nav-label" style="margin-top:10px">만들기</li>
         <li data-nav-key="acc-pages"><a href="accounts/"><i class="dot" style="background:var(--text)"></i>계정별 콘텐츠</a></li>
         <li><button type="button" data-ch="thlab"><i class="dot" style="background:var(--ch-threads)"></i>쓰레드 연구소</button>
@@ -1125,6 +1132,26 @@ ul.gd-card{padding-left:36px;line-height:1.8}
       <div class="view" data-view="c-malhee" hidden>
         <div class="title-row"><div><h1>말희아빠</h1><p>이 채널의 인스타그램, 쓰레드, 영상을 여기서 만들어요. 올리기 전에 꼭 확인해 주세요.</p></div></div>
         <div id="c-malhee-root"></div>
+      </div>
+      <div class="view" data-view="fb-bull" hidden>
+        <div class="title-row"><div><h1>황소개미 피드백</h1><p>내 실제 계정을 크롤링한 결과예요.</p></div></div>
+        <div id="fb-bull-root"></div>
+      </div>
+      <div class="view" data-view="fb-hot" hidden>
+        <div class="title-row"><div><h1>핫코노미 피드백</h1><p>내 실제 계정을 크롤링한 결과예요.</p></div></div>
+        <div id="fb-hot-root"></div>
+      </div>
+      <div class="view" data-view="fb-asset" hidden>
+        <div class="title-row"><div><h1>자산백배 피드백</h1><p>내 실제 계정을 크롤링한 결과예요.</p></div></div>
+        <div id="fb-asset-root"></div>
+      </div>
+      <div class="view" data-view="fb-chart" hidden>
+        <div class="title-row"><div><h1>차트덕후 피드백</h1><p>내 실제 계정을 크롤링한 결과예요.</p></div></div>
+        <div id="fb-chart-root"></div>
+      </div>
+      <div class="view" data-view="fb-malhee" hidden>
+        <div class="title-row"><div><h1>말희아빠 피드백</h1><p>내 실제 계정을 크롤링한 결과예요.</p></div></div>
+        <div id="fb-malhee-root"></div>
       </div>
       <div class="view" data-view="video" hidden>
         <div class="title-row"><div><h1>영상 연구소</h1><p>대본과 컷 이미지를 먼저 보고, 고친 뒤 버튼을 눌렀을 때만 영상을 만들어요. 새 보드는 <b>핫코노미 v2</b>(상위 릴스 벤치마크) 형식으로 만들어지고, 보드마다 다른 형식으로 바꿀 수 있어요. 플랫폼에는 올리지 않아요.</p></div></div>
@@ -2035,27 +2062,39 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     sync();
     return box;
   }
-  function chanPulse(ch) {
-    const box = el('div', 'ch-pulse');
+  const fbKey = ch => ch.replace('fb-', 'c-');
+  function fbDraw(ch) {
+    const root = document.getElementById(ch + '-root'); if (!root) return;
+    root.replaceChildren(el('p', 'sub', '불러오는 중…'));
     chPulseP = chPulseP || chJson('channel_pulse.json');
     chPulseP.then(d => {
-      const c = d && d.channels && d.channels[ch];
-      if (!c) { box.append(el('p', 'sub', '발행 체크 집계를 기다리는 중이에요.')); return; }
-      const when = x => { const t = new Date(x * 1000); return `${t.getMonth() + 1}/${t.getDate()}`; }, LABEL = { instagram: '인스타그램', threads: '쓰레드' };
+      const c = d && d.channels && d.channels[fbKey(ch)];
+      if (!c) return root.replaceChildren(el('p', 'sub', '집계를 기다리는 중이에요.'));
+      const when = x => { const t = new Date(x * 1000); return `${t.getMonth() + 1}/${t.getDate()}`; }, n = x => x == null ? '-' : x.toLocaleString();
+      const LABEL = { instagram: '인스타그램', threads: '쓰레드' }, STATE = { green: '목표 달성', yellow: '조금 부족', red: '많이 부족' };
+      const parts = [];
       Object.entries(c).forEach(([p, v]) => {
-        const row = el('div', 'ch-prow'); row.append(el('i', 'ch-dot ' + v.state), el('b', '', LABEL[p]));
-        if (v.state === 'none') row.append(el('span', 'sub', '계정 주소 미설정'));
-        else if (v.state === 'wait') row.append(el('span', 'sub', `@${v.handle} 첫 크롤링 대기 중`));
-        else {
-          const r = (v.recent || [])[0];
-          row.append(el('span', '', `최근 ${v.last_post ? when(v.last_post) : '없음'} · 7일 ${v.d7}/${v.target_7}건 · 30일 ${v.d30}건`));
-          if (r) row.append(el('span', 'sub', `최근 글 조회 ${r.views == null ? '-' : r.views.toLocaleString()} · 좋아요 ${r.likes == null ? '-' : r.likes.toLocaleString()}`));
+        const box = el('section', 'ch-pulse'), head = el('div', 'ch-prow'); head.append(el('i', 'ch-dot ' + v.state), el('b', '', LABEL[p]));
+        box.append(head);
+        if (v.state === 'none') { head.append(el('span', 'sub', '계정 주소 필요')); parts.push(box); return; }
+        if (v.state === 'wait') { head.append(el('span', 'sub', `@${v.handle} 첫 크롤링 대기 중`)); parts.push(box); return; }
+        head.append(el('span', '', `@${v.handle} · ${STATE[v.state]}`));
+        box.append(el('p', '', `최근 발행 ${v.last_post ? when(v.last_post) : '없음'} · 최근 7일 ${v.d7}건 (목표 ${v.target_7}건) · 최근 30일 ${v.d30}건`));
+        const cmp = (t, x) => { const b = el('div', 'fb-cmp'); b.append(el('b', '', t)); const a = el('a', '', x.text || '글 보기'); a.href = x.url; a.target = '_blank'; a.rel = 'noopener'; b.append(a, el('span', 'sub', `조회 ${n(x.views)} · 좋아요 ${n(x.likes)} · 댓글 ${n(x.comments)}`)); return b; };
+        if (v.best) { const g = el('div', 'fb-grid'); g.append(cmp('잘 된 글', v.best), cmp('안 된 글', v.worst)); box.append(g); }
+        else box.append(el('p', 'sub', '24시간 지난 글이 2개 이상 쌓이면 잘 된 글과 안 된 글을 비교해요.'));
+        if (v.note) { [['잘 된 이유', v.note.why_good], ['안 된 이유', v.note.why_bad], ['다음에 할 것', v.note.next]].forEach(([a, b]) => { const r = el('p'); r.append(el('b', '', a + ' '), b); box.append(r); }); box.append(el('p', 'sub', '이유는 글 두 개를 비교한 AI 추정이에요.')); }
+        if ((v.recent || []).length) {
+          const wrap = el('div', 'fb-wrap'), tb = el('table', 'fb-table'), hr = el('tr');
+          ['날짜', '글', '조회', '좋아요', '댓글'].forEach(x => hr.append(el('th', '', x))); tb.append(hr);
+          v.recent.forEach(x => { const tr = el('tr'), a = el('a', '', x.text || '글 보기'), td = el('td'); a.href = x.url; a.target = '_blank'; a.rel = 'noopener'; td.append(a); tr.append(el('td', '', when(x.at)), td, el('td', '', n(x.views)), el('td', '', n(x.likes)), el('td', '', n(x.comments))); tb.append(tr); });
+          wrap.append(tb); box.append(wrap);
         }
-        box.append(row);
+        parts.push(box);
       });
-      box.append(el('p', 'sub', `갱신 ${String(d.updated).slice(5, 16).replace('T', ' ')} · 크롤링으로 잡힌 글만 세요`));
+      parts.push(el('p', 'sub', `갱신 ${String(d.updated).slice(5, 16).replace('T', ' ')} · 크롤링으로 잡힌 글만 세요. 목표는 임의 값이에요.`));
+      root.replaceChildren(...parts);
     });
-    return box;
   }
   function chanThread(c, x) {
     if (x.lab) {
@@ -2078,7 +2117,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     });
     const it = c[cur];
     panel.append(it.wait ? chanWait(it.wait) : cur === 'thread' ? chanThread(c, it) : chanFlow(c, cur, it));
-    root.replaceChildren(chanPulse(ch), bar, panel);
+    root.replaceChildren(bar, panel);
   }
   async function vlStart(force) {
     if (vl.started && !force) { vlDraw(); return; }
@@ -4353,7 +4392,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
   document.getElementById('side-hide').addEventListener('click', () => setSide(true));
   document.getElementById('side-show').addEventListener('click', () => setSide(false));
   if (store.get('side_hidden') === '1') setSide(true);
-  const NAMES = { thlab: '쓰레드 연구소', econ: '경제 미디어 추천', guide: '사용 가이드', calendar: '발행 캘린더', video: '영상 연구소', 'c-bull': '황소개미', 'c-hot': '핫코노미', 'c-asset': '자산백배', 'c-chart': '차트덕후', 'c-malhee': '말희아빠', home: '오늘 할 일', instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드', x: 'X · 트루스소셜', telegram: '텔레그램 · 말희아빠', traders: '텔레그램 · 트레이더스', feedback: '후기·기록', growth: '마케팅 코치', viral: '뜬 글 공식', usage: '활용 체크' };
+  const NAMES = { 'fb-bull': '황소개미 피드백', 'fb-hot': '핫코노미 피드백', 'fb-asset': '자산백배 피드백', 'fb-chart': '차트덕후 피드백', 'fb-malhee': '말희아빠 피드백', thlab: '쓰레드 연구소', econ: '경제 미디어 추천', guide: '사용 가이드', calendar: '발행 캘린더', video: '영상 연구소', 'c-bull': '황소개미', 'c-hot': '핫코노미', 'c-asset': '자산백배', 'c-chart': '차트덕후', 'c-malhee': '말희아빠', home: '오늘 할 일', instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드', x: 'X · 트루스소셜', telegram: '텔레그램 · 말희아빠', traders: '텔레그램 · 트레이더스', feedback: '후기·기록', growth: '마케팅 코치', viral: '뜬 글 공식', usage: '활용 체크' };
   // ── 폰: 채널을 열면 '전체' 대신 한 칸만 (이 기기에서 많이 본 칸, 없으면 첫 칸). 위 탭으로 다른 칸·전체로 이동 ──
   const isPhone = () => matchMedia('(max-width:860px)').matches;
   function phoneFolder(ch) {
@@ -4387,6 +4426,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     foldLongText(document.querySelector(`.view[data-view="${ch}"]`));
     if (ch === 'video') vlStart();
     if (CHANNELS[ch]) chanDraw(ch);
+    if (ch.startsWith('fb-')) fbDraw(ch);
     unfocus();
     spy();
   }
@@ -4481,6 +4521,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
   const NAV_GROUPS = [
     ['대시보드', ['home', 'guide']],
     ['컨텐츠 바로 만들기', ['c-bull', 'c-hot', 'c-asset', 'c-chart', 'c-malhee']],
+    ['내 채널 피드백', ['fb-bull', 'fb-hot', 'fb-asset', 'fb-chart', 'fb-malhee']],
     ['쓰레드 연구소', ['thlab', 'threads']],
     ['트렌드 발견', ['google', 'foreign', 'x', 'youtube']],
     ['계정 분석', ['accounts', 'econ']],
