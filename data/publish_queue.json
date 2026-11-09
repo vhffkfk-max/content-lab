@@ -3035,408 +3035,6 @@
  ],
  "ideas": [
   {
-   "title": "TSMC 3D D램 생산 검토, 엔비디아 요청설",
-   "concept": "TSMC의 3D D램 검토 보도와 한국일보가 전한 엔비디아 요청설을 짚고, 삼성전자, SK하이닉스 메모리 주도권 해석은 '해석'으로 구분하며 확정된 건 없다는 단서는 마지막 장에 한 번만 둔다 (공식: 없음)",
-   "why_now": "동아일보, 조선비즈에 이어 뉴데일리, 메트로, 한국일보가 후속 보도를 냈다. 코스피 급락 속에 반도체 불안이 커진 시점이다.",
-   "tag": "반도체",
-   "sources": [
-    "https://www.donga.com/news/Economy/article/all/20261108/134985356/1"
-   ],
-   "bg": "Jensen Huang Nvidia",
-   "bg_alt": "TSMC fab building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "엔비디아가 TSMC에\n3D 메모리 생산 요청\n**한국일보** 보도",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "TSMC까지 D램?\n삼전닉스 메모리\n**주도권**은 안전할까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "파운드리 1위가\n**3D D램**까지\n생산을 검토 중",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/08",
-     "headlines": [
-      "TSMC, 3D D램 생산 검토 보도",
-      "한국일보, 엔비디아 요청 보도",
-      "확정 아님, 공식 발표 대기"
-     ]
-    }
-   },
-   "id": "20261108-1806-i1",
-   "created_at": "2026-11-08T18:06:31+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261108-1806-i1/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261108-1806-i1/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261108-1806-i1/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261108-1806-i1/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261108-1806-i1/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261108-1806-i1/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261108-1806-i1/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261108-1806-i1/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261108-1806-i1/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261108-1806-i1/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261108-1806-i1/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261108-1806-i1/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261108-1806-i1/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261108-1806-i1/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261108-1806-i1/3-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261108-1806-i1/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261108-1806-i1/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261108-1806-i1/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "미래에셋증권 3만5천명, SM엔터 정보 유출",
-   "concept": "미래에셋증권 임직원 3만5천명 정보 유출과 SM엔터 임직원 주민등록번호, 계약서 정보 유출을 한 장씩 속보로 전하고, 유출 범위와 원인은 확인 중이라고 한 줄로 밝힌 뒤 피싱 문자와 전화 주의를 안내한다 (공식: 큰 숫자 하나를 빨간 한 줄로)",
-   "why_now": "17:26 미래에셋증권, 17:31 SM엔터 보도가 연달아 나왔다. 앞서 보낸 주제에는 없던 새 소식이다.",
-   "tag": "속보",
-   "sources": [
-    "https://www.mk.co.kr/news/stock/12201813",
-    "https://biz.chosun.com/topics/topics_social/2026/11/08/2GCLXHKXQZHE5LIPJY6NG6RMGY/"
-   ],
-   "bg": "Mirae Asset Securities",
-   "bg_alt": "SM Entertainment building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "미래에셋증권\n임직원 **3만5천명**\n정보가 유출됐어요",
-     "number": "3만5천명",
-     "label": "미래에셋증권 임직원 정보 유출",
-     "sub": "유출 범위와 원인은 확인 중"
-    },
-    {
-     "type": "질문형",
-     "title": "증권사와 엔터사\n연달아 유출 보도\n**내 정보**는 괜찮을까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "증권사에 이어\n**SM엔터**도 유출\n주민번호, 계약서까지",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261108-1806-i2",
-   "created_at": "2026-11-08T18:06:31+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261108-1806-i2/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261108-1806-i2/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261108-1806-i2/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261108-1806-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261108-1806-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261108-1806-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261108-1806-i2/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261108-1806-i2/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261108-1806-i2/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261108-1806-i2/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261108-1806-i2/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261108-1806-i2/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "코스피 11% 빠진 주, 파킹 ETF에 2.2조",
-   "concept": "주식이 빠진 한 주 동안 잠깐 돈을 맡겨 두는 파킹 ETF에 한 달 새 2조 2천억 원이 들어왔고 ETF 전체 시총은 400조 아래로 내려간 대비를 보여 준다. 특정 상품 추천은 하지 않고 투자 권유가 아니라는 단서를 한 줄 둔다 (공식: 큰 숫자 하나를 빨간 한 줄로)",
-   "why_now": "15:25 한 주 새 코스피 11% 넘게 하락 보도, 17:20 매일경제가 파킹 ETF 2조 2천억 유입을 전했고 17:26에는 ETF 시총이 반년 만에 400조 아래로 내려갔다는 기사도 나왔다.",
-   "tag": "증시",
-   "sources": [
-    "https://www.mk.co.kr/news/business/12201802",
-    "https://www.mk.co.kr/news/stock/12201811",
-    "https://www.fnnews.com/news/202611081514308869"
-   ],
-   "bg": "Korea Exchange KRX",
-   "bg_alt": "KOSPI trading screen",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "코스피 11% 하락 주간\n한 달 새 파킹 ETF에\n**2조 2천억** 유입",
-     "number": "2조 2천억",
-     "label": "한 달 새 파킹 ETF 유입",
-     "sub": "코스피 한 주 11% 넘게 하락"
-    },
-    {
-     "type": "질문형",
-     "title": "주식이 빠질 때\n돈이 몰린 곳은\n**파킹 ETF**?",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "ETF 전체는 400조 아래\n반년 만에 줄었는데\n**파킹 ETF**는 유입",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/08",
-     "headlines": [
-      "코스피 한 주 11% 넘게 하락",
-      "파킹 ETF 한 달 2.2조 유입",
-      "ETF 시총 반년 만에 400조 아래"
-     ]
-    }
-   },
-   "id": "20261108-1806-i3",
-   "created_at": "2026-11-08T18:06:31+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261108-1806-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261108-1806-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261108-1806-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261108-1806-i3/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261108-1806-i3/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261108-1806-i3/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261108-1806-i3/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261108-1806-i3/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261108-1806-i3/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261108-1806-i3/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261108-1806-i3/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261108-1806-i3/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "이자 갚을 능력, 대기업 19배 중기 3배",
    "concept": "같은 금리 부담 속에서 이자 갚을 능력이 19배와 3배로 갈린 'K자' 격차를 두 숫자 대결로 풀고, 내 회사는 어느 쪽인지 댓글로 묻는다. 정확한 기준(이자보상배율 등)은 원문 확인 후 표기. (공식: 두 쪽 대결을 색 두 개로)",
    "why_now": "19:05 헤럴드경제가 보도했고, 월급 줄 돈을 빌리는 기업이 늘었다는 한국경제 보도와 이어진다. 금리 인상 우려가 커진 시기라 공감도가 크다.",
@@ -8398,6 +7996,310 @@
      "form": "bignum",
      "font": "dohyeon",
      "path": "20261109-1701-i3/1-bignum-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "삼성, 현대차 피지컬 AI로 원팀",
+   "concept": "이재용, 정의선 부부동반 회동과 공동 TF 보도를 사건으로 세우고, 피지컬 AI를 나오는 자리에서 한 문장으로 풀어 쓴다. 배터리 협업이 먼저 거론됐다는 점과 협력 범위가 어디까지 넓어질지를 끝 장의 관전 포인트로 둔다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "17시대 기사가 동아일보, 연합인포맥스 등 7곳에서 나왔고 한국경제는 공동 TF 구성을 다뤘다. 쓰레드에서도 피지컬 AI 글이 시간당 조회 1148로 크고 있다.",
+   "tag": "산업",
+   "sources": [
+    "https://www.donga.com/news/Economy/article/all/20261109/134993345/1",
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443806",
+    "https://www.hankyung.com/article/2026110958771"
+   ],
+   "bg": "Lee Jae-yong Chung Eui-sun",
+   "bg_alt": "Samsung Hyundai headquarters",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "이재용, 정의선\n부부동반 첫 기업 교류\n**피지컬 AI**로 손잡다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "삼성과 현대차, 이번엔\n왜 **원팀**이 됐나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "배터리 협업이 먼저\n키워드는 **피지컬 AI**\n삼성, 현대차 회동",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/09",
+     "headlines": [
+      "이재용, 정의선 부부동반 회동",
+      "키워드는 피지컬 AI",
+      "배터리 협업이 먼저 거론"
+     ]
+    }
+   },
+   "id": "20261109-1807-i1",
+   "created_at": "2026-11-09T18:07:16+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261109-1807-i1/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261109-1807-i1/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261109-1807-i1/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261109-1807-i1/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261109-1807-i1/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261109-1807-i1/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261109-1807-i1/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261109-1807-i1/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261109-1807-i1/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "고정금리가 변동보다 싸진 주담대",
+   "concept": "보통은 변동형이 더 싼데 지금은 거꾸로라는 전후 차이를 표지에 두고, 채권금리 상승(국고채 3년물 3.639%)이 배경이라는 점을 쉬운 말로 푼다. 같은 날 기준으로 나란히 비교하라는 행동 팁으로 마무리하고 은행별 실제 차이는 [확인]으로 남긴다. (공식: 전후 낙차 한 줄 표지)",
+   "why_now": "'고정형이 더 싸다'는 연합뉴스 기사와 '변동형이 5년 고정보다 높다'는 한국경제 기사가 오늘 나왔다. 국고채 3년물이 3.639%까지 오른 날이라 금리 관심이 높다.",
+   "tag": "대출",
+   "sources": [
+    "https://www.yna.co.kr/view/AKR20261109131651008",
+    "https://www.hankyung.com/article/2026110958531"
+   ],
+   "bg": "mortgage loan bank",
+   "bg_alt": "apartment complex Korea",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "국고채 **3.639%**에\n고정 주담대가\n변동보다 싸졌다",
+     "number": "3.639%",
+     "label": "국고채 3년물, 11/09",
+     "sub": "고정형 주담대가 변동형보다 싸졌어요"
+    },
+    {
+     "type": "질문형",
+     "title": "고정형과 변동형\n오늘 어느 쪽이\n**더 싼지** 아세요",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "원래 변동이 싼데\n지금은 **거꾸로**\n주담대 금리 역전",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "editorial",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261109-1807-i2",
+   "created_at": "2026-11-09T18:07:16+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261109-1807-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261109-1807-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261109-1807-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-1807-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-1807-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-1807-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-1807-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-1807-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-1807-i2/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "알테오젠 15%대 급락, 코스피는 5000선 방어",
+   "concept": "코스피가 0.81% 내린 5018.85로 마감한 날 바이오 대형주 알테오젠이 15%대 빠졌다는 두 사실을 나란히 보여 준다. 이유로 거론된 미국 IRA 약가 규정과 유럽 특허 불확실성은 보도 내용으로만 다루고, 업종 확산과 회사 해명 여부를 끝 장에 둔다. (공식: A인데 B, 어긋난 두 사실 제목)",
+   "why_now": "16:40 보도로, 코스피가 5000선을 간신히 지킨 날 바이오 대형주가 크게 빠졌다. 오늘 아직 다루지 않은 종목 이슈다.",
+   "tag": "증시",
+   "sources": [
+    "https://kr.investing.com/news/stock-market-news/article-2165499",
+    "https://kr.investing.com/news/stock-market-news/article-2165502"
+   ],
+   "bg": "Alteogen",
+   "bg_alt": "biotech laboratory",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "바이오 대형주 알테오젠\n하루 **15%대** 급락",
+     "number": "-15%대",
+     "label": "알테오젠, 11/09",
+     "sub": "코스피는 0.81% 내린 5018.85에 마감"
+    },
+    {
+     "type": "질문형",
+     "title": "미국 약가 규정과\n유럽 특허 불확실성\n알테오젠 **왜** 급락",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "코스피가 5000선\n간신히 지킨 날\n알테오젠은 **-15%**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "breaking"
+   ],
+   "extra": {},
+   "id": "20261109-1807-i3",
+   "created_at": "2026-11-09T18:07:16+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261109-1807-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261109-1807-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261109-1807-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-1807-i3/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-1807-i3/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-1807-i3/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-1807-i3/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-1807-i3/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-1807-i3/3-breaking-dohyeon.jpg"
     }
    ]
   }
