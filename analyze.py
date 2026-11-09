@@ -410,7 +410,11 @@ def foreign_section(posts, now):
     fo14 = [p for p in ok if p["region"] == FOREIGN and p["dt"] >= d14]
     fo_prev = [p for p in ok if p["region"] == FOREIGN and d28 <= p["dt"] < d14]
     kr14 = [p for p in ok if p["region"] == KR and p["dt"] >= d14]
-    hot = sorted((p for p in fo14 if (p["outlier"] or 0) >= 1.5), key=lambda p: p["outlier"], reverse=True)[:30]
+    hot, per_acc = [], Counter()   # 한 계정이 목록을 다 차지하지 않게 계정당 최대 5개
+    for p in sorted((p for p in fo14 if (p["outlier"] or 0) >= 1.5), key=lambda p: p["outlier"], reverse=True):
+        if per_acc[p["username"]] < 5 and len(hot) < 30:
+            per_acc[p["username"]] += 1
+            hot.append(p)
     full = {p["id"]: (p["caption"] or "").strip()[:600] for p in hot}
     hot_rows = [dict(post_brief(p), rank=i, id=p["id"], topics=", ".join(p["topics"]), full=full[p["id"]])
                 for i, p in enumerate(hot, 1)]
