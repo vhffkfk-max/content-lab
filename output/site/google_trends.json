@@ -1,21 +1,12 @@
 [
  {
   "geo": "KR",
-  "term": "김부선",
-  "traffic": 10000,
-  "topics": "",
-  "econ": false,
-  "news_title": "김부선 \"월 300만원 '무상 지원' 소송서 승리…2억 다 안 갚아도 된다\"",
-  "news_link": "https://www.news1.kr/society/general-society/6347578"
- },
- {
-  "geo": "KR",
-  "term": "스타틴",
+  "term": "빅테크",
   "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "동맥경화성 심혈관질환 환자에 ‘이 약’ 추가했더니···‘나쁜 콜레스테롤’ 더 빨리 줄이는 데 효과",
-  "news_link": "https://www.khan.co.kr/article/202611091453001"
+  "topics": "AI·반도체, 빅테크",
+  "econ": true,
+  "news_title": "한국 주요 오픈 모델의 프로덕션 배포 가속하는 NVIDIA Dynamo",
+  "news_link": "https://blogs.nvidia.co.kr/blog/nvidia-dynamo-korea-open-models/"
  },
  {
   "geo": "KR",
@@ -28,12 +19,12 @@
  },
  {
   "geo": "KR",
-  "term": "가상자산",
-  "traffic": 1000,
-  "topics": "환율·달러, 비트코인, ETF·지수투자",
-  "econ": true,
-  "news_title": "비트코인, 규제 불확실성·ETF 자금 유출에 7만4천달러로 하락",
-  "news_link": "https://kr.investing.com/news/cryptocurrency-news/article-2165447"
+  "term": "이지혜",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "섬뜩한 얼굴로 \"왜 말 안 들어\"…'아동학대' 논란 터졌다",
+  "news_link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008836764"
  },
  {
   "geo": "KR",
@@ -46,6 +37,15 @@
  },
  {
   "geo": "KR",
+  "term": "착륙",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "[영상] \"세계 최고도 기록\"…印 수송기, 해발 4천154ｍ 비행장 착륙",
+  "news_link": "https://www.yna.co.kr/view/AKR20261109127800704"
+ },
+ {
+  "geo": "KR",
   "term": "해커",
   "traffic": 1000,
   "topics": "",
@@ -55,39 +55,75 @@
  },
  {
   "geo": "KR",
-  "term": "착륙",
+  "term": "박승규",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "[영상] \"세계 최고도 기록\"…印 수송기, 해발 4천154ｍ 비행장 착륙",
-  "news_link": "https://www.yna.co.kr/view/AKR20261109127800704"
- },
- {
-  "geo": "KR",
-  "term": "nepal premier league",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Pokhara Avengers beat Karnali Yaks by 63 runs for first NPL win",
-  "news_link": "https://english.nepalnews.com/s/sports/pokhara-avengers-beat-karnali-yaks-by-63-runs-for-first-npl-win/"
- },
- {
-  "geo": "KR",
-  "term": "이지혜",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "이지혜, 샵 서지영과 부둥켜안고 울며 화해..\"딸들 앞에서 '스위티' 불러\"[핫피플]",
-  "news_link": "https://biz.chosun.com/entertainment/enter_general/2026/11/09/HAZDOOLCGQ2GMNLDMQ2WKM3FMI/"
+  "news_title": "무명서 가을 스타로… 박승규 “우승 반지로 청혼할래요”",
+  "news_link": "https://www.munhwa.com/article/11629827"
  },
  {
   "geo": "KR",
   "term": "변호사",
-  "traffic": 100,
+  "traffic": 200,
   "topics": "",
   "econ": false,
   "news_title": "대륙아주·린, ‘디앤엘(D&L)’로 새출발… 국내 6위 로펌으로",
   "news_link": "https://www.lawtimes.co.kr/news/articleView.html?idxno=229091"
+ },
+ {
+  "geo": "KR",
+  "term": "아시아나항공",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "아시아나항공 주가 170원 하락 후 장마감",
+  "news_link": "https://m.anewsa.com/article_sub3.php?number=3215988&type=&mobile="
+ },
+ {
+  "geo": "KR",
+  "term": "캐시워크 정답",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "[단독] 캐시워크 돈버는퀴즈 정답 11월 9일",
+  "news_link": "https://www.bntnews.co.kr/article/view/bnt202611090065"
+ },
+ {
+  "geo": "US",
+  "term": "what did dave chappelle say about charlie kirk",
+  "traffic": 10000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Dave Chappelle slammed for Charlie Kirk joke",
+  "news_link": "https://www.foxnews.com/video/6408131460112"
+ },
+ {
+  "geo": "US",
+  "term": "jessie bates",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Sources - Jaguars bolster secondary, land Jessie Bates III in trade with Falcons",
+  "news_link": "https://www.espn.com/nfl/story/_/id/50432277/sources-jaguars-get-jessie-bates-iii-trade-falcons"
+ },
+ {
+  "geo": "US",
+  "term": "nfl trade deadline",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "2026 NFL trade deadline: Proposing deals for Tony Pollard, Riq Woolen, others",
+  "news_link": "https://www.espn.com/nfl/story/_/id/50389499/2026-nfl-trade-deadline-offers-experts-taylor-woolen-pollard"
+ },
+ {
+  "geo": "US",
+  "term": "when is gta 6 coming out",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Grand Theft Auto VI Pre-Load Begins on November 10",
+  "news_link": "https://www.rockstargames.com/newswire/article/k4ak9okk485712/grand-theft-auto-vi-pre-load-begins-on-november-10"
  },
  {
   "geo": "US",
@@ -100,48 +136,39 @@
  },
  {
   "geo": "US",
-  "term": "goldman sachs treasury yields outlook",
-  "traffic": 200,
+  "term": "will mcdonald",
+  "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Bonds' Redemption: Goldman Sees the Treasury Rally Finding Its Feet",
-  "news_link": "https://thedarksideoftheboom.substack.com/p/bonds-redemption-goldman-sees-the"
+  "news_title": "New Jets Trade Rumors Leak on Positions to Watch and Stance on 2026 NFL Deadline",
+  "news_link": "https://bleacherreport.com/articles/25530571-new-jets-trade-rumors-leak-positions-watch-and-stance-2026-nfl-deadline"
  },
  {
   "geo": "US",
-  "term": "laura gallacher",
+  "term": "robby discher",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Russell Brand sentencing: Follow live",
-  "news_link": "https://www.bbc.com/news/live/c670ppzjwxpnt"
+  "news_title": "Ohio State parts ways with special teams coordinator Robby Discher",
+  "news_link": "https://247sports.com/college/ohio-state/article/ohio-state-football-parts-ways-with-special-teams-coordinator-robby-discher-292437972/"
  },
  {
   "geo": "US",
-  "term": "soxl stock",
+  "term": "st",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "SOXL Price Prediction: Oversold read, but the downtrend still sets the tone",
-  "news_link": "https://blockchain.news/news/20261107-price-prediction-soxl-oversold-read-but-the-downtrend-still"
+  "news_title": "160 Years of Mercy Tradition in Nashville",
+  "news_link": "https://www.nashvillecatholic.org/news/posts/160-years-of-mercy-tradition-in-nashville"
  },
  {
   "geo": "US",
-  "term": "argentina",
+  "term": "are schools closed on veterans day",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "Pope Leo arrives in Argentina under the shadow of his predecessor",
-  "news_link": "https://www.ncronline.org/vatican/pope-leo-arrives-argentina-under-shadow-his-predecessor"
- },
- {
-  "geo": "US",
-  "term": "british airways boeing 787 pittsburgh grounded",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "British Airways Boeing 787 Stranded In Pittsburgh For 2 Months Due To Complicated Repairs",
-  "news_link": "https://simpleflying.com/british-airways-boeing-787-stranded-pittsburgh-2-months-complicated-repairs/"
+  "news_title": "Alachua County Veterans Services hosting annual Veterans Day celebration",
+  "news_link": "https://www.wcjb.com/2026/11/09/alachua-county-veterans-services-hosting-annual-veterans-day-celebration/"
  },
  {
   "geo": "US",
@@ -151,32 +178,5 @@
   "econ": false,
   "news_title": "What’s making you sick? Pittsburgh doctors explain the viruses circulating this fall",
   "news_link": "https://triblive.com/local/regional/whats-making-you-sick-pittsburgh-doctors-explain-the-viruses-circulating-this-fall/"
- },
- {
-  "geo": "US",
-  "term": "noaa weather",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "NOAA weather modeling hits key milestone with Rapid Refresh Forecast System debut",
-  "news_link": "https://www.noaa.gov/news-release/noaa-weather-modeling-hits-key-milestone-with-rapid-refresh-forecast-system-debut"
- },
- {
-  "geo": "US",
-  "term": "teddy riner",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "Présidentielle 2027 : « Je suis candidat pour dire qu’on peut relever la France », Teddy Riner se lance dans la compétition",
-  "news_link": "https://www.leparisien.fr/elections/presidentielle/presidentielle-2027-je-suis-candidat-pour-dire-quon-peut-relever-la-france-teddy-riner-se-lance-dans-la-competition-09-11-2026-36MFSFMWDFGATLM2YGR3MDF4QI.php"
- },
- {
-  "geo": "US",
-  "term": "weather.com",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "How the jet stream decides who gets the most snow: West vs. East",
-  "news_link": "https://www.yahoo.com/news/weather-news/articles/jet-stream-decides-gets-most-101934211.html"
  }
 ]
