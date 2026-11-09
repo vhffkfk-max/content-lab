@@ -2118,8 +2118,10 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
       const pre = el('pre', '', p.text), copy = el('button', 'btn small', '복사'); copy.type = 'button';
       pre.style.cssText = 'white-space:pre-wrap;word-break:keep-all;font:inherit;margin:8px 0;';
       copy.addEventListener('click', async () => { try { await navigator.clipboard.writeText(p.text); copy.textContent = '복사했어요'; } catch (e) { copy.textContent = '복사 실패'; } setTimeout(() => { copy.textContent = '복사'; }, 1500); });
-      box.append(el('h4', 'ch-step', p.label), pre, copy);
-      if (p.image) box.append(el('p', 'sub', `비교용 이미지(PC): ${p.image}`));
+      box.append(el('h4', 'ch-step', p.label), pre);
+      if (p.image_data) { const img = document.createElement('img'); img.src = p.image_data; img.alt = `${item.name} ${p.label} 작도 이미지`; img.loading = 'lazy'; img.style.cssText = 'display:block;width:100%;max-width:640px;height:auto;border-radius:8px;margin:8px 0;'; box.append(img); }
+      box.append(copy);
+      if (p.image && !p.image_data) box.append(el('p', 'sub', `비교용 이미지(PC): ${p.image}`));
     });
     box.append(el('p', 'sub', `게시 이미지는 트레이딩뷰에서 직접 작도해 저장해 주세요. 작도 위치와 비교용 이미지는 PC의 ${d.folder} 폴더에 있어요.`));
     if (item.sources.length) { const ul = el('ul'); item.sources.forEach(s => { const li = el('li'), a = el('a', '', s.title); a.href = s.url; a.target = '_blank'; a.rel = 'noopener'; li.append(a); ul.append(li); }); box.append(el('h4', 'ch-step', '근거 기사'), ul); }
