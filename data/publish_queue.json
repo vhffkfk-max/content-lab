@@ -3128,382 +3128,6 @@
  ],
  "ideas": [
   {
-   "title": "외국인 닷새 10조 매도, 5천피 흔들",
-   "concept": "닷새간 외국인 순매도 10조와 서킷브레이커 발동을 먼저 보여 주고, 같은 시간 미 반도체주는 반등했다는 점을 대비시킨다. 월요일 수급은 마지막 장에서 확인 포인트로만 둔다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "서울신문과 헤럴드경제가 외국인 닷새 10조 매도와 5천피 붕괴, 서킷브레이커를 보도했다. 월요일 개장을 앞두고 수급 이야기가 가장 궁금한 시점이다. 이전에 다룬 급락 원인 글과 달리 수급이 중심이다.",
-   "tag": "증시",
-   "sources": [
-    "https://v.daum.net/v/20261108203417801",
-    "https://v.daum.net/v/20261108204132916",
-    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008836149&plink=RSSLINK&cooper=RSSREADER"
-   ],
-   "bg": "Korea stock exchange KOSPI",
-   "bg_alt": "Seoul Yeouido trading screen",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "외국인이 닷새 동안\n**10조**를 던졌다\n5천피가 흔들렸다",
-     "number": "10조원",
-     "label": "외국인 닷새간 순매도",
-     "sub": "서울신문 보도 기준"
-    },
-    {
-     "type": "질문형",
-     "title": "서킷브레이커 뒤 맞는\n월요일, **외국인**은?",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "코스피는 6% 빠졌는데\n미국 반도체주는\n**반등**했다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/09",
-     "headlines": [
-      "외국인 닷새간 10조 순매도",
-      "5천피 흔들, 서킷브레이커 발동",
-      "미국 반도체주는 반등"
-     ]
-    }
-   },
-   "id": "20261109-0801-i1",
-   "created_at": "2026-11-09T08:01:33+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261109-0801-i1/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261109-0801-i1/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261109-0801-i1/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261109-0801-i1/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261109-0801-i1/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261109-0801-i1/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261109-0801-i1/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261109-0801-i1/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261109-0801-i1/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261109-0801-i1/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261109-0801-i1/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261109-0801-i1/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261109-0801-i1/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261109-0801-i1/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261109-0801-i1/3-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261109-0801-i1/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261109-0801-i1/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261109-0801-i1/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "하이닉스 10% 하락 날, 750억 달러 환원 보도",
-   "concept": "주가는 11/06 하루 -10.44%였는데 WSJ는 750억 달러 주주환원 계획을 보도했다. 두 사실의 출처를 2장에서 바로 보여 주고, 기간과 방식(배당, 자사주)은 확인되지 않았다고 밝힌다. (공식: A인데 B, 어긋난 두 사실 제목)",
-   "why_now": "WSJ의 750억 달러 주주환원 보도와 하이닉스 하루 10.44% 하락이 같은 시간대에 나왔다. 월요일 장에서 시장이 어떻게 받아들일지 궁금한 시점이다. 앞서 다룬 삼전닉스 배당 글과는 다른 사건이다.",
-   "tag": "반도체",
-   "sources": [
-    "https://news.google.com/rss/articles/CBMivwFBVV95cUxORS13MExBQ0RLMjJkM1FxVkF0aVVJVzRib0Uxa0FTejhNTlY5M216LURtMFRrZ1Bwc1Z",
-    "https://news.google.com/rss/articles/CBMibEFVX3lxTE9mSi1QN2ZQZjh2YkladzhxbEZsSGtlUHJzSmNNN3VBczkzeUF3R0o4YmlwellEQTV2RVZ"
-   ],
-   "bg": "SK hynix headquarters",
-   "bg_alt": "SK hynix HBM memory chip",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "하이닉스 하루 만에\n**-10.44%** 하락\n환원은 750억달러",
-     "number": "750억 달러",
-     "label": "WSJ 보도 주주환원 규모",
-     "sub": "11/06 하이닉스 주가 -10.44%"
-    },
-    {
-     "type": "질문형",
-     "title": "하이닉스가 주주에게\n**750억달러** 돌려준다\n시장은 받아줄까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "주가는 10% 빠졌는데\n하이닉스는\n**750억달러** 환원",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261109-0801-i2",
-   "created_at": "2026-11-09T08:01:33+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261109-0801-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261109-0801-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261109-0801-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261109-0801-i2/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261109-0801-i2/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261109-0801-i2/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261109-0801-i2/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261109-0801-i2/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261109-0801-i2/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "앤트로픽, 34억 달러 발전기 계약",
-   "concept": "앤트로픽이 데이터센터에 쓸 가스 발전 설비를 34억 달러에 사기로 했다는 FT 보도를 CNBC가 전했다. AI 경쟁이 칩에서 전력으로 넓어지는 장면으로 풀고, 국내 업종 영향은 재료에 없다는 사실만 짧게 적는다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "CNBC와 Seeking Alpha가 FT 보도를 인용해 전한 새 소식이다. 데이터센터 규제와 AI 투자 논쟁이 이어지는 가운데 AI의 병목이 전력으로 옮겨 가는지가 관심사다. 앤트로픽 상장 일정 글과는 다른 사건이다.",
-   "tag": "AI",
-   "sources": [
-    "https://www.cnbc.com/2026/11/08/anthropic-generator-deal-ai-data-centers.html",
-    "https://seekingalpha.com/news/4668761-anthropic-strikes-3_4b-generator-deal-to-secure-data-center-power-ft?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
-   ],
-   "bg": "Anthropic Dario Amodei",
-   "bg_alt": "data center power generator",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "앤트로픽이 **34억달러**\n들여 발전기부터\n샀다",
-     "number": "34억 달러",
-     "label": "앤트로픽 발전기 계약",
-     "sub": "FT 보도, CNBC 인용"
-    },
-    {
-     "type": "질문형",
-     "title": "AI의 병목이 칩에서\n**전력**으로 옮겨갔나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "AI 회사가 칩 대신\n**발전기**를 샀다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261109-0801-i3",
-   "created_at": "2026-11-09T08:01:33+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261109-0801-i3/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261109-0801-i3/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261109-0801-i3/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261109-0801-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261109-0801-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261109-0801-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261109-0801-i3/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261109-0801-i3/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261109-0801-i3/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261109-0801-i3/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261109-0801-i3/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261109-0801-i3/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
    "title": "SK하이닉스 750억 달러 환원 vs 10% 급락",
    "concept": "주가는 10.44% 빠졌는데 WSJ는 750억 달러 주주환원 계획을 보도했다. 두 사실이 어긋난 장면을 2장에서 출처와 함께 보여 준다. 기간과 방식(배당, 자사주)은 재료에 없다고 밝히고, 보도 단서는 한 장에만 남긴다. (공식: A인데 B, 어긋난 두 사실 제목)",
    "why_now": "WSJ가 22:17에 750억 달러 주주환원 계획을 전했고, 시세에는 11/06 하이닉스 -10.44%(1달 -34.3%)가 찍혀 있다. 월요일 장에서 시장 반응이 갈리는 지점이다. 앞서 다룬 삼전닉스 배당 44조원과는 다른 사건이다.",
@@ -8589,6 +8213,362 @@
      "form": "paper",
      "font": "gowun",
      "path": "20261109-2206-i3/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "코스피 5거래일 만에 11.71% 급락",
+   "concept": "5거래일 하락률과 5,000선 턱걸이를 앞세우고, 美 반도체는 반등했는데 코스피는 밀린 어긋남을 보여준다. 시세표로 코스피, 코스닥, 삼성전자, SK하이닉스의 1달 낙폭을 비교한다. 반대매매와 코스닥 비교 같은 전언은 확인 전이라 뺀다. (공식: A인데 B, 어긋난 두 사실 제목)",
+   "why_now": "한경 릴스 좋아요가 시간당 1487로 평소의 94배다. 코스피 하락 기사가 여러 곳에서 나왔고 KBS도 반등 시점을 다뤘다.",
+   "tag": "증시",
+   "sources": [
+    "https://v.daum.net/v/20261109205915158",
+    "https://v.daum.net/v/20261109211343456",
+    "https://www.instagram.com/reel/Dfg05LfOzzr/"
+   ],
+   "bg": "KOSPI stock board Seoul",
+   "bg_alt": "Korea Exchange building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "코스피 5거래일 만에\n**11.71%** 빠지며\n5,000선 턱걸이",
+     "number": "-11.71%",
+     "label": "코스피 5거래일 하락률",
+     "sub": "지수는 5,000선 턱걸이"
+    },
+    {
+     "type": "질문형",
+     "title": "코스피 5거래일\n**11.71%** 급락,\n무슨 일 있었나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "美 반도체는 반등했는데\n코스피는 5거래일간\n**11.71%** 빠졌다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "bars"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "시세표 기준 1달 하락률(%)",
+     "bars": [
+      {
+       "label": "코스피",
+       "value": 25.64,
+       "hi": true
+      },
+      {
+       "label": "코스닥",
+       "value": 28.29
+      },
+      {
+       "label": "삼성전자",
+       "value": 27.52
+      },
+      {
+       "label": "SK하이닉스",
+       "value": 32.42
+      }
+     ]
+    }
+   },
+   "id": "20261110-0707-i1",
+   "created_at": "2026-11-10T07:07:31+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261110-0707-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261110-0707-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261110-0707-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261110-0707-i1/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261110-0707-i1/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261110-0707-i1/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261110-0707-i1/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261110-0707-i1/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261110-0707-i1/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261110-0707-i1/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261110-0707-i1/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261110-0707-i1/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "트럼프 발언에 유가 급락, 환율 12원 하락",
+   "concept": "트럼프의 '추가 타격은 매우 어렵다' 발언에서 유가 급락, 환율 하락, 기름값 부담 완화로 이어지는 길을 풀어 쓴다. 카타르 당국자는 보도가 사실이 아니고 협상은 진행 중이라고 했으므로 타결은 아니라고 선을 긋는다. 마지막 장에서 미국 10월 CPI 발표를 다음 변수로 둔다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "WTI -3.4%, 브렌트 -3.8%, 5년 만의 최대 주간 하락이고 달러-원은 한때 1,344원까지 12원 넘게 내렸다. 이란 협상 소식이 아닌 트럼프의 직접 발언이라는 점이 새롭다.",
+   "tag": "유가, 환율",
+   "sources": [
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443826",
+    "https://v.daum.net/v/20261109230017612",
+    "https://x.com/zerohedge/status/2119793155440545848"
+   ],
+   "bg": "Donald Trump podium",
+   "bg_alt": "oil refinery tanker",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "트럼프 한마디에\n브렌트유 장중\n**7.9%** 급락",
+     "number": "-7.9%",
+     "label": "브렌트유 장중 낙폭",
+     "sub": "국제유가 5년 만의 최대 주간 하락"
+    },
+    {
+     "type": "질문형",
+     "title": "유가가 급락하고\n환율도 **12원** 내렸다\n이란 협상은 타결?",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "유가 급락 호재인데\n카타르 당국자는\n보도가 **사실 아니라**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261110-0707-i2",
+   "created_at": "2026-11-10T07:07:31+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261110-0707-i2/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261110-0707-i2/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261110-0707-i2/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261110-0707-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261110-0707-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261110-0707-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261110-0707-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261110-0707-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261110-0707-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261110-0707-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261110-0707-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261110-0707-i2/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "트럼프는 감쌌는데 엔비디아는 4% 빠졌다",
+   "concept": "트럼프가 젠슨 황을 '훌륭한 사람'이라며 CEO를 계속 맡아야 한다고 했지만, 이사회는 따로 조사 중이고 주가는 빠졌다. 지수가 오르는 날 엔비디아만 빠진 장면을 A인데 B로 보여준다. 한국 반도체 쪽은 심리에 닿을 수 있다는 정도로만 한 줄 적고, 매매 권유는 넣지 않는다. (공식: A인데 B, 어긋난 두 사실 제목)",
+   "why_now": "블룸버그 릴스가 시간당 좋아요 3,871로 빠르게 크고 있다. 엔비디아는 11/09 -4.27%였고 CNBC는 이 이슈가 한동안 반도체 업종을 누를 수 있다고 분석했다. 스캔들 자체는 이미 다뤘지만 트럼프 발언 쪽 해석은 아직 안 나갔다.",
+   "tag": "엔비디아",
+   "sources": [
+    "https://www.cnbc.com/2026/11/09/nvidia-stock-faces-huang-investigation-overhang-analysts.html",
+    "https://www.instagram.com/reel/DfgozPpD04a/",
+    "https://www.cnbc.com/2026/11/09/nvidia-jensen-huang-chinese-spy-investigation.html"
+   ],
+   "bg": "Jensen Huang",
+   "bg_alt": "Nvidia headquarters",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "트럼프 '훌륭한 사람'\n그날 엔비디아는\n**-4.27%** 마감",
+     "number": "-4.27%",
+     "label": "엔비디아 11/09 등락",
+     "sub": "프리마켓에선 5% 안팎 하락"
+    },
+    {
+     "type": "질문형",
+     "title": "대통령이 감쌌는데\n엔비디아는 왜\n**5%**나 빠졌나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "다우 700포인트 급등\n기술주도 강세인데\n엔비디아만 **빠졌다**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "breaking"
+   ],
+   "extra": {},
+   "id": "20261110-0707-i3",
+   "created_at": "2026-11-10T07:07:31+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261110-0707-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261110-0707-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261110-0707-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261110-0707-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261110-0707-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261110-0707-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261110-0707-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261110-0707-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261110-0707-i3/3-news-myeongjo.jpg"
     }
    ]
   }
