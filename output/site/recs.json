@@ -24,8 +24,8 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 2.32,
   "kr_n": 13,
-  "foreign_avg": 1.74,
-  "foreign_n": 140
+  "foreign_avg": 1.73,
+  "foreign_n": 141
  },
  {
   "rank": 3,
@@ -37,7 +37,7 @@
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
   "kr_avg": 1.46,
-  "kr_n": 331,
+  "kr_n": 332,
   "foreign_avg": 1.77,
   "foreign_n": 96
  },
@@ -46,11 +46,11 @@
   "topic": "빅테크",
   "kind": "국내 검증 주제",
   "confidence": "높음",
-  "title_idea": "빅테크, 한 줄 정리",
+  "title_idea": "빅테크, 지금 꼭 알아야 할 것은?",
   "format": "릴스",
-  "hook": "짧은 한 줄",
+  "hook": "질문형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.25,
+  "kr_avg": 2.33,
   "kr_n": 36,
   "foreign_avg": 1.08,
   "foreign_n": 14
@@ -100,7 +100,7 @@
  {
   "rank": 8,
   "topic": "환율·달러",
-  "kind": "국내·해외 모두 강세",
+  "kind": "국내 검증 주제",
   "confidence": "높음",
   "title_idea": "환율·달러, 한 줄 정리",
   "format": "릴스",
@@ -108,7 +108,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 1.88,
   "kr_n": 52,
-  "foreign_avg": 1.61,
-  "foreign_n": 6
+  "foreign_avg": 0.95,
+  "foreign_n": 5
  }
 ]
