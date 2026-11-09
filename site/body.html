@@ -2110,6 +2110,8 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     return box;
   }
   let chDailyP = null, chMain = '';
+  const CH_PC = 'http://127.0.0.1:8765';
+  const chPc = (p, init) => { const c = new AbortController(); setTimeout(() => c.abort(), init ? 60000 : 8000); return fetch(CH_PC + p, { cache: 'no-store', signal: c.signal, ...(init || {}) }).then(r => r.ok ? r.json() : null).catch(() => null); };
   function chCopy(text, label) {
     const b = el('button', 'btn small', label || '복사'); b.type = 'button';
     b.addEventListener('click', async () => { try { await navigator.clipboard.writeText(text); b.textContent = '복사했어요'; } catch (e) { b.textContent = '복사 실패'; } setTimeout(() => { b.textContent = label || '복사'; }, 1500); });
@@ -2139,7 +2141,8 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
   }
   function chTraderCard(item, photos) {
     const box = el('div', 'vl-hot');
-    box.append(el('h3', '', item.status === 'done' ? item.title : '변환 실패'), el('p', 'sub', item.at.replace('T', ' ')));
+    box.append(el('h3', '', item.status === 'done' ? item.title : item.status === 'pending' ? '변환 중…' : '변환 실패'), el('p', 'sub', item.at.replace('T', ' ')));
+    if (item.status === 'pending') return box;
     if (item.status !== 'done') { box.append(el('p', 'warn', item.error || '다시 시도해 주세요.')); return box; }
     (item.check || []).forEach(n => box.append(el('p', 'warn', `확인 필요: ${n}`)));
     item.posts.forEach(p => {
@@ -2149,36 +2152,34 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
       sel.value = String(p.image && photos[p.image - 1] ? p.image : 0); sel.addEventListener('change', draw); draw();
       box.append(el('h4', 'ch-step', p.label), chPre(p.text), sel, slot, chCopy(p.text));
     });
-    if (!photos.length && item.photos) box.append(el('p', 'sub', '사진은 분석을 입력한 브라우저에만 저장돼요. 이 기기에는 사진이 없어요.'));
     return box;
   }
   function chanTrader() {
     const root = el('div'), form = el('div', 'vl-hot'), ta = document.createElement('textarea'), file = document.createElement('input'), go = el('button', 'btn small', '쓰레드 글로 바꾸기'), st = el('p', 'sub', ''), list = el('div');
     ta.rows = 12; ta.maxLength = 6000; ta.placeholder = '트레이더가 쓴 분석 글을 붙여 넣어 주세요.'; ta.style.cssText = 'width:100%;box-sizing:border-box;padding:10px;font:inherit;margin:8px 0;';
     file.type = 'file'; file.accept = 'image/*'; file.multiple = true; go.type = 'button';
-    form.append(el('h3', '', '트레이더 분석을 쓰레드 글로'), el('p', 'sub', '작도 사진은 차트 순서대로 넣어 주세요(최대 4장). 사진은 이 브라우저에만 저장되고, 글은 PC로 보내져 몇 분 안에 바뀌어요. 저장소가 공개라 글 원문과 결과도 공개돼요.'), ta, file, el('div'), go, st);
+    form.append(el('h3', '', '트레이더 분석을 쓰레드 글로'), el('p', 'sub', '작도 사진은 차트 순서대로 넣어 주세요(최대 4장). 글과 사진은 이 PC에만 저장되고 GitHub에는 올라가지 않아요.'), ta, file, el('div'), go, st);
     const render = async () => {
-      const d = await chJson('trader_posts.json'), rows = Array.isArray(d) ? d : [], out = [];
-      for (const it of rows) out.push(chTraderCard(it, (await chIdb('readonly', s => s.get(it.rid)).catch(() => null)) || []));
-      list.replaceChildren(...out);
-      return rows;
+      const d = await chPc('/trader');
+      if (!Array.isArray(d)) { list.replaceChildren(el('p', 'warn', 'PC 연결이 안 돼요. 차트덕후 PC 프로그램이 켜진 그 PC에서 열어 주세요.')); go.disabled = true; return null; }
+      go.disabled = false; list.replaceChildren(...d.map(it => chTraderCard(it, it.photos_data || [])));
+      return d;
     };
     let timer = null;
     go.addEventListener('click', async () => {
       const text = ta.value.trim(), files = [...file.files].slice(0, 4);
       if (text.length < 30) return alert('분석 글을 먼저 넣어 주세요.');
-      if (!fb.key && !(await connectLab())) return;
-      go.disabled = true; st.textContent = '보내는 중…';
+      go.disabled = true; st.textContent = 'PC로 보내는 중…';
       try {
-        const rid = Date.now().toString(36) + Math.random().toString(36).slice(2, 6), photos = [];
+        const photos = [];
         for (const f of files) photos.push(await chShrink(f));
-        await chIdb('readwrite', s => s.put(photos, rid));
-        const r = await ghApi('actions/workflows/draft-create.yml/dispatches', { method: 'POST', body: JSON.stringify({ ref: 'main', inputs: { trader: text, trader_rid: rid, photos: String(photos.length) } }) });
-        if (r.status !== 204) { st.textContent = ghFail(r.status); go.disabled = false; return; }
-        st.textContent = 'PC에 보냈어요. 보통 5~10분 걸려요. 이 화면을 열어 두면 자동으로 나타나요.';
+        const r = await chPc('/trader', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text, photos }) });
+        if (!r || !r.rid) { st.textContent = 'PC로 보내지 못했어요. 프로그램이 켜져 있는지 확인해 주세요.'; go.disabled = false; return; }
+        ta.value = ''; file.value = ''; st.textContent = '변환 중이에요. 보통 1~3분 걸려요.';
         let n = 0; clearInterval(timer);
-        timer = setInterval(async () => { n++; const rows = await render(); if (rows.some(x => x.rid === rid)) { clearInterval(timer); st.textContent = '완료됐어요.'; go.disabled = false; ta.value = ''; file.value = ''; } else if (n > 60) { clearInterval(timer); st.textContent = '시간이 오래 걸려요. PC가 켜져 있는지 확인해 주세요.'; go.disabled = false; } }, 20000);
-      } catch (e) { st.textContent = '요청 실패: 인터넷 연결이나 사진 파일을 확인해 주세요.'; go.disabled = false; }
+        const tick = async () => { n++; const rows = await render(); const it = rows && rows.find(x => x.rid === r.rid); if (it && it.status !== 'pending') { clearInterval(timer); st.textContent = it.status === 'done' ? '완료됐어요.' : '변환에 실패했어요.'; } else if (n > 120) { clearInterval(timer); st.textContent = '시간이 오래 걸려요. 잠시 뒤 다시 열어 주세요.'; } };
+        await tick(); timer = setInterval(tick, 5000);
+      } catch (e) { st.textContent = '요청 실패: 사진 파일을 확인해 주세요.'; go.disabled = false; }
     });
     root.append(form, list); render(); return root;
   }
@@ -2230,7 +2231,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     });
     if (c.main) {
       root.replaceChildren(el('p', 'sub', '불러오는 중…'));
-      chDailyP = chDailyP || chJson('chart_daily.json');
+      chDailyP = chDailyP || chPc('/chart_daily.json').then(d => d || chJson('chart_daily.json'));
       chDailyP.then(d => {
         const items = (d && d.items) || [];
         if (!items.length) return root.replaceChildren(chanWait('오늘 메인 컨텐츠가 아직 없어요. 평일 장 마감 후 PC에서 만들어요.'));
