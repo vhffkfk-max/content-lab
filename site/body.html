@@ -2110,6 +2110,49 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     return box;
   }
   let chDailyP = null, chMain = '';
+  function chCopy(text, label) {
+    const b = el('button', 'btn small', label || '복사'); b.type = 'button';
+    b.addEventListener('click', async () => { try { await navigator.clipboard.writeText(text); b.textContent = '복사했어요'; } catch (e) { b.textContent = '복사 실패'; } setTimeout(() => { b.textContent = label || '복사'; }, 1500); });
+    return b;
+  }
+  function chImg(src, alt, file) {
+    const wrap = el('div'), img = document.createElement('img'), row = el('div'), copy = el('button', 'btn small', '사진 복사'), save = el('a', 'btn small', '사진 저장');
+    img.src = src; img.alt = alt; img.loading = 'lazy'; img.style.cssText = 'display:block;width:100%;max-width:640px;height:auto;border-radius:8px;margin:8px 0;';
+    row.style.cssText = 'display:flex;gap:6px;margin-bottom:8px;'; copy.type = 'button'; save.href = src; save.download = file;
+    copy.addEventListener('click', async () => {
+      try {
+        await img.decode();
+        const cv = document.createElement('canvas'); cv.width = img.naturalWidth; cv.height = img.naturalHeight; cv.getContext('2d').drawImage(img, 0, 0);
+        const blob = await new Promise(r => cv.toBlob(r, 'image/png'));
+        await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]); copy.textContent = '복사했어요';
+      } catch (e) { copy.textContent = '복사 실패, 저장을 써 주세요'; }
+      setTimeout(() => { copy.textContent = '사진 복사'; }, 2000);
+    });
+    row.append(copy, save); wrap.append(img, row); return wrap;
+  }
+  function chPre(text) { const pre = el('pre', '', text); pre.style.cssText = 'white-space:pre-wrap;word-break:keep-all;font:inherit;margin:8px 0;'; return pre; }
+  function chanCalls(d) {
+    const root = el('div'), won = v => Math.round(v).toLocaleString('ko-KR'), md = s => `${+s.slice(5, 7)}/${+s.slice(8, 10)}`;
+    if (d.brief) { const b = el('div', 'vl-hot'); b.append(el('h3', '', '장 시작 전 종목 안내 글'), chPre(d.brief), chCopy(d.brief)); root.append(b); }
+    (d.haetje || []).forEach(h => {
+      const b = el('div', 'vl-hot');
+      b.append(el('h3', '', `했제: ${h.name} ${won(h.price)}원 도달 (${md(h.date)})`), el('h4', 'ch-step', '본문'), chPre(h.text));
+      if (h.image_data) b.append(chImg(h.image_data, `${h.name} 했제 차트`, `${h.name}_했제.jpg`));
+      b.append(chCopy(h.text), el('h4', 'ch-step', '답글'), chPre(h.reply), chCopy(h.reply));
+      root.append(b);
+    });
+    const box = el('div', 'vl-hot'), calls = d.calls || [];
+    box.append(el('h3', '', '내가 말한 종목과 자리'), el('p', 'sub', '쓰레드에 실제로 올린 종목만 나와요. 말한 자리에 닿으면 위에 했제 글이 만들어지고, 무효 기준이 먼저 깨지면 했제를 만들지 않아요.'));
+    if (!calls.length) box.append(el('p', 'sub', '아직 등록된 종목이 없어요.'));
+    else {
+      const tw = el('div'), t = el('table'); tw.style.overflowX = 'auto'; t.style.cssText = 'width:100%;border-collapse:collapse;font-size:14px;';
+      const tr = cells => { const r = el('tr'); cells.forEach(c => { const td = el('td', '', c); td.style.cssText = 'padding:8px 6px;border-bottom:1px solid var(--border);white-space:nowrap;'; r.append(td); }); return r; };
+      t.append(tr(['종목', '언급일', '언급가', '방향', '말한 자리', '무효 기준', '언급 후', '상태']));
+      calls.slice().reverse().forEach(c => t.append(tr([c.name, md(c.date), won(c.close), `${c.pick === 'up' ? '상승' : '하락'} ${Math.round(c.pick === 'up' ? c.up_pct : c.down_pct)}%`, c.targets.map(x => `${won(x.price)}${x.reached ? ' ✓' + md(x.reached) : ''}`).join(', '), won(c.invalid), c.ret_since == null ? '-' : `${c.ret_since > 0 ? '+' : ''}${c.ret_since.toFixed(1)}%`, c.status])));
+      tw.append(t); box.append(tw);
+    }
+    root.append(box); return root;
+  }
   function chanMainThread(item, d) {
     const box = el('div', 'vl-hot');
     box.append(el('h3', '', `${item.name} 쓰레드 글`));
@@ -2119,18 +2162,18 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
       pre.style.cssText = 'white-space:pre-wrap;word-break:keep-all;font:inherit;margin:8px 0;';
       copy.addEventListener('click', async () => { try { await navigator.clipboard.writeText(p.text); copy.textContent = '복사했어요'; } catch (e) { copy.textContent = '복사 실패'; } setTimeout(() => { copy.textContent = '복사'; }, 1500); });
       box.append(el('h4', 'ch-step', p.label), pre);
-      if (p.image_data) { const img = document.createElement('img'); img.src = p.image_data; img.alt = `${item.name} ${p.label} 작도 이미지`; img.loading = 'lazy'; img.style.cssText = 'display:block;width:100%;max-width:640px;height:auto;border-radius:8px;margin:8px 0;'; box.append(img); }
+      if (p.image_data) box.append(chImg(p.image_data, `${item.name} ${p.label} 작도 이미지`, `${item.name}_${p.label}.jpg`));
       box.append(copy);
-      if (p.image && !p.image_data) box.append(el('p', 'sub', `비교용 이미지(PC): ${p.image}`));
+      if (p.image && !p.image_data) box.append(el('p', 'sub', `이미지(PC): ${p.image}`));
     });
-    box.append(el('p', 'sub', `게시 이미지는 트레이딩뷰에서 직접 작도해 저장해 주세요. 작도 위치와 비교용 이미지는 PC의 ${d.folder} 폴더에 있어요.`));
+    box.append(el('p', 'sub', `글과 사진을 순서대로 복사해 올리면 돼요. 올리기 전에 숫자를 한 번 확인해 주세요. 작도 위치는 PC의 ${d.folder}/작도지시.md에 있어요.`));
     if (item.sources.length) { const ul = el('ul'); item.sources.forEach(s => { const li = el('li'), a = el('a', '', s.title); a.href = s.url; a.target = '_blank'; a.rel = 'noopener'; li.append(a); ul.append(li); }); box.append(el('h4', 'ch-step', '근거 기사'), ul); }
     return box;
   }
   function chanDraw(ch) {
     const c = CHANNELS[ch], root = document.getElementById(ch + '-root'); if (!c || !root) return;
     const cur = chanTab[ch] || c.first || 'video', bar = el('div', 'tabs'), panel = el('div'); panel.style.marginTop = '14px';
-    [['insta', '인스타그램'], ['thread', '쓰레드'], ['video', '영상']].forEach(([k, label]) => {
+    [['insta', '인스타그램'], ['thread', '쓰레드'], ['video', '영상'], ...(c.main ? [['calls', '종목 안내']] : [])].forEach(([k, label]) => {
       const b = el('button', null, label); b.type = 'button'; b.setAttribute('aria-selected', String(k === cur));
       b.addEventListener('click', () => { chanTab[ch] = k; chanDraw(ch); }); bar.append(b);
     });
@@ -2145,7 +2188,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
         items.forEach(x => { const b = el('button', 'ch-chip', `${x.name} ${x.ret > 0 ? '+' : ''}${x.ret.toFixed(1)}%`); b.type = 'button'; b.setAttribute('aria-pressed', String(x === item)); b.addEventListener('click', () => { chMain = x.code; chanDraw(ch); }); row.append(b); });
         head.append(el('h3', '', `오늘의 메인 컨텐츠 (${d.date})`), el('p', 'sub', '종목을 고르면 아래 쓰레드 글과 카드뉴스가 그 종목 내용으로 바뀌어요.'), row);
         const v = c[cur];
-        panel.append(v.wait ? chanWait(v.wait) : cur === 'thread' ? chanMainThread(item, d) : chanFlow(c, cur, { ...v, preset: item.topic }));
+        panel.append(cur === 'calls' ? chanCalls(d) : v.wait ? chanWait(v.wait) : cur === 'thread' ? chanMainThread(item, d) : chanFlow(c, cur, { ...v, preset: item.topic }));
         root.replaceChildren(head, bar, panel);
       });
       return;
