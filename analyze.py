@@ -63,6 +63,13 @@ def summarize(items):
 
 def load_posts(conn):
     accounts = {r["username"]: dict(r) for r in conn.execute("SELECT * FROM accounts")}
+    # 크롤러가 '비슷한 계정'으로 찾은 계정은 지역 칸이 비어 있음 → 캡션의 절반 넘게 한글이면 한국 계정으로 (해외 목록에 한국 언론이 섞이던 문제)
+    caps = defaultdict(list)
+    for u, cap in conn.execute("SELECT username, caption FROM posts"):
+        caps[u].append(sum("가" <= ch <= "힣" for ch in cap or "") >= 5)
+    for u, a in accounts.items():
+        if not (a["region"] or "").strip() and caps[u] and sum(caps[u]) * 2 >= len(caps[u]):
+            a["region"] = "KR"
     posts = []
     for r in conn.execute("SELECT * FROM posts"):
         acc = accounts.get(r["username"])

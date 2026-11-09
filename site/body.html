@@ -4114,7 +4114,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
         kpi('지켜보는 글', `${fmtN(IM.tracked)}개`, `참고 계정 ${IM.accounts}곳`), kpi('잰 글', `${fmtN(IM.measured)}개`, '최근 3일'),
         kpi('평소 2배+', `${IM.hot}개`, '좋아요 기준'));
       listWithMore(il, IL, h => rowLink([h.x_usual >= 0.1 ? el('span', h.x_usual >= 2 ? 'pill accent' : 'pill neutral', `평소의 ${h.x_usual}배`) : el('span', 'pill neutral', `시간당 좋아요 ${fmtN(h.growth != null ? h.growth : h.lph)}`), ' ', h.kind ? `[${h.kind}] ` : '', h.text || '(내용 없음)'],
-        `@${h.username}${h.followers ? ' · 팔로워 ' + fmtN(h.followers) : ''} · 올린 지 ${h.age_h}시간 · 좋아요 ${fmtN(h.likes || 0)} · 댓글 ${fmtN(h.comments || 0)}${h.views ? ' · 조회 ' + fmtN(h.views) : ''}${h.vgrowth != null ? ' · 지금 시간당 조회 ' + fmtN(h.vgrowth) : h.vph ? ' · 평균 시간당 조회 ' + fmtN(h.vph) : ''}${h.growth != null ? ' · 지금 시간당 좋아요 ' + fmtN(h.growth) : ''}${h.topics ? ' · ' + h.topics : ''}`, h.url, webLink), 8);
+        `@${h.username}${h.followers ? ' · 팔로워 ' + fmtN(h.followers) : ''} · 발행 ${h.time || '미상'} (${h.age_h}시간 전) · 좋아요 ${fmtN(h.likes || 0)} · 댓글 ${fmtN(h.comments || 0)}${h.views ? ' · 조회 ' + fmtN(h.views) : ''}${h.vgrowth != null ? ' · 지금 시간당 조회 ' + fmtN(h.vgrowth) : h.vph ? ' · 평균 시간당 조회 ' + fmtN(h.vph) : ''}${h.growth != null ? ' · 지금 시간당 좋아요 ' + fmtN(h.growth) : ''}${h.topics ? ' · ' + h.topics : ''}`, h.url, webLink), 8);
     }
 
     const LM = (rows('thx_live_meta') || [])[0], L = rows('thx_live') || [];
@@ -4342,7 +4342,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
       document.getElementById('fo-ideas-note').textContent = `해외 계정의 최근 14일 반응 상위 게시물을, 한국 계정 게시물 ${I[0].kr_checked}개와 한국 경제 뉴스 제목 ${I[0].news_checked}개에 대어 보고 Claude가 골랐어요. 근거는 이 자료 안에서만 판단한 거예요.`;
       ib.replaceChildren(...I.map(i => {
         const card = el('article', 'card rec'), chips = el('div', 'chips');
-        chips.append(el('span', 'pill accent', `원 게시물 평소의 ${(+i.x).toFixed(1)}배`), el('span', 'pill neutral', `@${i.account} · ${i.src_format}`), el('span', 'pill positive', `추천 형식 ${i.format}`));
+        chips.append(el('span', 'pill neutral', `발행 ${i.date || '날짜 미상'}`), el('span', 'pill accent', `원 게시물 평소의 ${(+i.x).toFixed(1)}배`), el('span', 'pill neutral', `@${i.account} · ${i.src_format}`), el('span', 'pill positive', `추천 형식 ${i.format}`));
         const steps = el('dl', 'steps'); i.structure.forEach((s, k) => steps.append(el('dt', null, `${k + 1}`), el('dd', null, s)));
         const actions = el('div', 'actions');
         const link = igLink(i.permalink);
@@ -4357,7 +4357,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     }
     const hb = document.getElementById('fo-hot-list');
     if (!H.length) empty(hb, '최근 14일 해외에서 크게 터진 게시물이 없어요.');
-    else listWithMore(hb, H, h => rowLink(h.caption || '(캡션 없음)', `${fmtX(h.outlier)}${igViews(h)} · @${h.username} · ${h.format} · ${h.topics} · ${h.date}`, h.permalink), 8);
+    else listWithMore(hb, H, h => rowLink(h.caption || '(캡션 없음)', `발행 ${h.date} · ${fmtX(h.outlier)}${igViews(h)} · @${h.username} · ${h.format} · ${h.topics}`, h.permalink), 8);
     legend('legend-fo', ['해외 14일', '한국 같은 주제']);
     const tb = document.getElementById('fo-topic-chart');
     if (!T.length) empty(tb);
