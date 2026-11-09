@@ -3035,425 +3035,6 @@
  ],
  "ideas": [
   {
-   "title": "외국인 닷새간 10조 매도, 5천피 붕괴",
-   "concept": "외국인 수급을 중심에 두고 5천피 붕괴와 서킷브레이커, 미 반도체 반등 뒤 월요일 관전 포인트까지 한 사건으로 푼다 (공식: 없음)",
-   "why_now": "서울신문이 외인 닷새간 10조 매도를 보도했고, 헤럴드경제는 5천피 붕괴와 서킷브레이커를 다뤘다. SBS Biz와 매일경제는 미 반도체주 반등 뒤 월요일 코스피를 주목했다.",
-   "tag": "증시",
-   "sources": [
-    "https://v.daum.net/v/20261108203417801",
-    "https://v.daum.net/v/20261108204132916",
-    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008836149&plink=RSSLINK&cooper=RSSREADER"
-   ],
-   "bg": "Korea Exchange KOSPI board",
-   "bg_alt": "Seoul stock market screen",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "외국인이 닷새간\n**10조**를 던졌다\n5천피가 흔들렸다",
-     "number": "10조원",
-     "label": "외국인 닷새간 매도",
-     "sub": "5천피 붕괴, 서킷브레이커까지 발동"
-    },
-    {
-     "type": "질문형",
-     "title": "외국인이 던진 10조\n월요일 코스피는\n**한숨** 돌릴 수 있을까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "미국 반도체는 반등했는데\n코스피는 **5천피 붕괴**\n서킷브레이커까지",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/08",
-     "headlines": [
-      "외국인 닷새간 10조 매도",
-      "5천피 붕괴, 서킷브레이커 발동",
-      "미 반도체주 반등, 월요일 주목"
-     ]
-    }
-   },
-   "id": "20261108-2107-i1",
-   "created_at": "2026-11-08T21:07:12+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261108-2107-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261108-2107-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261108-2107-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261108-2107-i1/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261108-2107-i1/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261108-2107-i1/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261108-2107-i1/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261108-2107-i1/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261108-2107-i1/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261108-2107-i1/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261108-2107-i1/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261108-2107-i1/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "폭락장 ELS 후폭풍, 866억 원금손실 위기",
-   "concept": "원금손실 위기 ELS 규모와 녹인 개념을 쉬운 말로 풀고, 내 ELS에서 확인할 세 가지를 짚는다 (공식: 없음)",
-   "why_now": "코스피 급락 여파로 ELS 손실 기사가 18시대에 연달아 나왔다. 오늘 아직 다루지 않은 주제다.",
-   "tag": "ELS",
-   "sources": [
-    "https://v.daum.net/v/20261108181957526",
-    "https://v.daum.net/v/20261108180942145"
-   ],
-   "bg": "Samsung Electronics SK Hynix",
-   "bg_alt": "KOSPI stock board Seoul",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "원금손실 위기\nELS가 **866억**\n폭락장의 그림자",
-     "number": "866억원",
-     "label": "원금손실 위기 ELS 규모",
-     "sub": "파이낸셜뉴스 보도"
-    },
-    {
-     "type": "질문형",
-     "title": "내가 가입한 ELS도\n**녹인**에 닿았을까\n기초자산부터 확인",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "삼전닉스 ELS 235억\n녹인은 닿았지만\n손실 확정은 **만기**에",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "bars"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "원금손실 위기 ELS 규모(억원)",
-     "bars": [
-      {
-       "label": "원금손실 위기 전체",
-       "value": 866,
-       "hi": true
-      },
-      {
-       "label": "삼전, SK하이닉스 연계 녹인 터치",
-       "value": 235
-      }
-     ]
-    }
-   },
-   "id": "20261108-2107-i2",
-   "created_at": "2026-11-08T21:07:12+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261108-2107-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261108-2107-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261108-2107-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261108-2107-i2/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261108-2107-i2/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261108-2107-i2/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261108-2107-i2/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261108-2107-i2/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261108-2107-i2/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261108-2107-i2/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261108-2107-i2/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261108-2107-i2/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "1주택 종부세 14억 공제, 여당 vs 청와대",
-   "concept": "여당의 14억 통일 요구와 청와대의 수용 어렵다는 입장을 맞세워, 공제선이 서울 1주택자 세금에 닿는 길을 쉬운 말로 푼다. 결론은 아직 안 났다는 단서는 한 번만 둔다 (공식: A인데 B)",
-   "why_now": "20:40 기준 뉴스1, 동아일보, 연합뉴스 등 5곳이 다뤘고, 서울 의원들의 완화 요청 기사도 따로 나왔다. 아직 보내지 않은 주제다.",
-   "tag": "부동산세",
-   "sources": [
-    "https://v.daum.net/v/20261108202911742",
-    "https://www.donga.com/news/Politics/article/all/20261108/134987770/1",
-    "https://www.mt.co.kr/politics/2026/11/08/2026110819241445667"
-   ],
-   "bg": "Blue House Seoul",
-   "bg_alt": "Seoul apartment complex",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "1주택 종부세 공제\n여당은 **14억** 요구\n청와대는 어렵다",
-     "number": "14억원",
-     "label": "여당이 요구한 1주택 공제선",
-     "sub": "청와대는 수용 어렵다는 입장"
-    },
-    {
-     "type": "질문형",
-     "title": "1주택 종부세 공제\n14억으로 통일될까\n결론은 **아직** 안 났다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "여당은 '총선 직결'이라는데\n청와대는 **수용 어렵다**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/08",
-     "headlines": [
-      "여당, 1주택 공제 14억 통일 요구",
-      "청와대 '수용 어려워' 입장",
-      "서울 의원, 비거주 1주택도 완화"
-     ]
-    }
-   },
-   "id": "20261108-2107-i3",
-   "created_at": "2026-11-08T21:07:12+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261108-2107-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261108-2107-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261108-2107-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261108-2107-i3/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261108-2107-i3/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261108-2107-i3/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261108-2107-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261108-2107-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261108-2107-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261108-2107-i3/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261108-2107-i3/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261108-2107-i3/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261108-2107-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261108-2107-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261108-2107-i3/3-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261108-2107-i3/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261108-2107-i3/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261108-2107-i3/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "아람코 리야드 사무실 피격, WTI 86달러",
    "concept": "후티 공격으로 사우디 아람코 사무실이 피해를 입은 사건을 속보로 전하고, 유가가 한국의 환율과 수입 물가로 이어지는 길을 쉬운 말로 한 장 넣는다. 월요일 아침 유가 반응을 다음 변수로 남긴다. (공식: 표지는 이미 일어난 일로)",
    "why_now": "FT와 CNBC가 21:16에 보도한 오늘 밤 새 외부 변수이고, 지금까지 다룬 주제에는 없었다. 닛케이 9.3% 폭락 기사에도 WTI 86달러대가 함께 나왔다. WTI 수치는 원문 확인이 필요하다.",
@@ -8374,6 +7955,435 @@
      "form": "news",
      "font": "myeongjo",
      "path": "20261109-1901-i3/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "엔비디아, 한국 AI 스타트업 4곳 투자",
+   "concept": "CEO 논란으로 주가가 4~5%대 빠진 날 한국 스타트업 4곳에 투자한 반전을 앞세우고, 의존 심화와 협력 기회라는 두 시각을 한국 입장에서 함께 보여 준다 (공식: A인데 B, 어긋난 두 사실 제목)",
+   "why_now": "19:48 기준 9개 매체가 다룬 새 소식이다. 같은 날 열린 AI 데이 현장 기사들과 이어진다.",
+   "tag": "AI, 기업",
+   "sources": [
+    "https://biz.chosun.com/it-science/ict/2026/11/09/E2NB6FVCRRBONHFSOARRZ4U7SI/"
+   ],
+   "bg": "Jensen Huang",
+   "bg_alt": "Nvidia headquarters",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "엔비디아가 찍은\n한국 스타트업\n**4곳** 이름 공개",
+     "number": "4곳",
+     "label": "엔비디아가 투자한 한국 AI 스타트업",
+     "sub": "모티프, 업스테이지, 리얼월드, 포인투테크놀로지"
+    },
+    {
+     "type": "질문형",
+     "title": "주가 빠진 날\n엔비디아는 왜\n한국에 **투자**했나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "주가 4~5% 빠진 날\n엔비디아의 선택은\n한국 스타트업 **투자**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/09",
+     "headlines": [
+      "엔비디아, 한국 AI 4곳 투자",
+      "CEO 논란에 주가 4~5%대 하락",
+      "피지컬 AI 황금시대라 밝혀"
+     ]
+    }
+   },
+   "id": "20261109-2006-i1",
+   "created_at": "2026-11-09T20:06:34+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-2006-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-2006-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-2006-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261109-2006-i1/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261109-2006-i1/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261109-2006-i1/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-2006-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-2006-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-2006-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261109-2006-i1/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261109-2006-i1/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261109-2006-i1/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-2006-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-2006-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-2006-i1/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261109-2006-i1/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261109-2006-i1/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261109-2006-i1/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "테슬라, 스페이스X 합병과 서학개미 양도세",
+   "concept": "국내 기업은 과세이연을 받을 수 있지만 해외 기업은 합병 때 양도세 우려가 나온다는 차이를 해외주식 보유자 입장에서 풀고, 실제 과세 여부는 합병 조건에 달렸다고 선을 긋는다 (공식: 없음)",
+   "why_now": "18:23, 18:29 파이낸셜뉴스가 연달아 보도했다. 해외주식 보유자의 세금과 직결되는 이야기라 개인 투자자의 관심이 크다.",
+   "tag": "세금, 해외주식",
+   "sources": [
+    "https://www.fnnews.com/news/202611091829425514",
+    "https://www.fnnews.com/news/202611091823276882"
+   ],
+   "bg": "Elon Musk",
+   "bg_alt": "Tesla SpaceX",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "테슬라, 스페이스X 합병\n국내 기업은 과세이연\n해외는 **양도세** 우려",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "서학개미는 왜\n테슬라 합병 소식에\n**양도세**를 걱정할까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "국내 합병은 과세이연\n테슬라 같은 해외 합병엔\n**양도세** 우려",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "editorial",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261109-2006-i2",
+   "created_at": "2026-11-09T20:06:34+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261109-2006-i2/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261109-2006-i2/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261109-2006-i2/1-editorial-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-2006-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-2006-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-2006-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261109-2006-i2/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261109-2006-i2/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261109-2006-i2/2-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-2006-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-2006-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-2006-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261109-2006-i2/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261109-2006-i2/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261109-2006-i2/3-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-2006-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-2006-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-2006-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "삼성화재, 영국 캐노피우스에 3조원",
+   "concept": "국내 보험사의 대형 해외 인수라는 규모를 먼저 보여 주고, 지분율과 인수 구조는 확인 뒤 보강한다 (공식: 표지는 이미 일어난 일로)",
+   "why_now": "18:55 보도 이후 머니투데이, 파이낸셜뉴스, 한국경제 등 4곳이 다뤘고 연합뉴스도 추가 지분 인수로 전했다. 아직 다룬 적 없는 새 소식이다.",
+   "tag": "보험, 인수합병",
+   "sources": [
+    "https://www.mt.co.kr/finance/2026/11/09/2026110918400928010",
+    "https://v.daum.net/v/20261109182926606",
+    "https://www.yna.co.kr/view/AKR20261109153600002"
+   ],
+   "bg": "Samsung Fire Marine Insurance",
+   "bg_alt": "London skyline insurance",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "삼성화재가 영국\n보험사에 베팅한\n금액은 **3조원**",
+     "number": "3조원",
+     "label": "삼성화재가 영국 캐노피우스에 쓴 금액",
+     "sub": "영국 특수보험사, 경영권 확보 보도"
+    },
+    {
+     "type": "질문형",
+     "title": "삼성화재는 왜\n영국 보험사에\n**3조원**을 썼을까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "국내 보험사가\n영국 특수보험사의\n**경영권**을 잡았다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261109-2006-i3",
+   "created_at": "2026-11-09T20:06:34+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-2006-i3/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-2006-i3/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-2006-i3/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261109-2006-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261109-2006-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261109-2006-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-2006-i3/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-2006-i3/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-2006-i3/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-2006-i3/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-2006-i3/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-2006-i3/3-breaking-dohyeon.jpg"
     }
    ]
   }
