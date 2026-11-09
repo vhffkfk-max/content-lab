@@ -72,8 +72,8 @@ def check(caption, keyword=""):
     if len(TAG.findall(caption)) > MAX_TAGS:
         block.append(f"해시태그가 {MAX_TAGS}개를 넘어요")
     asks = len(ASK.findall(body))
-    if asks != 1:
-        notes.append(f"행동 유도가 {asks}개예요 (1개 권장)")
+    if asks not in (1, 2):   # 첫 줄과 마지막에 같은 키워드 댓글 부탁
+        notes.append(f"행동 유도가 {asks}개예요 (같은 부탁 1~2번 권장)")
     if keyword and keyword not in body:
         notes.append(f"끝 장 댓글 키워드 '{keyword}'가 캡션에 없어요")
     ends = re.findall(r"(습니다|입니다|니다|어요|아요|예요|해요|에요|네요)[.!?\s]", body + " ")
