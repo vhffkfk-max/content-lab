@@ -85,6 +85,12 @@ def load(path, default):
 def find_pick(idx, slot):
     hist = load(SITE / "hot_now.json", [])
     run = next((h for h in hist if h.get("time") == slot), None) if slot else None
+    if slot and not run:    # 120번이 지나 hot_now.json 에서 밀려난 글감은 영구 보관에서 찾는다
+        for f in sorted((SITE / "hot_archive").glob("20*.json"), reverse=True):
+            p = next((x for x in load(f, []) if x.get("run") == slot and x.get("i") == idx), None)
+            if p:
+                return {"time": slot, "picks": [p]}, p
+        return None, None
     run = run or (hist[0] if hist else None)
     if not run or idx >= len(run.get("picks", [])):
         return None, None

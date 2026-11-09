@@ -30,7 +30,7 @@ LOG = ROOT / "data" / "local_ai.log"
 SITE = "output/site/"
 OUTPUTS = [SITE + f for f in ("tg_ai.json", "tg_rewrites.json", "trd_rooms.json", "trd_posts.json", "drafts.json",
                                "imports.json", "threads_ai.json", "x_ai.json", "thm_ai.json", "growth_plan.json", "thread_posts.json",
-                               "chart_reports.json", "charts", "futures_brief.json", "futures", "malhee_var.json", "acc_topics.json", "channel_pulse.json", "trader_posts.json")] + [SITE + f"acc_{a['slug']}.json" for a in _ACCS] + ["data/publish_queue.json", "data/card_style.json", "data/form_stats.json"]
+                               "chart_reports.json", "charts", "futures_brief.json", "futures", "malhee_var.json", "acc_topics.json", "channel_pulse.json", "trader_posts.json", "hot_archive")] + [SITE + f"acc_{a['slug']}.json" for a in _ACCS] + ["data/publish_queue.json", "data/card_style.json", "data/form_stats.json"]
 ENV = {**os.environ, "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1"}
 CRAWLERS = (("content-lab-telegram-live", "tg_live.py"), ("content-lab-threads-watch", "threads_watch.py"), ("content-lab-thread-listen", "thread_listen.py"))
 TG_BEAT = Path.home() / ".content-lab-ai" / "tg_live.beat"
@@ -258,6 +258,10 @@ def run_cycle():
             continue
         py("-m", "publish.publish_card", r["args"].get("id", ""), "--yes", timeout=15 * 60)
         did.append(f"인스타 발행 {r['args'].get('id', '')}")
+
+    if time.time() - state.get("hot_archive_at", 0) >= 600:   # 지금 쓸 거리 영구 보관 (AI 없음)
+        state["hot_archive_at"] = time.time()
+        py("hot_archive.py", timeout=60)
 
     if time.time() - state.get("pulse_at", 0) >= 3600:   # 채널 발행 체크: AI 없이 크롤링 기록만 집계 (매시간)
         state["pulse_at"] = time.time()

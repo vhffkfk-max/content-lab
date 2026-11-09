@@ -580,6 +580,7 @@ ul.gd-card{padding-left:36px;line-height:1.8}
     <nav>
       <ul class="nav" id="channel-nav">
         <li><button type="button" data-ch="home"><i class="dot" style="background:var(--text)"></i>오늘 할 일</button></li>
+        <li><button type="button" data-ch="hotnow"><i class="dot" style="background:#E5484D"></i>지금 쓸 거리</button></li>
         <li><button type="button" data-ch="guide"><i class="dot" style="background:var(--accent)"></i>사용 가이드</button>
           <ul class="subnav" data-for="guide">
             <li><a href="#gd-what">연구소가 뭐예요?</a></li>
@@ -791,11 +792,6 @@ ul.gd-card{padding-left:36px;line-height:1.8}
         <section class="sec" id="home-fresh-sec" hidden><div class="fresh" id="home-fresh"></div></section>
         <section class="sec" id="home-quick-sec"><h2>바로가기</h2><div class="quick" id="home-quick"></div></section>
         <section class="sec" id="home-check" aria-label="연구소 활용 체크"><div class="uc-strip" id="home-check-box"></div></section>
-        <section class="sec" id="home-jobs-sec">
-          <h2>지금 쓸 거리</h2>
-          <div class="home-jobs" id="home-jobs"></div>
-          <div id="home-jobs-old" hidden></div>
-        </section>
         <section class="sec" id="home-thhist">
           <h2>내가 만든 쓰레드 글 (지난 것까지)</h2>
           <p class="note">'쓰레드 콘텐츠 만들기'로 만든 글이 글감이 바뀌어도 여기 남아요. 최근 것부터 보여요.</p>
@@ -1152,6 +1148,13 @@ ul.gd-card{padding-left:36px;line-height:1.8}
       <div class="view" data-view="fb-malhee" hidden>
         <div class="title-row"><div><h1>말희아빠 피드백</h1><p>내 실제 계정을 크롤링한 결과예요.</p></div></div>
         <div id="fb-malhee-root"></div>
+      </div>
+      <div class="view" data-view="hotnow" hidden>
+        <div class="title-row"><div><h1>지금 쓸 거리</h1><p>30분마다 새 글감을 확인해요. 지나간 글감은 지우지 않고 아래에 계속 보관해요.</p></div></div>
+        <section class="sec" id="home-jobs-sec">
+          <div class="home-jobs" id="home-jobs"></div>
+          <div id="home-jobs-old" hidden></div>
+        </section>
       </div>
       <div class="view" data-view="video" hidden>
         <div class="title-row"><div><h1>영상 연구소</h1><p>대본과 컷 이미지를 먼저 보고, 고친 뒤 버튼을 눌렀을 때만 영상을 만들어요. 새 보드는 <b>핫코노미 v2</b>(상위 릴스 벤치마크) 형식으로 만들어지고, 보드마다 다른 형식으로 바꿀 수 있어요. 플랫폼에는 올리지 않아요.</p></div></div>
@@ -2537,7 +2540,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
       const k = thhState.q.trim().toLowerCase();
       const G = [...groups].filter(([t, xs]) => !k || (t + ' ' + xs.map(x => x.text).join(' ')).toLowerCase().includes(k));
       list.replaceChildren();
-      if (!all.length) return list.append(el('div', 'lab-empty', '아직 만든 쓰레드 글이 없어요. 위 "지금 쓸 거리"에서 A·B·C를 눌러 보세요.'));
+      if (!all.length) return list.append(el('div', 'lab-empty', '아직 만든 쓰레드 글이 없어요. 왼쪽 "지금 쓸 거리" 메뉴에서 A·B·C를 눌러 보세요.'));
       if (!G.length) return list.append(el('div', 'lab-empty', '검색에 맞는 글이 없어요.'));
       G.slice(0, thhState.shown).forEach(([title, xs], gi) => {
         const d = el('details', 'thh'); d.open = gi === 0 && !k ? true : !!k;
@@ -2730,32 +2733,44 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
       return card;
     };
     if (hn) (hn.picks || []).slice(0, 3).forEach((p, i) => jobs.push(jobCard(p, i, hn)));
-    // 지난 쓸 거리: 화면에서 밀려난 글감을 날짜별로 보관. 쓰레드 버튼도 그대로 쓸 수 있고, 펼칠 때 그림
-    const oldDays = new Map(), oldSeen = new Set((hn ? hn.picks || [] : []).slice(0, 3).map(p => p.title));
-    hist.slice(1).forEach(run => (run.picks || []).slice(0, 3).forEach((p, i) => {
-      if (oldSeen.has(p.title)) return;
-      oldSeen.add(p.title);
-      const day = (p.time || run.time).slice(0, 5);
-      if (!oldDays.has(day)) oldDays.set(day, []);
-      oldDays.get(day).push({ p, i, run });
-    }));
+    // 지난 쓸 거리: 지우지 않고 달별로 영구 보관 (hot_archive.py). 달·날짜를 펼칠 때 그림
+    const nowTitles = new Set((hn ? hn.picks || [] : []).slice(0, 3).map(p => p.title));
     const oldBox = document.getElementById('home-jobs-old');
-    oldBox.hidden = !oldDays.size;
-    if (oldDays.size) {
-      const total = [...oldDays.values()].reduce((n, l) => n + l.length, 0);
-      const top = el('details', 'hn-old'), sum = el('summary'), days = el('div', 'hn-old-days');
-      sum.append(el('span', null, `지난 쓸 거리 · ${total}개`), el('span', 'note', '날짜별 보관 · 일주일쯤'));
-      [...oldDays].forEach(([day, list], n) => {
-        const d = el('details', 'hn-old-day'), s = el('summary'), box = el('div', 'home-jobs');
-        s.append(day); s.append(el('span', null, `${list.length}개`));
-        const fill = () => { if (d.open && !box.firstChild) box.replaceChildren(...list.map(x => jobCard(x.p, x.i, x.run))); };
-        d.addEventListener('toggle', fill);
-        d.append(s, box); d.open = n === 0;
-        days.append(d);
+    chJson('hot_archive/index.json').then(idx => {
+      oldBox.hidden = false;
+      if (!idx || !idx.length) return oldBox.replaceChildren(el('p', 'sub', '지난 쓸 거리를 불러오지 못했어요. 잠시 후 다시 열어 주세요.'));
+      const total = idx.reduce((n, m) => n + m.count, 0);
+      const top = el('details', 'hn-old'), sum = el('summary'), months = el('div', 'hn-old-days');
+      top.open = true;
+      sum.append(el('span', null, `지금까지 쌓인 글감 · ${total.toLocaleString()}개`), el('span', 'note', '지우지 않고 계속 보관'));
+      idx.forEach((m, n) => {
+        const md = el('details', 'hn-old-day'), ms = el('summary'), body = el('div', 'hn-old-days');
+        ms.append(m.month.replace('-', '년 ') + '월'); ms.append(el('span', null, `${m.count}개`));
+        let started = false;
+        const load = () => {
+          if (!md.open || started) return;
+          started = true; body.replaceChildren(el('p', 'sub', '불러오는 중…'));
+          chJson(`hot_archive/${m.month}.json`).then(list => {
+            if (!list) { started = false; return body.replaceChildren(el('p', 'sub', '불러오지 못했어요. 접었다가 다시 펼쳐 주세요.')); }
+            const days = new Map();
+            list.filter(p => !nowTitles.has(p.title)).forEach(p => { const day = p.time.slice(0, 5); if (!days.has(day)) days.set(day, []); days.get(day).push(p); });
+            body.replaceChildren(...[...days].map(([day, l], k) => {
+              const d = el('details', 'hn-old-day'), s = el('summary'), box = el('div', 'home-jobs');
+              s.append(day); s.append(el('span', null, `${l.length}개`));
+              const fill = () => { if (d.open && !box.firstChild) box.replaceChildren(...l.map(p => jobCard(p, p.i, { time: p.run }))); };
+              d.addEventListener('toggle', fill);
+              d.append(s, box); d.open = n === 0 && k === 0;
+              return d;
+            }));
+          });
+        };
+        md.addEventListener('toggle', load);
+        md.append(ms, body); md.open = n === 0;
+        months.append(md);
       });
-      top.append(sum, days);
+      top.append(sum, months);
       oldBox.replaceChildren(top);
-    }
+    });
     // 채널별 다음 한 가지: 한 줄씩
     const row = (c, chName, title, sub, acts) => {
       const r = el('div', 'next-row'), n = el('b'), t = el('div'), a = el('div', 'job-acts');
@@ -4522,7 +4537,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
   document.getElementById('side-hide').addEventListener('click', () => setSide(true));
   document.getElementById('side-show').addEventListener('click', () => setSide(false));
   if (store.get('side_hidden') === '1') setSide(true);
-  const NAMES = { 'fb-bull': '황소개미 피드백', 'fb-hot': '핫코노미 피드백', 'fb-asset': '자산백배 피드백', 'fb-chart': '차트덕후 피드백', 'fb-malhee': '말희아빠 피드백', thlab: '쓰레드 연구소', econ: '경제 미디어 추천', guide: '사용 가이드', calendar: '발행 캘린더', video: '영상 연구소', 'c-bull': '황소개미', 'c-hot': '핫코노미', 'c-asset': '자산백배', 'c-chart': '차트덕후', 'c-malhee': '말희아빠', home: '오늘 할 일', instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드', x: 'X · 트루스소셜', telegram: '텔레그램 · 말희아빠', traders: '텔레그램 · 트레이더스', feedback: '후기·기록', growth: '마케팅 코치', viral: '뜬 글 공식', usage: '활용 체크' };
+  const NAMES = { hotnow: '지금 쓸 거리', 'fb-bull': '황소개미 피드백', 'fb-hot': '핫코노미 피드백', 'fb-asset': '자산백배 피드백', 'fb-chart': '차트덕후 피드백', 'fb-malhee': '말희아빠 피드백', thlab: '쓰레드 연구소', econ: '경제 미디어 추천', guide: '사용 가이드', calendar: '발행 캘린더', video: '영상 연구소', 'c-bull': '황소개미', 'c-hot': '핫코노미', 'c-asset': '자산백배', 'c-chart': '차트덕후', 'c-malhee': '말희아빠', home: '오늘 할 일', instagram: '인스타 · 한국', foreign: '인스타 · 해외', accounts: '계정 분석', google: '뉴스·정보', youtube: '유튜브', threads: '쓰레드', x: 'X · 트루스소셜', telegram: '텔레그램 · 말희아빠', traders: '텔레그램 · 트레이더스', feedback: '후기·기록', growth: '마케팅 코치', viral: '뜬 글 공식', usage: '활용 체크' };
   // ── 폰: 채널을 열면 '전체' 대신 한 칸만 (이 기기에서 많이 본 칸, 없으면 첫 칸). 위 탭으로 다른 칸·전체로 이동 ──
   const isPhone = () => matchMedia('(max-width:860px)').matches;
   function phoneFolder(ch) {
@@ -4649,7 +4664,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
   // 실제 데이터만 쓴다. 없는 값은 '미수집', 연결 안 된 값은 '측정 불가'.
   const nf = v => v == null || v === '' ? null : Number(v).toLocaleString('ko-KR');
   const NAV_GROUPS = [
-    ['대시보드', ['home', 'guide']],
+    ['대시보드', ['home', 'hotnow', 'guide']],
     ['컨텐츠 바로 만들기', ['c-bull', 'c-hot', 'c-asset', 'c-chart', 'c-malhee']],
     ['내 채널 피드백', ['fb-bull', 'fb-hot', 'fb-asset', 'fb-chart', 'fb-malhee']],
     ['쓰레드 연구소', ['thlab', 'threads']],
