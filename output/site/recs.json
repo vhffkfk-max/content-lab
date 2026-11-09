@@ -8,8 +8,8 @@
   "format": "릴스",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 3.22,
-  "kr_n": 31,
+  "kr_avg": 3.13,
+  "kr_n": 32,
   "foreign_avg": 1.72,
   "foreign_n": 39
  },
@@ -22,7 +22,7 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.51,
+  "kr_avg": 2.5,
   "kr_n": 12,
   "foreign_avg": 1.72,
   "foreign_n": 139
@@ -36,10 +36,10 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.57,
-  "kr_n": 236,
-  "foreign_avg": 1.23,
-  "foreign_n": 145
+  "kr_avg": 1.58,
+  "kr_n": 238,
+  "foreign_avg": 1.24,
+  "foreign_n": 146
  },
  {
   "rank": 4,
@@ -50,7 +50,7 @@
   "format": "릴스",
   "hook": "짧은 한 줄",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.08,
+  "kr_avg": 2.13,
   "kr_n": 28,
   "foreign_avg": 1.53,
   "foreign_n": 18
@@ -65,8 +65,8 @@
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
   "kr_avg": 1.95,
-  "kr_n": 70,
-  "foreign_avg": 1.89,
+  "kr_n": 72,
+  "foreign_avg": 1.9,
   "foreign_n": 17
  },
  {
@@ -78,27 +78,13 @@
   "format": "릴스",
   "hook": "짧은 한 줄",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.06,
+  "kr_avg": 2.03,
   "kr_n": 47,
-  "foreign_avg": 1.24,
+  "foreign_avg": 1.23,
   "foreign_n": 9
  },
  {
   "rank": 7,
-  "topic": "금리·연준",
-  "kind": "국내 검증 주제",
-  "confidence": "높음",
-  "title_idea": "숫자 하나로 보는 금리·연준",
-  "format": "릴스",
-  "hook": "숫자 강조형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 1.74,
-  "kr_n": 27,
-  "foreign_avg": 0.82,
-  "foreign_n": 23
- },
- {
-  "rank": 8,
   "topic": "연금·절세",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
@@ -106,9 +92,23 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.56,
+  "kr_avg": 1.54,
   "kr_n": 41,
   "foreign_avg": 1.4,
   "foreign_n": 31
+ },
+ {
+  "rank": 8,
+  "topic": "ETF·지수투자",
+  "kind": "해외 선행 주제 (선점 기회)",
+  "confidence": "높음",
+  "title_idea": "[오늘] ETF·지수투자에 무슨 일이? 1분 요약",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "속보·뉴스형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 1.19,
+  "kr_n": 22,
+  "foreign_avg": 1.26,
+  "foreign_n": 48
  }
 ]
