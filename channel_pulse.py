@@ -37,6 +37,12 @@ def one(c, platform, handle, target, now):
     posts = c.execute(post_q, (handle,)).fetchall()
     d7 = sum(1 for p in posts if now - p[2] <= 7 * 86400)
     d30 = sum(1 for p in posts if now - p[2] <= 30 * 86400)
+    day = int(datetime.now(KST).replace(hour=0, minute=0, second=0, microsecond=0).timestamp())
+    if platform == "instagram":
+        kinds = dict(c.execute("SELECT kind, COUNT(*) FROM ig_posts WHERE account=? AND taken_at>=? GROUP BY kind", (handle, day)).fetchall())
+        today = {"card": kinds.get("카드뉴스", 0), "reel": kinds.get("릴스", 0)}
+    else:
+        today = {"n": sum(1 for p in posts if p[2] >= day)}
     recent = []
     for code, url, at, text in [x for x in posts if now - x[2] <= 30 * 86400][:20]:
         s = c.execute(snap_q, (code,)).fetchone() or (None, None, None)
@@ -47,7 +53,7 @@ def one(c, platform, handle, target, now):
     best = max(old, key=score) if len(old) >= 2 else None
     worst = min(old, key=score) if len(old) >= 2 else None
     return {"handle": handle, "state": status(d7, target), "last_post": posts[0][2] if posts else None, "d7": d7, "d30": d30,
-            "target_7": target, "scanned": row[0], "recent": recent, "best": best, "worst": worst}
+            "target_7": target, "today": today, "scanned": row[0], "recent": recent, "best": best, "worst": worst}
 
 
 SYSTEM = """너는 경제 콘텐츠 계정의 편집 코치다. 한 계정의 최근 30일에서 반응이 가장 좋은 글과 가장 나쁜 글을 받아 비교한다.
@@ -81,14 +87,14 @@ def main():
     cfg = json.loads((ROOT / "data" / "channel_targets.json").read_text(encoding="utf-8"))
     now = int(time.time())
     c = sqlite3.connect(f"file:{DB.as_posix()}?mode=ro", uri=True, timeout=30)
-    out = {"updated": datetime.now(KST).isoformat(timespec="seconds"), "channels": {}}
+    out = {"updated": datetime.now(KST).isoformat(timespec="seconds"), "daily": cfg["daily"], "channels": {}}
     path = ROOT / "output" / "site" / "channel_pulse.json"
     try:
         before = json.loads(path.read_text(encoding="utf-8"))["channels"]
     except (OSError, ValueError, KeyError):
         before = {}
     for ch, handles in cfg["channels"].items():
-        out["channels"][ch] = {p: one(c, p, handles.get(p, ""), cfg["targets"][p]["per_week"], now) for p in Q}
+        out["channels"][ch] = {p: one(c, p, handles.get(p, ""), handles.get("per_week", {}).get(p, cfg["targets"][p]["per_week"]), now) for p in Q}
         for pf, v in out["channels"][ch].items():
             v["note"] = note(handles.get(pf, ""), v, before.get(ch, {}).get(pf, {}).get("note"))
     path.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
