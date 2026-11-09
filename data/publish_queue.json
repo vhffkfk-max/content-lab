@@ -3035,383 +3035,6 @@
  ],
  "ideas": [
   {
-   "title": "상장사 3곳 중 1곳 연중 최저가",
-   "concept": "코스피 한 주 -11.71%를 지수가 아니라 종목 체감으로 풀기. 삼전닉스 외국인 7.6조 매도, ETF 순자산 400조 붕괴, 그 와중에 버틴 K콘텐츠와 통신주까지 한 사건으로 묶고, 이번 주 변수는 마지막에 한 줄로만 둔다. (공식: 없음)",
-   "why_now": "연합뉴스, 매일경제, 세계비즈 3곳이 다뤘고, 월요일 장 시작 전이라 급락의 체감 규모를 확인하려는 수요가 크다. 코스피는 11/06 종가 5,059.69로 전일 -6.02%, 1달 -25.64%다.",
-   "tag": "증시",
-   "sources": [
-    "https://www.yna.co.kr/view/AKR20261106189100008",
-    "https://www.yna.co.kr/view/AKR20261107026400008",
-    "https://www.yna.co.kr/view/AKR20261107028500008"
-   ],
-   "bg": "KOSPI trading screen",
-   "bg_alt": "Korea Exchange building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "지난주 상장사\n3곳 중 1곳이\n**연중 최저가** 찍었다",
-     "number": "3곳 중 1곳",
-     "label": "지난주 연중 최저가를 찍은 상장사",
-     "sub": "코스피는 한 주 만에 -11.71%"
-    },
-    {
-     "type": "질문형",
-     "title": "11.7% 빠진 한 주\n버틴 건 **K콘텐츠**\n통신주뿐이었나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "삼전닉스 탓만이\n아니었다, 상장사\n3곳 중 1곳 **최저가**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/08",
-     "headlines": [
-      "코스피 한 주 -11.71%",
-      "외국인 삼전닉스 7.6조 매도",
-      "ETF 순자산 400조 아래로"
-     ]
-    }
-   },
-   "id": "20261108-0906-i1",
-   "created_at": "2026-11-08T09:06:48+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261108-0906-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261108-0906-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261108-0906-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261108-0906-i1/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261108-0906-i1/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261108-0906-i1/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261108-0906-i1/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261108-0906-i1/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261108-0906-i1/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261108-0906-i1/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261108-0906-i1/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261108-0906-i1/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "주식은 폭락, 서울 집값은 역대 최장 상승",
-   "concept": "주식이 주저앉은 주에 서울 집값은 역대 최장기 상승이고 오피스텔도 함께 오른다는 대비로 연다. 청약통장 4년 새 282만 명 해지와 중도금 대출금리 5%는 숫자로 짧게 보여 주고, 버블 가능성 논쟁은 보도 내용만 전한다. (공식: 없음)",
-   "why_now": "동아일보, 주간동아가 역대 최장기 상승을 다뤘고 오피스텔 동반 상승과 청약통장 이탈 기사도 같은 시각에 나왔다. 급락장에서 자금이 어디로 가는지 보려는 관심과 맞물린다.",
-   "tag": "부동산",
-   "sources": [
-    "https://www.donga.com/news/Economy/article/all/20261108/134984117/1",
-    "https://v.daum.net/v/20261108080119497",
-    "https://biz.chosun.com/real_estate/real_estate_general/2026/11/08/JGGRJPUVUNAD3HEGCHST75SEEI/"
-   ],
-   "bg": "Seoul apartment complex",
-   "bg_alt": "Seoul skyline apartments",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "청약통장 4년 새\n**282만 명**이 해지\n서울 집값은 상승",
-     "number": "282만 명",
-     "label": "4년 새 청약통장을 깬 사람",
-     "sub": "분양가는 높고 대출 규제는 세다는 설명"
-    },
-    {
-     "type": "질문형",
-     "title": "금리에 장사 없다던\n서울 집값 **버블**\n가능성은 없나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "주식은 주저앉았는데\n서울 집값은\n**역대 최장** 상승",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "editorial",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261108-0906-i2",
-   "created_at": "2026-11-08T09:06:48+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261108-0906-i2/1-editorial-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261108-0906-i2/1-editorial-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261108-0906-i2/1-editorial-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261108-0906-i2/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261108-0906-i2/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261108-0906-i2/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261108-0906-i2/2-editorial-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261108-0906-i2/2-editorial-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261108-0906-i2/2-editorial-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261108-0906-i2/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261108-0906-i2/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261108-0906-i2/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261108-0906-i2/3-editorial-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261108-0906-i2/3-editorial-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261108-0906-i2/3-editorial-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261108-0906-i2/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261108-0906-i2/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261108-0906-i2/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "코인 거래대금 61% 증발, 리플 1.16달러",
-   "concept": "비트코인은 1달 -6.97%인데 거래대금은 61% 증발했다는 보도를 중심으로 푼다. 리플 1.16달러, 1,000만 달러 청산, 소셜미디어 투심 7월 이후 최저를 이어 붙이고, 거래대금 61%의 기준 시점은 확인 필요라고 한 줄로 밝힌다. (공식: 없음)",
-   "why_now": "톱스타뉴스와 코인리더스가 거래대금 급감과 청산을 보도했고, 거래소 잇단 해킹에 금감원이 가상자산업계 보안책임자를 소집했다는 소식도 이어졌다. 주말에도 열리는 시장이라 월요일 전에 분위기를 짚기 좋다.",
-   "tag": "코인",
-   "sources": [
-    "https://news.google.com/rss/articles/CBMickFVX3lxTE1VTlRGUWVVc2R2dE1oWDU1dlRTSmR0VGxtN3J0U09TdEIyTjRJbE15cXd6NHFpZVV1WTM",
-    "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9LeXlWV3YtWXBPUjJMN01YejhzQUIxa1c3cjhTbGE2dTI1bzZ6dU9qVTZ1U1FJSDBycDN"
-   ],
-   "bg": "Bitcoin coin",
-   "bg_alt": "Upbit app",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "코인 거래대금\n**61%** 증발했다\n리플 1.16달러",
-     "number": "61%",
-     "label": "증발한 코인시장 거래대금",
-     "sub": "리플은 1.16달러까지 밀렸다"
-    },
-    {
-     "type": "질문형",
-     "title": "금감원이 거래소\n보안책임자를\n**소집**한 이유",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "비트코인 1달 -7%\n거래대금은 **61%**\n증발했다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "breaking"
-   ],
-   "extra": {},
-   "id": "20261108-0906-i3",
-   "created_at": "2026-11-08T09:06:48+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261108-0906-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261108-0906-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261108-0906-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261108-0906-i3/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261108-0906-i3/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261108-0906-i3/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261108-0906-i3/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261108-0906-i3/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261108-0906-i3/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
    "title": "코스피 한 주 -11.7%, 외국인 7.6조 매도",
    "concept": "한 주 낙폭과 외국인 매도, 상장사 3곳 중 1곳 연중 최저가로 급락의 체감 규모를 보여 주고, 버틴 업종과 다음 주 변수로 마무리한다. 표지에는 '오늘의 시황' 같은 라벨 대신 가장 센 사건 하나만 건다. (공식: 날짜, 모음 라벨 표지는 피하기)",
    "why_now": "연합뉴스 등 여러 곳이 급락장 기사를 냈고, 주말 주간 전망이 쏟아지는 월요일 장 전 시점이다. 외국인 매도, 연중 최저가 종목 비율, ETF 순자산 400조 붕괴가 같은 흐름으로 이어진다.",
@@ -8708,6 +8331,354 @@
      "form": "breaking",
      "font": "dohyeon",
      "path": "20261109-0801-i3/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "SK하이닉스 750억 달러 환원 vs 10% 급락",
+   "concept": "주가는 10.44% 빠졌는데 WSJ는 750억 달러 주주환원 계획을 보도했다. 두 사실이 어긋난 장면을 2장에서 출처와 함께 보여 준다. 기간과 방식(배당, 자사주)은 재료에 없다고 밝히고, 보도 단서는 한 장에만 남긴다. (공식: A인데 B, 어긋난 두 사실 제목)",
+   "why_now": "WSJ가 22:17에 750억 달러 주주환원 계획을 전했고, 시세에는 11/06 하이닉스 -10.44%(1달 -34.3%)가 찍혀 있다. 월요일 장에서 시장 반응이 갈리는 지점이다. 앞서 다룬 삼전닉스 배당 44조원과는 다른 사건이다.",
+   "tag": "반도체",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMivwFBVV95cUxORS13MExBQ0RLMjJkM1FxVkF0aVVJVzRib0Uxa0FTejhNTlY5M216LURtMFRrZ1Bwc1Z",
+    "https://news.google.com/rss/articles/CBMibEFVX3lxTE9mSi1QN2ZQZjh2YkladzhxbEZsSGtlUHJzSmNNN3VBczkzeUF3R0o4YmlwellEQTV2RVZ"
+   ],
+   "bg": "SK hynix headquarters",
+   "bg_alt": "SK hynix HBM memory chip",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "SK하이닉스 **750억달러**\n주주에게 돌려준다는데\n주가는 10.44% 하락",
+     "number": "750억달러",
+     "label": "WSJ 보도, SK하이닉스 주주환원",
+     "sub": "11/06 주가는 10.44% 하락"
+    },
+    {
+     "type": "질문형",
+     "title": "하이닉스 10% 급락\n**750억달러** 환원책\n시장은 믿을까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "10.44% 급락한 하이닉스\nWSJ \"**750억달러** 환원\"",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261109-0901-i1",
+   "created_at": "2026-11-09T09:01:39+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261109-0901-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261109-0901-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261109-0901-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-0901-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-0901-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-0901-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-0901-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-0901-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-0901-i1/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "반포현대 이어 은마, 재초환 수억 원 청구서",
+   "concept": "재건축으로 오른 이익 중 기준을 넘는 부분에 매기는 부담금(재초환)이 반포현대에 이어 은마까지 수억 원대로 청구됐다는 보도다. 재초환 뜻은 나오는 자리에서 한두 문장으로 풀고, 정확한 액수와 부과 기준은 재료에 없다고 밝힌다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "뉴스웨이가 11/08 21:02에 두 단지의 수억 원대 재초환 청구가 현실화했다고 보도했다. 이전에 다룬 적 없는 주제이고, 같은 시간대 부동산 세제 논쟁도 이어지고 있다. 다룬 매체가 1곳이라 원문 확인이 필요하다.",
+   "tag": "부동산",
+   "sources": [
+    "https://v.daum.net/v/20261108210203157"
+   ],
+   "bg": "Eunma apartment Seoul",
+   "bg_alt": "Seoul apartment complex redevelopment",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "반포현대 이어 은마\n재건축 부담금\n**수억원** 청구서",
+     "number": "수억원",
+     "label": "재건축 초과이익환수금",
+     "sub": "반포현대에 이어 은마까지"
+    },
+    {
+     "type": "질문형",
+     "title": "은마 조합원에게\n날아온 **수억원** 청구서\n재초환이 뭐길래",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "재건축 이익에 매겨진\n**수억원** 청구서\n반포현대 이어 은마",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "editorial"
+   ],
+   "extra": {},
+   "id": "20261109-0901-i2",
+   "created_at": "2026-11-09T09:01:39+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-0901-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-0901-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-0901-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261109-0901-i2/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261109-0901-i2/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261109-0901-i2/1-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-0901-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-0901-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-0901-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261109-0901-i2/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261109-0901-i2/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261109-0901-i2/2-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-0901-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-0901-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-0901-i2/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261109-0901-i2/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261109-0901-i2/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261109-0901-i2/3-editorial-plex.jpg"
+    }
+   ]
+  },
+  {
+   "title": "하트넷 \"블루웨이브는 AI 고점 신호\"",
+   "concept": "미국 중간선거에서 민주당이 크게 이긴 것을 하트넷이 'AI 고점'의 표시로 봤다는 제로헤지 보도다. 중간선거는 나오는 자리에서 한 문장으로 풀고, 하트넷의 소속은 확인 필요라고 밝힌다. 코스피 11/06 하락률은 기준일과 함께 쓰되, 선거와의 인과는 확인 안 됨이라고 한 줄 적는다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "제로헤지가 23:30에 하트넷 발언을 전했고 조회 16,536을 기록했다. 한겨레와 국민일보도 선거 뒤 AI 충격을 다뤘다. 월요일 개장 전 시장 분위기를 설명하는 소재다. 외국인 매도 기사와는 다른 각도다.",
+   "tag": "시장 해석",
+   "sources": [
+    "https://x.com/zerohedge/status/2119437396093571492",
+    "https://v.daum.net/v/20261108224158106",
+    "https://v.daum.net/v/20261108230931296"
+   ],
+   "bg": "Hartnett Bank of America",
+   "bg_alt": "Bank of America tower",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "코스피 한 달 새\n**-25.64%** 빠진 뒤\n하트넷 AI 고점 거론",
+     "number": "-25.64%",
+     "label": "코스피 1달 등락률 (11/06 기준)",
+     "sub": "하트넷, 민주당 압승을 AI 고점 신호로 해석"
+    },
+    {
+     "type": "질문형",
+     "title": "민주당 압승이\n**AI 고점** 신호라고?\n하트넷의 해석",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "월가 강세론 중\n**하나만** 남았다\n하트넷의 경고",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "breaking"
+   ],
+   "extra": {},
+   "id": "20261109-0901-i3",
+   "created_at": "2026-11-09T09:01:39+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-0901-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-0901-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-0901-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-0901-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-0901-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-0901-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-0901-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-0901-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-0901-i3/3-news-myeongjo.jpg"
     }
    ]
   }
