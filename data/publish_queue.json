@@ -3035,335 +3035,6 @@
  ],
  "ideas": [
   {
-   "title": "앤트로픽, 가스 발전기 4.6조원 직접 확보",
-   "concept": "AI 경쟁의 병목이 칩에서 전력으로 옮겨 간 장면을 앤트로픽 하나를 주인공으로 풀고, 마지막 장에서 반도체 수요와 데이터센터 규제 변수를 짚는다 (공식: 표지는 이미 일어난 일로)",
-   "why_now": "연합뉴스가 11/09 06:44에 앤트로픽의 데이터센터용 가스 발전기 4.6조원 직접 확보를 보도했고, CNBC도 34억 달러 규모 계약을 전했다. 이미 다룬 상장 일정 기사와는 다른 새 사건이다.",
-   "tag": "AI 인프라",
-   "sources": [
-    "https://www.yna.co.kr/view/AKR20261109007600009",
-    "https://www.cnbc.com/2026/11/08/anthropic-generator-deal-ai-data-centers.html"
-   ],
-   "bg": "Dario Amodei Anthropic",
-   "bg_alt": "Anthropic data center",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "앤트로픽이 직접 산\n데이터센터용 발전기\n값이 **4.6조원**",
-     "number": "4.6조원",
-     "label": "앤트로픽 가스 발전기 직접 확보",
-     "sub": "34억 달러 규모, 연합뉴스와 CNBC 보도 기준"
-    },
-    {
-     "type": "질문형",
-     "title": "AI 경쟁의 병목이\n칩에서 **전기**로\n넘어간 걸까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "칩 싸움인 줄 알았던\nAI 경쟁, 앤트로픽은\n**발전기**부터 샀다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261109-0711-i1",
-   "created_at": "2026-11-09T07:11:36+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261109-0711-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261109-0711-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261109-0711-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261109-0711-i1/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261109-0711-i1/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261109-0711-i1/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261109-0711-i1/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261109-0711-i1/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261109-0711-i1/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "세계 배 수주 4척 중 3척, 중국이 가져갔다",
-   "concept": "세계 선박 수주에서 중국 비중이 커진 흐름과, 한국 텃밭이던 LNG선까지 영향이 번질 수 있다는 보도를 정리한다. 수치는 기사에 나온 것만 쓰고 기간과 기준은 확인 표기한다 (공식: 없음)",
-   "why_now": "다음 뉴스에 11/09 07:00 전해진 보도로, 오늘 아침 새로 나온 산업 소식이다. 이미 다룬 주제 목록에 조선 수주는 없다.",
-   "tag": "조선, 산업",
-   "sources": [
-    "https://v.daum.net/v/20261109070008989"
-   ],
-   "bg": "container ship shipyard China",
-   "bg_alt": "LNG carrier ship",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "세계 배 수주\n4척 중 **3척**을\n중국이 가져갔다",
-     "number": "4척 중 3척",
-     "label": "전 세계 배 수주 중 중국 몫",
-     "sub": "기간과 기준은 기사 원문 확인"
-    },
-    {
-     "type": "질문형",
-     "title": "한국 텃밭 LNG선까지\n**중국**에 밀리는 걸까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "한국 텃밭이라던\nLNG선마저 **흔들**\n수주 4척 중 3척은 중국",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261109-0711-i2",
-   "created_at": "2026-11-09T07:11:36+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261109-0711-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261109-0711-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261109-0711-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261109-0711-i2/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261109-0711-i2/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261109-0711-i2/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261109-0711-i2/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261109-0711-i2/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261109-0711-i2/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261109-0711-i2/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261109-0711-i2/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261109-0711-i2/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "경영평가 1위인데 성과급 0원, 법원 판단은",
-   "concept": "우정사업본부 국장이 경영평가 1위를 받고도 성과급을 받지 못해 소송을 낸 사건과 법원의 '처분 위법' 판단을 시간순으로 푼다. 성과급 기준이 왜 갈등이 되는지는 일반 원리로만 설명한다 (공식: A인데 B, 어긋난 두 사실 제목)",
-   "why_now": "조선비즈와 머니투데이가 11/09 07:00에 동시에 보도했다. 같은 시각 다음 뉴스에는 성과급 갈등으로 공장이 멈춘 날이 45% 늘었다는 기사도 올라와 직장인 관심이 높은 주제다.",
-   "tag": "직장, 성과급",
-   "sources": [
-    "https://biz.chosun.com/topics/law_firm/2026/11/09/ZR6QA4KX5JBMNEMSU25BD3LQ6A/",
-    "https://www.mt.co.kr/society/2026/11/09/2026110814102884506"
-   ],
-   "bg": "Korea Post office building",
-   "bg_alt": "post office Korea",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "경영평가 1위 국장\n성과급은 **0원**\n법원은 위법이라 했다",
-     "number": "0원",
-     "label": "경영평가 1위 국장이 받은 성과급",
-     "sub": "법원 판단: 처분 위법"
-    },
-    {
-     "type": "질문형",
-     "title": "1위를 하고도\n성과급이 **0원**이면\n소송밖에 없을까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "경영평가는 **1위**\n받은 성과급은 0원\n법원 판단은 '위법'",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261109-0711-i3",
-   "created_at": "2026-11-09T07:11:36+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261109-0711-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261109-0711-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261109-0711-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261109-0711-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261109-0711-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261109-0711-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261109-0711-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261109-0711-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261109-0711-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261109-0711-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261109-0711-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261109-0711-i3/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
    "title": "외국인 닷새 10조 매도, 5천피 흔들",
    "concept": "닷새간 외국인 순매도 10조와 서킷브레이커 발동을 먼저 보여 주고, 같은 시간 미 반도체주는 반등했다는 점을 대비시킨다. 월요일 수급은 마지막 장에서 확인 포인트로만 둔다. (공식: 표지는 이미 일어난 일로)",
    "why_now": "서울신문과 헤럴드경제가 외국인 닷새 10조 매도와 5천피 붕괴, 서킷브레이커를 보도했다. 월요일 개장을 앞두고 수급 이야기가 가장 궁금한 시점이다. 이전에 다룬 급락 원인 글과 달리 수급이 중심이다.",
@@ -8434,6 +8105,397 @@
      "form": "news",
      "font": "myeongjo",
      "path": "20261109-2106-i3/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "배민, 쿠팡이츠 과징금 6천억 원, 역대 최대",
+   "concept": "'다른 앱보다 비싸면 불이익'이라는 조건 하나가 무엇이었는지, 소비자 가격에는 어떻게 닿는지를 5장으로 푼다. 세부 내용과 소비자 영향은 확인 표시로 구분한다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "20:28 MBC, MBN이 보도한 새 소식이다. 매일 쓰는 앱이라 소비자 공유가 잘 되는 주제다.",
+   "tag": "소비",
+   "sources": [
+    "https://v.daum.net/v/20261109202217632",
+    "https://v.daum.net/v/20261109202824728"
+   ],
+   "bg": "Baemin delivery app",
+   "bg_alt": "Coupang Eats delivery",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "배민, 쿠팡이츠에\n과징금 **6천억**원\n역대 최대 기록",
+     "number": "6천억 원",
+     "label": "배민, 쿠팡이츠 과징금",
+     "sub": "역대 최대 규모"
+    },
+    {
+     "type": "질문형",
+     "title": "다른 앱보다\n비싸면 **불이익**?\n6천억 과징금 맞았다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "'비싸면 불이익'\n이 조건 하나가\n**6천억** 과징금이 됐다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261109-2206-i1",
+   "created_at": "2026-11-09T22:06:41+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261109-2206-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261109-2206-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261109-2206-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-2206-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-2206-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-2206-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-2206-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-2206-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-2206-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-2206-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-2206-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-2206-i1/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "미, 이란, 호르무즈 재개방 80억 달러 협상 검토",
+   "concept": "이스라엘 매체가 전한 '동결 자금 80억 달러와 해협 재개방' 제안을 보도로 다룬다. 단일 매체 보도라는 점을 한 번만 밝히고, 유가와 물가에 닿는 일반 원리를 쉬운 말로 한 장에 담는다. (공식: 없음)",
+   "why_now": "X 속보 계정 @DeItaone 글이 조회 10만 5천으로 가장 빨리 퍼졌다. 트럼프 대통령이 오늘 카타르 총리를 만나 논의할 예정이라 곧 후속 소식이 나올 수 있다.",
+   "tag": "국제, 유가",
+   "sources": [
+    "https://x.com/DeItaone/status/2119752143246635145"
+   ],
+   "bg": "Strait of Hormuz tanker",
+   "bg_alt": "oil tanker ship",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "이란이 내건 제안\n동결자금 **80억**달러\n호르무즈와 맞교환",
+     "number": "80억 달러",
+     "label": "이란이 제안했다는 동결 자금",
+     "sub": "이스라엘 매체 보도, 합의 확정 아님"
+    },
+    {
+     "type": "질문형",
+     "title": "호르무즈 열리면\n**유가**는 내려갈까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "해협을 다시 열 조건\n이란이 꺼낸 건\n동결 **자금**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261109-2206-i2",
+   "created_at": "2026-11-09T22:06:41+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-2206-i2/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-2206-i2/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-2206-i2/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261109-2206-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261109-2206-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261109-2206-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-2206-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-2206-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-2206-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-2206-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-2206-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-2206-i2/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "엔비디아, 주가 빠진 날 한국 AI 4곳에 투자",
+   "concept": "CEO 논란으로 주가가 4~5% 빠진 같은 날 한국 스타트업 4곳 투자를 밝힌 어긋난 장면을 앞세운다. 의존이 깊어진다는 시각과 협력 기회라는 시각을 함께 보여 주고, 투자 금액과 지분은 확인 전이라고 밝힌다. 투자 권유가 아니다. (공식: A인데 B, 어긋난 두 사실 제목)",
+   "why_now": "19:48 기준 9개 매체가 다룬 새 소식이다. 엔비디아 논란 속에서 한국과의 관계가 어떻게 움직이는지 보여 준다.",
+   "tag": "AI, 기업",
+   "sources": [
+    "https://biz.chosun.com/it-science/ict/2026/11/09/E2NB6FVCRRBONHFSOARRZ4U7SI/"
+   ],
+   "bg": "Jensen Huang Nvidia",
+   "bg_alt": "Nvidia headquarters",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "엔비디아 주가\n4~5% 하락한 날\n한국 **4곳**에 투자",
+     "number": "4곳",
+     "label": "엔비디아가 투자한 한국 AI 스타트업",
+     "sub": "모티프, 업스테이지, 리얼월드, 포인투테크놀로지"
+    },
+    {
+     "type": "질문형",
+     "title": "엔비디아 의존이\n더 깊어질까, 아니면\n협력 **기회**일까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "CEO 논란에 주가는\n4~5% 하락했는데\n한국엔 **투자**했다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/09",
+     "headlines": [
+      "한국 AI 스타트업 4곳 투자",
+      "엔비디아 주가 4~5%대 하락",
+      "SKT, 리벨리온 NPU 인프라 개발"
+     ]
+    }
+   },
+   "id": "20261109-2206-i3",
+   "created_at": "2026-11-09T22:06:41+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-2206-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-2206-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-2206-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261109-2206-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261109-2206-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261109-2206-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-2206-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-2206-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-2206-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261109-2206-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261109-2206-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261109-2206-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-2206-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-2206-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-2206-i3/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261109-2206-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261109-2206-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261109-2206-i3/3-paper-gowun.jpg"
     }
    ]
   }
