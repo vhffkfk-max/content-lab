@@ -2212,6 +2212,21 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     }
     root.append(box); return root;
   }
+  function chanExtras(d) {
+    const root = el('div'), ex = d.extras || {};
+    [['차트 퀴즈', ex.quiz], ['통념 검증', ex.verify]].forEach(([title, sec]) => {
+      const b = el('div', 'vl-hot'); b.append(el('h3', '', title));
+      if (!sec) b.append(el('p', 'sub', '오늘은 아직 없어요. 평일 장 마감 후 PC에서 만들어요.'));
+      else sec.posts.forEach(p => {
+        b.append(el('h4', 'ch-step', p.label), chPre(p.text));
+        if (p.image_data) b.append(chImg(p.image_data, `${title} ${p.label}`, p.image.replace('.png', '.jpg')));
+        else if (p.image) b.append(el('p', 'sub', `이미지(PC): ${d.folder}/${p.image}`));
+        b.append(chCopy(p.text));
+      });
+      root.append(b);
+    });
+    return root;
+  }
   function chanMainThread(item, d) {
     const box = el('div', 'vl-hot');
     box.append(el('h3', '', `${item.name} 쓰레드 글`));
@@ -2232,7 +2247,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
   function chanDraw(ch) {
     const c = CHANNELS[ch], root = document.getElementById(ch + '-root'); if (!c || !root) return;
     const cur = chanTab[ch] || c.first || 'video', bar = el('div', 'tabs'), panel = el('div'); panel.style.marginTop = '14px';
-    [['insta', '인스타그램'], ['thread', '쓰레드'], ['video', '영상'], ...(c.main ? [['calls', '종목 안내'], ['trader', '트레이더 분석']] : [])].forEach(([k, label]) => {
+    [['insta', '인스타그램'], ['thread', '쓰레드'], ['video', '영상'], ...(c.main ? [['extras', '퀴즈·검증'], ['calls', '종목 안내'], ['trader', '트레이더 분석']] : [])].forEach(([k, label]) => {
       const b = el('button', null, label); b.type = 'button'; b.setAttribute('aria-selected', String(k === cur));
       b.addEventListener('click', () => { chanTab[ch] = k; chanDraw(ch); }); bar.append(b);
     });
@@ -2247,7 +2262,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
         items.forEach(x => { const b = el('button', 'ch-chip', `${x.name} ${x.ret > 0 ? '+' : ''}${x.ret.toFixed(1)}%`); b.type = 'button'; b.setAttribute('aria-pressed', String(x === item)); b.addEventListener('click', () => { chMain = x.code; chanDraw(ch); }); row.append(b); });
         head.append(el('h3', '', `오늘의 메인 컨텐츠 (${d.date})`), el('p', 'sub', '종목을 고르면 아래 쓰레드 글과 카드뉴스가 그 종목 내용으로 바뀌어요.'), row);
         const v = c[cur];
-        panel.append(cur === 'calls' ? chanCalls(d) : cur === 'trader' ? chanTrader() : v.wait ? chanWait(v.wait) : cur === 'thread' ? chanMainThread(item, d) : chanFlow(c, cur, { ...v, preset: item.topic }));
+        panel.append(cur === 'extras' ? chanExtras(d) : cur === 'calls' ? chanCalls(d) : cur === 'trader' ? chanTrader() : v.wait ? chanWait(v.wait) : cur === 'thread' ? chanMainThread(item, d) : chanFlow(c, cur, { ...v, preset: item.topic }));
         root.replaceChildren(head, bar, panel);
       });
       return;
