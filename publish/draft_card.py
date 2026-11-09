@@ -64,7 +64,24 @@ def market():
     return out
 
 
+def chart_facts(topic):
+    """차트덕후 메인 컨텐츠(output/site/chart_daily.json)에서 고른 종목이면 그 글의 문장만 재료로 쓴다."""
+    p = SITE / "chart_daily.json"
+    if not p.exists():
+        return []
+    d = json.loads(p.read_text(encoding="utf-8"))
+    item = next((i for i in d.get("items", []) if i.get("topic") == topic), None)
+    if not item:
+        return []
+    src = "; ".join(s["url"] for s in item.get("sources", []))
+    return [{"source": "차트덕후 메인", "published": d.get("date", ""), "title": line.strip(), "link": src}
+            for post in item.get("posts", []) for line in post["text"].splitlines()
+            if line.strip() and not line.startswith(("이유는", "제가 그리는", "경로와 시간"))]
+
+
 def headlines(topic, n=25):
+    if facts := chart_facts(topic):
+        return facts
     rows = []
     for f in ("press_headlines.json", "google_headlines.json"):
         p = SITE / f

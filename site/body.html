@@ -1981,7 +1981,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     'c-bull': { name: '황소개미', brand: 'bull', sub: '@bullant_economy', first: 'thread', insta: { cards: ['bignum', 'bars', 'quote'] }, thread: { lab: true }, video: { styles: ['table'] } },
     'c-hot': { name: '핫코노미', brand: 'hot', sub: '@hotconomy', insta: { cards: ['news', 'breaking', 'bignum', 'bars', 'editorial'] }, thread: { slug: 'hotconomy' }, video: { styles: ['hot', 'duo-A', 'duo-B', 'duo-C', 'board'] } },
     'c-asset': { name: '자산백배', brand: 'asset', sub: '@100x.asset', insta: { cards: ['bignum', 'list', 'bars'] }, thread: { slug: 'js100x' }, video: { styles: ['table'], angle: true } },
-    'c-chart': { name: '차트덕후', brand: 'chart', sub: '차트 공부 계정', insta: { cards: ['bars', 'list', 'bignum'] }, thread: { wait: '차트덕후 쓰레드 계정과 글쓰기 기준이 아직 없어요.' }, video: { styles: ['table'] } },
+    'c-chart': { name: '차트덕후', brand: 'chart', sub: '@chartdeokhu · 메인 컨텐츠에서 이어 만들기', main: true, first: 'thread', insta: { cards: ['bars', 'list', 'bignum'] }, thread: {}, video: { wait: '이 종목 분석에 맞는 영상 형식을 준비 중이에요. 지금 있는 3자 비교 영상은 맞지 않아 뺐어요.' } },
     'c-malhee': { name: '말희아빠', brand: 'malhee', sub: '@oh_neworld', insta: { cards: ['bignum', 'bars', 'paper'] }, thread: { slug: 'malhee' }, video: { styles: ['table'] } },
   };
   const chanTab = {};
@@ -2030,6 +2030,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
   function chanFlow(c, kind, it) {
     const box = el('div', 'vl-hot'), keys = kind === 'insta' ? it.cards : it.styles, names = kind === 'insta' ? CH_CARD : CH_VIDEO;
     const s = { topic: '', style: keys.length === 1 ? keys[0] : '' };
+    if (it.preset) s.topic = it.preset;
     const topics = el('div', 'ch-topics'), t = el('input'), styles = el('div', 'ch-styles'), go = el('button', 'btn primary', kind === 'insta' ? '카드뉴스 초안 만들기' : '영상 만들기'), st = el('p', 'sub');
     let a = null;
     go.type = 'button'; t.placeholder = '직접 입력'; t.maxLength = 60; t.setAttribute('aria-label', c.name + ' 소재 직접 입력');
@@ -2039,7 +2040,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
       styles.classList.toggle('off', s.topic.length < 2); go.disabled = s.topic.length < 2 || !s.style;
     };
     t.addEventListener('input', () => { s.topic = t.value.trim(); sync(); });
-    chTopics().then(list => { list.forEach(x => { const b = el('button', 'ch-chip', x); b.type = 'button'; b.addEventListener('click', () => { s.topic = x; t.value = ''; sync(); }); topics.append(b); }); if (!list.length) topics.append(el('p', 'sub', '추천 글감을 불러오지 못했어요. 직접 입력해 주세요.')); sync(); });
+    if (it.preset) { t.hidden = true; topics.append(el('p', 'sub', `메인 컨텐츠: ${it.preset}`)); } else chTopics().then(list => { list.forEach(x => { const b = el('button', 'ch-chip', x); b.type = 'button'; b.addEventListener('click', () => { s.topic = x; t.value = ''; sync(); }); topics.append(b); }); if (!list.length) topics.append(el('p', 'sub', '추천 글감을 불러오지 못했어요. 직접 입력해 주세요.')); sync(); });
     keys.forEach(k => { const b = el('button', 'ch-style'); b.type = 'button'; b.dataset.k = k; b.append(chMock(k), el('b', '', names[k][0]), el('span', '', names[k][1])); b.addEventListener('click', () => { if (s.topic.length < 2) return; s.style = k; sync(); }); styles.append(b); });
     const step = n => el('h4', 'ch-step', n);
     box.append(el('h3', '', `${c.name} ${kind === 'insta' ? '카드뉴스' : '영상'}`), step('① 소재 정하기'), topics, t, step('② 스타일 고르기'), styles);
@@ -2108,6 +2109,22 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     box.append(el('h3', '', c.name + ' 쓰레드'), el('p', 'sub', '이 계정 기준으로 하루 세 번(7시·12시·18시) 글을 자동으로 만들어 둬요. 주제를 직접 넣어 만드는 기능은 아직 없어요.'), a);
     return box;
   }
+  let chDailyP = null, chMain = '';
+  function chanMainThread(item, d) {
+    const box = el('div', 'vl-hot');
+    box.append(el('h3', '', `${item.name} 쓰레드 글`));
+    if (item.note) box.append(el('p', 'warn', item.note));
+    item.posts.forEach(p => {
+      const pre = el('pre', '', p.text), copy = el('button', 'btn small', '복사'); copy.type = 'button';
+      pre.style.cssText = 'white-space:pre-wrap;word-break:keep-all;font:inherit;margin:8px 0;';
+      copy.addEventListener('click', async () => { try { await navigator.clipboard.writeText(p.text); copy.textContent = '복사했어요'; } catch (e) { copy.textContent = '복사 실패'; } setTimeout(() => { copy.textContent = '복사'; }, 1500); });
+      box.append(el('h4', 'ch-step', p.label), pre, copy);
+      if (p.image) box.append(el('p', 'sub', `비교용 이미지(PC): ${p.image}`));
+    });
+    box.append(el('p', 'sub', `게시 이미지는 트레이딩뷰에서 직접 작도해 저장해 주세요. 작도 위치와 비교용 이미지는 PC의 ${d.folder} 폴더에 있어요.`));
+    if (item.sources.length) { const ul = el('ul'); item.sources.forEach(s => { const li = el('li'), a = el('a', '', s.title); a.href = s.url; a.target = '_blank'; a.rel = 'noopener'; li.append(a); ul.append(li); }); box.append(el('h4', 'ch-step', '근거 기사'), ul); }
+    return box;
+  }
   function chanDraw(ch) {
     const c = CHANNELS[ch], root = document.getElementById(ch + '-root'); if (!c || !root) return;
     const cur = chanTab[ch] || c.first || 'video', bar = el('div', 'tabs'), panel = el('div'); panel.style.marginTop = '14px';
@@ -2115,6 +2132,22 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
       const b = el('button', null, label); b.type = 'button'; b.setAttribute('aria-selected', String(k === cur));
       b.addEventListener('click', () => { chanTab[ch] = k; chanDraw(ch); }); bar.append(b);
     });
+    if (c.main) {
+      root.replaceChildren(el('p', 'sub', '불러오는 중…'));
+      chDailyP = chDailyP || chJson('chart_daily.json');
+      chDailyP.then(d => {
+        const items = (d && d.items) || [];
+        if (!items.length) return root.replaceChildren(chanWait('오늘 메인 컨텐츠가 아직 없어요. 평일 장 마감 후 PC에서 만들어요.'));
+        const item = items.find(x => x.code === chMain) || items[0], head = el('div', 'vl-hot'), row = el('div', 'ch-topics');
+        chMain = item.code;
+        items.forEach(x => { const b = el('button', 'ch-chip', `${x.name} ${x.ret > 0 ? '+' : ''}${x.ret.toFixed(1)}%`); b.type = 'button'; b.setAttribute('aria-pressed', String(x === item)); b.addEventListener('click', () => { chMain = x.code; chanDraw(ch); }); row.append(b); });
+        head.append(el('h3', '', `오늘의 메인 컨텐츠 (${d.date})`), el('p', 'sub', '종목을 고르면 아래 쓰레드 글과 카드뉴스가 그 종목 내용으로 바뀌어요.'), row);
+        const v = c[cur];
+        panel.append(v.wait ? chanWait(v.wait) : cur === 'thread' ? chanMainThread(item, d) : chanFlow(c, cur, { ...v, preset: item.topic }));
+        root.replaceChildren(head, bar, panel);
+      });
+      return;
+    }
     const it = c[cur];
     panel.append(it.wait ? chanWait(it.wait) : cur === 'thread' ? chanThread(c, it) : chanFlow(c, cur, it));
     root.replaceChildren(bar, panel);
