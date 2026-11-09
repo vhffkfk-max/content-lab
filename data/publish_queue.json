@@ -3035,318 +3035,6 @@
  ],
  "ideas": [
   {
-   "title": "방한객 2000만명인데 관광수지 적자 10배",
-   "concept": "방문객 수와 실제 수지는 다른 숫자라는 대비로 풀고, 적자 원인은 기사 본문 확인 전에는 단정하지 않는다. 마지막 장에서 해외여행 경험을 묻는다. (공식: 큰 숫자 하나를 빨간 한 줄로)",
-   "why_now": "10:50 뉴스1이 보도했고 아직 다루지 않은 주제다. 방한객 2000만명과 적자 5억달러, 3개월 만에 10배라는 대비가 분명하다.",
-   "tag": "관광수지",
-   "sources": [
-    "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9VYk9McUlPSU9hZnN1WWtIdm4yNzRrUWhiWDZ0c2loVHB3cWxvMXN1NDVLSU13RTh6Smw"
-   ],
-   "bg": "Incheon airport tourists",
-   "bg_alt": "Myeongdong Seoul street crowd",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "방한객 2000만명인데\n관광수지 **적자** 5억달러\n석 달 새 10배 늘었다",
-     "number": "5억달러",
-     "label": "관광수지 적자",
-     "sub": "3개월 만에 10배로 늘었어요"
-    },
-    {
-     "type": "질문형",
-     "title": "방한객 2000만명인데\n왜 관광수지는\n5억달러 **적자**일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "외국인 2000만명이 와도\n관광수지는 **적자**였다\n석 달 만에 10배",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261108-1204-i1",
-   "created_at": "2026-11-08T12:04:30+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261108-1204-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261108-1204-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261108-1204-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261108-1204-i1/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261108-1204-i1/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261108-1204-i1/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261108-1204-i1/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261108-1204-i1/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261108-1204-i1/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "강남 10명 중 7명, 집주인에게 돈 빌렸다",
-   "concept": "은행 대출이 막힌 자리에 집주인이 직접 빌려주는 방식이 나왔다는 흐름으로 풀고, 생판 모르는 집주인이 24억원을 빌려준 사례를 중심에 둔다. '10명 중 7명'의 정확한 기준은 본문 확인 후 한 줄로 밝힌다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "뉴시스(11:02)와 매일경제(11:07)가 같은 현상을 보도했다. 이미 다룬 서울 아파트 매물 33% 증가와 이어지는 새 각도다.",
-   "tag": "부동산",
-   "sources": [
-    "https://www.mk.co.kr/news/realestate/12201619",
-    "https://v.daum.net/v/20261108110236521"
-   ],
-   "bg": "Gangnam Seoul apartments",
-   "bg_alt": "Seoul apartment complex aerial",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "강남 10명 중 7명이\n**집주인**한테 돈 빌렸다\n은행 대신 집주인",
-     "number": "24억원",
-     "label": "생판 모르는 집주인이 빌려준 돈",
-     "sub": "매일경제가 전한 사례예요"
-    },
-    {
-     "type": "질문형",
-     "title": "은행 대출이 막히자\n강남 집주인이\n**대출**해 주는 이유",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "생판 모르는 집주인이\n**24억**을 빌려줬어요\n강남 집 거래 풍경",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261108-1204-i2",
-   "created_at": "2026-11-08T12:04:30+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261108-1204-i2/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261108-1204-i2/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261108-1204-i2/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261108-1204-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261108-1204-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261108-1204-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261108-1204-i2/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261108-1204-i2/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261108-1204-i2/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261108-1204-i2/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261108-1204-i2/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261108-1204-i2/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "금감원, 빚투 담보유지 의무 한시 면제",
-   "concept": "증시 급락 속 금감원이 증권사 신용공여 140%룰을 한시 면제한 사건을 보도로 풀고, 강제처분이 줄어든다는 점과 업계의 '폭탄 돌리기' 우려를 나란히 놓는다. 투자 권유가 아닌 현황 전달로 쓴다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "12시 기준 머니투데이, 아시아경제, 다음 뉴스가 일제히 다뤘다. 코스피 급락 국면에서 나온 새 정책 대응이고 아직 다루지 않았다.",
-   "tag": "금융정책",
-   "sources": [
-    "https://www.mt.co.kr/stock/2026/11/08/2026110619030119159",
-    "https://view.asiae.co.kr/article/2026110619382233602",
-    "https://v.daum.net/v/20261108120023616"
-   ],
-   "bg": "Financial Supervisory Service Korea",
-   "bg_alt": "Korea stock exchange Yeouido",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "증시 급락에 금감원이\n신용공여 **140%룰**을\n한시 면제했어요",
-     "number": "140%",
-     "label": "증권사 신용공여 담보유지 의무",
-     "sub": "빚투 강제처분을 줄이려는 조치예요"
-    },
-    {
-     "type": "질문형",
-     "title": "빚투 담보 의무 면제\n업계는 왜\n'**폭탄 돌리기**'라 했나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "빚투 강제처분 줄였는데\n업계선 **폭탄 돌리기**\n한시 면제 논란",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261108-1204-i3",
-   "created_at": "2026-11-08T12:04:30+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261108-1204-i3/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261108-1204-i3/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261108-1204-i3/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261108-1204-i3/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261108-1204-i3/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261108-1204-i3/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261108-1204-i3/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261108-1204-i3/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261108-1204-i3/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
    "title": "강남 10명 중 7명, 집주인에게 돈 빌렸다",
    "concept": "은행 대출이 막힌 강남에서 집주인이 직접 돈을 빌려주는 방식이 퍼졌다는 보도를 풀고, 생판 모르는 집주인이 24억원을 빌려준 사례를 보여 준다. '10명 중 7명'의 정확한 기준은 본문 확인 후 한 줄로 밝힌다. (공식: 없음)",
    "why_now": "뉴시스(11:02)와 매일경제(11:07)가 같은 시간대에 강남 부동산의 집주인 대출 현상을 보도했다. 서울 아파트 매물 33% 증가 소식과 이어지지만 대출 방식이라는 새 각도다.",
@@ -8585,6 +8273,315 @@
      "form": "news",
      "font": "myeongjo",
      "path": "20261109-1101-i3/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "배민 3311억, 쿠팡 3008억 과징금",
+   "concept": "점주에게 최혜대우를 요구하다 과징금 합계 6319억 원을 맞은 사건을 보도 기준으로 정리합니다. 배민과 쿠팡 각각의 금액을 비교하고, 쿠팡 끼워팔기는 재심사로 남았다는 점을 반전으로 둡니다. (공식: 두 쪽 대결을 색 두 개로)",
+   "why_now": "11/09 머니투데이, 아시아경제, 다음 뉴스가 동시에 전한 새 소식이고 이전에 다룬 적이 없습니다. 배달앱 수수료와 음식값은 소비자 지갑과 직결됩니다.",
+   "tag": "과징금",
+   "sources": [
+    "https://view.asiae.co.kr/article/2026110910362445913",
+    "https://www.mt.co.kr/economy/2026/11/09/2026110909062575177",
+    "https://v.daum.net/v/20261109120018788"
+   ],
+   "bg": "Baemin Coupang Eats app",
+   "bg_alt": "food delivery rider Seoul",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "배민 3311억\n쿠팡 3008억\n**과징금** 맞았다",
+     "number": "6319억원",
+     "label": "배민과 쿠팡 과징금 합계",
+     "sub": "최혜대우 요구 혐의"
+    },
+    {
+     "type": "질문형",
+     "title": "싼값 경쟁을 막은\n배민과 쿠팡의\n**청구서**는 얼마",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "쿠팡 끼워팔기는\n판단이 미뤄져\n**재심사**로 갔다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bars",
+    "news"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "최혜대우 요구 과징금(억원)",
+     "bars": [
+      {
+       "label": "배민",
+       "value": 3311,
+       "hi": true
+      },
+      {
+       "label": "쿠팡",
+       "value": 3008
+      }
+     ]
+    }
+   },
+   "id": "20261109-1205-i1",
+   "created_at": "2026-11-09T12:05:15+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261109-1205-i1/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261109-1205-i1/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261109-1205-i1/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261109-1205-i1/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261109-1205-i1/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261109-1205-i1/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261109-1205-i1/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261109-1205-i1/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261109-1205-i1/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "KDI, 성장은 AI가 끌고 소비는 더디다",
+   "concept": "AI 투자 중심으로 성장은 양호한데 소비 등 가계 전반으로는 개선 속도가 더디다는 KDI 진단을 A인데 B 구조로 풉니다. 두 사실의 출처를 2장에서 바로 보여 주고, 반도체에 국한된 경기라는 표현은 보도 기준으로만 씁니다. (공식: A인데 B, 어긋난 두 사실 제목)",
+   "why_now": "11/09 머니투데이와 아시아경제가 KDI의 경기 진단을 전했습니다. 폭락장 뒤 첫 주에 반도체 쏠림과 체감경기 괴리를 설명하는 글감입니다.",
+   "tag": "경기 진단",
+   "sources": [
+    "https://view.asiae.co.kr/article/2026110909264848339",
+    "https://www.mt.co.kr/economy/2026/11/09/2026110909281689815"
+   ],
+   "bg": "Korea Development Institute",
+   "bg_alt": "semiconductor factory Korea",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "KDI가 진단했다\n성장은 AI 투자가 끌고\n**소비**는 아직 더디다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "반도체만 잘 나가면\n나머지 경제는\n**괜찮은** 걸까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "성장은 양호한데\n가계 체감까지는\n온기가 **안 퍼졌다**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "editorial",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261109-1205-i2",
+   "created_at": "2026-11-09T12:05:15+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-1205-i2/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-1205-i2/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-1205-i2/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-1205-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-1205-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-1205-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-1205-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-1205-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-1205-i2/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "청년 고용보험 가입자 50개월째 감소",
+   "concept": "10월 전체 가입자는 28.6만 명 늘었는데 29세 이하만 50개월째 줄어 역대 최장이라는 어긋남을 숫자 하나로 보여 줍니다. 원인은 재료에 없으므로 단정하지 않고 사실만 전합니다. (공식: A인데 B, 어긋난 두 사실 제목)",
+   "why_now": "11/09 다음 뉴스에 올라온 10월 고용보험 통계 기사로, 이전에 다룬 주제와 겹치지 않습니다. 시장 불안 속에서 일자리 지표를 짚는 글감입니다.",
+   "tag": "고용",
+   "sources": [
+    "https://v.daum.net/v/20261109120015782"
+   ],
+   "bg": "young job seekers Korea",
+   "bg_alt": "Ministry of Employment and Labor Korea",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "29세 이하 가입자\n50개월째 감소\n**역대 최장**",
+     "number": "50개월",
+     "label": "29세 이하 고용보험 가입자 감소",
+     "sub": "역대 최장 기록"
+    },
+    {
+     "type": "질문형",
+     "title": "전체는 28.6만 늘었는데\n29세 이하만 왜\n**50개월째** 줄까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "10월 가입자는 28.6만 늘었다\n그런데 29세 이하는\n**50개월째** 줄었다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "editorial"
+   ],
+   "extra": {},
+   "id": "20261109-1205-i3",
+   "created_at": "2026-11-09T12:05:15+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261109-1205-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261109-1205-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261109-1205-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-1205-i3/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-1205-i3/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-1205-i3/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-1205-i3/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-1205-i3/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-1205-i3/3-breaking-dohyeon.jpg"
     }
    ]
   }
