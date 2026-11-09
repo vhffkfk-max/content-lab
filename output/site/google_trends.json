@@ -21,10 +21,10 @@
   "geo": "KR",
   "term": "골드만삭스",
   "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "골드만삭스, 2030년 글로벌 데이터센터 용량 전망 273GW로 상향",
-  "news_link": "https://kr.investing.com/news/stock-market-news/article-2164829"
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "골드만삭스 CEO \"AI 인프라 수요 여전히 강세\"",
+  "news_link": "https://kr.investing.com/news/stock-market-news/article-2166843"
  },
  {
   "geo": "KR",
@@ -34,6 +34,15 @@
   "econ": false,
   "news_title": "'17년째 활동 중단' 신애, 깜짝 근황…여전한 미모 - 머니투데이",
   "news_link": "https://www.mt.co.kr/entertainment/2026/11/09/2026110917541840072"
+ },
+ {
+  "geo": "KR",
+  "term": "1인당 국민소득",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "\"1인당 5700만원 번다고?\"…현실은 딴판인 이유 있었다",
+  "news_link": "https://www.hankyung.com/article/2026110956791"
  },
  {
   "geo": "KR",
@@ -55,21 +64,12 @@
  },
  {
   "geo": "KR",
-  "term": "1인당 국민소득",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "\"1인당 5700만원 번다고?\"…현실은 딴판인 이유 있었다",
-  "news_link": "https://www.hankyung.com/article/2026110956791"
- },
- {
-  "geo": "KR",
-  "term": "ai 데이터 센터",
+  "term": "nvda",
   "traffic": 100,
   "topics": "AI·반도체",
   "econ": true,
-  "news_title": "삼성에스디에스 '다음 이정표는 AI DC 계획 확대' 증권사 발표에 강세…2.98%",
-  "news_link": "https://stock.mk.co.kr/news/view/1193641"
+  "news_title": "Commerce Dept. Chip Inquiry Was Halted After Nvidia Intervention",
+  "news_link": "https://www.nytimes.com/2026/11/09/business/economy/nvidia-megaspeed-investigation-huang.html"
  },
  {
   "geo": "KR",
@@ -91,17 +91,35 @@
  },
  {
   "geo": "US",
-  "term": "andre cisco",
+  "term": "cruise ship",
+  "traffic": 20000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Cruise ship pianist rescued from sea after nine hours in Pacific Ocean",
+  "news_link": "https://www.bbc.com/news/articles/ck1wvrrgln13o"
+ },
+ {
+  "geo": "US",
+  "term": "thomas massie",
   "traffic": 10000,
   "topics": "",
   "econ": false,
-  "news_title": "Lions agree to acquire S Andre Cisco from Jets",
-  "news_link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/lions-agree-to-acquire-s-andre-cisco-from-jets"
+  "news_title": "GOP congressman introduces articles of impeachment against Hegseth",
+  "news_link": "https://www.cnn.com/2026/11/09/politics/live-news/midterm-election-trump-congress"
+ },
+ {
+  "geo": "US",
+  "term": "bobby taylor st louis drummer",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Popular rock drummer dies after cancer battle: ‘He fought until the bitter end’",
+  "news_link": "https://www.pennlive.com/entertainment/2026/11/popular-rock-drummer-dies-after-cancer-battle-he-fought-until-the-bitter-end.html"
  },
  {
   "geo": "US",
   "term": "fable 5.2",
-  "traffic": 2000,
+  "traffic": 5000,
   "topics": "",
   "econ": false,
   "news_title": "Anthropic releases first frontier models since Amodei's call for slowdown as IPO buzz builds",
@@ -110,7 +128,7 @@
  {
   "geo": "US",
   "term": "fall out boy tour",
-  "traffic": 2000,
+  "traffic": 5000,
   "topics": "",
   "econ": false,
   "news_title": "Fall Out Boy Announce Biggest Tour Yet — and New Single ‘Aces’",
@@ -127,26 +145,8 @@
  },
  {
   "geo": "US",
-  "term": "drummer",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Popular rock drummer dies after cancer battle: ‘He fought until the bitter end’",
-  "news_link": "https://www.pennlive.com/entertainment/2026/11/popular-rock-drummer-dies-after-cancer-battle-he-fought-until-the-bitter-end.html"
- },
- {
-  "geo": "US",
-  "term": "pawan kalyan",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Andhra Pradesh deputy chief minister Pawan Kalyan and wife Anna Konidela announce separation",
-  "news_link": "https://timesofindia.indiatimes.com/city/hyderabad/andhra-pradesh-deputy-chief-minister-pawan-kalyan-and-wife-anna-konidela-announce-separation/articleshow/135691684.cms"
- },
- {
-  "geo": "US",
   "term": "activision",
-  "traffic": 500,
+  "traffic": 1000,
   "topics": "",
   "econ": false,
   "news_title": "Call of Duty cracks down on Warzone Agent lobby-shopping tool",
@@ -154,29 +154,29 @@
  },
  {
   "geo": "US",
-  "term": "ahmed moor",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "John Fetterman to be challenged for Senate seat by democratic socialist born in Gaza",
-  "news_link": "https://www.theguardian.com/us-news/2026/nov/09/john-fetterman-pennsylvania-ahmed-moor"
- },
- {
-  "geo": "US",
-  "term": "mike tomlin dallas cowboys coaching rumors",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Dak Prescott: “Cowardice” to put blame for Sunday’s loss on Brian Schottenheimer",
-  "news_link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/dak-prescott-cowardice-to-put-the-blame-on-brian-schottenheimer"
- },
- {
-  "geo": "US",
   "term": "supper mario broth",
-  "traffic": 500,
+  "traffic": 1000,
   "topics": "",
   "econ": false,
   "news_title": "'I Am Scared I Will Soon Not Be Able to See Mario Again' — Popular Nintendo Blogger Supper Mario Broth Says He May Only Have a Year to Live",
   "news_link": "https://www.ign.com/articles/supper-mario-broth-health-condition"
+ },
+ {
+  "geo": "US",
+  "term": "traffic",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Traffic incident shuts down road near Rolling Oaks Mall",
+  "news_link": "https://www.mysanantonio.com/news/local/traffic/article/evans-road-closure-22521074.php"
+ },
+ {
+  "geo": "US",
+  "term": "vanderbilt",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Kalen DeBoer, Alabama coaches talk Keelon Russell health, expanded CFP, Vanderbilt",
+  "news_link": "https://www.al.com/alabamafootball/2026/11/live-updates-kalen-deboer-alabama-coaches-talk-lsu-win-vanderbilt.html"
  }
 ]
