@@ -10,7 +10,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 3.19,
   "kr_n": 31,
-  "foreign_avg": 1.71,
+  "foreign_avg": 1.72,
   "foreign_n": 39
  },
  {
@@ -37,9 +37,9 @@
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
   "kr_avg": 1.57,
-  "kr_n": 234,
-  "foreign_avg": 1.27,
-  "foreign_n": 138
+  "kr_n": 235,
+  "foreign_avg": 1.24,
+  "foreign_n": 142
  },
  {
   "rank": 4,
@@ -57,20 +57,6 @@
  },
  {
   "rank": 5,
-  "topic": "2차전지",
-  "kind": "해외 벤치마킹 주제 (방식 바꾸면 기회)",
-  "confidence": "높음",
-  "title_idea": "2차전지 한 장으로 총정리",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "정리·요약형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 0.78,
-  "kr_n": 10,
-  "foreign_avg": 2.61,
-  "foreign_n": 5
- },
- {
-  "rank": 6,
   "topic": "급락·변동성",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
@@ -84,7 +70,7 @@
   "foreign_n": 17
  },
  {
-  "rank": 7,
+  "rank": 6,
   "topic": "금리·연준",
   "kind": "국내 검증 주제",
   "confidence": "높음",
@@ -98,7 +84,7 @@
   "foreign_n": 23
  },
  {
-  "rank": 8,
+  "rank": 7,
   "topic": "연금·절세",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
@@ -108,7 +94,21 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 1.54,
   "kr_n": 41,
-  "foreign_avg": 1.39,
+  "foreign_avg": 1.4,
   "foreign_n": 31
+ },
+ {
+  "rank": 8,
+  "topic": "환율·달러",
+  "kind": "국내·해외 모두 강세",
+  "confidence": "높음",
+  "title_idea": "환율·달러, 한 줄 정리",
+  "format": "릴스",
+  "hook": "짧은 한 줄",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 2.04,
+  "kr_n": 47,
+  "foreign_avg": 1.24,
+  "foreign_n": 9
  }
 ]
