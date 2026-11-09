@@ -28,6 +28,8 @@ def status(d7, target):
 
 
 def one(c, platform, handle, target, now):
+    if handle == "-":   # 정지된 계정
+        return {"state": "off", "target_7": target}
     if not handle:
         return {"state": "none", "target_7": target}
     scan_q, post_q, snap_q = Q[platform]

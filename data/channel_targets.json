@@ -1,5 +1,5 @@
 {
- "_안내": "발행 체크 설정. daily 는 메인 현황판의 하루 목표, per_week 는 피드백 화면의 7일 목표. 계정 주소를 넣으면 체크 대상이 되고, accounts.csv·threads_accounts.csv 에도 넣어야 크롤링됨. 작업 PC 크롤러는 insta-research 폴더의 csv 를 읽음.",
+ "_안내": "발행 체크 설정. daily 는 메인 현황판의 하루 목표, per_week 는 피드백 화면의 7일 목표. 계정 주소를 넣으면 체크 대상이 되고, accounts.csv·threads_accounts.csv 에도 넣어야 크롤링됨. 작업 PC 크롤러는 insta-research 폴더의 csv 를 읽음. 주소 자리에 - 를 넣으면 정지된 계정으로 표시.",
  "targets": {
   "instagram": {
    "per_week": 14
@@ -10,20 +10,20 @@
  },
  "channels": {
   "c-bull": {
-   "instagram": "",
+   "instagram": "bullant_economy",
    "threads": "bullant_economy"
   },
   "c-hot": {
    "instagram": "hotconomy",
-   "threads": ""
+   "threads": "hotconomy"
   },
   "c-asset": {
    "instagram": "100x.asset",
-   "threads": ""
+   "threads": "-"
   },
   "c-chart": {
-   "instagram": "",
-   "threads": ""
+   "instagram": "chartdeokhu",
+   "threads": "chartdeokhu"
   },
   "c-malhee": {
    "instagram": "oh_neworld",

@@ -2082,6 +2082,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
       Object.entries(c).forEach(([p, v]) => {
         const box = el('section', 'ch-pulse'), head = el('div', 'ch-prow'); head.append(el('i', 'ch-dot ' + v.state), el('b', '', LABEL[p]));
         box.append(head);
+        if (v.state === 'off') { head.append(el('span', 'sub', '계정 정지됨')); parts.push(box); return; }
         if (v.state === 'none') { head.append(el('span', 'sub', '계정 주소 필요')); parts.push(box); return; }
         if (v.state === 'wait') { head.append(el('span', 'sub', `@${v.handle} 첫 크롤링 대기 중`)); parts.push(box); return; }
         head.append(el('span', '', `@${v.handle} · ${STATE[v.state]}`));
@@ -2732,6 +2733,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
         th.append(go); tr.append(th);
         COL.forEach(([, pf, k, goal]) => {
           const v = ((d.channels[key] || {})[pf]) || {}, n = v.today ? v.today[k] : null;
+          if (v.state === 'off') return tr.append(el('td', 'pb-off', '정지됨'));
           if (v.state === 'none' || !v.state) return tr.append(el('td', 'pb-off', '주소 필요'));
           if (n == null) return tr.append(el('td', 'pb-off', '수집 대기'));
           total++; if (n >= goal) done++;
