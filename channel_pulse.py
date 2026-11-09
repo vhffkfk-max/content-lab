@@ -85,6 +85,31 @@ def note(name, v, old):
         return old
 
 
+BOARD = ("c-bull", "c-hot", "c-asset", "c-chart")   # 메인 현황판 계정 (말희아빠 제외)
+DAYS = 42
+
+
+def history(c, channels):
+    """최근 42일, 날마다 계정별 [카드뉴스, 릴스, 쓰레드] 개수. 메인 현황판 날짜별·요일별 화면용."""
+    today = datetime.now(KST).replace(hour=0, minute=0, second=0, microsecond=0)
+    keys = [(today - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(DAYS - 1, -1, -1)]
+    start = int((today - timedelta(days=DAYS - 1)).timestamp())
+    table = {k: {ch: [0, 0, 0] for ch in BOARD} for k in keys}
+    day = lambda ts: datetime.fromtimestamp(ts, KST).strftime("%Y-%m-%d")
+    for ch in BOARD:
+        ig, th = channels[ch].get("instagram", ""), channels[ch].get("threads", "")
+        if ig and ig != "-":
+            for ts, kind in c.execute("SELECT taken_at, kind FROM ig_posts WHERE account=? AND taken_at>=?", (ig, start)):
+                slot = {"카드뉴스": 0, "릴스": 1}.get(kind)
+                if slot is not None and day(ts) in table:
+                    table[day(ts)][ch][slot] += 1
+        if th and th != "-":
+            for (ts,) in c.execute("SELECT taken_at FROM posts WHERE username=? AND taken_at>=?", (th, start)):
+                if day(ts) in table:
+                    table[day(ts)][ch][2] += 1
+    return [{"d": k, "a": table[k]} for k in keys]
+
+
 def main():
     cfg = json.loads((ROOT / "data" / "channel_targets.json").read_text(encoding="utf-8"))
     now = int(time.time())
@@ -99,6 +124,7 @@ def main():
         out["channels"][ch] = {p: one(c, p, handles.get(p, ""), handles.get("per_week", {}).get(p, cfg["targets"][p]["per_week"]), now) for p in Q}
         for pf, v in out["channels"][ch].items():
             v["note"] = note(handles.get(pf, ""), v, before.get(ch, {}).get(pf, {}).get("note"))
+    out["days"] = history(c, cfg["channels"])
     path.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
     print("발행 체크", {k: {p: v[p]["state"] for p in v} for k, v in out["channels"].items()})
 

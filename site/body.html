@@ -41,7 +41,8 @@
 
 .vl-tabs{display:flex;gap:6px;margin:0 0 12px}.vl-tab{padding:6px 14px;border-radius:999px;border:1px solid var(--border);color:var(--muted);font-size:13px}.vl-tab.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
 .ch-pulse{margin:0 0 12px;padding:10px 12px;border:1px solid var(--border);border-radius:10px}.ch-prow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:14px;margin-bottom:4px}.ch-dot{width:10px;height:10px;border-radius:50%;background:#aaa;flex:none}.ch-dot.green{background:#1F8A5B}.ch-dot.yellow{background:#F5A623}.ch-dot.red{background:#E5484D}
-.pb-table{width:100%;border-collapse:collapse;font-size:14px;text-align:center}.pb-table th,.pb-table td{padding:10px 8px;border-bottom:1px solid var(--border);white-space:nowrap}.pb-table th{font-size:12px;font-weight:500;color:var(--text-2,inherit)}.pb-table th:first-child,.pb-table td:first-child{text-align:left}.pb-acc{all:unset;cursor:pointer;font-weight:700}.pb-ok{background:var(--pill-positive-bg);color:var(--pill-positive-ink);font-weight:700}.pb-no{background:var(--pill-negative-bg);color:var(--pill-negative-ink);font-weight:700}.pb-off{font-size:12px;opacity:.6}.pb-sum{font-weight:700;margin:0 0 8px}.pb-total{font-weight:700}.pb-sumrow td{font-weight:700;border-bottom:0}
+.pb-ctl{margin:0 0 12px}.pb-cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}.pb-dow{text-align:center;font-size:12px;padding:4px 0}.pb-day{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:68px;padding:4px 0;border:0;border-radius:8px;background:var(--hover,rgba(127,127,127,.08));color:inherit;font:inherit;cursor:pointer;transition:transform .12s}.pb-day:hover{transform:translateY(-1px)}.pb-day:focus-visible{outline:2px solid var(--accent);outline-offset:1px}.pb-day b{font-size:20px;font-variant-numeric:tabular-nums}.pb-date{font-size:12px}.pb-none{background:none;cursor:default}.pb-empty{opacity:.45}.pb-today .pb-date{font-weight:700;text-decoration:underline}.pb-sel{outline:2px solid var(--accent)}.pb-week td{white-space:nowrap}.pb-barline{display:flex;align-items:center;gap:8px;min-width:150px}.pb-bar{display:block;height:12px;min-width:2px;background:var(--accent);border-radius:0 4px 4px 0}@media (prefers-reduced-motion:reduce){.pb-day{transition:none}.pb-day:hover{transform:none}}@media (max-width:520px){.pb-day{min-height:56px}.pb-day b{font-size:17px}}
+.pb-table{width:100%;border-collapse:collapse;font-size:14px;text-align:center}.pb-table th,.pb-table td{padding:10px 8px;border-bottom:1px solid var(--border);white-space:nowrap}.pb-table th{font-size:12px;font-weight:500;color:var(--text-2,inherit)}.pb-table th:first-child,.pb-table td:first-child{text-align:left}.pb-acc{all:unset;cursor:pointer;font-weight:700}.pb-ok{background:var(--pill-positive-bg);color:var(--pill-positive-ink);font-weight:700}.pb-no{background:var(--pill-negative-bg);color:var(--pill-negative-ink);font-weight:700}.pb-off{font-size:12px;opacity:.6}.pb-sum{font-weight:700;margin:0 0 8px}.pb-sum.pb-gap{margin-top:20px}.pb-total{font-weight:700}.pb-sumrow td{font-weight:700;border-bottom:0}
 .fb-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;margin:8px 0}.fb-cmp{display:flex;flex-direction:column;gap:3px;padding:8px;border:1px solid var(--border);border-radius:8px;font-size:14px}.fb-wrap{overflow-x:auto}.fb-table{width:100%;border-collapse:collapse;font-size:13px}.fb-table th,.fb-table td{padding:5px 6px;border-bottom:1px solid var(--border);text-align:left}.fb-table td:nth-child(2){min-width:180px}
 .ch-step{margin:16px 0 8px;font-size:14px}.ch-topics{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}.ch-chip{all:unset;cursor:pointer;padding:6px 10px;border:1px solid var(--border);border-radius:999px;font-size:13px}.ch-chip[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
 .vl-hot>input{width:100%;box-sizing:border-box;min-height:36px;padding:0 12px;border-radius:8px;border:1px solid var(--border);margin-top:4px}
@@ -2750,8 +2751,74 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
       sumRow.append(el('td', '', '합계'), ...colSum.map(n => el('td', '', `${n}개`)), el('td', 'pb-off', '-'), el('td', 'pb-off', '-'), el('td', 'pb-total', `${all}개`));
       tb.append(sumRow);
       wrap.append(tb);
-      box.replaceChildren(el('p', 'pb-sum', `오늘 총 ${all}개 발행 · 최근 7일 ${d7}개 · 최근 30일 ${d30}개 · 오늘 달성 ${done}칸 / 집계되는 ${total}칸`), wrap,
-        el('p', 'sub', `갱신 ${String(d.updated).slice(5, 16).replace('T', ' ')} · 크롤링으로 잡힌 게시물만 세요. 올린 뒤 1~2시간 늦게 잡힐 수 있어요. 계정 이름을 누르면 피드백으로 가요.`));
+      const todayEls = [el('p', 'pb-sum', `오늘 총 ${all}개 발행 · 최근 7일 ${d7}개 · 최근 30일 ${d30}개 · 오늘 달성 ${done}칸 / 집계되는 ${total}칸`), wrap,
+        el('p', 'sub', `갱신 ${String(d.updated).slice(5, 16).replace('T', ' ')} · 크롤링으로 잡힌 게시물만 세요. 올린 뒤 1~2시간 늦게 잡힐 수 있어요. 계정 이름을 누르면 피드백으로 가요.`)];
+      const D = d.days || [], DOW = ['월', '화', '수', '목', '금', '토', '일'], last = D.length - 1;
+      let mode = 'today', acc = 'all', sel = last;
+      const keys = () => acc === 'all' ? ACC.map(a => a[0]) : [acc];
+      const pick = x => keys().reduce((s, k) => { const v = x.a[k] || [0, 0, 0]; return [s[0] + v[0], s[1] + v[1], s[2] + v[2]]; }, [0, 0, 0]);
+      const sum3 = v => v[0] + v[1] + v[2];
+      const dowOf = s => (new Date(s + 'T00:00:00Z').getUTCDay() + 6) % 7;
+      const md = s => `${+s.slice(5, 7)}/${+s.slice(8)}`;
+      const firstData = () => D.findIndex(x => sum3(pick(x)) > 0);
+      const pane = el('div'), tabs = el('div', 'chips pb-ctl'), filt = el('div', 'chips pb-ctl');
+      const chip = (label, on, fn) => { const b = el('button', on ? 'btn small primary' : 'btn small', label); b.type = 'button'; b.setAttribute('aria-pressed', String(on)); b.addEventListener('click', fn); return b; };
+      const dayTable = i => {
+        const x = D[i], w = el('div', 'fb-wrap'), t = el('table', 'pb-table'), h = el('tr');
+        ['계정', '카드뉴스', '릴스', '쓰레드', '합계'].forEach(s => h.append(el('th', '', s))); t.append(h);
+        keys().forEach(k => { const v = x.a[k] || [0, 0, 0], r = el('tr'); r.append(el('td', 'pb-total', ACC.find(a => a[0] === k)[1]), ...v.map(n => el('td', '', `${n}개`)), el('td', 'pb-total', `${sum3(v)}개`)); t.append(r); });
+        w.append(t); return w;
+      };
+      const calendar = () => {
+        let start = last - dowOf(D[last].d) - 28; const end = last + 6 - dowOf(D[last].d), cells = [], f = firstData(), wrapC = el('div', 'pb-cal');
+        while (f >= 0 && start + 7 <= f) start += 7;   // 수집 전인 주는 통째로 뺀다
+        DOW.forEach(s => wrapC.append(el('div', 'pb-dow', s)));
+        for (let i = start; i <= end; i++) if (D[i]) cells.push(sum3(pick(D[i])));
+        const max = Math.max(1, ...cells);
+        for (let i = start; i <= end; i++) {
+          if (i > last || !D[i]) { wrapC.append(el('div', 'pb-day pb-none')); continue; }
+          const n = sum3(pick(D[i])), v = pick(D[i]), nodata = f < 0 || i < f;
+          const b = el('button', 'pb-day' + (i === sel ? ' pb-sel' : '') + (i === last ? ' pb-today' : '')); b.type = 'button';
+          b.append(el('span', 'pb-date', md(D[i].d)), el('b', '', nodata ? '-' : String(n)));
+          if (nodata) b.classList.add('pb-empty');
+          else if (n) b.style.background = `color-mix(in srgb, var(--accent) ${Math.round(10 + 40 * n / max)}%, transparent)`;
+          const tip = nodata ? `${md(D[i].d)} 수집 전` : `${md(D[i].d)}(${DOW[dowOf(D[i].d)]}) 총 ${n}개 · 카드뉴스 ${v[0]} · 릴스 ${v[1]} · 쓰레드 ${v[2]}`;
+          b.title = tip; b.setAttribute('aria-label', tip); b.setAttribute('aria-pressed', String(i === sel));
+          b.addEventListener('click', () => { sel = i; draw(); });
+          wrapC.append(b);
+        }
+        const x = D[sel], v = pick(x);
+        return [wrapC, el('p', 'pb-sum pb-gap', `${md(x.d)}(${DOW[dowOf(x.d)]}) 총 ${sum3(v)}개`), dayTable(sel),
+          el('p', 'sub', '날짜를 누르면 계정별로 나와요. 진할수록 많이 올린 날이에요. 수집을 시작하기 전 날짜는 - 로 표시돼요.')];
+      };
+      const weekly = () => {
+        const f = firstData();
+        if (f < 0 || f >= last) return [el('p', 'sub', '요일별로 비교하려면 수집된 날이 더 쌓여야 해요.')];
+        const from = Math.max(f, last - 28), R = DOW.map(() => ({ c: 0, v: [0, 0, 0] }));
+        for (let i = from; i < last; i++) { const r = R[dowOf(D[i].d)], v = pick(D[i]); r.c++; v.forEach((n, k) => { r.v[k] += n; }); }   // 오늘은 아직 안 끝났으니 뺀다
+        const avg = (r, k) => r.c ? r.v[k] / r.c : 0, tot = r => r.c ? sum3(r.v) / r.c : 0, has = R.filter(r => r.c), max = Math.max(0.1, ...R.map(tot));
+        const w = el('div', 'fb-wrap'), t = el('table', 'pb-table pb-week'), h = el('tr');
+        ['요일', '하루 평균', '카드뉴스', '릴스', '쓰레드', '날짜 수'].forEach(s => h.append(el('th', '', s))); t.append(h);
+        R.forEach((r, i) => {
+          const tr = el('tr'), c = el('td'), line = el('div', 'pb-barline'), bar = el('i', 'pb-bar'); bar.style.width = `${Math.round(tot(r) / max * 100)}%`;
+          line.append(bar, el('b', '', r.c ? tot(r).toFixed(1) : '-')); c.append(line);
+          tr.append(el('td', 'pb-total', DOW[i]), c, ...[0, 1, 2].map(k => el('td', '', r.c ? avg(r, k).toFixed(1) : '-')), el('td', 'pb-off', `${r.c}일`)); t.append(tr);
+        });
+        w.append(t);
+        const hi = has.reduce((a, b) => tot(b) > tot(a) ? b : a), lo = has.reduce((a, b) => tot(b) < tot(a) ? b : a), nm = r => DOW[R.indexOf(r)] + '요일';
+        const out = [];
+        if (tot(hi) > tot(lo) && has.length === 7 && has.every(r => r.c >= 2)) out.push(el('p', 'pb-sum', `가장 많이 올린 요일은 ${nm(hi)}(평균 ${tot(hi).toFixed(1)}개), 가장 적은 요일은 ${nm(lo)}(평균 ${tot(lo).toFixed(1)}개)이에요.`));
+        out.push(w, el('p', 'sub', `${md(D[from].d)}부터 어제까지 ${last - from}일 기준이에요. 아직 안 끝난 오늘은 뺐어요. 날짜 수가 적은 요일은 평균이 크게 흔들릴 수 있어요.`));
+        return out;
+      };
+      function draw() {
+        tabs.replaceChildren(...[['today', '오늘'], ['date', '날짜별'], ['dow', '요일별']].map(([k, s]) => chip(s, mode === k, () => { mode = k; draw(); })));
+        filt.hidden = mode === 'today';
+        filt.replaceChildren(chip('전체', acc === 'all', () => { acc = 'all'; draw(); }), ...ACC.map(([k, s]) => chip(s, acc === k, () => { acc = k; draw(); })));
+        pane.replaceChildren(...(mode === 'today' ? todayEls : mode === 'date' ? calendar() : weekly()));
+      }
+      draw();
+      box.replaceChildren(tabs, filt, pane);
     });
   }
   function drawHome(recs) {
