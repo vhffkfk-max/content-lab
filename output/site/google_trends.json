@@ -1,21 +1,30 @@
 [
  {
   "geo": "KR",
-  "term": "중앙일보",
-  "traffic": 10000,
-  "topics": "",
-  "econ": false,
-  "news_title": "[부고] 김병수 씨(중앙일보 마케팅솔루션국 리더) 부친상",
-  "news_link": "https://www.news1.kr/life-culture/press/6347157"
+  "term": "삼전닉스",
+  "traffic": 20000,
+  "topics": "ETF·지수투자",
+  "econ": true,
+  "news_title": "외국인 7일째 '팔자'에도…ETF 담는 개미들, 삼전닉스 들어 올렸다 - 머니투데이",
+  "news_link": "https://www.mt.co.kr/stock/2026/11/09/2026110911301182528"
  },
  {
   "geo": "KR",
   "term": "홍창기",
-  "traffic": 5000,
+  "traffic": 10000,
   "topics": "",
   "econ": false,
   "news_title": "롯데서 은퇴선언, FA 영입 1순위로 이 선수 지목했다…\"올해는 시행착오, 내년부터 괜찮아질 것\" 기대",
   "news_link": "https://www.spotvnews.co.kr/news/articleView.html?idxno=1018505"
+ },
+ {
+  "geo": "KR",
+  "term": "한남더힐 아파트",
+  "traffic": 5000,
+  "topics": "부동산",
+  "econ": true,
+  "news_title": "옥주현 한남더힐 경매 사태…\"50억으로 400억 당겼다가 청산된 것\"",
+  "news_link": "https://www.news1.kr/realestate/general/6346754"
  },
  {
   "geo": "KR",
@@ -28,12 +37,12 @@
  },
  {
   "geo": "KR",
-  "term": "한남더힐 아파트",
+  "term": "신인감독 김연경",
   "traffic": 2000,
-  "topics": "부동산",
-  "econ": true,
-  "news_title": "옥주현 한남더힐 경매 사태…\"50억으로 400억 당겼다가 청산된 것\"",
-  "news_link": "https://www.news1.kr/realestate/general/6346754"
+  "topics": "",
+  "econ": false,
+  "news_title": "'신인감독' 김연경, 흥국생명에 3대2 대역전 '2연승 쾌거' - 머니투데이",
+  "news_link": "https://www.mt.co.kr/entertainment/2026/11/09/2026110902291872728"
  },
  {
   "geo": "KR",
@@ -55,15 +64,6 @@
  },
  {
   "geo": "KR",
-  "term": "광교 자연앤 센트레빌",
-  "traffic": 200,
-  "topics": "부동산",
-  "econ": true,
-  "news_title": "집값의 30%로 내 집 마련, '이익공유형Ⅱ' 공공분양 도입 추진 - 전체 | 카드/한컷 | 멀티미디어",
-  "news_link": "https://www.korea.kr/multi/visualNewsView.do?newsId=148975273"
- },
- {
-  "geo": "KR",
   "term": "알 테오 젠",
   "traffic": 200,
   "topics": "급락·변동성",
@@ -73,12 +73,12 @@
  },
  {
   "geo": "KR",
-  "term": "항공 승무원",
-  "traffic": 200,
+  "term": "김희영",
+  "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "\"빈자리 왜 못 옮겨?\" vs \"돈 더 내야\"…항공기 좌석 이동 논란 - 머니투데이",
-  "news_link": "https://www.mt.co.kr/world/2026/11/09/2026110909193257655"
+  "news_title": "산이 좋아 머문 자리 ‘K-마운틴’ 희망을 품다 [화제인물 파타고니아 영남알프스점 김희영 대표]",
+  "news_link": "http://san.chosun.com/news/articleView.html?idxno=26280"
  },
  {
   "geo": "KR",
@@ -86,8 +86,8 @@
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "청와대 몰려간 국민의힘 \"죄수에게 탈옥 열쇠 쥐어준 꼴\"",
-  "news_link": "https://imnews.imbc.com/news/2026/politics/article/6864201_36911.html"
+  "news_title": "할리스·커피빈 주춤한 사이…메가커피, 매장·결제액 다 늘었다",
+  "news_link": "https://www.hankyung.com/article/2026110831921"
  },
  {
   "geo": "US",
@@ -100,75 +100,57 @@
  },
  {
   "geo": "US",
-  "term": "pelicans",
+  "term": "usc basketball",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "Clippers Injury Report vs. Pelicans: Short-Handed LA Trying to Avoid 8th Straight Loss",
-  "news_link": "https://sports.yahoo.com/articles/clippers-injury-report-vs-pelicans-224719276.html"
+  "news_title": "Where to watch Utah State vs. USC basketball for free today",
+  "news_link": "https://www.oregonlive.com/tv/2026/11/where-to-watch-utah-state-vs-usc-basketball-for-free-today.html"
  },
  {
   "geo": "US",
-  "term": "henry cavill",
+  "term": "oj simpson",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Watch Henry Cavill build a video game on his Googlebook",
-  "news_link": "https://blog.google/products-and-platforms/devices/googlebook/henry-cavill-mustache-protocol-video-game/"
+  "news_title": "9 mystery fingerprints from OJ Simpson murder case could hold new clues more than 30 years later",
+  "news_link": "https://www.foxnews.com/us/9-mystery-fingerprints-oj-simpson-murder-case-could-hold-new-clues-more-than-30-years-later"
  },
  {
   "geo": "US",
-  "term": "kyler gordon",
+  "term": "ramla ali",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Bears CB Kyler Gordon leaves game early with apparent injury",
-  "news_link": "https://bearswire.usatoday.com/story/sports/nfl/bears/2026/11/08/bears-kyler-gordon-injury-update/92685544007/"
+  "news_title": "Licensable picture: Ramla Ali and Mikiah Kreps weigh-in ahead of their super-bantamweight world championship bout",
+  "news_link": "https://www.reutersconnect.com/item/ramla-ali-and-mikiah-kreps-weigh-in-ahead-of-their-super-bantamweight-world-championship-bout/dGFnOnJldXRlcnMuY29tLDIwMjY6bmV3c21sX01UMUFOQURMMDAwSEpWQVBR"
  },
  {
   "geo": "US",
-  "term": "paige bueckers",
-  "traffic": 1000,
+  "term": "ben stiller",
+  "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Wings' Paige Bueckers, Azzi Fudd talk relationship on pod",
-  "news_link": "https://www.espn.com/wnba/story/_/id/50401662/wings-paige-bueckers-azzi-fudd-talk-relationship-pod"
+  "news_title": "Ariana Grande Sings ‘O Christmas Tree’ With Robert De Niro & Ben Stiller on ‘Tonight Show’: Exclusive Preview",
+  "news_link": "https://www.yahoo.com/entertainment/tv/articles/ariana-grande-sings-o-christmas-020620844.html"
  },
  {
   "geo": "US",
-  "term": "paul george",
-  "traffic": 1000,
+  "term": "c.d. guadalajara",
+  "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Paul George is Celtics ‘Name to Know’ Player of the Game in win over Bucks",
-  "news_link": "https://www.masslive.com/celtics/2026/11/paul-george-is-celtics-name-to-know-player-of-the-game-in-win-over-bucks.html"
+  "news_title": "¿Cuándo llega y dónde se hospedará Chivas Femenil en Ciudad Juárez?",
+  "news_link": "https://www.chivasfemenil.mx/es/noticias/41776/Cundo-llega-y-dnde-se-hospedar-Chivas-Femenil-en-Ciudad-Jurez"
  },
  {
   "geo": "US",
-  "term": "dane cook brother",
-  "traffic": 500,
+  "term": "miles killebrew",
+  "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Dane Cook's Brother Robbed Him Blind. Now He's Rebuilding His Life -- And Gunning for a Comeback",
-  "news_link": "https://www.rollingstone.com/tv-movies/tv-movie-features/dane-cook-brother-theft-funny-money-interview-1235637778/"
- },
- {
-  "geo": "US",
-  "term": "santi aldama",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "How Santi Aldama could change the dynamic of Mavericks' offense after his Dallas debut",
-  "news_link": "https://www.dallasnews.com/sports/mavericks/article/santi-aldama-mavericks-offense-dallas-debut-nba-22518307.php"
- },
- {
-  "geo": "US",
-  "term": "silver alert",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Missing Williamson County man found dead after Silver Alert issued",
-  "news_link": "https://www.wkrn.com/news/local-news/have-you-seen-him-silver-alert-issued-for-missing-williamson-county-man/"
+  "news_title": "Buccaneers' Miles Killebrew on what goes into blocking a punt and the team's resurgence",
+  "news_link": "https://www.mississippivalleypublishing.com/buccaneers-miles-killebrew-on-what-goes-into-blocking-a-punt-and-the-teams-resurgence/video_cdbbe239-0b55-5295-964d-ef8575441783.html"
  },
  {
   "geo": "US",
@@ -176,7 +158,25 @@
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "THREE BID IVY, AGAIN! Harvard, Princeton, Yale Headed to NCAA Field Hockey Tournament",
-  "news_link": "https://ivyleague.com/news/2026/11/7/three-bid-ivy-again-harvard-princeton-yale-headed-to-ncaa-field-hockey-tournament.aspx"
+  "news_title": "2026 DIII field hockey championship: Selection show info, bracket, schedule",
+  "news_link": "https://www.ncaa.com/news/fieldhockey/article/2026-11-01/2026-diii-field-hockey-championship-selection-show-info-bracket-schedule"
+ },
+ {
+  "geo": "US",
+  "term": "terrell owens",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Everyone loves a parade: A new route, a new rally and a new UTC Homecoming tradition",
+  "news_link": "https://blog.utc.edu/news/2026/11/everyone-loves-a-parade-a-new-route-a-new-rally-and-a-new-utc-homecoming-tradition/"
+ },
+ {
+  "geo": "US",
+  "term": "vision quest episode 8",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "‘VisionQuest’ Episode 8 Release Date, Time and Where to Watch the Finale",
+  "news_link": "https://www.imdb.com/news/ni66094426/?ref_=nmnw_art_perm"
  }
 ]
