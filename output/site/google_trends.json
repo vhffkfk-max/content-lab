@@ -1,57 +1,75 @@
 [
  {
   "geo": "KR",
-  "term": "자동차",
-  "traffic": 5000,
-  "topics": "",
-  "econ": false,
-  "news_title": "‘회장님 차’ 제네시스 G90만 수십 대 줄줄이…그들이 향한 곳은?",
-  "news_link": "https://www.chosun.com/economy/industry-company/2026/11/09/UPCGNJ6NH5D2DJ2LYCNAVRZ5OM/"
- },
- {
-  "geo": "KR",
-  "term": "김구라",
+  "term": "논문",
   "traffic": 2000,
-  "topics": "급락·변동성",
-  "econ": true,
-  "news_title": "김구라 \"올해 번 돈 다 까먹었다\"…주식 폭락에 한숨 - 머니투데이",
-  "news_link": "https://www.mt.co.kr/entertainment/2026/11/10/2026111005403695983"
- },
- {
-  "geo": "KR",
-  "term": "김치",
-  "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "광주시 경안동 5개 단체, 취약계층·경로당에 김장김치 2천610㎏ 전달",
-  "news_link": "https://www.kyeonggi.com/article/20261109580389"
+  "news_title": "‘줄기세포 논문 조작’ 황우석, UAE 국적 취득해 한국 국적 상실",
+  "news_link": "https://www.chosun.com/national/court_law/2026/11/09/6AM5NJLHFRDNZF26S7Q6NCVGEU/"
  },
  {
   "geo": "KR",
-  "term": "fable 5.2",
-  "traffic": 200,
+  "term": "압수수색",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "노동부 서산지청, 부당노동행위 혐의 자동차 제조업체 압수수색",
+  "news_link": "https://www.yna.co.kr/view/AKR20261109105300063?section=economy/economic-policy"
+ },
+ {
+  "geo": "KR",
+  "term": "필라델피아 반도체 지수",
+  "traffic": 1000,
   "topics": "AI·반도체",
   "econ": true,
-  "news_title": "Anthropic Unveils New AI Models Commanding 1,000 Agents",
-  "news_link": "https://www.chosun.com/english/industry-en/2026/11/10/JZUGSKIAJNDF5BSQTA5BH3NIMY/"
+  "news_title": "[속보]나스닥 2.7%급등…엔비디아만 4%넘게 밀렸다",
+  "news_link": "https://www.munhwa.com/article/11630041"
+ },
+ {
+  "geo": "KR",
+  "term": "vix",
+  "traffic": 500,
+  "topics": "급락·변동성",
+  "econ": true,
+  "news_title": "Wall Street’s Fear Gauge Jumped More Than 11 Points In A Day. Buffett’s Most Famous Rule Says It Might Be Time To Get Greedy. Here’s Where The Market Has Historically Gone Over The Next 6 Months.",
+  "news_link": "https://finance.yahoo.com/markets/options/articles/wall-street-fear-gauge-jumped-102241024.html"
+ },
+ {
+  "geo": "KR",
+  "term": "나스닥 100",
+  "traffic": 500,
+  "topics": "ETF·지수투자",
+  "econ": true,
+  "news_title": "삼성운용, 美 단기국채·나스닥100 50대50 투자 ETF 10일 상장",
+  "news_link": "https://www.yna.co.kr/view/AKR20261109027600008"
  },
  {
   "geo": "KR",
   "term": "tqqq",
   "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "TQQQ Price Prediction: Oversold bounce attempt faces a heavy trend filter",
+  "topics": "ETF·지수투자",
+  "econ": true,
+  "news_title": "ProShares UltraPro QQQ ETF (TQQQ) Price Prediction: Oversold bounce attempt faces a heavy trend filter",
   "news_link": "https://blockchain.news/news/20261109-price-prediction-tqqq-oversold-bounce-attempt-faces-a-heavy"
  },
  {
   "geo": "KR",
-  "term": "미스터트롯3",
+  "term": "수능일",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "트로트가수 남승민, 고양이 분장으로 전한 미스터트롯3 콘서트 소감",
-  "news_link": "https://www.topstarnews.net/news/articleView.html?idxno=16271433"
+  "news_title": "시흥도시공사, 수능일 교통약자 수험생 등굣길 무료 지원",
+  "news_link": "https://www.newstown.co.kr/news/articleView.html?idxno=721328"
+ },
+ {
+  "geo": "KR",
+  "term": "중대범죄수사청",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "피해자가 새 증거 찾아도… 검사 \"직접 못 받아\" 경찰 \"손 떠난 사건\"",
+  "news_link": "https://www.chosun.com/national/court_law/2026/11/10/MNTQTB3TAZC7TBSLCRCGAXGEH4/"
  },
  {
   "geo": "KR",
@@ -64,39 +82,48 @@
  },
  {
   "geo": "KR",
-  "term": "수능 날짜",
+  "term": "세무조사",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "2026 수능 날짜·시간표, 미리 확인하세요",
-  "news_link": "https://www.wikitree.co.kr/articles/1173061"
- },
- {
-  "geo": "KR",
-  "term": "전도연",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "이창동 감독 “해고 노동자의 입장 대변 가능한가, 10년 묵힌 고민 풀어내”",
-  "news_link": "https://www.donga.com/news/Culture/article/all/20261109/134995376/2"
- },
- {
-  "geo": "KR",
-  "term": "피의자신문",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "인권위 \"경사 이하 단독 조서작성 개선권고\"…경찰청, 일부 수용",
-  "news_link": "https://www.yna.co.kr/view/AKR20261109070700004?section=society/all"
+  "news_title": "국세청 로비 대가 2억 챙긴 회계사·기밀 유출 세무공무원 기소",
+  "news_link": "https://webzine.kacta.or.kr/news/articleView.html?idxno=26283"
  },
  {
   "geo": "US",
-  "term": "jonathan taylor nfl trade rumors",
+  "term": "cavaliers vs hornets",
+  "traffic": 10000,
+  "topics": "",
+  "econ": false,
+  "news_title": "NBA Matchups: November 9",
+  "news_link": "https://establishtherun.com/nba-matchups-november-9-2/"
+ },
+ {
+  "geo": "US",
+  "term": "syracuse vs indiana",
   "traffic": 5000,
   "topics": "",
   "econ": false,
-  "news_title": "John Harbaugh: Giants did pull offer for Jonathan Taylor but 'things do change'",
-  "news_link": "https://www.espn.com/nfl/story/_/id/50426855/john-harbaugh-says-giants-did-pull-offer-jonathan-taylor"
+  "news_title": "How to Watch Syracuse vs. Indiana: TV Channel, Live Stream, Time",
+  "news_link": "https://www.foxsports.com/stories/mens-college-basketball/how-watch-syracuse-vs-indiana-tv-channel-live-stream-time-nov-9-2026"
+ },
+ {
+  "geo": "US",
+  "term": "wizards vs pistons",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Preview: The Wizards play the Pistons on Monday night",
+  "news_link": "https://www.bulletsforever.com/washington-wizards-preview/73948/washington-wizards-detroit-pistons-nba-game-preview"
+ },
+ {
+  "geo": "US",
+  "term": "bills schedule",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "S Geno Stone and WR Trent Sherfield Sr. elevated, WR Joshua Palmer placed on Injured Reserve | Week 9",
+  "news_link": "https://www.buffalobills.com/news/s-geno-stone-and-wr-trent-sherfield-sr-elevated-wr-joshua-palmer-placed-on-injured-reserve-week-9"
  },
  {
   "geo": "US",
@@ -109,21 +136,12 @@
  },
  {
   "geo": "US",
-  "term": "carson beck",
+  "term": "marshall vs ohio state",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Pros and cons: Should the Cardinals just go to Carson Beck now?",
-  "news_link": "https://arizonasports.com/nfl/arizona-cardinals/pros-and-cons-should-the-cardinals-just-go-to-carson-beck-now"
- },
- {
-  "geo": "US",
-  "term": "aaron jones",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "'It's showtime.' El Paso's Aaron Jones and Vikings vs. Bills on MNF",
-  "news_link": "https://www.elpasotimes.com/story/sports/football/nfl/2026/11/09/aaron-jones-on-gma-monday-night-football-tonight-buffalo-bills-vs-minnesota-vikings/92696819007/"
+  "news_title": "What To Watch: Buckeyes look for more consistent showing vs. Marshall",
+  "news_link": "https://247sports.com/college/ohio-state/longformarticle/ohio-state-buckeyes-mens-basketball-preview-vs-marshall-thundering-herd-292432334/"
  },
  {
   "geo": "US",
@@ -136,47 +154,29 @@
  },
  {
   "geo": "US",
-  "term": "cavaliers vs hornets",
+  "term": "jet blast",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Three Key Storylines To Watch in Cavs vs. Hornets",
-  "news_link": "https://sports.yahoo.com/articles/three-key-storylines-watch-cavs-180007148.html"
+  "news_title": "Plane rolls over after being hit by blast from jet engines",
+  "news_link": "https://www.cnn.com/2026/11/09/us/plane-rolls-over-jet-blast"
  },
  {
   "geo": "US",
-  "term": "indiana basketball",
+  "term": "nba starting lineups",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "How to Watch Syracuse vs. Indiana: TV Channel, Live Stream, Time",
-  "news_link": "https://www.foxsports.com/stories/mens-college-basketball/how-watch-syracuse-vs-indiana-tv-channel-live-stream-time-nov-9-2026"
+  "news_title": "How One Minor Injury Has Shaken Up the Dallas Mavericks Starting Lineup",
+  "news_link": "https://sports.yahoo.com/articles/one-minor-injury-shaken-dallas-184051006.html"
  },
  {
   "geo": "US",
-  "term": "lakers vs hawks",
+  "term": "tutu atwell",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Lakers vs. Hawks Preview: Streaking teams collide",
-  "news_link": "https://www.silverscreenandroll.com/lakers-game-previews/128614/lakers-vs-hawks-discussion-injury-report-how-to-watch-tv-stream-start-time-luka-doncic-cj-mccolum"
- },
- {
-  "geo": "US",
-  "term": "marshall vs ohio state",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "What To Watch: Buckeyes look for more consistent showing vs. Marshall",
-  "news_link": "https://247sports.com/college/ohio-state/longformarticle/ohio-state-buckeyes-mens-basketball-preview-vs-marshall-thundering-herd-292432334/"
- },
- {
-  "geo": "US",
-  "term": "wizards vs pistons",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Preview: The Wizards play the Pistons on Monday night",
-  "news_link": "https://www.bulletsforever.com/washington-wizards-preview/73948/washington-wizards-detroit-pistons-nba-game-preview"
+  "news_title": "Tutu Atwell blew golden opportunity to earn larger role Rams need someone to seize",
+  "news_link": "https://ramblinfan.com/tutu-atwell-blew-golden-opportunity-earn-larger-role-rams-need-seize"
  }
 ]
