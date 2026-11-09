@@ -2,11 +2,29 @@
  {
   "geo": "KR",
   "term": "kf-21 보라매",
-  "traffic": 2000,
+  "traffic": 5000,
   "topics": "",
   "econ": false,
   "news_title": "",
   "news_link": ""
+ },
+ {
+  "geo": "KR",
+  "term": "골드만삭스",
+  "traffic": 1000,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "골드만삭스 CEO \"AI 인프라 수요 여전히 강세\"",
+  "news_link": "https://kr.investing.com/news/stock-market-news/article-2166843"
+ },
+ {
+  "geo": "KR",
+  "term": "신애",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "'17년째 활동 중단' 신애, 깜짝 근황…여전한 미모 - 머니투데이",
+  "news_link": "https://www.mt.co.kr/entertainment/2026/11/09/2026110917541840072"
  },
  {
   "geo": "KR",
@@ -19,21 +37,12 @@
  },
  {
   "geo": "KR",
-  "term": "골드만삭스",
-  "traffic": 500,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "골드만삭스 CEO \"AI 인프라 수요 여전히 강세\"",
-  "news_link": "https://kr.investing.com/news/stock-market-news/article-2166843"
- },
- {
-  "geo": "KR",
-  "term": "신애",
+  "term": "장례",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "'17년째 활동 중단' 신애, 깜짝 근황…여전한 미모 - 머니투데이",
-  "news_link": "https://www.mt.co.kr/entertainment/2026/11/09/2026110917541840072"
+  "news_title": "죽어서도 자식 부담 주기 싫다…연 5000건 몰린 '이 장례'",
+  "news_link": "https://www.hankyung.com/article/2026110956691"
  },
  {
   "geo": "KR",
@@ -46,35 +55,8 @@
  },
  {
   "geo": "KR",
-  "term": "버거킹",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "\"소방관 응원해요\"…유통가, 소방의 날 맞이 캠페인",
-  "news_link": "https://www.yonhapnewstv.co.kr/news/AKR20261109133837fmD"
- },
- {
-  "geo": "KR",
-  "term": "안드레이 알롭스키",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "사망 조롱 논란에 “죄송합니다”…UFC 전 챔피언 “영어는 제2외국어” 해명",
-  "news_link": "https://isplus.com/article/view/isp202611090129"
- },
- {
-  "geo": "KR",
-  "term": "nvda",
-  "traffic": 100,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "Commerce Dept. Chip Inquiry Was Halted After Nvidia Intervention",
-  "news_link": "https://www.nytimes.com/2026/11/09/business/economy/nvidia-megaspeed-investigation-huang.html"
- },
- {
-  "geo": "KR",
   "term": "대한민국 해군",
-  "traffic": 100,
+  "traffic": 200,
   "topics": "",
   "econ": false,
   "news_title": "부울병무청, 9일 '해군병 입영문화제' 개최",
@@ -83,34 +65,43 @@
  {
   "geo": "KR",
   "term": "사이비 종교",
-  "traffic": 100,
+  "traffic": 200,
   "topics": "",
   "econ": false,
   "news_title": "15화 사이비 종교 신도 2,000명이 방송국으로 몰려간 밤",
   "news_link": "https://brunch.co.kr/@poet/68"
  },
  {
-  "geo": "US",
-  "term": "cruise ship",
-  "traffic": 20000,
+  "geo": "KR",
+  "term": "google",
+  "traffic": 100,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "Google Escalates Nvidia Rivalry With Specialized Versions of AI Chips",
+  "news_link": "https://www.bloomberg.com/news/articles/2026-11-09/google-escalates-nvidia-rivalry-with-new-versions-of-its-tpu-systems"
+ },
+ {
+  "geo": "KR",
+  "term": "신현준",
+  "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "Cruise ship pianist rescued from sea after nine hours in Pacific Ocean",
-  "news_link": "https://www.bbc.com/news/articles/ck1wvrrgln13o"
+  "news_title": "신현준, 아내 회사 특혜 의혹에 입 열었다",
+  "news_link": "https://www.donga.com/news/Society/article/all/20261109/134992698/1"
  },
  {
   "geo": "US",
   "term": "thomas massie",
-  "traffic": 10000,
+  "traffic": 20000,
   "topics": "",
   "econ": false,
-  "news_title": "GOP congressman introduces articles of impeachment against Hegseth",
-  "news_link": "https://www.cnn.com/2026/11/09/politics/live-news/midterm-election-trump-congress"
+  "news_title": "Pete Hegseth impeachment articles introduced by Rep. Massie",
+  "news_link": "https://www.cnbc.com/2026/11/09/pete-hegseth-impeachment-articles-massie.html"
  },
  {
   "geo": "US",
   "term": "bobby taylor st louis drummer",
-  "traffic": 5000,
+  "traffic": 10000,
   "topics": "",
   "econ": false,
   "news_title": "Popular rock drummer dies after cancer battle: ‘He fought until the bitter end’",
@@ -118,53 +109,35 @@
  },
  {
   "geo": "US",
-  "term": "fable 5.2",
-  "traffic": 5000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Anthropic releases first frontier models since Amodei's call for slowdown as IPO buzz builds",
-  "news_link": "https://www.cnbc.com/2026/11/09/anthropic-claude-fable-5-2-mythos-5-2.html"
- },
- {
-  "geo": "US",
-  "term": "fall out boy tour",
-  "traffic": 5000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Fall Out Boy Announce Biggest Tour Yet — and New Single ‘Aces’",
-  "news_link": "https://www.rollingstone.com/music/music-features/fall-out-boy-interview-tour-dates-new-single-aces-1235654708/"
- },
- {
-  "geo": "US",
   "term": "gta vi",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "A Free GTA 6 Competitor Is Blowing Up on Steam",
+  "news_link": "https://www.polygon.com/gta-6-competitor-rob-run-blowing-up-steam/"
+ },
+ {
+  "geo": "US",
+  "term": "aryna sabalenka",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "Grand Theft Auto VI: The Festival",
-  "news_link": "https://www.rockstargames.com/newswire/article/o39o87a435a25a/grand-theft-auto-vi-the-festival"
+  "news_title": "FAGE WTA Finals Day 2 preview: Can Sabalenka even series with Muchova?",
+  "news_link": "https://www.wtatennis.com/news/4606429/wta-finals-2026-day-2-preview-can-aryna-sabalenka-even-series-with-karolina-muchova"
  },
  {
   "geo": "US",
-  "term": "activision",
-  "traffic": 1000,
+  "term": "playstation",
+  "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "Call of Duty cracks down on Warzone Agent lobby-shopping tool",
-  "news_link": "https://www.invenglobal.com/articles/28288/call-of-duty-cracks-down-on-warzone-agent-lobby-shopping-tool"
- },
- {
-  "geo": "US",
-  "term": "supper mario broth",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "'I Am Scared I Will Soon Not Be Able to See Mario Again' — Popular Nintendo Blogger Supper Mario Broth Says He May Only Have a Year to Live",
-  "news_link": "https://www.ign.com/articles/supper-mario-broth-health-condition"
+  "news_title": "Sony’s new PlayStation Portal handheld includes ‘additional’ internal storage",
+  "news_link": "https://www.theverge.com/news/1029822/sony-playstation-portal-japan-model-additional-storage"
  },
  {
   "geo": "US",
   "term": "traffic",
-  "traffic": 500,
+  "traffic": 1000,
   "topics": "",
   "econ": false,
   "news_title": "Traffic incident shuts down road near Rolling Oaks Mall",
@@ -172,8 +145,35 @@
  },
  {
   "geo": "US",
+  "term": "carla hall",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Food Network Star Reportedly Leaves Network After Several Show Exits",
+  "news_link": "https://www.yahoo.com/entertainment/tv/renewed-canceled/articles/food-network-star-reportedly-leaves-191531159.html"
+ },
+ {
+  "geo": "US",
+  "term": "mark zuckerberg net worth 200 billion",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Mark Zuckerberg’s fortune tops $200 billion. His 3 daughters won’t inherit most of it",
+  "news_link": "https://fortune.com/2026/11/07/zuckerberg-chan-daughters-inheritance-99-percent-pledge/"
+ },
+ {
+  "geo": "US",
+  "term": "tony stewart",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Tony Stewart says he would fire everyone at NASCAR (Video)",
+  "news_link": "https://racingnews.co/2026/11/09/tony-stewart-says-he-would-fire-everyone-at-nascar/"
+ },
+ {
+  "geo": "US",
   "term": "vanderbilt",
-  "traffic": 200,
+  "traffic": 500,
   "topics": "",
   "econ": false,
   "news_title": "Kalen DeBoer, Alabama coaches talk Keelon Russell health, expanded CFP, Vanderbilt",
