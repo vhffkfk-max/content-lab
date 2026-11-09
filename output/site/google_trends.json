@@ -1,6 +1,15 @@
 [
  {
   "geo": "KR",
+  "term": "구속",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "지하철에서 잠든 여성에 성폭력‥60대 남성 구속 송치",
+  "news_link": "https://imnews.imbc.com/news/2026/society/article/6864258_36918.html"
+ },
+ {
+  "geo": "KR",
   "term": "김장훈",
   "traffic": 5000,
   "topics": "연금·절세",
@@ -10,21 +19,21 @@
  },
  {
   "geo": "KR",
-  "term": "구속",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "지하철에서 잠든 여성에 성폭력‥60대 남성 구속 송치",
-  "news_link": "https://imnews.imbc.com/news/2026/society/article/6864258_36918.html"
- },
- {
-  "geo": "KR",
   "term": "한국 민속촌",
   "traffic": 2000,
   "topics": "",
   "econ": false,
   "news_title": "[자막뉴스] \"말 잘 들을거야?\" 귀신 훈육 놀이에…터져버린 '아동학대' 논란",
   "news_link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008836764"
+ },
+ {
+  "geo": "KR",
+  "term": "실업",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "'자발적 퇴사' 청년에 月100만원 검토…\"도덕적 해이 우려 적어\"",
+  "news_link": "https://www.newsis.com/view/NISX20261109_0003859821"
  },
  {
   "geo": "KR",
@@ -46,21 +55,12 @@
  },
  {
   "geo": "KR",
-  "term": "상장지수 펀드",
+  "term": "스타틴",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "한달 만에 1000만원→299만원 됐다...'야수의 심장' 개미, 눈물의 물타기 [서학픽] - 머니투데이",
-  "news_link": "https://www.mt.co.kr/world/2026/11/09/2026110814501193864"
- },
- {
-  "geo": "KR",
-  "term": "실업",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "'자발적 퇴사' 청년에 月100만원 검토…\"도덕적 해이 우려 적어\"",
-  "news_link": "https://www.newsis.com/view/NISX20261109_0003859821"
+  "news_title": "동맥경화성 심혈관질환 환자에 ‘이 약’ 추가했더니···‘나쁜 콜레스테롤’ 더 빨리 줄이는 데 효과",
+  "news_link": "https://www.khan.co.kr/article/202611091453001"
  },
  {
   "geo": "KR",
@@ -68,8 +68,8 @@
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "스포츠클라이밍 대표팀, 국가대항전서 볼더링·리드 은메달",
-  "news_link": "https://www.yna.co.kr/view/AKR20261109124800007"
+  "news_title": "“어딘지 어색하더라니…” 고난도 볼더링 짜깁기 논란",
+  "news_link": "http://san.chosun.com/news/articleView.html?idxno=26234"
  },
  {
   "geo": "KR",
@@ -78,7 +78,7 @@
   "topics": "",
   "econ": false,
   "news_title": "한전 에너지캐시백 가입자 200만호…제주 가정 1년 전력량 절약",
-  "news_link": "https://stock.mk.co.kr/news/view/1193673"
+  "news_link": "https://www.yna.co.kr/view/AKR20261109094200003"
  },
  {
   "geo": "KR",
@@ -86,26 +86,35 @@
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "한화에어로, 천무 해상 사격 시험… 무인수상정 탑재 추진",
-  "news_link": "https://biz.chosun.com/industry/company/2026/11/09/MFAUDA76S5FGBCLNWX6SX4DZJA/"
+  "news_title": "한화에어로스페이스, 육상용 ‘천무’ 바다에서 쏜다…美 무인함정 시장 공략",
+  "news_link": "https://www.chosun.com/economy/industry-company/2026/11/09/7MFLUFVJQRHAHGO6FKCDX5LWEU/"
  },
  {
   "geo": "US",
-  "term": "top",
-  "traffic": 10000,
+  "term": "jonathan taylor trade",
+  "traffic": 20000,
   "topics": "",
   "econ": false,
-  "news_title": "Georgia back at No. 1 in AP Top 25 ahead of Utah, Irish; Buckeyes drop to 21st",
-  "news_link": "https://www.espn.com/college-football/story/_/id/50422780/georgia-begins-second-stint-season-ap-no-1"
+  "news_title": "John Harbaugh: Giants did pull offer for Jonathan Taylor but 'things do change'",
+  "news_link": "https://www.espn.com/nfl/story/_/id/50426855/john-harbaugh-says-giants-did-pull-offer-jonathan-taylor"
  },
  {
   "geo": "US",
-  "term": "west indies vs bangladesh",
-  "traffic": 500,
+  "term": "hospital",
+  "traffic": 5000,
   "topics": "",
   "econ": false,
-  "news_title": "Ball by Ball Commentary & Live Score - BAN vs WI, 2nd Test",
-  "news_link": "https://www.cricinfo.com/series/west-indies-in-bangladesh-2026-27-1553291/bangladesh-vs-west-indies-2nd-test-1553296/ball-by-ball-commentary"
+  "news_title": "Poles mourn rare mass killing as authorities say attacker had far-right views",
+  "news_link": "https://apnews.com/article/poland-shooting-krakow-market-dead-69a65400657ffd0c8b3fa104bd472b97"
+ },
+ {
+  "geo": "US",
+  "term": "the gilded age season 4",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Meet ‘The Gilded Age’ Season 4 Cast’s Real-Life Partners",
+  "news_link": "https://people.com/meet-the-real-life-loves-the-gilded-age-season-4-cast-12236988"
  },
  {
   "geo": "US",
@@ -118,21 +127,12 @@
  },
  {
   "geo": "US",
-  "term": "peaky blinders netflix six seasons",
+  "term": "pandilla",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Tom Hardy’s Epic 6-Season Crime Series Is a Near-Perfect Netflix Binge",
-  "news_link": "https://collider.com/peaky-blinders-netflix-tom-hardy-streaming-binge/"
- },
- {
-  "geo": "US",
-  "term": "attack on titan",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "Release the Villains: Zeke Jaeger Is Attack on Titan’s Ultimate Agent of Chaos",
-  "news_link": "https://www.crunchyroll.com/ko/news/features/2026/11/8/anime-villains-zeke-jaeger"
+  "news_title": "#CaceríaDeTerroristas | Saturación policial deja a un terrorista de la Pandilla 18 capturado en la 14 de marzo de Comayagüela Los policías llegaron de sorpresa, logrando la detención de este sujeto que tiene antecedentes por extorsión en 2019.",
+  "news_link": "https://www.facebook.com/PoliciaNacionaldeHonduras/posts/cacer%C3%ADadeterroristas-saturaci%C3%B3n-policial-deja-a-un-terrorista-de-la-pandilla-18-/1468214752168163/"
  },
  {
   "geo": "US",
@@ -145,21 +145,21 @@
  },
  {
   "geo": "US",
-  "term": "jennifer aniston",
+  "term": "lori vallow",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "Before Friends, Jennifer Aniston Starred In A Forgotten '90s Sketch Comedy Show",
-  "news_link": "https://www.yahoo.com/entertainment/tv/articles/friends-jennifer-aniston-starred-forgotten-191200025.html"
+  "news_title": "Prosecution, defense exchange arguments as Lori Daybell asks for new trial",
+  "news_link": "https://www.ksl.com/article/51643071/watch-live-lori-daybell-asks-idaho-supreme-court-for-new-trial"
  },
  {
   "geo": "US",
-  "term": "pandilla",
+  "term": "planned parenthood",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "#CaceríaDeTerroristas | Saturación policial deja a un terrorista de la Pandilla 18 capturado en la 14 de marzo de Comayagüela Los policías llegaron de sorpresa, logrando la detención de este sujeto que tiene antecedentes por extorsión en 2019.",
-  "news_link": "https://www.facebook.com/PoliciaNacionaldeHonduras/posts/cacer%C3%ADadeterroristas-saturaci%C3%B3n-policial-deja-a-un-terrorista-de-la-pandilla-18-/1468214752168163/"
+  "news_title": "Justice Department Intervenes in Planned Parenthood Lawsuit in Texas",
+  "news_link": "https://www.nytimes.com/2026/11/07/us/politics/doj-texas-fraud-lawsuit-planned-parenthood.html"
  },
  {
   "geo": "US",
@@ -167,16 +167,16 @@
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "Power restored to Zaporizhzhia nuclear plant, IAEA says",
-  "news_link": "https://www.reuters.com/world/zaporizhzhia-nuclear-plant-loses-external-power-supply-russian-installed-2026-11-08/"
+  "news_title": "Democratic thrashing redraws the map of state power",
+  "news_link": "https://www.politico.com/news/2026/11/08/democratic-thrashing-redraws-the-map-of-state-power-01154607"
  },
  {
   "geo": "US",
-  "term": "volcano",
+  "term": "west indies vs bangladesh",
   "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "Kilauea volcano erupts: See the 660-foot lava fountain",
-  "news_link": "https://weather.com/2026/11/06/news/trending/video/hawaii-kilauea-lava-fountain-episode-56-eruption"
+  "topics": "초보·투자마인드",
+  "econ": true,
+  "news_title": "Kavem Hodge: There is a belief and shared mindset among WI batters",
+  "news_link": "https://www.cricinfo.com/story/ban-vs-wi-2nd-test-kavem-hodge-west-indies-batters-share-ideas-and-mindset-as-they-rack-up-the-runs-1561911"
  }
 ]
