@@ -41,7 +41,7 @@
 
 .vl-tabs{display:flex;gap:6px;margin:0 0 12px}.vl-tab{padding:6px 14px;border-radius:999px;border:1px solid var(--border);color:var(--muted);font-size:13px}.vl-tab.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
 .ch-pulse{margin:0 0 12px;padding:10px 12px;border:1px solid var(--border);border-radius:10px}.ch-prow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:14px;margin-bottom:4px}.ch-dot{width:10px;height:10px;border-radius:50%;background:#aaa;flex:none}.ch-dot.green{background:#1F8A5B}.ch-dot.yellow{background:#F5A623}.ch-dot.red{background:#E5484D}
-.pb-table{width:100%;border-collapse:collapse;font-size:14px;text-align:center}.pb-table th,.pb-table td{padding:10px 8px;border-bottom:1px solid var(--border);white-space:nowrap}.pb-table th{font-size:12px;font-weight:500;color:var(--text-2,inherit)}.pb-table th:first-child,.pb-table td:first-child{text-align:left}.pb-acc{all:unset;cursor:pointer;font-weight:700}.pb-ok{background:var(--pill-positive-bg);color:var(--pill-positive-ink);font-weight:700}.pb-no{background:var(--pill-negative-bg);color:var(--pill-negative-ink);font-weight:700}.pb-off{font-size:12px;opacity:.6}.pb-sum{font-weight:700;margin:0 0 8px}
+.pb-table{width:100%;border-collapse:collapse;font-size:14px;text-align:center}.pb-table th,.pb-table td{padding:10px 8px;border-bottom:1px solid var(--border);white-space:nowrap}.pb-table th{font-size:12px;font-weight:500;color:var(--text-2,inherit)}.pb-table th:first-child,.pb-table td:first-child{text-align:left}.pb-acc{all:unset;cursor:pointer;font-weight:700}.pb-ok{background:var(--pill-positive-bg);color:var(--pill-positive-ink);font-weight:700}.pb-no{background:var(--pill-negative-bg);color:var(--pill-negative-ink);font-weight:700}.pb-off{font-size:12px;opacity:.6}.pb-sum{font-weight:700;margin:0 0 8px}.pb-total{font-weight:700}.pb-sumrow td{font-weight:700;border-bottom:0}
 .fb-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;margin:8px 0}.fb-cmp{display:flex;flex-direction:column;gap:3px;padding:8px;border:1px solid var(--border);border-radius:8px;font-size:14px}.fb-wrap{overflow-x:auto}.fb-table{width:100%;border-collapse:collapse;font-size:13px}.fb-table th,.fb-table td{padding:5px 6px;border-bottom:1px solid var(--border);text-align:left}.fb-table td:nth-child(2){min-width:180px}
 .ch-step{margin:16px 0 8px;font-size:14px}.ch-topics{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}.ch-chip{all:unset;cursor:pointer;padding:6px 10px;border:1px solid var(--border);border-radius:999px;font-size:13px}.ch-chip[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
 .vl-hot>input{width:100%;box-sizing:border-box;min-height:36px;padding:0 12px;border-radius:8px;border:1px solid var(--border);margin-top:4px}
@@ -2723,27 +2723,34 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
       if (!d || !d.daily) return box.replaceChildren(el('p', 'sub', '오늘 집계를 기다리는 중이에요.'));
       const G = d.daily, ACC = [['c-bull', '황소개미', 'fb-bull'], ['c-hot', '핫코노미', 'fb-hot'], ['c-asset', '자산백배', 'fb-asset'], ['c-chart', '차트덕후', 'fb-chart']];
       const COL = [['인스타 카드뉴스', 'instagram', 'card', G.card], ['인스타 릴스', 'instagram', 'reel', G.reel], ['쓰레드', 'threads', 'n', G.threads]];
-      let done = 0, total = 0;
+      let done = 0, total = 0, d7 = 0, d30 = 0;
+      const colSum = COL.map(() => 0);
       const wrap = el('div', 'fb-wrap'), tb = el('table', 'pb-table'), hr = el('tr');
-      ['계정', ...COL.map(x => `${x[0]} ${x[3]}개`), `유튜브 숏폼 ${G.yt_short}개`, `유튜브 롱폼 ${G.yt_long}개`].forEach(x => hr.append(el('th', '', x)));
+      ['계정', ...COL.map(x => `${x[0]} ${x[3]}개`), `유튜브 숏폼 ${G.yt_short}개`, `유튜브 롱폼 ${G.yt_long}개`, '합계'].forEach(x => hr.append(el('th', '', x)));
       tb.append(hr);
       ACC.forEach(([key, name, fb]) => {
         const tr = el('tr'), th = el('td'), go = el('button', 'pb-acc', name); go.type = 'button';
         go.addEventListener('click', () => goTo(fb));
         th.append(go); tr.append(th);
-        COL.forEach(([, pf, k, goal]) => {
+        let rowSum = 0;
+        ['instagram', 'threads'].forEach(pf => { const v = (d.channels[key] || {})[pf] || {}; d7 += v.d7 || 0; d30 += v.d30 || 0; });
+        COL.forEach(([, pf, k, goal], ci) => {
           const v = ((d.channels[key] || {})[pf]) || {}, n = v.today ? v.today[k] : null;
           if (v.state === 'off') return tr.append(el('td', 'pb-off', '정지됨'));
           if (v.state === 'none' || !v.state) return tr.append(el('td', 'pb-off', '주소 필요'));
           if (n == null) return tr.append(el('td', 'pb-off', '수집 대기'));
           total++; if (n >= goal) done++;
+          rowSum += n; colSum[ci] += n;
           tr.append(el('td', n >= goal ? 'pb-ok' : 'pb-no', `${n} / ${goal}`));
         });
-        tr.append(el('td', 'pb-off', '진행 예정'), el('td', 'pb-off', '진행 예정'));
+        tr.append(el('td', 'pb-off', '진행 예정'), el('td', 'pb-off', '진행 예정'), el('td', 'pb-total', `${rowSum}개`));
         tb.append(tr);
       });
+      const all = colSum.reduce((a, b) => a + b, 0), sumRow = el('tr', 'pb-sumrow');
+      sumRow.append(el('td', '', '합계'), ...colSum.map(n => el('td', '', `${n}개`)), el('td', 'pb-off', '-'), el('td', 'pb-off', '-'), el('td', 'pb-total', `${all}개`));
+      tb.append(sumRow);
       wrap.append(tb);
-      box.replaceChildren(el('p', 'pb-sum', `오늘 달성 ${done}칸 / 집계되는 ${total}칸`), wrap,
+      box.replaceChildren(el('p', 'pb-sum', `오늘 총 ${all}개 발행 · 최근 7일 ${d7}개 · 최근 30일 ${d30}개 · 오늘 달성 ${done}칸 / 집계되는 ${total}칸`), wrap,
         el('p', 'sub', `갱신 ${String(d.updated).slice(5, 16).replace('T', ' ')} · 크롤링으로 잡힌 게시물만 세요. 올린 뒤 1~2시간 늦게 잡힐 수 있어요. 계정 이름을 누르면 피드백으로 가요.`));
     });
   }
