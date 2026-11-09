@@ -2110,7 +2110,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     return box;
   }
   let chDailyP = null, chMain = '';
-  const CH_PC = 'http://127.0.0.1:8765';
+  const CH_PC = 'http://127.0.0.1:18765';
   const chPc = (p, init) => { const c = new AbortController(); setTimeout(() => c.abort(), init ? 60000 : 8000); return fetch(CH_PC + p, { cache: 'no-store', signal: c.signal, ...(init || {}) }).then(r => r.ok ? r.json() : null).catch(() => null); };
   function chCopy(text, label) {
     const b = el('button', 'btn small', label || '복사'); b.type = 'button';
