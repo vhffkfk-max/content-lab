@@ -2131,6 +2131,57 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     row.append(copy, save); wrap.append(img, row); return wrap;
   }
   function chPre(text) { const pre = el('pre', '', text); pre.style.cssText = 'white-space:pre-wrap;word-break:keep-all;font:inherit;margin:8px 0;'; return pre; }
+  const chIdb = (mode, fn) => new Promise((ok, no) => { const q = indexedDB.open('chart_trader', 1); q.onupgradeneeded = () => q.result.createObjectStore('p'); q.onerror = () => no(q.error); q.onsuccess = () => { const tx = q.result.transaction('p', mode), r = fn(tx.objectStore('p')); tx.oncomplete = () => { q.result.close(); ok(r && r.result); }; tx.onerror = () => no(tx.error); }; });
+  async function chShrink(file) {
+    const bmp = await createImageBitmap(file), scale = Math.min(1, 1400 / bmp.width), cv = document.createElement('canvas');
+    cv.width = Math.round(bmp.width * scale); cv.height = Math.round(bmp.height * scale); cv.getContext('2d').drawImage(bmp, 0, 0, cv.width, cv.height);
+    return cv.toDataURL('image/jpeg', 0.88);
+  }
+  function chTraderCard(item, photos) {
+    const box = el('div', 'vl-hot');
+    box.append(el('h3', '', item.status === 'done' ? item.title : '변환 실패'), el('p', 'sub', item.at.replace('T', ' ')));
+    if (item.status !== 'done') { box.append(el('p', 'warn', item.error || '다시 시도해 주세요.')); return box; }
+    (item.check || []).forEach(n => box.append(el('p', 'warn', `확인 필요: ${n}`)));
+    item.posts.forEach(p => {
+      const slot = el('div'), sel = document.createElement('select');
+      const draw = () => { const n = +sel.value; slot.replaceChildren(n && photos[n - 1] ? chImg(photos[n - 1], `${p.label} 사진`, `트레이더_${p.label}.jpg`) : el('span')); };
+      [['0', '사진 없음'], ...photos.map((_, i) => [String(i + 1), `사진 ${i + 1}`])].forEach(([v, t]) => { const o = el('option', '', t); o.value = v; sel.append(o); });
+      sel.value = String(p.image && photos[p.image - 1] ? p.image : 0); sel.addEventListener('change', draw); draw();
+      box.append(el('h4', 'ch-step', p.label), chPre(p.text), sel, slot, chCopy(p.text));
+    });
+    if (!photos.length && item.photos) box.append(el('p', 'sub', '사진은 분석을 입력한 브라우저에만 저장돼요. 이 기기에는 사진이 없어요.'));
+    return box;
+  }
+  function chanTrader() {
+    const root = el('div'), form = el('div', 'vl-hot'), ta = document.createElement('textarea'), file = document.createElement('input'), go = el('button', 'btn small', '쓰레드 글로 바꾸기'), st = el('p', 'sub', ''), list = el('div');
+    ta.rows = 12; ta.maxLength = 6000; ta.placeholder = '트레이더가 쓴 분석 글을 붙여 넣어 주세요.'; ta.style.cssText = 'width:100%;box-sizing:border-box;padding:10px;font:inherit;margin:8px 0;';
+    file.type = 'file'; file.accept = 'image/*'; file.multiple = true; go.type = 'button';
+    form.append(el('h3', '', '트레이더 분석을 쓰레드 글로'), el('p', 'sub', '작도 사진은 차트 순서대로 넣어 주세요(최대 4장). 사진은 이 브라우저에만 저장되고, 글은 PC로 보내져 몇 분 안에 바뀌어요. 저장소가 공개라 글 원문과 결과도 공개돼요.'), ta, file, el('div'), go, st);
+    const render = async () => {
+      const d = await chJson('trader_posts.json'), rows = Array.isArray(d) ? d : [], out = [];
+      for (const it of rows) out.push(chTraderCard(it, (await chIdb('readonly', s => s.get(it.rid)).catch(() => null)) || []));
+      list.replaceChildren(...out);
+      return rows;
+    };
+    let timer = null;
+    go.addEventListener('click', async () => {
+      const text = ta.value.trim(), files = [...file.files].slice(0, 4);
+      if (text.length < 30) return alert('분석 글을 먼저 넣어 주세요.');
+      if (!fb.key && !(await connectLab())) return;
+      go.disabled = true; st.textContent = '보내는 중…';
+      try {
+        const rid = Date.now().toString(36) + Math.random().toString(36).slice(2, 6), photos = [];
+        for (const f of files) photos.push(await chShrink(f));
+        await chIdb('readwrite', s => s.put(photos, rid));
+        const r = await ghApi('actions/workflows/draft-create.yml/dispatches', { method: 'POST', body: JSON.stringify({ ref: 'main', inputs: { trader: text, trader_rid: rid, photos: String(photos.length) } }) });
+        if (r.status !== 204) { st.textContent = ghFail(r.status); go.disabled = false; return; }
+        st.textContent = 'PC에 보냈어요. 보통 5~10분 걸려요. 이 화면을 열어 두면 자동으로 나타나요.';
+        let n = 0; clearInterval(timer);
+        timer = setInterval(async () => { n++; const rows = await render(); if (rows.some(x => x.rid === rid)) { clearInterval(timer); st.textContent = '완료됐어요.'; go.disabled = false; ta.value = ''; file.value = ''; } else if (n > 60) { clearInterval(timer); st.textContent = '시간이 오래 걸려요. PC가 켜져 있는지 확인해 주세요.'; go.disabled = false; } }, 20000);
+      } catch (e) { st.textContent = '요청 실패: 인터넷 연결이나 사진 파일을 확인해 주세요.'; go.disabled = false; }
+    });
+    root.append(form, list); render(); return root;
+  }
   function chanCalls(d) {
     const root = el('div'), won = v => Math.round(v).toLocaleString('ko-KR'), md = s => `${+s.slice(5, 7)}/${+s.slice(8, 10)}`;
     if (d.brief) { const b = el('div', 'vl-hot'); b.append(el('h3', '', '장 시작 전 종목 안내 글'), chPre(d.brief), chCopy(d.brief)); root.append(b); }
@@ -2173,7 +2224,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
   function chanDraw(ch) {
     const c = CHANNELS[ch], root = document.getElementById(ch + '-root'); if (!c || !root) return;
     const cur = chanTab[ch] || c.first || 'video', bar = el('div', 'tabs'), panel = el('div'); panel.style.marginTop = '14px';
-    [['insta', '인스타그램'], ['thread', '쓰레드'], ['video', '영상'], ...(c.main ? [['calls', '종목 안내']] : [])].forEach(([k, label]) => {
+    [['insta', '인스타그램'], ['thread', '쓰레드'], ['video', '영상'], ...(c.main ? [['calls', '종목 안내'], ['trader', '트레이더 분석']] : [])].forEach(([k, label]) => {
       const b = el('button', null, label); b.type = 'button'; b.setAttribute('aria-selected', String(k === cur));
       b.addEventListener('click', () => { chanTab[ch] = k; chanDraw(ch); }); bar.append(b);
     });
@@ -2188,7 +2239,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
         items.forEach(x => { const b = el('button', 'ch-chip', `${x.name} ${x.ret > 0 ? '+' : ''}${x.ret.toFixed(1)}%`); b.type = 'button'; b.setAttribute('aria-pressed', String(x === item)); b.addEventListener('click', () => { chMain = x.code; chanDraw(ch); }); row.append(b); });
         head.append(el('h3', '', `오늘의 메인 컨텐츠 (${d.date})`), el('p', 'sub', '종목을 고르면 아래 쓰레드 글과 카드뉴스가 그 종목 내용으로 바뀌어요.'), row);
         const v = c[cur];
-        panel.append(cur === 'calls' ? chanCalls(d) : v.wait ? chanWait(v.wait) : cur === 'thread' ? chanMainThread(item, d) : chanFlow(c, cur, { ...v, preset: item.topic }));
+        panel.append(cur === 'calls' ? chanCalls(d) : cur === 'trader' ? chanTrader() : v.wait ? chanWait(v.wait) : cur === 'thread' ? chanMainThread(item, d) : chanFlow(c, cur, { ...v, preset: item.topic }));
         root.replaceChildren(head, bar, panel);
       });
       return;

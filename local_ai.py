@@ -30,7 +30,7 @@ LOG = ROOT / "data" / "local_ai.log"
 SITE = "output/site/"
 OUTPUTS = [SITE + f for f in ("tg_ai.json", "tg_rewrites.json", "trd_rooms.json", "trd_posts.json", "drafts.json",
                                "imports.json", "threads_ai.json", "x_ai.json", "thm_ai.json", "growth_plan.json", "thread_posts.json",
-                               "chart_reports.json", "charts", "futures_brief.json", "futures", "malhee_var.json", "acc_topics.json", "channel_pulse.json")] + [SITE + f"acc_{a['slug']}.json" for a in _ACCS] + ["data/publish_queue.json", "data/card_style.json", "data/form_stats.json"]
+                               "chart_reports.json", "charts", "futures_brief.json", "futures", "malhee_var.json", "acc_topics.json", "channel_pulse.json", "trader_posts.json")] + [SITE + f"acc_{a['slug']}.json" for a in _ACCS] + ["data/publish_queue.json", "data/card_style.json", "data/form_stats.json"]
 ENV = {**os.environ, "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1"}
 CRAWLERS = (("content-lab-telegram-live", "tg_live.py"), ("content-lab-threads-watch", "threads_watch.py"), ("content-lab-thread-listen", "thread_listen.py"))
 TG_BEAT = Path.home() / ".content-lab-ai" / "tg_live.beat"
@@ -150,7 +150,7 @@ def auto_ideas(state, did):
     did.append("카드뉴스 추천안")
 
 
-DAILY_REQ = {"draft": 30, "daily": 3, "social": 6, "tg": 10, "trd": 10, "chart": 20, "thpost": 40, "refresh_canva": 3}
+DAILY_REQ = {"draft": 30, "daily": 3, "social": 6, "tg": 10, "trd": 10, "chart": 20, "thpost": 40, "refresh_canva": 3, "trader": 20}
 
 
 def cap_requests(state, todo):
@@ -263,6 +263,10 @@ def run_cycle():
         state["pulse_at"] = time.time()
         py("channel_pulse.py", timeout=120)
         did.append("발행 체크")
+
+    for r in [x for x in todo if x["job"] == "trader"][-3:]:   # 차트덕후: 트레이더 분석 → 쓰레드 글
+        py("chart_trader.py", "--rid", r["id"], timeout=15 * 60)
+        did.append("트레이더 분석 변환")
 
     drafts = [r for r in todo if r["job"] == "draft"][-3:]
     for r in drafts:

@@ -12,6 +12,18 @@ on:
         description: "추천안에서 고른 것 (추천안id|표지번호|폼|글꼴|short)"
         required: false
         default: ""
+      trader:
+        description: "차트덕후 트레이더 분석 원문 (있으면 쓰레드 글로 변환)"
+        required: false
+        default: ""
+      trader_rid:
+        description: "트레이더 분석 요청 번호"
+        required: false
+        default: ""
+      photos:
+        description: "트레이더 분석 사진 수"
+        required: false
+        default: "0"
 
 permissions:
   contents: write
@@ -33,10 +45,17 @@ jobs:
         env:
           TOPIC: ${{ inputs.topic }}
           PICK: ${{ inputs.pick }}
+          TRADER: ${{ inputs.trader }}
+          TRADER_RID: ${{ inputs.trader_rid }}
+          PHOTOS: ${{ inputs.photos }}
         run: |
           git config user.name "content-lab-bot"
           git config user.email "content-lab-bot@users.noreply.github.com"
-          python ai_request.py draft "topic=$TOPIC" "pick=$PICK"
+          if [ -n "$TRADER" ]; then
+            python ai_request.py trader "text=$TRADER" "rid=$TRADER_RID" "photos=$PHOTOS"
+          else
+            python ai_request.py draft "topic=$TOPIC" "pick=$PICK"
+          fi
           git add data/ai_requests.json
           git commit -m "ai: PC에 Claude 작업 요청" || echo "변경 없음"
           for i in 1 2 3 4 5; do   # PC·다른 봇이 같은 때 올리면 밀림 → 받아서 다시
