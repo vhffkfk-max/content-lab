@@ -1,83 +1,583 @@
 [
  {
-  "source": "다음 뉴스",
-  "section": "뉴스1",
+  "source": "머니투데이",
+  "section": "전체",
   "region": "KR",
-  "title": "\"AI주 급락 과도했다\"…월가 IB, 민주당 규제 우려 일축",
-  "link": "https://v.daum.net/v/20261110053307232",
+  "title": "프랑스, '냉장고 해킹' 배후로 이란 지목…유럽 차원 제재 예고",
+  "link": "https://www.mt.co.kr/world/2026/11/10/2026111005500424423",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:06"
+ },
+ {
+  "source": "다음 뉴스",
+  "section": "시사저널",
+  "region": "KR",
+  "title": "아침저녁 찬바람에 혈압 상승…뇌출혈 주의보",
+  "link": "https://v.daum.net/v/20261110060618810",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:06"
+ },
+ {
+  "source": "다음 뉴스",
+  "section": "매일경제",
+  "region": "KR",
+  "title": "“설마 더 떨어지진 않겠지” 막연한 믿음에…하루 빚투 59조 ‘역대 최대’",
+  "link": "https://v.daum.net/v/20261110060605808",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:06"
+ },
+ {
+  "source": "CNBC",
+  "section": "Top News",
+  "region": "US",
+  "title": "Dow surges 1,100 points, Nasdaq climbs more than 2% as tech rebounds from last week’s tumult: Live updates",
+  "link": "https://www.cnbc.com/2026/11/08/stock-market-today-live-updates.html",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:05"
+ },
+ {
+  "source": "다음 뉴스",
+  "section": "세계일보",
+  "region": "KR",
+  "title": "‘보이스피싱 피해자’에 최대 200만원 긴급생계비 지원",
+  "link": "https://v.daum.net/v/20261110060558804",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:05"
+ },
+ {
+  "source": "다음 뉴스",
+  "section": "경향신문",
+  "region": "KR",
+  "title": "기지개 펴는 일본 반도체 산업…“한국이 오히려 일본의 모델”",
+  "link": "https://v.daum.net/v/20261110060541794",
+  "topics": "AI·반도체",
+  "popular": false,
+  "published": "11/10 06:05"
+ },
+ {
+  "source": "다음 뉴스",
+  "section": "세계일보",
+  "region": "KR",
+  "title": "28% 뛴 ‘곱버스’ 차익실현…순매수 1위는 급락한 하이닉스 [주식고수]",
+  "link": "https://v.daum.net/v/20261110060502779",
   "topics": "AI·반도체, 급락·변동성",
   "popular": false,
-  "published": "11/10 05:33"
+  "published": "11/10 06:05"
  },
  {
   "source": "다음 뉴스",
-  "section": "동행미디어 시대",
+  "section": "세계일보",
   "region": "KR",
-  "title": "LG화학 숨통 틔운 엔솔 분할, 이제는 어렵다",
-  "link": "https://v.daum.net/v/20261110053219224",
+  "title": "쿠팡이츠·배민, 6300억대 과징금에 반발… “소비자 혜택·시장 경쟁 노력 외면”",
+  "link": "https://v.daum.net/v/20261110060501778",
   "topics": "",
+  "popular": false,
+  "published": "11/10 06:05"
+ },
+ {
+  "source": "CNBC",
+  "section": "Top News",
+  "region": "US",
+  "title": "Jensen Huang affair puts Nvidia's future at risk, with no clear successor to the renowned CEO",
+  "link": "https://www.cnbc.com/2026/11/09/jensen-huang-affair-nvidia-succession.html",
+  "topics": "AI·반도체",
+  "popular": false,
+  "published": "11/10 06:04"
+ },
+ {
+  "source": "다음 뉴스",
+  "section": "세계일보",
+  "region": "KR",
+  "title": "“보조금 막차 타자”…현대차·기아 10월 전기차 판매 2배 늘었다",
+  "link": "https://v.daum.net/v/20261110060456776",
+  "topics": "국내 대형주",
+  "popular": false,
+  "published": "11/10 06:04"
+ },
+ {
+  "source": "다음 뉴스",
+  "section": "세계일보",
+  "region": "KR",
+  "title": "최저가 압박 ‘갑질’… 배민·쿠팡에 6319억 과징금",
+  "link": "https://v.daum.net/v/20261110060446772",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:04"
+ },
+ {
+  "source": "뉴시스",
+  "section": "경제",
+  "region": "KR",
+  "title": "[속보] 뉴욕증시, 저가 매수·유가 하락에 상승 마감…엔비디아 급락",
+  "link": "https://www.newsis.com/view/NISX20261110_0003861200",
+  "topics": "AI·반도체, 급락·변동성",
+  "popular": false,
+  "published": "11/10 06:03"
+ },
+ {
+  "source": "Seeking Alpha",
+  "section": "Market Currents",
+  "region": "US",
+  "title": "Trade Desk Non-GAAP EPS of $0.33 beats by $0.08, revenue of $736M beats by $84.56M",
+  "link": "https://seekingalpha.com/news/4669234-trade-desk-non-gaap-eps-of-0_33-beats-by-0_08-revenue-of-736m-beats-by-84_56m?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+  "topics": "실적발표",
+  "popular": false,
+  "published": "11/10 06:03"
+ },
+ {
+  "source": "MarketWatch",
+  "section": "Top Stories",
+  "region": "US",
+  "title": "I’m 53 and not sure how to handle merging finances with my long-term partner.",
+  "link": "https://www.marketwatch.com/story/his-mine-or-ours-im-53-and-not-sure-how-to-handle-merging-finances-with-my-long-term-partner-4c34c914?mod=mw_rss_topstories",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:02"
+ },
+ {
+  "source": "Seeking Alpha",
+  "section": "Market Currents",
+  "region": "US",
+  "title": "Plug Power GAAP EPS of $0.00 beats by $0.06, revenue of $201M beats by $7.67M",
+  "link": "https://seekingalpha.com/news/4669224-plug-power-gaap-eps-of-0_00-beats-by-0_06-revenue-of-201m-beats-by-7_67m?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+  "topics": "실적발표",
+  "popular": false,
+  "published": "11/10 06:02"
+ },
+ {
+  "source": "Seeking Alpha",
+  "section": "Market Currents",
+  "region": "US",
+  "title": "Roivant outlines Investor Day focus as IMVT-1402 targets 85,000 difficult-to-treat RA patients",
+  "link": "https://seekingalpha.com/news/4669229-roivant-outlines-investor-day-focus-as-imvtminus-1402-targets-85000-difficult-to-treat-ra?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:02"
+ },
+ {
+  "source": "Seeking Alpha",
+  "section": "Market Currents",
+  "region": "US",
+  "title": "SA analyst warns that Wall Street’s rally could be unsustainable",
+  "link": "https://seekingalpha.com/news/4669211-sa-analyst-warns-that-wall-streets-rally-could-be-unsustainable?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:02"
+ },
+ {
+  "source": "Seeking Alpha",
+  "section": "Market Currents",
+  "region": "US",
+  "title": "U.S. equities ended higher and erased the Election Day losses",
+  "link": "https://seekingalpha.com/news/4669207-us-equities-ended-higher-and-erased-the-election-day-losses?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+  "topics": "정치·관세",
+  "popular": false,
+  "published": "11/10 06:02"
+ },
+ {
+  "source": "MarketWatch",
+  "section": "Top Stories",
+  "region": "US",
+  "title": "Hot U.S. inflation hasn’t cooled off. Rising consumer prices to keep Fed rate hike on track.",
+  "link": "https://www.marketwatch.com/story/hot-u-s-inflation-hasnt-cooled-off-rising-consumer-prices-to-keep-fed-rate-hike-on-track-926c44b0?mod=mw_rss_topstories",
+  "topics": "물가·경기",
+  "popular": false,
+  "published": "11/10 06:01"
+ },
+ {
+  "source": "연합뉴스",
+  "section": "경제",
+  "region": "KR",
+  "title": "중기부, '글로벌 육성' 기업 수출 706만달러…전년比 56% 증가",
+  "link": "https://www.yna.co.kr/view/AKR20261109117000030",
+  "topics": "환율·달러",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "연합뉴스",
+  "section": "마켓",
+  "region": "KR",
+  "title": "국내 상장사 소액주주 18개월 새 24%↑…삼성전자 797만명 1위",
+  "link": "https://www.yna.co.kr/view/AKR20261109118900003",
+  "topics": "국내 대형주",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "연합뉴스",
+  "section": "경제",
+  "region": "KR",
+  "title": "농경연 \"김장비용 4% 안팎 줄어…상품 김치 구매 비중은 증가\"",
+  "link": "https://www.yna.co.kr/view/AKR20261109136900030",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "연합뉴스",
+  "section": "경제",
+  "region": "KR",
+  "title": "서울시, 디딤돌소득 3년 성과 공개…23일 시민 참여 보고회",
+  "link": "https://www.yna.co.kr/view/AKR20261109137900004",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "연합뉴스",
+  "section": "경제",
+  "region": "KR",
+  "title": "서비스 수출실적 증명 편리하게…무역협회 등 6개 기관 협력",
+  "link": "https://www.yna.co.kr/view/AKR20261109140300003",
+  "topics": "실적발표",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "연합뉴스",
+  "section": "경제",
+  "region": "KR",
+  "title": "취준생 77% \"취업에 AI 역량 중요\"…공식 평가하는 기업은 20%",
+  "link": "https://www.yna.co.kr/view/AKR20261109146900003",
+  "topics": "AI·반도체",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "연합뉴스",
+  "section": "경제",
+  "region": "KR",
+  "title": "백화점 3사, 겨울 정기세일…한파 대비 외투·신상 할인 판매",
+  "link": "https://www.yna.co.kr/view/AKR20261109149300030",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "조선비즈",
+  "section": "전체",
+  "region": "KR",
+  "title": "페블스톤·AEW, 평택·여주 물류센터 통매각… 이지스운용·베인캐피탈 우협 선정",
+  "link": "https://biz.chosun.com/stock/market_trend/2026/11/10/F6PXHH4IEJFITCMRKE6RH4TO6E/",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "조선비즈",
+  "section": "전체",
+  "region": "KR",
+  "title": "AI 신약개발 투자 열기 속 커지는 회의론…빅파마가 짚은 한계는",
+  "link": "https://biz.chosun.com/science-chosun/bio/2026/11/10/7K5FCXTD25F2BARRIYELYA2XHE/",
+  "topics": "AI·반도체",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "조선비즈",
+  "section": "전체",
+  "region": "KR",
+  "title": "이마트, 9900원부터 1498만원까지… 와인 7000종 최대 50% 할인",
+  "link": "https://biz.chosun.com/distribution/channel/2026/11/10/THPAPLBMNFCH3K5EJV46RTORGI/",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "조선비즈",
+  "section": "전체",
+  "region": "KR",
+  "title": "[비즈톡톡] 美 민주당 압승에 엇갈린 SK텔레콤 AI 셈법… 앤트로픽 IPO 기대 낮아지고, 울산 데이터센터에 기회?",
+  "link": "https://biz.chosun.com/it-science/ict/2026/11/10/HS2JMUOJ4VGWDICPMYW6HGQNV4/",
+  "topics": "AI·반도체",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "조선비즈",
+  "section": "전체",
+  "region": "KR",
+  "title": "전력 확보 어려워도 수도권으로… 새로 짓는 데이터센터 10건 중 7건",
+  "link": "https://biz.chosun.com/real_estate/real_estate_general/2026/11/10/SJOS6MPUMZGUHGL6BWY3RUSMTA/",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "조선비즈",
+  "section": "전체",
+  "region": "KR",
+  "title": "“AI 서버용 낸드만 잘 팔린다”… 삼성전자·키옥시아·SK하이닉스 엇갈리는 셈법",
+  "link": "https://biz.chosun.com/it-science/ict/2026/11/10/CG2AAGKUS5HUNC6BUCFBSV5CII/",
+  "topics": "AI·반도체, 국내 대형주",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "조선비즈",
+  "section": "전체",
+  "region": "KR",
+  "title": "“서울선 계약서 구경도 어려워”… 용인·화성으로 원정 중개 나선 공인중개사들",
+  "link": "https://biz.chosun.com/real_estate/real_estate_general/2026/11/10/S2APB765E5CSBCCSP4SUYD3AOY/",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "조선비즈",
+  "section": "전체",
+  "region": "KR",
+  "title": "韓 ‘본업’ LNG 운반선 수주 경고음… 돌파구는 내년 북미 수요",
+  "link": "https://biz.chosun.com/industry/company/2026/11/10/ZSEIWSZQTRAS7GKWTK3HPLDM2I/",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "머니투데이",
+  "section": "전체",
+  "region": "KR",
+  "title": "\"기술만으론 살아남지 못한다\"…농식품 벤처의 '성장 사다리' 놓는 김진헌 센터장",
+  "link": "https://www.mt.co.kr/economy/2026/11/10/2026110921441639597",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "머니투데이",
+  "section": "전체",
+  "region": "KR",
+  "title": "젠슨 황 '불륜 인정', 그녀는 중국 스파이?...엔비디아 CEO 교체 되나",
+  "link": "https://www.mt.co.kr/world/2026/11/10/2026110918234079266",
+  "topics": "AI·반도체",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "머니투데이",
+  "section": "전체",
+  "region": "KR",
+  "title": "100년간 이어진 '만성콩팥병 저단백' 원칙…무조건 줄이면 위험",
+  "link": "https://www.mt.co.kr/thebio/2026/11/10/2026110916022641173",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "머니투데이",
+  "section": "전체",
+  "region": "KR",
+  "title": "\"검사가 주말에 불러\"...女피의자와 성관계 '파문'[뉴스속오늘]",
+  "link": "https://www.mt.co.kr/society/2026/11/10/2026110910281178024",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "머니투데이",
+  "section": "전체",
+  "region": "KR",
+  "title": "버스·점심도 지원…서울교육청 '학급소풍데이' 신청 6배 몰려",
+  "link": "https://www.mt.co.kr/policy/2026/11/10/2026110916490356840",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "아시아경제",
+  "section": "경제",
+  "region": "KR",
+  "title": "\"발목 잡힌다\" 한양도성 세계유산 우려… 서울시, 주민의견 듣는다",
+  "link": "https://view.asiae.co.kr/article/2026110917012757799",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "뉴시스",
+  "section": "경제",
+  "region": "KR",
+  "title": "강남3구 하락 거래 '중소형' 확산…'강남불패' 무너지나",
+  "link": "https://www.newsis.com/view/NISX20261107_0003858923",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "뉴시스",
+  "section": "경제",
+  "region": "KR",
+  "title": "메탄 감축 약속했지만 투자 턱없이 부족…COP31 이행 논의 주목",
+  "link": "https://www.newsis.com/view/NISX20261109_0003860750",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "뉴시스",
+  "section": "경제",
+  "region": "KR",
+  "title": "친환경차 도시철도채권 매입 감면 2년 더 연장한다",
+  "link": "https://www.newsis.com/view/NISX20261109_0003860263",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "이투데이",
+  "section": "증권",
+  "region": "KR",
+  "title": "삼성전자 17%·하이닉스 22% 하락…美 빅테크와 디커플링 속 반등 열쇠는?",
+  "link": "https://www.etoday.co.kr/news/view/2645910",
+  "topics": "AI·반도체, 빅테크, 국내 대형주",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "이투데이",
+  "section": "증권",
+  "region": "KR",
+  "title": "'반대매매 유예' 약발 통했나…한 달 새 77% 치솟던 공포지수, 8거래일 만에 '숨 고르기'",
+  "link": "https://www.etoday.co.kr/news/view/2645911",
+  "topics": "급락·변동성",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "Bloomberg",
+  "section": "Economics",
+  "region": "US",
+  "title": "Takaichi’s Hunt for New Cash to Fund Spending Harbors Risks",
+  "link": "https://www.bloomberg.com/news/articles/2026-11-09/takaichi-s-hunt-for-new-cash-to-fund-spending-harbors-risks",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "연준",
+  "section": "보도자료",
+  "region": "US",
+  "title": "Federal Reserve Board announces approval of two applications by Mutual Federal Bancorp, MHC, and MFB Bancorp, Inc.",
+  "link": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261109a.htm",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 06:00"
+ },
+ {
+  "source": "CNBC",
+  "section": "Top News",
+  "region": "US",
+  "title": "Hegseth impeachment articles introduced by Rep. Massie",
+  "link": "https://www.cnbc.com/2026/11/09/pete-hegseth-impeachment-articles-massie.html",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 05:54"
+ },
+ {
+  "source": "Seeking Alpha",
+  "section": "Market Currents",
+  "region": "US",
+  "title": "Paramount Resources raised at Scotiabank as Kaybob sale clears way for next leg of growth",
+  "link": "https://seekingalpha.com/news/4669208-paramount-resources-raised-at-scotiabank-as-kaybob-sale-clears-way-for-next-leg-of-growth?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 05:54"
+ },
+ {
+  "source": "연합뉴스",
+  "section": "경제",
+  "region": "KR",
+  "title": "미래기금에 \"중복 투자 우려\" 등 반대 입법의견 다수 제기돼",
+  "link": "https://www.yna.co.kr/view/AKR20261109151800002",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 05:53"
+ },
+ {
+  "source": "Seeking Alpha",
+  "section": "Market Currents",
+  "region": "US",
+  "title": "A preliminary agreement reducing Iran’s Uranium enrichment likely to be reached – reports",
+  "link": "https://seekingalpha.com/news/4669216-a-preliminary-agreement-reducing-iran-s-uranium-enrichment-likely-to-be-reached-reports?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 05:53"
+ },
+ {
+  "source": "MarketWatch",
+  "section": "Top Stories",
+  "region": "US",
+  "title": "Analysts say these chip stocks are bargains. Is it time to buy?",
+  "link": "https://www.marketwatch.com/story/analysts-say-these-chip-stocks-are-bargains-is-it-time-to-buy-fb5fdde8?mod=mw_rss_topstories",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 05:48"
+ },
+ {
+  "source": "인베스팅닷컴",
+  "section": "주식 시장",
+  "region": "KR",
+  "title": "월트 디즈니, Disney+ 참여도 높이기 위해 무료 티어·크리에이터 콘텐츠 검토",
+  "link": "https://kr.investing.com/news/stock-market-news/article-2166899",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 05:47"
+ },
+ {
+  "source": "MarketWatch",
+  "section": "Top Stories",
+  "region": "US",
+  "title": "The stock-market rally keeps spreading beyond Big Tech. October inflation data could put it to the test.",
+  "link": "https://www.marketwatch.com/story/the-stock-market-rally-keeps-spreading-beyond-big-tech-october-inflation-data-could-put-it-to-the-test-c1b87dcd?mod=mw_rss_topstories",
+  "topics": "물가·경기",
+  "popular": false,
+  "published": "11/10 05:42"
+ },
+ {
+  "source": "CNBC",
+  "section": "Top News",
+  "region": "US",
+  "title": "As Nvidia probes Jensen Huang affair, here's the board member likely to play a big role",
+  "link": "https://www.cnbc.com/2026/11/09/nvidia-jensen-huang-investigation.html",
+  "topics": "AI·반도체",
+  "popular": false,
+  "published": "11/10 05:41"
+ },
+ {
+  "source": "CNBC",
+  "section": "Top News",
+  "region": "US",
+  "title": "PepsiCo to cut about 1,000 jobs as North American business struggles",
+  "link": "https://www.cnbc.com/2026/11/09/pepsico-north-america-job-cuts.html",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 05:41"
+ },
+ {
+  "source": "파이낸셜뉴스",
+  "section": "경제",
+  "region": "KR",
+  "title": "800만원 신발장 이어 140만원 패딩까지…박수홍 가족 둘러싼 '재력 과시' 시선들 [이슈코노미]",
+  "link": "https://www.fnnews.com/news/202611091813141479",
+  "topics": "",
+  "popular": false,
+  "published": "11/10 05:40"
+ },
+ {
+  "source": "Bloomberg",
+  "section": "Markets",
+  "region": "US",
+  "title": "Test Your ETF Knowledge In Our IQ Test",
+  "link": "https://www.bloomberg.com/news/videos/2026-11-09/test-your-etf-knowledge-in-our-iq-test-video",
+  "topics": "ETF·지수투자",
   "popular": false,
   "published": "11/10 05:32"
- },
- {
-  "source": "다음 뉴스",
-  "section": "동행미디어 시대",
-  "region": "KR",
-  "title": "솔리다임 상장 땐 주주 손해? 지분율 줄어도 가치는 그대로",
-  "link": "https://v.daum.net/v/20261110053218221",
-  "topics": "",
-  "popular": false,
-  "published": "11/10 05:32"
- },
- {
-  "source": "다음 뉴스",
-  "section": "조선일보",
-  "region": "KR",
-  "title": "박세익 “삼전닉스 물린 분, 절대 시장 떠나지 마세요”",
-  "link": "https://v.daum.net/v/20261110053218222",
-  "topics": "",
-  "popular": false,
-  "published": "11/10 05:32"
- },
- {
-  "source": "다음 뉴스",
-  "section": "머니투데이",
-  "region": "KR",
-  "title": "중동 전쟁에 석화업계 '휘청'…줄줄이 적자에 체질 개선 속도",
-  "link": "https://v.daum.net/v/20261110053134201",
-  "topics": "",
-  "popular": false,
-  "published": "11/10 05:31"
- },
- {
-  "source": "다음 뉴스",
-  "section": "뉴시스",
-  "region": "KR",
-  "title": "돌아온 조현범號 한국앤컴퍼니 '파격 인사'…고성과 83년생 팀원, 곧바로 '임원 직행'",
-  "link": "https://v.daum.net/v/20261110053133200",
-  "topics": "",
-  "popular": false,
-  "published": "11/10 05:31"
- },
- {
-  "source": "다음 뉴스",
-  "section": "서울경제",
-  "region": "KR",
-  "title": "배민·쿠팡이츠가 과징금 6319억 물게 된 사연은? [Pick코노미]",
-  "link": "https://v.daum.net/v/20261110053132199",
-  "topics": "",
-  "popular": false,
-  "published": "11/10 05:31"
- },
- {
-  "source": "다음 뉴스",
-  "section": "머니투데이",
-  "region": "KR",
-  "title": "'7100억→5조' 7배 뛴 쿠팡 '최혜대우' 매출...'징벌적 과징금' 포석?",
-  "link": "https://v.daum.net/v/20261110053130196",
-  "topics": "",
-  "popular": false,
-  "published": "11/10 05:31"
  },
  {
   "source": "MarketWatch",
@@ -100,64 +600,14 @@
   "published": "11/10 05:29"
  },
  {
-  "source": "Seeking Alpha",
-  "section": "Market Currents",
-  "region": "US",
-  "title": "Eli Lilly, Novo weight-loss drugs to get rare eye loss warning",
-  "link": "https://seekingalpha.com/news/4669195-eli-lilly-novo-weight-loss-drugs-get-rare-eye-loss-warning?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-  "topics": "",
-  "popular": false,
-  "published": "11/10 05:28"
- },
- {
-  "source": "머니투데이",
-  "section": "전체",
-  "region": "KR",
-  "title": "신아영 포옹에 여성 BJ와 합방도…젠슨 황, 불륜에 과거 '소환'",
-  "link": "https://www.mt.co.kr/society/2026/11/10/2026111005130842128",
-  "topics": "AI·반도체",
-  "popular": false,
-  "published": "11/10 05:26"
- },
- {
-  "source": "CNBC",
-  "section": "Top News",
-  "region": "US",
-  "title": "Hegseth impeachment articles introduced by Rep. Massie",
-  "link": "https://www.cnbc.com/2026/11/09/pete-hegseth-impeachment-articles-massie.html",
-  "topics": "",
-  "popular": false,
-  "published": "11/10 05:25"
- },
- {
-  "source": "CNBC",
-  "section": "Top News",
-  "region": "US",
-  "title": "Jensen Huang affair puts Nvidia's future at risk, with no clear successor to the renowned CEO",
-  "link": "https://www.cnbc.com/2026/11/09/jensen-huang-affair-nvidia-succession.html",
-  "topics": "AI·반도체",
-  "popular": false,
-  "published": "11/10 05:25"
- },
- {
   "source": "연합인포맥스",
   "section": "전체",
   "region": "KR",
-  "title": "美 국채 3년물 입찰에 양호한 수요…수익률 예상 하회",
+  "title": "美 국채 3년물 입찰에 다소 부진한 수요…수익률 예상 소폭 상회",
   "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4443836",
   "topics": "",
   "popular": false,
   "published": "11/10 05:25"
- },
- {
-  "source": "조선비즈",
-  "section": "전체",
-  "region": "KR",
-  "title": "AI創薬に懐疑広がる投資拡大も成果乏しい",
-  "link": "https://biz.chosun.com/jp/jp-science/2026/11/10/755JJT6OI5DZBOINRFE3L6N6O4/",
-  "topics": "AI·반도체",
-  "popular": false,
-  "published": "11/10 05:24"
  },
  {
   "source": "Bloomberg",
@@ -165,16 +615,6 @@
   "region": "US",
   "title": "World 'Rewiring' Around Innovation Thematics: Anderson",
   "link": "https://www.bloomberg.com/news/videos/2026-11-09/world-rewiring-around-innovation-thematics-anderson-video",
-  "topics": "",
-  "popular": false,
-  "published": "11/10 05:23"
- },
- {
-  "source": "Seeking Alpha",
-  "section": "Market Currents",
-  "region": "US",
-  "title": "Winners and losers in the managed care repricing divide",
-  "link": "https://seekingalpha.com/news/4669019-winners-and-losers-in-the-managed-care-repricing-divide?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
   "topics": "",
   "popular": false,
   "published": "11/10 05:23"
@@ -190,36 +630,6 @@
   "published": "11/10 05:21"
  },
  {
-  "source": "Seeking Alpha",
-  "section": "Market Currents",
-  "region": "US",
-  "title": "LoanDepot expects $4.5B-$6.5B Q4 origination volume while targeting breakeven or profitability by first half or mid next year",
-  "link": "https://seekingalpha.com/news/4669198-loandepot-expects-4_5b-6_5b-q4-origination-volume-while-targeting-breakeven-or-profitability?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-  "topics": "",
-  "popular": false,
-  "published": "11/10 05:21"
- },
- {
-  "source": "Seeking Alpha",
-  "section": "Market Currents",
-  "region": "US",
-  "title": "SpaceX plans $24B gas power plant, supercomputing facility in Texas",
-  "link": "https://seekingalpha.com/news/4669197-spacex-plans-24b-gas-power-plant-supercomputing-facility-in-texas?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-  "topics": "",
-  "popular": false,
-  "published": "11/10 05:16"
- },
- {
-  "source": "CNBC",
-  "section": "Top News",
-  "region": "US",
-  "title": "Dow rallies 1,200 points, Nasdaq jumps 3% as stocks climb out of postelection slump: Live updates",
-  "link": "https://www.cnbc.com/2026/11/08/stock-market-today-live-updates.html",
-  "topics": "",
-  "popular": false,
-  "published": "11/10 05:15"
- },
- {
   "source": "MarketWatch",
   "section": "Top Stories",
   "region": "US",
@@ -228,16 +638,6 @@
   "topics": "",
   "popular": false,
   "published": "11/10 05:15"
- },
- {
-  "source": "CNBC",
-  "section": "Top News",
-  "region": "US",
-  "title": "Nvidia's China revenue exposure: What New Street estimates",
-  "link": "https://www.cnbc.com/2026/11/09/nvidias-china-revenue-exposure-what-new-street-estimates-.html",
-  "topics": "AI·반도체",
-  "popular": false,
-  "published": "11/10 05:13"
  },
  {
   "source": "Bloomberg",
@@ -250,42 +650,12 @@
   "published": "11/10 05:12"
  },
  {
-  "source": "Seeking Alpha",
-  "section": "Market Currents",
-  "region": "US",
-  "title": "Cnh outlines $300M-$450M 2026 industrial free cash flow as Kobelco deal targets end-2027 close",
-  "link": "https://seekingalpha.com/news/4669196-cnh-outlines-300m-450m-2026-industrial-free-cash-flow-as-kobelco-deal-targets-endminus-2027?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-  "topics": "",
-  "popular": false,
-  "published": "11/10 05:12"
- },
- {
-  "source": "머니투데이",
-  "section": "전체",
-  "region": "KR",
-  "title": "콩밭에 들어온 로봇…농진청, 파종부터 수확까지 스마트농업 시대 연다",
-  "link": "https://www.mt.co.kr/economy/2026/11/10/2026111004505174240",
-  "topics": "",
-  "popular": false,
-  "published": "11/10 05:08"
- },
- {
   "source": "CNBC",
   "section": "Top News",
   "region": "US",
   "title": "The wait is almost over for this blockbuster video game. I see 35% upside in the stock",
   "link": "https://www.cnbc.com/2026/11/09/the-wait-is-almost-over-for-this-blockbuster-video-game-i-see-35percent-upside-in-the-stock.html",
   "topics": "",
-  "popular": false,
-  "published": "11/10 05:07"
- },
- {
-  "source": "Seeking Alpha",
-  "section": "Market Currents",
-  "region": "US",
-  "title": "Inflation is expected to remain stubborn in CPI's October reading",
-  "link": "https://seekingalpha.com/news/4669191-inflation-expected-to-remain-stubborn-in-cpis-october-reading?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-  "topics": "물가·경기",
   "popular": false,
   "published": "11/10 05:07"
  },
@@ -310,16 +680,6 @@
   "published": "11/10 05:02"
  },
  {
-  "source": "Seeking Alpha",
-  "section": "Market Currents",
-  "region": "US",
-  "title": "Merck MASH asset efinopegdutide meets primary goal in mid-stage trial",
-  "link": "https://seekingalpha.com/news/4669185-merck-mash-asset-efinopegdutide-meets-primary-goal-mid-stage-trial?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-  "topics": "",
-  "popular": false,
-  "published": "11/10 05:02"
- },
- {
   "source": "매일경제",
   "section": "증권",
   "region": "KR",
@@ -330,61 +690,11 @@
   "published": "11/10 05:00"
  },
  {
-  "source": "머니투데이",
-  "section": "전체",
-  "region": "KR",
-  "title": "누리호 성공에도 '우주강국' 멀었다…K-우주산업의 다음 과제는",
-  "link": "https://www.mt.co.kr/future/2026/11/10/2026110910285534518",
-  "topics": "",
-  "popular": false,
-  "published": "11/10 05:00"
- },
- {
-  "source": "머니투데이",
-  "section": "전체",
-  "region": "KR",
-  "title": "[기고]소방학교의 문을 넓혀, 국민의 안전을 더 두텁게",
-  "link": "https://www.mt.co.kr/opinion/2026/11/10/2026110910253956932",
-  "topics": "",
-  "popular": false,
-  "published": "11/10 05:00"
- },
- {
-  "source": "머니투데이",
-  "section": "전체",
-  "region": "KR",
-  "title": "밀폐용기 어디 있지?...베트남서 텀블러·소형가전 앞세운 락앤락",
-  "link": "https://www.mt.co.kr/living/2026/11/10/2026110214595677438",
-  "topics": "",
-  "popular": false,
-  "published": "11/10 05:00"
- },
- {
-  "source": "머니투데이",
-  "section": "전체",
-  "region": "KR",
-  "title": "[우보세]미래대응기금의 미래",
-  "link": "https://www.mt.co.kr/economy/2026/11/10/2026110814111428974",
-  "topics": "",
-  "popular": false,
-  "published": "11/10 05:00"
- },
- {
   "source": "파이낸셜뉴스",
   "section": "경제",
   "region": "KR",
   "title": "40% 이상 빠지면 60일 뒤 97% 올랐다…주가 반토막 난 삼전에 쏟아진 '파격 분석'",
   "link": "https://www.fnnews.com/news/202611092215106521",
-  "topics": "",
-  "popular": false,
-  "published": "11/10 05:00"
- },
- {
-  "source": "뉴시스",
-  "section": "경제",
-  "region": "KR",
-  "title": "서울 6대 상권 공실률 모두 한 자릿수…강남 최대 낙폭",
-  "link": "https://www.newsis.com/view/NISX20261109_0003860945",
   "topics": "",
   "popular": false,
   "published": "11/10 05:00"
@@ -530,16 +840,6 @@
   "published": "11/10 04:43"
  },
  {
-  "source": "CNBC",
-  "section": "Top News",
-  "region": "US",
-  "title": "Millions of dollars poured into prediction markets on election night, trading on Democratic control of Congress and Texas governor's race",
-  "link": "https://www.cnbc.com/2026/11/09/millions-of-dollars-poured-into-prediction-markets-on-election-night.html",
-  "topics": "정치·관세",
-  "popular": false,
-  "published": "11/10 04:41"
- },
- {
   "source": "Bloomberg",
   "section": "Markets",
   "region": "US",
@@ -613,16 +913,6 @@
   "source": "동아일보",
   "section": "경제",
   "region": "KR",
-  "title": "입점업체에 갑질 의혹, 배민-쿠팡 6319억 과징금",
-  "link": "https://www.donga.com/news/Economy/article/all/20261110/134995528/2",
-  "topics": "",
-  "popular": false,
-  "published": "11/10 04:30"
- },
- {
-  "source": "동아일보",
-  "section": "경제",
-  "region": "KR",
   "title": "[단독]보증금 못줘 경매 신청 지방아파트 4년새 6.8배로… 年1000채 육박",
   "link": "https://www.donga.com/news/Economy/article/all/20261110/134995612/2",
   "topics": "부동산",
@@ -681,12 +971,12 @@
  },
  {
   "source": "인베스팅닷컴",
-  "section": "주식 시장",
+  "section": "주식 시장 · 많이 본 기사",
   "region": "KR",
   "title": "SpaceX, 텍사스 스타베이스에 240억 달러 규모 발전소 건설 계획",
   "link": "https://kr.investing.com/news/stock-market-news/article-2166847",
   "topics": "환율·달러",
-  "popular": false,
+  "popular": true,
   "published": "11/10 04:16"
  },
  {
@@ -730,26 +1020,6 @@
   "published": "11/10 04:09"
  },
  {
-  "source": "인베스팅닷컴",
-  "section": "주식 시장",
-  "region": "KR",
-  "title": "Anthropic, IPO 앞두고 Fable 5.2·Mythos 5.2 AI 모델 출시",
-  "link": "https://kr.investing.com/news/stock-market-news/article-2166837",
-  "topics": "AI·반도체",
-  "popular": false,
-  "published": "11/10 04:06"
- },
- {
-  "source": "Bloomberg",
-  "section": "Markets",
-  "region": "US",
-  "title": "BLS Will Not Publish 12-Month CPI, Core CPI Figures For October",
-  "link": "https://www.bloomberg.com/news/articles/2026-11-09/bls-will-not-publish-12-month-cpi-core-cpi-figures-for-october",
-  "topics": "물가·경기",
-  "popular": false,
-  "published": "11/10 04:05"
- },
- {
   "source": "연합인포맥스",
   "section": "전체",
   "region": "KR",
@@ -758,16 +1028,6 @@
   "topics": "금리·연준, 물가·경기",
   "popular": false,
   "published": "11/10 04:02"
- },
- {
-  "source": "Bloomberg",
-  "section": "Economics",
-  "region": "US",
-  "title": "Bank of France Warns of Uncertainty as Modest Growth Returns",
-  "link": "https://www.bloomberg.com/news/articles/2026-11-09/bank-of-france-warns-of-uncertainty-as-modest-growth-returns",
-  "topics": "",
-  "popular": false,
-  "published": "11/10 04:00"
  },
  {
   "source": "연합인포맥스",
@@ -790,26 +1050,6 @@
   "published": "11/10 03:52"
  },
  {
-  "source": "MarketWatch",
-  "section": "Top Stories",
-  "region": "US",
-  "title": "Are AMD and Broadcom the real winners of the Nvidia spy scandal?",
-  "link": "https://www.marketwatch.com/story/are-amd-and-broadcom-the-real-winners-of-the-nvidia-spy-scandal-d2343072?mod=mw_rss_topstories",
-  "topics": "AI·반도체, ETF·지수투자",
-  "popular": false,
-  "published": "11/10 03:33"
- },
- {
-  "source": "MarketWatch",
-  "section": "Top Stories",
-  "region": "US",
-  "title": "Think the bond market is broken? History says a massive turnaround could be coming.",
-  "link": "https://www.marketwatch.com/story/think-the-bond-market-is-broken-history-says-a-massive-turnaround-could-be-coming-dfaae450?mod=mw_rss_topstories",
-  "topics": "",
-  "popular": false,
-  "published": "11/10 03:26"
- },
- {
   "source": "Financial Times",
   "section": "Markets",
   "region": "US",
@@ -820,26 +1060,6 @@
   "published": "11/10 03:19"
  },
  {
-  "source": "MarketWatch",
-  "section": "Top Stories",
-  "region": "US",
-  "title": "Hot U.S. inflation hasn’t cooled off. Rising consumer prices to keep Fed rate hike on track.",
-  "link": "https://www.marketwatch.com/story/hot-u-s-inflation-hasnt-cooled-off-rising-consumer-prices-to-keep-fed-rate-hike-on-track-926c44b0?mod=mw_rss_topstories",
-  "topics": "물가·경기",
-  "popular": false,
-  "published": "11/10 03:16"
- },
- {
-  "source": "MarketWatch",
-  "section": "Top Stories",
-  "region": "US",
-  "title": "Funeral homes are finding new life hosting weddings and golf outings, as the traditional burial business dies out",
-  "link": "https://www.marketwatch.com/story/funeral-homes-are-finding-new-life-hosting-weddings-and-golf-outings-as-the-traditional-burial-business-dies-out-15831d13?mod=mw_rss_topstories",
-  "topics": "",
-  "popular": false,
-  "published": "11/10 03:11"
- },
- {
   "source": "헤럴드경제",
   "section": "금융",
   "region": "KR",
@@ -848,16 +1068,6 @@
   "topics": "",
   "popular": false,
   "published": "11/10 03:05"
- },
- {
-  "source": "뉴시스",
-  "section": "경제",
-  "region": "KR",
-  "title": "공매도 투자사, 6개월 전 '젠슨 황 中리스크' 제기",
-  "link": "https://www.newsis.com/view/NISX20261110_0003861174",
-  "topics": "AI·반도체",
-  "popular": false,
-  "published": "11/10 02:36"
  },
  {
   "source": "Financial Times",
@@ -913,16 +1123,6 @@
   "source": "SBS Biz",
   "section": "경제",
   "region": "KR",
-  "title": "'싸게 팔아라' 압박…'쿠팡·배민' 과징금 6천억",
-  "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008838010&plink=RSSLINK&cooper=RSSREADER",
-  "topics": "",
-  "popular": false,
-  "published": "11/10 00:52"
- },
- {
-  "source": "SBS Biz",
-  "section": "경제",
-  "region": "KR",
   "title": "반등 못한 한국 증시…힘 못 쓰는 국민연금",
   "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008838008&plink=RSSLINK&cooper=RSSREADER",
   "topics": "연금·절세",
@@ -970,16 +1170,6 @@
   "published": "11/10 00:18"
  },
  {
-  "source": "뉴시스",
-  "section": "경제",
-  "region": "KR",
-  "title": "뉴욕증시, 상승 개장…'中간첩 불륜 의혹' 엔비디아, 7% 하락",
-  "link": "https://www.newsis.com/view/NISX20261109_0003861166",
-  "topics": "AI·반도체",
-  "popular": false,
-  "published": "11/10 00:17"
- },
- {
   "source": "한국경제",
   "section": "경제",
   "region": "KR",
@@ -1008,36 +1198,6 @@
   "topics": "",
   "popular": false,
   "published": "11/10 00:00"
- },
- {
-  "source": "뉴시스",
-  "section": "경제",
-  "region": "KR",
-  "title": "\"프로와 아마추어가 같은 링에서 싸우고 있다\"…자산운용 23년 차의 팩트 폭격",
-  "link": "https://www.newsis.com/view/NISX20261109_0003859734",
-  "topics": "",
-  "popular": false,
-  "published": "11/10 00:00"
- },
- {
-  "source": "뉴시스",
-  "section": "금융",
-  "region": "KR",
-  "title": "\"시드머니 1억 모아 투자? 위험한 착각\"…화폐 가치 폭락 시대의 경고",
-  "link": "https://www.newsis.com/view/NISX20261109_0003859711",
-  "topics": "급락·변동성",
-  "popular": false,
-  "published": "11/10 00:00"
- },
- {
-  "source": "연합뉴스",
-  "section": "마켓",
-  "region": "KR",
-  "title": "뉴욕증시, 저가매수·유가하락에 상승출발",
-  "link": "https://www.yna.co.kr/view/AKR20261109159900009",
-  "topics": "",
-  "popular": false,
-  "published": "11/09 23:50"
  },
  {
   "source": "매일경제",
@@ -1128,6 +1288,16 @@
   "topics": "AI·반도체, 물가·경기",
   "popular": false,
   "published": "11/09 22:36"
+ },
+ {
+  "source": "SBS Biz",
+  "section": "경제",
+  "region": "KR",
+  "title": "'싸게 팔아라' 압박…'쿠팡이츠·배민' 과징금 6천억",
+  "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008837871&plink=RSSLINK&cooper=RSSREADER",
+  "topics": "",
+  "popular": false,
+  "published": "11/09 22:23"
  },
  {
   "source": "한국경제",
@@ -1240,26 +1410,6 @@
   "published": "11/09 21:00"
  },
  {
-  "source": "매일경제",
-  "section": "경제",
-  "region": "KR",
-  "title": "못 받은 돈만 3조, 더 빌려줄 수가…4대 은행 中企 ‘깡통대출’ 경고등",
-  "link": "https://www.mk.co.kr/news/economy/12202882",
-  "topics": "",
-  "popular": false,
-  "published": "11/09 20:55"
- },
- {
-  "source": "연합뉴스",
-  "section": "경제",
-  "region": "KR",
-  "title": "파리바게뜨, 16일부터 제조 음료 10종 가격 평균 2.7% 인상",
-  "link": "https://www.yna.co.kr/view/AKR20261109156300030",
-  "topics": "",
-  "popular": false,
-  "published": "11/09 20:49"
- },
- {
   "source": "헤럴드경제",
   "section": "금융",
   "region": "KR",
@@ -1300,16 +1450,6 @@
   "published": "11/09 20:30"
  },
  {
-  "source": "연합뉴스",
-  "section": "경제",
-  "region": "KR",
-  "title": "\"업종별 하위 25%·할증률 40%로\"…'주가 누르기' 정부안 보완론(종합)",
-  "link": "https://www.yna.co.kr/view/AKR20261109147051002",
-  "topics": "",
-  "popular": false,
-  "published": "11/09 20:26"
- },
- {
   "source": "파이낸셜뉴스",
   "section": "증권",
   "region": "KR",
@@ -1318,16 +1458,6 @@
   "topics": "AI·반도체",
   "popular": false,
   "published": "11/09 19:59"
- },
- {
-  "source": "연합뉴스",
-  "section": "경제",
-  "region": "KR",
-  "title": "삼성화재, 英캐노피우스 지분 추가인수…해외사업 확대",
-  "link": "https://www.yna.co.kr/view/AKR20261109153600002",
-  "topics": "",
-  "popular": false,
-  "published": "11/09 19:31"
  },
  {
   "source": "서울경제",
@@ -1390,16 +1520,6 @@
   "published": "11/09 18:33"
  },
  {
-  "source": "파이낸셜뉴스",
-  "section": "경제",
-  "region": "KR",
-  "title": "글로벌 바이오 전문가 집결… 신약개발 미래 엿본다",
-  "link": "https://www.fnnews.com/news/202611091832210002",
-  "topics": "",
-  "popular": false,
-  "published": "11/09 18:32"
- },
- {
   "source": "아시아경제",
   "section": "증권",
   "region": "KR",
@@ -1430,16 +1550,6 @@
   "published": "11/09 18:23"
  },
  {
-  "source": "연합뉴스",
-  "section": "경제",
-  "region": "KR",
-  "title": "조의장 \"체감경기 회복 더뎌…선순환 회복이 조세정책 역할\"",
-  "link": "https://www.yna.co.kr/view/AKR20261109148000001",
-  "topics": "",
-  "popular": false,
-  "published": "11/09 18:22"
- },
- {
   "source": "아시아경제",
   "section": "증권",
   "region": "KR",
@@ -1468,26 +1578,6 @@
   "topics": "",
   "popular": false,
   "published": "11/09 18:06"
- },
- {
-  "source": "아시아경제",
-  "section": "증권",
-  "region": "KR",
-  "title": "[클릭 e종목]\"삼성SDS, 데이터센터 추가 확보 기대…목표가 ↑\"",
-  "link": "https://view.asiae.co.kr/article/2026110915263348144",
-  "topics": "",
-  "popular": false,
-  "published": "11/09 18:04"
- },
- {
-  "source": "연합뉴스",
-  "section": "경제",
-  "region": "KR",
-  "title": "[연합뉴스 이 시각 헤드라인] - 18:00",
-  "link": "https://www.yna.co.kr/view/AKR20261109139700011",
-  "topics": "",
-  "popular": false,
-  "published": "11/09 18:00"
  },
  {
   "source": "서울경제",
@@ -1528,15 +1618,5 @@
   "topics": "",
   "popular": false,
   "published": "11/09 17:42"
- },
- {
-  "source": "서울경제",
-  "section": "경제",
-  "region": "KR",
-  "title": "배달음식값 담합 유도한 배민·쿠팡…6319억 과징금",
-  "link": "https://www.sedaily.com/article/20112085",
-  "topics": "",
-  "popular": false,
-  "published": "11/09 17:41"
  }
 ]
