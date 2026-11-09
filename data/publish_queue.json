@@ -3035,378 +3035,6 @@
  ],
  "ideas": [
   {
-   "title": "금감원, 빚투 담보비율 의무 3개월 면제",
-   "concept": "코스피 급락 직후 반대매매 우려에 나온 조치를 보도 중심으로 풀고, 빚이 사라지는 건 아니라는 점과 면제가 끝나면 부담이 돌아온다는 점을 짚는다. 적용 대상과 시작일은 원문 확인이 필요하다고 한 줄만 밝힌다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "11곳이 다룬 새 소식이다. 코스피가 급락한 직후라 빚투 강제청산 우려가 커진 시점이다. 조선비즈는 내년 1월까지 면제한다고 보도했다.",
-   "tag": "증시",
-   "sources": [
-    "https://www.newsis.com/view/NISX20261106_0003858573",
-    "https://www.mt.co.kr/stock/2026/11/08/2026110619030119159",
-    "https://biz.chosun.com/stock/stock_general/2026/11/08/3N3FO3SK6RHQZG2FLCL37RLIZU/"
-   ],
-   "bg": "KOSPI trading screen",
-   "bg_alt": "Financial Supervisory Service building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "빚투 반대매매 압박에\n금감원이 담보 의무를\n**3개월** 면제했어요",
-     "number": "3개월",
-     "label": "담보비율 유지의무 면제",
-     "sub": "내년 1월까지, 반대매매 우려 속"
-    },
-    {
-     "type": "질문형",
-     "title": "빚투 강제청산,\n금감원은 왜 갑자기\n**3개월** 멈췄을까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "빚은 그대로인데\n강제 매도만 **멈췄어요**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261108-1401-i1",
-   "created_at": "2026-11-08T14:01:39+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261108-1401-i1/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261108-1401-i1/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261108-1401-i1/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261108-1401-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261108-1401-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261108-1401-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261108-1401-i1/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261108-1401-i1/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261108-1401-i1/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261108-1401-i1/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261108-1401-i1/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261108-1401-i1/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "젠슨 황 딸 방한 취소, 배경훈 면담 무산",
-   "concept": "황 딸 방한이 취소되면서 부총리 면담과 기업 협력 일정이 같이 무산된 사실을 중심으로 푼다. 중국 스파이 의혹 보도와 엮는 시각이 있지만 공식 확인된 이유는 아니라고 한 줄만 밝히고, 내일 AI 데이 서울을 다음에 볼 변수로 남긴다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "16곳이 다룬 새 소식이다. 엔비디아 AI 데이 서울이 내일 9일 개막해 시점이 맞는다.",
-   "tag": "테크",
-   "sources": [
-    "https://biz.chosun.com/it-science/ict/2026/11/08/L22RCPNIPBFTTL466CDXONUPRU/",
-    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008835855&plink=RSSLINK&cooper=RSSREADER"
-   ],
-   "bg": "Jensen Huang Nvidia",
-   "bg_alt": "Nvidia headquarters",
-   "hooks": [
-    {
-     "type": "사건형",
-     "title": "젠슨 황 딸 방한이\n취소됐어요\n**배경훈** 면담도 무산",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "엔비디아 행사 하루 전\n황 딸은 왜 안 올까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "AI 데이 서울 하루 전\n황 딸 방한 일정이\n전부 **무산**됐어요",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "breaking"
-   ],
-   "extra": {},
-   "id": "20261108-1401-i2",
-   "created_at": "2026-11-08T14:01:39+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261108-1401-i2/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261108-1401-i2/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261108-1401-i2/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261108-1401-i2/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261108-1401-i2/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261108-1401-i2/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261108-1401-i2/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261108-1401-i2/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261108-1401-i2/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "라가르드 ECB 총재, 12월 금리 인상에 무게",
-   "concept": "라가르드의 발언 한 줄을 앞세우고, 한국 투자자에게 닿는 길(위험자산, 환율, 외국인 자금)을 쉬운 말로 한 장에 풀어 쓴다. 인상 폭과 세부 발언은 원문 확인이 필요하다고 한 줄만 밝힌다. (공식: 없음)",
-   "why_now": "13:12 연합인포맥스 등 2곳이 보도했다. 증시가 급락한 상황에서 유럽의 금리 인상 기조가 이어질 수 있다는 신호라 관심이 높다.",
-   "tag": "금리",
-   "sources": [
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443607"
-   ],
-   "bg": "Christine Lagarde",
-   "bg_alt": "European Central Bank building",
-   "hooks": [
-    {
-     "type": "사건형",
-     "title": "라가르드 ECB 총재\n12월 금리 인상에\n**무게**를 뒀어요",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "유럽도 금리를 안 내리면\n한국 증시에 **부담**일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "증시 급락 속에서도\n라가르드는 **인상**에 무게",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "quote",
-    "news"
-   ],
-   "extra": {
-    "quote": {
-     "label": "ECB 총재 발언",
-     "quote": "방향이 바뀌려면 상당한 변화가 필요하다",
-     "by": "라가르드 ECB 총재"
-    }
-   },
-   "id": "20261108-1401-i3",
-   "created_at": "2026-11-08T14:01:39+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261108-1401-i3/1-quote-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261108-1401-i3/1-quote-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261108-1401-i3/1-quote-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261108-1401-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261108-1401-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261108-1401-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261108-1401-i3/2-quote-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261108-1401-i3/2-quote-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261108-1401-i3/2-quote-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261108-1401-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261108-1401-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261108-1401-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261108-1401-i3/3-quote-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261108-1401-i3/3-quote-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261108-1401-i3/3-quote-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261108-1401-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261108-1401-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261108-1401-i3/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
    "title": "방한객 2000만명인데 관광수지 적자 10배",
    "concept": "방문객 수와 실제 수지는 다른 숫자라는 반전으로 풉니다. 적자 5억달러가 3개월 만에 10배가 된 점을 앞세우고, 원인은 기사 본문 확인 전이라 단정하지 않습니다. (공식: 표지는 이미 일어난 일로)",
    "why_now": "오늘 10:50 뉴스1이 보도했고 서울경제도 같은 흐름을 다뤘습니다. 방한객 2000만명과 적자 확대라는 대비가 뚜렷하고, 아직 다루지 않은 주제입니다.",
@@ -8583,6 +8211,433 @@
      "form": "news",
      "font": "myeongjo",
      "path": "20261109-1301-i3/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "29세 이하 고용보험 가입자 50개월째 감소",
+   "concept": "역대 최장 기록인 50개월 연속 감소를 숫자로 보여 주고, KDI가 짚은 '성장은 양호한데 가계 전반으로는 안 퍼진다'는 어긋남을 붙인다. 세부 감소 인원은 재료에 없으므로 쓰지 않는다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "13시대 속보로 5곳이 다룬 새 소식이고, 오늘 보낸 주제와 겹치지 않는다. 청년 고용은 독자 본인과 직접 관련된 이야기다.",
+   "tag": "고용",
+   "sources": [
+    "https://www.mt.co.kr/economy/2026/11/09/2026110911320962826",
+    "https://v.daum.net/v/20261109130818478",
+    "https://www.fnnews.com/news/202611091022135288"
+   ],
+   "bg": "Korean young job seekers",
+   "bg_alt": "Seoul office building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "29세 이하 가입자\n**50개월째** 감소\n역대 최장 기록",
+     "number": "50개월",
+     "label": "29세 이하 고용보험 가입자 감소",
+     "sub": "역대 최장 기록"
+    },
+    {
+     "type": "질문형",
+     "title": "청년 고용보험은\n왜 **50개월째**\n줄기만 할까",
+     "number": "50개월",
+     "label": "29세 이하 고용보험 가입자 감소",
+     "sub": "역대 최장 기록"
+    },
+    {
+     "type": "반전형",
+     "title": "성장은 **양호**한데\n29세 이하 고용은\n50개월째 감소",
+     "number": "50개월",
+     "label": "29세 이하 고용보험 가입자 감소",
+     "sub": "KDI, 성장이 가계 전반으로 퍼지지 않는다고 짚음"
+    }
+   ],
+   "forms": [
+    "breaking",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261109-1406-i1",
+   "created_at": "2026-11-09T14:06:32+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-1406-i1/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-1406-i1/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-1406-i1/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261109-1406-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261109-1406-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261109-1406-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-1406-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-1406-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-1406-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261109-1406-i1/2-bignum-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261109-1406-i1/2-bignum-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261109-1406-i1/2-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-1406-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-1406-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-1406-i1/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261109-1406-i1/3-bignum-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261109-1406-i1/3-bignum-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261109-1406-i1/3-bignum-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "중국 소비자물가 0.7%, 생산자물가는 4년 만에 최고",
+   "concept": "소비자물가는 예상(0.8%)보다 낮은데 생산자물가는 4년 만에 최고라는 어긋난 두 사실로 시작한다. 한국에 미칠 구체적 영향은 확인 전이라고 한 줄만 밝힌다. (공식: A인데 B, 어긋난 두 사실 제목)",
+   "why_now": "13곳이 다룬 큰 소식(13:36)이고 X의 BullTheory 글은 조회 18,288이다. 중국 물가는 한국 수출과 원자재 가격을 볼 때 참고하는 지표다.",
+   "tag": "중국경제",
+   "sources": [
+    "https://www.newsis.com/view/NISX20261109_0003860318",
+    "https://www.yna.co.kr/view/AKR20261109080800089"
+   ],
+   "bg": "China factory production line",
+   "bg_alt": "Shanghai skyline",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "중국 소비자물가\n**0.7%** 상승에 그쳐\n예상 0.8% 밑돌아",
+     "number": "0.7%",
+     "label": "중국 소비자물가 상승률",
+     "sub": "시장 예상 0.8%보다 낮음"
+    },
+    {
+     "type": "질문형",
+     "title": "중국 공장 물가만\n왜 **4년 만에**\n최고를 찍었나",
+     "number": "0.7%",
+     "label": "중국 소비자물가 상승률",
+     "sub": "시장 예상 0.8%보다 낮음"
+    },
+    {
+     "type": "반전형",
+     "title": "생산자물가는\n4년 만에 최고인데\n**소비**는 예상 밑",
+     "number": "0.7%",
+     "label": "중국 소비자물가 상승률",
+     "sub": "시장 예상 0.8%보다 낮음"
+    }
+   ],
+   "forms": [
+    "bars",
+    "paper"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "중국 소비자물가 상승률(%)",
+     "bars": [
+      {
+       "label": "실제",
+       "value": 0.7,
+       "hi": true
+      },
+      {
+       "label": "시장 예상",
+       "value": 0.8
+      }
+     ]
+    },
+    "paper": {
+     "date": "11/09",
+     "headlines": [
+      "중국 소비자물가 0.7% 상승",
+      "시장 예상 0.8%보다 낮아",
+      "생산자물가 4년 만에 최고"
+     ]
+    }
+   },
+   "id": "20261109-1406-i2",
+   "created_at": "2026-11-09T14:06:32+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261109-1406-i2/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261109-1406-i2/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261109-1406-i2/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261109-1406-i2/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261109-1406-i2/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261109-1406-i2/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261109-1406-i2/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261109-1406-i2/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261109-1406-i2/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261109-1406-i2/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261109-1406-i2/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261109-1406-i2/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261109-1406-i2/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261109-1406-i2/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261109-1406-i2/3-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261109-1406-i2/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261109-1406-i2/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261109-1406-i2/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "5000선 깼다가 5100선 되찾은 코스피",
+   "concept": "장 초반 5000선 붕괴에서 장중 5100선 회복까지 하루 안의 낙차를 보여 준다. 연기금과 자사주 매수는 보도로 단서를 달고, 골드만삭스 세부 수치는 재료에 없다고 밝힌다. 끝 장은 매수 신호가 아니라 변동성 확인으로 맺는다. (공식: 전후 낙차 한 줄 표지)",
+   "why_now": "코스피 반등 소식을 14곳이 다뤘고, 오늘 5000선 붕괴와 회복이 한 날에 일어났다. 이전에 다룬 '5천피 붕괴'는 하락 소식이고, 이번에는 반등이 새 사건이다.",
+   "tag": "증시",
+   "sources": [
+    "https://www.etoday.co.kr/news/view/2645731",
+    "https://www.donga.com/news/Economy/article/all/20261109/134990798/1",
+    "https://www.mt.co.kr/world/2026/11/09/2026110911251538491"
+   ],
+   "bg": "KOSPI stock exchange Seoul",
+   "bg_alt": "Samsung Electronics headquarters",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "코스피 5000선\n깼다가 **5100선**\n하루 만에 회복",
+     "number": "5,116.81",
+     "label": "코스피 11/09 기준",
+     "sub": "장 초반 5000선 붕괴 뒤 반등"
+    },
+    {
+     "type": "질문형",
+     "title": "5000선 무너진 날\n누가 코스피를\n**받쳤나**",
+     "number": "5,116.81",
+     "label": "코스피 11/09 기준",
+     "sub": "연기금, 자사주 매수 보도"
+    },
+    {
+     "type": "반전형",
+     "title": "장 초반 5000선\n붕괴했던 코스피가\n**상승 전환**했다",
+     "number": "5,116.81",
+     "label": "코스피 11/09 기준",
+     "sub": "삼성전자, SK하이닉스 3% 안팎 강세"
+    }
+   ],
+   "forms": [
+    "breaking",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261109-1406-i3",
+   "created_at": "2026-11-09T14:06:32+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-1406-i3/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-1406-i3/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-1406-i3/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-1406-i3/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-1406-i3/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-1406-i3/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-1406-i3/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-1406-i3/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-1406-i3/3-breaking-dohyeon.jpg"
     }
    ]
   }
