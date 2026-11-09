@@ -40,10 +40,15 @@ def _open():
     if _page:
         return _page
     from playwright.sync_api import sync_playwright
-    _pw = sync_playwright().start()
-    _ctx = _pw.chromium.launch_persistent_context(str(LOGIN_PROFILE), executable_path=browser(), headless=True,
-                                                  locale="ko-KR", viewport={"width": 1280, "height": 900})
-    _page = _ctx.pages[0] if _ctx.pages else _ctx.new_page()
+    close()   # 지난번에 덜 닫힌 게 있으면 다음 시작이 전부 실패함 (2026-11-09 00:40부터 11시간 멈춘 원인)
+    try:
+        _pw = sync_playwright().start()
+        _ctx = _pw.chromium.launch_persistent_context(str(LOGIN_PROFILE), executable_path=browser(), headless=True,
+                                                      locale="ko-KR", viewport={"width": 1280, "height": 900})
+        _page = _ctx.pages[0] if _ctx.pages else _ctx.new_page()
+    except Exception:
+        close()
+        raise
     return _page
 
 

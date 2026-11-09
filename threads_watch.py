@@ -470,6 +470,12 @@ def main():
             tick(c, a.no_push)
         except Exception as e:   # 한 바퀴가 실패해도 계속
             log.info("이번 바퀴 실패: %r", e)
+            lb.close()
+            try:   # 크롤링이 실패해도 뉴스·지금 쓸 거리·깃허브 올리기는 차례대로
+                if not a.no_push:
+                    push(c, int(time.time()))
+            except Exception as e2:
+                log.info("올리기 실패: %r", e2)
         time.sleep(max(30, TICK_S - (time.time() - t0)))
 
 

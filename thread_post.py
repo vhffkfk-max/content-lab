@@ -179,6 +179,18 @@ def materials(pick):
                 t = article(u)
                 if t:
                     arts.append((u, t))
+    if len(arts) < 2:   # 구글 뉴스 주소는 본문을 못 읽고(400) 검색도 빈손일 때: 수집한 기사 중 언론사 직접 주소
+        words = [w for w in re.split(r"[\s·,/'\"]+", f"{pick.get('topic', '')} {pick.get('title', '')}") if len(w) >= 2]
+        rows = load(SITE / "press_headlines.json", []) + load(SITE / "google_headlines.json", [])
+        hits = sorted(((sum(w in r.get("title", "") for w in words), r.get("link", "")) for r in rows), key=lambda x: -x[0])
+        for k, u in hits:
+            if k < 2 or len(arts) >= MAX_ARTICLES:
+                break
+            if u and "news.google.com" not in u and u not in tried:
+                tried.add(u)
+                t = article(u)
+                if t:
+                    arts.append((u, t))
     return arts
 
 
