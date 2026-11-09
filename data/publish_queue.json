@@ -3035,350 +3035,6 @@
  ],
  "ideas": [
   {
-   "title": "이자 갚을 능력, 대기업 19배 중기 3배",
-   "concept": "같은 금리 부담 속에서 이자 갚을 능력이 19배와 3배로 갈린 'K자' 격차를 두 숫자 대결로 풀고, 내 회사는 어느 쪽인지 댓글로 묻는다. 정확한 기준(이자보상배율 등)은 원문 확인 후 표기. (공식: 두 쪽 대결을 색 두 개로)",
-   "why_now": "19:05 헤럴드경제가 보도했고, 월급 줄 돈을 빌리는 기업이 늘었다는 한국경제 보도와 이어진다. 금리 인상 우려가 커진 시기라 공감도가 크다.",
-   "tag": "기업, 금리",
-   "sources": [
-    "https://biz.heraldcorp.com/article/10929498",
-    "https://www.hankyung.com/article/2026110832801"
-   ],
-   "bg": "Seoul office buildings",
-   "bg_alt": "Korean won banknotes",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "대기업은 이자의\n**19배** 벌고\n중기는 3배뿐",
-     "number": "19배",
-     "label": "대기업이 이자 갚을 능력",
-     "sub": "중소기업은 3배 수준"
-    },
-    {
-     "type": "질문형",
-     "title": "우리 회사는 이자\n**19배** 쪽일까\n아니면 3배 쪽일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "이자 갚을 능력도\n**K자**로 갈렸다\n19배 대 3배",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bars",
-    "news"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "이자 갚을 능력, 배 (기준은 원문 확인)",
-     "bars": [
-      {
-       "label": "대기업",
-       "value": 19,
-       "hi": true
-      },
-      {
-       "label": "중소기업",
-       "value": 3
-      }
-     ]
-    }
-   },
-   "id": "20261108-2051-i1",
-   "created_at": "2026-11-08T20:51:34+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261108-2051-i1/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261108-2051-i1/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261108-2051-i1/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261108-2051-i1/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261108-2051-i1/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261108-2051-i1/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261108-2051-i1/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261108-2051-i1/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261108-2051-i1/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "폭락장 ELS 원금손실 위기 866억",
-   "concept": "원금손실 위기 ELS 866억 원과 삼성전자, SK하이닉스 연계 ELS의 녹인 235억 원을 중심으로, 녹인의 뜻과 내 ELS에서 확인할 것을 쉬운 말로 풀어준다. 투자 권유 아님을 한 줄로 밝힌다. (공식: 없음)",
-   "why_now": "코스피 급락 여파로 ELS 손실 기사가 18:09~18:19에 연달아 나왔고, 오늘 아직 다루지 않은 주제다.",
-   "tag": "ELS, 증시",
-   "sources": [
-    "https://v.daum.net/v/20261108181957526",
-    "https://v.daum.net/v/20261108180942145"
-   ],
-   "bg": "KOSPI stock board",
-   "bg_alt": "Samsung Electronics headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "원금손실 위기 ELS\n**866억** 원 규모\n삼전닉스 연계 235억",
-     "number": "866억 원",
-     "label": "원금손실 위기 ELS 규모",
-     "sub": "삼성전자, SK하이닉스 연계 235억 원은 녹인 터치"
-    },
-    {
-     "type": "질문형",
-     "title": "내 ELS는 녹인을\n**터치**했을까\n기초자산부터 확인",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "폭락장 후폭풍\n삼전닉스 연계만\n**235억** 녹인 터치",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261108-2051-i2",
-   "created_at": "2026-11-08T20:51:34+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261108-2051-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261108-2051-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261108-2051-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261108-2051-i2/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261108-2051-i2/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261108-2051-i2/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261108-2051-i2/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261108-2051-i2/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261108-2051-i2/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261108-2051-i2/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261108-2051-i2/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261108-2051-i2/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "주담대 고정금리가 변동형보다 싸졌다",
-   "concept": "보통은 고정이 더 비싼데 이번엔 거꾸로라는 점을 앞세우고, 12월 금리 인상 가능성이 거론되는 만큼 갈아타기 전 중도상환수수료와 본인 대출 조건부터 확인하라는 점을 짚는다. (공식: A인데 B, 어긋난 두 사실)",
-   "why_now": "17:58 보도로 주담대 고정금리가 한 달 새 0.45%p 내려 변동형보다 낮아진 것이 확인됐다. 대출자에게 직접 와닿는 이슈다.",
-   "tag": "대출, 금리",
-   "sources": [
-    "https://news.google.com/rss/articles/CBMiUkFVX3lxTE82ZXdVTUNvUnpVU254SVBMRHNKdlBLWW1aaWhNWGY0QnE0Y0xnOEZkZHRkTU1UZkhwWlp"
-   ],
-   "bg": "Korean apartment complex",
-   "bg_alt": "Bank of Korea building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "주담대 고정금리\n한 달 새 **0.45%p**\n내려 변동보다 싸졌다",
-     "number": "0.45%p",
-     "label": "주담대 고정금리, 한 달 새 하락",
-     "sub": "변동형보다 낮아졌다는 보도"
-    },
-    {
-     "type": "질문형",
-     "title": "고정금리가 더 싸다\n변동형 **갈아탈**까\n수수료부터 확인",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "보통은 고정이 비싼데\n이번엔 **거꾸로**였다\n변동이 더 비싸졌다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "editorial",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261108-2051-i3",
-   "created_at": "2026-11-08T20:51:34+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261108-2051-i3/1-editorial-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261108-2051-i3/1-editorial-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261108-2051-i3/1-editorial-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261108-2051-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261108-2051-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261108-2051-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261108-2051-i3/2-editorial-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261108-2051-i3/2-editorial-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261108-2051-i3/2-editorial-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261108-2051-i3/3-editorial-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261108-2051-i3/3-editorial-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261108-2051-i3/3-editorial-plex.jpg"
-    }
-   ]
-  },
-  {
    "title": "외국인 닷새간 10조 매도, 5천피 붕괴",
    "concept": "외국인 수급을 중심에 두고 5천피 붕괴와 서킷브레이커, 미 반도체 반등 뒤 월요일 관전 포인트까지 한 사건으로 푼다 (공식: 없음)",
    "why_now": "서울신문이 외인 닷새간 10조 매도를 보도했고, 헤럴드경제는 5천피 붕괴와 서킷브레이커를 다뤘다. SBS Biz와 매일경제는 미 반도체주 반등 뒤 월요일 코스피를 주목했다.",
@@ -8300,6 +7956,424 @@
      "form": "breaking",
      "font": "dohyeon",
      "path": "20261109-1807-i3/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "中 24% 추가관세, 희토류 통제 유예 연장",
+   "concept": "중국이 미국에 매기려던 24% 추가관세와 희토류 수출통제 강화를 2개월 더 미뤘다는 속보를 풀고, 희토류가 한국 반도체, 배터리, 전기차 부품에 왜 중요한지 한 장에서 쉽게 설명한다. 유예일 뿐 갈등이 끝난 건 아니라는 점과 세부 내용은 확인 중이라는 단서를 마지막 장에 한 번만 남긴다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "18:48 연합뉴스 등 3곳이 보도한 새 발표다. 관세와 희토류는 한국 반도체, 배터리 업계에 직결되는데 아직 다룬 적 없는 주제다.",
+   "tag": "미중 무역",
+   "sources": [
+    "https://v.daum.net/v/20261109184819015",
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443793"
+   ],
+   "bg": "Xi Jinping",
+   "bg_alt": "rare earth minerals",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "중국이 미국에 매기려던\n**24%** 추가관세\n두 달 더 미뤘다",
+     "number": "24%",
+     "label": "중국이 미국에 매기려던 추가관세",
+     "sub": "희토류 통제 강화와 함께 2개월 유예 연장"
+    },
+    {
+     "type": "질문형",
+     "title": "미중 무역 휴전이\n**2개월** 더 길어졌다\n갈등도 끝난 걸까?",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "관세는 미뤘지만\n희토류 통제도\n**유예**일 뿐이다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261109-1901-i1",
+   "created_at": "2026-11-09T19:01:29+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-1901-i1/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-1901-i1/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-1901-i1/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-1901-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-1901-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-1901-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-1901-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-1901-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-1901-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-1901-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-1901-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-1901-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-1901-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-1901-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-1901-i1/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-1901-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-1901-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-1901-i1/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "금융위, 은행 우대금리 축소 연말까지 점검",
+   "concept": "대출 금리를 깎아 주던 우대금리를 슬그머니 줄여 실제 금리를 올리는 관행을 금융위가 금감원과 점검한다는 속보다. 내 우대금리 조건이 그대로인지 확인해 볼 만하다는 점으로 마무리하고, 점검 대상 은행과 세부 내용은 확인 중이라고 한 번만 밝힌다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "18:10 연합뉴스, 이데일리 등 6곳이 보도했다. 낮에 화제였던 주담대 금리 흐름과 이어지는 소식이다.",
+   "tag": "대출 금리",
+   "sources": [
+    "https://www.yna.co.kr/view/AKR20261109128300001"
+   ],
+   "bg": "Financial Services Commission Korea",
+   "bg_alt": "bank loan counter",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "금융위가 은행의\n**우대금리** 축소를\n연말까지 점검한다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "내 대출 우대금리\n슬그머니 줄었나\n**금융위**가 본다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "우대금리를 줄이면\n겉으론 그대로여도\n실제 금리는 **오른다**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "editorial"
+   ],
+   "extra": {},
+   "id": "20261109-1901-i2",
+   "created_at": "2026-11-09T19:01:29+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-1901-i2/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-1901-i2/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-1901-i2/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261109-1901-i2/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261109-1901-i2/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261109-1901-i2/1-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-1901-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-1901-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-1901-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261109-1901-i2/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261109-1901-i2/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261109-1901-i2/2-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261109-1901-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261109-1901-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261109-1901-i2/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261109-1901-i2/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261109-1901-i2/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261109-1901-i2/3-editorial-plex.jpg"
+    }
+   ]
+  },
+  {
+   "title": "미국 트럭업체 파산 221곳, 경기 신호?",
+   "concept": "올해 미국 트럭업체 221곳이 파산했고 3년 연속 220곳 이상이라는 숫자를 중심에 둔다. 2021~2022년에는 연간 100곳 미만이었다는 대비를 보여 주고, 트럭 운송이 경기의 체온계로 불리는 이유와 한국 수출기업에 닿는 경로를 설명한다. 소규모 업체 비중 같은 세부 수치는 재료에 없으니 확인 필요로 남긴다. 출처는 Kobeissi Letter다. (공식: 전후 낙차 한 줄 표지)",
+   "why_now": "Kobeissi Letter 글이 조회 14.7만, 좋아요 1223으로 퍼지고 있다. 연준의 12월 금리 결정을 앞두고 실물 경기 신호로 읽히고 있다.",
+   "tag": "미국 경기",
+   "sources": [
+    "https://x.com/KobeissiLetter/status/2119636362810859821"
+   ],
+   "bg": "semi truck highway",
+   "bg_alt": "trucking freight terminal",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "미국 트럭업체\n**221곳**이 올해\n벌써 파산했다",
+     "number": "221곳",
+     "label": "올해 미국 트럭업체 파산",
+     "sub": "이 추세면 23년 만에 연간 최다"
+    },
+    {
+     "type": "질문형",
+     "title": "트럭이 멈추면\n경기도 멈출까\n파산 **221곳**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "연 100곳 미만이던\n트럭업체 파산이\n3년째 **220곳**대",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261109-1901-i3",
+   "created_at": "2026-11-09T19:01:29+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261109-1901-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261109-1901-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261109-1901-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-1901-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-1901-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-1901-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-1901-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-1901-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-1901-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-1901-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-1901-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-1901-i3/3-news-myeongjo.jpg"
     }
    ]
   }
