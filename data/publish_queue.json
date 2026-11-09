@@ -3035,338 +3035,6 @@
  ],
  "ideas": [
   {
-   "title": "방한객 2000만명인데 관광수지 적자 10배",
-   "concept": "방문객 수와 실제 수지는 다른 숫자라는 반전으로 풉니다. 적자 5억달러가 3개월 만에 10배가 된 점을 앞세우고, 원인은 기사 본문 확인 전이라 단정하지 않습니다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "오늘 10:50 뉴스1이 보도했고 서울경제도 같은 흐름을 다뤘습니다. 방한객 2000만명과 적자 확대라는 대비가 뚜렷하고, 아직 다루지 않은 주제입니다.",
-   "tag": "관광",
-   "sources": [
-    "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9VYk9McUlPSU9hZnN1WWtIdm4yNzRrUWhiWDZ0c2loVHB3cWxvMXN1NDVLSU13RTh6Smw",
-    "https://www.sedaily.com/article/20111554"
-   ],
-   "bg": "Incheon Airport tourists",
-   "bg_alt": "Myeongdong Seoul tourists",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "방한객 **2000만명**\n관광수지 적자는\n3개월 만에 10배",
-     "number": "5억달러",
-     "label": "관광수지 적자",
-     "sub": "3개월 만에 10배 늘었어요"
-    },
-    {
-     "type": "질문형",
-     "title": "외국인 2000만명이\n왔는데 **적자**라니",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "관광객은 **늘었는데**\n돈은 못 벌었어요",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "editorial"
-   ],
-   "extra": {},
-   "id": "20261108-1501-i1",
-   "created_at": "2026-11-08T15:01:37+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261108-1501-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261108-1501-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261108-1501-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261108-1501-i1/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261108-1501-i1/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261108-1501-i1/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261108-1501-i1/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261108-1501-i1/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261108-1501-i1/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "서학개미 하루 만에 13조 사라졌다는 보도",
-   "concept": "미국 AI주 급락이 국내 투자자 계좌에 닿은 규모를 13조 한 줄로 보여 줍니다. 엔비디아 9.3%, AMD 17.3% 하락은 막대로 비교하고, 13조 산정 기준과 하락 시점은 확인 필요라고 한 줄로 밝힙니다. 매매 권유는 하지 않습니다. (공식: 큰 숫자 하나를 빨간 한 줄로)",
-   "why_now": "13:08 세계일보가 보도했습니다. 코스피 급락에 이어 국내 개인의 미국 계좌 손실이 직접 확인된 소식이고, 앞서 다룬 서학개미 매수 주제와는 다른 사건입니다.",
-   "tag": "증시",
-   "sources": [
-    "https://news.google.com/rss/articles/CBMia0FVX3lxTE55TnZXUVRfRldPUkhhOGpYUlVtejRzNDNSN3RPcE9MMVlOZ0tLNXJHanFyREUwQ0dVeU1",
-    "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5aM0dpU2pvbkJpRmlDaFZQWmRrdUJrWnhrVU01T1B1cjVCTXFHZ2puYWpaSTBTdVlTTlZ"
-   ],
-   "bg": "Nvidia GPU chip",
-   "bg_alt": "Nvidia headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "서학개미 계좌에서\n하루 만에 **13조**가\n사라졌다는 보도",
-     "number": "13조",
-     "label": "서학개미 하루 손실",
-     "sub": "산정 기준은 확인 필요"
-    },
-    {
-     "type": "질문형",
-     "title": "미국 AI주 급락에\n내 계좌는 **괜찮을까**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "엔비디아 9.3%\nAMD는 **17.3%**\n개미 13조가 날아갔다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "bars"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "AI주 하락률(%), 보도 기준",
-     "bars": [
-      {
-       "label": "엔비디아",
-       "value": 9.3
-      },
-      {
-       "label": "AMD",
-       "value": 17.3,
-       "hi": true
-      }
-     ]
-    }
-   },
-   "id": "20261108-1501-i2",
-   "created_at": "2026-11-08T15:01:37+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261108-1501-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261108-1501-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261108-1501-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261108-1501-i2/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261108-1501-i2/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261108-1501-i2/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261108-1501-i2/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261108-1501-i2/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261108-1501-i2/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261108-1501-i2/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261108-1501-i2/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261108-1501-i2/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "라가르드 \"12월 금리 인상에 무게\"",
-   "concept": "증시가 급락한 날에도 ECB 총재가 인상 기조를 바꿀 뜻이 없다는 신호를 낸 점을 실제 발언으로 보여 줍니다. 인상 폭은 원문 확인 전이라 쓰지 않고, 한국 환율과 외국인 자금 흐름은 다음에 볼 변수로만 남깁니다. (공식: 없음)",
-   "why_now": "13:12 연합인포맥스 등이 보도했습니다. 주식 급락 속에서 금리 방향을 둘러싼 관심이 큰 시점이고, 아직 다루지 않은 주제입니다.",
-   "tag": "금리",
-   "sources": [
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443607"
-   ],
-   "bg": "Christine Lagarde",
-   "bg_alt": "European Central Bank building",
-   "hooks": [
-    {
-     "type": "사건형",
-     "title": "라가르드 ECB 총재\n12월 금리 인상에\n**무게**를 실었다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "주식은 폭락했는데\n금리는 **내려올까**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "증시는 무너졌는데\nECB는 **인상** 쪽\n방향 안 바꾼다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "quote",
-    "breaking"
-   ],
-   "extra": {
-    "quote": {
-     "label": "ECB 총재 발언",
-     "quote": "방향이 바뀌려면 상당한 변화가 필요하다",
-     "by": "크리스틴 라가르드 ECB 총재"
-    }
-   },
-   "id": "20261108-1501-i3",
-   "created_at": "2026-11-08T15:01:37+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261108-1501-i3/1-quote-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261108-1501-i3/1-quote-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261108-1501-i3/1-quote-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261108-1501-i3/2-quote-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261108-1501-i3/2-quote-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261108-1501-i3/2-quote-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261108-1501-i3/3-quote-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261108-1501-i3/3-quote-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261108-1501-i3/3-quote-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "상장사 844곳 연중 최저가",
    "concept": "한 주 새 11% 넘게 빠진 증시에서 상장사 3곳 중 1곳이 올해 가장 낮은 가격까지 내려온 사실을 보도로 정리하고, 마지막 장에서 외국인 매도와 미국 CPI, PPI를 다음에 볼 변수로 남긴다. 반대매매와 책임 공방 중심이던 앞선 글과 달리 '바닥' 각도로 푼다. (공식: 없음)",
    "why_now": "파이낸셜뉴스가 한 주 새 11% 넘게 하락한 증시에서 844개 상장사가 연중 최저가를 기록했다고 보도했고, 4곳이 같은 내용을 다뤘다. 코스피 5000선이 위태로운 시점이라 관심이 높다.",
@@ -8638,6 +8306,397 @@
      "form": "breaking",
      "font": "dohyeon",
      "path": "20261109-1406-i3/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "배민 3311억, 쿠팡 3008억 과징금",
+   "concept": "공정위가 최혜대우 요구를 문제 삼아 두 회사에 과징금 6319억 원을 부과했다. 혐의, 멤버십 혜택 박탈, 이후 확인할 점 순으로 푼다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "공정위 발표로 오늘 속보가 연달아 나왔고 여러 매체가 다뤘다. 자영업자와 소비자 모두에게 직접 관련된 소식이다.",
+   "tag": "공정위",
+   "sources": [
+    "https://www.yna.co.kr/view/AKR20261109070200002",
+    "https://biz.chosun.com/policy/policy_sub/2026/11/09/GDWFJZN54BHH5GQRIRJZTK7BPY/",
+    "https://view.asiae.co.kr/article/2026110910362445913"
+   ],
+   "bg": "Baemin delivery rider",
+   "bg_alt": "Coupang logo building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "배민 3311억\n쿠팡 3008억\n**과징금** 맞았다",
+     "number": "6319억원",
+     "label": "배민, 쿠팡 과징금 합계",
+     "sub": "배민 3311억, 쿠팡 3008억"
+    },
+    {
+     "type": "질문형",
+     "title": "배민과 쿠팡은 왜\n입점업체에게 **최혜대우**\n요구를 했을까요",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "거부하면 멤버십 혜택\n뺏었다는 혐의로\n**6319억** 과징금",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bars",
+    "news"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "공정위 과징금, 억 원",
+     "bars": [
+      {
+       "label": "배민",
+       "value": 3311,
+       "hi": true
+      },
+      {
+       "label": "쿠팡",
+       "value": 3008
+      }
+     ]
+    }
+   },
+   "id": "20261109-1507-i1",
+   "created_at": "2026-11-09T15:07:03+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261109-1507-i1/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261109-1507-i1/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261109-1507-i1/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261109-1507-i1/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261109-1507-i1/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261109-1507-i1/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261109-1507-i1/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261109-1507-i1/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261109-1507-i1/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "작년 주식 증여, 건물 증여를 처음 앞질렀다",
+   "concept": "부동산 대신 주식을 물려준 변화를 보도 중심으로 전한다. 대출 규제 배경은 거론되는 수준으로만 쓰고, 정확한 금액과 건수는 기사 확인 후 넣는다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "작년 주식 증여가 건물 증여를 처음 넘어섰다는 기사가 오늘 14시대에 나왔다. 코스피 급락 국면과 맞물려 관심이 높다.",
+   "tag": "증여",
+   "sources": [
+    "https://www.donga.com/news/Economy/article/all/20261109/134991976/1",
+    "https://www.newsis.com/view/NISX20261109_0003860481"
+   ],
+   "bg": "Korean stock market board",
+   "bg_alt": "apartment buildings Seoul",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "작년 주식 증여가\n건물 증여를 앞질렀다\n**처음** 있는 일",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "부모들은 왜 건물 대신\n**주식**을 물려줬을까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "물려주면 건물?\n작년엔 **주식**이\n증여에서 처음 앞섰다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "editorial",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261109-1507-i2",
+   "created_at": "2026-11-09T15:07:03+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261109-1507-i2/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261109-1507-i2/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261109-1507-i2/1-editorial-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-1507-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-1507-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-1507-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261109-1507-i2/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261109-1507-i2/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261109-1507-i2/2-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-1507-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-1507-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-1507-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261109-1507-i2/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261109-1507-i2/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261109-1507-i2/3-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261109-1507-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261109-1507-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261109-1507-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "일본, 하루 8조엔 가까이 엔화 매수 개입",
+   "concept": "7월 30일 하루 개입 규모와 같은 날 국채 금리 상승(2년물 5bp, 10년물 6bp)을 함께 보여 준다. 환율이 수입 원가와 물가에 닿는 일반 원리는 한 장으로 쉽게 풀고, 개입 효과는 확인 안 됨으로 남긴다. (공식: A인데 B, 어긋난 두 사실 제목)",
+   "why_now": "일본 정부의 7월 30일 개입 규모가 공개됐다(연합인포맥스 등 3곳). 환율과 금리를 함께 볼 수 있는 새 소식이다.",
+   "tag": "환율",
+   "sources": [
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443778",
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443758"
+   ],
+   "bg": "Bank of Japan Tokyo",
+   "bg_alt": "Japanese yen banknotes",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "일본 정부가 하루에\n엔화 **8조엔** 가까이 샀다",
+     "number": "8조엔 가까이",
+     "label": "7월 30일 하루 엔화 매수 개입",
+     "sub": "엔화 가치를 방어하려는 시장 개입"
+    },
+    {
+     "type": "질문형",
+     "title": "하루 8조엔 쓴 일본,\n엔화 **방어**는 얼마나 갈까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "엔화 방어에 8조엔 쓴 날\n국채 금리도 **올랐다**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/09",
+     "headlines": [
+      "일본, 하루 8조엔 가까이 엔화 매수",
+      "같은 날 2년물 금리 5bp 상승",
+      "같은 날 10년물 금리 6bp 상승"
+     ]
+    }
+   },
+   "id": "20261109-1507-i3",
+   "created_at": "2026-11-09T15:07:03+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261109-1507-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261109-1507-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261109-1507-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261109-1507-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261109-1507-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261109-1507-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261109-1507-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261109-1507-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261109-1507-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261109-1507-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261109-1507-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261109-1507-i3/3-paper-gowun.jpg"
     }
    ]
   }
