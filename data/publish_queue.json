@@ -3128,329 +3128,6 @@
  ],
  "ideas": [
   {
-   "title": "외국인 닷새간 10조 매도, 5천피 붕괴",
-   "concept": "외국인 순매도 10조, 5천피 붕괴, 서킷브레이커까지 이어진 한 주를 수급 중심으로 정리하고, 월요일 코스피가 5,112.91로 다시 5천 위에 있다는 점을 끝 장에서 보여 준다. 앞서 다룬 ELS, 삼전닉스 글과 달리 외국인 수급이 주인공이다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "서울신문과 헤럴드경제가 외국인의 닷새간 10조 매도와 5천피 붕괴, 서킷브레이커 발동을 전했습니다. 월요일 장에서 외국인 수급 방향이 가장 큰 관전 포인트입니다.",
-   "tag": "증시 수급",
-   "sources": [
-    "https://v.daum.net/v/20261108203417801",
-    "https://v.daum.net/v/20261108204132916",
-    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008836149&plink=RSSLINK&cooper=RSSREADER"
-   ],
-   "bg": "KOSPI trading screen Seoul",
-   "bg_alt": "Korea Exchange building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "외국인이 닷새간\n**10조**를 팔았다\n5천피가 흔들렸다",
-     "number": "10조원",
-     "label": "외국인 순매도, 닷새간",
-     "sub": "서울신문 보도 기준"
-    },
-    {
-     "type": "질문형",
-     "title": "서킷브레이커까지\n나온 5천피 붕괴\n월요일엔 **반등**할까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "10조 던진 외국인\n그런데 코스피는\n5천 위로 **복귀**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/09",
-     "headlines": [
-      "외국인 닷새간 10조 매도",
-      "5천피 붕괴, 서킷브레이커 발동",
-      "하이닉스 하루 10.44% 하락"
-     ]
-    }
-   },
-   "id": "20261109-1101-i1",
-   "created_at": "2026-11-09T11:01:39+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261109-1101-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261109-1101-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261109-1101-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261109-1101-i1/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261109-1101-i1/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261109-1101-i1/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261109-1101-i1/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261109-1101-i1/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261109-1101-i1/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261109-1101-i1/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261109-1101-i1/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261109-1101-i1/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "앤트로픽, 34억 달러 가스발전기 계약",
-   "concept": "AI 경쟁이 칩에서 전력으로 넓어지고 있다는 신호로 풀어, FT 보도를 CNBC가 전한 34억 달러 발전기 계약을 중심에 둔다. 국내 전력기기 업종 영향은 재료에 없다는 사실만 짧게 밝힌다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "CNBC가 FT 보도를 인용해 전했고 X에서도 조회가 24,000 넘게 나왔습니다. AI 데이터센터의 병목이 전력으로 옮겨 가는지 시장이 보고 있고, 이번 주 코어위브와 AMAT 실적에서도 관련 힌트가 나올 수 있습니다.",
-   "tag": "AI 인프라",
-   "sources": [
-    "https://www.cnbc.com/2026/11/08/anthropic-generator-deal-ai-data-centers.html",
-    "https://x.com/StockMKTNewz/status/2119394725086044619"
-   ],
-   "bg": "Anthropic Dario Amodei",
-   "bg_alt": "gas turbine data center",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "앤트로픽이 34억 달러로\n산 건 칩이 아닌\n**가스발전기**였다",
-     "number": "34억 달러",
-     "label": "데이터센터용 발전기 계약",
-     "sub": "FT 보도, CNBC 인용"
-    },
-    {
-     "type": "질문형",
-     "title": "AI의 병목이\n칩에서 **전기**로\n옮겨 가는 걸까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "칩 경쟁하던 AI가\n이번엔 **발전기**를\n34억 달러어치 샀다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261109-1101-i2",
-   "created_at": "2026-11-09T11:01:39+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261109-1101-i2/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261109-1101-i2/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261109-1101-i2/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261109-1101-i2/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261109-1101-i2/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261109-1101-i2/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261109-1101-i2/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261109-1101-i2/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261109-1101-i2/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "하트넷 \"민주당 압승은 Peak AI 신호\"",
-   "concept": "제로헤지가 전한 하트넷의 해석을 보도로 다룬다. 중간선거(미국 의회와 주지사를 뽑는 선거) 결과를 AI 고점의 표시로 봤다는 내용이고, 하트넷의 소속은 확인 후 쓴다. 코스피의 AI, 반도체 쏠림과 월요일 외국인 수급은 마지막 장에서 짧게 잇는다. (공식: 없음)",
-   "why_now": "제로헤지가 23:30에 발언을 전했고 조회 16,536을 기록했습니다. 한겨레와 국민일보도 AI 쇼크와 선거 후폭풍을 다뤄 월요일 개장 전 시장 분위기를 설명하는 글감입니다.",
-   "tag": "시장 해석",
-   "sources": [
-    "https://x.com/zerohedge/status/2119437396093571492",
-    "https://v.daum.net/v/20261108224158106",
-    "https://v.daum.net/v/20261108230931296"
-   ],
-   "bg": "Michael Hartnett",
-   "bg_alt": "Bank of America building",
-   "hooks": [
-    {
-     "type": "사건형",
-     "title": "하트넷은 민주당\n압승을 **AI 고점**\n신호로 읽었다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "중간선거 결과가\n왜 AI 주가의\n**고점** 신호일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "월가 강세론 중\n하나만 남고 모두\n**무너졌다**는 진단",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "breaking"
-   ],
-   "extra": {},
-   "id": "20261109-1101-i3",
-   "created_at": "2026-11-09T11:01:39+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261109-1101-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261109-1101-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261109-1101-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261109-1101-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261109-1101-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261109-1101-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261109-1101-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261109-1101-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261109-1101-i3/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
    "title": "배민 3311억, 쿠팡 3008억 과징금",
    "concept": "점주에게 최혜대우를 요구하다 과징금 합계 6319억 원을 맞은 사건을 보도 기준으로 정리합니다. 배민과 쿠팡 각각의 금액을 비교하고, 쿠팡 끼워팔기는 재심사로 남았다는 점을 반전으로 둡니다. (공식: 두 쪽 대결을 색 두 개로)",
    "why_now": "11/09 머니투데이, 아시아경제, 다음 뉴스가 동시에 전한 새 소식이고 이전에 다룬 적이 없습니다. 배달앱 수수료와 음식값은 소비자 지갑과 직결됩니다.",
@@ -8480,6 +8157,496 @@
      "form": "news",
      "font": "myeongjo",
      "path": "20261110-0901-i3/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "은마 재초환 총 2조원, 가구당 4억6천만원",
+   "concept": "2조원, 평균 4억6천만원이라는 숫자를 앞세우고, 강남구가 '확정액이 아니라 예정액'이라고 밝힌 점을 반전으로 둔다. 재초환 개념은 처음 나오는 자리에서 한 줄로 풀고, 마지막 장은 최종 부과액 확인으로 끝낸다. (공식: A인데 B, 어긋난 두 사실 제목)",
+   "why_now": "오늘 09:19 연합뉴스, 뉴시스 등 7곳이 은마아파트 재초환 부담금을 보도했다. 반포현대 건은 이미 다뤘고, 은마는 새 소식이다.",
+   "tag": "부동산",
+   "sources": [
+    "https://www.yna.co.kr/view/AKR20261110023200004",
+    "https://www.newsis.com/view/NISX20261110_0003861296",
+    "https://www.newsis.com/view/NISX20261110_0003861286"
+   ],
+   "bg": "Eunma Apartment Seoul",
+   "bg_alt": "Daechi apartment complex",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "은마아파트 재건축\n부담금 총 **2조원**\n집주인 평균 4억6천만원",
+     "number": "2조원",
+     "label": "은마아파트 재초환 부담금 총액",
+     "sub": "가구당 평균 4억6천만원"
+    },
+    {
+     "type": "질문형",
+     "title": "은마 집주인 평균\n**4억6천만원** 내라고?\n재초환 부담금 통지",
+     "number": "4억6천만원",
+     "label": "가구당 평균 부담금",
+     "sub": "재건축으로 오른 집값 차익의 일부"
+    },
+    {
+     "type": "반전형",
+     "title": "은마 부담금 2조원\n그런데 아직\n**확정액 아니다**",
+     "number": "2조원",
+     "label": "은마아파트 재초환 부담금",
+     "sub": "최종 금액은 달라질 수 있음"
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261110-1001-i1",
+   "created_at": "2026-11-10T10:01:54+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261110-1001-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261110-1001-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261110-1001-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261110-1001-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261110-1001-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261110-1001-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261110-1001-i1/2-bignum-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261110-1001-i1/2-bignum-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261110-1001-i1/2-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261110-1001-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261110-1001-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261110-1001-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261110-1001-i1/3-bignum-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261110-1001-i1/3-bignum-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261110-1001-i1/3-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261110-1001-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261110-1001-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261110-1001-i1/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "코스피 9거래일 만에 매수 사이드카",
+   "concept": "한때 5.23% 오른 코스피에 매수 사이드카가 걸린 사건을 속보로 전한다. 엔비디아는 4%대 급락했는데 다른 반도체주가 오른 배경을 잇고, 사이드카는 선물 급등락 때 프로그램 매매를 5분간 멈추는 장치라고 처음 나오는 자리에서 풀어 쓴다. 코스닥 상승률은 재료에서 확인되지 않아 쓰지 않는다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "09:57 기준 59곳이 보도했다. 앞서 다룬 '급등 출발' 소식보다 한 단계 큰 사건이다.",
+   "tag": "증시 속보",
+   "sources": [
+    "https://www.hankyung.com/article/2026111066247",
+    "https://v.daum.net/v/20261110095721254",
+    "https://www.fnnews.com/news/202611100900386903"
+   ],
+   "bg": "KOSPI trading screen",
+   "bg_alt": "Korea Exchange building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "코스피 한때 **5.23%**\n급등, 9거래일 만에\n매수 사이드카",
+     "number": "5.23%",
+     "label": "코스피 한때 상승률",
+     "sub": "9거래일 만에 매수 사이드카 발동"
+    },
+    {
+     "type": "질문형",
+     "title": "코스피 5% 뛰자\n프로그램 매매\n**5분** 멈춘 이유는?",
+     "number": "5분",
+     "label": "프로그램 매매 정지 시간",
+     "sub": "선물이 급등락할 때 작동하는 장치"
+    },
+    {
+     "type": "반전형",
+     "title": "엔비디아 4% 급락에도\n반도체주 일제히 상승\n코스피 **사이드카**",
+     "number": "",
+     "label": "",
+     "sub": "간밤 미국 반도체주 반등이 배경"
+    }
+   ],
+   "forms": [
+    "breaking",
+    "bars"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "11/10 전일 대비 등락률(%)",
+     "bars": [
+      {
+       "label": "코스피",
+       "value": 4.07
+      },
+      {
+       "label": "코스닥",
+       "value": 2.84
+      },
+      {
+       "label": "삼성전자",
+       "value": 5.45
+      },
+      {
+       "label": "SK하이닉스",
+       "value": 8.01,
+       "hi": true
+      }
+     ]
+    }
+   },
+   "id": "20261110-1001-i2",
+   "created_at": "2026-11-10T10:01:54+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261110-1001-i2/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261110-1001-i2/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261110-1001-i2/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261110-1001-i2/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261110-1001-i2/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261110-1001-i2/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261110-1001-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261110-1001-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261110-1001-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261110-1001-i2/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261110-1001-i2/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261110-1001-i2/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261110-1001-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261110-1001-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261110-1001-i2/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261110-1001-i2/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261110-1001-i2/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261110-1001-i2/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "전년 대비 없이 나오는 美 10월 CPI",
+   "concept": "오늘 밤 발표되는 미국 CPI가 12개월 변동률 없이 나온다는 보도를 중심에 둔다. 사유는 2025년 셧다운 영향이라는 보도라고 한 줄만 적고, 정확한 사유는 확인이 필요하다고 밝힌다. 비트코인 7만5천달러 안팎, 금 4,100달러 위 유지는 시세 기준일과 함께 곁들이고, 시장은 전월 대비 숫자 위주로 읽게 된다는 점으로 끝낸다. (공식: 없음)",
+   "why_now": "X의 @wallstengine 글이 조회 6만을 기록했고 블룸버그도 같은 내용을 전했다. 발표가 오늘 밤이라 반응이 빠를 주제다.",
+   "tag": "미국 물가",
+   "sources": [
+    "https://www.bloomberg.com/news/articles/2026-11-10/inflation-data-to-test-limits-of-treasury-rally-after-haven-bid",
+    "https://x.com/wallstengine/status/2119882617898021014"
+   ],
+   "bg": "Bureau of Labor Statistics building",
+   "bg_alt": "US inflation grocery prices",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "미국 10월 CPI\n**전년 대비** 없이\n오늘 밤 발표",
+     "number": "",
+     "label": "",
+     "sub": "2025년 셧다운 영향이라는 보도"
+    },
+    {
+     "type": "질문형",
+     "title": "물가 발표인데\n**1년 전 비교**가 없다\n뭘 봐야 할까",
+     "number": "",
+     "label": "",
+     "sub": "시장은 전월 대비 숫자 위주로 읽는 중"
+    },
+    {
+     "type": "반전형",
+     "title": "오늘 밤 CPI\n물가 발표인데\n**전년 대비**는 없다",
+     "number": "",
+     "label": "",
+     "sub": "헤드라인, 근원 모두 12개월 변동 없음"
+    }
+   ],
+   "forms": [
+    "news",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/10",
+     "headlines": [
+      "10월 CPI, 전년 대비 없이 발표",
+      "비트코인 7만5천달러 안팎 대기",
+      "금 4,100달러 위 유지"
+     ]
+    }
+   },
+   "id": "20261110-1001-i3",
+   "created_at": "2026-11-10T10:01:54+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261110-1001-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261110-1001-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261110-1001-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261110-1001-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261110-1001-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261110-1001-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261110-1001-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261110-1001-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261110-1001-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261110-1001-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261110-1001-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261110-1001-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261110-1001-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261110-1001-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261110-1001-i3/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261110-1001-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261110-1001-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261110-1001-i3/3-paper-gowun.jpg"
     }
    ]
   }
