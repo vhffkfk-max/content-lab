@@ -652,6 +652,7 @@ ul.gd-card{padding-left:36px;line-height:1.8}
         <li><button type="button" data-ch="video"><i class="dot" style="background:var(--accent)"></i>영상 연구소</button></li>
         <li><button type="button" data-ch="telegram"><i class="dot" style="background:var(--ch-telegram)"></i>텔레그램 · 말희아빠<span class="soon" id="tg-badge">연결 전</span></button>
           <ul class="subnav" data-for="telegram">
+            <li><a href="#tg-inbox">올릴 자료함</a></li>
             <li><a href="#tg-mv">블로그·인스타 바레이션</a></li>
             <li><a href="#tg-rw">시황 자동 변환</a></li>
             <li><a href="#tg-mine">내 채널 성과</a></li>
@@ -1361,6 +1362,13 @@ ul.gd-card{padding-left:36px;line-height:1.8}
           <div><h1>텔레그램 · 말희아빠</h1><p>차트보는 말희아빠 채널 키우기예요. 다른 업체 방의 반응 큰 글과 오늘 뉴스로 올릴 문구를 보여 줘요.</p></div>
         </div>
         <div class="kpis" id="tg-kpis"></div>
+        <section class="sec" id="tg-inbox">
+          <h2>올릴 자료함 — 다른 채널과 비교해서 고른 오늘 글</h2>
+          <p class="note">하루 2번(08시·17시) 다른 경제 채널 25곳과 우리 방을 비교해서 말희아빠 채널 4개, 트레이더스 3개를 만들어요. 같은 내용이 내 텔레그램 봇으로도 와요. 방에 자동으로 올라가지 않아요. 검토하고 고쳐서 직접 올려 주세요. 올렸는지는 '활용 체크'가 확인해요.</p>
+          <div id="tg-inbox-insights"></div>
+          <div class="recs" id="tg-inbox-list"></div>
+          <details style="margin-top:10px"><summary>채널 비교 숫자 (최근 30일)</summary><div id="tg-inbox-compare" style="overflow-x:auto"></div></details>
+        </section>
         <section class="sec" id="tg-mv">
           <h2>블로그·인스타 바레이션</h2>
           <p class="note">말희아빠 블로그와 오뉴월드 인스타에 새 글이 올라오면 채널용 요약을 써서 여기와 봇으로 보내요. 채널에 자동으로 올라가지는 않아요. 경제와 상관없는 인스타 글은 건너뛰어요.</p>
@@ -3960,6 +3968,36 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     }, 3);
   }
 
+  // ── 텔레그램: 올릴 자료함 (tg_inbox.py — 다른 채널 비교 → 채널·트레이더스 글) ──
+  function drawInbox() {
+    const D = (() => { const d = dash.data('tg_inbox'); return d.status === 'ok' && !Array.isArray(d.data) ? d.data : null; })();
+    const ib = document.getElementById('tg-inbox-insights'), lb = document.getElementById('tg-inbox-list'), cb = document.getElementById('tg-inbox-compare');
+    if (!ib || !lb) return;
+    if (!D) { ib.replaceChildren(); cb.replaceChildren(); return empty(lb, '08시·17시에 첫 자료가 만들어지면 여기와 봇으로 와요.'); }
+    const made = new Date(D.made_at), when = `${made.getMonth() + 1}/${made.getDate()} ${String(made.getHours()).padStart(2, '0')}:${String(made.getMinutes()).padStart(2, '0')}`;
+    const ul = el('ul', 'sub'); (D.insights || []).forEach(t => ul.append(el('li', '', t)));
+    ib.replaceChildren(el('p', 'sub', `${when} 만듦 · 우리 방과 잘 되는 채널의 차이`), ul);
+    listWithMore(lb, D.items || [], it => {
+      const c = el('article', 'card rec'), chips = el('div', 'chips');
+      chips.append(el('span', it.room === '트레이더스' ? 'pill neutral' : 'pill accent', it.room + (it.folder ? ` › ${it.folder}` : '')),
+        el('span', 'pill neutral', `추천 ${it.time}`));
+      c.append(chips, el('h3', '', it.title), el('p', 'sub', it.why), el('div', 'box', it.text));
+      if (it.photo) c.append(el('p', 'sub', `붙일 사진 · ${it.photo}`));
+      if (it.check && it.check.length) c.append(el('p', 'sub', `올리기 전 확인 · ${it.check.join(' · ')}`));
+      const row = el('div', 'chips');
+      row.append(copyBtn('본문 복사', it.text, 'btn primary'));
+      (it.sources || []).forEach(s => { if (!s.link) return; const a = el('a', 'btn small', `근거 ${s.no} (평소 ${s.ratio}배)`); a.href = s.link; a.target = '_blank'; a.rel = 'noopener'; row.append(a); });
+      c.append(row, fbBar({ id: `inbox:${it.id}`, type: '올릴 자료함', title: it.title, url: '' }));
+      c.style.gap = '10px'; return c;
+    }, 7);
+    const C = D.compare || [], top = C.filter(r => !r.mine).slice(0, 8).concat(C.filter(r => r.mine));
+    const t = el('table', 'pb-table'), hd = el('tr');
+    ['채널', '구독자', '하루 글', '조회 중앙값', '도달 %', '반응/1천', '전달/1천', '사진·영상 %', '글자 수', '잘 되는 시각'].forEach(h => hd.append(el('th', '', h)));
+    t.append(hd);
+    top.forEach(r => { const tr = el('tr'); [r.mine ? `★ ${r.title}` : r.title, (r.members || 0).toLocaleString(), r.posts_day, (r.views_med || 0).toLocaleString(), r.reach_pct, r.react_1k, r.fwd_1k, r.photo_pct, r.len_med, (r.best_hours || []).join(' ')].forEach(v => tr.append(el('td', '', String(v ?? '')))); if (r.mine) tr.style.fontWeight = '600'; t.append(tr); });
+    cb.replaceChildren(t);
+  }
+
   // ── 텔레그램: 시황 자동 변환 (원문 채널 → 말희아빠 아침·마감시황) ──
   function drawRewrites() {
     const R = [...(rows('tg_rewrites') || [])].reverse(), box = document.getElementById('tg-rw-list');
@@ -5196,7 +5234,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     if (!setupRefresh.done) { setupRefresh(); setupRefresh.done = true; }
     const recs = grouped();
     regroupNav(); buildTabs(); drawLab2(); drawHome(recs); drawFresh(); drawQuick(); drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors(); drawAccRank();
-    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawX(); drawFeedback(); drawMalheeVar(); drawRewrites(); drawThreadsMine(); drawSlides(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics(); drawTraders(); drawTraderPosts(); drawGrowth(); drawViral(); drawAudit();
+    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawX(); drawFeedback(); drawMalheeVar(); drawInbox(); drawRewrites(); drawThreadsMine(); drawSlides(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics(); drawTraders(); drawTraderPosts(); drawGrowth(); drawViral(); drawAudit();
     const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/), g = location.hash.match(/^#go-([\w-]+)$/);
     const known = ch && document.querySelector(`.view[data-view="${ch[1]}"]`);
     if (ch && !known) setTimeout(() => toast('없는 주소라 첫 화면으로 왔어요'), 300);

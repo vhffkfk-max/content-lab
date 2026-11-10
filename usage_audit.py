@@ -75,6 +75,10 @@ def recs_from(name, d, day):
                 if isinstance(p, dict) and (p.get("text") or p.get("title")):
                     out.append({"day": d.get("date") or day, "src": "트레이더스 글", "channel": "텔레그램",
                                 "title": p.get("title") or first_line(p.get("text")), "text": (p.get("text") or "")[:160]})
+    elif name == "tg_inbox" and isinstance(d, dict):
+        for it in d.get("items") or []:
+            out.append({"day": (d.get("made_at") or day)[:10], "src": "올릴 자료함", "channel": "텔레그램" if it.get("room") != "트레이더스" else "트레이더스",
+                        "title": it.get("title", ""), "text": (it.get("text") or "")[:160]})
     elif name == "growth_plan" and isinstance(d, dict):
         dd = d.get("date") or day
         for h in d.get("hooks") or []:
@@ -91,7 +95,7 @@ def recs_from(name, d, day):
     return out
 
 
-SOURCES = ["hot_now", "recs", "tg_ai", "trd_posts", "growth_plan", "thx_top", "thread_posts"]
+SOURCES = ["hot_now", "recs", "tg_ai", "tg_inbox", "trd_posts", "growth_plan", "thx_top", "thread_posts"]
 
 
 def git(*args):

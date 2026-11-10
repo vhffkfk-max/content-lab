@@ -28,7 +28,7 @@ STATE = Path.home() / ".content-lab-ai" / "state.json"
 LOCK = Path.home() / ".content-lab-ai" / "lock"
 LOG = ROOT / "data" / "local_ai.log"
 SITE = "output/site/"
-OUTPUTS = [SITE + f for f in ("tg_ai.json", "tg_rewrites.json", "trd_rooms.json", "trd_posts.json", "drafts.json",
+OUTPUTS = [SITE + f for f in ("tg_ai.json", "tg_inbox.json", "tg_rewrites.json", "trd_rooms.json", "trd_posts.json", "drafts.json",
                                "imports.json", "threads_ai.json", "x_ai.json", "thm_ai.json", "growth_plan.json", "thread_posts.json",
                                "chart_reports.json", "charts", "futures_brief.json", "futures", "malhee_var.json", "acc_topics.json", "channel_pulse.json", "trader_posts.json", "hot_archive")] + [SITE + f"acc_{a['slug']}.json" for a in _ACCS] + ["data/publish_queue.json", "data/card_style.json", "data/form_stats.json"]
 ENV = {**os.environ, "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1"}
@@ -234,6 +234,10 @@ def run_cycle():
         refresh_news()
         py("trd_posts.py")
         did.append("트레이더스 글")
+    if slot_once(state, "inbox", (8, 17)) and py("tg_inbox.py", "--due") == 0:   # 올릴 자료함: 다른 채널 비교 → 채널 4·트레이더스 3, 봇으로 대표에게 (방에 자동 게시 안 함)
+        refresh_news()
+        py("tg_inbox.py", "--send", timeout=20 * 60)
+        did.append("올릴 자료함")
 
     py("tg_rewrite.py")              # 새 시황이 있을 때만 Claude 를 부름
     mv = ROOT / SITE / "malhee_var.json"
