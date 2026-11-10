@@ -461,11 +461,15 @@ FORMS = {"breaking": (f_breaking, "brk"), "bignum": (f_bignum, ""), "bars": (f_b
 
 
 def end_slide(e, n, theme):
-    """마지막 장 e: title, checks[...], keyword(댓글 유도 단어, 선택). 위에서 아래로 차례로 쌓아서 제목이 두 줄이어도 안 겹침."""
+    """마지막 장 e: title, checks[...], keyword(댓글 유도 단어, 선택), gift[...](선택: 댓글 단 사람에게 DM으로 줄 자료 2~3개).
+    gift 가 있으면 체크 대신 '드리는 것' 목록을 보여 주고, 댓글 줄도 'DM으로 보내드려요'로 바뀐다. 위에서 아래로 차례로 쌓아서 제목이 두 줄이어도 안 겹침."""
     logo = f'<img class="endlogo" src="{LOGO}">' if LOGO else ""
-    checks = "".join(f"<div>✓&nbsp; {md(x)}</div>" for x in e.get("checks", []))
-    kw = (f'<div class="endkw">💬 궁금한 점은 댓글에 <b class="hl">\'{html.escape(e["keyword"])}\'</b> 남겨 주세요</div>'
-          if e.get("keyword") else "")
+    gift = e.get("gift") or []
+    checks = "".join(f"<div>{'🎁' if gift else '✓'}&nbsp; {md(x)}</div>" for x in (gift or e.get("checks", [])))
+    kw = ""
+    if e.get("keyword"):
+        kw = (f'<div class="endkw">💬 댓글에 <b class="hl">\'{html.escape(e["keyword"])}\'</b> 남기면 DM으로 보내드려요</div>' if gift else
+              f'<div class="endkw">💬 궁금한 점은 댓글에 <b class="hl">\'{html.escape(e["keyword"])}\'</b> 남겨 주세요</div>')
     return (f'<div class="endbox">{logo}<div class="center t-l" style="font-size:{fit(e.get("title", ""), top=80, low=58)}px">{md(e.get("title", "정리하면"))}</div>'
             f'<div class="endchecks">{checks}</div>{kw}'
             f'<div class="btns"><div class="btn o">🔖 저장해두기</div><div class="btn f">팔로우 하기</div></div></div>'
