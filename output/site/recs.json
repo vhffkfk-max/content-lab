@@ -23,26 +23,12 @@
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
   "kr_avg": 1.51,
-  "kr_n": 363,
-  "foreign_avg": 1.77,
-  "foreign_n": 133
+  "kr_n": 364,
+  "foreign_avg": 1.76,
+  "foreign_n": 134
  },
  {
   "rank": 3,
-  "topic": "비트코인",
-  "kind": "국내·해외 모두 강세",
-  "confidence": "높음",
-  "title_idea": "[오늘] 비트코인에 무슨 일이? 1분 요약",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "속보·뉴스형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 2.21,
-  "kr_n": 14,
-  "foreign_avg": 1.75,
-  "foreign_n": 144
- },
- {
-  "rank": 4,
   "topic": "빅테크",
   "kind": "국내 검증 주제",
   "confidence": "높음",
@@ -56,6 +42,20 @@
   "foreign_n": 15
  },
  {
+  "rank": 4,
+  "topic": "비트코인",
+  "kind": "국내·해외 모두 강세",
+  "confidence": "높음",
+  "title_idea": "[오늘] 비트코인에 무슨 일이? 1분 요약",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "속보·뉴스형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 2.21,
+  "kr_n": 14,
+  "foreign_avg": 1.75,
+  "foreign_n": 144
+ },
+ {
   "rank": 5,
   "topic": "ETF·지수투자",
   "kind": "해외 선행 주제 (선점 기회)",
@@ -64,9 +64,9 @@
   "format": "단일 이미지",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 0.98,
+  "kr_avg": 0.99,
   "kr_n": 42,
-  "foreign_avg": 1.77,
+  "foreign_avg": 1.78,
   "foreign_n": 48
  },
  {
@@ -78,7 +78,7 @@
   "format": "릴스",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.03,
+  "kr_avg": 2.04,
   "kr_n": 77,
   "foreign_avg": 1.82,
   "foreign_n": 20
@@ -93,7 +93,7 @@
   "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
   "kr_avg": 1.38,
-  "kr_n": 153,
+  "kr_n": 154,
   "foreign_avg": 0.82,
   "foreign_n": 2
  },
@@ -106,7 +106,7 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.54,
+  "kr_avg": 1.56,
   "kr_n": 73,
   "foreign_avg": 0.73,
   "foreign_n": 5
