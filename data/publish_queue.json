@@ -3128,337 +3128,6 @@
  ],
  "ideas": [
   {
-   "title": "앤트로픽, 다음 주 증시 데뷔 계획 보도",
-   "concept": "WSJ 보도로 확인된 상장 일정을 앞세우고, 기업가치가 낮아질 수 있다는 관측과 AI주 분위기를 한국 투자자 관점에서 이어 붙인다. 공모가는 확정 전이라는 점은 마지막 장에 한 번만 밝힌다. (공식: A인데 B, 어긋난 두 사실 제목)",
-   "why_now": "WSJ발 '다음 주 IPO' 소식이 워처 구루 게시물로 조회 14.6만을 넘겼고 제로헤지도 같은 내용을 전했다. 국내에서도 기업가치 하향 기사가 나와 관심이 커졌다.",
-   "tag": "AI, IPO",
-   "sources": [
-    "https://v.daum.net/v/20261110071218823",
-    "https://x.com/WatcherGuru/status/2119902152009101656",
-    "https://x.com/zerohedge/status/2119904302000996725"
-   ],
-   "bg": "Dario Amodei",
-   "bg_alt": "Anthropic headquarters",
-   "hooks": [
-    {
-     "type": "사건형",
-     "title": "WSJ 보도, 앤트로픽\n다음 주 목, 금요일\n**증시 데뷔** 계획",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "AI주 급락 속에서도\n앤트로픽 상장 일정\n정말 **그대로**일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "AI주는 흔들리는데\n앤트로픽 상장 일정은\n**예정대로** 추진",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "breaking"
-   ],
-   "extra": {},
-   "id": "20261110-0801-i1",
-   "created_at": "2026-11-10T08:01:32+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261110-0801-i1/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261110-0801-i1/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261110-0801-i1/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261110-0801-i1/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261110-0801-i1/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261110-0801-i1/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261110-0801-i1/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261110-0801-i1/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261110-0801-i1/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "엔비디아, 젠슨 황, 주주 집단소송",
-   "concept": "젠슨 황을 끝까지 주인공으로 두고 의혹, 시총 증발, 소송 제기 순으로 장을 넘긴다. 소송 제기 법원과 시점은 확인 전이라고 한 줄만 밝히고, 로이터를 인용한 보도로 다룬다. (공식: 한 주인공이 장마다 한 걸음씩)",
-   "why_now": "07:20 로이터 인용 속보가 나왔고, 시총 258조원 증발 보도 직후라 기존 트럼프 발언, 조사 중단 글감과는 다른 새 국면이다.",
-   "tag": "엔비디아",
-   "sources": [
-    "https://www.yna.co.kr/view/AKR20261110017900009",
-    "https://www.mk.co.kr/news/economy/12203304",
-    "https://www.bloomberg.com/news/articles/2026-11-09/nvidia-sees-historic-split-from-s-p-as-stock-sinks-market-soars"
-   ],
-   "bg": "Jensen Huang",
-   "bg_alt": "Nvidia headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "시총 258조원 증발\n이번엔 주주들이\n**집단소송** 제기",
-     "number": "258조원",
-     "label": "엔비디아 시총 증발",
-     "sub": "이번엔 주주 집단소송"
-    },
-    {
-     "type": "질문형",
-     "title": "황 CEO 관계를\n투자자에게 숨겼나\n주주가 **소송** 냈다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "나스닥은 2.7% 올랐는데\n엔비디아만 -4.3%\n이제 **소송**까지",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261110-0801-i2",
-   "created_at": "2026-11-10T08:01:32+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261110-0801-i2/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261110-0801-i2/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261110-0801-i2/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261110-0801-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261110-0801-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261110-0801-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261110-0801-i2/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261110-0801-i2/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261110-0801-i2/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261110-0801-i2/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261110-0801-i2/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261110-0801-i2/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "주담대 변동금리가 고정금리 추월",
-   "concept": "변동이 더 싸서 골랐던 상식이 뒤집혔다는 점을 내 대출 얘기로 푼다. 변동금리가 연 7%를 눈앞에 뒀다는 보도를 쓰고, 은행별 실제 금리는 확인 전이라고 한 줄만 밝힌다. 마지막은 변동인지 고정인지, 재산정일이 언제인지 확인하라는 점검으로 끝낸다. (공식: 없음)",
-   "why_now": "뉴시스, 뉴스1 등이 06:00에 보도했다. 해외 이슈에 묻혔지만 대출자 체감이 큰 국내 주제이고 최근 보낸 목록에 없다.",
-   "tag": "대출, 금리",
-   "sources": [
-    "https://www.newsis.com/view/NISX20261109_0003861082"
-   ],
-   "bg": "mortgage loan bank",
-   "bg_alt": "Korean apartment complex",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "변동금리 연 7% 눈앞\n고정금리까지\n**추월**했다",
-     "number": "연 7%",
-     "label": "주담대 변동금리",
-     "sub": "고정금리를 추월"
-    },
-    {
-     "type": "질문형",
-     "title": "내 주담대 금리\n변동일까 고정일까\n**재산정일**부터 확인",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "싸서 골랐던 변동금리\n이제 고정금리보다\n**더 비싸졌다**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "editorial",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261110-0801-i3",
-   "created_at": "2026-11-10T08:01:32+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261110-0801-i3/1-editorial-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261110-0801-i3/1-editorial-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261110-0801-i3/1-editorial-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261110-0801-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261110-0801-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261110-0801-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261110-0801-i3/2-editorial-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261110-0801-i3/2-editorial-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261110-0801-i3/2-editorial-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261110-0801-i3/3-editorial-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261110-0801-i3/3-editorial-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261110-0801-i3/3-editorial-plex.jpg"
-    }
-   ]
-  },
-  {
    "title": "코스피 야간선물 5%대 급등, 삼전닉스 프리마켓 7%↑",
    "concept": "엔비디아는 4%대 하락했는데 반도체 지수는 6.9% 급등한 어긋남에서 시작해, 개장 직후 시초가 흐름을 지켜보자는 말로 끝낸다 (공식: A인데 B, 어긋난 두 사실 제목)",
    "why_now": "개장 직전인 08시 전후에 굿모닝 증시, 야간선물, 프리마켓 기사가 한꺼번에 나왔다. 개장 직후 변동폭이 클 수 있어 지금 가장 빠르게 읽힌다.",
@@ -8937,6 +8606,426 @@
      "form": "editorial",
      "font": "plex",
      "path": "20261110-2206-i3/3-editorial-plex.jpg"
+    }
+   ]
+  },
+  {
+   "title": "골드만 \"금리 인상 2027년까지 갈 수도\"",
+   "concept": "10월 CPI 0.4%가 예상을 웃돈 뒤 골드만삭스가 인상 기간을 2027년까지 열어 뒀고, JP모건 켈리는 50bp 인상은 안 된다고 한 엇갈림을 푼다. 12월 한 번이 아니라 얼마나 오래 올리느냐가 새 각도다. (공식: 없음)",
+   "why_now": "CPI 발표 직후 골드만삭스 전망이 나왔고, 미 국채 2~5년물 금리는 하루 10bp 이상 올랐다. CPI 숫자는 이미 다뤘지만 인상 기간 전망은 아직 다루지 않았다.",
+   "tag": "금리",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBQNWRWS19xSnZfWlRKdTczSmFCakdyWVJTVEVSR2RHUnB0WEt3aUhXLWtUYTRrYXRDVlB",
+    "https://www.bloomberg.com/news/videos/2026-11-10/fed-shouldn-t-do-a-50bps-rate-hike-jpm-s-kelly-says-video",
+    "https://x.com/NickTimiraos/status/2120156997530128487"
+   ],
+   "bg": "Jerome Powell",
+   "bg_alt": "Federal Reserve building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "골드만삭스가 꺼낸\n금리 인상 시한은\n**2027년**까지",
+     "number": "2027년",
+     "label": "골드만삭스 전망, 연준 금리 인상 지속",
+     "sub": "10월 CPI 0.4%, 예상 0.3% 웃돌아"
+    },
+    {
+     "type": "질문형",
+     "title": "근원 물가 3달 연속\n예상을 웃돌았다\n12월엔 **50bp**일까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "JP모건 켈리는\n50bp는 안 된다는데\n골드만은 **2027년**까지",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/11",
+     "headlines": [
+      "10월 CPI 0.4%, 예상 0.3% 상회",
+      "국채 2~5년물 하루 10bp 넘게 상승",
+      "골드만 \"인상 2027년까지 가능\""
+     ]
+    }
+   },
+   "id": "20261111-0707-i1",
+   "created_at": "2026-11-11T07:07:22+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261111-0707-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261111-0707-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261111-0707-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261111-0707-i1/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261111-0707-i1/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261111-0707-i1/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261111-0707-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261111-0707-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261111-0707-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261111-0707-i1/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261111-0707-i1/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261111-0707-i1/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261111-0707-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261111-0707-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261111-0707-i1/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261111-0707-i1/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261111-0707-i1/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261111-0707-i1/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "엔비디아 이틀 새 시총 540조원 증발",
+   "concept": "젠슨 황 사생활 논란으로 엔비디아가 5%대 급락한 사건을 시세 숫자로 보여 준다. 엔비디아 -5.47%, 나스닥 -0.74%, S&P500 -0.38%를 나란히 놓고, 한국 반도체주 영향은 확인된 시세만 쓴다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "11/10 뉴욕 마감에서 엔비디아가 5%대 하락했고, 이틀 새 시총 540조원이 증발했다는 보도가 나왔다. 앞서 다룬 FT 보도 이후의 시장 결과다.",
+   "tag": "AI 반도체",
+   "sources": [
+    "https://v.daum.net/v/20261111065847391",
+    "https://v.daum.net/v/20261111065900392",
+    "https://www.mt.co.kr/world/2026/11/11/2026111106403922694"
+   ],
+   "bg": "Jensen Huang",
+   "bg_alt": "Nvidia headquarters",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "젠슨 황 논란 이틀,\n엔비디아 시총\n**540조원** 증발",
+     "number": "540조원",
+     "label": "이틀 새 사라진 엔비디아 시가총액",
+     "sub": "11/10 뉴욕 마감 -5.47%"
+    },
+    {
+     "type": "질문형",
+     "title": "엔비디아 540조 증발\n한국 반도체주는\n무사했나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "실적이 아닌 논란에\n엔비디아 하루\n**-5.47%** 급락했다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "bars"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "11/10 뉴욕 마감 하락률(%)",
+     "bars": [
+      {
+       "label": "엔비디아",
+       "value": 5.47,
+       "hi": true
+      },
+      {
+       "label": "나스닥",
+       "value": 0.74
+      },
+      {
+       "label": "S&P500",
+       "value": 0.38
+      }
+     ]
+    }
+   },
+   "id": "20261111-0707-i2",
+   "created_at": "2026-11-11T07:07:22+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261111-0707-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261111-0707-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261111-0707-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261111-0707-i2/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261111-0707-i2/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261111-0707-i2/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261111-0707-i2/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261111-0707-i2/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261111-0707-i2/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261111-0707-i2/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261111-0707-i2/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261111-0707-i2/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "비트코인 11주 최저, 상장사는 사고 판다",
+   "concept": "트럼프 미디어는 1,510개를 샀고 미국 상장사 14곳은 올해 약 11조 원어치를 팔았다. 하이퍼스케일 데이터는 211.56개를 팔아 빚을 갚았다. 같은 비트코인을 두고 갈린 선택을 사례로 풀고, 매수 매도 권유는 하지 않는다. (공식: A인데 B, 어긋난 두 사실 제목)",
+   "why_now": "CPI 발표 직후 비트코인이 11주 만의 최저인 7.36만 달러까지 밀렸다. 같은 날 상장사 매도 보도와 하이퍼스케일 데이터의 전량 매각 속보가 나왔다.",
+   "tag": "비트코인",
+   "sources": [
+    "https://v.daum.net/v/20261110200918039",
+    "https://x.com/DeItaone/status/2120116970779525189",
+    "https://www.newsis.com/view/NISX20261110_0003862898"
+   ],
+   "bg": "Bitcoin physical coin",
+   "bg_alt": "Trump Media building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "미국 상장사 14곳\n올해 비트코인\n**11조원** 팔았다",
+     "number": "11조원",
+     "label": "올해 미국 상장사 14곳 매도 규모(약)",
+     "sub": "비트코인은 11주 만의 최저"
+    },
+    {
+     "type": "질문형",
+     "title": "같은 비트코인인데\n누구는 사고\n누구는 **왜** 팔까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "트럼프 미디어는 사고\n하이퍼스케일 데이터는\n**전량 매각**했다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "list",
+    "bignum"
+   ],
+   "extra": {
+    "list": {
+     "sub": "비트코인 상장사의 엇갈린 선택",
+     "count": 3
+    }
+   },
+   "id": "20261111-0707-i3",
+   "created_at": "2026-11-11T07:07:22+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "list",
+     "font": "noto",
+     "path": "20261111-0707-i3/1-list-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "list",
+     "font": "black",
+     "path": "20261111-0707-i3/1-list-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "list",
+     "font": "plex",
+     "path": "20261111-0707-i3/1-list-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261111-0707-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261111-0707-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261111-0707-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "list",
+     "font": "noto",
+     "path": "20261111-0707-i3/2-list-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "list",
+     "font": "black",
+     "path": "20261111-0707-i3/2-list-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "list",
+     "font": "plex",
+     "path": "20261111-0707-i3/2-list-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "list",
+     "font": "noto",
+     "path": "20261111-0707-i3/3-list-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "list",
+     "font": "black",
+     "path": "20261111-0707-i3/3-list-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "list",
+     "font": "plex",
+     "path": "20261111-0707-i3/3-list-plex.jpg"
     }
    ]
   }
