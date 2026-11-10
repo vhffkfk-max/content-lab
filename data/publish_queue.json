@@ -3128,397 +3128,6 @@
  ],
  "ideas": [
   {
-   "title": "배민, 쿠팡이츠 과징금 6천억 원, 역대 최대",
-   "concept": "'다른 앱보다 비싸면 불이익'이라는 조건 하나가 무엇이었는지, 소비자 가격에는 어떻게 닿는지를 5장으로 푼다. 세부 내용과 소비자 영향은 확인 표시로 구분한다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "20:28 MBC, MBN이 보도한 새 소식이다. 매일 쓰는 앱이라 소비자 공유가 잘 되는 주제다.",
-   "tag": "소비",
-   "sources": [
-    "https://v.daum.net/v/20261109202217632",
-    "https://v.daum.net/v/20261109202824728"
-   ],
-   "bg": "Baemin delivery app",
-   "bg_alt": "Coupang Eats delivery",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "배민, 쿠팡이츠에\n과징금 **6천억**원\n역대 최대 기록",
-     "number": "6천억 원",
-     "label": "배민, 쿠팡이츠 과징금",
-     "sub": "역대 최대 규모"
-    },
-    {
-     "type": "질문형",
-     "title": "다른 앱보다\n비싸면 **불이익**?\n6천억 과징금 맞았다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "'비싸면 불이익'\n이 조건 하나가\n**6천억** 과징금이 됐다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261109-2206-i1",
-   "created_at": "2026-11-09T22:06:41+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261109-2206-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261109-2206-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261109-2206-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261109-2206-i1/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261109-2206-i1/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261109-2206-i1/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261109-2206-i1/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261109-2206-i1/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261109-2206-i1/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261109-2206-i1/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261109-2206-i1/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261109-2206-i1/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "미, 이란, 호르무즈 재개방 80억 달러 협상 검토",
-   "concept": "이스라엘 매체가 전한 '동결 자금 80억 달러와 해협 재개방' 제안을 보도로 다룬다. 단일 매체 보도라는 점을 한 번만 밝히고, 유가와 물가에 닿는 일반 원리를 쉬운 말로 한 장에 담는다. (공식: 없음)",
-   "why_now": "X 속보 계정 @DeItaone 글이 조회 10만 5천으로 가장 빨리 퍼졌다. 트럼프 대통령이 오늘 카타르 총리를 만나 논의할 예정이라 곧 후속 소식이 나올 수 있다.",
-   "tag": "국제, 유가",
-   "sources": [
-    "https://x.com/DeItaone/status/2119752143246635145"
-   ],
-   "bg": "Strait of Hormuz tanker",
-   "bg_alt": "oil tanker ship",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "이란이 내건 제안\n동결자금 **80억**달러\n호르무즈와 맞교환",
-     "number": "80억 달러",
-     "label": "이란이 제안했다는 동결 자금",
-     "sub": "이스라엘 매체 보도, 합의 확정 아님"
-    },
-    {
-     "type": "질문형",
-     "title": "호르무즈 열리면\n**유가**는 내려갈까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "해협을 다시 열 조건\n이란이 꺼낸 건\n동결 **자금**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261109-2206-i2",
-   "created_at": "2026-11-09T22:06:41+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261109-2206-i2/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261109-2206-i2/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261109-2206-i2/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261109-2206-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261109-2206-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261109-2206-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261109-2206-i2/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261109-2206-i2/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261109-2206-i2/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261109-2206-i2/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261109-2206-i2/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261109-2206-i2/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "엔비디아, 주가 빠진 날 한국 AI 4곳에 투자",
-   "concept": "CEO 논란으로 주가가 4~5% 빠진 같은 날 한국 스타트업 4곳 투자를 밝힌 어긋난 장면을 앞세운다. 의존이 깊어진다는 시각과 협력 기회라는 시각을 함께 보여 주고, 투자 금액과 지분은 확인 전이라고 밝힌다. 투자 권유가 아니다. (공식: A인데 B, 어긋난 두 사실 제목)",
-   "why_now": "19:48 기준 9개 매체가 다룬 새 소식이다. 엔비디아 논란 속에서 한국과의 관계가 어떻게 움직이는지 보여 준다.",
-   "tag": "AI, 기업",
-   "sources": [
-    "https://biz.chosun.com/it-science/ict/2026/11/09/E2NB6FVCRRBONHFSOARRZ4U7SI/"
-   ],
-   "bg": "Jensen Huang Nvidia",
-   "bg_alt": "Nvidia headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "엔비디아 주가\n4~5% 하락한 날\n한국 **4곳**에 투자",
-     "number": "4곳",
-     "label": "엔비디아가 투자한 한국 AI 스타트업",
-     "sub": "모티프, 업스테이지, 리얼월드, 포인투테크놀로지"
-    },
-    {
-     "type": "질문형",
-     "title": "엔비디아 의존이\n더 깊어질까, 아니면\n협력 **기회**일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "CEO 논란에 주가는\n4~5% 하락했는데\n한국엔 **투자**했다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/09",
-     "headlines": [
-      "한국 AI 스타트업 4곳 투자",
-      "엔비디아 주가 4~5%대 하락",
-      "SKT, 리벨리온 NPU 인프라 개발"
-     ]
-    }
-   },
-   "id": "20261109-2206-i3",
-   "created_at": "2026-11-09T22:06:41+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261109-2206-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261109-2206-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261109-2206-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261109-2206-i3/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261109-2206-i3/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261109-2206-i3/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261109-2206-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261109-2206-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261109-2206-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261109-2206-i3/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261109-2206-i3/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261109-2206-i3/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261109-2206-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261109-2206-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261109-2206-i3/3-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261109-2206-i3/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261109-2206-i3/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261109-2206-i3/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "코스피 5거래일 만에 11.71% 급락",
    "concept": "5거래일 하락률과 5,000선 턱걸이를 앞세우고, 美 반도체는 반등했는데 코스피는 밀린 어긋남을 보여준다. 시세표로 코스피, 코스닥, 삼성전자, SK하이닉스의 1달 낙폭을 비교한다. 반대매매와 코스닥 비교 같은 전언은 확인 전이라 뺀다. (공식: A인데 B, 어긋난 두 사실 제목)",
    "why_now": "한경 릴스 좋아요가 시간당 1487로 평소의 94배다. 코스피 하락 기사가 여러 곳에서 나왔고 KBS도 반등 시점을 다뤘다.",
@@ -8944,6 +8553,388 @@
      "form": "editorial",
      "font": "plex",
      "path": "20261110-2006-i3/3-editorial-plex.jpg"
+    }
+   ]
+  },
+  {
+   "title": "젠슨 황 관계, 칩 75억 달러 중국 출하와 연결",
+   "concept": "The Information 보도로 처음 나온 75억 달러 금액을 앞세우고, 엔비디아 공식 확인이 없다는 점을 한 줄로만 밝힌다. 같은 시각 BofA의 최선호주 제외 소식을 붙인다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "20시 전후 X에서 조회 5.4만, 4.2만으로 퍼진 새 소식이다. 앞서 다룬 FT 보도와 트럼프 옹호 글에는 금액이 없었다.",
+   "tag": "엔비디아",
+   "sources": [
+    "https://x.com/KobeissiLetter/status/2120110889693245744",
+    "https://x.com/DeItaone/status/2120109355341123593",
+    "https://x.com/DeItaone/status/2120111174523953635"
+   ],
+   "bg": "Jensen Huang",
+   "bg_alt": "Nvidia headquarters",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "젠슨 황 관계가\n**75억 달러** 칩\n중국행과 연결됐다",
+     "number": "75억 달러",
+     "label": "중국으로 출하된 엔비디아 칩 규모",
+     "sub": "The Information 보도, 엔비디아 공식 확인 없음"
+    },
+    {
+     "type": "질문형",
+     "title": "CEO의 그 관계가\n**75억 달러**어치\n칩 출하를 도왔나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "트럼프는 감쌌는데\nBofA는 엔비디아를\n**최선호주**서 뺐다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "breaking"
+   ],
+   "extra": {},
+   "id": "20261110-2101-i1",
+   "created_at": "2026-11-10T21:01:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261110-2101-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261110-2101-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261110-2101-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261110-2101-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261110-2101-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261110-2101-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261110-2101-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261110-2101-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261110-2101-i1/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "종부세 완화 놓고 與와 靑, 정부 또 충돌",
+   "concept": "여당의 거주, 비거주 공제 통일 요구와 이형일 차관의 '거주용 우대 원칙' 발언을 나란히 놓고, 쟁점을 실거주 1주택과 비거주 주택의 공제 차이로 정리한다. 재건축 부담금 소식은 마지막에 덧붙인다. (공식: A인데 B, 어긋난 두 사실 제목)",
+   "why_now": "뉴스1, 서울경제 등이 '종부세 완화, 靑과 갈등 2R'을 다뤘고 이형일 차관이 3곳에서 선을 그었다. 부동산 세금은 독자 관심이 큰데 오늘 보낸 주제와 겹치지 않는다.",
+   "tag": "부동산 세금",
+   "sources": [
+    "https://v.daum.net/v/20261110190556727",
+    "https://www.sedaily.com/article/20112677",
+    "https://biz.chosun.com/policy/policy_sub/2026/11/10/75OAMQA2VVHQTIC6SUFKIDETT4/"
+   ],
+   "bg": "Seoul apartment complex",
+   "bg_alt": "Korea National Assembly",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "종부세 완화 두고\n여당과 정부가\n**또** 부딪혔다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "실거주 1주택과\n비거주 주택\n공제는 **같아야** 하나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "총선 앞두고 나온\n종부세 완화 카드\n정부는 **선 그었다**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/10",
+     "headlines": [
+      "여당, 거주, 비거주 공제 통일 요구",
+      "이형일 차관 \"거주용 우대 원칙 유지\"",
+      "재건축 부담금 은마 4.6억 보도"
+     ]
+    }
+   },
+   "id": "20261110-2101-i2",
+   "created_at": "2026-11-10T21:01:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261110-2101-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261110-2101-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261110-2101-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261110-2101-i2/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261110-2101-i2/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261110-2101-i2/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261110-2101-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261110-2101-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261110-2101-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261110-2101-i2/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261110-2101-i2/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261110-2101-i2/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261110-2101-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261110-2101-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261110-2101-i2/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261110-2101-i2/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261110-2101-i2/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261110-2101-i2/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "머스크, 스타링크 소프트웨어가 AI 훈련에도 맞더라",
+   "concept": "조회 45만을 기록한 머스크 본인 발언을 그대로 보여주고, 위성 인터넷용 기술이 AI 데이터센터 운영에 쓰일 수 있다는 뜻으로 쉽게 풀어준다. 앞서 다룬 스페이스X 텍사스 투자 소식과 연결한다. (공식: 진짜 현장과 원문을 화면에)",
+   "why_now": "머스크의 X 글(19:34)이 조회 45만, 좋아요 3,601로 오늘 자료 중 가장 크게 퍼졌다. 16:35에 보낸 스페이스X 소식과 달리 머스크 본인 발언은 아직 다루지 않았다.",
+   "tag": "AI 인프라",
+   "sources": [
+    "https://x.com/elonmusk/status/2120102767624880364"
+   ],
+   "bg": "Elon Musk",
+   "bg_alt": "Starlink satellite",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "머스크 한 줄에\n조회 **45만**\n스타링크와 AI 훈련",
+     "number": "45만",
+     "label": "머스크 X 글 조회수",
+     "sub": "스타링크 소프트웨어, 초지능 훈련에도 맞는다"
+    },
+    {
+     "type": "질문형",
+     "title": "위성 인터넷 기술이\nAI 훈련에도\n**쓰일 수** 있나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "AI 주식 흔들린 날\n머스크는 **스타링크**를\nAI 인프라로 엮었다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "quote",
+    "bignum"
+   ],
+   "extra": {
+    "quote": {
+     "label": "머스크 X 글",
+     "quote": "스타링크 소프트웨어는 우주와 지상 사이로 엄청난 데이터를 움직이도록 만들었는데, 초지능 훈련에도 아주 잘 맞는 걸로 드러났다.",
+     "by": "일론 머스크"
+    }
+   },
+   "id": "20261110-2101-i3",
+   "created_at": "2026-11-10T21:01:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261110-2101-i3/1-quote-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261110-2101-i3/1-quote-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261110-2101-i3/1-quote-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261110-2101-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261110-2101-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261110-2101-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261110-2101-i3/2-quote-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261110-2101-i3/2-quote-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261110-2101-i3/2-quote-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261110-2101-i3/3-quote-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261110-2101-i3/3-quote-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261110-2101-i3/3-quote-gowun.jpg"
     }
    ]
   }
