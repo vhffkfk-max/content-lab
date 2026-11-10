@@ -3128,310 +3128,6 @@
  ],
  "ideas": [
   {
-   "title": "삼성, 현대차 피지컬 AI로 원팀",
-   "concept": "이재용, 정의선 부부동반 회동과 공동 TF 보도를 사건으로 세우고, 피지컬 AI를 나오는 자리에서 한 문장으로 풀어 쓴다. 배터리 협업이 먼저 거론됐다는 점과 협력 범위가 어디까지 넓어질지를 끝 장의 관전 포인트로 둔다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "17시대 기사가 동아일보, 연합인포맥스 등 7곳에서 나왔고 한국경제는 공동 TF 구성을 다뤘다. 쓰레드에서도 피지컬 AI 글이 시간당 조회 1148로 크고 있다.",
-   "tag": "산업",
-   "sources": [
-    "https://www.donga.com/news/Economy/article/all/20261109/134993345/1",
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443806",
-    "https://www.hankyung.com/article/2026110958771"
-   ],
-   "bg": "Lee Jae-yong Chung Eui-sun",
-   "bg_alt": "Samsung Hyundai headquarters",
-   "hooks": [
-    {
-     "type": "사건형",
-     "title": "이재용, 정의선\n부부동반 첫 기업 교류\n**피지컬 AI**로 손잡다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "삼성과 현대차, 이번엔\n왜 **원팀**이 됐나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "배터리 협업이 먼저\n키워드는 **피지컬 AI**\n삼성, 현대차 회동",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/09",
-     "headlines": [
-      "이재용, 정의선 부부동반 회동",
-      "키워드는 피지컬 AI",
-      "배터리 협업이 먼저 거론"
-     ]
-    }
-   },
-   "id": "20261109-1807-i1",
-   "created_at": "2026-11-09T18:07:16+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261109-1807-i1/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261109-1807-i1/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261109-1807-i1/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261109-1807-i1/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261109-1807-i1/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261109-1807-i1/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261109-1807-i1/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261109-1807-i1/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261109-1807-i1/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "고정금리가 변동보다 싸진 주담대",
-   "concept": "보통은 변동형이 더 싼데 지금은 거꾸로라는 전후 차이를 표지에 두고, 채권금리 상승(국고채 3년물 3.639%)이 배경이라는 점을 쉬운 말로 푼다. 같은 날 기준으로 나란히 비교하라는 행동 팁으로 마무리하고 은행별 실제 차이는 [확인]으로 남긴다. (공식: 전후 낙차 한 줄 표지)",
-   "why_now": "'고정형이 더 싸다'는 연합뉴스 기사와 '변동형이 5년 고정보다 높다'는 한국경제 기사가 오늘 나왔다. 국고채 3년물이 3.639%까지 오른 날이라 금리 관심이 높다.",
-   "tag": "대출",
-   "sources": [
-    "https://www.yna.co.kr/view/AKR20261109131651008",
-    "https://www.hankyung.com/article/2026110958531"
-   ],
-   "bg": "mortgage loan bank",
-   "bg_alt": "apartment complex Korea",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "국고채 **3.639%**에\n고정 주담대가\n변동보다 싸졌다",
-     "number": "3.639%",
-     "label": "국고채 3년물, 11/09",
-     "sub": "고정형 주담대가 변동형보다 싸졌어요"
-    },
-    {
-     "type": "질문형",
-     "title": "고정형과 변동형\n오늘 어느 쪽이\n**더 싼지** 아세요",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "원래 변동이 싼데\n지금은 **거꾸로**\n주담대 금리 역전",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "editorial",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261109-1807-i2",
-   "created_at": "2026-11-09T18:07:16+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261109-1807-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261109-1807-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261109-1807-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261109-1807-i2/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261109-1807-i2/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261109-1807-i2/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261109-1807-i2/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261109-1807-i2/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261109-1807-i2/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "알테오젠 15%대 급락, 코스피는 5000선 방어",
-   "concept": "코스피가 0.81% 내린 5018.85로 마감한 날 바이오 대형주 알테오젠이 15%대 빠졌다는 두 사실을 나란히 보여 준다. 이유로 거론된 미국 IRA 약가 규정과 유럽 특허 불확실성은 보도 내용으로만 다루고, 업종 확산과 회사 해명 여부를 끝 장에 둔다. (공식: A인데 B, 어긋난 두 사실 제목)",
-   "why_now": "16:40 보도로, 코스피가 5000선을 간신히 지킨 날 바이오 대형주가 크게 빠졌다. 오늘 아직 다루지 않은 종목 이슈다.",
-   "tag": "증시",
-   "sources": [
-    "https://kr.investing.com/news/stock-market-news/article-2165499",
-    "https://kr.investing.com/news/stock-market-news/article-2165502"
-   ],
-   "bg": "Alteogen",
-   "bg_alt": "biotech laboratory",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "바이오 대형주 알테오젠\n하루 **15%대** 급락",
-     "number": "-15%대",
-     "label": "알테오젠, 11/09",
-     "sub": "코스피는 0.81% 내린 5018.85에 마감"
-    },
-    {
-     "type": "질문형",
-     "title": "미국 약가 규정과\n유럽 특허 불확실성\n알테오젠 **왜** 급락",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "코스피가 5000선\n간신히 지킨 날\n알테오젠은 **-15%**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "breaking"
-   ],
-   "extra": {},
-   "id": "20261109-1807-i3",
-   "created_at": "2026-11-09T18:07:16+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261109-1807-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261109-1807-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261109-1807-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261109-1807-i3/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261109-1807-i3/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261109-1807-i3/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261109-1807-i3/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261109-1807-i3/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261109-1807-i3/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
    "title": "中 24% 추가관세, 희토류 통제 유예 연장",
    "concept": "중국이 미국에 매기려던 24% 추가관세와 희토류 수출통제 강화를 2개월 더 미뤘다는 속보를 풀고, 희토류가 한국 반도체, 배터리, 전기차 부품에 왜 중요한지 한 장에서 쉽게 설명한다. 유예일 뿐 갈등이 끝난 건 아니라는 점과 세부 내용은 확인 중이라는 단서를 마지막 장에 한 번만 남긴다. (공식: 표지는 이미 일어난 일로)",
    "why_now": "18:48 연합뉴스 등 3곳이 보도한 새 발표다. 관세와 희토류는 한국 반도체, 배터리 업계에 직결되는데 아직 다룬 적 없는 주제다.",
@@ -8956,6 +8652,364 @@
      "form": "paper",
      "font": "gowun",
      "path": "20261110-1601-i3/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "코스피 4.39% 급등 마감, 외국인 8일 만에 복귀",
+   "concept": "마감 결과 한 줄을 단정형으로 걸고, 하루 반등과 한 달 낙폭을 나란히 놓아 방향을 단정하기 이르다는 점까지 보여준다. 순매수 금액은 재료에 없어 [확인]으로 남긴다. (공식: 전후 낙차 한 줄 표지)",
+   "why_now": "오늘 23곳이 다룬 최대 소식이고, 장중 급등과 달리 마감 결과와 외국인 순매수 복귀는 아직 보내지 않았다.",
+   "tag": "증시",
+   "sources": [
+    "https://v.daum.net/v/20261110160213380",
+    "https://biz.chosun.com/stock/stock_general/2026/11/10/MRQWGMBZGMYGIMTDGI4DGZJXGI/",
+    "https://www.yna.co.kr/view/AKR20261110129700002"
+   ],
+   "bg": "KOSPI trading screen",
+   "bg_alt": "Korea Exchange building Seoul",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "코스피 **4.39%** 급등\n외국인 8일 만에\n순매수로 돌아왔다",
+     "number": "+4.39%",
+     "label": "코스피 11/10 마감",
+     "sub": "5,239.13, 220.28p 상승"
+    },
+    {
+     "type": "질문형",
+     "title": "삼전 4.7%, 닉스 6.7%\n외국인이 8일 만에\n**돌아온** 이유는?",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "하루 **4.39%** 올랐는데\n한 달 전보다는\n아직 17.94% 낮다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/10",
+     "headlines": [
+      "코스피 5,239.13, +4.39% 마감",
+      "삼성전자 +4.7%, 하이닉스 +6.7%",
+      "외국인 8일 만에 순매수 복귀"
+     ]
+    }
+   },
+   "id": "20261110-1701-i1",
+   "created_at": "2026-11-10T17:01:33+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261110-1701-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261110-1701-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261110-1701-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261110-1701-i1/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261110-1701-i1/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261110-1701-i1/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261110-1701-i1/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261110-1701-i1/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261110-1701-i1/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261110-1701-i1/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261110-1701-i1/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261110-1701-i1/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "스페이스X, 텍사스에 32조원 투자",
+   "concept": "데이터센터에 필요한 건 칩만이 아니라 전기라는 흐름 속에서, 가스발전소와 데이터센터를 함께 짓는 계획을 보도 중심으로 푼다. 세부 규모와 일정은 [확인]으로 남긴다. (공식: 없음)",
+   "why_now": "한국경제와 머니투데이가 오늘 전한 새 소식이고, 앞서 보낸 글에는 없었다. AI 전력 수요라는 시장의 큰 주제와 이어진다.",
+   "tag": "AI 전력",
+   "sources": [
+    "https://www.hankyung.com/article/2026111080597",
+    "https://www.mt.co.kr/world/2026/11/10/2026111014463723758"
+   ],
+   "bg": "Elon Musk SpaceX",
+   "bg_alt": "SpaceX Starbase Texas",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "스페이스X가\n텍사스에 **32조원**\n발전소도 함께 짓는다",
+     "number": "32조원",
+     "label": "스페이스X 텍사스 투자",
+     "sub": "가스발전소와 데이터센터를 함께"
+    },
+    {
+     "type": "질문형",
+     "title": "스페이스X는 왜\n발전소와 데이터센터를\n**같이** 짓나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "칩이 전부가 아니었다\n스페이스X는 **전기**에\n32조원을 쓴다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261110-1701-i2",
+   "created_at": "2026-11-10T17:01:33+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261110-1701-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261110-1701-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261110-1701-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261110-1701-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261110-1701-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261110-1701-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261110-1701-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261110-1701-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261110-1701-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261110-1701-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261110-1701-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261110-1701-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "유가 5% 급락, 코스피 반등 뒤 시장은 물가를 본다",
+   "concept": "코스피 반등 이유를 반도체만이 아니라 유가 급락과 물가 걱정 완화 해석으로 풀고, 곧 나올 미국 10월 CPI를 다음 변수로 마무리한다. 발표일과 예상치는 [확인]. (공식: A인데 B, 어긋난 두 사실 제목)",
+   "why_now": "유가 5% 급락에 코스피가 반등했다는 기사가 나왔고, 제로헤지의 10월 CPI 프리뷰가 조회 55,270을 기록했다. 시장의 관심이 물가 숫자로 옮겨가는 날이다.",
+   "tag": "물가",
+   "sources": [
+    "https://www.fnnews.com/news/202611101358127122",
+    "https://x.com/zerohedge/status/2120002626154549528"
+   ],
+   "bg": "oil refinery crude barrels",
+   "bg_alt": "US consumer price index chart",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "유가 **5%** 급락\n코스피 반등 뒤\n시장은 CPI를 본다",
+     "number": "-5%",
+     "label": "유가 하루 낙폭",
+     "sub": "미국 10월 CPI 발표를 앞두고"
+    },
+    {
+     "type": "질문형",
+     "title": "코스피 반등의 열쇠\n반도체 말고\n**유가**였나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "코스피 4.39% 올랐는데\n시장이 더 보는 건\n**물가** 숫자",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "editorial"
+   ],
+   "extra": {},
+   "id": "20261110-1701-i3",
+   "created_at": "2026-11-10T17:01:33+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261110-1701-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261110-1701-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261110-1701-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261110-1701-i3/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261110-1701-i3/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261110-1701-i3/1-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261110-1701-i3/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261110-1701-i3/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261110-1701-i3/2-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261110-1701-i3/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261110-1701-i3/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261110-1701-i3/3-editorial-plex.jpg"
     }
    ]
   }
