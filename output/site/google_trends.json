@@ -1,15 +1,6 @@
 [
  {
   "geo": "KR",
-  "term": "시가총액",
-  "traffic": 5000,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "\"젠슨황 외도 상대, 홍콩 영주권 42세 中사업가\"",
-  "news_link": "https://www.yonhapnewstv.co.kr/news/MYH202611102036062iy"
- },
- {
-  "geo": "KR",
   "term": "뉴데일리",
   "traffic": 2000,
   "topics": "",
@@ -23,8 +14,8 @@
   "traffic": 1000,
   "topics": "물가·경기",
   "econ": true,
-  "news_title": "A key report for where inflation stood in October comes out Tuesday. Here's what to expect",
-  "news_link": "https://www.cnbc.com/2026/11/09/october-cpi-report-2026-inflation.html"
+  "news_title": "Consumer prices rose 0.4% in October, more than expected",
+  "news_link": "https://www.cnbc.com/2026/11/10/cpi-inflation-report-october-2026.html"
  },
  {
   "geo": "KR",
@@ -37,6 +28,15 @@
  },
  {
   "geo": "KR",
+  "term": "cpi 발표",
+  "traffic": 500,
+  "topics": "물가·경기",
+  "econ": true,
+  "news_title": "[2보] 美 10월 소비자물가 전월 대비 0.4%↑…전망치 웃돌아",
+  "news_link": "https://www.yna.co.kr/view/AKR20261110179000072"
+ },
+ {
+  "geo": "KR",
   "term": "금융보안원",
   "traffic": 500,
   "topics": "",
@@ -46,12 +46,12 @@
  },
  {
   "geo": "KR",
-  "term": "cpi 발표",
-  "traffic": 200,
-  "topics": "물가·경기",
-  "econ": true,
-  "news_title": "미국 인플레이션 데이터 발표 앞두고 황 CEO 스캔들 여파 주목",
-  "news_link": "https://kr.investing.com/news/economy-news/article-2167872"
+  "term": "임영웅 아임 히어로 더 스타디움",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "“함성까지 다시 듣는다” 임영웅 스타디움, IMAX로 귀환",
+  "news_link": "https://www.mk.co.kr/news/hot-issues/12203793"
  },
  {
   "geo": "KR",
@@ -77,8 +77,8 @@
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "조회수 1,000만은 기본! 맛잘알 정승제와 찰떡 연애 비유로 유명한 유대종 | KBS 261110 방송",
-  "news_link": "https://www.kbs.co.kr/index.html?source=smr&sname=vod&stype=vod&contents_id=K02_PS-2026192788-01-000_MFSC2&program_code=T2018-0562&program_id=PS-2026192788-01-000&section_code=04&broadcast_complete_yn=N&section_id=25328"
+  "news_title": "정승제 \"피부과 2주에 한 번씩\"…주우재도 놀란 관리",
+  "news_link": "https://www.news1.kr/entertain/broadcast-tv/6349705"
  },
  {
   "geo": "KR",
@@ -91,48 +91,75 @@
  },
  {
   "geo": "US",
-  "term": "dustin hoffman",
-  "traffic": 2000,
+  "term": "country music singer dies",
+  "traffic": 5000,
   "topics": "",
   "econ": false,
-  "news_title": "Look at Me by Dustin Hoffman review – an era-defining actor says his piece",
-  "news_link": "https://www.theguardian.com/books/2026/nov/09/look-at-me-by-dustin-hoffman-review-an-era-defining-actor-says-his-piece"
- },
- {
-  "geo": "US",
-  "term": "cpi today",
-  "traffic": 1000,
-  "topics": "물가·경기",
-  "econ": true,
-  "news_title": "CPI Report Today: Investors Await Latest Inflation Data — Live Updates",
-  "news_link": "https://www.wsj.com/livecoverage/stock-market-cpi-inflation-11-10-2026"
+  "news_title": "Rising country music singer dies in wreck at 22: ‘The world lost an amazing talent’",
+  "news_link": "https://www.pennlive.com/entertainment/2026/11/rising-country-music-singer-dies-in-wreck-at-22-the-world-lost-an-amazing-talent.html"
  },
  {
   "geo": "US",
   "term": "gary sinise",
-  "traffic": 1000,
+  "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "Gary Sinise Shares What It Would Take for Him to Return to Acting After 6 Years (Exclusive)",
-  "news_link": "https://people.com/gary-sinise-what-it-would-take-for-him-to-return-to-acting-after-6-years-exclusive-12237969"
+  "news_title": "Gary Sinise Documentary 'The Ballad Of Lieutenant Dan' Arrives On Streaming This Week",
+  "news_link": "https://www.forbes.com/sites/timlammers/2026/11/07/documentary-about-gary-sinise-helping-veterans-lands-distribution-and-debuts-on-digital-this-week/"
  },
  {
   "geo": "US",
-  "term": "cpi data",
-  "traffic": 500,
-  "topics": "물가·경기",
-  "econ": true,
-  "news_title": "Treasury yields edge higher as traders await CPI inflation data",
-  "news_link": "https://www.cnbc.com/2026/11/10/us-bonds-treasurys-yields.html"
+  "term": "tradingview",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "YieldMax® ETFs Announces Weekly Distributions for Group 1 ETFs",
+  "news_link": "https://www.globenewswire.com/news-release/2026/11/10/3399291/0/en/yieldmax-etfs-announces-weekly-distributions-for-group-1-etfs.html"
+ },
+ {
+  "geo": "US",
+  "term": "gary sinise son",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Gary Sinise Talks Love, Loss and Resilience in Moving Memoir",
+  "news_link": "https://www.today.com/video/gary-sinise-talks-love-loss-and-resilience-in-moving-memoir-273192005824"
  },
  {
   "geo": "US",
   "term": "gma deals and steals",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "'GMA' Deals & Steals with Kristin Cavallari 11/9",
+  "news_link": "https://www.goodmorningamerica.com/shop/story/gma-deals-steals-kristin-cavallari-119-137980372"
+ },
+ {
+  "geo": "US",
+  "term": "pwhl",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Coming up Clutch: PWHL Detroit team has a nickname and logo at last",
+  "news_link": "https://www.freep.com/story/sports/pwhl/2026/11/10/pwhl-detroit-clutch-team-name-logo/91578865007/"
+ },
+ {
+  "geo": "US",
+  "term": "jordan elliott",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Exclusive 'GMA' digital Deals & Steals Holiday Gift Guide",
-  "news_link": "https://abcnews.com/GMA/Shop/exclusive-gma-digital-deals-steals-holiday-gift-guide/story?id=137907923"
+  "news_title": "Report: DT Jordan Elliott to work out for Bears",
+  "news_link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/report-dt-jordan-elliott-to-work-out-for-bears"
+ },
+ {
+  "geo": "US",
+  "term": "michael sanft attorney",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Attorney who represented ‘Keffe D’ in Tupac murder trial dies",
+  "news_link": "https://www.fox5vegas.com/2026/11/06/attorney-who-represented-keffe-d-tupac-murder-trial-reportedly-dies/"
  },
  {
   "geo": "US",
@@ -145,38 +172,11 @@
  },
  {
   "geo": "US",
-  "term": "india national under-19 cricket team vs united arab emirates national under-19 cricket team standings",
+  "term": "lauren sanchez",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "U-19 Asia Cup 2026: Aaryavir Sehwag smashes 160 as India post massive total against UAE after Pakistan debacle",
-  "news_link": "https://sports.yahoo.com/articles/u-19-asia-cup-2026-093702334.html"
- },
- {
-  "geo": "US",
-  "term": "oviedo, spain",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Police officer dies and another injured after backpack explosion in Oviedo",
-  "news_link": "https://www.bbc.com/news/articles/cwm262pzezy0o"
- },
- {
-  "geo": "US",
-  "term": "south korea",
-  "traffic": 200,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "Why a South Korean city is turning to a U.S. college to outsmart AI?",
-  "news_link": "https://www.npr.org/2026/11/09/g-s1-151519/why-a-south-korean-city-is-turning-to-a-u-s-college-to-outsmart-ai"
- },
- {
-  "geo": "US",
-  "term": "veterans",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Veterans face hurdles transitioning to civilian workforce",
-  "news_link": "https://triblive.com/local/valley-news-dispatch/veterans-face-hurdles-transitioning-to-civilian-workforce/"
+  "news_title": "The best and worst fashion moments Jeff Bezos and Lauren Sánchez Bezos have had this year",
+  "news_link": "https://www.businessinsider.com/jeff-bezos-lauren-sanchez-bezos-best-worst-outfits-2026-11"
  }
 ]
