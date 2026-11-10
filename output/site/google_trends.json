@@ -1,6 +1,15 @@
 [
  {
   "geo": "KR",
+  "term": "메이플스토리",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "넥슨 3분기 영업익 3천718억…메이플·FC 성과에 전망치 상회",
+  "news_link": "https://www.yna.co.kr/view/AKR20261110137000017"
+ },
+ {
+  "geo": "KR",
   "term": "농구",
   "traffic": 1000,
   "topics": "",
@@ -10,12 +19,30 @@
  },
  {
   "geo": "KR",
-  "term": "메이플스토리",
-  "traffic": 1000,
+  "term": "k리그",
+  "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "넥슨 3분기 영업익 3천718억…메이플·FC 성과에 전망치 상회",
-  "news_link": "https://www.yna.co.kr/view/AKR20261110137000017"
+  "news_title": "[영상] 이겨도 ‘버럭’ 선수단 마음가짐 바꾼 ‘효버지’ 이정효",
+  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8708757"
+ },
+ {
+  "geo": "KR",
+  "term": "vix",
+  "traffic": 500,
+  "topics": "AI·반도체, 급락·변동성",
+  "econ": true,
+  "news_title": "Dan Ives Warns Chip Stocks Aren't Done Falling, Sees Another 12% Drop — But Tom Lee Calls AI Selloff an '",
+  "news_link": "https://www.benzinga.com/markets/tech/26/11/62904872/dan-ives-warns-chip-stocks-arent-done-falling-sees-another-12-drop-but-tom-lee-calls-ai-selloff-an-overreaction-predicts-20-tech-rally"
+ },
+ {
+  "geo": "KR",
+  "term": "맨체스터 유나이티드 fc",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "‘리그 10경기 1승, 18위’ 최악의 맨유, 캐릭 감독 경질 가닥",
+  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8708520"
  },
  {
   "geo": "KR",
@@ -28,89 +55,44 @@
  },
  {
   "geo": "KR",
-  "term": "엄정욱",
+  "term": "부동산",
   "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "배우 지안, ‘158km 강속구 투수’ 엄정욱과 결혼…“웃음 끊이지 않게 살 것”",
-  "news_link": "https://sports.khan.co.kr/article/202611091718003"
- },
- {
-  "geo": "KR",
-  "term": "gs칼텍스",
-  "traffic": 200,
-  "topics": "AI·반도체",
+  "topics": "AI·반도체, 부동산",
   "econ": true,
-  "news_title": "정유공장의 새로운 엔진 AI…허세홍號 GS칼텍스, 디지털 전환 '시너지'",
-  "news_link": "https://www.financialpost.co.kr/news/articleView.html?idxno=285901"
+  "news_title": "제11회 부동산 산업의 날 …AI·데이터 기반 산업 혁신 논의",
+  "news_link": "https://www.yna.co.kr/view/AKR20261110133300003"
  },
  {
   "geo": "KR",
-  "term": "vix",
-  "traffic": 200,
-  "topics": "AI·반도체, 급락·변동성",
-  "econ": true,
-  "news_title": "Dan Ives Warns Chip Stocks Aren't Done Falling, Sees Another 12% Drop — But Tom Lee Calls AI Selloff an '",
-  "news_link": "https://www.benzinga.com/markets/tech/26/11/62904872/dan-ives-warns-chip-stocks-arent-done-falling-sees-another-12-drop-but-tom-lee-calls-ai-selloff-an-overreaction-predicts-20-tech-rally"
- },
- {
-  "geo": "KR",
-  "term": "제네시스 gv90",
+  "term": "난민",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "제네시스, 앞·뒤 차 문 마주 열리는 ‘GV90’ 출시···최고 2억3950만원",
-  "news_link": "https://www.khan.co.kr/article/202611101005001"
+  "news_title": "난민신청 해놓고 강제추행 등 벌금만 3번 냈는데…“출국명령은 부당”",
+  "news_link": "https://www.munhwa.com/article/11630036"
  },
  {
   "geo": "KR",
-  "term": "보스턴다이내믹스",
+  "term": "조인성",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "보스턴다이내믹스, 바퀴형 로봇 공개...\"360도 회전\"",
-  "news_link": "https://m.science.ytn.co.kr/program/view_today.php?s_mcd=0082&key=202611101601571649"
+  "news_title": "[인터뷰] 조인성 \"이창동 감독님은 영화의 신, 초심으로 돌아간 기분\"",
+  "news_link": "https://www.ytn.co.kr/_ln/0117_202611101604268979"
  },
  {
   "geo": "KR",
-  "term": "예산",
+  "term": "통영어부장터",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "미래기금으로 주민센터 재건축? 고정지출 '21조' 논란도",
-  "news_link": "https://imnews.imbc.com/replay/2026/nwdesk/article/6864652_37004.html"
- },
- {
-  "geo": "KR",
-  "term": "코어위브 주가",
-  "traffic": 100,
-  "topics": "실적발표",
-  "econ": true,
-  "news_title": "코어위브, 매출·손실 모두 급증세…실적 전망 상향에 주가 약 2% 상승 - 머니투데이",
-  "news_link": "https://www.mt.co.kr/world/2026/11/11/2026111106370882172"
+  "news_title": "강레오 손길 거쳤는데 단돈 7000원…통영 축제 ‘역대급 메뉴’",
+  "news_link": "https://www.joongang.co.kr/article/25476270"
  },
  {
   "geo": "US",
-  "term": "cfp rankings release",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "College Football Playoff Bubble Watch after Week 10",
-  "news_link": "https://www.espn.com/college-football/story/_/id/50422353/cfp-playoff-2026-bubble-watch-week-10"
- },
- {
-  "geo": "US",
-  "term": "florida vs florida state",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "No. 1 Florida at Florida State (Tuesday, 6 pm)",
-  "news_link": "https://floridagators.com/news/2026/11/9/mens-basketball-stuff-florida-at-fsu-nov-10-2026"
- },
- {
-  "geo": "US",
-  "term": "michigan state basketball",
-  "traffic": 1000,
+  "term": "duke basketball",
+  "traffic": 5000,
   "topics": "",
   "econ": false,
   "news_title": "Champions Classic 2026: Previewing Michigan State-Duke, Kansas-Kentucky",
@@ -118,65 +100,83 @@
  },
  {
   "geo": "US",
-  "term": "packers sign kenny fletcher jr",
+  "term": "bucks vs knicks",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Packers announce roster move | Nov. 10, 2026",
-  "news_link": "https://www.packers.com/news/packers-announce-roster-move-nov-10-2026"
+  "news_title": "Knicks Could Catch Break as 2 Key Bucks Face Uncertainty Ahead of Kith Night",
+  "news_link": "https://sports.yahoo.com/articles/knicks-could-catch-break-2-214004270.html"
  },
  {
   "geo": "US",
-  "term": "silver rail elementary school",
+  "term": "capitals vs senators",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Capitals at Senators projected lineups",
+  "news_link": "https://www.nhl.com/news/washington-capitals-ottawa-senators-game-preview-november-10-2026"
+ },
+ {
+  "geo": "US",
+  "term": "devils vs jets",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Hellebuyck says concerns for family, uncertain career path made him ask Jets for trade",
+  "news_link": "https://www.nhl.com/news/connor-hellebuyck-says-concerns-for-family-uncertain-career-path-led-to-winnipeg-jets-trade"
+ },
+ {
+  "geo": "US",
+  "term": "kent state vs bowling green",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Kent State vs. Bowling Green odds, prediction, time: Week 11 MACtion picks by proven model",
+  "news_link": "https://www.cbssports.com/betting/news/kent-state-bowling-green-prediction-odds-time-week-11-maction-picks-bets/"
+ },
+ {
+  "geo": "US",
+  "term": "drummer",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Teacher seriously hurt in Bend school shooting returns home after four surgeries",
-  "news_link": "https://katu.com/news/local/silver-rail-elementary-school-bend-oregon-teacher-becky-drury-hurt-shootings-returns-home"
+  "news_title": "St. Louis drummer Bobby Taylor, who played in many local bands, dies at 58",
+  "news_link": "https://www.stltoday.com/life-entertainment/local/music/article_c997393e-9256-481b-ad32-6c0b34ca73a5.html"
  },
  {
   "geo": "US",
-  "term": "vicki lawrence carol burnett show",
+  "term": "iowa basketball",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Vicki Lawrence Is Surprised She Wasn’t ‘Kicked Off’ ‘The Carol Burnett Show’ (Exclusive)",
-  "news_link": "https://people.com/vicki-lawrence-carol-burnett-show-kicked-off-exclusive-12247376"
+  "news_title": "Where to watch Iowa men's basketball vs Virginia Tech on Tuesday",
+  "news_link": "https://www.hawkcentral.com/story/sports/college/iowa/basketball-men/2026/11/10/iowa-mens-basketball-virginia-tech-how-to-watch-tv-channel-stream/92683477007/"
  },
  {
   "geo": "US",
-  "term": "carson cooper",
-  "traffic": 200,
+  "term": "rick van vactor",
+  "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Grizzlies sign rookie Saunders",
-  "news_link": "https://dailymemphian.com/article/68364/grizzlies-sign-rookie-richie-saunders"
+  "news_title": "TLC star arrested on domestic violence charge",
+  "news_link": "https://www.yahoo.com/entertainment/celebrity/articles/tlc-star-arrested-domestic-violence-172612316.html"
  },
  {
   "geo": "US",
-  "term": "mexico vs jamaica",
-  "traffic": 200,
+  "term": "texas tech basketball",
+  "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Márquez names Mexico Nations League squad as pressure and scrutiny continue to mount - The Athletic",
-  "news_link": "https://www.nytimes.com/athletic/7757802/2026/11/05/mexico-jamaica-nations-league-el-tri-marquez/"
+  "news_title": "No. 3 Illini Visit No. 16 Texas Tech in Ranked Road Test Tuesday - University of Illinois Athletics",
+  "news_link": "https://fightingillini.com/news/2026/11/9/mens-basketball-no-3-illini-visit-no-16-texas-tech-in-ranked-road-test-tuesday"
  },
  {
   "geo": "US",
-  "term": "pnc bank employee theft charges",
+  "term": "duke basketball schedule",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "PNC Bank employee charged with stealing $86K",
-  "news_link": "https://www.wpxi.com/news/local/pnc-bank-employee-charged-with-stealing-86k/W6LWPMGOMBDYLORZMITXL47X3A/"
- },
- {
-  "geo": "US",
-  "term": "vision quest episode 8 release date",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "VisionQuest Episode 8: How MCU Ruined Its Finale Before Its Release?",
-  "news_link": "https://www.imdb.com/news/ni66102626/?ref_=nmnw_art_perm"
+  "news_title": "Duke Secures NCAA At-Large Bid; Faces Iowa in First Round - Duke University",
+  "news_link": "https://goduke.com/news/2026/11/8/field-hockey-duke-secures-ncaa-at-large-bid-faces-iowa-in-first-round"
  }
 ]
