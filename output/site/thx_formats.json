@@ -2,34 +2,34 @@
  {
   "dim": "길이",
   "key": "100자 미만",
-  "n": 790,
-  "spread": 0.84,
+  "n": 793,
+  "spread": 0.85,
   "rate": 1.0,
-  "vs": 2.22,
+  "vs": 2.26,
   "small": false
  },
  {
   "dim": "길이",
   "key": "100~300자",
-  "n": 1270,
-  "spread": 0.25,
-  "rate": 1.6,
-  "vs": 0.67,
+  "n": 1267,
+  "spread": 0.26,
+  "rate": 1.5,
+  "vs": 0.69,
   "small": false
  },
  {
   "dim": "길이",
   "key": "300~500자",
-  "n": 488,
+  "n": 492,
   "spread": 0.24,
   "rate": 0.8,
-  "vs": 0.65,
+  "vs": 0.63,
   "small": false
  },
  {
   "dim": "미디어",
   "key": "글만",
-  "n": 2552,
+  "n": 2556,
   "spread": 0.38,
   "rate": 1.2,
   "vs": 1.0,
@@ -38,37 +38,46 @@
  {
   "dim": "첫 줄",
   "key": "속보형",
-  "n": 36,
-  "spread": 0.69,
+  "n": 39,
+  "spread": 0.67,
   "rate": 0.5,
-  "vs": 1.85,
-  "small": false
- },
- {
-  "dim": "첫 줄",
-  "key": "숫자형",
-  "n": 439,
-  "spread": 0.4,
-  "rate": 0.8,
-  "vs": 1.06,
+  "vs": 1.79,
   "small": false
  },
  {
   "dim": "첫 줄",
   "key": "경험형",
-  "n": 56,
+  "n": 57,
+  "spread": 0.41,
+  "rate": 1.7,
+  "vs": 1.09,
+  "small": false
+ },
+ {
+  "dim": "첫 줄",
+  "key": "숫자형",
+  "n": 442,
   "spread": 0.4,
-  "rate": 1.6,
+  "rate": 0.8,
   "vs": 1.05,
   "small": false
  },
  {
   "dim": "첫 줄",
   "key": "평서형",
-  "n": 1726,
+  "n": 1719,
   "spread": 0.38,
   "rate": 1.3,
-  "vs": 1.0,
+  "vs": 1.01,
+  "small": false
+ },
+ {
+  "dim": "첫 줄",
+  "key": "질문형",
+  "n": 266,
+  "spread": 0.3,
+  "rate": 0.8,
+  "vs": 0.81,
   "small": false
  },
  {
@@ -79,15 +88,6 @@
   "rate": 1.2,
   "vs": 0.81,
   "small": true
- },
- {
-  "dim": "첫 줄",
-  "key": "질문형",
-  "n": 262,
-  "spread": 0.29,
-  "rate": 0.9,
-  "vs": 0.78,
-  "small": false
  },
  {
   "dim": "첫 줄",
