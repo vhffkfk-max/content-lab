@@ -8,9 +8,9 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.66,
-  "kr_n": 46,
-  "foreign_avg": 1.7,
+  "kr_avg": 2.59,
+  "kr_n": 48,
+  "foreign_avg": 1.73,
   "foreign_n": 43
  },
  {
@@ -22,7 +22,7 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.32,
+  "kr_avg": 2.35,
   "kr_n": 13,
   "foreign_avg": 1.77,
   "foreign_n": 143
@@ -36,27 +36,13 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.47,
-  "kr_n": 337,
-  "foreign_avg": 1.75,
-  "foreign_n": 126
+  "kr_avg": 1.5,
+  "kr_n": 343,
+  "foreign_avg": 1.77,
+  "foreign_n": 127
  },
  {
   "rank": 4,
-  "topic": "ETF·지수투자",
-  "kind": "해외 선행 주제 (선점 기회)",
-  "confidence": "높음",
-  "title_idea": "[오늘] ETF·지수투자에 무슨 일이? 1분 요약",
-  "format": "단일 이미지",
-  "hook": "속보·뉴스형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 1.07,
-  "kr_n": 38,
-  "foreign_avg": 1.77,
-  "foreign_n": 47
- },
- {
-  "rank": 5,
   "topic": "빅테크",
   "kind": "국내 검증 주제",
   "confidence": "높음",
@@ -64,10 +50,24 @@
   "format": "릴스",
   "hook": "질문형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.4,
+  "kr_avg": 2.45,
   "kr_n": 36,
   "foreign_avg": 1.06,
   "foreign_n": 14
+ },
+ {
+  "rank": 5,
+  "topic": "ETF·지수투자",
+  "kind": "해외 선행 주제 (선점 기회)",
+  "confidence": "높음",
+  "title_idea": "[오늘] ETF·지수투자에 무슨 일이? 1분 요약",
+  "format": "단일 이미지",
+  "hook": "속보·뉴스형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 1.06,
+  "kr_n": 38,
+  "foreign_avg": 1.78,
+  "foreign_n": 47
  },
  {
   "rank": 6,
@@ -79,8 +79,8 @@
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
   "kr_avg": 2.05,
-  "kr_n": 73,
-  "foreign_avg": 1.89,
+  "kr_n": 74,
+  "foreign_avg": 1.9,
   "foreign_n": 19
  },
  {
@@ -92,7 +92,7 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.52,
+  "kr_avg": 1.55,
   "kr_n": 70,
   "foreign_avg": 0.76,
   "foreign_n": 5
@@ -107,7 +107,7 @@
   "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
   "kr_avg": 1.4,
-  "kr_n": 145,
+  "kr_n": 148,
   "foreign_avg": 0.82,
   "foreign_n": 2
  }
