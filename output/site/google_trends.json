@@ -1,6 +1,15 @@
 [
  {
   "geo": "KR",
+  "term": "jtbc",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "JTBC launches sale, to pick preferred buyer in January",
+  "news_link": "https://biz.chosun.com/en/en-finance/2026/11/09/I67ZL7I37VCOJOM7A6MXFLPHRM/"
+ },
+ {
+  "geo": "KR",
   "term": "뉴데일리",
   "traffic": 2000,
   "topics": "",
@@ -14,26 +23,8 @@
   "traffic": 1000,
   "topics": "물가·경기",
   "econ": true,
-  "news_title": "Consumer prices rose 0.4% in October, more than expected",
-  "news_link": "https://www.cnbc.com/2026/11/10/cpi-inflation-report-october-2026.html"
- },
- {
-  "geo": "KR",
-  "term": "jtbc",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "JTBC launches sale, to pick preferred buyer in January",
-  "news_link": "https://biz.chosun.com/en/en-finance/2026/11/09/I67ZL7I37VCOJOM7A6MXFLPHRM/"
- },
- {
-  "geo": "KR",
-  "term": "cpi 발표",
-  "traffic": 500,
-  "topics": "물가·경기",
-  "econ": true,
-  "news_title": "[2보] 美 10월 소비자물가 전월 대비 0.4%↑…전망치 웃돌아",
-  "news_link": "https://www.yna.co.kr/view/AKR20261110179000072"
+  "news_title": "10-year Treasury yield jumps after hot CPI and as Waller hints at half-point hike",
+  "news_link": "https://www.cnbc.com/2026/11/10/us-bonds-treasurys-yields.html"
  },
  {
   "geo": "KR",
@@ -41,17 +32,26 @@
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "'금융보안 문지기' 금융보안원마저 해킹으로 정보유출‥긴급 차단조치",
-  "news_link": "https://imnews.imbc.com/replay/2026/nwdesk/article/6864653_37004.html"
+  "news_title": "[2보] '금융보안 문지기' 금융보안원도 해킹으로 정보유출",
+  "news_link": "https://www.yna.co.kr/view/AKR20261110173800002"
  },
  {
   "geo": "KR",
-  "term": "임영웅 아임 히어로 더 스타디움",
+  "term": "철도",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "“함성까지 다시 듣는다” 임영웅 스타디움, IMAX로 귀환",
-  "news_link": "https://www.mk.co.kr/news/hot-issues/12203793"
+  "news_title": "앞으로의 철도, 어떤 모습이면 좋을까요? - 전체 | 카드/한컷 | 멀티미디어",
+  "news_link": "https://www.korea.kr/multi/visualNewsView.do?newsId=148975355&pWise=sub&pWiseSub=C1"
+ },
+ {
+  "geo": "KR",
+  "term": "고발",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "\"낑낑\" 묶인 채 봉투 속에‥'이거 심상치 않다' 주변 뒤졌더니‥",
+  "news_link": "https://imnews.imbc.com/replay/2026/nwdesk/article/6864656_37004.html"
  },
  {
   "geo": "KR",
@@ -64,21 +64,21 @@
  },
  {
   "geo": "KR",
-  "term": "양홍원 오보",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "여전히 밖에 있는 양홍원, 찜질방 흡연실서 포착",
-  "news_link": "https://www.newsis.com/view/NISX20261109_0003859879"
- },
- {
-  "geo": "KR",
   "term": "정승제",
   "traffic": 200,
   "topics": "",
   "econ": false,
   "news_title": "정승제 \"피부과 2주에 한 번씩\"…주우재도 놀란 관리",
   "news_link": "https://www.news1.kr/entertain/broadcast-tv/6349705"
+ },
+ {
+  "geo": "KR",
+  "term": "공공",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "세종에 ‘우주 위성 정비기지’ 들어선다…첫 분양기업, 산업화 시동",
+  "news_link": "https://www.greened.kr/news/articleView.html?idxno=354318"
  },
  {
   "geo": "KR",
@@ -92,56 +92,56 @@
  {
   "geo": "US",
   "term": "country music singer dies",
+  "traffic": 10000,
+  "topics": "급락·변동성",
+  "econ": true,
+  "news_title": "Father of young country music singer killed in crash makes plea: ‘In memory of my son’",
+  "news_link": "https://www.yahoo.com/entertainment/celebrity/deaths-obituaries/articles/father-young-country-music-singer-130100524.html"
+ },
+ {
+  "geo": "US",
+  "term": "mississippi senate race election results",
   "traffic": 5000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Rising country music singer dies in wreck at 22: ‘The world lost an amazing talent’",
-  "news_link": "https://www.pennlive.com/entertainment/2026/11/rising-country-music-singer-dies-in-wreck-at-22-the-world-lost-an-amazing-talent.html"
+  "topics": "정치·관세",
+  "econ": true,
+  "news_title": "‘Where is Cindy Hyde-Smith?’: In a nail-biter Senate race, the incumbent stays out of view in Mississippi",
+  "news_link": "https://www.cnn.com/2026/11/09/politics/mississippi-senate-hyde-smith-colom-campaign"
  },
  {
   "geo": "US",
-  "term": "gary sinise",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Gary Sinise Documentary 'The Ballad Of Lieutenant Dan' Arrives On Streaming This Week",
-  "news_link": "https://www.forbes.com/sites/timlammers/2026/11/07/documentary-about-gary-sinise-helping-veterans-lands-distribution-and-debuts-on-digital-this-week/"
+  "term": "big walk game ai",
+  "traffic": 1000,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "Big Walk Used AI In 'The Final Stretch' Of Development, Kicking Off Intense Awards Debate",
+  "news_link": "https://aftermath.site/big-walk-ai-igf-jurors-controversy/"
  },
  {
   "geo": "US",
-  "term": "tradingview",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "YieldMax® ETFs Announces Weekly Distributions for Group 1 ETFs",
-  "news_link": "https://www.globenewswire.com/news-release/2026/11/10/3399291/0/en/yieldmax-etfs-announces-weekly-distributions-for-group-1-etfs.html"
- },
- {
-  "geo": "US",
-  "term": "gary sinise son",
+  "term": "michael sanft attorney",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Gary Sinise Talks Love, Loss and Resilience in Moving Memoir",
-  "news_link": "https://www.today.com/video/gary-sinise-talks-love-loss-and-resilience-in-moving-memoir-273192005824"
+  "news_title": "Attorney who represented ‘Keffe D’ in Tupac murder trial dies",
+  "news_link": "https://www.fox5vegas.com/2026/11/06/attorney-who-represented-keffe-d-tupac-murder-trial-reportedly-dies/"
  },
  {
   "geo": "US",
-  "term": "gma deals and steals",
-  "traffic": 1000,
+  "term": "ayesha curry",
+  "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "'GMA' Deals & Steals with Kristin Cavallari 11/9",
-  "news_link": "https://www.goodmorningamerica.com/shop/story/gma-deals-steals-kristin-cavallari-119-137980372"
+  "news_title": "Steph Curry’s post after wife Ayesha’s viral kissing scene speaks volumes",
+  "news_link": "https://nypost.com/2026/11/05/sports/steph-curry-wife-ayesha-viral-kissing-scene/"
  },
  {
   "geo": "US",
-  "term": "pwhl",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Coming up Clutch: PWHL Detroit team has a nickname and logo at last",
-  "news_link": "https://www.freep.com/story/sports/pwhl/2026/11/10/pwhl-detroit-clutch-team-name-logo/91578865007/"
+  "term": "cloud gaming",
+  "traffic": 500,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "\"It's a brave new world\": GTA 6's PC port will release sooner than you think to avoid losing money to AI rip-offs, says former Rockstar tech director",
+  "news_link": "https://www.rockpapershotgun.com/its-a-brave-new-world-gta-6s-pc-port-will-release-sooner-than-you-think-to-avoid-losing-money-to-ai-rip-offs-says-former-rockstar-tech-director"
  },
  {
   "geo": "US",
@@ -154,21 +154,21 @@
  },
  {
   "geo": "US",
-  "term": "michael sanft attorney",
+  "term": "lorenzo sonego",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Attorney who represented ‘Keffe D’ in Tupac murder trial dies",
-  "news_link": "https://www.fox5vegas.com/2026/11/06/attorney-who-represented-keffe-d-tupac-murder-trial-reportedly-dies/"
+  "news_title": "ATP Stockholm Day 3 Predictions Including Lorenzo Musetti vs Toby Samuel",
+  "news_link": "https://lastwordonsports.com/tennis/2026/11/09/atp-stockholm-day-3-predictions-musetti-samuel/"
  },
  {
   "geo": "US",
-  "term": "ed gallrein",
+  "term": "adam schefter",
   "traffic": 200,
-  "topics": "정치·관세",
-  "econ": true,
-  "news_title": "Mississippi U.S. Senate 2026: Live Midterm Election Results, Hyde-Smith vs. Colom",
-  "news_link": "https://www.nytimes.com/interactive/2026/11/03/us/elections/results-mississippi-us-senate.html"
+  "topics": "",
+  "econ": false,
+  "news_title": "Bronco notes: Reasons for and against making a trade",
+  "news_link": "https://www.9news.com/article/sports/nfl/denver-broncos/mike-klis/denver-bronco-notes-reasons-for-and-against-making-a-trade-mike-klis-insider/73-569edad2-a1f4-4cd0-9a12-aa703ddd967f"
  },
  {
   "geo": "US",
