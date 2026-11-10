@@ -3128,240 +3128,6 @@
  ],
  "ideas": [
   {
-   "title": "생보사 자본비율 81%, 금리 1%p면 63%",
-   "concept": "금리 상승이 보험사 건전성에 닿는 숫자를 현재 81%와 분석상 63%로 나란히 보여 주고, 내 보험은 괜찮은지 금융당국 점검 방향으로 맺는다. 구조 설명은 기사 본문으로 검증한 것만 쓴다. (공식: 없음)",
-   "why_now": "15:04에 보도됐고, 연준 12월 인상론과 KDI의 금리 부담 언급이 이어지는 날이라 금리가 금융사에 닿는 숫자로 읽힌다. 아직 다루지 않은 주제다.",
-   "tag": "금융",
-   "sources": [
-    "https://news.google.com/rss/articles/CBMiXkFVX3lxTE01QUxPQVpnYm1rWG9mTFBFUFB5eTc1akFKSEdDLXcxLV9ETFh2cmxmR1p1LUpVWHVKWFJ"
-   ],
-   "bg": "life insurance headquarters Seoul",
-   "bg_alt": "Seoul financial district building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "생보사 자본비율 **81%**\n금리 1%p 더 오르면\n63%까지 내려간다",
-     "number": "63%",
-     "label": "금리 1%p 더 오르면",
-     "sub": "생보사 기본자본비율, 현재 81%"
-    }
-   ],
-   "forms": [
-    "bignum",
-    "bars"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "생명보험사 기본자본비율(%)",
-     "bars": [
-      {
-       "label": "현재",
-       "value": 81
-      },
-      {
-       "label": "금리 1%p 상승 시",
-       "value": 63,
-       "hi": true
-      }
-     ]
-    }
-   },
-   "id": "20261109-1701-i1",
-   "created_at": "2026-11-09T17:01:27+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261109-1701-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261109-1701-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261109-1701-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261109-1701-i1/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261109-1701-i1/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261109-1701-i1/1-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "중국 생산자물가 4년 최고, 소비자물가 0.7%",
-   "concept": "공장 비용은 오르는데 소비자물가는 예상(0.8%)에 못 미친 어긋난 두 사실을 2장에서 바로 보여 주고, 기업 마진 압박과 한국 수출 변수로 잇는다. 구체 영향은 추가 확인 전까지 단정하지 않는다. (공식: A인데 B, 어긋난 두 사실 제목)",
-   "why_now": "13곳이 다룬 13:36 소식이다. 같은 날 중국이 미국산 상품 추가관세 10%를 2개월 유지한다고 밝혀 한국 수출과 원자재 가격에도 닿는다.",
-   "tag": "중국 경제",
-   "sources": [
-    "https://www.newsis.com/view/NISX20261109_0003860318",
-    "https://www.yna.co.kr/view/AKR20261109080800089"
-   ],
-   "bg": "China factory production line",
-   "bg_alt": "Shanghai skyline shopping street",
-   "hooks": [
-    {
-     "type": "반전형",
-     "title": "중국 생산자물가 4년 최고\n그런데 소비자물가는\n예상 못 미친 **0.7%**",
-     "number": "0.7%",
-     "label": "중국 소비자물가 상승률",
-     "sub": "시장 예상 0.8%보다 낮았다"
-    }
-   ],
-   "forms": [
-    "paper",
-    "bars"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/09",
-     "headlines": [
-      "소비자물가 0.7%, 예상 0.8% 밑",
-      "생산자물가 4년 만에 최고",
-      "미국산 추가관세 10% 2개월 유지"
-     ]
-    },
-    "bars": {
-     "sub": "중국 소비자물가 상승률(%)",
-     "bars": [
-      {
-       "label": "시장 예상",
-       "value": 0.8
-      },
-      {
-       "label": "실제",
-       "value": 0.7,
-       "hi": true
-      }
-     ]
-    }
-   },
-   "id": "20261109-1701-i2",
-   "created_at": "2026-11-09T17:01:27+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261109-1701-i2/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261109-1701-i2/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261109-1701-i2/1-paper-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261109-1701-i2/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261109-1701-i2/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261109-1701-i2/1-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "1.7억 더 주면 84㎡, 59㎡로 몰리는 이유",
-   "concept": "대출규제로 한도가 막히자 작은 평형으로 수요가 몰리고 84㎡와의 가격차가 줄었다는 흐름을 내 대출 한도 질문으로 푼다. 단지별 실제 가격차는 확인되기 전까지 쓰지 않는다. (공식: 없음)",
-   "why_now": "16:12 동아일보 등 4곳이 보도했다. 오늘 다룬 글감 중 부동산이 없고, 대출 한도가 내 선택에 닿는 내 얘기다.",
-   "tag": "부동산",
-   "sources": [
-    "https://www.donga.com/news/Economy/article/all/20261109/134990790/1"
-   ],
-   "bg": "Korean apartment complex",
-   "bg_alt": "Seoul apartment buildings",
-   "hooks": [
-    {
-     "type": "질문형",
-     "title": "1.7억 더 주면 84㎡인데\n다들 **59㎡**로\n몰리는 이유가 뭘까",
-     "number": "1.7억",
-     "label": "84㎡로 가려면 더 필요한 돈",
-     "sub": "대출규제로 59㎡ 인기가 올랐다"
-    }
-   ],
-   "forms": [
-    "editorial",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261109-1701-i3",
-   "created_at": "2026-11-09T17:01:27+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261109-1701-i3/1-editorial-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261109-1701-i3/1-editorial-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261109-1701-i3/1-editorial-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261109-1701-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261109-1701-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261109-1701-i3/1-bignum-dohyeon.jpg"
-    }
-   ]
-  },
-  {
    "title": "삼성, 현대차 피지컬 AI로 원팀",
    "concept": "이재용, 정의선 부부동반 회동과 공동 TF 보도를 사건으로 세우고, 피지컬 AI를 나오는 자리에서 한 문장으로 풀어 쓴다. 배터리 협업이 먼저 거론됐다는 점과 협력 범위가 어디까지 넓어질지를 끝 장의 관전 포인트로 둔다. (공식: 표지는 이미 일어난 일로)",
    "why_now": "17시대 기사가 동아일보, 연합인포맥스 등 7곳에서 나왔고 한국경제는 공동 TF 구성을 다뤘다. 쓰레드에서도 피지컬 AI 글이 시간당 조회 1148로 크고 있다.",
@@ -8871,6 +8637,325 @@
      "form": "news",
      "font": "myeongjo",
      "path": "20261110-1506-i3/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "코스피 -21% 표시, 개장 전 예상지수의 함정",
+   "concept": "아침 화면에 뜬 -21%가 실제 거래가 아닌 예상 체결가로 계산된 숫자였다는 점을 풀고, 오늘 실제 시세는 +4.39%였다는 대비로 보여준다. 마지막 장에서 장 시작 후 체결 지수를 확인하라고 안내한다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "조선비즈가 15:06에 보도했다. 오늘 코스피가 급등하고 변동성이 컸던 날이라 개인투자자가 헷갈리기 쉬운 포인트다.",
+   "tag": "시장 상식",
+   "sources": [
+    "https://biz.chosun.com/stock/stock_general/2026/11/10/VD5MVNNVUJHONFGM6PSDKEAKWU/"
+   ],
+   "bg": "KOSPI stock board Seoul",
+   "bg_alt": "Korea Exchange building Seoul",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "개장 전 코스피\n**-21%**로 떴는데\n오늘 시세는 +4.39%",
+     "number": "-21%",
+     "label": "개장 전 예상지수로 표시된 코스피",
+     "sub": "오늘 코스피는 전일 대비 +4.39%"
+    },
+    {
+     "type": "질문형",
+     "title": "아침 화면의 -21%\n그 숫자는 왜\n**실제가 아니었나**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "코스피 -21% 표시\n체결 없이 계산된\n**예상**지수였다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261110-1601-i1",
+   "created_at": "2026-11-10T16:01:40+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261110-1601-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261110-1601-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261110-1601-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261110-1601-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261110-1601-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261110-1601-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261110-1601-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261110-1601-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261110-1601-i1/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "TSMC 10월 매출 5,869억 대만달러, 59.7%↑",
+   "concept": "TSMC 10월 매출이 전년 같은 달보다 59.7% 늘었다는 새 수치를 보도로 전한다. 엔비디아가 한 달간 -22.07%(11/09 기준) 빠진 것과 나란히 놓아 주가와 매출이 엇갈린 장면을 보여준다. 원화 환산은 재료에 없어 쓰지 않는다. (공식: A인데 B, 어긋난 두 사실 제목)",
+   "why_now": "연합인포맥스가 방금 보도한 새 수치다. 반도체 변동성이 큰 날이라 업황 지표로 의미가 있다.",
+   "tag": "반도체",
+   "sources": [
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443997"
+   ],
+   "bg": "TSMC chip wafer",
+   "bg_alt": "TSMC building Taiwan",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "TSMC 10월 매출\n**5,869억** 대만달러\n작년보다 59.7%↑",
+     "number": "5,869억 대만달러",
+     "label": "TSMC 10월 매출",
+     "sub": "전년 같은 달보다 59.7% 증가"
+    },
+    {
+     "type": "질문형",
+     "title": "주가는 빠지는데\nTSMC 매출은 왜\n**59.7%** 늘었나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "엔비디아 한 달 -22%\nTSMC 10월 매출은\n**+59.7%**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261110-1601-i2",
+   "created_at": "2026-11-10T16:01:40+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261110-1601-i2/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261110-1601-i2/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261110-1601-i2/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261110-1601-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261110-1601-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261110-1601-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261110-1601-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261110-1601-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261110-1601-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261110-1601-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261110-1601-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261110-1601-i2/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "비트코인 ETF 2.01억달러 유출, MARA 11억달러 매도",
+   "concept": "미국 비트코인 현물 ETF 하루 순유출 2억100만달러, 이더리움 ETF 3일 연속 유출, 채굴업체 MARA의 6주간 13,597 BTC(약 11억달러) 매도를 묶어 보도로 정리한다. 비트코인 가격은 11/10 기준 74,604달러, 1달 -8.86%다. 원인 해석은 하지 않고 오늘 밤 美 CPI를 변수로 한 줄만 둔다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "비트코인 ETF 유출을 6곳이 14:39에 보도했고, MARA 매도 소식도 같은 시각 나왔다. 오늘 밤 美 CPI 발표를 앞두고 코인 시장 관심이 크다.",
+   "tag": "코인",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1rRjhtNlc1Nll1djQwR3cxSUVGR0lpS1JHUFZLWVdQRTkzQmlKaFVIcmg1ZHhPcG1qSk1",
+    "https://news.google.com/rss/articles/CBMizAFBVV95cUxObFI0RjUtQUg1TVBJamFZdmhzOFZWdnhNRTlaaEVYM01XYWhXWlRBNng2VlJsdmw0TzR"
+   ],
+   "bg": "Bitcoin coin MARA mining",
+   "bg_alt": "bitcoin mining facility",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "비트코인 ETF에서\n하루 **2억100만**달러\n빠져나갔다",
+     "number": "2.01억달러",
+     "label": "美 비트코인 현물 ETF 하루 순유출",
+     "sub": "이더리움 ETF도 3일 연속 유출"
+    },
+    {
+     "type": "질문형",
+     "title": "채굴업체 MARA가\n6주간 판 비트코인\n**13,597개**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "ETF 돈도 빠지고\n채굴업체도 팔았다\n**11억달러** 매도",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "paper",
+    "breaking"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/10",
+     "headlines": [
+      "BTC 현물 ETF 2.01억달러 유출",
+      "ETH ETF 3일 연속 유출",
+      "MARA 13,597 BTC 11억달러 매도"
+     ]
+    }
+   },
+   "id": "20261110-1601-i3",
+   "created_at": "2026-11-10T16:01:40+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261110-1601-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261110-1601-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261110-1601-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261110-1601-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261110-1601-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261110-1601-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261110-1601-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261110-1601-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261110-1601-i3/3-paper-gowun.jpg"
     }
    ]
   }
