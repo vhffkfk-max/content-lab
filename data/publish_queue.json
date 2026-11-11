@@ -3128,426 +3128,6 @@
  ],
  "ideas": [
   {
-   "title": "골드만 \"금리 인상 2027년까지 갈 수도\"",
-   "concept": "10월 CPI 0.4%가 예상을 웃돈 뒤 골드만삭스가 인상 기간을 2027년까지 열어 뒀고, JP모건 켈리는 50bp 인상은 안 된다고 한 엇갈림을 푼다. 12월 한 번이 아니라 얼마나 오래 올리느냐가 새 각도다. (공식: 없음)",
-   "why_now": "CPI 발표 직후 골드만삭스 전망이 나왔고, 미 국채 2~5년물 금리는 하루 10bp 이상 올랐다. CPI 숫자는 이미 다뤘지만 인상 기간 전망은 아직 다루지 않았다.",
-   "tag": "금리",
-   "sources": [
-    "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBQNWRWS19xSnZfWlRKdTczSmFCakdyWVJTVEVSR2RHUnB0WEt3aUhXLWtUYTRrYXRDVlB",
-    "https://www.bloomberg.com/news/videos/2026-11-10/fed-shouldn-t-do-a-50bps-rate-hike-jpm-s-kelly-says-video",
-    "https://x.com/NickTimiraos/status/2120156997530128487"
-   ],
-   "bg": "Jerome Powell",
-   "bg_alt": "Federal Reserve building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "골드만삭스가 꺼낸\n금리 인상 시한은\n**2027년**까지",
-     "number": "2027년",
-     "label": "골드만삭스 전망, 연준 금리 인상 지속",
-     "sub": "10월 CPI 0.4%, 예상 0.3% 웃돌아"
-    },
-    {
-     "type": "질문형",
-     "title": "근원 물가 3달 연속\n예상을 웃돌았다\n12월엔 **50bp**일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "JP모건 켈리는\n50bp는 안 된다는데\n골드만은 **2027년**까지",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/11",
-     "headlines": [
-      "10월 CPI 0.4%, 예상 0.3% 상회",
-      "국채 2~5년물 하루 10bp 넘게 상승",
-      "골드만 \"인상 2027년까지 가능\""
-     ]
-    }
-   },
-   "id": "20261111-0707-i1",
-   "created_at": "2026-11-11T07:07:22+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261111-0707-i1/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261111-0707-i1/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261111-0707-i1/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261111-0707-i1/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261111-0707-i1/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261111-0707-i1/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261111-0707-i1/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261111-0707-i1/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261111-0707-i1/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261111-0707-i1/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261111-0707-i1/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261111-0707-i1/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261111-0707-i1/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261111-0707-i1/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261111-0707-i1/3-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261111-0707-i1/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261111-0707-i1/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261111-0707-i1/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "엔비디아 이틀 새 시총 540조원 증발",
-   "concept": "젠슨 황 사생활 논란으로 엔비디아가 5%대 급락한 사건을 시세 숫자로 보여 준다. 엔비디아 -5.47%, 나스닥 -0.74%, S&P500 -0.38%를 나란히 놓고, 한국 반도체주 영향은 확인된 시세만 쓴다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "11/10 뉴욕 마감에서 엔비디아가 5%대 하락했고, 이틀 새 시총 540조원이 증발했다는 보도가 나왔다. 앞서 다룬 FT 보도 이후의 시장 결과다.",
-   "tag": "AI 반도체",
-   "sources": [
-    "https://v.daum.net/v/20261111065847391",
-    "https://v.daum.net/v/20261111065900392",
-    "https://www.mt.co.kr/world/2026/11/11/2026111106403922694"
-   ],
-   "bg": "Jensen Huang",
-   "bg_alt": "Nvidia headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "젠슨 황 논란 이틀,\n엔비디아 시총\n**540조원** 증발",
-     "number": "540조원",
-     "label": "이틀 새 사라진 엔비디아 시가총액",
-     "sub": "11/10 뉴욕 마감 -5.47%"
-    },
-    {
-     "type": "질문형",
-     "title": "엔비디아 540조 증발\n한국 반도체주는\n무사했나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "실적이 아닌 논란에\n엔비디아 하루\n**-5.47%** 급락했다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "bars"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "11/10 뉴욕 마감 하락률(%)",
-     "bars": [
-      {
-       "label": "엔비디아",
-       "value": 5.47,
-       "hi": true
-      },
-      {
-       "label": "나스닥",
-       "value": 0.74
-      },
-      {
-       "label": "S&P500",
-       "value": 0.38
-      }
-     ]
-    }
-   },
-   "id": "20261111-0707-i2",
-   "created_at": "2026-11-11T07:07:22+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261111-0707-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261111-0707-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261111-0707-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261111-0707-i2/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261111-0707-i2/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261111-0707-i2/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261111-0707-i2/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261111-0707-i2/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261111-0707-i2/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261111-0707-i2/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261111-0707-i2/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261111-0707-i2/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "비트코인 11주 최저, 상장사는 사고 판다",
-   "concept": "트럼프 미디어는 1,510개를 샀고 미국 상장사 14곳은 올해 약 11조 원어치를 팔았다. 하이퍼스케일 데이터는 211.56개를 팔아 빚을 갚았다. 같은 비트코인을 두고 갈린 선택을 사례로 풀고, 매수 매도 권유는 하지 않는다. (공식: A인데 B, 어긋난 두 사실 제목)",
-   "why_now": "CPI 발표 직후 비트코인이 11주 만의 최저인 7.36만 달러까지 밀렸다. 같은 날 상장사 매도 보도와 하이퍼스케일 데이터의 전량 매각 속보가 나왔다.",
-   "tag": "비트코인",
-   "sources": [
-    "https://v.daum.net/v/20261110200918039",
-    "https://x.com/DeItaone/status/2120116970779525189",
-    "https://www.newsis.com/view/NISX20261110_0003862898"
-   ],
-   "bg": "Bitcoin physical coin",
-   "bg_alt": "Trump Media building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "미국 상장사 14곳\n올해 비트코인\n**11조원** 팔았다",
-     "number": "11조원",
-     "label": "올해 미국 상장사 14곳 매도 규모(약)",
-     "sub": "비트코인은 11주 만의 최저"
-    },
-    {
-     "type": "질문형",
-     "title": "같은 비트코인인데\n누구는 사고\n누구는 **왜** 팔까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "트럼프 미디어는 사고\n하이퍼스케일 데이터는\n**전량 매각**했다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "list",
-    "bignum"
-   ],
-   "extra": {
-    "list": {
-     "sub": "비트코인 상장사의 엇갈린 선택",
-     "count": 3
-    }
-   },
-   "id": "20261111-0707-i3",
-   "created_at": "2026-11-11T07:07:22+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "list",
-     "font": "noto",
-     "path": "20261111-0707-i3/1-list-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "list",
-     "font": "black",
-     "path": "20261111-0707-i3/1-list-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "list",
-     "font": "plex",
-     "path": "20261111-0707-i3/1-list-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261111-0707-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261111-0707-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261111-0707-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "list",
-     "font": "noto",
-     "path": "20261111-0707-i3/2-list-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "list",
-     "font": "black",
-     "path": "20261111-0707-i3/2-list-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "list",
-     "font": "plex",
-     "path": "20261111-0707-i3/2-list-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "list",
-     "font": "noto",
-     "path": "20261111-0707-i3/3-list-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "list",
-     "font": "black",
-     "path": "20261111-0707-i3/3-list-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "list",
-     "font": "plex",
-     "path": "20261111-0707-i3/3-list-plex.jpg"
-    }
-   ]
-  },
-  {
    "title": "근원 CPI 3개월 연속 상회, 연준 인상 속도",
    "concept": "근원 CPI 10월 0.3%가 3개월 연속 예상을 웃돌았고, 12월에 한 번에 올릴지 12월과 1월에 나눠 올릴지가 새 쟁점이라는 점을 사건 중심으로 푼다. 25bp는 이미 반영됐고 50bp 확률은 11%라는 숫자를 앞세운다. 마지막 장에 12월 FOMC 전 연준 인사 발언을 다음 변수로 둔다. (공식: 없음)",
    "why_now": "WSJ 연준 전문 기자 티미라오스가 CPI 직후 12월 50bp 인상 또는 12월과 1월 연속 인상 시나리오를 썼고, 뉴욕채권 시장에서는 10년물 금리가 5%를 넘었다. 어제 카드뉴스가 다룬 'CPI 상회'와 달리 이번에는 인상 속도가 새로운 내용이다.",
@@ -8770,6 +8350,396 @@
      "form": "news",
      "font": "myeongjo",
      "path": "20261111-2101-i3/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "연준 12월 인상, '할까'에서 '얼마나'로",
+   "concept": "WSJ 연준 전문 기자의 X 글을 원문 그대로 보여 주고, 25bp와 50bp 선택지를 막대처럼 풀어 한국 투자자에게 오는 길(달러, 환율, 국고채 금리)까지 잇는다 (공식: 진짜 현장과 원문을 화면에)",
+   "why_now": "WSJ 닉 티미라오스가 21:34에 '12월 인상은 의심의 여지가 거의 없다'고 썼고, BofA의 12월 50bp 가능성 소식은 워처구루 X에서 조회 6.7만을 넘겼다. 인상 자체를 기정사실로 말한 새 단계다.",
+   "tag": "연준",
+   "sources": [
+    "https://x.com/NickTimiraos/status/2120495446179131412",
+    "https://x.com/DeItaone/status/2120492687576994289",
+    "https://x.com/WatcherGuru/status/2120495159939100834"
+   ],
+   "bg": "Jerome Powell Federal Reserve",
+   "bg_alt": "Federal Reserve building Washington",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "10월 물가 0.4% 상승\n3개월 연속 예상 상회\n**12월 인상** 굳어졌다",
+     "number": "0.4%",
+     "label": "10월 미국 소비자물가 상승률",
+     "sub": "3개월 연속 예상보다 높았다"
+    },
+    {
+     "type": "질문형",
+     "title": "인상은 이미 기정사실\n12월에는 **몇 bp**를\n올리는 걸까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "인상 여부 논쟁은 끝\nWSJ 기자 \"의심 없다\"\n이제 싸움은 **속도**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "quote",
+    "bignum"
+   ],
+   "extra": {
+    "quote": {
+     "label": "WSJ 연준 전문 기자",
+     "quote": "12월 인상은 의심의 여지가 거의 없다",
+     "by": "닉 티미라오스, WSJ"
+    }
+   },
+   "id": "20261111-2201-i1",
+   "created_at": "2026-11-11T22:01:38+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261111-2201-i1/1-quote-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261111-2201-i1/1-quote-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261111-2201-i1/1-quote-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261111-2201-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261111-2201-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261111-2201-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261111-2201-i1/2-quote-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261111-2201-i1/2-quote-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261111-2201-i1/2-quote-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261111-2201-i1/3-quote-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261111-2201-i1/3-quote-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261111-2201-i1/3-quote-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "유류세 인하 2개월 연장, 내년 1월 31일까지",
+   "concept": "주유할 때 내는 세금 부담이 당분간 그대로라는 점을 첫 장에서 쉬운 말로 답하고, 인하율은 발표문 확인 후 덧붙인다 (공식: 없음)",
+   "why_now": "21:33 SBS Biz 등이 보도한 신규 소식이다. 생활비와 직결돼 반응이 빠르고, 아직 이 주제를 보낸 적이 없다.",
+   "tag": "생활비",
+   "sources": [
+    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008841707&plink=RSSLINK&cooper=RSSREADER",
+    "https://v.daum.net/v/20261111213353198"
+   ],
+   "bg": "gas station fuel pump",
+   "bg_alt": "gasoline pump nozzle",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "유류세 인하\n**2개월** 연장 결정\n내년 1월 31일까지",
+     "number": "2개월",
+     "label": "유류세 인하 연장 기간",
+     "sub": "내년 1월 31일까지 혜택 유지"
+    },
+    {
+     "type": "질문형",
+     "title": "주유할 때 내는 세금\n내년 1월 말까지\n**그대로**인 이유는",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "유류세 인하가\n**2개월 더** 이어진다\n주유 부담은 그대로",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "editorial"
+   ],
+   "extra": {},
+   "id": "20261111-2201-i2",
+   "created_at": "2026-11-11T22:01:38+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261111-2201-i2/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261111-2201-i2/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261111-2201-i2/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261111-2201-i2/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261111-2201-i2/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261111-2201-i2/1-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261111-2201-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261111-2201-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261111-2201-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261111-2201-i2/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261111-2201-i2/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261111-2201-i2/2-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261111-2201-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261111-2201-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261111-2201-i2/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261111-2201-i2/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261111-2201-i2/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261111-2201-i2/3-editorial-plex.jpg"
+    }
+   ]
+  },
+  {
+   "title": "뜨거운 CPI에도 덤덤한 비트코인",
+   "concept": "코인데스크 보도를 근거로 물가 충격에 비트코인이 거의 반응하지 않았고 ETF 자금 유출은 이어진다는 두 장면을 대비한다. 시세 인과는 만들지 않고 원인은 확인 안 됨으로 한 줄만 적는다 (공식: 없음)",
+   "why_now": "21:19 코인데스크가 '뜨거운 CPI에도 비트코인 거의 안 흔들, ETF 매도 둔화'를, 20:47에 'ETF 자금 유출 지속'을 보도했다. 오늘 금리 인상 우려가 가장 큰 화제인데 코인 관점은 아직 보내지 않았다.",
+   "tag": "코인",
+   "sources": [
+    "https://www.coindesk.com/daybook-us/2026/11/11/bitcoin-barely-flinches-at-hot-cpi-as-etf-selling-slows"
+   ],
+   "bg": "Bitcoin coin",
+   "bg_alt": "Bitcoin ETF",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "뜨거운 CPI에도\n비트코인 전일 **+0.1%**\n거의 안 움직였다",
+     "number": "+0.1%",
+     "label": "11/11 비트코인 전일 대비",
+     "sub": "7만3,791달러, 1달 -12.16%"
+    },
+    {
+     "type": "질문형",
+     "title": "물가가 또 뜨거운데\n비트코인은 왜\n**덤덤**했을까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "CPI에 꿈쩍 않은\n비트코인, 그러나\nETF는 **계속 빠졌다**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261111-2201-i3",
+   "created_at": "2026-11-11T22:01:38+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261111-2201-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261111-2201-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261111-2201-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261111-2201-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261111-2201-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261111-2201-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261111-2201-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261111-2201-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261111-2201-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261111-2201-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261111-2201-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261111-2201-i3/3-news-myeongjo.jpg"
     }
    ]
   }
