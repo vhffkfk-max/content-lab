@@ -3128,364 +3128,6 @@
  ],
  "ideas": [
   {
-   "title": "수출 72% 늘었는데 10곳이 61%",
-   "concept": "수출 호황 숫자와 상위 10개 기업 비중 61%(처음 60% 돌파)를 나란히 놓고, 마지막 장에서 반도체 쏠림 지적으로 마무리한다. 비중의 기준 시점은 기사에서 확인해 쓴다. (공식: A인데 B, 어긋난 두 사실 제목)",
-   "why_now": "오늘 동아일보, 연합인포맥스 등이 보도한 새 통계다. 10대 기업 비중이 처음 60%를 넘었다는 점이 새롭고, 이전에 다룬 글에는 없다.",
-   "tag": "수출",
-   "sources": [
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443966",
-    "https://view.asiae.co.kr/article/2026111013052249131",
-    "https://www.donga.com/news/Economy/article/all/20261110/134998072/1"
-   ],
-   "bg": "semiconductor wafer factory",
-   "bg_alt": "container port cranes",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "수출 72% 늘었는데\n상위 10곳이\n**61%** 차지했다",
-     "number": "61%",
-     "label": "상위 10개 기업 수출 비중",
-     "sub": "처음으로 60% 돌파"
-    },
-    {
-     "type": "질문형",
-     "title": "수출 호황인데\n웃는 기업은\n**10곳**뿐일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "수출은 역대급인데\n비중은 상위 10곳에\n**쏠렸다**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/10",
-     "headlines": [
-      "수출 72% 늘었지만",
-      "상위 10개 기업이 61% 차지",
-      "10대 기업 비중 처음 60% 돌파"
-     ]
-    }
-   },
-   "id": "20261110-1401-i1",
-   "created_at": "2026-11-10T14:01:31+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261110-1401-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261110-1401-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261110-1401-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261110-1401-i1/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261110-1401-i1/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261110-1401-i1/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261110-1401-i1/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261110-1401-i1/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261110-1401-i1/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261110-1401-i1/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261110-1401-i1/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261110-1401-i1/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "中 무역흑자 1조 달러 돌파",
-   "concept": "중국 1~10월 무역흑자가 1조 달러를 넘었고 수입 증가 속도도 5년 만에 가장 빨랐다는 점을 함께 보여 준다. 미국과 EU의 압박 해석은 보도로 짧게 다루고, 우리 수출과 겹치는 품목은 마지막 장에서 다룬다. 보도마다 '첫 돌파'와 '2년 연속'이 엇갈리므로 이 표현은 쓰지 않는다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "오늘 오전 속보로 SBS Biz, 한국경제, 연합뉴스, CNBC 등이 다뤘다. 이전에 보낸 글에는 없던 새 소식이다.",
-   "tag": "무역",
-   "sources": [
-    "https://www.cnbc.com/2026/11/10/china-trade-october-exports-imports-surplus-.html",
-    "https://v.daum.net/v/20261110134905881"
-   ],
-   "bg": "Chinese container port",
-   "bg_alt": "Shanghai port cranes",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "중국 1~10월\n무역흑자가\n**1조달러** 넘겼다",
-     "number": "1조 달러",
-     "label": "중국 1~10월 무역흑자",
-     "sub": "미국과 EU 압박이 거세질 수 있다는 해석"
-    },
-    {
-     "type": "질문형",
-     "title": "수입이 늘었는데\n흑자가 1조달러?\n**중국**의 계산법",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "수입 증가 5년 최고\n그런데 흑자도\n**1조달러** 돌파",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261110-1401-i2",
-   "created_at": "2026-11-10T14:01:31+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261110-1401-i2/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261110-1401-i2/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261110-1401-i2/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261110-1401-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261110-1401-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261110-1401-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261110-1401-i2/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261110-1401-i2/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261110-1401-i2/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261110-1401-i2/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261110-1401-i2/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261110-1401-i2/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "아이폰 듀오 보름 만에 중고가 38%",
-   "concept": "중고로 팔아도 값이 잘 안 떨어진다던 아이폰이 출시 보름 만에 38% 내려갔다는 소식을 소비자 관점에서 푼다. 세부 모델과 기준 시세는 기사에서 확인해 쓰고, 마지막 장은 사기 전에 시세 추이를 확인하자는 내용으로 한다. (공식: 없음)",
-   "why_now": "오늘 오전 동아일보와 매일경제가 보도한 새 소식이다. 체감이 큰 소비 주제이고 이미 다룬 글과 겹치지 않는다.",
-   "tag": "소비",
-   "sources": [
-    "https://www.donga.com/news/Economy/article/all/20261110/134997363/1",
-    "https://www.mk.co.kr/news/stock/12203639"
-   ],
-   "bg": "iPhone",
-   "bg_alt": "Apple Store",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "아이폰 듀오\n출시 보름 만에\n중고가 **38%** 하락",
-     "number": "38%",
-     "label": "아이폰 듀오 중고가 하락",
-     "sub": "출시 보름 만에"
-    },
-    {
-     "type": "질문형",
-     "title": "중고값 안 떨어진다던\n아이폰은 왜\n**이번엔** 달랐나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "중고가 방어 신화\n아이폰이\n**보름** 만에 깨졌다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "editorial",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261110-1401-i3",
-   "created_at": "2026-11-10T14:01:31+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261110-1401-i3/1-editorial-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261110-1401-i3/1-editorial-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261110-1401-i3/1-editorial-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261110-1401-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261110-1401-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261110-1401-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261110-1401-i3/2-editorial-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261110-1401-i3/2-editorial-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261110-1401-i3/2-editorial-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261110-1401-i3/3-editorial-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261110-1401-i3/3-editorial-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261110-1401-i3/3-editorial-plex.jpg"
-    }
-   ]
-  },
-  {
    "title": "신세계 3분기 영업익 1,643억, 역대 최대",
    "concept": "반도체 얘기뿐인 날, 외국인 관광객이 백화점과 면세점 실적을 끌어올린 내수 소비주 소식으로 푼다. 전년 대비 64.7% 증가를 전면에 두고, 배당 2,600원(총 227억원)은 본문에서 짧게 다룬다. 다음 분기 지속 여부는 확인된 바 없으므로 마지막 장에 한 줄만 둔다. (공식: 전후 낙차 한 줄 표지)",
    "why_now": "오늘 14시대에 연합뉴스, 조선비즈, 머니투데이 등이 3분기 실적을 일제히 보도했다. 반도체 소식에 가려진 소비주 소재가 비어 있다.",
@@ -8892,6 +8534,410 @@
      "form": "breaking",
      "font": "dohyeon",
      "path": "20261111-1205-i3/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "앤트로픽 IPO 몸값 1.5조달러 후속",
+   "concept": "FT가 전한 새 숫자 1.5조달러와 국민연금 주주 화제를 잇되, 아직 IPO 전이라 가격이 바뀔 수 있다는 점을 짚는다. 첫 장에서 내 연금과 어떻게 닿는지 쉬운 말로 푼다. (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "10:42 FT 인용 보도로 IPO 기업가치 1.5조달러 이상이라는 새 숫자가 나왔다. 쓰레드에서는 국민연금 주주 글이 시간당 조회 3955로 번지고 있다.",
+   "tag": "AI,IPO",
+   "sources": [
+    "https://x.com/unusual_whales/status/2120331422850548202",
+    "https://www.threads.com/@bstory_economy/post/DfkJdAmiQ1Z"
+   ],
+   "bg": "Dario Amodei Anthropic",
+   "bg_alt": "Anthropic headquarters",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "앤트로픽 IPO 몸값\n**1.5조달러** 이상\nFT, 은행단 준비 보도",
+     "number": "1.5조달러",
+     "label": "IPO 기업가치, 은행단 준비",
+     "sub": "FT 보도, 아직 IPO 전"
+    },
+    {
+     "type": "질문형",
+     "title": "앤트로픽 몸값 1.5조달러\n국민연금이 왜\n**주주**로 나오나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "국민연금도 주주로 알려진\n앤트로픽 IPO 몸값\n**1.5조달러**대 보도",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261111-1301-i1",
+   "created_at": "2026-11-11T13:01:31+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261111-1301-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261111-1301-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261111-1301-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261111-1301-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261111-1301-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261111-1301-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261111-1301-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261111-1301-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261111-1301-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261111-1301-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261111-1301-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261111-1301-i1/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "10월 가계대출 6.4조 증가",
+   "concept": "연말 대출절벽 우려와 달리 10월에 가계대출이 한 달 만에 증가세로 돌아섰고, 같은 날 미국 CPI로 금리 부담이 커졌다는 점을 대비한다. 마지막 장은 내 대출이 변동금리인지 확인하라는 생활 행동으로 닫는다. (공식: 전후 낙차 한 줄 표지)",
+   "why_now": "12시 전후 7개 매체가 10월 가계대출 증가를 다뤘다. 같은 날 미국 CPI가 예상보다 높게 나와 금리 인상 우려가 커졌다.",
+   "tag": "대출,금리",
+   "sources": [
+    "https://www.mt.co.kr/finance/2026/11/11/2026111109174730582",
+    "https://biz.heraldcorp.com/article/10933288"
+   ],
+   "bg": "Korean bank loan counter",
+   "bg_alt": "Seoul apartment complex",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "10월 가계대출\n**6.4조원** 늘었다\n한 달 만에 증가 전환",
+     "number": "6.4조원",
+     "label": "10월 가계대출 증가폭",
+     "sub": "한 달 만에 증가세로 돌아섰어요"
+    },
+    {
+     "type": "질문형",
+     "title": "연말 대출절벽\n정말 **없는** 걸까\n10월에 6.4조 늘었다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "대출은 다시 늘었는데\n같은 날 미국 CPI는\n**금리 인상** 우려를 키웠다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "paper"
+   ],
+   "extra": {
+    "bignum": {},
+    "paper": {
+     "date": "11/11",
+     "headlines": [
+      "10월 가계대출 6.4조 증가",
+      "한 달 만에 증가세 전환",
+      "미국 CPI 예상보다 높게 나와"
+     ]
+    }
+   },
+   "id": "20261111-1301-i2",
+   "created_at": "2026-11-11T13:01:31+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261111-1301-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261111-1301-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261111-1301-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261111-1301-i2/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261111-1301-i2/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261111-1301-i2/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261111-1301-i2/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261111-1301-i2/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261111-1301-i2/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261111-1301-i2/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261111-1301-i2/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261111-1301-i2/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "베센트 협력 발언, 미국은 중국 자석 못 받는다",
+   "concept": "베센트의 무역은 양쪽 이익 발언과, 미국이 원하는 만큼 중국 자석이 오지 않는다는 퍼듀 발언, 트럼프의 미국산 원유 제안 발언을 한 흐름으로 묶는다. 한국의 자석, 배터리, 유가 부담으로 푼다. 퍼듀의 직함과 원유 제안의 구체 내용은 확인이 필요하다. (공식: 당사자의 한마디를 따옴표로)",
+   "why_now": "12:02 미 재무부 X에 베센트 연설이 올라왔다. 11:40 퍼듀 발언은 조회 3.4만, 11:59 원유 제안 글은 조회 1.3만을 넘겼다.",
+   "tag": "미중,공급망",
+   "sources": [
+    "https://x.com/USTreasury/status/2120351410143252485",
+    "https://x.com/zerohedge/status/2120345986291888376",
+    "https://x.com/zerohedge/status/2120350718767022471"
+   ],
+   "bg": "Scott Bessent",
+   "bg_alt": "rare earth magnets",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "베센트는 협력을 말했고\n미국은 중국 **자석**을\n원하는 만큼 못 받았다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "트럼프가 중국에\n이란 기름 대신\n**미국산** 쓰라 했다고?",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "무역은 양쪽 이익이라는데\n핵심 부품 **자석**은\n아직 안 들어온다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/11",
+     "headlines": [
+      "베센트 무역은 양쪽 이익",
+      "퍼듀 중국 자석 물량 부족",
+      "트럼프 미국산 원유 제안 발언"
+     ]
+    }
+   },
+   "id": "20261111-1301-i3",
+   "created_at": "2026-11-11T13:01:31+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261111-1301-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261111-1301-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261111-1301-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261111-1301-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261111-1301-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261111-1301-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261111-1301-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261111-1301-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261111-1301-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261111-1301-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261111-1301-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261111-1301-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261111-1301-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261111-1301-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261111-1301-i3/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261111-1301-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261111-1301-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261111-1301-i3/3-paper-gowun.jpg"
     }
    ]
   }
