@@ -8,9 +8,9 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.58,
-  "kr_n": 50,
-  "foreign_avg": 1.87,
+  "kr_avg": 2.56,
+  "kr_n": 51,
+  "foreign_avg": 1.9,
   "foreign_n": 49
  },
  {
@@ -22,9 +22,9 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.58,
-  "kr_n": 376,
-  "foreign_avg": 1.98,
+  "kr_avg": 1.59,
+  "kr_n": 380,
+  "foreign_avg": 2.0,
   "foreign_n": 152
  },
  {
@@ -36,9 +36,9 @@
   "format": "단일 이미지",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 0.97,
+  "kr_avg": 0.99,
   "kr_n": 44,
-  "foreign_avg": 2.03,
+  "foreign_avg": 2.04,
   "foreign_n": 50
  },
  {
@@ -50,9 +50,9 @@
   "format": "릴스",
   "hook": "질문형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.54,
+  "kr_avg": 2.55,
   "kr_n": 37,
-  "foreign_avg": 1.01,
+  "foreign_avg": 1.02,
   "foreign_n": 18
  },
  {
@@ -66,7 +66,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 2.22,
   "kr_n": 14,
-  "foreign_avg": 1.73,
+  "foreign_avg": 1.74,
   "foreign_n": 146
  },
  {
@@ -79,26 +79,12 @@
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
   "kr_avg": 2.01,
-  "kr_n": 79,
+  "kr_n": 81,
   "foreign_avg": 1.8,
   "foreign_n": 21
  },
  {
   "rank": 7,
-  "topic": "부동산",
-  "kind": "국내 검증 주제",
-  "confidence": "높음",
-  "title_idea": "숫자 하나로 보는 부동산",
-  "format": "단일 이미지",
-  "hook": "숫자 강조형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 1.35,
-  "kr_n": 159,
-  "foreign_avg": 0.61,
-  "foreign_n": 3
- },
- {
-  "rank": 8,
   "topic": "환율·달러",
   "kind": "국내 검증 주제",
   "confidence": "높음",
@@ -106,9 +92,23 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "짧은 한 줄",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.02,
+  "kr_avg": 2.09,
   "kr_n": 58,
-  "foreign_avg": 0.78,
+  "foreign_avg": 0.77,
   "foreign_n": 6
+ },
+ {
+  "rank": 8,
+  "topic": "부동산",
+  "kind": "국내 검증 주제",
+  "confidence": "높음",
+  "title_idea": "숫자 하나로 보는 부동산",
+  "format": "단일 이미지",
+  "hook": "숫자 강조형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 1.37,
+  "kr_n": 160,
+  "foreign_avg": 0.61,
+  "foreign_n": 3
  }
 ]
