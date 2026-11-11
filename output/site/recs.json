@@ -8,7 +8,7 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.5,
+  "kr_avg": 2.49,
   "kr_n": 53,
   "foreign_avg": 1.89,
   "foreign_n": 49
@@ -33,13 +33,13 @@
   "kind": "해외 선행 주제 (선점 기회)",
   "confidence": "높음",
   "title_idea": "[오늘] ETF·지수투자에 무슨 일이? 1분 요약",
-  "format": "단일 이미지",
+  "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
   "kr_avg": 0.99,
   "kr_n": 44,
-  "foreign_avg": 1.97,
-  "foreign_n": 51
+  "foreign_avg": 1.94,
+  "foreign_n": 50
  },
  {
   "rank": 4,
@@ -89,10 +89,10 @@
   "kind": "국내 검증 주제",
   "confidence": "높음",
   "title_idea": "환율·달러, 한 줄 정리",
-  "format": "릴스",
+  "format": "캐러셀(카드뉴스)",
   "hook": "짧은 한 줄",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.99,
+  "kr_avg": 2.0,
   "kr_n": 62,
   "foreign_avg": 0.84,
   "foreign_n": 7
@@ -108,7 +108,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 1.37,
   "kr_n": 161,
-  "foreign_avg": 0.6,
+  "foreign_avg": 0.61,
   "foreign_n": 3
  }
 ]
