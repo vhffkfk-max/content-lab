@@ -3128,381 +3128,6 @@
  ],
  "ideas": [
   {
-   "title": "반대매매 전 거래일의 5배",
-   "concept": "코스피가 반등한 날 그 전 폭락의 청구서로 반대매매가 300억원대로 급증했다는 사실을 숫자 하나로 보여 준다. 집계 기준 차이로 380억원 보도가 있다는 점은 한 줄로 밝힌다. (공식: A인데 B, 어긋난 두 사실 제목)",
-   "why_now": "연합, 매경, 한경이 보도했고 데일리안이 18:49 후속을 냈다. 코스피가 4.39% 반등한 날이라 독자 공감이 크다.",
-   "tag": "증시",
-   "sources": [
-    "https://www.yna.co.kr/view/AKR20261110142900008",
-    "https://v.daum.net/v/20261110184906330"
-   ],
-   "bg": "KOSPI trading screen",
-   "bg_alt": "Korea Exchange building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "코스피 반등한 날\n반대매매 **5배** 넘었다",
-     "number": "5배",
-     "label": "전 거래일 대비 반대매매",
-     "sub": "300억원대로 급증"
-    },
-    {
-     "type": "질문형",
-     "title": "반등장이 열렸는데\n왜 빚투 계좌는 **팔렸나**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "코스피 4% 반등했지만\n강제로 팔린 주식은 **그대로**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261110-1901-i1",
-   "created_at": "2026-11-10T19:01:39+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261110-1901-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261110-1901-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261110-1901-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261110-1901-i1/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261110-1901-i1/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261110-1901-i1/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261110-1901-i1/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261110-1901-i1/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261110-1901-i1/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261110-1901-i1/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261110-1901-i1/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261110-1901-i1/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "연준 월러, 12월 인상 지지",
-   "concept": "시장이 보던 12월 인상 확률 80%에 연준 이사가 직접 힘을 실었고, 반 포인트 인상까지 열어뒀다는 점을 보도로 다룬다. 미국 10월 CPI는 마지막 장에서 다음 변수로 한 줄만 쓴다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "블룸버그와 마켓워치가 월러 발언을 전했고 미국 10월 CPI 발표를 앞두고 있다. 우리 계정에서 아직 다루지 않은 새 소식이다.",
-   "tag": "미국 금리",
-   "sources": [
-    "https://www.bloomberg.com/news/articles/2026-11-10/fed-s-waller-backs-december-rate-hike-says-open-to-larger-move",
-    "https://www.marketwatch.com/story/feds-waller-puts-half-point-rate-hike-into-the-mix-for-december-1bebdffc?mod=mw_rss_topstories"
-   ],
-   "bg": "Christopher Waller",
-   "bg_alt": "Federal Reserve building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "12월 인상 확률 80%\n연준 월러가 **힘** 실었다",
-     "number": "80%",
-     "label": "X에서 퍼진 12월 인상 확률",
-     "sub": "월러 이사가 12월 인상 지지"
-    },
-    {
-     "type": "질문형",
-     "title": "연준 이사가 12월 인상\n**반 포인트**도 열어둔 이유",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "CPI 발표도 나오기 전\n월러는 **인상**을 말했다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/10",
-     "headlines": [
-      "월러 연준 이사, 12월 인상 지지",
-      "더 큰 폭 인상도 열어두겠다고 밝혀",
-      "미국 10월 CPI가 다음 변수"
-     ]
-    }
-   },
-   "id": "20261110-1901-i2",
-   "created_at": "2026-11-10T19:01:39+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261110-1901-i2/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261110-1901-i2/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261110-1901-i2/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261110-1901-i2/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261110-1901-i2/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261110-1901-i2/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261110-1901-i2/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261110-1901-i2/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261110-1901-i2/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261110-1901-i2/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261110-1901-i2/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261110-1901-i2/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261110-1901-i2/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261110-1901-i2/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261110-1901-i2/3-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261110-1901-i2/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261110-1901-i2/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261110-1901-i2/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "코스피 급등일 모건스탠리 목표가 하향",
-   "concept": "삼성전자와 SK하이닉스가 급등한 날 모건스탠리가 목표가를 낮춘 반대 시각을 다룬다. 이유로 든 '2028년 이후 이익이 이어질지'를 중심에 두고, 목표가 숫자는 재료에 없어 확인 전까지 쓰지 않는다. (공식: A인데 B, 어긋난 두 사실 제목)",
-   "why_now": "한국경제, 뉴시스, 파이낸셜뉴스가 18:15에 보도했다. 코스피가 4.39% 오르고 삼성전자 +4.74%, SK하이닉스 +6.69%를 기록한 날 나온 소식이다.",
-   "tag": "반도체",
-   "sources": [
-    "https://www.hankyung.com/article/202611108106i",
-    "https://www.newsis.com/view/NISX20261110_0003862554"
-   ],
-   "bg": "Morgan Stanley",
-   "bg_alt": "Samsung Electronics headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "코스피 4.39% 급등한 날\n모건스탠리는 **낮췄다**",
-     "number": "4.39%",
-     "label": "11/10 코스피 상승률",
-     "sub": "같은 날 삼전닉스 목표가 하향"
-    },
-    {
-     "type": "질문형",
-     "title": "삼전닉스가 급등한 날\n왜 **목표가**를 낮췄나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "삼전닉스 오른 날\n모건스탠리는 **2028년**을 봤다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "breaking"
-   ],
-   "extra": {},
-   "id": "20261110-1901-i3",
-   "created_at": "2026-11-10T19:01:39+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261110-1901-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261110-1901-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261110-1901-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261110-1901-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261110-1901-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261110-1901-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261110-1901-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261110-1901-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261110-1901-i3/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
    "title": "금통위 의사록, 과반 추가 인상 필요",
    "concept": "10월엔 만장일치 동결이었는데 의사록에선 과반이 추가 인상을 봤다는 어긋남을 중심에 두고, 두 차례 인상 효과를 점검한 뒤 시기를 정하자는 대목과 미국 10월 CPI라는 다음 변수로 마무리한다. 월러 발언은 이미 다뤘으니 한 줄만 쓴다. (공식: A인데 B, 어긋난 두 사실 제목)",
    "why_now": "뉴스1, 헤럴드, 연합 등 8곳이 18:49에 보도했다. 동결 결정과 달리 의사록에서 과반이 추가 인상을 언급했다는 점이 새롭다.",
@@ -8814,6 +8439,325 @@
      "form": "breaking",
      "font": "dohyeon",
      "path": "20261111-1705-i3/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "엔씨 3분기 영업익 1196억, 흑자전환",
+   "concept": "같은 3분기 실적인데 이마트와 스타벅스는 부진, 엔씨는 신작(리니지 클래식, 아이온2)으로 흑자전환한 대비를 푼다. 전년 동기 대비 수치는 재료에 없어 쓰지 않는다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "오늘 15시대 9곳이 다룬 실적 소식이다. 같은 날 나온 이마트와 스타벅스 실적과 대비된다.",
+   "tag": "기업 실적",
+   "sources": [
+    "https://view.asiae.co.kr/article/2026111115151248368",
+    "https://www.yna.co.kr/view/AKR20261111112251527"
+   ],
+   "bg": "NCSoft Aion 2",
+   "bg_alt": "NCSOFT headquarters Pangyo",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "엔씨 3분기 영업익\n**1196억**원 찍고\n흑자전환했어요",
+     "number": "1196억원",
+     "label": "엔씨 3분기 영업이익",
+     "sub": "흑자전환"
+    },
+    {
+     "type": "질문형",
+     "title": "이마트는 줄고\n스타벅스는 적자인데\n엔씨는 **왜** 흑자?",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "같은 3분기인데\n엔씨만 **흑자전환**\n신작이 갈랐어요",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/11",
+     "headlines": [
+      "엔씨 3분기 영업익 1196억",
+      "흑자전환 비결은 신작 호조",
+      "이마트 영업익 감소, 스타벅스 적자"
+     ]
+    }
+   },
+   "id": "20261111-1806-i1",
+   "created_at": "2026-11-11T18:06:03+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261111-1806-i1/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261111-1806-i1/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261111-1806-i1/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261111-1806-i1/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261111-1806-i1/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261111-1806-i1/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261111-1806-i1/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261111-1806-i1/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261111-1806-i1/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "하나에어로 청약 1851대 1, 증거금 5.8조",
+   "concept": "경쟁률과 증거금 숫자로 공모주 열기를 보여 주고, 증거금은 청약 때 맡기는 돈이라 배정받지 못하면 돌려받는다는 점을 쉬운 말로 풀어 준다. 상장일 주가와 배정 물량은 확인 전이라 쓰지 않는다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "조선비즈가 17:29에 보도한 신규 소식이다. 코스닥이 5.62% 오른 날이라 공모주 열기와 같이 읽힌다.",
+   "tag": "공모주",
+   "sources": [
+    "https://biz.chosun.com/stock/stock_general/2026/11/11/MBYEZUCDRRCNZHZNFDNVGUNMBY/"
+   ],
+   "bg": "Hana Aerodynamics",
+   "bg_alt": "KOSDAQ trading screen",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "하나에어로 청약\n경쟁률 **1851대 1**\n증거금 5.8조 몰렸어요",
+     "number": "1851대 1",
+     "label": "일반 청약 경쟁률",
+     "sub": "청약 증거금 5조 8033억 원"
+    },
+    {
+     "type": "질문형",
+     "title": "청약 증거금 **5.8조**\n배정 못 받으면?",
+     "number": "5.8조",
+     "label": "청약 증거금",
+     "sub": "배정받지 못하면 돌려받아요"
+    },
+    {
+     "type": "반전형",
+     "title": "코스닥 5.62% 급등\n공모주엔 **5.8조**가\n몰려들었어요",
+     "number": "5.62%",
+     "label": "오늘 코스닥 등락",
+     "sub": "공모주 증거금 5조 8033억 원"
+    }
+   ],
+   "forms": [
+    "bignum",
+    "breaking"
+   ],
+   "extra": {},
+   "id": "20261111-1806-i2",
+   "created_at": "2026-11-11T18:06:03+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261111-1806-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261111-1806-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261111-1806-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261111-1806-i2/2-bignum-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261111-1806-i2/2-bignum-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261111-1806-i2/2-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261111-1806-i2/3-bignum-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261111-1806-i2/3-bignum-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261111-1806-i2/3-bignum-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "코스피 2.6% 오른 날, 국고채 3년물도 뛰었다",
+   "concept": "주식 반등과 금리 상승이 같은 날 나온 이유를 미국 물가 부담으로 풀고, 국고채 금리가 대출금리 기준이 되는 경우가 많아 변동금리 대출자에게 닿는 길을 첫 장에서 보여 준다. 연준 인상 확률 주제와는 대출 각도로 구분한다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "연합 종합 기사(16:56)가 3년물 금리 급등을 따로 다뤘다. 코스피 급등과 같은 날이라 대비가 크다.",
+   "tag": "금리",
+   "sources": [
+    "https://www.yna.co.kr/view/AKR20261111150551008"
+   ],
+   "bg": "Bank of Korea building",
+   "bg_alt": "Korean won bills",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "국고채 3년물이\n연 **3.729%**까지\n뛰어올랐어요",
+     "number": "3.729%",
+     "label": "국고채 3년물 금리",
+     "sub": "대출금리 기준이 되는 경우가 많아요"
+    },
+    {
+     "type": "질문형",
+     "title": "주식은 올랐는데\n국채 금리는 **왜** 뛰었나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "코스피 2.6% 오른 날\n국고채 3년물 금리는\n**반대로** 뛰었어요",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "editorial",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261111-1806-i3",
+   "created_at": "2026-11-11T18:06:03+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261111-1806-i3/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261111-1806-i3/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261111-1806-i3/1-editorial-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261111-1806-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261111-1806-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261111-1806-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261111-1806-i3/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261111-1806-i3/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261111-1806-i3/2-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261111-1806-i3/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261111-1806-i3/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261111-1806-i3/3-editorial-plex.jpg"
     }
    ]
   }
