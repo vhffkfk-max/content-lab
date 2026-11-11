@@ -3128,364 +3128,6 @@
  ],
  "ideas": [
   {
-   "title": "앤트로픽 주당 70~78달러 공모가 초안",
-   "concept": "주식 8억 2,500만 주에 가격대를 곱한 공모 규모와 별도 사모 배정 260억달러를 숫자로 보여 준다. 초안 단계라 바뀔 수 있다는 단서는 마지막 장에 한 줄만 둔다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "로이터가 본 증권신고서 초안에 공모 주식 수와 주당 70~78달러가 처음 나왔고 CNBC도 같은 가격대를 전했다. 앞서 다룬 일정, 조달 규모 보도와 달리 이번엔 가격이 새로 나왔다.",
-   "tag": "IPO",
-   "sources": [
-    "https://x.com/DeItaone/status/2120110435592523797",
-    "https://www.mt.co.kr/world/2026/11/10/2026111019364998812",
-    "https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html"
-   ],
-   "bg": "Dario Amodei",
-   "bg_alt": "Anthropic headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "앤트로픽 상장\n주당 **70~78달러**\n가격대가 나왔다",
-     "number": "70~78달러",
-     "label": "주당 공모가 초안",
-     "sub": "로이터가 본 증권신고서 기준"
-    },
-    {
-     "type": "질문형",
-     "title": "8억 2,500만 주에\n70~78달러를 곱하면\n얼마가 **나올까**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "공모만 최대 643억달러\n그런데 별도로\n**260억달러**가 더 있다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "bars"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "단위 억달러, 로이터가 본 초안 기준",
-     "bars": [
-      {
-       "label": "공모 최소",
-       "value": 577.5
-      },
-      {
-       "label": "공모 최대",
-       "value": 643.5,
-       "hi": true
-      },
-      {
-       "label": "사모 배정",
-       "value": 260
-      }
-     ]
-    }
-   },
-   "id": "20261110-2206-i1",
-   "created_at": "2026-11-10T22:06:47+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261110-2206-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261110-2206-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261110-2206-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261110-2206-i1/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261110-2206-i1/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261110-2206-i1/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261110-2206-i1/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261110-2206-i1/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261110-2206-i1/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261110-2206-i1/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261110-2206-i1/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261110-2206-i1/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "BofA 1순위 목록에서 엔비디아 제외",
-   "concept": "BofA의 미국 주식 1순위 목록에서 엔비디아, 마이크론, 램리서치가 빠진 사실과 CEO 스캔들로 흔들린 오늘 엔비디아 흐름을 이어 붙인다. 제외 이유는 확인 안 됨으로 한 줄만 적는다. (공식: A인데 B, 어긋난 두 사실 제목)",
-   "why_now": "시킹알파가 21:34에 전한 새 소식이고 X 워처구루 글은 조회 8만 8천을 넘었다. 앞서 다룬 모건스탠리 목표가 하향과는 다른 사건이다.",
-   "tag": "증시",
-   "sources": [
-    "https://seekingalpha.com/news/4669687-micron-nvidia-lam-research-removed-from-bofas-us-1-list?utm_source=feed_news_all&u",
-    "https://x.com/WatcherGuru/status/2120125152898003240"
-   ],
-   "bg": "Jensen Huang Nvidia",
-   "bg_alt": "Nvidia headquarters",
-   "hooks": [
-    {
-     "type": "사건형",
-     "title": "BofA 1순위 목록서\n엔비디아, 마이크론,\n**램리서치**까지 뺐다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "엔비디아가 흔들린 날\nBofA 추천 목록에서\n누가 **빠졌나**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "나스닥은 2.74% 올랐는데\n엔비디아는 **-4.27%**\nBofA 목록서도 빠졌다",
-     "number": "-4.27%",
-     "label": "엔비디아 11/09 등락",
-     "sub": "같은 날 나스닥 +2.74%"
-    }
-   ],
-   "forms": [
-    "news",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/10",
-     "headlines": [
-      "BofA 1순위서 엔비디아 제외",
-      "마이크론, 램리서치도 함께 제외",
-      "엔비디아 11/09 -4.27%"
-     ]
-    }
-   },
-   "id": "20261110-2206-i2",
-   "created_at": "2026-11-10T22:06:47+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261110-2206-i2/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261110-2206-i2/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261110-2206-i2/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261110-2206-i2/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261110-2206-i2/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261110-2206-i2/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261110-2206-i2/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261110-2206-i2/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261110-2206-i2/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "위장 퇴사 의사 부부, 부정청약 354건",
-   "concept": "의사 부부가 퇴사한 것처럼 꾸며 신혼부부 특공에 당첨된 사례를 앞세우고, 의심 사례 354건과 기준을 속이면 필요한 사람이 밀려난다는 점을 풀어 쓴다. 처분 내용과 세부 기준은 재료에 없어 확인 후 적는다. (공식: 없음)",
-   "why_now": "10곳이 다룬 19:06 새 기사다. 청약은 독자 관심이 큰데 아직 다룬 적이 없다.",
-   "tag": "부동산",
-   "sources": [
-    "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1TV3dwSVFaNnpUalhvNVhSc1lEWEpjQWtsYjAydFkxMEtCTHdfYmhNbndvcGJTb2xJVTh"
-   ],
-   "bg": "apartment complex Korea",
-   "bg_alt": "apartment building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "신혼부부 특공에서\n부정청약 의심이\n**354건** 나왔다",
-     "number": "354건",
-     "label": "부정청약 의심 사례",
-     "sub": "의사 부부 위장 퇴사 사례 포함"
-    },
-    {
-     "type": "질문형",
-     "title": "의사 부부가 퇴사까지\n꾸며서 받은 건\n**무엇**이었을까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "퇴사는 가짜였고\n당첨은 진짜였다\n**의사 부부** 특공",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "editorial",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261110-2206-i3",
-   "created_at": "2026-11-10T22:06:47+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261110-2206-i3/1-editorial-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261110-2206-i3/1-editorial-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261110-2206-i3/1-editorial-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261110-2206-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261110-2206-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261110-2206-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261110-2206-i3/2-editorial-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261110-2206-i3/2-editorial-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261110-2206-i3/2-editorial-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261110-2206-i3/3-editorial-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261110-2206-i3/3-editorial-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261110-2206-i3/3-editorial-plex.jpg"
-    }
-   ]
-  },
-  {
    "title": "골드만 \"금리 인상 2027년까지 갈 수도\"",
    "concept": "10월 CPI 0.4%가 예상을 웃돈 뒤 골드만삭스가 인상 기간을 2027년까지 열어 뒀고, JP모건 켈리는 50bp 인상은 안 된다고 한 엇갈림을 푼다. 12월 한 번이 아니라 얼마나 오래 올리느냐가 새 각도다. (공식: 없음)",
    "why_now": "CPI 발표 직후 골드만삭스 전망이 나왔고, 미 국채 2~5년물 금리는 하루 10bp 이상 올랐다. CPI 숫자는 이미 다뤘지만 인상 기간 전망은 아직 다루지 않았다.",
@@ -8699,6 +8341,435 @@
      "form": "editorial",
      "font": "plex",
      "path": "20261111-2006-i3/3-editorial-plex.jpg"
+    }
+   ]
+  },
+  {
+   "title": "ETF 거래대금, 코스피 사상 첫 추월",
+   "concept": "아시아경제 단독 보도를 사실만 짧게 전하고, 개인이 종목 대신 ETF로 옮겨가는 흐름인지 독자에게 묻는다. 정확한 금액과 기간은 확인 후 쓴다. (공식: 없음)",
+   "why_now": "20:24 아시아경제 단독이고 다른 매체는 아직 다루지 않았다. 오늘 코스피, 코스닥 반등 속 개인 투자 흐름과 이어진다.",
+   "tag": "ETF",
+   "sources": [
+    "https://view.asiae.co.kr/article/2026111115322772043"
+   ],
+   "bg": "Korea ETF trading screen",
+   "bg_alt": "KOSPI stock board Seoul",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "ETF 거래대금이\n코스피 시장을\n사상 처음 **추월**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "종목 대신 ETF,\n개인 투자 방식이\n**바뀐** 걸까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "코스피 급등한 날\n개인은 **팔았는데**\nETF가 코스피 추월",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "editorial"
+   ],
+   "extra": {},
+   "id": "20261111-2101-i1",
+   "created_at": "2026-11-11T21:01:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261111-2101-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261111-2101-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261111-2101-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261111-2101-i1/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261111-2101-i1/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261111-2101-i1/1-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261111-2101-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261111-2101-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261111-2101-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261111-2101-i1/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261111-2101-i1/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261111-2101-i1/2-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261111-2101-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261111-2101-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261111-2101-i1/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261111-2101-i1/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261111-2101-i1/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261111-2101-i1/3-editorial-plex.jpg"
+    }
+   ]
+  },
+  {
+   "title": "국고채 1.6조 과징금 후폭풍",
+   "concept": "과징금 확정 이후 금투협 반발과 행정소송 지원 예고, 증권사 적자 우려까지 번진 국면을 보여준다. PD사가 줄면 정부 조달 비용에 영향이 갈 수 있다는 점은 [확인] 표시를 달아 쓴다. (공식: 용어 대신 눈에 보이는 것으로)",
+   "why_now": "공정위가 15개 PD사에 역대 최대 1.6조 과징금을 부과한 뒤 금투협 공식 반발, PD사 법적 대응 예고가 나왔고 5곳 이상이 다룬다. 14:26 발송분은 확정 소식이고 이번은 후폭풍이다.",
+   "tag": "국채",
+   "sources": [
+    "https://www.hankyung.com/article/202611110619i",
+    "https://www.fnnews.com/news/202611111744498594",
+    "https://www.etoday.co.kr/news/view/2646903"
+   ],
+   "bg": "Korea Fair Trade Commission",
+   "bg_alt": "Korea Exchange building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "국고채 입찰 담합\n역대 최대 **1.6조**\n과징금 부과됐다",
+     "number": "1.6조원",
+     "label": "공정위 역대 최대 과징금",
+     "sub": "15개 PD사 국고채 입찰 담합"
+    },
+    {
+     "type": "질문형",
+     "title": "1.6조 과징금에\n증권사들이\n**격앙**한 이유는",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "과징금은 PD사가\n맞았는데 걱정은\n**국채** 발행으로",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "paper",
+    "news"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/11",
+     "headlines": [
+      "공정위 1.6조 과징금 부과",
+      "금투협 행정소송 지원 예고",
+      "증권사 적자 전환 우려"
+     ]
+    }
+   },
+   "id": "20261111-2101-i2",
+   "created_at": "2026-11-11T21:01:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261111-2101-i2/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261111-2101-i2/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261111-2101-i2/1-paper-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261111-2101-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261111-2101-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261111-2101-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261111-2101-i2/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261111-2101-i2/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261111-2101-i2/2-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261111-2101-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261111-2101-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261111-2101-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261111-2101-i2/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261111-2101-i2/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261111-2101-i2/3-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261111-2101-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261111-2101-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261111-2101-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "청약 하루 전 상장 철회 2곳",
+   "concept": "제이앤티지와 씨앤엠의 철회와 같은 날 하나에어로 증거금 5.8조를 나란히 놓고 공모 시장의 온도차를 보여준다. (공식: 없음)",
+   "why_now": "조선비즈, 이데일리, 한국경제 등 5곳이 보도했다. 하나에어로 청약 증거금 5.8조 직후라 온도차가 화제가 될 수 있고, 철회 건은 아직 다루지 않았다.",
+   "tag": "공모주",
+   "sources": [
+    "https://biz.chosun.com/stock/stock_general/2026/11/11/2DPULZOCZFH4HJLZTIH5ODAMDQ/",
+    "http://www.edaily.co.kr/news/newspath.asp?newsid=05395606645644736"
+   ],
+   "bg": "Korea Exchange Yeouido",
+   "bg_alt": "Korea IPO stock listing",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "청약 하루 전\n상장 접은 회사\n**2곳** 나왔다",
+     "number": "2곳",
+     "label": "청약 하루 전 상장 철회",
+     "sub": "같은 날 하나에어로 증거금 5.8조원"
+    },
+    {
+     "type": "질문형",
+     "title": "공모 시장은\n되는 곳만\n**몰리는** 걸까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "한쪽은 증거금\n**5.8조** 몰렸고\n한쪽은 상장 철회",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261111-2101-i3",
+   "created_at": "2026-11-11T21:01:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261111-2101-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261111-2101-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261111-2101-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261111-2101-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261111-2101-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261111-2101-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261111-2101-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261111-2101-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261111-2101-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261111-2101-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261111-2101-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261111-2101-i3/3-news-myeongjo.jpg"
     }
    ]
   }
