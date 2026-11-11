@@ -29,20 +29,6 @@
  },
  {
   "rank": 3,
-  "topic": "비트코인",
-  "kind": "국내·해외 모두 강세",
-  "confidence": "높음",
-  "title_idea": "[오늘] 비트코인에 무슨 일이? 1분 요약",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "속보·뉴스형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 2.34,
-  "kr_n": 13,
-  "foreign_avg": 1.77,
-  "foreign_n": 150
- },
- {
-  "rank": 4,
   "topic": "ETF·지수투자",
   "kind": "해외 선행 주제 (선점 기회)",
   "confidence": "높음",
@@ -54,6 +40,20 @@
   "kr_n": 44,
   "foreign_avg": 1.93,
   "foreign_n": 52
+ },
+ {
+  "rank": 4,
+  "topic": "비트코인",
+  "kind": "국내·해외 모두 강세",
+  "confidence": "높음",
+  "title_idea": "[오늘] 비트코인에 무슨 일이? 1분 요약",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "속보·뉴스형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 2.34,
+  "kr_n": 13,
+  "foreign_avg": 1.77,
+  "foreign_n": 150
  },
  {
   "rank": 5,
@@ -94,7 +94,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 1.98,
   "kr_n": 62,
-  "foreign_avg": 1.05,
+  "foreign_avg": 1.06,
   "foreign_n": 7
  },
  {
