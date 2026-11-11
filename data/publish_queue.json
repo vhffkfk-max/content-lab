@@ -3128,325 +3128,6 @@
  ],
  "ideas": [
   {
-   "title": "코스피 -21% 표시, 개장 전 예상지수의 함정",
-   "concept": "아침 화면에 뜬 -21%가 실제 거래가 아닌 예상 체결가로 계산된 숫자였다는 점을 풀고, 오늘 실제 시세는 +4.39%였다는 대비로 보여준다. 마지막 장에서 장 시작 후 체결 지수를 확인하라고 안내한다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "조선비즈가 15:06에 보도했다. 오늘 코스피가 급등하고 변동성이 컸던 날이라 개인투자자가 헷갈리기 쉬운 포인트다.",
-   "tag": "시장 상식",
-   "sources": [
-    "https://biz.chosun.com/stock/stock_general/2026/11/10/VD5MVNNVUJHONFGM6PSDKEAKWU/"
-   ],
-   "bg": "KOSPI stock board Seoul",
-   "bg_alt": "Korea Exchange building Seoul",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "개장 전 코스피\n**-21%**로 떴는데\n오늘 시세는 +4.39%",
-     "number": "-21%",
-     "label": "개장 전 예상지수로 표시된 코스피",
-     "sub": "오늘 코스피는 전일 대비 +4.39%"
-    },
-    {
-     "type": "질문형",
-     "title": "아침 화면의 -21%\n그 숫자는 왜\n**실제가 아니었나**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "코스피 -21% 표시\n체결 없이 계산된\n**예상**지수였다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261110-1601-i1",
-   "created_at": "2026-11-10T16:01:40+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261110-1601-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261110-1601-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261110-1601-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261110-1601-i1/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261110-1601-i1/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261110-1601-i1/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261110-1601-i1/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261110-1601-i1/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261110-1601-i1/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "TSMC 10월 매출 5,869억 대만달러, 59.7%↑",
-   "concept": "TSMC 10월 매출이 전년 같은 달보다 59.7% 늘었다는 새 수치를 보도로 전한다. 엔비디아가 한 달간 -22.07%(11/09 기준) 빠진 것과 나란히 놓아 주가와 매출이 엇갈린 장면을 보여준다. 원화 환산은 재료에 없어 쓰지 않는다. (공식: A인데 B, 어긋난 두 사실 제목)",
-   "why_now": "연합인포맥스가 방금 보도한 새 수치다. 반도체 변동성이 큰 날이라 업황 지표로 의미가 있다.",
-   "tag": "반도체",
-   "sources": [
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443997"
-   ],
-   "bg": "TSMC chip wafer",
-   "bg_alt": "TSMC building Taiwan",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "TSMC 10월 매출\n**5,869억** 대만달러\n작년보다 59.7%↑",
-     "number": "5,869억 대만달러",
-     "label": "TSMC 10월 매출",
-     "sub": "전년 같은 달보다 59.7% 증가"
-    },
-    {
-     "type": "질문형",
-     "title": "주가는 빠지는데\nTSMC 매출은 왜\n**59.7%** 늘었나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "엔비디아 한 달 -22%\nTSMC 10월 매출은\n**+59.7%**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261110-1601-i2",
-   "created_at": "2026-11-10T16:01:40+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261110-1601-i2/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261110-1601-i2/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261110-1601-i2/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261110-1601-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261110-1601-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261110-1601-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261110-1601-i2/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261110-1601-i2/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261110-1601-i2/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261110-1601-i2/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261110-1601-i2/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261110-1601-i2/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "비트코인 ETF 2.01억달러 유출, MARA 11억달러 매도",
-   "concept": "미국 비트코인 현물 ETF 하루 순유출 2억100만달러, 이더리움 ETF 3일 연속 유출, 채굴업체 MARA의 6주간 13,597 BTC(약 11억달러) 매도를 묶어 보도로 정리한다. 비트코인 가격은 11/10 기준 74,604달러, 1달 -8.86%다. 원인 해석은 하지 않고 오늘 밤 美 CPI를 변수로 한 줄만 둔다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "비트코인 ETF 유출을 6곳이 14:39에 보도했고, MARA 매도 소식도 같은 시각 나왔다. 오늘 밤 美 CPI 발표를 앞두고 코인 시장 관심이 크다.",
-   "tag": "코인",
-   "sources": [
-    "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1rRjhtNlc1Nll1djQwR3cxSUVGR0lpS1JHUFZLWVdQRTkzQmlKaFVIcmg1ZHhPcG1qSk1",
-    "https://news.google.com/rss/articles/CBMizAFBVV95cUxObFI0RjUtQUg1TVBJamFZdmhzOFZWdnhNRTlaaEVYM01XYWhXWlRBNng2VlJsdmw0TzR"
-   ],
-   "bg": "Bitcoin coin MARA mining",
-   "bg_alt": "bitcoin mining facility",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "비트코인 ETF에서\n하루 **2억100만**달러\n빠져나갔다",
-     "number": "2.01억달러",
-     "label": "美 비트코인 현물 ETF 하루 순유출",
-     "sub": "이더리움 ETF도 3일 연속 유출"
-    },
-    {
-     "type": "질문형",
-     "title": "채굴업체 MARA가\n6주간 판 비트코인\n**13,597개**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "ETF 돈도 빠지고\n채굴업체도 팔았다\n**11억달러** 매도",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "paper",
-    "breaking"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/10",
-     "headlines": [
-      "BTC 현물 ETF 2.01억달러 유출",
-      "ETH ETF 3일 연속 유출",
-      "MARA 13,597 BTC 11억달러 매도"
-     ]
-    }
-   },
-   "id": "20261110-1601-i3",
-   "created_at": "2026-11-10T16:01:40+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261110-1601-i3/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261110-1601-i3/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261110-1601-i3/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261110-1601-i3/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261110-1601-i3/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261110-1601-i3/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261110-1601-i3/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261110-1601-i3/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261110-1601-i3/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "코스피 4.39% 급등 마감, 외국인 8일 만에 복귀",
    "concept": "마감 결과 한 줄을 단정형으로 걸고, 하루 반등과 한 달 낙폭을 나란히 놓아 방향을 단정하기 이르다는 점까지 보여준다. 순매수 금액은 재료에 없어 [확인]으로 남긴다. (공식: 전후 낙차 한 줄 표지)",
    "why_now": "오늘 23곳이 다룬 최대 소식이고, 장중 급등과 달리 마감 결과와 외국인 순매수 복귀는 아직 보내지 않았다.",
@@ -8949,6 +8630,366 @@
      "form": "paper",
      "font": "gowun",
      "path": "20261111-1401-i3/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "이마트 영업이익 69.6% 급감, 스타벅스 적자",
+   "concept": "본업(트레이더스)은 버텼는데 스타벅스 3분기 영업손실 약 453억원이 발목을 잡았다는 반전으로 푼다. 주가 하락폭은 재료에 없어 쓰지 않는다. (공식: 없음)",
+   "why_now": "14시대 이마트 3분기 실적 기사가 5곳 이상에서 나왔고, 머니투데이가 어닝쇼크 급락을 보도했다. 아직 다룬 적 없는 새 사건이다.",
+   "tag": "기업실적",
+   "sources": [
+    "https://www.mt.co.kr/living/2026/11/11/2026111113152963431",
+    "https://biz.chosun.com/distribution/channel/2026/11/11/S2I5SJRFBJDI7EECEPVYCFWWHY/",
+    "https://www.mt.co.kr/stock/2026/11/11/2026111114171065107"
+   ],
+   "bg": "Starbucks Korea store",
+   "bg_alt": "Emart store",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "이마트 영업이익\n작년보다 **69.6%** 줄었다\n스타벅스 손실 453억",
+     "number": "69.6%",
+     "label": "이마트 3분기 영업이익 감소",
+     "sub": "영업이익 461억원, 스타벅스 영업손실 약 453억원"
+    },
+    {
+     "type": "질문형",
+     "title": "이마트 이익 70% 급감\n범인은 **스타벅스**?\n본업은 버텼다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "트레이더스는 효자인데\n이마트 이익 **70%** 급감\n스타벅스가 발목",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "bars"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "이마트 3분기 영업이익, 억원(스타벅스는 영업손실 규모)",
+     "bars": [
+      {
+       "label": "이마트 별도 영업이익",
+       "value": 1660
+      },
+      {
+       "label": "이마트 연결 영업이익",
+       "value": 461
+      },
+      {
+       "label": "스타벅스 영업손실",
+       "value": 453,
+       "hi": true
+      }
+     ]
+    }
+   },
+   "id": "20261111-1506-i1",
+   "created_at": "2026-11-11T15:06:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261111-1506-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261111-1506-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261111-1506-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261111-1506-i1/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261111-1506-i1/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261111-1506-i1/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261111-1506-i1/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261111-1506-i1/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261111-1506-i1/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261111-1506-i1/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261111-1506-i1/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261111-1506-i1/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "SK하이닉스 생산직 채용에 쏠린 관심",
+   "concept": "반도체 수출 4배 보도와 '1인당 성과급 8억?' 기대감이 채용 관심으로 이어진 흐름을 풀되, 성과급은 실적에 따라 달라지니 원문 확인이 필요하다는 점을 한 곳에만 밝힌다. (공식: 없음)",
+   "why_now": "14:48 5곳이 다뤘고, 14:57 반도체 수출 호황 기사와 맞물려 일반 독자 관심이 크다. 이전 발행 목록에 없다.",
+   "tag": "산업, 일자리",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9DeXpVR0x0N19ybDBfcEFZY2x0cUMzQlZwWGZmZzdSTmxNbFhMbE1EUmNOOVBrYS1QYVV",
+    "https://v.daum.net/v/20261111145757294"
+   ],
+   "bg": "SK hynix",
+   "bg_alt": "SK hynix fab",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "반도체 수출 **4배**\n하이닉스 생산직에\n관심이 쏠렸다",
+     "number": "4배",
+     "label": "반도체 수출",
+     "sub": "1조 달러 달성이 눈앞이라는 보도"
+    },
+    {
+     "type": "질문형",
+     "title": "하이닉스 생산직\n성과급 **8억**?\n채용에 몰린 눈",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "업황이 좋을수록\n채용 경쟁도 **커진다**\n성과급은 실적 따라",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "editorial"
+   ],
+   "extra": {},
+   "id": "20261111-1506-i2",
+   "created_at": "2026-11-11T15:06:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261111-1506-i2/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261111-1506-i2/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261111-1506-i2/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261111-1506-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261111-1506-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261111-1506-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261111-1506-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261111-1506-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261111-1506-i2/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "오픈AI 분기 매출 첫 100억달러, TSMC도 베팅",
+   "concept": "AI 수익성 걱정이 나오는 가운데 오픈AI 매출이 전분기보다 50% 늘고, 칩을 만드는 TSMC가 최대 10억달러를 직접 넣는다는 대비로 푼다. 매출 세부 수치는 원문 확인. (공식: 없음)",
+   "why_now": "오픈AI 매출은 14:52 조선비즈 등 2곳, TSMC 투자는 14:54 3곳이 보도했다. 엔비디아 리스크가 커진 날 AI 투심 이야기와 맞물린다.",
+   "tag": "AI, 반도체",
+   "sources": [
+    "https://biz.chosun.com/it-science/ict/2026/11/11/QDQLRCEK5ZHBRLD4HDRBECGH5U/",
+    "https://www.hankyung.com/article/202611110093i",
+    "https://www.yna.co.kr/view/AKR20261111093200008"
+   ],
+   "bg": "Sam Altman OpenAI",
+   "bg_alt": "OpenAI logo",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "오픈AI 분기 매출\n처음 **100억달러**\n전분기보다 50%↑",
+     "number": "100억달러",
+     "label": "오픈AI 분기 매출 첫 돌파",
+     "sub": "전분기보다 50% 늘었다는 보도"
+    },
+    {
+     "type": "질문형",
+     "title": "AI 거품 얘기에도\nTSMC는 왜 **베팅**했나\n최대 10억달러",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "수익성 걱정이 나와도\n오픈AI 분기 매출\n**50%** 뛰었다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/11",
+     "headlines": [
+      "오픈AI 분기 매출 첫 100억달러",
+      "전분기보다 매출 50% 증가",
+      "TSMC, 오픈AI 등에 최대 10억달러"
+     ]
+    }
+   },
+   "id": "20261111-1506-i3",
+   "created_at": "2026-11-11T15:06:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261111-1506-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261111-1506-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261111-1506-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261111-1506-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261111-1506-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261111-1506-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261111-1506-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261111-1506-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261111-1506-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261111-1506-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261111-1506-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261111-1506-i3/3-paper-gowun.jpg"
     }
    ]
   }
