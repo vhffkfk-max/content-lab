@@ -3128,416 +3128,6 @@
  ],
  "ideas": [
   {
-   "title": "아이폰 듀오 중고가 보름 만에 38% 폭락",
-   "concept": "값이 잘 안 떨어진다던 아이폰 중고가가 신제품 출시 보름 만에 꺾인 반전을 보여주고, 사기 전 시세 추이를 확인하자고 마무리한다. 세부 모델과 기준 시세는 기사 확인 필요. (공식: 전후 낙차 한 줄 표지)",
-   "why_now": "오늘 10:35 동아일보와 매일경제가 다룬 새 소식이다. 중고 거래와 교체를 고민하는 소비자에게 바로 와닿는다.",
-   "tag": "소비",
-   "sources": [
-    "https://www.donga.com/news/Economy/article/all/20261110/134997363/1",
-    "https://www.mk.co.kr/news/stock/12203639"
-   ],
-   "bg": "iPhone used phone",
-   "bg_alt": "Apple Store",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "아이폰 듀오 중고가\n보름 만에 **38%**\n폭락했다",
-     "number": "38%",
-     "label": "아이폰 듀오 중고가",
-     "sub": "출시 보름 만에"
-    },
-    {
-     "type": "질문형",
-     "title": "값 안 떨어진다던\n아이폰 중고가\n왜 **보름** 만에 꺾였나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "중고로 팔아도\n값 방어된다던 아이폰\n이번엔 **달랐다**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261110-1204-i1",
-   "created_at": "2026-11-10T12:04:45+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261110-1204-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261110-1204-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261110-1204-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261110-1204-i1/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261110-1204-i1/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261110-1204-i1/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261110-1204-i1/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261110-1204-i1/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261110-1204-i1/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261110-1204-i1/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261110-1204-i1/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261110-1204-i1/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "은마 재초환 총 2조, 가구당 평균 4억6천만원",
-   "concept": "은마아파트 재초환 부담금 규모와 확정액이 아니라는 단서, 서초구의 폐지 탄원, 앞서 나온 반포현대 179억원 통지를 한 흐름으로 푼다. 재초환은 처음 나오는 자리에서 쉬운 말로 풀어 쓴다. (공식: 없음)",
-   "why_now": "오늘 09:19 연합뉴스와 뉴시스 등 7곳이 보도한 새 소식이다. 서초구는 주민 6,936명의 탄원서를 전달했다.",
-   "tag": "부동산",
-   "sources": [
-    "https://www.yna.co.kr/view/AKR20261110023200004",
-    "https://www.newsis.com/view/NISX20261110_0003861296",
-    "https://www.newsis.com/view/NISX20261110_0003861286"
-   ],
-   "bg": "Eunma apartment Seoul",
-   "bg_alt": "Gangnam apartment complex",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "은마 재초환 부담금\n총 **2조원**, 집주인\n평균 4억6천만원",
-     "number": "2조원",
-     "label": "은마아파트 재초환 부담금",
-     "sub": "가구당 평균 4억6천만원"
-    },
-    {
-     "type": "질문형",
-     "title": "은마 한 가구가\n내야 할 돈이\n평균 **4억6천만원**?",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "부담금 2조 나온 은마\n서초구는 주민 6,936명\n탄원서로 **폐지** 요구",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "bars"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "재초환 부담금 총액(억원)",
-     "bars": [
-      {
-       "label": "은마",
-       "value": 20000,
-       "hi": true
-      },
-      {
-       "label": "반포현대",
-       "value": 179
-      }
-     ]
-    }
-   },
-   "id": "20261110-1204-i2",
-   "created_at": "2026-11-10T12:04:45+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261110-1204-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261110-1204-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261110-1204-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261110-1204-i2/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261110-1204-i2/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261110-1204-i2/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261110-1204-i2/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261110-1204-i2/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261110-1204-i2/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261110-1204-i2/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261110-1204-i2/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261110-1204-i2/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "위장전입 94%, 부정청약 354건 적발",
-   "concept": "정부 점검에서 나온 부정청약 354건 중 위장전입이 94%인 사실에서 시작해, 의사 부부의 위장퇴사 사례, 경찰 단속 3565명, 대통령 발언까지 이어 간다. 마지막 장에서 서류와 거주 요건 확인을 짚는다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "정부 발표를 10곳 넘게 다뤘고, 경찰 단속과 대통령의 '패가망신' 발언으로 이어지는 중이다. 아직 보내지 않은 주제다.",
-   "tag": "부동산",
-   "sources": [
-    "https://www.mt.co.kr/economy/2026/11/10/2026111009413456664",
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4443915",
-    "https://biz.chosun.com/real_estate/real_estate_general/2026/11/10/T3FABNST5FDSNCIY6PCW56VY4E/"
-   ],
-   "bg": "apartment subscription Korea",
-   "bg_alt": "Korea apartment complex",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "부정청약 **354건**\n적발, 그중 위장전입이\n94%였다",
-     "number": "354건",
-     "label": "부정청약 적발",
-     "sub": "위장전입이 94%"
-    },
-    {
-     "type": "질문형",
-     "title": "의사 부부가\n저소득자 청약을?\n**위장퇴사**까지 적발",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "청약 당첨 뒤에\n숨어 있던 수법\n알고 보니 **위장전입**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "paper",
-    "news"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/10",
-     "headlines": [
-      "부정청약 354건 적발",
-      "이 중 위장전입이 94%",
-      "경찰 부동산범죄 3565명 적발"
-     ]
-    }
-   },
-   "id": "20261110-1204-i3",
-   "created_at": "2026-11-10T12:04:45+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261110-1204-i3/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261110-1204-i3/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261110-1204-i3/1-paper-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261110-1204-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261110-1204-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261110-1204-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261110-1204-i3/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261110-1204-i3/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261110-1204-i3/2-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261110-1204-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261110-1204-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261110-1204-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261110-1204-i3/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261110-1204-i3/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261110-1204-i3/3-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261110-1204-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261110-1204-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261110-1204-i3/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
    "title": "코스피 급등 속 모건스탠리 목표가 하향",
    "concept": "코스피 사이드카가 발동한 급등장에서 모건스탠리가 삼성전자 30만9천원, SK하이닉스 160만원으로 목표가를 낮춘 어긋남을 보도로 정리한다. 기존 목표가 대비 하향 폭은 재료에 없으므로 쓰지 않고, 투자 권유가 아니라는 문구를 마지막 장에 한 줄 둔다. (공식: A인데 B, 어긋난 두 사실 제목)",
    "why_now": "12:02 기준 47곳이 다룬 오늘 최대 소식이다. 미국 반도체 급반등 한가운데 나온 반대 신호라 관심이 크다.",
@@ -8920,6 +8510,398 @@
      "form": "quote",
      "font": "gowun",
      "path": "20261111-1001-i3/3-quote-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "6개월 헬스케어 +31.7%, 기술주 -3.9%",
+   "concept": "기술주가 흔들리는 사이 헬스케어가 35.6%p 앞섰다는 격차를 결과 문장으로 던지고, 마지막 장에 한국의 셀트리온 목표가 상향을 붙인다. (공식: 전후 낙차 한 줄 표지)",
+   "why_now": "코베이시 레터 X 글이 조회 8만을 넘겼고, 엔비디아 급락과 긴축 우려로 기술주가 흔들리는 시점이다. 국내에선 셀트리온 목표가 상향 기사도 나왔다.",
+   "tag": "증시",
+   "sources": [
+    "https://x.com/KobeissiLetter/status/2120301225602085366",
+    "https://v.daum.net/v/20261111102741228"
+   ],
+   "bg": "healthcare stocks trading",
+   "bg_alt": "Wall Street New York",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "6개월 성적표\n헬스케어 **+31.7%**\n기술주는 -3.9%",
+     "number": "+31.7%",
+     "label": "최근 6개월 미국 헬스케어",
+     "sub": "기술주 -3.9%, 격차 35.6%p"
+    },
+    {
+     "type": "질문형",
+     "title": "기술주 대신\n헬스케어가 **왜** 올랐나\n격차 35.6%p",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "엔비디아 흔들리자\n**헬스케어**가 기술주를\n35.6%p 앞섰어요",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bars",
+    "bignum"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "최근 6개월 수익률(%)",
+     "bars": [
+      {
+       "label": "미국 헬스케어",
+       "value": 31.7,
+       "hi": true
+      },
+      {
+       "label": "미국 기술주",
+       "value": -3.9
+      }
+     ]
+    }
+   },
+   "id": "20261111-1101-i1",
+   "created_at": "2026-11-11T11:01:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261111-1101-i1/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261111-1101-i1/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261111-1101-i1/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261111-1101-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261111-1101-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261111-1101-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261111-1101-i1/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261111-1101-i1/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261111-1101-i1/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261111-1101-i1/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261111-1101-i1/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261111-1101-i1/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "유류세 인하 내년 1월까지 연장",
+   "concept": "운전자 생활비와 바로 닿는 소식으로, 인하율과 연장 기한을 결과 문장으로 먼저 보여 주고 브렌트유 90달러 아래라는 배경을 붙인다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "10곳이 오늘 09:14에 보도했고, 아직 다루지 않은 주제다. 주유비가 걸린 내 얘기라 반응이 클 소재다.",
+   "tag": "생활경제",
+   "sources": [
+    "https://www.fnnews.com/news/202611110901245153",
+    "https://www.donga.com/news/Economy/article/all/20261111/135003915/1",
+    "https://www.newsis.com/view/NISX20261111_0003862933"
+   ],
+   "bg": "gas station fuel price",
+   "bg_alt": "fuel pump car",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "휘발유 **15%**\n경유 25% 인하\n내년 1월까지 연장",
+     "number": "15%",
+     "label": "휘발유 유류세 인하율",
+     "sub": "경유 부탄 25%, 내년 1월까지"
+    },
+    {
+     "type": "질문형",
+     "title": "내 주유비는\n**어디까지** 싸질까\n유류세 인하 연장",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "브렌트유 90달러 밑인데\n유류세 인하는\n**연장**됐어요",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "editorial"
+   ],
+   "extra": {},
+   "id": "20261111-1101-i2",
+   "created_at": "2026-11-11T11:01:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261111-1101-i2/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261111-1101-i2/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261111-1101-i2/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261111-1101-i2/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261111-1101-i2/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261111-1101-i2/1-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261111-1101-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261111-1101-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261111-1101-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261111-1101-i2/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261111-1101-i2/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261111-1101-i2/2-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261111-1101-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261111-1101-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261111-1101-i2/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261111-1101-i2/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261111-1101-i2/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261111-1101-i2/3-editorial-plex.jpg"
+    }
+   ]
+  },
+  {
+   "title": "앤트로픽 19일 나스닥 상장, 몸값 1조 달러",
+   "concept": "상장일과 목표 몸값, 조달 규모를 사실로 깔고, 골드만삭스 매출 전망과 국민연금 주주설은 확인 필요 단서를 한 곳에만 남겨 풀어 간다. (공식: 끝 장은 닫힌 결론 한 줄)",
+   "why_now": "연합인포맥스, AI타임스, 헤럴드경제 등 3곳 이상이 상장 소식을 다뤘고, 이데일리는 몸값 최대 1.4조 달러 전망을 전했다. 쓰레드에서 국민연금 주주 글이 빠르게 크고 있다.",
+   "tag": "AI",
+   "sources": [
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4444040",
+    "https://www.yna.co.kr/view/AKR20261111010700009",
+    "http://www.edaily.co.kr/news/newspath.asp?newsid=01558006645644736"
+   ],
+   "bg": "Dario Amodei Anthropic",
+   "bg_alt": "Anthropic headquarters",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "앤트로픽 19일 상장\n목표 몸값\n**1조 달러**",
+     "number": "1조 달러",
+     "label": "앤트로픽 목표 몸값",
+     "sub": "19일 나스닥 상장, 최대 900억 달러 조달 추진"
+    },
+    {
+     "type": "질문형",
+     "title": "앤트로픽 몸값\n**1.4조 달러** 전망\n얼마나 반영됐나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "몸값 1조 달러 노리는\n앤트로픽, 매출은\n5년 내 **150배**?",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/11",
+     "headlines": [
+      "앤트로픽 19일 나스닥 상장",
+      "목표 몸값 1조 달러",
+      "골드만, 매출 5년 내 150배"
+     ]
+    }
+   },
+   "id": "20261111-1101-i3",
+   "created_at": "2026-11-11T11:01:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261111-1101-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261111-1101-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261111-1101-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261111-1101-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261111-1101-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261111-1101-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261111-1101-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261111-1101-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261111-1101-i3/3-paper-gowun.jpg"
     }
    ]
   }
