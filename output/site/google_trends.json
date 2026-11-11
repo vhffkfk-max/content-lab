@@ -5,26 +5,26 @@
   "traffic": 5000,
   "topics": "",
   "econ": false,
-  "news_title": "노시환과 메츠 워싱턴 코치의 한화 시절 인연, 미국 현지서 화제",
-  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8709600"
- },
- {
-  "geo": "KR",
-  "term": "홈런",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
   "news_title": "12홈런 친 3루수가 C등급이라고? 보상금 고작 1억3500...의외의 '초대박' 터지나",
   "news_link": "https://www.chosun.com/sports/baseball/2026/11/12/MQZDENLCMZRGMNTDMNRGCODFMY/"
  },
  {
   "geo": "KR",
   "term": "박동원",
-  "traffic": 1000,
+  "traffic": 2000,
   "topics": "",
   "econ": false,
   "news_title": "\"꼭 잡겠다\" 왜 얘기 못하나...분위기가 심상치 않다, FA 포수 대격변 일어날까",
   "news_link": "https://www.chosun.com/sports/baseball/2026/11/11/ME3GMMLBMU3GIYJXGUYTAZBYG4/"
+ },
+ {
+  "geo": "KR",
+  "term": "kimberly powell",
+  "traffic": 500,
+  "topics": "AI·반도체, 금리·연준",
+  "econ": true,
+  "news_title": "Jensen Huang Said to Have Had Relationship With Nvidia Executive Who Reports to Him",
+  "news_link": "https://www.nytimes.com/2026/11/11/technology/jensen-huang-nvidia-affair.html"
  },
  {
   "geo": "KR",
@@ -37,7 +37,16 @@
  },
  {
   "geo": "KR",
-  "term": "엘리나 스비톨리나",
+  "term": "메르세데스-벤츠 v 클래스",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "[포토뉴스]“골프도 편안하게” 벤츠, 새 V-클래스 출시",
+  "news_link": "https://www.khan.co.kr/article/20261111203100A/?cp"
+ },
+ {
+  "geo": "KR",
+  "term": "미라 안드레예바",
   "traffic": 200,
   "topics": "",
   "econ": false,
@@ -46,25 +55,34 @@
  },
  {
   "geo": "KR",
-  "term": "차장",
+  "term": "암호화폐",
   "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "'김 차장, 요즘 왜 저래?'…부장님만 '바글바글' 심상찮다",
-  "news_link": "https://www.hankyung.com/article/2026111110121"
- },
- {
-  "geo": "KR",
-  "term": "nvda stock",
-  "traffic": 100,
-  "topics": "AI·반도체",
+  "topics": "비트코인, 알트코인",
   "econ": true,
-  "news_title": "Exclusive | Nvidia is Preparing to Oust CEO Jensen Huang",
-  "news_link": "https://www.wsj.com/business/nvidia-is-preparing-to-oust-nvidia-ceo-jensen-huang-30f421ad"
+  "news_title": "암호화폐 시장의 미약한 반등…비트코인·이더리움 추가 하락 위험 여전",
+  "news_link": "https://www.coinreaders.com/269013"
  },
  {
   "geo": "KR",
-  "term": "광공해",
+  "term": "정의선",
+  "traffic": 200,
+  "topics": "국내 대형주",
+  "econ": true,
+  "news_title": "[단독] 현대차, 무뇨스 재신임…북미시장 공세 '고삐'",
+  "news_link": "https://www.mk.co.kr/news/business/12205668"
+ },
+ {
+  "geo": "KR",
+  "term": "죽도시장",
+  "traffic": 200,
+  "topics": "급락·변동성",
+  "econ": true,
+  "news_title": "고랭지 배춧값 급락…출하 포기까지",
+  "news_link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8709021"
+ },
+ {
+  "geo": "KR",
+  "term": "노란봉투법",
   "traffic": 100,
   "topics": "",
   "econ": false,
@@ -72,111 +90,93 @@
   "news_link": ""
  },
  {
-  "geo": "KR",
-  "term": "삼성자산운용",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "[부고] 김우석(삼성자산운용 대표)씨 모친상",
-  "news_link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4444267"
- },
- {
-  "geo": "KR",
-  "term": "지소연",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "지소연에 ‘성희롱 발언’한 심판, 출전정지 3개월 징계",
-  "news_link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8710019"
- },
- {
   "geo": "US",
-  "term": "cavaliers vs knicks",
-  "traffic": 10000,
-  "topics": "",
-  "econ": false,
-  "news_title": "How to watch Cavaliers vs Knicks: NBA, live stream, TV channel, start time",
-  "news_link": "https://sports.yahoo.com/articles/watch-cavaliers-vs-knicks-nba-230000591.html"
- },
- {
-  "geo": "US",
-  "term": "amd stock",
-  "traffic": 5000,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "Why Advanced Micro Devices Stock Popped Today",
-  "news_link": "https://finance.yahoo.com/markets/stocks/articles/why-advanced-micro-devices-stock-175422041.html"
- },
- {
-  "geo": "US",
-  "term": "celtics vs raptors",
-  "traffic": 5000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Boston Celtics (9-2) at Toronto Raptors (5-5) Game #12 11/11/26",
-  "news_link": "https://sports.yahoo.com/articles/boston-celtics-9-2-toronto-210000066.html"
- },
- {
-  "geo": "US",
-  "term": "wizards vs pacers",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Washington Wizards @ Indiana Pacers Odds",
-  "news_link": "https://sportsbook.fanduel.com/basketball/nba/washington-wizards-@-indiana-pacers-36298489"
- },
- {
-  "geo": "US",
-  "term": "avgo stock",
-  "traffic": 1000,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "What Is Going on With Broadcom Stock on Wednesday?",
-  "news_link": "https://www.benzinga.com/markets/tech/26/11/63145055/what-is-going-on-with-broadcom-stock-on-wednesday"
- },
- {
-  "geo": "US",
-  "term": "lightning vs sabres",
+  "term": "buffalo vs ball state",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "NHL On Tap: Lightning, Sabres kick off Veterans Appreciation Night doubleheader on TNT",
-  "news_link": "https://www.nhl.com/news/nhl-on-tap-news-and-notes-november-11-2026"
+  "news_title": "Buffalo @ Ball State Odds",
+  "news_link": "https://sportsbook.fanduel.com/football/ncaa-football-games/buffalo-@-ball-state-36280934"
  },
  {
   "geo": "US",
-  "term": "bethesda skyrim 15th anniversary remaster",
+  "term": "bob woodruff",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Skyrim confirms unexpected remaster on 15th anniversary of Bethesda game",
-  "news_link": "https://www.gamingbible.com/news/skyrim-unexpected-remaster-15th-anniversary-bethesda-game-120844-20261111"
+  "news_title": "See Bruce Springsteen Finally Play ‘Western Stars’ Songs in Public",
+  "news_link": "https://www.rollingstone.com/music/music-news/bruce-springsteen-western-stars-public-concert-1235655108/"
  },
  {
   "geo": "US",
-  "term": "week 10 start e m sit em",
+  "term": "isabelle huppert",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "NFL Fantasy 2026 Start 'Em, Sit 'Em: Wide receivers for Week 10",
-  "news_link": "https://www.nfl.com/news/nfl-fantasy-2026-start-em-sit-em-wide-receivers-for-week-10"
+  "news_title": "Quentin Tarantino Reveals Why He Originally Fired Mélanie Laurent and Isabelle Huppert from Inglourious Basterds",
+  "news_link": "https://people.com/inglourious-basterds-why-melanie-laurent-and-isabelle-huppert-were-fired-by-quentin-tarantino-12246881"
  },
  {
   "geo": "US",
-  "term": "chicago fire over the edge",
-  "traffic": 200,
+  "term": "rangers vs flames",
+  "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Chicago Fire Season 15 Episode 6 Photos: “Over the Edge” Airs Tonight on NBC",
-  "news_link": "https://seat42f.com/chicago-fire-season-15-episode-6-photos/"
+  "news_title": "Rangers at Flames projected lineups",
+  "news_link": "https://www.nhl.com/news/new-york-rangers-calgary-flames-game-preview-november-11-2026"
  },
  {
   "geo": "US",
-  "term": "phil mickelson",
+  "term": "sacramento st vs central mi",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Sac State football adjusts to the big time, Wednesday night games and all",
+  "news_link": "https://www.abridged.org/news/sac-state-football-adjusts-to-the-big-time-wednesday-night-games-and-all/"
+ },
+ {
+  "geo": "US",
+  "term": "umass vs toledo",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Toledo vs. UMass odds, picks, prediction, start time: Wednesday college football betting preview for Nov. 11",
+  "news_link": "https://www.cbssports.com/betting/news/toledo-vs-umass-odds-picks-prediction-start-time-wednesday-college-football-betting-preview-for-nov-11/"
+ },
+ {
+  "geo": "US",
+  "term": "maria flores garcia ice detention",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Most high-profile class ever? Florida State officially signs Miles Russell, Charlie Woods",
-  "news_link": "https://www.golfchannel.com/ncaa/news/most-high-profile-class-ever-florida-state-officially-signs-miles-russell-charlie-woods"
+  "news_title": "She gave a valedictorian speech in the spring. Now, she could be deported.",
+  "news_link": "https://www.washingtonpost.com/dc-md-va/2026/11/11/ice-detains-maryland-college-student-who-was-her-high-schools-valedictorian/"
+ },
+ {
+  "geo": "US",
+  "term": "normandy",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Walk the talk: a week learning French with a personal prof in Normandy",
+  "news_link": "https://www.theguardian.com/travel/2026/nov/10/immersive-learning-french-in-rouen-normandy"
+ },
+ {
+  "geo": "US",
+  "term": "reasons for falling us gas prices",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Why is gasoline suddenly under $4 a gallon?",
+  "news_link": "https://www.npr.org/2026/11/11/nx-s1-6037588/gasoline-price-below-4-dollars-gallon"
+ },
+ {
+  "geo": "US",
+  "term": "rory mcilroy",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "‘Nor would I ever want to be’: Rory McIlroy jabs Bryson DeChambeau over pro return",
+  "news_link": "https://golf.com/news/rory-mcilroy-jabs-bryson-dechambeau-pro-return/"
  }
 ]
