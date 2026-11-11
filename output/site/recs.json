@@ -8,8 +8,8 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.56,
-  "kr_n": 51,
+  "kr_avg": 2.52,
+  "kr_n": 52,
   "foreign_avg": 1.9,
   "foreign_n": 49
  },
@@ -22,8 +22,8 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.59,
-  "kr_n": 380,
+  "kr_avg": 1.58,
+  "kr_n": 383,
   "foreign_avg": 2.0,
   "foreign_n": 152
  },
@@ -43,6 +43,20 @@
  },
  {
   "rank": 4,
+  "topic": "비트코인",
+  "kind": "국내·해외 모두 강세",
+  "confidence": "높음",
+  "title_idea": "[오늘] 비트코인에 무슨 일이? 1분 요약",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "속보·뉴스형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 2.23,
+  "kr_n": 14,
+  "foreign_avg": 1.74,
+  "foreign_n": 146
+ },
+ {
+  "rank": 5,
   "topic": "빅테크",
   "kind": "국내 검증 주제",
   "confidence": "높음",
@@ -54,20 +68,6 @@
   "kr_n": 37,
   "foreign_avg": 1.02,
   "foreign_n": 18
- },
- {
-  "rank": 5,
-  "topic": "비트코인",
-  "kind": "국내·해외 모두 강세",
-  "confidence": "높음",
-  "title_idea": "[오늘] 비트코인에 무슨 일이? 1분 요약",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "속보·뉴스형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 2.22,
-  "kr_n": 14,
-  "foreign_avg": 1.74,
-  "foreign_n": 146
  },
  {
   "rank": 6,
@@ -106,7 +106,7 @@
   "format": "단일 이미지",
   "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.37,
+  "kr_avg": 1.38,
   "kr_n": 160,
   "foreign_avg": 0.61,
   "foreign_n": 3
