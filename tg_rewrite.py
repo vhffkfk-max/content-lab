@@ -55,16 +55,17 @@ def renumber(text):
 
 
 def to_html(text):
-    """✅ 줄 묶음(+바로 위 한 문장)을 텔레그램 인용 서식으로. 길게 눌러 복사하면 서식째 붙여넣어진다."""
+    """✅ 줄 묶음(+바로 위 한 문장)과 ✔️ 볼 것 묶음을 텔레그램 인용 서식으로. 길게 눌러 복사하면 서식째 붙여넣어진다."""
     import html as H
     lines, out, i = text.split("\n"), [], 0
     while i < len(lines):
         j = i
-        while j < len(lines) and lines[j].startswith("✅"):
+        mark = "✅" if lines[i].startswith("✅") else "✔" if lines[i].startswith("✔") else None
+        while mark and j < len(lines) and lines[j].startswith(mark):
             j += 1
-        if j > i:   # i..j 가 ✅ 묶음
+        if j > i:   # i..j 가 ✅ 또는 ✔️ 묶음
             lead = []
-            if out and out[-1].strip() and not out[-1].lstrip().startswith(("•", "→", "✔", "<")) and "️⃣" not in out[-1]:
+            if mark == "✅" and out and out[-1].strip() and not out[-1].lstrip().startswith(("•", "→", "✔", "<")) and "️⃣" not in out[-1]:
                 lead = [out.pop()]
             out.append("<blockquote>" + "\n".join(lead + [H.escape(x) for x in lines[i:j]]) + "</blockquote>")
             i = j
