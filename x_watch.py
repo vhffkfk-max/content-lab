@@ -163,6 +163,9 @@ def scan_accounts(c, now):
 
 def alert(posts, v):
     """핵심 인물 새 글 → 텔레그램 (글마다 한 번 — 처음 본 글만 들어옴)."""
+    # 2026-11-12 대표 요청: 이 알림은 텔레그램에 안 보냄 (연구소 사이트에는 그대로). 다시 켜려면 .env 에 WATCH_ALERTS=1
+    if os.environ.get("WATCH_ALERTS") != "1":
+        return 
     token, chat = os.environ.get("TELEGRAM_BOT_TOKEN"), os.environ.get("TELEGRAM_CHAT_ID")
     if not (token and chat):
         return

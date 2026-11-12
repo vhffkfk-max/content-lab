@@ -312,6 +312,9 @@ def short_n(v):
 
 
 def alert(c, rows):
+    # 2026-11-12 대표 요청: 이 알림은 텔레그램에 안 보냄 (연구소 사이트에는 그대로). 다시 켜려면 .env 에 WATCH_ALERTS=1
+    if os.environ.get("WATCH_ALERTS") != "1":
+        return 0
     token, chat = os.environ.get("TELEGRAM_BOT_TOKEN"), os.environ.get("TELEGRAM_CHAT_ID")
     if not (token and chat):
         return 0
