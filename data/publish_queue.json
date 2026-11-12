@@ -3128,196 +3128,6 @@
  ],
  "ideas": [
   {
-   "title": "이마트 영업이익 70% 급감, 스타벅스 적자",
-   "concept": "이마트 3분기 영업이익 461억, 작년보다 69.6% 감소. 본업(별도 1,660억, 트레이더스)은 버텼는데 스타벅스 영업손실 약 453억이 발목을 잡았다는 구도로 푼다. 첫 장에서 우리가 자주 가는 마트와 커피 매장이 실적을 갈랐다는 점을 쉬운 말로 짚는다. 주가 하락폭은 재료에 없어 쓰지 않는다. (공식: 없음)",
-   "why_now": "14시대 이마트 실적 기사가 5곳 이상에서 나왔고 머니투데이가 어닝쇼크 급락을 보도했다. 아직 이 주제를 보낸 적이 없다.",
-   "tag": "기업실적",
-   "sources": [
-    "https://www.mt.co.kr/living/2026/11/11/2026111113152963431",
-    "https://biz.chosun.com/distribution/channel/2026/11/11/S2I5SJRFBJDI7EECEPVYCFWWHY/",
-    "https://www.mt.co.kr/stock/2026/11/11/2026111114171065107"
-   ],
-   "bg": "Starbucks Korea store",
-   "bg_alt": "Emart store",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "이마트 영업이익\n작년보다 **69.6%** 급감\n발목은 스타벅스 적자",
-     "number": "-69.6%",
-     "label": "이마트 3분기 영업이익 461억",
-     "sub": "스타벅스 영업손실 약 453억원"
-    }
-   ],
-   "forms": [
-    "bignum",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/11",
-     "headlines": [
-      "이마트 영업익 461억, 69.6% 감소",
-      "별도 1,660억, 트레이더스가 효자",
-      "스타벅스 영업손실 약 453억원"
-     ]
-    }
-   },
-   "id": "20261111-1601-i1",
-   "created_at": "2026-11-11T16:01:32+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261111-1601-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261111-1601-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261111-1601-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261111-1601-i1/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261111-1601-i1/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261111-1601-i1/1-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "현대엔지니어링 교량 붕괴, 8개월 영업정지",
-   "concept": "안성 교량 붕괴 사고로 8개월 영업정지가 나왔고 매출 약 40%가 영향권이라는 보도를 속보로 전한다. 정확한 범위와 시작일은 재료에 없어 확인 필요로 남기고, 건설업계가 수주와 공사 일정 파장을 주시한다는 점까지만 다룬다. (공식: 없음)",
-   "why_now": "15:31 기준 5곳이 막 다룬 새 소식이고, 앞서 보낸 주제에는 없다.",
-   "tag": "속보",
-   "sources": [
-    "https://v.daum.net/v/20261111153141368",
-    "https://www.newsis.com/view/NISX20261111_0003863979"
-   ],
-   "bg": "Hyundai Engineering & Construction",
-   "bg_alt": "Anseong bridge collapse",
-   "hooks": [
-    {
-     "type": "질문형",
-     "title": "교량 하나 무너졌는데\n왜 회사가 **8개월**\n멈춰 서야 했나",
-     "number": "8개월",
-     "label": "현대엔지니어링 영업정지",
-     "sub": "매출 약 40%가 영향권이라는 보도"
-    }
-   ],
-   "forms": [
-    "breaking",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261111-1601-i2",
-   "created_at": "2026-11-11T16:01:32+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261111-1601-i2/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261111-1601-i2/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261111-1601-i2/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261111-1601-i2/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261111-1601-i2/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261111-1601-i2/1-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "엔씨 3분기 영업익 1196억, 흑자전환",
-   "concept": "이마트와 스타벅스가 부진했던 같은 날, 엔씨는 리니지 클래식과 아이온2 신작 호조로 흑자전환했다는 대비로 푼다. 전년 동기 대비 수치는 재료에 없어 쓰지 않는다. 같은 3분기 실적인데 기업마다 희비가 갈렸다는 점이 포인트다. (공식: 없음)",
-   "why_now": "15:15에 9곳이 다룬 실적 소식이다. 오늘 이마트와 스타벅스 실적이 부진한 가운데 반등 사례라 대비가 된다.",
-   "tag": "기업실적",
-   "sources": [
-    "https://view.asiae.co.kr/article/2026111115151248368",
-    "https://www.yna.co.kr/view/AKR20261111112251527"
-   ],
-   "bg": "NCSoft Pangyo headquarters",
-   "bg_alt": "Lineage Classic game",
-   "hooks": [
-    {
-     "type": "반전형",
-     "title": "이마트는 꺾이고\n스타벅스는 적자인 날\n엔씨는 **흑자전환**",
-     "number": "1196억원",
-     "label": "엔씨 3분기 영업이익",
-     "sub": "리니지 클래식, 아이온2 신작 호조"
-    }
-   ],
-   "forms": [
-    "bignum",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261111-1601-i3",
-   "created_at": "2026-11-11T16:01:32+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261111-1601-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261111-1601-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261111-1601-i3/1-bignum-dohyeon.jpg"
-    }
-   ]
-  },
-  {
    "title": "금융보안원 해킹, 48개사 파일 유출",
    "concept": "금융보안원이 뚫려 상호금융 48곳, 파일 130여개가 나갔다는 사실과 경찰 수사의뢰, 공격 IP 236개가 전부 국내라는 점을 속보로 정리. 유출 범위는 미확인이라 한 곳에서만 밝힌다. (공식: 없음)",
    "why_now": "연합뉴스와 헤럴드경제가 15~16시대 보도한 새 소식이고, 경찰 수사의뢰까지 나왔다. 아직 발행한 적이 없다.",
@@ -8849,6 +8659,419 @@
      "form": "news",
      "font": "myeongjo",
      "path": "20261112-1401-i3/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "번스타인, 엔비디아 목표가 반토막",
+   "concept": "월가 첫 대규모 목표가 하향을 400달러에서 200달러로 줄어든 숫자 하나로 보여주고, 한국 반도체주 변동성과 연결한다 (공식: 표지는 이미 일어난 일로)",
+   "why_now": "13:48 연합인포맥스, SBS Biz가 보도했다. 젠슨 황 해임 논의 이후 월가에서 처음 나온 대규모 목표가 하향이고, 앞선 후속과 달리 새 숫자가 있다.",
+   "tag": "해외주식",
+   "sources": [
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4444429",
+    "https://v.daum.net/v/20261112134808883"
+   ],
+   "bg": "Jensen Huang",
+   "bg_alt": "Nvidia headquarters",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "번스타인이 엔비디아\n목표가를 400달러에서\n**200달러**로 낮췄다",
+     "number": "200달러",
+     "label": "번스타인 엔비디아 목표가",
+     "sub": "기존 400달러에서 하향"
+    },
+    {
+     "type": "질문형",
+     "title": "번스타인은 왜\n엔비디아 목표가를\n**절반**으로 깎았나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "엔비디아 목표가가\n**반토막** 난 날에\nAMD는 올랐다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "bars"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "번스타인 엔비디아 목표주가(달러)",
+     "bars": [
+      {
+       "label": "기존",
+       "value": 400
+      },
+      {
+       "label": "하향",
+       "value": 200,
+       "hi": true
+      }
+     ]
+    }
+   },
+   "id": "20261112-1501-i1",
+   "created_at": "2026-11-12T15:01:35+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261112-1501-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261112-1501-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261112-1501-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261112-1501-i1/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261112-1501-i1/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261112-1501-i1/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261112-1501-i1/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261112-1501-i1/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261112-1501-i1/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261112-1501-i1/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261112-1501-i1/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261112-1501-i1/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "서울 92주째 상승, 성동 강동은 하락",
+   "concept": "서울 전체는 오르는데 한강벨트가 하락으로 돌아선 엇갈림을 주간 통계로 보여준다. 주간 통계 한 번이라 추세 단정은 이르다는 점은 한 번만 밝힌다 (공식: 표지는 이미 일어난 일로)",
+   "why_now": "14시 전후 여러 매체가 한국부동산원 주간 통계를 다뤘다. 강남3구에 이어 성동, 강동이 하락 전환했고 서울 상승폭은 0.07%로 줄었다.",
+   "tag": "부동산",
+   "sources": [
+    "https://www.newsis.com/view/NISX20261112_0003865338",
+    "https://biz.chosun.com/real_estate/real_estate_general/2026/11/12/OIRPL6KFGFH25AO23AO3RMEPOE/"
+   ],
+   "bg": "Seoul apartment Han River",
+   "bg_alt": "Seoul apartment complex",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "서울 92주째 올랐는데\n송파는 **0.35%** 내렸다",
+     "number": "0.35%",
+     "label": "송파 주간 하락률",
+     "sub": "서울 전체는 92주째 상승"
+    },
+    {
+     "type": "질문형",
+     "title": "성동, 강동 하락\n한강벨트도 **꺾일까**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "92주 연속 상승인데\n성동, 강동은\n**하락** 전환했다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "paper",
+    "news"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/12",
+     "headlines": [
+      "서울 아파트값 92주째 상승",
+      "성동, 강동 하락 전환",
+      "송파 0.35% 하락"
+     ]
+    }
+   },
+   "id": "20261112-1501-i2",
+   "created_at": "2026-11-12T15:01:35+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261112-1501-i2/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261112-1501-i2/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261112-1501-i2/1-paper-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-1501-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-1501-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-1501-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261112-1501-i2/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261112-1501-i2/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261112-1501-i2/2-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-1501-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-1501-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-1501-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261112-1501-i2/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261112-1501-i2/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261112-1501-i2/3-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-1501-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-1501-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-1501-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "머스크 \"로보택시는 168시간 일한다\"",
+   "concept": "머스크가 X에 올린 한 줄과 사람 기사 근무시간을 견주고, 한국에서 처음 공개된 사이버캡으로 이어간다. 상용화 일정은 확인 안 됨을 한 번만 적는다 (공식: 표지는 이미 일어난 일로)",
+   "why_now": "14:12 게시된 머스크 X 글이 조회 478,283으로 자료 내 최고다. 같은 시간 테슬라 사이버캡 한국 첫 공개 기사도 나왔다.",
+   "tag": "테슬라",
+   "sources": [
+    "https://x.com/elonmusk/status/2120746428720988408"
+   ],
+   "bg": "Elon Musk",
+   "bg_alt": "Tesla Cybercab",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "머스크가 올린 한 줄\n로보택시 주 **168시간**",
+     "number": "168시간",
+     "label": "머스크가 X에 쓴 로보택시 근무시간",
+     "sub": "24시간 x 7일, 쉬지 않고 돈다는 뜻"
+    },
+    {
+     "type": "질문형",
+     "title": "머스크는 왜 로보택시를\n**168시간**이라 불렀나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "기사는 하루 8~10시간\n로보택시는 **168시간**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "quote"
+   ],
+   "extra": {
+    "quote": {
+     "label": "머스크 X 글",
+     "quote": "로보택시는 일주일에 168시간 일한다.",
+     "by": "일론 머스크"
+    }
+   },
+   "id": "20261112-1501-i3",
+   "created_at": "2026-11-12T15:01:35+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261112-1501-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261112-1501-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261112-1501-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261112-1501-i3/1-quote-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261112-1501-i3/1-quote-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261112-1501-i3/1-quote-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261112-1501-i3/2-quote-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261112-1501-i3/2-quote-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261112-1501-i3/2-quote-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261112-1501-i3/3-quote-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261112-1501-i3/3-quote-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261112-1501-i3/3-quote-gowun.jpg"
     }
    ]
   }
