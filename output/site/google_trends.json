@@ -10,15 +10,6 @@
  },
  {
   "geo": "KR",
-  "term": "토스증권",
-  "traffic": 1000,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "“AI 돈맥 어디로 흐르나”…5개국 발로 뛴 토스증권, 투자 지도 그렸다",
-  "news_link": "https://stock.mk.co.kr/news/view/1196929"
- },
- {
-  "geo": "KR",
   "term": "13일의 금요일",
   "traffic": 200,
   "topics": "",
@@ -28,12 +19,12 @@
  },
  {
   "geo": "KR",
-  "term": "msci",
+  "term": "공장",
   "traffic": 200,
-  "topics": "비트코인",
-  "econ": true,
-  "news_title": "Strategy, the World’s Biggest Corporate Bitcoin Holder, to Be Dropped From MSCI Indexes",
-  "news_link": "https://www.wsj.com/finance/investing/strategy-the-worlds-biggest-corporate-bitcoin-holder-to-be-dropped-from-msci-indexes-96572af4"
+  "topics": "",
+  "econ": false,
+  "news_title": "재난문자",
+  "news_link": "https://d.kbs.co.kr/info/messageView?seq=206635&areaCd=10714"
  },
  {
   "geo": "KR",
@@ -41,8 +32,8 @@
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "‘김승원 신약 청탁 의혹’ 브로커 양모씨에 징역 4년 구형",
-  "news_link": "https://www.chosun.com/national/national_general/2026/11/12/X3EACDFYJNF43MGVF67SH52VCA/"
+  "news_title": "공소청, 김승원 ‘신약 청탁 의혹’ 브로커에 징역 4년 구형",
+  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8711265"
  },
  {
   "geo": "KR",
@@ -50,8 +41,8 @@
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "네이션스 리그 세르비아 대 독일 축구 예측",
-  "news_link": "https://ko.laodong.vn/bong-da-quoc-te/nhan-dinh-bong-da-serbia-vs-duc-tai-nations-league-1799219.ldo"
+  "news_title": "잉글랜드 대 크로아티아 경기 예측, 11월 13일 오전 2시 45분: 잉글랜드, 8강 진출 확정",
+  "news_link": "https://www.vietnam.vn/ko/nhan-dinh-anh-vs-croatia-02h45-ngay-13-11-ve-tu-ket-cho-tam-su"
  },
  {
   "geo": "KR",
@@ -60,7 +51,7 @@
   "topics": "",
   "econ": false,
   "news_title": "‘코인 상장 청탁’ 프로골퍼 안성현, 대법서 무죄 확정",
-  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8710942"
+  "news_link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8710942"
  },
  {
   "geo": "KR",
@@ -90,93 +81,102 @@
   "news_link": "https://www.mk.co.kr/news/broadcasting-service/12205959"
  },
  {
+  "geo": "KR",
+  "term": "국가배상책임",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "세월호 유족들 \"보상금 돌려주고 국가 배상 받겠다\"‥2심도 패소",
+  "news_link": "https://imnews.imbc.com/news/2026/society/article/6865189_36918.html"
+ },
+ {
   "geo": "US",
-  "term": "internet outage",
+  "term": "czechia vs spain",
+  "traffic": 20000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Czech Republic vs Spain: UEFA Nations League stats & head-to-head",
+  "news_link": "https://www.bbc.com/sport/football/live/cwg5jrzyqzdnt"
+ },
+ {
+  "geo": "US",
+  "term": "chequia - españa",
   "traffic": 10000,
   "topics": "",
   "econ": false,
-  "news_title": "Optimum internet restored in West Virginia after multi-state outage",
-  "news_link": "https://www.wtap.com/2026/11/12/optimum-internet-restored-west-virginia-after-multi-state-outage/"
+  "news_title": "¿A qué hora es el partido República Checa vs España y cómo verlo en TV y streaming online?",
+  "news_link": "https://www.si.com/es-us/a-que-hora-es-el-partido-republica-checa-vs-espana-y-como-verlo-en-tv-y-streaming-online-12-11-2026"
  },
  {
   "geo": "US",
-  "term": "microsoft stock",
+  "term": "italia - francia",
+  "traffic": 10000,
+  "topics": "",
+  "econ": false,
+  "news_title": "¿A qué hora es el partido Italia vs Francia y cómo verlo en TV y streaming online?",
+  "news_link": "https://www.si.com/es-us/a-que-hora-es-el-partido-italia-vs-francia-y-como-verlo-en-tv-y-streaming-online-12-11-2026"
+ },
+ {
+  "geo": "US",
+  "term": "inglaterra - croacia",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "¿A qué hora es el partido Inglaterra vs Croacia y cómo verlo en TV y streaming online?",
+  "news_link": "https://www.si.com/es-us/a-que-hora-es-el-partido-inglaterra-vs-croacia-y-como-verlo-en-tv-y-streaming-online-12-11-2026"
+ },
+ {
+  "geo": "US",
+  "term": "microsoft hacked",
   "traffic": 2000,
   "topics": "빅테크",
   "econ": true,
-  "news_title": "Microsoft Stock At $521: Anthropic’s Landlord, Customer And Rival?",
-  "news_link": "https://www.trefis.com/stock/msft/articles/624619/microsoft-stock-at-521-anthropic-s-landlord-customer-and-rival/2026-11-12"
+  "news_title": "Hackers abuse SQL Server’s weak passwords to drop cryptominers and Gh0st RAT",
+  "news_link": "https://www.csoonline.com/article/4247845/hackers-abuse-sql-servers-weak-passwords-to-drop-cryptominers-and-gh0st-rat.html"
  },
  {
   "geo": "US",
-  "term": "microsoft ceo",
+  "term": "cyber attacks today",
   "traffic": 1000,
-  "topics": "AI·반도체, 빅테크",
-  "econ": true,
-  "news_title": "Microsoft's CEO says AI copilots will change every profession",
-  "news_link": "https://www.yahoo.com/news/videos/microsofts-ceo-says-ai-copilots-130000845.html"
+  "topics": "",
+  "econ": false,
+  "news_title": "Critical RCE Vulnerability in Apache HTTP Server: Everything You Need To Know",
+  "news_link": "https://www.wiz.io/blog/cve-2026-119618-rce-apache-http-server-vulnerability"
  },
  {
   "geo": "US",
-  "term": "msft",
-  "traffic": 1000,
+  "term": "albania vs finland",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Albania vs Finland: UEFA Nations League stats & head-to-head",
+  "news_link": "https://www.bbc.com/sport/football/live/ck86z8g3j1yzt"
+ },
+ {
+  "geo": "US",
+  "term": "microsoft layoffs",
+  "traffic": 500,
   "topics": "빅테크",
   "econ": true,
-  "news_title": "OpenAI posts steep losses even as quarterly revenue rises to $10 billion, WSJ reports",
-  "news_link": "https://www.reuters.com/legal/transactional/openai-posts-steep-losses-even-quarterly-revenue-rises-10-billion-wsj-reports-2026-11-10/"
+  "news_title": "Tech layoffs tracker 2026: All the job losses across Canva, Squarespace, Amazon, Microsoft, Apple, Meta and others",
+  "news_link": "https://tech.yahoo.com/general/breaking-news/article/tech-layoffs-tracker-2026-all-the-job-losses-across-canva-squarespace-amazon-microsoft-apple-meta-and-others-141507340.html"
  },
  {
   "geo": "US",
-  "term": "senegal vs sudan",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Senegal vs. Sudan Lineups, Live Stream Options, How & Where to Watch AFCON Qualifiers on TV",
-  "news_link": "https://athlonsports.com/soccer/senegal-vs-sudan-lineups-live-stream-afcon-qualifiers-on-tv"
- },
- {
-  "geo": "US",
-  "term": "tommy mcmillen",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "UFC Star Tommy McMillen Rushed to Hospital After Suspected Overdose",
-  "news_link": "https://www.tmz.com/2026/11/12/tommy-mcmillen-hospitalized-suspected-overdose/"
- },
- {
-  "geo": "US",
-  "term": "bill gates",
+  "term": "outlook cyber attack",
   "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Bill Gates Reassess Climate Change",
-  "news_link": "https://www.forbes.com/sites/arielcohen/2026/11/11/bill-gates-reassess-climate-change/"
+  "topics": "빅테크",
+  "econ": true,
+  "news_title": "Microsoft Confirms Active Exploitation Of New Outlook Zero-Day",
+  "news_link": "https://www.forbes.com/sites/daveywinder/2026/11/11/microsoft-confirms-active-exploitation-of-new-outlook-zero-day/"
  },
  {
   "geo": "US",
-  "term": "hail",
+  "term": "spain",
   "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Severe thunderstorms could bring hail, damaging winds, tornado to NJ",
-  "news_link": "https://www.yahoo.com/news/weather-news/articles/severe-thunderstorms-could-bring-hail-173424856.html"
- },
- {
-  "geo": "US",
-  "term": "hola",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Alejandra Rubio y Carlo Constanzia buscan nuevos horizontes: ella debuta en el teatro y él quiere resucitar su faceta como músico",
-  "news_link": "https://www.abc.es/gente/alejandra-rubio-carlo-constanzia-buscan-nuevos-horizontes-20261110114420-nt.html"
- },
- {
-  "geo": "US",
-  "term": "venezuela",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Duelo entre Tiburones y Navegantes en Miami por los damnificados de terremoto en Venezuela",
-  "news_link": "https://www.telemundo51.com/video/noticiero-t51/duelo-entre-tiburones-y-navegantes-en-miami-por-los-damnificados-de-terremoto-en-venezuela/2847388/"
+  "topics": "부동산",
+  "econ": true,
+  "news_title": "Millions of Spaniards stage first general strike in 14 years as anger rages over housing",
+  "news_link": "https://www.cnn.com/2026/11/11/europe/spain-strike-housing-latam-intl"
  }
 ]
