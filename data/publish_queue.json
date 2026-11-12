@@ -3128,384 +3128,6 @@
  ],
  "ideas": [
   {
-   "title": "3분기 중앙은행 금 매입 321톤",
-   "concept": "금값은 한 달 새 내렸는데 중앙은행은 3분기에 금 321톤을 사들였다는 대비로 풀고, 2분기 296톤과 비교한다. 첫 본문 장에서 금 매입이 일반 투자자에게 왜 눈여겨볼 신호인지 쉬운 말로 답한다. 수치의 원출처(World Gold Council 집계로 보임)는 한 번만 확인 필요로 적는다. (공식: 전후 낙차 한 줄)",
-   "why_now": "@KobeissiLetter가 올린 새 통계가 조회 58,485로 퍼지고 있다. 금 선물은 전일 -0.89%, 1달 -4.38%(11/11 기준)여서 중앙은행의 움직임과 대비된다.",
-   "tag": "금, 중앙은행",
-   "sources": [
-    "https://x.com/KobeissiLetter/status/2120512766796566810"
-   ],
-   "bg": "gold bars vault",
-   "bg_alt": "gold bullion",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "중앙은행이 3분기에\n금 **321톤**을\n싹 쓸어 담았다",
-     "number": "321톤",
-     "label": "2026년 3분기 중앙은행 금 매입",
-     "sub": "2분기(296톤)보다 8% 늘었다"
-    },
-    {
-     "type": "질문형",
-     "title": "금값 빠지는 사이\n중앙은행은 왜\n**321톤**이나 샀나",
-     "number": "321톤",
-     "label": "3분기 중앙은행 금 매입",
-     "sub": "금 선물은 1달 -4.38%(11/11)"
-    },
-    {
-     "type": "반전형",
-     "title": "1분기 대비\n**453%** 늘었다\n중앙은행 금 쇼핑",
-     "number": "453%",
-     "label": "1분기 대비 3분기 금 매입 증가율",
-     "sub": "2024년 4분기 이후 분기 기준 최대"
-    }
-   ],
-   "forms": [
-    "bignum",
-    "bars"
-   ],
-   "extra": {
-    "bignum": {},
-    "bars": {
-     "sub": "중앙은행 분기별 금 매입(톤)",
-     "bars": [
-      {
-       "label": "2분기",
-       "value": 296
-      },
-      {
-       "label": "3분기",
-       "value": 321,
-       "hi": true
-      }
-     ]
-    }
-   },
-   "id": "20261112-0709-i1",
-   "created_at": "2026-11-12T07:09:11+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261112-0709-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261112-0709-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261112-0709-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261112-0709-i1/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261112-0709-i1/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261112-0709-i1/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261112-0709-i1/2-bignum-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261112-0709-i1/2-bignum-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261112-0709-i1/2-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261112-0709-i1/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261112-0709-i1/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261112-0709-i1/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261112-0709-i1/3-bignum-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261112-0709-i1/3-bignum-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261112-0709-i1/3-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261112-0709-i1/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261112-0709-i1/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261112-0709-i1/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "예탁금 최저치, 630억 반대매매",
-   "concept": "코스피가 5거래일 만에 11.71% 빠진 뒤 빚내서 산 주식 630억 원이 강제로 팔렸고, 시장 대기 자금인 예탁금은 사상 최저치를 새로 썼다는 흐름으로 푼다. 첫 본문 장에서 반대매매(빌린 돈으로 산 주식을 증권사가 대신 강제로 파는 것)와 예탁금(투자자가 증권사 계좌에 맡겨 둔 대기 자금)을 나오는 자리에서 풀고, 반등을 받쳐줄 돈이 얇다는 뜻을 한 줄로 답한다. 예탁금 정확한 금액은 재료에 없다고 한 번만 밝힌다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "한국경제가 22:00~22:02에 예탁금 최저치 경신과 630억 원 반대매매를 연달아 보도했다. 한경 인스타 릴스의 코스피 5거래일 11.71% 급락 영상은 시간당 좋아요가 평소의 313배다. 국내 증시 불안 중 이 주제는 아직 다루지 않았다.",
-   "tag": "국내 증시, 개인 투자자",
-   "sources": [
-    "https://v.daum.net/v/20261111220240694",
-    "https://news.google.com/rss/articles/CBMiWkFVX3lxTE81WENFVV8yV3VsdzQ1ZjFZOTRrM2xkTjZEUzZoeERscFktZHRBSlVyM2NvOFUwSkNVdnZ",
-    "https://www.instagram.com/reel/Dfg05LfOzzr/"
-   ],
-   "bg": "Korea stock market screen",
-   "bg_alt": "KOSPI trading floor Seoul",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "빚내서 산 주식\n**630억**이 강제로\n팔려 나갔다",
-     "number": "630억원",
-     "label": "반대매매로 강제 처분된 금액",
-     "sub": "투자자예탁금은 사상 최저치 경신"
-    },
-    {
-     "type": "질문형",
-     "title": "반등 때 받쳐줄\n돈이 **최저치**인데\n누가 사나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "증시는 빠졌는데\n대기 자금은 **바닥**\n빚 낸 주식만 팔렸다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/12",
-     "headlines": [
-      "투자자예탁금 사상 최저치 경신",
-      "반대매매로 630억 원 강제 매도",
-      "코스피 5거래일 11.71% 급락"
-     ]
-    }
-   },
-   "id": "20261112-0709-i2",
-   "created_at": "2026-11-12T07:09:11+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261112-0709-i2/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261112-0709-i2/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261112-0709-i2/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261112-0709-i2/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261112-0709-i2/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261112-0709-i2/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261112-0709-i2/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261112-0709-i2/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261112-0709-i2/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "굴스비, 10월 물가에 \"불안할 정도\"",
-   "concept": "연준 인사가 CPI를 직접 어떻게 평가했는지에 초점을 둔다. 굴스비 시카고 연은 총재가 10월 물가 보고서를 두고 한 말과, NYT가 전한 '올려야 한다, 문제는 속도'라는 견해차를 묶는다. 12월 인상 확률을 다룬 앞선 글과 달리 연준 인사의 평가를 중심에 둔다. 첫 본문 장에서 금리가 오르면 대출 이자와 환율에 어떤 부담이 갈 수 있는지 일반 원리로만 쉽게 풀고, 이번 발언 때문에 움직였다는 말은 쓰지 않는다. (공식: 당사자의 한마디를 따옴표로)",
-   "why_now": "22:50 CNBC가 굴스비 총재의 발언을 보도했고, 같은 시각 NYT는 인상 속도를 두고 연준 내 의견이 갈린다고 전했다. 미국 10년물 금리는 5.0%(11/11)다.",
-   "tag": "연준, 물가",
-   "sources": [
-    "https://www.cnbc.com/2026/11/11/goolsbee-october-inflation-fed-rates-disturbing-distressing.html"
-   ],
-   "bg": "Goolsbee Federal Reserve",
-   "bg_alt": "Federal Reserve building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "연준 굴스비가\n10월 물가 보고서를\n**불안할 정도**라 했다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "연준 총재 입에서\n**'불안'**이 나왔다\n10월 물가 뭐였나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "인상 여부 아닌\n**속도**로 갈렸다\n연준 속내",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "quote",
-    "news"
-   ],
-   "extra": {
-    "quote": {
-     "label": "연준 발언",
-     "quote": "borderline disturbing",
-     "by": "굴스비 시카고 연은 총재, 10월 물가 보고서에 대해"
-    }
-   },
-   "id": "20261112-0709-i3",
-   "created_at": "2026-11-12T07:09:11+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261112-0709-i3/1-quote-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261112-0709-i3/1-quote-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261112-0709-i3/1-quote-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261112-0709-i3/2-quote-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261112-0709-i3/2-quote-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261112-0709-i3/2-quote-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261112-0709-i3/3-quote-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261112-0709-i3/3-quote-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261112-0709-i3/3-quote-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "엔비디아 이사회, 젠슨 황 해임 준비 WSJ",
    "concept": "11일 종가 +2.87%였던 엔비디아에 밤사이 해임 준비 보도가 나온 반전을 속보로 풀고, 시간외 낙폭은 매체별로 3%대와 8%로 엇갈려 확인 중이라고 밝힌다. 첫 본문 장에서 삼성전자와 SK하이닉스 HBM 고객사라 반도체주 분위기와 이어질 수 있다는 점을 쉬운 말로 설명한다. (공식: 한 주인공이 장마다 한 걸음씩)",
    "why_now": "WSJ 보도가 07:49에 나왔고 국내외 18곳이 다뤘다. 기존 승계 질문보다 한 단계 큰 후속 소식이다.",
@@ -8912,6 +8534,432 @@
      "form": "quote",
      "font": "gowun",
      "path": "20261112-2101-i3/3-quote-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "트럼프, 멕시코에 관세 2배 경고",
+   "concept": "이민자 1500명 북상 보도 직후 트럼프가 멕시코에 '안 막으면 관세 2배'라고 한 사건을 보도로 전한다. 첫 본문 장에서 멕시코 생산 거점을 둔 한국 자동차, 부품 기업에 어떤 길로 영향이 갈 수 있는지 쉬운 말로 풀고, 실제 인상 여부와 시점은 아직 나오지 않았다고 한 번만 밝힌다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "21:17 이후 머니투데이 등이 보도한 새 소식이다. 오늘 다룬 금리, 엔비디아 이슈와 겹치지 않는 관세 재료다.",
+   "tag": "관세",
+   "sources": [
+    "https://www.mt.co.kr/world/2026/11/12/2026111221312663687",
+    "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBoUXdtV0tmS3VyYVFCNTlMMGhNU1NyZ2F1QzBXMzFSZzl4NkMwQ3BRQWY2UHJ5QjVROE5"
+   ],
+   "bg": "Donald Trump",
+   "bg_alt": "Mexico US border",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "이민자 1500명 북상,\n트럼프 멕시코에\n관세 **2배** 경고",
+     "number": "2배",
+     "label": "멕시코산 관세",
+     "sub": "안 막으면 즉각 올리겠다고 경고"
+    },
+    {
+     "type": "질문형",
+     "title": "멕시코 관세 **2배** 경고,\n한국 차 공장은\n영향 없을까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "무역 카드였던 관세,\n이번엔 **이민자**\n문제에 들이댔다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261112-2201-i1",
+   "created_at": "2026-11-12T22:01:57+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261112-2201-i1/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261112-2201-i1/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261112-2201-i1/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-2201-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-2201-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-2201-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261112-2201-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261112-2201-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261112-2201-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-2201-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-2201-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-2201-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261112-2201-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261112-2201-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261112-2201-i1/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-2201-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-2201-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-2201-i1/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "재건축 부담금, 장관의 효과와 재산권 발언",
+   "concept": "국토부 장관이 재초환에 대해 '집값 안정 효과는 분명하지만 재산권 침해 소지도 있다'고 말한 것을 중심으로 풀고, 재초환이 무엇인지는 나오는 자리에서 한 줄로 푼다. 제도 변경 여부와 발언 전문은 기사 원문으로 확인한 뒤 쓴다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "홍지선 국토장관 발언을 조선비즈, 매일경제 등 3곳이 다뤘다. 서울 집값이 92주째 오르면서 강남3구, 한강벨트 하락 기사도 함께 나와 관심이 높다.",
+   "tag": "부동산",
+   "sources": [
+    "https://www.mk.co.kr/news/economy/12206789",
+    "https://v.daum.net/v/20261112185833605",
+    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008843728&plink=RSSLINK&cooper=RSSREADER"
+   ],
+   "bg": "Seoul apartment complex",
+   "bg_alt": "Seoul Gangnam apartments",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "**92주째** 오른 집값,\n국토장관이 재초환\n효과 직접 언급",
+     "number": "92주째",
+     "label": "서울 아파트값 상승",
+     "sub": "국토장관, 재건축 부담금 효과 언급"
+    },
+    {
+     "type": "질문형",
+     "title": "재건축 부담금,\n집값엔 **효과** 있다는데\n재산권은 어쩌나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "집값 잡는 데 **효과**\n분명하다던 장관,\n재산권 침해도 언급",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "quote"
+   ],
+   "extra": {
+    "quote": {
+     "label": "국토부 장관, 재건축 부담금",
+     "quote": "집값 안정 효과는 분명하다. 다만 재산권 침해 소지도 있다.",
+     "by": "홍지선 국토교통부 장관"
+    }
+   },
+   "id": "20261112-2201-i2",
+   "created_at": "2026-11-12T22:01:57+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-2201-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-2201-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-2201-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261112-2201-i2/1-quote-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261112-2201-i2/1-quote-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261112-2201-i2/1-quote-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-2201-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-2201-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-2201-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261112-2201-i2/2-quote-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261112-2201-i2/2-quote-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261112-2201-i2/2-quote-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-2201-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-2201-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-2201-i2/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261112-2201-i2/3-quote-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261112-2201-i2/3-quote-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261112-2201-i2/3-quote-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "매일 이자 쌓아 주는 통장, 최고 연 4%",
+   "concept": "이자를 매일 쌓아 준다는 새 통장을 소개하되, '최고 연 4%'는 조건을 채워야 적용된다는 점을 짚는다. 가입 전 확인할 기본금리, 우대 조건, 한도를 내 지갑 관점에서 정리하고, 자료에 없는 우대 조건과 한도는 지어내지 않는다. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "21:13 헤럴드경제가 보도한 새 상품 소식이다. 증시 변동성이 큰 날이라 예금, 통장에 대한 관심이 높을 수 있다.",
+   "tag": "금융상품",
+   "sources": [
+    "https://biz.heraldcorp.com/article/10934625"
+   ],
+   "bg": "savings account bank",
+   "bg_alt": "Woori Bank building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "하루마다 이자 쌓는\n통장 나왔다,\n최고 연 **4%**",
+     "number": "연 4%",
+     "label": "최고 금리",
+     "sub": "조건을 충족해야 적용"
+    },
+    {
+     "type": "질문형",
+     "title": "매일 이자 주는\n통장, **최고** 4%\n조건은 뭘까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "연 4%라지만\n**최고**금리일 뿐,\n조건 충족해야 적용",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "editorial",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261112-2201-i3",
+   "created_at": "2026-11-12T22:01:57+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261112-2201-i3/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261112-2201-i3/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261112-2201-i3/1-editorial-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261112-2201-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261112-2201-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261112-2201-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261112-2201-i3/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261112-2201-i3/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261112-2201-i3/2-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261112-2201-i3/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261112-2201-i3/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261112-2201-i3/3-editorial-plex.jpg"
     }
    ]
   }
