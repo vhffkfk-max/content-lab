@@ -459,6 +459,14 @@ img,video,canvas,svg{max-width:100%;height:auto}
 /* ── 2026-11-06 리뉴얼(CONTENT LAB 명세): 6개 상위 메뉴 · KPI · 쓰레드 카드 · 상세 패널 · 발행 캘린더 ── */
 .nav-group{margin:14px 12px 4px;font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--faint);list-style:none}
 .nav-group:first-child{margin-top:4px}
+.nav-group.fold{margin:10px 2px 0}
+.nav .nav-fold{min-height:30px;padding:4px 10px;justify-content:space-between;font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--muted)}
+.nav .nav-fold i{font-style:normal;font-size:11px}
+.nav .nav-alias{display:none}
+.acc-switch{display:flex;width:max-content;max-width:100%;box-sizing:border-box;gap:4px;padding:4px;margin-bottom:16px;border:1px solid var(--border);border-radius:99px;background:var(--surface)}
+.acc-switch button{all:unset;cursor:pointer;padding:7px 18px;border-radius:99px;font-size:14px;font-weight:600;color:var(--muted)}
+.acc-switch button[aria-selected="true"]{background:var(--accent);color:#fff}
+.acc-switch button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .kpi4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .kpi4 a{display:block;padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--surface);color:inherit;text-decoration:none}
 .kpi4 a:hover{border-color:var(--control)}
@@ -4839,7 +4847,9 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
   function setChannel(ch) {
     if (document.querySelector('.dp')) closeDetail();
     markMnav(ch);
-    document.querySelectorAll('#channel-nav > li > button').forEach(b => b.setAttribute('aria-current', String(b.dataset.ch === ch)));
+    const navCh = ch.replace(/^fb-/, 'c-');
+    document.querySelectorAll('#channel-nav > li > button').forEach(b => b.setAttribute('aria-current', String(b.dataset.ch === navCh)));
+    navOpenFor(ch); accSwitch(ch);
     document.querySelectorAll('.subnav').forEach(u => { u.hidden = u.dataset.for !== ch; });
     document.querySelectorAll('.view').forEach(v => { v.hidden = v.dataset.view !== ch; });
     document.getElementById('topbar-title').textContent = NAMES[ch];
@@ -4938,17 +4948,44 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
   // ── 2026-11-06 리뉴얼(CONTENT LAB 명세) ──
   // 실제 데이터만 쓴다. 없는 값은 '미수집', 연결 안 된 값은 '측정 불가'.
   const nf = v => v == null || v === '' ? null : Number(v).toLocaleString('ko-KR');
+  // [이름, 메뉴, 접기] — 접기 1이면 이름을 눌러 펼친다. 지금 보고 있는 메뉴가 든 묶음은 저절로 펼쳐진다.
   const NAV_GROUPS = [
-    ['대시보드', ['home', 'hotnow', 'guide']],
-    ['컨텐츠 바로 만들기', ['c-bull', 'c-hot', 'c-asset', 'c-chart', 'c-malhee']],
-    ['내 채널 피드백', ['fb-bull', 'fb-hot', 'fb-asset', 'fb-chart', 'fb-malhee']],
-    ['쓰레드 연구소', ['thlab', 'threads']],
-    ['트렌드 발견', ['google', 'foreign', 'x', 'youtube']],
-    ['계정 분석', ['accounts', 'econ']],
-    ['콘텐츠 제작', ['acc-pages', 'instagram', 'telegram', 'traders', 'video', 'viral', 'growth']],
-    ['성과 분석', ['usage', 'feedback']],
-    ['발행 캘린더', ['calendar']],
+    ['오늘', ['home', 'hotnow'], 0],
+    ['내 계정', ['c-bull', 'c-hot', 'c-asset', 'c-chart', 'c-malhee', 'fb-bull', 'fb-hot', 'fb-asset', 'fb-chart', 'fb-malhee'], 0],
+    ['만들기 도구', ['instagram', 'telegram', 'traders', 'threads', 'video', 'acc-pages'], 1],
+    ['글감 찾기', ['google', 'foreign', 'x', 'youtube', 'thlab', 'viral'], 1],
+    ['분석·기록', ['accounts', 'econ', 'growth', 'calendar', 'usage', 'feedback', 'guide'], 1],
   ];
+  const navOpen = {
+    get() { try { return JSON.parse(localStorage.getItem('nav_open') || '{}'); } catch (e) { return {}; } },
+    set(v) { try { localStorage.setItem('nav_open', JSON.stringify(v)); } catch (e) {} },
+  };
+  function navFold(label, open) {
+    const h = document.querySelector(`#channel-nav .nav-fold[data-grp="${label}"]`); if (!h) return;
+    h.setAttribute('aria-expanded', String(open)); h.querySelector('i').textContent = open ? '▾' : '▸';
+    document.querySelectorAll(`#channel-nav > li[data-grp="${label}"]`).forEach(li => { li.hidden = !open; });
+  }
+  function navOpenFor(ch) {
+    const li = document.querySelector(`#channel-nav > li[data-grp] > button[data-ch="${ch}"]`);
+    const g = li && li.parentElement.dataset.grp;
+    if (g && document.querySelector(`#channel-nav .nav-fold[data-grp="${g}"]`)) navFold(g, true);
+  }
+  // 계정 화면 맨 위: [만들기] [지난 성적] — 왼쪽 메뉴에는 계정 이름 한 번만
+  function accSwitch(ch) {
+    const m = /^(c|fb)-(.+)$/.exec(ch); if (!m || !document.querySelector(`.view[data-view="fb-${m[2]}"]`)) return;
+    const view = document.querySelector(`.view[data-view="${ch}"]`); if (!view) return;
+    let bar = view.querySelector(':scope > .acc-switch');
+    if (!bar) {
+      bar = el('div', 'acc-switch'); bar.setAttribute('role', 'tablist');
+      [['c', '만들기'], ['fb', '지난 성적']].forEach(([k, label]) => {
+        const b = el('button', null, label); b.type = 'button'; b.setAttribute('role', 'tab');
+        b.setAttribute('aria-selected', String(k === m[1]));
+        b.addEventListener('click', () => { if (k !== m[1]) { setChannel(`${k}-${m[2]}`); try { history.replaceState(null, '', `#ch-${k}-${m[2]}`); } catch (e) {} scrollTo({ top: 0 }); } });
+        bar.append(b);
+      });
+      view.prepend(bar);
+    }
+  }
   function regroupNav() {
     const ul = document.getElementById('channel-nav');
     if (!ul || ul.dataset.grouped) return;
@@ -4957,9 +4994,24 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
       const b = li.querySelector(':scope > button'), key = b ? b.dataset.ch : li.dataset.navKey;   // navKey: 다른 페이지로 가는 링크 (계정별 콘텐츠)
       if (key) items[key] = li; else li.remove();
     });
-    NAV_GROUPS.forEach(([label, chs]) => {
-      const h = el('li', 'nav-group', label); h.setAttribute('role', 'presentation'); ul.append(h);
-      chs.forEach(c => { if (items[c]) { ul.append(items[c]); delete items[c]; } });
+    const saved = navOpen.get();
+    NAV_GROUPS.forEach(([label, chs, fold]) => {
+      const h = el('li', 'nav-group' + (fold ? ' fold' : '')); h.setAttribute('role', 'presentation');
+      if (fold) {
+        const btn = el('button', 'nav-fold'); btn.type = 'button'; btn.dataset.grp = label;
+        btn.append(el('span', null, label), el('i', null, '▸'));
+        btn.addEventListener('click', () => { const open = btn.getAttribute('aria-expanded') !== 'true'; navFold(label, open); const s = navOpen.get(); s[label] = open; navOpen.set(s); });
+        h.append(btn);
+      } else h.textContent = label;
+      ul.append(h);
+      chs.forEach(c => {
+        if (!items[c]) return;
+        const li = items[c]; delete items[c];
+        if (/^fb-/.test(c)) li.classList.add('nav-alias');   // 지난 성적은 계정 화면 위 탭으로 (메뉴에서는 숨김)
+        if (fold) li.dataset.grp = label;
+        ul.append(li);
+      });
+      if (fold) navFold(label, !!saved[label]);
     });
     Object.values(items).forEach(li => ul.append(li));   // 빠뜨린 메뉴가 없게
     ul.dataset.grouped = '1';
