@@ -3128,366 +3128,6 @@
  ],
  "ideas": [
   {
-   "title": "이마트 영업이익 69.6% 급감, 스타벅스 적자",
-   "concept": "본업(트레이더스)은 버텼는데 스타벅스 3분기 영업손실 약 453억원이 발목을 잡았다는 반전으로 푼다. 주가 하락폭은 재료에 없어 쓰지 않는다. (공식: 없음)",
-   "why_now": "14시대 이마트 3분기 실적 기사가 5곳 이상에서 나왔고, 머니투데이가 어닝쇼크 급락을 보도했다. 아직 다룬 적 없는 새 사건이다.",
-   "tag": "기업실적",
-   "sources": [
-    "https://www.mt.co.kr/living/2026/11/11/2026111113152963431",
-    "https://biz.chosun.com/distribution/channel/2026/11/11/S2I5SJRFBJDI7EECEPVYCFWWHY/",
-    "https://www.mt.co.kr/stock/2026/11/11/2026111114171065107"
-   ],
-   "bg": "Starbucks Korea store",
-   "bg_alt": "Emart store",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "이마트 영업이익\n작년보다 **69.6%** 줄었다\n스타벅스 손실 453억",
-     "number": "69.6%",
-     "label": "이마트 3분기 영업이익 감소",
-     "sub": "영업이익 461억원, 스타벅스 영업손실 약 453억원"
-    },
-    {
-     "type": "질문형",
-     "title": "이마트 이익 70% 급감\n범인은 **스타벅스**?\n본업은 버텼다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "트레이더스는 효자인데\n이마트 이익 **70%** 급감\n스타벅스가 발목",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "bars"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "이마트 3분기 영업이익, 억원(스타벅스는 영업손실 규모)",
-     "bars": [
-      {
-       "label": "이마트 별도 영업이익",
-       "value": 1660
-      },
-      {
-       "label": "이마트 연결 영업이익",
-       "value": 461
-      },
-      {
-       "label": "스타벅스 영업손실",
-       "value": 453,
-       "hi": true
-      }
-     ]
-    }
-   },
-   "id": "20261111-1506-i1",
-   "created_at": "2026-11-11T15:06:36+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261111-1506-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261111-1506-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261111-1506-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261111-1506-i1/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261111-1506-i1/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261111-1506-i1/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261111-1506-i1/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261111-1506-i1/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261111-1506-i1/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261111-1506-i1/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261111-1506-i1/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261111-1506-i1/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "SK하이닉스 생산직 채용에 쏠린 관심",
-   "concept": "반도체 수출 4배 보도와 '1인당 성과급 8억?' 기대감이 채용 관심으로 이어진 흐름을 풀되, 성과급은 실적에 따라 달라지니 원문 확인이 필요하다는 점을 한 곳에만 밝힌다. (공식: 없음)",
-   "why_now": "14:48 5곳이 다뤘고, 14:57 반도체 수출 호황 기사와 맞물려 일반 독자 관심이 크다. 이전 발행 목록에 없다.",
-   "tag": "산업, 일자리",
-   "sources": [
-    "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9DeXpVR0x0N19ybDBfcEFZY2x0cUMzQlZwWGZmZzdSTmxNbFhMbE1EUmNOOVBrYS1QYVV",
-    "https://v.daum.net/v/20261111145757294"
-   ],
-   "bg": "SK hynix",
-   "bg_alt": "SK hynix fab",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "반도체 수출 **4배**\n하이닉스 생산직에\n관심이 쏠렸다",
-     "number": "4배",
-     "label": "반도체 수출",
-     "sub": "1조 달러 달성이 눈앞이라는 보도"
-    },
-    {
-     "type": "질문형",
-     "title": "하이닉스 생산직\n성과급 **8억**?\n채용에 몰린 눈",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "업황이 좋을수록\n채용 경쟁도 **커진다**\n성과급은 실적 따라",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "editorial"
-   ],
-   "extra": {},
-   "id": "20261111-1506-i2",
-   "created_at": "2026-11-11T15:06:36+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261111-1506-i2/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261111-1506-i2/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261111-1506-i2/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261111-1506-i2/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261111-1506-i2/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261111-1506-i2/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261111-1506-i2/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261111-1506-i2/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261111-1506-i2/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "오픈AI 분기 매출 첫 100억달러, TSMC도 베팅",
-   "concept": "AI 수익성 걱정이 나오는 가운데 오픈AI 매출이 전분기보다 50% 늘고, 칩을 만드는 TSMC가 최대 10억달러를 직접 넣는다는 대비로 푼다. 매출 세부 수치는 원문 확인. (공식: 없음)",
-   "why_now": "오픈AI 매출은 14:52 조선비즈 등 2곳, TSMC 투자는 14:54 3곳이 보도했다. 엔비디아 리스크가 커진 날 AI 투심 이야기와 맞물린다.",
-   "tag": "AI, 반도체",
-   "sources": [
-    "https://biz.chosun.com/it-science/ict/2026/11/11/QDQLRCEK5ZHBRLD4HDRBECGH5U/",
-    "https://www.hankyung.com/article/202611110093i",
-    "https://www.yna.co.kr/view/AKR20261111093200008"
-   ],
-   "bg": "Sam Altman OpenAI",
-   "bg_alt": "OpenAI logo",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "오픈AI 분기 매출\n처음 **100억달러**\n전분기보다 50%↑",
-     "number": "100억달러",
-     "label": "오픈AI 분기 매출 첫 돌파",
-     "sub": "전분기보다 50% 늘었다는 보도"
-    },
-    {
-     "type": "질문형",
-     "title": "AI 거품 얘기에도\nTSMC는 왜 **베팅**했나\n최대 10억달러",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "수익성 걱정이 나와도\n오픈AI 분기 매출\n**50%** 뛰었다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/11",
-     "headlines": [
-      "오픈AI 분기 매출 첫 100억달러",
-      "전분기보다 매출 50% 증가",
-      "TSMC, 오픈AI 등에 최대 10억달러"
-     ]
-    }
-   },
-   "id": "20261111-1506-i3",
-   "created_at": "2026-11-11T15:06:36+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261111-1506-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261111-1506-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261111-1506-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261111-1506-i3/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261111-1506-i3/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261111-1506-i3/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261111-1506-i3/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261111-1506-i3/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261111-1506-i3/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261111-1506-i3/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261111-1506-i3/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261111-1506-i3/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "이마트 영업이익 70% 급감, 스타벅스 적자",
    "concept": "이마트 3분기 영업이익 461억, 작년보다 69.6% 감소. 본업(별도 1,660억, 트레이더스)은 버텼는데 스타벅스 영업손실 약 453억이 발목을 잡았다는 구도로 푼다. 첫 장에서 우리가 자주 가는 마트와 커피 매장이 실적을 갈랐다는 점을 쉬운 말로 짚는다. 주가 하락폭은 재료에 없어 쓰지 않는다. (공식: 없음)",
    "why_now": "14시대 이마트 실적 기사가 5곳 이상에서 나왔고 머니투데이가 어닝쇼크 급락을 보도했다. 아직 이 주제를 보낸 적이 없다.",
@@ -8809,6 +8449,406 @@
      "form": "paper",
      "font": "gowun",
      "path": "20261112-1306-i3/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "삼성, 충청권에 144조원 투자",
+   "concept": "144조원이라는 숫자를 앞에 두고, HBM 패키징 등 4개 분야를 어디에 쓰는지 풀어 줌. 둘째 장에서 '그래서 내 생활에 뭐가 달라지나'를 쉬운 말로 한 줄 답하고, 투자 기간과 세부 금액은 확인 안 됨으로 한 번만 밝힘. (공식: 용어 대신 눈에 보이는 것으로)",
+   "why_now": "디일렉, 서울경제, 뉴스1 등 3곳이 12:31에 보도한 새 소식이고 아직 다루지 않았다. 반도체 강세와 AI 투자 불안이 겹친 날이라 반응이 날 만하다.",
+   "tag": "반도체",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1lZ0hkTlhnVUZBSHU2ekZjZFJqQldDVEJqbWxVUVRDMEtrQTFCTk5BUG5ERkZuNWwwVVV"
+   ],
+   "bg": "Samsung Electronics HBM",
+   "bg_alt": "Samsung semiconductor plant",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "삼성, 충청권에\n**144조원** 투자 보도\nHBM부터 배터리까지",
+     "number": "144조원",
+     "label": "삼성 충청권 투자",
+     "sub": "HBM 패키징, OLED, 기판, 배터리"
+    },
+    {
+     "type": "질문형",
+     "title": "HBM부터 배터리까지\n삼성은 왜 충청권에\n**144조**를 걸었나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "AI 투자 불안한 날\n삼성은 오히려\n**144조** 투자 보도",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261112-1401-i1",
+   "created_at": "2026-11-12T14:01:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261112-1401-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261112-1401-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261112-1401-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261112-1401-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261112-1401-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261112-1401-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261112-1401-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261112-1401-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261112-1401-i1/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "스트래티지, MSCI 글로벌 지수서 퇴출",
+   "concept": "비트코인을 계속 사 모으던 기업이 지수에서 빠진다는 보도를 사건 중심으로 정리함. 지수를 따라 사는 펀드 자금이 빠질 수 있다는 점은 쉬운 말로 풀고, 퇴출 시점과 자금 규모는 확인 안 됨으로 한 번만 적음. (공식: 표지는 이미 일어난 일로)",
+   "why_now": "디지털투데이와 블루밍비트가 13:20에 보도했다. 비트코인이 7만3천달러대에서 횡보하는 중에 나온 소식이고 오늘 아직 다루지 않았다.",
+   "tag": "가상자산",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zN1hwWXQ2d25uRlN6OWdTN2xhQzNvTDZtajRKQ29sMGgtYzNEcEstcER2LVU5aG5ha1Z"
+   ],
+   "bg": "Michael Saylor",
+   "bg_alt": "MicroStrategy bitcoin",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "비트코인 사 모으던\n스트래티지, MSCI\n지수에서 **퇴출**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "지수에서 빠지면\n비트코인 시장에서\n**자금**도 빠질까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "계속 사 모은 기업이\nMSCI 지수에서\n**퇴출**됐다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261112-1401-i2",
+   "created_at": "2026-11-12T14:01:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261112-1401-i2/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261112-1401-i2/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261112-1401-i2/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-1401-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-1401-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-1401-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261112-1401-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261112-1401-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261112-1401-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-1401-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-1401-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-1401-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261112-1401-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261112-1401-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261112-1401-i2/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-1401-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-1401-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-1401-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "서울 오피스텔만 따로 논다",
+   "concept": "전국은 4년째 하락인데 서울만 2%대 상승이라는 대비로 풂. 기준시가가 세금과 건보료 계산의 기준이 된다는 점을 첫 본문 장에서 내 지갑 얘기로 연결하고, 서울 상승률의 정확한 수치는 확인 안 됨으로 한 번만 적음. (공식: 전후 낙차 한 줄 표지)",
+   "why_now": "서울경제, SBS, SBS Biz 등 4곳이 13:27 전후로 보도했다. 오늘 다룬 부동산 거래 감소와 집값 하락 소식과 반대 흐름이라 대비가 된다.",
+   "tag": "부동산",
+   "sources": [
+    "https://www.sedaily.com/article/20113388",
+    "https://v.daum.net/v/20261112132701130"
+   ],
+   "bg": "Seoul officetel buildings",
+   "bg_alt": "Seoul apartment skyline",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "전국 오피스텔\n기준시가 **4년째**\n하락했어요",
+     "number": "4년째",
+     "label": "전국 오피스텔 기준시가 하락",
+     "sub": "서울은 2%대 상승"
+    },
+    {
+     "type": "질문형",
+     "title": "내 오피스텔의\n**기준시가**는\n오르는 쪽일까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "전국은 4년째 하락\n서울만 **2%대** 상승\n오피스텔 따로 논다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "editorial",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261112-1401-i3",
+   "created_at": "2026-11-12T14:01:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261112-1401-i3/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261112-1401-i3/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261112-1401-i3/1-editorial-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-1401-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-1401-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-1401-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261112-1401-i3/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261112-1401-i3/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261112-1401-i3/2-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-1401-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-1401-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-1401-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261112-1401-i3/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261112-1401-i3/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261112-1401-i3/3-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-1401-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-1401-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-1401-i3/3-news-myeongjo.jpg"
     }
    ]
   }
