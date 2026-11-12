@@ -258,6 +258,41 @@ a.row:hover .row-main{text-decoration:underline}
 @media (max-width:860px){.side-hide{display:none}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 /* 처음 화면 */
+.clamp2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.sec-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.sec-head h2{margin:0}
+#home-todo-head h2{margin:0 0 6px}
+.todo-sum{font-size:20px;font-weight:700;margin:0 0 10px}
+.todo-sum em{font-style:normal;color:var(--accent-ink)}
+.todo-bar{height:10px;border-radius:99px;background:var(--border);overflow:hidden;margin-bottom:6px}
+.todo-bar i{display:block;height:100%;background:var(--accent);border-radius:99px}
+.todo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:14px}
+.todo-card{display:grid;gap:12px;align-content:start;background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--todo-c,var(--accent));border-radius:var(--radius-card);padding:18px 18px 16px}
+.todo-card.is-done{opacity:.72}
+.todo-top{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.todo-top b{display:flex;align-items:center;gap:8px;font-size:18px}
+.todo-left{font-size:13px;font-weight:700;color:var(--pill-negative-ink);background:var(--pill-negative-bg);padding:3px 10px;border-radius:99px}
+.todo-items{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.todo-items li{display:grid;grid-template-columns:22px 1fr auto;align-items:center;gap:8px;font-size:15px}
+.todo-items small{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.todo-mark{width:20px;height:20px;box-sizing:border-box;border-radius:6px;border:2px solid var(--control);display:grid;place-items:center;font-size:13px;font-weight:800;line-height:1}
+.todo-ok .todo-mark{background:var(--accent);border-color:var(--accent);color:#fff}
+.todo-ok span:not(.todo-mark){color:var(--muted);text-decoration:line-through}
+.todo-no span:not(.todo-mark){font-weight:600}
+.todo-na{color:var(--muted)}
+.todo-na .todo-mark{border-style:dashed}
+.todo-acts{display:flex;gap:8px;flex-wrap:wrap}
+.pick-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-top:10px}
+.pick{display:grid;gap:8px;align-content:start;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-card);padding:18px}
+.pick h3{font-size:17px;line-height:1.45;margin:0}
+.pick>p:not(.job-ch){margin:0;font-size:14px;color:var(--muted);line-height:1.55}
+.pick .job-acts{justify-content:flex-start;margin-top:4px}
+.home-more{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-card);padding:0}
+.home-more>summary{cursor:pointer;padding:16px 20px;font-weight:700;font-size:16px}
+.home-more>summary span{font-weight:400;font-size:13px;color:var(--muted);margin-left:8px}
+.home-more[open]>summary{border-bottom:1px solid var(--border)}
+.home-more>.card,.home-more>.sec{margin:16px 20px}
+@media (max-width:640px){.todo-sum{font-size:17px}.home-more>summary span{display:block;margin:4px 0 0}}
 .home-jobs{display:grid;gap:12px}
 .hn-old{margin-top:12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-control)}
 .hn-old>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;font-weight:600}
@@ -790,25 +825,38 @@ ul.gd-card{padding-left:36px;line-height:1.8}
         <div class="title-row">
           <div><h1>오늘 뭐 할까요?</h1><p id="home-sub">오늘 할 일만 골랐어요. 하나 골라서 버튼을 누르세요.</p><a href="#ch-guide" class="gd-home" id="gd-home-link">처음이세요? 사용 가이드 보기 →</a></div>
         </div>
-        <section class="sec" id="home-board-sec"><h2>오늘 발행 현황</h2><div class="card" id="home-board"></div></section>
-        <section class="sec" id="home-kpi-sec" aria-label="오늘의 숫자"><div class="kpi4" id="home-kpi"></div></section>
-        <section class="sec" id="home-hot-sec"><h2>지금 주목할 콘텐츠</h2><p class="note">쓰레드 바이럴 TOP·급상승에서 골랐어요. 카드를 누르면 오른쪽에 자세히 열려요.</p><div class="tcards" id="home-hot"></div></section>
+        <!-- 2026-11-12 개편: 들어오자마자 '오늘 남은 발행' → '지금 쓸 거리' → '지금 뜨는 남의 글'. 나머지는 맨 아래 접기 -->
+        <section class="sec" id="home-todo-sec" aria-label="오늘 남은 발행"><div id="home-todo-head"></div><div class="todo-grid" id="home-todo"></div></section>
+        <section class="sec" id="home-pick-sec">
+          <div class="sec-head"><h2>② 지금 쓸 거리</h2><button type="button" class="btn small" id="home-pick-all">지난 글감까지 보기 →</button></div>
+          <p class="note">30분마다 새로 골라요. 하나 골라서 <b>초안 복사</b> 하거나 <b>카드뉴스 초안</b>을 만드세요.</p>
+          <div class="pick-grid" id="home-pick"></div>
+        </section>
+        <section class="sec" id="home-hot-sec">
+          <h2>③ 지금 뜨는 남의 글</h2>
+          <p class="note">최근 조회가 빨리 느는 쓰레드 글이에요. 누르면 오른쪽에 글 전체가 열려요. 따라 쓸 땐 우리 말투로 다시 쓰세요.</p>
+          <div class="tcards" id="home-hot"></div>
+        </section>
         <section class="sec" id="home-fresh-sec" hidden><div class="fresh" id="home-fresh"></div></section>
+        <details class="sec home-more" id="home-board-sec"><summary>발행 기록 보기 <span>날짜별 · 요일별</span></summary><div class="card" id="home-board"></div></details>
+        <details class="sec home-more"><summary>더 보기 <span>채널별 다음 한 가지 · 바로가기 · 내가 만든 쓰레드 글 · 메뉴 안내</span></summary>
+        <section class="sec" id="home-next-sec">
+          <h2>채널별 다음 한 가지</h2>
+          <div class="card next-list" id="home-next"></div>
+        </section>
         <section class="sec" id="home-quick-sec"><h2>바로가기</h2><div class="quick" id="home-quick"></div></section>
         <section class="sec" id="home-check" aria-label="연구소 활용 체크"><div class="uc-strip" id="home-check-box"></div></section>
+        <section class="sec" id="home-kpi-sec" aria-label="오늘의 숫자"><h2>숫자로 보기</h2><div class="kpi4" id="home-kpi"></div></section>
         <section class="sec" id="home-thhist">
           <h2>내가 만든 쓰레드 글 (지난 것까지)</h2>
           <p class="note">'쓰레드 콘텐츠 만들기'로 만든 글이 글감이 바뀌어도 여기 남아요. 최근 것부터 보여요.</p>
           <div id="thhist-box"></div>
         </section>
-        <section class="sec" id="home-next-sec">
-          <h2>채널별 다음 한 가지</h2>
-          <div class="card next-list" id="home-next"></div>
-        </section>
         <section class="sec" id="home-map-sec">
           <h2>메뉴 안내</h2>
           <div class="card home-map" id="home-map"></div>
         </section>
+        </details>
       </div>
 
       <!-- 활용 체크: 연구소 추천을 실제 글·AI 대화에 썼는지 (usage_audit.py, 3시간마다) -->
@@ -2844,8 +2892,57 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
       box.replaceChildren(tabs, filt, pane);
     });
   }
+  // ① 오늘 남은 발행: 계정마다 카드뉴스·릴스·쓰레드 체크리스트 + 바로 만들기 (2026-11-12 개편)
+  function drawTodo() {
+    const box = document.getElementById('home-todo'), head = document.getElementById('home-todo-head'); if (!box) return;
+    chJson('channel_pulse.json').then(d => {
+      if (!d || !d.daily) { head.replaceChildren(el('h2', null, '① 오늘 남은 발행')); return box.replaceChildren(el('p', 'sub', '오늘 집계를 기다리는 중이에요.')); }
+      const G = d.daily;
+      const ACC = [['c-bull', '황소개미', 'fb-bull', '#8B5E34'], ['c-hot', '핫코노미', 'fb-hot', '#E5484D'], ['c-asset', '자산백배', 'fb-asset', '#1F8A5B'], ['c-chart', '차트덕후', 'fb-chart', '#3E63DD']];
+      const COL = [['카드뉴스', 'instagram', 'card', G.card], ['릴스', 'instagram', 'reel', G.reel], ['쓰레드', 'threads', 'n', G.threads]];
+      let done = 0, total = 0;
+      const cards = ACC.map(([key, name, fbk, color]) => {
+        const card = el('article', 'todo-card'), items = el('ul', 'todo-items'), left = [];
+        let cells = 0, ok = 0;
+        card.style.setProperty('--todo-c', color);
+        COL.forEach(([lab, pf, k, goal]) => {
+          const v = ((d.channels[key] || {})[pf]) || {}, n = v.today ? v.today[k] : null, li = el('li');
+          const why = v.state === 'off' ? '정지됨' : (v.state === 'none' || !v.state) ? '주소 필요' : n == null ? '집계 대기' : null;
+          if (why) {
+            li.className = 'todo-na';
+            li.append(el('span', 'todo-mark'), el('span', null, lab), el('small', null, why));
+          } else {
+            const fin = n >= goal; cells++; total++;
+            if (fin) { ok++; done++; } else left.push(`${lab} ${goal - n}`);
+            li.className = fin ? 'todo-ok' : 'todo-no';
+            li.append(el('span', 'todo-mark', fin ? '✓' : ''), el('span', null, lab), el('small', null, `${n} / ${goal}`));
+          }
+          items.append(li);
+        });
+        const all = cells > 0 && ok === cells;
+        card.classList.add(all ? 'is-done' : 'is-left');
+        const top = el('div', 'todo-top'), nm = el('b'), dt = el('i', 'dot'); dt.style.background = color; nm.append(dt, name);
+        top.append(nm, all ? el('span', 'pill positive', '오늘 완료') : cells ? el('span', 'todo-left', `${left.join(' · ')}개 남음`) : el('span', 'note', '집계 대기'));
+        const acts = el('div', 'todo-acts');
+        acts.append(goBtn(all ? '더 만들기' : '지금 만들기 →', key, null, all ? 'btn small' : 'btn small primary'), goBtn('지난 성적', fbk, null, 'btn small'));
+        card.append(top, items, acts);
+        return [all ? 1 : 0, card];
+      });
+      cards.sort((x, y) => x[0] - y[0]);   // 남은 계정이 먼저
+      const bar = el('div', 'todo-bar'), fill = el('i'); fill.style.width = `${total ? Math.round(done / total * 100) : 0}%`; bar.append(fill);
+      const sum = el('p', 'todo-sum');
+      if (!total) sum.textContent = '오늘 집계를 기다리는 중이에요.';
+      else if (done === total) sum.textContent = `오늘 목표 ${total}칸 모두 끝났어요`;
+      else sum.append('오늘 목표 ', el('em', null, `${total - done}칸`), ` 남았어요 (${total}칸 중 ${done}칸 끝)`);
+      head.replaceChildren(el('h2', null, '① 오늘 남은 발행'), sum, bar,
+        el('p', 'sub', `갱신 ${String(d.updated).slice(5, 16).replace('T', ' ')} · 올린 글은 1~2시간 늦게 잡힐 수 있어요. '지금 만들기'를 누르면 그 계정 제작 화면으로 가요.`));
+      box.replaceChildren(...cards.map(c => c[1]));
+    });
+  }
   function drawHome(recs) {
-    drawPubBoard();
+    drawPubBoard(); drawTodo();
+    const allBtn = document.getElementById('home-pick-all');
+    if (allBtn && !allBtn.dataset.on) { allBtn.dataset.on = '1'; allBtn.addEventListener('click', () => goTo('hotnow')); }
     const jobs = [], next = [], dot = c => { const i = el('i', 'dot'); i.style.background = c === 'accent' ? 'var(--accent)' : `var(--ch-${c})`; return i; };
     // 지금 쓸 거리: 30분마다 확인해 새 소식이면 바뀌는 3개 (hot_now.py). 설명은 한 줄만 보이고 눌러서 펼침
     const hist = rows('hot_now') || [], hn = hist[0], A = auditData();
@@ -2865,6 +2962,23 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
       return card;
     };
     if (hn) (hn.picks || []).slice(0, 3).forEach((p, i) => jobs.push(jobCard(p, i, hn)));
+    // ② 처음 화면용 짧은 글감 카드 (지난 글감·쓰레드 만들기는 '지금 쓸 거리' 화면에)
+    const pickBox = document.getElementById('home-pick');
+    if (pickBox) {
+      const picks = hn ? (hn.picks || []).slice(0, 3) : [];
+      pickBox.replaceChildren(...(picks.length ? picks.map(p => {
+        const ch = /쓰레드/.test(p.channel) ? 'threads' : /텔레그램/.test(p.channel) ? 'telegram' : /X/.test(p.channel) ? 'x' : 'instagram';
+        const c = el('article', 'pick'), meta = el('p', 'job-ch'), acts = el('div', 'job-acts');
+        meta.append(dot(ch), `${p.channel} · ${(p.time || hn.time).slice(6)}`);
+        if (usedTitles.has(p.title)) meta.append(el('span', 'pill positive', '올렸어요'));
+        acts.append(copyBtn('초안 복사', p.draft, 'btn small primary'));
+        if (ch === 'instagram') acts.append(draftBtn(p.topic || p.title));
+        const src = (p.sources || [])[0];
+        if (src && webLink(src)) { const l = el('a', 'btn small', '근거'); l.href = src; l.target = '_blank'; l.rel = 'noopener'; acts.append(l); }
+        c.append(meta, el('h3', null, p.title), el('p', 'clamp2', p.why_now || ''), acts);
+        return c;
+      }) : [el('div', 'lab-empty', '07~23시 사이 30분마다 새 글감을 골라요.')]));
+    }
     // 지난 쓸 거리: 지우지 않고 달별로 영구 보관 (hot_archive.py). 달·날짜를 펼칠 때 그림
     const nowTitles = new Set((hn ? hn.picks || [] : []).slice(0, 3).map(p => p.title));
     const oldBox = document.getElementById('home-jobs-old');
@@ -2932,9 +3046,8 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     document.getElementById('home-next').replaceChildren(...next);
     const L = (rows('live_meta') || [])[0], S = (rows('summary') || [])[0];
     document.getElementById('home-sub').textContent = [
-      hn ? `지금 쓸 거리는 30분마다 확인(07~23시) · 마지막 확인 ${(hn.checked || hn.time).slice(6)} · 새 글감 ${hn.time.slice(6)}` : '',
-      L ? `뉴스는 30분마다 새로 모아요 · 마지막 ${L.updated_at.slice(11)}${L.new_press + L.new_google ? ` · 새 기사 ${L.new_press + L.new_google}개` : ''}` : '',
-      S ? `추천·분석은 매시간 (${S.generated_at.slice(5, 10).replace('-', '/')} 기준)` : ''].filter(Boolean).join(' · ') || '오늘 할 일만 골랐어요. 하나 골라서 버튼을 누르세요.';
+      '① 남은 발행 → ② 쓸 거리 고르기 → ③ 뜨는 글 참고, 이 순서로 보면 돼요',
+      hn ? `글감 ${(hn.checked || hn.time).slice(6)} 확인` : '', L ? `뉴스 ${L.updated_at.slice(11)}` : ''].filter(Boolean).join(' · ');
     const box = document.getElementById('home-jobs');
     if (!jobs.length) empty(box, '07~23시 사이 30분마다 새 글감을 확인해요.'); else box.replaceChildren(...jobs);
 
@@ -5009,7 +5122,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     kpi(null, '검수·발행 대기', '카드뉴스 검수 화면에서 로그인 후 확인', 'instagram', 'ig-publish');
     const hot = document.getElementById('home-hot'); if (!hot) return;
     const S = labSources(), seen = new Set(), pick = [];
-    [...S[0].rows.map(p => [p, S[0]]), ...S[1].rows.map(p => [p, S[1]])].forEach(([p, s]) => { if (pick.length < 4 && !seen.has(p.url)) { seen.add(p.url); pick.push([p, s]); } });
+    [...S[2].rows.map(p => [p, S[2]]), ...S[1].rows.map(p => [p, S[1]]), ...S[0].rows.map(p => [p, S[0]])].forEach(([p, s]) => { if (pick.length < 4 && !seen.has(p.url)) { seen.add(p.url); pick.push([p, s]); } });
     hot.replaceChildren(...(pick.length ? pick.map(([p, s]) => tCard(p, s)) : [el('div', 'lab-empty', '주목 콘텐츠 데이터가 아직 없어요.')]));
   }
   function drawCalendar() {
