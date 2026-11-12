@@ -3128,382 +3128,6 @@
  ],
  "ideas": [
   {
-   "title": "국고채 담합 15곳, 과징금 1.6조",
-   "concept": "공정위가 증권사와 은행 15곳에 부과한 역대 최대 과징금을 숫자 하나로 풀고, 국고채 담합이 무엇인지는 처음 나오는 자리에서 쉬운 말로 풉니다. 세부 담합 내용은 재료에 없어 확인된 보도 범위만 씁니다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "오늘 공정위가 국고채 담합으로 15개 증권사와 은행에 역대 최대인 1.6조원 과징금을 부과했다는 보도가 나왔고, 아직 다루지 않은 주제입니다.",
-   "tag": "금융",
-   "sources": [
-    "https://www.mt.co.kr/economy/2026/11/11/2026111109032210486"
-   ],
-   "bg": "Fair Trade Commission Korea",
-   "bg_alt": "Korean government bond",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "15개 금융사에\n과징금 **1.6조**\n역대 최대였어요",
-     "number": "1.6조원",
-     "label": "공정위 과징금",
-     "sub": "국고채 담합 15개 증권사, 은행"
-    },
-    {
-     "type": "질문형",
-     "title": "국고채 시장에서\n무슨 일이 있었길래\n**1.6조** 과징금?",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "증권사와 은행이\n국고채로 역대급\n**담합**으로 걸렸어요",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261111-1205-i1",
-   "created_at": "2026-11-11T12:05:00+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261111-1205-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261111-1205-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261111-1205-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261111-1205-i1/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261111-1205-i1/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261111-1205-i1/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261111-1205-i1/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261111-1205-i1/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261111-1205-i1/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261111-1205-i1/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261111-1205-i1/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261111-1205-i1/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "코스닥 매수 사이드카, 4%대 급등",
-   "concept": "한 달간 16.3% 빠진 코스닥이 하루에 4.94% 오르며 사이드카까지 걸린 낙차를 보여 줍니다. 사이드카가 무엇인지 첫 장에서 바로 풀고, 급등 원인은 재료에서 확인되지 않은 만큼 인과를 만들지 않습니다. (공식: 전후 낙차 한 줄 표지)",
-   "why_now": "오늘 11시대에 코스닥 매수 사이드카가 발동됐고 지수는 700선을 넘었습니다. 앞서 다룬 코스닥 급등보다 한 단계 큰 시장 안전장치 소식입니다.",
-   "tag": "증시",
-   "sources": [
-    "https://www.mt.co.kr/stock/2026/11/11/2026111110460243444",
-    "https://www.mk.co.kr/news/stock/12205216",
-    "https://v.daum.net/v/20261111120012625"
-   ],
-   "bg": "KOSDAQ trading screen",
-   "bg_alt": "Korea Exchange building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "코스닥 하루 **4.94%**\n급등해 700 회복\n사이드카 발동",
-     "number": "+4.94%",
-     "label": "코스닥 11/11 등락",
-     "sub": "700.61, 매수 사이드카 발동"
-    },
-    {
-     "type": "질문형",
-     "title": "코스닥 급등에\n사이드카가 왜\n**2일 연속** 걸렸나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "한 달간 **16.3%** 빠진\n코스닥이 하루 만에\n4%대 급등했어요",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/11",
-     "headlines": [
-      "코스닥 4%대 급등, 700선 회복",
-      "매수 사이드카 2일 연속 발동",
-      "코스피도 1% 안팎 강세"
-     ]
-    }
-   },
-   "id": "20261111-1205-i2",
-   "created_at": "2026-11-11T12:05:00+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261111-1205-i2/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261111-1205-i2/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261111-1205-i2/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261111-1205-i2/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261111-1205-i2/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261111-1205-i2/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261111-1205-i2/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261111-1205-i2/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261111-1205-i2/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261111-1205-i2/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261111-1205-i2/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261111-1205-i2/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261111-1205-i2/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261111-1205-i2/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261111-1205-i2/3-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261111-1205-i2/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261111-1205-i2/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261111-1205-i2/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "은행 가계대출 사상 첫 1200조 돌파",
-   "concept": "10월 한 달 5조원 늘어 사상 처음 1200조를 넘은 가계대출을 주담대, 신용대출, 집단대출, 빚투 흐름과 함께 보여 줍니다. 내 대출 비중을 점검하자는 생활 관점으로 닫고, 금리 전망은 재료에 없어 쓰지 않습니다. (공식: 끝 장은 닫힌 결론 한 줄)",
-   "why_now": "오늘 10월 은행 가계대출이 5조원 늘며 사상 처음 1200조원을 넘었다는 보도가 여러 곳에서 나왔습니다. 반대매매 소식과는 다른 사건으로, 전체 대출 규모를 다루는 주제입니다.",
-   "tag": "대출",
-   "sources": [
-    "https://www.mt.co.kr/economy/2026/11/11/2026111110595050184",
-    "https://www.sedaily.com/article/20112848",
-    "https://view.asiae.co.kr/article/2026111110184814703"
-   ],
-   "bg": "Korean bank loan counter",
-   "bg_alt": "Korean won banknotes",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "은행 가계대출\n사상 첫 **1200조**\n한 달에 5조 늘어",
-     "number": "1200조원",
-     "label": "은행 가계대출 첫 돌파",
-     "sub": "10월 한 달 5조원 증가"
-    },
-    {
-     "type": "질문형",
-     "title": "가계대출이 한 달에\n5조 늘어난 **이유**는\n집단대출과 빚투?",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "주담대도 신용대출도\n**함께** 늘어난 끝에\n1200조를 넘었어요",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "editorial"
-   ],
-   "extra": {},
-   "id": "20261111-1205-i3",
-   "created_at": "2026-11-11T12:05:00+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261111-1205-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261111-1205-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261111-1205-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261111-1205-i3/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261111-1205-i3/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261111-1205-i3/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261111-1205-i3/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261111-1205-i3/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261111-1205-i3/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
    "title": "앤트로픽 IPO 몸값 1.5조달러 후속",
    "concept": "FT가 전한 새 숫자 1.5조달러와 국민연금 주주 화제를 잇되, 아직 IPO 전이라 가격이 바뀔 수 있다는 점을 짚는다. 첫 장에서 내 연금과 어떻게 닿는지 쉬운 말로 푼다. (공식: 한 주인공이 장마다 한 걸음씩)",
    "why_now": "10:42 FT 인용 보도로 IPO 기업가치 1.5조달러 이상이라는 새 숫자가 나왔다. 쓰레드에서는 국민연금 주주 글이 시간당 조회 3955로 번지고 있다.",
@@ -8826,6 +8450,389 @@
      "form": "bars",
      "font": "dohyeon",
      "path": "20261112-1001-i3/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "엔비디아 시간외 8.6%↓, 시총 3위로",
+   "concept": "시간외 급락과 시총 순위 하락이라는 확인된 결과로 시작하고, 이사회가 CEO 해임을 준비 중이라는 WSJ, 블룸버그 보도는 원인 후보로 한 번만 붙인다. 삼성전자, SK하이닉스는 AI 칩 수요로 엮여 있다는 점만 짧게 풀고 투자 판단은 독자 몫으로 둔다. (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "39곳이 다룬 가장 큰 소식이고 연합뉴스가 시간외 8.6%↓와 시총 MS 추월을 전했다. 코스피가 5400을 찍고 하락 전환한 날이라 한국 시장과도 이어진다.",
+   "tag": "미국주식",
+   "sources": [
+    "https://www.yna.co.kr/view/AKR20261112021351009",
+    "https://kr.investing.com/news/stock-market-news/article-2171488",
+    "https://www.marketwatch.com/story/nvidias-stock-drops-as-the-board-reportedly-prepares-to-remove-ceo-jensen-huang-9edee5"
+   ],
+   "bg": "Jensen Huang",
+   "bg_alt": "Nvidia headquarters",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "엔비디아 시간외\n**8.6%** 급락, 시총\nMS에 밀려 3위",
+     "number": "-8.6%",
+     "label": "엔비디아 시간외",
+     "sub": "시총 MS에 밀려 3위"
+    },
+    {
+     "type": "질문형",
+     "title": "엔비디아 시총은\n**해임설** 하루 만에\n어디로 밀렸나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "AI 대장주 엔비디아\n이사회는 CEO\n**해임**을 준비했대요",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261112-1101-i1",
+   "created_at": "2026-11-12T11:01:44+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261112-1101-i1/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261112-1101-i1/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261112-1101-i1/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261112-1101-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261112-1101-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261112-1101-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261112-1101-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261112-1101-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261112-1101-i1/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "나라살림 적자 70.5조 줄었다",
+   "concept": "역대 최대 개선이고 적자 규모는 8년 만에 가장 작다는 사실로 연다. 나라가 쓴 돈과 번 돈의 차이가 좁혀졌다는 뜻을 쉬운 말로 풀고, 세수 증가인지 지출 감소인지는 원문에서 확인한 만큼만 쓴다. 체감 경기와 숫자가 맞는지는 캡션 질문으로 옮긴다. (공식: 전후 낙차 한 줄 표지)",
+   "why_now": "동아일보, 뉴시스, 조선비즈 등 6곳이 10시 전후로 다룬 새 소식이다. 아직 보낸 적 없는 주제다.",
+   "tag": "재정",
+   "sources": [
+    "https://www.donga.com/news/Economy/article/all/20261112/135012099/1",
+    "https://v.daum.net/v/20261112100122974"
+   ],
+   "bg": "Korea government complex Sejong",
+   "bg_alt": "Korean won banknotes",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "나라살림 적자가\n한 해 만에 **70.5조**\n역대 최대로 줄었대요",
+     "number": "70.5조원",
+     "label": "나라살림 적자 감소폭",
+     "sub": "적자 규모는 8년 만에 가장 작아요"
+    },
+    {
+     "type": "질문형",
+     "title": "적자는 **70.5조** 줄었다\n내 체감 경기와\n숫자는 맞나요",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "쓴 돈과 번 돈\n차이가 8년 만에\n가장 **좁혀졌어요**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "editorial"
+   ],
+   "extra": {},
+   "id": "20261112-1101-i2",
+   "created_at": "2026-11-12T11:01:44+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261112-1101-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261112-1101-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261112-1101-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261112-1101-i2/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261112-1101-i2/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261112-1101-i2/1-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261112-1101-i2/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261112-1101-i2/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261112-1101-i2/2-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261112-1101-i2/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261112-1101-i2/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261112-1101-i2/3-editorial-plex.jpg"
+    }
+   ]
+  },
+  {
+   "title": "미래에셋증권 적자인데 1.4조 환원",
+   "concept": "3분기 4056억 순손실과 1.4조 규모 주주환원 발표를 나란히 놓고, 환원 방식(소각, 배당 등)은 확인된 만큼만 쓴다. 국고채 담합 과징금 등 곁가지 보도는 덜어내고 미래에셋증권 하나만 끝까지 끌고 간다. 마지막 장은 '실적과 환원 발표를 함께 보라'는 한 줄로 닫는다. (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "이투데이, 이데일리 등 7곳이 10시 전후로 다룬 새 소식이다. 증권주 실적 확인이 필요한 날이다. 같은 날 메리츠금융지주 급락도 있지만 구체 수치가 확인 안 돼 이 건을 먼저 고른다.",
+   "tag": "증권",
+   "sources": [
+    "https://www.etoday.co.kr/news/view/2647248",
+    "http://www.edaily.co.kr/news/newspath.asp?newsid=02650246645645064",
+    "https://v.daum.net/v/20261112104006165"
+   ],
+   "bg": "Mirae Asset Securities",
+   "bg_alt": "Yeouido Seoul financial district",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "미래에셋증권 3분기\n**4056억** 순손실에도\n1.4조 환원 발표",
+     "number": "-4056억",
+     "label": "미래에셋증권 3분기 순손실",
+     "sub": "주주환원 1.4조원 규모 발표"
+    },
+    {
+     "type": "질문형",
+     "title": "적자 4056억인데\n주주환원 **1.4조**\n발표한 이유는",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "3분기 순손실\n4056억 낸 증권사\n주주에겐 **1.4조** 환원",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "bars"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "미래에셋증권 3분기 순손실과 주주환원 규모 (억원)",
+     "bars": [
+      {
+       "label": "3분기 순손실",
+       "value": 4056
+      },
+      {
+       "label": "주주환원 규모",
+       "value": 14000,
+       "hi": true
+      }
+     ]
+    }
+   },
+   "id": "20261112-1101-i3",
+   "created_at": "2026-11-12T11:01:44+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-1101-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-1101-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-1101-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261112-1101-i3/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261112-1101-i3/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261112-1101-i3/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-1101-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-1101-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-1101-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261112-1101-i3/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261112-1101-i3/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261112-1101-i3/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-1101-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-1101-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-1101-i3/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261112-1101-i3/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261112-1101-i3/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261112-1101-i3/3-bars-dohyeon.jpg"
     }
    ]
   }
