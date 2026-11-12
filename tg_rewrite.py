@@ -12,6 +12,7 @@ import json
 import os
 import sys
 from datetime import datetime, timedelta, timezone
+from pathlib import Path
 
 from common import OUTPUT_DIR, ROOT, load_env
 
@@ -26,11 +27,11 @@ SYSTEM = """당신은 텔레그램 채널 '차트보는 말희아빠'의 시황 
 독자 피드백: 예전 시황은 길어서 한번에 보기 힘들었다 → 핵심만 짧게.
 
 형식 ([말희아빠 예시]와 똑같은 모양):
-- 첫 줄 '🥛{date} 말희아빠 {kind}시황'
+- 첫 줄 '🐱 {date} 말희아빠 {kind}시황'
 - 빈 줄 뒤 두 줄짜리 제목(오늘을 한 문장씩, 마침표 없이)
 - 빈 줄 뒤 오늘 시장을 숫자로 요약한 1~2문장
 - 1️⃣ 2️⃣ … 번호 소제목 3~5개. 소제목 아래는 '• ' 짧은 줄(숫자 중심, 문장 대신 명사형), 결론은 '→ ' 한 줄
-- 좋은 숫자·근거를 나열할 땐 '✅ ' 줄, 국내 증시 칸에는 '• 상승:' '• 하락:' 업종·종목과 '수급' (외국인·기관)
+- 좋은 숫자·근거를 나열할 땐 한 문장(예: '자금 조달 우려에도 답했습니다.') 바로 아래 '✅ ' 줄을 붙여 씀 (이 묶음은 인용 서식으로 나감), 그 뒤 '→ ' 결론, 국내 증시 칸에는 '• 상승:' '• 하락:' 업종·종목과 '수급' (외국인·기관)
 - 이어서 앞으로 볼 것 '✔️ ' 줄 4~6개와 한두 문장 정리
 - 마지막 번호 소제목 '오늘의 시장 한줄 평' + 한 줄 평 + 한 문장 대응 방향
 - {flow}
@@ -42,7 +43,36 @@ SYSTEM = """당신은 텔레그램 채널 '차트보는 말희아빠'의 시황 
 - 특정 종목 매수·매도 권유, 목표가, 수익 보장 표현 금지. 원문 채널 이름·서명·링크 금지.
 - text 는 그대로 복사해 올릴 완성본. check 는 올리기 전에 대표가 확인할 것(지수·숫자·보도 사실) 1~3개, 각 한 문장."""
 FLOW = {"마감": "흐름: 오늘 장에서 무슨 일이 → 왜 → 국내 증시·수급 → 내일 볼 것",
-        "아침": "흐름: 밤사이 미국장·주요 지표 → 오늘 우리 장 핵심 → 국내 수급·업종 → 오늘 볼 것"}
+        "아침": "흐름: 밤사이 미국장 → 핵심 이슈 → 금리·유가 → '📊 주요 지표'(원문에 있는 지수·달러·유가·VIX·금리·야간선물 숫자를 한 줄씩) → 국내 증시 → 오늘 볼 것"}
+IMG = Path.home() / ".content-lab-ai" / "malhee_sihwang.png"   # 시황에 항상 붙이는 '차트보는 말희아빠' 이미지 (PC에만, 저장소엔 안 올림)
+
+
+def renumber(text):
+    """번호 소제목(1️⃣ 2️⃣ …)을 빠짐없이 차례대로 다시 매긴다 (Claude 가 4️⃣를 건너뛴 적 있음, 11/12)."""
+    import re
+    n = iter(range(1, 11))
+    return re.sub(r"^(?:10|[1-9])️⃣", lambda m: f"{next(n)}️⃣", text, flags=re.M)
+
+
+def to_html(text):
+    """✅ 줄 묶음(+바로 위 한 문장)을 텔레그램 인용 서식으로. 길게 눌러 복사하면 서식째 붙여넣어진다."""
+    import html as H
+    lines, out, i = text.split("\n"), [], 0
+    while i < len(lines):
+        j = i
+        while j < len(lines) and lines[j].startswith("✅"):
+            j += 1
+        if j > i:   # i..j 가 ✅ 묶음
+            lead = []
+            if out and out[-1].strip() and not out[-1].lstrip().startswith(("•", "→", "✔", "<")) and "️⃣" not in out[-1]:
+                lead = [out.pop()]
+            out.append("<blockquote>" + "\n".join(lead + [H.escape(x) for x in lines[i:j]]) + "</blockquote>")
+            i = j
+            continue
+        out.append(H.escape(lines[i]))
+        i += 1
+    return "\n".join(out).replace("</blockquote>\n", "</blockquote>")
+
 
 
 
@@ -92,9 +122,11 @@ def main():
         if r.stop_reason != "end_turn" or r.parsed_output is None:
             print(f"⚠️ 변환 결과를 받지 못했어요({r.stop_reason})")
             continue
-        text = r.parsed_output.text.strip()
-        ok = notify.send(text)   # 1통: 그대로 붙여넣을 본문
-        notify.send(f"☝️ 말희아빠 {s['kind']}시황 (원문 {s['time']}) — 위 글을 길게 눌러 복사해 붙여넣으세요.\n\n올리기 전 확인\n"
+        text = renumber(r.parsed_output.text.strip())
+        if IMG.exists():   # 1통: 시황 이미지 (게시물에 첨부)
+            notify.send_photos([IMG])
+        ok = notify.send(to_html(text), html=True) or notify.send(text)   # 2통: 그대로 붙여넣을 본문 (✅ 묶음은 인용 서식)
+        notify.send(f"☝️ 말희아빠 {s['kind']}시황 (원문 {s['time']}) — 위 이미지를 첨부하고 글을 길게 눌러 복사해 붙여넣으세요.\n\n올리기 전 확인\n"
                     + "\n".join(f"• {c}" for c in r.parsed_output.check) + f"\n\n원문: {s['link']}", silent=True)
         print("📨 핫코노미 봇 전송", "완료" if ok else "실패")
         done = [d for d in done if d["source_id"] != s["id"]]
