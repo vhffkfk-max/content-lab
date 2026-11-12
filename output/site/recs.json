@@ -8,10 +8,10 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.59,
-  "kr_n": 428,
-  "foreign_avg": 2.17,
-  "foreign_n": 181
+  "kr_avg": 1.61,
+  "kr_n": 432,
+  "foreign_avg": 2.18,
+  "foreign_n": 182
  },
  {
   "rank": 2,
@@ -24,25 +24,11 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 2.45,
   "kr_n": 54,
-  "foreign_avg": 1.83,
+  "foreign_avg": 1.86,
   "foreign_n": 52
  },
  {
   "rank": 3,
-  "topic": "비트코인",
-  "kind": "국내·해외 모두 강세",
-  "confidence": "높음",
-  "title_idea": "[오늘] 비트코인에 무슨 일이? 1분 요약",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "속보·뉴스형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 2.36,
-  "kr_n": 13,
-  "foreign_avg": 1.8,
-  "foreign_n": 155
- },
- {
-  "rank": 4,
   "topic": "급락·변동성",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
@@ -52,8 +38,22 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 2.08,
   "kr_n": 83,
-  "foreign_avg": 1.78,
+  "foreign_avg": 1.81,
   "foreign_n": 21
+ },
+ {
+  "rank": 4,
+  "topic": "비트코인",
+  "kind": "국내·해외 모두 강세",
+  "confidence": "높음",
+  "title_idea": "[오늘] 비트코인에 무슨 일이? 1분 요약",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "속보·뉴스형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 2.36,
+  "kr_n": 13,
+  "foreign_avg": 1.85,
+  "foreign_n": 155
  },
  {
   "rank": 5,
@@ -66,7 +66,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 1.0,
   "kr_n": 45,
-  "foreign_avg": 1.81,
+  "foreign_avg": 1.84,
   "foreign_n": 55
  },
  {
@@ -78,10 +78,10 @@
   "format": "릴스",
   "hook": "질문형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.43,
-  "kr_n": 39,
-  "foreign_avg": 1.09,
-  "foreign_n": 18
+  "kr_avg": 2.41,
+  "kr_n": 40,
+  "foreign_avg": 1.08,
+  "foreign_n": 17
  },
  {
   "rank": 7,
@@ -94,7 +94,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 1.94,
   "kr_n": 68,
-  "foreign_avg": 1.12,
+  "foreign_avg": 1.13,
   "foreign_n": 7
  },
  {
@@ -106,9 +106,9 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "숫자·리스트형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.82,
-  "kr_n": 183,
-  "foreign_avg": 0.8,
+  "kr_avg": 1.8,
+  "kr_n": 186,
+  "foreign_avg": 0.81,
   "foreign_n": 10
  }
 ]
