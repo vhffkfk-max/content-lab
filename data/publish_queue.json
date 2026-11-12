@@ -3128,421 +3128,6 @@
  ],
  "ideas": [
   {
-   "title": "AI 실적에 반도체 반등, 하이닉스 5%대",
-   "concept": "코어위브 실적 호조와 같은 날 삼성전자 +3.57%, SK하이닉스 +5.36% 반등을 보여 주되, 1달 전 대비로는 아직 -11%대라는 낙차를 함께 둔다. 한국 반도체가 코어위브 때문에 올랐다는 인과는 재료에 없어 'AI 실적 기대감 속 동반 상승'으로만 쓰고, 물가 쇼크와 빅스텝 우려, 연준과 엔비디아 실적은 마지막 장 변수로 보낸다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "코어위브 실적 직후 나스닥100 선물이 오르고 국내 반도체가 급등 마감했다. 어제 AI 청구서 급락 이후 첫 반등이라 흐름 확인 수요가 크다.",
-   "tag": "증시",
-   "sources": [
-    "https://x.com/KobeissiLetter/status/2120446576434786804",
-    "https://v.daum.net/v/20261111192306079",
-    "https://www.coindesk.com/markets/2026/11/11/coreweave-earnings-revive-ai-outlook-as-anthropic-weighs-higher-ipo-valuatio"
-   ],
-   "bg": "CoreWeave data center",
-   "bg_alt": "SK hynix semiconductor",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "코어위브 실적 한 방에\nSK하이닉스 **5.36%**",
-     "number": "5.36%",
-     "label": "SK하이닉스 11/11 하루 등락",
-     "sub": "삼성전자도 +3.57%, 1달 전보다는 아직 -11%대"
-    },
-    {
-     "type": "질문형",
-     "title": "반도체 반등,\n코어위브 실적 하나로\n이번엔 **오래**갈까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "물가 쇼크 속에서도\n반도체만 **반등**했다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "bars"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "11/11 하루 등락률(%)",
-     "bars": [
-      {
-       "label": "SK하이닉스",
-       "value": 5.36,
-       "hi": true
-      },
-      {
-       "label": "삼성전자",
-       "value": 3.57
-      },
-      {
-       "label": "코스피",
-       "value": 2.6
-      }
-     ]
-    }
-   },
-   "id": "20261111-2006-i1",
-   "created_at": "2026-11-11T20:06:52+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261111-2006-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261111-2006-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261111-2006-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261111-2006-i1/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261111-2006-i1/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261111-2006-i1/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261111-2006-i1/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261111-2006-i1/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261111-2006-i1/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261111-2006-i1/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261111-2006-i1/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261111-2006-i1/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "국고채 1.6조 과징금, 업계 소송 카드",
-   "concept": "공정위가 15개 PD사에 역대 최대 1.6조 과징금을 확정한 뒤 금투협이 행정소송 지원을 예고한 후폭풍을 다룬다. 첫 장에서 PD(국채 거래 전담 증권사)를 바로 풀고, 이 구조가 정부 차입 비용과 닿는 길을 쉽게 한 줄로 설명한다. 소송 결과와 PD사 참여 변화는 마지막 장 변수로 둔다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "확정 소식 이후 금투협 공식 반발, PD사 법적 대응 예고, 증권사 적자 전환 우려까지 5곳 이상이 보도한 새 국면이다.",
-   "tag": "금융",
-   "sources": [
-    "https://www.hankyung.com/article/202611110619i",
-    "https://www.fnnews.com/news/202611111744498594",
-    "https://www.etoday.co.kr/news/view/2646903"
-   ],
-   "bg": "Korea Fair Trade Commission",
-   "bg_alt": "Seoul Yeouido financial district",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "국고채 입찰 금리 맞춘\n15곳에 **1.6조** 청구서",
-     "number": "1.6조원",
-     "label": "공정위가 15개 PD사에 부과한 과징금",
-     "sub": "역대 최대 규모"
-    },
-    {
-     "type": "질문형",
-     "title": "과징금 1.6조에\n증권사들이 왜 **격앙**했나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "과징금 1.6조 맞자\n금투협이 **소송** 지원",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/11",
-     "headlines": [
-      "공정위, 15개 PD사 1.6조 과징금",
-      "금투협, 행정소송 지원 예고",
-      "증권사 적자 전환 우려 나와"
-     ]
-    }
-   },
-   "id": "20261111-2006-i2",
-   "created_at": "2026-11-11T20:06:52+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261111-2006-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261111-2006-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261111-2006-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261111-2006-i2/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261111-2006-i2/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261111-2006-i2/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261111-2006-i2/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261111-2006-i2/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261111-2006-i2/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261111-2006-i2/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261111-2006-i2/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261111-2006-i2/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "해외서 산 비만약 12일부터 반입",
-   "concept": "12일부터 해외에서 산 비만약을 최대 3개월치까지 직접 들고 들어올 수 있게 된 변화를 내 얘기로 푼다. 일본서 산 마운자로도 같은 기준 적용이라는 보도까지만 쓰고, 처방전 필요 여부 등 세부 조건은 재료에 없어 확인 중이라고 한 곳에만 밝힌다. 효과나 구매를 권하는 표현은 쓰지 않는다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "19:24 연합뉴스 등 5곳 이상이 종합2보까지 낸 새 소식이고, 시행이 바로 내일(12일)이라 생활 영향이 크다.",
-   "tag": "생활경제",
-   "sources": [
-    "https://www.yna.co.kr/view/AKR20261111158151017",
-    "https://www.mt.co.kr/thebio/2026/11/11/2026111117265020740",
-    "https://www.yna.co.kr/view/AKR20261111158100017"
-   ],
-   "bg": "Mounjaro pen",
-   "bg_alt": "Incheon Airport terminal",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "해외서 산 비만약\n12일부터 직접 들고\n최대 **3개월치**",
-     "number": "3개월치",
-     "label": "해외서 산 비만약 휴대 반입 한도",
-     "sub": "12일부터, 세부 조건은 확인 중"
-    },
-    {
-     "type": "질문형",
-     "title": "일본서 산 마운자로\n이제 **들고** 와도 될까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "그동안 막혔던 비만약\n12일부터 **허용**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "editorial"
-   ],
-   "extra": {},
-   "id": "20261111-2006-i3",
-   "created_at": "2026-11-11T20:06:52+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261111-2006-i3/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261111-2006-i3/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261111-2006-i3/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261111-2006-i3/1-editorial-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261111-2006-i3/1-editorial-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261111-2006-i3/1-editorial-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261111-2006-i3/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261111-2006-i3/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261111-2006-i3/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261111-2006-i3/2-editorial-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261111-2006-i3/2-editorial-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261111-2006-i3/2-editorial-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261111-2006-i3/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261111-2006-i3/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261111-2006-i3/3-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261111-2006-i3/3-editorial-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261111-2006-i3/3-editorial-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261111-2006-i3/3-editorial-plex.jpg"
-    }
-   ]
-  },
-  {
    "title": "ETF 거래대금, 코스피 사상 첫 추월",
    "concept": "아시아경제 단독 보도를 사실만 짧게 전하고, 개인이 종목 대신 ETF로 옮겨가는 흐름인지 독자에게 묻는다. 정확한 금액과 기간은 확인 후 쓴다. (공식: 없음)",
    "why_now": "20:24 아시아경제 단독이고 다른 매체는 아직 다루지 않았다. 오늘 코스피, 코스닥 반등 속 개인 투자 흐름과 이어진다.",
@@ -9200,6 +8785,204 @@
      "form": "news",
      "font": "myeongjo",
      "path": "20261112-1806-i3/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "HMM 3분기 영업익 1조3947억, 370% 급증",
+   "concept": "HMM이 3분기에 1조3947억원을 벌었다는 사실로 시작해 운임 급등, 배당성향 30% 이상 상향, 같은 날 한전 부진과의 대비 순서로 푼다. 운임이 계속 높게 유지될지는 마지막 장의 다음 변수로 보낸다. (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "오늘 오후 연합뉴스, 머니투데이, 헤럴드경제 등이 실적을 다뤘다. 같은 날 한전이 예상치를 밑돌아 같은 중동발 변수가 업종마다 반대로 나타났다는 대비가 생겼다.",
+   "tag": "실적",
+   "sources": [
+    "https://www.yna.co.kr/view/AKR20261112145200003",
+    "https://www.mt.co.kr/industry/2026/11/12/2026111215395818148"
+   ],
+   "bg": "HMM container ship",
+   "bg_alt": "HMM Seoul headquarters",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "HMM 3분기 영업이익\n**1조3947억** 찍었다\n1년 새 370% 급증",
+     "number": "1조3947억원",
+     "label": "HMM 3분기 영업이익",
+     "sub": "전년보다 370% 늘었다"
+    }
+   ],
+   "forms": [
+    "bignum",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/12",
+     "headlines": [
+      "HMM 3분기 영업익 1조3947억",
+      "배당성향 30% 이상으로 상향",
+      "같은 날 한전은 예상치 하회"
+     ]
+    }
+   },
+   "id": "20261112-1901-i1",
+   "created_at": "2026-11-12T19:01:29+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261112-1901-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261112-1901-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261112-1901-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261112-1901-i1/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261112-1901-i1/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261112-1901-i1/1-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "영풍, MBK, 고려아연 주총 결의 취소 소송 승소",
+   "concept": "법원이 '의결권을 제한할 수 없다'고 판단해 영풍, MBK가 이겼다는 결과를 첫 장에 놓는다. 경영권 분쟁에서 어느 쪽에 유리한 판결인지 쉬운 말로 풀고, 항소 여부 등 이후 절차는 확인 중이라고 마지막 장에 적는다. (공식: 없음)",
+   "why_now": "18시 16분에 기사가 나왔고 동아일보, 이투데이, 연합인포맥스 등 7곳이 다뤘다. 아직 한 번도 다루지 않은 주제다.",
+   "tag": "속보",
+   "sources": [
+    "https://www.donga.com/news/Economy/article/all/20261112/135014097/1",
+    "https://www.etoday.co.kr/news/view/2647525"
+   ],
+   "bg": "Korea Zinc headquarters",
+   "bg_alt": "Young Poong MBK Partners",
+   "hooks": [
+    {
+     "type": "반전형",
+     "title": "의결권 제한은 안 된다\n법원이 **고려아연** 주총\n소송서 영풍 손 들었다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261112-1901-i2",
+   "created_at": "2026-11-12T19:01:29+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261112-1901-i2/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261112-1901-i2/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261112-1901-i2/1-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "플라이빗 해킹, 금융보안원은 다음 주 감사",
+   "concept": "플라이빗에서 고객 40명의 주민번호와 납세정보가 유출됐다는 사실과, 해킹 공격을 받은 금융보안원을 금융위가 다음 주부터 감사한다는 사실을 한 흐름으로 묶는다. 거래소 보안 점검이 더 엄격해질 전망이라는 점은 마지막 장에 둔다. (공식: 없음)",
+   "why_now": "18시 34분에 플라이빗 해킹 기사가 4곳에서 나왔고, 금융위의 금융보안원 감사 착수는 5곳이 다뤘다. 앞서 보낸 입출금 차단 제도 소식 뒤에 나온 새 사건이다.",
+   "tag": "속보",
+   "sources": [
+    "https://www.yna.co.kr/view/AKR20261112168500002",
+    "https://www.yna.co.kr/view/AKR20261112145400002"
+   ],
+   "bg": "Flybit crypto exchange",
+   "bg_alt": "Financial Security Institute Korea",
+   "hooks": [
+    {
+     "type": "질문형",
+     "title": "해킹당한 금융보안원\n다음 주 **감사** 받는다\n플라이빗도 뚫렸다",
+     "number": "40명",
+     "label": "주민번호와 납세정보가 유출된 고객",
+     "sub": "플라이빗도 해킹당했다"
+    }
+   ],
+   "forms": [
+    "breaking",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/12",
+     "headlines": [
+      "플라이빗 해킹, 고객 40명 유출",
+      "금융보안원 해킹, 공식 사과",
+      "금융위, 다음 주 감사 착수"
+     ]
+    }
+   },
+   "id": "20261112-1901-i3",
+   "created_at": "2026-11-12T19:01:29+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261112-1901-i3/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261112-1901-i3/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261112-1901-i3/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261112-1901-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261112-1901-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261112-1901-i3/1-paper-gowun.jpg"
     }
    ]
   }
