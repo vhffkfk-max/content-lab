@@ -23,7 +23,7 @@
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
   "kr_avg": 1.57,
-  "kr_n": 422,
+  "kr_n": 425,
   "foreign_avg": 2.12,
   "foreign_n": 180
  },
@@ -39,24 +39,10 @@
   "kr_avg": 2.36,
   "kr_n": 13,
   "foreign_avg": 1.8,
-  "foreign_n": 154
+  "foreign_n": 155
  },
  {
   "rank": 4,
-  "topic": "ETF·지수투자",
-  "kind": "해외 선행 주제 (선점 기회)",
-  "confidence": "높음",
-  "title_idea": "[오늘] ETF·지수투자에 무슨 일이? 1분 요약",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "속보·뉴스형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 0.99,
-  "kr_n": 45,
-  "foreign_avg": 1.83,
-  "foreign_n": 54
- },
- {
-  "rank": 5,
   "topic": "급락·변동성",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
@@ -70,6 +56,20 @@
   "foreign_n": 21
  },
  {
+  "rank": 5,
+  "topic": "ETF·지수투자",
+  "kind": "해외 선행 주제 (선점 기회)",
+  "confidence": "높음",
+  "title_idea": "[오늘] ETF·지수투자에 무슨 일이? 1분 요약",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "속보·뉴스형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 0.99,
+  "kr_n": 45,
+  "foreign_avg": 1.8,
+  "foreign_n": 55
+ },
+ {
   "rank": 6,
   "topic": "빅테크",
   "kind": "국내 검증 주제",
@@ -80,7 +80,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 2.43,
   "kr_n": 39,
-  "foreign_avg": 1.09,
+  "foreign_avg": 1.1,
   "foreign_n": 18
  },
  {
@@ -99,16 +99,16 @@
  },
  {
   "rank": 8,
-  "topic": "부동산",
+  "topic": "국내 대형주",
   "kind": "국내 검증 주제",
   "confidence": "높음",
-  "title_idea": "숫자 하나로 보는 부동산",
-  "format": "단일 이미지",
-  "hook": "숫자 강조형",
+  "title_idea": "국내 대형주, 지금 꼭 알아야 할 3가지",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "숫자·리스트형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.36,
-  "kr_n": 162,
-  "foreign_avg": 0.53,
-  "foreign_n": 4
+  "kr_avg": 1.75,
+  "kr_n": 181,
+  "foreign_avg": 0.8,
+  "foreign_n": 10
  }
 ]
