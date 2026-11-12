@@ -1,16 +1,25 @@
 [
  {
   "geo": "KR",
-  "term": "부동산",
+  "term": "원태인",
   "traffic": 2000,
-  "topics": "부동산",
-  "econ": true,
-  "news_title": "김민석·\"부동산 정책 일관\" 종부세 엇박자 불식 주력, 정청래 갈등엔 \"만나서 대화\"",
-  "news_link": "https://www.kookje.co.kr/news2011/asp/newsbody.asp?code=0100&key=20261112.99099003806"
+  "topics": "",
+  "econ": false,
+  "news_title": "[단독]\"12년 만의 우승에 가전 할인\"…삼성스토어, 13일부터 할인",
+  "news_link": "https://www.news1.kr/industry/general-industry/6352149"
  },
  {
   "geo": "KR",
-  "term": "공항철도 파업",
+  "term": "천위페이",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "'71승 1패' 안세영 유일한 패배 안긴 선수인데...中 왕즈이, 이래서 '8개월 무관' 끊겠나? 세계 25위 상대 진땀승→8강 진출 - 머니투데이",
+  "news_link": "https://www.mt.co.kr/sports/2026/11/12/202611121734779265O"
+ },
+ {
+  "geo": "KR",
+  "term": "공항철도",
   "traffic": 1000,
   "topics": "",
   "econ": false,
@@ -28,15 +37,6 @@
  },
  {
   "geo": "KR",
-  "term": "천위페이",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "'안세영 천적이라고 하지 마세요' 세계 36위 상대 '진땀승'→간신히 8강 진출…中 천위페이, AN과 격차 점점 벌어진다",
-  "news_link": "https://www.xportsnews.com/article/2218686"
- },
- {
-  "geo": "KR",
   "term": "nol",
   "traffic": 500,
   "topics": "",
@@ -46,21 +46,12 @@
  },
  {
   "geo": "KR",
-  "term": "페드로 아빌라",
+  "term": "원자력 잠수함",
   "traffic": 500,
-  "topics": "환율·달러",
-  "econ": true,
-  "news_title": "SSG, MLB 출신 강속구 투수 리차드슨 100만 달러에 영입",
-  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8711079"
- },
- {
-  "geo": "KR",
-  "term": "백승호",
-  "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "'韓 초대박 경사' 터질까, 한국인 16호 프리미어리거는 백승호? '1위 질주' 버밍엄 \"꿈의 무대 EPL 복귀 예상\"",
-  "news_link": "https://www.sportschosun.com/football/2026-11-11/202611110100078270007276"
+  "news_title": "日, 안보 전략에 '핵추진잠수함 검토 가능' 명기 방안 부상(종합)",
+  "news_link": "https://www.yna.co.kr/view/AKR20261111130751073"
  },
  {
   "geo": "KR",
@@ -68,17 +59,8 @@
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "안양시, 위례과천선·서부선 연장 국가철도망 반영 추진",
-  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8711123"
- },
- {
-  "geo": "KR",
-  "term": "원자력 잠수함",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "日, 안보 전략에 '핵추진잠수함 검토 가능' 명기 방안 부상(종합)",
-  "news_link": "https://www.yna.co.kr/view/AKR20261111130751073"
+  "news_title": "태백시, 철도망 국가계획 반영 총력…시민 설문 참여 요청",
+  "news_link": "https://www.yna.co.kr/view/AKR20261112171600062"
  },
  {
   "geo": "KR",
@@ -90,18 +72,27 @@
   "news_link": "https://www.yonhapnewstv.co.kr/news/AKR20261112180246PVF"
  },
  {
-  "geo": "US",
-  "term": "alex michelsen",
-  "traffic": 500,
+  "geo": "KR",
+  "term": "두산 베어스",
+  "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "Hot Shot: Kecmanovic goes this way then that in superb Stockholm 2026 play",
-  "news_link": "https://www.atptour.com/en/video/hot-shot-kecmanovic-goes-this-way-then-that-in-superb-stockholm-2026-play"
+  "news_title": "두산 신인 김지우, 이진영 코치도 칭찬…“파워·기술 겸비”",
+  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8711118"
+ },
+ {
+  "geo": "KR",
+  "term": "신주아",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "신주아, 남편 재벌설엔 선 그었는데…류화영 결혼식 참석 후 ‘사모님 화보’ [Oh!쎈 이슈]",
+  "news_link": "https://www.chosun.com/entertainments/broadcast/2026/11/11/GI2TAM3CG5QTKN3BGQZDSMLFMQ/"
  },
  {
   "geo": "US",
   "term": "mark mcguinn",
-  "traffic": 500,
+  "traffic": 5000,
   "topics": "",
   "econ": false,
   "news_title": "Country music star known for 2000s hit dies at 58: ‘He was an incredible talent’",
@@ -109,12 +100,39 @@
  },
  {
   "geo": "US",
-  "term": "polar vortex el niño winter weather",
-  "traffic": 500,
+  "term": "nbis stock",
+  "traffic": 5000,
   "topics": "",
   "econ": false,
-  "news_title": "See where El Niño may help deliver lots of snow this winter",
-  "news_link": "https://www.washingtonpost.com/weather/2026/11/11/see-where-el-nino-may-help-deliver-lots-snow-this-winter/"
+  "news_title": "Nebius falls 10% as company expects increased 2026 capex spend, issues weak outlook",
+  "news_link": "https://www.cnbc.com/2026/11/12/nebius-q3-earnings-report-2026.html"
+ },
+ {
+  "geo": "US",
+  "term": "resident evil code veronica remake",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Resident Evil Veronica Reportedly Delayed Due to Requiem Feedback",
+  "news_link": "https://www.relyonhorror.com/latest-news/resident-evil-news/resident-evil-veronica-delayed/"
+ },
+ {
+  "geo": "US",
+  "term": "social security trust fund depletion 2032",
+  "traffic": 5000,
+  "topics": "물가·경기",
+  "econ": true,
+  "news_title": "Social Security could pay full benefits until 2059 if taxable payroll kept pace with GDP: AARP report",
+  "news_link": "https://www.cnbc.com/2026/11/11/social-security-benefits-taxable-payroll-gdp.html"
+ },
+ {
+  "geo": "US",
+  "term": "polar vortex el niño winter weather",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "This winter, it’s polar vortex versus El Niño. Round one starts now",
+  "news_link": "https://www.cnn.com/2026/11/12/weather/polar-vortex-stratospheric-warming-cold-el-nino"
  },
  {
   "geo": "US",
@@ -127,12 +145,12 @@
  },
  {
   "geo": "US",
-  "term": "doc brown marty mcfly flux capacitor",
+  "term": "jacey birch",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "NYT Connections hints today: Meanings for each word for Nov. 12, 2026",
-  "news_link": "https://mashable.com/entertainment/nyt-connections-hints-meanings-november-12-2026"
+  "news_title": "Miami TV anchor flashes side boob in racy festival pics — after boss blasted ‘cringeworthy’ social media posts",
+  "news_link": "https://nypost.com/2026/11/11/media/wplg-anchor-jacey-birch-flashes-side-boob-in-festival-pics/"
  },
  {
   "geo": "US",
@@ -160,23 +178,5 @@
   "econ": false,
   "news_title": "Daily Horoscope for November 12, 2026",
   "news_link": "https://www.chicagotribune.com/2026/11/11/daily-horoscope-for-november-12-2026/"
- },
- {
-  "geo": "US",
-  "term": "jacey birch",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "Miami TV anchor flashes side boob in racy festival pics — after boss blasted ‘cringeworthy’ social media posts",
-  "news_link": "https://nypost.com/2026/11/11/media/wplg-anchor-jacey-birch-flashes-side-boob-in-festival-pics/"
- },
- {
-  "geo": "US",
-  "term": "keith cooper jr.",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "Dolphins sign Cooper Jr.",
-  "news_link": "https://www.miamidolphins.com/news/dolphins-sign-cooper-jr"
  }
 ]
