@@ -1,15 +1,6 @@
 [
  {
   "geo": "KR",
-  "term": "colette kress",
-  "traffic": 5000,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "NVIDIA Announces CEO Transition",
-  "news_link": "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition"
- },
- {
-  "geo": "KR",
   "term": "토스증권",
   "traffic": 1000,
   "topics": "AI·반도체",
@@ -55,6 +46,15 @@
  },
  {
   "geo": "KR",
+  "term": "msci",
+  "traffic": 200,
+  "topics": "비트코인",
+  "econ": true,
+  "news_title": "Strategy, the World’s Biggest Corporate Bitcoin Holder, to Be Dropped From MSCI Indexes",
+  "news_link": "https://www.wsj.com/finance/investing/strategy-the-worlds-biggest-corporate-bitcoin-holder-to-be-dropped-from-msci-indexes-96572af4"
+ },
+ {
+  "geo": "KR",
   "term": "100 일 의 거짓말",
   "traffic": 100,
   "topics": "",
@@ -73,12 +73,12 @@
  },
  {
   "geo": "KR",
-  "term": "msci",
+  "term": "amd stock",
   "traffic": 100,
-  "topics": "비트코인",
+  "topics": "AI·반도체",
   "econ": true,
-  "news_title": "Strategy, the World’s Biggest Corporate Bitcoin Holder, to Be Dropped From MSCI Indexes",
-  "news_link": "https://www.wsj.com/finance/investing/strategy-the-worlds-biggest-corporate-bitcoin-holder-to-be-dropped-from-msci-indexes-96572af4"
+  "news_title": "This AMD Analyst Turns Bullish; Here Are Top 5 Upgrades For Thursday",
+  "news_link": "https://www.benzinga.com/analyst-stock-ratings/upgrades/26/11/63185579/this-amd-analyst-turns-bullish-here-are-top-5-upgrades-for-thursday-2"
  },
  {
   "geo": "KR",
@@ -91,7 +91,7 @@
  },
  {
   "geo": "US",
-  "term": "nintendo black friday game discounts",
+  "term": "nintendo black friday",
   "traffic": 20000,
   "topics": "",
   "econ": false,
@@ -100,21 +100,57 @@
  },
  {
   "geo": "US",
-  "term": "petroleum",
-  "traffic": 2000,
+  "term": "ticketmaster",
+  "traffic": 10000,
   "topics": "",
   "econ": false,
-  "news_title": "Why is gasoline suddenly under $4 a gallon?",
-  "news_link": "https://www.npr.org/2026/11/11/nx-s1-6037588/gasoline-price-below-4-dollars-gallon"
+  "news_title": "Kennedy Center plans Ticketmaster switch, raising conflict of interest concerns",
+  "news_link": "https://www.npr.org/2026/11/12/nx-s1-6031461/kennedy-center-ticketmaster-conflict-of-interest"
  },
  {
   "geo": "US",
-  "term": "dr congo vs sierra leone",
-  "traffic": 1000,
+  "term": "türkiye vs belgium",
+  "traffic": 10000,
   "topics": "",
   "econ": false,
-  "news_title": "Congo DR vs Sierra Leone: Africa Cup of Nations Qualification stats & head-to-head",
-  "news_link": "https://www.bbc.com/sport/football/live/cqkgjm5yly1vt"
+  "news_title": "How to watch Turkey vs Belgium: UEFA Nations League live stream, TV channel, start time",
+  "news_link": "https://sports.yahoo.com/articles/watch-turkey-vs-belgium-uefa-160000282.html"
+ },
+ {
+  "geo": "US",
+  "term": "hurricanes vs kraken",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Projected Lineup: November 12 at Seattle",
+  "news_link": "https://www.nhl.com/hurricanes/news/projected-lineup-november-12-at-seattle"
+ },
+ {
+  "geo": "US",
+  "term": "noah kahan fenway",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Noah Kahan adds two more Fenway Park shows to tour next summer",
+  "news_link": "https://www.bostonglobe.com/2026/11/10/arts/noah-kahan-fenway-park-2027/"
+ },
+ {
+  "geo": "US",
+  "term": "the view",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Desi Lydic Chides Democrats Who Missed Hegseth’s Impeachment Vote",
+  "news_link": "https://www.nytimes.com/2026/11/12/arts/television/desi-lydic-democrats-miss-pete-hegseth-impeachment-vote.html"
+ },
+ {
+  "geo": "US",
+  "term": "turquía - bélgica",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Pronóstico Turquía - Bélgica - Nations League",
+  "news_link": "https://www.sportytrader.es/pronosticos/turquia-belgica-386158/"
  },
  {
   "geo": "US",
@@ -127,39 +163,12 @@
  },
  {
   "geo": "US",
-  "term": "kim kardashian louis vuitton nurse outfit",
+  "term": "robert f. kennedy jr.",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Kim Kardashian Plays Nurse in One of Louis Vuitton’s Rarest Runway Looks",
-  "news_link": "https://www.vogue.com/article/kim-kardashian-louis-vuitton-marc-jacobs-nurse-look"
- },
- {
-  "geo": "US",
-  "term": "penelope cruz",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Penélope Cruz Says Her Kids with Javier Bardem Have More ‘Freedom’ Living in Madrid: ‘They Deserve That’",
-  "news_link": "https://www.yahoo.com/entertainment/celebrity/interviews/articles/pen-lope-cruz-says-her-171935235.html"
- },
- {
-  "geo": "US",
-  "term": "robbie avila",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Robbie Avila Nears Contract for New Landing Spot in Latest Rumors After Lakers Stint, SLU Transfer",
-  "news_link": "https://bleacherreport.com/articles/25532617-robbie-avila-nears-contract-new-landing-spot-latest-rumors-after-lakers-stint-slu-transfer"
- },
- {
-  "geo": "US",
-  "term": "salma hayek",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Salma Hayek Is A Vision In A Red Sparkly Gown At LACMA Gala With Her Billionaire Husband: 'Divine'",
-  "news_link": "https://www.yahoo.com/entertainment/celebrity/fashion/articles/salma-hayek-vision-red-sparkly-004549170.html"
+  "news_title": "Senator opens investigation into evidence RFK Jr ‘unlawfully lied’ to Congress",
+  "news_link": "https://www.theguardian.com/us-news/2026/nov/12/senate-investigation-rfk-jr-measles-samoa"
  },
  {
   "geo": "US",
@@ -167,16 +176,7 @@
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "CNN doorstops US envoy Steve Witkoff",
-  "news_link": "https://www.cnn.com/2026/11/12/world/video/us-envoy-steve-witkoff-ukraine-talks-intldsk"
- },
- {
-  "geo": "US",
-  "term": "air bakin",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Where to Buy the Nike Air Bakin Varsity Royal",
-  "news_link": "https://www.soleretriever.com/news/articles/where-to-buy-the-nike-air-bakin-varsity-royal-release-date-november-2026"
+  "news_title": "Witkoff and Kushner arrive in Moscow to meet with Putin, discuss Ukraine peace talks",
+  "news_link": "https://abcnews.com/International/witkoff-kushner-arrive-moscow-meet-putin-discuss-ukraine/story?id=138070892"
  }
 ]
