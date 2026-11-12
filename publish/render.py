@@ -6,6 +6,7 @@
 캔바 수정용 사본은 publish/canva_copy.py (같은 HTML → 배경 그림 + 글상자 PPTX).
 글꼴: 내 PC는 윈도 Noto Sans/Serif KR 가변 글꼴, 깃허브(우분투)는 fonts-noto-cjk 의 Noto Sans/Serif CJK KR (CSS 대체 글꼴).
 """
+import atexit
 import os
 import pathlib
 import shutil
@@ -54,10 +55,63 @@ html,body{{margin:0;padding:0;width:{W}px;height:{H}px;overflow:hidden}}
 </style></head><body>{body}</body></html>"""
 
 
+_PW = None   # (playwright, browser, page) — 한 번 켠 크롬을 덱 전체(이미지·겹침 검사·캔바 사본)에 재사용. 실패하면 False → 예전 방식
+
+
+def _close():
+    if _PW:
+        for f in (_PW[1].close, _PW[0].stop):
+            try:
+                f()
+            except Exception:
+                pass
+
+
+def _page():
+    """크롬을 한 번만 켜 둔다 (2026-11-12: 장마다 새로 켜던 0.75초 → 0.07초, 결과 이미지 동일 확인)."""
+    global _PW
+    if _PW is None:
+        _PW = False
+        try:
+            from playwright.sync_api import sync_playwright
+            p = sync_playwright().start()
+            args = ["--allow-file-access-from-files", "--disable-gpu", "--hide-scrollbars"] + (["--no-sandbox"] if sys.platform.startswith("linux") else [])
+            for ch in ("chrome", "msedge", None):
+                try:
+                    b = p.chromium.launch(channel=ch, args=args) if ch else p.chromium.launch(args=args)
+                    break
+                except Exception:
+                    b = None
+            if b is None:
+                p.stop()
+                return None
+            _PW = (p, b, b.new_page(viewport={"width": W, "height": H}, device_scale_factor=1))
+            atexit.register(_close)
+        except Exception:
+            _PW = False
+    return _PW[2] if _PW else None
+
+
 def chrome(html_text, tmp, *args):
     """HTML 을 크롬(헤드리스)으로 열어 args(--screenshot=… / --dump-dom)대로 → 표준출력."""
+    global _PW
     html = pathlib.Path(tmp) / f"p{abs(hash(html_text))}.html"
     html.write_text(html_text, encoding="utf-8")
+    pg = _page()
+    if pg:
+        try:
+            pg.goto(html.as_uri(), wait_until="load", timeout=60000)
+            pg.evaluate("document.fonts.ready.then(() => 1)")
+            pg.wait_for_timeout(50)
+            shot = [x.split("=", 1)[1] for x in args if x.startswith("--screenshot=")]
+            if shot:
+                pg.screenshot(path=shot[0])
+                return ""
+            if "--dump-dom" in args:
+                return pg.content()
+        except Exception:
+            _close()
+            _PW = False   # 이번 실행은 예전 방식으로
     linux = ["--no-sandbox"] if sys.platform.startswith("linux") else []
     r = subprocess.run([browser(), "--headless=new", "--disable-gpu", "--hide-scrollbars", "--force-device-scale-factor=1", *linux,
                         "--allow-file-access-from-files", "--virtual-time-budget=3000", f"--window-size={W},{H}",

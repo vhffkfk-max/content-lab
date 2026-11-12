@@ -17,4 +17,9 @@ $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -MultipleInstances 
     -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries
 Register-ScheduledTask -TaskName "content-lab-ai" -Action $action -Trigger $trigger -Settings $settings `
     -Description "content-lab: Claude jobs via Claude Code (Max subscription), every 5 minutes" -Force | Out-Null
+# 1분마다 새 요청만 확인 (local_ai.py --quick): 사이트에서 누른 카드 초안 등을 기다리지 않고 바로 처리
+$quick = New-ScheduledTaskAction -Execute $pyw -Argument "local_ai.py --quick" -WorkingDirectory $dir
+$qtrig = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1) -RepetitionInterval (New-TimeSpan -Minutes 1)
+Register-ScheduledTask -TaskName "content-lab-ai-quick" -Action $quick -Trigger $qtrig -Settings $settings `
+    -Description "content-lab: new site requests within 1 minute" -Force | Out-Null
 Write-Host "OK: content-lab-ai runs every 5 minutes (log: $dir\data\local_ai.log)"

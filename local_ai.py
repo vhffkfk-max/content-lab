@@ -329,6 +329,21 @@ def push(did):
 
 def main():
     LOCK.parent.mkdir(parents=True, exist_ok=True)
+    if "--quick" in sys.argv:   # 1분마다: 사이트에 새 요청(카드 초안 등)이 있을 때만 바로 처리 — 정해진 시각 일은 5분 차례가 함
+        if LOCK.exists() and time.time() - LOCK.stat().st_mtime < 90 * 60:
+            return
+        try:
+            git("fetch", "-q", "origin")
+            reqs = json.loads(git("show", "origin/main:data/ai_requests.json").stdout)
+            done = set(json.loads(STATE.read_text(encoding="utf-8")).get("done", []))
+        except Exception:
+            return
+        since = (datetime.now(KST) - timedelta(hours=6)).isoformat()
+        new = [r for r in reqs if r["id"] not in done and r.get("job") != "thpost" and r.get("at", "") >= since]
+        if not new:
+            return
+        log("⚡ 새 요청 바로 처리:", ", ".join(r["job"] for r in new))
+        sys.argv.remove("--quick")
     if "--run" not in sys.argv:
         watch_crawlers()
         try:   # 매시간 분석 (hourly_lab.py): 오래 걸려서 따로 띄움 — 이 5분 작업(말희아빠·시황 변환)을 막지 않게. 차례·잠금은 스스로 봄
