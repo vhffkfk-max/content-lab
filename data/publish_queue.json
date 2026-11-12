@@ -3128,410 +3128,6 @@
  ],
  "ideas": [
   {
-   "title": "앤트로픽 IPO 몸값 1.5조달러 후속",
-   "concept": "FT가 전한 새 숫자 1.5조달러와 국민연금 주주 화제를 잇되, 아직 IPO 전이라 가격이 바뀔 수 있다는 점을 짚는다. 첫 장에서 내 연금과 어떻게 닿는지 쉬운 말로 푼다. (공식: 한 주인공이 장마다 한 걸음씩)",
-   "why_now": "10:42 FT 인용 보도로 IPO 기업가치 1.5조달러 이상이라는 새 숫자가 나왔다. 쓰레드에서는 국민연금 주주 글이 시간당 조회 3955로 번지고 있다.",
-   "tag": "AI,IPO",
-   "sources": [
-    "https://x.com/unusual_whales/status/2120331422850548202",
-    "https://www.threads.com/@bstory_economy/post/DfkJdAmiQ1Z"
-   ],
-   "bg": "Dario Amodei Anthropic",
-   "bg_alt": "Anthropic headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "앤트로픽 IPO 몸값\n**1.5조달러** 이상\nFT, 은행단 준비 보도",
-     "number": "1.5조달러",
-     "label": "IPO 기업가치, 은행단 준비",
-     "sub": "FT 보도, 아직 IPO 전"
-    },
-    {
-     "type": "질문형",
-     "title": "앤트로픽 몸값 1.5조달러\n국민연금이 왜\n**주주**로 나오나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "국민연금도 주주로 알려진\n앤트로픽 IPO 몸값\n**1.5조달러**대 보도",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261111-1301-i1",
-   "created_at": "2026-11-11T13:01:31+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261111-1301-i1/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261111-1301-i1/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261111-1301-i1/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261111-1301-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261111-1301-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261111-1301-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261111-1301-i1/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261111-1301-i1/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261111-1301-i1/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261111-1301-i1/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261111-1301-i1/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261111-1301-i1/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "10월 가계대출 6.4조 증가",
-   "concept": "연말 대출절벽 우려와 달리 10월에 가계대출이 한 달 만에 증가세로 돌아섰고, 같은 날 미국 CPI로 금리 부담이 커졌다는 점을 대비한다. 마지막 장은 내 대출이 변동금리인지 확인하라는 생활 행동으로 닫는다. (공식: 전후 낙차 한 줄 표지)",
-   "why_now": "12시 전후 7개 매체가 10월 가계대출 증가를 다뤘다. 같은 날 미국 CPI가 예상보다 높게 나와 금리 인상 우려가 커졌다.",
-   "tag": "대출,금리",
-   "sources": [
-    "https://www.mt.co.kr/finance/2026/11/11/2026111109174730582",
-    "https://biz.heraldcorp.com/article/10933288"
-   ],
-   "bg": "Korean bank loan counter",
-   "bg_alt": "Seoul apartment complex",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "10월 가계대출\n**6.4조원** 늘었다\n한 달 만에 증가 전환",
-     "number": "6.4조원",
-     "label": "10월 가계대출 증가폭",
-     "sub": "한 달 만에 증가세로 돌아섰어요"
-    },
-    {
-     "type": "질문형",
-     "title": "연말 대출절벽\n정말 **없는** 걸까\n10월에 6.4조 늘었다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "대출은 다시 늘었는데\n같은 날 미국 CPI는\n**금리 인상** 우려를 키웠다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "paper"
-   ],
-   "extra": {
-    "bignum": {},
-    "paper": {
-     "date": "11/11",
-     "headlines": [
-      "10월 가계대출 6.4조 증가",
-      "한 달 만에 증가세 전환",
-      "미국 CPI 예상보다 높게 나와"
-     ]
-    }
-   },
-   "id": "20261111-1301-i2",
-   "created_at": "2026-11-11T13:01:31+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261111-1301-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261111-1301-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261111-1301-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261111-1301-i2/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261111-1301-i2/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261111-1301-i2/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261111-1301-i2/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261111-1301-i2/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261111-1301-i2/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261111-1301-i2/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261111-1301-i2/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261111-1301-i2/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "베센트 협력 발언, 미국은 중국 자석 못 받는다",
-   "concept": "베센트의 무역은 양쪽 이익 발언과, 미국이 원하는 만큼 중국 자석이 오지 않는다는 퍼듀 발언, 트럼프의 미국산 원유 제안 발언을 한 흐름으로 묶는다. 한국의 자석, 배터리, 유가 부담으로 푼다. 퍼듀의 직함과 원유 제안의 구체 내용은 확인이 필요하다. (공식: 당사자의 한마디를 따옴표로)",
-   "why_now": "12:02 미 재무부 X에 베센트 연설이 올라왔다. 11:40 퍼듀 발언은 조회 3.4만, 11:59 원유 제안 글은 조회 1.3만을 넘겼다.",
-   "tag": "미중,공급망",
-   "sources": [
-    "https://x.com/USTreasury/status/2120351410143252485",
-    "https://x.com/zerohedge/status/2120345986291888376",
-    "https://x.com/zerohedge/status/2120350718767022471"
-   ],
-   "bg": "Scott Bessent",
-   "bg_alt": "rare earth magnets",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "베센트는 협력을 말했고\n미국은 중국 **자석**을\n원하는 만큼 못 받았다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "트럼프가 중국에\n이란 기름 대신\n**미국산** 쓰라 했다고?",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "무역은 양쪽 이익이라는데\n핵심 부품 **자석**은\n아직 안 들어온다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/11",
-     "headlines": [
-      "베센트 무역은 양쪽 이익",
-      "퍼듀 중국 자석 물량 부족",
-      "트럼프 미국산 원유 제안 발언"
-     ]
-    }
-   },
-   "id": "20261111-1301-i3",
-   "created_at": "2026-11-11T13:01:31+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261111-1301-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261111-1301-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261111-1301-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261111-1301-i3/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261111-1301-i3/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261111-1301-i3/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261111-1301-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261111-1301-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261111-1301-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261111-1301-i3/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261111-1301-i3/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261111-1301-i3/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261111-1301-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261111-1301-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261111-1301-i3/3-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261111-1301-i3/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261111-1301-i3/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261111-1301-i3/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "개미 3조, 커버드콜 ETF 1위로",
    "concept": "3조원이 어디로 갔는지 먼저 보여 주고, 커버드콜이 분배금을 받는 대신 급등장에서 상승폭이 제한될 수 있는 구조라는 점을 쉬운 말로 푼다. 수익률은 재료에 없어 쓰지 않는다. (공식: 표지는 이미 일어난 일로)",
    "why_now": "뉴시스 등 7곳이 개미 자금 3조원 유입을 다뤘다. 금리 인상 우려가 커진 날 인기 상품이라 관심이 높다. 앞서 다룬 분배금 확대와 달리 이번엔 자금 쏠림이 새 포인트다.",
@@ -8833,6 +8429,383 @@
      "form": "bars",
      "font": "dohyeon",
      "path": "20261112-1101-i3/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "JYP엔터 3분기 깜짝실적, 17~18% 급등",
+   "concept": "실적 부진 종목이 많은 날 호실적 하나가 주가를 얼마나 움직였는지 보여 준다. 증권가 목표가 상향과 스트레이키즈의 서구 팬덤 평가를 차례로 붙인다. 영업이익 등 세부 수치는 확인 후 넣는다. (공식: 없음)",
+   "why_now": "JYP 급등 기사가 5곳, 실적 기사가 4곳에서 나왔다. 같은 날 메리츠 등 실적 부진 종목의 급락과 대비된다.",
+   "tag": "특징주",
+   "sources": [
+    "https://www.etoday.co.kr/news/view/2647181",
+    "https://www.newsis.com/view/NISX20261112_0003865050",
+    "https://www.yna.co.kr/view/AKR20261112047400008"
+   ],
+   "bg": "Stray Kids",
+   "bg_alt": "JYP Entertainment building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "JYP엔터 3분기\n깜짝 실적 발표에\n주가 **17%**대 급등",
+     "number": "17~18%",
+     "label": "장중 JYP엔터 최고 상승률",
+     "sub": "3분기 깜짝 실적에 목표가 상향"
+    },
+    {
+     "type": "질문형",
+     "title": "실적 부진 줄 잇는 날\nJYP만 **17%** 올랐다\n무엇이 달랐나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "급락 종목 가득한 날\nJYP엔터 홀로\n**17%**대 올랐다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261112-1204-i1",
+   "created_at": "2026-11-12T12:04:33+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261112-1204-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261112-1204-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261112-1204-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261112-1204-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261112-1204-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261112-1204-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261112-1204-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261112-1204-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261112-1204-i1/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "미래에셋증권 4056억 적자, 1.4조 주주환원",
+   "concept": "3분기 4056억원 순손실과 1.4조원 주주환원 발표를 나란히 놓는 반전 구도로 푼다. 환원 방식과 시기는 확인 안 됐다고 밝히고, 국고채 담합 과징금이 증권사 실적 부담이라는 NH투자증권 분석은 뒷장에 둔다. 투자 권유는 하지 않는다. (공식: 전후 낙차 한 줄 표지)",
+   "why_now": "이투데이, 이데일리, 아시아경제 등 7곳이 10시 전후로 다뤘다. 같은 날 메리츠금융지주 급락과 함께 증권, 금융주 실적이 화제다.",
+   "tag": "증권",
+   "sources": [
+    "https://www.etoday.co.kr/news/view/2647248",
+    "http://www.edaily.co.kr/news/newspath.asp?newsid=02650246645645064"
+   ],
+   "bg": "Mirae Asset Securities",
+   "bg_alt": "Mirae Asset building Seoul",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "3분기 순손실 4056억\n그런데 주주환원은\n**1.4조원** 발표",
+     "number": "4056억원",
+     "label": "미래에셋증권 3분기 순손실",
+     "sub": "같은 날 1.4조원 규모 주주환원 발표"
+    },
+    {
+     "type": "질문형",
+     "title": "4056억 적자 낸 증권사\n왜 주주에게\n**1.4조원**을 내놨나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "적자 4056억 냈는데\n주주에게 돌려줄 돈\n**1.4조원** 발표",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261112-1204-i2",
+   "created_at": "2026-11-12T12:04:33+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261112-1204-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261112-1204-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261112-1204-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-1204-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-1204-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-1204-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-1204-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-1204-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-1204-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-1204-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-1204-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-1204-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "여당 종부세 완화론, 하루 만에 정리",
+   "concept": "완화론이 나왔다가 총리의 선 긋기로 접힌 흐름을 먼저 보여 준다. 같은 날 나온 서울 주택사업 경기전망 급락을 이어 붙이고, 내 세금과 집값 분위기에 어떤 의미인지 쉬운 말로 푼다. 총리 직함과 발언 원문은 확인 후 쓴다. (공식: 없음)",
+   "why_now": "11시 전후 조선비즈, 연합뉴스 등 5곳이 이견 정리 수순을 보도했다. 강남 3구 조정과 수도권 주택사업 경기전망 악화 기사도 같이 나와 집값 관심이 크다.",
+   "tag": "부동산 정책",
+   "sources": [
+    "https://biz.chosun.com/policy/politics/2026/11/12/K6AJROJPVVCNDHFY34UKLFD5PY/",
+    "https://www.yna.co.kr/view/AKR20261112025600001",
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4444396"
+   ],
+   "bg": "Seoul apartment complex",
+   "bg_alt": "Gangnam Seoul skyline",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "여당 종부세 완화론\n나온 지 하루 만에\n**없던 일**로 정리",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "여당 종부세 완화론\n왜 하루 만에\n**없던 일**이 됐나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "완화 기대 커지자\n총리가 **선을 그었다**\n종부세 그대로",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "editorial",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/12",
+     "headlines": [
+      "여당 종부세 완화론, 정리 수순",
+      "총리 \"부동산 정책 기본은 지켜져야\"",
+      "11월 서울 주택사업 경기전망 급락"
+     ]
+    }
+   },
+   "id": "20261112-1204-i3",
+   "created_at": "2026-11-12T12:04:33+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261112-1204-i3/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261112-1204-i3/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261112-1204-i3/1-editorial-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261112-1204-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261112-1204-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261112-1204-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261112-1204-i3/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261112-1204-i3/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261112-1204-i3/2-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261112-1204-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261112-1204-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261112-1204-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261112-1204-i3/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261112-1204-i3/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261112-1204-i3/3-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261112-1204-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261112-1204-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261112-1204-i3/3-paper-gowun.jpg"
     }
    ]
   }
