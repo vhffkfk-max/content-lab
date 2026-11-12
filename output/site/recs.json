@@ -10,7 +10,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 2.43,
   "kr_n": 54,
-  "foreign_avg": 1.81,
+  "foreign_avg": 1.82,
   "foreign_n": 52
  },
  {
@@ -23,12 +23,26 @@
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
   "kr_avg": 1.56,
-  "kr_n": 405,
-  "foreign_avg": 2.04,
-  "foreign_n": 176
+  "kr_n": 408,
+  "foreign_avg": 2.05,
+  "foreign_n": 177
  },
  {
   "rank": 3,
+  "topic": "ETF·지수투자",
+  "kind": "해외 선행 주제 (선점 기회)",
+  "confidence": "높음",
+  "title_idea": "[오늘] ETF·지수투자에 무슨 일이? 1분 요약",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "속보·뉴스형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 0.98,
+  "kr_n": 44,
+  "foreign_avg": 1.83,
+  "foreign_n": 54
+ },
+ {
+  "rank": 4,
   "topic": "비트코인",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
@@ -42,20 +56,6 @@
   "foreign_n": 152
  },
  {
-  "rank": 4,
-  "topic": "ETF·지수투자",
-  "kind": "해외 선행 주제 (선점 기회)",
-  "confidence": "높음",
-  "title_idea": "[오늘] ETF·지수투자에 무슨 일이? 1분 요약",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "속보·뉴스형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 0.98,
-  "kr_n": 44,
-  "foreign_avg": 1.85,
-  "foreign_n": 53
- },
- {
   "rank": 5,
   "topic": "급락·변동성",
   "kind": "국내·해외 모두 강세",
@@ -65,7 +65,7 @@
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
   "kr_avg": 2.0,
-  "kr_n": 83,
+  "kr_n": 84,
   "foreign_avg": 1.78,
   "foreign_n": 21
  },
@@ -80,7 +80,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 2.55,
   "kr_n": 37,
-  "foreign_avg": 1.1,
+  "foreign_avg": 1.09,
   "foreign_n": 18
  },
  {
@@ -92,23 +92,23 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "짧은 한 줄",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.97,
+  "kr_avg": 1.98,
   "kr_n": 64,
-  "foreign_avg": 1.13,
+  "foreign_avg": 1.14,
   "foreign_n": 7
  },
  {
   "rank": 8,
-  "topic": "부동산",
+  "topic": "연금·절세",
   "kind": "국내 검증 주제",
   "confidence": "높음",
-  "title_idea": "숫자 하나로 보는 부동산",
+  "title_idea": "숫자 하나로 보는 연금·절세",
   "format": "단일 이미지",
   "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.35,
-  "kr_n": 162,
-  "foreign_avg": 0.52,
-  "foreign_n": 4
+  "kr_avg": 1.66,
+  "kr_n": 76,
+  "foreign_avg": 0.7,
+  "foreign_n": 6
  }
 ]
