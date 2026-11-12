@@ -11,7 +11,7 @@
  {
   "geo": "KR",
   "term": "해변",
-  "traffic": 500,
+  "traffic": 1000,
   "topics": "",
   "econ": false,
   "news_title": "해변 실종 박세나씨 수색 중단…지난 8일 샌타크루즈서 실종돼",
@@ -25,24 +25,6 @@
   "econ": true,
   "news_title": "빗나간 66년 전 ‘인구종말론’…AI 종말론은 다를까?",
   "news_link": "https://www.hani.co.kr/arti/science/science_general/1286931.html"
- },
- {
-  "geo": "KR",
-  "term": "amd 주가",
-  "traffic": 200,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "젠슨 황 해임으로 누가 이득보나…브로드컴·AMD 주가 급등",
-  "news_link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4444516"
- },
- {
-  "geo": "KR",
-  "term": "jyp 엔터테인먼트",
-  "traffic": 200,
-  "topics": "실적발표",
-  "econ": true,
-  "news_title": "역대급 실적 낸 JYP, 주가 17% 급등한 이유는?",
-  "news_link": "https://story.pay.naver.com/content/3952_3_C1"
  },
  {
   "geo": "KR",
@@ -64,12 +46,30 @@
  },
  {
   "geo": "KR",
+  "term": "amd stock",
+  "traffic": 100,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "This AMD Analyst Turns Bullish; Here Are Top 5 Upgrades For Thursday",
+  "news_link": "https://www.benzinga.com/analyst-stock-ratings/upgrades/26/11/63185579/this-amd-analyst-turns-bullish-here-are-top-5-upgrades-for-thursday-2"
+ },
+ {
+  "geo": "KR",
+  "term": "김승원",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "‘김승원 신약 청탁 의혹’ 브로커 양모씨에 징역 4년 구형",
+  "news_link": "https://www.chosun.com/national/national_general/2026/11/12/X3EACDFYJNF43MGVF67SH52VCA/"
+ },
+ {
+  "geo": "KR",
   "term": "네이션스리그",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "UEFA 네이션스리그: 몸값을 높이는 뛰어난 선수들",
-  "news_link": "https://sbotopkr.tistory.com/2670"
+  "news_title": "스페인 감독, 야말 특혜 논란에 발끈…\"거짓말과 날조 참을 수 없어\"",
+  "news_link": "https://www.news1.kr/sports/overseas-soccer/6351283"
  },
  {
   "geo": "KR",
@@ -77,31 +77,22 @@
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "‘코인 상장 청탁’ 프로골퍼 안성현, 대법서 무죄 확정",
-  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8710942"
+  "news_title": "'코인 상장 뒷돈' 전 빗썸 대표 징역형 집행유예 확정",
+  "news_link": "https://imnews.imbc.com/news/2026/society/article/6865117_36918.html"
  },
  {
   "geo": "KR",
-  "term": "학대",
+  "term": "정선희",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "\"학대냐 아니냐\" 불붙은 논란‥'어둠의 오은영' 이제 못 보나",
-  "news_link": "https://imnews.imbc.com/replay/2026/nwdesk/article/6865252_37004.html"
- },
- {
-  "geo": "US",
-  "term": "ticketmaster",
-  "traffic": 10000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Kennedy Center plans Ticketmaster switch, raising conflict of interest concerns",
-  "news_link": "https://www.npr.org/2026/11/12/nx-s1-6031461/kennedy-center-ticketmaster-conflict-of-interest"
+  "news_title": "자기연민 고백한 정선희, 몰라보게 야윈 근황…김영철 '깜짝' - 머니투데이",
+  "news_link": "https://www.mt.co.kr/entertainment/2026/11/12/2026111215551129077"
  },
  {
   "geo": "US",
   "term": "barcelona - arsenal",
-  "traffic": 5000,
+  "traffic": 10000,
   "topics": "",
   "econ": false,
   "news_title": "Barcelona v Arsenal: How 'Barca way' continues despite big-name exits",
@@ -109,35 +100,8 @@
  },
  {
   "geo": "US",
-  "term": "weather nyc",
-  "traffic": 5000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Nor’easter ahead: Here’s who has the best chance of accumulating snow",
-  "news_link": "https://weather.com/2026/11/11/forecast/regional/noreaster-first-snow-frost-freeze"
- },
- {
-  "geo": "US",
-  "term": "the view",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Governor Sanders' national book tour raises criticism over minimum wage remark",
-  "news_link": "https://www.5newsonline.com/article/news/politics/governor-sanders-national-book-tour-raises-criticism-minimum-wage-remark/527-5fff2fbc-66c3-4ba0-a5e5-e054fe7ae83f"
- },
- {
-  "geo": "US",
-  "term": "freeze watch",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Routine freeze warnings end for Charlotte region for the season: Here’s why",
-  "news_link": "https://www.wbtv.com/2026/11/12/routine-freeze-warnings-end-charlotte-region-season-heres-why/"
- },
- {
-  "geo": "US",
   "term": "sabrina carpenter",
-  "traffic": 1000,
+  "traffic": 2000,
   "topics": "",
   "econ": false,
   "news_title": "Sabrina Carpenter Teams Up With ‘La La Land’ Director for ‘Playful, Unexpected’ Whiskey Campaign",
@@ -145,12 +109,39 @@
  },
  {
   "geo": "US",
-  "term": "ast spacemobile at&t verizon partnership",
+  "term": "seatgeek",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Inside DC's legal battle over secondhand ticket sales",
+  "news_link": "https://51st.news/dc-concert-resale-act-lawsuit/"
+ },
+ {
+  "geo": "US",
+  "term": "stubhub",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Stubhub Swings to Profit, Names New Finance Chief",
+  "news_link": "https://www.wsj.com/business/retail/stubhub-swings-to-profit-sees-higher-gross-merchandise-sales-05fe7ec4"
+ },
+ {
+  "geo": "US",
+  "term": "smci stock",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Super Micro Computer Stocks Fall 2.01% as Cash Drain Shadows Fourfold Sales Jump",
+  "news_link": "https://finance.yahoo.com/markets/stocks/articles/super-micro-computer-stocks-fall-192505738.html"
+ },
+ {
+  "geo": "US",
+  "term": "bruce arians",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "AT&T and Verizon users will soon get a taste of what it's been like for T-Mobile customers",
-  "news_link": "https://www.phonearena.com/news/ast-spacemobile-d2d-launch-at-t-verizon_id184752"
+  "news_title": "Super Bowl-winning coach ‘has itch’ to return to game",
+  "news_link": "https://sports.yahoo.com/articles/super-bowl-winning-coach-itch-172620452.html"
  },
  {
   "geo": "US",
@@ -163,20 +154,29 @@
  },
  {
   "geo": "US",
-  "term": "liga de naciones",
+  "term": "holger rune",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "¿Qué es lo más atractivo en Europa para UEFA Nations League?",
-  "news_link": "https://espndeportes.espn.com/futbol/selecciones/nota/_/id/17501812/uefa-nations-league-portugal-sin-cristiano-zidane-klopp"
+  "news_title": "Highlights: Rune reaches Stockholm 2026 QFs, sets Fritz clash",
+  "news_link": "https://www.atptour.com/en/video/highlights-rune-reaches-stockholm-2026-qfs-sets-fritz-clash"
  },
  {
   "geo": "US",
-  "term": "smci stock",
+  "term": "nvidia cmp 170hx voltage mod",
+  "traffic": 500,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "Techie uses voltage glitching hack to turn $2,500 Nvidia 8GB cryptomining GPU into a full-fat $20,000 A100 with 80GB of VRAM — hack carefully blows onboard fuses to unlock entire VRAM and shader modules",
+  "news_link": "https://www.tomshardware.com/pc-components/gpus/techie-turns-usd2-500-cmp-170hx-8gb-mining-card-into-a-full-fat-a100-80gb-with-voltage-glitching-carefully-blowing-onboard-fuses-to-unlock-entire-vram-and-shader-modules"
+ },
+ {
+  "geo": "US",
+  "term": "uefa nations league schedule",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Super Micro Computer Stocks Fall 2.01% as Cash Drain Shadows Fourfold Sales Jump",
-  "news_link": "https://finance.yahoo.com/markets/stocks/articles/super-micro-computer-stocks-fall-192505738.html"
+  "news_title": "UEFA Nations League Matchday 5 preview: Harry Kane set for England landmark as Spain and Portugal protect perfect records",
+  "news_link": "https://www.uefa.com/uefanationsleague/news/02ab-220793bfb8a3-00d5842942af-1000--uefa-nations-league-matchday-5-preview-harry-kane-set-for-en/"
  }
 ]
