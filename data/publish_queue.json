@@ -3128,469 +3128,6 @@
  ],
  "ideas": [
   {
-   "title": "코어위브 24.71% 폭등, AI 반도체 동반 급등",
-   "concept": "코어위브 하나가 뛰자 마이크론, SK하이닉스 ADR까지 따라 오른 하루를 주인공 한 곳 중심으로 풀고, 엔비디아 약세는 마지막 장 변수로만 둔다. 첫 본문 장에서 한국 반도체 종목에 미치는 영향을 쉬운 말로 짚는다 (공식: 표지는 이미 일어난 일로)",
-   "why_now": "뉴욕증시 마감 기사 11곳이 다뤘고, 한국 증시 개장 전이라 관심이 높다. 코어위브가 24.71% 오르며 나스닥이 1.6% 상승했다.",
-   "tag": "미국증시",
-   "sources": [
-    "https://kr.investing.com/news/stock-market-news/article-2171444",
-    "https://www.newsis.com/view/NISX20261112_0003864614",
-    "https://kr.investing.com/news/assorted/article-2171476"
-   ],
-   "bg": "CoreWeave data center",
-   "bg_alt": "CoreWeave logo",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "코어위브 **24.71%** 폭등\n마이크론도 11.89%\n하이닉스 ADR 9.71%",
-     "number": "24.71%",
-     "label": "코어위브 하루 상승률",
-     "sub": "나스닥은 1.6% 상승"
-    },
-    {
-     "type": "질문형",
-     "title": "코어위브 하나에\nAI 반도체가 왜\n**동시에** 뛰었나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "나스닥은 1.6% 올랐는데\n코어위브는 **24.71%**\n엔비디아는 시간 외 약세",
-     "number": "24.71%",
-     "label": "코어위브 상승률",
-     "sub": "같은 AI주도 엇갈렸다"
-    }
-   ],
-   "forms": [
-    "bars",
-    "bignum"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "11/11 뉴욕증시 상승률(%)",
-     "bars": [
-      {
-       "label": "코어위브",
-       "value": 24.71,
-       "hi": true
-      },
-      {
-       "label": "마이크론",
-       "value": 11.89
-      },
-      {
-       "label": "SK하이닉스 ADR",
-       "value": 9.71
-      },
-      {
-       "label": "나스닥",
-       "value": 1.6
-      }
-     ]
-    }
-   },
-   "id": "20261112-0906-i1",
-   "created_at": "2026-11-12T09:06:32+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261112-0906-i1/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261112-0906-i1/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261112-0906-i1/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261112-0906-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261112-0906-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261112-0906-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261112-0906-i1/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261112-0906-i1/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261112-0906-i1/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261112-0906-i1/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261112-0906-i1/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261112-0906-i1/3-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261112-0906-i1/3-bignum-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261112-0906-i1/3-bignum-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261112-0906-i1/3-bignum-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "네이버 3분기, 매출 최대인데 영업이익 20.9% 감소",
-   "concept": "매출은 사상 최대, 이익은 뒷걸음이라는 엇갈린 성적표를 숫자 두 개로 대비한다. 비용 증가 원인은 확인된 내용만 덧붙인다 (공식: 없음)",
-   "why_now": "오늘 장 시작 전 연합뉴스, 조선비즈, 뉴시스 등이 속보로 전했다. 대형주 실적이라 장 반응이 갈릴 수 있다.",
-   "tag": "기업실적",
-   "sources": [
-    "https://biz.chosun.com/it-science/ict/2026/11/12/ABBL6HIPJZBSBEG2OFYHP4H4R4/",
-    "https://www.yna.co.kr/view/AKR20261112025400527"
-   ],
-   "bg": "Naver headquarters Bundang",
-   "bg_alt": "Naver logo building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "네이버 매출 3조4724억\n전년보다 10.7% 늘고\n영업이익 **4513억**",
-     "number": "4513억",
-     "label": "네이버 3분기 영업이익",
-     "sub": "전년보다 20.9% 감소"
-    },
-    {
-     "type": "질문형",
-     "title": "매출 사상 최대인데\n네이버 이익은\n왜 **줄었나**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "네이버가 더 팔고도\n영업이익 **20.9%**\n뒷걸음쳤다",
-     "number": "-20.9%",
-     "label": "네이버 영업이익",
-     "sub": "매출은 10.7% 증가"
-    }
-   ],
-   "forms": [
-    "bignum",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/12",
-     "headlines": [
-      "네이버 3분기 매출 3조4724억",
-      "매출 전년비 10.7% 증가, 최대",
-      "영업이익 4513억, 20.9% 감소"
-     ]
-    }
-   },
-   "id": "20261112-0906-i2",
-   "created_at": "2026-11-12T09:06:32+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261112-0906-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261112-0906-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261112-0906-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261112-0906-i2/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261112-0906-i2/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261112-0906-i2/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261112-0906-i2/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261112-0906-i2/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261112-0906-i2/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261112-0906-i2/3-bignum-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261112-0906-i2/3-bignum-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261112-0906-i2/3-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261112-0906-i2/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261112-0906-i2/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261112-0906-i2/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "당정, 금융지주 CEO 셀프연임 막는다",
-   "concept": "연임 요건 강화, 임추위 전원 독립이사, 성과보수 환수제 세 가지를 한 장씩 풀고, 시행 시점은 확인된 것만 쓴다. 용어(임추위, 환수제)는 나오는 자리에서 바로 푼다 (공식: 없음)",
-   "why_now": "08:14 속보로 한국경제, 연합뉴스 등이 보도했고 08:25 성과보수 환수제 도입까지 추가로 나왔다. 우리 계정에서 아직 다루지 않았다.",
-   "tag": "금융정책",
-   "sources": [
-    "https://www.hankyung.com/article/2026111216087",
-    "https://www.yna.co.kr/view/AKR20261112022600001",
-    "https://v.daum.net/v/20261112082503468"
-   ],
-   "bg": "Seoul bank headquarters building",
-   "bg_alt": "Financial Services Commission Korea",
-   "hooks": [
-    {
-     "type": "사건형",
-     "title": "당정이 은행지주\nCEO **셀프연임**\n막는다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "은행지주 연임 심사\n임추위는 왜\n전원 **독립이사**인가",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "현직 CEO 입김 나오던\n연임 구조에\n당정이 **손댔다**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "paper",
-    "news"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/12",
-     "headlines": [
-      "은행지주 CEO 연임요건 강화",
-      "임추위 전원 독립이사로 구성",
-      "성과보수 환수제 도입"
-     ]
-    }
-   },
-   "id": "20261112-0906-i3",
-   "created_at": "2026-11-12T09:06:32+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261112-0906-i3/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261112-0906-i3/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261112-0906-i3/1-paper-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261112-0906-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261112-0906-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261112-0906-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261112-0906-i3/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261112-0906-i3/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261112-0906-i3/2-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261112-0906-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261112-0906-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261112-0906-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261112-0906-i3/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261112-0906-i3/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261112-0906-i3/3-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261112-0906-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261112-0906-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261112-0906-i3/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
    "title": "엔비디아, 젠슨 황 후임 탐색 시작",
    "concept": "해임 준비에서 후임 탐색으로 넘어간 새 단계를 블룸버그 보도 기준으로 풀고, 첫 장에서 SK하이닉스, 삼성전자 같은 AI 반도체 종목의 변동성 가능성을 쉬운 말로 짚는다. 공식 발표 전이라 보도 기준으로만 쓴다. (공식: 한 주인공이 장마다 한 걸음씩)",
    "why_now": "블룸버그발 속보가 08:39~08:42에 나왔고 국내 29곳이 다뤘다. 앞선 '해임 준비' 보도에서 '후임 탐색'으로 넘어간 새 단계다.",
@@ -9009,6 +8546,417 @@
      "form": "news",
      "font": "myeongjo",
      "path": "20261113-0707-i3/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "젠슨 황 퇴진, 엔비디아 시총 801조원 증발",
+   "concept": "주인공을 젠슨 황 한 명으로 두고 퇴진, 장중 시총 4조 달러 붕괴, 임시 CEO 체제 순으로 한 걸음씩 풀고, 끝 장은 확인된 것(임시 CEO 선임)과 아직 모르는 것(정식 후임)으로 닫는다. 첫 장에 한국 투자자에게 CEO 리스크와 AI 수요를 나눠서 봐야 한다는 점을 먼저 둔다. (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "뉴스 21곳이 다룬 오늘 가장 큰 소식이고, 시총 증발액은 뉴시스가 장중 801조원으로 보도했다. 한국장 개장 전에 삼성전자, SK하이닉스 HBM 공급망 영향을 짚기 좋다.",
+   "tag": "엔비디아",
+   "sources": [
+    "https://www.mt.co.kr/world/2026/11/13/2026111306522328092",
+    "https://www.newsis.com/view/NISX20261113_0003866401",
+    "https://www.cnbc.com/2026/11/12/nvidia-nvda-jensen-huang-second-affair.html"
+   ],
+   "bg": "Jensen Huang",
+   "bg_alt": "Nvidia headquarters",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "젠슨 황 퇴진에\n엔비디아 시총\n**801조원** 증발",
+     "number": "801조원",
+     "label": "장중 사라진 엔비디아 시총",
+     "sub": "젠슨 황 CEO 사임 직후"
+    },
+    {
+     "type": "질문형",
+     "title": "33년 만의 퇴진,\n**AI 대장주**는\n누가 이끌게 되나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "시총 4조 달러 붕괴\n후임은 **임시** CEO\n정식은 아직 없다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261113-0805-i1",
+   "created_at": "2026-11-13T08:05:21+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261113-0805-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261113-0805-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261113-0805-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261113-0805-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261113-0805-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261113-0805-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261113-0805-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261113-0805-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261113-0805-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261113-0805-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261113-0805-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261113-0805-i1/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "앤트로픽 IPO, 공모 물량의 6배 주문",
+   "concept": "엔비디아가 흔들린 날 AI 비상장 대어로 돈이 몰린다는 대비를 앞세우고, 조달 목표 644억 달러와 별도 사모 260억 달러를 맞붙여 보여 준다. 공동창업자 매도 규모와 유지 지분은 한 줄로 비교하고, 상장일과 티커는 아직 확인 전이라고 닫는다. (공식: 숫자는 둘을 맞붙여서)",
+   "why_now": "블룸버그 인용 보도가 조회 88,918을 기록했고 인베스팅닷컴 많이 본 기사에도 올랐다. 젠슨 황 퇴진으로 AI 대장주가 흔들리는 날 나온 다른 AI 소식이다.",
+   "tag": "AI IPO",
+   "sources": [
+    "https://kr.investing.com/news/stock-market-news/article-2173669",
+    "https://x.com/DeItaone/status/2120987833888370826",
+    "https://x.com/unusual_whales/status/2120999577541046643"
+   ],
+   "bg": "Anthropic Dario Amodei",
+   "bg_alt": "Anthropic logo office",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "공모 물량보다\n**6배** 주문이\n앤트로픽에 몰렸다",
+     "number": "6배",
+     "label": "앤트로픽 IPO 주문 규모",
+     "sub": "블룸버그 보도 기준"
+    },
+    {
+     "type": "질문형",
+     "title": "AI 대장주 흔들린 날\n**앤트로픽**엔 왜\n주문이 몰렸을까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "공동창업자 7명이\n각 2억 5천만 달러\n팔고도 **180억** 남는다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "bars"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "앤트로픽 IPO 조달 규모, 억 달러",
+     "bars": [
+      {
+       "label": "공모 조달 목표",
+       "value": 644,
+       "hi": true
+      },
+      {
+       "label": "별도 사모",
+       "value": 260
+      }
+     ]
+    }
+   },
+   "id": "20261113-0805-i2",
+   "created_at": "2026-11-13T08:05:21+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261113-0805-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261113-0805-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261113-0805-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261113-0805-i2/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261113-0805-i2/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261113-0805-i2/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261113-0805-i2/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261113-0805-i2/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261113-0805-i2/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261113-0805-i2/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261113-0805-i2/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261113-0805-i2/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "트럼프 \"이란 합의 불필요\", 유가 3% 급등",
+   "concept": "어제 나온 10월 수입물가 1.8% 하락과 오늘 유가 3% 급등을 맞붙여 흐름이 이어질지 묻는다. 기름을 전부 수입하는 한국은 유가가 뛰면 물가와 기업 비용이 같이 신경 쓰인다는 점을 첫 장에서 쉬운 말로 먼저 답한다. 유가 수준은 재료에 없어 확인 전이라고 적는다. (공식: 숫자는 둘을 맞붙여서)",
+   "why_now": "트럼프 발언 직후 국제유가가 3% 올랐고 뉴욕 증시 마감 기사 9곳이 이 발언을 함께 언급했다. 한국 장 시작 전에 유가와 환율부터 확인할 이유가 된다.",
+   "tag": "유가",
+   "sources": [
+    "https://v.daum.net/v/20261113055110190",
+    "https://www.yna.co.kr/view/AKR20261113010900072",
+    "https://www.sedaily.com/article/20113767"
+   ],
+   "bg": "Donald Trump",
+   "bg_alt": "Strait of Hormuz oil tanker",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "트럼프 한마디에\n국제유가 **3%**\n급등했다",
+     "number": "3%",
+     "label": "국제유가 하루 상승폭",
+     "sub": "트럼프 \"이란 합의 필요 없다\""
+    },
+    {
+     "type": "질문형",
+     "title": "이란 합의 필요 없다\n내리던 수입물가\n**이어질까**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "수입물가 1.8% 내린\n다음 날 유가는\n**3%** 뛰었다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/13",
+     "headlines": [
+      "트럼프 \"이란 합의 필요 없다\"",
+      "국제유가 3% 급등",
+      "10월 수입물가 1.8% 하락"
+     ]
+    }
+   },
+   "id": "20261113-0805-i3",
+   "created_at": "2026-11-13T08:05:21+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261113-0805-i3/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261113-0805-i3/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261113-0805-i3/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261113-0805-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261113-0805-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261113-0805-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261113-0805-i3/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261113-0805-i3/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261113-0805-i3/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261113-0805-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261113-0805-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261113-0805-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261113-0805-i3/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261113-0805-i3/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261113-0805-i3/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261113-0805-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261113-0805-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261113-0805-i3/3-paper-gowun.jpg"
     }
    ]
   }
