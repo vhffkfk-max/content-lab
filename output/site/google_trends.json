@@ -1,21 +1,21 @@
 [
  {
   "geo": "KR",
+  "term": "국제 a매치",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "“에이~ 매치” 되어버린 A매치···축구대표팀 인기 추락하는 소리",
+  "news_link": "https://www.khan.co.kr/article/202611112246001"
+ },
+ {
+  "geo": "KR",
   "term": "토스증권",
   "traffic": 1000,
   "topics": "AI·반도체",
   "econ": true,
   "news_title": "“AI 돈맥 어디로 흐르나”…5개국 발로 뛴 토스증권, 투자 지도 그렸다",
   "news_link": "https://stock.mk.co.kr/news/view/1196929"
- },
- {
-  "geo": "KR",
-  "term": "해변",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "해변 실종 박세나씨 수색 중단…지난 8일 샌타크루즈서 실종돼",
-  "news_link": "https://www.koreadaily.com/article/20261111215737005"
  },
  {
   "geo": "KR",
@@ -37,26 +37,8 @@
  },
  {
   "geo": "KR",
-  "term": "100 일 의 거짓말",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "‘100일의 거짓말’, 시청률 10% 넘더니 일 냈다…드라마 브랜드 평판 1위",
-  "news_link": "https://www.mk.co.kr/news/broadcasting-service/12205959"
- },
- {
-  "geo": "KR",
-  "term": "amd stock",
-  "traffic": 100,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "This AMD Analyst Turns Bullish; Here Are Top 5 Upgrades For Thursday",
-  "news_link": "https://www.benzinga.com/analyst-stock-ratings/upgrades/26/11/63185579/this-amd-analyst-turns-bullish-here-are-top-5-upgrades-for-thursday-2"
- },
- {
-  "geo": "KR",
   "term": "김승원",
-  "traffic": 100,
+  "traffic": 200,
   "topics": "",
   "econ": false,
   "news_title": "‘김승원 신약 청탁 의혹’ 브로커 양모씨에 징역 4년 구형",
@@ -65,7 +47,7 @@
  {
   "geo": "KR",
   "term": "네이션스리그",
-  "traffic": 100,
+  "traffic": 200,
   "topics": "",
   "econ": false,
   "news_title": "네이션스 리그 세르비아 대 독일 축구 예측",
@@ -74,109 +56,127 @@
  {
   "geo": "KR",
   "term": "안성현",
-  "traffic": 100,
+  "traffic": 200,
   "topics": "",
   "econ": false,
   "news_title": "‘코인 상장 청탁’ 프로골퍼 안성현, 대법서 무죄 확정",
-  "news_link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8710942"
+  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8710942"
+ },
+ {
+  "geo": "KR",
+  "term": "이자",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "우리은행, 삼성금융과 '모니모 전용' 입출금·적금·예금 상품",
+  "news_link": "https://www.yna.co.kr/view/AKR20261112064200002"
  },
  {
   "geo": "KR",
   "term": "정선희",
-  "traffic": 100,
+  "traffic": 200,
   "topics": "",
   "econ": false,
   "news_title": "자기연민 고백한 정선희, 몰라보게 야윈 근황…김영철 '깜짝' - 머니투데이",
   "news_link": "https://www.mt.co.kr/entertainment/2026/11/12/2026111215551129077"
  },
  {
-  "geo": "US",
-  "term": "tornado watch",
-  "traffic": 100000,
+  "geo": "KR",
+  "term": "100 일 의 거짓말",
+  "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "First Alert: Storms could bring hail, damaging winds and tornado risk",
-  "news_link": "https://www.nbcphiladelphia.com/weather/stories-weather/first-alert-storm-could-bring-hail-damaging-winds-and-isolated-tornadoes/4496058/"
+  "news_title": "‘100일의 거짓말’, 시청률 10% 넘더니 일 냈다…드라마 브랜드 평판 1위",
+  "news_link": "https://www.mk.co.kr/news/broadcasting-service/12205959"
  },
  {
   "geo": "US",
-  "term": "outlook outage",
-  "traffic": 50000,
+  "term": "internet outage",
+  "traffic": 10000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Optimum internet restored in West Virginia after multi-state outage",
+  "news_link": "https://www.wtap.com/2026/11/12/optimum-internet-restored-west-virginia-after-multi-state-outage/"
+ },
+ {
+  "geo": "US",
+  "term": "microsoft stock",
+  "traffic": 2000,
   "topics": "빅테크",
   "econ": true,
-  "news_title": "Is Microsoft Outlook down? Thousands report issues with platform",
-  "news_link": "https://www.wusa9.com/article/news/nation-world/is-microsoft-outlook-down-issues-reported-thursday/507-c4b3db9a-24e9-4c76-a414-28aa084c18f8"
+  "news_title": "Microsoft Stock At $521: Anthropic’s Landlord, Customer And Rival?",
+  "news_link": "https://www.trefis.com/stock/msft/articles/624619/microsoft-stock-at-521-anthropic-s-landlord-customer-and-rival/2026-11-12"
  },
  {
   "geo": "US",
-  "term": "seatgeek",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Inside DC's legal battle over secondhand ticket sales",
-  "news_link": "https://51st.news/dc-concert-resale-act-lawsuit/"
- },
- {
-  "geo": "US",
-  "term": "senate finance committee rfk jr inquiry",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Senators probing RFK Jr.'s testimony on Samoa trip after AP and Guardian showed documents refute it",
-  "news_link": "https://apnews.com/article/samoa-rfk-jr-senate-investigation-measles-vaccines-e4b97becad6d2951d9e84ea584979c41"
- },
- {
-  "geo": "US",
-  "term": "tornado warning",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Severe thunderstorm warning, tornado watch issued for New Castle County",
-  "news_link": "https://www.delawareonline.com/story/weather/2026/11/12/severe-thunderstorm-warning-tornado-watch-issued-for-new-castle-county/92744330007/"
- },
- {
-  "geo": "US",
-  "term": "turkey",
-  "traffic": 2000,
-  "topics": "급락·변동성",
-  "econ": true,
-  "news_title": "Military helicopter crash in Turkey leaves four dead",
-  "news_link": "https://www.independent.co.uk/news/world/europe/turkey-military-helicopter-crash-samankoy-b3084116.html"
- },
- {
-  "geo": "US",
-  "term": "gemini hydrogen",
+  "term": "microsoft ceo",
   "traffic": 1000,
-  "topics": "AI·반도체",
+  "topics": "AI·반도체, 빅테크",
   "econ": true,
-  "news_title": "Google is letting staff test a 'fast' new Gemini AI model named Hydrogen",
-  "news_link": "https://www.businessinsider.com/google-hydrogen-test-new-gemini-4-flash-model-ai-2026-11"
+  "news_title": "Microsoft's CEO says AI copilots will change every profession",
+  "news_link": "https://www.yahoo.com/news/videos/microsofts-ceo-says-ai-copilots-130000845.html"
  },
  {
   "geo": "US",
-  "term": "internet invitational",
+  "term": "msft",
+  "traffic": 1000,
+  "topics": "빅테크",
+  "econ": true,
+  "news_title": "OpenAI posts steep losses even as quarterly revenue rises to $10 billion, WSJ reports",
+  "news_link": "https://www.reuters.com/legal/transactional/openai-posts-steep-losses-even-quarterly-revenue-rises-10-billion-wsj-reports-2026-11-10/"
+ },
+ {
+  "geo": "US",
+  "term": "senegal vs sudan",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "YouTube’s Wildest Golf Tournament Mints Star Creators. Its Founder Explains How It Really Works",
-  "news_link": "https://www.hollywoodreporter.com/tv/tv-features/internet-invitational-2026-robby-berger-talks-viral-moments-1236747861/"
+  "news_title": "Senegal vs. Sudan Lineups, Live Stream Options, How & Where to Watch AFCON Qualifiers on TV",
+  "news_link": "https://athlonsports.com/soccer/senegal-vs-sudan-lineups-live-stream-afcon-qualifiers-on-tv"
  },
  {
   "geo": "US",
-  "term": "warrenton mo",
+  "term": "tommy mcmillen",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "UFC Star Tommy McMillen Rushed to Hospital After Suspected Overdose",
+  "news_link": "https://www.tmz.com/2026/11/12/tommy-mcmillen-hospitalized-suspected-overdose/"
+ },
+ {
+  "geo": "US",
+  "term": "bill gates",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Student hospitalized, teacher injured after incident at Blackhawk Middle School",
-  "news_link": "https://www.ksdk.com/article/news/crime/large-police-presence-responds-blackhawk-middle-school-1-person-in-custody-warrenton-missouri/63-84fdfff9-4962-4201-8bb7-51ce529e5717"
+  "news_title": "Bill Gates Reassess Climate Change",
+  "news_link": "https://www.forbes.com/sites/arielcohen/2026/11/11/bill-gates-reassess-climate-change/"
  },
  {
   "geo": "US",
-  "term": "gatto",
-  "traffic": 200,
+  "term": "hail",
+  "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Verona diventa la capitale dei gatti: al Palaexpo arrivano oltre 300 felini da ammirare",
-  "news_link": "https://mattinodiverona.it/2026/11/12/verona-diventa-la-capitale-dei-gatti-al-palaexpo-arrivano-oltre-300-felini-da-ammirare/"
+  "news_title": "Severe thunderstorms could bring hail, damaging winds, tornado to NJ",
+  "news_link": "https://www.yahoo.com/news/weather-news/articles/severe-thunderstorms-could-bring-hail-173424856.html"
+ },
+ {
+  "geo": "US",
+  "term": "hola",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Alejandra Rubio y Carlo Constanzia buscan nuevos horizontes: ella debuta en el teatro y él quiere resucitar su faceta como músico",
+  "news_link": "https://www.abc.es/gente/alejandra-rubio-carlo-constanzia-buscan-nuevos-horizontes-20261110114420-nt.html"
+ },
+ {
+  "geo": "US",
+  "term": "venezuela",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Duelo entre Tiburones y Navegantes en Miami por los damnificados de terremoto en Venezuela",
+  "news_link": "https://www.telemundo51.com/video/noticiero-t51/duelo-entre-tiburones-y-navegantes-en-miami-por-los-damnificados-de-terremoto-en-venezuela/2847388/"
  }
 ]
