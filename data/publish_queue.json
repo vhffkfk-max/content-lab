@@ -3128,396 +3128,6 @@
  ],
  "ideas": [
   {
-   "title": "연준 12월 인상, '할까'에서 '얼마나'로",
-   "concept": "WSJ 연준 전문 기자의 X 글을 원문 그대로 보여 주고, 25bp와 50bp 선택지를 막대처럼 풀어 한국 투자자에게 오는 길(달러, 환율, 국고채 금리)까지 잇는다 (공식: 진짜 현장과 원문을 화면에)",
-   "why_now": "WSJ 닉 티미라오스가 21:34에 '12월 인상은 의심의 여지가 거의 없다'고 썼고, BofA의 12월 50bp 가능성 소식은 워처구루 X에서 조회 6.7만을 넘겼다. 인상 자체를 기정사실로 말한 새 단계다.",
-   "tag": "연준",
-   "sources": [
-    "https://x.com/NickTimiraos/status/2120495446179131412",
-    "https://x.com/DeItaone/status/2120492687576994289",
-    "https://x.com/WatcherGuru/status/2120495159939100834"
-   ],
-   "bg": "Jerome Powell Federal Reserve",
-   "bg_alt": "Federal Reserve building Washington",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "10월 물가 0.4% 상승\n3개월 연속 예상 상회\n**12월 인상** 굳어졌다",
-     "number": "0.4%",
-     "label": "10월 미국 소비자물가 상승률",
-     "sub": "3개월 연속 예상보다 높았다"
-    },
-    {
-     "type": "질문형",
-     "title": "인상은 이미 기정사실\n12월에는 **몇 bp**를\n올리는 걸까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "인상 여부 논쟁은 끝\nWSJ 기자 \"의심 없다\"\n이제 싸움은 **속도**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "quote",
-    "bignum"
-   ],
-   "extra": {
-    "quote": {
-     "label": "WSJ 연준 전문 기자",
-     "quote": "12월 인상은 의심의 여지가 거의 없다",
-     "by": "닉 티미라오스, WSJ"
-    }
-   },
-   "id": "20261111-2201-i1",
-   "created_at": "2026-11-11T22:01:38+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261111-2201-i1/1-quote-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261111-2201-i1/1-quote-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261111-2201-i1/1-quote-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261111-2201-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261111-2201-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261111-2201-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261111-2201-i1/2-quote-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261111-2201-i1/2-quote-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261111-2201-i1/2-quote-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261111-2201-i1/3-quote-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261111-2201-i1/3-quote-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261111-2201-i1/3-quote-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "유류세 인하 2개월 연장, 내년 1월 31일까지",
-   "concept": "주유할 때 내는 세금 부담이 당분간 그대로라는 점을 첫 장에서 쉬운 말로 답하고, 인하율은 발표문 확인 후 덧붙인다 (공식: 없음)",
-   "why_now": "21:33 SBS Biz 등이 보도한 신규 소식이다. 생활비와 직결돼 반응이 빠르고, 아직 이 주제를 보낸 적이 없다.",
-   "tag": "생활비",
-   "sources": [
-    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008841707&plink=RSSLINK&cooper=RSSREADER",
-    "https://v.daum.net/v/20261111213353198"
-   ],
-   "bg": "gas station fuel pump",
-   "bg_alt": "gasoline pump nozzle",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "유류세 인하\n**2개월** 연장 결정\n내년 1월 31일까지",
-     "number": "2개월",
-     "label": "유류세 인하 연장 기간",
-     "sub": "내년 1월 31일까지 혜택 유지"
-    },
-    {
-     "type": "질문형",
-     "title": "주유할 때 내는 세금\n내년 1월 말까지\n**그대로**인 이유는",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "유류세 인하가\n**2개월 더** 이어진다\n주유 부담은 그대로",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "editorial"
-   ],
-   "extra": {},
-   "id": "20261111-2201-i2",
-   "created_at": "2026-11-11T22:01:38+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261111-2201-i2/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261111-2201-i2/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261111-2201-i2/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261111-2201-i2/1-editorial-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261111-2201-i2/1-editorial-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261111-2201-i2/1-editorial-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261111-2201-i2/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261111-2201-i2/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261111-2201-i2/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261111-2201-i2/2-editorial-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261111-2201-i2/2-editorial-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261111-2201-i2/2-editorial-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261111-2201-i2/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261111-2201-i2/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261111-2201-i2/3-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261111-2201-i2/3-editorial-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261111-2201-i2/3-editorial-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261111-2201-i2/3-editorial-plex.jpg"
-    }
-   ]
-  },
-  {
-   "title": "뜨거운 CPI에도 덤덤한 비트코인",
-   "concept": "코인데스크 보도를 근거로 물가 충격에 비트코인이 거의 반응하지 않았고 ETF 자금 유출은 이어진다는 두 장면을 대비한다. 시세 인과는 만들지 않고 원인은 확인 안 됨으로 한 줄만 적는다 (공식: 없음)",
-   "why_now": "21:19 코인데스크가 '뜨거운 CPI에도 비트코인 거의 안 흔들, ETF 매도 둔화'를, 20:47에 'ETF 자금 유출 지속'을 보도했다. 오늘 금리 인상 우려가 가장 큰 화제인데 코인 관점은 아직 보내지 않았다.",
-   "tag": "코인",
-   "sources": [
-    "https://www.coindesk.com/daybook-us/2026/11/11/bitcoin-barely-flinches-at-hot-cpi-as-etf-selling-slows"
-   ],
-   "bg": "Bitcoin coin",
-   "bg_alt": "Bitcoin ETF",
-   "hooks": [
-    {
-     "type": "사건형",
-     "title": "뜨거운 CPI에도\n비트코인 전일 **+0.1%**\n거의 안 움직였다",
-     "number": "+0.1%",
-     "label": "11/11 비트코인 전일 대비",
-     "sub": "7만3,791달러, 1달 -12.16%"
-    },
-    {
-     "type": "질문형",
-     "title": "물가가 또 뜨거운데\n비트코인은 왜\n**덤덤**했을까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "CPI에 꿈쩍 않은\n비트코인, 그러나\nETF는 **계속 빠졌다**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261111-2201-i3",
-   "created_at": "2026-11-11T22:01:38+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261111-2201-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261111-2201-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261111-2201-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261111-2201-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261111-2201-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261111-2201-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261111-2201-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261111-2201-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261111-2201-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261111-2201-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261111-2201-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261111-2201-i3/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
    "title": "3분기 중앙은행 금 매입 321톤",
    "concept": "금값은 한 달 새 내렸는데 중앙은행은 3분기에 금 321톤을 사들였다는 대비로 풀고, 2분기 296톤과 비교한다. 첫 본문 장에서 금 매입이 일반 투자자에게 왜 눈여겨볼 신호인지 쉬운 말로 답한다. 수치의 원출처(World Gold Council 집계로 보임)는 한 번만 확인 필요로 적는다. (공식: 전후 낙차 한 줄)",
    "why_now": "@KobeissiLetter가 올린 새 통계가 조회 58,485로 퍼지고 있다. 금 선물은 전일 -0.89%, 1달 -4.38%(11/11 기준)여서 중앙은행의 움직임과 대비된다.",
@@ -8920,6 +8530,388 @@
      "form": "news",
      "font": "myeongjo",
      "path": "20261112-2001-i3/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "92주 오른 서울 집값, 한강벨트도 하락 전환",
+   "concept": "92주 연속 상승 끝에 강남3구에 이어 성동구, 강동구도 하락으로 돌아섰고 수도권 외곽은 계속 오르는 갈림 흐름을 보여준다. 첫 본문 장에서 내 지역 시세를 주간 시세로 확인하라는 한 줄을 넣고, 전문가 진단은 인용으로만 쓴다. (공식: 전후 낙차 한 줄 표지)",
+   "why_now": "'집값 하락기 진입 신호', '강남 약세 한강벨트까지', '성동, 강동 하락 전환' 기사를 각각 4곳이 18~20시에 다뤘다. 오늘 발송 목록에는 거래량만 있었고 가격 흐름 자체는 새 주제다.",
+   "tag": "부동산",
+   "sources": [
+    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008843676&plink=RSSLINK&cooper=RSSREADER",
+    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008843677&plink=RSSLINK&cooper=RSSREADER"
+   ],
+   "bg": "Seoul apartment complex",
+   "bg_alt": "Han River Seoul apartments",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "92주 오른 서울 아파트값\n성동구, 강동구도\n**하락**으로 돌아섰다",
+     "number": "92주",
+     "label": "서울 아파트값 연속 상승",
+     "sub": "강남3구에 이어 성동구, 강동구도 하락 전환"
+    },
+    {
+     "type": "질문형",
+     "title": "강남3구 다음엔\n성동구, 강동구\n**한강벨트**까지 번졌나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "서울은 꺾였는데\n수도권 외곽은\n아직 **오르는** 중",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "paper"
+   ],
+   "extra": {
+    "bignum": {},
+    "paper": {
+     "date": "11/12",
+     "headlines": [
+      "서울 아파트값 92주째 상승",
+      "강남3구 이어 성동, 강동 하락",
+      "수도권 외곽은 계속 상승"
+     ]
+    }
+   },
+   "id": "20261112-2101-i1",
+   "created_at": "2026-11-12T21:01:38+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261112-2101-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261112-2101-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261112-2101-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261112-2101-i1/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261112-2101-i1/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261112-2101-i1/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261112-2101-i1/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261112-2101-i1/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261112-2101-i1/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261112-2101-i1/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261112-2101-i1/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261112-2101-i1/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "젠슨 황 스캔들, 알리바바 7% 하락과 미중 문제",
+   "concept": "엔비디아 사태가 알리바바 주가 7% 하락과 중국의 반박으로 이어지며 미중 이슈가 된 과정을 한 사건으로 따라간다. 시세는 오늘 코스피 하락만 기준일과 함께 쓰고, 원인은 확인 안 됨을 한 번만 적는다. (공식: 없음)",
+   "why_now": "블룸버그가 16:58에 알리바바 7% 하락을, 17:35에 중국의 '간첩 서사' 반박을 전했고 미 민주당의 정보 보존 요구도 나왔다. 엔비디아 사태가 미중 이슈로 번진 새 국면이다.",
+   "tag": "AI, 미중",
+   "sources": [
+    "https://www.bloomberg.com/news/articles/2026-11-12/alibaba-shares-drop-7-as-nvidia-saga-triggers-chip-access-fears",
+    "https://v.daum.net/v/20261112171128911"
+   ],
+   "bg": "Jensen Huang",
+   "bg_alt": "Nvidia headquarters",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "알리바바 주가 **7%** 급락\n엔비디아 칩 못 구할까\n우려가 번졌다",
+     "number": "7%",
+     "label": "알리바바 주가 하락",
+     "sub": "엔비디아 칩 접근 우려, 블룸버그"
+    },
+    {
+     "type": "질문형",
+     "title": "젠슨 황 스캔들이\n왜 미중 **문제**가 됐나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "중국이 정면 반박\n미국의 **간첩 서사**\n봉쇄 구실이라고",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "breaking"
+   ],
+   "extra": {},
+   "id": "20261112-2101-i2",
+   "created_at": "2026-11-12T21:01:38+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-2101-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-2101-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-2101-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-2101-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-2101-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-2101-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-2101-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-2101-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-2101-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "마이크로소프트, 데이터센터 전기료 직접 내겠다",
+   "concept": "AI 데이터센터 때문에 전기료가 오른다는 미국 내 불만에 마이크로소프트가 보조금 없이, 다른 고객 요금을 올리지 않고 전력을 조달하겠다고 밝힌 사건을 다룬다. 첫 본문 장에서 AI 투자 비용이 커질 수 있다는 점을 쉬운 말로 풀고, MAGA 전략가의 공화당 참패 진단은 보도로 짧게 붙인다. (공식: 당사자의 한마디를 따옴표로)",
+   "why_now": "X에서 마이크로소프트 발언 게시물 조회가 3.2만을 넘겼고, 같은 시간 뉴스1이 'MAGA 전략 설계자, 공화당 참패는 AI 데이터센터, 빅테크 탓'을 보도했다. AI 투자 부담이 정치 이슈가 된 새 흐름이다.",
+   "tag": "AI, 에너지",
+   "sources": [
+    "https://x.com/unusual_whales/status/2120843297975406943",
+    "https://v.daum.net/v/20261112204821705"
+   ],
+   "bg": "Microsoft data center",
+   "bg_alt": "Microsoft headquarters Redmond",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "마이크로소프트\n데이터센터 전기료\n**직접 내겠다**고 선언",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "AI 데이터센터 전기료\n누가 내야 하나\nMS가 **먼저** 답했다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "AI 데이터센터가\n공화당 참패 **탓**이라는데\nMS는 전기료 선언",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "quote"
+   ],
+   "extra": {
+    "quote": {
+     "label": "마이크로소프트",
+     "quote": "우리 성장을 다른 고객이 대신 내면 안 된다",
+     "by": "마이크로소프트 클라우드 사업 사장"
+    }
+   },
+   "id": "20261112-2101-i3",
+   "created_at": "2026-11-12T21:01:38+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-2101-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-2101-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-2101-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261112-2101-i3/1-quote-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261112-2101-i3/1-quote-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261112-2101-i3/1-quote-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-2101-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-2101-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-2101-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261112-2101-i3/2-quote-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261112-2101-i3/2-quote-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261112-2101-i3/2-quote-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261112-2101-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261112-2101-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261112-2101-i3/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261112-2101-i3/3-quote-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261112-2101-i3/3-quote-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261112-2101-i3/3-quote-gowun.jpg"
     }
    ]
   }
