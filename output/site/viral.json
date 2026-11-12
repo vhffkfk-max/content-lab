@@ -1,40 +1,42 @@
 {
- "made_at": "2026-11-13T03:34:02.994156+09:00",
- "checked_at": "2026-11-13T04:03+09:00",
+ "made_at": "2026-11-13T07:24:26.704691+09:00",
+ "checked_at": "2026-11-13T07:24+09:00",
  "days": 45,
  "min_x": 3,
  "funnel": {
-  "수집 글": 4616,
-  "평소의 3배+ (최근 45일)": 272,
-  "광고·자사 홍보 제외": 37,
-  "경제 글": 125,
-  "비교 글 없음": 5,
-  "분석 후보": 120,
+  "수집 글": 4646,
+  "평소의 3배+ (최근 45일)": 274,
+  "광고·자사 홍보 제외": 38,
+  "경제 글": 126,
+  "비교 글 없음": 4,
+  "분석 후보": 122,
   "퍼가기가 막혀 건너뛴 글": 11,
-  "자료를 받은 쌍 (계정당 4, 형식당 20 이내)": 39,
-  "자료·비교까지 끝난 쌍": 39
+  "자료를 받은 쌍 (계정당 4, 형식당 20 이내)": 40,
+  "자료·비교까지 끝난 쌍": 40
  },
  "summary": [
-  "이번 짝 40개 가운데 주제 힘이 '높음'인 짝이 다수예요. 해킹, 스캔들, 대통령 발언처럼 사건 자체의 힘이 결과를 좌우한 경우가 많아서, 형식이 얼마나 작용했는지는 주제 힘이 '중간'이나 '낮음'인 짝에서 주로 찾았어요.",
-  "가장 꾸준히 보인 차이는 사건 하나를 끝까지 다룬 글과 모음 글의 차이예요. 이슈 모음, 시황 정리, 지난 24시간 같은 모음 표지는 같은 소재를 다뤘을 때도 사건 하나를 끝까지 다룬 글에 졌어요(JP모건 경고 릴스, 테슬라 합병 릴스).",
-  "형식 쪽에서는 세 가지가 여러 계정에서 반복됐어요. 말한 사람과 대상 인물을 한 화면에 함께 두기, 두 쪽을 색 두 개로 맞붙이기, 숫자 두 개를 맞대어 규모를 보여 주기예요.",
-  "공식이 판단을 거의 돕지 못했어요(공식 있을 때 맞힌 비율 0.63, 없을 때 0.62). 그래서 '첫 3초'와 '따옴표' 공식은 무엇이 아닌지를 더 좁게 고쳤고, 반대 사례를 붙였어요.",
-  "'내 돈 대입' 공식은 근거는 있지만 핫코노미 몫이 아니라서 '안 맞음'으로 표시하고 자산백배에 넘기는 쪽으로 정리했어요."
+  "이번 묶음 36쌍 가운데 27쌍은 주제 힘이 '높음'이에요. 바이낸스 해킹, 젠슨 황 스캔들, 트럼프 발언처럼 사건 자체가 컸어요. 그래서 형식만으로 생긴 차이는 주제 힘이 '중간·낮음'인 9쌍을 중심으로 골랐어요.",
+  "'🚨속보(BREAKING·JUST IN) + 기관 확인 + 큰 금액' 캡션은 크립토 계정에서 네 번 이겼어요. 하지만 네 쌍 모두 주제 힘이 높았고, 진 비교 글(Dfj-iq2idIH)도 같은 속보형이라 공식으로 만들지 않았어요.",
+  "형식 차이가 가장 또렷한 곳은 표지와 첫 3초예요. 모음 라벨 표지, 커버와 다른 첫 장면, 개념을 묻는 질문은 사건 하나를 '누가 무엇을 했다'로 건 쪽에 반복해서 졌어요.",
+  "'숫자는 둘을 맞붙여서'에서 '큰 숫자 하나만 쓰면 진다'는 부분은 이번에 뒤집혔어요. 큰 숫자 하나만 쓴 글도 이겼거든요(DfH1WP6oMTH, DfGPwcTIIlI). 그래서 그 부분을 지웠어요.",
+  "새 공식 두 개를 넣었어요. 표지에 '왜 지금 이 글인지' 알려 주는 꼬리표를 다는 공식과, 본문은 같은 틀로 반복하되 장마다 새 사실 하나를 넣는 공식이에요. 다만 블라인드 시험에서 공식이 있을 때 정답률이 63%, 없을 때 62%라 아직 판단을 크게 돕지는 못해요. 그래서 공식마다 '이 공식이 아닌 것'을 더 분명히 적었어요."
  ],
  "not_copyable": [
-  "63억 달러 바이낸스 해킹, 북한·트럼프 연루 같은 사건 자체의 크기. 암호화폐 계정의 속보 글은 'BREAKING' 머리말을 비교 글도 똑같이 써서, 머리말이 아니라 사건이 갈랐어요.",
-  "트럼프, 빌 게이츠, 젠슨 황, 머스크, 대통령처럼 누구나 아는 인물의 힘.",
-  "젠슨 황 사생활, 연예인 고가 주택 경매처럼 사생활·가십 소재의 화제성. 사실 확인이 어렵고 낚시로 흐르기 쉬워 핫코노미는 따라 하지 않는 게 좋아요.",
-  "한경미디어처럼 이미 큰 계정의 기본 도달력과, 개표 중·폭락 당일 같은 올린 시점의 운.",
-  "'이 글은 평소 대비 몇 배'라는 숫자는 계정마다 중앙값이 달라 핫코노미에 그대로 옮길 수 없어요."
+  "사건 자체의 크기: 63억 달러 거래소 해킹, 엔비디아 대표 스캔들, 미국 중간선거 개표, 새 연준 의장의 첫 회의처럼 반응 대부분이 사건에서 나온 쌍이 많아요.",
+  "인물 이름값: 트럼프, 빌 게이츠, 젠슨 황, 대통령처럼 누구나 아는 얼굴은 형식과 무관하게 눈길을 끌어요.",
+  "계정 힘: 블룸버그, 한국경제, 파이낸셜타임스처럼 원래 도달이 큰 계정은 중앙값 대비 배수가 같아도 절대 숫자가 달라요.",
+  "올린 시점: 개표 중, 금리 결정 당일, 해킹 직후처럼 몇 시간 단위 타이밍은 따라 할 수 있는 형식이 아니에요.",
+  "독점 영상 자료: 대통령 회의 원본, 현장 휴대폰 영상, 인터뷰 육성은 우리가 확보하기 어려워요.",
+  "감정이 센 소재(불륜, 약탈, 중국 베끼기 같은 분노 소재)는 반응을 키웠을 수 있지만, 핫코노미가 일부러 따라 할 형식은 아니에요."
  ],
  "limits": [
-  "주제 힘이 '높음'인 짝이 다수라, 공식 대부분은 사건의 힘이 섞인 '잘 된 글의 공통점'이에요. 형식이 원인이라고 증명된 것이 아니에요.",
-  "블라인드 시험에서 공식을 본 쪽과 안 본 쪽의 정답률 차이가 0.01뿐이었어요. '첫 3초', '따옴표' 공식은 지금까지 다른 글과 가르는 힘이 없었어서, 이번에 아닌 경우를 좁혀 다시 지켜봐야 해요.",
-  "릴스 짝은 많지만 컷 수는 양쪽으로 갈렸어요. 컷 2개로 이긴 글도 있고 9개로 이긴 글도 있어서 컷 수나 길이는 공식으로 만들지 않았어요.",
-  "'밈 말풍선'과 '질문 표지' 근거의 상당수가 한 계정(ekke.now)에서 나와 계정의 말투가 섞였을 수 있어요.",
-  "숫자는 좋아요와 조회 위주이고 저장·공유는 볼 수 없어요. 대본이 비었거나 영상 본편을 못 본 짝은 화면과 캡션만 보고 판단했어요.",
-  "@hotconomy 실제 성적이 쌓이면 카드뉴스 성적 학습 결과로 다시 판단해야 해요."
+  "숫자는 좋아요(릴스는 조회 등) 배수뿐이에요. 저장·공유·도달은 볼 수 없어요.",
+  "36쌍 가운데 27쌍이 주제 힘 '높음'이라, 공식마다 '중간·낮음' 글을 최소 하나 넣었지만 형식만의 효과로 증명된 것은 아니에요.",
+  "비교 글이 다른 주제인 쌍이 많아요(예: 바이낸스 해킹 대 솔라나 제휴). 같은 소재끼리 비교한 쌍은 DfLK8TCluoh, DetJsXXgqRw, DffwgWzl213 정도예요.",
+  "릴스 블라인드 시험은 9건뿐이고, 공식이 있을 때와 없을 때 정답률이 같았어요(67%). 릴스 공식은 특히 더 검증이 필요해요.",
+  "길이 효과는 엇갈렸어요. 짧은 쪽이 이긴 쌍(DfBCNmhPGJW, DfgozPpD04a, Dd5el3wRZpN)과 긴 쪽이 이긴 쌍(DetJsXXgqRw, DeyIU7Jg1ON, DfhSCL7Cq81)이 모두 있어 공식으로 만들지 않았어요.",
+  "일부 영상은 대본이 비어 있거나 본편을 못 받았고(DeieMdcMQii, DfBCNmhPGJW, DeswvYrO7CS 비교 글), DfTw3x4BCz5 비교 글은 기록된 길이와 설명 속 길이가 달라요.",
+  "'두 쪽 대결', '주인공이 분명한 질문', '밈 말풍선'은 비교 글도 비슷한 장치를 쓴 경우가 있거나 근거 수가 적어서 가르는 힘이 약할 수 있어요. @hotconomy 성적(card_learn)으로 다시 판단해야 해요."
  ],
  "numbers": {
   "카드뉴스": {
@@ -45,27 +47,27 @@
     "쌍": 20
    },
    "caption_len": {
-    "뜬 글 중앙값": 410.0,
-    "비교 글 중앙값": 361.0,
+    "뜬 글 중앙값": 455.5,
+    "비교 글 중앙값": 386.0,
     "쌍": 20
    }
   },
   "릴스": {
-   "쌍": 19,
+   "쌍": 20,
    "duration": {
-    "뜬 글 중앙값": 48.669,
-    "비교 글 중앙값": 58.2,
-    "쌍": 19
+    "뜬 글 중앙값": 54.7235,
+    "비교 글 중앙값": 58.93300000000001,
+    "쌍": 20
    },
    "cuts_per_10s": {
-    "뜬 글 중앙값": 0.6,
+    "뜬 글 중앙값": 0.3,
     "비교 글 중앙값": 0.1,
-    "쌍": 18
+    "쌍": 19
    },
    "caption_len": {
-    "뜬 글 중앙값": 210,
-    "비교 글 중앙값": 210,
-    "쌍": 19
+    "뜬 글 중앙값": 189.0,
+    "비교 글 중앙값": 210.5,
+    "쌍": 20
    }
   }
  },
@@ -73,11 +75,11 @@
   {
    "name": "날짜·모음 라벨 표지는 피하기",
    "kind": "공통",
-   "what": "표지 제목 자리에 '이슈 TOP 4', '퇴근길 경제', '지난 24시간', '시황정리', 계정 소개, 날짜와 시세만 있는 화면을 두지 않고, 그날 가장 큰 사건 하나를 '누가 무엇을 했다' 한 문장으로 걸어요. 같은 소재를 모음 속 한 줄로 넣은 쪽이 사건 하나만 다룬 쪽에 졌어요.",
+   "what": "표지 제목 자리에 '이슈 TOP 4', '퇴근길 경제', '지난 24시간', '시황정리', 계정 소개, 날짜와 시세만 두지 않아요. 대신 그날 가장 큰 사건 하나를 '누가 무엇을 했다' 한 문장으로 걸어요. 같은 소재를 모음 속 한 줄로만 다룬 글은 그 소재 하나만 다룬 글에 졌어요(같은 JP모건 소재로 비교 글 0.8배 대 이긴 글 3.9배).",
    "fit": "잘 맞음",
-   "fit_why": "'제목은 주제 요약보다 사건과 반전'이라는 핫코노미 기준과 그대로 겹쳐요.",
-   "how": "하루에 소식이 여러 개여도 표지에는 하나만 걸어요. 주인공 사진을 화면 전체에 깔고 아래쪽에 '누가 무엇을 했다'를 흰 큰 글씨 두 줄로 넣어요. 날짜나 '오늘의 뉴스' 같은 라벨은 빼요.",
-   "example_hook": "○○그룹, 하루 만에 ○○ 인수 철회했어요",
+   "fit_why": "핫코노미는 '오늘 무슨 사건이 터졌는지'를 큰 제목으로 바로 알려 주는 계정이에요. 날짜 라벨 표지는 그 약속을 표지에서 지키지 못해요.",
+   "how": "하루 소식을 묶고 싶은 날에도 표지 큰 제목에는 가장 센 사건 하나만 '주인공 + 동사'로 올리고, 주인공 사진을 전체 화면에 깔아요. 날짜와 '오늘의 경제' 같은 라벨은 빼거나 위쪽 작은 꼬리표로만 남기고, 나머지 소식은 안쪽 장으로 보내요.",
+   "example_hook": "○○그룹, 결국 ○○ 사업에서 손 뗐어요",
    "evidence": [
     {
      "code": "DetJsXXgqRw",
@@ -96,22 +98,15 @@
     {
      "code": "De23Z_Kk8CW",
      "author": "hankyungmedia_official",
-     "x": 24.9,
+     "x": 24.6,
      "url": "https://www.instagram.com/p/De23Z_Kk8CW/",
      "kind": "카드뉴스"
     },
     {
      "code": "DfGPwcTIIlI",
      "author": "cryptodaily",
-     "x": 9.0,
+     "x": 9.1,
      "url": "https://www.instagram.com/p/DfGPwcTIIlI/",
-     "kind": "카드뉴스"
-    },
-    {
-     "code": "DfjpH7OEpXE",
-     "author": "bullstory1",
-     "x": 9.4,
-     "url": "https://www.instagram.com/p/DfjpH7OEpXE/",
      "kind": "카드뉴스"
     },
     {
@@ -119,6 +114,13 @@
      "author": "friendsthatinvest",
      "x": 8.6,
      "url": "https://www.instagram.com/p/DfhzXFioCUj/",
+     "kind": "카드뉴스"
+    },
+    {
+     "code": "DfTrzsMEkSH",
+     "author": "bullstory1",
+     "x": 15.1,
+     "url": "https://www.instagram.com/p/DfTrzsMEkSH/",
      "kind": "카드뉴스"
     }
    ],
@@ -139,9 +141,9 @@
    "kind": "카드뉴스",
    "what": "인물이나 기업 하나를 끝까지 주인공으로 두고, 장을 넘길 때마다 다음 행동이나 결과를 하나씩 더해 일이 커지는 흐름(의심 → 추궁 → 거부 → 결론)을 보여 줘요. 장마다 주체가 바뀌는 뉴스 모음이나 서로 관계없는 사례 나열은 이 공식이 아니에요.",
    "fit": "잘 맞음",
-   "fit_why": "'한 장에 사실 하나'와 6~8장 기본 장수에 그대로 맞아요.",
-   "how": "본문 장마다 위쪽에는 같은 주인공의 다른 사진을, 아래쪽에는 그 장의 새 행동 한 줄을 큰 글씨로 넣어요. 장 사이를 '그러자', '결국'으로 이어요.",
-   "example_hook": "○○가 ○○ 주문을 단칼에 거절했어요",
+   "fit_why": "'한 장에 사실 하나'와 6~8장 기준이 그대로 사건 경과를 한 걸음씩 보여 주는 틀이 돼요.",
+   "how": "본문 장마다 맨 위 큰 글을 시간 순서의 다음 단계로 써요(발표 → 반응 → 조사 → 시장 → 확인된 것). 모든 장에 같은 주인공의 다른 사진이나 관련 현장 사진을 넣어요. 다만 한 사건에 대한 여러 사람의 반응을 모아도 이긴 경우(DfhzXFioCUj)가 있어서, 꼭 시간순이어야 한다고 단정하지는 않아요.",
+   "example_hook": "○○ 대표, 사과 ○시간 만에 이사회가 움직였어요",
    "evidence": [
     {
      "code": "DeqV0csIPn0",
@@ -151,17 +153,10 @@
      "kind": "카드뉴스"
     },
     {
-     "code": "DfZWohvkbD7",
-     "author": "cointelegraph",
-     "x": 10.7,
-     "url": "https://www.instagram.com/p/DfZWohvkbD7/",
-     "kind": "카드뉴스"
-    },
-    {
-     "code": "DfGPwcTIIlI",
-     "author": "cryptodaily",
-     "x": 9.0,
-     "url": "https://www.instagram.com/p/DfGPwcTIIlI/",
+     "code": "De8uQS1El-Q",
+     "author": "bullstory1",
+     "x": 13.1,
+     "url": "https://www.instagram.com/p/De8uQS1El-Q/",
      "kind": "카드뉴스"
     },
     {
@@ -172,6 +167,13 @@
      "kind": "카드뉴스"
     },
     {
+     "code": "DfZWohvkbD7",
+     "author": "cointelegraph",
+     "x": 10.7,
+     "url": "https://www.instagram.com/p/DfZWohvkbD7/",
+     "kind": "카드뉴스"
+    },
+    {
      "code": "DfE0xbKnyCN",
      "author": "ekke.now",
      "x": 14.9,
@@ -179,14 +181,22 @@
      "kind": "카드뉴스"
     },
     {
-     "code": "DevoKManery",
-     "author": "mk.co.kr",
-     "x": 5.5,
-     "url": "https://www.instagram.com/p/DevoKManery/",
+     "code": "DfGPwcTIIlI",
+     "author": "cryptodaily",
+     "x": 9.1,
+     "url": "https://www.instagram.com/p/DfGPwcTIIlI/",
      "kind": "카드뉴스"
     }
    ],
-   "counter": [],
+   "counter": [
+    {
+     "code": "DfhzXFioCUj",
+     "author": "friendsthatinvest",
+     "x": 8.6,
+     "url": "https://www.instagram.com/p/DfhzXFioCUj/",
+     "kind": "카드뉴스"
+    }
+   ],
    "test": {
     "n": 7,
     "right": 7,
@@ -201,17 +211,24 @@
   {
    "name": "릴스 첫 3초에 가장 센 말",
    "kind": "릴스",
-   "what": "커버와 위쪽 고정 제목에 건 발언·숫자·결과를 첫 3초 안에 같은 말로 들려주거나 큰 자막으로 띄워요. 진 쪽은 잡음, '○○가 성명을 냈는데요' 같은 출처 소개, 커버와 다른 퀴즈로 시작했어요. 둘 다 첫 3초에 핵심을 말했다면 이 공식으로는 가를 수 없어요.",
+   "what": "커버와 위쪽 고정 제목에 건 발언·숫자·결과를 첫 3초 안에 같은 말로 들려주거나 큰 자막으로 띄워요. 진 쪽은 커버에 건 말이 수십 초 뒤에야 나오거나(상인회장 발언 75초쯤, 기부제 40초 뒤), '○○가 성명을 냈는데요' 같은 출처 소개나 잡음으로 시작했어요. 둘 다 첫 3초에 핵심을 말했다면 이 공식으로는 가를 수 없어요.",
    "fit": "잘 맞음",
-   "fit_why": "사건을 바로 이해시킨다는 약속과 같고, 상단 고정 코스피 릴스도 첫 장면을 고친 경험이 있어요.",
-   "how": "첫 장면의 위쪽 고정 제목과 첫 자막을 같은 문장으로 맞춰요. 0초에 결과나 직격 발언을 노랑 강조 큰 자막으로 띄우고, 배경 설명은 3초 뒤로 미뤄요.",
-   "example_hook": "\"○○는 명백히 실패했다\" ○○ 장관 앞에서 나온 말",
+   "fit_why": "상단 고정 코스피 릴스도 첫 장면을 고친 판이 걸려 있을 만큼, 핫코노미는 이미 첫 장면을 중요하게 보고 있어요.",
+   "how": "편집 전에 커버 문구와 영상 0~3초 자막·말소리를 나란히 놓고 같은 말인지 확인해요. 다르면 가장 센 문장을 맨 앞으로 잘라 붙이고, 출처 소개('○○ 인터뷰에서')는 3초 뒤나 아래쪽 작은 자막으로 옮겨요.",
+   "example_hook": "\"○○은 명백한 실수였어요\" ○○ 장관이 국회에서 처음 인정했어요",
    "evidence": [
     {
      "code": "DetM6PwOSjt",
      "author": "hankyungmedia_official",
      "x": 43.8,
      "url": "https://www.instagram.com/reel/DetM6PwOSjt/",
+     "kind": "릴스"
+    },
+    {
+     "code": "DfTw3x4BCz5",
+     "author": "ktv_kr",
+     "x": 17.0,
+     "url": "https://www.instagram.com/reel/DfTw3x4BCz5/",
      "kind": "릴스"
     },
     {
@@ -224,7 +241,7 @@
     {
      "code": "DfBCNmhPGJW",
      "author": "hktv__",
-     "x": 73.9,
+     "x": 73.6,
      "url": "https://www.instagram.com/reel/DfBCNmhPGJW/",
      "kind": "릴스"
     },
@@ -236,19 +253,26 @@
      "kind": "릴스"
     },
     {
-     "code": "DetJsXXgqRw",
-     "author": "mk.co.kr",
-     "x": 4.1,
-     "url": "https://www.instagram.com/reel/DetJsXXgqRw/",
+     "code": "DfgozPpD04a",
+     "author": "bloombergbusiness",
+     "x": 12.6,
+     "url": "https://www.instagram.com/reel/DfgozPpD04a/",
      "kind": "릴스"
     }
    ],
    "counter": [
     {
-     "code": "DeACu0WtHce",
-     "author": "humphreytalks",
-     "x": 17.1,
-     "url": "https://www.instagram.com/reel/DeACu0WtHce/",
+     "code": "DfDs7YxT9IK",
+     "author": "mk.co.kr",
+     "x": 3.3,
+     "url": "https://www.instagram.com/reel/DfDs7YxT9IK/",
+     "kind": "릴스"
+    },
+    {
+     "code": "DeieMdcMQii",
+     "author": "seoul_economic",
+     "x": 95.5,
+     "url": "https://www.instagram.com/reel/DeieMdcMQii/",
      "kind": "릴스"
     }
    ],
@@ -264,13 +288,83 @@
    }
   },
   {
+   "name": "숫자는 둘을 맞붙여서",
+   "kind": "공통",
+   "what": "숫자를 '전에는 ○○ → 지금은 ○○', '○○은 내렸는데 ○○은 올랐다', '빚 한도가 집값보다 많다'처럼 두 개를 한 줄에 맞대어 규모와 반전을 함께 보여 줘요. 다만 큰 숫자 하나만 크게 쓴 글도 이긴 경우가 있어서, 하나만 쓰면 진다고 보지는 않아요.",
+   "fit": "잘 맞음",
+   "fit_why": "'규모가 느껴지는 숫자'와 '반전'이 핫코노미 주제 3·4번이라, 숫자 둘을 맞대면 둘을 한 줄로 보여 줄 수 있어요.",
+   "how": "표지 제목 둘째 줄에 '○○ → ○○'를 크게 쓰고 앞 숫자는 흰색, 뒤 숫자는 빨강이나 노랑으로 해요. 본문 숫자 장도 숫자 두 개와 화살표 하나만 남겨요.",
+   "example_hook": "○○은 내렸는데 ○○은 그대로예요",
+   "evidence": [
+    {
+     "code": "De6jwNpPOsn",
+     "author": "seoul_economic",
+     "x": 32.5,
+     "url": "https://www.instagram.com/reel/De6jwNpPOsn/",
+     "kind": "릴스"
+    },
+    {
+     "code": "DfjpH7OEpXE",
+     "author": "bullstory1",
+     "x": 9.4,
+     "url": "https://www.instagram.com/p/DfjpH7OEpXE/",
+     "kind": "카드뉴스"
+    },
+    {
+     "code": "DfW6bB8GYoQ",
+     "author": "decarolis_fx",
+     "x": 50.3,
+     "url": "https://www.instagram.com/reel/DfW6bB8GYoQ/",
+     "kind": "릴스"
+    },
+    {
+     "code": "DeyIU7Jg1ON",
+     "author": "mk.co.kr",
+     "x": 3.6,
+     "url": "https://www.instagram.com/reel/DeyIU7Jg1ON/",
+     "kind": "릴스"
+    },
+    {
+     "code": "DfE9VaIvcdG",
+     "author": "seoul_economic",
+     "x": 12.2,
+     "url": "https://www.instagram.com/reel/DfE9VaIvcdG/",
+     "kind": "릴스"
+    },
+    {
+     "code": "DeACu0WtHce",
+     "author": "humphreytalks",
+     "x": 17.1,
+     "url": "https://www.instagram.com/reel/DeACu0WtHce/",
+     "kind": "릴스"
+    }
+   ],
+   "counter": [
+    {
+     "code": "DfH1WP6oMTH",
+     "author": "cryptodaily",
+     "x": 6.0,
+     "url": "https://www.instagram.com/p/DfH1WP6oMTH/",
+     "kind": "카드뉴스"
+    },
+    {
+     "code": "DfGPwcTIIlI",
+     "author": "cryptodaily",
+     "x": 9.1,
+     "url": "https://www.instagram.com/p/DfGPwcTIIlI/",
+     "kind": "카드뉴스"
+    }
+   ],
+   "test": null
+  },
+  {
    "name": "당사자의 한마디를 따옴표로",
    "kind": "공통",
-   "what": "사건 당사자가 실제로 한 짧은 말을 원문 그대로 따옴표에 넣어 크게 올리고, '누가 누구에게'와 맞부딪침이 드러나는 동사(폭발, 인정, 직격)를 붙여요. 앞으로 하겠다는 다짐('화형 당해도 혁신한다'), 성명 문구, 홍보 문구, 남의 말을 요약해 놓고 따옴표를 친 문구는 이 공식이 아니에요.",
+   "what": "사건 당사자가 실제로 다른 사람이나 사건을 두고 한 짧은 판단·고백·추궁을 원문 그대로 따옴표에 넣어 크게 올려요. 그리고 '누가 누구에게'와 맞부딪침이 드러나는 동사(폭발, 인정, 직격)를 붙여요. 시장 전망 같은 의견('조정이 다소 과하다'), 앞으로 하겠다는 다짐('화형 당해도 혁신한다'), 성명·홍보 문구, 남의 말을 요약해 놓고 따옴표만 친 문구는 이 공식이 아니에요. 이런 문구를 쓴 비교 글은 졌어요.",
    "fit": "잘 맞음",
-   "fit_why": "핫코노미 주제 2번 '경제에 영향을 주는 인물과 발언'에 바로 쓸 수 있어요.",
-   "how": "표지 아래쪽 첫 줄에 따옴표 발언을 흰 큰 글씨로, 둘째 줄에 '○○, ○○ 향해 직격'을 빨강으로 넣어요. 발언은 원문 출처를 캡션 끝에 적어요.",
-   "example_hook": "\"솔직히 말하세요\" ○○ 대통령, ○○ 장관 향해 직격",
+   "fit_why": "핫코노미의 두 번째 주제가 '경제에 영향을 주는 인물과 발언'이라 그대로 들어맞아요.",
+   "how": "표지 아래쪽 큰 제목 첫 줄에 따옴표 발언을 흰색으로, 둘째 줄에 '○○, ○○ 향해 직격'을 노랑으로 넣어요. 발언은 원문 출처를 확인한 것만 쓰고, 번역했다면 캡션 끝에 원문 출처를 적어요.",
+   "example_hook": "\"솔직히 말하세요\" ○○, ○○ 향해 직격",
    "evidence": [
     {
      "code": "DetM6PwOSjt",
@@ -282,7 +376,7 @@
     {
      "code": "DfBCNmhPGJW",
      "author": "hktv__",
-     "x": 73.9,
+     "x": 73.6,
      "url": "https://www.instagram.com/reel/DfBCNmhPGJW/",
      "kind": "릴스"
     },
@@ -296,31 +390,31 @@
     {
      "code": "Dfic0VGjFkZ",
      "author": "yahoofinance",
-     "x": 6.5,
+     "x": 5.5,
      "url": "https://www.instagram.com/reel/Dfic0VGjFkZ/",
      "kind": "릴스"
     },
     {
      "code": "De23Z_Kk8CW",
      "author": "hankyungmedia_official",
-     "x": 24.9,
+     "x": 24.6,
      "url": "https://www.instagram.com/p/De23Z_Kk8CW/",
      "kind": "카드뉴스"
     }
    ],
    "counter": [
     {
+     "code": "DfgozPpD04a",
+     "author": "bloombergbusiness",
+     "x": 12.6,
+     "url": "https://www.instagram.com/reel/DfgozPpD04a/",
+     "kind": "릴스"
+    },
+    {
      "code": "De6jwNpPOsn",
      "author": "seoul_economic",
      "x": 32.5,
      "url": "https://www.instagram.com/reel/De6jwNpPOsn/",
-     "kind": "릴스"
-    },
-    {
-     "code": "DeswvYrO7CS",
-     "author": "hankyungmedia_official",
-     "x": 25.7,
-     "url": "https://www.instagram.com/reel/DeswvYrO7CS/",
      "kind": "릴스"
     }
    ],
@@ -338,12 +432,26 @@
   {
    "name": "끝 장은 닫힌 결론 한 줄",
    "kind": "카드뉴스",
-   "what": "마지막 본문 장은 표지에서 연 궁금증에 답하는 '그래서 결과는 ○○' 한 줄이나, '확인된 사실 / 아직 모르는 것' 정리로 끝내요. 표지 질문에 끝까지 답하지 않거나, 서비스 홍보나 모호한 전망으로 끝내면 이 공식이 아니에요. 단, 연재 만화처럼 다음 편이 있으면 열린 결말로 끝내도 이긴 경우가 있었어요.",
+   "what": "마지막 본문 장은 표지에서 연 궁금증에 답하는 '그래서 결과는 ○○' 한 줄이나 '확인된 사실 / 아직 모르는 것' 정리로 끝내요. 표지 질문에 끝까지 답하지 않거나, 서비스 홍보나 모호한 전망으로 끝내면 이 공식이 아니에요. 다만 연재 만화처럼 다음 편이 있으면 열린 결말로 끝내도 이긴 경우가 있었어요.",
    "fit": "잘 맞음",
-   "fit_why": "핫코노미 결론인 '다음에 볼 시장 변수'를, 확인된 사실과 아직 모르는 것으로 나눠 닫으면 공포 조장 없이 끝낼 수 있어요.",
-   "how": "끝에서 두 번째 장은 검정 배경에 '확인된 것'을 흰색, '아직 모르는 것'을 노랑으로 두 칸에 나눠요. 마지막 장은 @hotconomy 와 다음에 볼 변수 한 줄을 넣어요.",
-   "example_hook": "확인된 건 ○○까지예요. ○○은 아직 몰라요",
+   "fit_why": "핫코노미의 결론 장은 '다음에 볼 시장 변수'인데, 그 앞에 확인된 결과를 한 줄 두면 모호한 전망으로 흐르지 않아요.",
+   "how": "끝 본문 장을 둘로 나눠요. 위에는 '확인된 것' 한 줄, 아래에는 '아직 모르는 것' 한 줄을 크게 써요. 다음에 볼 변수는 날짜가 있는 일정 하나만 붙이고, 그 뒤 장에 @hotconomy 를 넣어요.",
+   "example_hook": "확인된 건 여기까지예요: ○○은 인정, ○○은 아직 조사 중",
    "evidence": [
+    {
+     "code": "DeqV0csIPn0",
+     "author": "ekke.now",
+     "x": 11.9,
+     "url": "https://www.instagram.com/p/DeqV0csIPn0/",
+     "kind": "카드뉴스"
+    },
+    {
+     "code": "DfjpH7OEpXE",
+     "author": "bullstory1",
+     "x": 9.4,
+     "url": "https://www.instagram.com/p/DfjpH7OEpXE/",
+     "kind": "카드뉴스"
+    },
     {
      "code": "Dff50lbEs78",
      "author": "bullstory1",
@@ -359,24 +467,10 @@
      "kind": "카드뉴스"
     },
     {
-     "code": "DfjpH7OEpXE",
-     "author": "bullstory1",
-     "x": 9.4,
-     "url": "https://www.instagram.com/p/DfjpH7OEpXE/",
-     "kind": "카드뉴스"
-    },
-    {
-     "code": "DeqV0csIPn0",
-     "author": "ekke.now",
-     "x": 11.9,
-     "url": "https://www.instagram.com/p/DeqV0csIPn0/",
-     "kind": "카드뉴스"
-    },
-    {
-     "code": "DevoKManery",
-     "author": "mk.co.kr",
-     "x": 5.5,
-     "url": "https://www.instagram.com/p/DevoKManery/",
+     "code": "DfZWohvkbD7",
+     "author": "cointelegraph",
+     "x": 10.7,
+     "url": "https://www.instagram.com/p/DfZWohvkbD7/",
      "kind": "카드뉴스"
     }
    ],
@@ -392,90 +486,34 @@
    "test": null
   },
   {
-   "name": "숫자는 둘을 맞붙여서",
-   "kind": "공통",
-   "what": "숫자 하나만 크게 쓰지 않고 '전에는 ○○ → 지금은 ○○', '○○은 내렸는데 ○○은 올랐다'처럼 두 숫자를 한 줄에 맞대어 규모와 반전을 동시에 보여 줘요. 큰 숫자 하나만 앞세운 쪽은 같은 사건을 다뤘을 때도 졌어요.",
-   "fit": "잘 맞음",
-   "fit_why": "핫코노미 주제 3번 '규모가 느껴지는 숫자'를 반전형 제목과 함께 쓸 수 있어요.",
-   "how": "표지 제목 두 줄 중 한 줄을 숫자 대비로 써요. 앞 숫자는 흰색, 뒤 숫자는 빨강으로 줘요. 가운데 화살표나 '인데'로 이어요.",
-   "example_hook": "○○은 ○○% 내렸는데, ○○은 ○○% 올랐어요",
-   "evidence": [
-    {
-     "code": "De6jwNpPOsn",
-     "author": "seoul_economic",
-     "x": 32.5,
-     "url": "https://www.instagram.com/reel/De6jwNpPOsn/",
-     "kind": "릴스"
-    },
-    {
-     "code": "DfE9VaIvcdG",
-     "author": "seoul_economic",
-     "x": 12.2,
-     "url": "https://www.instagram.com/reel/DfE9VaIvcdG/",
-     "kind": "릴스"
-    },
-    {
-     "code": "DfjpH7OEpXE",
-     "author": "bullstory1",
-     "x": 9.4,
-     "url": "https://www.instagram.com/p/DfjpH7OEpXE/",
-     "kind": "카드뉴스"
-    },
-    {
-     "code": "DeyIU7Jg1ON",
-     "author": "mk.co.kr",
-     "x": 3.6,
-     "url": "https://www.instagram.com/reel/DeyIU7Jg1ON/",
-     "kind": "릴스"
-    },
-    {
-     "code": "DfZWohvkbD7",
-     "author": "cointelegraph",
-     "x": 10.7,
-     "url": "https://www.instagram.com/p/DfZWohvkbD7/",
-     "kind": "카드뉴스"
-    }
-   ],
-   "counter": [
-    {
-     "code": "DfLK8TCluoh",
-     "author": "cryptosrus",
-     "x": 229.2,
-     "url": "https://www.instagram.com/p/DfLK8TCluoh/",
-     "kind": "카드뉴스"
-    }
-   ],
-   "test": null
-  },
-  {
    "name": "인공지능 연출 말고 실물 증거",
    "kind": "공통",
    "what": "현장 사진·영상, 당사자 게시물 원문, 앱 알림, 공식 문서, 지도·메뉴판처럼 실제로 일어났다는 증거를 보여 주고, 핵심 줄에 형광 박스나 화살표를 얹어요. 실물이 있는데 인공지능 강의실, 연출 장면, 공포 포스터 그림으로 대신하면 이 공식이 아니에요.",
    "fit": "잘 맞음",
-   "fit_why": "'그 일의 주인공 사진' 기준과 같고, 사진이 없을 때 시세 그래프나 게시물 캡처로 대신하는 기존 규칙과도 이어져요.",
-   "how": "본문 한 장은 당사자 게시물이나 공시 화면 캡처로 쓰고, 핵심 문장에 노랑 형광 박스를 얹어요. 출처는 캡션 끝에 적어요.",
-   "example_hook": "○○ 회장이 직접 올린 글, 이 한 줄이 문제였어요",
+   "fit_why": "핫코노미는 이미 '그 일의 주인공 사진'과 실제 시세 그래프를 기본으로 쓰고 있어요.",
+   "how": "본문 한 장은 공식 발표문, 게시물 원문, 시세 화면 같은 증거 화면으로 채우고 핵심 한 줄에 노랑 박스를 얹어요. 출처는 캡션 끝에 모아 적어요.",
+   "example_hook": "○○이 직접 올린 공지, 이 한 줄이 문제였어요",
    "evidence": [
-    {
-     "code": "DfZWohvkbD7",
-     "author": "cointelegraph",
-     "x": 10.7,
-     "url": "https://www.instagram.com/p/DfZWohvkbD7/",
-     "kind": "카드뉴스"
-    },
-    {
-     "code": "DfBCNmhPGJW",
-     "author": "hktv__",
-     "x": 73.9,
-     "url": "https://www.instagram.com/reel/DfBCNmhPGJW/",
-     "kind": "릴스"
-    },
     {
      "code": "DfRucKOBT93",
      "author": "mk.co.kr",
      "x": 22.3,
      "url": "https://www.instagram.com/reel/DfRucKOBT93/",
      "kind": "릴스"
+    },
+    {
+     "code": "DfBCNmhPGJW",
+     "author": "hktv__",
+     "x": 73.6,
+     "url": "https://www.instagram.com/reel/DfBCNmhPGJW/",
+     "kind": "릴스"
+    },
+    {
+     "code": "DfZWohvkbD7",
+     "author": "cointelegraph",
+     "x": 10.7,
+     "url": "https://www.instagram.com/p/DfZWohvkbD7/",
+     "kind": "카드뉴스"
     },
     {
      "code": "DfizLiiH814",
@@ -485,10 +523,10 @@
      "kind": "카드뉴스"
     },
     {
-     "code": "DfkG4dwjEcP",
-     "author": "yahoofinance",
-     "x": 5.2,
-     "url": "https://www.instagram.com/reel/DfkG4dwjEcP/",
+     "code": "DeswvYrO7CS",
+     "author": "hankyungmedia_official",
+     "x": 25.7,
+     "url": "https://www.instagram.com/reel/DeswvYrO7CS/",
      "kind": "릴스"
     }
    ],
@@ -499,59 +537,25 @@
      "x": 6.0,
      "url": "https://www.instagram.com/p/DfH1WP6oMTH/",
      "kind": "카드뉴스"
+    },
+    {
+     "code": "Dd5el3wRZpN",
+     "author": "cointelegraph",
+     "x": 3.1,
+     "url": "https://www.instagram.com/reel/Dd5el3wRZpN/",
+     "kind": "릴스"
     }
    ],
-   "test": null
-  },
-  {
-   "name": "용어 대신 눈에 보이는 것으로",
-   "kind": "공통",
-   "what": "전문 용어(파생상품, 지분 구조, 근저당 등)로 설명해야 하는 대목을 색칠한 지도, 나란히 놓은 비교 사진, 또는 '빚 한도가 집값보다 많다' 같은 한 줄 비교로 바꿔요. 용어를 이어 붙인 말이나 글만으로 설명하면 이 공식이 아니에요.",
-   "fit": "잘 맞음",
-   "fit_why": "'바로 이해시킨다'는 약속에 맞고, 큰 글씨 한 줄 본문 기준과도 겹쳐요.",
-   "how": "본문에서 용어가 나오는 장은 위쪽에 비교 사진이나 지도를, 아래쪽에 '쉽게 말해 ○○' 한 줄을 넣어요. 용어 자체는 작은 글씨로 괄호에 둬요.",
-   "example_hook": "쉽게 말해, 빚 한도가 집값보다 커요",
-   "evidence": [
-    {
-     "code": "DfRucKOBT93",
-     "author": "mk.co.kr",
-     "x": 22.3,
-     "url": "https://www.instagram.com/reel/DfRucKOBT93/",
-     "kind": "릴스"
-    },
-    {
-     "code": "DfE9VaIvcdG",
-     "author": "seoul_economic",
-     "x": 12.2,
-     "url": "https://www.instagram.com/reel/DfE9VaIvcdG/",
-     "kind": "릴스"
-    },
-    {
-     "code": "DfizLiiH814",
-     "author": "ekke.now",
-     "x": 7.6,
-     "url": "https://www.instagram.com/p/DfizLiiH814/",
-     "kind": "카드뉴스"
-    },
-    {
-     "code": "DfOcjasoBGk",
-     "author": "ekke.now",
-     "x": 9.0,
-     "url": "https://www.instagram.com/p/DfOcjasoBGk/",
-     "kind": "카드뉴스"
-    }
-   ],
-   "counter": [],
    "test": null
   },
   {
    "name": "릴스 중간에 한 번 뒤집기",
    "kind": "릴스",
-   "what": "앞부분에서 문제나 흔한 생각을 꺼낸 뒤, 중간에 '그런데'와 함께 확인된 사실 하나를 더해 판을 뒤집어요. 마지막은 큰 한 줄 요약 자막으로 닫아요. 위기 신호만 늘어놓다 끝나거나, 뒤집는 근거가 추측이면 이 공식이 아니에요.",
+   "what": "앞부분에서 문제나 흔한 생각을 꺼낸 뒤, 중간에 '그런데'와 함께 확인된 사실 하나를 더해 판을 뒤집어요(칭찬 → 괴로워한다, 단점 → 그럼에도 호재, 거래 성사 → 실제 값 공개). 마지막은 큰 한 줄 요약 자막으로 닫아요. 위기 신호만 늘어놓다 끝나거나, 뒤집는 근거가 추측이면 이 공식이 아니에요.",
    "fit": "잘 맞음",
-   "fit_why": "핫코노미 주제 4번 '기업과 산업의 반전 이슈'와 같은 구조예요.",
-   "how": "영상 길이의 절반쯤에서 화면을 바꾸고 노랑 큰 자막으로 '그런데'를 띄워요. 끝 장면에는 결론 한 줄을 흰 큰 글씨로 2초 이상 남겨요.",
-   "example_hook": "다들 ○○ 탓이라는데, 진짜 문제는 따로 있어요",
+   "fit_why": "'기업과 산업의 반전 이슈'가 핫코노미 주제라서 영상 안에 반전 지점을 하나 두는 구성이 잘 맞아요.",
+   "how": "30~60초 대본을 셋으로 나눠요. 앞 1/3은 흔한 생각, 가운데는 '그런데' 자막과 근거 화면 하나, 끝은 노랑 큰 글씨 한 줄이에요. 불안을 키우는 단어('지하실' 같은 말)는 마무리 자막에 쓰지 않아요.",
+   "example_hook": "다들 ○○이 끝났다고 했는데, 그런데 ○○ 숫자는 달랐어요",
    "evidence": [
     {
      "code": "DfRucKOBT93",
@@ -577,8 +581,104 @@
     {
      "code": "Dfic0VGjFkZ",
      "author": "yahoofinance",
-     "x": 6.5,
+     "x": 5.5,
      "url": "https://www.instagram.com/reel/Dfic0VGjFkZ/",
+     "kind": "릴스"
+    },
+    {
+     "code": "De6jwNpPOsn",
+     "author": "seoul_economic",
+     "x": 32.5,
+     "url": "https://www.instagram.com/reel/De6jwNpPOsn/",
+     "kind": "릴스"
+    }
+   ],
+   "counter": [],
+   "test": null
+  },
+  {
+   "name": "본문은 같은 틀, 장마다 새 한 방",
+   "kind": "카드뉴스",
+   "what": "본문 장은 한 가지 배치(질문 말풍선 → 답 / 제목 → 그래프 → 결론 한 줄 / 제목 → 캐릭터 → 한 줄)를 끝까지 반복하고, 장마다 새 사실이나 숫자 하나만 바꿔 넣어요. 장마다 배치가 바뀌거나, 한 장에 문단·표가 빽빽하면 이 공식이 아니에요.",
+   "fit": "잘 맞음",
+   "fit_why": "핫코노미의 '한 장에 사실 하나'와 사진 뉴스형 본문 틀(위 사진, 아래 큰 글)이 이미 같은 방식이에요.",
+   "how": "한 글 안에서는 본문 폼을 하나로 고정하고, 장마다 바뀌는 것은 사진과 큰 글 한 줄, 강조 숫자 하나뿐이게 해요. 글끼리는 지금처럼 폼을 돌려쓰되, 한 글 안에서는 섞지 않아요.",
+   "example_hook": "○○ 사태, 하루 사이 바뀐 것 ○가지",
+   "evidence": [
+    {
+     "code": "Ded9mfXDw9A",
+     "author": "lssec_official",
+     "x": 6.1,
+     "url": "https://www.instagram.com/p/Ded9mfXDw9A/",
+     "kind": "카드뉴스"
+    },
+    {
+     "code": "DfOcjasoBGk",
+     "author": "ekke.now",
+     "x": 9.0,
+     "url": "https://www.instagram.com/p/DfOcjasoBGk/",
+     "kind": "카드뉴스"
+    },
+    {
+     "code": "DeqV0csIPn0",
+     "author": "ekke.now",
+     "x": 11.9,
+     "url": "https://www.instagram.com/p/DeqV0csIPn0/",
+     "kind": "카드뉴스"
+    },
+    {
+     "code": "DfjpH7OEpXE",
+     "author": "bullstory1",
+     "x": 9.4,
+     "url": "https://www.instagram.com/p/DfjpH7OEpXE/",
+     "kind": "카드뉴스"
+    },
+    {
+     "code": "DfH1WP6oMTH",
+     "author": "cryptodaily",
+     "x": 6.0,
+     "url": "https://www.instagram.com/p/DfH1WP6oMTH/",
+     "kind": "카드뉴스"
+    }
+   ],
+   "counter": [],
+   "test": null
+  },
+  {
+   "name": "용어 대신 눈에 보이는 것으로",
+   "kind": "공통",
+   "what": "전문 용어(파생상품, 지분 희석, 근저당 등)로 설명해야 하는 대목을 색칠한 지도, 나란히 놓은 비교 사진, '빚 한도가 집값보다 많다' 같은 한 줄 비교, '○주 → ○주' 같은 숫자 변화로 바꿔요. 용어를 이어 붙인 말이나 글만으로 설명하면 이 공식이 아니에요.",
+   "fit": "잘 맞음",
+   "fit_why": "'큰 사진과 큰 글씨로 바로 이해시킨다'는 핫코노미의 약속과 같은 방향이에요.",
+   "how": "초안에서 독자가 모를 용어가 나오면 그 장의 큰 글을 '그래서 무엇이 무엇보다 크다/작다'로 바꿔요. 용어는 아래쪽 작은 글로만 남기거나 빼요.",
+   "example_hook": "○○의 빚 한도가 집값보다 많았어요",
+   "evidence": [
+    {
+     "code": "DfRucKOBT93",
+     "author": "mk.co.kr",
+     "x": 22.3,
+     "url": "https://www.instagram.com/reel/DfRucKOBT93/",
+     "kind": "릴스"
+    },
+    {
+     "code": "DfE9VaIvcdG",
+     "author": "seoul_economic",
+     "x": 12.2,
+     "url": "https://www.instagram.com/reel/DfE9VaIvcdG/",
+     "kind": "릴스"
+    },
+    {
+     "code": "DfizLiiH814",
+     "author": "ekke.now",
+     "x": 7.6,
+     "url": "https://www.instagram.com/p/DfizLiiH814/",
+     "kind": "카드뉴스"
+    },
+    {
+     "code": "DeyIU7Jg1ON",
+     "author": "mk.co.kr",
+     "x": 3.6,
+     "url": "https://www.instagram.com/reel/DeyIU7Jg1ON/",
      "kind": "릴스"
     }
    ],
@@ -588,11 +688,11 @@
   {
    "name": "두 쪽 대결을 색 두 개로",
    "kind": "공통",
-   "what": "두 진영, 두 기업, 두 숫자, 두 구역을 막대나 지도 위에 나란히 놓고 한쪽에 한 색씩 줘서, 1초 안에 누가 앞서는지 보이게 해요. 시세표나 글 목록처럼 읽어야 알 수 있거나, 색이 세 개 이상 섞이면 이 공식이 아니에요.",
+   "what": "두 진영, 두 기업, 두 숫자, 두 구역을 막대나 지도 위에 나란히 놓고 한쪽에 한 색씩 줘서 1초 안에 누가 앞서는지 보이게 해요. 시세표나 글 목록처럼 읽어야 알 수 있거나, 색이 세 개 이상 섞이면 이 공식이 아니에요.",
    "fit": "잘 맞음",
-   "fit_why": "검정 배경에 빨강과 노랑 두 포인트 색만 쓰는 핫코노미 디자인에 그대로 얹을 수 있어요.",
-   "how": "막대형 폼에서 막대를 두 개만 쓰고 한쪽은 빨강, 한쪽은 노랑으로 줘요. 막대 위에 숫자를 크게 넣고, 아래에 '○○ 압승' 같은 결론 한 줄을 써요.",
-   "example_hook": "○○ 대 ○○, 매출 차이는 ○○배였어요",
+   "fit_why": "검정 배경에 빨강과 노랑 두 포인트 색만 쓰는 핫코노미 디자인과 바로 맞아요.",
+   "how": "막대형 폼에서 막대를 두 개만 쓰고 한쪽은 빨강, 다른 쪽은 노랑으로 칠해요. 정당처럼 원래 색이 정해진 대상만 그 색을 따르고, 막대 위에 숫자만 크게 둬요.",
+   "example_hook": "○○ 대 ○○, 매출 차이가 ○배로 벌어졌어요",
    "evidence": [
     {
      "code": "DfTrzsMEkSH",
@@ -602,17 +702,17 @@
      "kind": "카드뉴스"
     },
     {
-     "code": "DfE0xbKnyCN",
-     "author": "ekke.now",
-     "x": 14.9,
-     "url": "https://www.instagram.com/p/DfE0xbKnyCN/",
-     "kind": "카드뉴스"
-    },
-    {
      "code": "DfOcjasoBGk",
      "author": "ekke.now",
      "x": 9.0,
      "url": "https://www.instagram.com/p/DfOcjasoBGk/",
+     "kind": "카드뉴스"
+    },
+    {
+     "code": "DfE0xbKnyCN",
+     "author": "ekke.now",
+     "x": 14.9,
+     "url": "https://www.instagram.com/p/DfE0xbKnyCN/",
      "kind": "카드뉴스"
     },
     {
@@ -636,47 +736,13 @@
    }
   },
   {
-   "name": "말한 사람과 대상 인물을 한 화면에",
-   "kind": "릴스",
-   "what": "말한 사람과 그 말의 대상이 된 사람(또는 대상 제품)을 위아래나 좌우로 나눠 한 화면에 함께 보여 줘요. 그러면 누가 누구에게 무슨 말을 했는지 소리 없이도 읽혀요. 진행자 한 명만 나오는 화면이나 한 사람 사진만 있는 화면은 이 공식이 아니에요.",
-   "fit": "잘 맞음",
-   "fit_why": "인물 발언을 다루는 핫코노미 글에서 사진 두 장만 있으면 바로 만들 수 있어요.",
-   "how": "화면을 위아래로 나눠 위는 말한 사람, 아래는 대상 인물이나 제품을 둬요. 가운데에 발언 원문을 흰 박스 큰 글씨로 고정해요.",
-   "example_hook": "○○ 대통령이 ○○ 회장을 두고 한 말",
-   "evidence": [
-    {
-     "code": "Dfic0VGjFkZ",
-     "author": "yahoofinance",
-     "x": 6.5,
-     "url": "https://www.instagram.com/reel/Dfic0VGjFkZ/",
-     "kind": "릴스"
-    },
-    {
-     "code": "DetM6PwOSjt",
-     "author": "hankyungmedia_official",
-     "x": 43.8,
-     "url": "https://www.instagram.com/reel/DetM6PwOSjt/",
-     "kind": "릴스"
-    },
-    {
-     "code": "DfkG4dwjEcP",
-     "author": "yahoofinance",
-     "x": 5.2,
-     "url": "https://www.instagram.com/reel/DfkG4dwjEcP/",
-     "kind": "릴스"
-    }
-   ],
-   "counter": [],
-   "test": null
-  },
-  {
    "name": "주인공이 분명한 질문 표지",
    "kind": "공통",
-   "what": "실명 기업이나 인물이 이미 한 행동의 이유나 결과를 표지에서 묻고, 답은 바로 다음 장이나 첫 몇 초 안에 줘요. '○○가 뭐길래', '반등일까 숨 고르기일까'처럼 개념이나 앞날을 묻는 질문, 주체가 없는 질문, 끝까지 답하지 않는 질문은 이 공식이 아니에요.",
-   "fit": "조건부",
-   "fit_why": "사건형 제목이 기본이라, 이유가 아직 알려지지 않은 사건에만 질문형을 써야 맞아요.",
-   "how": "표지 아래쪽에 '○○가 ○○한 이유'를 흰 큰 글씨로 쓰고 물음표는 빨강으로 줘요. 2장 첫 줄에 바로 답을 노랑으로 넣어요.",
-   "example_hook": "○○가 ○○ 사업을 접은 이유",
+   "what": "실명 기업이나 인물이 이미 한 행동의 이유나 결과를 표지에서 묻고(○○가 거절한 이유, ○○는 어느 당에 줬을까), 답은 바로 다음 장이나 첫 몇 초 안에 줘요. '○○가 뭐길래', '새로운 성장 공식은?', '반등일까 숨 고르기일까'처럼 개념이나 앞날을 묻는 질문, 주체가 없는 질문, 끝까지 답하지 않는 질문은 이 공식이 아니에요. 이런 질문을 쓴 비교 글은 졌어요.",
+   "fit": "잘 맞음",
+   "fit_why": "핫코노미 제목은 주제 요약보다 사건과 반전인데, 이미 일어난 행동의 이유를 묻는 질문은 사건 제목이에요.",
+   "how": "표지 제목을 '○○가 ○○한 이유'로 쓰고 주인공 얼굴이나 로고를 크게 깔아요. 2장 첫 줄에서 바로 답하고, 답을 3장 이후로 미루지 않아요.",
+   "example_hook": "○○이 ○○ 주문을 단칼에 거절한 이유",
    "evidence": [
     {
      "code": "DeqV0csIPn0",
@@ -700,20 +766,20 @@
      "kind": "릴스"
     },
     {
-     "code": "DeyIU7Jg1ON",
-     "author": "mk.co.kr",
-     "x": 3.6,
-     "url": "https://www.instagram.com/reel/DeyIU7Jg1ON/",
-     "kind": "릴스"
+     "code": "DfjpH7OEpXE",
+     "author": "bullstory1",
+     "x": 9.4,
+     "url": "https://www.instagram.com/p/DfjpH7OEpXE/",
+     "kind": "카드뉴스"
     }
    ],
    "counter": [
     {
-     "code": "DfhSCL7Cq81",
-     "author": "financialtimes",
-     "x": 4.8,
-     "url": "https://www.instagram.com/reel/DfhSCL7Cq81/",
-     "kind": "릴스"
+     "code": "DfTmGkcmWjf",
+     "author": "ppspr_korea",
+     "x": 24.8,
+     "url": "https://www.instagram.com/p/DfTmGkcmWjf/",
+     "kind": "카드뉴스"
     }
    ],
    "test": {
@@ -728,34 +794,34 @@
    }
   },
   {
-   "name": "사진이 없는 대상은 표정 있는 캐릭터로",
+   "name": "표지에 '왜 지금' 꼬리표",
    "kind": "공통",
-   "what": "금, 은, 금리, 원화처럼 주인공 사진이 없는 대상이나 누구나 겪는 상황을 다룰 때는 감정이 보이는 캐릭터 하나에 사건 한 줄을 얹어요. 실물 사진이 있는 사건, 또는 사건과 관계없는 장식 그림은 이 공식이 아니에요.",
-   "fit": "조건부",
-   "fit_why": "사진 중심 디자인이 기본이라, 사진을 끝내 못 찾았을 때 '글자만 크게' 대신 쓸 예외로만 맞아요.",
-   "how": "검정 배경 위에 겁먹거나 웃는 캐릭터 하나를 가운데 크게 두고, 아래쪽에 사건 한 줄과 숫자를 빨강 큰 글씨로 넣어요. 그림이 연출임을 감추지 않아요.",
-   "example_hook": "하루 만에 금과 은에서 ○○조 원이 사라졌어요",
+   "what": "표지 제목 위에 '○○ 폭락하자 재조명', '선거 D-2', '○시 기준'처럼 왜 하필 지금 이 글을 봐야 하는지 알려 주는 짧은 꼬리표를 달아요. 단순한 날짜나 '오늘의 경제' 같은 정기 라벨은 이 공식이 아니에요.",
+   "fit": "잘 맞음",
+   "fit_why": "'지금 뜨는 경제 사건'을 다루는 계정이라, 지금 봐야 할 이유를 표지 한 줄로 보여 주면 정체성이 드러나요.",
+   "how": "표지 위쪽에 빨강 바탕 흰 글씨로 6~10자 꼬리표를 넣어요(예: '발표 하루 뒤', '○시 기준'). 아래쪽 큰 제목은 그대로 사건 한 문장으로 써요.",
+   "example_hook": "[○○ 발표 직후] ○○, 하루 만에 입장 바꿨어요",
    "evidence": [
     {
-     "code": "DfH1WP6oMTH",
-     "author": "cryptodaily",
-     "x": 6.0,
-     "url": "https://www.instagram.com/p/DfH1WP6oMTH/",
-     "kind": "카드뉴스"
-    },
-    {
-     "code": "Ded9mfXDw9A",
-     "author": "lssec_official",
-     "x": 6.1,
-     "url": "https://www.instagram.com/p/Ded9mfXDw9A/",
-     "kind": "카드뉴스"
-    },
-    {
-     "code": "Dd5el3wRZpN",
-     "author": "cointelegraph",
-     "x": 3.1,
-     "url": "https://www.instagram.com/reel/Dd5el3wRZpN/",
+     "code": "Dfg05LfOzzr",
+     "author": "hankyungmedia_official",
+     "x": 17.9,
+     "url": "https://www.instagram.com/reel/Dfg05LfOzzr/",
      "kind": "릴스"
+    },
+    {
+     "code": "DfOcjasoBGk",
+     "author": "ekke.now",
+     "x": 9.0,
+     "url": "https://www.instagram.com/p/DfOcjasoBGk/",
+     "kind": "카드뉴스"
+    },
+    {
+     "code": "DfTrzsMEkSH",
+     "author": "bullstory1",
+     "x": 15.1,
+     "url": "https://www.instagram.com/p/DfTrzsMEkSH/",
+     "kind": "카드뉴스"
     }
    ],
    "counter": [],
@@ -764,19 +830,12 @@
   {
    "name": "밈 말풍선 표지",
    "kind": "카드뉴스",
-   "what": "실명 기업 로고나 실존 인물 사진에 짧은 말풍선을 붙여, 그 주체가 놓인 처지를 한마디로 보여 줘요. 익명 인물, 가상 캐릭터, 동물 합성에 붙인 말풍선은 이 공식이 아니에요.",
+   "what": "실명 기업 로고나 실존 인물 사진에 짧은 말풍선을 붙여, 그 주체가 놓인 처지를 한마디로 보여 줘요. 익명 인물, 가상 캐릭터, 동물 합성에 붙인 말풍선은 이 공식이 아니에요. 다만 이긴 글과 진 비교 글이 모두 말풍선을 쓴 쌍(DfizLiiH814)도 있어서 가르는 힘은 약해요.",
    "fit": "조건부",
-   "fit_why": "근거가 한 계정(ekke.now)에서만 나왔고 실존 인물에게 지어낸 말을 붙이는 방식이라, 뉴스 계정에서는 인용으로 오해받지 않게 조심해야 해요.",
-   "how": "실제 발언이 아닌 말풍선은 따옴표 없이 쓰고, 표지 제목은 사실만 적어요. 말풍선은 노랑 바탕에 검정 글씨로 사진 위쪽 구석에 작게 둬요.",
-   "example_hook": "○○, ○○ 인수로 17년 라이벌전 끝냈어요",
+   "fit_why": "실존 인물 입에 하지 않은 말을 넣으면 실제 발언으로 오해받을 수 있고, 핫코노미의 짧은 뉴스 말투와도 어긋나요.",
+   "how": "사람 얼굴에는 실제 발언만 따옴표로 넣고, 지어낸 한마디는 회사 로고나 건물 사진에만 붙여요. 비유라는 게 바로 보이도록 짧고 과장된 말(예: '부산 접수 드갈게')로 쓰고, 제목은 사실 문장으로 따로 둬요.",
+   "example_hook": "○○백화점 로고에 '바로 옆집 접수할게요', 제목: ○○, 경쟁사 점포 인수했어요",
    "evidence": [
-    {
-     "code": "DfE0xbKnyCN",
-     "author": "ekke.now",
-     "x": 14.9,
-     "url": "https://www.instagram.com/p/DfE0xbKnyCN/",
-     "kind": "카드뉴스"
-    },
     {
      "code": "DfOcjasoBGk",
      "author": "ekke.now",
@@ -789,6 +848,13 @@
      "author": "ekke.now",
      "x": 11.9,
      "url": "https://www.instagram.com/p/DeqV0csIPn0/",
+     "kind": "카드뉴스"
+    },
+    {
+     "code": "DfE0xbKnyCN",
+     "author": "ekke.now",
+     "x": 14.9,
+     "url": "https://www.instagram.com/p/DfE0xbKnyCN/",
      "kind": "카드뉴스"
     }
    ],
@@ -815,11 +881,11 @@
   {
    "name": "캡션은 숫자 달린 항목으로",
    "kind": "공통",
-   "what": "그림이 정보를 다 담지 못할 때(장수가 적거나 이미지에 글이 없을 때) 캡션을 '결과 한 줄 → 이모지로 나눈 항목마다 구체 숫자 하나' 순서로 써요. 숫자 없이 일반적인 말로 풀거나, 개념 질문으로 시작해 핵심이 늦게 나오면 이 공식이 아니에요.",
+   "what": "그림이 정보를 다 담지 못할 때(장수가 적거나 이미지에 글이 없을 때) 캡션을 '결과 한 줄 → 이모지로 나눈 항목마다 구체 숫자 하나' 순서로 써요. 숫자 없이 일반적인 말로 풀거나, 개념 질문으로 시작해 핵심이 늦게 나오면 이 공식이 아니에요. 이미지만으로 사건이 읽힐 때는 한 줄 속보 캡션이 이긴 경우도 있었어요.",
    "fit": "조건부",
-   "fit_why": "핫코노미는 그림 안에 사실을 담는 쪽이라, 캡션 보강용으로만 쓸 만해요.",
-   "how": "캡션 첫 줄에 결과 한 문장을 쓰고, 아래에 이모지 3~4개로 항목을 나눠 항목마다 숫자 하나씩 적어요. 출처는 맨 끝에 모아요.",
-   "example_hook": "○○ 해킹, 지금까지 ○○억 달러 회수됐어요",
+   "fit_why": "핫코노미 카드는 장마다 사실을 크게 올리므로 캡션은 보조이고, 이미지가 정보를 덜 담은 글에서만 이 순서가 의미가 있어요.",
+   "how": "캡션 첫 줄은 사건 결과 한 문장, 그 아래는 이모지 항목 3~4개에 숫자 하나씩, 끝에 확인 안 된 것과 사진 출처를 적어요. 카드에 이미 같은 숫자가 크면 캡션은 짧게 줄여요.",
+   "example_hook": "○○, 결국 ○○ 발표했어요. ⏱ 기간 ○일 단축 💰 수수료 ○% 인하",
    "evidence": [
     {
      "code": "DfTmGkcmWjf",
@@ -836,14 +902,29 @@
      "kind": "카드뉴스"
     },
     {
-     "code": "Dfj-iq2idIH",
+     "code": "DeieMdcMQii",
+     "author": "seoul_economic",
+     "x": 95.5,
+     "url": "https://www.instagram.com/reel/DeieMdcMQii/",
+     "kind": "릴스"
+    }
+   ],
+   "counter": [
+    {
+     "code": "Dff50lbEs78",
+     "author": "bullstory1",
+     "x": 57.6,
+     "url": "https://www.instagram.com/p/Dff50lbEs78/",
+     "kind": "카드뉴스"
+    },
+    {
+     "code": "DfIaQ9Fn54n",
      "author": "cryptosrus",
-     "x": 54.1,
-     "url": "https://www.instagram.com/p/Dfj-iq2idIH/",
+     "x": 64.2,
+     "url": "https://www.instagram.com/p/DfIaQ9Fn54n/",
      "kind": "카드뉴스"
     }
    ],
-   "counter": [],
    "test": {
     "n": 2,
     "right": 2,
@@ -856,27 +937,111 @@
    }
   },
   {
+   "name": "말한 사람과 대상 인물을 한 화면에",
+   "kind": "릴스",
+   "what": "말한 사람과 그 말의 대상이 된 사람(또는 대상 제품)을 위아래나 좌우로 나눠 한 화면에 함께 보여 줘요. 그러면 누가 누구에게 무슨 말을 했는지 소리 없이도 읽혀요. 진행자 한 명만 나오는 화면은 이 공식이 아니에요. 다만 말한 사람 혼자 나온 화면으로도 이긴 경우가 있어서 꼭 필요한 조건은 아니에요.",
+   "fit": "조건부",
+   "fit_why": "발언 영상과 대상 인물 사진이 둘 다 있을 때만 쓸 수 있는데, 한국 경영인은 무료 사진이 거의 없어요.",
+   "how": "위쪽에는 발언 영상, 아래쪽에는 대상 인물이나 회사 로고 정지 사진을 두고, 가운데 띠에 '○○ → ○○' 이름표를 붙여요. 카드 표지라면 두 사진을 위아래로 나누고 제목을 아래쪽 1/3에 둬요.",
+   "example_hook": "○○ 대통령이 ○○ 대표를 두고 처음 입을 열었어요",
+   "evidence": [
+    {
+     "code": "Dfic0VGjFkZ",
+     "author": "yahoofinance",
+     "x": 5.5,
+     "url": "https://www.instagram.com/reel/Dfic0VGjFkZ/",
+     "kind": "릴스"
+    },
+    {
+     "code": "DetM6PwOSjt",
+     "author": "hankyungmedia_official",
+     "x": 43.8,
+     "url": "https://www.instagram.com/reel/DetM6PwOSjt/",
+     "kind": "릴스"
+    }
+   ],
+   "counter": [
+    {
+     "code": "DfgozPpD04a",
+     "author": "bloombergbusiness",
+     "x": 12.6,
+     "url": "https://www.instagram.com/reel/DfgozPpD04a/",
+     "kind": "릴스"
+    },
+    {
+     "code": "DfBCNmhPGJW",
+     "author": "hktv__",
+     "x": 73.6,
+     "url": "https://www.instagram.com/reel/DfBCNmhPGJW/",
+     "kind": "릴스"
+    }
+   ],
+   "test": null
+  },
+  {
+   "name": "사진이 없는 대상은 표정 있는 캐릭터로",
+   "kind": "공통",
+   "what": "금, 은, 금리처럼 주인공 사진이 없는 대상이나 누구나 겪는 상황을 다룰 때는 감정이 보이는 캐릭터 하나에 사건 한 줄을 얹어요. 실물 사진이 있는 사건에 그림을 쓰거나, 사건과 관계없는 장식 그림을 쓰면 이 공식이 아니에요. 실제 사건을 그림 포스터로 대신한 비교 글은 졌어요.",
+   "fit": "조건부",
+   "fit_why": "핫코노미는 어두운 배경의 사진 뉴스가 기본이고, 사진이 없을 때의 대안도 '어둡게 깐 사진 + 아주 큰 강조 단어'로 정해 두었어요. 그래서 캐릭터는 원자재·금리처럼 사진 자체가 없는 주제에만 써요.",
+   "how": "금값·환율 같은 글에서 표지 사진 후보가 없을 때만, 검정 배경에 겁먹은 금괴처럼 감정이 보이는 단색 캐릭터 하나를 두고 아래쪽에 빨강 큰 숫자 제목을 얹어요. 실물 시세 그래프는 본문에 따로 넣어요.",
+   "example_hook": "금과 은에서 하루 만에 ○○원이 사라졌어요",
+   "evidence": [
+    {
+     "code": "DfH1WP6oMTH",
+     "author": "cryptodaily",
+     "x": 6.0,
+     "url": "https://www.instagram.com/p/DfH1WP6oMTH/",
+     "kind": "카드뉴스"
+    },
+    {
+     "code": "Dd5el3wRZpN",
+     "author": "cointelegraph",
+     "x": 3.1,
+     "url": "https://www.instagram.com/reel/Dd5el3wRZpN/",
+     "kind": "릴스"
+    }
+   ],
+   "counter": [
+    {
+     "code": "Ded9mfXDw9A",
+     "author": "lssec_official",
+     "x": 6.1,
+     "url": "https://www.instagram.com/p/Ded9mfXDw9A/",
+     "kind": "카드뉴스"
+    },
+    {
+     "code": "DfZWohvkbD7",
+     "author": "cointelegraph",
+     "x": 10.7,
+     "url": "https://www.instagram.com/p/DfZWohvkbD7/",
+     "kind": "카드뉴스"
+    }
+   ],
+   "test": null
+  },
+  {
    "name": "내 돈에 대입시키는 사연·계산",
    "kind": "공통",
    "what": "독자가 자기 자금이나 월 저축액을 넣어 보게 하는 계산식과 금액 예시 세 가지, 또는 큰돈을 건 사연 만화를 보여 주고 다음 편으로 이어 가요. 사건 전달이 아니라 개인 자산 관리가 중심이에요.",
    "fit": "안 맞음",
-   "fit_why": "'내 돈에 무슨 일이 생기는지'는 자산백배 몫이라 핫코노미 정체성과 겹쳐요.",
-   "how": "핫코노미에서는 쓰지 않고 같은 소재를 자산백배 초안으로 넘겨요. 핫코노미는 같은 사건의 '무슨 일이 일어났는지'만 다뤄요.",
-   "example_hook": "모은 돈 ○○억을 한 종목에 넣었다면",
+   "fit_why": "'내 돈에 무슨 일이 생기는지'는 자산백배가 맡는 영역이라 핫코노미가 쓰면 두 계정이 겹쳐요.",
+   "how": "핫코노미에서는 쓰지 않고 자산백배로 넘겨요. 같은 사건을 다룰 때 핫코노미는 결론을 '다음에 볼 시장 변수'로만 닫아요.",
+   "example_hook": "(자산백배용) 월 ○○만 원씩이면 언제 ○○에 닿을까요?",
    "evidence": [
-    {
-     "code": "De8uQS1El-Q",
-     "author": "bullstory1",
-     "x": 13.1,
-     "url": "https://www.instagram.com/p/De8uQS1El-Q/",
-     "kind": "카드뉴스"
-    },
     {
      "code": "DeH1VFXPJnW",
      "author": "humphreytalks",
      "x": 7.3,
      "url": "https://www.instagram.com/reel/DeH1VFXPJnW/",
      "kind": "릴스"
+    },
+    {
+     "code": "De8uQS1El-Q",
+     "author": "bullstory1",
+     "x": 13.1,
+     "url": "https://www.instagram.com/p/De8uQS1El-Q/",
+     "kind": "카드뉴스"
     }
    ],
    "counter": [],
@@ -995,7 +1160,7 @@
   {
    "code": "DfBCNmhPGJW",
    "author": "hktv__",
-   "x": 73.9,
+   "x": 73.6,
    "url": "https://www.instagram.com/reel/DfBCNmhPGJW/",
    "kind": "릴스",
    "metric": 45393,
@@ -1202,32 +1367,6 @@
    "structure": "자료상 확인되는 구간만 적음. (1) 커버: 사건 한 줄 + 평가 한 줄. (2) 0초대 첫 장면: 남편이 아내의 옷을 낚아챔. (3) 이어서 남편이 옷을 안고 가는 장면, 구경하는 행인들. (4) 중간 흐릿한 장면, 행인 클로즈업. (5) 끝 장면: 핌키 매장 앞, 유모차, 영상 출처(@GuntherEagleman)와 편집자 표기. 컷 수 0, 46초 동안 한 번에 찍은 영상. 대본은 러시아어 현장 음성이고 \"아내가 훔쳐 나왔고 남편이 되돌려놓았다\"는 내용으로 보임. 해설 내레이션은 없음."
   },
   {
-   "code": "De23Z_Kk8CW",
-   "author": "hankyungmedia_official",
-   "x": 24.9,
-   "url": "https://www.instagram.com/p/De23Z_Kk8CW/",
-   "kind": "카드뉴스",
-   "metric": 1158,
-   "topic": "e스포츠 산업 성장",
-   "ctrl": {
-    "url": "https://www.instagram.com/p/De1NnJIE8Re/",
-    "x": 0.6,
-    "metric": 29
-   },
-   "hook_type": "인물 발언 + 장면(줄 선 사람들) 중심의 사연형 단일 주제",
-   "hook_hit": "표지에 큰 글자로 \"아들 주려고 9시간 기다렸다\" / 60대 父 줄 세운 '페이커 우표'. 우표 전시관 앞에 줄 선 사람들 사진과, 빨간 테두리로 강조한 금색 페이커 우표 카드 사진이 함께 나옴. 캡션 첫 줄은 \"게임 몰라도 페이커는 좋아…e스포츠 팬덤 달라졌다\".",
-   "differences": [
-    "뜬 글은 한 사람의 구체적 발언(\"아들 주려고 9시간 기다렸다\")과 나이·관계(60대 아버지)를 제목으로 삼음. 비교 글은 뉴스 3건을 항목 제목으로만 나열함.",
-    "뜬 글은 주제가 하나라 첫 화면에서 이야기가 바로 이해됨. 비교 글은 자동차·노동·부동산이 섞여 있어 보는 사람이 관심 가는 항목을 골라야 함.",
-    "뜬 글 표지는 사진이 화면 대부분을 차지하고 줄 선 사람들과 확대한 우표 카드가 한눈에 들어옴. 비교 글 표지는 흐릿한 신문 배경에 글 박스뿐이고 주제를 보여 주는 사진이 없음.",
-    "뜬 글은 \"게임 몰라도 페이커는 좋아\"처럼 의외성이 있는 시각(게임을 못 해도 팬이 됨)과 2872억원, 2030 81% 같은 숫자를 함께 넣음. 비교 글은 일일 뉴스 요약 형식이라 반전이나 의외성이 약함."
-   ],
-   "why": "9시간 줄 서는 아버지라는 사연과 인용구가 첫 화면에서 호기심과 공감을 만들었고, 큰 현장 사진이 이를 받쳐 준 것으로 보임. 다만 확인 가능한 것은 화면과 글뿐이라 정확한 원인은 단정할 수 없음.",
-   "topic_power": "높음",
-   "copyable": "표지에 인용 발언 한 줄(노란색 강조)과 사람 얼굴·현장이 보이는 큰 사진을 쓰기. 한 글에 한 사건만 다루기. 확대 사진은 빨간 테두리로 강조하기. 2장 안에서 기사 캡처로 신뢰를 주고, 캡션에 숫자 2~3개(예: 2872억원, 2030 81%)를 넣기. 페이커·팬덤처럼 이미 관심이 큰 인물이 주제라 형식만으로 같은 효과가 나올지는 확인 불가.",
-   "structure": "2장. 1장: 인용 발언 제목 + 줄 선 현장 사진 + 우표 확대 사진. 2장: 한국경제 기사 원문 캡처(헤드라인, 요약 5줄, 팝업스토어 대기 사진). 캡션은 이모지 4개 구간(팬덤 변화 → 산업 규모 2872억 → 원데이 클래스 → 수강생 2030 비율)으로 이어짐. 비교 글은 4장으로 표지 + 뉴스 3건 각 1장(제목 박스 + 글 2덩이 + 사진)인 모음형."
-  },
-  {
    "code": "DfTmGkcmWjf",
    "author": "ppspr_korea",
    "x": 24.8,
@@ -1252,6 +1391,32 @@
    "topic_power": "중간",
    "copyable": "그림이 같은 상태에서도 반응이 달랐으므로 그림보다 캡션에서 가져올 것: ①첫 줄에 결과 혜택 선언('~는 줄이고, ~는 낮추고!') ②항목마다 이모지와 구체 숫자(○일 단축, ○% 할인) ③시행 시기·조건을 ※로 짧게 표기 ④수혜 대상을 명시(대학·연구기관 등). 개념 설명형 글은 숫자와 대상을 더 좁혀 쓰는 것이 좋음.",
    "structure": "1장짜리 카드뉴스. 그림은 표지 한 장뿐이라 내용은 전부 캡션에 있음. 캡션 흐름: 결과 선언(절차↓ 부담↓) → 외자구매 정의 → 4개 항목(기간 10일 이상 단축 / 규격검토 약 7일 단축 / 수수료 5% 할인 / 사전컨설팅 확대) → 마무리 다짐 → 해시태그."
+  },
+  {
+   "code": "De23Z_Kk8CW",
+   "author": "hankyungmedia_official",
+   "x": 24.6,
+   "url": "https://www.instagram.com/p/De23Z_Kk8CW/",
+   "kind": "카드뉴스",
+   "metric": 1158,
+   "topic": "e스포츠 산업 성장",
+   "ctrl": {
+    "url": "https://www.instagram.com/p/De1NnJIE8Re/",
+    "x": 0.6,
+    "metric": 29
+   },
+   "hook_type": "인물 발언 + 장면(줄 선 사람들) 중심의 사연형 단일 주제",
+   "hook_hit": "표지에 큰 글자로 \"아들 주려고 9시간 기다렸다\" / 60대 父 줄 세운 '페이커 우표'. 우표 전시관 앞에 줄 선 사람들 사진과, 빨간 테두리로 강조한 금색 페이커 우표 카드 사진이 함께 나옴. 캡션 첫 줄은 \"게임 몰라도 페이커는 좋아…e스포츠 팬덤 달라졌다\".",
+   "differences": [
+    "뜬 글은 한 사람의 구체적 발언(\"아들 주려고 9시간 기다렸다\")과 나이·관계(60대 아버지)를 제목으로 삼음. 비교 글은 뉴스 3건을 항목 제목으로만 나열함.",
+    "뜬 글은 주제가 하나라 첫 화면에서 이야기가 바로 이해됨. 비교 글은 자동차·노동·부동산이 섞여 있어 보는 사람이 관심 가는 항목을 골라야 함.",
+    "뜬 글 표지는 사진이 화면 대부분을 차지하고 줄 선 사람들과 확대한 우표 카드가 한눈에 들어옴. 비교 글 표지는 흐릿한 신문 배경에 글 박스뿐이고 주제를 보여 주는 사진이 없음.",
+    "뜬 글은 \"게임 몰라도 페이커는 좋아\"처럼 의외성이 있는 시각(게임을 못 해도 팬이 됨)과 2872억원, 2030 81% 같은 숫자를 함께 넣음. 비교 글은 일일 뉴스 요약 형식이라 반전이나 의외성이 약함."
+   ],
+   "why": "9시간 줄 서는 아버지라는 사연과 인용구가 첫 화면에서 호기심과 공감을 만들었고, 큰 현장 사진이 이를 받쳐 준 것으로 보임. 다만 확인 가능한 것은 화면과 글뿐이라 정확한 원인은 단정할 수 없음.",
+   "topic_power": "높음",
+   "copyable": "표지에 인용 발언 한 줄(노란색 강조)과 사람 얼굴·현장이 보이는 큰 사진을 쓰기. 한 글에 한 사건만 다루기. 확대 사진은 빨간 테두리로 강조하기. 2장 안에서 기사 캡처로 신뢰를 주고, 캡션에 숫자 2~3개(예: 2872억원, 2030 81%)를 넣기. 페이커·팬덤처럼 이미 관심이 큰 인물이 주제라 형식만으로 같은 효과가 나올지는 확인 불가.",
+   "structure": "2장. 1장: 인용 발언 제목 + 줄 선 현장 사진 + 우표 확대 사진. 2장: 한국경제 기사 원문 캡처(헤드라인, 요약 5줄, 팝업스토어 대기 사진). 캡션은 이모지 4개 구간(팬덤 변화 → 산업 규모 2872억 → 원데이 클래스 → 수강생 2030 비율)으로 이어짐. 비교 글은 4장으로 표지 + 뉴스 3건 각 1장(제목 박스 + 글 2덩이 + 사진)인 모음형."
   },
   {
    "code": "DfRucKOBT93",
@@ -1438,6 +1603,33 @@
    "structure": "1장 제목(3억 몰빵 썰) → 2장 공무원 화자 소개, 월급부터 모음 → 3장 \"3억.\" 큰 숫자와 통장·저금통 → 4장 결혼식·전세 계획 → 5장 집 알아볼수록 조급 → 6장 삼전·하이닉스, 남들 계좌만 오르는데 내 통장만 휴무 → 7장 \"상승장 초입이면?\" → 8장 \"3억이 1년 뒤 10억 되면?\" 망상 → 9장 머릿속 \"집은? vs 기회는?\" 갈등 → 10장 여친에게 \"주식 좀 해볼까?\" \"얼마나?\"로 끝(다음 화 예고). 캡션에서는 결과 직전에 끊고 \"여러분이라면?\" 질문을 던짐."
   },
   {
+   "code": "DfgozPpD04a",
+   "author": "bloombergbusiness",
+   "x": 12.6,
+   "url": "https://www.instagram.com/reel/DfgozPpD04a/",
+   "kind": "릴스",
+   "metric": 3340822,
+   "topic": "엔비디아 CEO 스캔들",
+   "ctrl": {
+    "url": "https://www.instagram.com/reel/DfjJaoNhZXA/",
+    "x": 0.5,
+    "metric": 143843
+   },
+   "hook_type": "인물 발언 + 스캔들(유명 CEO 불륜·스파이 의혹, 대통령 반응)",
+   "hook_hit": "커버: 어두운 배경에 트럼프 얼굴 클로즈업과 큰 흰 글자 \"Trump calls Nvidia's Huang a 'fine person' after he admits affair\". 영상 첫 자막은 \"Nvidia is investigating Jensen Huang's relationship with a Chinese spy.\" 로, 첫 1초 안에 스캔들(중국 스파이 관계)이 나옴.",
+   "differences": [
+    "길이가 22초로 짧음. 비교 글은 83초로 약 4배 긺",
+    "첫 자막부터 '중국 스파이'라는 자극적인 사건어가 나옴. 비교 글은 '조정·재평가 얼마나 갈까'라는 일반 질문으로 시작",
+    "트럼프와 젠슨 황이라는 아주 유명한 두 인물이 걸려 있고, 커버 제목에 'admits affair'가 있음. 비교 글은 시티 CEO의 시장 의견",
+    "말하는 사람이 한 명이고 문장이 짧고 쉬움 ('fine person', 'Oh yeah, sure'). 비교 글은 진행자와 답변자가 번갈아 나오고 AI 인프라·리스크 관리·선거 등 긴 설명이 이어짐",
+    "커버가 검은 배경에 얼굴 크게와 흰 글자라 대비가 강함. 비교 글은 밝고 흐린 배경의 미소 사진"
+   ],
+   "why": "스캔들성이 강한 사건과 트럼프의 직접 발언이 22초 안에 결론까지 닿아, 끝까지 보기 쉬웠을 가능성이 있음. 다만 사건 자체의 화제성이 커서 형식 효과는 분리하기 어려움.",
+   "topic_power": "높음",
+   "copyable": "① 첫 자막에 사건의 핵심어를 바로 넣기 ② 20초대 짧은 질문→답 클립으로 끝내기 ③ 커버에 '누가 + 무슨 말 + 왜 놀라운지'를 한 문장 큰 글자로 쓰기 ④ 어두운 배경에 얼굴 클로즈업으로 대비 주기. 단 주제 힘이 커서 형식만으로 같은 결과를 기대하기는 어려움.",
+   "structure": "0~3초: 엔비디아가 젠슨 황의 중국 스파이 관계를 조사 중이라는 자막 → 3.6~5초: 기자가 트럼프에게 질문 → 7~9초: \"좋은 사람이지만 무슨 일인지는 모른다\" → 15~17초: \"대단한 일을 했다\"→ 17~22초: CEO 유임 질문에 \"그렇다, 물론\" 답하고 종료. 전체 22초, 질문→답이 한 번에 끝나는 짧은 문답."
+  },
+  {
    "code": "DfE9VaIvcdG",
    "author": "seoul_economic",
    "x": 12.2,
@@ -1546,7 +1738,7 @@
   {
    "code": "DfGPwcTIIlI",
    "author": "cryptodaily",
-   "x": 9.0,
+   "x": 9.1,
    "url": "https://www.instagram.com/p/DfGPwcTIIlI/",
    "kind": "카드뉴스",
    "metric": 17108,
@@ -1677,33 +1869,6 @@
    "structure": "0~8초: 100K 다음 단계인 '크로스오버 포인트'를 정의합니다. / 8~20초: 계산법(연 투자액×12.5)과 예시(월 1,000달러→약 15만 달러)를 보여 줍니다. / 20~50초: 달라지는 세 가지를 차례로 말합니다. 계좌가 저축액의 두 배로 늘고, 입금액이 작아 보이고(1% 움직임=1,500달러), 한 번의 패닉셀이 큰 타격(20% 하락=3만 달러)이 됩니다. / 58~71초: 월 500달러면 7.5만, 월 2,000달러면 30만처럼 내 경우로 바꿔 볼 수 있게 합니다. / 73~79초: 다음 편(25만 달러)을 예고하고 팔로우를 유도합니다."
   },
   {
-   "code": "Dfic0VGjFkZ",
-   "author": "yahoofinance",
-   "x": 6.5,
-   "url": "https://www.instagram.com/reel/Dfic0VGjFkZ/",
-   "kind": "릴스",
-   "metric": 392997,
-   "topic": "기업 반전",
-   "ctrl": {
-    "url": "https://www.instagram.com/reel/Dfh_UromRFg/",
-    "x": 0.8,
-    "metric": 49657
-   },
-   "hook_type": "인물 발언(대통령) + 반전(젠슨 황이 괴로워한다는 뜻밖의 한마디)",
-   "hook_hit": "첫 화면에 'PRESIDENT TRUMP: JENSEN HUANG \"IS SUFFERING\"' 큰 흰 박스 제목과 자막 'I was amazed'. 첫 말은 트럼프의 \"I heard about it. First of all, I was amazed because I view him as a very high quality person.\"",
-   "differences": [
-    "뜬 글은 트럼프라는 세계적 인물의 직접 발언이고, 비교 글은 진행자의 의견(석세션 플랜 촉구)이다.",
-    "뜬 글은 제목에 인물 이름과 감정 단어 'IS SUFFERING'을 넣었다. 비교 글 제목은 'name successor'라는 제도·지배구조 논점이다.",
-    "뜬 글은 칭찬 후 '고통받는다'로 끝나는 반전 구조다. 비교 글은 주장과 촉구('This can't continue')로 일관한다.",
-    "뜬 글은 화면 위에 트럼프, 아래에 젠슨 황 얼굴을 함께 보여줘 두 인물을 한눈에 알아보게 한다. 비교 글은 진행자와 증시 히트맵 배경이라 인물 얼굴이 낯설다.",
-    "뜬 글 캡션은 한 줄로 사건·발언만 전한다. 비교 글 캡션은 데니스 창업 일화와 이사회 조사, 후계 문제 등 설명이 길다."
-   ],
-   "why": "트럼프가 젠슨 황의 사생활 사건을 직접 언급했다는 점과, 칭찬 뒤에 'suffering'이 나오는 반전이 시청 유지와 반응을 끌었을 가능성이 있다. 다만 같은 날 같은 사건을 다룬 글이라 형식 차이만으로 단정하기는 어렵다.",
-   "topic_power": "높음",
-   "copyable": "'인물 이름 + 감정·상태 단어' 따옴표 제목(예: X \"IS SUFFERING\")을 큰 박스로 고정. 유명 인물 두 명을 위아래로 분할 배치. 단어 단위 큰 자막. 캡션은 한 줄 요약. 단, 유명인 발언 자체가 핵심이라 발언 자료가 있을 때만 쓸 수 있음.",
-   "structure": "0~6초 트럼프가 소식을 들었다며 놀랐고 높이 평가한다고 말함 → 6~26초 엔비디아 시총, 10년 앞선 칩, 블랙웰은 복제 불가라며 칭찬 → 26~32초 \"문제가 없길 바란다, 있으면 알려주겠다\" → 32~44초 \"가족, 아내 때문에 크게 괴로워하고 있다고 믿는다\"로 마무리. 칭찬에서 시작해 사생활 암시로 끝나는 구조."
-  },
-  {
    "code": "DfhrC-Vy6MG",
    "author": "friendsthatinvest",
    "x": 6.5,
@@ -1782,56 +1947,57 @@
    "structure": "1장 $8,902억 증발이라는 헤드라인과 겁먹은 금·은 일러스트 → 2장 은 −5.27%, $49.30, $154.5B → 3장 금 −2.56%, $3,917.70, $735.7B → 4장 \"We track market news in real time. Follow us\" 팔로우 유도. 총 4장이고 한 장에 메시지 하나, 헤드라인→세부→팔로우 순서다."
   },
   {
-   "code": "DevoKManery",
-   "author": "mk.co.kr",
-   "x": 5.5,
-   "url": "https://www.instagram.com/p/DevoKManery/",
+   "code": "DffwgWzl213",
+   "author": "yahoofinance",
+   "x": 5.6,
+   "url": "https://www.instagram.com/p/DffwgWzl213/",
    "kind": "카드뉴스",
-   "metric": 243,
-   "topic": "삼성전자 성과급",
+   "metric": 12100,
+   "topic": "기업 반전",
    "ctrl": {
-    "url": "https://www.instagram.com/p/Dev15MQHexb/",
-    "x": 0.9,
-    "metric": 39
+    "url": "https://www.instagram.com/p/DfiqcvulzWe/",
+    "x": 1.3,
+    "metric": 2757
    },
-   "hook_type": "단독 태그 + 불공정 해소 선언 (인물·기업 이슈 + 성과급)",
-   "hook_hit": "표지: 삼성 본사 건물 사진 위에 주황 '단독' 태그와 큰 흰 글씨 \"삼성전자, 차세대메모리 핵심 개발인력 '성과급 차별' 없앤다\". 삼성 깃발과 로고가 보임.",
+   "hook_type": "인물 본인의 충격 고백(스캔들 인정) + 스파이 연루 반전",
+   "hook_hit": "\"Jensen Huang admits to affair after allegations of romance with Chinese spy\" (REPORT 태그). 검은 배경에 CEO 얼굴 사진과 흰색 대형 헤드라인.",
    "differences": [
-    "뜬 글 표지에는 '단독' 태그가 있고 비교 글에는 없음. 독점 보도라는 신호가 첫 화면에 보임.",
-    "뜬 글 제목은 '차별 없앤다'라는 단정형 변화 선언이고, 비교 글 제목은 '성공할 수 있을까'라는 열린 질문임.",
-    "뜬 글은 '성과급 70% 수준 → 동일 수준'이라는 보상 격차 이야기가 있어 직장인 독자가 자기 일처럼 느끼기 쉬움. 비교 글은 유통업 경쟁 전망이라 독자와 거리가 있음.",
-    "뜬 글은 3장이 '현재 → 변화 → 배경(70%, 이탈 방지, 중국 견제)' 순서로 이어져 한 가지 이야기로 마무리됨. 비교 글 3장은 시범운영 성과와 과제, 과거 실패 사례가 섞여 있고 텍스트가 짧아 빈 공간이 큼."
+    "뜬 글 헤드라인은 '인정했다'는 확정된 사실과 '중국 스파이'라는 자극적 단어를 담았다. 비교 글은 '예측시장 45% 확률'이라는 파생 해석이다.",
+    "뜬 글은 사건 첫 보도(속보성)다. 비교 글은 하루 뒤 후속 기사로, 거래량 약 35만 달러라 '확률보다 분위기'라고 캡션이 스스로 한계를 밝힌다.",
+    "뜬 글은 2·3장이 큰 인용 카드 한 문장씩이라 읽기 쉽다. 비교 글 2장은 차트 캡처와 숫자(45%, 58%, 62%)가 섞여 한눈에 읽기 어렵다.",
+    "뜬 글 캡션은 CEO의 직접 사과 인용('I owe my family and all of you an apology')을 담았다. 비교 글 캡션은 '부인했다'와 의회 브리핑 요청 정도이고 인물 발언이 없다."
    ],
-   "why": "삼성전자와 성과급이라는 주제에 단독 보도 표시와 '차별 없앤다'는 선언형 제목이 합쳐져 클릭할 이유가 분명했을 수 있음. 다만 형식은 두 글이 거의 같아서, 주제와 소재의 힘이 더 크게 작용했을 가능성이 높음.",
+   "why": "사건 자체가 세계적 기업 CEO의 불륜 인정과 중국 스파이 연루라 호기심이 컸고, 첫 보도라 관심이 몰렸을 가능성이 크다. 비교 글은 같은 사건의 2차 해석이라 반응이 약했을 수 있다. 다만 형식 효과는 분리해 확인하기 어렵다.",
    "topic_power": "높음",
-   "copyable": "표지에 '단독' 태그를 달고 제목을 단정형 변화 선언(\"~없앤다\")으로 쓰는 방식. 마지막 장에 '기존 → 이번 조치 → 배경' 순서로 대비를 넣는 방식. 다만 효과는 주제의 힘과 분리해서 봐야 함.",
-   "structure": "1장: '단독' 태그와 \"성과급 차별 없앤다\" 표지 → 2장: 반도체연구소 내 D램·낸드 '코어팀' 공식화, 소속이 아닌 업무 기준으로 메모리사업부와 동일한 성과급 → 3장: 기존에는 공통조직이라 메모리사업부의 약 70% 수준만 받았다는 설명, 인력 이탈 방지와 중국 견제 목적으로 마무리."
+   "copyable": "큰 사건은 첫 장에 '확정된 사실 + 놀라운 단어' 한 줄 헤드라인을 쓰고, 뒤 장은 공식 성명을 큰 글씨 인용 카드 한 장에 한 문장씩 넣는 방식. 다만 효과의 큰 몫은 주제에서 온 것으로 보여 형식만 따라 해서는 같은 결과를 기대하기 어렵다.",
+   "structure": "1장 스캔들 인정 헤드라인과 인물 사진 → 2장 이사회 성명 인용(독립 조사 착수, 외국 정보기관의 표적이 됐다는 표현) → 3장 이사회 성명 인용(국가안보·영업비밀 침해 근거 없음, CEO가 조사에 협조). 3장 모두 공식 입장을 인용으로 전개."
   },
   {
-   "code": "DfkG4dwjEcP",
+   "code": "Dfic0VGjFkZ",
    "author": "yahoofinance",
-   "x": 5.2,
-   "url": "https://www.instagram.com/reel/DfkG4dwjEcP/",
+   "x": 5.5,
+   "url": "https://www.instagram.com/reel/Dfic0VGjFkZ/",
    "kind": "릴스",
-   "metric": 318044,
-   "topic": "테슬라 사이버트럭 주문·생산",
+   "metric": 392997,
+   "topic": "기업 반전",
    "ctrl": {
-    "url": "https://www.instagram.com/reel/DfkFj2_DfUE/",
-    "x": 0.5,
-    "metric": 29908
+    "url": "https://www.instagram.com/reel/Dfh_UromRFg/",
+    "x": 0.7,
+    "metric": 49657
    },
-   "hook_type": "인물 발언 + 제품 단종 반전 (잘 팔리는데 생산을 접음)",
-   "hook_hit": "첫 화면에 일론 머스크의 찡그린 얼굴 클로즈업 위에 머스크 X 게시물 캡처가 올라가 있음: \"The Cybertruck order rate far exceeds our production rate... shutting down the line in about 8 months, but will have to return deposits for a lot of people.\" 캡션 첫 줄도 \"Elon Musk says Tesla's Cybertruck order rate far exceeds its production rate...\"로 인물 발언으로 시작.",
+   "hook_type": "인물 발언(대통령) + 반전(젠슨 황이 괴로워한다는 뜻밖의 한마디)",
+   "hook_hit": "첫 화면에 'PRESIDENT TRUMP: JENSEN HUANG \"IS SUFFERING\"' 큰 흰 박스 제목과 자막 'I was amazed'. 첫 말은 트럼프의 \"I heard about it. First of all, I was amazed because I view him as a very high quality person.\"",
    "differences": [
-    "사람 얼굴이 있음: 머스크의 표정 클로즈업이 반복되는데, 비교 글은 사람 없이 매장 통로 영상만 있음",
-    "컷 수가 5로 화면이 계속 바뀜. 비교 글은 컷 수 0으로 같은 통로를 천천히 이동하는 한 장면뿐",
-    "트윗 내용이 '주문이 생산을 크게 넘음, 8개월 뒤 라인 종료, 예약금 반환'이라는 구체적 사건과 반전을 담음. 비교 글은 0.4% vs 0.3% 같은 수치 비교라 설명이 필요하고 맥락이 약함",
-    "캡션에 '머스크가 말했다'와 '다시는 이런 차는 없을 것'이라는 인용이 들어 있어 인물 중심 이야기가 됨. 비교 글 캡션은 지표 설명 위주"
+    "뜬 글은 트럼프라는 세계적 인물의 직접 발언이고, 비교 글은 진행자의 의견(석세션 플랜 촉구)이다.",
+    "뜬 글은 제목에 인물 이름과 감정 단어 'IS SUFFERING'을 넣었다. 비교 글 제목은 'name successor'라는 제도·지배구조 논점이다.",
+    "뜬 글은 칭찬 후 '고통받는다'로 끝나는 반전 구조다. 비교 글은 주장과 촉구('This can't continue')로 일관한다.",
+    "뜬 글은 화면 위에 트럼프, 아래에 젠슨 황 얼굴을 함께 보여줘 두 인물을 한눈에 알아보게 한다. 비교 글은 진행자와 증시 히트맵 배경이라 인물 얼굴이 낯설다.",
+    "뜬 글 캡션은 한 줄로 사건·발언만 전한다. 비교 글 캡션은 데니스 창업 일화와 이사회 조사, 후계 문제 등 설명이 길다."
    ],
-   "why": "머스크라는 유명 인물과 사이버트럭이라는 소비자에게 친숙한 제품의 단종·예약금 반환 소식이 겹쳐 반응을 끌었을 가능성이 있음. 컷 전환과 인물 얼굴 덕에 시각적 변화도 컸을 것으로 보이나, 형식 효과를 주제 효과와 분리해 단정하기는 어려움.",
+   "why": "트럼프가 젠슨 황의 사생활 사건을 직접 언급했다는 점과, 칭찬 뒤에 'suffering'이 나오는 반전이 시청 유지와 반응을 끌었을 가능성이 있다. 다만 같은 날 같은 사건을 다룬 글이라 형식 차이만으로 단정하기는 어렵다.",
    "topic_power": "높음",
-   "copyable": "① 유명 인물의 발언 원문 트윗 캡처를 화면 중앙에 두고 위에 인물 얼굴, 아래에 관련 제품 영상을 배치하는 상하 분할 구성 ② 같은 캡처를 유지하되 배경 컷(인물·제품·설비)을 4~5번 바꿔 13초 안에 변화를 주는 방식 ③ 캡션을 'X가 말했다'로 시작하고 핵심 인용으로 마무리하는 방식. 단, 머스크·사이버트럭이라는 주제의 힘은 복제할 수 없음.",
-   "structure": "13.4초, 5컷. 전 구간 같은 머스크 트윗 캡처를 고정해 두고 배경만 바꿈. 머스크 표정 클로즈업(f0~f1) → 사이버트럭 차체 클로즈업(f2) → 머스크 정면 얼굴과 생산 설비(f3) → 무대에 선 머스크와 충돌시험 모니터(f4). 대본은 비어 있어 음성·내레이션은 확인 불가."
+   "copyable": "'인물 이름 + 감정·상태 단어' 따옴표 제목(예: X \"IS SUFFERING\")을 큰 박스로 고정. 유명 인물 두 명을 위아래로 분할 배치. 단어 단위 큰 자막. 캡션은 한 줄 요약. 단, 유명인 발언 자체가 핵심이라 발언 자료가 있을 때만 쓸 수 있음.",
+   "structure": "0~6초 트럼프가 소식을 들었다며 놀랐고 높이 평가한다고 말함 → 6~26초 엔비디아 시총, 10년 앞선 칩, 블랙웰은 복제 불가라며 칭찬 → 26~32초 \"문제가 없길 바란다, 있으면 알려주겠다\" → 32~44초 \"가족, 아내 때문에 크게 괴로워하고 있다고 믿는다\"로 마무리. 칭찬에서 시작해 사생활 암시로 끝나는 구조."
   },
   {
    "code": "DfhSCL7Cq81",
@@ -1911,6 +2077,32 @@
    "topic_power": "높음",
    "copyable": "\"[특정 투자자층+금액] 어쩌나\" 형태의 제목과 \"~는 어떻게 되는 건가요?\" 질문 첫마디, 앵커 정면 화면에 손글씨 감정 자막, 수치 비교 3단계 설명 구조. 주제 힘이 큰 사건에서 가장 효과가 있을 것으로 보임.",
    "structure": "0~19초: 서학개미 질문 → 합병 공식화·28조 지분 희석 우려 / 19~41초: 합병 비율 쟁점, 2.97주→2.53주로 15% 하락 / 41~64초: 의결권 비대칭, 머스크 20% vs 80% 통제, 테슬라 주주 영향력 축소 / 64~81초: 합병 배경 해석(자금 확보·정치 리스크 분산), 전략적 포석으로 마무리"
+  },
+  {
+   "code": "DfDs7YxT9IK",
+   "author": "mk.co.kr",
+   "x": 3.3,
+   "url": "https://www.instagram.com/reel/DfDs7YxT9IK/",
+   "kind": "릴스",
+   "metric": 11319,
+   "topic": "연준 FOMC 발언",
+   "ctrl": {
+    "url": "https://www.instagram.com/reel/DfEd95XAPOt/",
+    "x": 0.8,
+    "metric": 2817
+   },
+   "hook_type": "인물 발언 직접 노출과 사건 속보 (연준 의장 원본 기자회견)",
+   "hook_hit": "첫 말은 연준 의장의 영어 발언 \"Good day. This morning, the FOMC decided to maintain the target rate...\"이고, 자막은 \"안녕하십니까\"입니다. 표지에는 \"케빈 워시 연준 의장 주요 발언 총정리\"라고 적혀 있습니다.",
+   "differences": [
+    "뜬 글은 새 연준 의장(케빈 워시)이 처음 나선 FOMC라는 시점의 사건이고, 그 인물의 육성을 한글 자막으로 그대로 보여 줍니다. 비교 글은 크리에이터가 직접 설명하는 지역 임장 콘텐츠입니다.",
+    "뜬 글 표지는 인물 이름과 직함, '총정리'라는 약속을 담았고 얼굴이 크게 나옵니다. 비교 글 표지는 '6억?'이라는 가격 질문과 '이유가 있다'는 호기심형 문구입니다.",
+    "뜬 글은 391초로 길어도 컷이 13개이고 한 사람이 말하는 한 장면입니다. 비교 글은 1058초에 컷이 66개이고, 도입에서 미리보기 36초 뒤에 본 영상이 이어지는 구조입니다. 두 글 모두 길지만 뜬 글이 상대적으로 짧습니다.",
+    "캡션은 둘 다 짧습니다. 뜬 글은 출처(Federal Reserve)와 이벤트 해시태그(#10월FOMC #FOMC)를 적었고, 비교 글은 한 줄 문장과 지역 태그를 적었습니다."
+   ],
+   "why": "금리 결정 당일 새 의장의 발언이라는 시의성과 인물 이름값 덕분에 검색·관심 수요가 컸을 가능성이 큽니다. 반면 향동은 낯선 지역이라는 점이 비교 글에 불리했을 수 있습니다. 다만 형식 효과와 주제 효과를 분리해 확인하기는 어렵습니다.",
+   "topic_power": "높음",
+   "copyable": "표지에 '인물명+직함+총정리'를 큰 글자로 올리는 방식, 원본 발언 영상에 한글 번역 자막을 붙이는 방식, 출처와 이벤트 해시태그를 적는 방식은 가져다 쓸 수 있습니다. 다만 효과의 대부분은 FOMC와 새 의장이라는 사건에서 나왔을 가능성이 큽니다.",
+   "structure": "0~40초: 금리 동결(3.75~4%)과 성장·고용·물가 판단을 의장 발언으로 전달 / 52~116초: 경제를 \"창밖을 보듯 현실을 심문한다\"는 말, GDP 상향(1.8→2.4%), 3분기 3% 이상 성장, 투자 호조 / 119~153초: 실업률과 실업수당 청구, 물가가 6년 가까이 목표 위라는 점 / 153초 이후: 물가 안정 책임, 금융·신용 여건 변화. 이 구간은 발언을 시간순으로 늘어놓은 구조이고, 총 391초 중 앞 172초만 확인됩니다."
   },
   {
    "code": "Dd5el3wRZpN",
