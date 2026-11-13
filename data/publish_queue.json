@@ -3219,457 +3219,6 @@
  ],
  "ideas": [
   {
-   "title": "젠슨 황 사임, 네오클라우드로 번진 불똥",
-   "concept": "엔비디아 본주가 아니라 엔비디아 칩에 기대 사업하는 회사들이 더 크게 맞았다는 점을 프리마켓 낙폭으로 보여준다. 한국 시장 파급은 확인 필요로 짧게 마무리한다. (공식: 숫자는 둘을 맞붙여서)",
-   "why_now": "사임 확정 직후 프리마켓에서 네비우스 -20.1%, 코어위브 -13.6%가 나왔다. 엔비디아 본주 외 파급 범위를 보여주는 새 각도다.",
-   "tag": "AI 반도체",
-   "sources": [
-    "https://kr.investing.com/news/stock-market-news/article-2173066",
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4444507",
-    "https://x.com/DeItaone/status/2120880061985243640"
-   ],
-   "bg": "Jensen Huang",
-   "bg_alt": "Nvidia headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "젠슨 황 사임에\n네비우스 **-20%**\n코어위브 -14%",
-     "number": "-20.1%",
-     "label": "네비우스 프리마켓",
-     "sub": "코어위브 -13.6%, 네오클라우드 ETF -12.5%"
-    },
-    {
-     "type": "질문형",
-     "title": "CEO 한 명 떠났는데\n왜 **네비우스**가\n20% 빠졌나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "엔비디아 -10%보다\n네비우스는 **-20%**\n불똥이 더 컸다",
-     "number": "-20%",
-     "label": "프리마켓 낙폭",
-     "sub": "엔비디아 시간외는 약 -10%"
-    }
-   ],
-   "forms": [
-    "bars",
-    "news"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "프리마켓 낙폭(%), 수치는 프리마켓 기준",
-     "bars": [
-      {
-       "label": "네비우스",
-       "value": 20.1,
-       "hi": true
-      },
-      {
-       "label": "코어위브",
-       "value": 13.6
-      },
-      {
-       "label": "네오클라우드 ETF",
-       "value": 12.5
-      },
-      {
-       "label": "IREN",
-       "value": 8.1
-      }
-     ]
-    }
-   },
-   "id": "20261113-0707-i1",
-   "created_at": "2026-11-13T07:07:32+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261113-0707-i1/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261113-0707-i1/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261113-0707-i1/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-0707-i1/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-0707-i1/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-0707-i1/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261113-0707-i1/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261113-0707-i1/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261113-0707-i1/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-0707-i1/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-0707-i1/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-0707-i1/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261113-0707-i1/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261113-0707-i1/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261113-0707-i1/3-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-0707-i1/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-0707-i1/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-0707-i1/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "삼성 AI 안경 65만원, 뭐가 되나",
-   "concept": "제품 소개보다 '65만원으로 통역과 관광 가이드가 되는 안경'이라는 쓰임새와 가격 중심으로 푼다. 마지막 장은 확인된 것과 시장 반응은 아직 모르는 것으로 닫는다. (공식: 끝 장은 닫힌 결론 한 줄)",
-   "why_now": "어젯밤 조선비즈, 한국일보, 한국경제, 머니투데이, 동아, 이데일리가 일제히 보도했다. 메타에 도전장을 낸 신제품이라 대중 관심이 높다.",
-   "tag": "IT, 소비",
-   "sources": [
-    "https://biz.chosun.com/it-science/ict/2026/11/12/K5YX5HDGAFGVRO2KXWPYDXW75M/",
-    "https://www.mt.co.kr/tech/2026/11/12/2026111214212322214",
-    "https://www.donga.com/news/Economy/article/all/20261112/135016503/1"
-   ],
-   "bg": "Samsung Galaxy glasses",
-   "bg_alt": "smart glasses",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "삼성이 안경을 냈다\n**65만원** AI 안경\n메타에 도전장",
-     "number": "65만원",
-     "label": "국내 출시가 65만~70만원",
-     "sub": "구글 제미나이 탑재, 안경 30종"
-    },
-    {
-     "type": "질문형",
-     "title": "스마트폰 다음은\n**안경**일까\n삼성이 먼저 냈다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "한 시간 써도 평소\n안경 같다는 **AI 안경**\n통역까지 된다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "editorial",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261113-0707-i2",
-   "created_at": "2026-11-13T07:07:32+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261113-0707-i2/1-editorial-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261113-0707-i2/1-editorial-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261113-0707-i2/1-editorial-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261113-0707-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261113-0707-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261113-0707-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261113-0707-i2/2-editorial-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261113-0707-i2/2-editorial-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261113-0707-i2/2-editorial-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261113-0707-i2/3-editorial-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261113-0707-i2/3-editorial-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261113-0707-i2/3-editorial-plex.jpg"
-    }
-   ]
-  },
-  {
-   "title": "연준 해맥 \"금리 더 올려야\", 10년물 5%",
-   "concept": "연준 인사가 또 인상론을 꺼냈고 10년물이 다시 5%를 넘었다는 한 가지 사건으로 간다. 금리가 오르면 환율과 성장주가 흔들리기 쉽다는 일반 원리를 엔비디아 쇼크 날과 연결해 푼다. (공식: 한 주인공이 장마다 한 걸음씩)",
-   "why_now": "블룸버그가 해맥 발언을, CNBC가 10년물 5% 복귀를 보도했다. 시세상 10년물은 11/12 기준 5.1%다. 앞선 금리 글 이후 새 발언이 나온 후속이다.",
-   "tag": "금리",
-   "sources": [
-    "https://www.bloomberg.com/news/articles/2026-11-12/fed-s-hammack-says-more-restrictive-rates-are-needed",
-    "https://www.cnbc.com/2026/11/12/us-treasurys-bonds-yields.html"
-   ],
-   "bg": "Beth Hammack",
-   "bg_alt": "Federal Reserve building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "미 10년물 금리\n다시 **5%** 돌파\n연준 인사 인상론",
-     "number": "5%",
-     "label": "미 10년물 금리",
-     "sub": "유가 상승과 인상 기대 속에 5% 복귀"
-    },
-    {
-     "type": "질문형",
-     "title": "엔비디아 쇼크 날\n금리까지 **5%** 넘자\n연준은 뭐라 했나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "연준 인사가 **또**\n금리 인상을 꺼냈다\n뒤처지면 더 크게",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "quote",
-    "news"
-   ],
-   "extra": {
-    "quote": {
-     "label": "연준 해맥 총재",
-     "quote": "더 긴축적인 금리가 필요하다.",
-     "by": "해맥 연준 총재"
-    }
-   },
-   "id": "20261113-0707-i3",
-   "created_at": "2026-11-13T07:07:32+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261113-0707-i3/1-quote-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261113-0707-i3/1-quote-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261113-0707-i3/1-quote-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-0707-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-0707-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-0707-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261113-0707-i3/2-quote-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261113-0707-i3/2-quote-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261113-0707-i3/2-quote-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-0707-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-0707-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-0707-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261113-0707-i3/3-quote-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261113-0707-i3/3-quote-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261113-0707-i3/3-quote-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-0707-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-0707-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-0707-i3/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
    "title": "젠슨 황 퇴진, 엔비디아 시총 801조원 증발",
    "concept": "주인공을 젠슨 황 한 명으로 두고 퇴진, 장중 시총 4조 달러 붕괴, 임시 CEO 체제 순으로 한 걸음씩 풀고, 끝 장은 확인된 것(임시 CEO 선임)과 아직 모르는 것(정식 후임)으로 닫는다. 첫 장에 한국 투자자에게 CEO 리스크와 AI 수요를 나눠서 봐야 한다는 점을 먼저 둔다. (공식: 한 주인공이 장마다 한 걸음씩)",
    "why_now": "뉴스 21곳이 다룬 오늘 가장 큰 소식이고, 시총 증발액은 뉴시스가 장중 801조원으로 보도했다. 한국장 개장 전에 삼성전자, SK하이닉스 HBM 공급망 영향을 짚기 좋다.",
@@ -8883,6 +8432,398 @@
      "form": "paper",
      "font": "gowun",
      "path": "20261113-2101-i3/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "미국 10월 적자 4,040억 달러",
+   "concept": "10월 기준 역대 최대 적자를 지출 840억 증가, 적자 1,200억 증가로 맞붙여 보여 주고, 국채 금리가 뛴 날과 연결한다. 첫 장에서 나랏빚이 늘면 금리와 달러에 부담이 된다는 점과 달러-원 환율을 보는 사람에게 왜 중요한지를 한 줄로 푼다. (공식: 숫자는 둘을 맞붙여서)",
+   "why_now": "코베이시 레터가 20:48에 속보로 전했고 조회가 4.7만이다. 국채 금리가 4년여 만에 최대폭으로 오른 날과 겹친다. 연준 이야기와는 달리 재정 쪽 각도다.",
+   "tag": "미국 재정",
+   "sources": [
+    "https://x.com/KobeissiLetter/status/2121208607102373944"
+   ],
+   "bg": "US Treasury building",
+   "bg_alt": "US Capitol building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "미국 정부 10월 한 달\n**4,040억 달러** 적자\n10월 기준 역대 최대",
+     "number": "4,040억 달러",
+     "label": "미국 정부 10월 한 달 적자",
+     "sub": "10월 기준 역대 최대, 코베이시 레터 보도"
+    },
+    {
+     "type": "질문형",
+     "title": "한 달 적자 4,040억\n이 돈은 **누가**\n빌려주나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "지출 840억 늘었는데\n적자는 **1,200억**\n더 늘었다",
+     "number": "1,200억 달러",
+     "label": "1년 전보다 늘어난 적자",
+     "sub": "정부 지출은 7,730억 달러, 840억 달러 증가"
+    }
+   ],
+   "forms": [
+    "bignum",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/13",
+     "headlines": [
+      "10월 적자 4,040억 달러, 역대 최대",
+      "적자 1년 전보다 1,200억 달러 늘어",
+      "지출 7,730억 달러, 840억 달러 증가"
+     ]
+    }
+   },
+   "id": "20261113-2201-i1",
+   "created_at": "2026-11-13T22:01:39+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261113-2201-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261113-2201-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261113-2201-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261113-2201-i1/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261113-2201-i1/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261113-2201-i1/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261113-2201-i1/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261113-2201-i1/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261113-2201-i1/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261113-2201-i1/3-bignum-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261113-2201-i1/3-bignum-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261113-2201-i1/3-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261113-2201-i1/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261113-2201-i1/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261113-2201-i1/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "코어위브 채권 금리 16% 돌파",
+   "concept": "AI 투자가 빚으로 굴러간다면 어떻게 되는지 코어위브 한 곳을 따라간다. 채권 금리 16%, MS 계약 재검토 보도, 확인된 것과 아직 모르는 것 순으로 풀고, 금리 16%는 돈 떼일 위험을 크게 본다는 뜻이라고 쉬운 말로 푼다. 한국 AI 반도체 투자자가 볼 대목을 마지막에 붙인다. (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "코어위브 일부 채권 금리가 16%를 넘었고, MS가 계약을 재검토한다는 보도의 여파라고 전해졌다. 골드만삭스의 AI 투자 효과 2027년 정점 전망과도 맞물린다.",
+   "tag": "AI 투자",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5veHFrSVhFNDZabGhDai1lZzdZZkRoYVhZN29JVXhrdlpTQU9iX2hONFRRMHBvS1RIeU9",
+    "https://kr.investing.com/news/stock-market-news/article-2174982"
+   ],
+   "bg": "CoreWeave data center",
+   "bg_alt": "Microsoft headquarters",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "코어위브 일부 채권\n금리가 **16%**\n넘어섰다",
+     "number": "16%",
+     "label": "코어위브 일부 채권 금리",
+     "sub": "AI 빚에 경고등이 켜졌나"
+    },
+    {
+     "type": "질문형",
+     "title": "AI 투자, 혹시\n**빚**으로 굴러가나\n코어위브 채권 16%",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "MS 계약 재검토 보도에\n코어위브 채권이\n**16%** 넘었다",
+     "number": "16%",
+     "label": "MS 계약 재검토 보도의 여파",
+     "sub": "재검토 여부는 확인 전"
+    }
+   ],
+   "forms": [
+    "news",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261113-2201-i2",
+   "created_at": "2026-11-13T22:01:39+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261113-2201-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261113-2201-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261113-2201-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261113-2201-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261113-2201-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261113-2201-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261113-2201-i2/3-bignum-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261113-2201-i2/3-bignum-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261113-2201-i2/3-bignum-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "MS 365 먹통, 하루 멈춘 업무",
+   "concept": "아웃룩 등 MS 365가 글로벌로 먹통이 된 사건을 MS 한 곳을 주인공으로 따라간다. 무슨 일, 기업과 정부 업무 차질, 한국 직장인 피해, 클라우드 한 곳 의존의 약점, 원인과 피해 규모는 아직 확인 전이라는 점 순서로 쓴다. (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "FT 인스타 글이 시간당 좋아요 8,904개이고 관련 릴스는 평소의 30배다. CNBC, BBC, 포브스가 다뤘고 한국일보도 직장인 피해를 보도했다. 우리 계정이 아직 다루지 않은 새 주제다.",
+   "tag": "IT 장애",
+   "sources": [
+    "https://www.cnbc.com/2026/11/12/microsoft-outage-outlook-aws-google.html",
+    "https://v.daum.net/v/20261113190205934"
+   ],
+   "bg": "Microsoft Outlook",
+   "bg_alt": "Microsoft headquarters",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "아웃룩 먹통에\n전 세계 업무가\n**멈췄다**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "클라우드 한 곳이\n멈추면 회사는\n**어디까지** 멈출까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "MS가 멈추자\n한국 직장인은\n**전화기**만 붙잡았다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261113-2201-i3",
+   "created_at": "2026-11-13T22:01:39+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261113-2201-i3/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261113-2201-i3/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261113-2201-i3/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261113-2201-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261113-2201-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261113-2201-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261113-2201-i3/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261113-2201-i3/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261113-2201-i3/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261113-2201-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261113-2201-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261113-2201-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261113-2201-i3/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261113-2201-i3/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261113-2201-i3/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261113-2201-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261113-2201-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261113-2201-i3/3-news-myeongjo.jpg"
     }
    ]
   }
