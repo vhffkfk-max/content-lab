@@ -281,10 +281,35 @@ def run_cycle():
     drafts = [r for r in todo if r["job"] == "draft"][-3:]
     for r in drafts:
         topic, pick = r["args"].get("topic", ""), r["args"].get("pick", "")
+        if pick.startswith("thform:"):   # 쓰레드 연구소 '이 형태로 쓰레드 글 만들기' 버튼 (draft-create 길로 옴)
+            py("thread_post.py", "--form", pick[7:8], "--match", "--push", timeout=15 * 60)
+            did.append(f"쓰레드 글 {pick[7:8]}형")
+            continue
         py("-m", "publish.draft_card", *(["--topic", topic, "--style", pick[6:]] if pick.startswith("style:") else ["--pick", pick] if pick else ["--topic", topic] if topic else []))
         did.append(f"카드뉴스 초안 {pick or topic}")
     if not drafts:
         auto_ideas(state, did)
+
+    if slot_once(state, "formauto", (8,)):   # 매일 08시: 쓰레드 연구소 추천 형태 1·2위로 황소개미 쓰레드 글 + 1위 주제 카드뉴스 초안 → 사이트·봇 (2026-11-13)
+        try:
+            reco = json.loads((ROOT / "output" / "site" / "thl_reco.json").read_text(encoding="utf-8"))
+            reco = reco[0] if isinstance(reco, list) else reco
+            forms = [p["type"] for p in reco.get("picks", [])[:2]]
+        except (OSError, ValueError, KeyError, IndexError):
+            forms = []
+        for f in forms:
+            py("thread_post.py", "--form", f, "--match", "--auto", "--send", "--push", timeout=15 * 60)
+        if forms:
+            sys.path.insert(0, str(ROOT))
+            try:
+                from thread_post import match_pick
+                _, hp, _ = match_pick(forms[0])
+                topic = (hp or {}).get("topic") or (hp or {}).get("title") or ""
+            except Exception as e:
+                topic = ""
+                log("⚠️ 아침 카드뉴스 주제 고르기 실패:", e)
+            py("-m", "publish.draft_card", *(["--topic", topic] if topic else []))
+            did.append(f"아침 자동 콘텐츠 (쓰레드 {'·'.join(forms)}형 + 카드뉴스)")
 
     if slot_once(state, "accounts", (7, 12, 18)):   # 계정별 콘텐츠: 소재 정제 → 준비된 계정 글·영상 대본 (acclab, 계정당 하루 3건)
         refresh_news()

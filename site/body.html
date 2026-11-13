@@ -258,6 +258,17 @@ a.row:hover .row-main{text-decoration:underline}
 @media (max-width:860px){.side-hide{display:none}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 /* 처음 화면 */
+.clamp4{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer}
+.fpost{display:grid;gap:8px;align-content:start;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-card);padding:16px}
+.fpost .job-ch{display:block;line-height:1.5}
+.fpost .job-ch b{color:var(--text)}
+.fpost-text{margin:0;font-size:15px;line-height:1.6;white-space:pre-line}
+.fpost .job-acts{justify-content:flex-start}
+.pick-grid .fpost{max-width:none}
+.job-acts.tl-make{justify-content:flex-start;margin-top:10px}
+.tl-made{margin-top:10px}
+.tl-made>summary{cursor:pointer;font-size:13px;font-weight:600;color:var(--muted);padding:4px 0}
+.tl-made .fpost{margin-top:8px;padding:12px}
 .clamp2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .sec-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .sec-head h2{margin:0}
@@ -835,6 +846,11 @@ ul.gd-card{padding-left:36px;line-height:1.8}
         </div>
         <!-- 2026-11-12 개편: 들어오자마자 '오늘 남은 발행' → '지금 쓸 거리' → '지금 뜨는 남의 글'. 나머지는 맨 아래 접기 -->
         <section class="sec" id="home-todo-sec" aria-label="오늘 남은 발행"><div id="home-todo-head"></div><div class="todo-grid" id="home-todo"></div></section>
+        <section class="sec" id="home-made-sec" hidden>
+          <div class="sec-head"><h2>오늘 만들어 둔 쓰레드 글</h2><button type="button" class="btn small" id="home-made-lab">쓰레드 연구소 →</button></div>
+          <p class="note">매일 아침 8시 쓰레드 연구소 추천 형태 1·2위로 자동으로 만들어요. 연구소에서 버튼으로 더 만들 수 있어요. 복사해서 올리면 돼요.</p>
+          <div class="pick-grid" id="home-made"></div>
+        </section>
         <section class="sec" id="home-pick-sec">
           <div class="sec-head"><h2>② 지금 쓸 거리</h2><button type="button" class="btn small" id="home-pick-all">지난 글감까지 보기 →</button></div>
           <p class="note">30분마다 새로 골라요. 하나 골라서 <b>초안 복사</b> 하거나 <b>카드뉴스 초안</b>을 만드세요.</p>
@@ -2346,6 +2362,37 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
   }
 
   // 카드뉴스 초안 만들기 → 깃허브 draft-create.yml 이 내 PC에 요청 → PC(Max 구독)가 만들어 텔레그램 봇으로 보냄 (인스타 발행은 안 함)
+  // 쓰레드 연구소 형태로 황소개미 쓰레드 글 (카드뉴스 초안과 같은 요청 길: draft-create → PC local_ai 가 thread_post.py --form)
+  function formBtn(letter, name) {
+    const label = '이 형태로 쓰레드 글 만들기', b = el('button', 'btn small primary', label); b.type = 'button';
+    const fail = msg => { b.disabled = false; b.textContent = label; alert(msg); };
+    b.addEventListener('click', async () => {
+      if (!fb.key && !(await connectLab())) return;
+      if (!confirm(`'${letter} ${name}' 형태로 황소개미 쓰레드 글을 만들까요?\n지금 뜨는 주제에 맞는 글감을 골라 1~3분 안에 만들어요. 이 카드 아래와 '오늘 할 일'에 떠요(새로고침).`)) return;
+      b.disabled = true; b.textContent = '요청하는 중…';
+      try {
+        const r = await ghApi('actions/workflows/draft-create.yml/dispatches', { method: 'POST', body: JSON.stringify({ ref: 'main', inputs: { topic: '', pick: 'thform:' + letter } }) });
+        if (r.status === 204) b.textContent = '요청했어요 — 1~3분 뒤 새로고침';
+        else fail(ghFail(r.status));
+      } catch (e) { fail('실행 요청 실패 — 인터넷 연결을 확인해 주세요'); }
+    });
+    return b;
+  }
+  // 형태로 만든 쓰레드 글 한 개 (복사 버튼)
+  function formPost(x, withPick) {
+    const c = el('article', 'fpost'), meta = el('p', 'job-ch');
+    meta.append(el('b', null, `${x.form} ${x.form_name || ''}`), ` · ${x.time}${x.auto ? ' · 아침 자동' : ''}`);
+    if (withPick) meta.append(` · ${x.pick}`);
+    const body = el('p', 'fpost-text clamp4', x.text); body.title = '눌러서 펼치기';
+    body.addEventListener('click', () => body.classList.toggle('clamp4'));
+    const acts = el('div', 'job-acts');
+    if ((x.parts || []).length > 1) x.parts.forEach((pt, i) => acts.append(copyBtn(`${i + 1}칸 복사`, pt, i ? 'btn small' : 'btn small primary')));
+    else acts.append(copyBtn('복사', x.text, 'btn small primary'));
+    c.append(meta, body);
+    if ((x.check || []).length) c.append(el('p', 'note', '올리기 전 확인: ' + x.check.join(' · ')));
+    c.append(acts);
+    return c;
+  }
   function draftBtn(topic) {
     const label = '카드뉴스 초안 만들기', b = el('button', 'btn small', label); b.type = 'button';
     const fail = msg => { b.disabled = false; b.textContent = label; alert(msg); };
@@ -2947,8 +2994,17 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
       box.replaceChildren(...cards.map(c => c[1]));
     });
   }
+  function drawMade() {
+    const sec = document.getElementById('home-made-sec'), box = document.getElementById('home-made'); if (!sec) return;
+    const today = isoDay(kst()).slice(5).replace('-', '/');
+    const list = (rows('thread_posts') || []).filter(x => x.form && String(x.time || '').startsWith(today)).slice(0, 4);
+    sec.hidden = !list.length;
+    box.replaceChildren(...list.map(x => formPost(x, true)));
+    const b = document.getElementById('home-made-lab');
+    if (b && !b.dataset.on) { b.dataset.on = '1'; b.addEventListener('click', () => goTo('thlab', 'tl-reco')); }
+  }
   function drawHome(recs) {
-    drawPubBoard(); drawTodo();
+    drawPubBoard(); drawTodo(); drawMade();
     const allBtn = document.getElementById('home-pick-all');
     if (allBtn && !allBtn.dataset.on) { allBtn.dataset.on = '1'; allBtn.addEventListener('click', () => goTo('hotnow')); }
     const jobs = [], next = [], dot = c => { const i = el('i', 'dot'); i.style.background = c === 'accent' ? 'var(--accent)' : `var(--ch-${c})`; return i; };
@@ -5229,6 +5285,11 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
         const ul = el('ul'); (p.why || []).forEach(w => ul.append(el('li', null, w))); c.append(ul);
         const x = ai[p.type]; if (x && x.template) c.append(el('p', 'note', `틀: ${x.template}`));
         if (p.example) { const b = el('button', 'btn small', '지금 크는 예시 글 보기'); b.type = 'button'; b.addEventListener('click', () => openDetail(p.example, { label: `${p.type} ${p.name} 예시`, collected: R.at, ai: x ? x.why : null }, b)); c.append(b); }
+        const make = el('div', 'job-acts tl-make');
+        make.append(formBtn(p.type, p.name), draftBtn(p.topic || p.name));
+        c.append(make);
+        const mine = (rows('thread_posts') || []).filter(y => y.form === p.type).slice(0, 2);
+        if (mine.length) { const d = el('details', 'tl-made'); d.open = true; d.append(el('summary', null, `이 형태로 만든 글 ${mine.length}개`), ...mine.map(y => formPost(y, true))); c.append(d); }
         g.append(c);
       });
       boxes[1].replaceChildren(el('p', 'note', `최근 48시간 빨리 크는 글 ${R.hot_n}개 기준 · 뜨는 주제 ${(R.hot_topics || []).join(', ')} · ${R.at}`), g);

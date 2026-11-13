@@ -4,6 +4,8 @@
     python thread_post.py --idx 2 --styles B --slot "11/01 17:10" --rid abc123 --push   # 사이트 버튼 (thread_listen.py 가 부름)
     python thread_post.py --idx 0 --styles DE             # 짧은 글 D·E
     python thread_post.py --idx 0 --styles A --dry-run    # Claude 에게 넘길 글만 보기
+    python thread_post.py --form G --match --push         # 쓰레드 연구소 형태 G 로 (추천 주제와 맞는 글감 자동 선택)
+    python thread_post.py --form G --match --auto --send  # 매일 아침 자동 (local_ai.py) — 봇으로도 보냄
 
 - 말투·형식: ~/.content-lab-ai/threads_abc.md (Claude.ai 프로젝트 3곳의 지침 — 저장소가 공개라 PC에만 둠). 없으면 config/threads_abc.md
 - 재료: 지금 쓸 거리 + 근거 링크의 기사 본문 + 같은 주제 최근 기사 제목 (자료에 없는 숫자는 못 쓰게 함)
@@ -40,6 +42,7 @@ GUIDES = [Path.home() / ".content-lab-ai" / "threads_abc.md", ROOT / "config" / 
 DISCLAIMER = "(정보 제공용이며 투자 권유가 아닙니다)"
 MODEL = "claude-opus-5-5"
 KEEP = 300
+FORM_STYLE = {"G": "D", "H": "D", "D": "D", "F": "D", "B": "E", "C": "E", "E": "E", "A": "A", "I": "A"}   # 형태 길이 → 칸 구성
 SHORT = {"D": 1, "E": 2}   # 짧은 글의 칸 수
 SHORT_FIRST, SHORT_LAST = 60, 300   # 첫 칸·E 둘째 칸 글자 수 상한 (경제 글 4,427개 분석: 첫 칸 40자 안팎이 가장 잘 터짐)
 UA = {"User-Agent": "Mozilla/5.0 (content-lab research bot)"}
@@ -208,7 +211,48 @@ def related(pick, n=12):
     return [f"- {r['title']} ({r.get('source', '')})" for k, r in hits[:n] if k >= 2]
 
 
-def write(pick, styles, names, guide, done):
+def _one(name):
+    d = load(SITE / f"{name}.json", {})
+    return (d[0] if isinstance(d, list) and d else d) or {}
+
+
+def form_info(letter):
+    """쓰레드 연구소의 형태 하나 → (형태 정보, 프롬프트에 넣을 글). threads_types.py 결과(thl_types·thl_reco·thl_ai)를 그대로 씀."""
+    t = next((x for x in _one("thl_types").get("types", []) if x.get("type") == letter), None)
+    if not t:
+        return None, ""
+    r = next((x for x in _one("thl_reco").get("picks", []) if x.get("type") == letter), {})
+    x = next((x for x in _one("thl_ai").get("types", []) if x.get("type") == letter), {})
+    lines = ["## 이 글 형태 (쓰레드 연구소 추천 — 꼭 이 모양과 길이로)", f"{letter} {t['name']}: {t.get('desc', '')}",
+             f"길이: {r.get('best_length') or t.get('best_length', '')}"]
+    if x.get("template"):
+        lines.append(f"틀: {x['template']}")
+    if x.get("hooks"):
+        lines.append("첫 줄 느낌 (그대로 쓰지 말 것): " + " / ".join(x["hooks"][:2]))
+    if x.get("avoid"):
+        lines.append(f"하지 말 것: {x['avoid']}")
+    ex = (r.get("example") or {}).get("text")
+    if ex:
+        lines.append(f"지금 크는 같은 형태 남의 글 (모양만 참고, 문장·사실은 베끼지 말 것): {ex[:300]}")
+    return t, "\n".join(lines) + "\n"
+
+
+def match_pick(letter=""):
+    """형태 추천의 주제(예: AI·반도체)와 가장 잘 맞는 최신 '지금 쓸 거리' → (run, pick, idx). 없으면 1번."""
+    hist = load(SITE / "hot_now.json", [])
+    run = next((h for h in hist if h.get("picks")), None)
+    if not run:
+        return None, None, 0
+    R = _one("thl_reco")
+    r = next((x for x in R.get("picks", []) if x.get("type") == letter), None) or next(iter(R.get("picks", [])), {})
+    words = [w for w in re.split(r"[\s·,/]+", f"{r.get('topic', '')}") if len(w) >= 2]
+    picks = run["picks"][:3]
+    score = [sum(w.lower() in f"{p.get('topic', '')} {p.get('title', '')} {p.get('why_now', '')}".lower() for w in words) for p in picks]
+    i = max(range(len(picks)), key=lambda k: (score[k], -k))
+    return run, picks[i], i
+
+
+def write(pick, styles, names, guide, done, extra=""):
     """글마다 따로 동시에 쓰고, 끝나는 대로 done(style, post, thin) 을 부른다."""
     G = load(SITE / "growth_plan.json", {})
     G = G[0] if isinstance(G, list) and G else G
@@ -227,10 +271,10 @@ def write(pick, styles, names, guide, done):
         "## 쓸 거리", f"주제: {pick.get('topic', '')}", f"제목: {pick.get('title', '')}", f"왜 지금: {pick.get('why_now', '')}",
         f"편집장 초안({pick.get('channel', '')}용):\n{pick.get('draft', '')}", f"근거 링크: {' '.join(pick.get('sources') or []) or '없음'}", "",
         "## 기사 본문 (자료)", *(arts or ["못 읽음 — 위 쓸 거리와 아래 제목에 있는 사실만 쓸 것"]), "",
-        "## 같은 주제 최근 기사 제목", *(related(pick) or ["- 없음"]), ""])
+        "## 같은 주제 최근 기사 제목", *(related(pick) or ["- 없음"]), "", extra])
 
     def one(s):
-        prompt = f"{head}\n위 쓸 거리로 {s}({names.get(s, s)}) 글을 하나 써 줘. style 에는 {s} 글자만."
+        prompt = f"{head}\n위 쓸 거리로 {s}({names.get(s, s)}) 글을 하나 써 줘. style 에는 {s} 글자만." + (" '이 글 형태'의 틀과 길이를 꼭 지켜 줘." if extra else "")
         msgs = [{"role": "user", "content": prompt}]
         for attempt in range(2):
             r = anthropic.Anthropic().messages.parse(model=MODEL, max_tokens=6000, system=system, output_config={"effort": "medium"},
@@ -280,9 +324,22 @@ def main():
     ap.add_argument("--rid", default="")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--push", action="store_true", help="글이 끝날 때마다 바로 푸시 (thread_listen.py 용)")
+    ap.add_argument("--form", default="", help="쓰레드 연구소 형태 A~I")
+    ap.add_argument("--match", action="store_true", help="형태 추천 주제와 맞는 글감을 자동으로 고름")
+    ap.add_argument("--auto", action="store_true", help="매일 아침 자동으로 만든 글 표시")
+    ap.add_argument("--send", action="store_true", help="다 쓰면 핫코노미 봇으로 (올릴 글)")
     a = ap.parse_args()
     sys.stdout.reconfigure(encoding="utf-8")
-    run, pick = find_pick(a.idx, a.slot)
+    a.form = a.form.upper()[:1]
+    form, extra = form_info(a.form) if a.form else (None, "")
+    if a.form and not form:
+        return print(f"⚠️ 쓰레드 연구소에 형태 {a.form} 가 없어요")
+    if a.match:
+        run, pick, a.idx = match_pick(a.form)
+    else:
+        run, pick = find_pick(a.idx, a.slot)
+    if form and a.styles == "ABC":
+        a.styles = FORM_STYLE.get(a.form, "D")
     if not pick:
         return print(f"⚠️ '지금 쓸 거리' {a.idx + 1}번을 못 찾았어요")
     guide = next(p for p in GUIDES if p.exists()).read_text(encoding="utf-8")
@@ -298,14 +355,22 @@ def main():
         now = datetime.now(KST)
         row = {"rid": a.rid, "at": now.isoformat(timespec="seconds"), "time": now.strftime("%m/%d %H:%M"), "slot": run["time"],
                "idx": a.idx, "pick": pick["title"], "style": s, "label": names.get(s, s), "parts": [x.strip() for x in p.parts],
-               "text": "\n\n".join(x.strip() for x in p.parts), "take": p.take, "check": p.check, "tells": tells(p.parts, s), "thin": thin}
+               "text": "\n\n".join(x.strip() for x in p.parts), "take": p.take, "check": p.check, "tells": tells(p.parts, s), "thin": thin,
+               **({"form": a.form, "form_name": form["name"], "auto": a.auto} if form else {})}
         with lock:
             new.append(row)
             OUT.write_text(json.dumps([row] + load(OUT, [])[: KEEP - 1], ensure_ascii=False, indent=1), encoding="utf-8")
             if a.push:
                 pushed.append(push_out())
 
-    results = write(pick, styles, names, guide, done)
+    results = write(pick, styles, names, guide, done, extra)
+    if a.send and new:   # 올릴 글만 봇으로: 안내 1통(조용히) + 글마다 1통 (길게 눌러 복사)
+        from publish import notify
+        for x in new:
+            notify.send(f"🧵 황소개미 쓰레드 · {x.get('form', '')} {x.get('form_name', '')} · {pick['title'][:40]}\n아래 글을 길게 눌러 복사해 올리세요."
+                        + ("\n\n올리기 전 확인\n" + "\n".join(f"• {c}" for c in x["check"]) if x.get("check") else ""), silent=True)
+            for part in x["parts"]:
+                notify.send(part)
     if new:
         print(f"✅ 쓰레드 글 {len(new)}개 ({''.join(x['style'] for x in new)}) · {pick['title'][:30]}"
               + "".join(f" · {x['style']} AI 티 남음: {', '.join(x['tells'])}" for x in new if x["tells"]))
