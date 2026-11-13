@@ -19,15 +19,6 @@
  },
  {
   "geo": "KR",
-  "term": "블랙웰",
-  "traffic": 1000,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "[차이나워치] 젠슨황 후폭풍…美 AI칩 통제 강화에 中 확보전",
-  "news_link": "https://www.yonhapnewstv.co.kr/news/MYH20261113164645EQk"
- },
- {
-  "geo": "KR",
   "term": "구본현",
   "traffic": 500,
   "topics": "",
@@ -37,12 +28,12 @@
  },
  {
   "geo": "KR",
-  "term": "대학수학능력시험",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "행정안전부, 2027학년도 수능 대비 지진 대응태세 철저히 점검한다",
-  "news_link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156789140&pWise=main&pWiseMain=L1"
+  "term": "주간조선",
+  "traffic": 500,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "반도체 물 ‘속도전’의 숙제…가뭄 검증도, 농민 설득도, 기업 절수도 ‘아직’",
+  "news_link": "https://www.khan.co.kr/article/202611130600011"
  },
  {
   "geo": "KR",
@@ -50,8 +41,8 @@
   "traffic": 200,
   "topics": "AI·반도체",
   "econ": true,
-  "news_title": "‘AI 안경 의혹’ 세무사 수석 합격자, CCTV는 없었지만 감독관 바로 앞에서 시험",
-  "news_link": "https://www.khan.co.kr/article/202611131019001"
+  "news_title": "63회 세무사시험 수석 한원석씨 “매일 새벽 2시30분 싸주신 김밥...어머니가 합격 시켰다”",
+  "news_link": "https://www.intn.co.kr/news/articleView.html?idxno=3000154"
  },
  {
   "geo": "KR",
@@ -61,6 +52,15 @@
   "econ": false,
   "news_title": "현대백화점그룹, 익산시 '발달장애인 특화사업장' 1억원 후원",
   "news_link": "https://www.yna.co.kr/view/AKR20261113107800030"
+ },
+ {
+  "geo": "KR",
+  "term": "035420",
+  "traffic": 100,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "Naver's Q3 operating profit falls 21% as it bets on 2 trillion won deal, AI agent app and logistics subsidiary",
+  "news_link": "https://www.mt.co.kr/en/tech/2026/11/12/2026111215474393674"
  },
  {
   "geo": "KR",
@@ -91,48 +91,12 @@
  },
  {
   "geo": "US",
-  "term": "gta 6 pc",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Pre-Load Grand Theft Auto VI Now",
-  "news_link": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
- },
- {
-  "geo": "US",
-  "term": "brisbane bullets",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "New Zealand v Brisbane",
-  "news_link": "https://kayosports.com.au/en-AU/competitor/Competitor:7ohxf7wf7hyk20sdhfdhc645k/1f40zanjm4qg412oet0wdv12xp/4rhu4qs3n063e46610dvgk3uu"
- },
- {
-  "geo": "US",
-  "term": "cricbuzz",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "PAKU19 209/7 (48.1) vs INDU19 208 (Hamza Zahoor 100(108) Niqab Shafiq 2(16)) | India U19 vs Pakistan U19, 8th Match, Group A, ACC Men's U19 Asia Cup 2026 Live Cricket Stream, live scores, ball-by-ball commentary, highlights, videos, news, and more",
-  "news_link": "https://www.cricbuzz.com/live-cricket-scores/175660/indu19-vs-paku19-8th-match-group-a-acc-mens-u19-asia-cup-2026"
- },
- {
-  "geo": "US",
   "term": "friday the 13th",
-  "traffic": 500,
+  "traffic": 1000,
   "topics": "",
   "econ": false,
   "news_title": "Friday the 13th: Superstitions, history and what's next",
   "news_link": "https://www.usatoday.com/story/news/nation/2026/11/13/why-is-friday-the-13th-unlucky/92739688007/"
- },
- {
-  "geo": "US",
-  "term": "james webb space telescope",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Astronomers stunned after James Webb Space Telescope discovers the earliest pair of black hole-powered quasars",
-  "news_link": "https://www.space.com/astronomy/black-holes/astronomers-stunned-after-james-webb-space-telescope-discovers-the-earliest-pair-of-black-hole-powered-quasars"
  },
  {
   "geo": "US",
@@ -146,11 +110,38 @@
  {
   "geo": "US",
   "term": "avengers endgame encore",
-  "traffic": 100,
+  "traffic": 200,
   "topics": "",
   "econ": false,
   "news_title": "Avengers Endgame: Encore: Streaming Details, Story, Cast & What To Watch Next | Explore Disney+",
   "news_link": "https://www.disneyplus.com/explore/articles/avengers-endgame-encore"
+ },
+ {
+  "geo": "US",
+  "term": "brisbane bullets",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Brisbane Bullets beaten by Melbourne United in NBL clash",
+  "news_link": "https://localipswichnews.com.au/news/bullets-melbourne-united-defeat/"
+ },
+ {
+  "geo": "US",
+  "term": "gta 6 pc release date",
+  "traffic": 200,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "\"It's a brave new world\": GTA 6's PC port will release sooner than you think to avoid losing money to AI rip-offs, says former Rockstar tech director",
+  "news_link": "https://www.rockpapershotgun.com/its-a-brave-new-world-gta-6s-pc-port-will-release-sooner-than-you-think-to-avoid-losing-money-to-ai-rip-offs-says-former-rockstar-tech-director"
+ },
+ {
+  "geo": "US",
+  "term": "new zealand breakers",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "REPORT: Phoenix star one day, Breaker the next?",
+  "news_link": "https://www.nbl.com.au/news/report-phoenix-star-one-day-breaker-the-next"
  },
  {
   "geo": "US",
@@ -163,12 +154,21 @@
  },
  {
   "geo": "US",
-  "term": "kevin holland",
+  "term": "danielle fishel",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "UFC 334: Uros Medic vs. Kevin Holland Predictions & Odds",
-  "news_link": "https://sports.betmgm.com/en/blog/ufc/334-uros-medic-kevin-holland-predictions-odds-bm05/"
+  "news_title": "“Boy Meets World” book reveals ‘romantic’ moment between Danielle Fishel and Rider Strong",
+  "news_link": "https://www.yahoo.com/entertainment/celebrity/interviews/articles/boy-meets-world-book-reveals-143000905.html"
+ },
+ {
+  "geo": "US",
+  "term": "gta 6 countdown",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "GTA 5 Mod Turns Into GTA 6 Chaos with Random Teleports!",
+  "news_link": "https://tech.yahoo.com/videos/gta-5-mod-turns-gta-163000084.html"
  },
  {
   "geo": "US",
@@ -177,6 +177,6 @@
   "topics": "",
   "econ": false,
   "news_title": "The Super Hero Team-based PVP Shooter",
-  "news_link": "https://www.marvelrivals.com/balancepost/20261110/41667_1319209.html"
+  "news_link": "https://www.marvelrivals.com/gameupdate/20261111/41548_1319332.html"
  }
 ]
