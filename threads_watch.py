@@ -227,9 +227,9 @@ def from_apify(c, now):
 def next_gap(age_h, vph):
     if age_h >= WINDOW_H:
         return None                      # 48시간 지나면 그만
-    if age_h >= 6 and vph < 50:
+    if age_h >= 3 and vph < 50:
         return 6 * 3600                  # 반응이 거의 없는 글은 가끔만
-    return (20 * 60 if age_h < 3 else 45 * 60 if age_h < 12 else 90 * 60 if age_h < 24 else 3 * 3600)
+    return (20 * 60 if age_h < 3 else 60 * 60 if age_h < 12 else 3 * 3600 if age_h < 24 else 6 * 3600)   # 2026-11-13: 새 글 잴 자리를 비우려고 오래된 글 간격을 늘림
 
 
 def views_of(url):
@@ -240,8 +240,14 @@ def views_of(url):
 
 
 def measure(c, now, n):
-    due = c.execute("SELECT code, url, taken_at FROM posts WHERE next_check IS NOT NULL AND next_check <= ? "
-                    "ORDER BY next_check, COALESCE(likes_hint, 0) DESC LIMIT ?", (now, n)).fetchall()
+    # 1) 12시간 안에 올라와 아직 한 번도 못 잰 글을 최신 순으로 먼저 (반을 넘지 않게) → 2) 나머지는 차례대로
+    fresh = c.execute("SELECT code, url, taken_at FROM posts p WHERE next_check IS NOT NULL AND next_check <= ? AND taken_at >= ? "
+                      "AND NOT EXISTS (SELECT 1 FROM snaps s WHERE s.code = p.code) ORDER BY taken_at DESC LIMIT ?",
+                      (now, now - 12 * 3600, max(1, n * 3 // 5))).fetchall()
+    seen = {d[0] for d in fresh}
+    rest = c.execute("SELECT code, url, taken_at FROM posts WHERE next_check IS NOT NULL AND next_check <= ? "
+                     "ORDER BY next_check, COALESCE(likes_hint, 0) DESC LIMIT ?", (now, n + len(fresh))).fetchall()
+    due = (fresh + [d for d in rest if d[0] not in seen])[:n]
     ok = 0
     with ThreadPoolExecutor(WORKERS) as ex:
         for (code, url, taken), post in zip(due, ex.map(views_of, [d[1] for d in due])):
