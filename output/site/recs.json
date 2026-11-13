@@ -9,9 +9,9 @@
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
   "kr_avg": 1.64,
-  "kr_n": 467,
-  "foreign_avg": 2.4,
-  "foreign_n": 239
+  "kr_n": 474,
+  "foreign_avg": 2.41,
+  "foreign_n": 240
  },
  {
   "rank": 2,
@@ -24,7 +24,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 2.39,
   "kr_n": 56,
-  "foreign_avg": 1.93,
+  "foreign_avg": 1.94,
   "foreign_n": 59
  },
  {
@@ -38,7 +38,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 1.0,
   "kr_n": 46,
-  "foreign_avg": 1.87,
+  "foreign_avg": 1.88,
   "foreign_n": 61
  },
  {
@@ -60,12 +60,12 @@
   "topic": "국내 대형주",
   "kind": "국내 검증 주제",
   "confidence": "높음",
-  "title_idea": "국내 대형주, 지금 꼭 알아야 할 3가지",
+  "title_idea": "숫자 하나로 보는 국내 대형주",
   "format": "캐러셀(카드뉴스)",
-  "hook": "숫자·리스트형",
+  "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
   "kr_avg": 1.87,
-  "kr_n": 200,
+  "kr_n": 203,
   "foreign_avg": 0.71,
   "foreign_n": 9
  },
@@ -78,24 +78,24 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.19,
+  "kr_avg": 2.18,
   "kr_n": 14,
   "foreign_avg": 1.83,
   "foreign_n": 157
  },
  {
   "rank": 7,
-  "topic": "물가·경기",
+  "topic": "빅테크",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
-  "title_idea": "[오늘] 물가·경기에 무슨 일이? 1분 요약",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "속보·뉴스형",
+  "title_idea": "빅테크, 지금 꼭 알아야 할 것은?",
+  "format": "릴스",
+  "hook": "질문형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.4,
-  "kr_n": 30,
-  "foreign_avg": 1.24,
-  "foreign_n": 23
+  "kr_avg": 2.29,
+  "kr_n": 43,
+  "foreign_avg": 1.23,
+  "foreign_n": 19
  },
  {
   "rank": 8,
@@ -106,7 +106,7 @@
   "format": "단일 이미지",
   "hook": "짧은 한 줄",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.87,
+  "kr_avg": 1.88,
   "kr_n": 75,
   "foreign_avg": 1.09,
   "foreign_n": 7
