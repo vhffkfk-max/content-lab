@@ -3128,396 +3128,6 @@
  ],
  "ideas": [
   {
-   "title": "엔비디아, 젠슨 황 후임 탐색 시작",
-   "concept": "해임 준비에서 후임 탐색으로 넘어간 새 단계를 블룸버그 보도 기준으로 풀고, 첫 장에서 SK하이닉스, 삼성전자 같은 AI 반도체 종목의 변동성 가능성을 쉬운 말로 짚는다. 공식 발표 전이라 보도 기준으로만 쓴다. (공식: 한 주인공이 장마다 한 걸음씩)",
-   "why_now": "블룸버그발 속보가 08:39~08:42에 나왔고 국내 29곳이 다뤘다. 앞선 '해임 준비' 보도에서 '후임 탐색'으로 넘어간 새 단계다.",
-   "tag": "속보",
-   "sources": [
-    "https://biz.chosun.com/it-science/ict/2026/11/12/SZ66OJC42RGQVOCXF2I7BLOO4E/",
-    "https://x.com/DeItaone/status/2120662640972144887",
-    "https://x.com/KobeissiLetter/status/2120663608065704205"
-   ],
-   "bg": "Jensen Huang",
-   "bg_alt": "Nvidia headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "엔비디아 시총\n약 **7000억달러** 증발,\n후임 찾기 시작했어요",
-     "number": "7000억달러",
-     "label": "코베이시 레터 집계",
-     "sub": "두 번째 의혹 뒤 사라진 시가총액"
-    },
-    {
-     "type": "질문형",
-     "title": "젠슨 황 후임을\n외부 업체와 **벌써**\n찾고 있다고요?",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "해임 준비에서\n후임 탐색으로,\n엔비디아 **다음 단계**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261112-1001-i1",
-   "created_at": "2026-11-12T10:01:31+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261112-1001-i1/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261112-1001-i1/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261112-1001-i1/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261112-1001-i1/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261112-1001-i1/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261112-1001-i1/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261112-1001-i1/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261112-1001-i1/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261112-1001-i1/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261112-1001-i1/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261112-1001-i1/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261112-1001-i1/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261112-1001-i1/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261112-1001-i1/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261112-1001-i1/3-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261112-1001-i1/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261112-1001-i1/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261112-1001-i1/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "퇴직연금 ETF, 팔고 당일 재투자",
-   "concept": "하나은행 당일매매 도입을 '기존 대기, 이번 변화, 이유' 순서로 풀고, 첫 장에서 내 퇴직연금 운용에 뭐가 달라지는지 한 줄로 답한다. 투자 권유가 아닌 제도 소개로 쓰고, 기존 결제 기간은 확인 후 넣는다. (공식: 끝 장은 닫힌 결론 한 줄)",
-   "why_now": "09:15 기준 9곳이 다룬 새 소식이다. 증시 변동성이 커진 날이라 퇴직연금 운용에 관심이 높다.",
-   "tag": "퇴직연금",
-   "sources": [
-    "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1zdjlJTk5samp3aHdHYWZKUDQ2TkZpc0lJQ05ZbFppMmt0UWVINVkzbjJoOXZ4cUptS1d"
-   ],
-   "bg": "Hana Bank",
-   "bg_alt": "Hana Bank building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "하나은행이\n퇴직연금 ETF\n**당일매매**를 도입했어요",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "퇴직연금 ETF 판 돈\n기다릴 필요\n**없어졌다고요?**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "기다리던 판 돈이\n같은 날 **재투자**로\n바뀌었어요",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "editorial",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/12",
-     "headlines": [
-      "하나은행, 퇴직연금 당일매매 도입",
-      "기존엔 ETF 판 돈 입금까지 대기",
-      "이제 같은 날 바로 재투자 가능"
-     ]
-    }
-   },
-   "id": "20261112-1001-i2",
-   "created_at": "2026-11-12T10:01:31+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261112-1001-i2/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261112-1001-i2/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261112-1001-i2/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261112-1001-i2/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261112-1001-i2/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261112-1001-i2/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261112-1001-i2/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261112-1001-i2/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261112-1001-i2/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "3분기 중앙은행 금 매입 321톤",
-   "concept": "World Gold Council 집계로 보이는 수치를 2분기 296톤과 비교해 보여 주고, 물가와 달러 불안 속 안전자산 수요라는 흐름만 일반 원리로 푼다. 금값 전망이나 매수 권유는 하지 않는다. 원출처는 확인 후 표기한다. (공식: 없음)",
-   "why_now": "@KobeissiLetter 게시글이 조회 58,485, 좋아요 283을 기록했다. 물가와 연준 인상 우려 속에 안전자산 흐름을 보여주는 새 통계다.",
-   "tag": "금",
-   "sources": [
-    "https://x.com/KobeissiLetter/status/2120512766796566810"
-   ],
-   "bg": "gold bars",
-   "bg_alt": "central bank vault",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "3분기 중앙은행\n금 **321톤**을\n사들였어요",
-     "number": "321톤",
-     "label": "2026년 3분기 중앙은행 금 매입",
-     "sub": "2024년 4분기 이후 분기 기준 최대"
-    },
-    {
-     "type": "질문형",
-     "title": "중앙은행들은\n왜 다시 금을\n**쓸어 담았을까**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "1분기보다 **453%**\n늘었어요, 중앙은행\n금 매입 반등",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "bars"
-   ],
-   "extra": {
-    "bignum": {},
-    "bars": {
-     "sub": "2026년 분기별 중앙은행 금 매입(톤)",
-     "bars": [
-      {
-       "label": "2분기",
-       "value": 296
-      },
-      {
-       "label": "3분기",
-       "value": 321,
-       "hi": true
-      }
-     ]
-    }
-   },
-   "id": "20261112-1001-i3",
-   "created_at": "2026-11-12T10:01:31+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261112-1001-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261112-1001-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261112-1001-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261112-1001-i3/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261112-1001-i3/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261112-1001-i3/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261112-1001-i3/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261112-1001-i3/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261112-1001-i3/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261112-1001-i3/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261112-1001-i3/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261112-1001-i3/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
    "title": "엔비디아 시간외 8.6%↓, 시총 3위로",
    "concept": "시간외 급락과 시총 순위 하락이라는 확인된 결과로 시작하고, 이사회가 CEO 해임을 준비 중이라는 WSJ, 블룸버그 보도는 원인 후보로 한 번만 붙인다. 삼성전자, SK하이닉스는 AI 칩 수요로 엮여 있다는 점만 짧게 풀고 투자 판단은 독자 몫으로 둔다. (공식: 한 주인공이 장마다 한 걸음씩)",
    "why_now": "39곳이 다룬 가장 큰 소식이고 연합뉴스가 시간외 8.6%↓와 시총 MS 추월을 전했다. 코스피가 5400을 찍고 하락 전환한 날이라 한국 시장과도 이어진다.",
@@ -8957,6 +8567,456 @@
      "form": "paper",
      "font": "gowun",
      "path": "20261113-0805-i3/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "스페이스X, 테슬라 합병 보도, 몸값 4500조",
+   "concept": "중앙일보 단독과 CNBC, 블룸버그 보도를 묶어 '보도된 것 / 아직 확정 아닌 것'으로 나눠 푼다. 테슬라 11/12 종가 397.45달러(+1.69%)는 참고 시세로만 쓰고 원인 관계는 단정하지 않는다. (공식: 끝 장은 닫힌 결론 한 줄)",
+   "why_now": "중앙일보 등 7곳이 단독 보도했고 CNBC, 로이터, 블룸버그도 합병 협상 진전을 전했다. 이르면 12월 발표라는 일정이 걸려 있다.",
+   "tag": "기업",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMiW0FVX3lxTE8tQi1QalZxQzU5T3ZWSjE5M2xYOXR5UTlnSUQxUk92cG9DR1lNNVFYOUU0MUpsYTF3MWE"
+   ],
+   "bg": "Elon Musk",
+   "bg_alt": "SpaceX Starship launch",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "몸값 **4500조**원\n스페이스X, 테슬라\n12월 합병 발표 보도",
+     "number": "4500조원",
+     "label": "스페이스X와 테슬라 합산 몸값",
+     "sub": "중앙일보 단독, 이르면 12월 발표"
+    },
+    {
+     "type": "질문형",
+     "title": "머스크의 회사 둘이\n정말 하나가 되나\n**합병** 협상 진전 보도",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "합병 보도는 나왔지만\n**확정**된 건 없다\n교환비율도 미정",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261113-0901-i1",
+   "created_at": "2026-11-13T09:01:39+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261113-0901-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261113-0901-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261113-0901-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261113-0901-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261113-0901-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261113-0901-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261113-0901-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261113-0901-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261113-0901-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261113-0901-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261113-0901-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261113-0901-i1/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "앤트로픽 IPO, 공모 물량의 6배 주문",
+   "concept": "블룸버그 보도 기준으로 '6배 주문'과 창업자 7명의 매도 예정 물량을 맞붙여 보여 준다. 판 뒤에도 각자 약 180억 달러 지분이 남는다는 대비를 쓴다. 상장일과 티커는 재료에 없으므로 쓰지 않는다. (공식: 숫자는 둘을 맞붙여서)",
+   "why_now": "엔비디아가 젠슨 황 퇴진으로 흔들린 날, 비상장 AI 대어인 앤트로픽에는 주문이 몰렸다는 보도가 나왔다. 블룸버그 인용 글의 조회도 높다.",
+   "tag": "IPO",
+   "sources": [
+    "https://kr.investing.com/news/stock-market-news/article-2173669",
+    "https://x.com/DeItaone/status/2120987833888370826",
+    "https://x.com/unusual_whales/status/2120999577541046643"
+   ],
+   "bg": "Dario Amodei",
+   "bg_alt": "Anthropic Claude logo",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "앤트로픽 공모에\n물량 **6배** 주문\n목표 644억 달러",
+     "number": "6배",
+     "label": "공모 물량 대비 주문",
+     "sub": "블룸버그 보도, 조달 목표 644억 달러"
+    },
+    {
+     "type": "질문형",
+     "title": "엔비디아 흔들린 날\n돈은 **어디**로 갔나\n앤트로픽 주문은 6배",
+     "number": "6배",
+     "label": "공모 물량 대비 주문",
+     "sub": "블룸버그 보도"
+    },
+    {
+     "type": "반전형",
+     "title": "창업자 7명이 각자\n2억 5천만 달러 **매도**\n그래도 180억 보유",
+     "number": "2.5억달러",
+     "label": "공동창업자 1인당 매도 예정",
+     "sub": "각자 약 180억 달러 지분은 유지"
+    }
+   ],
+   "forms": [
+    "bignum",
+    "bars"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "앤트로픽 조달 규모, 억 달러",
+     "bars": [
+      {
+       "label": "공모 조달 목표",
+       "value": 644,
+       "hi": true
+      },
+      {
+       "label": "별도 사모",
+       "value": 260
+      }
+     ]
+    }
+   },
+   "id": "20261113-0901-i2",
+   "created_at": "2026-11-13T09:01:39+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261113-0901-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261113-0901-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261113-0901-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261113-0901-i2/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261113-0901-i2/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261113-0901-i2/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261113-0901-i2/2-bignum-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261113-0901-i2/2-bignum-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261113-0901-i2/2-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261113-0901-i2/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261113-0901-i2/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261113-0901-i2/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261113-0901-i2/3-bignum-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261113-0901-i2/3-bignum-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261113-0901-i2/3-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261113-0901-i2/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261113-0901-i2/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261113-0901-i2/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "연준, 내년부터 금리 결정 회의 8회→7회",
+   "concept": "'연 8회에서 7회로'를 숫자 둘로 보여 주고, 내년 10월 회의는 금리 결정 없이 전략 논의만 한다는 점을 설명한다. 미 10년물 5.1%(11/12)는 배경으로만 쓰고, 구체적인 날짜는 확인 후 기입한다. (공식: 숫자는 둘을 맞붙여서)",
+   "why_now": "머니투데이와 조선비즈 등 6곳이 다뤘다. 미 10년물 금리가 5%대에 올라 시장이 연준 발언에 민감한 시점이다.",
+   "tag": "미국 금리",
+   "sources": [
+    "https://www.mt.co.kr/world/2026/11/13/2026111306264481203",
+    "https://biz.chosun.com/international/international_economy/2026/11/13/NPSZAJE3QJB6BEJ6ZUO7XYINA4/"
+   ],
+   "bg": "Federal Reserve Eccles Building",
+   "bg_alt": "Federal Reserve headquarters Washington",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "연준 금리 결정\n연 **8번**에서 7번으로\n내년 10월은 논의만",
+     "number": "8→7회",
+     "label": "연준 금리 결정 회의",
+     "sub": "내년 10월 회의는 전략 논의만"
+    },
+    {
+     "type": "질문형",
+     "title": "금리 5%대인데\n연준 회의 하나가\n**빠지는** 이유는",
+     "number": "8→7회",
+     "label": "연준 금리 결정 회의",
+     "sub": "내년 10월은 금리 결정 없음"
+    },
+    {
+     "type": "반전형",
+     "title": "10월 회의는 열려도\n금리는 **안 정한다**\n내년 달라지는 연준",
+     "number": "8→7회",
+     "label": "연준 금리 결정 회의",
+     "sub": "내년 10월 회의는 전략 논의만"
+    }
+   ],
+   "forms": [
+    "bignum",
+    "bars"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "연준 금리 결정 회의, 연간 횟수",
+     "bars": [
+      {
+       "label": "현재",
+       "value": 8
+      },
+      {
+       "label": "내년",
+       "value": 7,
+       "hi": true
+      }
+     ]
+    }
+   },
+   "id": "20261113-0901-i3",
+   "created_at": "2026-11-13T09:01:39+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261113-0901-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261113-0901-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261113-0901-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261113-0901-i3/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261113-0901-i3/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261113-0901-i3/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261113-0901-i3/2-bignum-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261113-0901-i3/2-bignum-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261113-0901-i3/2-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261113-0901-i3/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261113-0901-i3/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261113-0901-i3/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261113-0901-i3/3-bignum-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261113-0901-i3/3-bignum-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261113-0901-i3/3-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261113-0901-i3/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261113-0901-i3/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261113-0901-i3/3-bars-dohyeon.jpg"
     }
    ]
   }
