@@ -3128,419 +3128,6 @@
  ],
  "ideas": [
   {
-   "title": "번스타인, 엔비디아 목표가 반토막",
-   "concept": "월가 첫 대규모 목표가 하향을 400달러에서 200달러로 줄어든 숫자 하나로 보여주고, 한국 반도체주 변동성과 연결한다 (공식: 표지는 이미 일어난 일로)",
-   "why_now": "13:48 연합인포맥스, SBS Biz가 보도했다. 젠슨 황 해임 논의 이후 월가에서 처음 나온 대규모 목표가 하향이고, 앞선 후속과 달리 새 숫자가 있다.",
-   "tag": "해외주식",
-   "sources": [
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4444429",
-    "https://v.daum.net/v/20261112134808883"
-   ],
-   "bg": "Jensen Huang",
-   "bg_alt": "Nvidia headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "번스타인이 엔비디아\n목표가를 400달러에서\n**200달러**로 낮췄다",
-     "number": "200달러",
-     "label": "번스타인 엔비디아 목표가",
-     "sub": "기존 400달러에서 하향"
-    },
-    {
-     "type": "질문형",
-     "title": "번스타인은 왜\n엔비디아 목표가를\n**절반**으로 깎았나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "엔비디아 목표가가\n**반토막** 난 날에\nAMD는 올랐다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "bars"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "번스타인 엔비디아 목표주가(달러)",
-     "bars": [
-      {
-       "label": "기존",
-       "value": 400
-      },
-      {
-       "label": "하향",
-       "value": 200,
-       "hi": true
-      }
-     ]
-    }
-   },
-   "id": "20261112-1501-i1",
-   "created_at": "2026-11-12T15:01:35+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261112-1501-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261112-1501-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261112-1501-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261112-1501-i1/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261112-1501-i1/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261112-1501-i1/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261112-1501-i1/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261112-1501-i1/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261112-1501-i1/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261112-1501-i1/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261112-1501-i1/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261112-1501-i1/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "서울 92주째 상승, 성동 강동은 하락",
-   "concept": "서울 전체는 오르는데 한강벨트가 하락으로 돌아선 엇갈림을 주간 통계로 보여준다. 주간 통계 한 번이라 추세 단정은 이르다는 점은 한 번만 밝힌다 (공식: 표지는 이미 일어난 일로)",
-   "why_now": "14시 전후 여러 매체가 한국부동산원 주간 통계를 다뤘다. 강남3구에 이어 성동, 강동이 하락 전환했고 서울 상승폭은 0.07%로 줄었다.",
-   "tag": "부동산",
-   "sources": [
-    "https://www.newsis.com/view/NISX20261112_0003865338",
-    "https://biz.chosun.com/real_estate/real_estate_general/2026/11/12/OIRPL6KFGFH25AO23AO3RMEPOE/"
-   ],
-   "bg": "Seoul apartment Han River",
-   "bg_alt": "Seoul apartment complex",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "서울 92주째 올랐는데\n송파는 **0.35%** 내렸다",
-     "number": "0.35%",
-     "label": "송파 주간 하락률",
-     "sub": "서울 전체는 92주째 상승"
-    },
-    {
-     "type": "질문형",
-     "title": "성동, 강동 하락\n한강벨트도 **꺾일까**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "92주 연속 상승인데\n성동, 강동은\n**하락** 전환했다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "paper",
-    "news"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/12",
-     "headlines": [
-      "서울 아파트값 92주째 상승",
-      "성동, 강동 하락 전환",
-      "송파 0.35% 하락"
-     ]
-    }
-   },
-   "id": "20261112-1501-i2",
-   "created_at": "2026-11-12T15:01:35+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261112-1501-i2/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261112-1501-i2/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261112-1501-i2/1-paper-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261112-1501-i2/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261112-1501-i2/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261112-1501-i2/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261112-1501-i2/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261112-1501-i2/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261112-1501-i2/2-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261112-1501-i2/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261112-1501-i2/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261112-1501-i2/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261112-1501-i2/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261112-1501-i2/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261112-1501-i2/3-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261112-1501-i2/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261112-1501-i2/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261112-1501-i2/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "머스크 \"로보택시는 168시간 일한다\"",
-   "concept": "머스크가 X에 올린 한 줄과 사람 기사 근무시간을 견주고, 한국에서 처음 공개된 사이버캡으로 이어간다. 상용화 일정은 확인 안 됨을 한 번만 적는다 (공식: 표지는 이미 일어난 일로)",
-   "why_now": "14:12 게시된 머스크 X 글이 조회 478,283으로 자료 내 최고다. 같은 시간 테슬라 사이버캡 한국 첫 공개 기사도 나왔다.",
-   "tag": "테슬라",
-   "sources": [
-    "https://x.com/elonmusk/status/2120746428720988408"
-   ],
-   "bg": "Elon Musk",
-   "bg_alt": "Tesla Cybercab",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "머스크가 올린 한 줄\n로보택시 주 **168시간**",
-     "number": "168시간",
-     "label": "머스크가 X에 쓴 로보택시 근무시간",
-     "sub": "24시간 x 7일, 쉬지 않고 돈다는 뜻"
-    },
-    {
-     "type": "질문형",
-     "title": "머스크는 왜 로보택시를\n**168시간**이라 불렀나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "기사는 하루 8~10시간\n로보택시는 **168시간**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "quote"
-   ],
-   "extra": {
-    "quote": {
-     "label": "머스크 X 글",
-     "quote": "로보택시는 일주일에 168시간 일한다.",
-     "by": "일론 머스크"
-    }
-   },
-   "id": "20261112-1501-i3",
-   "created_at": "2026-11-12T15:01:35+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261112-1501-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261112-1501-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261112-1501-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261112-1501-i3/1-quote-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261112-1501-i3/1-quote-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261112-1501-i3/1-quote-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261112-1501-i3/2-quote-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261112-1501-i3/2-quote-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261112-1501-i3/2-quote-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261112-1501-i3/3-quote-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261112-1501-i3/3-quote-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261112-1501-i3/3-quote-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "LCC 3사 통합, 내년 3월 17일 출범",
    "concept": "진에어, 에어서울, 에어부산이 한 회사가 된다는 합병 인가 소식을 항공권을 사는 소비자 관점에서 푼다. 노선과 운임 변화는 확정된 게 없다고 밝히고, 브랜드명과 노선 정리는 확인 중으로 둔다. (공식: 표지는 이미 일어난 일로)",
    "why_now": "15:12 기사로 8곳이 다룬 새 소식이다. 항공권과 여행 계획에 바로 닿고 이전 발송분에 없다.",
@@ -8989,6 +8576,382 @@
      "form": "breaking",
      "font": "dohyeon",
      "path": "20261113-1301-i3/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "잠자는 카드포인트 2.1조, 지역화폐로",
+   "concept": "내 카드포인트가 어디서 잠자고 있는지부터 짚고, 내년 5월부터 지역화폐로 쓸 수 있다는 보도를 쉬운 말로 풀어 줍니다. 전환 방식과 대상 카드는 보도에 아직 없어 확인 필요로 처리합니다. 사건은 하나만 담습니다. (공식: 본문은 같은 틀, 장마다 새 한 방)",
+   "why_now": "13:25에 뉴시스, 연합인포맥스, 한경비즈니스 3곳이 막 보도한 새 소식입니다. 내 포인트가 걸린 생활형 주제라 저장과 공유가 잘 나옵니다.",
+   "tag": "생활경제",
+   "sources": [
+    "https://www.newsis.com/view/NISX20261113_0003866649",
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4444652",
+    "https://v.daum.net/v/20261113132541580"
+   ],
+   "bg": "Korean credit cards",
+   "bg_alt": "Korean shopping street",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "잠자는 카드포인트\n**2.1조원**, 내년 5월\n지역화폐로 푼다",
+     "number": "2.1조원",
+     "label": "쓰지 않고 잠자는 카드포인트",
+     "sub": "내년 5월부터 지역화폐로 전환"
+    },
+    {
+     "type": "질문형",
+     "title": "안 쓴 카드포인트\n내년 5월부터\n**지역화폐**로 바꾼다고?",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "잠자던 카드포인트가\n내년 5월부터\n**동네 소비**로 돌아온다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "editorial"
+   ],
+   "extra": {},
+   "id": "20261113-1401-i1",
+   "created_at": "2026-11-13T14:01:51+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261113-1401-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261113-1401-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261113-1401-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261113-1401-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261113-1401-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261113-1401-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261113-1401-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261113-1401-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261113-1401-i1/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "내년 1분기까지 입주 4만호, 분양 1.1만호",
+   "concept": "정부가 내놓은 공급 일정을 입주 4만호와 분양 1.1만호 두 숫자로 맞붙여 보여 주고, 한강벨트 10월 토지거래허가 신청 8.2% 증가를 함께 놓습니다. 공급이 체감 시장을 바로 바꿀지는 지켜봐야 한다는 점, 지역별로 다를 수 있다는 점을 한 번만 밝힙니다. (공식: 숫자는 둘을 맞붙여서)",
+   "why_now": "12:49 속보로 나왔고 19곳이 다뤄 오늘 가장 많은 매체가 다룬 부동산 소식입니다. 아직 다루지 않은 주제입니다.",
+   "tag": "부동산",
+   "sources": [
+    "https://www.mt.co.kr/politics/2026/11/13/2026111310532659571",
+    "https://biz.chosun.com/real_estate/real_estate_general/2026/11/13/FGHURBUCTJGZVI3JQOLIONO2SI/"
+   ],
+   "bg": "Seoul apartment complex",
+   "bg_alt": "Han River Seoul apartments",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "내년 1분기까지\n입주 **4만호** 이상,\n분양은 연말 1.1만호",
+     "number": "4만호",
+     "label": "내년 1분기까지 아파트 입주 물량",
+     "sub": "신규 분양은 연말까지 1.1만호"
+    },
+    {
+     "type": "질문형",
+     "title": "공급 일정 나왔다\n집값은 **안정**될까?",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "입주 4만호 온다는데\n한강벨트 10월 신청은\n**8.2%** 늘었다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "paper",
+    "bignum"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/13",
+     "headlines": [
+      "내년 1분기까지 입주 4만호",
+      "연말까지 신규 분양 1.1만호",
+      "한강벨트 10월 허가신청 8.2%↑"
+     ]
+    }
+   },
+   "id": "20261113-1401-i2",
+   "created_at": "2026-11-13T14:01:51+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261113-1401-i2/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261113-1401-i2/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261113-1401-i2/1-paper-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261113-1401-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261113-1401-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261113-1401-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261113-1401-i2/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261113-1401-i2/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261113-1401-i2/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261113-1401-i2/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261113-1401-i2/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261113-1401-i2/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "李대통령, 증안펀드 규모와 운용 점검 주문",
+   "concept": "대통령이 증시안정펀드 규모와 운용 방식 점검을 주문했다는 보도를 사건으로 겁니다. 금융위원장이 '긴급, 예외적 수단'이라고 설명한 것을 쉬운 말로 풀고, 구체 규모는 아직 나오지 않았다는 점을 분명히 합니다. (공식: 없음)",
+   "why_now": "12:52에 기사가 막 나왔고 자본시장 간담회 직후 후속입니다. 엔비디아 쇼크 직후 나온 점검 지시라 시장 관심이 큽니다.",
+   "tag": "증시",
+   "sources": [
+    "https://www.yna.co.kr/view/AKR20261113080800002",
+    "https://v.daum.net/v/20261113125250032"
+   ],
+   "bg": "Lee Jae-myung",
+   "bg_alt": "Korea Exchange Seoul",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "李대통령 증안펀드\n규모, 운용 방식을\n**점검**하라 주문했다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "평소엔 안 쓰는\n**증시안정펀드** 점검,\n왜 지금 나왔나?",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "'긴급, 예외적 수단'\n증안펀드 규모를\n**점검**하라 했다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261113-1401-i3",
+   "created_at": "2026-11-13T14:01:51+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261113-1401-i3/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261113-1401-i3/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261113-1401-i3/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261113-1401-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261113-1401-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261113-1401-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261113-1401-i3/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261113-1401-i3/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261113-1401-i3/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261113-1401-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261113-1401-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261113-1401-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261113-1401-i3/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261113-1401-i3/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261113-1401-i3/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261113-1401-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261113-1401-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261113-1401-i3/3-news-myeongjo.jpg"
     }
    ]
   }
