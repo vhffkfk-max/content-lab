@@ -3128,398 +3128,6 @@
  ],
  "ideas": [
   {
-   "title": "LCC 3사 통합, 내년 3월 17일 출범",
-   "concept": "진에어, 에어서울, 에어부산이 한 회사가 된다는 합병 인가 소식을 항공권을 사는 소비자 관점에서 푼다. 노선과 운임 변화는 확정된 게 없다고 밝히고, 브랜드명과 노선 정리는 확인 중으로 둔다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "15:12 기사로 8곳이 다룬 새 소식이다. 항공권과 여행 계획에 바로 닿고 이전 발송분에 없다.",
-   "tag": "항공",
-   "sources": [
-    "https://www.newsis.com/view/NISX20261112_0003865360",
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4444449"
-   ],
-   "bg": "Jin Air airplane",
-   "bg_alt": "Air Busan airplane",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "진에어, 에어서울\n에어부산 합병 인가\n내년 **3월 17일** 출범",
-     "number": "3→1",
-     "label": "LCC 3사가 한 회사로",
-     "sub": "통합 LCC는 내년 3월 17일 출범"
-    },
-    {
-     "type": "질문형",
-     "title": "LCC 3곳이 하나로\n내 항공권은\n**어떻게** 달라질까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "경쟁하던 LCC 3곳\n내년 봄부터는\n**한 회사**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "editorial"
-   ],
-   "extra": {},
-   "id": "20261112-1606-i1",
-   "created_at": "2026-11-12T16:06:49+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261112-1606-i1/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261112-1606-i1/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261112-1606-i1/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261112-1606-i1/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261112-1606-i1/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261112-1606-i1/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261112-1606-i1/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261112-1606-i1/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261112-1606-i1/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "비트코인, 이더리움 ETF 5일째 순유출",
-   "concept": "비트코인 ETF 3,990억, 이더리움 ETF 1,927억이 5일 연속 빠져나갔다는 사실을 막대로 비교한다. 단기 보유자가 4만7천BTC를 손실 매도했다는 분석은 분석으로 구분해 쓰고, 단위와 통화는 확인 중으로 둔다. (공식: 용어 대신 눈에 보이는 것으로)",
-   "why_now": "ETF 플로우 기사가 4곳에서 나왔다. 비트코인이 7만3천달러대에 머무는 날이라 보유자들이 관심을 가질 만하다.",
-   "tag": "가상자산",
-   "sources": [
-    "https://news.google.com/rss/articles/CBMiSkFVX3lxTFB4LVlWNzAtOFJGdHl0eUh0TVVtQXJGakpWdzdzT0hpTUktTzlOdXkyVERudFExRWtId2l",
-    "https://news.google.com/rss/articles/CBMiSkFVX3lxTE41cV8xbzE2dDE1VURfVk9temgtbldPbEhLaVBmc05lZ211cHJBNGNuZlVIb3RSTS1sNGN"
-   ],
-   "bg": "Bitcoin coin",
-   "bg_alt": "Ethereum coin",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "비트코인 ETF에서\n5일간 **3,990억**\n빠져나갔다",
-     "number": "3,990억",
-     "label": "비트코인 ETF 5일 연속 순유출",
-     "sub": "이더리움 ETF도 1,927억 순유출"
-    },
-    {
-     "type": "질문형",
-     "title": "단기 보유자들은\n왜 4만7천BTC를\n**손실** 매도했나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "7만3천달러대 버틴\n비트코인, ETF는\n5일째 **순유출**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "bars"
-   ],
-   "extra": {
-    "bignum": {},
-    "bars": {
-     "sub": "5일 연속 ETF 순유출 규모 (단위, 통화는 확인 필요)",
-     "bars": [
-      {
-       "label": "비트코인 ETF",
-       "value": 3990,
-       "hi": true
-      },
-      {
-       "label": "이더리움 ETF",
-       "value": 1927
-      }
-     ]
-    }
-   },
-   "id": "20261112-1606-i2",
-   "created_at": "2026-11-12T16:06:49+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261112-1606-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261112-1606-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261112-1606-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261112-1606-i2/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261112-1606-i2/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261112-1606-i2/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261112-1606-i2/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261112-1606-i2/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261112-1606-i2/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261112-1606-i2/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261112-1606-i2/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261112-1606-i2/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "금융당국 \"13일 코스닥 추가대책 사실 아냐\"",
-   "concept": "코스닥이 696.53으로 마감해 700선 아래로 내려온 날, 금융당국이 내일 대책설을 직접 부인하고 풍문 유포에 엄정 조치하겠다고 밝힌 상황을 정리한다. 대책이 나온다는 글을 보면 출처부터 확인하자는 점으로 마무리한다. (공식: 표지는 이미 일어난 일로)",
-   "why_now": "14:24 보도로 나온 소식이고, 장 마감에서 코스닥은 -1.22%였다. 개인투자자에게 바로 영향이 있고 이전 발송분에 없다.",
-   "tag": "증시",
-   "sources": [
-    "https://www.mt.co.kr/stock/2026/11/12/2026111213503417969",
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4444442",
-    "https://www.newsis.com/view/NISX20261112_0003865808"
-   ],
-   "bg": "Korea Exchange Seoul building",
-   "bg_alt": "KOSDAQ stock board",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "코스닥 696.53 마감\n대책설엔 당국이\n**사실 아냐**",
-     "number": "696.53",
-     "label": "11/12 코스닥 마감",
-     "sub": "-1.22%, 다시 700선 아래"
-    },
-    {
-     "type": "질문형",
-     "title": "내일 코스닥 대책설\n당국은 왜 직접\n**선**을 그었나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "코스닥 700선 붕괴\n13일 대책설은\n당국이 **부인**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/12",
-     "headlines": [
-      "코스닥 696.53, 700선 아래로",
-      "당국 \"13일 대책설 사실 아냐\"",
-      "풍문 유포엔 엄정 조치 경고"
-     ]
-    }
-   },
-   "id": "20261112-1606-i3",
-   "created_at": "2026-11-12T16:06:49+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261112-1606-i3/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261112-1606-i3/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261112-1606-i3/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261112-1606-i3/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261112-1606-i3/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261112-1606-i3/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261112-1606-i3/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261112-1606-i3/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261112-1606-i3/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261112-1606-i3/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261112-1606-i3/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261112-1606-i3/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261112-1606-i3/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261112-1606-i3/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261112-1606-i3/3-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261112-1606-i3/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261112-1606-i3/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261112-1606-i3/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "HMM 3분기 영업익 1조3947억, 370%↑",
    "concept": "전년 대비 370% 늘어난 영업이익을 해상운임 급등 한 줄로 풀고, 같은 날 연료비에 밀린 한전과 대비해 중동발 변수가 업종마다 반대로 나온 점을 보여준다. 첫 본문 장에서 운임이 오르면 왜 해운사가 돈을 버는지 쉬운 말로 짚는다. 운임 지속 여부는 다음 실적의 관건이라는 점만 적고 전망은 쓰지 않는다. (공식: 표지는 이미 일어난 일로)",
    "why_now": "오늘 15시 51분부터 연합뉴스, 머니투데이, 헤럴드경제 등이 다뤘다. 한전 부진 소식과 함께 읽히는 주제라 지금 내기 좋다.",
@@ -8952,6 +8560,202 @@
      "form": "news",
      "font": "myeongjo",
      "path": "20261113-1401-i3/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "서학개미 6.8조 증발, 국민연금도 엔비디아",
+   "concept": "젠슨 황 사태로 개인과 연기금 노출이 처음 숫자로 나온 점을 풀고, 첫 장에서 내 계좌에 어떤 의미인지 한 줄로 답한다. 6.8조는 동아일보 보도 수치로 표기하고 산정 기준일은 확인 필요로 한 번만 적는다. 17일 엔비디아 실적이 다음 시험대. 투자 권유 아님. (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "동아일보와 뉴시스가 서학개미 평가액 6.8조원 증발을 보도했고, 국민연금 3분기 말 미국 주식 1587억 달러 중 엔비디아가 1위라는 보도도 나왔다. 개인과 연기금 노출이 처음 숫자로 나온 날이다.",
+   "tag": "해외주식",
+   "sources": [
+    "https://www.donga.com/news/Economy/article/all/20261113/135019831/1",
+    "https://www.newsis.com/view/NISX20261113_0003867039"
+   ],
+   "bg": "Jensen Huang Nvidia",
+   "bg_alt": "Nvidia headquarters",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "서학개미 평가액\n**6.8조원** 증발\n국민연금 1위도 엔비디아",
+     "number": "6.8조원",
+     "label": "서학개미 평가액 증발",
+     "sub": "동아일보 보도, 국민연금 미국주식 1위 종목은 엔비디아"
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261113-1501-i1",
+   "created_at": "2026-11-13T15:01:26+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261113-1501-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261113-1501-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261113-1501-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261113-1501-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261113-1501-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261113-1501-i1/1-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "대통령 IR 발언에 거래소가 연 1회 의무화 추진",
+   "concept": "대통령의 실제 발언에서 시작해 거래소의 연 1회 IR 의무화 추진, 의무공개매수제 언급, 고위급 TF까지 한 흐름으로 잇는다. 내 주식에는 어떤 뜻인지 쉬운 말로 풀고 세부안은 확정 전임을 밝힌다. 투자 권유 아님. (공식: 당사자의 한마디를 따옴표로)",
+   "why_now": "13:59 기준 5곳이 IR 의무화를 다뤘고, 고위급 TF와 의무공개매수제 보도도 이어졌다. 오전 간담회의 후속으로 구체 조치가 나왔다.",
+   "tag": "자본시장",
+   "sources": [
+    "https://biz.chosun.com/stock/stock_general/2026/11/13/W5VR4NRS6JBY5M3XY6L5TOAO3A/",
+    "https://www.newsis.com/view/NISX20261113_0003867048",
+    "https://www.mt.co.kr/politics/2026/11/13/2026111311310824572"
+   ],
+   "bg": "Korea Exchange Seoul",
+   "bg_alt": "Korea Exchange building",
+   "hooks": [
+    {
+     "type": "질문형",
+     "title": "IR 안 하는 상장사\n시장에 있을 **자격**\n있나? 대통령 질문",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "quote",
+    "news"
+   ],
+   "extra": {
+    "quote": {
+     "label": "대통령 발언",
+     "quote": "상장만 하고 IR 외면, 시장에 있을 자격 있나",
+     "by": "대통령"
+    }
+   },
+   "id": "20261113-1501-i2",
+   "created_at": "2026-11-13T15:01:26+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261113-1501-i2/1-quote-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261113-1501-i2/1-quote-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261113-1501-i2/1-quote-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "서울 아파트 매물 40% 늘었는데 정부는 안정 신호",
+   "concept": "매물이 연초보다 40% 늘었다는 사실과 정부의 안정 신호 해석을 맞붙이고, 같은 날 나온 수도권 4만여 가구 입주 일정을 덧붙인다. 매물이 늘면 가격이 꺾일지는 지역별로 엇갈린다는 점과 다음 주 매물 추이를 볼 대목으로 남긴다. (공식: 숫자는 둘을 맞붙여서)",
+   "why_now": "14:26 동아일보 등 5곳이 보도했다. 같은 시각 정부 주택공급 브리핑과 대통령 지지율 하락 때 부정 평가 1위가 부동산이라는 기사가 겹쳐 관심이 높다.",
+   "tag": "부동산",
+   "sources": [
+    "https://www.donga.com/news/Economy/article/all/20261113/135020438/1",
+    "https://www.mt.co.kr/politics/2026/11/13/2026111311004579753"
+   ],
+   "bg": "Seoul apartment complex",
+   "bg_alt": "Seoul apartment skyline",
+   "hooks": [
+    {
+     "type": "반전형",
+     "title": "매물 40% 늘었는데\n정부는 **안정 신호**\n라고 해석했다",
+     "number": "40%",
+     "label": "서울 아파트 매물, 연초 대비",
+     "sub": "정부는 시장 안정 신호로 해석"
+    }
+   ],
+   "forms": [
+    "bignum",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/13",
+     "headlines": [
+      "서울 아파트 매물 연초比 40%↑",
+      "정부 \"시장 안정 신호\" 해석",
+      "수도권 4만여 가구 입주 예정"
+     ]
+    }
+   },
+   "id": "20261113-1501-i3",
+   "created_at": "2026-11-13T15:01:26+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261113-1501-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261113-1501-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261113-1501-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261113-1501-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261113-1501-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261113-1501-i3/1-paper-gowun.jpg"
     }
    ]
   }
