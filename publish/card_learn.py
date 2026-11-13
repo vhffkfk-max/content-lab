@@ -253,7 +253,7 @@ def learn_edits(queue, send=True):
                 if send and st.get("relogin_alert") != day:
                     st["relogin_alert"] = day
                     save(STYLE, st)
-                    notify.send("⚠️ 캔바 연결이 끊겼어요. PC에서 content-lab-ai 폴더의 'python -m publish.canva_auth' 를 실행해 다시 허용해 주세요.")
+                    os.environ.get("WATCH_ALERTS") == "1" and notify.send("⚠️ 캔바 연결이 끊겼어요. PC에서 content-lab-ai 폴더의 'python -m publish.canva_auth' 를 실행해 다시 허용해 주세요.")
                 break
             continue
         upd = d.get("updated_at") or 0
@@ -298,7 +298,7 @@ def learn_edits(queue, send=True):
             msg += f"\n지금 규칙 {len(st['rules'])}개 → 다음 초안부터 적용"
             if applied:
                 msg += f"\n🎨 {item['form']} 폼 색 바꿈: " + ", ".join(k.replace('>', '→') for k in applied)
-            notify.send(msg)
+            os.environ.get("WATCH_ALERTS") == "1" and notify.send(msg)  # 봇엔 올릴 콘텐츠만 (2026-11-13 대표 요청) — WATCH_ALERTS=1 이면 다시 보냄
     return changed
 
 
@@ -380,7 +380,7 @@ def learn_perf(queue, send=True):
             stats = write_stats(queue)
             f = stats["forms"].get(it["form"], {})
             if send:
-                notify.send(f"📊 48시간 성적: {it.get('title', it['topic'])}\n폼 {it['form']} · 도달 {vals.get('reach')} · 저장 {vals.get('saved')} · "
+                os.environ.get("WATCH_ALERTS") == "1" and notify.send(f"📊 48시간 성적: {it.get('title', it['topic'])}\n폼 {it['form']} · 도달 {vals.get('reach')} · 저장 {vals.get('saved')} · "
                             f"공유 {vals.get('shares')} · 댓글 {m.get('comments_count')}\n점수 {score(it['perf'])} (이 폼 평균 {f.get('score')}, {f.get('n')}번)\n{m.get('permalink', '')}")
     write_stats(queue)
     return changed

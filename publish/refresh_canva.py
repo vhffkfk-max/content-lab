@@ -5,6 +5,7 @@
 대표가 캔바에서 고친 사본은 건드리지 않는다. 옛 사본은 지우지 않고 '핫코노미 · 옛 초안' 폴더로 옮긴다.
 새 편집 링크는 큐와 텔레그램으로.
 """
+import os
 import json
 import sys
 
@@ -56,7 +57,7 @@ def main():
     lines += [f"\n{it.get('title', it['id'])}\n{it['canva']['edit_url']}" for it in done[-8:]]
     if kept:
         lines.append(f"\n대표님이 고친 사본 {len(kept)}개는 그대로 뒀어요.")
-    if done or kept:
+    if (done or kept) and os.environ.get("WATCH_ALERTS") == "1":  # 봇엔 올릴 콘텐츠만 (2026-11-13 대표 요청) — WATCH_ALERTS=1 이면 다시 보냄
         notify.send("\n".join(lines))
     print(f"다시 만듦 {len(done)}개, 고친 사본 유지 {len(kept)}개")
 

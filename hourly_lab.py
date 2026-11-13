@@ -91,6 +91,8 @@ def freshness(cwd):
 
 
 def alert(text):
+    if not os.environ.get("WATCH_ALERTS") == "1":  # 봇엔 올릴 콘텐츠만 (2026-11-13 대표 요청) — WATCH_ALERTS=1 이면 다시 보냄
+        return
     """멈춘 자료는 봇으로 — 3시간에 한 번만."""
     mark = HOME / "hourly_alert"
     if mark.exists() and time.time() - mark.stat().st_mtime < 3 * 3600:

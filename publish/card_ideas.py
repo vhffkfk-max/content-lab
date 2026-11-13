@@ -7,6 +7,7 @@
 - 완성 카드를 매번 만들면 Max 사용량을 많이 써서, 여기서는 글 한 번(주제 3개)만 쓰고 시안은 코드가 그린다.
 - 추천안은 data/publish_queue.json 의 ideas 칸. 사이트가 이미 읽는 파일이라 중간 서버를 고치지 않아도 된다.
 """
+import os
 import argparse
 import json
 import pathlib
@@ -214,7 +215,8 @@ def main():
     if not a.no_send:
         print("시안:", card_preview.push({}, blobs))
         lines = "\n\n".join(f"{i + 1}. {x['title']}\n{x['why_now']}" for i, x in enumerate(ideas))
-        notify.send(f"💡 카드뉴스 추천안 {now:%H}시\n\n{lines}\n\n연구소 '카드뉴스 검수'에서 골라 주세요.", silent=True)
+        if os.environ.get("WATCH_ALERTS") == "1":  # 봇엔 올릴 콘텐츠만 (2026-11-13 대표 요청) — WATCH_ALERTS=1 이면 다시 보냄
+            notify.send(f"💡 카드뉴스 추천안 {now:%H}시\n\n{lines}\n\n연구소 '카드뉴스 검수'에서 골라 주세요.", silent=True)
     return 0
 
 

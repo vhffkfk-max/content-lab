@@ -189,6 +189,8 @@ def show_popup():
 
 def remind(rows, state):
     """오래 확인 안 한 글을 봇으로 다시 알림 (PC 앞에 없을 때를 위해)."""
+    if not os.environ.get("WATCH_ALERTS") == "1":  # 봇엔 올릴 콘텐츠만 (2026-11-13 대표 요청) — WATCH_ALERTS=1 이면 다시 보냄
+        return
     now = datetime.now(KST)
     if now.hour < QUIET_UNTIL or time.time() - state.get("remind_at", 0) < (REMIND_MIN - 1) * 60:
         return
@@ -302,7 +304,7 @@ def main():
             if n >= MAX_FAILS:
                 seen[item["key"]] = None
                 mark(item["key"], status="실패")
-                send(f"⚠️ 바레이션을 못 만들었어요 ({item['source']}): {item['url']}")
+                os.environ.get("WATCH_ALERTS") == "1" and send(f"⚠️ 바레이션을 못 만들었어요 ({item['source']}): {item['url']}")
             continue
         seen[item["key"]] = None
         if row:

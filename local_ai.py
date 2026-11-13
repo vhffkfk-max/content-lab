@@ -68,6 +68,8 @@ def py(*a, timeout=40 * 60):
 
 
 def alert_owner(text):
+    if not os.environ.get("WATCH_ALERTS") == "1":  # 봇엔 올릴 콘텐츠만 (2026-11-13 대표 요청) — WATCH_ALERTS=1 이면 다시 보냄
+        return log("(봇 알림 끔)", text)
     """크롤러 문제를 봇으로 — 1시간에 한 번만."""
     if ALERTED.exists() and time.time() - ALERTED.stat().st_mtime < 3600:
         return
