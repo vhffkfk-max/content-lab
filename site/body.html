@@ -258,6 +258,10 @@ a.row:hover .row-main{text-decoration:underline}
 @media (max-width:860px){.side-hide{display:none}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 /* 처음 화면 */
+.dp-var{margin:14px 0;padding:14px;border:1px solid var(--accent);border-radius:var(--radius-card);background:var(--accent-soft)}
+.dp-var h3{margin:0 0 8px}
+.dp-var-part{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:start;padding:10px 0;border-top:1px solid var(--border)}
+.dp-var-part p{margin:0;white-space:pre-line;line-height:1.6;font-size:15px}
 .clamp4{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer}
 .fpost{display:grid;gap:8px;align-content:start;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-card);padding:16px}
 .fpost .job-ch{display:block;line-height:1.5}
@@ -5102,6 +5106,19 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     const x = el('button', 'btn small', '닫기'); x.type = 'button'; x.addEventListener('click', closeDetail);
     head.append(hd, x);
     dp.append(head, el('p', 'full', p.text || '(본문 미수집)'));
+    const v = varOf(p);
+    if (v) {
+      const box = el('section', 'dp-var'), h = el('h3', null, '황소개미 바레이션 '); h.append(el('span', 'bdg ai', 'AI 작성'));
+      box.append(h);
+      v.parts.forEach((pt, i) => {
+        const row = el('div', 'dp-var-part');
+        row.append(el('p', null, pt), copyBtn(v.parts.length > 1 ? `${i + 1}칸 복사` : '복사', pt, i ? 'btn small' : 'btn small primary'));
+        box.append(row);
+      });
+      if ((v.check || []).length) box.append(el('p', 'note', '올리기 전 확인: ' + v.check.join(' · ')));
+      box.append(el('p', 'note', `${v.time} 작성 · 원문 문장은 옮기지 않고 소재·형식만 빌렸어요.`));
+      dp.append(box);
+    }
     const h1 = el('h3', null, '실측 지표 '); h1.append(el('span', 'bdg obs', '관측 데이터'));
     const dl = el('dl');
     metricRows(p).forEach(([k, v, tip]) => {
@@ -5141,6 +5158,12 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     document.body.append(back, dp);
     x.focus();
   }
+  // 남의 글 → 황소개미 바레이션 (thread_var.py → thx_var.json, url 로 연결)
+  let VARS = null;
+  function varOf(p) {
+    if (!VARS) { VARS = new Map(); (rows('thx_var') || []).forEach(v => { if (!VARS.has(v.url)) VARS.set(v.url, v); }); }
+    return p && p.url ? VARS.get(p.url) : null;
+  }
   function tCard(p, src) {
     const c = el('button', 'tcard'); c.type = 'button';
     const who = el('div', 'who');
@@ -5152,6 +5175,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     const f = el('div', 'foot'); f.append(el('span', 'bdg obs', '관측'));
     if (p.topics) f.append(el('span', null, p.topics));
     if (p.grade) f.append(el('span', null, '· ' + p.grade));
+    if (varOf(p)) f.append(el('span', 'pill positive', '바레이션 있음'));
     c.append(who, el('p', 'txt', p.text || '(본문 미수집)'), m, f);
     c.setAttribute('aria-label', `@${p.username || '?'} 글 상세 보기`);
     c.addEventListener('click', () => openDetail(p, src, c));

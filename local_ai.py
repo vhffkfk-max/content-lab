@@ -30,7 +30,7 @@ LOG = ROOT / "data" / "local_ai.log"
 SITE = "output/site/"
 OUTPUTS = [SITE + f for f in ("tg_ai.json", "tg_inbox.json", "tg_rewrites.json", "trd_rooms.json", "trd_posts.json", "drafts.json",
                                "imports.json", "threads_ai.json", "x_ai.json", "thm_ai.json", "growth_plan.json", "thread_posts.json",
-                               "chart_reports.json", "charts", "futures_brief.json", "futures", "malhee_var.json", "acc_topics.json", "channel_pulse.json", "trader_posts.json", "hot_archive")] + [SITE + f"acc_{a['slug']}{x}.json" for a in _ACCS for x in ("", "_gpt")] + ["data/publish_queue.json", "data/card_style.json", "data/form_stats.json"]
+                               "chart_reports.json", "charts", "futures_brief.json", "futures", "malhee_var.json", "acc_topics.json", "channel_pulse.json", "trader_posts.json", "hot_archive", "thx_var.json")] + [SITE + f"acc_{a['slug']}{x}.json" for a in _ACCS for x in ("", "_gpt")] + ["data/publish_queue.json", "data/card_style.json", "data/form_stats.json"]
 ENV = {**os.environ, "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1"}
 CRAWLERS = (("content-lab-telegram-live", "tg_live.py"), ("content-lab-threads-watch", "threads_watch.py"), ("content-lab-thread-listen", "thread_listen.py"))
 TG_BEAT = Path.home() / ".content-lab-ai" / "tg_live.beat"
@@ -289,6 +289,10 @@ def run_cycle():
         did.append(f"카드뉴스 초안 {pick or topic}")
     if not drafts:
         auto_ideas(state, did)
+
+    if slot_once(state, "thvar", tuple(range(8, 24))):   # 매시간: 급상승·지금 크는 쓰레드 글 → 황소개미 바레이션 4개 (사이트 카드에서 복사, thread_var.py)
+        py("thread_var.py", timeout=15 * 60)
+        did.append("쓰레드 바레이션")
 
     if slot_once(state, "formauto", (8,)):   # 매일 08시: 쓰레드 연구소 추천 형태 1·2위로 황소개미 쓰레드 글 + 1위 주제 카드뉴스 초안 → 사이트·봇 (2026-11-13)
         try:
