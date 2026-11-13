@@ -42,8 +42,9 @@ def election_now(today=None):
     return next((e for e in config().get("election_periods", []) if e["from"] <= today <= e["to"]), None)
 
 
-def items_path(slug):
-    return SITE / f"acc_{slug}.json"
+def items_path(slug, engine="claude"):
+    """Claude 글은 acc_<slug>.json, ChatGPT 글은 acc_<slug>_gpt.json (페이지에서 따로 보임)."""
+    return SITE / (f"acc_{slug}_gpt.json" if engine == "gpt" else f"acc_{slug}.json")
 
 
 def load(path, default):

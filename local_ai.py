@@ -30,7 +30,7 @@ LOG = ROOT / "data" / "local_ai.log"
 SITE = "output/site/"
 OUTPUTS = [SITE + f for f in ("tg_ai.json", "tg_inbox.json", "tg_rewrites.json", "trd_rooms.json", "trd_posts.json", "drafts.json",
                                "imports.json", "threads_ai.json", "x_ai.json", "thm_ai.json", "growth_plan.json", "thread_posts.json",
-                               "chart_reports.json", "charts", "futures_brief.json", "futures", "malhee_var.json", "acc_topics.json", "channel_pulse.json", "trader_posts.json", "hot_archive")] + [SITE + f"acc_{a['slug']}.json" for a in _ACCS] + ["data/publish_queue.json", "data/card_style.json", "data/form_stats.json"]
+                               "chart_reports.json", "charts", "futures_brief.json", "futures", "malhee_var.json", "acc_topics.json", "channel_pulse.json", "trader_posts.json", "hot_archive")] + [SITE + f"acc_{a['slug']}{x}.json" for a in _ACCS for x in ("", "_gpt")] + ["data/publish_queue.json", "data/card_style.json", "data/form_stats.json"]
 ENV = {**os.environ, "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1"}
 CRAWLERS = (("content-lab-telegram-live", "tg_live.py"), ("content-lab-threads-watch", "threads_watch.py"), ("content-lab-thread-listen", "thread_listen.py"))
 TG_BEAT = Path.home() / ".content-lab-ai" / "tg_live.beat"
@@ -315,7 +315,8 @@ def run_cycle():
         refresh_news()
         py("news_pool.py")              # 같은 소식 묶음 (수집 소스는 그대로)
         py("-m", "acclab.run", timeout=30 * 60)
-        did.append("계정별 콘텐츠")
+        py("-m", "acclab.run", "--gpt", timeout=40 * 60)   # 같은 소재로 ChatGPT(정액제) 판 — 페이지에서 따로 보임
+        did.append("계정별 콘텐츠 (Claude·ChatGPT)")
 
     if slot_once(state, "learn", tuple(range(8, 24))):   # 1시간마다: 캔바에서 고친 것·48시간 성적 배우기 (publish/card_learn.py)
         py("-m", "publish.card_learn")

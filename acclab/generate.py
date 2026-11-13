@@ -19,7 +19,7 @@ from typing import List
 from pydantic import BaseModel
 
 import llm as anthropic
-from acclab import compliance
+from acclab import compliance, gpt_engine
 from acclab.common import OUTPUT_DIR, TOPICS, account, accounts, items_path, load, now, persona, save
 
 KEEP = 60
@@ -118,7 +118,7 @@ def others_first_lines(topic_id, slug):
     return out
 
 
-def write(t, acc):
+def write(t, acc, engine="claude"):
     closing = acc["opinion_note"] if acc.get("group") == "정치" else acc["disclaimer"]
     others = others_first_lines(t["id"], acc["slug"])
     quotes = market(acc.get("market", ""))
@@ -137,13 +137,20 @@ def write(t, acc):
         "위 소재로 main, A, B, C, D, take, video 를 모두 써 줘."])
     msgs = [{"role": "user", "content": prompt}]
     for attempt in range(2):
-        r = anthropic.Anthropic().messages.parse(model=acc["model"], max_tokens=9000, system=system, output_config={"effort": "medium"},
-                                                 messages=msgs, output_format=Out)
-        out = r.parsed_output
+        if engine == "gpt":   # ChatGPT(정액제) — 대화 전체를 글 하나로 이어 보냄
+            convo = "\n\n".join(("[이전 답]\n" if m["role"] == "assistant" else "") + m["content"] for m in msgs)
+            out = Out.model_validate(gpt_engine.ask(system, convo, Out.model_json_schema()))
+        else:
+            r = anthropic.Anthropic().messages.parse(model=acc["model"], max_tokens=9000, system=system, output_config={"effort": "medium"},
+                                                     messages=msgs, output_format=Out)
+            out = r.parsed_output
         if out is None:
             raise RuntimeError("형식에 맞는 답이 없음")
         res = assemble(t, acc, out, closing, others)
         res["market"] = quotes
+        res["engine"] = engine
+        if engine == "gpt":
+            res["id"] += "-gpt"
         bad = compliance.stops(sum(res["flags"].values(), []) + res["video_flags"])   # 다섯 형식 + 영상 대본 전부
         if attempt or not bad:
             return res
@@ -195,14 +202,14 @@ def files(res):
     (d / "video" / f"{res['id']}.json").write_text(json.dumps(res["video"], ensure_ascii=False, indent=1), encoding="utf-8")
 
 
-def run(slug, n=3, topic=None):
+def run(slug, n=3, topic=None, engine="claude"):
     acc = account(slug)
     if not acc:
         raise SystemExit(f"accounts.config.json 에 없는 계정: {slug}")
-    if not anthropic.ready():
-        print("Claude(Max)를 부를 수 없는 곳이라 건너뜀")
+    if not (gpt_engine.ready() if engine == "gpt" else anthropic.ready()):
+        print("ChatGPT(Codex)를 부를 수 없는 곳이라 건너뜀" if engine == "gpt" else "Claude(Max)를 부를 수 없는 곳이라 건너뜀")
         return 0
-    topics, items = load(TOPICS, []), load(items_path(slug), [])
+    topics, items = load(TOPICS, []), load(items_path(slug, engine), [])
     todo = [t for t in topics if t["id"] == topic] if topic else due(acc, topics, items, n)
     if not todo:
         print(f"{acc['name']}: 새로 쓸 소재 없음 (오늘 몫 {acc['daily_max']}건)")
@@ -210,16 +217,16 @@ def run(slug, n=3, topic=None):
     made = 0
     for t in todo:
         try:
-            res = write(t, acc)
+            res = write(t, acc, engine)
         except Exception as e:
             print("실패:", t["title"][:40], str(e)[:300])
             continue
         items = [res] + [it for it in items if it["id"] != res["id"]]
-        save(items_path(slug), items[:KEEP])
+        save(items_path(slug, engine), items[:KEEP])
         files(res)
         made += 1
         stop = compliance.stops(res["flags"]["main"] + res["video_flags"])
-        print(f"✅ {acc['name']} | {t['title'][:40]} | 첫 문장: {compliance.first_line(res['thread']['main'])[:40]}"
+        print(f"✅ {'[GPT] ' if engine == 'gpt' else ''}{acc['name']} | {t['title'][:40]} | 첫 문장: {compliance.first_line(res['thread']['main'])[:40]}"
               + (f" | ⚠ {', '.join(f['kind'] for f in stop)}" if stop else ""))
     return made
 
@@ -230,8 +237,9 @@ def main():
     ap.add_argument("slug")
     ap.add_argument("--n", type=int, default=3)
     ap.add_argument("--topic")
+    ap.add_argument("--engine", choices=("claude", "gpt"), default="claude")
     a = ap.parse_args()
-    run(a.slug, a.n, a.topic)
+    run(a.slug, a.n, a.topic, a.engine)
 
 
 if __name__ == "__main__":

@@ -48,6 +48,7 @@ pre{white-space:pre-wrap;font:inherit;margin:0;padding:16px;background:var(--rai
 .flag{font-size:13px;padding:8px 12px;border-radius:8px;margin:0 0 6px}.flag.stop{background:var(--stop-bg);color:var(--stop-ink)}
 .flag.warn{background:var(--warn-bg);color:var(--warn-ink)}.pill{font-size:12px;padding:2px 8px;border-radius:999px}
 .pill.stop{background:var(--stop-bg);color:var(--stop-ink)}.pill.warn{background:var(--warn-bg);color:var(--warn-ink)}.pill.ok{background:var(--raised);color:var(--muted)}
+.pill.gpt{background:#10a37f;color:#fff;font-weight:600}.gpt-h{margin-top:36px;padding-top:18px;border-top:2px solid #10a37f}
 table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px solid var(--rule)}
 th{font-size:12px;color:var(--faint);font-weight:600}td.s{white-space:nowrap;color:var(--muted)}
 .facts{margin:0;padding-left:18px;font-size:14px;color:var(--muted)}.src{font-size:13px}.empty{padding:28px 18px;color:var(--muted)}
@@ -118,7 +119,7 @@ def item_html(i, it):
     market = (f'<p class="sub"><b>글에 준 시세</b> {e(" / ".join(it["market"]))}</p>' if it.get("market") else "")
     links = " ".join(f'<a href="{e(u)}" target="_blank" rel="noopener">원문 {n + 1}</a>' for n, u in enumerate(it.get("sources", [])))
     return f"""<details class="item panel" data-i="{i}"><summary><span class="t">{e(it["title"])}</span>
-<span class="m">{when} · {e(tags)} · {len(it.get("outlets", []))}개 매체 보도</span><span class="f">{badge(allflags)}</span></summary>
+<span class="m">{when} · {e(tags)} · {len(it.get("outlets", []))}개 매체 보도</span><span class="f">{'<span class="pill gpt">ChatGPT</span> ' if it.get("engine") == "gpt" else ""}{badge(allflags)}</span></summary>
 <div class="body">{dup}
 <div class="row"><h3>쓰레드 글</h3><button type="button" class="copy th">이 글 복사</button></div>
 <div class="tabs" role="group" aria-label="글 형식">{tabs}</div><div class="tflags"></div><pre class="thread"></pre>
@@ -130,7 +131,7 @@ def item_html(i, it):
 </div></details>"""
 
 
-def account_page(a, items):
+def account_page(a, items, gitems=()):
     chips = "".join(f'<li class="chip on">{OUT_LABEL.get(o, o)}</li>' for o in a["outputs"])
     head = (f'<div class="top"><h1>{e(a["name"])}</h1><a href="../">← 계정 목록</a></div>'
             f'<p class="sub">{e(a["group"])} · {e(a.get("handle") or "핸들 미정")}</p><ul class="chips">{chips}</ul>')
@@ -150,8 +151,12 @@ def account_page(a, items):
     body += "".join(item_html(i, it) for i, it in new) or '<div class="panel empty">아직 오늘 만든 글이 없어요. PC가 07·12·18시에 만듭니다.</div>'
     if old:
         body += "<h2>지난 콘텐츠</h2>" + "".join(item_html(i, it) for i, it in old)
+    gitems, base = list(gitems), len(items)   # ChatGPT 판: 같은 소재를 ChatGPT(정액제)가 쓴 글. 화면 데이터는 Claude 글 뒤에 붙임
+    body += ('<h2 class="gpt-h">ChatGPT 버전 <span class="sub">같은 소재 · Claude 토큰 안 씀 · 비교용</span></h2>'
+             + ("".join(item_html(base + i, it) for i, it in enumerate(gitems))
+                or '<div class="panel empty">아직 ChatGPT 글이 없어요. PC가 Claude 글 다음에 같은 소재로 만듭니다.</div>'))
     body += '<p class="sub" style="margin-top:28px">자동 검사는 놓칠 수 있어요. 올리기 전 숫자와 표현을 한 번 확인해 주세요.</p>'
-    return page(a["name"], body, {"items": items})
+    return page(a["name"], body, {"items": items + gitems})
 
 
 def index_page(accs):
@@ -165,7 +170,8 @@ def index_page(accs):
         for a in rows:
             items = load(items_path(a["slug"]), [])
             outs = ", ".join(OUT_LABEL.get(o, o) for o in a["outputs"])
-            state = f'글 {len(items)}개' if a.get("ready") else '<span class="soon">준비 중</span>'
+            ng = len(load(items_path(a["slug"], "gpt"), []))
+            state = (f'글 {len(items)}개' + (f' · ChatGPT {ng}개' if ng else '')) if a.get("ready") else '<span class="soon">준비 중</span>'
             cards += f'<a class="panel" href="{a["slug"]}/"><b>{e(a["name"])}</b><p>{outs} · {state}</p></a>'
         body += f'<section class="group"><h2>{e(g)}</h2><div class="acc">{cards}</div></section>'
     return page("계정별 콘텐츠", body)
@@ -179,7 +185,7 @@ def build(out):
     for a in accs:
         d = out / a["slug"]
         d.mkdir(exist_ok=True)
-        (d / "index.html").write_text(account_page(a, load(items_path(a["slug"]), [])), encoding="utf-8")
+        (d / "index.html").write_text(account_page(a, load(items_path(a["slug"]), []), load(items_path(a["slug"], "gpt"), [])), encoding="utf-8")
     return len(accs)
 
 
