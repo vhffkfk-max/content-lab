@@ -1,21 +1,39 @@
 [
  {
   "geo": "KR",
+  "term": "날씨",
+  "traffic": 500000,
+  "topics": "",
+  "econ": false,
+  "news_title": "은행나무 ‘노란 단풍’ 절정…토요일 전국에 비",
+  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8712490"
+ },
+ {
+  "geo": "KR",
   "term": "weather",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "Live updates: FAA issues nationwide ground stop for all flights",
-  "news_link": "https://www.cnn.com/2026/11/13/us/live-news/flights-ground-stop-faa"
+  "news_title": "Cold weather settling in this weekend",
+  "news_link": "https://www.local3news.com/local-news/cold-weather-settling-in-this-weekend/article_ca348ccc-d6f0-4e19-b850-1581885a47c4.html"
  },
  {
   "geo": "KR",
-  "term": "중앙일보",
+  "term": "돈",
+  "traffic": 2000,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "\"돈 펑펑 쓸 때 아니다\"…AI 호황 누리는 한국에 날린 경고",
+  "news_link": "https://www.hankyung.com/article/2026111236311"
+ },
+ {
+  "geo": "KR",
+  "term": "참교육",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "용산구, '용산형 생활안심디자인'으로 대한민국 범죄예방대상 경찰청장 표창 수상",
-  "news_link": "https://www.yna.co.kr/view/RPR20261113001700353"
+  "news_title": "아동학대 논란 휩싸인 민속촌 귀신…“웃는다고 괜찮은 건 아냐” 세계의 ‘공포 훈육’ 돌아보니 [이윤정 기자의 소소월드]",
+  "news_link": "https://www.khan.co.kr/article/202611121023001"
  },
  {
   "geo": "KR",
@@ -28,155 +46,137 @@
  },
  {
   "geo": "KR",
+  "term": "天气",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "最新天气消息｜黄色暴雨警告信号一度生效 凌晨5时30分取消",
+  "news_link": "https://global.hk01.com/%E5%A4%A9%E6%B0%94/60410538/%E6%9C%80%E6%96%B0%E5%A4%A9%E6%B0%94%E6%B6%88%E6%81%AF-%E9%BB%84%E8%89%B2%E6%9A%B4%E9%9B%A8%E8%AD%A6%E5%91%8A%E4%BF%A1%E5%8F%B7%E4%B8%80%E5%BA%A6%E7%94%9F%E6%95%88-%E5%87%8C%E6%99%A85%E6%97%B630%E5%88%86%E5%8F%96%E6%B6%88"
+ },
+ {
+  "geo": "KR",
+  "term": "주한 미군의 철수",
+  "traffic": 1000,
+  "topics": "정치·관세",
+  "econ": true,
+  "news_title": "美전문가들 \"트럼프, 전작권 전환을 주한미군 철수 수단으로 봐\"",
+  "news_link": "https://www.yna.co.kr/view/AKR20261114002200071"
+ },
+ {
+  "geo": "KR",
   "term": "погода",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Петербург стал другим. Фоторепортаж «Фонтанки» с улиц",
-  "news_link": "https://www.fontanka.ru/2026/11/13/76763284/"
+  "news_title": "Приближается похолодание: как изменит погоду в Украине на выходных антициклон",
+  "news_link": "https://www.rbc.ua/ukr/news/nablizhaetsya-poholodannya-k-zminit-pogodu-1794572566.html"
  },
  {
   "geo": "KR",
-  "term": "天气",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "2026年11月14日，义安省天气预报：气温28摄氏度，早晨有雾，少量降雨。",
-  "news_link": "https://www.vietnam.vn/zh-cn/thoi-tiet-nghe-an-hom-nay-14-11-2026-troi-am-len-28c-sang-co-suong-mu-it-mua"
- },
- {
-  "geo": "KR",
-  "term": "디에고 시메오네",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "'이강인은 60분 만에 뺐으면서...' 시메오네 감독의 단호한 한마디 \"알바레스는 교체하지 않을 거야\"... 스페인 현지서도 논란 - 머니투데이",
-  "news_link": "https://www.mt.co.kr/sports/2026/11/11/2026111108070646917"
- },
- {
-  "geo": "KR",
-  "term": "天気",
+  "term": "天氣",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "【冬の嵐】18日（水）「台風並み」に発達する低気圧 大雨だけでなく「暴風と高波」にも警戒【3時間ごと雨風シミュレーション19日（木）まで／ 3連休まで天気予報（23日まで）】気象庁",
-  "news_link": "https://newsdig.tbs.co.jp/articles/gallery/3085472"
+  "news_title": "氣溫漸升東偶雨週六短波槽掠過",
+  "news_link": "http://www.metapp.org.tw/pages/post-cda502448ac8e0252fb8.html"
  },
  {
   "geo": "KR",
-  "term": "김하성",
+  "term": "보안",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "한국 돌아갈 일 없다! 타율 .116 최악의 해였는데…김하성 FA 인기 폭발 \"예상보다 높은 관심, 1년 계약 모색\" - 머니투데이",
-  "news_link": "https://www.mt.co.kr/sports/2026/11/13/202611121142773551O"
- },
- {
-  "geo": "KR",
-  "term": "은행나무",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "100살 넘은 은행나무에 제초제‥환기미술관장 등 3명 송치",
-  "news_link": "https://imnews.imbc.com/news/2026/society/article/6865440_36918.html"
- },
- {
-  "geo": "KR",
-  "term": "제네시스 gv90",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "제네시스 GV90 계약 시작, 1억 3,950만원부터 2억 4,710만원까지",
-  "news_link": "https://story.pay.naver.com/content/3927_24_C62"
+  "news_title": "해킹 당한 금융보안원 “공격 IP 246개 차단완료…국적은 한국”",
+  "news_link": "https://stock.mk.co.kr/news/view/1198487"
  },
  {
   "geo": "US",
-  "term": "frontier airlines",
-  "traffic": 2000,
+  "term": "nws down",
+  "traffic": 5000,
   "topics": "",
   "econ": false,
-  "news_title": "Frontier is now offering first-class seats starting at $129",
-  "news_link": "https://www.latimes.com/travel/story/2026-11-12/frontier-airlines-first-class-seats-deal"
+  "news_title": "Tornadoes touch down in Del. and NJ as temperatures plummet",
+  "news_link": "https://www.nbcphiladelphia.com/weather/stories-weather/storms-philadelphia-wind-rain-tornado-threat-new-jersey-delaware/4496202/"
  },
  {
   "geo": "US",
-  "term": "newsmax",
+  "term": "estados unidos",
   "traffic": 2000,
-  "topics": "실적발표",
+  "topics": "",
+  "econ": false,
+  "news_title": "La autoridad de aviación de EE.UU. ordena suspender los despegues de vuelos en todo el país \"por circunstancias extraordinarias\"",
+  "news_link": "https://www.bbc.com/mundo/articles/crgqx8jpw3jvo"
+ },
+ {
+  "geo": "US",
+  "term": "knicks vs pacers",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Knicks vs. Pacers prediction, odds, time: 2026 NBA Cup picks for Friday, Nov. 13 from proven model",
+  "news_link": "https://www.cbssports.com/betting/news/knicks-pacers-prediction-odds-time-2026-nba-cup-picks-best-bets-friday-november-13/"
+ },
+ {
+  "geo": "US",
+  "term": "mexico vs",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "El Tri is back in action Saturday in its first official match of the Rafa Márquez era",
+  "news_link": "https://mexiconewsdaily.com/lifestyle/el-tri-back-in-action-saturday-first-official-match-rafa-marquez-era/"
+ },
+ {
+  "geo": "US",
+  "term": "florida state vs pittsburgh",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Follow Live: Pitt Football vs. Florida State",
+  "news_link": "https://pittsburghpanthers.com/news/2026/11/13/follow-live-pitt-football-vs-florida-state"
+ },
+ {
+  "geo": "US",
+  "term": "bucks vs magic",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Why This Should Be a Dominant NBA Cup Win for Wagner Magic vs. Bucks",
+  "news_link": "https://sports.yahoo.com/articles/why-dominant-nba-cup-win-180005908.html"
+ },
+ {
+  "geo": "US",
+  "term": "cisa",
+  "traffic": 500,
+  "topics": "빅테크",
   "econ": true,
-  "news_title": "Femasys Inc reports results for the quarter ended September 30 - Earnings Summary",
-  "news_link": "https://www.tradingview.com/news/reuters.com,2026:newsml_L5N46U2QG:0-femasys-inc-reports-results-for-the-quarter-ended-september-30-earnings-summary/"
+  "news_title": "Microsoft Confirms Active Exploitation Of New Outlook Zero-Day",
+  "news_link": "https://www.forbes.com/sites/daveywinder/2026/11/11/microsoft-confirms-active-exploitation-of-new-outlook-zero-day/"
  },
  {
   "geo": "US",
-  "term": "radar",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Iran targets US military site in Gulf for first time in two months as hopes for a deal fade",
-  "news_link": "https://www.cnn.com/2026/11/13/middleeast/iran-targets-us-military-site-in-gulf-first-time-in-two-months-intl"
- },
- {
-  "geo": "US",
-  "term": "is the world ending",
+  "term": "iphone warning",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "It’s the end of the world as we know it, per a physicist’s 1960 prediction",
-  "news_link": "https://arstechnica.com/science/2026/11/its-the-end-of-the-world-as-we-know-it-per-a-physicists-1960-prediction/"
+  "news_title": "‘Immediate Action Required’—Urgent Warning To ‘Delete’ These Money-Stealing iPhone Apps Issued",
+  "news_link": "https://www.forbes.com/sites/digital-assets/2026/11/12/immediate-action-required-urgent-warning-to-delete-iphone-apps-issued-after-biggest-ever-hack-sparked-massive-meltdown/"
  },
  {
   "geo": "US",
-  "term": "nasdaq composite",
-  "traffic": 500,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "Nasdaq falls on Friday as Nvidia sells off, but index notches best week since August: Live updates",
-  "news_link": "https://www.cnbc.com/2026/11/12/stock-market-today-live-updates.html"
- },
- {
-  "geo": "US",
-  "term": "texas a&m-cc vs florida state",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "FSU Basketball hosts Texas A&M-Corpus Christi on Friday evening",
-  "news_link": "https://247sports.com/college/florida-state/longformarticle/fsu-basketball-texas-am-corpus-christi-game-preview-292601073/"
- },
- {
-  "geo": "US",
-  "term": "war",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "What the Iraq War Foretold About How the Iran War Will End",
-  "news_link": "https://www.theatlantic.com/newsletters/2026/11/politics-or-iran-war-bush-trump/689421/"
- },
- {
-  "geo": "US",
-  "term": "aliens",
+  "term": "king and queen building",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Fat Dog, “Cancel Me (I’m Tired)”",
-  "news_link": "https://floodmagazine.com/236349/fat-dog-cancel-me-im-tired/"
+  "news_title": "Threat cleared after evacuation of building at Sandy Springs 'King and Queen' complex",
+  "news_link": "https://www.11alive.com/article/news/local/sandy-springs-king-and-queen-towers-evacuation-threat-called-in/85-6e402e33-260e-49aa-9d91-a9359fa35058"
  },
  {
   "geo": "US",
-  "term": "jeff landry",
+  "term": "turkish airlines",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "National party money flowing to La. after nail-biter Senate race",
-  "news_link": "https://www.wafb.com/2026/11/12/national-party-money-flowing-la-after-nail-biter-senate-race/"
- },
- {
-  "geo": "US",
-  "term": "vuelo",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Actualizaciones en vivo: Lo que hay que saber sobre la suspensión nacional de vuelos de la FAA",
-  "news_link": "https://abc7.com/live-updates/actualizaciones-en-vivo-sobre-suspension-de-vuelos-la-faa-lo-que-hay-que-saber-mientras-vuelos-permanecen-detenidos-en-estados-unidos/20038919/"
+  "news_title": "Turkish Airlines sees no need for first class as premium economy returns",
+  "news_link": "https://www.flightglobal.com/strategy/2026/11/turkish-airlines-no-need-for-first-class-premium-economy-returns/"
  }
 ]
