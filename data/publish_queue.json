@@ -3219,388 +3219,6 @@
  ],
  "ideas": [
   {
-   "title": "92주 오른 서울 집값, 한강벨트도 하락 전환",
-   "concept": "92주 연속 상승 끝에 강남3구에 이어 성동구, 강동구도 하락으로 돌아섰고 수도권 외곽은 계속 오르는 갈림 흐름을 보여준다. 첫 본문 장에서 내 지역 시세를 주간 시세로 확인하라는 한 줄을 넣고, 전문가 진단은 인용으로만 쓴다. (공식: 전후 낙차 한 줄 표지)",
-   "why_now": "'집값 하락기 진입 신호', '강남 약세 한강벨트까지', '성동, 강동 하락 전환' 기사를 각각 4곳이 18~20시에 다뤘다. 오늘 발송 목록에는 거래량만 있었고 가격 흐름 자체는 새 주제다.",
-   "tag": "부동산",
-   "sources": [
-    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008843676&plink=RSSLINK&cooper=RSSREADER",
-    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008843677&plink=RSSLINK&cooper=RSSREADER"
-   ],
-   "bg": "Seoul apartment complex",
-   "bg_alt": "Han River Seoul apartments",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "92주 오른 서울 아파트값\n성동구, 강동구도\n**하락**으로 돌아섰다",
-     "number": "92주",
-     "label": "서울 아파트값 연속 상승",
-     "sub": "강남3구에 이어 성동구, 강동구도 하락 전환"
-    },
-    {
-     "type": "질문형",
-     "title": "강남3구 다음엔\n성동구, 강동구\n**한강벨트**까지 번졌나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "서울은 꺾였는데\n수도권 외곽은\n아직 **오르는** 중",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "paper"
-   ],
-   "extra": {
-    "bignum": {},
-    "paper": {
-     "date": "11/12",
-     "headlines": [
-      "서울 아파트값 92주째 상승",
-      "강남3구 이어 성동, 강동 하락",
-      "수도권 외곽은 계속 상승"
-     ]
-    }
-   },
-   "id": "20261112-2101-i1",
-   "created_at": "2026-11-12T21:01:38+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261112-2101-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261112-2101-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261112-2101-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261112-2101-i1/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261112-2101-i1/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261112-2101-i1/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261112-2101-i1/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261112-2101-i1/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261112-2101-i1/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261112-2101-i1/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261112-2101-i1/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261112-2101-i1/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "젠슨 황 스캔들, 알리바바 7% 하락과 미중 문제",
-   "concept": "엔비디아 사태가 알리바바 주가 7% 하락과 중국의 반박으로 이어지며 미중 이슈가 된 과정을 한 사건으로 따라간다. 시세는 오늘 코스피 하락만 기준일과 함께 쓰고, 원인은 확인 안 됨을 한 번만 적는다. (공식: 없음)",
-   "why_now": "블룸버그가 16:58에 알리바바 7% 하락을, 17:35에 중국의 '간첩 서사' 반박을 전했고 미 민주당의 정보 보존 요구도 나왔다. 엔비디아 사태가 미중 이슈로 번진 새 국면이다.",
-   "tag": "AI, 미중",
-   "sources": [
-    "https://www.bloomberg.com/news/articles/2026-11-12/alibaba-shares-drop-7-as-nvidia-saga-triggers-chip-access-fears",
-    "https://v.daum.net/v/20261112171128911"
-   ],
-   "bg": "Jensen Huang",
-   "bg_alt": "Nvidia headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "알리바바 주가 **7%** 급락\n엔비디아 칩 못 구할까\n우려가 번졌다",
-     "number": "7%",
-     "label": "알리바바 주가 하락",
-     "sub": "엔비디아 칩 접근 우려, 블룸버그"
-    },
-    {
-     "type": "질문형",
-     "title": "젠슨 황 스캔들이\n왜 미중 **문제**가 됐나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "중국이 정면 반박\n미국의 **간첩 서사**\n봉쇄 구실이라고",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "breaking"
-   ],
-   "extra": {},
-   "id": "20261112-2101-i2",
-   "created_at": "2026-11-12T21:01:38+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261112-2101-i2/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261112-2101-i2/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261112-2101-i2/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261112-2101-i2/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261112-2101-i2/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261112-2101-i2/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261112-2101-i2/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261112-2101-i2/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261112-2101-i2/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "마이크로소프트, 데이터센터 전기료 직접 내겠다",
-   "concept": "AI 데이터센터 때문에 전기료가 오른다는 미국 내 불만에 마이크로소프트가 보조금 없이, 다른 고객 요금을 올리지 않고 전력을 조달하겠다고 밝힌 사건을 다룬다. 첫 본문 장에서 AI 투자 비용이 커질 수 있다는 점을 쉬운 말로 풀고, MAGA 전략가의 공화당 참패 진단은 보도로 짧게 붙인다. (공식: 당사자의 한마디를 따옴표로)",
-   "why_now": "X에서 마이크로소프트 발언 게시물 조회가 3.2만을 넘겼고, 같은 시간 뉴스1이 'MAGA 전략 설계자, 공화당 참패는 AI 데이터센터, 빅테크 탓'을 보도했다. AI 투자 부담이 정치 이슈가 된 새 흐름이다.",
-   "tag": "AI, 에너지",
-   "sources": [
-    "https://x.com/unusual_whales/status/2120843297975406943",
-    "https://v.daum.net/v/20261112204821705"
-   ],
-   "bg": "Microsoft data center",
-   "bg_alt": "Microsoft headquarters Redmond",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "마이크로소프트\n데이터센터 전기료\n**직접 내겠다**고 선언",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "AI 데이터센터 전기료\n누가 내야 하나\nMS가 **먼저** 답했다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "AI 데이터센터가\n공화당 참패 **탓**이라는데\nMS는 전기료 선언",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "quote"
-   ],
-   "extra": {
-    "quote": {
-     "label": "마이크로소프트",
-     "quote": "우리 성장을 다른 고객이 대신 내면 안 된다",
-     "by": "마이크로소프트 클라우드 사업 사장"
-    }
-   },
-   "id": "20261112-2101-i3",
-   "created_at": "2026-11-12T21:01:38+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261112-2101-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261112-2101-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261112-2101-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261112-2101-i3/1-quote-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261112-2101-i3/1-quote-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261112-2101-i3/1-quote-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261112-2101-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261112-2101-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261112-2101-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261112-2101-i3/2-quote-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261112-2101-i3/2-quote-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261112-2101-i3/2-quote-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261112-2101-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261112-2101-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261112-2101-i3/3-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261112-2101-i3/3-quote-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261112-2101-i3/3-quote-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261112-2101-i3/3-quote-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "트럼프, 멕시코에 관세 2배 경고",
    "concept": "이민자 1500명 북상 보도 직후 트럼프가 멕시코에 '안 막으면 관세 2배'라고 한 사건을 보도로 전한다. 첫 본문 장에서 멕시코 생산 거점을 둔 한국 자동차, 부품 기업에 어떤 길로 영향이 갈 수 있는지 쉬운 말로 풀고, 실제 인상 여부와 시점은 아직 나오지 않았다고 한 번만 밝힌다. (공식: 표지는 이미 일어난 일로)",
    "why_now": "21:17 이후 머니투데이 등이 보도한 새 소식이다. 오늘 다룬 금리, 엔비디아 이슈와 겹치지 않는 관세 재료다.",
@@ -8870,6 +8488,389 @@
      "form": "news",
      "font": "myeongjo",
      "path": "20261113-1901-i3/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "잠자는 카드 포인트 2.1조, 지역화폐로",
+   "concept": "내 지갑 얘기로 시작해 '2.1조 원이 내년 5월부터 지역화폐로 바뀐다'는 보도를 풀고, 대상 기준과 기한은 아직 확인 전이라고 한 번만 밝힌다. 마지막 장은 내 포인트를 미리 확인하라는 안내. (공식: 없음)",
+   "why_now": "17:55 뉴스1, 동아, 한국경제 등 4곳이 시행 시기(내년 5월)와 규모(2.1조원)를 보도했다. 13:26 건의 구체화 후속이다.",
+   "tag": "소비",
+   "sources": [
+    "https://www.donga.com/news/Economy/article/all/20261113/135020787/1",
+    "https://v.daum.net/v/20261113175524550"
+   ],
+   "bg": "Korean credit cards",
+   "bg_alt": "Korean local currency card",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "잠자던 카드 포인트\n**2.1조원**이 내년 5월\n지역화폐로 바뀐다",
+     "number": "2.1조원",
+     "label": "안 쓰고 잠자는 카드 포인트",
+     "sub": "내년 5월부터 지역화폐로 전환"
+    },
+    {
+     "type": "질문형",
+     "title": "안 쓴 내 카드 포인트\n내년 5월부터\n**지역화폐**가 된다고?",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "쓰라고 해도 안 쓴\n포인트 2.1조원\n이제 **동네 가게**로",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "editorial"
+   ],
+   "extra": {},
+   "id": "20261113-2001-i1",
+   "created_at": "2026-11-13T20:01:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261113-2001-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261113-2001-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261113-2001-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261113-2001-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261113-2001-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261113-2001-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261113-2001-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261113-2001-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261113-2001-i1/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "석유 최고가격 12차 동결, 휘발유 1784원",
+   "concept": "'정부가 12차로 석유 최고가격을 동결했다'를 사건으로 걸고, 휘발유 1784원, 경유 1773원, 4주 더 동결을 짚는다. 100원 단위 계산 대신 '주유소 상한이 유지돼 급등 부담은 덜었다'로 내 차 기름값에 닿게 풀고, 상한 유지 기한은 확인 전이라고 한 번만 적는다. (공식: 없음)",
+   "why_now": "18:08~18:20 사이 뉴시스, 연합인포맥스, 파이낸셜뉴스 등 여러 곳이 보도했다. 아직 우리 계정이 다루지 않은 주제다.",
+   "tag": "생활물가",
+   "sources": [
+    "https://www.newsis.com/view/NISX20261113_0003867086",
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4444721",
+    "https://v.daum.net/v/20261113181439117"
+   ],
+   "bg": "gas station fuel price",
+   "bg_alt": "Korean gas station",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "휘발유 **1784원**\n경유 1773원\n최고가격 또 동결",
+     "number": "1784원",
+     "label": "휘발유 최고가격",
+     "sub": "경유 1773원, 4주 더 동결"
+    },
+    {
+     "type": "질문형",
+     "title": "주유소 기름값 상한\n**12번째** 동결\n언제까지 갈까?",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "기름값 상한 안 풀려\n급등 부담은 **덜었다**\n문제는 그다음",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261113-2001-i2",
+   "created_at": "2026-11-13T20:01:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261113-2001-i2/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261113-2001-i2/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261113-2001-i2/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261113-2001-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261113-2001-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261113-2001-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261113-2001-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261113-2001-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261113-2001-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261113-2001-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261113-2001-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261113-2001-i2/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "엔비디아 혼란 틈타 중국 한국산 HBM 확보전",
+   "concept": "주인공을 중국으로 두고 '혼란 틈타 한국산 HBM 달라'(중앙일보), 미국 AI칩 통제 강화 속 확보전(연합뉴스), 오늘 SK하이닉스 -3.03%, 삼성전자 -0.96% 순으로 한 걸음씩 푼다. 시세와 보도의 원인 관계는 확인 안 됨이라고 한 번만 적고, 투자 권유 아님을 붙인다. (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "중앙일보와 연합뉴스가 중국의 HBM 확보전을 보도했고, 오늘 SK하이닉스가 3%대 급락해 한국 반도체와 직결된다. 앞서 다룬 젠슨 황 의혹, 버리 경고와 다른 각도다.",
+   "tag": "반도체",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMiVkFVX3lxTE16dTBaV3RMQzZ1N1JsSzA3Uml5U0hjNE41aWVsQXAyYks5UWJEcHBiNk5jOUltczNnbVp",
+    "https://news.google.com/rss/articles/CBMidEFVX3lxTE0tbFU4TVhOTHlDMUswZmNHYUowRHhtZ0RlZlBfaW9BTUVtZHFnbkkwZ181eThNa2MxRmh",
+    "https://www.yna.co.kr/view/AKR20261113040151008"
+   ],
+   "bg": "Jensen Huang",
+   "bg_alt": "SK hynix HBM memory",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "SK하이닉스 **3%** 급락\n그 사이 중국은\n한국산 HBM 찾았다",
+     "number": "-3.03%",
+     "label": "SK하이닉스 11/13 등락",
+     "sub": "삼성전자 -0.96%"
+    },
+    {
+     "type": "질문형",
+     "title": "엔비디아가 흔들리자\n중국이 왜 한국산\n**HBM**부터 찾을까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "미국은 AI칩 통제 강화\n중국은 **한국산 HBM**\n확보전 나섰다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "bars"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "11/13 하락률(%)",
+     "bars": [
+      {
+       "label": "SK하이닉스",
+       "value": 3.03,
+       "hi": true
+      },
+      {
+       "label": "삼성전자",
+       "value": 0.96
+      }
+     ]
+    }
+   },
+   "id": "20261113-2001-i3",
+   "created_at": "2026-11-13T20:01:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261113-2001-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261113-2001-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261113-2001-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261113-2001-i3/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261113-2001-i3/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261113-2001-i3/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261113-2001-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261113-2001-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261113-2001-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261113-2001-i3/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261113-2001-i3/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261113-2001-i3/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261113-2001-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261113-2001-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261113-2001-i3/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261113-2001-i3/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261113-2001-i3/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261113-2001-i3/3-bars-dohyeon.jpg"
     }
    ]
   }
