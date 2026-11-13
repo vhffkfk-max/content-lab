@@ -8,10 +8,10 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.67,
-  "kr_n": 442,
-  "foreign_avg": 2.38,
-  "foreign_n": 227
+  "kr_avg": 1.66,
+  "kr_n": 444,
+  "foreign_avg": 2.37,
+  "foreign_n": 231
  },
  {
   "rank": 2,
@@ -24,8 +24,8 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 2.47,
   "kr_n": 54,
-  "foreign_avg": 1.9,
-  "foreign_n": 57
+  "foreign_avg": 1.87,
+  "foreign_n": 58
  },
  {
   "rank": 3,
@@ -85,20 +85,6 @@
  },
  {
   "rank": 7,
-  "topic": "빅테크",
-  "kind": "국내·해외 모두 강세",
-  "confidence": "높음",
-  "title_idea": "빅테크, 지금 꼭 알아야 할 것은?",
-  "format": "릴스",
-  "hook": "질문형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 2.42,
-  "kr_n": 40,
-  "foreign_avg": 1.25,
-  "foreign_n": 18
- },
- {
-  "rank": 8,
   "topic": "국내 대형주",
   "kind": "국내 검증 주제",
   "confidence": "높음",
@@ -110,5 +96,19 @@
   "kr_n": 187,
   "foreign_avg": 0.72,
   "foreign_n": 8
+ },
+ {
+  "rank": 8,
+  "topic": "빅테크",
+  "kind": "국내·해외 모두 강세",
+  "confidence": "높음",
+  "title_idea": "빅테크, 지금 꼭 알아야 할 것은?",
+  "format": "릴스",
+  "hook": "질문형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 2.36,
+  "kr_n": 41,
+  "foreign_avg": 1.25,
+  "foreign_n": 18
  }
 ]
