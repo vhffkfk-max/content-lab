@@ -11,7 +11,7 @@
   "kr_avg": 1.69,
   "kr_n": 477,
   "foreign_avg": 2.43,
-  "foreign_n": 262
+  "foreign_n": 263
  },
  {
   "rank": 2,
@@ -22,7 +22,7 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.33,
+  "kr_avg": 2.32,
   "kr_n": 57,
   "foreign_avg": 1.77,
   "foreign_n": 69
@@ -43,20 +43,6 @@
  },
  {
   "rank": 4,
-  "topic": "급락·변동성",
-  "kind": "국내·해외 모두 강세",
-  "confidence": "높음",
-  "title_idea": "[오늘] 급락·변동성에 무슨 일이? 1분 요약",
-  "format": "릴스",
-  "hook": "속보·뉴스형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 2.07,
-  "kr_n": 83,
-  "foreign_avg": 1.87,
-  "foreign_n": 20
- },
- {
-  "rank": 5,
   "topic": "국내 대형주",
   "kind": "국내 검증 주제",
   "confidence": "높음",
@@ -64,13 +50,13 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.99,
+  "kr_avg": 1.98,
   "kr_n": 204,
   "foreign_avg": 0.69,
   "foreign_n": 9
  },
  {
-  "rank": 6,
+  "rank": 5,
   "topic": "빅테크",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
@@ -80,25 +66,25 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 2.32,
   "kr_n": 43,
-  "foreign_avg": 1.25,
+  "foreign_avg": 1.26,
   "foreign_n": 26
  },
  {
-  "rank": 7,
-  "topic": "비트코인",
+  "rank": 6,
+  "topic": "급락·변동성",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
-  "title_idea": "[오늘] 비트코인에 무슨 일이? 1분 요약",
-  "format": "캐러셀(카드뉴스)",
+  "title_idea": "[오늘] 급락·변동성에 무슨 일이? 1분 요약",
+  "format": "릴스",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.29,
-  "kr_n": 13,
-  "foreign_avg": 1.76,
-  "foreign_n": 163
+  "kr_avg": 2.06,
+  "kr_n": 83,
+  "foreign_avg": 1.88,
+  "foreign_n": 20
  },
  {
-  "rank": 8,
+  "rank": 7,
   "topic": "테슬라",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
@@ -110,5 +96,19 @@
   "kr_n": 43,
   "foreign_avg": 2.72,
   "foreign_n": 29
+ },
+ {
+  "rank": 8,
+  "topic": "환율·달러",
+  "kind": "국내 검증 주제",
+  "confidence": "높음",
+  "title_idea": "환율·달러, 한 줄 정리",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "짧은 한 줄",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 1.94,
+  "kr_n": 75,
+  "foreign_avg": 1.02,
+  "foreign_n": 7
  }
 ]
