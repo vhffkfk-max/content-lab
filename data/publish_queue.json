@@ -3275,382 +3275,6 @@
  ],
  "ideas": [
   {
-   "title": "잠자는 카드포인트 2.1조, 지역화폐로",
-   "concept": "내 카드포인트가 어디서 잠자고 있는지부터 짚고, 내년 5월부터 지역화폐로 쓸 수 있다는 보도를 쉬운 말로 풀어 줍니다. 전환 방식과 대상 카드는 보도에 아직 없어 확인 필요로 처리합니다. 사건은 하나만 담습니다. (공식: 본문은 같은 틀, 장마다 새 한 방)",
-   "why_now": "13:25에 뉴시스, 연합인포맥스, 한경비즈니스 3곳이 막 보도한 새 소식입니다. 내 포인트가 걸린 생활형 주제라 저장과 공유가 잘 나옵니다.",
-   "tag": "생활경제",
-   "sources": [
-    "https://www.newsis.com/view/NISX20261113_0003866649",
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4444652",
-    "https://v.daum.net/v/20261113132541580"
-   ],
-   "bg": "Korean credit cards",
-   "bg_alt": "Korean shopping street",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "잠자는 카드포인트\n**2.1조원**, 내년 5월\n지역화폐로 푼다",
-     "number": "2.1조원",
-     "label": "쓰지 않고 잠자는 카드포인트",
-     "sub": "내년 5월부터 지역화폐로 전환"
-    },
-    {
-     "type": "질문형",
-     "title": "안 쓴 카드포인트\n내년 5월부터\n**지역화폐**로 바꾼다고?",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "잠자던 카드포인트가\n내년 5월부터\n**동네 소비**로 돌아온다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "editorial"
-   ],
-   "extra": {},
-   "id": "20261113-1401-i1",
-   "created_at": "2026-11-13T14:01:51+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261113-1401-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261113-1401-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261113-1401-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261113-1401-i1/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261113-1401-i1/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261113-1401-i1/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261113-1401-i1/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261113-1401-i1/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261113-1401-i1/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "내년 1분기까지 입주 4만호, 분양 1.1만호",
-   "concept": "정부가 내놓은 공급 일정을 입주 4만호와 분양 1.1만호 두 숫자로 맞붙여 보여 주고, 한강벨트 10월 토지거래허가 신청 8.2% 증가를 함께 놓습니다. 공급이 체감 시장을 바로 바꿀지는 지켜봐야 한다는 점, 지역별로 다를 수 있다는 점을 한 번만 밝힙니다. (공식: 숫자는 둘을 맞붙여서)",
-   "why_now": "12:49 속보로 나왔고 19곳이 다뤄 오늘 가장 많은 매체가 다룬 부동산 소식입니다. 아직 다루지 않은 주제입니다.",
-   "tag": "부동산",
-   "sources": [
-    "https://www.mt.co.kr/politics/2026/11/13/2026111310532659571",
-    "https://biz.chosun.com/real_estate/real_estate_general/2026/11/13/FGHURBUCTJGZVI3JQOLIONO2SI/"
-   ],
-   "bg": "Seoul apartment complex",
-   "bg_alt": "Han River Seoul apartments",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "내년 1분기까지\n입주 **4만호** 이상,\n분양은 연말 1.1만호",
-     "number": "4만호",
-     "label": "내년 1분기까지 아파트 입주 물량",
-     "sub": "신규 분양은 연말까지 1.1만호"
-    },
-    {
-     "type": "질문형",
-     "title": "공급 일정 나왔다\n집값은 **안정**될까?",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "입주 4만호 온다는데\n한강벨트 10월 신청은\n**8.2%** 늘었다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "paper",
-    "bignum"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/13",
-     "headlines": [
-      "내년 1분기까지 입주 4만호",
-      "연말까지 신규 분양 1.1만호",
-      "한강벨트 10월 허가신청 8.2%↑"
-     ]
-    }
-   },
-   "id": "20261113-1401-i2",
-   "created_at": "2026-11-13T14:01:51+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261113-1401-i2/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261113-1401-i2/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261113-1401-i2/1-paper-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261113-1401-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261113-1401-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261113-1401-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261113-1401-i2/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261113-1401-i2/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261113-1401-i2/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261113-1401-i2/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261113-1401-i2/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261113-1401-i2/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "李대통령, 증안펀드 규모와 운용 점검 주문",
-   "concept": "대통령이 증시안정펀드 규모와 운용 방식 점검을 주문했다는 보도를 사건으로 겁니다. 금융위원장이 '긴급, 예외적 수단'이라고 설명한 것을 쉬운 말로 풀고, 구체 규모는 아직 나오지 않았다는 점을 분명히 합니다. (공식: 없음)",
-   "why_now": "12:52에 기사가 막 나왔고 자본시장 간담회 직후 후속입니다. 엔비디아 쇼크 직후 나온 점검 지시라 시장 관심이 큽니다.",
-   "tag": "증시",
-   "sources": [
-    "https://www.yna.co.kr/view/AKR20261113080800002",
-    "https://v.daum.net/v/20261113125250032"
-   ],
-   "bg": "Lee Jae-myung",
-   "bg_alt": "Korea Exchange Seoul",
-   "hooks": [
-    {
-     "type": "사건형",
-     "title": "李대통령 증안펀드\n규모, 운용 방식을\n**점검**하라 주문했다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "평소엔 안 쓰는\n**증시안정펀드** 점검,\n왜 지금 나왔나?",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "'긴급, 예외적 수단'\n증안펀드 규모를\n**점검**하라 했다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261113-1401-i3",
-   "created_at": "2026-11-13T14:01:51+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261113-1401-i3/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261113-1401-i3/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261113-1401-i3/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-1401-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-1401-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-1401-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261113-1401-i3/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261113-1401-i3/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261113-1401-i3/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-1401-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-1401-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-1401-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261113-1401-i3/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261113-1401-i3/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261113-1401-i3/3-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-1401-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-1401-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-1401-i3/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
    "title": "서학개미 6.8조 증발, 국민연금도 엔비디아",
    "concept": "젠슨 황 사태로 개인과 연기금 노출이 처음 숫자로 나온 점을 풀고, 첫 장에서 내 계좌에 어떤 의미인지 한 줄로 답한다. 6.8조는 동아일보 보도 수치로 표기하고 산정 기준일은 확인 필요로 한 번만 적는다. 17일 엔비디아 실적이 다음 시험대. 투자 권유 아님. (공식: 한 주인공이 장마다 한 걸음씩)",
    "why_now": "동아일보와 뉴시스가 서학개미 평가액 6.8조원 증발을 보도했고, 국민연금 3분기 말 미국 주식 1587억 달러 중 엔비디아가 1위라는 보도도 나왔다. 개인과 연기금 노출이 처음 숫자로 나온 날이다.",
@@ -8866,6 +8490,360 @@
      "form": "news",
      "font": "myeongjo",
      "path": "20261114-1210-i3/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "비트코인 6만 7천 달러, 10분 새 2.5억 청산",
+   "concept": "7만 달러에서 6만 7천 달러대로 내려간 낙폭에, 10분 새 청산 2억 5천만 달러와 스트래티지 평가손실 68억 달러를 한 줄씩 붙여 보여준다. 마지막 장에서 레버리지 주의와 투자 권유가 아니라는 점을 밝힌다. (공식: 숫자는 둘을 맞붙여서)",
+   "why_now": "11시 34분에 비트코인이 6만 7천 달러까지 밀렸고 X의 @WatcherGuru 글은 조회 21만을 넘겼다. 오전 7시 글과 11시 30분 글보다 낙폭과 손실이 더 커졌다.",
+   "tag": "코인",
+   "sources": [
+    "https://v.daum.net/v/20261114103629789",
+    "https://x.com/WatcherGuru/status/2121431433440846020",
+    "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBNMHQzSkJmeEl2SzFmTXpvR1ZjamNsM2RuaWpiSENDaGducU1adk5BczRHOS1WMkhSRDl"
+   ],
+   "bg": "Michael Saylor",
+   "bg_alt": "Bitcoin coin",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "비트코인 6만 7천 달러\n10분 새 2.5억 달러\n**청산**이 쏟아졌다",
+     "number": "2.5억 달러",
+     "label": "10분 새 청산액",
+     "sub": "비트코인 6만 7천 달러대로 하락"
+    },
+    {
+     "type": "질문형",
+     "title": "7만 달러가 무너졌다\n매수자는 **어디로** 갔나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "공격적으로 사 모은\n스트래티지, 손실이\n**68억 달러**로",
+     "number": "68억 달러",
+     "label": "스트래티지 평가손실",
+     "sub": "비트코인 6만 7천 달러대"
+    }
+   ],
+   "forms": [
+    "breaking",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261114-1301-i1",
+   "created_at": "2026-11-14T13:01:47+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261114-1301-i1/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261114-1301-i1/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261114-1301-i1/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261114-1301-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261114-1301-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261114-1301-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261114-1301-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261114-1301-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261114-1301-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261114-1301-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261114-1301-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261114-1301-i1/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261114-1301-i1/3-bignum-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261114-1301-i1/3-bignum-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261114-1301-i1/3-bignum-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "테슬라 사이버캡, 개인에게도 판매",
+   "concept": "로보택시용으로 알려진 차를 개인에게 판다는 점을 중심으로 푼다. 가격 2만 9,990달러(약 4천만 원 안팎)와 WSJ가 전한 '일부 고객' 대상이라는 점, 가격 평가가 갈린다는 점을 장마다 한 걸음씩 더한다. 인도 시기와 대상 국가는 아직 확인 전이라고 한 번만 적는다. (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "블룸버그와 WSJ 등 해외 매체와 국내 매체가 오전 10시부터 12시 사이에 잇따라 다뤘다. 가격이 구체적이고 오늘 아직 보내지 않은 새 주제다.",
+   "tag": "테슬라",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMic0FVX3lxTGVIZUJCcFFpQmVlVTBiS0JPcXdFU0Q5ZHhsMUluT3RiTlBxZmczaTdHUm1EQ1hHSGVmWGR",
+    "https://news.google.com/rss/articles/CBMirwFBVV95cUxQVW9TQXZVWjF2c2FxVllYb2MwdjhVZ1ExOTNTRGpJTThYNWt6QVM4VWE0MWRwQ0VxU2c"
+   ],
+   "bg": "Tesla Cybercab",
+   "bg_alt": "Tesla showroom",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "테슬라 사이버캡\n2만 9,990달러에\n개인에게 **판다**",
+     "number": "2만 9,990달러",
+     "label": "사이버캡 개인 판매가",
+     "sub": "한국 돈으로 약 4천만 원 안팎"
+    },
+    {
+     "type": "질문형",
+     "title": "로보택시용 차를\n개인에게 판다는데\n**싼 걸까** 비쌀까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "택시용이라던 사이버캡\n일부 고객에게 **판매**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261114-1301-i2",
+   "created_at": "2026-11-14T13:01:47+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261114-1301-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261114-1301-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261114-1301-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1301-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1301-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1301-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1301-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1301-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1301-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1301-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1301-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1301-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "트럼프, 멕시코에 관세 2배 경고",
+   "concept": "트럼프의 '불법 이민자를 안 막으면 관세 2배' 발언과 멕시코 대통령의 즉각 반박을 맞세워 한 사건으로 푼다. 멕시코에서 만들어 미국으로 수출하는 기업, 그중 한국 기업의 비용 부담 가능성을 짚고, 실제 인상 여부와 시기는 확인 전이라고 한 번만 적는다. (공식: 당사자의 한마디를 따옴표로)",
+   "why_now": "조선비즈가 12시 5분에 보도한 새 소식이다. 트럼프 발언이라 시장과 환율에 닿을 수 있고 멕시코 대통령이 바로 반박했다.",
+   "tag": "관세",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMihAFBVV95cUxOQ1VHalpSWDFLbkFjbWxLRDV5WEQyaGtZTVBoQ194VVpUOHBTelg0dS00UVp4UlBPQ05"
+   ],
+   "bg": "Trump Sheinbaum",
+   "bg_alt": "Mexico US border",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "트럼프, 멕시코에\n관세 **2배** 경고\n이민 못 막으면",
+     "number": "2배",
+     "label": "트럼프가 꺼낸 관세 카드",
+     "sub": "불법 이민자를 안 막으면"
+    },
+    {
+     "type": "질문형",
+     "title": "멕시코에서 만드는 제품\n한국 기업도 **해당**될까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "트럼프 \"관세 2배\"\n멕시코 대통령\n\"**행렬**은 없다\"",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "quote"
+   ],
+   "extra": {
+    "quote": {
+     "label": "관세 공방",
+     "quote": "미국으로 향하는 행렬은 없다",
+     "by": "멕시코 대통령"
+    }
+   },
+   "id": "20261114-1301-i3",
+   "created_at": "2026-11-14T13:01:47+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261114-1301-i3/1-quote-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261114-1301-i3/1-quote-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261114-1301-i3/1-quote-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261114-1301-i3/2-quote-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261114-1301-i3/2-quote-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261114-1301-i3/2-quote-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261114-1301-i3/3-quote-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261114-1301-i3/3-quote-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261114-1301-i3/3-quote-gowun.jpg"
     }
    ]
   }
