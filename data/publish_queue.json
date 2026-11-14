@@ -3275,401 +3275,6 @@
  ],
  "ideas": [
   {
-   "title": "상원, 젠슨 황과 러트닉 청문회 요청",
-   "concept": "폴리티코 보도 기준으로 상원 은행위원장의 증언 요청을 속보로 전하고, 엔비디아 17일 실적 발표 전 불확실성이 하나 늘었다는 점을 한 줄로 연결한다. 청문회 일정과 범위가 아직 나오지 않았다는 점을 끝 장에 '확인된 것 / 아직 모르는 것'으로 정리한다. (공식: 한 주인공이 장마다 한 걸음씩, 끝 장은 닫힌 결론 한 줄)",
-   "why_now": "X에서 @unusual_whales 조회 6.3만, @zerohedge 3.3만이 나온 새 전개이고 국내 보도는 아직 없다. 젠슨 황 사임 이후 처음 나온 의회 쪽 움직임이다.",
-   "tag": "속보",
-   "sources": [
-    "https://x.com/unusual_whales/status/2121032314738327789",
-    "https://x.com/zerohedge/status/2121032037335277587"
-   ],
-   "bg": "Jensen Huang",
-   "bg_alt": "Nvidia headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "상원이 젠슨 황을\n**청문회**에 불렀다\n러트닉 장관까지",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "젠슨 황은 상원에서\n무엇을 **증언**할까\n엔비디아 실적 나흘 전",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "사임한 젠슨 황\n이번엔 **상원**이 부른다\n러트닉도 함께",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261113-1001-i1",
-   "created_at": "2026-11-13T10:01:47+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261113-1001-i1/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261113-1001-i1/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261113-1001-i1/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-1001-i1/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-1001-i1/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-1001-i1/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261113-1001-i1/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261113-1001-i1/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261113-1001-i1/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-1001-i1/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-1001-i1/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-1001-i1/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261113-1001-i1/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261113-1001-i1/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261113-1001-i1/3-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-1001-i1/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-1001-i1/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-1001-i1/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "엔비디아 쇼크 다음 날 코스피 반등",
-   "concept": "간밤 엔비디아 4.34% 하락과 오늘 코스피 장 초반 2.59% 상승을 맞붙여 보여 준다. 시장이 어제 낙폭을 이미 반영했다는 해석은 해석으로 표시하고, 환율 1334원대와 장중 변동성은 확인된 사실로 덧붙인다. 첫 장에서 내 주식에 어떤 의미인지 한 줄로 답한다. (공식: 숫자는 둘을 맞붙여서)",
-   "why_now": "코스피가 장 초반 2.59% 오른 5480.86을 기록했고 24곳이 보도했다. 삼성전자와 SK하이닉스도 3~4%대 올라, 엔비디아 충격 이후 한국 시장 반응으로 가장 궁금한 지점이다.",
-   "tag": "증시",
-   "sources": [
-    "https://biz.chosun.com/stock/stock_general/2026/11/13/SFPT72OC75A3FC4BB6N7SCHMT4/",
-    "https://www.etoday.co.kr/news/view/2647685",
-    "https://www.yna.co.kr/view/AKR20261113040100008"
-   ],
-   "bg": "Kospi stock board",
-   "bg_alt": "Korea Exchange building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "엔비디아 -4.34%\n코스피는 **+2.59%**\n정반대로 움직였다",
-     "number": "+2.59%",
-     "label": "코스피 장 초반 상승률",
-     "sub": "5480.86, 간밤 엔비디아는 4.34% 하락"
-    },
-    {
-     "type": "질문형",
-     "title": "엔비디아가 흔들렸는데\n코스피는 **왜** 올랐나\n삼전닉스 3~4%대 급등",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "엔비디아 쇼크 다음 날\n코스피가 **반등**했다\n환율은 1334원대",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261113-1001-i2",
-   "created_at": "2026-11-13T10:01:47+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261113-1001-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261113-1001-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261113-1001-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-1001-i2/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-1001-i2/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-1001-i2/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-1001-i2/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-1001-i2/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-1001-i2/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-1001-i2/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-1001-i2/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-1001-i2/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "자본시장 간담회, 의무공개매수와 코스닥 재설계",
-   "concept": "대통령 주재 자본시장 정책간담회에서 다뤄진 의무공개매수 단계적 도입, 고의 주가누르기 할증 과세, 저PBR 명단 공개, 코스닥 재설계를 사실 3개로 정리한다. 코스닥 상장 1년 뒤 주가 17% 하락 기사를 배경으로 두되, 정책은 논의 단계이며 확정이 아니라는 점을 끝 장에 밝힌다. 개인 투자자에게 달라질 수 있는 점은 첫 장에 한 줄로 쓴다. (공식: 끝 장은 닫힌 결론 한 줄)",
-   "why_now": "오늘 09:32 여의도에서 대통령이 주재한 간담회가 열렸고, 다음, 아시아경제, 뉴시스, 이투데이가 각각 다뤘다. 코스피 반등 시황과 별개로 정책 내용 자체를 풀어 줄 수 있다.",
-   "tag": "정책",
-   "sources": [
-    "https://view.asiae.co.kr/article/2026111308244067767",
-    "https://v.daum.net/v/20261113093204373",
-    "https://v.daum.net/v/20261113093202372"
-   ],
-   "bg": "Korea president Yeouido",
-   "bg_alt": "Korea Exchange Yeouido",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "코스닥 상장 1년 뒤\n주가 **17%** 하락\n대통령이 해법 찾는다",
-     "number": "17%",
-     "label": "코스닥 상장 1년 뒤 주가",
-     "sub": "자본시장 간담회서 코스닥 재설계 논의"
-    },
-    {
-     "type": "질문형",
-     "title": "고의로 주가 누르면\n**할증 과세**가 붙나\n간담회서 나온 해법",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "대통령이 직접 여의도로\n저PBR 명단 **공개**\n의무공개매수 드라이브",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "paper",
-    "bignum"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/13",
-     "headlines": [
-      "의무공개매수 단계적 논의",
-      "고의 주가누르기 할증 과세 거론",
-      "저PBR 명단, 코스닥 재설계"
-     ]
-    }
-   },
-   "id": "20261113-1001-i3",
-   "created_at": "2026-11-13T10:01:47+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261113-1001-i3/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261113-1001-i3/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261113-1001-i3/1-paper-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261113-1001-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261113-1001-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261113-1001-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261113-1001-i3/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261113-1001-i3/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261113-1001-i3/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261113-1001-i3/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261113-1001-i3/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261113-1001-i3/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "스페이스X, 테슬라 합병설, 몸값 4500조",
    "concept": "중앙일보 단독과 CNBC, 블룸버그 보도를 묶어 '합병 협상이 어디까지 왔나'를 풀고, 확정된 것과 미정인 것(상장 구조, 지분 교환비율)을 나눠 마무리한다. (공식: 끝 장은 닫힌 결론 한 줄)",
    "why_now": "중앙일보 등 7곳이 단독 보도했고 CNBC, 로이터, 블룸버그도 협상 진전을 전했다. 이르면 12월 발표라는 시점이 구체적이다.",
@@ -8803,6 +8408,442 @@
      "form": "list",
      "font": "plex",
      "path": "20261114-0806-i3/3-list-plex.jpg"
+    }
+   ]
+  },
+  {
+   "title": "트럼프 아시아 순방, 무역휴전 연장 변수",
+   "concept": "중간선거 패배 뒤 아시아로 간 트럼프를 주인공으로, 휴전 연장 여부와 19일 APEC 미중러 정상회담 보도, 한국 수출 영향을 차례로 풀어 간다 (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "조선비즈가 순방과 미중 무역휴전 연장 가능성을 다뤘고, 연합뉴스와 연합인포맥스가 APEC 계기 미중러 정상회담 보도를 냈다. 정치와 관세 주제는 평소 반응이 좋고 이번 주제는 아직 다루지 않았다.",
+   "tag": "정치, 관세",
+   "sources": [
+    "https://biz.chosun.com/international/international_general/2026/11/14/XII4G6DH75E35OCT6BNBS3MSM4/",
+    "https://v.daum.net/v/20261114083320306",
+    "https://www.yna.co.kr/view/AKR20261113170500003"
+   ],
+   "bg": "Donald Trump",
+   "bg_alt": "APEC summit",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "19일 APEC 미중러\n**정상회담** 열린다\n트럼프 아시아행",
+     "number": "19일",
+     "label": "APEC 계기 미중러 정상회담",
+     "sub": "트럼프, 중간선거 패배 뒤 아시아 순방"
+    },
+    {
+     "type": "질문형",
+     "title": "중간선거 패배 뒤\n트럼프가 아시아로\n**휴전** 연장할까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "선거에 지고도\n트럼프는 **아시아**로\n휴전 연장이 걸렸다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/14",
+     "headlines": [
+      "트럼프, 중간선거 뒤 아시아 순방",
+      "미중 무역휴전 연장 여부 주목",
+      "19일 APEC 계기 미중러 회담 보도"
+     ]
+    }
+   },
+   "id": "20261114-0901-i1",
+   "created_at": "2026-11-14T09:01:42+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-0901-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-0901-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-0901-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261114-0901-i1/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261114-0901-i1/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261114-0901-i1/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-0901-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-0901-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-0901-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261114-0901-i1/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261114-0901-i1/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261114-0901-i1/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-0901-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-0901-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-0901-i1/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261114-0901-i1/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261114-0901-i1/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261114-0901-i1/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "베선트, 러트닉 겨냥 제재 권한 발언",
+   "concept": "엔비디아 칩 밀수 의혹이 러트닉 상무장관 쪽으로 번지는 가운데, 재무장관이 공개적으로 선을 그은 발언을 중심으로 정리한다. 앞서 다룬 젠슨 황 사임, 스파이 의혹 보도와는 다른 사건이다 (공식: 당사자의 한마디를 따옴표로)",
+   "why_now": "SBS Biz, YTN, 머니투데이가 오늘 아침 베선트 발언을 보도했고 CNBC는 러트닉과 엔비디아의 관계를 다뤘다. 미국 정부 안에서 책임 공방이 시작된 첫 신호다.",
+   "tag": "미국 정부, 반도체",
+   "sources": [
+    "https://v.daum.net/v/20261114081216122",
+    "https://www.mt.co.kr/world/2026/11/14/2026111408310857240",
+    "https://www.cnbc.com/2026/11/13/howard-lutnick-nvidia-jensen-huang-china-cantor-fitzgerald.html"
+   ],
+   "bg": "Scott Bessent",
+   "bg_alt": "Howard Lutnick",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "美 재무장관이\n**상무장관**을 겨냥\n칩 밀수 의혹 번졌다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "엔비디아 제재는\n누구 책임일까\n미국 정부 안 **균열**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "\"매우 실망\"\n같은 정부 장관이\n**러트닉**을 비판",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "quote",
+    "news"
+   ],
+   "extra": {
+    "quote": {
+     "label": "엔비디아 사태",
+     "quote": "메가스피드 제재 권한은 상무부에 있다",
+     "by": "베선트 美 재무장관"
+    }
+   },
+   "id": "20261114-0901-i2",
+   "created_at": "2026-11-14T09:01:42+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261114-0901-i2/1-quote-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261114-0901-i2/1-quote-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261114-0901-i2/1-quote-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-0901-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-0901-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-0901-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261114-0901-i2/2-quote-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261114-0901-i2/2-quote-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261114-0901-i2/2-quote-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-0901-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-0901-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-0901-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "noto",
+     "path": "20261114-0901-i2/3-quote-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "myeongjo",
+     "path": "20261114-0901-i2/3-quote-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "quote",
+     "font": "gowun",
+     "path": "20261114-0901-i2/3-quote-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-0901-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-0901-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-0901-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "수출 1조달러 카운트다운, 20일 돌파 전망",
+   "concept": "증시가 흔들리는 가운데 한국 수출이 1조달러 문턱에 왔다는 보도를 숫자 하나 중심으로 풀고, 우리 일상에는 어떤 의미인지 쉬운 말로 잇는다 (공식: 없음)",
+   "why_now": "아시아경제가 현 추세라면 20일에 수출 1조달러를 돌파한다고 보도했다. 이번 주 하락 소식이 이어진 가운데 나온 국내 수치다. 세부 수치는 원문 확인 후 보강한다.",
+   "tag": "수출",
+   "sources": [
+    "https://view.asiae.co.kr/article/2026111315075161889"
+   ],
+   "bg": "Busan port container",
+   "bg_alt": "Korea export containers",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "수출 **1조달러**\n20일 돌파 눈앞\n현 추세 그대로면",
+     "number": "1조달러",
+     "label": "수출 카운트다운",
+     "sub": "현 추세라면 20일 돌파"
+    },
+    {
+     "type": "질문형",
+     "title": "1조달러 수출\n**20일** 정말 넘을까\n현 추세라면 가능",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "증시는 흔들려도\n수출은 **1조달러**\n20일 돌파 눈앞",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "editorial"
+   ],
+   "extra": {},
+   "id": "20261114-0901-i3",
+   "created_at": "2026-11-14T09:01:42+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261114-0901-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261114-0901-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261114-0901-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261114-0901-i3/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261114-0901-i3/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261114-0901-i3/1-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261114-0901-i3/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261114-0901-i3/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261114-0901-i3/2-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261114-0901-i3/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261114-0901-i3/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261114-0901-i3/3-editorial-plex.jpg"
     }
    ]
   }
