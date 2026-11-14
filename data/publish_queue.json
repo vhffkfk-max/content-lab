@@ -3275,398 +3275,6 @@
  ],
  "ideas": [
   {
-   "title": "미국 10월 적자 4,040억 달러",
-   "concept": "10월 기준 역대 최대 적자를 지출 840억 증가, 적자 1,200억 증가로 맞붙여 보여 주고, 국채 금리가 뛴 날과 연결한다. 첫 장에서 나랏빚이 늘면 금리와 달러에 부담이 된다는 점과 달러-원 환율을 보는 사람에게 왜 중요한지를 한 줄로 푼다. (공식: 숫자는 둘을 맞붙여서)",
-   "why_now": "코베이시 레터가 20:48에 속보로 전했고 조회가 4.7만이다. 국채 금리가 4년여 만에 최대폭으로 오른 날과 겹친다. 연준 이야기와는 달리 재정 쪽 각도다.",
-   "tag": "미국 재정",
-   "sources": [
-    "https://x.com/KobeissiLetter/status/2121208607102373944"
-   ],
-   "bg": "US Treasury building",
-   "bg_alt": "US Capitol building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "미국 정부 10월 한 달\n**4,040억 달러** 적자\n10월 기준 역대 최대",
-     "number": "4,040억 달러",
-     "label": "미국 정부 10월 한 달 적자",
-     "sub": "10월 기준 역대 최대, 코베이시 레터 보도"
-    },
-    {
-     "type": "질문형",
-     "title": "한 달 적자 4,040억\n이 돈은 **누가**\n빌려주나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "지출 840억 늘었는데\n적자는 **1,200억**\n더 늘었다",
-     "number": "1,200억 달러",
-     "label": "1년 전보다 늘어난 적자",
-     "sub": "정부 지출은 7,730억 달러, 840억 달러 증가"
-    }
-   ],
-   "forms": [
-    "bignum",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/13",
-     "headlines": [
-      "10월 적자 4,040억 달러, 역대 최대",
-      "적자 1년 전보다 1,200억 달러 늘어",
-      "지출 7,730억 달러, 840억 달러 증가"
-     ]
-    }
-   },
-   "id": "20261113-2201-i1",
-   "created_at": "2026-11-13T22:01:39+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261113-2201-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261113-2201-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261113-2201-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261113-2201-i1/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261113-2201-i1/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261113-2201-i1/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261113-2201-i1/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261113-2201-i1/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261113-2201-i1/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261113-2201-i1/3-bignum-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261113-2201-i1/3-bignum-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261113-2201-i1/3-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261113-2201-i1/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261113-2201-i1/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261113-2201-i1/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "코어위브 채권 금리 16% 돌파",
-   "concept": "AI 투자가 빚으로 굴러간다면 어떻게 되는지 코어위브 한 곳을 따라간다. 채권 금리 16%, MS 계약 재검토 보도, 확인된 것과 아직 모르는 것 순으로 풀고, 금리 16%는 돈 떼일 위험을 크게 본다는 뜻이라고 쉬운 말로 푼다. 한국 AI 반도체 투자자가 볼 대목을 마지막에 붙인다. (공식: 한 주인공이 장마다 한 걸음씩)",
-   "why_now": "코어위브 일부 채권 금리가 16%를 넘었고, MS가 계약을 재검토한다는 보도의 여파라고 전해졌다. 골드만삭스의 AI 투자 효과 2027년 정점 전망과도 맞물린다.",
-   "tag": "AI 투자",
-   "sources": [
-    "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5veHFrSVhFNDZabGhDai1lZzdZZkRoYVhZN29JVXhrdlpTQU9iX2hONFRRMHBvS1RIeU9",
-    "https://kr.investing.com/news/stock-market-news/article-2174982"
-   ],
-   "bg": "CoreWeave data center",
-   "bg_alt": "Microsoft headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "코어위브 일부 채권\n금리가 **16%**\n넘어섰다",
-     "number": "16%",
-     "label": "코어위브 일부 채권 금리",
-     "sub": "AI 빚에 경고등이 켜졌나"
-    },
-    {
-     "type": "질문형",
-     "title": "AI 투자, 혹시\n**빚**으로 굴러가나\n코어위브 채권 16%",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "MS 계약 재검토 보도에\n코어위브 채권이\n**16%** 넘었다",
-     "number": "16%",
-     "label": "MS 계약 재검토 보도의 여파",
-     "sub": "재검토 여부는 확인 전"
-    }
-   ],
-   "forms": [
-    "news",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261113-2201-i2",
-   "created_at": "2026-11-13T22:01:39+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261113-2201-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261113-2201-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261113-2201-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261113-2201-i2/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261113-2201-i2/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261113-2201-i2/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261113-2201-i2/3-bignum-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261113-2201-i2/3-bignum-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261113-2201-i2/3-bignum-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "MS 365 먹통, 하루 멈춘 업무",
-   "concept": "아웃룩 등 MS 365가 글로벌로 먹통이 된 사건을 MS 한 곳을 주인공으로 따라간다. 무슨 일, 기업과 정부 업무 차질, 한국 직장인 피해, 클라우드 한 곳 의존의 약점, 원인과 피해 규모는 아직 확인 전이라는 점 순서로 쓴다. (공식: 한 주인공이 장마다 한 걸음씩)",
-   "why_now": "FT 인스타 글이 시간당 좋아요 8,904개이고 관련 릴스는 평소의 30배다. CNBC, BBC, 포브스가 다뤘고 한국일보도 직장인 피해를 보도했다. 우리 계정이 아직 다루지 않은 새 주제다.",
-   "tag": "IT 장애",
-   "sources": [
-    "https://www.cnbc.com/2026/11/12/microsoft-outage-outlook-aws-google.html",
-    "https://v.daum.net/v/20261113190205934"
-   ],
-   "bg": "Microsoft Outlook",
-   "bg_alt": "Microsoft headquarters",
-   "hooks": [
-    {
-     "type": "사건형",
-     "title": "아웃룩 먹통에\n전 세계 업무가\n**멈췄다**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "클라우드 한 곳이\n멈추면 회사는\n**어디까지** 멈출까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "MS가 멈추자\n한국 직장인은\n**전화기**만 붙잡았다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261113-2201-i3",
-   "created_at": "2026-11-13T22:01:39+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261113-2201-i3/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261113-2201-i3/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261113-2201-i3/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-2201-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-2201-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-2201-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261113-2201-i3/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261113-2201-i3/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261113-2201-i3/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-2201-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-2201-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-2201-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261113-2201-i3/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261113-2201-i3/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261113-2201-i3/3-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-2201-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-2201-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-2201-i3/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
    "title": "도매물가 6.5%, 연준과 베센트 엇갈림",
    "concept": "10월 PPI가 연 6.5%로 2022년 11월 이후 최고였지만 예상 6.6%보다는 낮았다. 그 숫자 둘을 맞붙이고, 굴스비의 물가 확산 진단과 인상 자제를 촉구한 베센트의 주장을 대비해 풀고, 마지막에 한국 투자자가 볼 환율과 성장주를 짚는다. 첫 장에서 '내 지갑에는 금리와 환율 부담으로 올 수 있다'를 쉬운 말로 답한다. 12월 인상 확률은 재료에 없어 쓰지 않는다. (공식: 숫자는 둘을 맞붙여서)",
    "why_now": "어제 밤 발표된 PPI가 7곳에서 보도됐고 X 조회도 높다. 기존에 보낸 글에 PPI는 없었다.",
@@ -9313,6 +8921,400 @@
      "form": "paper",
      "font": "gowun",
      "path": "20261114-2001-i3/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "D램 담합 소송, 3사의 반박",
+   "concept": "D램 가격이 700% 오른 걸 두고 삼성전자, SK하이닉스, 마이크론이 담합 소송을 당했고, 3사는 AI 수요 때문이라고 맞선다는 보도. 5장 중 소송 제기 지역, 원고, 폭등 기간은 확인 후 쓰고, 소송 결과에 따라 반도체 업종 평가가 달라질 수 있다는 점은 투자 권유 없이 판결 일정만 짚는다. (공식: 없음)",
+   "why_now": "20:01에 나온 기사이고, 엔비디아 사태로 반도체 관심이 높다. 최근 보낸 주제에 이 소송은 없다.",
+   "tag": "반도체",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPYWZYWFVETVhBYTU4WFpjOUpOSVRaZE41UnY0SHNqcGZuaF91aUMzZy0xZGlvdzJ1bHZ",
+    "https://v.daum.net/v/20261114195400292"
+   ],
+   "bg": "Samsung semiconductor",
+   "bg_alt": "DRAM memory chip",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "D램 값 **700%** 폭등\n3사가 담합 소송 당했다",
+     "number": "700%",
+     "label": "D램 가격 상승폭",
+     "sub": "삼성전자, SK하이닉스, 마이크론이 소송 대상"
+    },
+    {
+     "type": "질문형",
+     "title": "D램 값 폭등, 담합일까\n아니면 **AI 수요**일까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "담합 소송 걸린 3사\n입장은 **AI 수요** 때문",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261114-2101-i1",
+   "created_at": "2026-11-14T21:01:40+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261114-2101-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261114-2101-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261114-2101-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-2101-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-2101-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-2101-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-2101-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-2101-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-2101-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-2101-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-2101-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-2101-i1/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "연준이 꼽은 최대 위험, AI 87%",
+   "concept": "연준 금융안정보고서에서 가장 큰 위험으로 AI를 꼽은 응답이 87%라는 보도를 한 주인공(AI)으로 풀고, 같은 날 엔비디아 급락과 서학개미 약 4000억 원 매수, 다음 주 엔비디아 실적(11/17)과 앤트로픽 상장(11/19) 일정으로 잇는다. 50%에서 87%로 뛰었다는 쓰레드 글은 확인 전이라 단정하지 않는다. (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "17:54 보도 이후 쓰레드 관련 글이 시간당 조회 6516, 누적 4만 2860으로 빠르게 크고 있다. 엔비디아 급락과 맞물려 AI 불안과 직결된다.",
+   "tag": "미국 증시",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMibkFVX3lxTFBzUFJ3Q3YxdUdTdEZvajFYODd1dHkwM2FsTkVzZEI2VzRYQTRud2VycktKUUY4X2hZNk0",
+    "https://www.mt.co.kr/world/2026/11/14/2026111411284468310",
+    "https://view.asiae.co.kr/article/2026111417365591912"
+   ],
+   "bg": "Jerome Powell",
+   "bg_alt": "Federal Reserve building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "연준 설문 **87%**가\n최대 위험으로\nAI를 꼽았다",
+     "number": "87%",
+     "label": "연준 보고서 응답 비율",
+     "sub": "가장 큰 위험으로 AI를 꼽은 응답"
+    },
+    {
+     "type": "질문형",
+     "title": "연준이 꼽은 최대 위험\n왜 하필 **AI**일까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "엔비디아 급락한 날\n연준 최대 위험은\n바로 **AI**였다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/14",
+     "headlines": [
+      "연준 보고서 최대 위험 AI 87%",
+      "엔비디아 CEO 퇴진에 美 반도체 급락",
+      "서학개미 엔비디아 약 4000억 매수"
+     ]
+    }
+   },
+   "id": "20261114-2101-i2",
+   "created_at": "2026-11-14T21:01:40+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261114-2101-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261114-2101-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261114-2101-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261114-2101-i2/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261114-2101-i2/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261114-2101-i2/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261114-2101-i2/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261114-2101-i2/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261114-2101-i2/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261114-2101-i2/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261114-2101-i2/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261114-2101-i2/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "이더리움 2천달러 아래, 재단 5천 ETH 매도",
+   "concept": "이더리움이 2천달러를 밑돈 날, 이더리움 재단이 5일간 5천 ETH를 팔았다는 보도를 속보로 정리한다. 두 사건의 인과는 재료에 없으므로 원인은 확인 안 됨을 한 번만 밝히고, 원화 환산 금액과 현재 시세는 확인 후 쓴다. 투자 권유가 아닌 시황 정리로 쓴다. (공식: 없음)",
+   "why_now": "2천달러 하회 기사가 20:07, 재단 매도 기사가 19:15에 나왔다. 이더리움 쓰레드 글은 시간당 조회 6206으로 빠르게 크고, 최근 보낸 주제에는 이더리움이 없다.",
+   "tag": "가상자산",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMisAFBVV95cUxOd3dMbmxFRHlKeGdIb2ZCMDU2cGJCZ1hLZF9kN0F3eFVDVVcwNUF4QXpfRE45d1VIVGV",
+    "https://news.google.com/rss/articles/CBMiUEFVX3lxTFB2TmJlOFhzcklvT1VaY1cwR0x4SkFwazRyblVOWmJrOGw5dHdoVGhueVp3UEVsaUg2Z05"
+   ],
+   "bg": "Vitalik Buterin",
+   "bg_alt": "Ethereum coin",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "이더리움 재단이\n5일 새 **5천 ETH** 팔았다",
+     "number": "5천 ETH",
+     "label": "재단 매도 물량",
+     "sub": "최근 5일 사이, 가격은 2천달러 아래로"
+    },
+    {
+     "type": "질문형",
+     "title": "이더리움 2천달러 붕괴\n재단 매도가 **원인**일까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "이더리움 재단이\n5일 동안 **팔았다**\n가격은 2천달러 아래로",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261114-2101-i3",
+   "created_at": "2026-11-14T21:01:40+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261114-2101-i3/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261114-2101-i3/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261114-2101-i3/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-2101-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-2101-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-2101-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261114-2101-i3/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261114-2101-i3/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261114-2101-i3/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-2101-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-2101-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-2101-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261114-2101-i3/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261114-2101-i3/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261114-2101-i3/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-2101-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-2101-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-2101-i3/3-news-myeongjo.jpg"
     }
    ]
   }
