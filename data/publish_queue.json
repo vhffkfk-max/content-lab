@@ -3275,377 +3275,6 @@
  ],
  "ideas": [
   {
-   "title": "스페이스X, 테슬라 합병설, 몸값 4500조",
-   "concept": "중앙일보 단독과 CNBC, 블룸버그 보도를 묶어 '합병 협상이 어디까지 왔나'를 풀고, 확정된 것과 미정인 것(상장 구조, 지분 교환비율)을 나눠 마무리한다. (공식: 끝 장은 닫힌 결론 한 줄)",
-   "why_now": "중앙일보 등 7곳이 단독 보도했고 CNBC, 로이터, 블룸버그도 협상 진전을 전했다. 이르면 12월 발표라는 시점이 구체적이다.",
-   "tag": "기업",
-   "sources": [
-    "https://news.google.com/rss/articles/CBMiW0FVX3lxTE8tQi1QalZxQzU5T3ZWSjE5M2xYOXR5UTlnSUQxUk92cG9DR1lNNVFYOUU0MUpsYTF3MWE"
-   ],
-   "bg": "Elon Musk",
-   "bg_alt": "SpaceX Starship rocket",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "몸값 합쳐 **4500조원**\n스페이스X, 테슬라와\n12월 합병 발표 보도",
-     "number": "4500조원",
-     "label": "스페이스X와 테슬라 합산 몸값",
-     "sub": "중앙일보 보도, 공식 발표 전"
-    },
-    {
-     "type": "질문형",
-     "title": "스페이스X와 테슬라\n정말 한 회사 될까\n**서학개미**는 뭘 볼까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "합병 급물살이라는데\n교환비율은 **미정**\n공식 발표도 아직 없다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261113-1101-i1",
-   "created_at": "2026-11-13T11:01:45+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261113-1101-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261113-1101-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261113-1101-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-1101-i1/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-1101-i1/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-1101-i1/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-1101-i1/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-1101-i1/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-1101-i1/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-1101-i1/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-1101-i1/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-1101-i1/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "KB캐피탈 해킹, 1800명 정보 유출",
-   "concept": "속보로 사실만 전하고, 회사의 전액 보상 방침과 아직 확인되지 않은 유출 항목, 시점을 나눈다. 해당 고객이 지금 할 일(공지 확인, 비밀번호 변경, 의심 문자와 전화 주의)로 끝낸다. (공식: 끝 장은 닫힌 결론 한 줄)",
-   "why_now": "오늘 10시 39분 기사로 가장 최근 소식이고 6곳이 다뤘다. 금융사 정보 유출이라 소비자 관심이 크다.",
-   "tag": "금융",
-   "sources": [
-    "https://www.donga.com/news/Economy/article/all/20261113/135018941/1",
-    "https://www.newsis.com/view/NISX20261113_0003866753"
-   ],
-   "bg": "KB Capital building",
-   "bg_alt": "KB Financial Group headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "KB캐피탈 해킹으로\n고객, 임직원 **1800명**\n정보가 새나갔다",
-     "number": "1800명",
-     "label": "KB캐피탈 정보 유출 대상",
-     "sub": "회사는 전액 보상하겠다고 밝혀"
-    },
-    {
-     "type": "질문형",
-     "title": "내 정보도 샜을까\nKB캐피탈 해킹 1800명\n회사는 **전액 보상** 약속",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "회사는 전액 보상이라는데\n정작 유출 항목은\n시점도 **미확인**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "editorial"
-   ],
-   "extra": {},
-   "id": "20261113-1101-i2",
-   "created_at": "2026-11-13T11:01:45+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261113-1101-i2/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261113-1101-i2/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261113-1101-i2/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261113-1101-i2/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261113-1101-i2/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261113-1101-i2/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261113-1101-i2/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261113-1101-i2/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261113-1101-i2/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "연준 윌리엄스 \"물가 아직 너무 높다\"",
-   "concept": "블룸버그가 전한 윌리엄스 발언을 미 10년물 5%대, 원/달러 1331원 시세와 맞붙여 '금리 인하가 늦어질 수 있다'는 해석과 환율, 외국인 수급 부담으로 연결한다. 발언 원문 수치는 확인 후 쓴다. (공식: 숫자는 둘을 맞붙여서)",
-   "why_now": "오늘 오전 9시 15분 블룸버그 보도다. 미 10년물 5%대, 달러 19개월 최고, 원/달러 1334원대 상승 출발과 겹쳐 금리 불안과 직결된다.",
-   "tag": "금리",
-   "sources": [
-    "https://www.bloomberg.com/news/articles/2026-11-13/fed-s-williams-says-inflation-far-too-high-still-work-to-do",
-    "https://biz.chosun.com/policy/policy_sub/2026/11/13/D7E4GJDOI5BFJB5FUFWCSIY2TQ/"
-   ],
-   "bg": "John Williams Federal Reserve",
-   "bg_alt": "Federal Reserve building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "미 10년물 **5%대**\n연준 윌리엄스는\n물가 아직 너무 높다",
-     "number": "5%대",
-     "label": "미국 10년물 금리",
-     "sub": "연준 윌리엄스 \"해야 할 일이 남았다\""
-    },
-    {
-     "type": "질문형",
-     "title": "연준은 금리 인하\n서두르지 않을까\n윌리엄스 **한마디**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "금리는 이미 5%대\n달러는 19개월 최고\n연준은 **할 일 남았다**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "quote"
-   ],
-   "extra": {
-    "quote": {
-     "label": "연준 발언",
-     "quote": "물가는 아직 너무 높다",
-     "by": "윌리엄스, 연준"
-    }
-   },
-   "id": "20261113-1101-i3",
-   "created_at": "2026-11-13T11:01:45+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-1101-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-1101-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-1101-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261113-1101-i3/1-quote-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261113-1101-i3/1-quote-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261113-1101-i3/1-quote-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-1101-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-1101-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-1101-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261113-1101-i3/2-quote-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261113-1101-i3/2-quote-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261113-1101-i3/2-quote-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-1101-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-1101-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-1101-i3/3-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261113-1101-i3/3-quote-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261113-1101-i3/3-quote-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261113-1101-i3/3-quote-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "미국 세금 100원 중 28원이 이자",
    "concept": "세수는 줄고 지출은 늘어난 10월 숫자를 맞붙여, 이자 비용이 사회보장 지출을 넘어설 수 있다는 전망까지 풀어 간다. 첫 장에서 한국 환율과 증시에 어떤 부담이 될 수 있는지 한 줄로 먼저 답한다. (공식: 숫자는 둘을 맞붙여서)",
    "why_now": "@zerohedge의 재정 관련 글이 연달아 올라왔고, 미 10년물 금리는 5.1%로 높은 수준이다. 연준 윌리엄스가 '물가 여전히 너무 높다'고 한 날이기도 하다.",
@@ -8844,6 +8473,381 @@
      "form": "editorial",
      "font": "plex",
      "path": "20261114-0901-i3/3-editorial-plex.jpg"
+    }
+   ]
+  },
+  {
+   "title": "美 10월 생산자물가 4년 만에 최고",
+   "concept": "기업이 물건을 팔 때 받는 도매 단계 가격이 4년 만에 가장 많이 올랐지만 시장 예상보다는 낮았다는 반전으로 풀고, 제퍼슨 부의장의 '물가 보고 정책 판단' 발언을 붙인다. 일부 매체의 6.5% 수치는 확인 전이라 쓰지 않는다. (공식: 없음)",
+   "why_now": "연합인포맥스가 09:54에 보도한 새 수치다. 간밤 연준 인사들의 금리 발언 직후라 물가 숫자에 시장 반응이 크다. 앞서 다룬 물가 경계 이야기와 달리 실제 수치가 나왔다.",
+   "tag": "물가",
+   "sources": [
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4444738",
+    "https://kr.investing.com/news/assorted/article-2175876"
+   ],
+   "bg": "Federal Reserve building",
+   "bg_alt": "US dollar bills",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "미국 10월 도매물가\n4년 만에 **최고**\n예상은 밑돌았다",
+     "number": "4년 만에",
+     "label": "미국 10월 생산자물가",
+     "sub": "시장 예상치보다는 낮았어요"
+    },
+    {
+     "type": "질문형",
+     "title": "도매물가 4년 최고\n금리 인하 기대는\n**더 멀어지나**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "4년 만에 최고인데\n시장 예상보다는\n**낮았다**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/14",
+     "headlines": [
+      "美 10월 생산자물가 4년 만에 최고",
+      "시장 예상치는 밑돌았다",
+      "제퍼슨 \"물가 보고 정책 판단\""
+     ]
+    }
+   },
+   "id": "20261114-1001-i1",
+   "created_at": "2026-11-14T10:01:41+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261114-1001-i1/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261114-1001-i1/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261114-1001-i1/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261114-1001-i1/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261114-1001-i1/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261114-1001-i1/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261114-1001-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261114-1001-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261114-1001-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261114-1001-i1/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261114-1001-i1/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261114-1001-i1/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261114-1001-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261114-1001-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261114-1001-i1/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261114-1001-i1/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261114-1001-i1/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261114-1001-i1/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "트럼프 방중, 엔비디아는 의제 아니다",
+   "concept": "미국 당국자들이 CNBC에 방중 때 엔비디아와 스파이 문제를 거론할 계획이 없다고 말했다는 보도를 중심으로 푼다. 같은 날 나온 러트닉 상무장관 경질 위기, 참모 간 충돌 보도는 곁가지라 한 장 이내로만 다룬다. 한국 투자자에겐 반도체 규제가 안건에서 빠질 경우와 엔비디아 리더십 공백이 길어질 경우를 함께 적는다. (공식: 없음)",
+   "why_now": "CNBC가 09:51에 보도했고, 3자 정상회담이 19일로 잡혀 있어 시장이 가장 궁금해하는 지점이다. 이전엔 머스크 동행과 베선트의 러트닉 저격만 다뤘다.",
+   "tag": "미중",
+   "sources": [
+    "https://www.cnbc.com/2026/11/13/trump-nvidia-huang-china.html"
+   ],
+   "bg": "Donald Trump Xi Jinping",
+   "bg_alt": "Nvidia headquarters",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "트럼프 방중 의제에\n엔비디아는 **없다**\n미 당국자 밝혀",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "엔비디아 뺀 방중\n미중 협상 테이블엔\n**무엇이** 오르나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "엔비디아 난리인데\n트럼프는 중국에서\n**언급 안 한다**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "breaking"
+   ],
+   "extra": {},
+   "id": "20261114-1001-i2",
+   "created_at": "2026-11-14T10:01:41+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1001-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1001-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1001-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1001-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1001-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1001-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1001-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1001-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1001-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "한국, 중국 수입시장 6개월째 1위",
+   "concept": "중국이 사들이는 외국 물건 중 한국산이 6개월 연속 1위라는 소식에, 미국 수입시장에서는 9위에서 6위로 올라섰다는 숫자를 맞붙인다. 수출 1조달러 돌파는 이미 다뤘으니 빼고, 한중 외교 회담 이야기도 곁가지로 둔다. 반도체가 이 흐름을 이끌었는지는 원문 확인 전에는 쓰지 않는다. (공식: 숫자는 둘을 맞붙여서)",
+   "why_now": "다음 뉴스에 09:51 올라온 새 기사로, 연합뉴스와 파이낸셜뉴스 등 5곳이 다뤘다. 엔비디아발 불안이 큰 날 나온 한국 경제의 좋은 소식이다.",
+   "tag": "수출",
+   "sources": [
+    "https://v.daum.net/v/20261114095105229",
+    "https://www.fnnews.com/news/202611140838590800",
+    "https://v.daum.net/v/20261114090743775"
+   ],
+   "bg": "Container port Busan",
+   "bg_alt": "Korean export cargo ship",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "중국이 가장 많이\n사들인 나라는\n**6개월째** 한국",
+     "number": "6개월째",
+     "label": "중국 수입시장 한국 순위 1위",
+     "sub": "미국에서는 9위에서 6위로 올랐어요"
+    },
+    {
+     "type": "질문형",
+     "title": "중국 수입시장\n한국은 **어떻게**\n6개월째 1위일까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "중국은 6개월째 1위\n미국에서도\n**세 계단** 올랐다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261114-1001-i3",
+   "created_at": "2026-11-14T10:01:41+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261114-1001-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261114-1001-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261114-1001-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1001-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1001-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1001-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1001-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1001-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1001-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1001-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1001-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1001-i3/3-news-myeongjo.jpg"
     }
    ]
   }
