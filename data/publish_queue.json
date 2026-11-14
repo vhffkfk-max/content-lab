@@ -3275,449 +3275,6 @@
  ],
  "ideas": [
   {
-   "title": "미국 전역 항공기 이륙 중단",
-   "concept": "FAA 한 곳을 주인공으로 이륙 중단 명령, 규모, 원인 발표, 운항 재개 미정 순서로 풀고, 첫 장에서 한국행 항공편 영향은 아직 확인 안 됨이라고 밝힌다 (공식: 한 주인공이 장마다 한 걸음씩)",
-   "why_now": "07:41 CNBC와 Bloomberg가 보도했고 뉴스1은 7000편 지연, 결항을 전했다. 원인 발표가 계속 바뀌고 있어 속도가 중요하다.",
-   "tag": "속보",
-   "sources": [
-    "https://www.cnbc.com/2026/11/13/faa-ground-stop.html",
-    "https://www.bloomberg.com/news/videos/2026-11-13/faa-grounds-all-flights-nationwide-video",
-    "https://v.daum.net/v/20261114071620459"
-   ],
-   "bg": "FAA air traffic control tower",
-   "bg_alt": "airport departures board",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "미국 전역 이륙 중단\n**7000편** 지연, 결항\n9.11 이후 두 번째",
-     "number": "7000편",
-     "label": "미국 전역 지연, 결항",
-     "sub": "9.11 이후 두 번째 전국 단위 이륙 중단"
-    },
-    {
-     "type": "질문형",
-     "title": "미국 전역 항공기는\n왜 **한꺼번에** 멈췄나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "사이버 공격 아니라\n**소프트웨어 업데이트**\n문제로 보고 있다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261114-0806-i1",
-   "created_at": "2026-11-14T08:06:27+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261114-0806-i1/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261114-0806-i1/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261114-0806-i1/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261114-0806-i1/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261114-0806-i1/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261114-0806-i1/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261114-0806-i1/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261114-0806-i1/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261114-0806-i1/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261114-0806-i1/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261114-0806-i1/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261114-0806-i1/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261114-0806-i1/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261114-0806-i1/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261114-0806-i1/3-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261114-0806-i1/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261114-0806-i1/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261114-0806-i1/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "젠슨 황 엔비디아 CEO 사임",
-   "concept": "젠슨 황을 주인공으로 사임, 임시 CEO, 시장 반응, 후임 접촉설과 엔비디아 부인 순서로 풀고, 삼성전자와 SK하이닉스 HBM 계약 영향은 업계가 지켜보는 단계라고 첫 장에 적는다 (공식: 한 주인공이 장마다 한 걸음씩)",
-   "why_now": "후임 관련 기사가 5곳 이상 나왔다. 뉴욕증시에서 엔비디아는 2% 하락했고 AMD는 9% 급락했으며, 지금 화면의 글감에는 이 소식이 없다.",
-   "tag": "기업",
-   "sources": [
-    "https://www.yna.co.kr/view/AKR20261114009500072",
-    "https://v.daum.net/v/20261114070904400",
-    "https://v.daum.net/v/20261114065629160"
-   ],
-   "bg": "Jensen Huang",
-   "bg_alt": "Nvidia headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "젠슨 황 CEO 사임\n엔비디아 2% 하락\nAMD는 **9%** 급락",
-     "number": "AMD -9%",
-     "label": "젠슨 황 사임 뒤 뉴욕증시",
-     "sub": "엔비디아는 2% 하락"
-    },
-    {
-     "type": "질문형",
-     "title": "젠슨 황이 떠난\n엔비디아, 후임은\n**누가** 되나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "CEO는 떠났는데\n후임은 **연락 안 했다**\n임시는 CFO 크레스",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "bars"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "뉴욕증시 하락률(%)",
-     "bars": [
-      {
-       "label": "엔비디아",
-       "value": 2
-      },
-      {
-       "label": "AMD",
-       "value": 9,
-       "hi": true
-      }
-     ]
-    }
-   },
-   "id": "20261114-0806-i2",
-   "created_at": "2026-11-14T08:06:27+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261114-0806-i2/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261114-0806-i2/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261114-0806-i2/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261114-0806-i2/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261114-0806-i2/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261114-0806-i2/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261114-0806-i2/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261114-0806-i2/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261114-0806-i2/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261114-0806-i2/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261114-0806-i2/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261114-0806-i2/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261114-0806-i2/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261114-0806-i2/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261114-0806-i2/3-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261114-0806-i2/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261114-0806-i2/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261114-0806-i2/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "엔비디아에 가려진 금리 5%와 달러",
-   "concept": "엔비디아 뉴스 뒤에서 미국 10년물 금리와 달러지수가 같이 오른 장면을 쉬운 말로 풀고, 10년물이 무엇인지 첫 등장 자리에서 설명한다. 금리가 5%를 넘고 달러는 19개월 최고라는 두 숫자를 맞붙인다 (공식: 숫자는 둘을 맞붙여서)",
-   "why_now": "21:20 중앙일보가 미국 국채금리 5% 돌파를, 21:34 야후파이낸스가 달러지수 19개월 최고와 비트코인 6만9천달러 하회를 전했다. 오늘 미국 인플레이션 지표를 앞두고 선물도 약세다.",
-   "tag": "금리",
-   "sources": [
-    "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBiTWR4aWRuR3dZV3o4dXhBWWNMYnlKZVllcVVKYzJTLTdlRGlnTTA5SHBPYkZTbFBVQ2J",
-    "https://news.google.com/rss/articles/CBMinAFBVV95cUxPMmN6UEd4ZFFXLU9tQTVxZ3loUFJBd19LVzEtU2hnb1BUUjBrR2JCa1JfNlQ3TFRhSll",
-    "https://news.google.com/rss/articles/CBMipgFBVV95cUxNcEdLelU4VXpMTmdPeTgxTjBhZkd3NEIyZDg5ZnZCWXdtVnVFd3Fxbm95Z2ZfbkNZRnh"
-   ],
-   "bg": "US dollar bills",
-   "bg_alt": "Federal Reserve building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "美 10년물 금리 5%\n넘었는데 달러는\n**19개월** 최고",
-     "number": "5.15%",
-     "label": "미국 10년물 국채금리, 11/13 기준",
-     "sub": "달러지수는 19개월 만의 최고"
-    },
-    {
-     "type": "질문형",
-     "title": "엔비디아만 보다가\n**금리 5%**를 놓쳤나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "엔비디아에 눈 간 사이\n**달러와 금리**가 올랐다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "list"
-   ],
-   "extra": {
-    "list": {
-     "sub": "엔비디아 뉴스 뒤에서 같은 날 벌어진 일",
-     "count": 3
-    }
-   },
-   "id": "20261114-0806-i3",
-   "created_at": "2026-11-14T08:06:27+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261114-0806-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261114-0806-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261114-0806-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "list",
-     "font": "noto",
-     "path": "20261114-0806-i3/1-list-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "list",
-     "font": "black",
-     "path": "20261114-0806-i3/1-list-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "list",
-     "font": "plex",
-     "path": "20261114-0806-i3/1-list-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "list",
-     "font": "noto",
-     "path": "20261114-0806-i3/2-list-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "list",
-     "font": "black",
-     "path": "20261114-0806-i3/2-list-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "list",
-     "font": "plex",
-     "path": "20261114-0806-i3/2-list-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "list",
-     "font": "noto",
-     "path": "20261114-0806-i3/3-list-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "list",
-     "font": "black",
-     "path": "20261114-0806-i3/3-list-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "list",
-     "font": "plex",
-     "path": "20261114-0806-i3/3-list-plex.jpg"
-    }
-   ]
-  },
-  {
    "title": "트럼프 아시아 순방, 무역휴전 연장 변수",
    "concept": "중간선거 패배 뒤 아시아로 간 트럼프를 주인공으로, 휴전 연장 여부와 19일 APEC 미중러 정상회담 보도, 한국 수출 영향을 차례로 풀어 간다 (공식: 한 주인공이 장마다 한 걸음씩)",
    "why_now": "조선비즈가 순방과 미중 무역휴전 연장 가능성을 다뤘고, 연합뉴스와 연합인포맥스가 APEC 계기 미중러 정상회담 보도를 냈다. 정치와 관세 주제는 평소 반응이 좋고 이번 주제는 아직 다루지 않았다.",
@@ -9358,6 +8915,376 @@
      "form": "paper",
      "font": "gowun",
      "path": "20261114-2201-i3/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "엔비디아, 일주일에 770조원 증발",
+   "concept": "젠슨 황 사임 이후 엔비디아 시총이 한 주 새 단일 기업 역대 최대로 줄었다는 보도를 숫자 하나로 푼다. 엔비디아를 끝까지 주인공으로 두고 사임, 낙폭, 연준의 AI 위험 경고, 한국 반도체 변동성 순으로 한 장에 하나씩 쓴다. 매수, 매도 권유 없이 내 계좌의 쏠림 점검으로 마무리한다. (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "문화일보가 어젯밤 22:04에 보도했다. 젠슨 황 사임 후속은 이미 다뤘지만 770조원이라는 규모는 아직 안 다뤘다. 시세로도 엔비디아는 1달 -25.03%다.",
+   "tag": "엔비디아",
+   "sources": [
+    "https://v.daum.net/v/20261114220440514",
+    "https://v.daum.net/v/20261114220224492"
+   ],
+   "bg": "Jensen Huang",
+   "bg_alt": "Nvidia headquarters",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "엔비디아 일주일에\n**770조원** 증발\n단일 기업 역대 최대",
+     "number": "770조원",
+     "label": "엔비디아 시총, 일주일 새",
+     "sub": "단일 기업 기준 역대 최대"
+    },
+    {
+     "type": "질문형",
+     "title": "젠슨 황 사임 한 주\n엔비디아 시총은\n어디까지 **빠졌나**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "연준이 꼽은 최대 위험\nAI 대장주서\n**770조원** 사라졌다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261115-0707-i1",
+   "created_at": "2026-11-15T07:07:08+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261115-0707-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261115-0707-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261115-0707-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261115-0707-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261115-0707-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261115-0707-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261115-0707-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261115-0707-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261115-0707-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261115-0707-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261115-0707-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261115-0707-i1/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "2020년 1월 이후 미국 물가 30.2% 상승",
+   "concept": "누적 30.2%를 연평균 약 4.0%로 환산해, 연준 목표 2%와 나란히 놓는다. 베선트의 '금리 너무 올리지 마라'와 영란은행의 선제 인상 지지를 이어 붙인다. 마지막은 장바구니, 환율, 금리가 이어지는 쉬운 설명으로 닫는다. 수치 출처는 Kobeissi Letter다. (공식: 없음)",
+   "why_now": "코베이시 레터 글이 조회 39,477을 넘겼다. 美 도매물가가 끈적하다는 우려와 중앙은행 인상 목소리가 겹치는 때라 물가가 얼마나 쌓였는지 보여 주기 좋다. 시세에서도 미국 10년물 금리가 5.15다.",
+   "tag": "미국 물가",
+   "sources": [
+    "https://x.com/KobeissiLetter/status/2121607597211926983"
+   ],
+   "bg": "Scott Bessent",
+   "bg_alt": "US grocery store",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "2020년 1월 이후\n미국 물가 누적\n**30.2%** 상승",
+     "number": "30.2%",
+     "label": "2020년 1월 이후 미국 물가",
+     "sub": "연평균으로 환산하면 약 4.0%"
+    },
+    {
+     "type": "질문형",
+     "title": "물가가 연 4%씩 올랐다\n목표 2%였다면\n**얼마나** 달랐을까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "물가 30% 넘게 올랐는데\n베선트 재무장관은\n**금리** 너무 올리지 마라",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "bars"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "연평균 물가 상승률 vs 연준 목표(%)",
+     "bars": [
+      {
+       "label": "2020년 1월 이후 연평균",
+       "value": 4.0,
+       "hi": true
+      },
+      {
+       "label": "연준 목표",
+       "value": 2.0
+      }
+     ]
+    }
+   },
+   "id": "20261115-0707-i2",
+   "created_at": "2026-11-15T07:07:08+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261115-0707-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261115-0707-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261115-0707-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261115-0707-i2/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261115-0707-i2/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261115-0707-i2/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261115-0707-i2/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261115-0707-i2/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261115-0707-i2/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261115-0707-i2/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261115-0707-i2/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261115-0707-i2/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "주식펀드 일주일 980억달러 유입, 역대 2위",
+   "concept": "'주식에서 돈이 빠진다'는 분위기와 반대로 움직이는 자금 흐름을 보여 준다. 11월 11일 마감 주간 유입 980억달러, 5주 연속 유입, 누적 약 3,500억달러를 쓴다. 투자 판단은 본인 몫이고 자금 흐름은 참고 지표라고 밝힌다. 4주 이동평균 최고치 여부는 확인되지 않아 단정하지 않는다. (공식: 없음)",
+   "why_now": "다들 AI 위험과 하락을 이야기하는 때에 자금은 들어오고 있어 대비되는 소식이다. 코베이시 레터 글 조회가 5.7만이다.",
+   "tag": "자금 흐름",
+   "sources": [
+    "https://x.com/KobeissiLetter/status/2121564824760902115"
+   ],
+   "bg": "stock market trading floor",
+   "bg_alt": "New York Stock Exchange",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "주식펀드에 일주일\n**980억달러** 들어왔다\n역대 2위 유입",
+     "number": "980억달러",
+     "label": "글로벌 주식펀드, 11월 11일 마감 주간",
+     "sub": "역대 2위 주간 유입"
+    },
+    {
+     "type": "질문형",
+     "title": "주식에서 돈이\n빠진다고요?\n**5주 연속** 들어왔다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "AI 위험 경고 속\n5주 연속 유입\n약 **3,500억달러**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/15",
+     "headlines": [
+      "주간 유입 980억달러, 역대 2위",
+      "5주 연속 유입, 누적 3,500억달러",
+      "4주 이동평균 유입 750억달러"
+     ]
+    }
+   },
+   "id": "20261115-0707-i3",
+   "created_at": "2026-11-15T07:07:08+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261115-0707-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261115-0707-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261115-0707-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261115-0707-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261115-0707-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261115-0707-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261115-0707-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261115-0707-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261115-0707-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261115-0707-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261115-0707-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261115-0707-i3/3-paper-gowun.jpg"
     }
    ]
   }
