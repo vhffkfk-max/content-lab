@@ -3275,204 +3275,6 @@
  ],
  "ideas": [
   {
-   "title": "배민, 쿠팡 과징금 6319억",
-   "concept": "배달앱 플랫폼 제재가 6319억 원이라는 실제 숫자로 나왔다는 점을 앞세우고, 구체 위반 내용과 업체별 금액은 확인된 만큼만 푼다. 소비자와 자영업자에게 달라질 점은 재료에 없으면 확인 필요로 한 번만 적는다. (공식: 없음)",
-   "why_now": "15:07 뉴시스 보도로 나온 새 소식이고 아직 다룬 곳이 적다. 액수가 커서 카드뉴스로 풀기 좋다.",
-   "tag": "플랫폼",
-   "sources": [
-    "https://www.newsis.com/view/NISX20261113_0003866706"
-   ],
-   "bg": "Baemin delivery app",
-   "bg_alt": "Coupang Eats delivery",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "배민, 쿠팡에 떨어진\n과징금 **6319억**\n배달앱 갑질 철퇴",
-     "number": "6319억원",
-     "label": "배달앱 갑질에 내려진 과징금",
-     "sub": "배민, 쿠팡 대상 제재"
-    }
-   ],
-   "forms": [
-    "bignum",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261113-1601-i1",
-   "created_at": "2026-11-13T16:01:25+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261113-1601-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261113-1601-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261113-1601-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-1601-i1/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-1601-i1/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-1601-i1/1-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "잠자는 카드포인트 2.1조, 지역화폐로",
-   "concept": "내 카드포인트도 안 쓰고 잠들어 있을지 묻는 질문으로 시작해, 내년 5월부터 지역화폐로 바꿔 쓸 수 있다는 변화를 풀고 전환 방식과 대상 카드는 확인 필요로 처리한다. (공식: 없음)",
-   "why_now": "13:25 뉴시스, 연합인포맥스, 한경비즈니스가 막 보도한 새 소식이다. 내 포인트가 걸린 생활형 주제라 저장과 공유가 잘 나온다.",
-   "tag": "생활금융",
-   "sources": [
-    "https://www.newsis.com/view/NISX20261113_0003866649",
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4444652"
-   ],
-   "bg": "credit card points",
-   "bg_alt": "local currency card Korea",
-   "hooks": [
-    {
-     "type": "질문형",
-     "title": "내 카드포인트도\n잠든 **2.1조**에\n들어 있을까?",
-     "number": "2.1조원",
-     "label": "쓰지 않고 잠자는 카드포인트",
-     "sub": "내년 5월부터 지역화폐로 전환 가능"
-    }
-   ],
-   "forms": [
-    "editorial",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261113-1601-i2",
-   "created_at": "2026-11-13T16:01:25+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261113-1601-i2/1-editorial-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261113-1601-i2/1-editorial-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261113-1601-i2/1-editorial-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261113-1601-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261113-1601-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261113-1601-i2/1-bignum-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "코스피 5500 찍고 5290 마감",
-   "concept": "장 초반 5500선에서 0.98% 내린 5290.53으로 끝난 하루를 한 주인공(코스피)으로 따라간다. 외국인 순매도 6200억은 장중 집계라고 밝히고, 원인은 재료에서 확인 안 됨으로 한 번만 적는다. (공식: 숫자는 둘을 맞붙여서)",
-   "why_now": "15:36 마감 기사를 8곳이 다뤘다. 장중 5500선을 찍고 마감은 5290.53으로, 하루 안에 분위기가 뒤집혔다.",
-   "tag": "증시",
-   "sources": [
-    "https://www.mt.co.kr/stock/2026/11/13/2026111315252770844",
-    "https://www.fnnews.com/news/202611131436486159",
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4444672"
-   ],
-   "bg": "KOSPI trading screen",
-   "bg_alt": "Korea Exchange building",
-   "hooks": [
-    {
-     "type": "반전형",
-     "title": "5500 찍은 코스피\n**5290**에서 끝났다\n외국인은 팔자로",
-     "number": "5290.53",
-     "label": "코스피 마감, 0.98% 하락",
-     "sub": "장중엔 5500선까지 올랐다"
-    }
-   ],
-   "forms": [
-    "breaking",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261113-1601-i3",
-   "created_at": "2026-11-13T16:01:25+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261113-1601-i3/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261113-1601-i3/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261113-1601-i3/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261113-1601-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261113-1601-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261113-1601-i3/1-bignum-dohyeon.jpg"
-    }
-   ]
-  },
-  {
    "title": "엔화 달러당 160엔 돌파, 100엔당 830원대",
    "concept": "엔화 160엔 돌파와 100엔당 830원대(18년 만)를 앞세우고, 일본 재무상 발언에 160엔 문턱에서 주춤한 장면으로 개입 여부를 다음 포인트로 남긴다. 첫 장에서 일본 여행, 엔화 결제 부담이 어떻게 달라지는지 한 줄로 답한다. (공식: 숫자는 둘을 맞붙여서)",
    "why_now": "중앙일보가 160엔 돌파와 100엔당 830원대 하락을 보도했고, 16:12 도쿄환시는 재무상 발언에 160엔 문턱에서 주춤했다고 전했다. 앞서 보낸 '160엔 위협'에서 한 단계 진행된 소식이다.",
@@ -9043,6 +8845,434 @@
      "form": "paper",
      "font": "gowun",
      "path": "20261114-1401-i3/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "미중 첫 무역위, 관세 인하 시행일 빠졌다",
+   "concept": "각각 약 40조 원 규모 관세를 내리기로 했지만 시행일이 없다는 점을 중심에 두고, 한국 수출업종의 다음 변수는 시행 시점 확정이라는 데로 풀기 (공식: 날짜, 모음 라벨 표지는 피하기)",
+   "why_now": "14:41에 나온 새 소식이다. 앞서 다룬 방중, 휴전 연장 기대와 달리 실제 회의 결과에서 시행일이 빠졌다는 점이 새 정보다. 관세에 민감한 한국 수출주와 직접 관련된다.",
+   "tag": "속보",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPWGhodktONURaMkt3X1hjYThPYUFTTVhTNktTajV2MmlJU0U2Z3ZrcFVzbkJXM0NZZUY"
+   ],
+   "bg": "US China trade talks",
+   "bg_alt": "container port cargo ship",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "미중 각각 **40조원**\n관세 내리기로 했는데\n시행일은 비어 있다",
+     "number": "40조원",
+     "label": "미중 각각 관세 인하 규모(약)",
+     "sub": "시행일은 제시되지 않았다"
+    },
+    {
+     "type": "질문형",
+     "title": "첫 무역위원회 끝났는데\n관세는 **언제부터**\n내려가는 걸까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "합의는 했는데\n**시행일**은 비어 있는\n미중 첫 무역위원회",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261114-1501-i1",
+   "created_at": "2026-11-14T15:01:38+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261114-1501-i1/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261114-1501-i1/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261114-1501-i1/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261114-1501-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261114-1501-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261114-1501-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261114-1501-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261114-1501-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261114-1501-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261114-1501-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261114-1501-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261114-1501-i1/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "엔화, 돈을 쏟아부어도 안 잡힌다",
+   "concept": "일본 당국이 돈을 쏟아부어도 엔화가 안 잡히고, 일본은행 안의 금리인상 이견이 엔저의 불씨라는 보도를 정리한 뒤 한국 수출업종과 환율에 닿는 부분을 짚기 (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "13:52 서울경제와 13:42 글로벌이코노믹이 연이어 엔화 약세를 다뤘다. 오늘 아직 다루지 않은 주제이고, 엔저는 한국 수출 업종의 가격 경쟁과 환율 흐름에 영향을 줄 수 있다.",
+   "tag": "환율",
+   "sources": [
+    "https://www.sedaily.com/article/20114323",
+    "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbkFjYlVWZzJRWFJSZ3ZDc0ZFbVVNcGVubXVaVS1xeUdfbUdrLU1walZmaE1JLUtzX0U"
+   ],
+   "bg": "Bank of Japan building",
+   "bg_alt": "Japanese yen banknotes",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "일본이 **돈을 쏟아부어도**\n엔화 약세가\n멈추지 않는다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "일본은 왜\n엔화를 **못 잡나**\n금리 이견이 불씨",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "돈을 쏟아부었는데\n엔저는 **그대로**\n불씨는 일본은행 안",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "editorial"
+   ],
+   "extra": {},
+   "id": "20261114-1501-i2",
+   "created_at": "2026-11-14T15:01:38+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1501-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1501-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1501-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261114-1501-i2/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261114-1501-i2/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261114-1501-i2/1-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1501-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1501-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1501-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261114-1501-i2/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261114-1501-i2/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261114-1501-i2/2-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1501-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1501-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1501-i2/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261114-1501-i2/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261114-1501-i2/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261114-1501-i2/3-editorial-plex.jpg"
+    }
+   ]
+  },
+  {
+   "title": "젠슨 황 퇴진, 美 칩 규제와 희토류로",
+   "concept": "엔비디아 사람 이슈가 규제와 공급망 이슈로 넘어가는 흐름을 보도 기준으로 정리하되, 규제 강화는 전문가 전망이고 확정된 정책이 아님을 분명히 하기 (공식: 없음)",
+   "why_now": "14:07~14:34 사이 한국경제, SBS Biz, 파이낸셜뉴스, 글로벌이코노믹이 같은 관점을 냈고 서울파이낸스는 삼성, SK의 중국 사업 우려를 다뤘다. 다음 주 엔비디아 실적(11/17)을 앞두고 새 국면이다.",
+   "tag": "반도체",
+   "sources": [
+    "https://v.daum.net/v/20261114143440240",
+    "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1PZUFzSXJ4cmY1cVdnbk15aUx4cno3VUhlcWsxTERjeXhQTkRhZXNPX2RBLUVvN0UtZWJ"
+   ],
+   "bg": "Jensen Huang",
+   "bg_alt": "Nvidia headquarters",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "황 퇴진 뒤 **美 칩 규제**\n세질 수 있다는\n전망이 나왔다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "美가 칩을 조이면\n중국은 **희토류**로\n맞받을까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "엔비디아 사람 이슈가\n**규제** 이슈로\n넘어가고 있다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/14",
+     "headlines": [
+      "젠슨 황 퇴진, 규제 변수로",
+      "美 칩 규제 강화 전망 나와",
+      "중국 전문가, 희토류 맞대응"
+     ]
+    }
+   },
+   "id": "20261114-1501-i3",
+   "created_at": "2026-11-14T15:01:38+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1501-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1501-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1501-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261114-1501-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261114-1501-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261114-1501-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1501-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1501-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1501-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261114-1501-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261114-1501-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261114-1501-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1501-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1501-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1501-i3/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261114-1501-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261114-1501-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261114-1501-i3/3-paper-gowun.jpg"
     }
    ]
   }
