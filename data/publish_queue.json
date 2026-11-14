@@ -3275,377 +3275,6 @@
  ],
  "ideas": [
   {
-   "title": "엔화 160엔 돌파, 100엔당 830원대",
-   "concept": "달러당 160엔을 넘었다가 일본 재무상 발언에 159엔대로 돌아온 하루를 따라간다. 100엔당 830원대는 18년 만의 낮은 수준이라는 보도이고, 일본 여행과 엔화 결제가 싸진다는 일반 원리는 100만 엔 환전 같은 가정 계산으로 푼다. 원/달러 1,336.7원(15:30 기준)과 원인 단정은 재료 범위 안에서만 쓴다. (공식: 숫자는 둘을 맞붙여서)",
-   "why_now": "중앙일보가 160엔 돌파와 100엔당 830원대 하락을 보도했고, 도쿄환시는 일본 재무상 발언에 160엔 문턱에서 주춤했다. 앞서 다룬 160엔 위협에서 한 단계 진행된 소식이다.",
-   "tag": "환율",
-   "sources": [
-    "https://v.daum.net/v/20261113161201915",
-    "https://www.yna.co.kr/view/AKR20261113127300002"
-   ],
-   "bg": "Japanese yen banknotes",
-   "bg_alt": "Bank of Japan building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "엔화 160엔 뚫렸다\n100엔당 **830원**대\n18년 만의 낮은 값",
-     "number": "830원",
-     "label": "100엔당",
-     "sub": "18년 만의 낮은 수준"
-    },
-    {
-     "type": "질문형",
-     "title": "엔저 100엔당 830원\n일본 여행 **더** 싸질까\n환율로 계산해 봤다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "160엔 뚫렸다더니\n문턱에서 **주춤**\n재무상 발언 한마디",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261113-1806-i1",
-   "created_at": "2026-11-13T18:06:02+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261113-1806-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261113-1806-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261113-1806-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-1806-i1/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-1806-i1/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-1806-i1/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-1806-i1/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-1806-i1/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-1806-i1/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-1806-i1/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-1806-i1/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-1806-i1/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "대통령 퇴직연금 선택권 발언, 금융권 TF",
-   "concept": "대통령의 실제 발언을 앞세우고 금융권이 같은 시간대에 움직인 모습(농협금융 기금형 TF, NH투자증권 백서, 키움 팝업)을 이어 붙인다. 첫 장에서 내 퇴직연금을 직접 고를 수 있는지부터 묻고, 투자 권유는 하지 않는다. (공식: 당사자의 한마디를 따옴표로)",
-   "why_now": "15:18 대통령 발언과 NH농협금융 TF, NH투자증권 백서, 키움 팝업이 같은 시간대에 나와 금융권이 한꺼번에 움직였다.",
-   "tag": "연금",
-   "sources": [
-    "https://v.daum.net/v/20261113151820696",
-    "https://www.yna.co.kr/view/AKR20261113118100002"
-   ],
-   "bg": "South Korea president",
-   "bg_alt": "retirement pension Korea",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "대통령이 퇴직연금\n**선택권** 문제 삼자\n금융권 바로 TF",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "내 퇴직연금 운용은\n내가 **고를** 수 있을까\n대통령이 짚었다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "내 노후 돈인데\n선택권이 **빠졌다면**\n대통령도 문제 삼았다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "quote",
-    "news"
-   ],
-   "extra": {
-    "quote": {
-     "label": "대통령 발언",
-     "quote": "퇴직연금 선택권이 근로자에게서 배제됐다면 문제",
-     "by": "대통령"
-    }
-   },
-   "id": "20261113-1806-i2",
-   "created_at": "2026-11-13T18:06:02+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261113-1806-i2/1-quote-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261113-1806-i2/1-quote-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261113-1806-i2/1-quote-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-1806-i2/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-1806-i2/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-1806-i2/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261113-1806-i2/2-quote-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261113-1806-i2/2-quote-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261113-1806-i2/2-quote-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-1806-i2/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-1806-i2/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-1806-i2/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261113-1806-i2/3-quote-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261113-1806-i2/3-quote-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261113-1806-i2/3-quote-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-1806-i2/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-1806-i2/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-1806-i2/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "엔비디아 혼란 속 중국의 한국산 HBM 확보전",
-   "concept": "중국을 주인공으로 두고 보도 순서대로 풀어간다. 엔비디아 혼란을 틈탄 한국산 HBM 요청(중앙일보), 미국 AI칩 통제 강화와 중국 확보전(연합뉴스), 오늘 SK하이닉스 -3.03%와 삼성전자 -0.96%까지. 모두 보도 내용으로만 다루고, 시세와 사건의 원인은 확인되지 않았다고 한 번만 밝힌다. 투자 권유는 하지 않는다. (공식: 한 주인공이 장마다 한 걸음씩)",
-   "why_now": "중앙일보가 중국의 한국산 HBM 요청을, 연합뉴스가 미국 AI칩 통제 강화에 따른 중국 확보전을 보도했다. 오늘 코스피에서 SK하이닉스가 3% 급락해 한국 반도체와 직결된 이슈다.",
-   "tag": "반도체",
-   "sources": [
-    "https://www.yna.co.kr/view/AKR20261113040151008"
-   ],
-   "bg": "SK hynix HBM",
-   "bg_alt": "HBM memory chip",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "SK하이닉스 **-3%**\n그런데 중국은\n한국산 HBM 달라",
-     "number": "-3.03%",
-     "label": "SK하이닉스 오늘",
-     "sub": "삼성전자 -0.96%"
-    },
-    {
-     "type": "질문형",
-     "title": "젠슨 황 떠난 틈에\n중국은 왜 한국산\n**HBM**을 찾나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "미국은 AI칩 조이는데\n중국은 **한국산** HBM\n확보전에 나섰다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "breaking"
-   ],
-   "extra": {},
-   "id": "20261113-1806-i3",
-   "created_at": "2026-11-13T18:06:02+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-1806-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-1806-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-1806-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-1806-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-1806-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-1806-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-1806-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-1806-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-1806-i3/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
    "title": "퇴직연금 선택권, 대통령 발언에 금융권 TF",
    "concept": "대통령의 '선택권 배제는 문제' 발언 하나에 농협금융 TF, NH투자증권 백서, 키움 팝업이 같은 날 나온 흐름을 따라가며, 내 퇴직연금을 직접 확인해 보자는 말로 마무리한다. (공식: 당사자의 한마디를 따옴표로)",
    "why_now": "대통령 발언(15:18)과 NH농협금융 기금형 TF, NH투자증권 백서, 키움 팝업이 같은 시간대에 나왔다. 아직 다룬 적 없는 주제다.",
@@ -9262,6 +8891,421 @@
      "form": "bars",
      "font": "dohyeon",
      "path": "20261114-1601-i3/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "한국 수출 사상 첫 1조 달러 눈앞",
+   "concept": "연간 수출이 한 번도 넘어본 적 없는 1조 달러에 다가섰다는 좋은 소식으로 풀되, 반도체 의존도와 엔비디아 사태의 기대 흔들림을 함께 짚는다. 한국 가게에 바로 닿는 일은 아니라고 한 줄로 밝히고, 다음 주 17일 엔비디아 실적 발표를 다음 시험대로 둔다. 정확한 달성 시점과 누적액은 원문 확인 후 쓴다. (공식: 없음)",
+   "why_now": "15:03 서울경제와 YTN 등 4곳이 연간 수출 1조 달러 초읽기를 보도했다. 젠슨 황 소식과 증시 불안이 이어지는 날이라 반대 결의 소식이다.",
+   "tag": "수출",
+   "sources": [
+    "https://www.sedaily.com/article/20114327",
+    "https://v.daum.net/v/20261114150300595"
+   ],
+   "bg": "Busan port containers",
+   "bg_alt": "Korea export container ship",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "한국 연간 수출\n사상 첫 **1조 달러**\n눈앞에 왔다",
+     "number": "1조 달러",
+     "label": "연간 수출, 사상 첫",
+     "sub": "한 번도 넘어본 적 없는 숫자"
+    },
+    {
+     "type": "질문형",
+     "title": "수출 1조 달러\n한 번도 못 넘은\n**숫자**가 코앞?",
+     "number": "1조 달러",
+     "label": "연간 수출 기준",
+     "sub": "반도체 업황이 밀어 올리는 중"
+    },
+    {
+     "type": "반전형",
+     "title": "엔비디아 흔들려도\n반도체가 수출을\n**1조 달러** 앞까지 민다",
+     "number": "1조 달러",
+     "label": "AI 반도체 기대는 흔들리는데",
+     "sub": "반도체 의존도가 높다는 뜻이기도 합니다"
+    }
+   ],
+   "forms": [
+    "bignum",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/14",
+     "headlines": [
+      "연간 수출 1조 달러 눈앞",
+      "1조 달러, 넘은 적 없는 숫자",
+      "반도체 업황이 수출을 견인"
+     ]
+    }
+   },
+   "id": "20261114-1705-i1",
+   "created_at": "2026-11-14T17:05:31+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261114-1705-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261114-1705-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261114-1705-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261114-1705-i1/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261114-1705-i1/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261114-1705-i1/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261114-1705-i1/2-bignum-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261114-1705-i1/2-bignum-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261114-1705-i1/2-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261114-1705-i1/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261114-1705-i1/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261114-1705-i1/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261114-1705-i1/3-bignum-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261114-1705-i1/3-bignum-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261114-1705-i1/3-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261114-1705-i1/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261114-1705-i1/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261114-1705-i1/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "노란우산 홈페이지 비정상 접근",
+   "concept": "중기중앙회가 노란우산 홈페이지에서 비정상 접근 정황을 포착했다는 사건 한 문장으로 연다. 유출 가능성이 있다는 설명, 가입자는 공지와 안내 문자를 확인하라는 행동 안내를 담고, 유출 범위와 규모는 아직 공개되지 않았다는 점을 한 번만 밝힌다. (공식: 날짜, 모음 라벨 표지는 피하기)",
+   "why_now": "16:55경 중기중앙회가 공개했고 조선비즈, 동아일보, 더팩트 등 5곳이 다뤘다. 소상공인 가입자가 많은 공제 상품이라 영향이 크다.",
+   "tag": "속보",
+   "sources": [
+    "https://biz.chosun.com/industry/business-venture/2026/11/14/KYPEZBYV4VFYXHL5UARDM2S2LE/",
+    "https://v.daum.net/v/20261114165542908"
+   ],
+   "bg": "Federation of Korean SMEs",
+   "bg_alt": "Seoul office building",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "노란우산 홈페이지\n비정상 접근 포착\n**유출** 가능성",
+     "number": "",
+     "label": "",
+     "sub": "중소기업중앙회 발표"
+    },
+    {
+     "type": "질문형",
+     "title": "노란우산 가입자라면\n내 정보는 **안전**할까",
+     "number": "",
+     "label": "",
+     "sub": "가입자는 공지와 안내 문자를 확인하세요"
+    },
+    {
+     "type": "반전형",
+     "title": "소상공인 많이 가입\n노란우산 홈페이지에\n**비정상** 접근",
+     "number": "",
+     "label": "",
+     "sub": "중기중앙회가 직접 공개"
+    }
+   ],
+   "forms": [
+    "breaking",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261114-1705-i2",
+   "created_at": "2026-11-14T17:05:31+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261114-1705-i2/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261114-1705-i2/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261114-1705-i2/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261114-1705-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261114-1705-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261114-1705-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261114-1705-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261114-1705-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261114-1705-i2/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "젠슨 황 퇴진 뒤 칩 규제와 희토류",
+   "concept": "엔비디아 사람 이슈가 규제와 공급망 이슈로 넘어가는 흐름을 보도 기준으로 정리한다. 미국 칩 규제가 세질 수 있다는 전망, 통제가 강화되면 희토류로 맞대응한다는 중국 전문가 발언, 삼성과 SK 중국 사업의 촉각을 잇고, 규제 강화는 확정 정책이 아닌 전망임을 한 번만 밝힌다. 희토류는 반도체와 배터리 공급망 핵심 원료라고 처음 나오는 자리에서 바로 풀어 쓴다. (공식: 없음)",
+   "why_now": "14:07~14:34 한국경제, SBS Biz, 파이낸셜뉴스, 글로벌이코노믹이 같은 관점을 냈고 서울파이낸스는 삼성과 SK 중국 사업 우려를 다뤘다. 다음 주 17일 엔비디아 실적 발표를 앞둔 새 국면이다.",
+   "tag": "반도체",
+   "sources": [
+    "https://v.daum.net/v/20261114143440240"
+   ],
+   "bg": "Jensen Huang",
+   "bg_alt": "rare earth minerals",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "美 칩 규제가 세지면\n중국 전문가가 꺼낸\n**희토류** 맞대응 카드",
+     "number": "",
+     "label": "",
+     "sub": "규제 강화는 전문가 전망이며 확정 정책이 아닙니다"
+    },
+    {
+     "type": "질문형",
+     "title": "젠슨 황이 빠지면\n美 칩 규제가 **세질까**",
+     "number": "",
+     "label": "",
+     "sub": "한국경제, SBS Biz 보도"
+    },
+    {
+     "type": "반전형",
+     "title": "엔비디아 대표 이슈가\n칩 규제, **희토류**로\n삼성, SK 중국사업 촉각",
+     "number": "",
+     "label": "",
+     "sub": "사람 문제에서 공급망 문제로"
+    }
+   ],
+   "forms": [
+    "news",
+    "list"
+   ],
+   "extra": {
+    "list": {
+     "sub": "다음 주까지 지켜볼 체크포인트",
+     "count": 3
+    }
+   },
+   "id": "20261114-1705-i3",
+   "created_at": "2026-11-14T17:05:31+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1705-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1705-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1705-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "list",
+     "font": "noto",
+     "path": "20261114-1705-i3/1-list-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "list",
+     "font": "black",
+     "path": "20261114-1705-i3/1-list-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "list",
+     "font": "plex",
+     "path": "20261114-1705-i3/1-list-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1705-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1705-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1705-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "list",
+     "font": "noto",
+     "path": "20261114-1705-i3/2-list-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "list",
+     "font": "black",
+     "path": "20261114-1705-i3/2-list-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "list",
+     "font": "plex",
+     "path": "20261114-1705-i3/2-list-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1705-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1705-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1705-i3/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "list",
+     "font": "noto",
+     "path": "20261114-1705-i3/3-list-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "list",
+     "font": "black",
+     "path": "20261114-1705-i3/3-list-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "list",
+     "font": "plex",
+     "path": "20261114-1705-i3/3-list-plex.jpg"
     }
    ]
   }
