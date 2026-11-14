@@ -3275,202 +3275,6 @@
  ],
  "ideas": [
   {
-   "title": "서학개미 6.8조 증발, 국민연금도 엔비디아",
-   "concept": "젠슨 황 사태로 개인과 연기금 노출이 처음 숫자로 나온 점을 풀고, 첫 장에서 내 계좌에 어떤 의미인지 한 줄로 답한다. 6.8조는 동아일보 보도 수치로 표기하고 산정 기준일은 확인 필요로 한 번만 적는다. 17일 엔비디아 실적이 다음 시험대. 투자 권유 아님. (공식: 한 주인공이 장마다 한 걸음씩)",
-   "why_now": "동아일보와 뉴시스가 서학개미 평가액 6.8조원 증발을 보도했고, 국민연금 3분기 말 미국 주식 1587억 달러 중 엔비디아가 1위라는 보도도 나왔다. 개인과 연기금 노출이 처음 숫자로 나온 날이다.",
-   "tag": "해외주식",
-   "sources": [
-    "https://www.donga.com/news/Economy/article/all/20261113/135019831/1",
-    "https://www.newsis.com/view/NISX20261113_0003867039"
-   ],
-   "bg": "Jensen Huang Nvidia",
-   "bg_alt": "Nvidia headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "서학개미 평가액\n**6.8조원** 증발\n국민연금 1위도 엔비디아",
-     "number": "6.8조원",
-     "label": "서학개미 평가액 증발",
-     "sub": "동아일보 보도, 국민연금 미국주식 1위 종목은 엔비디아"
-    }
-   ],
-   "forms": [
-    "bignum",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261113-1501-i1",
-   "created_at": "2026-11-13T15:01:26+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261113-1501-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261113-1501-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261113-1501-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-1501-i1/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-1501-i1/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-1501-i1/1-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "대통령 IR 발언에 거래소가 연 1회 의무화 추진",
-   "concept": "대통령의 실제 발언에서 시작해 거래소의 연 1회 IR 의무화 추진, 의무공개매수제 언급, 고위급 TF까지 한 흐름으로 잇는다. 내 주식에는 어떤 뜻인지 쉬운 말로 풀고 세부안은 확정 전임을 밝힌다. 투자 권유 아님. (공식: 당사자의 한마디를 따옴표로)",
-   "why_now": "13:59 기준 5곳이 IR 의무화를 다뤘고, 고위급 TF와 의무공개매수제 보도도 이어졌다. 오전 간담회의 후속으로 구체 조치가 나왔다.",
-   "tag": "자본시장",
-   "sources": [
-    "https://biz.chosun.com/stock/stock_general/2026/11/13/W5VR4NRS6JBY5M3XY6L5TOAO3A/",
-    "https://www.newsis.com/view/NISX20261113_0003867048",
-    "https://www.mt.co.kr/politics/2026/11/13/2026111311310824572"
-   ],
-   "bg": "Korea Exchange Seoul",
-   "bg_alt": "Korea Exchange building",
-   "hooks": [
-    {
-     "type": "질문형",
-     "title": "IR 안 하는 상장사\n시장에 있을 **자격**\n있나? 대통령 질문",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "quote",
-    "news"
-   ],
-   "extra": {
-    "quote": {
-     "label": "대통령 발언",
-     "quote": "상장만 하고 IR 외면, 시장에 있을 자격 있나",
-     "by": "대통령"
-    }
-   },
-   "id": "20261113-1501-i2",
-   "created_at": "2026-11-13T15:01:26+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261113-1501-i2/1-quote-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261113-1501-i2/1-quote-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261113-1501-i2/1-quote-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "서울 아파트 매물 40% 늘었는데 정부는 안정 신호",
-   "concept": "매물이 연초보다 40% 늘었다는 사실과 정부의 안정 신호 해석을 맞붙이고, 같은 날 나온 수도권 4만여 가구 입주 일정을 덧붙인다. 매물이 늘면 가격이 꺾일지는 지역별로 엇갈린다는 점과 다음 주 매물 추이를 볼 대목으로 남긴다. (공식: 숫자는 둘을 맞붙여서)",
-   "why_now": "14:26 동아일보 등 5곳이 보도했다. 같은 시각 정부 주택공급 브리핑과 대통령 지지율 하락 때 부정 평가 1위가 부동산이라는 기사가 겹쳐 관심이 높다.",
-   "tag": "부동산",
-   "sources": [
-    "https://www.donga.com/news/Economy/article/all/20261113/135020438/1",
-    "https://www.mt.co.kr/politics/2026/11/13/2026111311004579753"
-   ],
-   "bg": "Seoul apartment complex",
-   "bg_alt": "Seoul apartment skyline",
-   "hooks": [
-    {
-     "type": "반전형",
-     "title": "매물 40% 늘었는데\n정부는 **안정 신호**\n라고 해석했다",
-     "number": "40%",
-     "label": "서울 아파트 매물, 연초 대비",
-     "sub": "정부는 시장 안정 신호로 해석"
-    }
-   ],
-   "forms": [
-    "bignum",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/13",
-     "headlines": [
-      "서울 아파트 매물 연초比 40%↑",
-      "정부 \"시장 안정 신호\" 해석",
-      "수도권 4만여 가구 입주 예정"
-     ]
-    }
-   },
-   "id": "20261113-1501-i3",
-   "created_at": "2026-11-13T15:01:26+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261113-1501-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261113-1501-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261113-1501-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261113-1501-i3/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261113-1501-i3/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261113-1501-i3/1-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "배민, 쿠팡 과징금 6319억",
    "concept": "배달앱 플랫폼 제재가 6319억 원이라는 실제 숫자로 나왔다는 점을 앞세우고, 구체 위반 내용과 업체별 금액은 확인된 만큼만 푼다. 소비자와 자영업자에게 달라질 점은 재료에 없으면 확인 필요로 한 번만 적는다. (공식: 없음)",
    "why_now": "15:07 뉴시스 보도로 나온 새 소식이고 아직 다룬 곳이 적다. 액수가 커서 카드뉴스로 풀기 좋다.",
@@ -8844,6 +8648,401 @@
      "form": "quote",
      "font": "gowun",
      "path": "20261114-1301-i3/3-quote-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "삼성전자, 美 냉각장비 모딘 인수 추진",
+   "concept": "삼성전자를 주인공으로 '무슨 일, 시장 반응, 왜 냉각장비, 아직 추진 단계' 순서로 한 장에 한 걸음씩 풀어 갑니다. 첫 장에서 한국 개인 투자자에게 당장 달라지는 것은 확인된 바 없다고 한 줄로 밝힙니다. (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "서울경제가 오늘 10시 47분에 보도한 새 기업 소식이고, 모딘 주가 28% 급등 기사도 많이 읽히고 있습니다. AI 데이터센터 냉각이라는 반도체와 AI 흐름과도 이어집니다.",
+   "tag": "기업",
+   "sources": [
+    "https://www.sedaily.com/article/20114297",
+    "https://www.sedaily.com/article/20114300",
+    "https://kr.investing.com/news/stock-market-news/article-2175909"
+   ],
+   "bg": "Samsung Electronics headquarters",
+   "bg_alt": "data center cooling",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "삼성전자, 최대\n**10조** 원 들고\n美 모딘 인수 추진",
+     "number": "10조원",
+     "label": "삼성전자 인수 추진 규모(최대)",
+     "sub": "서울경제 보도, 대상은 美 냉각장비 업체 모딘"
+    },
+    {
+     "type": "질문형",
+     "title": "삼성은 왜 반도체 말고\n**냉각장비** 회사를\n10조에 사려 할까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "삼성 인수설 나오자\n모딘 주가 하루 만에\n**28%** 뛰어올랐다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261114-1401-i1",
+   "created_at": "2026-11-14T14:01:48+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261114-1401-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261114-1401-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261114-1401-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1401-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1401-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1401-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1401-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1401-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1401-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1401-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1401-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1401-i1/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "테슬라 사이버캡, 개인 판매 시작",
+   "concept": "가격 2만 9,990달러와 한국 돈 약 4천만 원을 맞붙여 보여 주고, 일부 고객 대상이라는 점과 아직 확인 안 된 인도 시기와 국가를 마지막에 정리합니다. 평가는 매체 제목 '싼듯 비싼듯'처럼 갈린다고만 전합니다. (공식: 숫자는 둘을 맞붙여서)",
+   "why_now": "블룸버그, WSJ 등 해외 매체와 국내 매체가 오전 10시부터 12시 사이에 잇따라 다뤘고, 아직 보내지 않은 새 주제입니다. 가격이 구체적이라 카드뉴스로 만들기 좋습니다.",
+   "tag": "기업",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMic0FVX3lxTE1IZWJCcFFpQmVlVTBiS0JPcXdFU0Q5ZHhsMUluT3RiTlBxZmczaTdHUm1EQ1hHSGVmWGR",
+    "https://news.google.com/rss/articles/CBMirwFBVV95cUxQVW9TQXZVWjF2c2FxVllYb2MwdjhVZ1ExOTNTRGpJTThYNWt6QVM4VWE0MWRwQ0VxU2c"
+   ],
+   "bg": "Tesla Cybercab",
+   "bg_alt": "Tesla robotaxi",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "테슬라 로보택시\n사이버캡 개인 판매\n**2만 9,990달러**",
+     "number": "2만 9,990달러",
+     "label": "사이버캡 개인 판매 가격",
+     "sub": "한국 돈 약 4천만 원 안팎 (11/14 환율 1,336원 기준)"
+    },
+    {
+     "type": "질문형",
+     "title": "로보택시용 차를\n개인이 **살 수** 있다고?\n일부 고객부터 연다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "싼 건지 비싼 건지\n**사이버캡** 가격에\n평가가 갈렸다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261114-1401-i2",
+   "created_at": "2026-11-14T14:01:48+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261114-1401-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261114-1401-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261114-1401-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1401-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1401-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1401-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1401-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1401-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1401-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1401-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1401-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1401-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "젠슨 황 임원 거짓 해명 보도",
+   "concept": "엔비디아 임원들에게 한 해명이 사실과 다르다는 보도에 한 사건으로 집중합니다. 상대 신분은 美 당국이 '확인 안 됨'이라는 점을 밝히고, 러트닉 경질론으로 번진 정치 파장까지 한 걸음씩 잇습니다. (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "조선비즈, 머니투데이, 서울경제 등 8곳이 다뤘고 연합뉴스TV와 MBC는 러트닉 경질론까지 보도했습니다. 앞서 보낸 사임과 가짜 서한 이슈와 다른 새 국면이고, 11/17 엔비디아 실적도 앞두고 있습니다.",
+   "tag": "기업",
+   "sources": [
+    "https://biz.chosun.com/it-science/ict/2026/11/14/ZJOCGGGQLRECBJIMHHQT6OYLRE/",
+    "https://www.mt.co.kr/world/2026/11/14/2026111410394683466",
+    "https://v.daum.net/v/20261114133801656"
+   ],
+   "bg": "Jensen Huang",
+   "bg_alt": "Nvidia headquarters",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "임원들에게 한 해명\n'통상적 고객 소통'\n**사실과 달랐다**는 보도",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "젠슨 황은 임원들에게\n무엇이라 해명했나\n'앨리스 황' **관계** 논란",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "젠슨 황 논란이\n러트닉 상무장관\n**경질론**까지 번졌다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/14",
+     "headlines": [
+      "임원에 '통상적 소통' 해명 보도",
+      "상대 신분, 美 당국 '확인 안 됨'",
+      "러트닉 상무장관 경질론 확산"
+     ]
+    }
+   },
+   "id": "20261114-1401-i3",
+   "created_at": "2026-11-14T14:01:48+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1401-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1401-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1401-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261114-1401-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261114-1401-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261114-1401-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1401-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1401-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1401-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261114-1401-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261114-1401-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261114-1401-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1401-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1401-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1401-i3/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261114-1401-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261114-1401-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261114-1401-i3/3-paper-gowun.jpg"
     }
    ]
   }
