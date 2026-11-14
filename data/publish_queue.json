@@ -3275,347 +3275,6 @@
  ],
  "ideas": [
   {
-   "title": "도매물가 6.5%, 연준과 베센트 엇갈림",
-   "concept": "10월 PPI가 연 6.5%로 2022년 11월 이후 최고였지만 예상 6.6%보다는 낮았다. 그 숫자 둘을 맞붙이고, 굴스비의 물가 확산 진단과 인상 자제를 촉구한 베센트의 주장을 대비해 풀고, 마지막에 한국 투자자가 볼 환율과 성장주를 짚는다. 첫 장에서 '내 지갑에는 금리와 환율 부담으로 올 수 있다'를 쉬운 말로 답한다. 12월 인상 확률은 재료에 없어 쓰지 않는다. (공식: 숫자는 둘을 맞붙여서)",
-   "why_now": "어제 밤 발표된 PPI가 7곳에서 보도됐고 X 조회도 높다. 기존에 보낸 글에 PPI는 없었다.",
-   "tag": "미국 물가",
-   "sources": [
-    "https://www.cnbc.com/2026/11/13/ppi-inflation-report-october-2026.html",
-    "https://www.bloomberg.com/news/articles/2026-11-13/us-wholesale-inflation-remained-elevated-in-october",
-    "https://kr.investing.com/news/economy-news/article-2175233"
-   ],
-   "bg": "Scott Bessent",
-   "bg_alt": "Federal Reserve building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "도매물가 연 **6.5%**\n2022년 11월 이후\n가장 높은 수치",
-     "number": "6.5%",
-     "label": "미국 10월 도매물가(PPI), 연율",
-     "sub": "2022년 11월 이후 가장 높음"
-    },
-    {
-     "type": "질문형",
-     "title": "물가는 번지는데\n연준은 **올릴까**\n베센트는 말린다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "예상보다 낮았는데\n2022년 11월 이후\n**최고치**였다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/13",
-     "headlines": [
-      "도매물가 연 6.5% 상승",
-      "근원 5.0%, 예상과 같았다",
-      "미국 10년물 5% 넘어"
-     ]
-    }
-   },
-   "id": "20261114-0707-i1",
-   "created_at": "2026-11-14T07:07:52+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261114-0707-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261114-0707-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261114-0707-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261114-0707-i1/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261114-0707-i1/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261114-0707-i1/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261114-0707-i1/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261114-0707-i1/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261114-0707-i1/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261114-0707-i1/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261114-0707-i1/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261114-0707-i1/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "코어위브 채권 금리 16%, AI 빚 경고등",
-   "concept": "코어위브 일부 채권 금리가 16%를 넘었다는 숫자 하나를 중심으로 풀고, 금리 16%가 '돈 떼일 위험을 크게 본다'는 뜻임을 바로 설명한다. MS의 계약 재검토 보도는 확인이 필요한 대목으로만 한 번 표시하고, 한국의 AI 반도체 기대와 이어지는 지점을 마지막에 짚는다. (공식: 한 주인공이 장마다 한 걸음씩)",
-   "why_now": "MS 서비스 장애와 같은 날 나온 새 소식이다. 골드만삭스의 AI 투자 효과 2027년 정점 전망, 엔비디아 악재와도 맞물린다.",
-   "tag": "AI 투자",
-   "sources": [
-    "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5veHFrSVhFNDZabGhDai1lZzdZZkRoYVhZN29JVXhrdlpTQU9iX2hONFRRMHBvS1RIeU9",
-    "https://www.marketwatch.com/story/microsoft-stock-slumps-on-outage-that-includes-the-copilot-tool-it-has-been-heavily-pr",
-    "https://kr.investing.com/news/stock-market-news/article-2174982"
-   ],
-   "bg": "CoreWeave",
-   "bg_alt": "CoreWeave data center",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "코어위브 일부 채권\n금리 **16%** 넘었다\nMS 계약 재검토 여파",
-     "number": "16%",
-     "label": "코어위브 일부 채권 금리",
-     "sub": "MS 계약 재검토 보도의 여파"
-    },
-    {
-     "type": "질문형",
-     "title": "AI 투자, **빚**으로\n굴러가는 걸까\n채권 금리 16% 넘었다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "AI 호황이라는데\n채권 금리는 **16%**\n돈 떼일 위험 반영",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261114-0707-i2",
-   "created_at": "2026-11-14T07:07:52+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261114-0707-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261114-0707-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261114-0707-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261114-0707-i2/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261114-0707-i2/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261114-0707-i2/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261114-0707-i2/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261114-0707-i2/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261114-0707-i2/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261114-0707-i2/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261114-0707-i2/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261114-0707-i2/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "스페이스X, 테슬라 합병에 텍사스 제동",
-   "concept": "합병 이르면 12월 발표설 뒤에 처음 나온 규제 변수인 텍사스 법무장관 당선인의 엄격 심사 예고를 중심으로 푼다. Kalshi 36%는 X 글에서 나온 베팅 시장 수치로만 표시하고, 마지막에 발표 시점, 규제 일정, 테슬라 주주 반응을 체크포인트로 둔다. (공식: 한 주인공이 장마다 한 걸음씩)",
-   "why_now": "어젯밤 인베스팅닷컴과 블룸버그가 보도해 '많이 봄'에 올랐다. 합병설 이후 처음 나온 규제 변수다.",
-   "tag": "기업 이슈",
-   "sources": [
-    "https://kr.investing.com/news/stock-market-news/article-2175264",
-    "https://news.google.com/rss/articles/CBMinAFBVV95cUxQOGk2MFZIQzEyV1ZlNGxadHptRkgzcGN1U3BvMl9yMlBPcHR2dWROWXVXVFIzOWVZR0l"
-   ],
-   "bg": "Elon Musk",
-   "bg_alt": "SpaceX Starship",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "스페이스X, 테슬라 합병\n베팅 확률 **36%**\n규제 변수가 나왔다",
-     "number": "36%",
-     "label": "Kalshi 합병 확률(X 글 기준)",
-     "sub": "텍사스 법무장관 당선인이 심사 예고"
-    },
-    {
-     "type": "질문형",
-     "title": "합병 발표 전에\n텍사스가 **제동**\n걸까?",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "합병설에 나온 첫 변수\n텍사스 법무장관 당선인\n**엄격** 심사 예고",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "breaking"
-   ],
-   "extra": {},
-   "id": "20261114-0707-i3",
-   "created_at": "2026-11-14T07:07:52+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261114-0707-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261114-0707-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261114-0707-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261114-0707-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261114-0707-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261114-0707-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261114-0707-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261114-0707-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261114-0707-i3/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
    "title": "미국 전역 항공기 이륙 중단",
    "concept": "FAA 한 곳을 주인공으로 이륙 중단 명령, 규모, 원인 발표, 운항 재개 미정 순서로 풀고, 첫 장에서 한국행 항공편 영향은 아직 확인 안 됨이라고 밝힌다 (공식: 한 주인공이 장마다 한 걸음씩)",
    "why_now": "07:41 CNBC와 Bloomberg가 보도했고 뉴스1은 7000편 지연, 결항을 전했다. 원인 발표가 계속 바뀌고 있어 속도가 중요하다.",
@@ -9315,6 +8974,390 @@
      "form": "news",
      "font": "myeongjo",
      "path": "20261114-2101-i3/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "노란우산 개인정보 조회 의심, KISA 신고",
+   "concept": "중기중앙회를 주인공으로 확인, 신고, 범위 미확인, 가입자 행동 순서로 풉니다. 노란우산이 무엇인지는 처음 나오는 자리에서 한 줄로 풀고, 유출 범위와 규모는 아직 확인되지 않았다고 한 번만 밝힙니다. (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "19:33에 중소기업중앙회가 개인정보 조회 의심 정황을 확인하고 KISA에 신고했다고 밝혔습니다. 16:58에는 유출 가능성만 나왔고, 이번에 기관이 공식 확인한 새 소식입니다.",
+   "tag": "소상공인",
+   "sources": [
+    "https://www.donga.com/news/Society/article/all/20261114/135024380/1",
+    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008846028&plink=RSSLINK&cooper=RSSREADER"
+   ],
+   "bg": "Korea Federation of SMEs",
+   "bg_alt": "Korea small business owner",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "중기중앙회가\n노란우산 **조회 의심**\nKISA에 신고",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "내 노란우산\n정보도 **조회**됐나\n아직 범위 미확인",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "유출 가능성에서\n**조회 의심**으로\n기관이 확인했다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261114-2201-i1",
+   "created_at": "2026-11-14T22:01:34+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261114-2201-i1/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261114-2201-i1/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261114-2201-i1/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261114-2201-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261114-2201-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261114-2201-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261114-2201-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261114-2201-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261114-2201-i1/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "글로벌 주식펀드 주간 유입 980억달러",
+   "concept": "하락 얘기가 많은 때에 자금 흐름은 반대로 움직였다는 대비로 풉니다. 980억달러(역대 2위), 5주 연속 유입, 누적 약 3,500억달러만 쓰고 4주 이동평균은 원문 확인 전이라 뺍니다. 한국 시장에 어떤 영향인지는 재료에 없다고 한 줄로만 적습니다. (공식: 없음)",
+   "why_now": "11월 11일 마감 주간 글로벌 주식펀드 유입이 980억달러로 역대 2위라는 글이 조회 5.7만을 기록했습니다. 코스피와 나스닥이 한 달 새 내린 시점이라 대비가 큽니다.",
+   "tag": "글로벌 자금",
+   "sources": [
+    "https://x.com/KobeissiLetter/status/2121564824760902115"
+   ],
+   "bg": "Wall Street trading floor",
+   "bg_alt": "New York Stock Exchange building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "글로벌 주식펀드\n일주일에 **980억달러**\n역대 2위 유입",
+     "number": "980억달러",
+     "label": "일주일 글로벌 주식펀드 유입",
+     "sub": "11월 11일 마감 주간, 역대 2위"
+    },
+    {
+     "type": "질문형",
+     "title": "주가는 빠지는데\n**980억달러**는\n왜 들어왔나",
+     "number": "980억달러",
+     "label": "글로벌 주식펀드 주간 유입",
+     "sub": "5주 연속 유입"
+    },
+    {
+     "type": "반전형",
+     "title": "하락 얘기뿐인데\n주식펀드엔 **5주째**\n돈이 들어왔다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/14",
+     "headlines": [
+      "주식펀드 주간 유입 980억달러",
+      "역대 2위 주간 유입 기록",
+      "5주 연속 유입, 누적 3,500억달러"
+     ]
+    }
+   },
+   "id": "20261114-2201-i2",
+   "created_at": "2026-11-14T22:01:34+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261114-2201-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261114-2201-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261114-2201-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261114-2201-i2/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261114-2201-i2/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261114-2201-i2/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261114-2201-i2/2-bignum-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261114-2201-i2/2-bignum-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261114-2201-i2/2-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261114-2201-i2/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261114-2201-i2/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261114-2201-i2/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261114-2201-i2/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261114-2201-i2/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261114-2201-i2/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "코인 시장에서 스테이블코인이 빠져나간다",
+   "concept": "가격 차트 대신 대기 자금인 스테이블코인 공급량을 봅니다. 테더 시총 60일 새 66억달러 감소(FTX 붕괴 때보다 큰 폭), 전체 공급량 한 달 새 170억달러 감소를 쓰되, 비트코인 하락의 원인이라고 단정하지 않고 매수 여력이 줄어드는 신호로 읽힌다고만 씁니다. 스테이블코인은 코인 살 때 쓰는 달러 같은 코인이라고 처음에 풀어 줍니다. (공식: 없음)",
+   "why_now": "디지털투데이와 블루밍비트가 스테이블코인 감소를 전했고, @cryptorover의 '올해 최대 스테이블코인 시총 감소' 글이 조회 4.4만입니다. 비트코인은 한 달 새 17.17% 내려 6만 6천 달러대(11/14)입니다.",
+   "tag": "코인",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMic0FVX3lxTFBhSU9wRDRaVE1wQmpRLWduX25JZ21TeHpQSGduQTEwbGtKcjI5UV9Camt2TXM0ck5TcU1",
+    "https://news.google.com/rss/articles/CBMiUEFVX3lxTE91RWVoR09sbjVXYmo5RWJWY1RkdW5HZUpDWkRwY3U5N2pyRlhLbWc3QXk2dmFoanlwN2h",
+    "https://x.com/cryptorover/status/2121529822455255043"
+   ],
+   "bg": "Tether USDT coin",
+   "bg_alt": "Bitcoin coin",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "코인판 달러가\n한 달 새 **170억달러**\n사라졌다",
+     "number": "170억달러",
+     "label": "스테이블코인 공급량, 한 달 새",
+     "sub": "올해 최대 감소라는 보도"
+    },
+    {
+     "type": "질문형",
+     "title": "코인 시장에서\n**달러**는 어디로\n빠져나갔나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "FTX 때보다\n더 큰 **66억달러**\n테더가 줄었다",
+     "number": "66억달러",
+     "label": "테더 시총, 60일 새 감소",
+     "sub": "FTX 붕괴 때보다 큰 폭"
+    }
+   ],
+   "forms": [
+    "bignum",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/14",
+     "headlines": [
+      "테더 시총 60일 새 66억달러 감소",
+      "스테이블코인 한 달 새 170억달러 감소",
+      "올해 최대 시총 감소라는 보도"
+     ]
+    }
+   },
+   "id": "20261114-2201-i3",
+   "created_at": "2026-11-14T22:01:34+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261114-2201-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261114-2201-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261114-2201-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261114-2201-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261114-2201-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261114-2201-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261114-2201-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261114-2201-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261114-2201-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261114-2201-i3/3-bignum-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261114-2201-i3/3-bignum-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261114-2201-i3/3-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261114-2201-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261114-2201-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261114-2201-i3/3-paper-gowun.jpg"
     }
    ]
   }
