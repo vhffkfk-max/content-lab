@@ -1,15 +1,6 @@
 [
  {
   "geo": "KR",
-  "term": "치지직",
-  "traffic": 10000,
-  "topics": "국내 대형주",
-  "econ": true,
-  "news_title": "네이버, 스트리머·팬 소통 특화 '크리에이터 카페' 내달 출시",
-  "news_link": "https://www.etnews.com/20261113000071"
- },
- {
-  "geo": "KR",
   "term": "바이퍼",
   "traffic": 2000,
   "topics": "",
@@ -29,7 +20,7 @@
  {
   "geo": "KR",
   "term": "blg",
-  "traffic": 500,
+  "traffic": 1000,
   "topics": "",
   "econ": false,
   "news_title": "Worlds 2026: BLG Knight vs Gen.G Chovy",
@@ -38,7 +29,7 @@
  {
   "geo": "KR",
   "term": "포르투갈 대 덴마크",
-  "traffic": 500,
+  "traffic": 1000,
   "topics": "",
   "econ": false,
   "news_title": "네이션스 리그 포르투갈 대 덴마크 경기 예측",
@@ -64,6 +55,15 @@
  },
  {
   "geo": "KR",
+  "term": "빈",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "이준석 “내가 노무현 대통령 추천서 어떻게 받나”…전한길 추가 고소 예고",
+  "news_link": "https://www.hani.co.kr/arti/politics/politics_general/1287327.html"
+ },
+ {
+  "geo": "KR",
   "term": "아프리카",
   "traffic": 200,
   "topics": "",
@@ -82,66 +82,48 @@
  },
  {
   "geo": "KR",
-  "term": "norway vs wales",
+  "term": "이세계아이돌",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "Uefa Nations League: Norway vs Wales - watch live stream, listen live, text updates, stats & head-to-head",
-  "news_link": "https://www.bbc.com/sport/football/live/crz6568xvv8vt"
+  "news_title": "이세계아이돌, 지상파 '음악중심' 출격…실제 몸 없는 6인조 걸그룹, 멜론 7위 이어 무대까지",
+  "news_link": "https://www.topstarnews.net/news/articleView.html?idxno=16276419"
  },
  {
   "geo": "US",
-  "term": "clemson football",
-  "traffic": 10000,
+  "term": "auburn vs ms state",
+  "traffic": 5000,
   "topics": "",
   "econ": false,
-  "news_title": "Gameday: Football vs. Georgia Tech • Nov. 14 • 12:30 p.m. • CW Sports",
-  "news_link": "https://clemsontigers.com/news/2026/11/10/fbgameday26-gt"
+  "news_title": "SEC Adjusts Football Kickoff Time As State Hosts Auburn",
+  "news_link": "https://hailstate.com/news/2026/11/13/sec-adjusts-football-kickoff-time-as-state-hosts-auburn"
  },
  {
   "geo": "US",
-  "term": "california vs virginia",
-  "traffic": 2000,
+  "term": "jeremiah smith",
+  "traffic": 5000,
   "topics": "",
   "econ": false,
-  "news_title": "Virginia vs Cal ACC Football | Live Updates: Score, Analysis and Highlights",
-  "news_link": "https://www.si.com/college/virginia/virginia-vs-cal-acc-football-live-updates-score-analysis-and-highlights-01m7dq42hzee"
+  "news_title": "Ohio State's Jeremiah Smith sets Big Ten receiving record",
+  "news_link": "https://www.espn.com/college-football/story/_/id/50481134/ohio-state-jeremiah-smith-sets-big-ten-receiving-record"
  },
  {
   "geo": "US",
-  "term": "jets vs blackhawks",
+  "term": "dan hicks illness",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Jets at Blackhawks projected lineups",
-  "news_link": "https://www.nhl.com/news/winnipeg-jets-chicago-blackahwks-game-preview-november-14-2026"
+  "news_title": "Longtime sports broadcaster Dan Hicks dies at age 64",
+  "news_link": "https://www.espn.com/espn/story/_/id/50462145/long-sports-broadcaster-dan-hicks-dies-age-64"
  },
  {
   "geo": "US",
-  "term": "evan elder",
-  "traffic": 500,
+  "term": "deportivo cali - tolima",
+  "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Evan Elder vs Samuel Sanches Prediction, Picks, Odds for UFC 334, Saturday, November 14",
-  "news_link": "https://sports.yahoo.com/articles/evan-elder-vs-samuel-sanches-103041169.html"
- },
- {
-  "geo": "US",
-  "term": "ga southern vs georgia state",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Rhode Island Rams at St. John's Red Storm - WNCAAB Game Summary - Nov 14, 2026",
-  "news_link": "https://www.usatoday.com/sports/wncaab/event/2026/3023738/boxscore/?itm_source=oembed&itm_medium=sports&itm_campaign=scoreboard&site=USAT&itm_content=WNCAAB&tile=9"
- },
- {
-  "geo": "US",
-  "term": "jax state vs wku",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Jacksonville State football vs Western Kentucky | Live score updates, analysis",
-  "news_link": "https://sports.yahoo.com/articles/jacksonville-state-football-vs-western-100318382.html"
+  "news_title": "Luis Fernando Suárez y su partido contra el deportivo Cali por la última fecha",
+  "news_link": "https://hsbnoticias.com/noticias/luis-fernando-suarez-y-su-partido-contra-el-deportivo-cali-por-la-ultima-fecha"
  },
  {
   "geo": "US",
@@ -154,29 +136,47 @@
  },
  {
   "geo": "US",
-  "term": "middle tenn. vs liberty",
+  "term": "millonarios - alianza",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "MTSU at Liberty live updates from college football Week 11 game",
-  "news_link": "https://sports.yahoo.com/articles/mtsu-liberty-live-updates-college-173020656.html"
+  "news_title": "Cuándo juegan Millonarios vs Alianza por fecha 19 de Liga BetPlay: equipo, fecha, hora y TV en vivo",
+  "news_link": "https://espndeportes.espn.com/futbol/colombia/nota/_/id/17511509/millonarios-vs-alianza-fecha-19-liga-betplay-equipo-fecha-hora-y-tv-en-vivo"
  },
  {
   "geo": "US",
-  "term": "monmouth football",
+  "term": "mirra andreeva",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "The Monmouth football seniors who sparked a program breakthrough | Exclusive",
-  "news_link": "https://www.app.com/story/sports/college/monmouth-university/2026/11/13/monmouth-nj-college-football-seniors-program-breakthrough-matt-fries-kevin-shriner-gavin-nelson/92713599007/"
+  "news_title": "WTA Finals 2026: Singles semifinals set after Elina Svitolina shocks Aryna Sabalenka - The Athletic",
+  "news_link": "https://www.nytimes.com/athletic/7750694/2026/11/13/wta-finals-2026-draw-prize-money-format-schedule/"
  },
  {
   "geo": "US",
-  "term": "nevada vs northern il",
+  "term": "saving private ryan",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Nevada football versus Northern Illinois: Three keys to victory and a prediction",
-  "news_link": "https://nevadasportsnet.com/news/reporters/nevada-football-versus-northern-illinois-three-keys-to-victory-and-a-prediction"
+  "news_title": "Matt Damon’s WWII Masterpiece Is Still His Greatest Movie 28 Years Later",
+  "news_link": "https://collider.com/matt-damon-saving-private-ryan-ww2-streaming-free-pluto-november-2026/"
+ },
+ {
+  "geo": "US",
+  "term": "swac tv",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "HBCU Football Week 11: Championship Scores, Separation Saturday's How to Watch, and TV/Streaming Schedule",
+  "news_link": "https://www.si.com/college/hbcu/football/hbcu-football-week-11-scores-how-to-watch-schedule-2026"
+ },
+ {
+  "geo": "US",
+  "term": "wcu vs samford",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Bulldogs To Host Western Carolina For Homecoming Saturday",
+  "news_link": "https://samfordsports.com/news/2026/11/13/football-bulldogs-to-host-western-carolina-for-homecoming-saturday"
  }
 ]
