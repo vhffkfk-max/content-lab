@@ -10,8 +10,8 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 1.7,
   "kr_n": 477,
-  "foreign_avg": 2.45,
-  "foreign_n": 265
+  "foreign_avg": 2.46,
+  "foreign_n": 266
  },
  {
   "rank": 2,
@@ -36,8 +36,8 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 0.92,
-  "kr_n": 45,
+  "kr_avg": 0.94,
+  "kr_n": 44,
   "foreign_avg": 1.75,
   "foreign_n": 65
  },
@@ -57,20 +57,6 @@
  },
  {
   "rank": 5,
-  "topic": "빅테크",
-  "kind": "국내·해외 모두 강세",
-  "confidence": "높음",
-  "title_idea": "빅테크, 지금 꼭 알아야 할 것은?",
-  "format": "릴스",
-  "hook": "질문형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 2.32,
-  "kr_n": 43,
-  "foreign_avg": 1.24,
-  "foreign_n": 26
- },
- {
-  "rank": 6,
   "topic": "급락·변동성",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
@@ -80,8 +66,22 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 2.06,
   "kr_n": 83,
-  "foreign_avg": 1.88,
-  "foreign_n": 20
+  "foreign_avg": 1.82,
+  "foreign_n": 21
+ },
+ {
+  "rank": 6,
+  "topic": "빅테크",
+  "kind": "국내·해외 모두 강세",
+  "confidence": "높음",
+  "title_idea": "빅테크, 지금 꼭 알아야 할 것은?",
+  "format": "릴스",
+  "hook": "질문형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 2.32,
+  "kr_n": 43,
+  "foreign_avg": 1.55,
+  "foreign_n": 26
  },
  {
   "rank": 7,
@@ -94,21 +94,21 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 1.96,
   "kr_n": 75,
-  "foreign_avg": 1.28,
+  "foreign_avg": 1.33,
   "foreign_n": 8
  },
  {
   "rank": 8,
-  "topic": "테슬라",
+  "topic": "비트코인",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
-  "title_idea": "테슬라, 지금 꼭 알아야 할 것은?",
+  "title_idea": "[오늘] 비트코인에 무슨 일이? 1분 요약",
   "format": "캐러셀(카드뉴스)",
-  "hook": "질문형",
+  "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 3.13,
-  "kr_n": 43,
-  "foreign_avg": 2.67,
-  "foreign_n": 28
+  "kr_avg": 2.21,
+  "kr_n": 14,
+  "foreign_avg": 1.75,
+  "foreign_n": 170
  }
 ]
