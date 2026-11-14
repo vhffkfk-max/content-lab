@@ -1,72 +1,72 @@
 {
- "at": "2026-11-14T09:09+09:00",
- "took_sec": 529,
+ "at": "2026-11-14T10:10+09:00",
+ "took_sec": 563,
  "steps": [
   {
    "step": "free_import.py",
    "ok": true,
-   "sec": 22,
-   "note": "무료 크롤러 → 인스타 글 1748개 · 쓰레드 글 5015개 · X 글 8536개 · 인스타 계정 팔로워 140곳 (PC가 0.3시간 전에 올림)"
+   "sec": 23,
+   "note": "무료 크롤러 → 인스타 글 1745개 · 쓰레드 글 4995개 · X 글 8557개 · 인스타 계정 팔로워 140곳 (PC가 0.3시간 전에 올림)"
   },
   {
    "step": "threads_viral.py --export",
    "ok": true,
    "sec": 0,
-   "note": "✅ 조회수 100,000+ 한국어 경제 글 149개 → output/site/thx_viral.json"
+   "note": "✅ 조회수 100,000+ 한국어 경제 글 150개 → output/site/thx_viral.json"
   },
   {
    "step": "analyze.py --no-open",
    "ok": true,
-   "sec": 6,
+   "sec": 23,
    "note": "   리포트: C:\\Users\\qkreo\\content-lab-hourly\\output\\report.html"
   },
   {
    "step": "export_site.py",
    "ok": true,
-   "sec": 0,
+   "sec": 5,
    "note": "✅ 사이트 데이터 → C:\\Users\\qkreo\\content-lab-hourly\\output\\site"
   },
   {
    "step": "account_rank.py",
    "ok": true,
-   "sec": 66,
-   "note": "✅ 계정 순위: 1075곳, 벤치마킹(채널 상위 10%) 104곳, 아이템 참고 글 90개"
+   "sec": 81,
+   "note": "✅ 계정 순위: 1076곳, 벤치마킹(채널 상위 10%) 105곳, 아이템 참고 글 90개"
   },
   {
    "step": "threads_analyze.py",
    "ok": true,
-   "sec": 79,
-   "note": "✅ 쓰레드 글 38개 분석 · 공식 5개 (입력 14,882 / 출력 8,754 토큰)"
+   "sec": 95,
+   "note": "✅ 쓰레드 글 40개 분석 · 공식 5개 (입력 15,455 / 출력 10,465 토큰)"
   },
   {
    "step": "threads_types.py",
    "ok": true,
-   "sec": 11,
+   "sec": 15,
    "note": "AI 해석: 하루 한 번만 (지난 해석 유지)"
   },
   {
    "step": "x_analyze.py",
    "ok": true,
-   "sec": 42,
-   "note": "✅ X·트루스 글 22개 분석 (입력 6,662 / 출력 7,522 토큰)"
+   "sec": 47,
+   "note": "✅ X·트루스 글 21개 분석 (입력 6,301 / 출력 7,068 토큰)"
   },
   {
    "step": "threads_mine_analyze.py",
    "ok": true,
-   "sec": 239,
-   "note": "✅ 황소개미 진단 (등급 C, AI 티 2.9) · 입력 43,276 / 출력 29,693 토큰"
+   "sec": 232,
+   "note": "✅ 황소개미 진단 (등급 C-, AI 티 2.6) · 입력 73,184 / 출력 32,106 토큰"
   },
   {
    "step": "generate_drafts.py",
    "ok": true,
-   "sec": 8,
+   "sec": 5,
    "note": "새로 쓸 기획안이 없어요 — Claude 호출 없이 지난 기획안을 유지해요."
   },
   {
    "step": "import_ideas.py",
    "ok": true,
-   "sec": 49,
-   "note": "✅ 한국 미출시 해외 아이디어 2개 (입력 31,751 / 출력 4,404 토큰)"
+   "sec": 33,
+   "note": "✅ 한국 미출시 해외 아이디어 1개 (입력 31,754 / 출력 3,273 토큰)"
   }
  ],
  "updated": [
@@ -77,10 +77,10 @@
   "acc_tops",
   "accounts",
   "calendar",
+  "fo_hot",
   "fo_topics",
   "ig_slides",
   "imports",
-  "insights",
   "patterns",
   "rec_reasons",
   "recs",
@@ -146,14 +146,14 @@
   {
    "name": "텔레그램 수집(30분)",
    "file": "tg_meta.json",
-   "age_min": 11,
+   "age_min": 8,
    "limit": 90,
    "stale": false
   },
   {
    "name": "뜬 글 공식(릴스·카드뉴스, 매시간)",
    "file": "viral.json",
-   "age_min": 108,
+   "age_min": 35,
    "limit": 120,
    "stale": false
   },
@@ -167,7 +167,7 @@
   {
    "name": "X 크롤러 새 글",
    "file": "free_crawl.json#x",
-   "age_min": 30,
+   "age_min": 31,
    "limit": 360,
    "stale": false
   }
