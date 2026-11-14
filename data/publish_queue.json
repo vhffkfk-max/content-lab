@@ -3275,389 +3275,6 @@
  ],
  "ideas": [
   {
-   "title": "잠자는 카드 포인트 2.1조, 지역화폐로",
-   "concept": "내 지갑 얘기로 시작해 '2.1조 원이 내년 5월부터 지역화폐로 바뀐다'는 보도를 풀고, 대상 기준과 기한은 아직 확인 전이라고 한 번만 밝힌다. 마지막 장은 내 포인트를 미리 확인하라는 안내. (공식: 없음)",
-   "why_now": "17:55 뉴스1, 동아, 한국경제 등 4곳이 시행 시기(내년 5월)와 규모(2.1조원)를 보도했다. 13:26 건의 구체화 후속이다.",
-   "tag": "소비",
-   "sources": [
-    "https://www.donga.com/news/Economy/article/all/20261113/135020787/1",
-    "https://v.daum.net/v/20261113175524550"
-   ],
-   "bg": "Korean credit cards",
-   "bg_alt": "Korean local currency card",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "잠자던 카드 포인트\n**2.1조원**이 내년 5월\n지역화폐로 바뀐다",
-     "number": "2.1조원",
-     "label": "안 쓰고 잠자는 카드 포인트",
-     "sub": "내년 5월부터 지역화폐로 전환"
-    },
-    {
-     "type": "질문형",
-     "title": "안 쓴 내 카드 포인트\n내년 5월부터\n**지역화폐**가 된다고?",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "쓰라고 해도 안 쓴\n포인트 2.1조원\n이제 **동네 가게**로",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "editorial"
-   ],
-   "extra": {},
-   "id": "20261113-2001-i1",
-   "created_at": "2026-11-13T20:01:36+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261113-2001-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261113-2001-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261113-2001-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261113-2001-i1/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261113-2001-i1/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261113-2001-i1/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261113-2001-i1/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261113-2001-i1/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261113-2001-i1/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "석유 최고가격 12차 동결, 휘발유 1784원",
-   "concept": "'정부가 12차로 석유 최고가격을 동결했다'를 사건으로 걸고, 휘발유 1784원, 경유 1773원, 4주 더 동결을 짚는다. 100원 단위 계산 대신 '주유소 상한이 유지돼 급등 부담은 덜었다'로 내 차 기름값에 닿게 풀고, 상한 유지 기한은 확인 전이라고 한 번만 적는다. (공식: 없음)",
-   "why_now": "18:08~18:20 사이 뉴시스, 연합인포맥스, 파이낸셜뉴스 등 여러 곳이 보도했다. 아직 우리 계정이 다루지 않은 주제다.",
-   "tag": "생활물가",
-   "sources": [
-    "https://www.newsis.com/view/NISX20261113_0003867086",
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4444721",
-    "https://v.daum.net/v/20261113181439117"
-   ],
-   "bg": "gas station fuel price",
-   "bg_alt": "Korean gas station",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "휘발유 **1784원**\n경유 1773원\n최고가격 또 동결",
-     "number": "1784원",
-     "label": "휘발유 최고가격",
-     "sub": "경유 1773원, 4주 더 동결"
-    },
-    {
-     "type": "질문형",
-     "title": "주유소 기름값 상한\n**12번째** 동결\n언제까지 갈까?",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "기름값 상한 안 풀려\n급등 부담은 **덜었다**\n문제는 그다음",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261113-2001-i2",
-   "created_at": "2026-11-13T20:01:36+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261113-2001-i2/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261113-2001-i2/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261113-2001-i2/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261113-2001-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261113-2001-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261113-2001-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261113-2001-i2/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261113-2001-i2/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261113-2001-i2/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261113-2001-i2/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261113-2001-i2/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261113-2001-i2/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "엔비디아 혼란 틈타 중국 한국산 HBM 확보전",
-   "concept": "주인공을 중국으로 두고 '혼란 틈타 한국산 HBM 달라'(중앙일보), 미국 AI칩 통제 강화 속 확보전(연합뉴스), 오늘 SK하이닉스 -3.03%, 삼성전자 -0.96% 순으로 한 걸음씩 푼다. 시세와 보도의 원인 관계는 확인 안 됨이라고 한 번만 적고, 투자 권유 아님을 붙인다. (공식: 한 주인공이 장마다 한 걸음씩)",
-   "why_now": "중앙일보와 연합뉴스가 중국의 HBM 확보전을 보도했고, 오늘 SK하이닉스가 3%대 급락해 한국 반도체와 직결된다. 앞서 다룬 젠슨 황 의혹, 버리 경고와 다른 각도다.",
-   "tag": "반도체",
-   "sources": [
-    "https://news.google.com/rss/articles/CBMiVkFVX3lxTE16dTBaV3RMQzZ1N1JsSzA3Uml5U0hjNE41aWVsQXAyYks5UWJEcHBiNk5jOUltczNnbVp",
-    "https://news.google.com/rss/articles/CBMidEFVX3lxTE0tbFU4TVhOTHlDMUswZmNHYUowRHhtZ0RlZlBfaW9BTUVtZHFnbkkwZ181eThNa2MxRmh",
-    "https://www.yna.co.kr/view/AKR20261113040151008"
-   ],
-   "bg": "Jensen Huang",
-   "bg_alt": "SK hynix HBM memory",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "SK하이닉스 **3%** 급락\n그 사이 중국은\n한국산 HBM 찾았다",
-     "number": "-3.03%",
-     "label": "SK하이닉스 11/13 등락",
-     "sub": "삼성전자 -0.96%"
-    },
-    {
-     "type": "질문형",
-     "title": "엔비디아가 흔들리자\n중국이 왜 한국산\n**HBM**부터 찾을까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "미국은 AI칩 통제 강화\n중국은 **한국산 HBM**\n확보전 나섰다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "bars"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "11/13 하락률(%)",
-     "bars": [
-      {
-       "label": "SK하이닉스",
-       "value": 3.03,
-       "hi": true
-      },
-      {
-       "label": "삼성전자",
-       "value": 0.96
-      }
-     ]
-    }
-   },
-   "id": "20261113-2001-i3",
-   "created_at": "2026-11-13T20:01:36+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-2001-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-2001-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-2001-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261113-2001-i3/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261113-2001-i3/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261113-2001-i3/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-2001-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-2001-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-2001-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261113-2001-i3/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261113-2001-i3/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261113-2001-i3/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261113-2001-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261113-2001-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261113-2001-i3/3-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261113-2001-i3/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261113-2001-i3/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261113-2001-i3/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
    "title": "MS 365 먹통, 하루 멈추면 벌어지는 일",
    "concept": "MS 365 장애를 주인공으로 두고 무슨 일이 있었나, 기업과 정부 차질, 한국 직장인 피해, 클라우드 쏠림 순으로 풀고 원인과 피해 규모는 아직 확인 안 됨을 한 번만 적는다. (공식: 한 주인공이 장마다 한 걸음씩)",
    "why_now": "FT 인스타 글이 시간당 좋아요 8,904를 기록했고 관련 릴스는 평소의 30배다. CNBC, 한국일보 등이 보도했고 우리 계정은 아직 안 다뤘다.",
@@ -9288,6 +8905,450 @@
      "form": "breaking",
      "font": "dohyeon",
      "path": "20261114-1805-i3/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "연준이 꼽은 시장 최대 위험은 AI",
+   "concept": "연준 금융안정보고서 응답자 87%가 AI를 최대 위험으로 꼽았다는 사실을 앞세우고, 같은 날 반도체주 급락, 빚내는 빅테크, 서학개미 4000억 원 순매수를 이어 붙인다. 50%에서 87%로 뛰었다는 쓰레드 글은 이전 수치가 확인되지 않아 본문에서 뺀다. 끝 장은 확인된 것과 아직 모르는 것으로 나누고, 17일 엔비디아 실적과 19일 앤트로픽 상장이 다음 고비라고 정리한다. (공식: 끝 장은 닫힌 결론 한 줄)",
+   "why_now": "17:54 보도가 나왔고 쓰레드에서 관련 글이 시간당 조회 6516, 누적 4만 2860으로 빠르게 커지고 있다. 엔비디아 급락과 맞물려 AI 거품 불안과 바로 이어진다.",
+   "tag": "AI 위험",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMibkFVX3lxTFBzUFJ3Q3YxdUdTdEZvajFYODd1dHkwM2FsTkVzZEI2VzRYQTRud2VycktKUUY4X2hZNk0",
+    "https://www.mt.co.kr/world/2026/11/14/2026111411284468310",
+    "https://view.asiae.co.kr/article/2026111417365591912"
+   ],
+   "bg": "Federal Reserve Eccles Building",
+   "bg_alt": "Nvidia headquarters",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "연준 보고서 응답자\n**87%**가 꼽은\n시장 최대 위험 AI",
+     "number": "87%",
+     "label": "연준 금융안정보고서 응답자",
+     "sub": "가장 큰 위험으로 AI를 꼽았다"
+    },
+    {
+     "type": "질문형",
+     "title": "연준이 꼽은 최대 위험\n왜 하필 **AI**였나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "엔비디아 급락한 날\n연준은 **AI**를 꼽았다\n서학개미는 4000억 샀다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261114-1901-i1",
+   "created_at": "2026-11-14T19:01:54+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261114-1901-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261114-1901-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261114-1901-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1901-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1901-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1901-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1901-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1901-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1901-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1901-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1901-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1901-i1/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "트럼프, 규제 완화 전 엔비디아 주식 매입 보도",
+   "concept": "국내 언론 3곳이 전한 속보로 풀되 매입 규모와 시점은 확인되지 않았다고 한 번만 밝힌다. 젠슨 황 퇴진 뒤 흔들리는 엔비디아에 대통령의 주식 거래 논란이 겹쳤다는 점, 한국 투자자에게는 미국 반도체 규제 방향의 변수라는 점을 쉬운 말로 먼저 답한다. 끝 장은 확인된 것과 아직 모르는 것으로 나눈다. (공식: 끝 장은 닫힌 결론 한 줄)",
+   "why_now": "17:56 연합뉴스, 아시아경제, 국제신문 등 3곳이 속보로 전했다. 엔비디아 사태가 이어지는 가운데 이해충돌 논란으로 번질 수 있는 새 소식이다.",
+   "tag": "속보",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMikwFBVV95cUxQN0RHV3c5YXUxZGZGNjFsc1V3aG9TWnE1U2xhY2xVYklScUNtaTctVkZGbTB0M3ZOdnF"
+   ],
+   "bg": "Donald Trump",
+   "bg_alt": "Nvidia logo",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "규제 완화 전에\n트럼프가 **엔비디아**\n주식을 샀다는 보도",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "트럼프 매입 시점\n규제 완화보다 **먼저**였나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "엔비디아 흔들린 날\n이번엔 **대통령**의\n주식 거래가 터졌다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261114-1901-i2",
+   "created_at": "2026-11-14T19:01:54+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261114-1901-i2/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261114-1901-i2/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261114-1901-i2/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1901-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1901-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1901-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261114-1901-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261114-1901-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261114-1901-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1901-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1901-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1901-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261114-1901-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261114-1901-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261114-1901-i2/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261114-1901-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261114-1901-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261114-1901-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "데이터센터 2건 취소, AMD -8.75%",
+   "concept": "미시간 100억 달러, 앨라배마 184에이커 데이터센터 계획이 철회됐다는 사실을 먼저 보여 주고, 11/13 미국 반도체주 하락률을 막대로 비교한다. 엔비디아 -2.01%와 AMD -8.75% 한 쌍을 표지에 쓰고, 취소와 주가의 인과는 재료에 없어 확인 안 됨을 한 번만 밝힌다. 조선비즈가 전한 AI 투자 둔화 시 한미 성장률 영향과 17일 엔비디아 실적을 마지막에 잇는다. (공식: 숫자는 둘을 맞붙여서)",
+   "why_now": "쓰레드에서 시간당 조회 6846으로 지금 가장 빠르게 크는 글이 데이터센터 취소 소식이다. 반도체주 급락을 전한 별도 글도 시간당 2829로 커지고 있고, 엔비디아 실적(11/17)을 앞둔 시점이다.",
+   "tag": "AI 투자",
+   "sources": [
+    "https://www.threads.com/@0biwon/post/Dftb0FLG3cH",
+    "https://www.threads.com/@beyond.cho/post/DfthPZnnzsK",
+    "https://biz.chosun.com/policy/policy_sub/2026/11/14/7VIJV43MFBGDTNZBV2R35WYPEQ/"
+   ],
+   "bg": "Data center",
+   "bg_alt": "AMD chip",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "미시간 **100억 달러**\n데이터센터 계획이\n통째로 철회됐다",
+     "number": "100억 달러",
+     "label": "미시간 데이터센터 계획 철회",
+     "sub": "앨라배마 184에이커 부지도 취소"
+    },
+    {
+     "type": "질문형",
+     "title": "데이터센터 2건 취소\nAI 투자 **둔화** 신호일까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "엔비디아는 -2.01%\n정작 더 크게 밀린 건\n**AMD** -8.75%",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "bars"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "11/13 미국 반도체주 하락률(%)",
+     "bars": [
+      {
+       "label": "AMD",
+       "value": 8.75,
+       "hi": true
+      },
+      {
+       "label": "델",
+       "value": 7.18
+      },
+      {
+       "label": "브로드컴",
+       "value": 4.76
+      },
+      {
+       "label": "엔비디아",
+       "value": 2.01
+      }
+     ]
+    }
+   },
+   "id": "20261114-1901-i3",
+   "created_at": "2026-11-14T19:01:54+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261114-1901-i3/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261114-1901-i3/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261114-1901-i3/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261114-1901-i3/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261114-1901-i3/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261114-1901-i3/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261114-1901-i3/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261114-1901-i3/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261114-1901-i3/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261114-1901-i3/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261114-1901-i3/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261114-1901-i3/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261114-1901-i3/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261114-1901-i3/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261114-1901-i3/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261114-1901-i3/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261114-1901-i3/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261114-1901-i3/3-bars-dohyeon.jpg"
     }
    ]
   }
