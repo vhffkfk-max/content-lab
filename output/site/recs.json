@@ -9,7 +9,7 @@
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
   "kr_avg": 1.72,
-  "kr_n": 482,
+  "kr_n": 484,
   "foreign_avg": 2.46,
   "foreign_n": 267
  },
@@ -47,11 +47,11 @@
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
   "title_idea": "[오늘] 급락·변동성에 무슨 일이? 1분 요약",
-  "format": "릴스",
+  "format": "단일 이미지",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.05,
-  "kr_n": 82,
+  "kr_avg": 2.06,
+  "kr_n": 81,
   "foreign_avg": 1.85,
   "foreign_n": 21
  },
@@ -80,7 +80,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 2.33,
   "kr_n": 43,
-  "foreign_avg": 1.58,
+  "foreign_avg": 1.59,
   "foreign_n": 26
  },
  {
@@ -94,21 +94,21 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 2.38,
   "kr_n": 13,
-  "foreign_avg": 1.75,
+  "foreign_avg": 1.76,
   "foreign_n": 173
  },
  {
   "rank": 8,
-  "topic": "환율·달러",
+  "topic": "테슬라",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
-  "title_idea": "환율·달러, 한 줄 정리",
+  "title_idea": "\"테슬라, 이것만 알면 돼요\"",
   "format": "캐러셀(카드뉴스)",
-  "hook": "짧은 한 줄",
+  "hook": "인용형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.97,
-  "kr_n": 76,
-  "foreign_avg": 1.41,
-  "foreign_n": 8
+  "kr_avg": 2.86,
+  "kr_n": 37,
+  "foreign_avg": 2.66,
+  "foreign_n": 28
  }
 ]
