@@ -1,21 +1,21 @@
 [
  {
   "geo": "KR",
-  "term": "재건축",
-  "traffic": 5000,
-  "topics": "부동산",
-  "econ": true,
-  "news_title": "강남 집값 내리는데 경기 규제지역은 상승…연말 토허제 ‘딜레마’",
-  "news_link": "https://marketin.edaily.co.kr/News/ReadE?newsId=01889286645646048"
- },
- {
-  "geo": "KR",
   "term": "아파트",
-  "traffic": 2000,
+  "traffic": 5000,
   "topics": "부동산",
   "econ": true,
   "news_title": "“지역 상징성 강조” 단지 번호 남기는 아파트 재건축",
   "news_link": "https://www.donga.com/news/Economy/article/all/20261115/135027921/2"
+ },
+ {
+  "geo": "KR",
+  "term": "한일전",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "日 APBC 우승 제물은 3연속 한국... 11년째 일본전 무승 이어가",
+  "news_link": "https://www.chosun.com/sports/baseball/2026/11/15/236G5T6ILFDGNOMZQAC3BJM7M4/"
  },
  {
   "geo": "KR",
@@ -50,8 +50,8 @@
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "HD현대, 미 무인함정 시장 공략 발판",
-  "news_link": "https://www.khan.co.kr/article/202611152031025"
+  "news_title": "HD현대, 美 안두릴과 600t급 무인 군함 건조… 내년 美 해군 수주 도전",
+  "news_link": "https://www.chosun.com/economy/industry-company/2026/11/15/VWBYOVIHRJCPHMJ2TI4KVG5NJI/"
  },
  {
   "geo": "KR",
@@ -61,6 +61,15 @@
   "econ": false,
   "news_title": "\"여기가 미감 종착지\"…김나영, ♥마이큐 작업실서 허리 감싸 안으며 '사랑꾼 면모' 과시",
   "news_link": "https://www.chosun.com/entertainments/broadcast/2026/11/15/HE3TSNRSGAYTANZTGI2TEMDGMU/"
+ },
+ {
+  "geo": "KR",
+  "term": "장혁",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "[3화 예고] 들리지 않느냐? 전쟁의 소리가 [문무] | KBS 방송",
+  "news_link": "https://www.kbs.co.kr/index.html?source=smr&sname=vod&stype=vod&contents_id=K02_PS-2026188993-01-000_20261115_TECH001&program_code=T2025-0499&program_id=PS-2026188993-01-000&section_code=03&broadcast_complete_yn=N&section_id=28257"
  },
  {
   "geo": "KR",
@@ -81,102 +90,93 @@
   "news_link": "https://www.chosun.com/entertainments/broadcast/2026/11/15/GU3TQNJVMQYWIM3DMUYDEOJUGA/"
  },
  {
-  "geo": "KR",
-  "term": "안재석",
-  "traffic": 100,
+  "geo": "US",
+  "term": "ole miss football",
+  "traffic": 20000,
   "topics": "",
   "econ": false,
-  "news_title": "[사진]도루 성공하는 쇼지",
-  "news_link": "https://www.chosun.com/sports/sports_photo/2026/11/15/HAYDMNBWMI4DCZDEMRSTSNLBMY/"
+  "news_title": "Oklahoma AD rips Ole Miss, SEC; Rebels defend travel effort",
+  "news_link": "https://www.espn.com/college-football/story/_/id/50482206/oklahoma-ad-infuriated-sec-ole-miss-sunday-game"
  },
  {
   "geo": "US",
-  "term": "pacers vs 76ers",
+  "term": "packers game",
   "traffic": 10000,
   "topics": "",
   "econ": false,
-  "news_title": "76ers' Joel Embiid out vs. Pacers due to plantar fascia management",
-  "news_link": "https://www.espn.com/nba/story/_/id/50484216/76ers-joel-embiid-vs-pacers-due-plantar-fascia-management"
+  "news_title": "How to Watch, Listen to & Stream Vikings at Packers in 2026 Week 10 Game",
+  "news_link": "https://www.vikings.com/news/how-to-watch-listen-to-stream-packers-week-10-2026"
  },
  {
   "geo": "US",
-  "term": "dan campbell",
+  "term": "nfc north",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Lions move up in NFC playoff picture following win over Patriots",
+  "news_link": "https://www.prideofdetroit.com/detroit-lions-nfl-playoffs/181230/nfc-playoff-picture-detroit-lions-first-place-nfc-north-standings"
+ },
+ {
+  "geo": "US",
+  "term": "terry bradshaw",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Rob Gronkowski's absence on FOX NFL Sunday due to sentimental trip",
+  "news_link": "https://www.aol.com/articles/rob-gronkowskis-absence-fox-nfl-195027000.html"
+ },
+ {
+  "geo": "US",
+  "term": "buffalo bills schedule",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Dan Campbell loving Germany, will be 'sick to our stomachs' if Lions lose",
-  "news_link": "https://www.freep.com/story/sports/nfl/lions/2026/11/13/detroit-lions-germany-game-dan-campbell/92757878007/"
+  "news_title": "Buffalo Bills inactives list at Jets | Week 10",
+  "news_link": "https://www.buffalobills.com/news/buffalo-bills-inactives-list-at-jets-week-10"
  },
  {
   "geo": "US",
-  "term": "hunter henry",
+  "term": "kyle mccord",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Hunter Henry ready to suit up vs. Lions",
-  "news_link": "https://www.nbcsports.com/fantasy/football/player-news/2026-11-13/hunter-henry-ready-to-suit-up-vs-lions"
+  "news_title": "Malik Willis injury opens door for another ex-Packers QB to start for Dolphins",
+  "news_link": "https://www.jsonline.com/story/sports/nfl/packers/2026/11/15/dolphins-quarterback-today-kyle-mccord-malik-willis-injury-update/92766917007/"
  },
  {
   "geo": "US",
-  "term": "chiefs - falcons",
+  "term": "saints game today",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Week 10 Inactives at New Orleans: Cornerback Will Lee inactive for Saints games",
+  "news_link": "https://www.panthers.com/news/week-10-inactives-at-new-orleans-cornerback-will-lee-inactive-for-saints-games"
+ },
+ {
+  "geo": "US",
+  "term": "louisville vs memphis",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Atlanta Falcons Week 10 inactives vs. Kansas City Chiefs",
-  "news_link": "https://www.atlantafalcons.com/news/atlanta-falcons-week-10-inactives-vs-kansas-city-chiefs"
+  "news_title": "Memphis vs. No. 10 Louisville: What to know for Tigers’ second home game",
+  "news_link": "https://dailymemphian.com/article/68575/memphis-tigers-basketball-louisville-preview"
  },
  {
   "geo": "US",
-  "term": "jameis winston giants commanders stunt",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Ex-NFL star says he'd cut Giants' Jameis Winston for 'Who Let the Dogs Out' stunt vs Commanders",
-  "news_link": "https://www.foxnews.com/outkick-sports/ex-nfl-star-says-hed-cut-giants-jameis-winston-who-let-dogs-out-stunt-vs-commanders"
- },
- {
-  "geo": "US",
-  "term": "micah parsons",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Is Micah Parsons playing today for the Packers?",
-  "news_link": "https://packerswire.usatoday.com/story/sports/nfl/packers/2026/11/15/packers-is-micah-parsons-playing-today-vs-vikings/92794494007/"
- },
- {
-  "geo": "US",
-  "term": "penei sewell",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "2026 NFL midseason awards: Joe Burrow, Greg Rousseau and David Bailey among my selections",
-  "news_link": "https://www.nfl.com/news/2026-nfl-midseason-awards-joe-burrow-greg-rousseau-and-david-bailey-among-my-selections"
- },
- {
-  "geo": "US",
-  "term": "robert kraft",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "The Krafts face what could be their ugliest fight yet: building one of the country’s largest data centers in Sutton",
-  "news_link": "https://www.bostonglobe.com/2026/11/14/business/kraft-data-center-sutton/"
- },
- {
-  "geo": "US",
-  "term": "bills jets",
+  "term": "boise state vs nebraska",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Bills Jets Football",
-  "news_link": "https://www.idahostatejournal.com/sports/national/bills-jets-football/image_804622fd-838a-510d-957c-f824d0b93718.html"
+  "news_title": "Starting Five: Nebraska Basketball vs. Boise State in Sioux Falls",
+  "news_link": "https://247sports.com/college/nebraska/longformarticle/nebraska-huskers-basketball-boise-state-basketball-preview-sioux-falls-south-dakota-292785352/"
  },
  {
   "geo": "US",
-  "term": "mike vrabel affair",
+  "term": "vanderbilt vs iowa",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Dianna Russini Details Sports Media Return 7 Months After Photo Scandal (Exclusive)",
-  "news_link": "https://people.com/dianna-russini-on-sports-media-return-after-photo-scandal-exclusive-12241351"
+  "news_title": "Iowa women's basketball vs Vanderbilt score, updates, highlights",
+  "news_link": "https://sports.yahoo.com/articles/iowa-womens-basketball-vs-vanderbilt-164519041.html"
  }
 ]
