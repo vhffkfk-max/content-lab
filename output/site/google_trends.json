@@ -10,6 +10,15 @@
  },
  {
   "geo": "KR",
+  "term": "아파트",
+  "traffic": 2000,
+  "topics": "부동산",
+  "econ": true,
+  "news_title": "“지역 상징성 강조” 단지 번호 남기는 아파트 재건축",
+  "news_link": "https://www.donga.com/news/Economy/article/all/20261115/135027921/2"
+ },
+ {
+  "geo": "KR",
   "term": "알렉산더 즈베레프",
   "traffic": 1000,
   "topics": "",
@@ -23,17 +32,8 @@
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "힐링 아일릿",
-  "news_link": "https://www.newsis.com/view/NISI20261115_0021533394"
- },
- {
-  "geo": "KR",
-  "term": "부고",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "[부음] 권형택(기술보증기금 이사장)씨 장인상",
-  "news_link": "https://www.etnews.com/20261115000175"
+  "news_title": "매력적인 아일릿",
+  "news_link": "https://www.newsis.com/view/NISI20261115_0021533395"
  },
  {
   "geo": "KR",
@@ -41,8 +41,8 @@
   "traffic": 200,
   "topics": "AI·반도체",
   "econ": true,
-  "news_title": "“젠슨 황 복귀해야” 14만명 청원…머스크도 가세",
-  "news_link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8713204"
+  "news_title": "“보스 돌려줘” 12만명 젠슨 황 복귀 청원…“타락한 실리콘밸리”",
+  "news_link": "https://www.hani.co.kr/arti/international/international_general/1287402.html"
  },
  {
   "geo": "KR",
@@ -91,62 +91,53 @@
  },
  {
   "geo": "US",
-  "term": "ou vs ole miss",
+  "term": "barry sanders",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Detroit Lions safety Brian Branch's big hit prevents a potential third-down conversion",
+  "news_link": "https://www.nfl.com/videos/brian-branch-s-big-hit-prevents-a-potential-third-down-conversion"
+ },
+ {
+  "geo": "US",
+  "term": "deportivo - barcelona",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "El Chelsea sigue interesado en Kounde y prepara una ofensiva para ficharlo en enero",
+  "news_link": "https://www.sport.es/es/noticias/barca/chelsea-prepara-ofensiva-final-kounde-136465336"
+ },
+ {
+  "geo": "US",
+  "term": "deportivo vs barcelona",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "Oklahoma AD rips Ole Miss, SEC; Rebels defend travel effort",
-  "news_link": "https://www.espn.com/college-football/story/_/id/50482206/oklahoma-ad-infuriated-sec-ole-miss-sunday-game"
+  "news_title": "Gran oportunidad para el Barça femenino de alejarse del Madrid",
+  "news_link": "https://www.mundodeportivo.com/futbol/fc-barcelona/20261115/1004251135/gran-oportunidad-barca-femenino-alejarse-madrid.html"
  },
  {
   "geo": "US",
-  "term": "lions record",
+  "term": "bernie sanders social security expansion act",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "NFL Week 10 predictions: Upsets, fantasy sleepers, stat lines, TD scorers, more",
-  "news_link": "https://www.espn.com/nfl/story/_/id/50453290/week-10-predictions-upsets-fantasy-sleepers-stats-2026"
+  "news_title": "Bernie Sanders Proposes $2,400 Social Security Boost in New Leadership Role",
+  "news_link": "https://www.newsweek.com/bernie-sanders-proposes-2400-social-security-boost-in-new-leadership-role-12714000"
  },
  {
   "geo": "US",
-  "term": "raiders vs seahawks",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "What to know as Seahawks face Raiders, plus Bob Condotta's prediction",
-  "news_link": "https://www.seattletimes.com/sports/seahawks/what-to-know-as-seahawks-face-fernando-mendoza-raiders/"
- },
- {
-  "geo": "US",
-  "term": "belarus vs albania",
+  "term": "dolphins vs colts",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "[!DIRETTA] Albania v. Belaruse In Diretta Streaming Tvs Gratis",
-  "news_link": "https://www.mapleleaffoods.com/video/avr/video-albania-v-belaruse-in-diretta-online-gratistv-ntyc.html"
- },
- {
-  "geo": "US",
-  "term": "is kirk cousins starting this week",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Sources: Vikings want to keep Kirk Cousins, talked to QB about staying in 2027",
-  "news_link": "https://www.espn.com/nfl/story/_/id/50484865/sources-vikings-want-keep-kirk-cousins-2027-season"
- },
- {
-  "geo": "US",
-  "term": "tim hill",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Hill agrees to 1-year deal to return to Yankees (source)",
-  "news_link": "https://www.mlb.com/news/tim-hill-deal-with-yankees"
+  "news_title": "Dolphins, Colts will stage a \"someone has to win\" game",
+  "news_link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/dolphins-colts-will-stage-a-someone-has-to-win-game"
  },
  {
   "geo": "US",
   "term": "finland vs san marino",
-  "traffic": 200,
+  "traffic": 500,
   "topics": "",
   "econ": false,
   "news_title": "Finland vs San Marino: UEFA Nations League stats & head-to-head",
@@ -154,21 +145,30 @@
  },
  {
   "geo": "US",
-  "term": "kevin byard",
-  "traffic": 200,
+  "term": "is jordan addison playing this week",
+  "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Patriots' Kevin Byard: Cleared to play in Munich",
-  "news_link": "https://www.cbssports.com/fantasy/football/news/patriots-kevin-byard-cleared-to-play-in-munich/"
+  "news_title": "S Xavier McKinney active for Green Bay | Packers-Vikings inactives",
+  "news_link": "https://www.packers.com/news/packers-vikings-week-10-inactives-nov-15-2026"
  },
  {
   "geo": "US",
-  "term": "lan larison",
+  "term": "mac jones",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Lan Larison went from a RODEO CHAMPION to an NFL running back?!",
-  "news_link": "https://sports.yahoo.com/videos/lan-larison-went-rodeo-champion-183453101.html"
+  "news_title": "NFL rumors: What 49ers demanded from Vikings for Mac Jones trade before Kirk Cousins deal",
+  "news_link": "https://sports.yahoo.com/articles/nfl-rumors-49ers-demanded-vikings-160335835.html"
+ },
+ {
+  "geo": "US",
+  "term": "settlement",
+  "traffic": 200,
+  "topics": "환율·달러",
+  "econ": true,
+  "news_title": "Family Dollar to Pay $63 Million Settlement for Overcharging Customers",
+  "news_link": "https://www.nytimes.com/2026/11/14/business/family-dollar-overcharging-settlement.html"
  },
  {
   "geo": "US",
@@ -176,7 +176,7 @@
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "The Real SC: South Carolina, Southern California set for early season heavyweight showdown",
-  "news_link": "https://247sports.com/college/south-carolina/article/gamecocks-women-basketball-dawn-staley-usc-juju-watkins-292639203/"
+  "news_title": "The Real SC to be Decided Sunday in Greenville",
+  "news_link": "https://gamecocksonline.com/news/2026/11/14/the-real-sc-to-be-decided-sunday-in-greenville/"
  }
 ]
