@@ -1,39 +1,21 @@
 [
  {
   "geo": "KR",
-  "term": "샤인머스캣",
-  "traffic": 5000,
-  "topics": "",
-  "econ": false,
-  "news_title": "샤인머스캣 인기 시들하더니…새로 등장한 '귀족 과일'",
-  "news_link": "https://www.hankyung.com/article/2026111574921"
- },
- {
-  "geo": "KR",
-  "term": "최원호",
-  "traffic": 5000,
-  "topics": "",
-  "econ": false,
-  "news_title": "APBC 야구대표팀, 일본에 져 준우승‥일본전 13연패",
-  "news_link": "https://imnews.imbc.com/news/2026/sports/article/6865836_36946.html"
- },
- {
-  "geo": "KR",
   "term": "재건축",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "요즘 잘나가는 재건축 단지 작명 비밀은…‘지역명’ ‘단지 번호’",
-  "news_link": "https://www.donga.com/news/Economy/article/all/20261115/135026944/1"
+  "traffic": 5000,
+  "topics": "부동산",
+  "econ": true,
+  "news_title": "강남 집값 내리는데 경기 규제지역은 상승…연말 토허제 ‘딜레마’",
+  "news_link": "https://marketin.edaily.co.kr/News/ReadE?newsId=01889286645646048"
  },
  {
   "geo": "KR",
-  "term": "백신",
-  "traffic": 500,
+  "term": "미미미누",
+  "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "생후 6개월 영아에 하루 지난 백신 투여한 의사…대법 “면허정지는 과도해”",
-  "news_link": "https://www.khan.co.kr/article/202611151323001"
+  "news_title": "힐링 아일릿",
+  "news_link": "https://www.newsis.com/view/NISI20261115_0021533394"
  },
  {
   "geo": "KR",
@@ -55,12 +37,21 @@
  },
  {
   "geo": "KR",
-  "term": "김유재",
+  "term": "박현주",
+  "traffic": 200,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "\"겸손은 연기, 반대하면 폭언\"… 젠슨 황 전기 작가의 폭로",
+  "news_link": "https://www.chosun.com/economy/tech_it/2026/11/15/K627F2S2CNFL5NG7Z3VUZCPXLM/"
+ },
+ {
+  "geo": "KR",
+  "term": "부고",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "피겨 김유재, 시니어 GP 4차 대회 쇼트 3위…트리플 악셀 성공",
-  "news_link": "https://www.yna.co.kr/view/AKR20261115018700007"
+  "news_title": "[부음] 권형택(기술보증기금 이사장)씨 장인상",
+  "news_link": "https://www.etnews.com/20261115000175"
  },
  {
   "geo": "KR",
@@ -73,12 +64,21 @@
  },
  {
   "geo": "KR",
-  "term": "화물기",
+  "term": "입양",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "테러 아니었네…역대급 美 항공대란, 이것 교체하다 터졌다",
-  "news_link": "https://www.koreadaily.com/article/20261114203812294"
+  "news_title": "\"다시는 안 키운다\" 입양 거절했는데... 예상 못한 일이 벌어졌다",
+  "news_link": "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003284762"
+ },
+ {
+  "geo": "KR",
+  "term": "퇴직금",
+  "traffic": 200,
+  "topics": "연금·절세",
+  "econ": true,
+  "news_title": "퇴직연금 대수술, 뭐가 달라질까?",
+  "news_link": "https://story.pay.naver.com/content/3912"
  },
  {
   "geo": "KR",
@@ -91,92 +91,92 @@
  },
  {
   "geo": "US",
-  "term": "dakota johnson",
+  "term": "elizabeth holmes",
+  "traffic": 10000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Billy Evans, in first interview, tells his side of \"You Can See Everything,\" its portrayal of Elizabeth Holmes",
+  "news_link": "https://www.cbsnews.com/news/billy-evans-on-you-can-see-everything-elizabeth-holmes/"
+ },
+ {
+  "geo": "US",
+  "term": "aidan hutchinson",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "Dakota Johnson Doubles Down on Animal Print for a Night Out With MGK",
-  "news_link": "https://www.harpersbazaar.com/celebrity/latest/a74414523/dakota-johnson-tiger-print-coat-mgk-date-studded-bag-photos/"
+  "news_title": "Week 10 Inactives: Patriots vs. Lions",
+  "news_link": "https://www.patriots.com/news/week-10-inactives-patriots-vs-lions"
  },
  {
   "geo": "US",
-  "term": "michael strahan",
+  "term": "el niño",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Fox NFL Sunday makes major broadcast change with Bradshaw and Strahan separated",
-  "news_link": "https://www.the-sun.com/sport/17297075/fox-nfl-sunday-week-10-michael-strahan-terry-bradshaw/"
+  "news_title": "El Niño still growing stronger. Here's what could happen next",
+  "news_link": "https://www.usatoday.com/story/news/weather/2026/11/15/el-nino-peak-forecast/92739777007/"
  },
  {
   "geo": "US",
-  "term": "actor",
+  "term": "elizabeth holmes documentary",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "The Only Thing Nathan Fielder Won’t Show",
+  "news_link": "https://www.theatlantic.com/ideas/2026/11/holmes-documentary-journalistic-ethics/689350/"
+ },
+ {
+  "geo": "US",
+  "term": "theranos",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Sunday Paper Recommends—Week of November 15, 2026",
+  "news_link": "https://www.mariashriversundaypaper.com/sunday-paper-recommends-week-of-november-15-2026/"
+ },
+ {
+  "geo": "US",
+  "term": "jared goff",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "‘No one wants us any more’: how Hollywood turned its back on trans actors",
-  "news_link": "https://www.theguardian.com/culture/2026/nov/15/hollywood-trans-actors"
+  "news_title": "Jared Goff takes 1-3 career record vs. Patriots into Germany game",
+  "news_link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/jared-goff-takes-1-3-career-record-vs-patriots-into-germany-game"
  },
  {
   "geo": "US",
-  "term": "fantasy footballers",
+  "term": "you can see everything where to watch",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "'The NFL Report' provides a weather update ahead of 'TNF'",
-  "news_link": "https://www.nfl.com/videos/the-nfl-report-provides-a-weather-update-ahead-of-tnf"
+  "news_title": "You can see everything on this list: the 20 most jaw-dropping documentaries – ranked!",
+  "news_link": "https://www.theguardian.com/film/2026/nov/12/you-can-see-everything-on-this-list-the-20-most-jaw-dropping-documentaries-ranked"
  },
  {
   "geo": "US",
-  "term": "who should i start",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Raiders: Darren Waller has best game in 3 years",
-  "news_link": "https://www.silverandblackpride.com/las-vegas-raiders-news/145632/raiders-former-players-week-8-darren-waller-khalil-mack-gardner-minshew"
- },
- {
-  "geo": "US",
-  "term": "boston logan international airport",
+  "term": "chris harrison",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Unruly Logan Airport passenger tackled, arrested after trying to grab computer behind baggage counter",
-  "news_link": "https://www.wcvb.com/article/logan-passenger-tackled-arrested/74431830"
+  "news_title": "Column | Welcome to ‘The Vow,’ the dating show for budding tradwives",
+  "news_link": "https://www.washingtonpost.com/style/2026/11/12/vow-is-bachelor-tradwives-its-really-something/"
  },
  {
   "geo": "US",
-  "term": "cyprus vs montenegro",
+  "term": "mike vrabel",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Cyprus vs Montenegro: UEFA Nations League stats & head-to-head",
-  "news_link": "https://www.bbc.com/sport/football/live/ckedq195688qt"
+  "news_title": "‘L incoming’ – Patriots HC Mike Vrabel under fire for drinking beer before NFL game in Germany",
+  "news_link": "https://sports.yahoo.com/articles/l-incoming-patriots-hc-mike-123000053.html"
  },
  {
   "geo": "US",
-  "term": "denzel boston",
+  "term": "texans vs browns",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Denzel Boston questionable for Week 10 vs. the Texans | Injury Report",
-  "news_link": "https://www.clevelandbrowns.com/news/denzel-boston-questionable-for-week-10-vs-the-texans-injury-report"
- },
- {
-  "geo": "US",
-  "term": "inmigración",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Licensable video: Embarcación de salvamento rescata 161 inmigrantes en aguas cercanas a la Isla El Hierro",
-  "news_link": "https://www.reutersconnect.com/item/embarcacion-de-salvamento-rescata-161-inmigrantes-en-aguas-cercanas-a-la-isla-el-hierro/dGFnOnJldXRlcnMuY29tLDIwMjY6bmV3c21sX09XRUZWQzcwMDE2MzExNzYwMDE"
- },
- {
-  "geo": "US",
-  "term": "mack hollins",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Patriots' Mack Hollins Doubles Down on Take After Bad Loss to Packers",
-  "news_link": "https://nesn.com/new-england-patriots/news/patriots-mack-hollins-doubles-down-take-after-loss-packers/b1f1ba5cbd0bcb960f2ded0c"
+  "news_title": "Experts release new Browns vs. Texans predictions after Denzel Boston injury update",
+  "news_link": "https://www.cleveland.com/betting/2026/11/experts-release-new-browns-vs-texans-predictions-after-denzel-boston-injury-update.html"
  }
 ]
