@@ -3333,432 +3333,6 @@
  ],
  "ideas": [
   {
-   "title": "美 데이터센터 2건 취소, AMD -8.75%",
-   "concept": "미시간 100억 달러, 앨라배마 184에이커 데이터센터 철회가 반도체주 동반 급락으로 번진 과정을 속보로 보여주고, AI 투자가 꺾이면 한국 수출과 성장률이 영향을 받는다는 조선비즈 분석으로 내 지갑 연결. 엔비디아 -2.01%와 AMD -8.75%를 맞붙여 보여줌. 취소 사유와 등락 마감 기준은 확인 필요. (공식: 숫자는 둘을 맞붙여서)",
-   "why_now": "쓰레드에서 시간당 조회 6846으로 지금 가장 빠르게 크는 글이 이 소식이다. 다음 주 엔비디아 실적(11/17)을 앞두고 AI 투자 신호로 읽힌다.",
-   "tag": "속보",
-   "sources": [
-    "https://www.threads.com/@0biwon/post/Dftb0FLG3cH",
-    "https://www.threads.com/@beyond.cho/post/DfthPZnnzsK",
-    "https://biz.chosun.com/policy/policy_sub/2026/11/14/7VIJV43MFBGDTNZBV2R35WYPEQ/"
-   ],
-   "bg": "Lisa Su AMD",
-   "bg_alt": "data center aerial",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "미국 데이터센터 2건\n철회에 AMD **-8.75%**",
-     "number": "-8.75%",
-     "label": "AMD 하루 낙폭",
-     "sub": "델 -7.18%, 브로드컴 -4.76%, 엔비디아 -2.01%"
-    },
-    {
-     "type": "질문형",
-     "title": "데이터센터 2건 취소\nAI 투자 **꺾이나**\n한국 수출은 어떻게",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "엔비디아는 -2.01%\n더 세게 맞은 건\n**AMD** -8.75%",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "bars"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "미국 반도체주 하락률(%)",
-     "bars": [
-      {
-       "label": "AMD",
-       "value": 8.75,
-       "hi": true
-      },
-      {
-       "label": "델",
-       "value": 7.18
-      },
-      {
-       "label": "브로드컴",
-       "value": 4.76
-      },
-      {
-       "label": "엔비디아",
-       "value": 2.01
-      }
-     ]
-    }
-   },
-   "id": "20261114-1805-i1",
-   "created_at": "2026-11-14T18:05:47+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261114-1805-i1/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261114-1805-i1/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261114-1805-i1/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261114-1805-i1/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261114-1805-i1/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261114-1805-i1/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261114-1805-i1/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261114-1805-i1/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261114-1805-i1/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261114-1805-i1/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261114-1805-i1/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261114-1805-i1/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261114-1805-i1/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261114-1805-i1/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261114-1805-i1/3-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261114-1805-i1/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261114-1805-i1/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261114-1805-i1/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "노란우산 홈페이지 비정상 접근 정황",
-   "concept": "중기중앙회가 노란우산 홈페이지의 비정상 접근과 개인정보 조회 의심 정황을 공개하고 KISA에 신고했다는 속보. 가입자 191만 명 상품이라는 점을 짚되, 유출 범위와 규모는 아직 미공개라는 점을 분명히 구분. 끝 장은 확인된 것과 아직 모르는 것 두 칸으로 정리하고, 가입자가 공지와 안내 문자를 확인하라고 안내. (공식: 끝 장은 닫힌 결론 한 줄)",
-   "why_now": "중기중앙회가 16:55경 이 정황을 공개했고, 조선비즈, 동아일보, 더팩트 등 5곳이 다뤘다. 오늘 아직 다루지 않은 새 소식이다.",
-   "tag": "속보",
-   "sources": [
-    "https://www.donga.com/news/Society/article/all/20261114/135024380/1",
-    "https://www.donga.com/news/Society/article/all/20261114/135024335/1",
-    "https://biz.chosun.com/industry/business-venture/2026/11/14/KYPEZBYV4VFYXHL5UARDM2S2LE/"
-   ],
-   "bg": "Korea Federation of SMEs",
-   "bg_alt": "yellow umbrella",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "가입자 191만 명\n노란우산 홈페이지\n**비정상 접근** 정황",
-     "number": "191만 명",
-     "label": "노란우산 가입자",
-     "sub": "유출 범위와 규모는 아직 공개되지 않았다"
-    },
-    {
-     "type": "질문형",
-     "title": "노란우산 가입했다면\n내 정보도 **조회**됐나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "유출 확정은 아닌데\n중기중앙회가 먼저\n**KISA**에 신고했다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261114-1805-i2",
-   "created_at": "2026-11-14T18:05:47+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261114-1805-i2/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261114-1805-i2/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261114-1805-i2/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261114-1805-i2/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261114-1805-i2/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261114-1805-i2/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261114-1805-i2/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261114-1805-i2/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261114-1805-i2/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261114-1805-i2/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261114-1805-i2/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261114-1805-i2/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261114-1805-i2/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261114-1805-i2/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261114-1805-i2/3-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261114-1805-i2/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261114-1805-i2/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261114-1805-i2/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "머스크 서명 복귀 서한, 엔비디아 \"위조\"",
-   "concept": "머스크가 서명한 젠슨 황 복귀 서한을 두고 코베이시 레터는 서명 6만5천 건, 주주 3만5천 명 이상이라 전했고 엔비디아 임원진은 위조라고 일축했다는 엇갈린 주장을 나란히 보여줌. 서명 수치의 진위는 확인 안 된 상태라는 점을 정리 장에 명시하고, 월요일(11/17) 실적 발표까지 CEO 공백 이슈가 이어질 수 있다는 점으로 마무리. (공식: 끝 장은 닫힌 결론 한 줄)",
-   "why_now": "17:17 기사에서 엔비디아 임원진이 서한을 위조라고 일축했다. 코베이시 레터 X 글(조회 4.5만)과 맞물려 젠슨 황 퇴진 기사가 12곳에서 나오는 중이다. 14:14에 머스크 서명을 다룬 글의 후속이다.",
-   "tag": "엔비디아",
-   "sources": [
-    "https://x.com/KobeissiLetter/status/2121514973809799294"
-   ],
-   "bg": "Elon Musk Jensen Huang",
-   "bg_alt": "Nvidia headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "서명 6만5천 건 주장\n머스크도 서명한 서한\n엔비디아 **위조**라 반박",
-     "number": "6만5천 건",
-     "label": "서한 서명 주장",
-     "sub": "엔비디아 임원진은 서한 자체가 위조라고 반박"
-    },
-    {
-     "type": "질문형",
-     "title": "머스크가 서명한\n젠슨 황 복귀 서한\n진짜일까 **위조**일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "주주 3만5천 명 서명?\n엔비디아 임원진은\n**가짜**라고 한다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261114-1805-i3",
-   "created_at": "2026-11-14T18:05:47+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261114-1805-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261114-1805-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261114-1805-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261114-1805-i3/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261114-1805-i3/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261114-1805-i3/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261114-1805-i3/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261114-1805-i3/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261114-1805-i3/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
    "title": "연준이 꼽은 시장 최대 위험은 AI",
    "concept": "연준 금융안정보고서 응답자 87%가 AI를 최대 위험으로 꼽았다는 사실을 앞세우고, 같은 날 반도체주 급락, 빚내는 빅테크, 서학개미 4000억 원 순매수를 이어 붙인다. 50%에서 87%로 뛰었다는 쓰레드 글은 이전 수치가 확인되지 않아 본문에서 뺀다. 끝 장은 확인된 것과 아직 모르는 것으로 나누고, 17일 엔비디아 실적과 19일 앤트로픽 상장이 다음 고비라고 정리한다. (공식: 끝 장은 닫힌 결론 한 줄)",
    "why_now": "17:54 보도가 나왔고 쓰레드에서 관련 글이 시간당 조회 6516, 누적 4만 2860으로 빠르게 커지고 있다. 엔비디아 급락과 맞물려 AI 거품 불안과 바로 이어진다.",
@@ -9444,6 +9018,450 @@
      "form": "news",
      "font": "myeongjo",
      "path": "20261115-1601-i3/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "액티브 ETF, 1000만원이 710만원으로",
+   "concept": "전문가에게 맡긴 1000만원이 한 달 새 710만원이 됐다는 사례를 '1000만원 → 710만원' 한 줄로 맞붙이고, 코스닥보다 더 빠졌다는 점을 짚는다. 특정 상품은 권하지 않고 보도 내용만 정리한다. (공식: 숫자는 둘을 맞붙여서)",
+   "why_now": "17시에 다음 뉴스에 올라온 새 기사이고 아직 다룬 적이 없다. 코스닥이 1달 -8.04%인 가운데 전문가 운용 상품이 더 빠졌다는 점이 개인 투자자의 관심을 끈다.",
+   "tag": "투자",
+   "sources": [
+    "https://v.daum.net/v/20261115170039858"
+   ],
+   "bg": "Korea stock market screen",
+   "bg_alt": "KOSDAQ trading board",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "맡긴 1000만원이\n한 달 새 **710만원**",
+     "number": "710만원",
+     "label": "기사가 짚은 액티브 ETF 사례",
+     "sub": "1000만원이 한 달 만에, 코스닥보다 더 빠졌다"
+    },
+    {
+     "type": "질문형",
+     "title": "전문가가 굴리는데\n코스닥보다 **더** 빠졌나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "운용 맡기면 낫다더니\n**액티브** ETF가\n코스닥보다 더 빠졌다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "bars"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "한 달 전 1000만원 기준, 단위 만원",
+     "bars": [
+      {
+       "label": "맡긴 돈",
+       "value": 1000
+      },
+      {
+       "label": "한 달 뒤",
+       "value": 710,
+       "hi": true
+      }
+     ]
+    }
+   },
+   "id": "20261115-1705-i1",
+   "created_at": "2026-11-15T17:05:41+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261115-1705-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261115-1705-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261115-1705-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261115-1705-i1/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261115-1705-i1/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261115-1705-i1/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261115-1705-i1/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261115-1705-i1/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261115-1705-i1/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261115-1705-i1/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261115-1705-i1/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261115-1705-i1/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "석유 최고가격제, 설까지 연장되나",
+   "concept": "풀면 물가가 뛰고 묶으면 재정 부담이 커지는 양자택일 구조를 주유소 가격표 한 장면으로 풀어, 내 기름값과 연결해 설명한다. (공식: 없음)",
+   "why_now": "동아일보와 뉴시스가 16:27에 최고가격제가 내년 설까지 이어질 수 있다고 보도했다. 호르무즈 불안으로 유가 걱정이 큰 시점이라 생활 물가와 바로 닿는다.",
+   "tag": "물가",
+   "sources": [
+    "https://www.donga.com/news/Economy/article/all/20261115/135027026/1",
+    "https://www.newsis.com/view/NISX20261012_0003821485"
+   ],
+   "bg": "gas station price sign",
+   "bg_alt": "oil refinery Korea",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "석유 최고가격제가\n내년 설까지 **연장**될 수도",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "기름값 상한, 언제까지\n**묶어둘** 건가요",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "풀면 물가가 뛰고\n묶으면 **재정**이 샌다\n어느 쪽도 부담",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "editorial",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261115-1705-i2",
+   "created_at": "2026-11-15T17:05:41+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261115-1705-i2/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261115-1705-i2/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261115-1705-i2/1-editorial-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261115-1705-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261115-1705-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261115-1705-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261115-1705-i2/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261115-1705-i2/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261115-1705-i2/2-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261115-1705-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261115-1705-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261115-1705-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261115-1705-i2/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261115-1705-i2/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261115-1705-i2/3-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261115-1705-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261115-1705-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261115-1705-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "회계사 시험 AI 안경 전수검사",
+   "concept": "금감원을 주인공으로 두고 회계사 2차 시험부터 AI 안경 전수검사를 한다는 발표, 靑 전수조사 지시, 산업인력공단의 세무사 부정행위자 고소 추진 순으로 한 걸음씩 풀어간다. 세무사 시험 수석 합격 건과는 별개의 대응이다. (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "뉴시스, 조선비즈, 머니투데이 등 10곳이 다뤘다. 세무사 시험에서 회계사 시험으로 번졌고 금감원의 구체적 대응이 처음 나왔다. 靑도 16:50에 모든 국가자격시험 전수조사를 밝혔다.",
+   "tag": "시험",
+   "sources": [
+    "https://www.newsis.com/view/NISX20261115_0003868634",
+    "https://biz.chosun.com/stock/stock_general/2026/11/15/33TR43F2AVFJ7ADMTTDBDCH7DQ/",
+    "https://biz.chosun.com/policy/politics/president_office/2026/11/15/OJUWNTSRZFHIZN5NU7WZD7LKK4/"
+   ],
+   "bg": "smart glasses exam",
+   "bg_alt": "Financial Supervisory Service building",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "금감원, 회계사 2차\n시험부터 **AI 안경**\n전수검사 한다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "세무사 다음은 회계사\nAI 안경 쓰고\n**시험** 봤나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "세무사 이어 회계사도\n**AI** 커닝 의혹\n금감원이 나섰다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/15",
+     "headlines": [
+      "금감원, 2차부터 AI 안경 전수검사",
+      "靑, 국가자격시험 전수조사",
+      "세무사 부정행위자 고소 추진"
+     ]
+    }
+   },
+   "id": "20261115-1705-i3",
+   "created_at": "2026-11-15T17:05:41+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261115-1705-i3/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261115-1705-i3/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261115-1705-i3/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261115-1705-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261115-1705-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261115-1705-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261115-1705-i3/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261115-1705-i3/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261115-1705-i3/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261115-1705-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261115-1705-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261115-1705-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261115-1705-i3/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261115-1705-i3/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261115-1705-i3/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261115-1705-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261115-1705-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261115-1705-i3/3-paper-gowun.jpg"
     }
    ]
   }
