@@ -3333,376 +3333,6 @@
  ],
  "ideas": [
   {
-   "title": "엔비디아, 일주일에 770조원 증발",
-   "concept": "젠슨 황 사임 이후 엔비디아 시총이 한 주 새 단일 기업 역대 최대로 줄었다는 보도를 숫자 하나로 푼다. 엔비디아를 끝까지 주인공으로 두고 사임, 낙폭, 연준의 AI 위험 경고, 한국 반도체 변동성 순으로 한 장에 하나씩 쓴다. 매수, 매도 권유 없이 내 계좌의 쏠림 점검으로 마무리한다. (공식: 한 주인공이 장마다 한 걸음씩)",
-   "why_now": "문화일보가 어젯밤 22:04에 보도했다. 젠슨 황 사임 후속은 이미 다뤘지만 770조원이라는 규모는 아직 안 다뤘다. 시세로도 엔비디아는 1달 -25.03%다.",
-   "tag": "엔비디아",
-   "sources": [
-    "https://v.daum.net/v/20261114220440514",
-    "https://v.daum.net/v/20261114220224492"
-   ],
-   "bg": "Jensen Huang",
-   "bg_alt": "Nvidia headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "엔비디아 일주일에\n**770조원** 증발\n단일 기업 역대 최대",
-     "number": "770조원",
-     "label": "엔비디아 시총, 일주일 새",
-     "sub": "단일 기업 기준 역대 최대"
-    },
-    {
-     "type": "질문형",
-     "title": "젠슨 황 사임 한 주\n엔비디아 시총은\n어디까지 **빠졌나**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "연준이 꼽은 최대 위험\nAI 대장주서\n**770조원** 사라졌다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261115-0707-i1",
-   "created_at": "2026-11-15T07:07:08+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261115-0707-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261115-0707-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261115-0707-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261115-0707-i1/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261115-0707-i1/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261115-0707-i1/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261115-0707-i1/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261115-0707-i1/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261115-0707-i1/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261115-0707-i1/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261115-0707-i1/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261115-0707-i1/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "2020년 1월 이후 미국 물가 30.2% 상승",
-   "concept": "누적 30.2%를 연평균 약 4.0%로 환산해, 연준 목표 2%와 나란히 놓는다. 베선트의 '금리 너무 올리지 마라'와 영란은행의 선제 인상 지지를 이어 붙인다. 마지막은 장바구니, 환율, 금리가 이어지는 쉬운 설명으로 닫는다. 수치 출처는 Kobeissi Letter다. (공식: 없음)",
-   "why_now": "코베이시 레터 글이 조회 39,477을 넘겼다. 美 도매물가가 끈적하다는 우려와 중앙은행 인상 목소리가 겹치는 때라 물가가 얼마나 쌓였는지 보여 주기 좋다. 시세에서도 미국 10년물 금리가 5.15다.",
-   "tag": "미국 물가",
-   "sources": [
-    "https://x.com/KobeissiLetter/status/2121607597211926983"
-   ],
-   "bg": "Scott Bessent",
-   "bg_alt": "US grocery store",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "2020년 1월 이후\n미국 물가 누적\n**30.2%** 상승",
-     "number": "30.2%",
-     "label": "2020년 1월 이후 미국 물가",
-     "sub": "연평균으로 환산하면 약 4.0%"
-    },
-    {
-     "type": "질문형",
-     "title": "물가가 연 4%씩 올랐다\n목표 2%였다면\n**얼마나** 달랐을까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "물가 30% 넘게 올랐는데\n베선트 재무장관은\n**금리** 너무 올리지 마라",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "bars"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "연평균 물가 상승률 vs 연준 목표(%)",
-     "bars": [
-      {
-       "label": "2020년 1월 이후 연평균",
-       "value": 4.0,
-       "hi": true
-      },
-      {
-       "label": "연준 목표",
-       "value": 2.0
-      }
-     ]
-    }
-   },
-   "id": "20261115-0707-i2",
-   "created_at": "2026-11-15T07:07:08+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261115-0707-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261115-0707-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261115-0707-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261115-0707-i2/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261115-0707-i2/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261115-0707-i2/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261115-0707-i2/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261115-0707-i2/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261115-0707-i2/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261115-0707-i2/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261115-0707-i2/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261115-0707-i2/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "주식펀드 일주일 980억달러 유입, 역대 2위",
-   "concept": "'주식에서 돈이 빠진다'는 분위기와 반대로 움직이는 자금 흐름을 보여 준다. 11월 11일 마감 주간 유입 980억달러, 5주 연속 유입, 누적 약 3,500억달러를 쓴다. 투자 판단은 본인 몫이고 자금 흐름은 참고 지표라고 밝힌다. 4주 이동평균 최고치 여부는 확인되지 않아 단정하지 않는다. (공식: 없음)",
-   "why_now": "다들 AI 위험과 하락을 이야기하는 때에 자금은 들어오고 있어 대비되는 소식이다. 코베이시 레터 글 조회가 5.7만이다.",
-   "tag": "자금 흐름",
-   "sources": [
-    "https://x.com/KobeissiLetter/status/2121564824760902115"
-   ],
-   "bg": "stock market trading floor",
-   "bg_alt": "New York Stock Exchange",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "주식펀드에 일주일\n**980억달러** 들어왔다\n역대 2위 유입",
-     "number": "980억달러",
-     "label": "글로벌 주식펀드, 11월 11일 마감 주간",
-     "sub": "역대 2위 주간 유입"
-    },
-    {
-     "type": "질문형",
-     "title": "주식에서 돈이\n빠진다고요?\n**5주 연속** 들어왔다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "AI 위험 경고 속\n5주 연속 유입\n약 **3,500억달러**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/15",
-     "headlines": [
-      "주간 유입 980억달러, 역대 2위",
-      "5주 연속 유입, 누적 3,500억달러",
-      "4주 이동평균 유입 750억달러"
-     ]
-    }
-   },
-   "id": "20261115-0707-i3",
-   "created_at": "2026-11-15T07:07:08+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261115-0707-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261115-0707-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261115-0707-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261115-0707-i3/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261115-0707-i3/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261115-0707-i3/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261115-0707-i3/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261115-0707-i3/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261115-0707-i3/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261115-0707-i3/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261115-0707-i3/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261115-0707-i3/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "서울 청약자 절반 사라졌다",
    "concept": "1순위 청약자가 4년 만에 최저로 줄었다는 사건 하나를 주인공으로 걸고, 강남 870대 1과 서울 전체 감소를 대비해 매수 심리가 식는 흐름을 보여 줌. 정확한 감소율은 재료에 없어 쓰지 않음 (공식: 날짜, 모음 라벨 표지는 피하기)",
    "why_now": "연합뉴스, 매일경제, 경기일보 등 3곳이 다뤘고, 매물 증가와 가격 조정 보도와 이어져 집값 흐름이 바뀌는 신호로 읽힘. 이미 다룬 경매, 실거래가 하락 소재와는 다른 청약 지표임.",
@@ -9459,6 +9089,362 @@
      "form": "paper",
      "font": "gowun",
      "path": "20261115-2101-i3/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "전월세 물가 3년 10개월 만에 최대폭",
+   "concept": "지난달 전월세 물가 1.4% 상승이라는 한 줄 사실에서 시작해, 월세, 전세로 사는 사람의 체감과 연결한다. 전세금 반환 걱정은 쓰레드 개인 의견이라 통계와 구분해 한 곳에만 쓴다. (공식: 없음)",
+   "why_now": "SBS Biz가 지난달 전월세 물가 1.4% 상승을 보도했다. 쓰레드에서 전세금 반환 글도 빠르게 퍼지고 있다. 이 주제는 아직 보내지 않았다.",
+   "tag": "부동산",
+   "sources": [
+    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008846774&plink=RSSLINK&cooper=RSSREADER",
+    "https://v.daum.net/v/20261115204509316"
+   ],
+   "bg": "Seoul apartment complex",
+   "bg_alt": "Korean apartment buildings",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "지난달 전월세\n물가가 **1.4%** 올라\n3년 10개월 만에 최대",
+     "number": "1.4%",
+     "label": "지난달 전월세 물가 상승률",
+     "sub": "3년 10개월 만에 가장 큰 폭"
+    },
+    {
+     "type": "질문형",
+     "title": "전월세 물가가\n3년 10개월 만에\n왜 **가장** 뛰었나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "증시가 빠진 달\n전월세 물가는\n**1.4%** 뛰었다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "editorial",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261115-2201-i1",
+   "created_at": "2026-11-15T22:01:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261115-2201-i1/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261115-2201-i1/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261115-2201-i1/1-editorial-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261115-2201-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261115-2201-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261115-2201-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261115-2201-i1/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261115-2201-i1/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261115-2201-i1/2-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261115-2201-i1/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261115-2201-i1/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261115-2201-i1/3-editorial-plex.jpg"
+    }
+   ]
+  },
+  {
+   "title": "반년 새 5600조원 빠진 데이터센터 주가",
+   "concept": "AI에 1조 달러를 쏟아붓는 한쪽과 주가 5600조원이 빠진 다른 쪽을 나란히 놓는다. 현대연구원의 2028년 경고를 더하고, 엔비디아 실적(17일)과 앤트로픽 상장을 다음 시험대로 둔다. 숫자 단위가 달라 맞붙임은 쓰지 않는다. (공식: 없음)",
+   "why_now": "뉴시스가 20:51에 전 세계 데이터센터 건설 관련 주가가 반년 새 5600조원 빠졌다고 보도했다. 엔비디아 실적과 앤트로픽 상장을 앞두고 AI 투자 과열 기사가 이어진다.",
+   "tag": "AI 투자",
+   "sources": [
+    "https://www.newsis.com/view/NISX20261115_0003868787",
+    "https://v.daum.net/v/20261115205357422"
+   ],
+   "bg": "Nvidia data center",
+   "bg_alt": "Data center servers",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "반년 새 전세계\n데이터센터 주가\n**5600조원** 빠졌다",
+     "number": "5600조원",
+     "label": "반년 새 데이터센터 관련 주가",
+     "sub": "전 세계 기준, 뉴시스 보도"
+    },
+    {
+     "type": "질문형",
+     "title": "AI 붐은 끝났나\n5600조원 빠진\n**데이터센터** 주가",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "1조 달러를 쏟는\n와중에 주가는\n**5600조원** 빠졌다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/15",
+     "headlines": [
+      "반년 새 5600조원 빠졌다",
+      "AI에는 1조 달러 투자 지속",
+      "현대연구원, 2028년 경고"
+     ]
+    }
+   },
+   "id": "20261115-2201-i2",
+   "created_at": "2026-11-15T22:01:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261115-2201-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261115-2201-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261115-2201-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261115-2201-i2/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261115-2201-i2/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261115-2201-i2/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261115-2201-i2/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261115-2201-i2/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261115-2201-i2/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261115-2201-i2/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261115-2201-i2/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261115-2201-i2/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "9월 경상수지 614.6억 달러 흑자",
+   "concept": "사상 최대 흑자 속보를 숫자로 먼저 보여 주고, 수출은 뜨겁고 내수는 차갑다는 흐름으로 이어간다. 세부 내역은 한국은행 원문 확인 전이라 단정하지 않는다. (공식: 없음)",
+   "why_now": "21:00에 올라온 새 소식으로, 3개월 만에 사상 최대 기록을 다시 썼다는 보도다. 앞서 다룬 반도체 수출 소식과 이어지지만 경상수지 자체는 아직 다루지 않았다.",
+   "tag": "경제지표",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMiQ0FVX3lxTE56TS1mN2I2WEZwZG94cDFwb2l1NnFyTUczMk1NdGkyUjRnRlRuNEt0TmM1UXBZWmVNVGd"
+   ],
+   "bg": "Korea export port containers",
+   "bg_alt": "Bank of Korea building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "9월 경상수지\n**614.6억달러** 흑자\n3개월 만에 최고",
+     "number": "614.6억달러",
+     "label": "9월 경상수지 흑자",
+     "sub": "3개월 만에 사상 최대 기록 경신"
+    },
+    {
+     "type": "질문형",
+     "title": "흑자는 사상 최대\n내 **지갑**도\n두둑해졌을까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "수출은 뜨겁고\n내수는 **차갑다**\n숫자로 또 확인",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261115-2201-i3",
+   "created_at": "2026-11-15T22:01:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261115-2201-i3/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261115-2201-i3/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261115-2201-i3/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261115-2201-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261115-2201-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261115-2201-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261115-2201-i3/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261115-2201-i3/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261115-2201-i3/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261115-2201-i3/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261115-2201-i3/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261115-2201-i3/3-breaking-dohyeon.jpg"
     }
    ]
   }
