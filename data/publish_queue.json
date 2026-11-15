@@ -3333,434 +3333,6 @@
  ],
  "ideas": [
   {
-   "title": "미중 첫 무역위, 관세 인하 시행일 빠졌다",
-   "concept": "각각 약 40조 원 규모 관세를 내리기로 했지만 시행일이 없다는 점을 중심에 두고, 한국 수출업종의 다음 변수는 시행 시점 확정이라는 데로 풀기 (공식: 날짜, 모음 라벨 표지는 피하기)",
-   "why_now": "14:41에 나온 새 소식이다. 앞서 다룬 방중, 휴전 연장 기대와 달리 실제 회의 결과에서 시행일이 빠졌다는 점이 새 정보다. 관세에 민감한 한국 수출주와 직접 관련된다.",
-   "tag": "속보",
-   "sources": [
-    "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPWGhodktONURaMkt3X1hjYThPYUFTTVhTNktTajV2MmlJU0U2Z3ZrcFVzbkJXM0NZZUY"
-   ],
-   "bg": "US China trade talks",
-   "bg_alt": "container port cargo ship",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "미중 각각 **40조원**\n관세 내리기로 했는데\n시행일은 비어 있다",
-     "number": "40조원",
-     "label": "미중 각각 관세 인하 규모(약)",
-     "sub": "시행일은 제시되지 않았다"
-    },
-    {
-     "type": "질문형",
-     "title": "첫 무역위원회 끝났는데\n관세는 **언제부터**\n내려가는 걸까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "합의는 했는데\n**시행일**은 비어 있는\n미중 첫 무역위원회",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261114-1501-i1",
-   "created_at": "2026-11-14T15:01:38+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261114-1501-i1/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261114-1501-i1/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261114-1501-i1/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261114-1501-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261114-1501-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261114-1501-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261114-1501-i1/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261114-1501-i1/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261114-1501-i1/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261114-1501-i1/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261114-1501-i1/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261114-1501-i1/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "엔화, 돈을 쏟아부어도 안 잡힌다",
-   "concept": "일본 당국이 돈을 쏟아부어도 엔화가 안 잡히고, 일본은행 안의 금리인상 이견이 엔저의 불씨라는 보도를 정리한 뒤 한국 수출업종과 환율에 닿는 부분을 짚기 (공식: 한 주인공이 장마다 한 걸음씩)",
-   "why_now": "13:52 서울경제와 13:42 글로벌이코노믹이 연이어 엔화 약세를 다뤘다. 오늘 아직 다루지 않은 주제이고, 엔저는 한국 수출 업종의 가격 경쟁과 환율 흐름에 영향을 줄 수 있다.",
-   "tag": "환율",
-   "sources": [
-    "https://www.sedaily.com/article/20114323",
-    "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbkFjYlVWZzJRWFJSZ3ZDc0ZFbVVNcGVubXVaVS1xeUdfbUdrLU1walZmaE1JLUtzX0U"
-   ],
-   "bg": "Bank of Japan building",
-   "bg_alt": "Japanese yen banknotes",
-   "hooks": [
-    {
-     "type": "사건형",
-     "title": "일본이 **돈을 쏟아부어도**\n엔화 약세가\n멈추지 않는다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "일본은 왜\n엔화를 **못 잡나**\n금리 이견이 불씨",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "돈을 쏟아부었는데\n엔저는 **그대로**\n불씨는 일본은행 안",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "editorial"
-   ],
-   "extra": {},
-   "id": "20261114-1501-i2",
-   "created_at": "2026-11-14T15:01:38+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261114-1501-i2/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261114-1501-i2/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261114-1501-i2/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261114-1501-i2/1-editorial-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261114-1501-i2/1-editorial-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261114-1501-i2/1-editorial-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261114-1501-i2/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261114-1501-i2/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261114-1501-i2/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261114-1501-i2/2-editorial-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261114-1501-i2/2-editorial-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261114-1501-i2/2-editorial-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261114-1501-i2/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261114-1501-i2/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261114-1501-i2/3-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261114-1501-i2/3-editorial-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261114-1501-i2/3-editorial-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261114-1501-i2/3-editorial-plex.jpg"
-    }
-   ]
-  },
-  {
-   "title": "젠슨 황 퇴진, 美 칩 규제와 희토류로",
-   "concept": "엔비디아 사람 이슈가 규제와 공급망 이슈로 넘어가는 흐름을 보도 기준으로 정리하되, 규제 강화는 전문가 전망이고 확정된 정책이 아님을 분명히 하기 (공식: 없음)",
-   "why_now": "14:07~14:34 사이 한국경제, SBS Biz, 파이낸셜뉴스, 글로벌이코노믹이 같은 관점을 냈고 서울파이낸스는 삼성, SK의 중국 사업 우려를 다뤘다. 다음 주 엔비디아 실적(11/17)을 앞두고 새 국면이다.",
-   "tag": "반도체",
-   "sources": [
-    "https://v.daum.net/v/20261114143440240",
-    "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1PZUFzSXJ4cmY1cVdnbk15aUx4cno3VUhlcWsxTERjeXhQTkRhZXNPX2RBLUVvN0UtZWJ"
-   ],
-   "bg": "Jensen Huang",
-   "bg_alt": "Nvidia headquarters",
-   "hooks": [
-    {
-     "type": "사건형",
-     "title": "황 퇴진 뒤 **美 칩 규제**\n세질 수 있다는\n전망이 나왔다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "美가 칩을 조이면\n중국은 **희토류**로\n맞받을까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "엔비디아 사람 이슈가\n**규제** 이슈로\n넘어가고 있다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/14",
-     "headlines": [
-      "젠슨 황 퇴진, 규제 변수로",
-      "美 칩 규제 강화 전망 나와",
-      "중국 전문가, 희토류 맞대응"
-     ]
-    }
-   },
-   "id": "20261114-1501-i3",
-   "created_at": "2026-11-14T15:01:38+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261114-1501-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261114-1501-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261114-1501-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261114-1501-i3/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261114-1501-i3/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261114-1501-i3/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261114-1501-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261114-1501-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261114-1501-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261114-1501-i3/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261114-1501-i3/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261114-1501-i3/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261114-1501-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261114-1501-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261114-1501-i3/3-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261114-1501-i3/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261114-1501-i3/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261114-1501-i3/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "인하 기대 대신 중앙은행 인상 목소리",
    "concept": "독일, 영국, 미국 시장의 발언이 같은 방향이라는 점을 한 장씩 짚고, 한국 투자자가 볼 달러와 국채금리로 마무리한다. 인상 폭과 시점은 확인 전이라고 한 번만 밝힌다. (공식: 없음)",
    "why_now": "14:00 FT가 영란은행 수석이코노미스트의 '물가 때문에 추가 인상 필요' 발언을 보도했다. 분데스방크 발언에 영란은행이 더해지고, 시장이 12월 연준 인상을 예상한다는 보도가 나와 주요 중앙은행이 같은 방향이라는 새 프레임이 된다.",
@@ -9410,6 +8982,444 @@
      "form": "breaking",
      "font": "dohyeon",
      "path": "20261115-1301-i3/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "연 4% 예금 상품, 두 달 새 10배",
+   "concept": "저축은행이 연말 자금 유치전에 들어가며 연 4% 예금 상품이 10배 가까이 늘었다는 사실을 앞세우고, 가입 전 예금자보호 한도와 우대금리 조건 확인으로 마무리한다 (공식: 주인공이 분명한 질문 표지)",
+   "why_now": "오늘 12:47에 나온 새 기사로, 연말을 앞두고 금리 관심이 큰 시점입니다. 이미 다룬 은행 단기예금 주제와는 다른 소식입니다.",
+   "tag": "금리",
+   "sources": [
+    "https://v.daum.net/v/20261115124730659"
+   ],
+   "bg": "savings bank interest rate",
+   "bg_alt": "bank deposit passbook",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "연 4% 예금 상품이\n두 달 새 **10배** 늘었다",
+     "number": "10배",
+     "label": "연 4% 예금 상품 수",
+     "sub": "두 달 만에 10배 가까이 늘었다"
+    },
+    {
+     "type": "질문형",
+     "title": "저축은행이 연말에\n연 4% 예금을\n쏟아내는 **이유**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "연 4%에 혹하기 전\n우대금리 **조건**부터\n봐야 하는 이유",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "editorial"
+   ],
+   "extra": {},
+   "id": "20261115-1401-i1",
+   "created_at": "2026-11-15T14:01:37+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261115-1401-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261115-1401-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261115-1401-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261115-1401-i1/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261115-1401-i1/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261115-1401-i1/1-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261115-1401-i1/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261115-1401-i1/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261115-1401-i1/2-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261115-1401-i1/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261115-1401-i1/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261115-1401-i1/3-editorial-plex.jpg"
+    }
+   ]
+  },
+  {
+   "title": "반도체 수출 259%, 소비는 대만보다 늦다",
+   "concept": "반도체 수출 259% 폭증과 월세 12년 10개월 만의 최대 상승을 맞붙여, 수출 숫자와 체감 경기가 따로 움직일 수 있음을 보여준다. 수출이 소득과 소비로 번지는 이유는 기사 확인 후 보강한다 (공식: 숫자는 둘을 맞붙여서)",
+   "why_now": "SBS Biz가 ICT 수출 두 달 연속 700억달러 돌파를 전했고, 같은 시각 한국은행의 소비 회복 지연 분석도 나왔습니다. 기존 주제와 겹치지 않는 내 지갑 이야기입니다.",
+   "tag": "수출과 소비",
+   "sources": [
+    "https://v.daum.net/v/20261115110905792",
+    "https://biz.chosun.com/policy/policy_sub/2026/11/15/2PRCGDX2HRB4NF24TNLXOTJ4HU/",
+    "https://v.daum.net/v/20261115103717082"
+   ],
+   "bg": "Samsung semiconductor",
+   "bg_alt": "semiconductor wafer factory",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "반도체 수출 **259%**\n그런데 소비 회복은\n대만보다 늦을 수도",
+     "number": "259%",
+     "label": "반도체 수출",
+     "sub": "ICT 수출 두 달 연속 700억달러 넘었다"
+    },
+    {
+     "type": "질문형",
+     "title": "한국은행은 왜\n소비 회복이 대만보다\n늦을 수 있다 했나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "수출은 폭증인데\n월세는 **12년 10개월**\n만에 최대 상승",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "editorial",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/15",
+     "headlines": [
+      "반도체 수출 259% 폭증",
+      "ICT 수출 두 달 연속 700억달러",
+      "월세 상승폭 12년 10개월 만에 최대"
+     ]
+    }
+   },
+   "id": "20261115-1401-i2",
+   "created_at": "2026-11-15T14:01:37+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261115-1401-i2/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261115-1401-i2/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261115-1401-i2/1-editorial-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261115-1401-i2/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261115-1401-i2/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261115-1401-i2/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261115-1401-i2/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261115-1401-i2/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261115-1401-i2/2-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261115-1401-i2/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261115-1401-i2/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261115-1401-i2/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261115-1401-i2/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261115-1401-i2/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261115-1401-i2/3-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261115-1401-i2/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261115-1401-i2/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261115-1401-i2/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "삼성SDI, LG엔솔 미국 ESS 맞대결",
+   "concept": "삼성SDI와 LG에너지솔루션이 미국 AI 데이터센터용 ESS 시장에서 맞붙은 사건을 주인공 중심으로 풀고, 전기차 수요가 주춤한 사이 새 먹거리가 됐다는 배경을 잇는다. 수주 규모와 실적은 확인 전이라고 한 번만 밝힌다 (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "오늘 11:30 기사로 28곳이 다뤘고, 오늘 뉴스 중 가장 많은 매체가 다룬 경제 소식입니다. 아직 보내지 않은 주제입니다.",
+   "tag": "배터리",
+   "sources": [
+    "https://biz.chosun.com/industry/company/2026/11/15/V6YHXV5G3ZFHVP7U2N4AXXMDDA/",
+    "https://www.mt.co.kr/industry/company/2026/11/15/2026111510430882446"
+   ],
+   "bg": "Samsung SDI battery",
+   "bg_alt": "LG Energy Solution ESS",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "삼성SDI와 LG엔솔이\n미국 데이터센터\n**ESS** 시장서 맞붙었다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "삼성SDI와 LG엔솔은\n왜 **데이터센터**로\n달려갔나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "전기차는 주춤한데\n배터리의 새 먹거리는\n**AI**였다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/15",
+     "headlines": [
+      "삼성SDI와 LG엔솔, 미국서 맞대결",
+      "무대는 데이터센터용 ESS 시장",
+      "전기차 주춤한 사이 새 먹거리로"
+     ]
+    }
+   },
+   "id": "20261115-1401-i3",
+   "created_at": "2026-11-15T14:01:37+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261115-1401-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261115-1401-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261115-1401-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261115-1401-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261115-1401-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261115-1401-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261115-1401-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261115-1401-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261115-1401-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261115-1401-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261115-1401-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261115-1401-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261115-1401-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261115-1401-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261115-1401-i3/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261115-1401-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261115-1401-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261115-1401-i3/3-paper-gowun.jpg"
     }
    ]
   }
