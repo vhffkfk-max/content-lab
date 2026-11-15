@@ -10,8 +10,8 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 1.7,
   "kr_n": 478,
-  "foreign_avg": 2.46,
-  "foreign_n": 266
+  "foreign_avg": 2.45,
+  "foreign_n": 267
  },
  {
   "rank": 2,
@@ -24,8 +24,8 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 2.32,
   "kr_n": 57,
-  "foreign_avg": 1.78,
-  "foreign_n": 71
+  "foreign_avg": 1.76,
+  "foreign_n": 72
  },
  {
   "rank": 3,
@@ -43,6 +43,20 @@
  },
  {
   "rank": 4,
+  "topic": "급락·변동성",
+  "kind": "국내·해외 모두 강세",
+  "confidence": "높음",
+  "title_idea": "[오늘] 급락·변동성에 무슨 일이? 1분 요약",
+  "format": "릴스",
+  "hook": "속보·뉴스형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 2.03,
+  "kr_n": 82,
+  "foreign_avg": 1.84,
+  "foreign_n": 21
+ },
+ {
+  "rank": 5,
   "topic": "국내 대형주",
   "kind": "국내 검증 주제",
   "confidence": "높음",
@@ -56,20 +70,6 @@
   "foreign_n": 8
  },
  {
-  "rank": 5,
-  "topic": "급락·변동성",
-  "kind": "국내·해외 모두 강세",
-  "confidence": "높음",
-  "title_idea": "[오늘] 급락·변동성에 무슨 일이? 1분 요약",
-  "format": "릴스",
-  "hook": "속보·뉴스형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 2.03,
-  "kr_n": 82,
-  "foreign_avg": 1.82,
-  "foreign_n": 21
- },
- {
   "rank": 6,
   "topic": "빅테크",
   "kind": "국내·해외 모두 강세",
@@ -80,11 +80,25 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 2.32,
   "kr_n": 43,
-  "foreign_avg": 1.55,
+  "foreign_avg": 1.56,
   "foreign_n": 26
  },
  {
   "rank": 7,
+  "topic": "비트코인",
+  "kind": "국내·해외 모두 강세",
+  "confidence": "높음",
+  "title_idea": "[오늘] 비트코인에 무슨 일이? 1분 요약",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "속보·뉴스형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 2.22,
+  "kr_n": 14,
+  "foreign_avg": 1.75,
+  "foreign_n": 171
+ },
+ {
+  "rank": 8,
   "topic": "환율·달러",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
@@ -94,21 +108,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 1.96,
   "kr_n": 75,
-  "foreign_avg": 1.33,
+  "foreign_avg": 1.39,
   "foreign_n": 8
- },
- {
-  "rank": 8,
-  "topic": "비트코인",
-  "kind": "국내·해외 모두 강세",
-  "confidence": "높음",
-  "title_idea": "[오늘] 비트코인에 무슨 일이? 1분 요약",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "속보·뉴스형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 2.21,
-  "kr_n": 14,
-  "foreign_avg": 1.75,
-  "foreign_n": 170
  }
 ]
