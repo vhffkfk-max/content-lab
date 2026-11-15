@@ -3333,489 +3333,6 @@
  ],
  "ideas": [
   {
-   "title": "서울 청약자 절반 사라졌다",
-   "concept": "1순위 청약자가 4년 만에 최저로 줄었다는 사건 하나를 주인공으로 걸고, 강남 870대 1과 서울 전체 감소를 대비해 매수 심리가 식는 흐름을 보여 줌. 정확한 감소율은 재료에 없어 쓰지 않음 (공식: 날짜, 모음 라벨 표지는 피하기)",
-   "why_now": "연합뉴스, 매일경제, 경기일보 등 3곳이 다뤘고, 매물 증가와 가격 조정 보도와 이어져 집값 흐름이 바뀌는 신호로 읽힘. 이미 다룬 경매, 실거래가 하락 소재와는 다른 청약 지표임.",
-   "tag": "부동산",
-   "sources": [
-    "https://www.yna.co.kr/view/AKR20261114036200003",
-    "https://v.daum.net/v/20261115070708099",
-    "https://v.daum.net/v/20261115070202040"
-   ],
-   "bg": "Seoul apartment complex",
-   "bg_alt": "Gangnam Seoul apartments",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "서울 1순위 청약자가\n4년 만에 **최저**\n강남은 870대 1인데",
-     "number": "870대 1",
-     "label": "강남 일반분양 경쟁률",
-     "sub": "서울 전체 청약자는 절반으로 줄었다"
-    },
-    {
-     "type": "질문형",
-     "title": "서울 청약자 절반이\n사라진 이유는\n오늘 **공급**일까 금리일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "강남은 **870대 1**\n서울 전체 청약자는\n절반으로 줄었다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "paper",
-    "editorial"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/15",
-     "headlines": [
-      "1순위 청약자 4년 만에 최저",
-      "강남 3구 일반분양 급감",
-      "매물 늘고 가격은 조정"
-     ]
-    }
-   },
-   "id": "20261115-0805-i1",
-   "created_at": "2026-11-15T08:05:35+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261115-0805-i1/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261115-0805-i1/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261115-0805-i1/1-paper-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261115-0805-i1/1-editorial-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261115-0805-i1/1-editorial-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261115-0805-i1/1-editorial-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261115-0805-i1/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261115-0805-i1/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261115-0805-i1/2-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261115-0805-i1/2-editorial-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261115-0805-i1/2-editorial-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261115-0805-i1/2-editorial-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261115-0805-i1/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261115-0805-i1/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261115-0805-i1/3-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261115-0805-i1/3-editorial-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261115-0805-i1/3-editorial-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261115-0805-i1/3-editorial-plex.jpg"
-    }
-   ]
-  },
-  {
-   "title": "머스크 \"젠슨 없는 엔비디아, 핵심 계약 잃을 것\"",
-   "concept": "머스크의 발언과 그 대상인 젠슨 황을 한 화면에 놓고, 복귀 청원 11만 명 돌파까지 한 걸음씩 이어 감. 트럼프의 팀 쿡 후임 언급은 확인 전이라 본문 한 곳에서만 단서를 붙임 (공식: 말한 사람과 대상 인물을 한 화면에)",
-   "why_now": "머스크 발언 기사를 4곳이 다뤘고, 복귀 요구 서한과 11만 명 청원도 보도됨. 월요일 장에서 엔비디아와 한국 반도체주 반응이 변수임. 투자 권유 아님.",
-   "tag": "엔비디아",
-   "sources": [
-    "https://www.mt.co.kr/world/2026/11/15/2026111506272283148",
-    "https://v.daum.net/v/20261115080012487",
-    "https://biz.chosun.com/international/international_general/2026/11/15/6WX72IXLPFB4JA55WUGIA7GEKY/"
-   ],
-   "bg": "Elon Musk Jensen Huang",
-   "bg_alt": "Nvidia headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "엔비디아 복귀 청원\n**11만 명** 넘었다\n머스크도 입 열었다",
-     "number": "11만 명",
-     "label": "젠슨 황 복귀 요구 청원",
-     "sub": "머스크는 핵심 계약을 잃을 수 있다고 했다"
-    },
-    {
-     "type": "질문형",
-     "title": "젠슨 황이 떠나면\n엔비디아가 잃는\n**핵심 계약**은 뭘까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "CEO가 떠났는데\n먼저 **머스크**가\n경고를 날렸다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "quote",
-    "news"
-   ],
-   "extra": {
-    "quote": {
-     "label": "머스크 발언",
-     "quote": "젠슨 황 없는 엔비디아, 공급망 핵심 계약 잃을 것",
-     "by": "일론 머스크"
-    }
-   },
-   "id": "20261115-0805-i2",
-   "created_at": "2026-11-15T08:05:35+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261115-0805-i2/1-quote-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261115-0805-i2/1-quote-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261115-0805-i2/1-quote-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261115-0805-i2/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261115-0805-i2/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261115-0805-i2/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261115-0805-i2/2-quote-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261115-0805-i2/2-quote-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261115-0805-i2/2-quote-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261115-0805-i2/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261115-0805-i2/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261115-0805-i2/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261115-0805-i2/3-quote-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261115-0805-i2/3-quote-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261115-0805-i2/3-quote-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261115-0805-i2/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261115-0805-i2/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261115-0805-i2/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "美 항공대란 이틀째, 결항 1만4000편",
-   "concept": "결항 1만4000편이라는 숫자를 앞세우고, FAA의 15일 정상화 목표와 MS 장애 복구 대비로 오늘이 분수령임을 보여 줌 (공식: 날짜, 모음 라벨 표지는 피하기)",
-   "why_now": "머니투데이는 9, 11 이후 세 번째 하늘길 봉쇄라고 전했고, FAA는 15일까지 정상화를 목표로 함. 오늘 정상화 여부가 핵심이며, 앞서 다룬 4시간 20분 중단 해제와는 다른 이틀째 후속 상황임.",
-   "tag": "글로벌",
-   "sources": [
-    "https://www.mt.co.kr/world/2026/11/15/2026111507073074997",
-    "https://biz.chosun.com/international/international_general/2026/11/15/M3B2C4HVRJH6ZCGE2KIC7MVONM/",
-    "https://v.daum.net/v/20261115075102416"
-   ],
-   "bg": "airport departure board cancelled",
-   "bg_alt": "FAA air traffic control tower",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "美 항공 결항\n**1만4000편**\n이틀째 멈췄다",
-     "number": "1만4000편",
-     "label": "미국 항공 결항",
-     "sub": "9, 11 이후 세 번째 하늘길 봉쇄"
-    },
-    {
-     "type": "질문형",
-     "title": "미국 하늘길 봉쇄가\n이틀째 이어진다\n오늘 **정상화**될까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "MS 서비스 장애는\n36시간 만에 복구\n하늘길은 **아직**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/15",
-     "headlines": [
-      "미국 결항 약 1만4000편",
-      "FAA, 15일까지 정상화 목표",
-      "MS 서비스 장애 36시간 만에 복구"
-     ]
-    }
-   },
-   "id": "20261115-0805-i3",
-   "created_at": "2026-11-15T08:05:35+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261115-0805-i3/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261115-0805-i3/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261115-0805-i3/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261115-0805-i3/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261115-0805-i3/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261115-0805-i3/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261115-0805-i3/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261115-0805-i3/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261115-0805-i3/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261115-0805-i3/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261115-0805-i3/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261115-0805-i3/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261115-0805-i3/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261115-0805-i3/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261115-0805-i3/3-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261115-0805-i3/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261115-0805-i3/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261115-0805-i3/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "빚투 7조, 삼전닉스로 쏠렸다",
    "concept": "빚투 잔액의 30%가 삼성전자와 SK하이닉스에 집중됐다는 보도를 중심에 둔다. 마이너스통장은 4년 3개월 만에 최대이고 주가가 급락하면 반대매매 위험이 커진다는 흐름으로, 내 빚투 규모를 점검하게 마무리한다. (공식: 날짜, 모음 라벨 표지는 피하기)",
    "why_now": "서울경제와 문화일보가 오늘 아침 연달아 보도했고, 연합뉴스와 한경은 마통이 4년 3개월 만에 최대라고 전했다. 11/13 기준 SK하이닉스는 전일 -3.03%, 코스피는 -0.98%였다.",
@@ -9445,6 +8962,360 @@
      "form": "breaking",
      "font": "dohyeon",
      "path": "20261115-2201-i3/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "9천피 때 발행한 ELS 94개 12월 만기",
+   "concept": "코스피 9천 근처에서 발행된 ELS 94개가 12월부터 만기를 맞는다는 한겨레 보도를 한 사건으로 따라간다. ELS가 무엇이고 만기 때 어떤 조건이 중요한지 풀고, 내 상품의 기준 가격과 만기일부터 확인하라는 한 줄로 닫는다. 손실 구간 여부는 상품별 조건이라 단정하지 않는다. (공식: 끝 장은 닫힌 결론 한 줄)",
+   "why_now": "한겨레가 어젯밤 'ELS 악몽 또…9천피때 발행 상품 94개, 내달부터 만기'를 보도했다. 비트코인과 금, 은이 함께 내리고 AI주도 흔들려 개인 투자자의 불안이 커진 시점이다.",
+   "tag": "투자자 불안",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9xZDZoYTFPLU1VUm9oWEo3MUpKUlhKVFBnRURmOHV2N2E1ZmFXQkRRSE11d096Ul90UVF"
+   ],
+   "bg": "KOSPI stock exchange Seoul",
+   "bg_alt": "stock market board screen Korea",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "9천피 때 판 ELS\n**94개**가 12월부터\n만기를 맞는다",
+     "number": "94개",
+     "label": "9천피 근처에서 발행된 ELS",
+     "sub": "12월부터 줄줄이 만기"
+    },
+    {
+     "type": "질문형",
+     "title": "9천피에 가입한 ELS\n12월 **만기**, 내 건\n괜찮은 걸까",
+     "number": "94개",
+     "label": "12월 만기 ELS",
+     "sub": "기준 가격과 만기일부터 확인"
+    },
+    {
+     "type": "반전형",
+     "title": "ELS 94개가 줄줄이\n만기를 맞는다\n발행 땐 **9천피**였다",
+     "number": "94개",
+     "label": "9천피 때 발행",
+     "sub": "12월부터 만기 시작"
+    }
+   ],
+   "forms": [
+    "editorial",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261116-0709-i1",
+   "created_at": "2026-11-16T07:09:58+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261116-0709-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261116-0709-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261116-0709-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261116-0709-i1/2-bignum-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261116-0709-i1/2-bignum-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261116-0709-i1/2-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261116-0709-i1/3-bignum-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261116-0709-i1/3-bignum-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261116-0709-i1/3-bignum-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "호반이 한진칼 최대주주, 조원태 370억 맞대응",
+   "concept": "한진칼 1대 주주가 바뀌었다는 이코노미조선 보도를 호반 한 곳을 주인공으로 따라간다. 지분 역전, 조원태 회장의 370억원 맞대응, 앞으로 볼 산업은행 지분과 내년 주주총회 순서로 푼다. 단독 보도라 숫자에 확인 표시를 한 곳에만 짧게 쓰고 주가 전망은 쓰지 않는다. (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "이코노미조선이 '호반, 한진칼 최대주주 등극, 조원태 370억 맞대응'을 보도했다. 산은 지분과 내년 주총이 분수령이라는 내용이다. 아직 다른 곳에서 크게 다루지 않은 새 기업 이슈다.",
+   "tag": "경영권 다툼",
+   "sources": [
+    "https://v.daum.net/v/20261115230103613"
+   ],
+   "bg": "Cho Won-tae Hanjin",
+   "bg_alt": "Korean Air Hanjin building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "조원태 회장이\n**370억**으로 맞대응\n호반이 1대 주주",
+     "number": "370억원",
+     "label": "조원태 회장 맞대응 규모",
+     "sub": "호반이 한진칼 최대주주에 올랐다"
+    },
+    {
+     "type": "질문형",
+     "title": "호반은 어떻게\n한진칼 **1대 주주**가\n됐을까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "한진칼 1대 주주가\n**호반**으로 바뀌었다\n산은 지분이 변수",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261116-0709-i2",
+   "created_at": "2026-11-16T07:09:58+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261116-0709-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261116-0709-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261116-0709-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261116-0709-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261116-0709-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261116-0709-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261116-0709-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261116-0709-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261116-0709-i2/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "큰손들, 엔비디아 판 돈으로 인텔과 하이닉스 ADR",
+   "concept": "스캔들이 아니라 돈의 이동으로 푼다. 매일경제 보도대로 글로벌 큰손이 엔비디아를 덜고 인텔과 SK하이닉스 ADR을 샀다는 사실만 쓰고, 어느 기관이 얼마나 샀는지는 원문 확인이 필요하다고 한 곳에 밝힌다. ADR은 해외에서 거래되는 주식 대리 증서라고 처음 나올 때 풀고, 17일 엔비디아 실적을 다음 일정으로 둔다. (공식: 없음)",
+   "why_now": "매일경제가 어젯밤 글로벌 큰손이 엔비디아를 팔고 인텔과 SK하이닉스 ADR을 샀다고 보도했다. 쓰레드에서도 이 이야기가 시간당 조회 9천 안팎으로 빠르게 크고 있고, 17일 엔비디아 실적 발표를 앞두고 있다.",
+   "tag": "AI 반도체 자금",
+   "sources": [
+    "https://www.mk.co.kr/news/stock/12209538"
+   ],
+   "bg": "Jensen Huang Nvidia",
+   "bg_alt": "Nvidia chip",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "큰손들이 엔비디아를\n팔고 **인텔**을\n사들였다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "엔비디아 판 돈\n**어디로** 갔을까\n큰손의 선택은",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "엔비디아를 덜고\n**SK하이닉스** ADR을\n담았다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/16",
+     "headlines": [
+      "큰손, 엔비디아 비중 덜어냈다",
+      "인텔, SK하이닉스 ADR 매수",
+      "17일 엔비디아 실적이 시험대"
+     ]
+    }
+   },
+   "id": "20261116-0709-i3",
+   "created_at": "2026-11-16T07:09:58+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261116-0709-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261116-0709-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261116-0709-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261116-0709-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261116-0709-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261116-0709-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261116-0709-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261116-0709-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261116-0709-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261116-0709-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261116-0709-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261116-0709-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261116-0709-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261116-0709-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261116-0709-i3/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261116-0709-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261116-0709-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261116-0709-i3/3-paper-gowun.jpg"
     }
    ]
   }
