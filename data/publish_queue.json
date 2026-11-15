@@ -3333,390 +3333,6 @@
  ],
  "ideas": [
   {
-   "title": "노란우산 개인정보 조회 의심, KISA 신고",
-   "concept": "중기중앙회를 주인공으로 확인, 신고, 범위 미확인, 가입자 행동 순서로 풉니다. 노란우산이 무엇인지는 처음 나오는 자리에서 한 줄로 풀고, 유출 범위와 규모는 아직 확인되지 않았다고 한 번만 밝힙니다. (공식: 한 주인공이 장마다 한 걸음씩)",
-   "why_now": "19:33에 중소기업중앙회가 개인정보 조회 의심 정황을 확인하고 KISA에 신고했다고 밝혔습니다. 16:58에는 유출 가능성만 나왔고, 이번에 기관이 공식 확인한 새 소식입니다.",
-   "tag": "소상공인",
-   "sources": [
-    "https://www.donga.com/news/Society/article/all/20261114/135024380/1",
-    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008846028&plink=RSSLINK&cooper=RSSREADER"
-   ],
-   "bg": "Korea Federation of SMEs",
-   "bg_alt": "Korea small business owner",
-   "hooks": [
-    {
-     "type": "사건형",
-     "title": "중기중앙회가\n노란우산 **조회 의심**\nKISA에 신고",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "내 노란우산\n정보도 **조회**됐나\n아직 범위 미확인",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "유출 가능성에서\n**조회 의심**으로\n기관이 확인했다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261114-2201-i1",
-   "created_at": "2026-11-14T22:01:34+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261114-2201-i1/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261114-2201-i1/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261114-2201-i1/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261114-2201-i1/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261114-2201-i1/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261114-2201-i1/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261114-2201-i1/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261114-2201-i1/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261114-2201-i1/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "글로벌 주식펀드 주간 유입 980억달러",
-   "concept": "하락 얘기가 많은 때에 자금 흐름은 반대로 움직였다는 대비로 풉니다. 980억달러(역대 2위), 5주 연속 유입, 누적 약 3,500억달러만 쓰고 4주 이동평균은 원문 확인 전이라 뺍니다. 한국 시장에 어떤 영향인지는 재료에 없다고 한 줄로만 적습니다. (공식: 없음)",
-   "why_now": "11월 11일 마감 주간 글로벌 주식펀드 유입이 980억달러로 역대 2위라는 글이 조회 5.7만을 기록했습니다. 코스피와 나스닥이 한 달 새 내린 시점이라 대비가 큽니다.",
-   "tag": "글로벌 자금",
-   "sources": [
-    "https://x.com/KobeissiLetter/status/2121564824760902115"
-   ],
-   "bg": "Wall Street trading floor",
-   "bg_alt": "New York Stock Exchange building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "글로벌 주식펀드\n일주일에 **980억달러**\n역대 2위 유입",
-     "number": "980억달러",
-     "label": "일주일 글로벌 주식펀드 유입",
-     "sub": "11월 11일 마감 주간, 역대 2위"
-    },
-    {
-     "type": "질문형",
-     "title": "주가는 빠지는데\n**980억달러**는\n왜 들어왔나",
-     "number": "980억달러",
-     "label": "글로벌 주식펀드 주간 유입",
-     "sub": "5주 연속 유입"
-    },
-    {
-     "type": "반전형",
-     "title": "하락 얘기뿐인데\n주식펀드엔 **5주째**\n돈이 들어왔다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/14",
-     "headlines": [
-      "주식펀드 주간 유입 980억달러",
-      "역대 2위 주간 유입 기록",
-      "5주 연속 유입, 누적 3,500억달러"
-     ]
-    }
-   },
-   "id": "20261114-2201-i2",
-   "created_at": "2026-11-14T22:01:34+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261114-2201-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261114-2201-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261114-2201-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261114-2201-i2/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261114-2201-i2/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261114-2201-i2/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261114-2201-i2/2-bignum-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261114-2201-i2/2-bignum-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261114-2201-i2/2-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261114-2201-i2/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261114-2201-i2/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261114-2201-i2/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261114-2201-i2/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261114-2201-i2/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261114-2201-i2/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "코인 시장에서 스테이블코인이 빠져나간다",
-   "concept": "가격 차트 대신 대기 자금인 스테이블코인 공급량을 봅니다. 테더 시총 60일 새 66억달러 감소(FTX 붕괴 때보다 큰 폭), 전체 공급량 한 달 새 170억달러 감소를 쓰되, 비트코인 하락의 원인이라고 단정하지 않고 매수 여력이 줄어드는 신호로 읽힌다고만 씁니다. 스테이블코인은 코인 살 때 쓰는 달러 같은 코인이라고 처음에 풀어 줍니다. (공식: 없음)",
-   "why_now": "디지털투데이와 블루밍비트가 스테이블코인 감소를 전했고, @cryptorover의 '올해 최대 스테이블코인 시총 감소' 글이 조회 4.4만입니다. 비트코인은 한 달 새 17.17% 내려 6만 6천 달러대(11/14)입니다.",
-   "tag": "코인",
-   "sources": [
-    "https://news.google.com/rss/articles/CBMic0FVX3lxTFBhSU9wRDRaVE1wQmpRLWduX25JZ21TeHpQSGduQTEwbGtKcjI5UV9Camt2TXM0ck5TcU1",
-    "https://news.google.com/rss/articles/CBMiUEFVX3lxTE91RWVoR09sbjVXYmo5RWJWY1RkdW5HZUpDWkRwY3U5N2pyRlhLbWc3QXk2dmFoanlwN2h",
-    "https://x.com/cryptorover/status/2121529822455255043"
-   ],
-   "bg": "Tether USDT coin",
-   "bg_alt": "Bitcoin coin",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "코인판 달러가\n한 달 새 **170억달러**\n사라졌다",
-     "number": "170억달러",
-     "label": "스테이블코인 공급량, 한 달 새",
-     "sub": "올해 최대 감소라는 보도"
-    },
-    {
-     "type": "질문형",
-     "title": "코인 시장에서\n**달러**는 어디로\n빠져나갔나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "FTX 때보다\n더 큰 **66억달러**\n테더가 줄었다",
-     "number": "66억달러",
-     "label": "테더 시총, 60일 새 감소",
-     "sub": "FTX 붕괴 때보다 큰 폭"
-    }
-   ],
-   "forms": [
-    "bignum",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/14",
-     "headlines": [
-      "테더 시총 60일 새 66억달러 감소",
-      "스테이블코인 한 달 새 170억달러 감소",
-      "올해 최대 시총 감소라는 보도"
-     ]
-    }
-   },
-   "id": "20261114-2201-i3",
-   "created_at": "2026-11-14T22:01:34+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261114-2201-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261114-2201-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261114-2201-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261114-2201-i3/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261114-2201-i3/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261114-2201-i3/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261114-2201-i3/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261114-2201-i3/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261114-2201-i3/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261114-2201-i3/3-bignum-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261114-2201-i3/3-bignum-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261114-2201-i3/3-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261114-2201-i3/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261114-2201-i3/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261114-2201-i3/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "엔비디아, 일주일에 770조원 증발",
    "concept": "젠슨 황 사임 이후 엔비디아 시총이 한 주 새 단일 기업 역대 최대로 줄었다는 보도를 숫자 하나로 푼다. 엔비디아를 끝까지 주인공으로 두고 사임, 낙폭, 연준의 AI 위험 경고, 한국 반도체 변동성 순으로 한 장에 하나씩 쓴다. 매수, 매도 권유 없이 내 계좌의 쏠림 점검으로 마무리한다. (공식: 한 주인공이 장마다 한 걸음씩)",
    "why_now": "문화일보가 어젯밤 22:04에 보도했다. 젠슨 황 사임 후속은 이미 다뤘지만 770조원이라는 규모는 아직 안 다뤘다. 시세로도 엔비디아는 1달 -25.03%다.",
@@ -9412,6 +9028,437 @@
      "form": "news",
      "font": "myeongjo",
      "path": "20261115-2001-i3/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "주가 빠지자 개미들 마통부터 열었다",
+   "concept": "주가가 빠지자 마이너스통장 대출이 51개월 만에 최대로 늘었다는 보도를 한 사건으로 푼다. 저가 매수 심리, 변동금리와 만기 구조, 내 대출 중 주식에 들어간 돈 점검 순서로 간다. (공식: 날짜, 모음 라벨 표지는 피하기)",
+   "why_now": "동아일보와 세계일보가 19~20시에 다뤘고, 쓰레드에서도 전세금과 폭락을 엮은 글이 빠르게 크고 있다. 앞서 낸 신용융자 글과 달리 마통은 새 소식이다.",
+   "tag": "빚투",
+   "sources": [
+    "https://v.daum.net/v/20261115191118096",
+    "https://www.donga.com/news/Economy/article/all/20261115/135026798/1",
+    "https://v.daum.net/v/20261115200318801"
+   ],
+   "bg": "Korean stock market screen",
+   "bg_alt": "KOSPI trading screen",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "11월 마통 대출\n**51개월** 만에 최대\n주가 빠지자 열었다",
+     "number": "51개월",
+     "label": "마통 대출이 이 기간 만에 최대",
+     "sub": "주가 하락 뒤 저가 매수 심리"
+    },
+    {
+     "type": "질문형",
+     "title": "주가 빠지자 개미는\n왜 **마통**부터 열었나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "싸게 사려던 돈은\n**변동금리** 마통이었다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "editorial",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261115-2101-i1",
+   "created_at": "2026-11-15T21:01:56+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261115-2101-i1/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261115-2101-i1/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261115-2101-i1/1-editorial-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261115-2101-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261115-2101-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261115-2101-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261115-2101-i1/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261115-2101-i1/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261115-2101-i1/2-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261115-2101-i1/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261115-2101-i1/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261115-2101-i1/3-editorial-plex.jpg"
+    }
+   ]
+  },
+  {
+   "title": "부총리, 가공식품, 외식 물가 관리 논의",
+   "concept": "이형일 부총리가 물가 관리 방안을 논의했고 가공식품과 외식 오름폭이 커지고 있다는 점을 핵심으로 한다. 장바구니와 외식비 부담 신호로 읽고, 대책 세부 내용은 나오는 대로 잇는다. (공식: 날짜, 모음 라벨 표지는 피하기)",
+   "why_now": "19:27 기준 10곳이 동시에 다룬 새 소식으로, 지금 목록에서 가장 많은 매체가 다뤘고 아직 보낸 적 없다.",
+   "tag": "물가",
+   "sources": [
+    "https://v.daum.net/v/20261115192736350",
+    "https://v.daum.net/v/20261115192703343",
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4444832"
+   ],
+   "bg": "Lee Hyung-il deputy prime minister",
+   "bg_alt": "Korean supermarket groceries",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "가공식품 외식값 오르자\n부총리가 **물가** 논의",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "장바구니와 외식비\n정부 대책은 **언제**?",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "신선식품은 내렸는데\n외식은 **오름폭**이 커졌다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261115-2101-i2",
+   "created_at": "2026-11-15T21:01:56+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261115-2101-i2/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261115-2101-i2/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261115-2101-i2/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261115-2101-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261115-2101-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261115-2101-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261115-2101-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261115-2101-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261115-2101-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261115-2101-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261115-2101-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261115-2101-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261115-2101-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261115-2101-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261115-2101-i2/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261115-2101-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261115-2101-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261115-2101-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "美 의회, AI칩 수출규제 강화 법안 추진",
+   "concept": "엔비디아 스캔들 뒤 美 의회가 AI칩 수출 규칙을 촘촘히 하는 법안 처리에 나섰다는 FT 보도를 중심으로 하고, 반도체 수출이 259% 늘어난 한국에 어떤 변수인지 짚는다. 법안 세부 내용은 확인 전이라 밝히고, 다음 주 엔비디아 실적 발표를 같이 볼 대목으로 둔다. (공식: 날짜, 모음 라벨 표지는 피하기)",
+   "why_now": "FT가 20시에 의회의 법안 처리 착수를 보도했다. 앞서 낸 민주당 조사 건과 달리 법안 단계로 넘어간 새 소식이고, 한국 반도체 수출 호조와 맞물린다.",
+   "tag": "반도체",
+   "sources": [
+    "https://www.cnbc.com/2026/11/15/megaspeed-alice-huang-probe-nvidia-scandal.html",
+    "https://kr.investing.com/news/stock-market-news/article-2176225"
+   ],
+   "bg": "US Capitol building",
+   "bg_alt": "Nvidia chip",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "반도체 수출 **259%**↑\n美 의회는 칩 규칙을\n더 조이려 한다",
+     "number": "259%",
+     "label": "한국 반도체 수출 증가율",
+     "sub": "美 의회는 AI칩 수출 규칙 강화 추진"
+    },
+    {
+     "type": "질문형",
+     "title": "엔비디아 스캔들 뒤\n**AI칩** 수출 규칙은\n어떻게 바뀌나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "스캔들 뒤 의회가\n칩 수출 **규칙**을 손본다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/15",
+     "headlines": [
+      "의회, AI칩 수출규칙 법안 추진",
+      "메가스피드, 앨리스 황 퇴사 후 조사",
+      "한국 반도체 수출 259% 증가"
+     ]
+    }
+   },
+   "id": "20261115-2101-i3",
+   "created_at": "2026-11-15T21:01:56+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261115-2101-i3/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261115-2101-i3/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261115-2101-i3/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261115-2101-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261115-2101-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261115-2101-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261115-2101-i3/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261115-2101-i3/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261115-2101-i3/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261115-2101-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261115-2101-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261115-2101-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261115-2101-i3/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261115-2101-i3/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261115-2101-i3/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261115-2101-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261115-2101-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261115-2101-i3/3-paper-gowun.jpg"
     }
    ]
   }
