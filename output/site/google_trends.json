@@ -1,12 +1,30 @@
 [
  {
   "geo": "KR",
-  "term": "조세",
-  "traffic": 10000,
-  "topics": "연금·절세",
+  "term": "사고",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "[단독] 고경표 ’만취운전’ 사고로 청소업체 직원 1명 경상",
+  "news_link": "https://www.yonhapnewstv.co.kr/news/AKR20261115135356kCt"
+ },
+ {
+  "geo": "KR",
+  "term": "다니엘",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "\"착취\"라는 NYT, \"선투자\"라는 韓… 뉴진스가 쏘아올린 K-팝 딜레마 [박지현의 아트월드]",
+  "news_link": "https://www.fnnews.com/news/202611140300483483"
+ },
+ {
+  "geo": "KR",
+  "term": "레버리지",
+  "traffic": 500,
+  "topics": "급락·변동성",
   "econ": true,
-  "news_title": "세금은 대중제, 영업은 회원제…골프장 ‘꼼수 회원권’ 판친다",
-  "news_link": "https://view.asiae.co.kr/article/2026111112015060160"
+  "news_title": "증시 폭락 후 초고수는 \"반등에 베팅\"…'레버리지·급락주' 담았다",
+  "news_link": "https://www.hankyung.com/article/202611157013i"
  },
  {
   "geo": "KR",
@@ -28,12 +46,12 @@
  },
  {
   "geo": "KR",
-  "term": "다니엘",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "\"뉴진스 5인 완전체 안 깨졌으면 수백억 벌었을것\"…다니엘, 얼마 물어내야 할까[SC이슈]",
-  "news_link": "https://www.chosun.com/entertainments/enter_general/2026/11/13/GBTGEZLFG5SWINBZGMYTEMZWGM/"
+  "term": "테슬라 사이버캡",
+  "traffic": 500,
+  "topics": "테슬라",
+  "econ": true,
+  "news_title": "운전대 없는 테슬라 '사이버캡', 개인도 산다…가격은 4000만원",
+  "news_link": "https://zdnet.co.kr/view/?no=20261114234839"
  },
  {
   "geo": "KR",
@@ -41,17 +59,17 @@
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "국민의힘 “미래대응기금, 5대 조건 수용 없인 심사 불가”",
-  "news_link": "https://m.go.seoul.co.kr/news/politics/2026/11/15/20261115500073"
+  "news_title": "국힘 \"법적 근거없는 미래대응기금 예산 심사 중단해야\"",
+  "news_link": "https://www.yna.co.kr/view/AKR20261115036100001"
  },
  {
   "geo": "KR",
-  "term": "테슬라 사이버캡",
+  "term": "조선소",
   "traffic": 200,
-  "topics": "테슬라",
-  "econ": true,
-  "news_title": "운전대 없는 테슬라 '사이버캡', 개인도 산다…가격은 4000만원",
-  "news_link": "https://zdnet.co.kr/view/?no=20261114234839"
+  "topics": "",
+  "econ": false,
+  "news_title": "[르포] K조선 심장 LNG화물창…HD현중, 품질·속도로 中 추격 따돌린다 By EBN",
+  "news_link": "https://kr.investing.com/news/stock-market-news/article-2176161"
  },
  {
   "geo": "KR",
@@ -64,75 +82,75 @@
  },
  {
   "geo": "KR",
-  "term": "england vs australia",
+  "term": "서버",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "Australia vs England LIVE: Second ODI, Adelaide Oval - cricket score, commentary & updates",
-  "news_link": "https://www.bbc.com/sport/cricket/live/cjwgxve1wynt"
- },
- {
-  "geo": "KR",
-  "term": "조선소",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "[르포] K조선 심장 LNG화물창…HD현중, 품질·속도로 中 추격 따돌린다 By EBN",
-  "news_link": "https://kr.investing.com/news/stock-market-news/article-2176161"
- },
- {
-  "geo": "KR",
-  "term": "지효",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "리모와, 광주 첫 매장 ‘광주신세계점’ 개장",
-  "news_link": "https://m.ekn.kr/view.php?key=20261113024129492"
+  "news_title": "\"북한 라자루스, 국내 서버 30곳 노렸다\"",
+  "news_link": "https://imnews.imbc.com/replay/2026/nw1200/article/6865762_36967.html"
  },
  {
   "geo": "US",
-  "term": "spacex starship rocket launch",
-  "traffic": 10000,
+  "term": "fitness",
+  "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "Live updates: SpaceX Starship soars in orbit, still aiming for ship catch in unprecedented test flight",
-  "news_link": "https://www.cnn.com/2026/11/13/science/live-news/spacex-starship-flight-15-ship-catch"
+  "news_title": "These four Canadians share their fitness advice for aging well",
+  "news_link": "https://www.theglobeandmail.com/life/wellness/fitness/article-four-canadians-share-fitness-advice-for-aging-well/"
  },
  {
   "geo": "US",
-  "term": "james comey",
+  "term": "dampier utah",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Key Witness in Comey Case Attests to Justice Dept.’s Aggressive Tactics",
-  "news_link": "https://www.nytimes.com/2026/11/14/us/politics/comey-witness-justice-dept-aggressive-tactics.html"
+  "news_title": "Utah QB Devon Dampier has fourth-best Heisman Trophy odds after BYU performance",
+  "news_link": "https://www.sltrib.com/sports/utah-utes/2026/11/12/what-are-devon-dampiers-heisman/"
  },
  {
   "geo": "US",
-  "term": "boxing tonight",
+  "term": "earthquake",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Overeem-Manuwa boxing match added to Dec. 24 Paul-Doumbé card",
-  "news_link": "https://www.espn.com/boxing/story/_/id/50461800/paul-doumbe-card-adds-overeem-manuwa-boxing-match-co-main"
+  "news_title": "NE Oregon has strongest earthquake in more than 30 years",
+  "news_link": "https://eastoregonian.com/2026/11/13/ne-oregon-has-strongest-earthquake-in-more-than-30-years/"
  },
  {
   "geo": "US",
-  "term": "gus johnson",
-  "traffic": 200,
+  "term": "sa vs ban",
+  "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Why Gus Johnson & Joel Klatt Won’t Be Calling Ohio State vs. Northwestern ‘Big Noon Kickoff’",
-  "news_link": "https://sports.yahoo.com/articles/why-gus-johnson-joel-klatt-191121784.html"
+  "news_title": "On-song South Africa host Bangladesh with an eye on another WTC final",
+  "news_link": "https://www.cricinfo.com/series/bangladesh-in-south-africa-2026-27-1525637/south-africa-vs-bangladesh-1st-test-1525662/match-preview"
  },
  {
   "geo": "US",
-  "term": "ryan reynolds",
+  "term": "aidan mizell",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "‘Avengers: Doomsday’ Lists Ryan Reynolds and Hugh Jackman Among 10 Writers",
-  "news_link": "https://variety.com/2026/film/news/avengers-doomsday-ryan-reynolds-hugh-jackman-writers-1236946441/"
+  "news_title": "Aidan Mizell is giving UCLA the breakout Florida fans waited years to see",
+  "news_link": "https://hailfloridahail.com/aidan-mizell-is-giving-ucla-the-breakout-florida-fans-waited-years-to-see"
+ },
+ {
+  "geo": "US",
+  "term": "aiden mizell",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "No. 4 UCLA defeats Illinois, improves to 10-0 for first time since 1998",
+  "news_link": "https://www.latimes.com/sports/ucla/story/2026-11-13/ucla-defeats-illinois-improves-to-10-0-for-first-time-since-1998"
+ },
+ {
+  "geo": "US",
+  "term": "karely ruiz",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "VIDEO: Karely Ruiz se pelea con Odette Orlena y agrediría a Cukis; sería expulsada de ‘La Mansión VIP’",
+  "news_link": "https://tribuna.com.mx/espectaculos/2026/11/14/video-karely-ruiz-se-pelea-con-odette-orlena-y-agrediria-a-cukis-seria-expulsada-de-la-mansion-vip_715591/"
  },
  {
   "geo": "US",
@@ -140,17 +158,8 @@
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Phil Collins, 75, considers touring again after years of health struggles",
-  "news_link": "https://www.usatoday.com/story/entertainment/music/2026/11/10/phil-collins-tour-return-health-update-rock-hall-of-fame/92711570007/"
- },
- {
-  "geo": "US",
-  "term": "when does gta 6 online come out",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Another Update About The ‘GTA 6 Online’ Release Date",
-  "news_link": "https://www.forbes.com/sites/paultassi/2026/11/13/the-gta-6-online-release-date-is-far-off-says-new-report/"
+  "news_title": "Phil Collins on health scare: ‘I live a simple life’",
+  "news_link": "https://apnews.com/video/phil-collins-on-health-scare-i-live-a-simple-life-85ab59482a504555b163ae05f3753658"
  },
  {
   "geo": "US",
@@ -160,15 +169,6 @@
   "econ": false,
   "news_title": "No flight, no problem: Ground stop doesn’t keep Aussie legend from watching son punt for Iowa",
   "news_link": "https://www.nytimes.com/athletic/7781914/2026/11/14/faa-ground-stop-iowa-punter-peter-everitt/"
- },
- {
-  "geo": "US",
-  "term": "magnus carlsen",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "Firouzja, Caruana, Giri, MVL Lead Before Final Day; Carlsen Out Of Contention",
-  "news_link": "https://www.chess.com/news/view/2026-total-chess-world-championship-tour-pilot-day-5"
  },
  {
   "geo": "US",
