@@ -1,6 +1,15 @@
 [
  {
   "geo": "KR",
+  "term": "아파트",
+  "traffic": 5000,
+  "topics": "부동산",
+  "econ": true,
+  "news_title": "“지역 상징성 강조” 단지 번호 남기는 아파트 재건축",
+  "news_link": "https://www.donga.com/news/Economy/article/all/20261115/135027921/2"
+ },
+ {
+  "geo": "KR",
   "term": "한일전",
   "traffic": 5000,
   "topics": "",
@@ -10,21 +19,30 @@
  },
  {
   "geo": "KR",
-  "term": "알렉산더 즈베레프",
+  "term": "로스앤젤레스 fc",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "즈베레프, 험난한 조 편성 속 호다르와 첫판… 알카라스는 '비교적 수월'",
-  "news_link": "https://www.tennis.co.kr/news/articleView.html?idxno=54294"
+  "news_title": "\"손흥민 이적료 없이 다시 이적 가능\" 토트넘 깜짝 복귀 성사되나...내년 1월 협상 가능 선수로 등장, \"본격적인 카운트다운 시작\"",
+  "news_link": "https://www.sportschosun.com/football/2026-11-14/202611140100095190008917"
  },
  {
   "geo": "KR",
-  "term": "부고",
-  "traffic": 500,
+  "term": "스페인 대 잉글랜드",
+  "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "[부고]김순애 별세 外",
-  "news_link": "https://www.donga.com/news/People/article/all/20261116/135028790/2"
+  "news_title": "“스페인에 인종차별 있다고 한 적 없다”…투헬, 기자들에 격분",
+  "news_link": "https://sports.khan.co.kr/article/202611150849003"
+ },
+ {
+  "geo": "KR",
+  "term": "공매도",
+  "traffic": 500,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "“보스 돌려줘” 12만명 젠슨 황 복귀 청원…“타락한 실리콘밸리”",
+  "news_link": "https://www.hani.co.kr/arti/international/international_general/1287402.html"
  },
  {
   "geo": "KR",
@@ -41,35 +59,26 @@
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "가입자 192만 ‘노란우산’서도 정보 유출 정황",
-  "news_link": "https://www.donga.com/news/Economy/article/all/20261115/135027882/2"
+  "news_title": "가입자 192만 ‘노란우산’, 주민번호·전화번호 등 유출 가능성",
+  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8712930"
  },
  {
   "geo": "KR",
-  "term": "박현주",
+  "term": "스포츠조선",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "복귀 청원 14만 넘겨 vs \"겸손은 연기, 폭언 일삼아\"",
-  "news_link": "https://www.ytn.co.kr/_cs/_ln_0104_202611152040168497_005.html"
+  "news_title": "김민하 착시현상 뭐길래? 살구빛 '누드톤' 의상으로 존재감 과시",
+  "news_link": "https://www.chosun.com/entertainments/broadcast/2026/11/15/GU3TQNJVMQYWIM3DMUYDEOJUGA/"
  },
  {
   "geo": "KR",
-  "term": "수상함",
+  "term": "필라데피아 대 인디애나",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "HD현대, 美 안두릴과 600t급 무인 군함 건조… 내년 美 해군 수주 도전",
-  "news_link": "https://www.chosun.com/economy/industry-company/2026/11/15/VWBYOVIHRJCPHMJ2TI4KVG5NJI/"
- },
- {
-  "geo": "KR",
-  "term": "장혁",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "＂내 어찌 경의 뜻을 모르겠는가＂ 양현민을 설득시킨 선동혁 [문무] | KBS 261115 방송",
-  "news_link": "https://www.kbs.co.kr/index.html?source=smr&sname=vod&stype=vod&contents_id=K02_PS-2026188993-01-000_MFSC1&program_code=T2025-0499&program_id=PS-2026188993-01-000&section_code=03&broadcast_complete_yn=N&section_id=28257"
+  "news_title": "76ers' Joel Embiid out vs. Pacers due to plantar fascia management",
+  "news_link": "https://www.espn.com/nba/story/_/id/50484216/76ers-joel-embiid-vs-pacers-due-plantar-fascia-management"
  },
  {
   "geo": "KR",
@@ -81,102 +90,93 @@
   "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8713167"
  },
  {
-  "geo": "KR",
-  "term": "스포츠조선",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "김민하 착시현상 뭐길래? 살구빛 '누드톤' 의상으로 존재감 과시",
-  "news_link": "https://www.chosun.com/entertainments/broadcast/2026/11/15/GU3TQNJVMQYWIM3DMUYDEOJUGA/"
- },
- {
   "geo": "US",
-  "term": "josh downs",
+  "term": "president donald trump",
   "traffic": 5000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Can't-Miss Play: Josh Downs' first Chiefs TD comes on back-shoulder connection with Mahomes",
-  "news_link": "https://www.nfl.com/videos/can-t-miss-play-josh-downs-first-chiefs-td-comes-on-back-shoulder-connection-with-mahomes"
+  "topics": "정치·관세",
+  "econ": true,
+  "news_title": "Trump breaks silence about FAA nationwide ground stop, blames Biden administration",
+  "news_link": "https://www.cnbc.com/2026/11/15/trump-breaks-silence-on-faa-nationwide-ground-stop-blames-biden-.html"
  },
  {
   "geo": "US",
-  "term": "madden movie",
+  "term": "cliff booth",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "Nicolas Cage transformed ‘from within’ for ‘Madden,’ co-star Kathryn Hahn says",
-  "news_link": "https://www.reuters.com/lifestyle/nicolas-cage-transformed-within-madden-co-star-kathryn-hahn-says-2026-11-10/"
+  "news_title": "Cliff Booth Meets the Academy",
+  "news_link": "https://www.awardsdaily.com/2026/11/15/cliff-booth-meets-the-academy/"
  },
  {
   "geo": "US",
-  "term": "tacko fall",
+  "term": "cliff booth movie",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "Tacko Fall Appreciates Love From 76ers Fans, But Thinks He’s Treated Like A ‘Make-A-Wish Kid’",
-  "news_link": "https://sports.yahoo.com/articles/tacko-fall-appreciates-love-76ers-161310502.html"
+  "news_title": "Quentin Tarantino’s First Movie in 7 Years Officially Arrives in 10 Days",
+  "news_link": "https://collider.com/further-mis-adventures-cliff-booth-imax-release-november-25/"
  },
  {
   "geo": "US",
-  "term": "john madden",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Video Christian Bale talks new film 'Madden'",
-  "news_link": "https://abcnews.com/video/138107026/"
- },
- {
-  "geo": "US",
-  "term": "martin short",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Tom Cruise Leads the Love Fest for Steven Spielberg at MoMA",
-  "news_link": "https://www.nytimes.com/2026/11/13/style/steven-spielberg-moma-colbert-tom-cruise.html"
- },
- {
-  "geo": "US",
-  "term": "brian flores",
+  "term": "creighton vs iowa",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Kevin O’Connell Receives Troubling Prediction About Vikings’ Future",
-  "news_link": "https://sports.yahoo.com/articles/kevin-o-connell-receives-troubling-204307092.html"
+  "news_title": "Three Keys And A Pick: Iowa vs. Creighton",
+  "news_link": "https://247sports.com/college/iowa/longformarticle/iowa-basketball-creighton-bluejays-preview-ben-mccollum-alan-huss--292624964/"
  },
  {
   "geo": "US",
-  "term": "chiefs score today",
+  "term": "lewis hall",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Sources: Chiefs had renowned baseball doctors weigh in on Patrick Mahomes' elbow",
-  "news_link": "https://www.espn.com/nfl/story/_/id/50481210/sources-baseball-doctors-consulted-patrick-mahomes-elbow"
+  "news_title": "Newcastle United fight Sunderland for ‘game-changing’ £35m star who can transform Matthias Jaissle attack",
+  "news_link": "https://www.newcastleworld.com/sport/football/newcastle-united/newcastle-united-news-sunderland-9347700"
  },
  {
   "geo": "US",
-  "term": "jobe bellingham",
+  "term": "mackenzie scott",
+  "traffic": 500,
+  "topics": "빅테크",
+  "econ": true,
+  "news_title": "MacKenzie Scott gave Jeff Bezos 75% of their Amazon shares, Blue Origin, and the Washington Post in 2019 divorce",
+  "news_link": "https://finance.yahoo.com/markets/stocks/articles/mackenzie-scott-gave-jeff-bezos-163000988.html"
+ },
+ {
+  "geo": "US",
+  "term": "pascal siakam",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "England star Jobe Bellingham names every Ballon d'Or winner since 2000 in incredible video",
-  "news_link": "https://www.sportbible.com/football/football-news/jobe-bellingham-england-ballon-dor-winners-717606-20261115"
+  "news_title": "Pacers 114-101 Wizards (Nov 11, 2026) Game Recap",
+  "news_link": "https://www.espn.com/nba/recap/_/gameId/401909966"
  },
  {
   "geo": "US",
-  "term": "missouri vs marquette",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Tiger Tip-Off Preview: Marquette",
-  "news_link": "https://247sports.com/college/missouri/article/mizzou-basketball-tiger-tip-off-preview-marquette-292759986/"
- },
- {
-  "geo": "US",
-  "term": "demeco ryans",
+  "term": "caleb douglas",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "DeMeco Ryans Has High Praise for Texans Kicker Ka'imi Fairbairn",
-  "news_link": "https://sports.yahoo.com/articles/demeco-ryans-high-praise-texans-015451651.html"
+  "news_title": "Fantasy Hurry-Up Offense: Can fantasy managers start Caleb Douglas with confidence?",
+  "news_link": "https://sports.yahoo.com/video/fantasy-hurry-up-offense-can-fantasy-managers-start-caleb-douglas-with-confidence-161844983.html"
+ },
+ {
+  "geo": "US",
+  "term": "matt lafleur",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Green Bay Packers Have an Answer at Running Back in Kaleb Johnson",
+  "news_link": "https://sports.yahoo.com/articles/green-bay-packers-answer-running-110006826.html"
+ },
+ {
+  "geo": "US",
+  "term": "nwsl schedule",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Washington Spirit edge Utah Royals to reach 3rd straight NWSL Championship",
+  "news_link": "https://www.espn.com/soccer/story/_/id/50481452/washington-spirit-vs-utah-royals-nwsl-championship-semiginal"
  }
 ]
