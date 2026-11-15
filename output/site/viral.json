@@ -1,6 +1,6 @@
 {
  "made_at": "2026-11-15T19:34:47.308599+09:00",
- "checked_at": "2026-11-15T23:25+09:00",
+ "checked_at": "2026-11-16T00:39+09:00",
  "days": 45,
  "min_x": 3,
  "funnel": {
@@ -147,11 +147,11 @@
     }
    ],
    "test": {
-    "n": 16,
+    "n": 18,
     "right": 15,
-    "rate": 0.94,
-    "base_rate": 0.81,
-    "lift": 0.13,
+    "rate": 0.83,
+    "base_rate": 0.72,
+    "lift": 0.11,
     "fixed": 2,
     "broke": 0,
     "status": "검증됨"
@@ -218,12 +218,12 @@
    ],
    "counter": [],
    "test": {
-    "n": 8,
-    "right": 6,
-    "rate": 0.75,
+    "n": 10,
+    "right": 8,
+    "rate": 0.8,
     "base_rate": 0.5,
-    "lift": 0.25,
-    "fixed": 2,
+    "lift": 0.3,
+    "fixed": 3,
     "broke": 0,
     "status": "검증됨"
    }
@@ -303,7 +303,16 @@
      "kind": "릴스"
     }
    ],
-   "test": null
+   "test": {
+    "n": 3,
+    "right": 1,
+    "rate": 0.33,
+    "base_rate": 0.33,
+    "lift": 0.0,
+    "fixed": 0,
+    "broke": 0,
+    "status": "검증 중"
+   }
   },
   {
    "name": "표지는 주인공 얼굴, 흐린 풍경 말고",
@@ -380,7 +389,16 @@
      "kind": "카드뉴스"
     }
    ],
-   "test": null
+   "test": {
+    "n": 4,
+    "right": 2,
+    "rate": 0.5,
+    "base_rate": 0.25,
+    "lift": 0.25,
+    "fixed": 1,
+    "broke": 0,
+    "status": "검증 중"
+   }
   },
   {
    "name": "표지 제목은 몸짓·표정 한 장면",
@@ -435,7 +453,16 @@
     }
    ],
    "counter": [],
-   "test": null
+   "test": {
+    "n": 1,
+    "right": 1,
+    "rate": 1.0,
+    "base_rate": 1.0,
+    "lift": 0.0,
+    "fixed": 0,
+    "broke": 0,
+    "status": "검증 중"
+   }
   },
   {
    "name": "인공지능 연출 말고 실물 증거",
@@ -499,14 +526,14 @@
     }
    ],
    "test": {
-    "n": 6,
-    "right": 6,
-    "rate": 1.0,
-    "base_rate": 0.83,
-    "lift": 0.17,
-    "fixed": 1,
+    "n": 11,
+    "right": 10,
+    "rate": 0.91,
+    "base_rate": 0.64,
+    "lift": 0.27,
+    "fixed": 3,
     "broke": 0,
-    "status": "검증 중"
+    "status": "검증됨"
    }
   },
   {
@@ -675,7 +702,16 @@
     }
    ],
    "counter": [],
-   "test": null
+   "test": {
+    "n": 2,
+    "right": 1,
+    "rate": 0.5,
+    "base_rate": 0.5,
+    "lift": 0.0,
+    "fixed": 0,
+    "broke": 0,
+    "status": "검증 중"
+   }
   },
   {
    "name": "말한 사람과 대상 인물을 한 화면에",
@@ -889,13 +925,13 @@
    ],
    "counter": [],
    "test": {
-    "n": 1,
+    "n": 2,
     "right": 1,
-    "rate": 1.0,
+    "rate": 0.5,
     "base_rate": 1.0,
-    "lift": 0.0,
+    "lift": -0.5,
     "fixed": 0,
-    "broke": 0,
+    "broke": 1,
     "status": "검증 중"
    }
   },
@@ -1005,10 +1041,10 @@
     }
    ],
    "test": {
-    "n": 5,
+    "n": 6,
     "right": 3,
-    "rate": 0.6,
-    "base_rate": 0.6,
+    "rate": 0.5,
+    "base_rate": 0.5,
     "lift": 0.0,
     "fixed": 1,
     "broke": 1,
@@ -1061,7 +1097,16 @@
     }
    ],
    "counter": [],
-   "test": null
+   "test": {
+    "n": 1,
+    "right": 1,
+    "rate": 1.0,
+    "base_rate": 1.0,
+    "lift": 0.0,
+    "fixed": 0,
+    "broke": 0,
+    "status": "검증 중"
+   }
   },
   {
    "name": "릴스 중간에 한 번 뒤집기",
@@ -1102,7 +1147,16 @@
     }
    ],
    "counter": [],
-   "test": null
+   "test": {
+    "n": 1,
+    "right": 0,
+    "rate": 0.0,
+    "base_rate": 1.0,
+    "lift": -1.0,
+    "fixed": 0,
+    "broke": 1,
+    "status": "검증 중"
+   }
   },
   {
    "name": "캡션은 숫자 달린 항목으로",
@@ -1137,10 +1191,10 @@
    ],
    "counter": [],
    "test": {
-    "n": 3,
+    "n": 4,
     "right": 3,
-    "rate": 1.0,
-    "base_rate": 1.0,
+    "rate": 0.75,
+    "base_rate": 0.75,
     "lift": 0.0,
     "fixed": 0,
     "broke": 0,
@@ -1183,33 +1237,33 @@
   }
  ],
  "lab": {
-  "tests": 93,
-  "with_rate": 0.69,
-  "without_rate": 0.65,
-  "panel_rate": 0.48,
+  "tests": 105,
+  "with_rate": 0.68,
+  "without_rate": 0.63,
+  "panel_rate": 0.47,
   "카드뉴스": {
-   "tests": 79,
+   "tests": 86,
    "with_rate": 0.67,
-   "without_rate": 0.63,
-   "panel_rate": 0.49
+   "without_rate": 0.62,
+   "panel_rate": 0.5
   },
   "릴스": {
-   "tests": 14,
-   "with_rate": 0.79,
-   "without_rate": 0.71,
-   "panel_rate": 0.43
+   "tests": 19,
+   "with_rate": 0.68,
+   "without_rate": 0.68,
+   "panel_rate": 0.32
   },
-  "formula_gain": 0.04,
-  "writer_rounds": 11,
-  "writer_gain": 0.53
+  "formula_gain": 0.05,
+  "writer_rounds": 12,
+  "writer_gain": 0.78
  },
  "writer_lessons": [
-  "표지는 이미 일어난 일을 단정형 한 문장으로 쓴다. 한 글에는 사건을 하나만 다룬다.",
-  "'나랑 무슨 상관'이라는 반응에는 표지나 첫 본문 장에서 쉬운 말 한 줄로 답한다. 관세가 누구에게 붙는 세금인지, 한국 가게에 바로 닿는지를 적는다.",
-  "낯선 용어(300%, 중간선거, 24% 등)는 따로 용어 장을 만들지 말고, 처음 나오는 자리에서 바로 푼다.",
-  "코스피와 환율 같은 시세는 기준일과 함께 재료에 있는 숫자만 쓴다. 관세와의 인과 근거가 없으면 '원인은 확인 안 됨'을 한 번만 쓰고 반복하지 않는다.",
-  "관세가 환율과 수입 물가로 이어지는 길은 일반 원리로 쉽게 풀되, 구체 종목, ETF, 대출금리처럼 재료에 없는 것은 지어내지 않고 없다고 짧게 밝힌다.",
-  "'보도', '확정 아님' 같은 단서는 줄마다 붙이지 말고 꼭 필요한 한 곳에만 둔다."
+  "표지 첫 줄은 이미 일어난 일이나 큰 숫자를 단정형으로 쓴다. 전망이나 날짜 나열은 피한다.",
+  "'그래서 내 지갑에 뭐가 달라지나'는 앞쪽 장에서 한 줄로 답한다. 한국 가게나 물가에 바로 닿는 일인지 아닌지도 함께 쓴다.",
+  "낯선 용어는 따로 모으지 않고 처음 나오는 자리에서 바로 풀어 쓴다.",
+  "재료에 없는 업종, ETF, 대출금리 영향은 지어내지 않는다. 확인 안 됨은 한 곳에만 짧게 쓰고 장마다 반복하지 않는다.",
+  "시세 숫자는 기준일과 함께 두 개를 맞붙여 보여 준다. 사건보다 앞선 값이나 인과가 확인 안 된 값은 연결하지 않는다.",
+  "한 글에는 한 사건만 둔다. 모든 장이 그 사건을 한 걸음씩 따라가게 한다."
  ],
  "pairs": [
   {
