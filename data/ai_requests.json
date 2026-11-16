@@ -1,16 +1,5 @@
 [
  {
-  "id": "6c45be4fb3bf",
-  "job": "thpost",
-  "args": {
-   "idx": "1",
-   "styles": "ABC",
-   "slot": "11/02 15:35",
-   "rid": "nvidiaredo1"
-  },
-  "at": "2026-11-02T16:11:35+09:00"
- },
- {
   "id": "2ea2b85ae5e8",
   "job": "chart",
   "args": {
@@ -379,5 +368,11 @@
   "job": "daily",
   "args": {},
   "at": "2026-11-15T09:45:35+09:00"
+ },
+ {
+  "id": "fbbec8cf61ec",
+  "job": "daily",
+  "args": {},
+  "at": "2026-11-16T09:45:16+09:00"
  }
 ]
