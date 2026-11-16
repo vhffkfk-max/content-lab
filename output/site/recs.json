@@ -8,10 +8,10 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.72,
-  "kr_n": 491,
-  "foreign_avg": 2.49,
-  "foreign_n": 271
+  "kr_avg": 1.75,
+  "kr_n": 493,
+  "foreign_avg": 2.5,
+  "foreign_n": 274
  },
  {
   "rank": 2,
@@ -22,9 +22,9 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.3,
+  "kr_avg": 2.33,
   "kr_n": 57,
-  "foreign_avg": 1.77,
+  "foreign_avg": 1.75,
   "foreign_n": 73
  },
  {
@@ -36,9 +36,9 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 0.95,
+  "kr_avg": 0.98,
   "kr_n": 43,
-  "foreign_avg": 1.76,
+  "foreign_avg": 1.74,
   "foreign_n": 65
  },
  {
@@ -50,9 +50,9 @@
   "format": "릴스",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.0,
+  "kr_avg": 2.05,
   "kr_n": 81,
-  "foreign_avg": 2.19,
+  "foreign_avg": 2.16,
   "foreign_n": 23
  },
  {
@@ -66,8 +66,8 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 2.32,
   "kr_n": 43,
-  "foreign_avg": 1.79,
-  "foreign_n": 29
+  "foreign_avg": 1.77,
+  "foreign_n": 30
  },
  {
   "rank": 6,
@@ -78,13 +78,27 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.91,
+  "kr_avg": 1.95,
   "kr_n": 202,
-  "foreign_avg": 0.69,
+  "foreign_avg": 0.67,
   "foreign_n": 8
  },
  {
   "rank": 7,
+  "topic": "테슬라",
+  "kind": "국내·해외 모두 강세",
+  "confidence": "높음",
+  "title_idea": "\"테슬라, 이것만 알면 돼요\"",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "인용형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 2.96,
+  "kr_n": 38,
+  "foreign_avg": 2.59,
+  "foreign_n": 29
+ },
+ {
+  "rank": 8,
   "topic": "비트코인",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
@@ -94,21 +108,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 2.39,
   "kr_n": 13,
-  "foreign_avg": 1.9,
-  "foreign_n": 178
- },
- {
-  "rank": 8,
-  "topic": "테슬라",
-  "kind": "국내·해외 모두 강세",
-  "confidence": "높음",
-  "title_idea": "\"테슬라, 이것만 알면 돼요\"",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "인용형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 2.88,
-  "kr_n": 38,
-  "foreign_avg": 2.65,
-  "foreign_n": 28
+  "foreign_avg": 1.87,
+  "foreign_n": 179
  }
 ]
