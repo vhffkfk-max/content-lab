@@ -1,6 +1,20 @@
 [
  {
   "rank": 1,
+  "topic": "알트코인",
+  "kind": "해외 선행 주제 (선점 기회)",
+  "confidence": "높음",
+  "title_idea": "[오늘] 알트코인에 무슨 일이? 1분 요약",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "속보·뉴스형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 4.73,
+  "kr_n": 1,
+  "foreign_avg": 1.84,
+  "foreign_n": 53
+ },
+ {
+  "rank": 2,
   "topic": "AI·반도체",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
@@ -8,13 +22,13 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.78,
-  "kr_n": 547,
-  "foreign_avg": 2.54,
-  "foreign_n": 283
+  "kr_avg": 1.79,
+  "kr_n": 548,
+  "foreign_avg": 2.52,
+  "foreign_n": 286
  },
  {
-  "rank": 2,
+  "rank": 3,
   "topic": "정치·관세",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
@@ -22,24 +36,10 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.29,
-  "kr_n": 59,
-  "foreign_avg": 1.71,
-  "foreign_n": 77
- },
- {
-  "rank": 3,
-  "topic": "ETF·지수투자",
-  "kind": "해외 선행 주제 (선점 기회)",
-  "confidence": "높음",
-  "title_idea": "[오늘] ETF·지수투자에 무슨 일이? 1분 요약",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "속보·뉴스형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 0.98,
-  "kr_n": 45,
-  "foreign_avg": 1.76,
-  "foreign_n": 65
+  "kr_avg": 2.25,
+  "kr_n": 60,
+  "foreign_avg": 1.7,
+  "foreign_n": 78
  },
  {
   "rank": 4,
@@ -57,17 +57,17 @@
  },
  {
   "rank": 5,
-  "topic": "알트코인",
+  "topic": "ETF·지수투자",
   "kind": "해외 선행 주제 (선점 기회)",
   "confidence": "높음",
-  "title_idea": "[오늘] 알트코인에 무슨 일이? 1분 요약",
+  "title_idea": "[오늘] ETF·지수투자에 무슨 일이? 1분 요약",
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.7,
-  "kr_n": 1,
-  "foreign_avg": 1.84,
-  "foreign_n": 53
+  "kr_avg": 0.98,
+  "kr_n": 45,
+  "foreign_avg": 1.76,
+  "foreign_n": 65
  },
  {
   "rank": 6,
@@ -108,7 +108,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 2.24,
   "kr_n": 14,
-  "foreign_avg": 1.91,
-  "foreign_n": 182
+  "foreign_avg": 1.9,
+  "foreign_n": 183
  }
 ]
