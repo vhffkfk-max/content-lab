@@ -3397,450 +3397,6 @@
  ],
  "ideas": [
   {
-   "title": "액티브 ETF, 1000만원이 710만원으로",
-   "concept": "전문가에게 맡긴 1000만원이 한 달 새 710만원이 됐다는 사례를 '1000만원 → 710만원' 한 줄로 맞붙이고, 코스닥보다 더 빠졌다는 점을 짚는다. 특정 상품은 권하지 않고 보도 내용만 정리한다. (공식: 숫자는 둘을 맞붙여서)",
-   "why_now": "17시에 다음 뉴스에 올라온 새 기사이고 아직 다룬 적이 없다. 코스닥이 1달 -8.04%인 가운데 전문가 운용 상품이 더 빠졌다는 점이 개인 투자자의 관심을 끈다.",
-   "tag": "투자",
-   "sources": [
-    "https://v.daum.net/v/20261115170039858"
-   ],
-   "bg": "Korea stock market screen",
-   "bg_alt": "KOSDAQ trading board",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "맡긴 1000만원이\n한 달 새 **710만원**",
-     "number": "710만원",
-     "label": "기사가 짚은 액티브 ETF 사례",
-     "sub": "1000만원이 한 달 만에, 코스닥보다 더 빠졌다"
-    },
-    {
-     "type": "질문형",
-     "title": "전문가가 굴리는데\n코스닥보다 **더** 빠졌나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "운용 맡기면 낫다더니\n**액티브** ETF가\n코스닥보다 더 빠졌다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "bars"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "한 달 전 1000만원 기준, 단위 만원",
-     "bars": [
-      {
-       "label": "맡긴 돈",
-       "value": 1000
-      },
-      {
-       "label": "한 달 뒤",
-       "value": 710,
-       "hi": true
-      }
-     ]
-    }
-   },
-   "id": "20261115-1705-i1",
-   "created_at": "2026-11-15T17:05:41+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261115-1705-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261115-1705-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261115-1705-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261115-1705-i1/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261115-1705-i1/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261115-1705-i1/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261115-1705-i1/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261115-1705-i1/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261115-1705-i1/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261115-1705-i1/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261115-1705-i1/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261115-1705-i1/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "석유 최고가격제, 설까지 연장되나",
-   "concept": "풀면 물가가 뛰고 묶으면 재정 부담이 커지는 양자택일 구조를 주유소 가격표 한 장면으로 풀어, 내 기름값과 연결해 설명한다. (공식: 없음)",
-   "why_now": "동아일보와 뉴시스가 16:27에 최고가격제가 내년 설까지 이어질 수 있다고 보도했다. 호르무즈 불안으로 유가 걱정이 큰 시점이라 생활 물가와 바로 닿는다.",
-   "tag": "물가",
-   "sources": [
-    "https://www.donga.com/news/Economy/article/all/20261115/135027026/1",
-    "https://www.newsis.com/view/NISX20261012_0003821485"
-   ],
-   "bg": "gas station price sign",
-   "bg_alt": "oil refinery Korea",
-   "hooks": [
-    {
-     "type": "사건형",
-     "title": "석유 최고가격제가\n내년 설까지 **연장**될 수도",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "기름값 상한, 언제까지\n**묶어둘** 건가요",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "풀면 물가가 뛰고\n묶으면 **재정**이 샌다\n어느 쪽도 부담",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "editorial",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261115-1705-i2",
-   "created_at": "2026-11-15T17:05:41+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261115-1705-i2/1-editorial-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261115-1705-i2/1-editorial-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261115-1705-i2/1-editorial-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261115-1705-i2/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261115-1705-i2/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261115-1705-i2/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261115-1705-i2/2-editorial-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261115-1705-i2/2-editorial-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261115-1705-i2/2-editorial-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261115-1705-i2/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261115-1705-i2/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261115-1705-i2/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261115-1705-i2/3-editorial-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261115-1705-i2/3-editorial-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261115-1705-i2/3-editorial-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261115-1705-i2/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261115-1705-i2/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261115-1705-i2/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "회계사 시험 AI 안경 전수검사",
-   "concept": "금감원을 주인공으로 두고 회계사 2차 시험부터 AI 안경 전수검사를 한다는 발표, 靑 전수조사 지시, 산업인력공단의 세무사 부정행위자 고소 추진 순으로 한 걸음씩 풀어간다. 세무사 시험 수석 합격 건과는 별개의 대응이다. (공식: 한 주인공이 장마다 한 걸음씩)",
-   "why_now": "뉴시스, 조선비즈, 머니투데이 등 10곳이 다뤘다. 세무사 시험에서 회계사 시험으로 번졌고 금감원의 구체적 대응이 처음 나왔다. 靑도 16:50에 모든 국가자격시험 전수조사를 밝혔다.",
-   "tag": "시험",
-   "sources": [
-    "https://www.newsis.com/view/NISX20261115_0003868634",
-    "https://biz.chosun.com/stock/stock_general/2026/11/15/33TR43F2AVFJ7ADMTTDBDCH7DQ/",
-    "https://biz.chosun.com/policy/politics/president_office/2026/11/15/OJUWNTSRZFHIZN5NU7WZD7LKK4/"
-   ],
-   "bg": "smart glasses exam",
-   "bg_alt": "Financial Supervisory Service building",
-   "hooks": [
-    {
-     "type": "사건형",
-     "title": "금감원, 회계사 2차\n시험부터 **AI 안경**\n전수검사 한다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "세무사 다음은 회계사\nAI 안경 쓰고\n**시험** 봤나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "세무사 이어 회계사도\n**AI** 커닝 의혹\n금감원이 나섰다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/15",
-     "headlines": [
-      "금감원, 2차부터 AI 안경 전수검사",
-      "靑, 국가자격시험 전수조사",
-      "세무사 부정행위자 고소 추진"
-     ]
-    }
-   },
-   "id": "20261115-1705-i3",
-   "created_at": "2026-11-15T17:05:41+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261115-1705-i3/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261115-1705-i3/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261115-1705-i3/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261115-1705-i3/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261115-1705-i3/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261115-1705-i3/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261115-1705-i3/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261115-1705-i3/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261115-1705-i3/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261115-1705-i3/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261115-1705-i3/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261115-1705-i3/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261115-1705-i3/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261115-1705-i3/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261115-1705-i3/3-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261115-1705-i3/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261115-1705-i3/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261115-1705-i3/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "이번 주 수출 1조달러 돌파 전망",
    "concept": "증시는 빠지는 중인데 수출은 큰 숫자를 찍는 반대 방향 뉴스. 수출 1조달러와 ICT 수출 703억달러, 증가율 202%를 한 줄씩 보여 주고, 코스피 한 달 -4.75%와 맞붙여 반전을 만든다. 집계 기준과 날짜는 원문 확인 후 쓴다. (공식: 숫자는 둘을 맞붙여서)",
    "why_now": "한국경제가 17:51에 '이번주 수출 1조달러 넘는다'를 보도했고 매일경제는 ICT 수출 703억달러, 증가율 202% 최대를 전했다. 증시 급락과 빚투 뉴스 속에서 반대 방향의 큰 숫자다.",
@@ -9368,6 +8924,337 @@
      "form": "paper",
      "font": "gowun",
      "path": "20261116-1502-i3/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "코픽스 2년 8개월 만에 최고, 3.62%",
+   "concept": "10월 코픽스 3.62%, 두 달 연속 상승. 변동형 주담대 금리가 고정형을 역전했다는 보도를 앞세우고, 코픽스가 뭔지는 처음 나오는 자리에서 바로 풀어 쓴다. 내 대출이 코픽스 연동인지, 재산정일이 언제인지 확인하라는 한 줄로 마무리한다. 반영 시점은 은행마다 다르다는 점만 한 곳에 [확인]으로 적는다. (공식: 용어 대신 눈에 보이는 것으로)",
+   "why_now": "15:21 이후 6곳이 다룬 새 소식이고, 대출자에게 바로 닿는다. 오늘 증시 급락 기사에 가려 아직 나가지 않았다.",
+   "tag": "대출",
+   "sources": [
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4444983",
+    "https://www.mt.co.kr/finance/2026/11/16/2026111614543051204",
+    "https://v.daum.net/v/20261116155757878"
+   ],
+   "bg": "Bank of Korea building",
+   "bg_alt": "Seoul apartment complex",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "10월 코픽스\n2년 8개월 만의\n최고 **3.62%**",
+     "number": "3.62%",
+     "label": "10월 코픽스",
+     "sub": "2년 8개월 만에 최고"
+    },
+    {
+     "type": "질문형",
+     "title": "내 변동금리\n대출 이자는\n**언제** 오를까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "변동금리가\n고정금리를\n**역전**했다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261116-1601-i1",
+   "created_at": "2026-11-16T16:01:41+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261116-1601-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261116-1601-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261116-1601-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261116-1601-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261116-1601-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261116-1601-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261116-1601-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261116-1601-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261116-1601-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261116-1601-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261116-1601-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261116-1601-i1/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "증권사 랩 계좌, 내 주식이 팔릴 수도",
+   "concept": "금감원 안내를 중심으로, 랩 계좌에 주식을 맡기면 운용 판단에 따라 팔릴 수 있다는 점을 푼다. 한 종목에 90%를 넣은 계좌도 있었다는 사례를 보여 주고, 가입 전에 계약서의 운용한도를 확인하라는 한 줄로 끝낸다. 특정 종목이나 상품 권유는 하지 않는다. (공식: 없음)",
+   "why_now": "14:09에 7곳이 다룬 새 소식이다. 급락장에서 내 주식이 어떻게 운용되는지 궁금해질 때라 관심이 커질 내용이다.",
+   "tag": "투자자 유의",
+   "sources": [
+    "https://biz.chosun.com/stock/stock_general/2026/11/16/MQYTCN3DGUYTONZZMJSGIMRZMY/",
+    "https://www.fnnews.com/news/202611161307408074"
+   ],
+   "bg": "Financial Supervisory Service Korea",
+   "bg_alt": "stock trading screen",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "한 종목에\n**90%** 넣은\n랩 계좌도 있었다",
+     "number": "90%",
+     "label": "한 종목 투자 비중",
+     "sub": "금감원이 안내한 랩 계좌 사례"
+    },
+    {
+     "type": "질문형",
+     "title": "내가 맡긴 주식\n**누가** 팔\n수 있을까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "내 주식인데\n증권사 판단으로\n**팔릴 수도**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "editorial",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261116-1601-i2",
+   "created_at": "2026-11-16T16:01:41+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261116-1601-i2/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261116-1601-i2/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261116-1601-i2/1-editorial-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261116-1601-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261116-1601-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261116-1601-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261116-1601-i2/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261116-1601-i2/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261116-1601-i2/2-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261116-1601-i2/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261116-1601-i2/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261116-1601-i2/3-editorial-plex.jpg"
+    }
+   ]
+  },
+  {
+   "title": "토스, 디지털자산 시장 진출 보도",
+   "concept": "토스가 이더리움, 테더(USDT), USDC를 품는다는 보도를 한 걸음씩 따라간다. 오전의 토스뱅크 스테이블코인 해외송금 검증 소식과 이어 붙이고, 사용자가 많은 앱이라 코인 접근 문턱이 낮아질 수 있다는 점을 짚는다. 서비스 시작 시점과 방식은 확인 전이라 한 곳에만 [확인]으로 적는다. 매수 권유는 하지 않는다. (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "15:53에 3곳이 보도한 새 소식이고, 11:04에 보낸 토스뱅크 소식에 이어진다. 비트코인이 9000만원선 아래로 내려간 날이라 코인 관심이 크다.",
+   "tag": "핀테크",
+   "sources": [
+    "https://news.google.com/rss/articles/CBMiVkFVX3lxTE8yekRnZmdJeHB3aDNqalk1LWJQUlJxR2NTaXRxOFB5S3pSNkpaUm1uUldzSG9ZTVZia1c",
+    "https://news.google.com/rss/articles/CBMiakFVX3lxTE82MTQxakVkTklfMnJBaG5aSXVsbVViaEZ1SFZYZllYMkZ0NUtXWjdybGY0bnlDbGxvc3Z"
+   ],
+   "bg": "Toss app Viva Republica",
+   "bg_alt": "Toss Bank",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "국민 앱 토스가\n디지털자산\n**진출**을 본격화",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "토스로 코인\n접근 문턱이\n**낮아질까**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "비트코인은\n9000만원 아래로\n토스는 **진출**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "breaking"
+   ],
+   "extra": {},
+   "id": "20261116-1601-i3",
+   "created_at": "2026-11-16T16:01:41+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261116-1601-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261116-1601-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261116-1601-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261116-1601-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261116-1601-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261116-1601-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261116-1601-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261116-1601-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261116-1601-i3/3-news-myeongjo.jpg"
     }
    ]
   }
