@@ -9,8 +9,8 @@
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
   "kr_avg": 1.78,
-  "kr_n": 544,
-  "foreign_avg": 2.54,
+  "kr_n": 546,
+  "foreign_avg": 2.53,
   "foreign_n": 281
  },
  {
@@ -24,7 +24,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 2.29,
   "kr_n": 59,
-  "foreign_avg": 1.7,
+  "foreign_avg": 1.69,
   "foreign_n": 77
  },
  {
@@ -78,27 +78,13 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.92,
-  "kr_n": 208,
+  "kr_avg": 1.91,
+  "kr_n": 209,
   "foreign_avg": 0.69,
   "foreign_n": 8
  },
  {
   "rank": 7,
-  "topic": "비트코인",
-  "kind": "국내·해외 모두 강세",
-  "confidence": "높음",
-  "title_idea": "[오늘] 비트코인에 무슨 일이? 1분 요약",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "속보·뉴스형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 2.24,
-  "kr_n": 14,
-  "foreign_avg": 1.92,
-  "foreign_n": 181
- },
- {
-  "rank": 8,
   "topic": "테슬라",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
@@ -110,5 +96,19 @@
   "kr_n": 42,
   "foreign_avg": 2.68,
   "foreign_n": 29
+ },
+ {
+  "rank": 8,
+  "topic": "비트코인",
+  "kind": "국내·해외 모두 강세",
+  "confidence": "높음",
+  "title_idea": "[오늘] 비트코인에 무슨 일이? 1분 요약",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "속보·뉴스형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 2.24,
+  "kr_n": 14,
+  "foreign_avg": 1.92,
+  "foreign_n": 181
  }
 ]
