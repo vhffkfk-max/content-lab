@@ -9,8 +9,8 @@
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
   "kr_avg": 1.72,
-  "kr_n": 515,
-  "foreign_avg": 2.51,
+  "kr_n": 523,
+  "foreign_avg": 2.52,
   "foreign_n": 278
  },
  {
@@ -22,9 +22,9 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.31,
+  "kr_avg": 2.33,
   "kr_n": 58,
-  "foreign_avg": 1.75,
+  "foreign_avg": 1.76,
   "foreign_n": 73
  },
  {
@@ -36,9 +36,9 @@
   "format": "릴스",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.01,
+  "kr_avg": 2.02,
   "kr_n": 80,
-  "foreign_avg": 2.16,
+  "foreign_avg": 2.17,
   "foreign_n": 23
  },
  {
@@ -60,13 +60,13 @@
   "topic": "테슬라",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
-  "title_idea": "\"테슬라, 이것만 알면 돼요\"",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "인용형",
+  "title_idea": "테슬라, 한 줄 정리",
+  "format": "단일 이미지",
+  "hook": "짧은 한 줄",
   "slot": "새벽(0~6시)",
   "kr_avg": 2.95,
-  "kr_n": 39,
-  "foreign_avg": 2.62,
+  "kr_n": 40,
+  "foreign_avg": 2.64,
   "foreign_n": 29
  },
  {
@@ -78,9 +78,9 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.39,
+  "kr_avg": 2.4,
   "kr_n": 13,
-  "foreign_avg": 1.88,
+  "foreign_avg": 1.9,
   "foreign_n": 179
  },
  {
@@ -92,9 +92,9 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.93,
+  "kr_avg": 1.94,
   "kr_n": 203,
-  "foreign_avg": 0.67,
+  "foreign_avg": 0.68,
   "foreign_n": 8
  },
  {
@@ -106,9 +106,9 @@
   "format": "릴스",
   "hook": "질문형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.29,
-  "kr_n": 44,
-  "foreign_avg": 1.8,
+  "kr_avg": 2.25,
+  "kr_n": 45,
+  "foreign_avg": 1.83,
   "foreign_n": 30
  }
 ]
