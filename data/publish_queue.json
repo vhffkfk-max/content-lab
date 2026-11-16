@@ -3397,362 +3397,6 @@
  ],
  "ideas": [
   {
-   "title": "전월세 물가 3년 10개월 만에 최대폭",
-   "concept": "지난달 전월세 물가 1.4% 상승이라는 한 줄 사실에서 시작해, 월세, 전세로 사는 사람의 체감과 연결한다. 전세금 반환 걱정은 쓰레드 개인 의견이라 통계와 구분해 한 곳에만 쓴다. (공식: 없음)",
-   "why_now": "SBS Biz가 지난달 전월세 물가 1.4% 상승을 보도했다. 쓰레드에서 전세금 반환 글도 빠르게 퍼지고 있다. 이 주제는 아직 보내지 않았다.",
-   "tag": "부동산",
-   "sources": [
-    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008846774&plink=RSSLINK&cooper=RSSREADER",
-    "https://v.daum.net/v/20261115204509316"
-   ],
-   "bg": "Seoul apartment complex",
-   "bg_alt": "Korean apartment buildings",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "지난달 전월세\n물가가 **1.4%** 올라\n3년 10개월 만에 최대",
-     "number": "1.4%",
-     "label": "지난달 전월세 물가 상승률",
-     "sub": "3년 10개월 만에 가장 큰 폭"
-    },
-    {
-     "type": "질문형",
-     "title": "전월세 물가가\n3년 10개월 만에\n왜 **가장** 뛰었나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "증시가 빠진 달\n전월세 물가는\n**1.4%** 뛰었다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "editorial",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261115-2201-i1",
-   "created_at": "2026-11-15T22:01:36+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261115-2201-i1/1-editorial-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261115-2201-i1/1-editorial-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261115-2201-i1/1-editorial-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261115-2201-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261115-2201-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261115-2201-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261115-2201-i1/2-editorial-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261115-2201-i1/2-editorial-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261115-2201-i1/2-editorial-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261115-2201-i1/3-editorial-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261115-2201-i1/3-editorial-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261115-2201-i1/3-editorial-plex.jpg"
-    }
-   ]
-  },
-  {
-   "title": "반년 새 5600조원 빠진 데이터센터 주가",
-   "concept": "AI에 1조 달러를 쏟아붓는 한쪽과 주가 5600조원이 빠진 다른 쪽을 나란히 놓는다. 현대연구원의 2028년 경고를 더하고, 엔비디아 실적(17일)과 앤트로픽 상장을 다음 시험대로 둔다. 숫자 단위가 달라 맞붙임은 쓰지 않는다. (공식: 없음)",
-   "why_now": "뉴시스가 20:51에 전 세계 데이터센터 건설 관련 주가가 반년 새 5600조원 빠졌다고 보도했다. 엔비디아 실적과 앤트로픽 상장을 앞두고 AI 투자 과열 기사가 이어진다.",
-   "tag": "AI 투자",
-   "sources": [
-    "https://www.newsis.com/view/NISX20261115_0003868787",
-    "https://v.daum.net/v/20261115205357422"
-   ],
-   "bg": "Nvidia data center",
-   "bg_alt": "Data center servers",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "반년 새 전세계\n데이터센터 주가\n**5600조원** 빠졌다",
-     "number": "5600조원",
-     "label": "반년 새 데이터센터 관련 주가",
-     "sub": "전 세계 기준, 뉴시스 보도"
-    },
-    {
-     "type": "질문형",
-     "title": "AI 붐은 끝났나\n5600조원 빠진\n**데이터센터** 주가",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "1조 달러를 쏟는\n와중에 주가는\n**5600조원** 빠졌다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/15",
-     "headlines": [
-      "반년 새 5600조원 빠졌다",
-      "AI에는 1조 달러 투자 지속",
-      "현대연구원, 2028년 경고"
-     ]
-    }
-   },
-   "id": "20261115-2201-i2",
-   "created_at": "2026-11-15T22:01:36+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261115-2201-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261115-2201-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261115-2201-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261115-2201-i2/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261115-2201-i2/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261115-2201-i2/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261115-2201-i2/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261115-2201-i2/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261115-2201-i2/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261115-2201-i2/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261115-2201-i2/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261115-2201-i2/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "9월 경상수지 614.6억 달러 흑자",
-   "concept": "사상 최대 흑자 속보를 숫자로 먼저 보여 주고, 수출은 뜨겁고 내수는 차갑다는 흐름으로 이어간다. 세부 내역은 한국은행 원문 확인 전이라 단정하지 않는다. (공식: 없음)",
-   "why_now": "21:00에 올라온 새 소식으로, 3개월 만에 사상 최대 기록을 다시 썼다는 보도다. 앞서 다룬 반도체 수출 소식과 이어지지만 경상수지 자체는 아직 다루지 않았다.",
-   "tag": "경제지표",
-   "sources": [
-    "https://news.google.com/rss/articles/CBMiQ0FVX3lxTE56TS1mN2I2WEZwZG94cDFwb2l1NnFyTUczMk1NdGkyUjRnRlRuNEt0TmM1UXBZWmVNVGd"
-   ],
-   "bg": "Korea export port containers",
-   "bg_alt": "Bank of Korea building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "9월 경상수지\n**614.6억달러** 흑자\n3개월 만에 최고",
-     "number": "614.6억달러",
-     "label": "9월 경상수지 흑자",
-     "sub": "3개월 만에 사상 최대 기록 경신"
-    },
-    {
-     "type": "질문형",
-     "title": "흑자는 사상 최대\n내 **지갑**도\n두둑해졌을까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "수출은 뜨겁고\n내수는 **차갑다**\n숫자로 또 확인",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261115-2201-i3",
-   "created_at": "2026-11-15T22:01:36+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261115-2201-i3/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261115-2201-i3/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261115-2201-i3/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261115-2201-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261115-2201-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261115-2201-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261115-2201-i3/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261115-2201-i3/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261115-2201-i3/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261115-2201-i3/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261115-2201-i3/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261115-2201-i3/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
    "title": "9천피 때 발행한 ELS 94개 12월 만기",
    "concept": "코스피 9천 근처에서 발행된 ELS 94개가 12월부터 만기를 맞는다는 한겨레 보도를 한 사건으로 따라간다. ELS가 무엇이고 만기 때 어떤 조건이 중요한지 풀고, 내 상품의 기준 가격과 만기일부터 확인하라는 한 줄로 닫는다. 손실 구간 여부는 상품별 조건이라 단정하지 않는다. (공식: 끝 장은 닫힌 결론 한 줄)",
    "why_now": "한겨레가 어젯밤 'ELS 악몽 또…9천피때 발행 상품 94개, 내달부터 만기'를 보도했다. 비트코인과 금, 은이 함께 내리고 AI주도 흔들려 개인 투자자의 불안이 커진 시점이다.",
@@ -9246,6 +8890,372 @@
      "form": "paper",
      "font": "gowun",
      "path": "20261116-2101-i3/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "대만 증시 6.03% 급락, 역대 2번째",
+   "concept": "엔비디아 불안이 아시아 반도체 공급망으로 번진 한 장면을 대만 증시 하나에 맞춰 풀고, 같은 날 코스피 -3.59%, 코스닥 -4.86%와 낙폭을 맞붙여 비교한다 (공식: 용어 대신 눈에 보이는 것으로)",
+   "why_now": "뉴시스가 21:15에 엔비디아 불안에 대만 증시가 역대 2번째로 크게 급락 마감했다고 전했다. 앞서 다룬 글감에는 대만 얘기가 없고, 코스피 급락과 연결해 볼 수 있다.",
+   "tag": "증시",
+   "sources": [
+    "https://www.newsis.com/view/NISX20261116_0003870540"
+   ],
+   "bg": "Jensen Huang Nvidia",
+   "bg_alt": "Taiwan Stock Exchange building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "대만 증시 하루에\n**6.03%** 폭락\n역대 두 번째 낙폭",
+     "number": "6.03%",
+     "label": "대만 증시 하루 낙폭",
+     "sub": "엔비디아 불안 속 역대 2번째 급락 마감"
+    },
+    {
+     "type": "질문형",
+     "title": "엔비디아 불안이\n**대만**까지 번졌나\n증시 6.03% 급락",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "코스피 -3.59%인데\n대만은 **-6.03%**\n더 깊이 빠졌다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "bars"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "11/16 하루 등락률 낙폭(%)",
+     "bars": [
+      {
+       "label": "대만",
+       "value": 6.03,
+       "hi": true
+      },
+      {
+       "label": "코스닥",
+       "value": 4.86
+      },
+      {
+       "label": "코스피",
+       "value": 3.59
+      }
+     ]
+    }
+   },
+   "id": "20261116-2201-i1",
+   "created_at": "2026-11-16T22:01:42+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261116-2201-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261116-2201-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261116-2201-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261116-2201-i1/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261116-2201-i1/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261116-2201-i1/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261116-2201-i1/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261116-2201-i1/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261116-2201-i1/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261116-2201-i1/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261116-2201-i1/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261116-2201-i1/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "트럼프도 엔비디아 주주, 최대 6200만달러",
+   "concept": "대통령의 엔비디아 보유 소식을 보도 그대로 전하고, 이해충돌 논란 가능성과 한국 반도체 투자자에게 닿는 정치 변수를 한 줄로 풀어 준다. 보유액은 최대 범위 추정치임을 한 곳에만 밝힌다 (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "이데일리와 인베스팅닷컴이 21:25에 전했고, 워싱턴포스트는 스캔들 전 보유액이 늘었다고 보도했다. 엔비디아 CEO 교체가 오늘 시장의 중심이라 관심이 높다.",
+   "tag": "엔비디아",
+   "sources": [
+    "http://www.edaily.co.kr/news/newspath.asp?newsid=03991766645646376",
+    "https://kr.investing.com/news/stock-market-news/article-2177365"
+   ],
+   "bg": "Donald Trump",
+   "bg_alt": "Nvidia headquarters",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "트럼프 대통령이\n엔비디아 주식\n최대 **6200만달러**",
+     "number": "6200만달러",
+     "label": "트럼프 엔비디아 보유액(8월 말, 최대)",
+     "sub": "워싱턴포스트 보도, 최대 범위 추정치"
+    },
+    {
+     "type": "질문형",
+     "title": "대통령이 쥔 종목\n엔비디아 스캔들 속\n**이해충돌** 논란 번질까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "스캔들 터지기 전\n트럼프 보유액은\n2년 전보다 **늘었다**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261116-2201-i2",
+   "created_at": "2026-11-16T22:01:42+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261116-2201-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261116-2201-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261116-2201-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261116-2201-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261116-2201-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261116-2201-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261116-2201-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261116-2201-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261116-2201-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261116-2201-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261116-2201-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261116-2201-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "주담대 변동금리 최고 6.51%, 인상 경고도",
+   "concept": "도이체방크의 인상 위험 경고와 美 빅스텝 거론, 한국의 코픽스 2년 8개월 만의 최고와 17일부터 오르는 주담대 변동금리를 한 흐름으로 묶어 내 대출 확인으로 끝낸다. 은행별 금리는 상품마다 다르다고 한 곳에만 쓴다 (공식: 끝 장은 닫힌 결론 한 줄)",
+   "why_now": "도이체방크 경고(20:33), 이데일리 빅스텝 가능성(20:50), 17일부터 적용되는 주담대 변동금리 최고 연 6.51% 보도가 이어졌다. 6.51%와 인상 경고는 아직 다루지 않은 새 정보다.",
+   "tag": "금리",
+   "sources": [
+    "https://v.daum.net/v/20261116205028108",
+    "https://kr.investing.com/news/stock-market-news/article-2177233"
+   ],
+   "bg": "Kevin Warsh Fed",
+   "bg_alt": "Federal Reserve building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "주담대 변동금리\n17일부터 최고\n연 **6.51%**",
+     "number": "6.51%",
+     "label": "주담대 변동금리 최고",
+     "sub": "17일부터 주요 은행 적용"
+    },
+    {
+     "type": "질문형",
+     "title": "금리 인하 아닌\n**인상** 위험 경고가\n도이체방크가 경고",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "코픽스 2년 8개월\n만에 최고인데\n미국은 **빅스텝** 거론",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "editorial",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261116-2201-i3",
+   "created_at": "2026-11-16T22:01:42+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261116-2201-i3/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261116-2201-i3/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261116-2201-i3/1-editorial-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261116-2201-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261116-2201-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261116-2201-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261116-2201-i3/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261116-2201-i3/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261116-2201-i3/2-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261116-2201-i3/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261116-2201-i3/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261116-2201-i3/3-editorial-plex.jpg"
     }
    ]
   }
