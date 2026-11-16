@@ -24,8 +24,8 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 1.79,
   "kr_n": 548,
-  "foreign_avg": 2.5,
-  "foreign_n": 287
+  "foreign_avg": 2.49,
+  "foreign_n": 289
  },
  {
   "rank": 3,
@@ -38,8 +38,8 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 2.25,
   "kr_n": 60,
-  "foreign_avg": 1.7,
-  "foreign_n": 79
+  "foreign_avg": 1.69,
+  "foreign_n": 80
  },
  {
   "rank": 4,
@@ -66,25 +66,11 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 2.02,
   "kr_n": 80,
-  "foreign_avg": 2.12,
-  "foreign_n": 24
+  "foreign_avg": 2.05,
+  "foreign_n": 25
  },
  {
   "rank": 6,
-  "topic": "국내 대형주",
-  "kind": "국내 검증 주제",
-  "confidence": "높음",
-  "title_idea": "숫자 하나로 보는 국내 대형주",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "숫자 강조형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 1.91,
-  "kr_n": 209,
-  "foreign_avg": 0.68,
-  "foreign_n": 8
- },
- {
-  "rank": 7,
   "topic": "테슬라",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
@@ -98,6 +84,20 @@
   "foreign_n": 29
  },
  {
+  "rank": 7,
+  "topic": "국내 대형주",
+  "kind": "국내 검증 주제",
+  "confidence": "높음",
+  "title_idea": "숫자 하나로 보는 국내 대형주",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "숫자 강조형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 1.91,
+  "kr_n": 209,
+  "foreign_avg": 0.68,
+  "foreign_n": 8
+ },
+ {
   "rank": 8,
   "topic": "비트코인",
   "kind": "국내·해외 모두 강세",
@@ -108,7 +108,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 2.24,
   "kr_n": 14,
-  "foreign_avg": 1.88,
-  "foreign_n": 185
+  "foreign_avg": 1.87,
+  "foreign_n": 187
  }
 ]
