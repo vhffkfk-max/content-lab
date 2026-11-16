@@ -3397,363 +3397,6 @@
  ],
  "ideas": [
   {
-   "title": "연준이 AI 거품 경고를 꺼냈다",
-   "concept": "연준이 AI 거품과 순환금융을 위험 요인으로 꼽았다는 사건 하나로 시작해, 부채 3년 새 5배, 위험 3조달러, 엔비디아 실적과 한국 반도체 영향 순으로 한 걸음씩 푼다. (공식: 한 주인공이 장마다 한 걸음씩)",
-   "why_now": "오늘 아침 09:25~09:30에 조선비즈, 디지털데일리, SBS Biz가 연달아 보도한 새 소식이고 아직 보내지 않았습니다. 이번 주 엔비디아 실적 발표를 앞두고 있어 시의성이 큽니다.",
-   "tag": "AI 거품",
-   "sources": [
-    "https://biz.chosun.com/international/international_general/2026/11/15/FZNL6GCNZRGQ5IYCS4CJDRN3IM/",
-    "https://v.daum.net/v/20261115093002804",
-    "https://v.daum.net/v/20261115093039821"
-   ],
-   "bg": "Federal Reserve building",
-   "bg_alt": "Nvidia data center",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "연준이 AI 부채 위험을\n**3조달러**로 꼽았다",
-     "number": "3조달러",
-     "label": "연준이 짚은 AI 관련 부채 위험",
-     "sub": "데이터센터 등 부채 발행액은 3년 새 5배 (보도 기준)"
-    },
-    {
-     "type": "질문형",
-     "title": "연준이 AI 거품을\n직접 꺼냈다, 이번 주\n**엔비디아**는 버틸까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "AI 기업끼리 돈 돌리는\n**순환금융**을 연준이\n위험 요인으로 꼽았다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261115-1001-i1",
-   "created_at": "2026-11-15T10:01:34+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261115-1001-i1/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261115-1001-i1/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261115-1001-i1/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261115-1001-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261115-1001-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261115-1001-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261115-1001-i1/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261115-1001-i1/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261115-1001-i1/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261115-1001-i1/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261115-1001-i1/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261115-1001-i1/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "퇴직연금 DC형 수익률 53%에서 14%대로",
-   "concept": "증시 급락 한 번에 DC형 수익률이 53%에서 14%대로 내려앉은 대비를 보여주고, 전환 후회와 진작 할걸 의견이 갈리는 점, 지금 확인할 것(상품 구성, 원리금보장 비중, 수수료)으로 풀되 매매 권유는 하지 않는다. (공식: 숫자는 둘을 맞붙여서)",
-   "why_now": "08:43 보도(3곳)에 이어 06:06 전환 후회 vs 진작 할걸 기사도 나와 노후자금 걱정이 커진 시점이고, 아직 보내지 않은 주제입니다.",
-   "tag": "퇴직연금",
-   "sources": [
-    "https://v.daum.net/v/20261115083635901",
-    "https://v.daum.net/v/20261115060632502",
-    "https://www.yna.co.kr/view/AKR20261113183400008"
-   ],
-   "bg": "Korea retirement pension",
-   "bg_alt": "KOSPI stock board",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "DC형 퇴직연금 수익률이\n53%에서 **14%대**로",
-     "number": "14%대",
-     "label": "DC형 퇴직연금 수익률, 이전 53%",
-     "sub": "수익률 기준 시점과 대상은 원문 확인"
-    },
-    {
-     "type": "질문형",
-     "title": "내 퇴직연금 수익률은\n증시 급락에 53%에서\n**14%대**로 내려앉았나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "DC형 전환 후회냐\n진작 할걸이냐\n의견이 **갈린다**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bars",
-    "editorial"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "DC형 퇴직연금 수익률, % (기준 시점은 원문 확인)",
-     "bars": [
-      {
-       "label": "이전",
-       "value": 53
-      },
-      {
-       "label": "지금",
-       "value": 14,
-       "hi": true
-      }
-     ]
-    }
-   },
-   "id": "20261115-1001-i2",
-   "created_at": "2026-11-15T10:01:34+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261115-1001-i2/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261115-1001-i2/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261115-1001-i2/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261115-1001-i2/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261115-1001-i2/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261115-1001-i2/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261115-1001-i2/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261115-1001-i2/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261115-1001-i2/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "빚투 잔액 30%가 삼전, 닉스에 쏠렸다",
-   "concept": "빚투 잔액의 30%가 삼성전자와 SK하이닉스에 몰렸다는 사실에서 시작해, 마통 4년 3개월 만의 최대, 주가 급락 시 반대매매 위험, 금리 인상 발언 순으로 이어 내 빚 규모와 금리 부담 점검으로 마무리한다. (공식: 없음)",
-   "why_now": "서울경제, 문화일보, SBS Biz가 08:11~09:18에 연달아 보도했고 연합과 한경은 마통이 4년 3개월 만에 최대라고 전했습니다. 코스피 출렁임과 금리 인상 우려가 겹친 아침입니다.",
-   "tag": "빚투",
-   "sources": [
-    "https://v.daum.net/v/20261115081711688",
-    "https://v.daum.net/v/20261115081142640",
-    "https://www.yna.co.kr/view/AKR20261114040800002"
-   ],
-   "bg": "Samsung Electronics SK Hynix",
-   "bg_alt": "Samsung Electronics headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "빚투 잔액의 **30%**가\n삼전, 닉스에 쏠렸다",
-     "number": "30%",
-     "label": "빚투 잔액 중 삼성전자와 SK하이닉스 비중",
-     "sub": "문화일보 보도 기준"
-    },
-    {
-     "type": "질문형",
-     "title": "마통 4년 3개월 만에\n최대인데 빚투는\n왜 **삼전닉스**일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "주가는 출렁이는데\n빚투는 **삼전닉스**로 쏠렸다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/15",
-     "headlines": [
-      "빚투 30%, 삼전 닉스 쏠림",
-      "마통 4년 3개월 만에 최대",
-      "연준 인사들 금리 인상 언급"
-     ]
-    }
-   },
-   "id": "20261115-1001-i3",
-   "created_at": "2026-11-15T10:01:34+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261115-1001-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261115-1001-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261115-1001-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261115-1001-i3/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261115-1001-i3/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261115-1001-i3/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261115-1001-i3/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261115-1001-i3/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261115-1001-i3/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261115-1001-i3/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261115-1001-i3/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261115-1001-i3/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "호르무즈 유조선 3척 화재, IRGC 기뢰 주장",
    "concept": "이란 혁명수비대가 유조선 3척이 기뢰를 건드려 불이 났다고 주장했다는 사건 하나만 건다. 주장과 확인된 사실을 구분하고, 호르무즈가 유가와 환율에 왜 중요한지 쉬운 말로 한 줄 푼다. (공식: 날짜, 모음 라벨 표지는 피하기)",
    "why_now": "10:29 조선비즈가 한국어판과 일본어판으로 동시에 전한 새 사건이다. 호르무즈는 원유 수송의 핵심 길목이라 유가와 원/달러 환율에 바로 닿는다.",
@@ -9390,6 +9033,400 @@
      "form": "breaking",
      "font": "dohyeon",
      "path": "20261116-0805-i3/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "삼성바이오 유증 2.7조에 증거금 11.4조",
+   "concept": "모집액 2.7조 원과 청약증거금 11.4조 원을 나란히 붙여 보여 주는 속보. 청약 경쟁률과 신주 상장일은 확인 후에만 추가한다. (공식: 숫자는 둘을 맞붙여서)",
+   "why_now": "오늘 08:31 보도로 10곳이 다룬 새 소식이고, 아직 다루지 않은 주제다. 청약증거금 11.4조 원은 역대 최대 규모로 보도됐다.",
+   "tag": "기업",
+   "sources": [
+    "https://www.mt.co.kr/thebio/2026/11/16/2026111608263796946",
+    "https://biz.chosun.com/science-chosun/bio/2026/11/16/7JO3S2RXHBD5DDG7WUDHLX3US4/"
+   ],
+   "bg": "Samsung Biologics Incheon",
+   "bg_alt": "Samsung Biologics plant",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "삼성바이오 유증\n2.7조 모집에\n**11.4조**가 몰렸다",
+     "number": "11.4조원",
+     "label": "청약증거금, 역대 최대",
+     "sub": "유상증자 모집액은 2.7조원"
+    },
+    {
+     "type": "질문형",
+     "title": "삼성바이오 유증에\n모집액보다 큰 돈이\n**어떻게** 몰렸나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "2.7조 유증인데\n증거금은 11.4조\n**역대 최대**였다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261116-0902-i1",
+   "created_at": "2026-11-16T09:02:44+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261116-0902-i1/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261116-0902-i1/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261116-0902-i1/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261116-0902-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261116-0902-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261116-0902-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261116-0902-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261116-0902-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261116-0902-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261116-0902-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261116-0902-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261116-0902-i1/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "4인 김장비 28만 8500원, 2020년대 최저",
+   "concept": "배춧값이 3분의 1 수준으로 내린 덕에 4인 가족 김장비가 내려온 소식을 장바구니 눈높이로 푼다. 지난해와 평년 대비 하락폭은 원문 확인 후에만 쓴다. (공식: 없음)",
+   "why_now": "08:48 동아일보, 뉴시스, 중앙일보 등 5곳이 다뤘다. 김장철을 앞두고 바로 체감되는 물가 소식이다.",
+   "tag": "물가",
+   "sources": [
+    "https://www.donga.com/news/Economy/article/all/20261116/135029558/1",
+    "https://www.newsis.com/view/NISX20261116_0003868954"
+   ],
+   "bg": "kimchi making cabbage",
+   "bg_alt": "napa cabbage market",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "4인 가족 김장비\n28만 8500원\n**2020년대 최저**",
+     "number": "28만 8500원",
+     "label": "4인 가족 김장비",
+     "sub": "2020년대 들어 가장 낮은 수준"
+    },
+    {
+     "type": "질문형",
+     "title": "올해 김장비 최저\n직접 담글까\n**사 먹을까**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "배춧값이 3분의 1로\n내려앉으면서\n**김장비**도 내려왔다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "editorial",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261116-0902-i2",
+   "created_at": "2026-11-16T09:02:44+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261116-0902-i2/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261116-0902-i2/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261116-0902-i2/1-editorial-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261116-0902-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261116-0902-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261116-0902-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261116-0902-i2/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261116-0902-i2/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261116-0902-i2/2-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261116-0902-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261116-0902-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261116-0902-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261116-0902-i2/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261116-0902-i2/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261116-0902-i2/3-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261116-0902-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261116-0902-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261116-0902-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "삼성전자, 하이닉스에 빚투 7조 육박",
+   "concept": "엔비디아 실적 주간을 앞두고 두 종목에 쏠린 신용 잔고와 마이너스통장 잔액을 한 사건으로 정리한다. 빚으로 산 주식은 주가가 빠지면 손실이 빨리 커진다는 점과, 내 대출 규모부터 점검하자는 내용으로 닫는다. (공식: 끝 장은 닫힌 결론 한 줄)",
+   "why_now": "파이낸셜뉴스, MBC, 세계일보가 07시 전후에 같은 쏠림을 다뤘다. 이번 주 엔비디아 실적과 앤트로픽 상장을 앞두고 있다.",
+   "tag": "증시",
+   "sources": [
+    "https://v.daum.net/v/20261116070841656",
+    "https://v.daum.net/v/20261116070710629",
+    "https://v.daum.net/v/20261116070240516"
+   ],
+   "bg": "Samsung Electronics Seoul",
+   "bg_alt": "SK hynix headquarters",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "삼성전자, 하이닉스에\n쌓인 빚투가\n**7조** 육박했다",
+     "number": "7조원",
+     "label": "삼성전자, SK하이닉스 신용잔고",
+     "sub": "마통 잔액도 4년 3개월 만에 최대"
+    },
+    {
+     "type": "질문형",
+     "title": "마통 잔액 4년 3개월\n만에 최대 수준\n**빚**은 어디로 갔나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "실적 발표 앞두고\n삼성전자, 하이닉스에\n**빚투** 7조 쏠렸다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/16",
+     "headlines": [
+      "삼성전자, 하이닉스 빚투 7조 육박",
+      "마통 잔액 4년 3개월 만에 최대",
+      "이번 주 엔비디아 실적 발표"
+     ]
+    }
+   },
+   "id": "20261116-0902-i3",
+   "created_at": "2026-11-16T09:02:44+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261116-0902-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261116-0902-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261116-0902-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261116-0902-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261116-0902-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261116-0902-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261116-0902-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261116-0902-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261116-0902-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261116-0902-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261116-0902-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261116-0902-i3/3-paper-gowun.jpg"
     }
    ]
   }
