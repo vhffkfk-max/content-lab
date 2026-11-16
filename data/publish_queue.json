@@ -3397,350 +3397,6 @@
  ],
  "ideas": [
   {
-   "title": "이번 주 수출 1조달러 돌파 전망",
-   "concept": "증시는 빠지는 중인데 수출은 큰 숫자를 찍는 반대 방향 뉴스. 수출 1조달러와 ICT 수출 703억달러, 증가율 202%를 한 줄씩 보여 주고, 코스피 한 달 -4.75%와 맞붙여 반전을 만든다. 집계 기준과 날짜는 원문 확인 후 쓴다. (공식: 숫자는 둘을 맞붙여서)",
-   "why_now": "한국경제가 17:51에 '이번주 수출 1조달러 넘는다'를 보도했고 매일경제는 ICT 수출 703억달러, 증가율 202% 최대를 전했다. 증시 급락과 빚투 뉴스 속에서 반대 방향의 큰 숫자다.",
-   "tag": "수출",
-   "sources": [
-    "https://v.daum.net/v/20261115175142237",
-    "https://www.mk.co.kr/news/economy/12209425"
-   ],
-   "bg": "Korea container port exports",
-   "bg_alt": "Samsung semiconductor plant",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "이번 주 한국 수출이\n**1조달러**를 넘는다",
-     "number": "1조달러",
-     "label": "이번 주 한국 연간 수출 전망",
-     "sub": "한국경제 보도, 집계 기준은 원문 확인"
-    },
-    {
-     "type": "질문형",
-     "title": "코스피는 빠지는데\n수출은 어떻게\n**1조달러**를 넘나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "ICT 수출 703억달러\n증가율 **202%**, 역대 최대\n그런데 주가는 조정",
-     "number": "202%",
-     "label": "ICT 수출 증가율",
-     "sub": "매일경제 보도, 기간은 원문 확인"
-    }
-   ],
-   "forms": [
-    "bignum",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/15",
-     "headlines": [
-      "이번 주 수출 1조달러 넘을 전망",
-      "ICT 수출 703억달러 기록",
-      "ICT 수출 증가율 202% 최대"
-     ]
-    }
-   },
-   "id": "20261115-1805-i1",
-   "created_at": "2026-11-15T18:05:48+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261115-1805-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261115-1805-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261115-1805-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261115-1805-i1/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261115-1805-i1/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261115-1805-i1/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261115-1805-i1/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261115-1805-i1/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261115-1805-i1/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261115-1805-i1/3-bignum-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261115-1805-i1/3-bignum-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261115-1805-i1/3-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261115-1805-i1/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261115-1805-i1/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261115-1805-i1/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "엔비디아 주요 투자자, 젠슨 황 복귀 요구",
-   "concept": "엔비디아 이사회를 주인공으로 두고 청원에서 투자자의 공식 압박으로 넘어온 흐름을 한 걸음씩 푼다. 투자자 요구, 박현주 회장의 청원 동참, 폭언 등 경영 논란으로 의견이 갈린다는 보도, 확인된 것과 아직 모르는 것 순서로 간다. 투자 권유는 하지 않는다. (공식: 한 주인공이 장마다 한 걸음씩)",
-   "why_now": "16:44 연합인포맥스 등 4곳이 주요 투자자들의 이사회 복귀 요구를 보도했고, 17:17에는 박현주 미래에셋 회장의 청원 동참 소식이 나왔다. 이전 카드뉴스는 청원과 트럼프 발언까지였고 투자자의 공식 압박은 새 전개다.",
-   "tag": "엔비디아",
-   "sources": [
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4444823",
-    "https://www.mt.co.kr/stock/2026/11/15/2026111516504054421",
-    "https://v.daum.net/v/20261115175957423"
-   ],
-   "bg": "Jensen Huang",
-   "bg_alt": "Nvidia headquarters Santa Clara",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "엔비디아 주요 투자자\n이사회에 공식 요구\n**젠슨 황** 복귀시켜라",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "엔비디아 이사회는\n**젠슨 황**을\n다시 부를까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "폭언 논란 속에서도\n투자자들은\n**젠슨 황** 복귀 요구",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "breaking"
-   ],
-   "extra": {},
-   "id": "20261115-1805-i2",
-   "created_at": "2026-11-15T18:05:48+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261115-1805-i2/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261115-1805-i2/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261115-1805-i2/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261115-1805-i2/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261115-1805-i2/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261115-1805-i2/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261115-1805-i2/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261115-1805-i2/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261115-1805-i2/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "코스피 고점에 팔린 ELS, 다음 달 만기",
-   "concept": "ELS를 '지수가 기준선 아래로 내려가면 손실이 날 수 있는 상품'이라고 처음 나오는 자리에서 쉽게 푼다. 지수가 높을 때 발행된 상품은 기준선도 높게 잡혀 있다는 점을 한 줄 비교로 보여 준다. 구체 규모는 기사 확인 후 쓰고, 내 ELS 만기일과 기준 지수 확인으로 마무리한다. (공식: 용어 대신 눈에 보이는 것으로)",
-   "why_now": "뉴시스와 조선비즈 등 3곳이 14:40에 다뤘다. 증시 급락과 퇴직연금 수익률 하락 보도에 이어지는 개인 투자자 불안 소재이고 아직 보낸 적이 없다.",
-   "tag": "투자자 불안",
-   "sources": [
-    "https://www.newsis.com/view/NISX20261115_0003868509"
-   ],
-   "bg": "Korea stock exchange KOSPI",
-   "bg_alt": "Seoul Yeouido financial district",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "코스피 고점에 팔린\n**ELS** 만기가\n다음 달부터 옵니다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "내 ELS 기준 지수\n지금 코스피와\n**얼마나** 차이 날까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "지수가 높을 때\n발행된 ELS는\n기준선도 **높습니다**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "editorial",
-    "list"
-   ],
-   "extra": {
-    "list": {
-     "sub": "ELS 만기 전에 확인할 것",
-     "count": 3
-    }
-   },
-   "id": "20261115-1805-i3",
-   "created_at": "2026-11-15T18:05:48+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "list",
-     "font": "noto",
-     "path": "20261115-1805-i3/1-list-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "list",
-     "font": "black",
-     "path": "20261115-1805-i3/1-list-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "list",
-     "font": "plex",
-     "path": "20261115-1805-i3/1-list-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "list",
-     "font": "noto",
-     "path": "20261115-1805-i3/2-list-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "list",
-     "font": "black",
-     "path": "20261115-1805-i3/2-list-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "list",
-     "font": "plex",
-     "path": "20261115-1805-i3/2-list-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "list",
-     "font": "noto",
-     "path": "20261115-1805-i3/3-list-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "list",
-     "font": "black",
-     "path": "20261115-1805-i3/3-list-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "list",
-     "font": "plex",
-     "path": "20261115-1805-i3/3-list-plex.jpg"
-    }
-   ]
-  },
-  {
    "title": "10년 고정금리 주담대 압박",
    "concept": "은행들이 10년 고정금리 주담대를 만들라는 압박을 받고 있다는 초기 보도를 다룬다. 쉽게 말해 이자가 몇 %로 고정될지 미리 아는 상품이라고 한 줄로 풀고, 시작 금리가 변동형보다 높을 수 있다는 점과 내 대출이 고정인지 변동인지 확인하라는 안내로 마무리한다. 누가 압박했는지와 출시 시점은 확인 전이라고 한 번만 밝힌다. (공식: 용어 대신 눈에 보이는 것으로)",
    "why_now": "18:57 파이낸셜뉴스가 보도한 초기 소식이다. 전월세 물가 상승과 대출 급증 이슈와 이어지고 아직 보낸 적 없는 주제다.",
@@ -9255,6 +8911,453 @@
      "form": "news",
      "font": "myeongjo",
      "path": "20261116-1601-i3/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "서울 평균 전셋값 사상 첫 5억 돌파",
+   "concept": "집값 상승폭은 석 달째 둔화인데 전셋값은 5억을 넘었다는 엇갈림을 보도 기준으로 풀고, 전세 구하는 사람이 보증금과 이자 부담을 함께 따져야 한다는 점으로 마무리. 정확한 수치와 기준 시점은 원문 확인 후 기재. (공식: 가운데 한 번 뒤집기)",
+   "why_now": "17시 무렵 '서울 평균 전셋값 사상 첫 5억 넘었다' 보도가 여러 곳에서 나왔습니다. 앞서 보낸 글은 집값 둔화만 다뤄 전셋값은 비어 있습니다.",
+   "tag": "부동산",
+   "sources": [
+    "https://biz.chosun.com/real_estate/real_estate_general/2026/11/16/HEQESDT6XVGSFNGHC2Q677VH5Y/",
+    "https://v.daum.net/v/20261116173039081"
+   ],
+   "bg": "Seoul apartment complex",
+   "bg_alt": "Seoul apartment buildings",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "서울 평균 전셋값이\n사상 처음 **5억** 넘었다",
+     "number": "5억원",
+     "label": "서울 평균 전셋값",
+     "sub": "사상 처음 넘어선 금액"
+    },
+    {
+     "type": "질문형",
+     "title": "집값 상승폭은 석 달째 둔화\n전셋값은 왜 **5억** 넘었나",
+     "number": "5억원",
+     "label": "서울 평균 전셋값",
+     "sub": "집값과 전세가 다른 방향"
+    },
+    {
+     "type": "반전형",
+     "title": "집값 오름세는 **둔화**\n전셋값은 오히려 올랐다",
+     "number": "5억원",
+     "label": "서울 평균 전셋값",
+     "sub": "집값 둔화 속 전세 상승"
+    }
+   ],
+   "forms": [
+    "bignum",
+    "editorial"
+   ],
+   "extra": {},
+   "id": "20261116-1844-i1",
+   "created_at": "2026-11-16T18:44:26+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261116-1844-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261116-1844-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261116-1844-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261116-1844-i1/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261116-1844-i1/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261116-1844-i1/1-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261116-1844-i1/2-bignum-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261116-1844-i1/2-bignum-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261116-1844-i1/2-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261116-1844-i1/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261116-1844-i1/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261116-1844-i1/2-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261116-1844-i1/3-bignum-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261116-1844-i1/3-bignum-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261116-1844-i1/3-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261116-1844-i1/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261116-1844-i1/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261116-1844-i1/3-editorial-plex.jpg"
+    }
+   ]
+  },
+  {
+   "title": "엔비디아 AI 업계 자금줄 역할 접나",
+   "concept": "엔비디아가 고객사에 돈을 대주며 칩을 팔던 역할에서 발을 뺀다는 보도를 한 주인공 기준으로 따라가고, 하이닉스 -7.89%와 코스피 -3.59%를 시장 불안으로 연결해 보여 줌. 새 CEO 이름 등 미확인 대목은 한 곳에만 표기. (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "'AI업계 백지수표 자금줄 역할 접는다'가 3곳, '돈줄 죄는 엔비디아'가 4곳에서 보도됐고 관련 쓰레드 글 반응이 가장 빠릅니다. 오늘 하이닉스와 코스피 급락의 배경으로 거론됩니다.",
+   "tag": "반도체",
+   "sources": [
+    "https://www.yna.co.kr/view/AKR20261116117700009",
+    "https://biz.chosun.com/it-science/ict/2026/11/16/DU5QDVYN6RD27B5VS4BIXN6CAM/",
+    "https://www.mt.co.kr/industry/2026/11/16/2026111616522964804"
+   ],
+   "bg": "Nvidia headquarters",
+   "bg_alt": "Nvidia GPU chip",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "하이닉스 하루 **-7.89%**\n엔비디아 돈줄 불안",
+     "number": "-7.89%",
+     "label": "SK하이닉스 11/16 등락률",
+     "sub": "엔비디아 자금줄 우려 속 급락"
+    },
+    {
+     "type": "질문형",
+     "title": "엔비디아가 AI 업계\n**백지수표**를 접는다?",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "칩 팔려고 대주던\n엔비디아 **돈줄**이 줄어든다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261116-1844-i2",
+   "created_at": "2026-11-16T18:44:26+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261116-1844-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261116-1844-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261116-1844-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261116-1844-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261116-1844-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261116-1844-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261116-1844-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261116-1844-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261116-1844-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261116-1844-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261116-1844-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261116-1844-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "삼전닉스 D램 담합 패소와 외국인 매물",
+   "concept": "삼성전자, SK하이닉스 D램 담합 패소 보도와 외국인 1.3조 매물, 개인 부담이라는 주간증시전망 보도를 사실만 묶어 정리. 패소 내용과 매물 기간은 원문 확인 후 기재, 패소와 하락의 인과는 단정하지 않음. (공식: 숫자는 둘을 맞붙여서)",
+   "why_now": "18시 34분 주간증시전망에서 'D램 담합 패소 충격, 외국인 1.3조 폭탄 매물, 개인들만 독박'이 나왔고, 오늘 삼성전자 -4.47%, 하이닉스 -7.89%로 마감했습니다. 앞서 보낸 글에서 다루지 않은 별개 사건입니다.",
+   "tag": "증시",
+   "sources": [
+    "https://v.daum.net/v/20261116183410469"
+   ],
+   "bg": "Samsung Electronics headquarters",
+   "bg_alt": "SK hynix semiconductor",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "삼전닉스 패소 충격\n외국인 **1.3조** 매물",
+     "number": "1.3조원",
+     "label": "외국인 매물 규모",
+     "sub": "주간증시전망 보도 기준"
+    },
+    {
+     "type": "질문형",
+     "title": "D램 담합 패소가\n외국인 **매물**을 불렀나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "외국인은 1.3조 팔았고\n**개인**만 독박 썼다",
+     "number": "1.3조원",
+     "label": "외국인 매물 규모",
+     "sub": "개인 부담 커졌다는 보도"
+    }
+   ],
+   "forms": [
+    "bars",
+    "paper"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "11/16 하락률(%)",
+     "bars": [
+      {
+       "label": "코스피",
+       "value": 3.59
+      },
+      {
+       "label": "삼성전자",
+       "value": 4.47
+      },
+      {
+       "label": "SK하이닉스",
+       "value": 7.89,
+       "hi": true
+      }
+     ]
+    },
+    "paper": {
+     "date": "11/16",
+     "headlines": [
+      "삼전닉스 D램 담합 패소",
+      "외국인 1.3조 폭탄 매물",
+      "하이닉스 -7.89% 마감"
+     ]
+    }
+   },
+   "id": "20261116-1844-i3",
+   "created_at": "2026-11-16T18:44:26+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261116-1844-i3/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261116-1844-i3/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261116-1844-i3/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261116-1844-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261116-1844-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261116-1844-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261116-1844-i3/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261116-1844-i3/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261116-1844-i3/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261116-1844-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261116-1844-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261116-1844-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261116-1844-i3/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261116-1844-i3/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261116-1844-i3/3-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261116-1844-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261116-1844-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261116-1844-i3/3-paper-gowun.jpg"
     }
    ]
   }
