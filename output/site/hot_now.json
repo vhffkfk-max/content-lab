@@ -1,5 +1,65 @@
 [
  {
+  "slot": "2026-11-16 23:44",
+  "at": "2026-11-16T23:44:31+09:00",
+  "time": "11/16 23:44",
+  "checked_at": "2026-11-16T23:44:31+09:00",
+  "checked": "11/16 23:44",
+  "summary": "새로 나온 큰 소식은 두 가지다. 뉴욕증시 개장과 함께 기술주가 밀렸고, 비트코인은 청산 폭탄 뒤 반등했다. 나머지는 이미 보낸 주제의 반복이거나 화면에 떠 있는 글감과 겹쳐서 뺐다. X 핵심 인물 글은 자료에 없었다.",
+  "picks": [
+   {
+    "topic": "뉴욕증시 개장 기술주 급락",
+    "channel": "텔레그램 짧은 속보",
+    "title": "[속보] 뉴욕증시 하락 출발, 나스닥 1.13%↓",
+    "why_now": "뉴시스 등 3곳이 23:39에 개장 직후 하락을 속보로 전했다. CNBC, FT, 뉴스핌도 엔비디아발 기술주 약세를 다뤘다. 나스닥100 선물도 1.2% 내렸다. 앞서 보낸 글감은 규제와 목표주가 얘기였고, 실제 지수 반응은 아직 다루지 않았다.",
+    "draft": "[속보] 뉴욕증시 하락 출발\n\n▪ 나스닥 -1.13% (개장 직후)\n▪ 엔비디아 약 4%↓, AMD 6%↓, TSMC 5%↓ (개장 전 기준)\n▪ 미 국채는 강세, 유가는 하락 → 안전자산 쏠림\n\n엔비디아 CEO 거취 논란에 실적 발표(이번 주)와 美 AI칩 규제 소식이 겹치면서 반도체가 먼저 밀렸습니다.\n내일 한국 반도체주 시초가에도 영향을 줄 수 있어 장 마감까지 낙폭을 봐야 합니다. [확인: 마감 수치]",
+    "sources": [
+     "https://www.newsis.com/view/NISX20261116_0003870596",
+     "https://news.google.com/rss/articles/CBMimgFBVV95cUxOVTN6c1RxdUhEaFJpcmd1amZzR19ISTZfTlhqc0lVNXR3ZE9HQzF6eWlYb3R0TnZZc2F",
+     "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPd0VaNXdEN3JiNHZrTzNmSHU2QWpVbkJlYVFfNGZyNndWMEI4S0JjSXliemhiLVpCRDN"
+    ],
+    "follow_up": true,
+    "time": "11/16 23:44"
+   },
+   {
+    "topic": "비트코인 6만2천달러 청산 후 반등",
+    "channel": "쓰레드",
+    "title": "비트코인 6만2천달러까지 밀렸다가 6만5천 회복",
+    "why_now": "CNBC가 23:29에 청산 연쇄로 6만2천달러까지 밀렸다가 소폭 반등했다고 전했다. 블루밍비트는 6만5천달러 일시 회복과 김치 프리미엄 2.02%를 전했다. 스트래티지는 하락 중에도 비트코인을 샀다. 앞선 글감은 주간 하락 위주였고, 지금은 급락 뒤 반등이라는 새 국면이다.",
+    "draft": "비트코인, 6만2천달러까지 찍고 튀어 올랐다\n\n연쇄 청산(빚내서 한 투자가 강제로 팔리는 것)이 터지며 6만2천달러까지 밀렸다가 6만5천달러를 잠깐 회복했어요.\n그 와중에 스트래티지는 가격이 떨어지는 중에도 비트코인을 샀습니다.\n한국 가격은 해외보다 2.02% 비싼 김치 프리미엄 상태입니다.\n\n나스닥이 같이 흔들리는 날이라 코인도 주식과 같이 움직이는지가 관건입니다.",
+    "sources": [
+     "https://www.cnbc.com/2026/11/16/bitcoin-slides-to-62000-following-liquidation-cascade-then-rebounds-slightly.html",
+     "https://news.google.com/rss/articles/CBMiUEFVX3lxTE4zSGlDd05zMll0TUxDTGVGUU9BZEx1cTg1RkdyZVFSSzNlTEpQVnlXTUpIeElvSWpmejk"
+    ],
+    "follow_up": true,
+    "time": "11/16 23:44"
+   },
+   {
+    "time": "11/16 23:11",
+    "topic": "美 상무부(루트닉), 제3국 우회 AI칩 접근 차단 규정",
+    "channel": "텔레그램 짧은 속보",
+    "title": "[속보] 美 상무부, AI칩 '제3국 우회' 구멍 막는다",
+    "why_now": "23:02~23:05 CNBC, Reuters, Bloomberg가 연달아 보도한 새 소식입니다. 22:46에는 루트닉 아들 회사가 엔비디아 지분을 절반 줄였다는 수출통제 지연 의혹도 나왔습니다. 앞서 보낸 글에는 없는 내용입니다.",
+    "draft": "[속보] 美 상무부, 첨단 AI 칩을 '제3국'이나 원격으로 우회해 쓰는 길을 막는 규정을 냈습니다.\n\n- 중국이 제3국을 거쳐 AI 연산 능력을 쓰던 구멍을 닫겠다는 취지입니다. CNBC는 이를 '엔비디아 파문의 후속 조치'로 전했습니다.\n- 같은 시각 루트닉 장관 아들 회사가 엔비디아 지분을 절반 줄였다는 보도도 나와, 수출통제가 늦어졌다는 의혹이 커지고 있습니다. [확인]\n\n한국 투자자 관전 포인트: 엔비디아 실적 발표 직전에 나온 규제라 중국向 매출과 반도체 수급 이야기가 다시 나올 수 있습니다.",
+    "sources": [
+     "https://www.cnbc.com/2026/11/16/nvidia-commerce-china-lutnick.html",
+     "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPOFRscFU2Tnd4dkpNWURqN2NDcEg1eHBNUW9VTTd5YkRBNlA2eVJkV0xsWHpqNExCek4",
+     "https://news.google.com/rss/articles/CBMiakFVX3lxTE9YdHBvNklidy1GMkNNOG9wRWpvNnVNTDhYX2tRWFBBS1QwTFF3TklCMjVEblFnYXdyODl"
+    ],
+    "follow_up": false
+   }
+  ],
+  "notified_at": "2026-11-12T18:35:45+09:00",
+  "inputs": {
+   "news": 90,
+   "new_news": 68,
+   "threads": 10,
+   "insta": 6,
+   "x_vip": 0,
+   "x": 0
+  }
+ },
+ {
   "slot": "2026-11-16 23:11",
   "at": "2026-11-16T23:11:14+09:00",
   "time": "11/16 23:11",
@@ -6975,67 +7035,6 @@
   "inputs": {
    "news": 90,
    "new_news": 64,
-   "threads": 10,
-   "insta": 6,
-   "x_vip": 15,
-   "x": 8
-  }
- },
- {
-  "slot": "2026-11-13 07:53",
-  "at": "2026-11-13T07:53:37+09:00",
-  "time": "11/13 07:53",
-  "checked_at": "2026-11-13T07:53:37+09:00",
-  "checked": "11/13 07:53",
-  "summary": "지금 가장 큰 소식은 젠슨 황 엔비디아 CEO 사임(21곳)이다. 기존 글감과 겹치지 않는다. 여기에 트럼프의 후임 발언과 비트코인 석 달 최저 소식을 더해 3개를 냈다.",
-  "picks": [
-   {
-    "topic": "젠슨 황 엔비디아 CEO 사임",
-    "channel": "인스타 카드뉴스",
-    "title": "젠슨 황 퇴진, 엔비디아 시총 4조 달러가 깨졌다",
-    "why_now": "뉴스 21곳이 다룬 가장 큰 소식이다. 인스타 해외 계정(야후파이낸스·FT·CNBC)의 시간당 좋아요가 4천~1만 건이다. 쓰레드에서도 시간당 조회 8500이 나온다. 기존 글감과 겹치지 않는다.",
-    "draft": "[1장] 젠슨 황, 엔비디아 CEO 사임\n33년 만의 퇴진. 세 번째 스캔들 보도가 나온 뒤였다.\n\n[2장] 시장 반응\n- 엔비디아 52주 신저가, 장중 시총 4조 달러 붕괴\n- 뉴욕 종가는 4% 넘게 하락 (CNBC)\n- 협력사 네비우스는 17% 급락\n\n[3장] 후임은?\n콜레트 크레스 CFO가 임시 CEO를 맡는다. 정식 후임은 아직 없다.\n\n[4장] 월가 시각\n\"기업가치 25% 할인\" vs \"AI 수요는 여전\" (연합인포맥스)\n\n[5장] 한국 투자자는?\n삼성전자·SK하이닉스 HBM 공급망 영향이 쟁점이다. 지금은 CEO 리스크와 AI 수요를 나눠서 봐야 한다.\n\n※ 투자 권유가 아닙니다.",
-    "sources": [
-     "https://www.mt.co.kr/world/2026/11/13/2026111306522328092",
-     "http://www.edaily.co.kr/news/newspath.asp?newsid=01971286645645392",
-     "https://www.cnbc.com/2026/11/12/nvidia-nvda-jensen-huang-second-affair.html",
-     "https://www.yna.co.kr/view/AKR20261113018300009",
-     "https://v.daum.net/v/20261113075301296"
-    ],
-    "follow_up": false,
-    "time": "11/13 07:53"
-   },
-   {
-    "topic": "트럼프 \"젠슨 황 후임은 팀 쿡\" 발언",
-    "channel": "쓰레드 글",
-    "title": "트럼프가 엔비디아 후임으로 팀 쿡을 콕 집었다",
-    "why_now": "트럼프 발언이다. 엔비디아 사태 직후 나와 시장의 관심이 크다. 동아일보와 SBS Biz가 다뤘다. 쓰레드에선 \"젠슨 황 FA\", \"머스크 영입\" 글이 시간당 조회 3천~7천을 기록 중이다.",
-    "draft": "트럼프가 젠슨 황 후임으로 애플 팀 쿡을 콕 집었습니다.\n\"전설이 전설을 대체한다\"는 취지의 발언입니다.\n\n엔비디아는 지금 크레스 CFO가 임시 CEO를 맡고 있고, 정식 후임은 정해지지 않았습니다.\n\n트럼프의 말일 뿐, 애플이나 엔비디아의 공식 입장은 자료에 없습니다 [확인].\n\n그래도 시장은 \"누가 AI 1등 기업을 이끄나\"에 민감합니다. 후임 발표가 나오면 주가와 한국 반도체주에도 변수가 될 수 있습니다.",
-    "sources": [
-     "https://www.donga.com/news/Inter/article/all/20261113/135018109/1",
-     "https://v.daum.net/v/20261113074802225"
-    ],
-    "follow_up": false,
-    "time": "11/13 07:53"
-   },
-   {
-    "topic": "비트코인 석 달 최저, 7.1만 달러대",
-    "channel": "텔레그램 짧은 속보",
-    "title": "[코인] 비트코인 7.1만 달러대로 밀려…석 달 만에 최저",
-    "why_now": "엔비디아 사임 충격과 기술주 약세, 유가 상승이 겹쳤다. 비트코인이 200일선을 이탈했다는 분석도 나왔다. 코인 매체 3곳과 한국경제TV, 이데일리가 다뤘다. 매일 아침 추천 주제에도 들어 있다.",
-    "draft": "[코인 속보] 비트코인 7.1만 달러대로 하락, 석 달 만에 최저\n\n- 젠슨 황 엔비디아 CEO 사임 여파로 기술주가 흔들렸다\n- 유가 상승도 겹쳤다\n- 200일 이동평균선을 이탈해 \"6.3만 달러까지 열릴 수 있다\"는 경고도 나왔다 (BeInCrypto)\n\n위험자산 전반이 약해진 날이다. 변동성에 유의해야 한다.\n(투자 권유 아님)",
-    "sources": [
-     "https://v.daum.net/v/20261113070326564",
-     "https://v.daum.net/v/20261113074632200"
-    ],
-    "follow_up": false,
-    "time": "11/13 07:53"
-   }
-  ],
-  "notified_at": "2026-11-12T18:35:45+09:00",
-  "inputs": {
-   "news": 90,
-   "new_news": 62,
    "threads": 10,
    "insta": 6,
    "x_vip": 15,
