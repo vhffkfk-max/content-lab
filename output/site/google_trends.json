@@ -1,30 +1,12 @@
 [
  {
   "geo": "KR",
-  "term": "담합",
-  "traffic": 5000,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "D램 담합소송, 미국 법원이 삼성·SK하이닉스의 기각 요청을 받아들이지 않았다",
-  "news_link": "https://contents.premium.naver.com/kny486kjh/kny486/contents/261115232143218lq"
- },
- {
-  "geo": "KR",
   "term": "삼성전기",
   "traffic": 2000,
   "topics": "",
   "econ": false,
   "news_title": "'227만원→86만원' 5개월새 62% 증발한 이 주식…삼전·닉스보다 더 깨졌다",
   "news_link": "https://view.asiae.co.kr/article/2026111511094655140"
- },
- {
-  "geo": "KR",
-  "term": "이무생",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "",
-  "news_link": ""
  },
  {
   "geo": "KR",
@@ -37,48 +19,39 @@
  },
  {
   "geo": "KR",
+  "term": "은행",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "\"차기 은행연합회장은 나\"…의지 드러낸 후보 '5파전'(종합)",
+  "news_link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4444945"
+ },
+ {
+  "geo": "KR",
   "term": "개헌",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "\"내년이 개헌 적기\" 조정식, ‘김형오·정세균’ 자문위 띄웠다",
-  "news_link": "https://news.jtbc.co.kr/article/NB12328233"
+  "news_title": "정점식 \"이 정부서 개헌 없다‥조정식 사퇴하라\"",
+  "news_link": "https://imnews.imbc.com/news/2026/politics/article/6865947_36911.html"
  },
  {
   "geo": "KR",
-  "term": "굿네이버스",
+  "term": "노동조합",
   "traffic": 500,
-  "topics": "국내 대형주",
-  "econ": true,
-  "news_title": "이호선 교수, 모친상 조의금 1억90만원 굿네이버스에 기부",
-  "news_link": "https://www.yna.co.kr/view/AKR20261116048700371"
+  "topics": "",
+  "econ": false,
+  "news_title": "대한항공·조종사노조, 3년치 임단협 잠정 합의",
+  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8713795"
  },
  {
   "geo": "KR",
-  "term": "한화그룹",
-  "traffic": 500,
-  "topics": "국내 대형주",
-  "econ": true,
-  "news_title": "삼성·SK·네이버가 샀지만…한화 100억대 초호화 레지던스 절반 미분양",
-  "news_link": "https://realty.chosun.com/site/data/html_dir/2026/11/13/2026111301362.html"
- },
- {
-  "geo": "KR",
-  "term": "kb증권",
-  "traffic": 200,
-  "topics": "AI·반도체, 국내 대형주",
-  "econ": true,
-  "news_title": "KB증권 \"삼성전자, 脫엔비디아 시대 최대 수혜주\"",
-  "news_link": "https://www.chosun.com/economy/money/2026/11/16/UVQKUCAVFBAG3BMHNWSCJ34BGI/"
- },
- {
-  "geo": "KR",
-  "term": "한소희",
+  "term": "hlb테라퓨틱스",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "한소희 3종 커버, 콘트리트 위에 피어난 꽃처럼",
-  "news_link": "https://www.elle.co.kr/article/1913112"
+  "news_title": "[ET특징주] HLB테라퓨틱스, 각막염 신약 미국 임상 3상 유효성 확인 실패… 주가 '하한가'",
+  "news_link": "https://www.etnews.com/20261116000175"
  },
  {
   "geo": "KR",
@@ -86,35 +59,71 @@
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "한화금융, 뉴욕서 'PLUS NY 2026' 개최…월가 인재 꿈꾸는 청년 750명 모여",
-  "news_link": "https://www.etnews.com/20261116000033"
+  "news_title": "한화금융, 뉴욕 월가 미래 이끌 인재 키운다 By EBN",
+  "news_link": "https://kr.investing.com/news/stock-market-news/article-2176375"
+ },
+ {
+  "geo": "KR",
+  "term": "건강 수명",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "전남광주 농어촌과 경기 신도시, 건강수명 ‘12년 격차’",
+  "news_link": "https://www.hani.co.kr/arti/society/health/1287463.html"
+ },
+ {
+  "geo": "KR",
+  "term": "노슬비",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "‘MZ 무속인’ 노슬비 “김정은 2년 안에 사망할 것”",
+  "news_link": "https://biz.chosun.com/entertainment/enter_general/2026/11/16/HUDRRNRGPJDVTGTNUESKYXA76I/"
+ },
+ {
+  "geo": "KR",
+  "term": "용인반도체클러스터",
+  "traffic": 100,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "[르포] 양산 검증 장벽 허문다…SK하이닉스가 용인에 품은 '상생의 팹'",
+  "news_link": "https://zdnet.co.kr/view/?no=20261113134910"
  },
  {
   "geo": "US",
-  "term": "gta 6 online release date",
-  "traffic": 2000,
+  "term": "afc north standings",
+  "traffic": 5000,
   "topics": "",
   "econ": false,
-  "news_title": "Another Update About The ‘GTA 6 Online’ Release Date",
-  "news_link": "https://www.forbes.com/sites/paultassi/2026/11/13/the-gta-6-online-release-date-is-far-off-says-new-report/"
+  "news_title": "NFL playoff chance tiers: Where all 32 teams fit in 2026 postseason picture",
+  "news_link": "https://www.espn.com/nfl/story/_/id/50463347/2026-nfl-playoffs-chances-odds-tiers-32-teams-nfc-afc"
  },
  {
   "geo": "US",
-  "term": "mason rudolph",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Steelers' Aaron Rodgers replaced by Mason Rudolph vs Bengals on SNF",
-  "news_link": "https://sports.yahoo.com/articles/steelers-aaron-rodgers-replaced-mason-041753448.html"
+  "term": "donald trump iran war",
+  "traffic": 5000,
+  "topics": "정치·관세",
+  "econ": true,
+  "news_title": "Iran war live: Third US carrier arrives, Iran warns it could strike first",
+  "news_link": "https://www.aljazeera.com/news/liveblog/2026/11/16/iran-war-live-tehran-warns-it-may-strike-first-before-another-us-attack"
  },
  {
   "geo": "US",
-  "term": "sharks game",
+  "term": "governors awards 2026",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "Predators Look to Keep Momentum Rolling in San Jose",
-  "news_link": "https://sports.yahoo.com/articles/predators-look-keep-momentum-rolling-005449646.html"
+  "news_title": "Governors Awards: Glenn Close, Ridley Scott Get Oscars (Live Updates)",
+  "news_link": "https://variety.com/2026/awards/news/governors-awards-glenn-close-ridley-scott-oscars-live-blog-1236948318/"
+ },
+ {
+  "geo": "US",
+  "term": "xbox project helix console",
+  "traffic": 2000,
+  "topics": "빅테크",
+  "econ": true,
+  "news_title": "Microsoft says Xbox Helix is a console, not a PC — but it will be able to play your PC games: \"It is not a PC that can also play console games\"",
+  "news_link": "https://www.windowscentral.com/gaming/xbox/microsoft-says-xbox-helix-is-a-console-not-a-pc-but-it-will-be-able-to-play-your-pc-games-helix-is-designed-to-be-a-console-that-can-also-play-games-from-your-pc"
  },
  {
   "geo": "US",
@@ -127,30 +136,30 @@
  },
  {
   "geo": "US",
-  "term": "shai gilgeous-alexander",
+  "term": "sharks game",
   "traffic": 1000,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "\"Gotcha,\" the reporter quipped. \"Don't trust AI.\" …",
-  "news_link": "https://sports.yahoo.com/articles/gotcha-reporter-quipped-dont-trust-223655365.html"
+  "topics": "",
+  "econ": false,
+  "news_title": "Predators at Sharks projected lineups",
+  "news_link": "https://www.nhl.com/news/nashville-predators-san-jose-sharks-game-preview-november-15-2026"
  },
  {
   "geo": "US",
-  "term": "canucks",
-  "traffic": 200,
+  "term": "oklahoma city thunder vs sacramento kings match player stats",
+  "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Replay: Away - 2026 Abbotsford vs Coachella Valley | Nov 15 @ 2 PM",
-  "news_link": "https://www.flohockey.tv/collections/6752010-continue-watching/video?playing=16411787"
+  "news_title": "Capitals vs Lightning Picks, Prop Bets For November 17, 2026 - NHL Predictions",
+  "news_link": "https://www.covers.com/sport/hockey/nhl/matchup/382613/picks"
  },
  {
   "geo": "US",
-  "term": "nfl scorigami",
-  "traffic": 200,
+  "term": "vgk",
+  "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "SCORIGAMI: The NFL’s list of unique scores has added more in 2026",
-  "news_link": "https://sports.yahoo.com/articles/scorigami-nfl-list-unique-scores-005915998.html"
+  "news_title": "Golden Knights Stock Up, Stock Down: Through 20 Games",
+  "news_link": "https://sinbin.vegas/golden-knights-stock-up-stock-down-through-20-games/"
  },
  {
   "geo": "US",
@@ -163,20 +172,11 @@
  },
  {
   "geo": "US",
-  "term": "vgk",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Golden Knights Stock Up, Stock Down: Through 20 Games",
-  "news_link": "https://sinbin.vegas/golden-knights-stock-up-stock-down-through-20-games/"
- },
- {
-  "geo": "US",
   "term": "will howard",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Steelers' Will Howard: Working as emergency QB again",
-  "news_link": "https://www.cbssports.com/fantasy/football/news/steelers-will-howard-working-as-emergency-qb-again/"
+  "news_title": "Will Howard News: Working as emergency QB again",
+  "news_link": "https://www.rotowire.com/football/headlines/will-howard-injury-working-as-emergency-qb-again-648019"
  }
 ]
