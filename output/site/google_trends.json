@@ -10,17 +10,8 @@
  },
  {
   "geo": "KR",
-  "term": "무역",
-  "traffic": 1000,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "뱀 잡아 팔던 나라가 반도체 강국으로…80년 만에 벌어진 일",
-  "news_link": "https://www.hankyung.com/article/2026111575161"
- },
- {
-  "geo": "KR",
   "term": "주가조작",
-  "traffic": 1000,
+  "traffic": 2000,
   "topics": "",
   "econ": false,
   "news_title": "[속보] 대법, 한덕수 ‘내란 혐의’ 19일 선고…구속 만료 하루 전 결론",
@@ -28,30 +19,30 @@
  },
  {
   "geo": "KR",
-  "term": "즉석밥",
+  "term": "이무생",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "\"평범한 햇반인 줄 알았는데\"…인기 1위 오른 '이것' 정체 [권 기자의 장바구니]",
-  "news_link": "https://www.hankyung.com/article/202611136089i"
+  "news_title": "",
+  "news_link": ""
  },
  {
   "geo": "KR",
-  "term": "우주",
+  "term": "굿네이버스",
   "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "‘우주의 새벽’은 어떻게 열렸나…슈퍼컴이 재현한 빅뱅 후 20억년",
-  "news_link": "https://www.hani.co.kr/arti/science/science_general/1287480.html"
+  "topics": "국내 대형주",
+  "econ": true,
+  "news_title": "“사랑 밖에는 답이 없다”…이호선 교수, 모친상 조의금 1억원 기부",
+  "news_link": "https://www.mk.co.kr/news/hot-issues/12209690"
  },
  {
   "geo": "KR",
-  "term": "이재명",
+  "term": "한화그룹",
   "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "이재명 대통령, 아세안 및 APEC 정상회의 참석(11.16.~11.19.) - 카드/한컷 | 멀티미디어",
-  "news_link": "https://m.korea.kr/multi/visualNewsView.do?newsId=148975751&pWise=mSub&pWiseSub=I1"
+  "topics": "국내 대형주",
+  "econ": true,
+  "news_title": "삼성·SK·네이버가 샀지만…한화 100억대 초호화 레지던스 절반 미분양",
+  "news_link": "https://realty.chosun.com/site/data/html_dir/2026/11/13/2026111301362.html"
  },
  {
   "geo": "KR",
@@ -64,30 +55,48 @@
  },
  {
   "geo": "KR",
-  "term": "조선민주주의인민공화국",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "통일부 “북한 조용원, 미중러회담 앞두고 방러…관련 동향 주시”",
-  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8713693"
- },
- {
-  "geo": "KR",
   "term": "청주시",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "청주 김장재료 28개 품목 구입비 34만3천원…작년보다 3.4%↑",
-  "news_link": "https://www.yna.co.kr/view/AKR20261116037300064"
+  "news_title": "청주시 하수처리시설 '에너지·물 생산 시설'로 진화 중",
+  "news_link": "https://cc.newdaily.co.kr/site/data/html/2026/11/16/2026111650021.html"
  },
  {
   "geo": "KR",
-  "term": "한화그룹",
+  "term": "한소희",
   "traffic": 200,
-  "topics": "국내 대형주",
+  "topics": "",
+  "econ": false,
+  "news_title": "한소희 3종 커버, 콘트리트 위에 피어난 꽃처럼",
+  "news_link": "https://www.elle.co.kr/article/1913112"
+ },
+ {
+  "geo": "KR",
+  "term": "kb증권",
+  "traffic": 100,
+  "topics": "AI·반도체, 국내 대형주",
   "econ": true,
-  "news_title": "삼성·SK·네이버가 샀지만…한화 100억대 초호화 레지던스 절반 미분양",
-  "news_link": "https://realty.chosun.com/site/data/html_dir/2026/11/13/2026111301362.html"
+  "news_title": "KB증권 \"삼성전자, 脫엔비디아 시대 최대 수혜주\"",
+  "news_link": "https://www.chosun.com/economy/money/2026/11/16/UVQKUCAVFBAG3BMHNWSCJ34BGI/"
+ },
+ {
+  "geo": "KR",
+  "term": "개헌",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "\"내년이 개헌 적기\" 조정식, ‘김형오·정세균’ 자문위 띄웠다",
+  "news_link": "https://news.jtbc.co.kr/article/NB12328233"
+ },
+ {
+  "geo": "US",
+  "term": "donald trump iran war",
+  "traffic": 5000,
+  "topics": "정치·관세",
+  "econ": true,
+  "news_title": "Trump Signals New Strategy on Iran: A Waiting Game",
+  "news_link": "https://www.nytimes.com/2026/11/13/us/politics/trump-iran-strategy.html"
  },
  {
   "geo": "US",
@@ -100,21 +109,21 @@
  },
  {
   "geo": "US",
-  "term": "liga mx femenil",
-  "traffic": 1000,
+  "term": "vegas golden knights",
+  "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "Monterrey vs. Pachuca.EN VIVO Cuartos de Final Partido de Vuelta EN DIRECTO Liga MX Femenil 2026",
-  "news_link": "https://www.mediotiempo.com/futbol/liga-mx-femenil/a-que-hora-juega-monterrey-vs-pachuca-horario-y-canal-cuartos-final-vuelta-liga-mx-femenil-2026"
+  "news_title": "Golden Knights Stock Up, Stock Down: Through 20 Games",
+  "news_link": "https://sinbin.vegas/golden-knights-stock-up-stock-down-through-20-games/"
  },
  {
   "geo": "US",
-  "term": "the gilded age cast",
+  "term": "golden knights",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Meet the Real-Life Loves of ‘The Gilded Age’ Cast (and the Two Actors Who Are Partners IRL)",
-  "news_link": "https://www.instyle.com/meet-real-life-loves-the-gilded-age-cast-12253223"
+  "news_title": "Golden Knights' Carter Hart: Between pipes against Vancouver",
+  "news_link": "https://www.cbssports.com/fantasy/hockey/news/golden-knights-carter-hart-between-pipes-against-vancouver/"
  },
  {
   "geo": "US",
@@ -122,35 +131,35 @@
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Video - Three Biggest Losers From Bucks’ Embarrassing Nine-Game Losing Streak",
-  "news_link": "https://roundtable.io/sports/nba/bucks/video/three-biggest-losers-from-bucks-embarrassing-nine-game-losing-streak"
+  "news_title": "Winderman: Often overshadowed with Heat (and to be again), Herro deserves embrace upon return",
+  "news_link": "https://www.sun-sentinel.com/2026/11/14/winderman-often-overshadowed-with-heat-and-to-be-again-herro-deserves-embrace-upon-return/"
  },
  {
   "geo": "US",
-  "term": "vegas golden knights",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Song Ui-Young gives Lions one moment to roar as Paraguay hand Singapore lesson in levels",
-  "news_link": "https://global.espn.com/football/story/_/id/50471924/song-ui-young-gives-lions-one-moment-roar-paraguay-hand-singapore-lesson-levels"
- },
- {
-  "geo": "US",
-  "term": "ben skowronek",
+  "term": "60 minutes",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Pittsburgh Steelers get big injury update on hard-nosed wide receiver",
-  "news_link": "https://www.pennlive.com/steelers/2026/11/pittsburgh-steelers-get-big-injury-update-on-hard-nosed-wide-receiver.html"
+  "news_title": "Parents whose sons died from kratom use warn about the substance finding allies in Washington",
+  "news_link": "https://www.cbsnews.com/news/parents-whose-sons-died-from-kratom-use-warn-about-substance-60-minutes/"
  },
  {
   "geo": "US",
-  "term": "golden knights",
+  "term": "kasparas jakučionis",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Golden Knights' Carter Hart: Between pipes against Vancouver",
-  "news_link": "https://www.cbssports.com/fantasy/hockey/news/golden-knights-carter-hart-between-pipes-against-vancouver/"
+  "news_title": "",
+  "news_link": ""
+ },
+ {
+  "geo": "US",
+  "term": "oscars",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Governors Awards 2026: Fashion—All of the Best Looks From the Red Carpet",
+  "news_link": "https://www.vogue.com/slideshow/2026-governors-awards-red-carpet-best-looks"
  },
  {
   "geo": "US",
@@ -163,20 +172,11 @@
  },
  {
   "geo": "US",
-  "term": "intel shareholder class action lawsuit",
+  "term": "oklahoma city thunder vs sacramento kings match player stats",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Intel sued by shareholders following 29% stock plunge",
-  "news_link": "https://www.reuters.com/business/intel-sued-by-shareholders-following-29-stock-plunge-2026-11-15/"
- },
- {
-  "geo": "US",
-  "term": "oregon state vs arizona",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Florida International Panthers vs. South Florida Bulls: Game Highlights",
-  "news_link": "https://www.espn.com/video/clip/_/id/50494734/game-highlights"
+  "news_title": "Capitals vs Lightning Picks, Prop Bets For November 17, 2026 - NHL Predictions",
+  "news_link": "https://www.covers.com/sport/hockey/nhl/matchup/382613/picks"
  }
 ]
