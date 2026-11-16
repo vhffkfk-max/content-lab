@@ -3397,443 +3397,6 @@
  ],
  "ideas": [
   {
-   "title": "비트코인 7만달러 붕괴, MSCI 퇴출 추가",
-   "concept": "급락 속보의 후속으로, 하락 원인에 스트래티지 MSCI 퇴출 소식이 새로 붙었다는 사실을 표지에 걸고, ETF 자금 유출과 강제 청산은 뒤로 돌려 비트코인을 대량 보유한 스트래티지가 중심에 오게 푼다. 퇴출 일정과 규모는 확인 전이라 단정하지 않는다. (공식: 같은 사건이면 해설보다 새로 나온 사실)",
-   "why_now": "15:40 새 보도로 하락 원인에 MSCI 퇴출이 추가됐다. 비트코인은 한때 6만2000달러까지 내려 3개월 만에 최저였고, '왜 폭락했나' 글이 쓰레드에서 시간당 조회 3000~5000건을 내고 있다.",
-   "tag": "가상자산",
-   "sources": [
-    "https://v.daum.net/v/20261115154005370",
-    "https://www.donga.com/news/Economy/article/all/20261115/135026231/1",
-    "https://kr.investing.com/news/cryptocurrency-news/article-2176171"
-   ],
-   "bg": "Michael Saylor Strategy",
-   "bg_alt": "Bitcoin coin",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "비트코인 한때\n**6만2000달러**\n3개월 만에 최저",
-     "number": "6만2000달러",
-     "label": "비트코인 장중 저점",
-     "sub": "3개월 만에 가장 낮았다"
-    },
-    {
-     "type": "질문형",
-     "title": "7만달러 붕괴에\n스트래티지 퇴출이\n왜 **변수**일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "ETF 유출과 청산에\n**MSCI 퇴출**까지\n하락 원인 추가",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261115-1601-i1",
-   "created_at": "2026-11-15T16:01:39+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261115-1601-i1/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261115-1601-i1/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261115-1601-i1/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261115-1601-i1/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261115-1601-i1/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261115-1601-i1/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261115-1601-i1/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261115-1601-i1/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261115-1601-i1/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261115-1601-i1/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261115-1601-i1/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261115-1601-i1/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261115-1601-i1/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261115-1601-i1/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261115-1601-i1/3-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261115-1601-i1/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261115-1601-i1/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261115-1601-i1/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "전월세 3년10개월 만에 최대 상승",
-   "concept": "전월세 물가가 3년10개월 만에 가장 크게 올랐다는 사건을 앞세우고, 매물이 늘었다는 정부 설명과 수도권 전세 공급 부족이 엇갈리는 점, 중랑구 월세 비중 급등을 이어 붙인다. 6년간 대출 53% 증가는 어떤 대출 기준인지 원문 확인 후 쓴다. (공식: 없음)",
-   "why_now": "동아일보, 조선비즈, SBS Biz 등 8곳이 다뤘고 같은 시각 전세 매물 감소, 수도권 전세 공급 부족, 중랑구 월세 비중 기사도 이어졌다. 이 주제는 아직 보내지 않았다.",
-   "tag": "부동산",
-   "sources": [
-    "https://www.donga.com/news/Economy/article/all/20261115/135025683/1",
-    "https://biz.chosun.com/policy/policy_sub/2026/11/15/AF5FXWNCRRC7THTRR7VH3ETYNY/"
-   ],
-   "bg": "Seoul apartment complex",
-   "bg_alt": "Korea apartment street",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "전월세 3년10개월 만에\n**최대폭** 올랐다",
-     "number": "3년10개월",
-     "label": "전월세 물가, 이만큼 크게 오른 건",
-     "sub": "3년10개월 만에 최대폭"
-    },
-    {
-     "type": "질문형",
-     "title": "전세 매물 늘었다는데\n수도권은 왜 여전히\n**공급 부족**일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "중랑구 임대차 3건 중\n2건이 **월세**가 됐다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/15",
-     "headlines": [
-      "전월세 3년10개월 만에 최대",
-      "6년간 관련 대출 53% 증가",
-      "중랑구 임대차 3건 중 2건 월세"
-     ]
-    }
-   },
-   "id": "20261115-1601-i2",
-   "created_at": "2026-11-15T16:01:39+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261115-1601-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261115-1601-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261115-1601-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261115-1601-i2/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261115-1601-i2/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261115-1601-i2/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261115-1601-i2/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261115-1601-i2/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261115-1601-i2/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261115-1601-i2/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261115-1601-i2/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261115-1601-i2/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "트럼프, 젠슨 황 사임에 \"끔찍한 일\"",
-   "concept": "트럼프가 젠슨 황 사임을 '끔찍한 일'이라 했고, NYT는 트럼프가 황에게 자리를 지키라고 권했다고 보도했다는 새 사실을 표지에 건다. 복귀 청원 13.6만 명, 18일 엔비디아 첫 실적이 한국 반도체주에 미칠 수 있는 영향으로 잇는다. (공식: 같은 사건이면 해설보다 새로 나온 사실)",
-   "why_now": "15:36 NYT 보도로 트럼프가 황에게 자리를 지키라고 권했다는 사실이 새로 나왔다. 복귀 청원은 13.6만 명을 넘었고, 18일 엔비디아 실적을 앞두고 AI 글 조회가 크게 늘고 있다.",
-   "tag": "AI, 반도체",
-   "sources": [
-    "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9VZzlBZGZ0MDJ2elRLOVExY0xVM3JGOW1TR0hBWUZxLVVQS3g4Q2JiR29INW1SWXBwdGJ",
-    "https://news.google.com/rss/articles/CBMigwFBVV95cUxOMFhFdjVXUmFEeDhEemZrSmthRjRTdDVVOVQ5S0lWaVVVWXR4T2RiU25IN20xaTFTdHB",
-    "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1pSnFkc0JvRjU0enQxaTQwbXpFa0xKSWVfYmhjekJVcWlVLTMzMEt5d01Da1FET0NqOGp"
-   ],
-   "bg": "Jensen Huang Trump",
-   "bg_alt": "Nvidia headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "젠슨 황 복귀 청원\n**13.6만 명** 돌파\n머스크도 지지했다",
-     "number": "13.6만 명",
-     "label": "젠슨 황 복귀 청원",
-     "sub": "머스크도 지지하고 있다"
-    },
-    {
-     "type": "질문형",
-     "title": "트럼프는 젠슨 황 사임을\n왜 **끔찍한 일**이라 했나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "황에게 자리 지키라\n권한 트럼프, 이유는\n**AI 우위** 걱정",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "quote",
-    "news"
-   ],
-   "extra": {
-    "quote": {
-     "label": "젠슨 황 사임",
-     "quote": "끔찍한 일",
-     "by": "트럼프"
-    }
-   },
-   "id": "20261115-1601-i3",
-   "created_at": "2026-11-15T16:01:39+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261115-1601-i3/1-quote-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261115-1601-i3/1-quote-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261115-1601-i3/1-quote-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261115-1601-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261115-1601-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261115-1601-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261115-1601-i3/2-quote-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261115-1601-i3/2-quote-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261115-1601-i3/2-quote-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261115-1601-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261115-1601-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261115-1601-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "noto",
-     "path": "20261115-1601-i3/3-quote-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "myeongjo",
-     "path": "20261115-1601-i3/3-quote-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "quote",
-     "font": "gowun",
-     "path": "20261115-1601-i3/3-quote-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261115-1601-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261115-1601-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261115-1601-i3/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
    "title": "액티브 ETF, 1000만원이 710만원으로",
    "concept": "전문가에게 맡긴 1000만원이 한 달 새 710만원이 됐다는 사례를 '1000만원 → 710만원' 한 줄로 맞붙이고, 코스닥보다 더 빠졌다는 점을 짚는다. 특정 상품은 권하지 않고 보도 내용만 정리한다. (공식: 숫자는 둘을 맞붙여서)",
    "why_now": "17시에 다음 뉴스에 올라온 새 기사이고 아직 다룬 적이 없다. 코스닥이 1달 -8.04%인 가운데 전문가 운용 상품이 더 빠졌다는 점이 개인 투자자의 관심을 끈다.",
@@ -9419,6 +8982,392 @@
      "form": "paper",
      "font": "gowun",
      "path": "20261116-1401-i3/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "서울 집값 30개월 연속 상승, 강남은 하락",
+   "concept": "서울 전체는 오르는데 강남, 서초는 내리고 강북은 1%대 올랐다는 방향 갈림을 4장 '그런데'에서 뒤집어 보여 준다. 경기도가 서울 상승률을 추월한 점까지 한 사건으로 이어 간다. (공식: 가운데 한 번 뒤집기)",
+   "why_now": "같은 소식을 7곳 이상이 다룬 새 보도다. 서울 상승폭이 석 달째 둔화한 가운데 지역별로 갈리는 흐름이 확인됐다.",
+   "tag": "부동산",
+   "sources": [
+    "https://www.yna.co.kr/view/AKR20261116074400003",
+    "https://www.newsis.com/view/NISX20261116_0003869423",
+    "https://www.donga.com/news/Economy/article/all/20261116/135031350/1"
+   ],
+   "bg": "Seoul apartment complex",
+   "bg_alt": "Gangnam Seoul skyline",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "집값 30개월 연속 상승\n그런데 강남, 서초는\n오히려 **하락**",
+     "number": "+0.65%",
+     "label": "서울 집값 30개월 연속 상승",
+     "sub": "상승폭은 석 달째 둔화"
+    },
+    {
+     "type": "질문형",
+     "title": "서울 집값 다 같이\n오르는 장일까\n강북은 1%대 **급등**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "강남은 내리고\n강북은 1%대 **급등**\n경기도는 서울 추월",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/16",
+     "headlines": [
+      "서울 집값 30개월 연속 상승",
+      "강남, 서초 하락 강북 1%대 급등",
+      "경기도 상승률, 서울 추월"
+     ]
+    }
+   },
+   "id": "20261116-1502-i1",
+   "created_at": "2026-11-16T15:02:06+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261116-1502-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261116-1502-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261116-1502-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261116-1502-i1/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261116-1502-i1/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261116-1502-i1/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261116-1502-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261116-1502-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261116-1502-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261116-1502-i1/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261116-1502-i1/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261116-1502-i1/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261116-1502-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261116-1502-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261116-1502-i1/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261116-1502-i1/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261116-1502-i1/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261116-1502-i1/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "랩 계좌에 넣은 주식, 팔릴 수 있다",
+   "concept": "금감원 안내를 바탕으로 랩어카운트가 무엇인지 처음 나오는 자리에서 풀고, 운용 판단에 따라 보유 주식이 매도될 수 있다는 점과 운용한도 확인법을 보도로 정리한다. 매수, 매도 권유는 없다. (공식: 용어 대신 눈에 보이는 것으로)",
+   "why_now": "14시대에 7곳 이상이 다룬 새 소식이고 아직 보내지 않았다. 코스피가 5100선 아래로 밀린 급락장이라 내 주식 관리에 대한 관심이 커질 시점이다.",
+   "tag": "투자자 유의",
+   "sources": [
+    "https://biz.chosun.com/stock/stock_general/2026/11/16/MQYTCN3DGUYTONZZMJSGIMRZMY/",
+    "https://www.fnnews.com/news/202611161307408074"
+   ],
+   "bg": "Financial Supervisory Service Korea",
+   "bg_alt": "Korea stock market screen",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "한 종목에 **90%** 투자한\n랩 계좌도 있었다",
+     "number": "90%",
+     "label": "한 종목에 몰아 투자한 랩 계좌 사례",
+     "sub": "금감원, 운용한도 설정 신중히"
+    },
+    {
+     "type": "질문형",
+     "title": "랩에 넣은 내 주식이\n내가 안 팔아도\n**팔릴** 수 있다고?",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "랩 계좌에 넣은 주식\n운용 판단에 따라\n**매도될** 수 있다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261116-1502-i2",
+   "created_at": "2026-11-16T15:02:06+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261116-1502-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261116-1502-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261116-1502-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261116-1502-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261116-1502-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261116-1502-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261116-1502-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261116-1502-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261116-1502-i2/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "퇴직연금 운용 방식, 20년 뒤 1억6000만원 차이",
+   "concept": "같은 돈을 넣어도 운용 방식에 따라 20년 뒤 1억 넘게 벌어질 수 있다는 금감원 가이드북 내용을 중심으로, 적립금 558조원과 DC형 전환자 34만명을 곁들여 내 퇴직연금 확인으로 연결한다. (공식: 숫자는 둘을 맞붙여서)",
+   "why_now": "금감원 가이드북 소식을 5곳 이상이 12시 전후에 다뤘다. 일주일 만에 8만9000건이 배포돼 관심이 확인됐고 오늘 보낸 주제와 겹치지 않는다.",
+   "tag": "노후, 연금",
+   "sources": [
+    "https://v.daum.net/v/20261116120342223",
+    "https://www.mt.co.kr/stock/2026/11/16/2026111609373861242",
+    "https://www.newsis.com/view/NISX20261116_0003869359"
+   ],
+   "bg": "retirement pension Korea",
+   "bg_alt": "Financial Supervisory Service building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "매년 1000만원 넣어도\n20년 뒤 **1.6억** 차이",
+     "number": "1억6000만원",
+     "label": "20년 뒤 운용 방식에 따른 차이",
+     "sub": "매년 1000만원 납입 기준, 금감원 가이드북"
+    },
+    {
+     "type": "질문형",
+     "title": "558조원 퇴직연금\n내 돈은 어디서\n**굴러가고** 있나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "같은 돈 넣었는데\n20년 뒤 **1억 넘게**\n차이 난다는 경고",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/16",
+     "headlines": [
+      "퇴직연금 적립금 558조원",
+      "가이드북 일주일 8만9000건 배포",
+      "DC형 전환자 34만명"
+     ]
+    }
+   },
+   "id": "20261116-1502-i3",
+   "created_at": "2026-11-16T15:02:06+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261116-1502-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261116-1502-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261116-1502-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261116-1502-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261116-1502-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261116-1502-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261116-1502-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261116-1502-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261116-1502-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261116-1502-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261116-1502-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261116-1502-i3/3-paper-gowun.jpg"
     }
    ]
   }
