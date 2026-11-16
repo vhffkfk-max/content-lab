@@ -1,12 +1,30 @@
 [
  {
   "geo": "KR",
-  "term": "논쟁",
+  "term": "뉴스",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "[뉴스포커스] 11월1６일 다시보기",
+  "news_link": "https://www.yonhapnewstv.co.kr/news/MYH20261116141042CpO"
+ },
+ {
+  "geo": "KR",
+  "term": "005930",
+  "traffic": 2000,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "Samsung Stocks Rise as Foreign Buyers Step In Despite NVIDIA Turmoil",
+  "news_link": "https://finance.yahoo.com/markets/stocks/articles/samsung-stocks-rise-foreign-buyers-194545026.html"
+ },
+ {
+  "geo": "KR",
+  "term": "검사",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "파키스탄 실종 여객기 PK404편, 위성 영상 공개로 37년 만의 재조사 논쟁",
-  "news_link": "https://www.g-enews.com/article/Global-Biz/2026/11/20261116031224791720990b2dc5_1"
+  "news_title": "[단독]與TF, 새 형소법 40여일만에 ‘경찰 모든 수사기록 검사에 전달’ 검토",
+  "news_link": "https://www.donga.com/news/Politics/article/all/20261116/135028760/2"
  },
  {
   "geo": "KR",
@@ -19,53 +37,8 @@
  },
  {
   "geo": "KR",
-  "term": "임현주",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "임현주, MBC 퇴사 \"13년 8개월 재직…회사 밖 탐험할 것\"",
-  "news_link": "https://www.hankyung.com/article/202611169179H"
- },
- {
-  "geo": "KR",
-  "term": "카카오뱅크 애플페이",
-  "traffic": 1000,
-  "topics": "국내 대형주",
-  "econ": true,
-  "news_title": "[단독]카카오뱅크, 애플페이 서비스 시작",
-  "news_link": "https://www.etnews.com/20261116000304"
- },
- {
-  "geo": "KR",
-  "term": "낙상",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "\"낙상 위험 미리 포착해 약사가 예방\"…새로운 약료 모델 '눈길'",
-  "news_link": "https://www.kpanews.co.kr/news/articleView.html?idxno=549019"
- },
- {
-  "geo": "KR",
-  "term": "서영교",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "서영교 “의원 150석 이상이면 탄핵…다음 사람이 대법원장하면 돼” [정치시그널]",
-  "news_link": "https://ichannela.com/news/detail/000000560122.do"
- },
- {
-  "geo": "KR",
-  "term": "신세계",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "",
-  "news_link": ""
- },
- {
-  "geo": "KR",
   "term": "신유열",
-  "traffic": 200,
+  "traffic": 500,
   "topics": "",
   "econ": false,
   "news_title": "‘롯데 3세’ 신유열 롯데지주 부사장, 사장 승진… 그룹 전략 총괄 맡는다",
@@ -73,30 +46,48 @@
  },
  {
   "geo": "KR",
-  "term": "위메이드",
-  "traffic": 200,
+  "term": "야구 코치",
+  "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "[기자수첩] 위메이드 창업주의 무책임한 침묵",
-  "news_link": "https://dealsite.co.kr/articles/172677"
+  "news_title": "22년 전 자신의 길 걷는 김민성 수비 코치…이동욱 롯데 감독이 말하는 존중과 조언 사이 [SD 미야자키 리포트]",
+  "news_link": "https://sports.donga.com/sports/article/all/20261115/135027297/1"
  },
  {
   "geo": "KR",
-  "term": "hiv",
+  "term": "박지윤",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "최동석, 박지윤 지인 상대 상간 소송 2심 일부 승소…1심 뒤집혔다 - 머니투데이",
+  "news_link": "https://www.mt.co.kr/society/2026/11/16/2026111615464396280"
+ },
+ {
+  "geo": "KR",
+  "term": "전국삼성전자노동조합",
+  "traffic": 200,
+  "topics": "테슬라, 국내 대형주",
+  "econ": true,
+  "news_title": "[단독] 삼성전자 노조, 조합원 대상 테슬라 등 억대 경품 이벤트",
+  "news_link": "https://www.chosun.com/national/labor/2026/11/16/Y4ZJLFQORRAX5N7MH7RUL53GNI/"
+ },
+ {
+  "geo": "KR",
+  "term": "(주)명륜당",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "Zimbabwe’s HIV gains face a test among young people",
-  "news_link": "https://www.aljazeera.com/news/2026/11/15/zimbabwes-hiv-gains-face-a-test-among-young-people"
+  "news_title": "서울중수청, 명륜당 본사 압수수색…대부업체 부당 지원 의혹",
+  "news_link": "https://news.jtbc.co.kr/article/NB12328220"
  },
  {
-  "geo": "US",
-  "term": "florence pugh",
-  "traffic": 5000,
+  "geo": "KR",
+  "term": "tvn",
+  "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "Governors Awards 2026: Fashion—All of the Best Looks From the Red Carpet",
-  "news_link": "https://www.vogue.com/slideshow/2026-governors-awards-red-carpet-best-looks"
+  "news_title": "PILNE! Odnaleziono ciało w miejscu poszukiwań",
+  "news_link": "https://uwaga.tvn.pl/najnowsze/pilne-odnaleziono-cialo-w-miejscu-poszukiwan-st9339698"
  },
  {
   "geo": "US",
@@ -104,8 +95,17 @@
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "MoM Grand Prix promotes fitness, health awareness",
-  "news_link": "https://guyanachronicle.com/2026/11/16/mom-grand-prix-promotes-fitness-health-awareness/"
+  "news_title": "Experiences of pass-oriented fitness assessment and perceived barriers to regular physical activity among Chinese university students who did not meet fitness standards",
+  "news_link": "https://www.frontiersin.org/articles/10.3389/fpsyg.2026.1975784"
+ },
+ {
+  "geo": "US",
+  "term": "gta vi game",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "How Rockstar's 'GTA VI' release could reshape gaming, streaming and even paid time off",
+  "news_link": "https://www.cnbc.com/2026/11/14/gta-6-grand-theft-auto-launch.html"
  },
  {
   "geo": "US",
@@ -118,30 +118,12 @@
  },
  {
   "geo": "US",
-  "term": "apec",
+  "term": "alexandra daddario",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "China’s ‘miracle city’ that no US president has visited (yet)",
-  "news_link": "https://www.cnn.com/2026/11/15/travel/us-china-apec-trump-xi-shenzhen-hnk-intl"
- },
- {
-  "geo": "US",
-  "term": "future",
-  "traffic": 200,
-  "topics": "정치·관세",
-  "econ": true,
-  "news_title": "In newly blue Texas, far-right Christian nationalists gather to plan a future after Trump",
-  "news_link": "https://www.cnn.com/2026/11/15/politics/christian-nationalists-nick-fuentes-trump"
- },
- {
-  "geo": "US",
-  "term": "jlo",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "'Healthy' Jennifer Lopez says ‘I can do whatever I want’ after Ben Affleck split",
-  "news_link": "https://www.themirror.com/entertainment/jennifer-lopez-single-jimmy-fallon-2111418"
+  "news_title": "3 Best Movies To Watch On Disney+ This Weekend (#1 Is Alexandra Daddario's Action Fantasy Epic)",
+  "news_link": "https://screenrant.com/best-disney-plus-movies-watch-weekend-november-14/"
  },
  {
   "geo": "US",
@@ -154,29 +136,47 @@
  },
  {
   "geo": "US",
-  "term": "bill fennelly",
-  "traffic": 100,
+  "term": "sharad kapoor",
+  "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Iowa State coach Bill Fennelly suspended for contact with player",
-  "news_link": "https://www.espn.com/womens-college-basketball/story/_/id/50498905/iowa-state-coach-bill-fennelly-suspended-contact-player"
+  "news_title": "After Years Of Being Bedridden, Actor Sharad Kapoor Urges Film Industry To Support Him",
+  "news_link": "https://www.ndtv.com/entertainment/please-help-me-actor-sharad-kapoor-seeks-financial-support-from-film-fraternity-12329924"
  },
  {
   "geo": "US",
-  "term": "black friday sales",
+  "term": "colin farrell",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "Costco’s Black Friday sale goes live this week! Get a $45 Shop Card for holiday shopping when you sign up now",
-  "news_link": "https://www.al.com/shopping/2026/11/costcos-black-friday-sale-goes-live-this-week-get-a-45-shop-card-for-holiday-shopping-when-you-sign-up.html"
+  "news_title": "‘I’m a smalltown girl with a terrible disability. He’s a Hollywood superstar. But we’ve been laughing since we met’: Emma Fogarty and Colin Farrell on their extraordinary story",
+  "news_link": "https://www.theguardian.com/film/2026/nov/16/emma-fogarty-colin-farrell-marathons-friendship-the-slightest-touch"
  },
  {
   "geo": "US",
-  "term": "jimmy fallon",
+  "term": "indigo",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "Jimmy Fallon Gets a Sunday-Night Head Start on Sean Duffy Jokes",
-  "news_link": "https://latenighter.com/news/jimmy-fallon-sean-duffy-faa-jokes/"
+  "news_title": "IndiGo Marks Two Years of IndiGo Stretch with Over 4,000 Daily Seats Across its Growing",
+  "news_link": "https://aviationjeta.com/indigo-marks-two-years-of-indigo-stretch-with-over-4000-daily-seats-across-its-growing/"
+ },
+ {
+  "geo": "US",
+  "term": "penelope cruz javier bardem movie bunker",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "Penélope Cruz Wary Of Marital Blowback Starring With Javier Bardem In ‘Bunker’",
+  "news_link": "https://deadline.com/2026/11/penelope-cruz-bunker-interview-1237223831/"
+ },
+ {
+  "geo": "US",
+  "term": "qwen4",
+  "traffic": 100,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "Alibaba Unveils New Flagship AI Model in Riposte to US Rivals",
+  "news_link": "https://www.bloomberg.com/news/articles/2026-11-16/alibaba-unveils-new-flagship-ai-model-in-riposte-to-us-rivals"
  }
 ]
