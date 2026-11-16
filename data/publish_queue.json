@@ -3397,360 +3397,6 @@
  ],
  "ideas": [
   {
-   "title": "9천피 때 발행한 ELS 94개 12월 만기",
-   "concept": "코스피 9천 근처에서 발행된 ELS 94개가 12월부터 만기를 맞는다는 한겨레 보도를 한 사건으로 따라간다. ELS가 무엇이고 만기 때 어떤 조건이 중요한지 풀고, 내 상품의 기준 가격과 만기일부터 확인하라는 한 줄로 닫는다. 손실 구간 여부는 상품별 조건이라 단정하지 않는다. (공식: 끝 장은 닫힌 결론 한 줄)",
-   "why_now": "한겨레가 어젯밤 'ELS 악몽 또…9천피때 발행 상품 94개, 내달부터 만기'를 보도했다. 비트코인과 금, 은이 함께 내리고 AI주도 흔들려 개인 투자자의 불안이 커진 시점이다.",
-   "tag": "투자자 불안",
-   "sources": [
-    "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9xZDZoYTFPLU1VUm9oWEo3MUpKUlhKVFBnRURmOHV2N2E1ZmFXQkRRSE11d096Ul90UVF"
-   ],
-   "bg": "KOSPI stock exchange Seoul",
-   "bg_alt": "stock market board screen Korea",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "9천피 때 판 ELS\n**94개**가 12월부터\n만기를 맞는다",
-     "number": "94개",
-     "label": "9천피 근처에서 발행된 ELS",
-     "sub": "12월부터 줄줄이 만기"
-    },
-    {
-     "type": "질문형",
-     "title": "9천피에 가입한 ELS\n12월 **만기**, 내 건\n괜찮은 걸까",
-     "number": "94개",
-     "label": "12월 만기 ELS",
-     "sub": "기준 가격과 만기일부터 확인"
-    },
-    {
-     "type": "반전형",
-     "title": "ELS 94개가 줄줄이\n만기를 맞는다\n발행 땐 **9천피**였다",
-     "number": "94개",
-     "label": "9천피 때 발행",
-     "sub": "12월부터 만기 시작"
-    }
-   ],
-   "forms": [
-    "editorial",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261116-0709-i1",
-   "created_at": "2026-11-16T07:09:58+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261116-0709-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261116-0709-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261116-0709-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261116-0709-i1/2-bignum-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261116-0709-i1/2-bignum-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261116-0709-i1/2-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261116-0709-i1/3-bignum-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261116-0709-i1/3-bignum-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261116-0709-i1/3-bignum-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "호반이 한진칼 최대주주, 조원태 370억 맞대응",
-   "concept": "한진칼 1대 주주가 바뀌었다는 이코노미조선 보도를 호반 한 곳을 주인공으로 따라간다. 지분 역전, 조원태 회장의 370억원 맞대응, 앞으로 볼 산업은행 지분과 내년 주주총회 순서로 푼다. 단독 보도라 숫자에 확인 표시를 한 곳에만 짧게 쓰고 주가 전망은 쓰지 않는다. (공식: 한 주인공이 장마다 한 걸음씩)",
-   "why_now": "이코노미조선이 '호반, 한진칼 최대주주 등극, 조원태 370억 맞대응'을 보도했다. 산은 지분과 내년 주총이 분수령이라는 내용이다. 아직 다른 곳에서 크게 다루지 않은 새 기업 이슈다.",
-   "tag": "경영권 다툼",
-   "sources": [
-    "https://v.daum.net/v/20261115230103613"
-   ],
-   "bg": "Cho Won-tae Hanjin",
-   "bg_alt": "Korean Air Hanjin building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "조원태 회장이\n**370억**으로 맞대응\n호반이 1대 주주",
-     "number": "370억원",
-     "label": "조원태 회장 맞대응 규모",
-     "sub": "호반이 한진칼 최대주주에 올랐다"
-    },
-    {
-     "type": "질문형",
-     "title": "호반은 어떻게\n한진칼 **1대 주주**가\n됐을까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "한진칼 1대 주주가\n**호반**으로 바뀌었다\n산은 지분이 변수",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261116-0709-i2",
-   "created_at": "2026-11-16T07:09:58+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261116-0709-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261116-0709-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261116-0709-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261116-0709-i2/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261116-0709-i2/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261116-0709-i2/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261116-0709-i2/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261116-0709-i2/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261116-0709-i2/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "큰손들, 엔비디아 판 돈으로 인텔과 하이닉스 ADR",
-   "concept": "스캔들이 아니라 돈의 이동으로 푼다. 매일경제 보도대로 글로벌 큰손이 엔비디아를 덜고 인텔과 SK하이닉스 ADR을 샀다는 사실만 쓰고, 어느 기관이 얼마나 샀는지는 원문 확인이 필요하다고 한 곳에 밝힌다. ADR은 해외에서 거래되는 주식 대리 증서라고 처음 나올 때 풀고, 17일 엔비디아 실적을 다음 일정으로 둔다. (공식: 없음)",
-   "why_now": "매일경제가 어젯밤 글로벌 큰손이 엔비디아를 팔고 인텔과 SK하이닉스 ADR을 샀다고 보도했다. 쓰레드에서도 이 이야기가 시간당 조회 9천 안팎으로 빠르게 크고 있고, 17일 엔비디아 실적 발표를 앞두고 있다.",
-   "tag": "AI 반도체 자금",
-   "sources": [
-    "https://www.mk.co.kr/news/stock/12209538"
-   ],
-   "bg": "Jensen Huang Nvidia",
-   "bg_alt": "Nvidia chip",
-   "hooks": [
-    {
-     "type": "사건형",
-     "title": "큰손들이 엔비디아를\n팔고 **인텔**을\n사들였다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "엔비디아 판 돈\n**어디로** 갔을까\n큰손의 선택은",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "엔비디아를 덜고\n**SK하이닉스** ADR을\n담았다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/16",
-     "headlines": [
-      "큰손, 엔비디아 비중 덜어냈다",
-      "인텔, SK하이닉스 ADR 매수",
-      "17일 엔비디아 실적이 시험대"
-     ]
-    }
-   },
-   "id": "20261116-0709-i3",
-   "created_at": "2026-11-16T07:09:58+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261116-0709-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261116-0709-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261116-0709-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261116-0709-i3/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261116-0709-i3/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261116-0709-i3/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261116-0709-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261116-0709-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261116-0709-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261116-0709-i3/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261116-0709-i3/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261116-0709-i3/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261116-0709-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261116-0709-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261116-0709-i3/3-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261116-0709-i3/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261116-0709-i3/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261116-0709-i3/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "연 4%대 예금 13개에서 154개로",
    "concept": "저축은행 연 4%대 예금 상품이 13개에서 154개로 늘었다는 보도를 숫자 하나로 보여 주고, 예금자보호 한도와 세전, 세후 금리 구분 같은 체크포인트로 닫는다. (공식: 숫자는 둘을 맞붙여서)",
    "why_now": "헤럴드경제가 연 4%대 예금이 13개에서 154개로 늘었다고 보도했고 전남일보도 저축은행 예금금리가 연 4%에 가깝다고 전했다. 주식과 코인이 흔들리는 날이라 예금에 관심이 쏠리기 쉽다.",
@@ -9256,6 +8902,406 @@
      "form": "editorial",
      "font": "plex",
      "path": "20261116-2201-i3/3-editorial-plex.jpg"
+    }
+   ]
+  },
+  {
+   "title": "AI 투자 전망 2028년 -28%, 2030년 -40%",
+   "concept": "세미애널리시스가 AI 가속기 투자 전망을 낮췄다는 사실과 같은 날 삼성전자(-4.47%), SK하이닉스(-7.89%, 11/16 종가 기준)가 급락한 것을 맞붙인다. 전망이 낮아졌다는 것이지 투자가 멈춘다는 뜻은 아니라는 점은 한 줄로 짚고, 마지막 장은 '확인된 것 / 아직 모르는 것'으로 닫는다. (공식: 끝 장은 닫힌 결론 한 줄)",
+   "why_now": "올라온 지 1.2시간 된 쓰레드 글이 시간당 조회 5,042로 크고 있고, 한국 매체는 아직 다루지 않았다. 반도체 급락일이라 HBM 수요 걱정이 큰 시점이다.",
+   "tag": "반도체",
+   "sources": [
+    "https://www.threads.com/@2jaboom/post/DfzWNHqH1M3",
+    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008848523&plink=RSSLINK&cooper=RSSREADER"
+   ],
+   "bg": "SK hynix HBM",
+   "bg_alt": "semiconductor wafer factory",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "세미애널리시스가\n2030년 AI 투자\n전망 **40%** 깎았다",
+     "number": "-40%",
+     "label": "2030년 AI 가속기 투자 전망",
+     "sub": "2028년 전망도 28% 낮췄다"
+    },
+    {
+     "type": "질문형",
+     "title": "AI 전망 40% 삭감\nHBM 수요도\n**줄어드나**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "전망만 깎였는데\n삼전닉스는\n**급락**했다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "bars"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "세미애널리시스 AI 가속기 투자 전망 하향폭(%)",
+     "bars": [
+      {
+       "label": "2028년",
+       "value": 28
+      },
+      {
+       "label": "2030년",
+       "value": 40,
+       "hi": true
+      }
+     ]
+    }
+   },
+   "id": "20261117-0707-i1",
+   "created_at": "2026-11-17T07:07:46+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261117-0707-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261117-0707-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261117-0707-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261117-0707-i1/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261117-0707-i1/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261117-0707-i1/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261117-0707-i1/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261117-0707-i1/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261117-0707-i1/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261117-0707-i1/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261117-0707-i1/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261117-0707-i1/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "美 상무부, AI칩 제3국 우회로 차단",
+   "concept": "상무부가 첨단 AI 칩을 제3국이나 원격으로 우회해 쓰는 길을 막는 규정을 냈다는 보도를 중심에 둔다. 같은 시각 루트닉 장관 아들 회사가 엔비디아 지분을 절반 줄였다는 보도와 수출통제 지연 의혹은 [확인] 표시와 함께 한 장으로만 다룬다. 한국 투자자에게는 중국 매출과 반도체 수급 이야기가 다시 나올 수 있다는 점까지만 쓴다. (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "23:02~23:05에 CNBC, Reuters, Bloomberg가 연달아 보도한 새 소식이다. 엔비디아 실적 발표 직전에 나왔고 앞선 글에는 없는 내용이다.",
+   "tag": "AI칩 규제",
+   "sources": [
+    "https://www.cnbc.com/2026/11/16/nvidia-commerce-china-lutnick.html",
+    "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPOFRscFU2Tnd4dkpNWURqN2NDcEg1eHBNUW9VTTd5YkRBNlA2eVJkV0xsWHpqNExCek4",
+    "https://news.google.com/rss/articles/CBMiakFVX3lxTE9YdHBvNklidy1GMkNNOG9wRWpvNnVNTDhYX2tRWFBBS1QwTFF3TklCMjVEblFnYXdyODl"
+   ],
+   "bg": "Howard Lutnick",
+   "bg_alt": "Nvidia headquarters",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "미 상무부가\nAI칩 제3국 우회\n통로를 **막는다**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "엔비디아 실적 직전\n미 상무부가 꺼낸\n**우회로** 차단 카드",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "규제가 나온 날\n루트닉 아들 회사는\n엔비디아 지분 **절반**",
+     "number": "절반",
+     "label": "루트닉 장관 아들 회사",
+     "sub": "엔비디아 지분 매각 보도"
+    }
+   ],
+   "forms": [
+    "breaking",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261117-0707-i2",
+   "created_at": "2026-11-17T07:07:46+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261117-0707-i2/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261117-0707-i2/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261117-0707-i2/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261117-0707-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261117-0707-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261117-0707-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261117-0707-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261117-0707-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261117-0707-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261117-0707-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261117-0707-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261117-0707-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261117-0707-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261117-0707-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261117-0707-i2/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261117-0707-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261117-0707-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261117-0707-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "비트코인 6만2천달러 찍고 6만5천 회복",
+   "concept": "연쇄 청산(빚내서 한 투자가 강제로 팔리는 것)으로 6만2천달러까지 밀렸다가 6만5천달러를 잠깐 회복한 흐름을 따라간다. 스트래티지가 하락 중에도 비트코인을 샀다는 점, 김치 프리미엄 2.02%, 11/16 종가 65,338달러와 1달 -18.33%를 맞붙여 보여준다. 나스닥이 같이 흔들린 날이라 코인도 주식과 같이 움직였는지는 확인 안 됨으로 한 번만 적는다. (공식: 가운데 한 번 뒤집기)",
+   "why_now": "CNBC가 23:29에 청산 연쇄로 6만2천달러까지 밀렸다가 소폭 반등했다고 전했다. 앞선 글감은 주간 하락 위주였고 지금은 급락 뒤 반등이라는 새 국면이다.",
+   "tag": "가상자산",
+   "sources": [
+    "https://www.cnbc.com/2026/11/16/bitcoin-slides-to-62000-following-liquidation-cascade-then-rebounds-slightly.html",
+    "https://news.google.com/rss/articles/CBMiUEFVX3lxTE4zSGlDd05zMll0TUxDTGVGUU9BZEx1cTg1RkdyZVFSSzNlTEpQVnlXTUpIeElvSWpmejk"
+   ],
+   "bg": "Bitcoin coin",
+   "bg_alt": "Strategy Michael Saylor",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "비트코인이\n청산 폭탄에\n**6만2천달러**까지",
+     "number": "6만2천달러",
+     "label": "청산 연쇄로 찍은 저점",
+     "sub": "이후 6만5천달러 일시 회복"
+    },
+    {
+     "type": "질문형",
+     "title": "스트래티지는\n폭락 중에도\n왜 **샀을까**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "6만2천달러 찍고\n6만5천달러를\n**회복**했다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261117-0707-i3",
+   "created_at": "2026-11-17T07:07:46+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261117-0707-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261117-0707-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261117-0707-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261117-0707-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261117-0707-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261117-0707-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261117-0707-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261117-0707-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261117-0707-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261117-0707-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261117-0707-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261117-0707-i3/3-news-myeongjo.jpg"
     }
    ]
   }
