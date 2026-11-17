@@ -1,16 +1,7 @@
 [
  {
   "geo": "KR",
-  "term": "상주 지진",
-  "traffic": 20000,
-  "topics": "",
-  "econ": false,
-  "news_title": "경북 상주 규모 3.6 지진…유감 신고 16건",
-  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8715579"
- },
- {
-  "geo": "KR",
-  "term": "데블스플랜3",
+  "term": "데블스플랜",
   "traffic": 1000,
   "topics": "",
   "econ": false,
@@ -19,8 +10,17 @@
  },
  {
   "geo": "KR",
+  "term": "친선경기",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "콜롬비아, 칠레와 친선 경기…수아레스, 마리판·울로아와 공 다툼",
+  "news_link": "https://www.gukjenews.com/news/articleView.html?idxno=3752319"
+ },
+ {
+  "geo": "KR",
   "term": "탄도 미사일",
-  "traffic": 500,
+  "traffic": 1000,
   "topics": "",
   "econ": false,
   "news_title": "젤렌스키 \"더 많은 北미사일 러에 공급‥韓주변에 도전 과제\"",
@@ -28,12 +28,12 @@
  },
  {
   "geo": "KR",
-  "term": "mbc",
+  "term": "gta6",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "بدء عرض الموسم الجديد من توب شيف مطلع ديسمبر المقبل باشتراك نجوم الوطن العربي",
-  "news_link": "https://www.shorouknews.com/mobile/news/view.aspx?cdate=15112026&id=1c40ef7d-5f0d-4f0b-bf2a-5e9715d9f868"
+  "news_title": "Pre-Load Grand Theft Auto VI Now",
+  "news_link": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
  },
  {
   "geo": "KR",
@@ -46,6 +46,15 @@
  },
  {
   "geo": "KR",
+  "term": "서울경제",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "일본 경유하려다 ‘날벼락’ 맞을 수도…“이것 없인 비행기 못 탄다” 대체 무슨 제도길래",
+  "news_link": "https://www.sedaily.com/article/20114910"
+ },
+ {
+  "geo": "KR",
   "term": "애플",
   "traffic": 200,
   "topics": "국내 대형주",
@@ -55,21 +64,12 @@
  },
  {
   "geo": "KR",
-  "term": "지진 3.7",
-  "traffic": 200,
+  "term": "mbk파트너스",
+  "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "지수 선물 시황 - 이벤트 경계 심리 확대로 기술주 주도 약세 지속",
-  "news_link": "https://kr.investing.com/analysis/article-200459919"
- },
- {
-  "geo": "KR",
-  "term": "포스코홀딩스",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "포스코인터내셔널, 거대 분지에서 끌어올린 '천연가스 잭팟'…파이프라인서 2000억 쏟아졌다",
-  "news_link": "https://www.hankyung.com/article/2026111710841"
+  "news_title": "회수부터 투자까지…MBK SS, 신규 펀드레이징 배경은",
+  "news_link": "https://marketin.edaily.co.kr/News/Read?newsId=04149206645646704"
  },
  {
   "geo": "KR",
@@ -91,92 +91,92 @@
  },
  {
   "geo": "US",
-  "term": "bosnia and herzegovina vs romania",
-  "traffic": 1000,
+  "term": "browns raiders",
+  "traffic": 10000,
   "topics": "",
   "econ": false,
-  "news_title": "Bosnia-Herzegovina vs Romania: UEFA Nations League stats & head-to-head",
-  "news_link": "https://www.bbc.com/sport/football/live/ckd71xvg3e8nt"
- },
- {
-  "geo": "US",
-  "term": "chris pratt",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Prime Video’s Military Thriller Masterpiece Officially Hits a Major Streaming Milestone",
-  "news_link": "https://collider.com/chris-pratt-the-terminal-list-dark-wolf-streaming-success-prime-video-200-days/"
- },
- {
-  "geo": "US",
-  "term": "equinor",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Equinor detects ongoing cyberattack, output unaffected",
-  "news_link": "https://www.reuters.com/technology/equinor-detects-ongoing-cyberattack-output-unaffected-2026-11-17/"
- },
- {
-  "geo": "US",
-  "term": "israel vs austria",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Israel vs Austria: UEFA Nations League stats & head-to-head",
-  "news_link": "https://www.bbc.com/sport/football/live/c6y974v0evnpt"
- },
- {
-  "geo": "US",
-  "term": "liberia vs cabo verde",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Cape Verde vs Liberia: Africa Cup of Nations Qualification stats & head-to-head",
-  "news_link": "https://www.bbc.com/sport/football/live/cm3vqgg7xwk7t"
- },
- {
-  "geo": "US",
-  "term": "pennsylvania lottery",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Winning Pa. Lottery numbers for Nov. 16, 2026",
-  "news_link": "https://www.pennlive.com/lottery/2026/11/winning-pa-lottery-numbers-for-nov-16-2026.html"
- },
- {
-  "geo": "US",
-  "term": "rj godfrey",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Arizona's RJ Godfrey reportedly eligible to play vs. UConn after judge grants injunction",
-  "news_link": "https://sports.yahoo.com/mens-college-basketball/breaking-news/article/arizonas-rj-godfrey-reportedly-eligible-to-play-vs-uconn-after-judge-grants-injunction-182521598.html"
- },
- {
-  "geo": "US",
-  "term": "rwanda vs mali",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Mali vs Rwanda: Africa Cup of Nations Qualification stats & head-to-head",
-  "news_link": "https://www.bbc.com/sport/football/live/ckgel338dyezt"
- },
- {
-  "geo": "US",
-  "term": "tech outages",
-  "traffic": 500,
-  "topics": "정치·관세",
-  "econ": true,
-  "news_title": "Trump administration dismisses crisis fears after string of disruptive tech outages",
-  "news_link": "https://www.cnn.com/2026/11/17/politics/vance-mullin-infrastructure-crisis-fears-intl-hnk"
+  "news_title": "The NFL’s Week 12 flex decision is looming",
+  "news_link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/the-nfls-week-12-flex-decision-is-looming"
  },
  {
   "geo": "US",
   "term": "wales vs portugal",
-  "traffic": 500,
+  "traffic": 10000,
   "topics": "",
   "econ": false,
   "news_title": "Wales v Portugal: Portugal without Cristiano Ronaldo face a post-Gareth Bale Wales",
   "news_link": "https://www.bbc.com/sport/football/articles/ckvg29vler1no"
+ },
+ {
+  "geo": "US",
+  "term": "rutgers vs houston",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Rutgers vs Houston Preview: How to watch, TV, radio, live thread",
+  "news_link": "https://247sports.com/college/rutgers/article/rutgers-vs-houston-preview-how-to-watch-tv-radio-live-thread-292849365/"
+ },
+ {
+  "geo": "US",
+  "term": "hayden panettiere",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Hayden Panettiere’s mom speaks out again in new interview, blames actress’ ex Brian Hickerson for their estrangement",
+  "news_link": "https://www.yahoo.com/entertainment/celebrity/deaths-obituaries/articles/hayden-panettiere-mom-speaks-again-134108638.html"
+ },
+ {
+  "geo": "US",
+  "term": "hungary vs northern ireland",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Nations League: Northern Ireland face Hungary in final group game - watch from 19:15 GMT",
+  "news_link": "https://www.bbc.com/sport/football/live/cwq6e479rygjt"
+ },
+ {
+  "geo": "US",
+  "term": "ireland vs kosovo",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Republic of Ireland vs Kosovo: UEFA Nations League stats & head-to-head",
+  "news_link": "https://www.bbc.com/sport/football/live/cmy974v0edx8t"
+ },
+ {
+  "geo": "US",
+  "term": "live radio",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "22News InFocus Host Patrick Berry stars in It’s a Wonderful Life: The Live Radio Play",
+  "news_link": "https://www.wwlp.com/news/local-news/hampden-county/22news-infocus-host-patrick-berry-stars-in-its-a-wonderful-life-the-live-radio-play/"
+ },
+ {
+  "geo": "US",
+  "term": "live tv",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Roku Quietly Adds Five More Free Channels",
+  "news_link": "https://www.yahoo.com/entertainment/tv/articles/roku-quietly-adds-five-more-164349470.html"
+ },
+ {
+  "geo": "US",
+  "term": "niger vs morocco",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Morocco Meets Niger Again in Rabat With 2027 AFCON Qualification in Sight",
+  "news_link": "https://barlamantoday.com/2026/11/17/morocco-meets-niger-again-in-rabat-with-2027-afcon-qualification-in-sight/"
+ },
+ {
+  "geo": "US",
+  "term": "ukraine vs georgia",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Ukraine vs Georgia: UEFA Nations League stats & head-to-head",
+  "news_link": "https://www.bbc.com/sport/football/live/cwdd14e27ejrt"
  }
 ]
