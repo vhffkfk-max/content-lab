@@ -1,6 +1,15 @@
 [
  {
   "geo": "KR",
+  "term": "weather",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Weather Forecast: Warming trend builds through a dry stretch ahead",
+  "news_link": "https://www.fingerlakesdailynews.com/weather/2026-11-18-evening-weekly-outlook-warming-trend-builds-through-a-dry-stretch-ahead/"
+ },
+ {
+  "geo": "KR",
   "term": "이민정",
   "traffic": 2000,
   "topics": "",
@@ -10,17 +19,17 @@
  },
  {
   "geo": "KR",
-  "term": "погода",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "В Москве к вечеру 18 ноября может появиться снежный покров",
-  "news_link": "https://snob.ru/news/v-moskve-k-vecheru-18-noiabria-mozhet-poiavitsia-snezhnyi-pokrov/"
+  "term": "s&p 500",
+  "traffic": 1000,
+  "topics": "ETF·지수투자",
+  "econ": true,
+  "news_title": "Dow Drops 849 Points, S&P 500 Lowest Since July",
+  "news_link": "https://www.chosun.com/english/market-money-en/2026/11/18/LXNSPTUW4FCDBNR3KASFM3YORY/"
  },
  {
   "geo": "KR",
   "term": "김현태",
-  "traffic": 500,
+  "traffic": 1000,
   "topics": "",
   "econ": false,
   "news_title": "법원, ‘국회 봉쇄’ 김현태 전 707 단장 구속취소 요청 기각",
@@ -28,44 +37,17 @@
  },
  {
   "geo": "KR",
-  "term": "보안 취약점",
+  "term": "농구",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "프로농구 정관장, DB 잡고 파죽의 5연승…4쿼터 해결사는 변준형",
+  "news_link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8715527"
+ },
+ {
+  "geo": "KR",
+  "term": "nvda",
   "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "PHP 이어 '자바'서도 치명적 취약점…공공·기업 보안 비상",
-  "news_link": "https://www.yna.co.kr/view/AKR20261118014000017"
- },
- {
-  "geo": "KR",
-  "term": "denmark vs norway",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Denmark vs Norway: UEFA Nations League stats & head-to-head",
-  "news_link": "https://www.bbc.com/sport/football/live/cq1k974v3m9dt"
- },
- {
-  "geo": "KR",
-  "term": "nations league",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Preview: Poland vs Sweden - prediction, team news, lineups",
-  "news_link": "https://www.sportsmole.co.uk/football/poland/uefa-nations-league/preview/poland-vs-sweden-prediction-team-news-lineups_609183.html"
- },
- {
-  "geo": "KR",
-  "term": "사고",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "고경표 때문에 더 주목받는 '술꾼들'...신동엽·성시경이 '무사고' 지킨 비결",
-  "news_link": "https://www.chosun.com/entertainments/enter_general/2026/11/17/MNQTOM3BG5SDONJTGQ2TMMLDGY/"
- },
- {
-  "geo": "KR",
-  "term": "nvda stock",
-  "traffic": 100,
   "topics": "AI·반도체",
   "econ": true,
   "news_title": "Nvidia interim CEO Kress says it’s ‘business as usual’ at company: Live updates",
@@ -73,110 +55,128 @@
  },
  {
   "geo": "KR",
-  "term": "天気",
-  "traffic": 100,
+  "term": "앨리스 황",
+  "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "１９日の天気（西日本）",
-  "news_link": "https://www.okinawatimes.co.jp/articles/-/1968656"
+  "news_title": "\"앨리스 황 남편, 中 정부 지원받아 12조 원 데이터센터 사업\"",
+  "news_link": "https://imnews.imbc.com/news/2026/world/article/6866314_36925.html"
  },
  {
   "geo": "KR",
-  "term": "변상일",
+  "term": "핑클",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "'190억 집 압류해제' 옥주현, '남편 무죄' 성유리와 재회…핑클 뭉쳤다 - 머니투데이",
+  "news_link": "https://www.mt.co.kr/entertainment/2026/11/17/2026111719381779534"
+ },
+ {
+  "geo": "KR",
+  "term": "ionq",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "[속보] 대이변…세계 1위 신진서 무너졌다, 韓 4위 변상일 결승行",
-  "news_link": "https://www.nocutnews.co.kr/news/6608315"
+  "news_title": "Ionq stock hits 52-week low at 24.91 USD",
+  "news_link": "https://www.investing.com/news/company-news/ionq-stock-hits-52week-low-at-2491-usd-93CH-5033482"
  },
  {
-  "geo": "US",
-  "term": "argentina - costa rica",
-  "traffic": 10000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Argentina vs. Costa Rica: Preview, Predictions and Lineups",
-  "news_link": "https://www.si.com/soccer/argentina-vs-costa-rica-preview-predictions-lineups-11-17-26"
- },
- {
-  "geo": "US",
-  "term": "chile vs colombia",
-  "traffic": 10000,
-  "topics": "",
-  "econ": false,
-  "news_title": "¡Atención, chilenos! La probable formación para enfrentar a Colombia",
-  "news_link": "https://espndeportes.espn.com/futbol/mundial/nota/_/id/17526251/probable-formacion-de-chile-para-enfrentar-a-colombia"
- },
- {
-  "geo": "US",
-  "term": "chile - colombia",
-  "traffic": 5000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Lorenzo hails Colombia's fight in 'intense' friendly win over Chile",
-  "news_link": "https://www.beinsports.com/en-us/soccer/friendlies/articles/lorenzo-hails-colombias-fight-in-intense-friendly-win-over-chile-2026-11-14"
- },
- {
-  "geo": "US",
-  "term": "dow jones industrial average",
-  "traffic": 5000,
-  "topics": "ETF·지수투자",
+  "geo": "KR",
+  "term": "south korea",
+  "traffic": 100,
+  "topics": "AI·반도체",
   "econ": true,
-  "news_title": "Dow drops more than 800 points, S&P 500 posts lowest close since July",
-  "news_link": "https://www.cnbc.com/2026/11/16/stock-market-today-live-updates.html"
+  "news_title": "Chinese AI short dramas surge in South Korea as users near 5 million",
+  "news_link": "https://biz.chosun.com/en/en-it/2026/11/18/HNYFYNN4ZRF7JDZLIGIUHQVQBE/"
  },
  {
   "geo": "US",
-  "term": "aircraft",
+  "term": "usa vs haiti",
+  "traffic": 10000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Live updates: Mauricio Pochettino bids farewell as USMNT take on Haiti",
+  "news_link": "https://www.espn.com/soccer/story/_/id/50490960/pochettino-farewell-usmnt-haiti-live-updates"
+ },
+ {
+  "geo": "US",
+  "term": "estados unidos - haití",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "Man accessed US military plane at Ireland airport and destroyed it, DOJ says",
-  "news_link": "https://www.cnn.com/2026/11/17/politics/irish-national-charges-destroying-us-military-plane-ireland"
+  "news_title": "Estados Unidos vs. Haití y México vs. Jamaica cierran los Cuartos de Final de la Liga de Naciones",
+  "news_link": "https://es.concacaf.com/competitions/nations-league/news/estados-unidos-vs-haiti-y-mexico-vs-jamaica-cierran-los-cuartos-de-final-de-la-liga-de-naciones"
  },
  {
   "geo": "US",
-  "term": "anne hathaway",
-  "traffic": 2000,
+  "term": "ball state vs ohio",
+  "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Anne Hathaway Welcomes New Baby, Spotted With Newborn in NYC",
-  "news_link": "https://www.tmz.com/2026/11/17/anne-hathaway-seen-with-new-baby/"
+  "news_title": "Ball State vs. Ohio prediction, picks, odds, start time: College football betting preview for Nov. 17 MACtion",
+  "news_link": "https://www.cbssports.com/betting/news/ball-state-vs-ohio-prediction-picks-odds-start-time-college-football-betting-preview-nov-17-maction/"
  },
  {
   "geo": "US",
-  "term": "league of legends",
+  "term": "kings vs bruins",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "11/17 Preview - Gustafsson Expected To Return + Power Play Entries, Setup, Overtime History",
+  "news_link": "https://lakingsinsider.com/2026/11/17/11-17-preview-gustafsson-expected-to-return-power-play-entries-setup-overtime-history/"
+ },
+ {
+  "geo": "US",
+  "term": "oilers vs panthers",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Gameday 23: Florida Panthers vs Edmonton Oilers",
+  "news_link": "https://www.litterboxcats.com/florida-panthers-vs-edmonton-oilers-gameday-23-2026-27-nhl-schedule/"
+ },
+ {
+  "geo": "US",
+  "term": "sabres vs flyers",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Sabres at Flyers | How to watch, lineup notes, and storylines",
+  "news_link": "https://www.nhl.com/sabres/news/how-to-watch-buffalo-sabres-philadelphia-flyers-lineup"
+ },
+ {
+  "geo": "US",
+  "term": "blue jackets vs islanders",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "League of Legends World Championship Grand Final: Riot Games Continues To Blaze the Remote-Production Trail at Barclays Center",
-  "news_link": "https://www.sportsvideo.org/2026/11/16/riot-games-continues-to-blaze-the-remote-production-trail-with-league-of-legends-worlds-grand-final-at-barclays-center/"
+  "news_title": "NY Islanders Could Be Without Trio of Players Against Blue Jackets",
+  "news_link": "https://sports.yahoo.com/articles/ny-islanders-could-without-trio-172357736.html"
  },
  {
   "geo": "US",
-  "term": "uruguay vs dominican republic",
+  "term": "harlan coben",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Uruguay vs Dominican Republic: Friendlies stats & head-to-head",
-  "news_link": "https://www.bbc.com/sport/football/live/c6jd75xzkn21t"
+  "news_title": "Harlan Coben’s The Innocent Is Getting a New Limited Series Adaptation",
+  "news_link": "https://www.netflix.com/tudum/articles/the-innocent-harlan-coben-series"
  },
  {
   "geo": "US",
-  "term": "kuwait",
-  "traffic": 200,
+  "term": "miami oh vs kent state",
+  "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Kuwait under hostile drone attacks, says army",
-  "news_link": "https://www.arabnews.com/middle-east/kuwait-under-hostile-drone-attacks-says-army-3012614"
+  "news_title": "Kent State college football vs. Miami live updates, highlights",
+  "news_link": "https://sports.yahoo.com/articles/kent-state-college-football-vs-220036376.html"
  },
  {
   "geo": "US",
-  "term": "qeshm",
-  "traffic": 200,
+  "term": "sheriff",
+  "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Iran war live: US hits Qeshm Island, Houthis claim attack on Saudi pipeline",
-  "news_link": "https://www.aljazeera.com/news/liveblog/2026/11/16/live-houthis-advance-in-yemen-as-tankers-hit-sea-mines-in-strait-of-hormuz"
+  "news_title": "California sheriff's deputy, special officer put on leave after 5-second conversation with ICE agents",
+  "news_link": "https://www.foxnews.com/us/california-sheriffs-deputy-special-officer-put-leave-after-5-second-conversation-ice-agents"
  }
 ]
