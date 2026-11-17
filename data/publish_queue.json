@@ -3452,404 +3452,6 @@
  ],
  "ideas": [
   {
-   "title": "SK하이닉스 목표가 260만→160만",
-   "concept": "목표가 38% 하향이라는 숫자를 11/16 종가 112만원과 나란히 놓고, 리포트가 짚은 우려가 수요 둔화가 아니라 2028년 이후 공급이라는 점을 중간에 뒤집는 장으로 둔다. 삼성전자 목표가 38.1만→30.9만원도 한 장에 붙이고, 마지막 장은 '확인된 것 / 아직 모르는 것'으로 닫는다. (공식: 끝 장은 닫힌 결론 한 줄)",
-   "why_now": "한국 투자자에게 직접 와닿는 소재이고, 오늘 삼성전자와 SK하이닉스가 급락한 날이라 관심이 높습니다. 같은 맥락의 AI 투자 전망 하향 글도 쓰레드에서 빠르게 커지고 있습니다.",
-   "tag": "반도체",
-   "sources": [
-    "https://www.threads.com/@play2000m/post/DfzY9w6E0z9",
-    "https://www.threads.com/@2jaboom/post/DfzWNHqH1M3"
-   ],
-   "bg": "SK hynix HBM",
-   "bg_alt": "SK hynix headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "SK하이닉스 목표가\n260만에서 **160만**원\n38% 낮춘 리포트",
-     "number": "-38%",
-     "label": "SK하이닉스 목표가 하향",
-     "sub": "260만원에서 160만원으로"
-    },
-    {
-     "type": "질문형",
-     "title": "SK하이닉스 목표가를\n**왜** 38%나 깎았나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "하이닉스 목표가 38%↓\n우려는 수요 아닌\n**2028년** 이후 공급",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "bars"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "SK하이닉스 목표가 변화 (만원, 종가는 11/16 기준)",
-     "bars": [
-      {
-       "label": "하향 전 목표가",
-       "value": 260
-      },
-      {
-       "label": "하향 후 목표가",
-       "value": 160,
-       "hi": true
-      },
-      {
-       "label": "11/16 종가",
-       "value": 112
-      }
-     ]
-    }
-   },
-   "id": "20261117-0807-i1",
-   "created_at": "2026-11-17T08:07:05+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261117-0807-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261117-0807-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261117-0807-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261117-0807-i1/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261117-0807-i1/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261117-0807-i1/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261117-0807-i1/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261117-0807-i1/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261117-0807-i1/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261117-0807-i1/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261117-0807-i1/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261117-0807-i1/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "연준, 블랙록, IMF가 같은 날 AI 경고",
-   "concept": "워시 연준 의장이 AI가 성장을 가속할 수 있다고 하면서 실업과 주가 하락 위험도 말했다는 점, 블랙록의 AI 인프라 속도 둔화 우려, IMF 총재의 'AI 한 다리' 발언을 한 장씩 풀고, 간밤 나스닥 2.49%와 반도체지수 5.3% 하락을 맞붙여 보여 준다. 마지막은 '기대가 컸던 만큼 변동성 확대에 유의'로 닫고 투자 권유가 아니라는 문구를 붙인다. (공식: 가운데 한 번 뒤집기)",
-   "why_now": "엔비디아 쇼크 직후 세 기관의 AI 경고가 같은 시각에 나왔고, 간밤 나스닥은 2.49%, 반도체지수는 5.3% 하락했습니다. 이번 주 엔비디아 실적을 앞두고 시장이 민감한 시점입니다.",
-   "tag": "AI 시장",
-   "sources": [
-    "https://v.daum.net/v/20261117065412717",
-    "https://www.mt.co.kr/world/2026/11/17/2026111706581748877",
-    "https://www.ft.com/content/12d927a9-98b1-40b9-8f75-01fb56a693d1?syn-25a6b1a6=1"
-   ],
-   "bg": "Warsh Federal Reserve",
-   "bg_alt": "Federal Reserve building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "나스닥 **2.49%**↓\n반도체지수 5.3%↓\n기관 경고도 겹쳤다",
-     "number": "-5.3%",
-     "label": "간밤 반도체지수",
-     "sub": "나스닥은 2.49% 하락"
-    },
-    {
-     "type": "질문형",
-     "title": "워시 연준 의장은\nAI 위험을 왜 짚었나\n블랙록, IMF도 같은 말",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "AI가 성장 가속한다던\n워시 의장이 **실업**과\n주가 하락도 꺼냈다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "paper",
-    "list"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/17",
-     "headlines": [
-      "워시: 성장도 실업도 가능",
-      "블랙록: 인프라 둔화 땐 타격",
-      "IMF: 세계경제 AI 한 다리"
-     ]
-    },
-    "list": {
-     "sub": "AI를 두고 같은 날 나온 경고 3가지",
-     "count": 3
-    }
-   },
-   "id": "20261117-0807-i2",
-   "created_at": "2026-11-17T08:07:05+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261117-0807-i2/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261117-0807-i2/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261117-0807-i2/1-paper-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "list",
-     "font": "noto",
-     "path": "20261117-0807-i2/1-list-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "list",
-     "font": "black",
-     "path": "20261117-0807-i2/1-list-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "list",
-     "font": "plex",
-     "path": "20261117-0807-i2/1-list-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261117-0807-i2/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261117-0807-i2/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261117-0807-i2/2-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "list",
-     "font": "noto",
-     "path": "20261117-0807-i2/2-list-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "list",
-     "font": "black",
-     "path": "20261117-0807-i2/2-list-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "list",
-     "font": "plex",
-     "path": "20261117-0807-i2/2-list-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261117-0807-i2/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261117-0807-i2/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261117-0807-i2/3-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "list",
-     "font": "noto",
-     "path": "20261117-0807-i2/3-list-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "list",
-     "font": "black",
-     "path": "20261117-0807-i2/3-list-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "list",
-     "font": "plex",
-     "path": "20261117-0807-i2/3-list-plex.jpg"
-    }
-   ]
-  },
-  {
-   "title": "예비 신랑 3억8000만원 투자 65% 손실",
-   "concept": "결혼을 앞두고 3억8000만원을 투자했다가 65% 손실을 봐 파혼 위기에 몰린 사례를 보도 기준으로 푼다. 65%를 직접 계산하면 약 2억4700만원이라는 숫자를 보여 주고, 마지막은 '확인된 사실 / 사례 밖의 일반화는 어렵다'로 닫는다. 특정 종목이나 투자 방식은 권하지 않는다. (공식: 한 주인공이 장마다 한 걸음씩)",
-   "why_now": "파이낸셜뉴스가 오늘 아침 보도한 사례입니다. 코스피 1달 -4.75%, 코스닥 1달 -8.04%로 시장이 흔들리는 시기라 투자 손실이 내 일상으로 이어지는 얘기로 읽힙니다.",
-   "tag": "투자 생활",
-   "sources": [
-    "https://www.fnnews.com/news/202611170732381471"
-   ],
-   "bg": "couple wedding rings",
-   "bg_alt": "stock chart falling",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "예비 신랑이 3억8000만원\n투자해 **65%** 잃었다\n파혼 위기까지 왔다",
-     "number": "-65%",
-     "label": "예비 신랑 투자 손실",
-     "sub": "3억8000만원 투자"
-    },
-    {
-     "type": "질문형",
-     "title": "결혼 앞둔 3억8000만원\n투자, 왜 **파혼 위기**일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "3억8000만원 투자 뒤\n**65%** 잃고 남은 건\n파혼 위기였다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "editorial",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261117-0807-i3",
-   "created_at": "2026-11-17T08:07:05+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261117-0807-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261117-0807-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261117-0807-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261117-0807-i3/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261117-0807-i3/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261117-0807-i3/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261117-0807-i3/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261117-0807-i3/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261117-0807-i3/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
    "title": "은마 분담금 4억에 재초환 4억",
    "concept": "대치 은마 재건축에 붙는 분담금 4억과 재초환 4억을 맞붙여 보여주고, 재초환이 재건축으로 오른 이익에 붙는 부담금이라는 점을 처음 나오는 자리에서 쉬운 말로 풉니다. 국토부가 폐지, 완화론에 선을 그은 대목으로 결론을 닫습니다. (공식: 끝 장은 닫힌 결론 한 줄)",
    "why_now": "조선비즈가 은마 재건축 부담을 다뤘고, 머니투데이는 국토부가 재초환 폐지, 완화론에 선을 그었다고 보도했습니다. 오늘 발행한 AI, 증시 주제와 겹치지 않는 부동산 소재입니다.",
@@ -9412,6 +9014,338 @@
      "form": "news",
      "font": "myeongjo",
      "path": "20261117-2201-i3/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "엔비디아 매출 111% 증가, 황 퇴진 후 첫 실적",
+   "concept": "오늘 밤 전망이 아니라 이미 나온 결과로 푼다. 매출 전년비 111% 증가에 컨센서스 상회, 이어서 젠슨 황 '이사회 요청 땐 복귀'와 후임 CEO 물색까지 한 주인공으로 한 걸음씩 따라간다. 1달 -28.39%(11/17 기준) 낙폭과 맞붙이되, 삼성전자나 SK하이닉스와의 인과는 재료에 없으니 엮지 않는다. (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "CNBC와 다음 뉴스가 06시대에 실적 결과를 보도했다. 기존 '오늘 밤 뭘 봐야 할까' 글감은 이미 낡았으니 결과 중심으로 바꿔야 한다.",
+   "tag": "미국증시",
+   "sources": [
+    "https://www.cnbc.com/2026/11/17/nvidia-nvda-earnings-report-q3-2027.html",
+    "https://v.daum.net/v/20261118065902540",
+    "https://v.daum.net/v/20261118065945548"
+   ],
+   "bg": "Jensen Huang",
+   "bg_alt": "Nvidia headquarters",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "엔비디아 매출\n전년보다 **111%** 늘었다\n젠슨 황 없이 낸 첫 성적",
+     "number": "111%",
+     "label": "엔비디아 최근 분기 매출 증가율(전년비)",
+     "sub": "컨센서스 상회, 젠슨 황 퇴진 후 첫 실적"
+    },
+    {
+     "type": "질문형",
+     "title": "젠슨 황 떠난 엔비디아\n첫 성적표 **어땠나**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "엔비디아 35% 급락 뒤\n실적은 **웃돌았다**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261118-0707-i1",
+   "created_at": "2026-11-18T07:07:08+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261118-0707-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261118-0707-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261118-0707-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261118-0707-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261118-0707-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261118-0707-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261118-0707-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261118-0707-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261118-0707-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261118-0707-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261118-0707-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261118-0707-i1/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "앤트로픽 공모가, 희망 범위 웃돌 전망",
+   "concept": "희망 범위 70~78달러를 넘겨 책정될 전망이라는 CNBC와 Bloomberg 보도를 속보로 전한다. 수요 신호로 읽히지만 최종 공모가는 미확정이라는 점을 '확인된 것 / 아직 모르는 것'으로 나눠 닫는다. (공식: 끝 장은 닫힌 결론 한 줄)",
+   "why_now": "CNBC와 Bloomberg가 23:34에 보도했다. 앞서 다룬 '상장 일정 유지'에서 한 단계 나아간 새 소식이다.",
+   "tag": "IPO",
+   "sources": [
+    "https://www.cnbc.com/2026/11/17/anthropic-ipo-price.html",
+    "https://www.bloomberg.com/news/articles/2026-11-17/anthropic-is-said-to-guide-ipo-price-to-top-of-range-or-above"
+   ],
+   "bg": "Dario Amodei",
+   "bg_alt": "Anthropic logo",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "앤트로픽, 희망가\n70~78달러 **웃돌 듯**",
+     "number": "70~78달러",
+     "label": "앤트로픽 공모가 희망 범위",
+     "sub": "CNBC, Bloomberg 보도, 최종 확정 전"
+    },
+    {
+     "type": "질문형",
+     "title": "앤트로픽 주식\n공모가 **어디까지** 오를까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "앤트로픽, AI 투매에도\n공모가 **범위 위** 전망",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261118-0707-i2",
+   "created_at": "2026-11-18T07:07:08+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261118-0707-i2/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261118-0707-i2/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261118-0707-i2/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261118-0707-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261118-0707-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261118-0707-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261118-0707-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261118-0707-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261118-0707-i2/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "의무공개매수 원안, 코스피 4,200 경고",
+   "concept": "원안대로 통과되면 코스피가 PBR 1배 수준인 4,200까지 내려갈 수 있다는 분석을 앞세운다. 중간에 친기업 성향 자유기업원의 반대와 터톤캐피탈의 '내년 주총이 시험대' 발언으로 흐름을 한 번 뒤집고, 주주 보호냐 M&A 위축이냐로 닫는다. (공식: 가운데 한 번 뒤집기)",
+   "why_now": "연합인포맥스가 23:32~23:39에 연달아 관련 기사를 냈다. 코스피 5000 붕괴 직후라 투자자가 민감하게 보는 주제다.",
+   "tag": "자본시장",
+   "sources": [
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4445176",
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4445179",
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4445180"
+   ],
+   "bg": "Korea Exchange Seoul",
+   "bg_alt": "KOSPI stock board",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "의무공개매수 원안이면\n코스피 **4,200**까지?",
+     "number": "4,200",
+     "label": "원안 통과 시 경고된 코스피 수준",
+     "sub": "PBR 1배 수준까지 내려갈 수 있다는 분석"
+    },
+    {
+     "type": "질문형",
+     "title": "친기업 자유기업원도\n왜 **반대**했을까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "주주 보호 법안에\n자유기업원 **반대** 가세",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261118-0707-i3",
+   "created_at": "2026-11-18T07:07:08+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261118-0707-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261118-0707-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261118-0707-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261118-0707-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261118-0707-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261118-0707-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261118-0707-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261118-0707-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261118-0707-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261118-0707-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261118-0707-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261118-0707-i3/3-news-myeongjo.jpg"
     }
    ]
   }
