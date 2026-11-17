@@ -23,9 +23,9 @@
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
   "kr_avg": 1.77,
-  "kr_n": 564,
+  "kr_n": 571,
   "foreign_avg": 2.53,
-  "foreign_n": 308
+  "foreign_n": 307
  },
  {
   "rank": 3,
@@ -71,20 +71,6 @@
  },
  {
   "rank": 6,
-  "topic": "국내 대형주",
-  "kind": "국내 검증 주제",
-  "confidence": "높음",
-  "title_idea": "숫자 하나로 보는 국내 대형주",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "숫자 강조형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 1.92,
-  "kr_n": 210,
-  "foreign_avg": 0.67,
-  "foreign_n": 8
- },
- {
-  "rank": 7,
   "topic": "테슬라",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
@@ -92,10 +78,24 @@
   "format": "단일 이미지",
   "hook": "짧은 한 줄",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.79,
+  "kr_avg": 2.84,
   "kr_n": 43,
-  "foreign_avg": 2.67,
+  "foreign_avg": 2.66,
   "foreign_n": 29
+ },
+ {
+  "rank": 7,
+  "topic": "국내 대형주",
+  "kind": "국내 검증 주제",
+  "confidence": "높음",
+  "title_idea": "숫자 하나로 보는 국내 대형주",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "숫자 강조형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 1.91,
+  "kr_n": 211,
+  "foreign_avg": 0.67,
+  "foreign_n": 8
  },
  {
   "rank": 8,
@@ -106,7 +106,7 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.15,
+  "kr_avg": 2.16,
   "kr_n": 15,
   "foreign_avg": 1.86,
   "foreign_n": 190
