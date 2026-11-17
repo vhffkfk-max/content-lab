@@ -3452,453 +3452,6 @@
  ],
  "ideas": [
   {
-   "title": "서울 평균 전셋값 사상 첫 5억 돌파",
-   "concept": "집값 상승폭은 석 달째 둔화인데 전셋값은 5억을 넘었다는 엇갈림을 보도 기준으로 풀고, 전세 구하는 사람이 보증금과 이자 부담을 함께 따져야 한다는 점으로 마무리. 정확한 수치와 기준 시점은 원문 확인 후 기재. (공식: 가운데 한 번 뒤집기)",
-   "why_now": "17시 무렵 '서울 평균 전셋값 사상 첫 5억 넘었다' 보도가 여러 곳에서 나왔습니다. 앞서 보낸 글은 집값 둔화만 다뤄 전셋값은 비어 있습니다.",
-   "tag": "부동산",
-   "sources": [
-    "https://biz.chosun.com/real_estate/real_estate_general/2026/11/16/HEQESDT6XVGSFNGHC2Q677VH5Y/",
-    "https://v.daum.net/v/20261116173039081"
-   ],
-   "bg": "Seoul apartment complex",
-   "bg_alt": "Seoul apartment buildings",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "서울 평균 전셋값이\n사상 처음 **5억** 넘었다",
-     "number": "5억원",
-     "label": "서울 평균 전셋값",
-     "sub": "사상 처음 넘어선 금액"
-    },
-    {
-     "type": "질문형",
-     "title": "집값 상승폭은 석 달째 둔화\n전셋값은 왜 **5억** 넘었나",
-     "number": "5억원",
-     "label": "서울 평균 전셋값",
-     "sub": "집값과 전세가 다른 방향"
-    },
-    {
-     "type": "반전형",
-     "title": "집값 오름세는 **둔화**\n전셋값은 오히려 올랐다",
-     "number": "5억원",
-     "label": "서울 평균 전셋값",
-     "sub": "집값 둔화 속 전세 상승"
-    }
-   ],
-   "forms": [
-    "bignum",
-    "editorial"
-   ],
-   "extra": {},
-   "id": "20261116-1844-i1",
-   "created_at": "2026-11-16T18:44:26+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261116-1844-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261116-1844-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261116-1844-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261116-1844-i1/1-editorial-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261116-1844-i1/1-editorial-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261116-1844-i1/1-editorial-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261116-1844-i1/2-bignum-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261116-1844-i1/2-bignum-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261116-1844-i1/2-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261116-1844-i1/2-editorial-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261116-1844-i1/2-editorial-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261116-1844-i1/2-editorial-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261116-1844-i1/3-bignum-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261116-1844-i1/3-bignum-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261116-1844-i1/3-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261116-1844-i1/3-editorial-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261116-1844-i1/3-editorial-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261116-1844-i1/3-editorial-plex.jpg"
-    }
-   ]
-  },
-  {
-   "title": "엔비디아 AI 업계 자금줄 역할 접나",
-   "concept": "엔비디아가 고객사에 돈을 대주며 칩을 팔던 역할에서 발을 뺀다는 보도를 한 주인공 기준으로 따라가고, 하이닉스 -7.89%와 코스피 -3.59%를 시장 불안으로 연결해 보여 줌. 새 CEO 이름 등 미확인 대목은 한 곳에만 표기. (공식: 한 주인공이 장마다 한 걸음씩)",
-   "why_now": "'AI업계 백지수표 자금줄 역할 접는다'가 3곳, '돈줄 죄는 엔비디아'가 4곳에서 보도됐고 관련 쓰레드 글 반응이 가장 빠릅니다. 오늘 하이닉스와 코스피 급락의 배경으로 거론됩니다.",
-   "tag": "반도체",
-   "sources": [
-    "https://www.yna.co.kr/view/AKR20261116117700009",
-    "https://biz.chosun.com/it-science/ict/2026/11/16/DU5QDVYN6RD27B5VS4BIXN6CAM/",
-    "https://www.mt.co.kr/industry/2026/11/16/2026111616522964804"
-   ],
-   "bg": "Nvidia headquarters",
-   "bg_alt": "Nvidia GPU chip",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "하이닉스 하루 **-7.89%**\n엔비디아 돈줄 불안",
-     "number": "-7.89%",
-     "label": "SK하이닉스 11/16 등락률",
-     "sub": "엔비디아 자금줄 우려 속 급락"
-    },
-    {
-     "type": "질문형",
-     "title": "엔비디아가 AI 업계\n**백지수표**를 접는다?",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "칩 팔려고 대주던\n엔비디아 **돈줄**이 줄어든다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261116-1844-i2",
-   "created_at": "2026-11-16T18:44:26+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261116-1844-i2/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261116-1844-i2/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261116-1844-i2/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261116-1844-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261116-1844-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261116-1844-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261116-1844-i2/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261116-1844-i2/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261116-1844-i2/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261116-1844-i2/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261116-1844-i2/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261116-1844-i2/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "삼전닉스 D램 담합 패소와 외국인 매물",
-   "concept": "삼성전자, SK하이닉스 D램 담합 패소 보도와 외국인 1.3조 매물, 개인 부담이라는 주간증시전망 보도를 사실만 묶어 정리. 패소 내용과 매물 기간은 원문 확인 후 기재, 패소와 하락의 인과는 단정하지 않음. (공식: 숫자는 둘을 맞붙여서)",
-   "why_now": "18시 34분 주간증시전망에서 'D램 담합 패소 충격, 외국인 1.3조 폭탄 매물, 개인들만 독박'이 나왔고, 오늘 삼성전자 -4.47%, 하이닉스 -7.89%로 마감했습니다. 앞서 보낸 글에서 다루지 않은 별개 사건입니다.",
-   "tag": "증시",
-   "sources": [
-    "https://v.daum.net/v/20261116183410469"
-   ],
-   "bg": "Samsung Electronics headquarters",
-   "bg_alt": "SK hynix semiconductor",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "삼전닉스 패소 충격\n외국인 **1.3조** 매물",
-     "number": "1.3조원",
-     "label": "외국인 매물 규모",
-     "sub": "주간증시전망 보도 기준"
-    },
-    {
-     "type": "질문형",
-     "title": "D램 담합 패소가\n외국인 **매물**을 불렀나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "외국인은 1.3조 팔았고\n**개인**만 독박 썼다",
-     "number": "1.3조원",
-     "label": "외국인 매물 규모",
-     "sub": "개인 부담 커졌다는 보도"
-    }
-   ],
-   "forms": [
-    "bars",
-    "paper"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "11/16 하락률(%)",
-     "bars": [
-      {
-       "label": "코스피",
-       "value": 3.59
-      },
-      {
-       "label": "삼성전자",
-       "value": 4.47
-      },
-      {
-       "label": "SK하이닉스",
-       "value": 7.89,
-       "hi": true
-      }
-     ]
-    },
-    "paper": {
-     "date": "11/16",
-     "headlines": [
-      "삼전닉스 D램 담합 패소",
-      "외국인 1.3조 폭탄 매물",
-      "하이닉스 -7.89% 마감"
-     ]
-    }
-   },
-   "id": "20261116-1844-i3",
-   "created_at": "2026-11-16T18:44:26+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261116-1844-i3/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261116-1844-i3/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261116-1844-i3/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261116-1844-i3/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261116-1844-i3/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261116-1844-i3/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261116-1844-i3/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261116-1844-i3/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261116-1844-i3/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261116-1844-i3/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261116-1844-i3/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261116-1844-i3/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261116-1844-i3/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261116-1844-i3/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261116-1844-i3/3-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261116-1844-i3/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261116-1844-i3/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261116-1844-i3/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "빗썸 3분기 15억 적자, 두나무도 적자",
    "concept": "거래가 식자 거래소 매출이 줄었다는 사실을 빗썸 적자와 두나무 적자 전환, 오늘 비트코인 9000만원선 붕괴 순서로 한 걸음씩 따라간다. (공식: 숫자는 둘을 맞붙여서)",
    "why_now": "빗썸 3분기 적자 기사를 14곳이 다뤘습니다. 오늘 비트코인이 9000만원선을 내주고 3개월 최저를 찍었고, 두나무 적자 소식도 이어졌습니다.",
@@ -9427,6 +8980,474 @@
      "form": "bars",
      "font": "dohyeon",
      "path": "20261117-1601-i3/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "월급의 17%가 월세로, 8년 새 최고",
+   "concept": "월세 17%와 서울 세입자 21.5%를 맞붙여 보여주고, 정부 통계상 집값 부담은 줄었다는 설명과 체감의 거리를 중간에 뒤집는다. 두 수치는 기준이 다를 수 있어 출처별로 따로 표기한다. (공식: 가운데 한 번 뒤집기)",
+   "why_now": "연합뉴스와 경향신문이 16시대에 다뤘고, 뉴시스와 조선비즈는 서울 세입자의 임대료 부담을 소득의 21.5%로 전했다. 시장 뉴스가 모두 하락 쪽인 날이라 생활 밀착 주제로 나누기 좋다.",
+   "tag": "부동산",
+   "sources": [
+    "https://www.yna.co.kr/view/AKR20261117130200003",
+    "https://www.newsis.com/view/NISX20261117_0003871811",
+    "https://biz.chosun.com/real_estate/real_estate_general/2026/11/17/6CSSLGK2UVEJXKFWUSUOXH53PM/"
+   ],
+   "bg": "Seoul apartment complex",
+   "bg_alt": "Seoul monthly rent",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "월급의 **17%**가\n월세로 나갑니다\n8년 새 가장 높아요",
+     "number": "17%",
+     "label": "월급 중 월세 비중",
+     "sub": "8년 새 가장 높은 수치"
+    },
+    {
+     "type": "질문형",
+     "title": "서울 세입자는\n소득의 몇 %를\n**임대료**로 낼까",
+     "number": "21.5%",
+     "label": "서울 세입자 임대료 부담",
+     "sub": "뉴시스, 조선비즈 보도 기준"
+    },
+    {
+     "type": "반전형",
+     "title": "집값 부담은 줄었다는\n정부 통계, 그런데\n**월세**는 8년 새 최고",
+     "number": "17%",
+     "label": "월급 중 월세 비중",
+     "sub": "통계와 체감은 거리가 있어요"
+    }
+   ],
+   "forms": [
+    "bignum",
+    "editorial"
+   ],
+   "extra": {},
+   "id": "20261117-1707-i1",
+   "created_at": "2026-11-17T17:07:10+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261117-1707-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261117-1707-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261117-1707-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261117-1707-i1/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261117-1707-i1/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261117-1707-i1/1-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261117-1707-i1/2-bignum-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261117-1707-i1/2-bignum-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261117-1707-i1/2-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261117-1707-i1/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261117-1707-i1/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261117-1707-i1/2-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261117-1707-i1/3-bignum-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261117-1707-i1/3-bignum-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261117-1707-i1/3-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261117-1707-i1/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261117-1707-i1/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261117-1707-i1/3-editorial-plex.jpg"
+    }
+   ]
+  },
+  {
+   "title": "코스피 4,968, 9개월 만에 5000선 아래 마감",
+   "concept": "장중 붕괴가 아니라 종가로 내려앉은 오늘 결과를 코스피 -2.59%, 코스닥 -2.34%, 외국인 1.4조 매도, 환율 1,338.2원으로 한 번에 정리하고, 끝 장은 확인된 것과 다음에 볼 것(엔비디아 실적 D-1)로 닫는다. (공식: 끝 장은 닫힌 결론)",
+   "why_now": "뉴스 29곳이 다룬 오늘 가장 큰 소식이다. 종가 기준 5000선 붕괴는 9개월 만이고, 외국인 매도와 환율 상승이 같은 날 나왔다.",
+   "tag": "증시 마감",
+   "sources": [
+    "https://www.newsis.com/view/NISX20261117_0003871758",
+    "https://www.yna.co.kr/view/AKR20261117127800008",
+    "https://www.etoday.co.kr/news/view/2649340"
+   ],
+   "bg": "KOSPI trading screen",
+   "bg_alt": "Korea Exchange building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "코스피 **4,968**\n9개월 만에\n5000선 아래 마감",
+     "number": "-2.59%",
+     "label": "코스피 종가 4,968.48",
+     "sub": "코스닥도 -2.34%, 650.06"
+    },
+    {
+     "type": "질문형",
+     "title": "코스피 5000선\n종가로 무너진 날\n외국인은 **얼마**를 팔았나",
+     "number": "1.4조원",
+     "label": "외국인 코스피 순매도",
+     "sub": "원/달러 환율은 1,338.2원 마감"
+    },
+    {
+     "type": "반전형",
+     "title": "장중 회복하던 코스피\n5000선이 종가로는\n**결국** 무너졌다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/17",
+     "headlines": [
+      "코스피 4,968, 5000선 9개월 만에 붕괴",
+      "외국인 1조4000억원 순매도",
+      "원/달러 환율 1,338.2원 마감"
+     ]
+    }
+   },
+   "id": "20261117-1707-i2",
+   "created_at": "2026-11-17T17:07:10+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261117-1707-i2/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261117-1707-i2/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261117-1707-i2/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261117-1707-i2/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261117-1707-i2/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261117-1707-i2/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261117-1707-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261117-1707-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261117-1707-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261117-1707-i2/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261117-1707-i2/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261117-1707-i2/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261117-1707-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261117-1707-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261117-1707-i2/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261117-1707-i2/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261117-1707-i2/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261117-1707-i2/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "美, 中 AI 데이터센터 원격접속 차단",
+   "concept": "칩을 직접 팔지 않아도 클라우드로 빌려 쓰는 길까지 막는다는 점을 짚고, 중국의 '부당한 탄압' 대응 예고와 엔비디아의 법적 위험 경고(CNBC 보도)를 이어 붙인다. 하이닉스 110만원선 이탈은 같은 날 시세로만 곁들이고 원인은 단정하지 않는다. (공식: 끝 장은 닫힌 결론)",
+   "why_now": "Bloomberg와 Reuters 등이 15:46부터 다뤘고 연합뉴스는 16:48에 종합2보를 냈다. 낮에 보낸 美상무 건의 후속이며, 새 사실은 중국의 대응 예고다. 엔비디아 실적 발표 전날이다.",
+   "tag": "반도체, 미중",
+   "sources": [
+    "https://v.daum.net/v/20261117164821146",
+    "https://www.cnbc.com/2026/11/17/nvidia-china-cloud-ai-chip-access.html",
+    "https://www.bloomberg.com/news/videos/2026-11-17/the-china-show-11-17-2026-video"
+   ],
+   "bg": "Nvidia data center",
+   "bg_alt": "Nvidia GPU chip",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "미국이 중국의\nAI 데이터센터\n**원격접속**을 막았다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "엔비디아가 칩 구매자에게\n법적 위험을 경고한\n**이유**는 무엇일까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "칩을 안 팔아도\n미국은 **클라우드**\n길까지 막는다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261117-1707-i3",
+   "created_at": "2026-11-17T17:07:10+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261117-1707-i3/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261117-1707-i3/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261117-1707-i3/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261117-1707-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261117-1707-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261117-1707-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261117-1707-i3/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261117-1707-i3/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261117-1707-i3/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261117-1707-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261117-1707-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261117-1707-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261117-1707-i3/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261117-1707-i3/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261117-1707-i3/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261117-1707-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261117-1707-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261117-1707-i3/3-news-myeongjo.jpg"
     }
    ]
   }
