@@ -22,10 +22,10 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.77,
-  "kr_n": 557,
+  "kr_avg": 1.76,
+  "kr_n": 561,
   "foreign_avg": 2.54,
-  "foreign_n": 305
+  "foreign_n": 306
  },
  {
   "rank": 3,
@@ -36,10 +36,10 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.25,
+  "kr_avg": 2.26,
   "kr_n": 60,
-  "foreign_avg": 1.79,
-  "foreign_n": 83
+  "foreign_avg": 1.77,
+  "foreign_n": 85
  },
  {
   "rank": 4,
@@ -64,13 +64,27 @@
   "format": "릴스",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.03,
+  "kr_avg": 2.04,
   "kr_n": 79,
   "foreign_avg": 2.06,
   "foreign_n": 25
  },
  {
   "rank": 6,
+  "topic": "테슬라",
+  "kind": "국내·해외 모두 강세",
+  "confidence": "높음",
+  "title_idea": "테슬라, 한 줄 정리",
+  "format": "단일 이미지",
+  "hook": "짧은 한 줄",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 2.78,
+  "kr_n": 43,
+  "foreign_avg": 2.67,
+  "foreign_n": 29
+ },
+ {
+  "rank": 7,
   "topic": "국내 대형주",
   "kind": "국내 검증 주제",
   "confidence": "높음",
@@ -79,23 +93,9 @@
   "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
   "kr_avg": 1.92,
-  "kr_n": 209,
+  "kr_n": 210,
   "foreign_avg": 0.67,
   "foreign_n": 8
- },
- {
-  "rank": 7,
-  "topic": "테슬라",
-  "kind": "국내·해외 모두 강세",
-  "confidence": "높음",
-  "title_idea": "테슬라, 한 줄 정리",
-  "format": "단일 이미지",
-  "hook": "짧은 한 줄",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 2.77,
-  "kr_n": 43,
-  "foreign_avg": 2.67,
-  "foreign_n": 29
  },
  {
   "rank": 8,
@@ -108,7 +108,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 2.15,
   "kr_n": 15,
-  "foreign_avg": 1.85,
+  "foreign_avg": 1.86,
   "foreign_n": 190
  }
 ]
