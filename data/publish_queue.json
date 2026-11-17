@@ -3452,372 +3452,6 @@
  ],
  "ideas": [
   {
-   "title": "대만 증시 6.03% 급락, 역대 2번째",
-   "concept": "엔비디아 불안이 아시아 반도체 공급망으로 번진 한 장면을 대만 증시 하나에 맞춰 풀고, 같은 날 코스피 -3.59%, 코스닥 -4.86%와 낙폭을 맞붙여 비교한다 (공식: 용어 대신 눈에 보이는 것으로)",
-   "why_now": "뉴시스가 21:15에 엔비디아 불안에 대만 증시가 역대 2번째로 크게 급락 마감했다고 전했다. 앞서 다룬 글감에는 대만 얘기가 없고, 코스피 급락과 연결해 볼 수 있다.",
-   "tag": "증시",
-   "sources": [
-    "https://www.newsis.com/view/NISX20261116_0003870540"
-   ],
-   "bg": "Jensen Huang Nvidia",
-   "bg_alt": "Taiwan Stock Exchange building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "대만 증시 하루에\n**6.03%** 폭락\n역대 두 번째 낙폭",
-     "number": "6.03%",
-     "label": "대만 증시 하루 낙폭",
-     "sub": "엔비디아 불안 속 역대 2번째 급락 마감"
-    },
-    {
-     "type": "질문형",
-     "title": "엔비디아 불안이\n**대만**까지 번졌나\n증시 6.03% 급락",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "코스피 -3.59%인데\n대만은 **-6.03%**\n더 깊이 빠졌다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "bars"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "11/16 하루 등락률 낙폭(%)",
-     "bars": [
-      {
-       "label": "대만",
-       "value": 6.03,
-       "hi": true
-      },
-      {
-       "label": "코스닥",
-       "value": 4.86
-      },
-      {
-       "label": "코스피",
-       "value": 3.59
-      }
-     ]
-    }
-   },
-   "id": "20261116-2201-i1",
-   "created_at": "2026-11-16T22:01:42+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261116-2201-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261116-2201-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261116-2201-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261116-2201-i1/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261116-2201-i1/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261116-2201-i1/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261116-2201-i1/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261116-2201-i1/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261116-2201-i1/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261116-2201-i1/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261116-2201-i1/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261116-2201-i1/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "트럼프도 엔비디아 주주, 최대 6200만달러",
-   "concept": "대통령의 엔비디아 보유 소식을 보도 그대로 전하고, 이해충돌 논란 가능성과 한국 반도체 투자자에게 닿는 정치 변수를 한 줄로 풀어 준다. 보유액은 최대 범위 추정치임을 한 곳에만 밝힌다 (공식: 한 주인공이 장마다 한 걸음씩)",
-   "why_now": "이데일리와 인베스팅닷컴이 21:25에 전했고, 워싱턴포스트는 스캔들 전 보유액이 늘었다고 보도했다. 엔비디아 CEO 교체가 오늘 시장의 중심이라 관심이 높다.",
-   "tag": "엔비디아",
-   "sources": [
-    "http://www.edaily.co.kr/news/newspath.asp?newsid=03991766645646376",
-    "https://kr.investing.com/news/stock-market-news/article-2177365"
-   ],
-   "bg": "Donald Trump",
-   "bg_alt": "Nvidia headquarters",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "트럼프 대통령이\n엔비디아 주식\n최대 **6200만달러**",
-     "number": "6200만달러",
-     "label": "트럼프 엔비디아 보유액(8월 말, 최대)",
-     "sub": "워싱턴포스트 보도, 최대 범위 추정치"
-    },
-    {
-     "type": "질문형",
-     "title": "대통령이 쥔 종목\n엔비디아 스캔들 속\n**이해충돌** 논란 번질까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "스캔들 터지기 전\n트럼프 보유액은\n2년 전보다 **늘었다**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261116-2201-i2",
-   "created_at": "2026-11-16T22:01:42+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261116-2201-i2/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261116-2201-i2/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261116-2201-i2/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261116-2201-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261116-2201-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261116-2201-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261116-2201-i2/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261116-2201-i2/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261116-2201-i2/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261116-2201-i2/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261116-2201-i2/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261116-2201-i2/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "주담대 변동금리 최고 6.51%, 인상 경고도",
-   "concept": "도이체방크의 인상 위험 경고와 美 빅스텝 거론, 한국의 코픽스 2년 8개월 만의 최고와 17일부터 오르는 주담대 변동금리를 한 흐름으로 묶어 내 대출 확인으로 끝낸다. 은행별 금리는 상품마다 다르다고 한 곳에만 쓴다 (공식: 끝 장은 닫힌 결론 한 줄)",
-   "why_now": "도이체방크 경고(20:33), 이데일리 빅스텝 가능성(20:50), 17일부터 적용되는 주담대 변동금리 최고 연 6.51% 보도가 이어졌다. 6.51%와 인상 경고는 아직 다루지 않은 새 정보다.",
-   "tag": "금리",
-   "sources": [
-    "https://v.daum.net/v/20261116205028108",
-    "https://kr.investing.com/news/stock-market-news/article-2177233"
-   ],
-   "bg": "Kevin Warsh Fed",
-   "bg_alt": "Federal Reserve building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "주담대 변동금리\n17일부터 최고\n연 **6.51%**",
-     "number": "6.51%",
-     "label": "주담대 변동금리 최고",
-     "sub": "17일부터 주요 은행 적용"
-    },
-    {
-     "type": "질문형",
-     "title": "금리 인하 아닌\n**인상** 위험 경고가\n도이체방크가 경고",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "코픽스 2년 8개월\n만에 최고인데\n미국은 **빅스텝** 거론",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "editorial",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261116-2201-i3",
-   "created_at": "2026-11-16T22:01:42+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261116-2201-i3/1-editorial-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261116-2201-i3/1-editorial-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261116-2201-i3/1-editorial-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261116-2201-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261116-2201-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261116-2201-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261116-2201-i3/2-editorial-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261116-2201-i3/2-editorial-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261116-2201-i3/2-editorial-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261116-2201-i3/3-editorial-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261116-2201-i3/3-editorial-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261116-2201-i3/3-editorial-plex.jpg"
-    }
-   ]
-  },
-  {
    "title": "AI 투자 전망 2028년 -28%, 2030년 -40%",
    "concept": "세미애널리시스가 AI 가속기 투자 전망을 낮췄다는 사실과 같은 날 삼성전자(-4.47%), SK하이닉스(-7.89%, 11/16 종가 기준)가 급락한 것을 맞붙인다. 전망이 낮아졌다는 것이지 투자가 멈춘다는 뜻은 아니라는 점은 한 줄로 짚고, 마지막 장은 '확인된 것 / 아직 모르는 것'으로 닫는다. (공식: 끝 장은 닫힌 결론 한 줄)",
    "why_now": "올라온 지 1.2시간 된 쓰레드 글이 시간당 조회 5,042로 크고 있고, 한국 매체는 아직 다루지 않았다. 반도체 급락일이라 HBM 수요 걱정이 큰 시점이다.",
@@ -9409,6 +9043,379 @@
      "form": "bars",
      "font": "dohyeon",
      "path": "20261117-2001-i3/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "디즈니 배당 33% 인상, 홈디포 새 CEO",
+   "concept": "증시가 엔비디아 실적을 앞두고 약세인 날, 디즈니(배당 33% 인상, 주당 2.00달러, 비용 30억달러 절감 목표)와 홈디포(예상 웃돈 3분기, 새 CEO 리처드 맥페일) 실적을 보도로 정리한다. 약세장이라는 흐름을 중간에 '그런데'로 한 번 뒤집어 두 기업의 호재를 보여 준다. 투자 권유 문구는 넣지 않는다. (공식: 가운데 한 번 뒤집기)",
+   "why_now": "디즈니와 홈디포가 20:28~20:45 사이 실적을 냈고 둘 다 시장 예상을 웃돌았다. 증시가 불안한 날이라 눈에 띄는 소식이다.",
+   "tag": "미국 실적",
+   "sources": [
+    "https://www.cnbc.com/2026/11/17/disney-dis-earnings-q-2026.html",
+    "https://www.cnbc.com/2026/11/17/home-depot-hd-q3-earnings-2026.html"
+   ],
+   "bg": "Walt Disney logo",
+   "bg_alt": "Home Depot store",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "디즈니가 배당을\n**33%** 올렸다\n연 2.00달러",
+     "number": "33%",
+     "label": "디즈니 연 배당 인상",
+     "sub": "주당 2.00달러로 정했어요"
+    },
+    {
+     "type": "질문형",
+     "title": "약세장에도 디즈니와\n홈디포가 **웃은** 이유",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "증시는 약세인데\n디즈니는 배당\n**33%** 올렸다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/17",
+     "headlines": [
+      "디즈니 연 배당 33% 인상",
+      "디즈니 비용 30억달러 절감 목표",
+      "홈디포 새 CEO 리처드 맥페일"
+     ]
+    }
+   },
+   "id": "20261117-2101-i1",
+   "created_at": "2026-11-17T21:01:42+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261117-2101-i1/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261117-2101-i1/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261117-2101-i1/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261117-2101-i1/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261117-2101-i1/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261117-2101-i1/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261117-2101-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261117-2101-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261117-2101-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261117-2101-i1/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261117-2101-i1/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261117-2101-i1/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261117-2101-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261117-2101-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261117-2101-i1/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261117-2101-i1/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261117-2101-i1/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261117-2101-i1/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "서울 아파트 전셋값 평균 5억 첫 돌파",
+   "concept": "문화일보 등이 보도한 '평균 전세가 사상 첫 5억 돌파'를 첫 장에 걸고, 세입자가 만기 전에 계산할 보증금, 대출 금리, 월세 전환 부담을 짚는다. 집계 기관과 정확한 금액은 확인 후 쓴다. 마지막 장은 '확인된 것 / 아직 모르는 것'으로 닫는다. (공식: 끝 장은 닫힌 결론 한 줄)",
+   "why_now": "20:11 문화일보와 조세일보가 사상 첫 5억 돌파를 보도했다. 오늘 아직 다루지 않은 주제이고 세입자에게 바로 와닿는 소재다.",
+   "tag": "부동산",
+   "sources": [
+    "https://v.daum.net/v/20261117201145856"
+   ],
+   "bg": "Seoul apartment complex",
+   "bg_alt": "Seoul apartments",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "서울 아파트 전셋값\n사상 처음 **5억** 돌파",
+     "number": "5억원",
+     "label": "서울 아파트 평균 전세가",
+     "sub": "사상 처음 돌파(문화일보 보도)"
+    },
+    {
+     "type": "질문형",
+     "title": "전세 만기 앞두면\n**무엇**부터 계산할까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "전셋값 5억 돌파\n세입자는 **보증금**\n이자도 걱정",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261117-2101-i2",
+   "created_at": "2026-11-17T21:01:42+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261117-2101-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261117-2101-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261117-2101-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261117-2101-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261117-2101-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261117-2101-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261117-2101-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261117-2101-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261117-2101-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261117-2101-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261117-2101-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261117-2101-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "삼성페이도 유료화? 카드 혜택 걱정",
+   "concept": "애플페이 확산 이후 카드사 수수료 부담 이야기가 나오는 흐름을 일상 결제 관점에서 풀고, 카드사 비용이 늘면 혜택이 줄 수 있다는 걱정을 가능성 단계로만 전한다. 수수료 규모와 시기는 확인 전이라 단정하지 않고, 마지막 장에서 확인된 것과 아직 모르는 것을 나눈다. (공식: 끝 장은 닫힌 결론 한 줄)",
+   "why_now": "매일경제가 20:42 '애플페이 확산에 삼성페이도 유료화?…카드 혜택 줄어드나'를 보도했다. 매일 쓰는 결제 서비스라 반응이 클 소재다.",
+   "tag": "소비, 결제",
+   "sources": [
+    "https://www.mk.co.kr/news/economy/12211644"
+   ],
+   "bg": "Samsung Pay phone",
+   "bg_alt": "Apple Pay iPhone",
+   "hooks": [
+    {
+     "type": "사건형",
+     "title": "애플페이 확산에\n삼성페이 **유료화** 거론",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "질문형",
+     "title": "삼성페이가 유료면\n내 카드 **혜택**은?",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "결제는 공짜인데\n카드 혜택이\n**줄 수도** 있다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "editorial",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261117-2101-i3",
+   "created_at": "2026-11-17T21:01:42+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261117-2101-i3/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261117-2101-i3/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261117-2101-i3/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261117-2101-i3/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261117-2101-i3/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261117-2101-i3/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261117-2101-i3/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261117-2101-i3/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261117-2101-i3/3-breaking-dohyeon.jpg"
     }
    ]
   }
