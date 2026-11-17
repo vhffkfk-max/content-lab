@@ -3452,415 +3452,6 @@
  ],
  "ideas": [
   {
-   "title": "내년 AI 빚 2천800조원, 사상 최대",
-   "concept": "JP모건 전망 하나를 주인공으로, AI 투자가 현금이 아니라 채권시장 빚에 기대는 흐름을 장마다 한 걸음씩 풀고, 한국 전력설비와 반도체 수요에 닿는 지점까지 이어 간다. 회사채는 처음 나오는 자리에서 '기업이 빚을 내려고 파는 채권'으로 풀어 쓴다. (공식: 용어 대신 눈에 보이는 것으로)",
-   "why_now": "JP모건이 내년 AI발 미국 회사채 발행이 사상 최대가 될 것으로 전망했다. 오늘 AI 투자 불확실성이 시장을 흔들었고, 엔비디아 실적과 앤트로픽 상장이 이번 주에 몰려 있다.",
-   "tag": "AI 투자",
-   "sources": [
-    "https://www.yna.co.kr/view/AKR20261116046400009"
-   ],
-   "bg": "Jamie Dimon JPMorgan",
-   "bg_alt": "data center servers",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "JP모건이 본 내년 AI 빚\n**2천800조원**\n미국 회사채 사상 최대",
-     "number": "2천800조원",
-     "label": "내년 AI발 미국 회사채 발행 전망",
-     "sub": "JP모건 전망, 사상 최대"
-    },
-    {
-     "type": "질문형",
-     "title": "AI 투자, 이제\n현금이 아니라\n**빚**으로 하는 걸까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "돈 많은 빅테크가\n데이터센터 비용을\n**채권시장**에서 빌린다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261116-1205-i1",
-   "created_at": "2026-11-16T12:05:10+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261116-1205-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261116-1205-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261116-1205-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261116-1205-i1/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261116-1205-i1/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261116-1205-i1/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261116-1205-i1/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261116-1205-i1/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261116-1205-i1/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261116-1205-i1/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261116-1205-i1/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261116-1205-i1/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
-   "title": "주택 자산 상하위 격차 52배, 역대 최대",
-   "concept": "15.6억 대 3000만이라는 두 숫자를 위아래로 맞붙여 격차를 보여 주고, 서울은 집주인이 늘어도 절반 이상이 무주택이라는 반전 장을 가운데 둔다. 52배는 다음 뉴스 보도, 머니투데이는 50배 넘었다고 한 만큼 수치는 원문 확인 후 쓴다. (공식: 숫자는 둘을 맞붙여서)",
-   "why_now": "오늘 통계로 주택 자산 상하위 격차가 역대 최대로 나왔다. 서울경제는 집주인이 33만 명 늘었지만 서울은 여전히 절반 이상이 무주택이라고 보도했다. 전월세 물가를 다룬 카드뉴스와 이어 볼 수 있는 새 각도다.",
-   "tag": "부동산",
-   "sources": [
-    "https://v.daum.net/v/20261116120013894",
-    "https://www.mt.co.kr/economy/2026/11/16/2026111610402942173",
-    "https://www.sedaily.com/article/20114799"
-   ],
-   "bg": "Seoul apartment complex",
-   "bg_alt": "Seoul housing aerial",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "주택 자산 상위와\n하위 격차가\n역대 최대 **52배**",
-     "number": "52배",
-     "label": "주택 자산 상위 대 하위",
-     "sub": "15.6억 vs 3000만, 역대 최대"
-    },
-    {
-     "type": "질문형",
-     "title": "누구는 15.6억\n누구는 3000만\n이 **격차** 실화일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "집주인 33만명 늘었는데\n서울은 여전히\n절반 이상 **무주택**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "bars"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "주택 자산, 상위 vs 하위 (억원)",
-     "bars": [
-      {
-       "label": "상위",
-       "value": 15.6,
-       "hi": true
-      },
-      {
-       "label": "하위",
-       "value": 0.3
-      }
-     ]
-    }
-   },
-   "id": "20261116-1205-i2",
-   "created_at": "2026-11-16T12:05:10+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261116-1205-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261116-1205-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261116-1205-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261116-1205-i2/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261116-1205-i2/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261116-1205-i2/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261116-1205-i2/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261116-1205-i2/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261116-1205-i2/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261116-1205-i2/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261116-1205-i2/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261116-1205-i2/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "코스피 상승 출발 후 3% 하락, 5200선 아래",
-   "concept": "5305.40 상승 출발이 오전 11시대 3% 하락으로 뒤집힌 하루를 한 사건으로 따라간다. 배경인 젠슨 황 쇼크와 엔비디아 실적 발표 전 불확실성, 일본 증시 하락까지 순서대로 잇는다. 장중 수치는 계속 바뀌므로 시각을 함께 적는다. (공식: 가운데 한 번 뒤집기)",
-   "why_now": "36곳이 다룬 오늘의 가장 큰 사건이다. 지수가 개장 때 5305.40(+0.28%)에서 11시대 3% 하락으로 바뀌었고, 시세 기준 코스피는 5,160.04(-2.47%)다.",
-   "tag": "증시 속보",
-   "sources": [
-    "https://biz.chosun.com/stock/stock_general/2026/11/16/MJSDANBUME3TIMDDME4TQMBVGI/",
-    "https://www.fnnews.com/news/202611161031009035",
-    "https://v.daum.net/v/20261116113602933"
-   ],
-   "bg": "Jensen Huang Nvidia",
-   "bg_alt": "KOSPI trading screen",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "5305로 출발한 코스피\n오전에 3% 급락\n**5200선** 아래로",
-     "number": "-3%",
-     "label": "코스피 장중 낙폭",
-     "sub": "5305.40 상승 출발, 11시대 하락 전환"
-    },
-    {
-     "type": "질문형",
-     "title": "상승 출발한 코스피\n오전 11시대에\n**3%** 하락 전환한 이유",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "상승 출발한 코스피\n오전 11시대\n**3% 하락**으로 돌변",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/16",
-     "headlines": [
-      "코스피 5305 출발, 3% 하락 전환",
-      "배경은 젠슨 황 쇼크",
-      "일본 증시도 장 초반 하락"
-     ]
-    }
-   },
-   "id": "20261116-1205-i3",
-   "created_at": "2026-11-16T12:05:10+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261116-1205-i3/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261116-1205-i3/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261116-1205-i3/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261116-1205-i3/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261116-1205-i3/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261116-1205-i3/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261116-1205-i3/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261116-1205-i3/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261116-1205-i3/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261116-1205-i3/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261116-1205-i3/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261116-1205-i3/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261116-1205-i3/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261116-1205-i3/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261116-1205-i3/3-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261116-1205-i3/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261116-1205-i3/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261116-1205-i3/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "퇴직연금 운용 방식, 20년 뒤 1억6000만원 차이",
    "concept": "금감원 가이드북을 계기로 같은 돈을 넣어도 운용 방식에 따라 결과가 갈린다는 점을 풀고, 내 퇴직연금이 어디서 굴러가는지 확인하라는 행동으로 끝낸다. 한 장에서 한 줄로 '내 연금 확인' 답을 준다. (공식: 없음)",
    "why_now": "금감원 가이드북 소식을 5곳 이상이 12시 전후로 한꺼번에 다뤘다. 일주일 만에 8만9000건이 배포됐고 DC형 전환자는 34만명이다.",
@@ -9370,6 +8961,355 @@
      "form": "bars",
      "font": "dohyeon",
      "path": "20261117-1106-i3/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "3040 자산가, 부동산보다 금융",
+   "concept": "3040 자산가가 가진 자산과 물려줄 자산이 모두 부동산보다 금융상품 쪽이라는 조사를 보도 중심으로 풀고, 증여는 세금과 시점 확인이 필요하다는 점으로 마무리 (공식: 없음)",
+   "why_now": "오늘 11:23 '3040 자산가 절반 이상 금융자산' 6곳, 11:44 '자녀 미성년일 때 물려주겠다' 2곳이 보도했다. 증시가 크게 흔들리는 날이라 자산 배분에 관심이 몰릴 만하고, 오늘 다른 글감과 겹치지 않는다.",
+   "tag": "재테크",
+   "sources": [
+    "https://biz.heraldcorp.com/article/10939394",
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4445129",
+    "https://www.yna.co.kr/view/AKR20261117063200002"
+   ],
+   "bg": "Korean wealthy investor",
+   "bg_alt": "Seoul Gangnam apartments",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "3040 자산가\n자산의 **절반 이상**이\n부동산 아닌 금융",
+     "number": "40%",
+     "label": "유자녀 3040 자산가",
+     "sub": "자녀가 미성년일 때 물려주겠다"
+    },
+    {
+     "type": "질문형",
+     "title": "3040 자산가는\n자녀에게 무엇을\n**물려줄까**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "부동산 부자? 아니\n3040 자산가는\n**금융**을 쥐었다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "editorial",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/17",
+     "headlines": [
+      "3040 자산가, 금융자산 절반 이상",
+      "물려줄 자산도 금융상품 우선",
+      "유자녀 40% 미성년 때 증여"
+     ]
+    }
+   },
+   "id": "20261117-1206-i1",
+   "created_at": "2026-11-17T12:06:13+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261117-1206-i1/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261117-1206-i1/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261117-1206-i1/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261117-1206-i1/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261117-1206-i1/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261117-1206-i1/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261117-1206-i1/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261117-1206-i1/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261117-1206-i1/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "아파트가 부담되자 빌라로 몰린다",
+   "concept": "서울 연립, 다세대 거래량 18% 증가와 서울 집값 둔화, 경기 아파트값의 서울 추월을 이어 아파트 가격 부담이 거래 이동으로 나타났다는 해석을 보도로 전하고, 4장 무렵에 경기 추월을 '그런데'로 뒤집는다. 비교 기간은 확인 후 표기 (공식: 가운데 한 번 뒤집기)",
+   "why_now": "서울 연립, 다세대 거래량 18% 증가 기사가 4곳에서 나왔고, 서울 집값 상승세 3개월 연속 둔화 보도도 이어졌다. 오늘 주제가 주식과 코인에 몰려 있어 부동산 쪽으로 분산할 만하다.",
+   "tag": "부동산",
+   "sources": [
+    "https://biz.chosun.com/real_estate/real_estate_general/2026/11/17/BTQBON2ZUBFSNC3XAZVOG3QI7I/",
+    "https://www.yna.co.kr/view/AKR20261117050300003"
+   ],
+   "bg": "Seoul villa housing",
+   "bg_alt": "Seoul apartment complex",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "서울 빌라 거래\n**18%** 늘었다\n아파트는 부담",
+     "number": "18%",
+     "label": "서울 연립, 다세대 거래량",
+     "sub": "서울 집값 상승세는 3개월 연속 둔화"
+    },
+    {
+     "type": "질문형",
+     "title": "아파트가 부담돼\n서울 사람들은\n**빌라**로 갔나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "서울 집값은 3개월째\n둔화인데 경기\n아파트가 **서울 추월**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/17",
+     "headlines": [
+      "서울 연립, 다세대 거래 18%↑",
+      "서울 집값 상승세 3개월 연속 둔화",
+      "경기 아파트값 상승률 서울 추월"
+     ]
+    }
+   },
+   "id": "20261117-1206-i2",
+   "created_at": "2026-11-17T12:06:13+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261117-1206-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261117-1206-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261117-1206-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261117-1206-i2/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261117-1206-i2/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261117-1206-i2/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261117-1206-i2/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261117-1206-i2/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261117-1206-i2/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261117-1206-i2/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261117-1206-i2/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261117-1206-i2/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "앤트로픽 지수 편입 지연, 25조",
+   "concept": "앤트로픽의 주요 지수 편입이 늦어질 듯하다는 보도와 편입 시 패시브 자금 약 25조 원 유입 추산을 전하고, 지수 추종 펀드는 편입 종목을 기계적으로 사기 때문에 편입 시점이 수급이 된다는 원리를 쉬운 말로 풀되 어느 지수인지와 상장 여부, 시점은 확인 후 표기 (공식: 끝 장은 닫힌 결론 한 줄)",
+   "why_now": "11:27 머니투데이와 연합뉴스가 보도했고 아직 다룬 곳이 적다. AI 과열 논란이 이어지는 때라 AI 비상장 대장주 이야기에 관심이 클 수 있다.",
+   "tag": "AI",
+   "sources": [
+    "https://www.mt.co.kr/world/2026/11/17/2026111709444891073",
+    "https://www.yna.co.kr/view/AKR20261117058300009"
+   ],
+   "bg": "Anthropic Claude logo",
+   "bg_alt": "Anthropic headquarters San Francisco",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "앤트로픽 주요지수\n편입이 늦어진다\n**25조** 대기 자금",
+     "number": "25조원",
+     "label": "패시브 자금 유입 추산",
+     "sub": "주요 지수 편입 시점이 늦어질 듯"
+    },
+    {
+     "type": "질문형",
+     "title": "앤트로픽 한 곳에\n왜 지수 자금\n**25조**가 걸렸나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "편입되면 25조인데\n앤트로픽 입성은\n**늦어질 듯하다**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261117-1206-i3",
+   "created_at": "2026-11-17T12:06:13+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261117-1206-i3/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261117-1206-i3/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261117-1206-i3/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261117-1206-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261117-1206-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261117-1206-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261117-1206-i3/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261117-1206-i3/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261117-1206-i3/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261117-1206-i3/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261117-1206-i3/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261117-1206-i3/3-news-myeongjo.jpg"
     }
    ]
   }
