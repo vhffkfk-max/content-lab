@@ -3452,399 +3452,6 @@
  ],
  "ideas": [
   {
-   "title": "퇴직연금 운용 방식, 20년 뒤 1억6000만원 차이",
-   "concept": "금감원 가이드북을 계기로 같은 돈을 넣어도 운용 방식에 따라 결과가 갈린다는 점을 풀고, 내 퇴직연금이 어디서 굴러가는지 확인하라는 행동으로 끝낸다. 한 장에서 한 줄로 '내 연금 확인' 답을 준다. (공식: 없음)",
-   "why_now": "금감원 가이드북 소식을 5곳 이상이 12시 전후로 한꺼번에 다뤘다. 일주일 만에 8만9000건이 배포됐고 DC형 전환자는 34만명이다.",
-   "tag": "연금",
-   "sources": [
-    "https://v.daum.net/v/20261116120342223",
-    "https://www.mt.co.kr/stock/2026/11/16/2026111609373861242",
-    "https://www.newsis.com/view/NISX20261116_0003869359"
-   ],
-   "bg": "retirement pension savings",
-   "bg_alt": "Financial Supervisory Service Korea building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "매년 1000만원씩 넣어도\n운용 방식 따라\n**1억6000만원** 차이",
-     "number": "1억6000만원",
-     "label": "20년 뒤 벌어질 수 있는 차이",
-     "sub": "매년 1000만원씩 넣었을 때, 금감원 가이드북 기준"
-    },
-    {
-     "type": "질문형",
-     "title": "같은 돈을 넣었는데\n내 퇴직연금만 왜\n**1억** 넘게 차이 날까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "퇴직연금 558조원\n금감원이 내놓은 건\n**운용법** 가이드북",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "editorial"
-   ],
-   "extra": {},
-   "id": "20261116-1301-i1",
-   "created_at": "2026-11-16T13:01:38+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261116-1301-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261116-1301-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261116-1301-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261116-1301-i1/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261116-1301-i1/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261116-1301-i1/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261116-1301-i1/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261116-1301-i1/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261116-1301-i1/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "집값 상하위 10% 격차 52배, 통계 이래 최대",
-   "concept": "상위 10% 15.6억과 하위 10% 3000만원을 맞붙여 보여 주고, 집주인은 늘었어도 서울 절반 이상이 무주택이라는 반전을 가운데에 둔다. 집이 있느냐보다 어떤 집이냐로 마무리한다. (공식: 숫자는 둘을 맞붙여서)",
-   "why_now": "12시경 이데일리, 연합뉴스, 조선비즈, 파이낸셜뉴스, 한겨레 등이 다뤘다. 오늘 아직 나간 부동산 글이 없다.",
-   "tag": "부동산",
-   "sources": [
-    "https://www.fnnews.com/news/202611161047387203",
-    "https://v.daum.net/v/20261116120639345",
-    "https://www.sedaily.com/article/20114799"
-   ],
-   "bg": "Seoul apartment complex",
-   "bg_alt": "Seoul housing skyline",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "상위 10% 집 15.6억\n하위 10%는 3000만원\n격차 역대 최대 **52배**",
-     "number": "52배",
-     "label": "주택자산 상위 10% 대 하위 10%",
-     "sub": "15.6억원 대 3000만원, 통계 집계 이래 최대"
-    },
-    {
-     "type": "질문형",
-     "title": "집주인 33만명 늘었는데\n서울은 왜 아직\n**절반**이 무주택일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "집 가진 가구는 늘었다\n그런데 집값 격차는\n통계 이래 **최대**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bars",
-    "bignum"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "주택자산 규모(억원)",
-     "bars": [
-      {
-       "label": "상위 10%",
-       "value": 15.6,
-       "hi": true
-      },
-      {
-       "label": "하위 10%",
-       "value": 0.3
-      }
-     ]
-    }
-   },
-   "id": "20261116-1301-i2",
-   "created_at": "2026-11-16T13:01:38+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261116-1301-i2/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261116-1301-i2/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261116-1301-i2/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261116-1301-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261116-1301-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261116-1301-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261116-1301-i2/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261116-1301-i2/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261116-1301-i2/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261116-1301-i2/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261116-1301-i2/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261116-1301-i2/3-bars-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "반도체 생산성 8.5%↑, 나머지 0.4%↓",
-   "concept": "수출 역대 최대인데 월급은 왜 제자리인지를 KDI 보고서로 푼다. 반도체와 나머지 산업의 생산성을 맞붙이고, 나라 경제 숫자와 내 월급이 따로 노는 이유로 연결한다. (공식: 숫자는 둘을 맞붙여서)",
-   "why_now": "12시경 KDI 보고서를 연합인포맥스, 연합뉴스, 파이낸셜뉴스, 뉴시스, 머니투데이 등이 다뤘다. 엔비디아 실적을 앞두고 반도체 관심이 큰 때다.",
-   "tag": "임금",
-   "sources": [
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4444947",
-    "https://www.fnnews.com/news/202611161021022952",
-    "https://www.newsis.com/view/NISX20261116_0003869459"
-   ],
-   "bg": "Korea semiconductor factory",
-   "bg_alt": "Samsung Electronics Pyeongtaek",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "반도체 생산성 **8.5%**↑\n나머지 산업은 0.4%↓",
-     "number": "8.5%",
-     "label": "반도체 생산성 상승률",
-     "sub": "반도체 뺀 산업은 0.4% 하락, KDI 보고서"
-    },
-    {
-     "type": "질문형",
-     "title": "수출은 역대 최대인데\n내 월급은 왜\n**제자리**일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "수출 역대 최대 뒤엔\n반도체만 웃고\n**나머지**는 뒷걸음",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "paper",
-    "news"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/16",
-     "headlines": [
-      "10월 수출, 역대 최대",
-      "반도체 생산성 8.5% 상승",
-      "비반도체 생산성 0.4% 하락"
-     ]
-    }
-   },
-   "id": "20261116-1301-i3",
-   "created_at": "2026-11-16T13:01:38+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261116-1301-i3/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261116-1301-i3/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261116-1301-i3/1-paper-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261116-1301-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261116-1301-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261116-1301-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261116-1301-i3/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261116-1301-i3/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261116-1301-i3/2-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261116-1301-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261116-1301-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261116-1301-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261116-1301-i3/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261116-1301-i3/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261116-1301-i3/3-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261116-1301-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261116-1301-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261116-1301-i3/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
    "title": "트럼프 행정부, 엔비디아 국가대표 지정 추진",
    "concept": "WSJ가 보도한 '국가대표 지정 추진'이라는 사건 하나만 다룬다. 같은 날 엔비디아 CEO 리스크로 코스피가 3%대 빠진 상황을 한 줄로 붙이고, 지정 기준과 혜택은 아직 확인 전이라고 한 곳에만 밝힌다. 투자 권유는 하지 않는다. (공식: 날짜, 모음 라벨 표지는 피하기)",
    "why_now": "13:17 로이터와 WSJ가 보도한 새 소식이다. 코스피는 5120선대로 3%대 급락 중이고, 이번 주 엔비디아 실적 발표를 앞두고 있다.",
@@ -9310,6 +8917,509 @@
      "form": "news",
      "font": "myeongjo",
      "path": "20261117-1206-i3/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "리모델링 동의율 75%에서 70%로",
+   "concept": "동의율 5%p 완화라는 사건 하나를 '내 단지에 뭐가 달라지나'부터 풀고, 마지막 장은 확인된 것과 아직 모르는 것(적용 대상, 시행 시점)으로 닫는다 (공식: 끝 장은 닫힌 결론 한 줄)",
+   "why_now": "12:21 조선비즈, 연합뉴스, SBS Biz 등 6곳이 주택법 시행령 개정안의 오늘 국무회의 통과를 보도했다. 오늘 이미 보낸 주제에는 없었다.",
+   "tag": "부동산",
+   "sources": [
+    "https://biz.chosun.com/real_estate/real_estate_general/2026/11/17/Q33I2R55PZD3TMI2MWVIAUBROM/",
+    "https://www.yna.co.kr/view/AKR20261117060500003"
+   ],
+   "bg": "apartment remodeling construction",
+   "bg_alt": "Korean apartment complex",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "정부가 리모델링 동의율\n**75%**를 70%로 낮췄다",
+     "number": "70%",
+     "label": "리모델링 동의율",
+     "sub": "75%에서 완화, 오늘 국무회의 통과"
+    },
+    {
+     "type": "질문형",
+     "title": "정부가 낮춘 동의율\n내 단지 **리모델링**\n문턱도 낮아졌나",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "동의율은 낮아졌는데\n내 단지 적용은\n**아직** 모른다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "news",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/17",
+     "headlines": [
+      "주택법 시행령 개정안 국무회의 통과",
+      "리모델링 동의율 75%에서 70%로",
+      "적용 대상, 시행 시점은 확인 필요"
+     ]
+    }
+   },
+   "id": "20261117-1301-i1",
+   "created_at": "2026-11-17T13:01:37+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261117-1301-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261117-1301-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261117-1301-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261117-1301-i1/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261117-1301-i1/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261117-1301-i1/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261117-1301-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261117-1301-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261117-1301-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261117-1301-i1/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261117-1301-i1/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261117-1301-i1/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261117-1301-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261117-1301-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261117-1301-i1/3-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261117-1301-i1/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261117-1301-i1/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261117-1301-i1/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "3040 자산가, 부동산보다 금융자산",
+   "concept": "3040 자산가가 무엇을 갖고 무엇을 물려줄지를 조사 결과로 보여 주고, 증여는 세금과 시점이 중요하다는 점으로 닫는다 (공식: 없음)",
+   "why_now": "11:23 '3040 자산가 절반 이상 금융자산' 6곳, 11:44 '유자녀 3040 자산가 40% 자녀 미성년일 때 물려주겠다' 2곳이 보도했다. 증시 변동성이 큰 날이라 자산 배분 관심이 크고, 오늘 주제 대부분인 증시와 겹치지 않는다.",
+   "tag": "재테크",
+   "sources": [
+    "https://biz.heraldcorp.com/article/10939394",
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4445129",
+    "https://www.yna.co.kr/view/AKR20261117063200002"
+   ],
+   "bg": "wealthy family wealth planning",
+   "bg_alt": "Seoul financial district Yeouido",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "자녀 있는 3040 부자\n**40%**는 미성년일 때\n물려주겠다고 답했다",
+     "number": "40%",
+     "label": "유자녀 3040 자산가",
+     "sub": "자녀가 미성년일 때 물려주겠다고 응답"
+    },
+    {
+     "type": "질문형",
+     "title": "3040 부자는\n부동산 대신 **무엇**을\n더 갖고 있을까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "3040 자산가의 선택\n부동산이 아니라\n**금융자산**이었다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "editorial",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/17",
+     "headlines": [
+      "3040 자산가 절반 이상 금융자산",
+      "물려줄 자산도 금융상품 우위",
+      "유자녀 40% 미성년 때 증여"
+     ]
+    }
+   },
+   "id": "20261117-1301-i2",
+   "created_at": "2026-11-17T13:01:37+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261117-1301-i2/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261117-1301-i2/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261117-1301-i2/1-editorial-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261117-1301-i2/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261117-1301-i2/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261117-1301-i2/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261117-1301-i2/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261117-1301-i2/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261117-1301-i2/2-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261117-1301-i2/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261117-1301-i2/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261117-1301-i2/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261117-1301-i2/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261117-1301-i2/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261117-1301-i2/3-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261117-1301-i2/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261117-1301-i2/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261117-1301-i2/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "목표가는 내리고 코스피 전망은 올렸다",
+   "concept": "키움의 삼성전자 목표가 하향과 NH의 내년 코스피 9200 전망을 같은 날 맞붙여, 시점에 따라 시각이 갈린다는 점을 보여 준다 (공식: 가운데 한 번 뒤집기)",
+   "why_now": "키움 목표가 하향 4곳, NH투자증권 코스피 9200 전망 4곳, 한투운용 반도체 ETF 비중 조정 4곳이 보도됐다. 코스피는 오늘 5000선 근처에서 움직이고 있다.",
+   "tag": "증권가",
+   "sources": [
+    "https://www.etoday.co.kr/news/view/2649010",
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4445069",
+    "https://www.etoday.co.kr/news/view/2648994"
+   ],
+   "bg": "Samsung Electronics headquarters",
+   "bg_alt": "KOSPI trading screen",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "키움이 삼성전자 목표가를\n**29만원**으로 내린 날\nNH는 9200 제시",
+     "number": "29만원",
+     "label": "키움 삼성전자 목표가",
+     "sub": "35만원에서 하향, 같은 날 NH는 내년 코스피 9200 전망"
+    },
+    {
+     "type": "질문형",
+     "title": "키움과 NH의 전망이\n같은 날 **갈린** 이유는",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "키움은 하이닉스 목표가\n180만원으로 내렸는데\n**NH**는 내년 9200",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bars",
+    "paper"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "삼성전자 목표가와 현재가, 만원 (현재가는 11/17 기준)",
+     "bars": [
+      {
+       "label": "키움 기존 목표가",
+       "value": 35
+      },
+      {
+       "label": "키움 하향 목표가",
+       "value": 29,
+       "hi": true
+      },
+      {
+       "label": "현재가",
+       "value": 19.3
+      }
+     ]
+    },
+    "paper": {
+     "date": "11/17",
+     "headlines": [
+      "키움 삼성전자 목표가 35만→29만",
+      "NH 내년 코스피 목표 9200",
+      "코스피 5008 하락 출발"
+     ]
+    }
+   },
+   "id": "20261117-1301-i3",
+   "created_at": "2026-11-17T13:01:37+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261117-1301-i3/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261117-1301-i3/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261117-1301-i3/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261117-1301-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261117-1301-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261117-1301-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261117-1301-i3/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261117-1301-i3/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261117-1301-i3/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261117-1301-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261117-1301-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261117-1301-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261117-1301-i3/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261117-1301-i3/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261117-1301-i3/3-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261117-1301-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261117-1301-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261117-1301-i3/3-paper-gowun.jpg"
     }
    ]
   }
