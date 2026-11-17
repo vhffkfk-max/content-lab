@@ -2,7 +2,7 @@
  {
   "geo": "KR",
   "term": "경찰",
-  "traffic": 20000,
+  "traffic": 10000,
   "topics": "",
   "econ": false,
   "news_title": "\"이렇게까지 한다고?\" 웃음보인 장관‥\"믿음 깨져\" 냉소 속출",
@@ -10,12 +10,21 @@
  },
  {
   "geo": "KR",
-  "term": "데블스플랜3",
-  "traffic": 1000,
+  "term": "wales vs portugal",
+  "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "[TF초점] '데블스 플랜3', 5회 만에 빠져든 두뇌 싸움…역시 근본 조합",
-  "news_link": "https://news.tf.co.kr/read/entertain/2389546.htm"
+  "news_title": "Bruno Fernandes and David Brooks score goals in Wales v Portugal",
+  "news_link": "https://www.bbc.co.uk/sport/football/videos/cmn80yjw6v2wo"
+ },
+ {
+  "geo": "KR",
+  "term": "김장",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "충북농협, 7400㎏ 김장 행사…취약계층·복지시설에 전달",
+  "news_link": "https://www.news1.kr/local/sejong-chungbuk/6356875"
  },
  {
   "geo": "KR",
@@ -23,8 +32,8 @@
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Lucía Caminos is the first Latina ‘Grand Theft Auto’ lead – these video game characters paved the way",
-  "news_link": "https://theconversation.com/lucia-caminos-is-the-first-latina-grand-theft-auto-lead-these-video-game-characters-paved-the-way-290289"
+  "news_title": "Pre-Load Grand Theft Auto VI Now",
+  "news_link": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
  },
  {
   "geo": "KR",
@@ -37,84 +46,57 @@
  },
  {
   "geo": "KR",
-  "term": "데블스플랜",
+  "term": "백신",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "정현규, 공황 증상으로 '데블스 플랜3' 하차 \"극복했다 생각\"",
-  "news_link": "https://enews.imbc.com/News/RetrieveNewsInfo/525195"
+  "news_title": "예방접종 피해 국가보상, 대리인도 신청 가능",
+  "news_link": "https://www.yna.co.kr/view/AKR20261117059800530"
+ },
+ {
+  "geo": "KR",
+  "term": "알렉산더 즈베레프",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "'세계 랭킹 1위' 트로피에 입 맞추는 즈베레프",
+  "news_link": "https://mobile.newsis.com/photo_view.html?pict_id=NISI20261117_0002293855&pID=1&cID=&sID=1&type=photoMain&idx=7"
  },
  {
   "geo": "KR",
   "term": "애플",
   "traffic": 200,
-  "topics": "국내 대형주",
+  "topics": "",
+  "econ": false,
+  "news_title": "아이폰 듀오, 전면 카메라로 얼굴 인식 잠금 해제한다",
+  "news_link": "https://zdnet.co.kr/view/?no=20261117081332"
+ },
+ {
+  "geo": "KR",
+  "term": "부고",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "오늘의 부고-김정순 충북 남부출장소 행정지원과장 모친상 외",
+  "news_link": "https://www.khan.co.kr/article/202611171548021"
+ },
+ {
+  "geo": "KR",
+  "term": "아이폰",
+  "traffic": 100,
+  "topics": "빅테크",
   "econ": true,
-  "news_title": "[단독]카카오뱅크, 애플페이 서비스 시작",
-  "news_link": "https://www.etnews.com/20261116000304"
- },
- {
-  "geo": "KR",
-  "term": "mbk파트너스",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "회수부터 투자까지…MBK SS, 신규 펀드레이징 배경은",
-  "news_link": "https://marketin.edaily.co.kr/News/Read?newsId=04149206645646704"
- },
- {
-  "geo": "KR",
-  "term": "백신",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "美, 26년 만에 '홍역 퇴치국' 지위 잃었다…\"백신 불신 탓\"",
-  "news_link": "https://marketin.edaily.co.kr/News/ReadE?newsId=04775686645646704"
- },
- {
-  "geo": "KR",
-  "term": "엔비디아 실적",
-  "traffic": 100,
-  "topics": "AI·반도체, 국내 대형주, 실적발표",
-  "econ": true,
-  "news_title": "9개월 만에 5,000선 붕괴, 코스피에 무슨 일이?",
-  "news_link": "https://story.pay.naver.com/content/3985_3_C1"
- },
- {
-  "geo": "KR",
-  "term": "정우영",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "정우영 2년 7개월 만에 복귀…카타르전 대거 로테이션 : 스포츠",
-  "news_link": "https://news.jkn.co.kr/post/1102804"
+  "news_title": "Apple to Let Users Face-Unlock iPhone Duo, Addressing Key Drawback",
+  "news_link": "https://www.bloomberg.com/news/articles/2026-11-16/apple-to-let-users-face-unlock-iphone-duo-addressing-key-drawback"
  },
  {
   "geo": "US",
-  "term": "alexander zverev",
+  "term": "taylor sheridan",
   "traffic": 5000,
   "topics": "",
   "econ": false,
-  "news_title": "ATP Finals 2026 live updates: Latest as Zverev takes first set against USA's Shelton on day three - The Athletic",
-  "news_link": "https://www.nytimes.com/athletic/live-blogs/atp-finals-2026-live-updates-schedule-scores-results/t2zHtLNMIMTO/"
- },
- {
-  "geo": "US",
-  "term": "portugal",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Mais de meia centena de tendas amanhecem no Rossio",
-  "news_link": "https://www.rtp.pt/noticias/pais/mais-de-meia-centena-de-tendas-amanhecem-no-rossio_n1776719"
- },
- {
-  "geo": "US",
-  "term": "uefa nations league schedule",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Nations League quarter-finals: Who is through? Who can join them? What is the state of play in each League A group?",
-  "news_link": "https://www.uefa.com/uefanationsleague/news/02ab-22096ba64f4d-f179d6d05013-1000--nations-league-quarter-finals-who-is-through-who-can-joi/"
+  "news_title": "Taylor Sheridan’s ‘Landman’ Season 3 Officially Confirms Major Update Following Delays",
+  "news_link": "https://www.imdb.com/news/ni66111200/?ref_=nmnw_art_perm"
  },
  {
   "geo": "US",
@@ -127,6 +109,33 @@
  },
  {
   "geo": "US",
+  "term": "notre dame basketball",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Players Era 8: No. 1 Florida vs Notre Dame (Tuesday, 4:30 pm)",
+  "news_link": "https://floridagators.com/news/2026/11/16/mens-basketball-players-era-stuff-florida-vs-notre-dame-nov-17-2026"
+ },
+ {
+  "geo": "US",
+  "term": "portugal fc",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "FC Porto: Gabriel Mec dá passo em frente a quatro dias do Paredes",
+  "news_link": "https://www.abola.pt/noticias/fc-porto-gabriel-mec-da-passo-em-frente-a-quatro-dias-do-paredes-2026111612471276515"
+ },
+ {
+  "geo": "US",
+  "term": "u.s. soccer",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Poch offers Pep advice on USMNT job, calls it 'perfect moment to arrive'",
+  "news_link": "https://www.espn.com/soccer/story/_/id/50504817/poch-pep-advice-usmnt-job"
+ },
+ {
+  "geo": "US",
   "term": "bill fritz",
   "traffic": 500,
   "topics": "",
@@ -136,47 +145,38 @@
  },
  {
   "geo": "US",
-  "term": "charles bronson",
+  "term": "vinod khosla",
   "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Luton-born Charles Bronson denied parole for ninth time",
-  "news_link": "https://www.bbc.com/news/articles/cqjd7n7p09j5o"
- },
- {
-  "geo": "US",
-  "term": "chip gaines",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Joanna Gaines Shares Rare Photo of Son Crew Bonding with His Older Brother on the Golf Course",
-  "news_link": "https://people.com/joanna-gaines-rare-photo-sons-golfing-12260318"
- },
- {
-  "geo": "US",
-  "term": "christopher laneve",
-  "traffic": 500,
-  "topics": "정치·관세",
+  "topics": "AI·반도체",
   "econ": true,
-  "news_title": "Trump nominates new top Army general, setting stage for confirmation fight",
-  "news_link": "https://www.washingtonpost.com/national-security/2026/11/17/trump-nominates-gen-chris-laneve-army-chief-staff/"
+  "news_title": "Vinod Khosla Is Betting AI Will Kill the Static Website",
+  "news_link": "https://www.businessinsider.com/khosla-doubles-down-on-coframe-to-build-a-living-internet-2026-11"
  },
  {
   "geo": "US",
-  "term": "ciara",
+  "term": "xbox game pass",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Ciara, Expecting Baby No. 5, Says There Shouldn’t Be Pressure on Moms to Make Christmas Perfect: ‘It’s About Love’ (Exclusive)",
-  "news_link": "https://people.com/ciara-expecting-baby-no-5-says-there-shouldn-t-be-pressure-on-moms-to-make-christmas-perfect-exclusive-12260214"
+  "news_title": "Coming to XBOX Game Pass: Hela: of Mice & Magic, The Outlast Trials, Sniper Ghost Warrior Contracts 2, and More",
+  "news_link": "https://news.xbox.com/en-us/2026/11/17/xbox-game-pass-november-2026-wave-2/"
  },
  {
   "geo": "US",
-  "term": "taylor sheridan",
-  "traffic": 500,
+  "term": "argentina vs costa rica",
+  "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Yellowstone creator Taylor Sheridan has no apologies for spending big money on his hit TV shows",
-  "news_link": "https://www.foxnews.com/outkick-culture/yellowstone-creator-taylor-sheridan-no-apologies-spending-big-money-hit-tv-shows"
+  "news_title": "El probable equipo de Argentina para enfrentar a Costa Rica en Córdoba",
+  "news_link": "https://espndeportes.espn.com/futbol/mundial/nota/_/id/17522786/la-formacion-de-argentina-vs-costa-rica"
+ },
+ {
+  "geo": "US",
+  "term": "portugal vs norway",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Wales vs Portugal: Uefa Nations League stats & head-to-head",
+  "news_link": "https://www.bbc.com/sport/football/live/crvg2d87xe38t"
  }
 ]
