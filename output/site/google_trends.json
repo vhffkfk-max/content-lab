@@ -1,17 +1,8 @@
 [
  {
   "geo": "KR",
-  "term": "피의자",
-  "traffic": 20000,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "2mm 초소형 카메라 AI 연결하니…순식간에 문제 풀이",
-  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8714200"
- },
- {
-  "geo": "KR",
   "term": "김선태",
-  "traffic": 2000,
+  "traffic": 5000,
   "topics": "AI·반도체",
   "econ": true,
   "news_title": "AI 안경 쓰고 공무원 시험 본 '충주맨', 25점 받은 이유가",
@@ -19,21 +10,12 @@
  },
  {
   "geo": "KR",
-  "term": "너구리",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "농심, '볶음너구리' 정식 판매 전환…신제품 '매콤마요'도 출시",
-  "news_link": "https://www.yna.co.kr/view/AKR20261117045300030"
- },
- {
-  "geo": "KR",
   "term": "장동혁",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "장동혁, 한동훈 장인상 조문… 7분간 머물러",
-  "news_link": "https://www.chosun.com/politics/assembly/2026/11/17/FKM4AA2WCFCCFPYATWVGRER5PI/"
+  "news_title": "장동혁, 한동훈 장인상 조문…한 “대표님 잠깐” 짧은 대화도",
+  "news_link": "https://www.khan.co.kr/article/202611171042001"
  },
  {
   "geo": "KR",
@@ -46,21 +28,30 @@
  },
  {
   "geo": "KR",
-  "term": "상장",
+  "term": "embassy",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "\"이 신호 뜨면 주식 팔아라?\"…앤트로픽 상장 앞두고 나온 경고 [분석+]",
-  "news_link": "https://www.hankyung.com/article/2026111695036"
+  "news_title": "(LEAD) S. Korea seeks to reconstruct aging embassy in U.S. amid uncertainty over funding",
+  "news_link": "https://en.yna.co.kr/view/AEN20261116007951315"
  },
  {
   "geo": "KR",
-  "term": "embassy",
-  "traffic": 100,
+  "term": "담보 대출",
+  "traffic": 200,
+  "topics": "금리·연준",
+  "econ": true,
+  "news_title": "내일부터 5대은행 주담대 변동금리 또 올라···최고 연 6.51%",
+  "news_link": "https://www.khan.co.kr/article/202611161646001"
+ },
+ {
+  "geo": "KR",
+  "term": "면세점",
+  "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "US warns Americans in Europe of holiday terror risk as bomb hoaxes disrupt flights",
-  "news_link": "https://investinglive.com/news/us-warns-americans-in-europe-of-holiday-terror-risk-as-bomb-hoaxes-disrupt-flights/"
+  "news_title": "신라면세점, 프리미엄 버번 위스키 '블랑톤' 단독 출시",
+  "news_link": "https://www.etnews.com/20261117000220"
  },
  {
   "geo": "KR",
@@ -70,6 +61,15 @@
   "econ": false,
   "news_title": "'만삭' 김지민, 장롱면허 김준호 대신해 운전대 잡았다",
   "news_link": "https://www.newsis.com/view/NISX20261116_0003868998"
+ },
+ {
+  "geo": "KR",
+  "term": "마이클 버리",
+  "traffic": 100,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "'빅쇼트' 버리 \"나스닥 약세 베팅 확대…내년 반도체주 하락 전망\"",
+  "news_link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4444844"
  },
  {
   "geo": "KR",
@@ -91,24 +91,6 @@
  },
  {
   "geo": "US",
-  "term": "connections hint november 16",
-  "traffic": 20000,
-  "topics": "",
-  "econ": false,
-  "news_title": "NYT Connections Answers for November 16, 2026",
-  "news_link": "https://www.nytimes.com/2026/11/15/crosswords/connections-companion-1254.html"
- },
- {
-  "geo": "US",
-  "term": "phil collins",
-  "traffic": 5000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Phil Collins shares health update at Rock & Roll Hall of Fame induction",
-  "news_link": "https://globalnews.ca/news/12153147/phil-collins-health-update-rock-and-roll-hall-of-fame-induction/"
- },
- {
-  "geo": "US",
   "term": "malware",
   "traffic": 2000,
   "topics": "",
@@ -118,30 +100,48 @@
  },
  {
   "geo": "US",
-  "term": "long beach st vs ucla",
-  "traffic": 1000,
+  "term": "pak vs sl",
+  "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "No. 9 Men's Basketball to Host Long Beach State, Cal State Fullerton",
-  "news_link": "https://uclabruins.com/news/2026/11/14/no-9-mens-basketball-to-host-long-beach-state-cal-state-fullerton"
+  "news_title": "Pakistan, Sri Lanka primed for more experimentation in Rawalpindi",
+  "news_link": "https://www.cricinfo.com/series/sri-lanka-in-pakistan-2026-27-1550703/pakistan-vs-sri-lanka-2nd-test-1550712/match-preview"
  },
  {
   "geo": "US",
-  "term": "madden movie",
+  "term": "cyberattack",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "David O. Russell’s ‘Madden’ Biopic Is Out Next Week — Does Anybody Know or Care?",
-  "news_link": "https://www.indiewire.com/features/commentary/david-o-russell-madden-biopic-amazon-burying-nicolas-cage-film-1235224213/"
+  "news_title": "California sues OpenAI over hacking risks",
+  "news_link": "https://www.npr.org/2026/11/16/nx-s1-6042920/california-sues-openai-hugging-face-hacking-incident"
  },
  {
   "geo": "US",
-  "term": "brian hallisay",
+  "term": "nfl draft order",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "2027 NFL mock draft: Six quarterbacks go in the first round but none overcome Jeremiah Smith",
+  "news_link": "https://www.cbssports.com/nfl/draft/news/2027-nfl-mock-draft-six-quarterbacks-jeremiah-smith-week-11/"
+ },
+ {
+  "geo": "US",
+  "term": "greta thunberg",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "The planet ‘is being killed’, Greta Thunberg tells Cop31 climate summit",
+  "news_link": "https://www.theguardian.com/environment/2026/nov/12/greta-thunberg-cop31-climate-summit"
+ },
+ {
+  "geo": "US",
+  "term": "chris moore",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Jennifer Love Hewitt Reveals the Secret to 13 Years of Marriage with Husband Brian Hallisay (Exclusive)",
-  "news_link": "https://people.com/jennifer-love-hewitt-reveals-secret-to-13-years-of-marriage-with-brian-hallisay-exclusive-12259096"
+  "news_title": "Ravens Elevate 13-Touchdown Wide Receiver Before Jacoby Brissett Debut",
+  "news_link": "https://sports.yahoo.com/articles/ravens-elevate-13-touchdown-wide-005232307.html"
  },
  {
   "geo": "US",
@@ -154,21 +154,21 @@
  },
  {
   "geo": "US",
-  "term": "pax silica",
-  "traffic": 200,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "US, Allies Agree to Guard AI Supply Chains From China, FT Says",
-  "news_link": "https://www.bloomberg.com/news/articles/2026-11-15/us-allies-agree-to-guard-ai-supply-chains-from-china-ft-says"
- },
- {
-  "geo": "US",
-  "term": "portland state basketball",
+  "term": "john christopher depp",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Saint Mary’s (CA) vs. Portland State: Free Live Stream, TV Channel, How to Watch",
-  "news_link": "https://www.bleachernation.com/how-to-watch/2026/11/16/saint-marys-ca-vs-portland-state-free-live-stream-tv-channel-how-to-watch/"
+  "news_title": "Weekend Box Office: Ebenezer Wins a Sleepy Weekend",
+  "news_link": "https://editorial.rottentomatoes.com/article/weekend-box-office-ebenezer-week-1/"
+ },
+ {
+  "geo": "US",
+  "term": "texas southern basketball",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Game of the Week: Men’s basketball vs Texas Southern",
+  "news_link": "https://ucsdguardian.org/2026/11/16/game-of-the-week-mens-basketball-vs-texas-southern/"
  },
  {
   "geo": "US",
