@@ -3452,429 +3452,6 @@
  ],
  "ideas": [
   {
-   "title": "앤트로픽 상장, 중국 홍콩 기관 청약 배제",
-   "concept": "앤트로픽 하나만 주인공으로 두고 장마다 한 걸음씩 따라간다. 904억 달러 조달 목표, 중국과 홍콩 기관 제외, 그 의미, 한국 투자자 체크 순서로 푼다. 청약 일정과 한국 영향은 확인된 것만 쓴다. (공식: 한 주인공이 장마다 한 걸음씩)",
-   "why_now": "오늘 아침 중국과 홍콩 기관이 청약에서 빠진다는 새 소식이 나왔다. 앤트로픽 IPO는 이번 주 최대 이벤트인데 아직 다룬 곳이 없다.",
-   "tag": "AI, IPO",
-   "sources": [
-    "https://biz.chosun.com/it-science/ict/2026/11/16/6C3DU53DHVDBHKGSXPIIKVP6WI/",
-    "https://www.yna.co.kr/view/AKR20261116020300009",
-    "https://www.instagram.com/p/DfxzbhymZsA/"
-   ],
-   "bg": "Anthropic Dario Amodei",
-   "bg_alt": "Anthropic logo office",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "앤트로픽 **904억달러**\n역대 최대 상장에서\n중국 홍콩 기관 제외",
-     "number": "904억 달러",
-     "label": "앤트로픽 IPO 조달 목표",
-     "sub": "중국, 홍콩 기관은 청약에서 빠진다"
-    },
-    {
-     "type": "질문형",
-     "title": "앤트로픽 청약에\n중국 홍콩 기관은\n**왜** 빠졌을까?",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "역대 최대 IPO인데\n**중국 홍콩** 기관은\n청약에서 빠졌다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261116-1101-i1",
-   "created_at": "2026-11-16T11:01:44+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261116-1101-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261116-1101-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261116-1101-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261116-1101-i1/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261116-1101-i1/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261116-1101-i1/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261116-1101-i1/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261116-1101-i1/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261116-1101-i1/3-breaking-dohyeon.jpg"
-    }
-   ]
-  },
-  {
-   "title": "코스피 -2.53%, 코스닥 -3.55% 외국인 매도",
-   "concept": "+0.28%로 출발한 코스피가 반도체 약세에 밀려 하락으로 뒤집힌 하루를 보여 준다. 중간 장에 그런데 장을 두고, 이유는 보도된 AI 투심 위축과 젠슨 황 불확실성으로만 쓴다. 시세는 11/16 기준으로 코스피와 코스닥 두 개를 맞붙인다. (공식: 가운데 한 번 뒤집기)",
-   "why_now": "오늘 장중 코스피가 5300선을 내주고 낙폭이 2~3%로 확대됐다. 33곳이 다뤘고 외국인이 팔았다는 속보가 나왔다.",
-   "tag": "증시 속보",
-   "sources": [
-    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008847443&plink=RSSLINK&cooper=RSSREADER",
-    "https://v.daum.net/v/20261116102357820",
-    "https://www.hankyung.com/article/202611168242i"
-   ],
-   "bg": "Jensen Huang Nvidia",
-   "bg_alt": "Korea Exchange Seoul",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "코스피 **-2.53%**\n코스닥은 -3.55%\n외국인이 팔았다",
-     "number": "-2.53%",
-     "label": "11/16 코스피 하락률",
-     "sub": "코스닥은 -3.55%"
-    },
-    {
-     "type": "질문형",
-     "title": "코스피 5300선\n붕괴의 이유는\n**젠슨 황**뿐일까?",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "+0.28%로 출발한\n코스피가 **반도체**에\n2%대 밀렸다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/16",
-     "headlines": [
-      "코스피 5,156.65 전일 -2.53%",
-      "코스닥 -3.55% 낙폭 확대",
-      "외국인 팔자, 반도체 약세"
-     ]
-    }
-   },
-   "id": "20261116-1101-i2",
-   "created_at": "2026-11-16T11:01:44+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261116-1101-i2/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261116-1101-i2/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261116-1101-i2/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261116-1101-i2/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261116-1101-i2/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261116-1101-i2/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261116-1101-i2/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261116-1101-i2/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261116-1101-i2/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261116-1101-i2/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261116-1101-i2/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261116-1101-i2/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261116-1101-i2/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261116-1101-i2/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261116-1101-i2/3-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261116-1101-i2/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261116-1101-i2/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261116-1101-i2/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "KB證 삼성 수혜론 vs 버리 반도체 약세론",
-   "concept": "같은 반도체를 두고 증권사 낙관과 마이클 버리의 비관을 한 화면에 맞붙인다. 낙관은 KB證과 LS證 보고서, 비관은 버리의 나스닥 약세 베팅과 내년 반도체 하락 전망으로 쓴다. 판단은 독자 몫으로 둔다. HBM 65% 수치는 확인 표시를 유지한다. (공식: 없음)",
-   "why_now": "오늘 아침 KB證 탈 엔비디아 수혜 보고서와 버리의 반도체 하락 전망이 같은 시간대에 나왔다. 엔비디아 실적 주간이라 전망이 갈린 점이 눈에 띈다.",
-   "tag": "반도체 전망",
-   "sources": [
-    "https://www.etoday.co.kr/news/view/2648378",
-    "https://www.newsis.com/view/NISX20261116_0003868925",
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4444844"
-   ],
-   "bg": "Michael Burry",
-   "bg_alt": "Samsung Electronics HBM chip",
-   "hooks": [
-    {
-     "type": "사건형",
-     "title": "빅쇼트 버리가\n나스닥 약세 베팅\n**확대**했다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "KB證은 삼성 수혜\n버리는 하락 전망\n**누가** 맞을까?",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "KB證은 삼성 수혜론\n버리는 반도체 약세론\n**정반대** 전망 충돌",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/16",
-     "headlines": [
-      "KB證 삼성, 탈 엔비디아 수혜",
-      "버리, 나스닥 약세 베팅 확대",
-      "LS證 하이닉스 최대 실적 전망"
-     ]
-    }
-   },
-   "id": "20261116-1101-i3",
-   "created_at": "2026-11-16T11:01:44+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261116-1101-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261116-1101-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261116-1101-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261116-1101-i3/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261116-1101-i3/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261116-1101-i3/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261116-1101-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261116-1101-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261116-1101-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261116-1101-i3/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261116-1101-i3/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261116-1101-i3/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261116-1101-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261116-1101-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261116-1101-i3/3-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261116-1101-i3/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261116-1101-i3/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261116-1101-i3/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "내년 AI 빚 2천800조원, 사상 최대",
    "concept": "JP모건 전망 하나를 주인공으로, AI 투자가 현금이 아니라 채권시장 빚에 기대는 흐름을 장마다 한 걸음씩 풀고, 한국 전력설비와 반도체 수요에 닿는 지점까지 이어 간다. 회사채는 처음 나오는 자리에서 '기업이 빚을 내려고 파는 채권'으로 풀어 쓴다. (공식: 용어 대신 눈에 보이는 것으로)",
    "why_now": "JP모건이 내년 AI발 미국 회사채 발행이 사상 최대가 될 것으로 전망했다. 오늘 AI 투자 불확실성이 시장을 흔들었고, 엔비디아 실적과 앤트로픽 상장이 이번 주에 몰려 있다.",
@@ -9429,6 +9006,370 @@
      "form": "bars",
      "font": "dohyeon",
      "path": "20261117-1001-i3/3-bars-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "신규 코픽스 2년8개월 최고, 변동형 역전",
+   "concept": "코픽스가 오르면 새로 받는 변동금리 이자가 같이 오른다는 점을 먼저 풀고, 일부 은행에서 변동형이 고정형보다 높아진 역전을 보여준다. 마지막 장은 '대출 계획이면 은행별 변동과 고정 금리 비교, 기존 대출이면 내 금리 기준 확인' 한 줄로 닫는다. 은행명과 금리 수치는 재료에 없으니 확인 전에는 쓰지 않는다. (공식: 끝 장은 닫힌 결론 한 줄)",
+   "why_now": "10:42에 아시아경제 등이 보도한 새 소식이다. 대출이 있는 사람 대부분에게 해당하고, 오늘 주제가 증시에 몰려 있어 겹치지 않는다.",
+   "tag": "대출금리",
+   "sources": [
+    "https://view.asiae.co.kr/article/2026111709481365016"
+   ],
+   "bg": "Bank of Korea building",
+   "bg_alt": "apartment loan contract",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "신규 코픽스가 **2년8개월**\n만에 최고치 찍었다\n변동이 고정보다 비싸졌다",
+     "number": "2년8개월",
+     "label": "신규 코픽스 최고 수준",
+     "sub": "일부 은행에서 변동형이 고정형보다 높게 나왔다"
+    },
+    {
+     "type": "질문형",
+     "title": "일부 은행에서\n변동금리가 고정보다\n**왜** 더 비싸졌을까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "변동형이 싸다는 공식\n일부 은행에서 **역전**\n코픽스 2년8개월 최고",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "editorial",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261117-1106-i1",
+   "created_at": "2026-11-17T11:06:55+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261117-1106-i1/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261117-1106-i1/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261117-1106-i1/1-editorial-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261117-1106-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261117-1106-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261117-1106-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261117-1106-i1/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261117-1106-i1/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261117-1106-i1/2-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261117-1106-i1/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261117-1106-i1/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261117-1106-i1/3-editorial-plex.jpg"
+    }
+   ]
+  },
+  {
+   "title": "코스피 장중 5000 하회 후 낙폭 축소",
+   "concept": "개장 5008.09(-1.81%)에서 장중 5000 하회, 10시 무렵 1%대 하락으로 줄어든 하루 흐름을 시간순으로 보여준다. 엔비디아 실적 발표 전 AI 투심이 움츠러든 영향이라는 보도까지만 쓰고, 마감 수치는 확인 전에는 쓰지 않는다. (공식: 가운데 한 번 뒤집기)",
+   "why_now": "37곳이 다룬 오늘 가장 큰 소식이다. 09:10의 위기 단계 글 이후 장중 공방 결과가 나왔다.",
+   "tag": "증시 속보",
+   "sources": [
+    "https://www.etoday.co.kr/news/view/2649050",
+    "https://www.newsis.com/view/NISX20261117_0003870859",
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4445101"
+   ],
+   "bg": "KOSPI trading screen",
+   "bg_alt": "Korea Exchange building",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "코스피가 개장 직후\n**1.81%** 내린 5008\n장중 5000 밑돌았다",
+     "number": "5,008.09",
+     "label": "코스피 개장 지수(-1.81%)",
+     "sub": "장중 5000선 하회 후 낙폭 축소"
+    },
+    {
+     "type": "질문형",
+     "title": "코스피 **5000선**, 오늘\n마감까지 지킬 수 있을까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "엔비디아 실적 전날\n코스피 5000 깨졌다\n**낙폭**은 줄였다",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261117-1106-i2",
+   "created_at": "2026-11-17T11:06:55+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261117-1106-i2/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261117-1106-i2/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261117-1106-i2/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261117-1106-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261117-1106-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261117-1106-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261117-1106-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261117-1106-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261117-1106-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261117-1106-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261117-1106-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261117-1106-i2/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "영업이익 236%↑, 삼전닉스 빼면 1.7%",
+   "concept": "500대 기업 3분기 영업이익 236% 증가 뒤에 삼성전자와 SK하이닉스를 빼면 1.7%라는 반전을 보여준다. 이익이 반도체 두 곳에 몰렸다는 점과 반도체 외 업종 실적이 따라오는지를 체크포인트로 둔다. 다른 기사는 약 2%로 썼으니 수치는 1.7%로 통일하고 합산 기준은 확인한다. 현금 329조원은 한국경제 보도로만 곁들인다. (공식: 가운데 한 번 뒤집기)",
+   "why_now": "연합뉴스와 브릿지경제가 보도했고, 반도체 급락으로 삼전닉스 쏠림이 가장 큰 관심사다. 코스피가 5000선을 놓고 흔들리는 오늘 맥락과 맞는다.",
+   "tag": "실적",
+   "sources": [
+    "https://www.yna.co.kr/view/AKR20261116178300003",
+    "https://v.daum.net/v/20261117075240872",
+    "https://www.hankyung.com/article/202611170691i"
+   ],
+   "bg": "Samsung Electronics headquarters",
+   "bg_alt": "SK hynix semiconductor",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "500대 기업 영업익\n**236%** 늘었는데\n삼전닉스 빼면 1.7%",
+     "number": "236%",
+     "label": "500대 기업 3분기 영업이익 증가율",
+     "sub": "삼성전자, SK하이닉스를 빼면 1.7%"
+    },
+    {
+     "type": "질문형",
+     "title": "삼성전자와 SK하이닉스\n빼면 500대 기업은\n**얼마나** 늘었을까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "영업이익 236% 증가의\n속은 삼전닉스 쏠림\n나머지는 **1.7%**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "bars"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "500대 기업 3분기 영업이익 증가율(%)",
+     "bars": [
+      {
+       "label": "500대 전체",
+       "value": 236,
+       "hi": true
+      },
+      {
+       "label": "삼전닉스 제외",
+       "value": 1.7
+      }
+     ]
+    }
+   },
+   "id": "20261117-1106-i3",
+   "created_at": "2026-11-17T11:06:55+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261117-1106-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261117-1106-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261117-1106-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261117-1106-i3/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261117-1106-i3/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261117-1106-i3/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261117-1106-i3/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261117-1106-i3/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261117-1106-i3/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261117-1106-i3/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261117-1106-i3/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261117-1106-i3/3-bars-dohyeon.jpg"
     }
    ]
   }
