@@ -10,8 +10,8 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 6.36,
   "kr_n": 2,
-  "foreign_avg": 1.98,
-  "foreign_n": 52
+  "foreign_avg": 1.96,
+  "foreign_n": 53
  },
  {
   "rank": 2,
@@ -24,8 +24,8 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 1.89,
   "kr_n": 641,
-  "foreign_avg": 2.53,
-  "foreign_n": 363
+  "foreign_avg": 2.55,
+  "foreign_n": 366
  },
  {
   "rank": 3,
@@ -36,10 +36,10 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.0,
+  "kr_avg": 2.01,
   "kr_n": 76,
-  "foreign_avg": 1.95,
-  "foreign_n": 101
+  "foreign_avg": 1.94,
+  "foreign_n": 103
  },
  {
   "rank": 4,
@@ -50,24 +50,24 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.09,
+  "kr_avg": 1.11,
   "kr_n": 49,
-  "foreign_avg": 1.61,
-  "foreign_n": 75
+  "foreign_avg": 1.62,
+  "foreign_n": 74
  },
  {
   "rank": 5,
-  "topic": "테슬라",
+  "topic": "빅테크",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
-  "title_idea": "테슬라, 한 줄 정리",
+  "title_idea": "[오늘] 빅테크에 무슨 일이? 1분 요약",
   "format": "단일 이미지",
-  "hook": "짧은 한 줄",
+  "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.72,
-  "kr_n": 40,
-  "foreign_avg": 2.59,
-  "foreign_n": 30
+  "kr_avg": 2.13,
+  "kr_n": 51,
+  "foreign_avg": 2.31,
+  "foreign_n": 39
  },
  {
   "rank": 6,
@@ -78,13 +78,27 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "짧은 한 줄",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.05,
+  "kr_avg": 2.07,
   "kr_n": 85,
   "foreign_avg": 1.29,
   "foreign_n": 8
  },
  {
   "rank": 7,
+  "topic": "테슬라",
+  "kind": "국내·해외 모두 강세",
+  "confidence": "높음",
+  "title_idea": "테슬라, 한 줄 정리",
+  "format": "단일 이미지",
+  "hook": "짧은 한 줄",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 2.72,
+  "kr_n": 40,
+  "foreign_avg": 2.65,
+  "foreign_n": 29
+ },
+ {
+  "rank": 8,
   "topic": "국내 대형주",
   "kind": "국내 검증 주제",
   "confidence": "높음",
@@ -96,19 +110,5 @@
   "kr_n": 213,
   "foreign_avg": 0.65,
   "foreign_n": 8
- },
- {
-  "rank": 8,
-  "topic": "빅테크",
-  "kind": "국내·해외 모두 강세",
-  "confidence": "높음",
-  "title_idea": "[오늘] 빅테크에 무슨 일이? 1분 요약",
-  "format": "단일 이미지",
-  "hook": "속보·뉴스형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 2.13,
-  "kr_n": 51,
-  "foreign_avg": 2.36,
-  "foreign_n": 38
  }
 ]
