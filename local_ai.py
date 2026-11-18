@@ -30,7 +30,7 @@ LOG = ROOT / "data" / "local_ai.log"
 SITE = "output/site/"
 OUTPUTS = [SITE + f for f in ("tg_ai.json", "tg_inbox.json", "tg_rewrites.json", "trd_rooms.json", "trd_posts.json", "drafts.json",
                                "imports.json", "threads_ai.json", "x_ai.json", "thm_ai.json", "growth_plan.json", "thread_posts.json",
-                               "chart_reports.json", "charts", "futures_brief.json", "futures", "malhee_var.json", "acc_topics.json", "channel_pulse.json", "trader_posts.json", "hot_archive", "thx_var.json")] + [SITE + f"acc_{a['slug']}{x}.json" for a in _ACCS for x in ("", "_gpt")] + ["data/publish_queue.json", "data/card_style.json", "data/form_stats.json"]
+                               "chart_reports.json", "charts", "futures_brief.json", "futures", "malhee_var.json", "tg_pick.json", "acc_topics.json", "channel_pulse.json", "trader_posts.json", "hot_archive", "thx_var.json")] + [SITE + f"acc_{a['slug']}{x}.json" for a in _ACCS for x in ("", "_gpt")] + ["data/publish_queue.json", "data/card_style.json", "data/form_stats.json"]
 ENV = {**os.environ, "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1"}
 CRAWLERS = (("content-lab-telegram-live", "tg_live.py"), ("content-lab-threads-watch", "threads_watch.py"), ("content-lab-thread-listen", "thread_listen.py"))
 TG_BEAT = Path.home() / ".content-lab-ai" / "tg_live.beat"
@@ -247,6 +247,11 @@ def run_cycle():
     py("malhee_watch.py", timeout=15 * 60)   # 말희아빠 블로그·오뉴월드 인스타 새 글 → 채널용 바레이션 (새 글이 있을 때만 Claude 를 부름)
     if mv.exists() and mv.stat().st_mtime != before:
         did.append("말희아빠 바레이션")
+    tp = ROOT / SITE / "tg_pick.json"
+    before = tp.stat().st_mtime if tp.exists() else 0
+    py("tg_pick.py", timeout=15 * 60)   # 다른 방 실시간 인기 글 → 말희아빠 바레이션 (30분마다, 새로 뜬 글만 최대 3개)
+    if tp.exists() and tp.stat().st_mtime != before:
+        did.append("실시간 골라 쓰기")
     py("tg_traders.py", "--ai-only")  # PC가 올린 통계가 바뀌었을 때만
     gp = ROOT / SITE / "growth_plan.json"
     before = gp.stat().st_mtime if gp.exists() else 0

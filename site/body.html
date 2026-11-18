@@ -260,6 +260,11 @@ a.row:hover .row-main{text-decoration:underline}
 /* 처음 화면 */
 .dp-var{margin:14px 0;padding:14px;border:1px solid var(--accent);border-radius:var(--radius-card);background:var(--accent-soft)}
 .dp-var h3{margin:0 0 8px}
+/* 실시간 골라 쓰기: 원문 | 바레이션 나란히 (2026-11-18) */
+.pick-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.pick-pair .box{white-space:pre-wrap;max-height:420px;overflow:auto}
+.pick-pair h4{margin:0 0 6px;font-size:13px;color:var(--muted, #6b7280)}
+@media (max-width:720px){.pick-pair{grid-template-columns:minmax(0,1fr)}}
 .dp-var-part{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:start;padding:10px 0;border-top:1px solid var(--border)}
 .dp-var-part p{margin:0;white-space:pre-line;line-height:1.6;font-size:15px}
 .clamp4{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer}
@@ -711,12 +716,12 @@ ul.gd-card{padding-left:36px;line-height:1.8}
         <li><button type="button" data-ch="telegram"><i class="dot" style="background:var(--ch-telegram)"></i>텔레그램 · 말희아빠<span class="soon" id="tg-badge">연결 전</span></button>
           <ul class="subnav" data-for="telegram">
             <li><a href="#tg-inbox">올릴 자료함</a></li>
+            <li><a href="#tg-pick">실시간 골라 쓰기</a></li>
             <li><a href="#tg-mv">블로그·인스타 바레이션</a></li>
             <li><a href="#tg-rw">시황 자동 변환</a></li>
             <li><a href="#tg-mine">내 채널 성과</a></li>
             <li><a href="#tg-rank">경쟁 채널 순위</a></li>
             <li><a href="#tg-today">오늘 올릴 문구</a></li>
-            <li><a href="#tg-charts">차트리포트 이미지</a></li>
             <li><a href="#tg-futures">선물 브리핑</a></li>
             <li><a href="#tg-formulas">잘 되는 글 공식</a></li>
             <li><a href="#tg-hot">다른 방 인기 글</a></li>
@@ -1445,6 +1450,11 @@ ul.gd-card{padding-left:36px;line-height:1.8}
           <div class="recs" id="tg-inbox-list"></div>
           <details style="margin-top:10px"><summary>채널 비교 숫자 (최근 30일)</summary><div id="tg-inbox-compare" style="overflow-x:auto"></div></details>
         </section>
+        <section class="sec" id="tg-pick">
+          <h2>실시간 골라 쓰기 — 다른 방에서 지금 뜬 글</h2>
+          <p class="note">다른 경제 채널 23곳에서 최근 12시간 안에 평소 조회수의 2배 이상 나온 글을 30분마다 골라, 말희아빠 채널용으로 새로 써요. 왼쪽이 원문, 오른쪽이 바레이션이에요. 단톡방·홍보·타점 글은 빼요. 방에 자동으로 올라가지 않아요.</p>
+          <div class="recs" id="tg-pick-list"></div>
+        </section>
         <section class="sec" id="tg-mv">
           <h2>블로그·인스타 바레이션</h2>
           <p class="note">말희아빠 블로그와 오뉴월드 인스타에 새 글이 올라오면 채널용 요약을 써서 여기와 봇으로 보내요. 채널에 자동으로 올라가지는 않아요. 경제와 상관없는 인스타 글은 건너뛰어요.</p>
@@ -1481,7 +1491,7 @@ ul.gd-card{padding-left:36px;line-height:1.8}
           <p class="note" id="tg-today-note">하루 7개 시간표(07:30 아침 브리핑 · 08:50 장 시작 전 · 10:30·13:30 장중 · 15:40 장 마감 · 20:30 저녁 미장 · 21:30 공유용 분석)에 맞춘 완성 문구예요. 숫자는 [확인] 표시를 꼭 채워 주세요.</p>
           <div class="recs" id="tg-today-list"></div>
         </section>
-        <section class="sec" id="tg-charts">
+        <section class="sec" id="tg-charts" hidden>
           <h2>차트리포트 이미지</h2>
           <p class="note">종목을 넣으면 실제 시세(미국 야후·국내 네이버·코인 바이낸스)로 피보나치·이평선·지지선·추세선을 그려 PC용·모바일용 이미지와 설명 글을 만들어요. 텔레그램 봇으로 이미지 → 설명 글 순서로 오고, 여기에도 올라와요. 매일 아침 8시에 오늘 문구의 다음 차트 글 종목으로 자동으로 만들고, 칸을 비우고 누르면 그 종목으로 지금 바로 만들어요. 봉은 옆에서 고르면 돼요 (자동은 일봉, 국내 분봉은 조금 늦은 시세). 추세는 20선·240선과 ATR, 하이킨아시로 보고, 1시간봉 이상은 하이킨아시 캔들로 그려요. 1분봉·15분봉에는 RSI·볼린저밴드·거래량 분석이 함께 들어가고, 단타는 15분봉과 1분봉을 한 글로 묶어요.</p>
           <div class="chips" style="gap:8px;align-items:center;margin:4px 0 14px">
@@ -2812,7 +2822,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     const b = el('button', kind, label); b.type = 'button'; b.addEventListener('click', () => goTo(ch, id)); return b;
   }
   // 바로가기: 이 기기에서 최근 14일 많이 연 폴더 순(없으면 팀이 많이 쓰는 기본 목록) — 처음 화면에서 한 번에 들어간다
-  const QUICK_DEFAULT = ['tg-charts', 'tg-rw', 'tg-futures', 'ig-publish', 'recommend', 'trdf-stock', 'trdf-news', 'g-opps'];
+  const QUICK_DEFAULT = ['tg-pick', 'tg-rw', 'tg-futures', 'ig-publish', 'recommend', 'trdf-stock', 'trdf-news', 'g-opps'];
   function drawQuick() {
     const box = document.getElementById('home-quick'); if (!box) return;
     const byName = {};
@@ -3596,8 +3606,6 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
         const c = el('article', 'card rec'), chips = el('div', 'chips');
         chips.append(el('span', 'pill accent', t.time), el('span', 'pill neutral', t.type));
         c.append(chips, el('div', 'box', t.text), el('p', 'why1', t.why), el('p', 'sub', `근거 · ${t.based_on}`), copyBtn('문구 복사', t.text, 'btn primary'));
-        const cr = CR.find(r => (r.slots || []).includes(`${AI.analyzed_at}|${t.time}`));
-        if (cr) c.append(el('p', 'sub', '↓ 실제 시세로 채운 차트리포트 (이미지 + 본문)'), chartBlock(cr));
         c.append(fbBar({ id: `tg-today:${t.time}:${(t.text || '').slice(0, 24)}`, type: '텔레그램 문구', title: (t.text || '').slice(0, 80), url: '' }));
         c.style.gap = '10px'; return c;
       }));
@@ -4129,6 +4137,28 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     });
     document.getElementById('rf-close').addEventListener('click', () => dlg.close());
     document.getElementById('rf-open').addEventListener('click', () => { st.replaceChildren(); dlg.showModal(); });
+  }
+
+  // ── 텔레그램: 다른 방 실시간 인기 글 → 말희아빠 바레이션 (tg_pick.py), 원문과 나란히 ──
+  function drawTgPick() {
+    const R = rows('tg_pick') || [], box = document.getElementById('tg-pick-list');
+    if (!box) return;
+    if (!R.length) { empty(box, '다른 방에서 평소보다 크게 뜬 글이 나오면 30분 안에 여기에 원문과 바레이션이 나란히 와요.'); return; }
+    listWithMore(box, R, r => {
+      const c = el('article', 'card rec'), chips = el('div', 'chips');
+      chips.append(el('span', 'pill accent', r.kind || '소식'), el('span', 'pill neutral', `${r.chat} · ${r.time}`), el('span', 'pill positive', `평소의 ${r.x}배`));
+      const pair = el('div', 'pick-pair'), L = el('div'), Rt = el('div');
+      L.append(el('h4', null, '원문'), el('div', 'box', r.original));
+      Rt.append(el('h4', null, '말희아빠 바레이션'), el('div', 'box', r.text));
+      pair.append(L, Rt);
+      c.append(chips, el('h3', null, r.title), pair);
+      if (r.why) c.append(el('p', 'why1', r.why));
+      if (r.check && r.check.length) c.append(el('p', 'sub', `올리기 전 확인 · ${r.check.join(' · ')}`));
+      const row = el('div', 'chips');
+      row.append(copyBtn('바레이션 복사', r.text, 'btn primary'));
+      const a = el('a', 'btn small', '원문 보기'); a.href = r.link; a.target = '_blank'; a.rel = 'noopener'; row.append(a);
+      c.append(row); c.style.gap = '10px'; return c;
+    }, 4);
   }
 
   // ── 텔레그램: 블로그·인스타 새 글 → 채널용 바레이션 (malhee_watch.py) ──
@@ -5484,7 +5514,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     if (!setupRefresh.done) { setupRefresh(); setupRefresh.done = true; }
     const recs = grouped();
     regroupNav(); buildTabs(); drawLab2(); drawHome(recs); drawFresh(); drawQuick(); drawIgHead(recs); drawToday(recs); drawRecs(recs); drawBoard(recs); drawCompetitors(); drawAccRank();
-    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawX(); drawFeedback(); drawMalheeVar(); drawInbox(); drawRewrites(); drawThreadsMine(); drawSlides(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics(); drawTraders(); drawTraderPosts(); drawGrowth(); drawViral(); drawAudit();
+    drawLearn(); drawPatterns(); drawTopics(); drawPosts(); drawAccounts(); drawGoogle(recs); drawThreads(); drawMyAccount(); drawOtherAccount(); drawForeign(); drawThreadsSaved(); drawThreadsAuto(); drawThreadsRank(); drawThreadsForeign(); drawIgHealth(); drawX(); drawFeedback(); drawMalheeVar(); drawTgPick(); drawInbox(); drawRewrites(); drawThreadsMine(); drawSlides(); drawTelegram(); drawTelegramMine(); drawTelegramMetrics(); drawTraders(); drawTraderPosts(); drawGrowth(); drawViral(); drawAudit();
     const ch = location.hash.match(/^#ch-(\w+)$/), m = location.hash.match(/^#rec-(\d+)$/), g = location.hash.match(/^#go-([\w-]+)$/);
     const known = ch && document.querySelector(`.view[data-view="${ch[1]}"]`);
     if (ch && !known) setTimeout(() => toast('없는 주소라 첫 화면으로 왔어요'), 300);
