@@ -3541,355 +3541,6 @@
  ],
  "ideas": [
   {
-   "title": "3040 자산가, 부동산보다 금융",
-   "concept": "3040 자산가가 가진 자산과 물려줄 자산이 모두 부동산보다 금융상품 쪽이라는 조사를 보도 중심으로 풀고, 증여는 세금과 시점 확인이 필요하다는 점으로 마무리 (공식: 없음)",
-   "why_now": "오늘 11:23 '3040 자산가 절반 이상 금융자산' 6곳, 11:44 '자녀 미성년일 때 물려주겠다' 2곳이 보도했다. 증시가 크게 흔들리는 날이라 자산 배분에 관심이 몰릴 만하고, 오늘 다른 글감과 겹치지 않는다.",
-   "tag": "재테크",
-   "sources": [
-    "https://biz.heraldcorp.com/article/10939394",
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4445129",
-    "https://www.yna.co.kr/view/AKR20261117063200002"
-   ],
-   "bg": "Korean wealthy investor",
-   "bg_alt": "Seoul Gangnam apartments",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "3040 자산가\n자산의 **절반 이상**이\n부동산 아닌 금융",
-     "number": "40%",
-     "label": "유자녀 3040 자산가",
-     "sub": "자녀가 미성년일 때 물려주겠다"
-    },
-    {
-     "type": "질문형",
-     "title": "3040 자산가는\n자녀에게 무엇을\n**물려줄까**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "부동산 부자? 아니\n3040 자산가는\n**금융**을 쥐었다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "editorial",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/17",
-     "headlines": [
-      "3040 자산가, 금융자산 절반 이상",
-      "물려줄 자산도 금융상품 우선",
-      "유자녀 40% 미성년 때 증여"
-     ]
-    }
-   },
-   "id": "20261117-1206-i1",
-   "created_at": "2026-11-17T12:06:13+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261117-1206-i1/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261117-1206-i1/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261117-1206-i1/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261117-1206-i1/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261117-1206-i1/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261117-1206-i1/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261117-1206-i1/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261117-1206-i1/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261117-1206-i1/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "아파트가 부담되자 빌라로 몰린다",
-   "concept": "서울 연립, 다세대 거래량 18% 증가와 서울 집값 둔화, 경기 아파트값의 서울 추월을 이어 아파트 가격 부담이 거래 이동으로 나타났다는 해석을 보도로 전하고, 4장 무렵에 경기 추월을 '그런데'로 뒤집는다. 비교 기간은 확인 후 표기 (공식: 가운데 한 번 뒤집기)",
-   "why_now": "서울 연립, 다세대 거래량 18% 증가 기사가 4곳에서 나왔고, 서울 집값 상승세 3개월 연속 둔화 보도도 이어졌다. 오늘 주제가 주식과 코인에 몰려 있어 부동산 쪽으로 분산할 만하다.",
-   "tag": "부동산",
-   "sources": [
-    "https://biz.chosun.com/real_estate/real_estate_general/2026/11/17/BTQBON2ZUBFSNC3XAZVOG3QI7I/",
-    "https://www.yna.co.kr/view/AKR20261117050300003"
-   ],
-   "bg": "Seoul villa housing",
-   "bg_alt": "Seoul apartment complex",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "서울 빌라 거래\n**18%** 늘었다\n아파트는 부담",
-     "number": "18%",
-     "label": "서울 연립, 다세대 거래량",
-     "sub": "서울 집값 상승세는 3개월 연속 둔화"
-    },
-    {
-     "type": "질문형",
-     "title": "아파트가 부담돼\n서울 사람들은\n**빌라**로 갔나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "서울 집값은 3개월째\n둔화인데 경기\n아파트가 **서울 추월**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bignum",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/17",
-     "headlines": [
-      "서울 연립, 다세대 거래 18%↑",
-      "서울 집값 상승세 3개월 연속 둔화",
-      "경기 아파트값 상승률 서울 추월"
-     ]
-    }
-   },
-   "id": "20261117-1206-i2",
-   "created_at": "2026-11-17T12:06:13+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261117-1206-i2/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261117-1206-i2/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261117-1206-i2/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261117-1206-i2/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261117-1206-i2/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261117-1206-i2/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261117-1206-i2/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261117-1206-i2/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261117-1206-i2/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261117-1206-i2/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261117-1206-i2/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261117-1206-i2/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "앤트로픽 지수 편입 지연, 25조",
-   "concept": "앤트로픽의 주요 지수 편입이 늦어질 듯하다는 보도와 편입 시 패시브 자금 약 25조 원 유입 추산을 전하고, 지수 추종 펀드는 편입 종목을 기계적으로 사기 때문에 편입 시점이 수급이 된다는 원리를 쉬운 말로 풀되 어느 지수인지와 상장 여부, 시점은 확인 후 표기 (공식: 끝 장은 닫힌 결론 한 줄)",
-   "why_now": "11:27 머니투데이와 연합뉴스가 보도했고 아직 다룬 곳이 적다. AI 과열 논란이 이어지는 때라 AI 비상장 대장주 이야기에 관심이 클 수 있다.",
-   "tag": "AI",
-   "sources": [
-    "https://www.mt.co.kr/world/2026/11/17/2026111709444891073",
-    "https://www.yna.co.kr/view/AKR20261117058300009"
-   ],
-   "bg": "Anthropic Claude logo",
-   "bg_alt": "Anthropic headquarters San Francisco",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "앤트로픽 주요지수\n편입이 늦어진다\n**25조** 대기 자금",
-     "number": "25조원",
-     "label": "패시브 자금 유입 추산",
-     "sub": "주요 지수 편입 시점이 늦어질 듯"
-    },
-    {
-     "type": "질문형",
-     "title": "앤트로픽 한 곳에\n왜 지수 자금\n**25조**가 걸렸나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "편입되면 25조인데\n앤트로픽 입성은\n**늦어질 듯하다**",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "bignum"
-   ],
-   "extra": {},
-   "id": "20261117-1206-i3",
-   "created_at": "2026-11-17T12:06:13+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261117-1206-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261117-1206-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261117-1206-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261117-1206-i3/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261117-1206-i3/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261117-1206-i3/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261117-1206-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261117-1206-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261117-1206-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261117-1206-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261117-1206-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261117-1206-i3/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
    "title": "리모델링 동의율 75%에서 70%로",
    "concept": "동의율 5%p 완화라는 사건 하나를 '내 단지에 뭐가 달라지나'부터 풀고, 마지막 장은 확인된 것과 아직 모르는 것(적용 대상, 시행 시점)으로 닫는다 (공식: 끝 장은 닫힌 결론 한 줄)",
    "why_now": "12:21 조선비즈, 연합뉴스, SBS Biz 등 6곳이 주택법 시행령 개정안의 오늘 국무회의 통과를 보도했다. 오늘 이미 보낸 주제에는 없었다.",
@@ -9313,6 +8964,345 @@
      "form": "paper",
      "font": "gowun",
      "path": "20261118-1001-i3/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "4대 은행 깡통대출 5조 돌파",
+   "concept": "담보 가치가 대출금보다 낮아진 대출이 4대 은행에서 5조원을 넘었고, 늘어난 금액의 93%가 기업대출이라는 점을 따라간다. 첫 장에서 '일반 예금자에게 당장 달라지는 건 확인된 바 없다'고 쉬운 말로 답하고, 은행별 수치와 기준일은 '아직 모르는 것'으로 한 곳에 모은다. (공식: 없음)",
+   "why_now": "헤럴드경제, 뉴시스 등이 오늘 보도했다. 증시와 코인 소식에 가려 있지만 금융권 건전성에 관한 숫자다.",
+   "tag": "금융",
+   "sources": [
+    "https://biz.heraldcorp.com/article/10940582",
+    "https://www.newsis.com/view/NISX20261118_0003872807"
+   ],
+   "bg": "Korean bank building",
+   "bg_alt": "bank loan sign",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "4대 은행 깡통대출\n**5조원** 넘었다\n늘어난 돈 93%는 기업",
+     "number": "5조원",
+     "label": "4대 은행 깡통대출",
+     "sub": "늘어난 금액의 93%는 기업대출"
+    },
+    {
+     "type": "질문형",
+     "title": "깡통대출 늘어난 돈\n93%는 **누구** 몫일까\n4대 은행 5조 돌파",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "가계가 아니라\n**기업대출**이 늘렸다\n깡통대출 93%",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/18",
+     "headlines": [
+      "4대 은행 깡통대출 5조 돌파",
+      "늘어난 금액의 93%는 기업대출",
+      "담보가 대출금보다 낮아진 대출"
+     ]
+    }
+   },
+   "id": "20261118-1101-i1",
+   "created_at": "2026-11-18T11:01:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261118-1101-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261118-1101-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261118-1101-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261118-1101-i1/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261118-1101-i1/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261118-1101-i1/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261118-1101-i1/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261118-1101-i1/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261118-1101-i1/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261118-1101-i1/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261118-1101-i1/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261118-1101-i1/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "KDB생명 7번째 매각도 불발",
+   "concept": "산업은행과 한국투자금융지주의 KDB생명 매각 협상이 결렬된 사건 하나만 따라간다. 결렬 발표, 이견의 쟁점(자본확충), 7번째 시도 불발, 재매각 전망 순으로 장마다 한 걸음씩 진행한다. 가격 등 세부 조건은 '아직 모르는 것'으로 한 곳에 적는다. (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "09:58 속보 이후 헤럴드경제, 연합인포맥스 등이 이견의 쟁점과 재매각 전망을 후속으로 냈다. 오늘 아직 다루지 않은 새 사건이다.",
+   "tag": "보험",
+   "sources": [
+    "https://www.donga.com/news/Economy/article/all/20261118/135044100/1",
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4445271",
+    "https://biz.heraldcorp.com/article/10940943"
+   ],
+   "bg": "KDB Life Insurance",
+   "bg_alt": "Korea Development Bank headquarters",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "KDB생명 매각\n**7번째**도 불발\n산은, 한투 협상 결렬",
+     "number": "7번째",
+     "label": "KDB생명 매각 시도",
+     "sub": "산은, 한투 협상 결렬"
+    },
+    {
+     "type": "질문형",
+     "title": "KDB생명 매각\n왜 또 **무산**됐나\n쟁점은 자본확충",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "한투가 나섰는데도\nKDB생명 **협상 결렬**\n7번째 시도 불발",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261118-1101-i2",
+   "created_at": "2026-11-18T11:01:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261118-1101-i2/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261118-1101-i2/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261118-1101-i2/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261118-1101-i2/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261118-1101-i2/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261118-1101-i2/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261118-1101-i2/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261118-1101-i2/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261118-1101-i2/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "노란우산 정보 20만 5천 명 유출",
+   "concept": "주소, 연락처 등 20만 5천 명 규모의 정보가 털렸다는 보도를 속보로 전한다. 재료에 확인된 사실이 제목 수준이라 유출 경위, 항목, 보상은 '아직 모르는 것'으로 한 곳에 적고, 내 정보가 해당되는지는 공식 안내를 확인하라고 안내한다. (공식: 없음)",
+   "why_now": "SBS Biz가 10:44에 보도한 새 소식이고 앞선 발송 목록에 없다. 본문 확인 후 세부 내용을 채워야 한다.",
+   "tag": "보안",
+   "sources": [
+    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008851413&plink=RSSLINK&cooper=RSSREADER"
+   ],
+   "bg": "Korea small business",
+   "bg_alt": "personal data security",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "노란우산 정보\n**20만 5천 명** 털렸다\n주소, 연락처 등",
+     "number": "20만 5천 명",
+     "label": "노란우산 정보 유출 규모",
+     "sub": "주소, 연락처 등"
+    },
+    {
+     "type": "질문형",
+     "title": "내 주소와 연락처도\n**노란우산**서 샜을까\n20만 5천 명 규모",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "이번엔 노란우산도\n**털렸다**는 소식\n20만 5천 명 규모",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "bignum"
+   ],
+   "extra": {},
+   "id": "20261118-1101-i3",
+   "created_at": "2026-11-18T11:01:36+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261118-1101-i3/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261118-1101-i3/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261118-1101-i3/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261118-1101-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261118-1101-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261118-1101-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261118-1101-i3/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261118-1101-i3/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261118-1101-i3/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261118-1101-i3/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261118-1101-i3/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261118-1101-i3/3-breaking-dohyeon.jpg"
     }
    ]
   }
