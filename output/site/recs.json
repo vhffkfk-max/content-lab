@@ -22,9 +22,9 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.86,
-  "kr_n": 605,
-  "foreign_avg": 2.56,
+  "kr_avg": 1.83,
+  "kr_n": 612,
+  "foreign_avg": 2.57,
   "foreign_n": 349
  },
  {
@@ -36,8 +36,8 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.11,
-  "kr_n": 68,
+  "kr_avg": 2.08,
+  "kr_n": 69,
   "foreign_avg": 1.93,
   "foreign_n": 97
  },
@@ -71,20 +71,6 @@
  },
  {
   "rank": 6,
-  "topic": "환율·달러",
-  "kind": "국내·해외 모두 강세",
-  "confidence": "높음",
-  "title_idea": "환율·달러, 한 줄 정리",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "짧은 한 줄",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 1.97,
-  "kr_n": 84,
-  "foreign_avg": 1.32,
-  "foreign_n": 8
- },
- {
-  "rank": 7,
   "topic": "비트코인",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
@@ -96,6 +82,20 @@
   "kr_n": 15,
   "foreign_avg": 1.84,
   "foreign_n": 193
+ },
+ {
+  "rank": 7,
+  "topic": "환율·달러",
+  "kind": "국내·해외 모두 강세",
+  "confidence": "높음",
+  "title_idea": "환율·달러, 한 줄 정리",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "짧은 한 줄",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 1.97,
+  "kr_n": 84,
+  "foreign_avg": 1.32,
+  "foreign_n": 8
  },
  {
   "rank": 8,
