@@ -666,13 +666,13 @@ ul.gd-card{padding-left:36px;line-height:1.8}
           </ul></li>
         <li class="nav-label" style="margin-top:10px">컨텐츠 바로 만들기</li>
         <li><button type="button" data-ch="c-bull"><i class="dot" style="background:#8B5E34"></i>황소개미</button></li>
-        <li><button type="button" data-ch="c-hot"><i class="dot" style="background:#E5484D"></i>핫코노미</button></li>
+        <li hidden><button type="button" data-ch="c-hot"><i class="dot" style="background:#E5484D"></i>핫코노미</button></li>
         <li><button type="button" data-ch="c-asset"><i class="dot" style="background:#1F8A5B"></i>자산백배</button></li>
         <li><button type="button" data-ch="c-chart"><i class="dot" style="background:#3E63DD"></i>차트덕후</button></li>
         <li><button type="button" data-ch="c-malhee"><i class="dot" style="background:#F5A623"></i>말희아빠</button></li>
         <li class="nav-label" style="margin-top:10px">내 채널 피드백</li>
         <li><button type="button" data-ch="fb-bull"><i class="dot" style="background:#8B5E34"></i>황소개미</button></li>
-        <li><button type="button" data-ch="fb-hot"><i class="dot" style="background:#E5484D"></i>핫코노미</button></li>
+        <li hidden><button type="button" data-ch="fb-hot"><i class="dot" style="background:#E5484D"></i>핫코노미</button></li>
         <li><button type="button" data-ch="fb-asset"><i class="dot" style="background:#1F8A5B"></i>자산백배</button></li>
         <li><button type="button" data-ch="fb-chart"><i class="dot" style="background:#3E63DD"></i>차트덕후</button></li>
         <li><button type="button" data-ch="fb-malhee"><i class="dot" style="background:#F5A623"></i>말희아빠</button></li>
@@ -2048,6 +2048,7 @@ ul.gd-card{padding-left:36px;line-height:1.8}
     form.addEventListener('submit', async e => { e.preventDefault(); const topic = inp.value.trim(); if (topic.length < 2) return alert('주제를 2글자 이상 넣어 주세요.'); if (await vlSend('board', { topic })) inp.value = ''; });
     // 핫코노미 전용 영상 · 버전 A: 핫코노미·궁금이 대화 캐릭터 영상을 주제만으로 바로 만든다 (보드 없이, 사실 검사 통과 시)
     const hot = el('div', 'vl-hot'), hf = el('form', 'vl-new'), hin = el('input'), hgo = el('button', 'btn primary', '핫코노미 A 영상 만들기');
+    hot.hidden = true;   // 2026-11-18 대표 지시: 핫코노미 전부 일시 중지
     hot.append(el('h3', '', '🔥 핫코노미 전용 영상 · 버전 A'), el('p', 'sub', '핫코노미(설명)와 궁금이(질문)가 대화하는 40~55초 영상을 바로 만들어요. 첫 1초 훅·자막·차트·목소리까지 자동, 기사에 없는 숫자나 투자 권유가 있으면 멈춰요. 아래 추천 글감을 누르거나 주제를 넣으세요. 5~10분 걸리고 영상은 텔레그램으로 와요.'));
     hin.placeholder = '주제 (예: 대출금리 엇갈림)'; hin.maxLength = 60; hin.setAttribute('aria-label', '핫코노미 영상 주제'); hgo.type = 'submit'; hf.append(hin, hgo); hot.append(hf);
     const hsug = el('div', 'vl-suggest');
@@ -2855,7 +2856,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     const box = document.getElementById('home-board');
     chJson('channel_pulse.json').then(d => {
       if (!d || !d.daily) return box.replaceChildren(el('p', 'sub', '오늘 집계를 기다리는 중이에요.'));
-      const G = d.daily, ACC = [['c-bull', '황소개미', 'fb-bull'], ['c-hot', '핫코노미', 'fb-hot'], ['c-asset', '자산백배', 'fb-asset'], ['c-chart', '차트덕후', 'fb-chart']];
+      const G = d.daily, ACC = [['c-bull', '황소개미', 'fb-bull'], ['c-asset', '자산백배', 'fb-asset'], ['c-chart', '차트덕후', 'fb-chart']];
       const COL = [['인스타 카드뉴스', 'instagram', 'card', G.card], ['인스타 릴스', 'instagram', 'reel', G.reel], ['쓰레드', 'threads', 'n', G.threads]];
       let done = 0, total = 0, d7 = 0, d30 = 0;
       const colSum = COL.map(() => 0);
@@ -2960,7 +2961,7 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     chJson('channel_pulse.json').then(d => {
       if (!d || !d.daily) { head.replaceChildren(el('h2', null, '① 오늘 남은 발행')); return box.replaceChildren(el('p', 'sub', '오늘 집계를 기다리는 중이에요.')); }
       const G = d.daily;
-      const ACC = [['c-bull', '황소개미', 'fb-bull', '#8B5E34'], ['c-hot', '핫코노미', 'fb-hot', '#E5484D'], ['c-asset', '자산백배', 'fb-asset', '#1F8A5B'], ['c-chart', '차트덕후', 'fb-chart', '#3E63DD']];
+      const ACC = [['c-bull', '황소개미', 'fb-bull', '#8B5E34'], ['c-asset', '자산백배', 'fb-asset', '#1F8A5B'], ['c-chart', '차트덕후', 'fb-chart', '#3E63DD']];
       const COL = [['카드뉴스', 'instagram', 'card', G.card], ['릴스', 'instagram', 'reel', G.reel], ['쓰레드', 'threads', 'n', G.threads]];
       let done = 0, total = 0;
       const cards = ACC.map(([key, name, fbk, color]) => {

@@ -11,7 +11,7 @@
  },
  "accounts": [
   {"slug": "hotconomy", "name": "핫코노미", "handle": "@hotconomy", "group": "경제", "pool": "economy",
-   "outputs": ["threads", "video"], "voice": "M3", "ready": true,
+   "outputs": ["threads", "video"], "voice": "M3", "ready": false, "paused": "2026-11-18 대표 지시로 일시 중지",
    "route": {"tags": ["macro", "kr_stock", "us_stock", "policy"]}},
   {"slug": "js100x", "name": "자산백배", "handle": "", "group": "경제", "pool": "economy",
    "outputs": ["threads", "video"], "voice": "F1", "ready": true,

@@ -132,10 +132,13 @@ def slot_once(state, key, hours):
     return True
 
 
+HOT_PAUSED = True   # 2026-11-18 대표 지시: 핫코노미(@hotconomy) 카드뉴스 추천안·초안·캔바 학습 전부 일시 중지. 다시 켜려면 False
 IDEA_SLOTS = tuple(range(7, 23))   # 07~22시 1시간마다 텍스트 추천안 + 표지 시안. 완성 카드는 대표가 사이트에서 고른 것만 (2026-11-05)
 
 
 def auto_ideas(state, did):
+    if HOT_PAUSED:
+        return
     """이번 시각에 추천안이 없으면 만듦. PC가 꺼져 있던 시간은 따라잡지 않는다(지난 소식을 몰아 만들면 Max 사용량만 쓴다)."""
     now = datetime.now(KST)
     today = f"{now:%Y-%m-%d}"
@@ -290,6 +293,9 @@ def run_cycle():
             py("thread_post.py", "--form", pick[7:8], "--match", "--push", timeout=15 * 60)
             did.append(f"쓰레드 글 {pick[7:8]}형")
             continue
+        if HOT_PAUSED:
+            log("핫코노미 중지 중 — 카드뉴스 초안 요청 건너뜀:", pick or topic)
+            continue
         py("-m", "publish.draft_card", *(["--topic", topic, "--style", pick[6:]] if pick.startswith("style:") else ["--pick", pick] if pick else ["--topic", topic] if topic else []))
         did.append(f"카드뉴스 초안 {pick or topic}")
     if not drafts:
@@ -308,7 +314,7 @@ def run_cycle():
             forms = []
         for f in forms:
             py("thread_post.py", "--form", f, "--match", "--auto", "--send", "--push", timeout=15 * 60)
-        if forms:
+        if forms and not HOT_PAUSED:   # 카드뉴스(@hotconomy) 부분만 중지, 황소개미 쓰레드 글은 그대로
             sys.path.insert(0, str(ROOT))
             try:
                 from thread_post import match_pick
@@ -327,7 +333,7 @@ def run_cycle():
         py("-m", "acclab.run", "--gpt", timeout=40 * 60)   # 같은 소재로 ChatGPT(정액제) 판 — 페이지에서 따로 보임
         did.append("계정별 콘텐츠 (Claude·ChatGPT)")
 
-    if slot_once(state, "learn", tuple(range(8, 24))):   # 1시간마다: 캔바에서 고친 것·48시간 성적 배우기 (publish/card_learn.py)
+    if not HOT_PAUSED and slot_once(state, "learn", tuple(range(8, 24))):   # 1시간마다: 캔바에서 고친 것·48시간 성적 배우기 (publish/card_learn.py)
         py("-m", "publish.card_learn")
 
     state["done"] = (state["done"] + [r["id"] for r in todo_all])[-200:]
