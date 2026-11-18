@@ -263,6 +263,8 @@ a.row:hover .row-main{text-decoration:underline}
 /* 실시간 골라 쓰기: 원문 | 바레이션 나란히 (2026-11-18) */
 .pick-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
 .pick-pair .box{white-space:pre-wrap;max-height:420px;overflow:auto}
+.pick-why{display:grid;gap:6px;padding:12px 14px;border-radius:10px;background:var(--surface-2,#f6f1f3);font-size:13px;line-height:1.6}
+.pick-why p{margin:0}.pick-why b{margin-right:6px;color:var(--accent,#b8336a)}
 .pick-pair h4{margin:0 0 6px;font-size:13px;color:var(--muted, #6b7280)}
 @media (max-width:720px){.pick-pair{grid-template-columns:minmax(0,1fr)}}
 .dp-var-part{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:start;padding:10px 0;border-top:1px solid var(--border)}
@@ -1450,7 +1452,7 @@ ul.gd-card{padding-left:36px;line-height:1.8}
         </section>
         <section class="sec" id="tg-pick">
           <h2>벤치마킹 바레이션 — 다른 방에서 지금 뜬 글</h2>
-          <p class="note">다른 경제 채널 23곳에서 최근 12시간 안에 뜬 글을 30분마다 골라 말희아빠 채널용으로 새로 써요. 실적 서프라이즈·코인 주의 소식·왜 올랐나·빠졌나는 매번 유형마다 하나씩 먼저 고르고, 그 밖에는 평소 조회수의 2배 넘게 뜬 글을 골라요. 왼쪽이 원문, 오른쪽이 바레이션이에요. 단톡방·홍보·타점 글은 빼요. 방에 자동으로 올라가지 않아요.</p>
+          <p class="note">다른 경제 채널 23곳에서 최근 12시간 안에 뜬 글을 30분마다 골라 말희아빠 채널용으로 새로 써요. 실적 서프라이즈·코인 주의 소식·왜 올랐나·빠졌나는 매번 유형마다 하나씩 먼저 고르고, 그 밖에는 평소 조회수의 2배 넘게 뜬 글을 골라요. 왼쪽이 원문, 오른쪽이 바레이션이에요. 최신 글이 맨 위에 오고, 글마다 추천 이유·바레이션 이유와 100점 점수(반응 40 + 유형 20 + 우리 방 적합도 40)를 붙여요. 단톡방·홍보·타점 글은 빼요. 방에 자동으로 올라가지 않아요.</p>
           <div class="recs" id="tg-pick-list"></div>
         </section>
         <section class="sec" id="tg-mv" hidden>
@@ -4136,7 +4138,8 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
   // ── 텔레그램: 다른 방 실시간 인기 글 → 말희아빠 바레이션 (tg_pick.py), 원문과 나란히 ──
   function drawTgPick() {
     const CATS = ['실적 서프라이즈', '코인 주의 소식', '왜 올랐나·빠졌나', '그 밖에 뜬 글'];
-    const all = (rows('tg_pick') || []).map(r => CATS.includes(r.kind) ? r : { ...r, kind: '그 밖에 뜬 글' }), box = document.getElementById('tg-pick-list');
+    const all = (rows('tg_pick') || []).map(r => CATS.includes(r.kind) ? r : { ...r, kind: '그 밖에 뜬 글' })
+      .sort((a, b) => String(b.at || '').localeCompare(String(a.at || ''))), box = document.getElementById('tg-pick-list');   // 최신 글이 맨 위
     if (!box) return;
     if (!all.length) { empty(box, '다른 방에서 평소보다 크게 뜬 글이 나오면 30분 안에 여기에 원문과 바레이션이 나란히 와요.'); return; }
     let bar = document.getElementById('tg-pick-cats');
@@ -4151,13 +4154,25 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
     if (!R.length) { empty(box, '이 유형은 오늘 아직 평소보다 뜬 글이 없어요. 30분마다 다시 찾아요.'); return; }
     listWithMore(box, R, r => {
       const c = el('article', 'card rec'), chips = el('div', 'chips');
+      if (r.score != null) {
+        const sc = el('span', r.score >= 80 ? 'pill positive' : r.score >= 60 ? 'pill accent' : 'pill neutral', `${r.score}점`);
+        sc.style.fontWeight = '700'; chips.append(sc);
+      }
       chips.append(el('span', 'pill accent', r.kind || '소식'), el('span', 'pill neutral', `${r.chat} · ${r.time}`), el('span', 'pill positive', `평소의 ${r.x}배`));
       const pair = el('div', 'pick-pair'), L = el('div'), Rt = el('div');
       L.append(el('h4', null, '원문'), el('div', 'box', r.original));
       Rt.append(el('h4', null, '말희아빠 바레이션'), el('div', 'box', r.text));
       pair.append(L, Rt);
       c.append(chips, el('h3', null, r.title), pair);
-      if (r.why) c.append(el('p', 'why1', r.why));
+      const why = el('div', 'pick-why');
+      const line = (k, v) => { const p = el('p'); p.append(el('b', null, k), document.createTextNode(v)); return p; };
+      if (r.why) why.append(line('추천 이유 ', r.why));
+      if (r.var_how) why.append(line('바레이션 이유 ', r.var_how));
+      if (r.score_parts) {
+        const P = r.score_parts;
+        why.append(line('점수 ', `${r.score}점 = 반응 ${P['반응']}/40 (평소 조회수의 ${r.x}배) + 유형 ${P['유형']}/20 + 우리 방 적합도 ${P['적합도']}/40`));
+      }
+      if (why.childElementCount) c.append(why);
       if (r.check && r.check.length) c.append(el('p', 'sub', `올리기 전 확인 · ${r.check.join(' · ')}`));
       const row = el('div', 'chips');
       row.append(copyBtn('바레이션 복사', r.text, 'btn primary'));
