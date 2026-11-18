@@ -3541,509 +3541,6 @@
  ],
  "ideas": [
   {
-   "title": "리모델링 동의율 75%에서 70%로",
-   "concept": "동의율 5%p 완화라는 사건 하나를 '내 단지에 뭐가 달라지나'부터 풀고, 마지막 장은 확인된 것과 아직 모르는 것(적용 대상, 시행 시점)으로 닫는다 (공식: 끝 장은 닫힌 결론 한 줄)",
-   "why_now": "12:21 조선비즈, 연합뉴스, SBS Biz 등 6곳이 주택법 시행령 개정안의 오늘 국무회의 통과를 보도했다. 오늘 이미 보낸 주제에는 없었다.",
-   "tag": "부동산",
-   "sources": [
-    "https://biz.chosun.com/real_estate/real_estate_general/2026/11/17/Q33I2R55PZD3TMI2MWVIAUBROM/",
-    "https://www.yna.co.kr/view/AKR20261117060500003"
-   ],
-   "bg": "apartment remodeling construction",
-   "bg_alt": "Korean apartment complex",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "정부가 리모델링 동의율\n**75%**를 70%로 낮췄다",
-     "number": "70%",
-     "label": "리모델링 동의율",
-     "sub": "75%에서 완화, 오늘 국무회의 통과"
-    },
-    {
-     "type": "질문형",
-     "title": "정부가 낮춘 동의율\n내 단지 **리모델링**\n문턱도 낮아졌나",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "동의율은 낮아졌는데\n내 단지 적용은\n**아직** 모른다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "news",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/17",
-     "headlines": [
-      "주택법 시행령 개정안 국무회의 통과",
-      "리모델링 동의율 75%에서 70%로",
-      "적용 대상, 시행 시점은 확인 필요"
-     ]
-    }
-   },
-   "id": "20261117-1301-i1",
-   "created_at": "2026-11-17T13:01:37+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261117-1301-i1/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261117-1301-i1/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261117-1301-i1/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261117-1301-i1/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261117-1301-i1/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261117-1301-i1/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261117-1301-i1/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261117-1301-i1/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261117-1301-i1/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261117-1301-i1/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261117-1301-i1/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261117-1301-i1/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261117-1301-i1/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261117-1301-i1/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261117-1301-i1/3-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261117-1301-i1/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261117-1301-i1/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261117-1301-i1/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "3040 자산가, 부동산보다 금융자산",
-   "concept": "3040 자산가가 무엇을 갖고 무엇을 물려줄지를 조사 결과로 보여 주고, 증여는 세금과 시점이 중요하다는 점으로 닫는다 (공식: 없음)",
-   "why_now": "11:23 '3040 자산가 절반 이상 금융자산' 6곳, 11:44 '유자녀 3040 자산가 40% 자녀 미성년일 때 물려주겠다' 2곳이 보도했다. 증시 변동성이 큰 날이라 자산 배분 관심이 크고, 오늘 주제 대부분인 증시와 겹치지 않는다.",
-   "tag": "재테크",
-   "sources": [
-    "https://biz.heraldcorp.com/article/10939394",
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4445129",
-    "https://www.yna.co.kr/view/AKR20261117063200002"
-   ],
-   "bg": "wealthy family wealth planning",
-   "bg_alt": "Seoul financial district Yeouido",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "자녀 있는 3040 부자\n**40%**는 미성년일 때\n물려주겠다고 답했다",
-     "number": "40%",
-     "label": "유자녀 3040 자산가",
-     "sub": "자녀가 미성년일 때 물려주겠다고 응답"
-    },
-    {
-     "type": "질문형",
-     "title": "3040 부자는\n부동산 대신 **무엇**을\n더 갖고 있을까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "3040 자산가의 선택\n부동산이 아니라\n**금융자산**이었다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "editorial",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/17",
-     "headlines": [
-      "3040 자산가 절반 이상 금융자산",
-      "물려줄 자산도 금융상품 우위",
-      "유자녀 40% 미성년 때 증여"
-     ]
-    }
-   },
-   "id": "20261117-1301-i2",
-   "created_at": "2026-11-17T13:01:37+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261117-1301-i2/1-editorial-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261117-1301-i2/1-editorial-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261117-1301-i2/1-editorial-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261117-1301-i2/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261117-1301-i2/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261117-1301-i2/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261117-1301-i2/2-editorial-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261117-1301-i2/2-editorial-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261117-1301-i2/2-editorial-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261117-1301-i2/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261117-1301-i2/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261117-1301-i2/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261117-1301-i2/3-editorial-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261117-1301-i2/3-editorial-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261117-1301-i2/3-editorial-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261117-1301-i2/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261117-1301-i2/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261117-1301-i2/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "목표가는 내리고 코스피 전망은 올렸다",
-   "concept": "키움의 삼성전자 목표가 하향과 NH의 내년 코스피 9200 전망을 같은 날 맞붙여, 시점에 따라 시각이 갈린다는 점을 보여 준다 (공식: 가운데 한 번 뒤집기)",
-   "why_now": "키움 목표가 하향 4곳, NH투자증권 코스피 9200 전망 4곳, 한투운용 반도체 ETF 비중 조정 4곳이 보도됐다. 코스피는 오늘 5000선 근처에서 움직이고 있다.",
-   "tag": "증권가",
-   "sources": [
-    "https://www.etoday.co.kr/news/view/2649010",
-    "https://news.einfomax.co.kr/news/articleView.html?idxno=4445069",
-    "https://www.etoday.co.kr/news/view/2648994"
-   ],
-   "bg": "Samsung Electronics headquarters",
-   "bg_alt": "KOSPI trading screen",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "키움이 삼성전자 목표가를\n**29만원**으로 내린 날\nNH는 9200 제시",
-     "number": "29만원",
-     "label": "키움 삼성전자 목표가",
-     "sub": "35만원에서 하향, 같은 날 NH는 내년 코스피 9200 전망"
-    },
-    {
-     "type": "질문형",
-     "title": "키움과 NH의 전망이\n같은 날 **갈린** 이유는",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "키움은 하이닉스 목표가\n180만원으로 내렸는데\n**NH**는 내년 9200",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "bars",
-    "paper"
-   ],
-   "extra": {
-    "bars": {
-     "sub": "삼성전자 목표가와 현재가, 만원 (현재가는 11/17 기준)",
-     "bars": [
-      {
-       "label": "키움 기존 목표가",
-       "value": 35
-      },
-      {
-       "label": "키움 하향 목표가",
-       "value": 29,
-       "hi": true
-      },
-      {
-       "label": "현재가",
-       "value": 19.3
-      }
-     ]
-    },
-    "paper": {
-     "date": "11/17",
-     "headlines": [
-      "키움 삼성전자 목표가 35만→29만",
-      "NH 내년 코스피 목표 9200",
-      "코스피 5008 하락 출발"
-     ]
-    }
-   },
-   "id": "20261117-1301-i3",
-   "created_at": "2026-11-17T13:01:37+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261117-1301-i3/1-bars-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261117-1301-i3/1-bars-plex.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261117-1301-i3/1-bars-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261117-1301-i3/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261117-1301-i3/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261117-1301-i3/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261117-1301-i3/2-bars-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261117-1301-i3/2-bars-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261117-1301-i3/2-bars-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261117-1301-i3/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261117-1301-i3/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261117-1301-i3/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "noto",
-     "path": "20261117-1301-i3/3-bars-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "plex",
-     "path": "20261117-1301-i3/3-bars-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bars",
-     "font": "dohyeon",
-     "path": "20261117-1301-i3/3-bars-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261117-1301-i3/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261117-1301-i3/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261117-1301-i3/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
    "title": "벤처투자 12조 역대 최대, 돈은 AI로",
    "concept": "1~3분기 벤처투자가 약 12조 원으로 역대 최대라는 보도를 풀어 줍니다. 증시가 흔들리는 날에도 AI에는 돈이 몰렸고, 초기 기업과 비수도권 스타트업으로도 투자가 늘었다는 점을 짚습니다. 12조와 12.6조로 보도가 갈리는 부분은 한 번만 밝힙니다. 마지막 장은 확인된 것과 아직 모르는 것(다음 분기에도 이어질지)으로 닫습니다. (공식: 끝 장은 닫힌 결론 한 줄)",
    "why_now": "머니투데이, 연합뉴스, 조선비즈, 매일일보가 12시에 함께 다뤘습니다. 증시와 코인이 흔들리는 날 돈이 몰리는 곳을 보여주는 소식입니다.",
@@ -9303,6 +8800,411 @@
      "form": "breaking",
      "font": "dohyeon",
      "path": "20261118-1101-i3/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "미래에셋생명 해킹 피해 1만명 넘었다",
+   "concept": "미래에셋생명 한 곳을 주인공으로 피해 규모, 금감원 간담회, 외주업체 관리 메시지, 가입자 체크 순으로 한 걸음씩 따라간다. 유출 항목과 정확한 피해 규모는 아직 모르는 것으로 한 곳에만 적는다. (공식: 한 주인공이 장마다 한 걸음씩)",
+   "why_now": "10:51 매일경제와 뉴시스가 피해자가 1만명을 넘었다고 보도했고, 10:30에는 금감원이 자산운용업 대상 해킹사고 대응 간담회를 열었다. 아직 보낸 적 없는 주제다.",
+   "tag": "금융보안",
+   "sources": [
+    "https://www.mk.co.kr/news/economy/12212001",
+    "https://www.newsis.com/view/NISX20261118_0003872865",
+    "https://view.asiae.co.kr/article/2026111808333860282"
+   ],
+   "bg": "Mirae Asset Life Insurance",
+   "bg_alt": "Mirae Asset building Seoul",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "미래에셋생명 해킹\n피해자 **1만명** 넘었다\n계속 늘어나는 중",
+     "number": "1만명+",
+     "label": "미래에셋생명 정보유출 피해",
+     "sub": "매일경제, 뉴시스 보도"
+    },
+    {
+     "type": "질문형",
+     "title": "내 정보도 샜을까\n미래에셋생명 **해킹**\n피해 1만명 넘어",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "해킹 터지자 금감원\n업계 불러 모아\n**외주업체**까지 챙겨라",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "breaking",
+    "news"
+   ],
+   "extra": {},
+   "id": "20261118-1204-i1",
+   "created_at": "2026-11-18T12:04:57+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261118-1204-i1/1-breaking-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261118-1204-i1/1-breaking-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261118-1204-i1/1-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261118-1204-i1/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261118-1204-i1/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261118-1204-i1/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261118-1204-i1/2-breaking-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261118-1204-i1/2-breaking-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261118-1204-i1/2-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261118-1204-i1/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261118-1204-i1/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261118-1204-i1/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "noto",
+     "path": "20261118-1204-i1/3-breaking-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "black",
+     "path": "20261118-1204-i1/3-breaking-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "breaking",
+     "font": "dohyeon",
+     "path": "20261118-1204-i1/3-breaking-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261118-1204-i1/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261118-1204-i1/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261118-1204-i1/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "KDI, 내년 성장률 2.2%에서 3.9%로",
+   "concept": "성장률 상향이라는 호재로 열고, 그 3분의 2가 반도체 몫이라는 점과 AI 투자가 꺾이면 급락할 수 있다는 우려로 가운데에서 한 번 뒤집는다. 내수와의 괴리는 보도된 범위까지만 쓴다. (공식: 숫자는 둘을 맞붙여서, 가운데 한 번 뒤집기)",
+   "why_now": "오늘 KDI 전망이 머니투데이, 아시아경제, 다음 뉴스에 동시에 올라왔다. 코스피 5000선이 흔들리는 날이라 반도체가 경제를 얼마나 받치는지 보여 주기 좋다.",
+   "tag": "경제전망",
+   "sources": [
+    "https://www.mt.co.kr/economy/2026/11/18/2026111808230512080",
+    "https://v.daum.net/v/20261118120020114",
+    "https://view.asiae.co.kr/article/2026111810503983444"
+   ],
+   "bg": "KDI Korea Development Institute",
+   "bg_alt": "semiconductor wafer factory",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "KDI 내년 성장률\n2.2%에서 **3.9%**로\n대폭 올려 잡았다",
+     "number": "2.2→3.9%",
+     "label": "KDI 내년 성장률 전망",
+     "sub": "성장률의 3분의 2는 반도체 몫"
+    },
+    {
+     "type": "질문형",
+     "title": "내년 성장률 3.9%\n그 3분의 2가\n**반도체**라고?",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "성장률 3.9%로 상향\n그런데 **AI 투자**\n꺾이면 급락 우려",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/18",
+     "headlines": [
+      "KDI 내년 성장률 2.2→3.9%",
+      "상향분 3분의 2는 반도체 몫",
+      "AI 투자 꺾이면 급락 우려"
+     ]
+    }
+   },
+   "id": "20261118-1204-i2",
+   "created_at": "2026-11-18T12:04:57+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261118-1204-i2/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261118-1204-i2/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261118-1204-i2/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261118-1204-i2/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261118-1204-i2/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261118-1204-i2/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261118-1204-i2/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261118-1204-i2/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261118-1204-i2/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261118-1204-i2/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261118-1204-i2/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261118-1204-i2/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "가계빚 2030조 역대 최대, 증가폭은 둔화",
+   "concept": "사상 최대 규모와 증가폭이 3분의 1로 줄었다는 두 숫자를 맞붙여 보여 준다. 증시 조정으로 빚투가 꺾였다는 보도와 주택대출이 역대급이라는 보도를 같이 놓고, 내 대출 부담과의 관련은 쉬운 말로 한 줄만 쓴다. (공식: 숫자는 둘을 맞붙여서)",
+   "why_now": "12:00 매일경제, 머니투데이, 다음 뉴스가 3분기 가계빚 2030조원 돌파를 다뤘다. 코스피가 흔들리는 날 빚투 열기가 식었다는 점이 같이 읽힌다.",
+   "tag": "가계부채",
+   "sources": [
+    "https://www.mk.co.kr/news/economy/12212213",
+    "https://www.mt.co.kr/economy/2026/11/18/2026111809013532680",
+    "https://v.daum.net/v/20261118120018111"
+   ],
+   "bg": "Korean apartment complex",
+   "bg_alt": "Seoul apartments skyline",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "가계빚 **2030조**\n사상 최대 찍었는데\n증가폭은 뚝 꺾였다",
+     "number": "2030조원",
+     "label": "3분기 가계빚, 역대 최대",
+     "sub": "증가폭은 3분의 1로 줄었다"
+    },
+    {
+     "type": "질문형",
+     "title": "빚투 열풍\n정말 **꺾였나**\n가계빚 2030조",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "증시 조정에\n빚투는 **식었는데**\n주택대출은 역대급",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bignum",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/18",
+     "headlines": [
+      "가계빚 2030조 역대 최대",
+      "빚투 열풍 꺾여 증가폭 둔화",
+      "주택대출은 역대급 증가"
+     ]
+    }
+   },
+   "id": "20261118-1204-i3",
+   "created_at": "2026-11-18T12:04:57+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261118-1204-i3/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261118-1204-i3/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261118-1204-i3/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261118-1204-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261118-1204-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261118-1204-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261118-1204-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261118-1204-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261118-1204-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261118-1204-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261118-1204-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261118-1204-i3/3-paper-gowun.jpg"
     }
    ]
   }
