@@ -1,17 +1,26 @@
 [
  {
   "geo": "KR",
+  "term": "솔비",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "솔비, ♥이규한과 결혼 전 경사…“오빠, 꿈 이뤄줘서 고마워”",
+  "news_link": "https://sports.khan.co.kr/article/202611170917003"
+ },
+ {
+  "geo": "KR",
   "term": "cve 2026 114938",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "When a fatal level of security vulnerability was identified in the web development language 'JAVA'",
-  "news_link": "https://www.mk.co.kr/en/politics/12212391"
+  "news_title": "How to Find, Mitigate, and Patch the Critical Java4Shell Flaw (CVE-2026-114938) Now",
+  "news_link": "https://blog.qualys.com/vulnerabilities-threat-research/2026/11/17/how-to-find-mitigate-and-patch-the-critical-java4shell-flaw-cve-2026-114938-now"
  },
  {
   "geo": "KR",
   "term": "네이버 뉴스",
-  "traffic": 1000,
+  "traffic": 2000,
   "topics": "국내 대형주",
   "econ": true,
   "news_title": "네이버 뉴스제휴 심사 607개사 신청…최종 통과 언론사 0곳",
@@ -32,8 +41,8 @@
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "NBA Roundup: Doncic fuels furious rally, Wemby falters in rough night",
-  "news_link": "https://www.eurohoops.net/en/nba-news/2036929/luka-doncic-victor-wembanyama-nba-european-recap-2/"
+  "news_title": "Charlotte Hornets vs Los Angeles Lakers Nov 17, 2026 Box Scores",
+  "news_link": "https://www.nba.com/game/cha-vs-lal-0022600256/box-score"
  },
  {
   "geo": "KR",
@@ -64,15 +73,6 @@
  },
  {
   "geo": "KR",
-  "term": "경정",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "경정 시즌 막바지, 다승왕과 그랑프리 향한 질주로 수면이 뜨겁다",
-  "news_link": "https://sports.donga.com/sports/article/all/20261117/135028450/1"
- },
- {
-  "geo": "KR",
   "term": "계약결혼",
   "traffic": 100,
   "topics": "",
@@ -91,15 +91,6 @@
  },
  {
   "geo": "US",
-  "term": "flash flooding florida",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Storm system could bring 12+ inches of rain, flooding to Central Florida this week, models show",
-  "news_link": "https://www.wesh.com/article/flooding-rain-volusia-florida-18-24-inches-possible/74442093"
- },
- {
-  "geo": "US",
   "term": "nba standings",
   "traffic": 2000,
   "topics": "",
@@ -109,57 +100,66 @@
  },
  {
   "geo": "US",
-  "term": "matisse thybulle",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Lakers' Matisse Thybulle Accomplishes Historic Feat Not Seen in 30 Years",
-  "news_link": "https://sports.yahoo.com/articles/lakers-matisse-thybulle-accomplishes-historic-222028894.html"
- },
- {
-  "geo": "US",
-  "term": "austin reaves injury",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Lakers rule Austin Reaves, Walker Kessler out vs. Hornets",
-  "news_link": "https://www.espn.com/nba/story/_/id/50506501/lakers-rule-austin-reaves-walker-kessler-vs-hornets"
- },
- {
-  "geo": "US",
   "term": "fuel",
-  "traffic": 500,
+  "traffic": 1000,
   "topics": "물가·경기",
   "econ": true,
-  "news_title": "UK inflation rises to 3.6% as energy prices increase",
-  "news_link": "https://www.theguardian.com/business/2026/nov/18/uk-inflation-rises-energy-prices-iran-war-oil"
+  "news_title": "Latest UK inflation figure about to be released, with rate expected to rise",
+  "news_link": "https://www.bbc.com/news/live/cw808v7d1gkmt"
  },
  {
   "geo": "US",
   "term": "gas",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "China Gas doubles volume in 20-yr LNG deal with Venture Global",
+  "news_link": "https://www.reuters.com/business/energy/china-gas-doubles-volume-20-yr-lng-deal-with-venture-global-2026-11-18/"
+ },
+ {
+  "geo": "US",
+  "term": "gta 6 new screenshots",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "What's the weather forecast for 'GTA 6'? The Weather Channel has a preview.",
+  "news_link": "https://mashable.com/entertainment/gta-6-weather-images"
+ },
+ {
+  "geo": "US",
+  "term": "ign",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "The Hunger Games: Sunrise on the Reaping review – surreally awful prequel to the Katniss Everdeen era",
+  "news_link": "https://www.theguardian.com/film/2026/nov/17/the-hunger-games-sunrise-on-the-reaping-review-surreally-awful-prequel-to-the-katniss-everdeen-era"
+ },
+ {
+  "geo": "US",
+  "term": "ps5 black friday deals",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Shelter-in-place lifted for Stockton area after reported gas leak",
-  "news_link": "https://www.abc10.com/article/news/local/stockton/shelter-in-place-issued-for-stockton-area-after-reported-gas-leak/103-8aa0f23f-1dab-40b5-bb72-0fc290b35a4b"
+  "news_title": "The best early Black Friday PlayStation deals: PS5 games, cheap controllers, and more",
+  "news_link": "https://mashable.com/entertainment/best-early-black-friday-playstation-live-deals-2026"
  },
  {
   "geo": "US",
-  "term": "adou thiero",
+  "term": "google play store",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Lakers expect to have to manage Adou Thiero’s minutes all season",
-  "news_link": "https://www.silverscreenandroll.com/lakers-news/129070/lakers-news-adou-thiero"
+  "news_title": "Google Play unveils the best apps, games, and books of 2026",
+  "news_link": "https://blog.google/products-and-platforms/platforms/google-play/best-of-play-awards-2026/"
  },
  {
   "geo": "US",
-  "term": "medicare part b premium 2027",
+  "term": "new zealand breakers",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Medicare Part B Adjustment for 2027: Here's How Much the New Premiums Will Eat Into Social Security Checks",
-  "news_link": "https://money.com/medicare-part-b-adjustment-2027-social-security/"
+  "news_title": "New Zealand Breakers vs South East Melbourne Phoenix Prediction, Betting Tips & Odds | 17 Nov 2026",
+  "news_link": "https://www.sportsgambler.com/betting-tips/basketball/new-zealand-breakers-vs-south-east-melbourne-phoenix-prediction-odds-2026-11-18/"
  },
  {
   "geo": "US",
@@ -172,11 +172,11 @@
  },
  {
   "geo": "US",
-  "term": "how long is gta 6 story mode",
+  "term": "red flag (fire weather) warning",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "How Long Will It Take to Complete GTA 6? Platinum Trophy & Mythic Achievement Time Explained",
-  "news_link": "https://insider-gaming.com/how-long-to-complete-gta/"
+  "news_title": "Denver weather: High wind, mountain snow moving in",
+  "news_link": "https://kdvr.com/weather/weather-forecast/denver-weather-high-wind-mountain-snow-moving-in/"
  }
 ]
