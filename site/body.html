@@ -1447,7 +1447,7 @@ ul.gd-card{padding-left:36px;line-height:1.8}
         </section>
         <section class="sec" id="tg-pick">
           <h2>벤치마킹 바레이션 — 다른 방에서 지금 뜬 글</h2>
-          <p class="note">다른 경제 채널 23곳에서 최근 12시간 안에 평소 조회수의 2배 이상 나온 글을 30분마다 골라, 말희아빠 채널용으로 새로 써요. 왼쪽이 원문, 오른쪽이 바레이션이에요. 단톡방·홍보·타점 글은 빼요. 방에 자동으로 올라가지 않아요.</p>
+          <p class="note">다른 경제 채널 23곳에서 최근 12시간 안에 뜬 글을 30분마다 골라 말희아빠 채널용으로 새로 써요. 실적 서프라이즈·코인 주의 소식·왜 올랐나·빠졌나는 매번 유형마다 하나씩 먼저 고르고, 그 밖에는 평소 조회수의 2배 넘게 뜬 글을 골라요. 왼쪽이 원문, 오른쪽이 바레이션이에요. 단톡방·홍보·타점 글은 빼요. 방에 자동으로 올라가지 않아요.</p>
           <div class="recs" id="tg-pick-list"></div>
         </section>
         <section class="sec" id="tg-mv" hidden>
@@ -4131,9 +4131,20 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
 
   // ── 텔레그램: 다른 방 실시간 인기 글 → 말희아빠 바레이션 (tg_pick.py), 원문과 나란히 ──
   function drawTgPick() {
-    const R = rows('tg_pick') || [], box = document.getElementById('tg-pick-list');
+    const CATS = ['실적 서프라이즈', '코인 주의 소식', '왜 올랐나·빠졌나', '그 밖에 뜬 글'];
+    const all = (rows('tg_pick') || []).map(r => CATS.includes(r.kind) ? r : { ...r, kind: '그 밖에 뜬 글' }), box = document.getElementById('tg-pick-list');
     if (!box) return;
-    if (!R.length) { empty(box, '다른 방에서 평소보다 크게 뜬 글이 나오면 30분 안에 여기에 원문과 바레이션이 나란히 와요.'); return; }
+    if (!all.length) { empty(box, '다른 방에서 평소보다 크게 뜬 글이 나오면 30분 안에 여기에 원문과 바레이션이 나란히 와요.'); return; }
+    let bar = document.getElementById('tg-pick-cats');
+    if (!bar) { bar = el('div', 'chips'); bar.id = 'tg-pick-cats'; bar.style.margin = '0 0 12px'; box.before(bar); }
+    const cur = drawTgPick.cat || '전체';
+    bar.replaceChildren(...['전체', ...CATS].map(k => {
+      const n = k === '전체' ? all.length : all.filter(r => r.kind === k).length;
+      const b = el('button', k === cur ? 'btn small primary' : 'btn small', `${k} ${n}`); b.type = 'button';
+      b.addEventListener('click', () => { drawTgPick.cat = k; drawTgPick(); }); return b;
+    }));
+    const R = cur === '전체' ? all : all.filter(r => r.kind === cur);
+    if (!R.length) { empty(box, '이 유형은 오늘 아직 평소보다 뜬 글이 없어요. 30분마다 다시 찾아요.'); return; }
     listWithMore(box, R, r => {
       const c = el('article', 'card rec'), chips = el('div', 'chips');
       chips.append(el('span', 'pill accent', r.kind || '소식'), el('span', 'pill neutral', `${r.chat} · ${r.time}`), el('span', 'pill positive', `평소의 ${r.x}배`));
