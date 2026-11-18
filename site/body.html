@@ -715,18 +715,8 @@ ul.gd-card{padding-left:36px;line-height:1.8}
         <li><button type="button" data-ch="video"><i class="dot" style="background:var(--accent)"></i>영상 연구소</button></li>
         <li><button type="button" data-ch="telegram"><i class="dot" style="background:var(--ch-telegram)"></i>텔레그램 · 말희아빠<span class="soon" id="tg-badge">연결 전</span></button>
           <ul class="subnav" data-for="telegram">
-            <li><a href="#tg-inbox">올릴 자료함</a></li>
-            <li><a href="#tg-pick">실시간 골라 쓰기</a></li>
-            <li><a href="#tg-mv">블로그·인스타 바레이션</a></li>
             <li><a href="#tg-rw">시황 자동 변환</a></li>
-            <li><a href="#tg-mine">내 채널 성과</a></li>
-            <li><a href="#tg-rank">경쟁 채널 순위</a></li>
-            <li><a href="#tg-today">오늘 올릴 문구</a></li>
-            <li><a href="#tg-futures">선물 브리핑</a></li>
-            <li><a href="#tg-formulas">잘 되는 글 공식</a></li>
-            <li><a href="#tg-hot">다른 방 인기 글</a></li>
-            <li><a href="#tg-when">시간대·형식</a></li>
-            <li><a href="#tg-rooms">방별 현황</a></li>
+            <li><a href="#tg-pick">벤치마킹 바레이션</a></li>
           </ul></li>
         <li><button type="button" data-ch="traders"><i class="dot" style="background:var(--ch-telegram)"></i>텔레그램 · 트레이더스</button>
           <ul class="subnav" data-for="traders">
@@ -1442,30 +1432,30 @@ ul.gd-card{padding-left:36px;line-height:1.8}
         <div class="title-row">
           <div><h1>텔레그램 · 말희아빠</h1><p>차트보는 말희아빠 채널 키우기예요. 다른 업체 방의 반응 큰 글과 오늘 뉴스로 올릴 문구를 보여 줘요.</p></div>
         </div>
-        <div class="kpis" id="tg-kpis"></div>
-        <section class="sec" id="tg-inbox">
+        <div class="kpis" id="tg-kpis" hidden></div>
+        <section class="sec" id="tg-inbox" hidden>
           <h2>올릴 자료함 — 다른 채널과 비교해서 고른 오늘 글</h2>
           <p class="note">하루 2번(08시·17시) 다른 경제 채널 25곳과 우리 방을 비교해서 말희아빠 채널 4개, 트레이더스 3개를 만들어요. 같은 내용이 내 텔레그램 봇으로도 와요. 방에 자동으로 올라가지 않아요. 검토하고 고쳐서 직접 올려 주세요. 올렸는지는 '활용 체크'가 확인해요.</p>
           <div id="tg-inbox-insights"></div>
           <div class="recs" id="tg-inbox-list"></div>
           <details style="margin-top:10px"><summary>채널 비교 숫자 (최근 30일)</summary><div id="tg-inbox-compare" style="overflow-x:auto"></div></details>
         </section>
-        <section class="sec" id="tg-pick">
-          <h2>실시간 골라 쓰기 — 다른 방에서 지금 뜬 글</h2>
-          <p class="note">다른 경제 채널 23곳에서 최근 12시간 안에 평소 조회수의 2배 이상 나온 글을 30분마다 골라, 말희아빠 채널용으로 새로 써요. 왼쪽이 원문, 오른쪽이 바레이션이에요. 단톡방·홍보·타점 글은 빼요. 방에 자동으로 올라가지 않아요.</p>
-          <div class="recs" id="tg-pick-list"></div>
-        </section>
-        <section class="sec" id="tg-mv">
-          <h2>블로그·인스타 바레이션</h2>
-          <p class="note">말희아빠 블로그와 오뉴월드 인스타에 새 글이 올라오면 채널용 요약을 써서 여기와 봇으로 보내요. 채널에 자동으로 올라가지는 않아요. 경제와 상관없는 인스타 글은 건너뛰어요.</p>
-          <div class="recs" id="tg-mv-list"></div>
-        </section>
         <section class="sec" id="tg-rw">
           <h2>시황 자동 변환 — 말희아빠 아침·마감시황</h2>
           <p class="note">시황맨 채널에 아침·마감 시황이 올라오면 말희아빠 스타일로 새로 써서 여기와 내 텔레그램 '저장된 메시지'로 보내요. 숫자는 '올리기 전 확인'을 보고 한 번 체크해 주세요.</p>
           <div class="recs" id="tg-rw-list"></div>
         </section>
-        <section class="sec" id="tg-mine">
+        <section class="sec" id="tg-pick">
+          <h2>벤치마킹 바레이션 — 다른 방에서 지금 뜬 글</h2>
+          <p class="note">다른 경제 채널 23곳에서 최근 12시간 안에 평소 조회수의 2배 이상 나온 글을 30분마다 골라, 말희아빠 채널용으로 새로 써요. 왼쪽이 원문, 오른쪽이 바레이션이에요. 단톡방·홍보·타점 글은 빼요. 방에 자동으로 올라가지 않아요.</p>
+          <div class="recs" id="tg-pick-list"></div>
+        </section>
+        <section class="sec" id="tg-mv" hidden>
+          <h2>블로그·인스타 바레이션</h2>
+          <p class="note">말희아빠 블로그와 오뉴월드 인스타에 새 글이 올라오면 채널용 요약을 써서 여기와 봇으로 보내요. 채널에 자동으로 올라가지는 않아요. 경제와 상관없는 인스타 글은 건너뛰어요.</p>
+          <div class="recs" id="tg-mv-list"></div>
+        </section>
+                <section class="sec" id="tg-mine" hidden>
           <h2 id="tg-mine-title">내 채널 성과</h2>
           <p class="note">최근 7일 우리 채널 글과, 다른 방 데이터로 Claude가 뽑은 이번 주 키우는 법이에요.</p>
           <div class="kpis" id="tg-mine-kpis"></div>
@@ -1481,12 +1471,12 @@ ul.gd-card{padding-left:36px;line-height:1.8}
           </div>
           <div class="card" style="margin-top:12px"><h3>우리 채널 글 (반응 큰 순)</h3><div class="rows" id="tg-mine-list"></div></div>
         </section>
-        <section class="sec" id="tg-rank">
+        <section class="sec" id="tg-rank" hidden>
           <h2>경쟁 채널 순위</h2>
           <p class="note">최근 30일 조회수 중앙값이 그 전 60일보다 몇 배인지(조회 추세) 순서예요. 구독 증감은 기록이 쌓이면 보여요.</p>
           <div class="card"><div class="rows" id="tg-rank-list"></div></div>
         </section>
-        <section class="sec" id="tg-today">
+        <section class="sec" id="tg-today" hidden>
           <h2>오늘 우리 채널에 올릴 문구</h2>
           <p class="note" id="tg-today-note">하루 7개 시간표(07:30 아침 브리핑 · 08:50 장 시작 전 · 10:30·13:30 장중 · 15:40 장 마감 · 20:30 저녁 미장 · 21:30 공유용 분석)에 맞춘 완성 문구예요. 숫자는 [확인] 표시를 꼭 채워 주세요.</p>
           <div class="recs" id="tg-today-list"></div>
@@ -1502,27 +1492,27 @@ ul.gd-card{padding-left:36px;line-height:1.8}
           <div id="cr-status"></div>
           <div class="recs" id="tg-chart-list"></div>
         </section>
-        <section class="sec" id="tg-futures">
+        <section class="sec" id="tg-futures" hidden>
           <h2>비트코인·이더리움 선물 브리핑</h2>
           <p class="note">바이낸스 USDT 무기한 시세로 4시간봉·1시간봉을 작도하고, 펀딩·미결제약정·롱숏 비율과 롱·숏 시나리오를 붙여요. 매일 08:30·21시에 자동으로 만들어 봇으로 보내요. 진입 지시나 레버리지 추천은 넣지 않아요.</p>
           <div class="chips" style="gap:8px;align-items:center;margin:4px 0 14px"><button class="btn primary" id="fu-run" type="button">선물 브리핑 만들기</button></div>
           <div id="fu-status"></div>
           <div class="recs" id="tg-futures-list"></div>
         </section>
-        <section class="sec" id="tg-formulas">
+        <section class="sec" id="tg-formulas" hidden>
           <h2>잘 되는 텔레그램 글 공식</h2>
           <div class="card"><h3>다른 방들의 공통점</h3><ul class="learn" id="tg-summary" style="margin-top:10px"></ul></div>
           <div class="groups" id="tg-formula-list"></div>
         </section>
-        <section class="sec" id="tg-hot">
+        <section class="sec" id="tg-hot" hidden>
           <h2>다른 방 반응 큰 글 (최근 7일)</h2>
           <p class="note">그 방 평소(중앙값)보다 몇 배 반응이었는지 순서예요. 채널은 조회수, 그룹은 반응 + 3×답글로 쟀어요.</p>
           <div class="recs" id="tg-hot-list"></div>
         </section>
         <div class="grid">
-          <section class="sec" id="tg-when"><h2>언제·어떤 글이 잘 되나</h2><p class="note">다른 방 글 전체, 평소 대비 평균 배수예요.</p>
+          <section class="sec" id="tg-when" hidden><h2>언제·어떤 글이 잘 되나</h2><p class="note">다른 방 글 전체, 평소 대비 평균 배수예요.</p>
             <div class="card"><div class="rows" id="tg-patterns"></div></div></section>
-          <section class="sec" id="tg-rooms"><h2>방별 현황</h2><p class="note">분석 중인 방과 하루 글 수, 반응 중앙값, 잘 되는 시간대예요.</p>
+          <section class="sec" id="tg-rooms" hidden><h2>방별 현황</h2><p class="note">분석 중인 방과 하루 글 수, 반응 중앙값, 잘 되는 시간대예요.</p>
             <div class="card"><div class="rows" id="tg-chats"></div></div></section>
         </div>
       </div>
@@ -4212,12 +4202,18 @@ ${x.title}`)) vlSend('hot', { topic: x.keyword }); });
   // ── 텔레그램: 시황 자동 변환 (원문 채널 → 말희아빠 아침·마감시황) ──
   function drawRewrites() {
     const R = [...(rows('tg_rewrites') || [])].reverse(), box = document.getElementById('tg-rw-list');
+    const SRC = rows('tg_source') || [];
     if (!R.length) { empty(box, '아침(6시쯤)·마감(오후 3시쯤) 시황이 올라오면 10분 안에 여기와 내 텔레그램 저장된 메시지에 변환본이 와요.'); return; }
     listWithMore(box, R, r => {
       const c = el('article', 'card rec'), chips = el('div', 'chips');
       chips.append(el('span', 'pill accent', `${r.kind}시황`), el('span', 'pill neutral', `원문 ${r.source_time}`),
         el('span', 'pill neutral', `변환 ${r.made_at.slice(5, 16).replace('T', ' ').replace('-', '/')} (UTC)`));
-      c.append(chips, el('div', 'box', r.text));
+      const src = SRC.find(x => x.id === r.source_id);   // 원문과 변환본을 나란히 (11/18 대표 요청)
+      if (src) {
+        const pair = el('div', 'pick-pair'), L = el('div'), Rt = el('div');
+        L.append(el('h4', null, '원문 (시황맨)'), el('div', 'box', src.text)); Rt.append(el('h4', null, '말희아빠 바레이션'), el('div', 'box', r.text));
+        pair.append(L, Rt); c.append(chips, pair);
+      } else c.append(chips, el('div', 'box', r.text));
       if (r.check && r.check.length) c.append(el('p', 'sub', `올리기 전 확인 · ${r.check.join(' · ')}`));
       const row = el('div', 'chips');
       row.append(copyBtn('변환본 복사', r.text, 'btn primary'));
