@@ -3541,474 +3541,6 @@
  ],
  "ideas": [
   {
-   "title": "월급의 17%가 월세로, 8년 새 최고",
-   "concept": "월세 17%와 서울 세입자 21.5%를 맞붙여 보여주고, 정부 통계상 집값 부담은 줄었다는 설명과 체감의 거리를 중간에 뒤집는다. 두 수치는 기준이 다를 수 있어 출처별로 따로 표기한다. (공식: 가운데 한 번 뒤집기)",
-   "why_now": "연합뉴스와 경향신문이 16시대에 다뤘고, 뉴시스와 조선비즈는 서울 세입자의 임대료 부담을 소득의 21.5%로 전했다. 시장 뉴스가 모두 하락 쪽인 날이라 생활 밀착 주제로 나누기 좋다.",
-   "tag": "부동산",
-   "sources": [
-    "https://www.yna.co.kr/view/AKR20261117130200003",
-    "https://www.newsis.com/view/NISX20261117_0003871811",
-    "https://biz.chosun.com/real_estate/real_estate_general/2026/11/17/6CSSLGK2UVEJXKFWUSUOXH53PM/"
-   ],
-   "bg": "Seoul apartment complex",
-   "bg_alt": "Seoul monthly rent",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "월급의 **17%**가\n월세로 나갑니다\n8년 새 가장 높아요",
-     "number": "17%",
-     "label": "월급 중 월세 비중",
-     "sub": "8년 새 가장 높은 수치"
-    },
-    {
-     "type": "질문형",
-     "title": "서울 세입자는\n소득의 몇 %를\n**임대료**로 낼까",
-     "number": "21.5%",
-     "label": "서울 세입자 임대료 부담",
-     "sub": "뉴시스, 조선비즈 보도 기준"
-    },
-    {
-     "type": "반전형",
-     "title": "집값 부담은 줄었다는\n정부 통계, 그런데\n**월세**는 8년 새 최고",
-     "number": "17%",
-     "label": "월급 중 월세 비중",
-     "sub": "통계와 체감은 거리가 있어요"
-    }
-   ],
-   "forms": [
-    "bignum",
-    "editorial"
-   ],
-   "extra": {},
-   "id": "20261117-1707-i1",
-   "created_at": "2026-11-17T17:07:10+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261117-1707-i1/1-bignum-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261117-1707-i1/1-bignum-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261117-1707-i1/1-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261117-1707-i1/1-editorial-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261117-1707-i1/1-editorial-gowun.jpg"
-    },
-    {
-     "h": 0,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261117-1707-i1/1-editorial-plex.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261117-1707-i1/2-bignum-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261117-1707-i1/2-bignum-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261117-1707-i1/2-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261117-1707-i1/2-editorial-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261117-1707-i1/2-editorial-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261117-1707-i1/2-editorial-plex.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "noto",
-     "path": "20261117-1707-i1/3-bignum-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "black",
-     "path": "20261117-1707-i1/3-bignum-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "bignum",
-     "font": "dohyeon",
-     "path": "20261117-1707-i1/3-bignum-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "noto",
-     "path": "20261117-1707-i1/3-editorial-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "gowun",
-     "path": "20261117-1707-i1/3-editorial-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "editorial",
-     "font": "plex",
-     "path": "20261117-1707-i1/3-editorial-plex.jpg"
-    }
-   ]
-  },
-  {
-   "title": "코스피 4,968, 9개월 만에 5000선 아래 마감",
-   "concept": "장중 붕괴가 아니라 종가로 내려앉은 오늘 결과를 코스피 -2.59%, 코스닥 -2.34%, 외국인 1.4조 매도, 환율 1,338.2원으로 한 번에 정리하고, 끝 장은 확인된 것과 다음에 볼 것(엔비디아 실적 D-1)로 닫는다. (공식: 끝 장은 닫힌 결론)",
-   "why_now": "뉴스 29곳이 다룬 오늘 가장 큰 소식이다. 종가 기준 5000선 붕괴는 9개월 만이고, 외국인 매도와 환율 상승이 같은 날 나왔다.",
-   "tag": "증시 마감",
-   "sources": [
-    "https://www.newsis.com/view/NISX20261117_0003871758",
-    "https://www.yna.co.kr/view/AKR20261117127800008",
-    "https://www.etoday.co.kr/news/view/2649340"
-   ],
-   "bg": "KOSPI trading screen",
-   "bg_alt": "Korea Exchange building",
-   "hooks": [
-    {
-     "type": "숫자형",
-     "title": "코스피 **4,968**\n9개월 만에\n5000선 아래 마감",
-     "number": "-2.59%",
-     "label": "코스피 종가 4,968.48",
-     "sub": "코스닥도 -2.34%, 650.06"
-    },
-    {
-     "type": "질문형",
-     "title": "코스피 5000선\n종가로 무너진 날\n외국인은 **얼마**를 팔았나",
-     "number": "1.4조원",
-     "label": "외국인 코스피 순매도",
-     "sub": "원/달러 환율은 1,338.2원 마감"
-    },
-    {
-     "type": "반전형",
-     "title": "장중 회복하던 코스피\n5000선이 종가로는\n**결국** 무너졌다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "paper"
-   ],
-   "extra": {
-    "paper": {
-     "date": "11/17",
-     "headlines": [
-      "코스피 4,968, 5000선 9개월 만에 붕괴",
-      "외국인 1조4000억원 순매도",
-      "원/달러 환율 1,338.2원 마감"
-     ]
-    }
-   },
-   "id": "20261117-1707-i2",
-   "created_at": "2026-11-17T17:07:10+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261117-1707-i2/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261117-1707-i2/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261117-1707-i2/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261117-1707-i2/1-paper-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261117-1707-i2/1-paper-myeongjo.jpg"
-    },
-    {
-     "h": 0,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261117-1707-i2/1-paper-gowun.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261117-1707-i2/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261117-1707-i2/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261117-1707-i2/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261117-1707-i2/2-paper-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261117-1707-i2/2-paper-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261117-1707-i2/2-paper-gowun.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261117-1707-i2/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261117-1707-i2/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261117-1707-i2/3-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "noto",
-     "path": "20261117-1707-i2/3-paper-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "myeongjo",
-     "path": "20261117-1707-i2/3-paper-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "paper",
-     "font": "gowun",
-     "path": "20261117-1707-i2/3-paper-gowun.jpg"
-    }
-   ]
-  },
-  {
-   "title": "美, 中 AI 데이터센터 원격접속 차단",
-   "concept": "칩을 직접 팔지 않아도 클라우드로 빌려 쓰는 길까지 막는다는 점을 짚고, 중국의 '부당한 탄압' 대응 예고와 엔비디아의 법적 위험 경고(CNBC 보도)를 이어 붙인다. 하이닉스 110만원선 이탈은 같은 날 시세로만 곁들이고 원인은 단정하지 않는다. (공식: 끝 장은 닫힌 결론)",
-   "why_now": "Bloomberg와 Reuters 등이 15:46부터 다뤘고 연합뉴스는 16:48에 종합2보를 냈다. 낮에 보낸 美상무 건의 후속이며, 새 사실은 중국의 대응 예고다. 엔비디아 실적 발표 전날이다.",
-   "tag": "반도체, 미중",
-   "sources": [
-    "https://v.daum.net/v/20261117164821146",
-    "https://www.cnbc.com/2026/11/17/nvidia-china-cloud-ai-chip-access.html",
-    "https://www.bloomberg.com/news/videos/2026-11-17/the-china-show-11-17-2026-video"
-   ],
-   "bg": "Nvidia data center",
-   "bg_alt": "Nvidia GPU chip",
-   "hooks": [
-    {
-     "type": "사건형",
-     "title": "미국이 중국의\nAI 데이터센터\n**원격접속**을 막았다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "질문형",
-     "title": "엔비디아가 칩 구매자에게\n법적 위험을 경고한\n**이유**는 무엇일까",
-     "number": "",
-     "label": "",
-     "sub": ""
-    },
-    {
-     "type": "반전형",
-     "title": "칩을 안 팔아도\n미국은 **클라우드**\n길까지 막는다",
-     "number": "",
-     "label": "",
-     "sub": ""
-    }
-   ],
-   "forms": [
-    "breaking",
-    "news"
-   ],
-   "extra": {},
-   "id": "20261117-1707-i3",
-   "created_at": "2026-11-17T17:07:10+09:00",
-   "previews": [
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261117-1707-i3/1-breaking-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261117-1707-i3/1-breaking-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261117-1707-i3/1-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "noto",
-     "path": "20261117-1707-i3/1-news-noto.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "black",
-     "path": "20261117-1707-i3/1-news-black.jpg"
-    },
-    {
-     "h": 0,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261117-1707-i3/1-news-myeongjo.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261117-1707-i3/2-breaking-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261117-1707-i3/2-breaking-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261117-1707-i3/2-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "noto",
-     "path": "20261117-1707-i3/2-news-noto.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "black",
-     "path": "20261117-1707-i3/2-news-black.jpg"
-    },
-    {
-     "h": 1,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261117-1707-i3/2-news-myeongjo.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "noto",
-     "path": "20261117-1707-i3/3-breaking-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "black",
-     "path": "20261117-1707-i3/3-breaking-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "breaking",
-     "font": "dohyeon",
-     "path": "20261117-1707-i3/3-breaking-dohyeon.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "noto",
-     "path": "20261117-1707-i3/3-news-noto.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "black",
-     "path": "20261117-1707-i3/3-news-black.jpg"
-    },
-    {
-     "h": 2,
-     "form": "news",
-     "font": "myeongjo",
-     "path": "20261117-1707-i3/3-news-myeongjo.jpg"
-    }
-   ]
-  },
-  {
    "title": "하이닉스 순현금 3.8조에서 98.7조",
    "concept": "코스피 5000이 깨지고 주가가 빠진 날, 같은 회사의 곳간은 1년 새 26배(98.7÷3.8) 늘었다는 숫자를 맞붙여 보여준다. 삼성전자+SK하이닉스 현금성 자산 329조도 함께 쓰고, 삼성전자 개별 순현금은 재료에 없으니 쓰지 않는다. 마지막 장은 이 돈의 쓰임(투자, 배당, 자사주)을 다음에 볼 것으로 남긴다. (공식: 가운데 한 번 뒤집기)",
    "why_now": "17:42 알파경제TV가 삼성전자와 SK하이닉스의 곳간이 329조원이고 하이닉스 순현금이 1년 새 3.8조원에서 98.7조원으로 늘었다고 보도했다. 오늘 하이닉스는 1,098,000원으로 마감해 한 달 -14.02%인데, 목표가 하향 기사와 대비되는 숫자라 새 각도다.",
@@ -9119,6 +8651,486 @@
      "form": "breaking",
      "font": "dohyeon",
      "path": "20261118-1506-i3/3-breaking-dohyeon.jpg"
+    }
+   ]
+  },
+  {
+   "title": "코스닥 10곳 중 6곳 3분기 적자",
+   "concept": "코스피 실적 카드와 짝이 되는 반대편 이야기로 풉니다. 순손실 1조2875억원, 10곳 중 6곳 적자로 열고, 중간에 누적 영업이익 49.6% 증가로 한 번 뒤집습니다. 끝은 '내 종목 실적부터 확인'으로 닫습니다. (공식: 가운데 한 번 뒤집기)",
+   "why_now": "코스닥 상장사 3분기 실적을 여러 매체가 다뤘고, 낮에 보낸 코스피 실적 카드와 짝이 되는 새 각도입니다. 오늘 코스닥은 662.81로 1.96% 올랐지만 1달 기준으로는 -15.24%입니다.",
+   "tag": "증시",
+   "sources": [
+    "https://www.fnnews.com/news/202611181406384992",
+    "https://biz.chosun.com/stock/stock_general/2026/11/18/234RBGWBOFE6ROK6F5E2E4KEWI/"
+   ],
+   "bg": "KOSDAQ stock board",
+   "bg_alt": "Seoul Yeouido stock exchange",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "코스닥 상장사 3분기\n**1조2875억원** 순손실\n10곳 중 6곳이 적자",
+     "number": "1조2875억원",
+     "label": "코스닥 3분기 순손실",
+     "sub": "10곳 중 6곳이 적자였다"
+    },
+    {
+     "type": "질문형",
+     "title": "코스피 웃는 날\n코스닥 10곳 중 6곳은\n왜 **적자**일까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "순이익은 적자인데\n누적 영업이익은\n**49.6%** 늘었다",
+     "number": "49.6%",
+     "label": "3분기 누적 영업이익 증가율",
+     "sub": "3분기 순이익은 적자로 돌아섰다"
+    }
+   ],
+   "forms": [
+    "bignum",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/18",
+     "headlines": [
+      "코스닥 3분기 순손실 1조2875억원",
+      "코스닥 10곳 중 6곳이 적자",
+      "3분기 누적 영업익은 49.6% 증가"
+     ]
+    }
+   },
+   "id": "20261118-1601-i1",
+   "created_at": "2026-11-18T16:01:41+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261118-1601-i1/1-bignum-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261118-1601-i1/1-bignum-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261118-1601-i1/1-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261118-1601-i1/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261118-1601-i1/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261118-1601-i1/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261118-1601-i1/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261118-1601-i1/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261118-1601-i1/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "noto",
+     "path": "20261118-1601-i1/3-bignum-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "black",
+     "path": "20261118-1601-i1/3-bignum-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bignum",
+     "font": "dohyeon",
+     "path": "20261118-1601-i1/3-bignum-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261118-1601-i1/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261118-1601-i1/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261118-1601-i1/3-paper-gowun.jpg"
+    }
+   ]
+  },
+  {
+   "title": "골드만, 코스피 목표 7500으로 또 하향",
+   "concept": "1만2000 → 9000 → 7500으로 내려온 목표치를 한 줄로 맞붙이고, 현재 5067.44와 비교해 '낮췄어도 아직 한참 위'로 한 번 뒤집습니다. 낮춘 시점과 기준은 확인 전이라 한 곳에만 적습니다. 매수, 매도 판단은 넣지 않습니다. (공식: 숫자는 둘을 맞붙여서)",
+   "why_now": "머니투데이가 14:40에 보도한 새 소식이고, 코스피는 오늘 5067.44로 5000선을 회복했습니다. 3분기 영업익 증가분의 83%가 삼성전자와 SK하이닉스 몫이라는 쏠림 이야기와도 이어집니다.",
+   "tag": "증시 전망",
+   "sources": [
+    "https://www.mt.co.kr/stock/2026/11/18/2026111813420114599",
+    "https://v.daum.net/v/20261118143937907",
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4445353"
+   ],
+   "bg": "Goldman Sachs headquarters",
+   "bg_alt": "KOSPI trading screen",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "골드만 코스피 목표\n1만2000→**7500**\n또 한 번 낮췄다",
+     "number": "7500",
+     "label": "골드만삭스 코스피 목표치",
+     "sub": "1만2000, 9000에서 또 하향"
+    },
+    {
+     "type": "질문형",
+     "title": "골드만이 또 낮췄는데\n목표 7500은 현재보다\n왜 아직도 **한참** 위일까",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "목표를 또 낮췄는데\n7500은 여전히\n지수보다 **한참** 위",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "bars",
+    "news"
+   ],
+   "extra": {
+    "bars": {
+     "sub": "코스피 목표치 변화와 11/18 종가",
+     "bars": [
+      {
+       "label": "1차 목표",
+       "value": 12000
+      },
+      {
+       "label": "2차 목표",
+       "value": 9000
+      },
+      {
+       "label": "이번 목표",
+       "value": 7500,
+       "hi": true
+      },
+      {
+       "label": "11/18 종가",
+       "value": 5067
+      }
+     ]
+    }
+   },
+   "id": "20261118-1601-i2",
+   "created_at": "2026-11-18T16:01:41+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261118-1601-i2/1-bars-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261118-1601-i2/1-bars-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261118-1601-i2/1-bars-dohyeon.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "noto",
+     "path": "20261118-1601-i2/1-news-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "black",
+     "path": "20261118-1601-i2/1-news-black.jpg"
+    },
+    {
+     "h": 0,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261118-1601-i2/1-news-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261118-1601-i2/2-bars-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261118-1601-i2/2-bars-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261118-1601-i2/2-bars-dohyeon.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "noto",
+     "path": "20261118-1601-i2/2-news-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "black",
+     "path": "20261118-1601-i2/2-news-black.jpg"
+    },
+    {
+     "h": 1,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261118-1601-i2/2-news-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "noto",
+     "path": "20261118-1601-i2/3-bars-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "plex",
+     "path": "20261118-1601-i2/3-bars-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "bars",
+     "font": "dohyeon",
+     "path": "20261118-1601-i2/3-bars-dohyeon.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "noto",
+     "path": "20261118-1601-i2/3-news-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "black",
+     "path": "20261118-1601-i2/3-news-black.jpg"
+    },
+    {
+     "h": 2,
+     "form": "news",
+     "font": "myeongjo",
+     "path": "20261118-1601-i2/3-news-myeongjo.jpg"
+    }
+   ]
+  },
+  {
+   "title": "금통위 앞, '인상 후 내년 동결' 전망",
+   "concept": "가계빚 2030.5조 역대 최대와 '이번엔 올리고 내년엔 멈춘다'는 전망을 맞세웁니다. 윌리엄스 연준 총재의 '천천히' 발언을 받쳐 쓰고, 마지막은 내 변동금리 대출 점검으로 닫습니다. 금통위 일정과 인상폭은 확인 전이라 단정하지 않습니다. (공식: 가운데 한 번 뒤집기)",
+   "why_now": "연합인포맥스가 12:56에 스테이트스트리트의 '인상 후 내년 동결' 전망을 보도했습니다. 연준 윌리엄스 총재의 발언, 가계빚 역대 최대 소식과 겹쳐 이자 부담에 관심이 큽니다.",
+   "tag": "금리",
+   "sources": [
+    "https://news.einfomax.co.kr/news/articleView.html?idxno=4445361",
+    "https://www.newsis.com/view/NISX20261118_0003872906"
+   ],
+   "bg": "Bank of Korea building",
+   "bg_alt": "Korean won banknotes",
+   "hooks": [
+    {
+     "type": "숫자형",
+     "title": "가계빚 **2030.5조**\n역대 최대 찍은 날\n금통위 앞 전망",
+     "number": "2030.5조원",
+     "label": "가계빚 역대 최대",
+     "sub": "스테이트스트리트는 인상 후 내년 동결 전망"
+    },
+    {
+     "type": "질문형",
+     "title": "이번에 금리를 올리면\n내년엔 정말 **멈출까**",
+     "number": "",
+     "label": "",
+     "sub": ""
+    },
+    {
+     "type": "반전형",
+     "title": "스테이트스트리트 전망\n이번엔 올리고\n내년엔 **동결**이라는",
+     "number": "",
+     "label": "",
+     "sub": ""
+    }
+   ],
+   "forms": [
+    "editorial",
+    "paper"
+   ],
+   "extra": {
+    "paper": {
+     "date": "11/18",
+     "headlines": [
+      "인상 후 내년 동결 전망",
+      "윌리엄스, 인상 천천히 발언",
+      "가계빚 2030.5조, 역대 최대"
+     ]
+    }
+   },
+   "id": "20261118-1601-i3",
+   "created_at": "2026-11-18T16:01:41+09:00",
+   "previews": [
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261118-1601-i3/1-editorial-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261118-1601-i3/1-editorial-gowun.jpg"
+    },
+    {
+     "h": 0,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261118-1601-i3/1-editorial-plex.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261118-1601-i3/1-paper-noto.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261118-1601-i3/1-paper-myeongjo.jpg"
+    },
+    {
+     "h": 0,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261118-1601-i3/1-paper-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261118-1601-i3/2-editorial-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261118-1601-i3/2-editorial-gowun.jpg"
+    },
+    {
+     "h": 1,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261118-1601-i3/2-editorial-plex.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261118-1601-i3/2-paper-noto.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261118-1601-i3/2-paper-myeongjo.jpg"
+    },
+    {
+     "h": 1,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261118-1601-i3/2-paper-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "noto",
+     "path": "20261118-1601-i3/3-editorial-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "gowun",
+     "path": "20261118-1601-i3/3-editorial-gowun.jpg"
+    },
+    {
+     "h": 2,
+     "form": "editorial",
+     "font": "plex",
+     "path": "20261118-1601-i3/3-editorial-plex.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "noto",
+     "path": "20261118-1601-i3/3-paper-noto.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "myeongjo",
+     "path": "20261118-1601-i3/3-paper-myeongjo.jpg"
+    },
+    {
+     "h": 2,
+     "form": "paper",
+     "font": "gowun",
+     "path": "20261118-1601-i3/3-paper-gowun.jpg"
     }
    ]
   }
