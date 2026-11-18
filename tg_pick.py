@@ -30,9 +30,10 @@ OUT = OUTPUT_DIR / "site" / "tg_pick.json"
 STATE = Path.home() / ".content-lab-ai" / "tg_pick_state.json"
 EXAMPLES = ROOT / "config" / "malhee_var_examples.txt"
 KST = timezone(timedelta(hours=9))
-WINDOW_H, MIN_X, MIN_CHARS, MIN_AGE_MIN = 12, 2.0, 60, 30
-PER_RUN, KEEP, EVERY_MIN = 4, 60, 30
-CAT_MIN_X = 1.5   # 고정 유형은 평소 1.5배만 넘어도 그 유형에서 가장 뜬 글 하나를 고름
+WINDOW_H, MIN_X, MIN_CHARS, MIN_AGE_MIN = 12, 1.4, 60, 20   # 같은 나이 글 대비 1.4배 (11/18 실시간화)
+PER_RUN, KEEP, EVERY_MIN = 5, 60, 30
+RECENT_H = 3   # 실시간 방이라 최근 3시간 안에 올라온 글만 새로 고른다
+CAT_MIN_X = 1.2   # 고정 유형은 같은 나이 글 대비 1.2배만 넘어도 그 유형에서 가장 뜬 글 하나를 고름
 DISCLAIMER = "※ 정보 제공용, 투자 권유 아님"
 # 11/18 대표 요청: 아래 3가지는 매일 빠지지 않게 유형마다 하나씩 고정으로 고른다 (다른 방 2주 분석 근거)
 CATS = [("실적 서프라이즈", re.compile(r"(영업익|영업이익|매출액?|순이익|EPS).{0,60}(예상|컨센|YoY|전년|%)|어닝 ?서프라이즈|어닝 ?쇼크", re.I)),
@@ -127,17 +128,25 @@ def candidates(now):
     by = {}
     for r in rows:
         by.setdefault(r[0], []).append(r)
-    out = []
+    # 조회수는 시간이 지날수록 쌓이므로, 방 평소값에 '같은 나이 글이 보통 받는 비율'(전체 방 곡선)을 곱해 비교한다.
+    # 그냥 12시간 중앙값과 비교하면 막 올라온 글은 늘 '평소보다 낮음'이 돼 최신 글이 하나도 안 뽑힌다 (11/18 발견).
+    age_h = lambda m: min(int((now - datetime.fromisoformat(m[2])).total_seconds() // 3600), WINDOW_H - 1)
+    rooms, ratios = {}, {}
     for cid, ms in by.items():
         ch = chats.get(cid)
         if not ch or ch[4] != "other" or ch[3] != "채널" or len(ms) < 4 or "에어드랍" in ch[1]:
             continue
-        med = max(statistics.median(m[4] for m in ms), 50)
+        rooms[cid] = (ch, ms, max(statistics.median(m[4] for m in ms), 50))
+        for m in ms:
+            ratios.setdefault(age_h(m), []).append(m[4] / rooms[cid][2])
+    curve = {h: max(statistics.median(v), 0.05) if len(v) >= 5 else 1.0 for h, v in ratios.items()}
+    out = []
+    for cid, (ch, ms, med) in rooms.items():
         for m in ms:
             text, dt = (m[3] or "").strip(), datetime.fromisoformat(m[2])
             if len(text) < MIN_CHARS or SKIP_WORDS.search(text) or now - dt < timedelta(minutes=MIN_AGE_MIN):
                 continue
-            x = m[4] / med
+            x = m[4] / (med * curve.get(age_h(m), 1.0))
             if x >= CAT_MIN_X:
                 out.append({"id": f"{cid}_{m[1]}", "chat": ch[1], "x": round(x, 1), "views": m[4], "forwards": m[5] or 0,
                             "at": dt.astimezone(KST).isoformat(timespec="minutes"), "time": dt.astimezone(KST).strftime("%m/%d %H:%M"),
@@ -199,7 +208,8 @@ def main():
     state = load(STATE, {"seen": [], "last": ""})
     if not a.force and not a.dry_run and state["last"] and now - datetime.fromisoformat(state["last"]) < timedelta(minutes=EVERY_MIN):
         return
-    fresh = [o for o in candidates(now) if o["id"] not in state["seen"]]
+    cut = (now - timedelta(hours=RECENT_H)).astimezone(KST).isoformat(timespec="minutes")
+    fresh = [o for o in candidates(now) if o["id"] not in state["seen"] and o["at"] >= cut]
     picks = []
     for name, _ in CATS:   # 고정 3유형에서 하나씩 먼저
         o = next((o for o in fresh if o["cat"] == name), None)
