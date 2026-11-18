@@ -75,17 +75,48 @@ def load_posts(db):
                 row = {"id": h["id"], "code": code, "lists": [key], "draft": key == "top", "author": h["username"],
                        "press": h.get("press", False), "lang": h.get("lang"), "text": h["text"], "followers": h["followers"], "views": h["views"],
                        "spread": h["spread"], "rate": h["rate"], "likes": h["likes"], "replies": h["replies"], "reposts": h["reposts"],
-                       "quotes": h["quotes"], "shares": h["shares"]}
+                       "quotes": h["quotes"], "shares": h["shares"], "url": h.get("url") or ""}
                 rows.append(row)
                 by_code[code] = row
     return rows[:60]
+
+
+def attach(notes, posts, old=None):
+    """사이트 '잘 되는 글 공식'에 원본 링크·숫자·본문 앞부분을 같이 보여 주려고 분석 결과에 붙인다 (2026-11-18 대표 요청)."""
+    by_id = {p["id"]: p for p in posts}
+    prev = {n["id"]: n for n in (old or [])}
+    out = []
+    for n in notes:
+        p = by_id.get(n["id"])
+        if p:
+            n = {**n, "author": p.get("author") or "", "url": p.get("url") or "", "lists": [LISTS[k] for k in p["lists"]],
+                 "text": (p.get("text") or "")[:400], **{k: p.get(k) for k in ("views", "spread", "likes", "replies", "reposts")}}
+        elif n["id"] in prev:
+            n = {**prev[n["id"]], **n}
+        out.append(n)
+    return out
+
+
+def attach_only(db=None):
+    """Claude 를 다시 부르지 않고 지난 분석 결과에 링크·숫자만 붙인다."""
+    if not OUT.exists():
+        return
+    d = json.loads(OUT.read_text(encoding="utf-8"))
+    new = attach(d.get("posts", []), load_posts(db or str(DEFAULT_DB)), d.get("posts", []))
+    if new != d.get("posts"):
+        d["posts"] = new
+        OUT.write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(f"링크·숫자 붙임: {sum(bool(n.get('url')) for n in new)}/{len(new)}개")
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--db", default=str(DEFAULT_DB))
+    ap.add_argument("--attach-only", action="store_true", help="Claude 호출 없이 지난 결과에 링크·숫자만 붙임")
     args = ap.parse_args()
+    if args.attach_only:
+        return attach_only(args.db)
     load_env()
     posts = load_posts(args.db)
     if not posts:
@@ -105,7 +136,7 @@ def main():
         return
     if OUT.exists() and json.loads(OUT.read_text(encoding="utf-8")).get("digest") == digest:
         print("새로 모은 쓰레드 글이 없어 지난 분석을 그대로 써요.")
-        return
+        return attach_only(args.db)
     if not __import__("llm").ready():
         print("Claude Code(Max) 가 없는 곳이라 쓰레드 분석을 건너뛰어요 — 지난 결과를 유지해요.")
         return
@@ -158,7 +189,7 @@ def main():
         return
     a = response.parsed_output
     by_no = {i: p for i, p in enumerate(posts, 1)}
-    notes = [{**n.model_dump(), "id": by_no[n.no]["id"]} for n in a.posts if n.no in by_no]
+    notes = attach([{**n.model_dump(), "id": by_no[n.no]["id"]} for n in a.posts if n.no in by_no], posts)
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({"digest": digest, "analyzed_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                                "count": len(posts), "summary": a.summary, "patterns": [p.model_dump() for p in a.patterns],
