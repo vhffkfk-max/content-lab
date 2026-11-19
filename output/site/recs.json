@@ -22,8 +22,8 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.87,
-  "kr_n": 645,
+  "kr_avg": 1.86,
+  "kr_n": 649,
   "foreign_avg": 2.55,
   "foreign_n": 380
  },
@@ -36,10 +36,10 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.06,
-  "kr_n": 74,
-  "foreign_avg": 1.96,
-  "foreign_n": 105
+  "kr_avg": 2.02,
+  "kr_n": 76,
+  "foreign_avg": 1.95,
+  "foreign_n": 106
  },
  {
   "rank": 4,
@@ -64,7 +64,7 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.1,
+  "kr_avg": 1.12,
   "kr_n": 50,
   "foreign_avg": 1.64,
   "foreign_n": 75
@@ -80,25 +80,11 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 2.66,
   "kr_n": 41,
-  "foreign_avg": 2.58,
+  "foreign_avg": 2.59,
   "foreign_n": 29
  },
  {
   "rank": 7,
-  "topic": "국내 대형주",
-  "kind": "국내 검증 주제",
-  "confidence": "높음",
-  "title_idea": "숫자 하나로 보는 국내 대형주",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "숫자 강조형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 1.93,
-  "kr_n": 210,
-  "foreign_avg": 0.65,
-  "foreign_n": 8
- },
- {
-  "rank": 8,
   "topic": "환율·달러",
   "kind": "국내 검증 주제",
   "confidence": "높음",
@@ -106,9 +92,23 @@
   "format": "단일 이미지",
   "hook": "짧은 한 줄",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.08,
+  "kr_avg": 2.09,
   "kr_n": 85,
-  "foreign_avg": 1.17,
+  "foreign_avg": 1.16,
   "foreign_n": 9
+ },
+ {
+  "rank": 8,
+  "topic": "국내 대형주",
+  "kind": "국내 검증 주제",
+  "confidence": "높음",
+  "title_idea": "숫자 하나로 보는 국내 대형주",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "숫자 강조형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 1.88,
+  "kr_n": 210,
+  "foreign_avg": 0.65,
+  "foreign_n": 8
  }
 ]
