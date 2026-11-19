@@ -10,7 +10,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 6.36,
   "kr_n": 2,
-  "foreign_avg": 1.94,
+  "foreign_avg": 1.95,
   "foreign_n": 54
  },
  {
@@ -23,9 +23,9 @@
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
   "kr_avg": 1.9,
-  "kr_n": 641,
-  "foreign_avg": 2.57,
-  "foreign_n": 371
+  "kr_n": 642,
+  "foreign_avg": 2.59,
+  "foreign_n": 375
  },
  {
   "rank": 3,
@@ -36,9 +36,9 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.0,
+  "kr_avg": 2.01,
   "kr_n": 76,
-  "foreign_avg": 1.95,
+  "foreign_avg": 1.96,
   "foreign_n": 105
  },
  {
@@ -50,27 +50,13 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.13,
-  "kr_n": 49,
-  "foreign_avg": 1.62,
-  "foreign_n": 76
+  "kr_avg": 1.11,
+  "kr_n": 50,
+  "foreign_avg": 1.61,
+  "foreign_n": 77
  },
  {
   "rank": 5,
-  "topic": "환율·달러",
-  "kind": "국내 검증 주제",
-  "confidence": "높음",
-  "title_idea": "환율·달러, 한 줄 정리",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "짧은 한 줄",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 2.08,
-  "kr_n": 85,
-  "foreign_avg": 1.16,
-  "foreign_n": 9
- },
- {
-  "rank": 6,
   "topic": "테슬라",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
@@ -78,10 +64,24 @@
   "format": "단일 이미지",
   "hook": "짧은 한 줄",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.72,
+  "kr_avg": 2.73,
   "kr_n": 40,
-  "foreign_avg": 2.57,
+  "foreign_avg": 2.58,
   "foreign_n": 29
+ },
+ {
+  "rank": 6,
+  "topic": "환율·달러",
+  "kind": "국내 검증 주제",
+  "confidence": "높음",
+  "title_idea": "환율·달러, 한 줄 정리",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "짧은 한 줄",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 2.07,
+  "kr_n": 85,
+  "foreign_avg": 1.16,
+  "foreign_n": 9
  },
  {
   "rank": 7,
@@ -92,8 +92,8 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.92,
-  "kr_n": 213,
+  "kr_avg": 1.93,
+  "kr_n": 212,
   "foreign_avg": 0.65,
   "foreign_n": 8
  },
@@ -108,7 +108,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 2.14,
   "kr_n": 51,
-  "foreign_avg": 2.34,
+  "foreign_avg": 2.35,
   "foreign_n": 39
  }
 ]
