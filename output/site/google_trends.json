@@ -1,21 +1,30 @@
 [
  {
   "geo": "KR",
+  "term": "관광",
+  "traffic": 5000,
+  "topics": "국내 대형주",
+  "econ": true,
+  "news_title": "(11월 20일~22일) 역대 최대 규모 ‘2026 대한민국 관광기념품 박람회’ 개최! : 네이버 블로그",
+  "news_link": "https://blog.naver.com/PostView.naver?blogId=mcstkorea&logNo=224481901157&redirect=Dlog"
+ },
+ {
+  "geo": "KR",
+  "term": "리트",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "[속보] ‘리트만점자’ 이진우, 약속 시간에 안 나타나…\"어제부터 연락 안 돼\"",
+  "news_link": "https://news.jtbc.co.kr/article/NB12328782"
+ },
+ {
+  "geo": "KR",
   "term": "weather",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "CNY weather: High temps will continue to climb this week",
-  "news_link": "https://www.syracuse.com/weather/2026/11/cny-weather-high-temps-will-continue-to-climb-this-week.html"
- },
- {
-  "geo": "KR",
-  "term": "미역국",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "수능 날 미역국 먹어도 된다면서…고3 딸 둔 의사가 말리는 이유 [29면]",
-  "news_link": "https://www.segye.com/newsView/20261117513101"
+  "news_title": "‘Nothing I can do about it’: North Country woman made most of FAA ground stop",
+  "news_link": "https://www.wwnytv.com/2026/11/17/nothing-i-can-do-about-it-north-country-woman-made-most-faa-ground-stop/"
  },
  {
   "geo": "KR",
@@ -28,6 +37,24 @@
  },
  {
   "geo": "KR",
+  "term": "s&p 500",
+  "traffic": 500,
+  "topics": "AI·반도체, ETF·지수투자",
+  "econ": true,
+  "news_title": "Dow drops more than 500 points; S&P 500 falls for fifth day as Nvidia sells off",
+  "news_link": "https://www.cnbc.com/2026/11/17/stock-market-today-live-updates.html"
+ },
+ {
+  "geo": "KR",
+  "term": "2027 수능",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "[2027수능 포토] 목발 짚고 시험장 들어서는 수험생",
+  "news_link": "https://www.newscj.com/news/articleView.html?idxno=3450074"
+ },
+ {
+  "geo": "KR",
   "term": "ionq",
   "traffic": 200,
   "topics": "",
@@ -37,21 +64,12 @@
  },
  {
   "geo": "KR",
-  "term": "lg그룹",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "안정 택한 LG, 주요 CEO 대거 유임 전망",
-  "news_link": "https://www.hankyung.com/article/2026111855481"
- },
- {
-  "geo": "KR",
   "term": "nvda",
   "traffic": 200,
   "topics": "AI·반도체",
   "econ": true,
-  "news_title": "CHART OF THE DAY: Nvidia, $NVDA, Needs To Be Up +26% Today Just To Recapture TRADE Support",
-  "news_link": "https://app.hedgeye.com/insights/190030-chart-of-the-day-nvidia-nvda-needs-to-be-up-26-today-just-to-rec?type=macro%2Cmarket-insights"
+  "news_title": "Same 0.5% risk, different position size: ADR% on NVDA for NASDAQ:NVDA by vishalreddy247",
+  "news_link": "https://www.tradingview.com/chart/NVDA/8xHBvsZa-Same-0-5-risk-different-position-size-ADR-on-NVDA/"
  },
  {
   "geo": "KR",
@@ -64,53 +82,89 @@
  },
  {
   "geo": "KR",
-  "term": "다우 존스 산업평균지수",
+  "term": "제미나이 네온",
   "traffic": 200,
-  "topics": "AI·반도체, 실적발표",
+  "topics": "빅테크",
   "econ": true,
-  "news_title": "엔비디아 실적보다 AI 투자 부담…힘 못 쓰는 뉴욕증시 [월가 업&다운]",
-  "news_link": "https://www.hankyung.com/article/202611196100i"
+  "news_title": "구글, '제미나이 4 하이드로젠' 출시…상위 모델 '아르곤' 성능 추월",
+  "news_link": "https://www.aitimes.com/news/articleView.html?idxno=217352"
  },
  {
-  "geo": "KR",
-  "term": "새마을금고",
+  "geo": "US",
+  "term": "bulls vs nets",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Bulls vs. Nets Preview: How to Watch, Injury Report & Odds",
+  "news_link": "https://sports.yahoo.com/articles/bulls-vs-nets-preview-watch-210005787.html"
+ },
+ {
+  "geo": "US",
+  "term": "central mi vs buffalo",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "How to watch Central Michigan vs Buffalo: Live stream NCAA College Football, TV channel",
+  "news_link": "https://sports.yahoo.com/articles/watch-central-michigan-vs-buffalo-233000455.html"
+ },
+ {
+  "geo": "US",
+  "term": "warriors vs mavericks",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Final Injury Report for Warriors-Mavericks: Will Stephen Curry, Kyrie Irving Play?",
+  "news_link": "https://sports.yahoo.com/articles/final-injury-report-warriors-mavericks-210000855.html"
+ },
+ {
+  "geo": "US",
+  "term": "brasileirao",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Grêmio x Bahia: onde assistir ao vivo, horário e escalações",
+  "news_link": "https://ge.globo.com/rs/futebol/brasileirao-serie-a/noticia/2026/11/18/gremio-x-bahia-onde-assistir-ao-vivo-horario-e-escalacoes.ghtml"
+ },
+ {
+  "geo": "US",
+  "term": "penn state basketball",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Penn State basketball set to add Serbian guard Savo Drezgic",
+  "news_link": "https://247sports.com/college/penn-state/article/penn-state-basketball-set-to-add-serbian-guard-savo-drezgic-292901164/"
+ },
+ {
+  "geo": "US",
+  "term": "corinthians vs botafogo",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "양주시, 지방보조금 전용 계좌 운영 업무 협약 체결",
-  "news_link": "https://www.yna.co.kr/view/AKR20261118146000060"
- },
- {
-  "geo": "KR",
-  "term": "kb금융그룹",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "KB금융 '생산적 금융' 김성현·AX 이창권 부문장 사의…거버넌스 재편",
-  "news_link": "https://v.daum.net/v/VT9QWXIkki"
+  "news_title": "Gambia vs Ivory Coast: Africa Cup of Nations Qualification stats & head-to-head",
+  "news_link": "https://www.bbc.com/sport/football/live/c6p3ew443ezet"
  },
  {
   "geo": "US",
-  "term": "bucks vs heat",
-  "traffic": 20000,
+  "term": "is cade cunningham playing tonight",
+  "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Re-grading the Giannis Antetokounmpo trade: Why the Heat and Bucks both look much worse now",
-  "news_link": "https://www.cbssports.com/nba/news/regrading-giannis-antetokounmpo-trade-heat-bucks/"
+  "news_title": "Pistons vs. Pelicans preview: Closing out the road trip in New Orleans",
+  "news_link": "https://www.detroitbadboys.com/detroit-pistons-game-day/51551/pistons-vs-pelicans-preview-closing-out-the-road-trip-in-new-orleans"
  },
  {
   "geo": "US",
-  "term": "hakeem jeffries",
-  "traffic": 10000,
+  "term": "jason kidd",
+  "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Democrats Nominate Jeffries as Speaker, Making History",
-  "news_link": "https://www.nytimes.com/2026/11/18/us/politics/hakeem-jeffries-speaker-of-the-house-democrats.html"
+  "news_title": "Where does LeBron James stand in the NBA record books?",
+  "news_link": "https://www.nba.com/news/lebron-james-all-time-leaders-rankings"
  },
  {
   "geo": "US",
-  "term": "76ers vs magic",
-  "traffic": 5000,
+  "term": "where to watch 76ers vs orlando magic",
+  "traffic": 200,
   "topics": "",
   "econ": false,
   "news_title": "Philadelphia 76ers Visit Orlando Magic Wednesday Night",
@@ -118,65 +172,11 @@
  },
  {
   "geo": "US",
-  "term": "grand theft auto: san andreas",
-  "traffic": 5000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Wow, GTA 6 Has Some Incredible Animations",
-  "news_link": "https://kotaku.com/wow-gta-6-has-some-incredible-animations-2000756295"
- },
- {
-  "geo": "US",
-  "term": "grizzlies vs cavaliers",
-  "traffic": 5000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Cavaliers score vs Grizzlies. Live game updates, injury news, stats",
-  "news_link": "https://sports.yahoo.com/articles/cavaliers-score-vs-grizzlies-live-230103091.html"
- },
- {
-  "geo": "US",
-  "term": "rockets vs pacers",
-  "traffic": 5000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Final Injury Report for Rockets-Pacers: Will Amen Thompson, Tyrese Haliburton Play?",
-  "news_link": "https://sports.yahoo.com/articles/final-injury-report-rockets-pacers-200000194.html"
- },
- {
-  "geo": "US",
-  "term": "flamengo vs athletico-pr",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Preview: Flamengo vs Athletico Paranaense - prediction, team news, lineups",
-  "news_link": "https://www.sportsmole.co.uk/football/flamengo/preview/flamengo-vs-athletico-pr-prediction-team-news-lineups_609284.html"
- },
- {
-  "geo": "US",
-  "term": "kyle isbel",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Kyle Isbel designated for assignment",
-  "news_link": "https://www.royalsreview.com/kansas-city-royals-news/108270/kyle-isbel-designated-for-assignment"
- },
- {
-  "geo": "US",
-  "term": "tesla yl",
-  "traffic": 500,
-  "topics": "테슬라",
-  "econ": true,
-  "news_title": "Op-Ed: I spent a day being driven by a Tesla. Every automaker now has an existential choice to make.",
-  "news_link": "https://news.dealershipguy.com/p/op-ed-i-spent-a-day-being-driven-by-a-tesla-every-automaker-now-has-an-existential-choice-to-make-83"
- },
- {
-  "geo": "US",
-  "term": "dedan thomas jr.",
+  "term": "이진우",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Prince Named to Wooden Watch List - University of Nebraska - Official Athletics Website",
-  "news_link": "https://huskers.com/news/2026/11/18/prince-named-to-wooden-watch-list"
+  "news_title": "[속보] ‘리트 만점자’ 이진우씨, 공개 검증장 약속 시간에 안 나타나",
+  "news_link": "https://www.chosun.com/national/incident/2026/11/19/NJ42GV6P2ZENFACW4VOA4OLMB4/"
  }
 ]
