@@ -1,48 +1,57 @@
 [
  {
   "geo": "KR",
-  "term": "남태현",
-  "traffic": 2000,
+  "term": "이진우 심정지",
+  "traffic": 100000,
   "topics": "",
   "econ": false,
-  "news_title": "'음주 상태로 시속 182㎞' 남태현, 2심서 법정구속",
-  "news_link": "https://www.hankyung.com/article/202611196853H"
+  "news_title": "[속보] '리트 만점자' 이진우 씨, 서울 천호동서 심정지 상태 발견",
+  "news_link": "https://imnews.imbc.com/news/2026/society/article/6866915_36918.html"
  },
  {
   "geo": "KR",
-  "term": "양민혁",
+  "term": "조선일보",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "손흥민 \"내 자리 그냥 물려줄 생각 없어\" 예언이었나...'벨기에에서도 벤치' 양민혁, 초대형 경쟁자 호평 등장 \"올 시즌 도약 가능성 크다\"",
-  "news_link": "https://www.sportschosun.com/football/2026-11-19/202611190100121670011269"
+  "news_title": "TV조선 ‘재승인 점수 조작’ 무죄, 조선일보·TV조선은 침묵?",
+  "news_link": "https://www.mediatoday.co.kr/news/articleView.html?idxno=338516"
  },
  {
   "geo": "KR",
-  "term": "주식시장",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "수능일 증시 오전 10시 개장…정규장 4시반까지",
-  "news_link": "https://www.yonhapnewstv.co.kr/news/MYH20261119094205rla"
+  "term": "네이버 뉴스",
+  "traffic": 1000,
+  "topics": "국내 대형주",
+  "econ": true,
+  "news_title": "607곳 전원 탈락 낳은 네이버의 무리수, 정량 확대·합격선 상향이 빚은 폐쇄",
+  "news_link": "https://www.dhilbo.co.kr/news/articleView.html?idxno=2430"
  },
  {
   "geo": "KR",
-  "term": "크리스 페덱",
-  "traffic": 2000,
+  "term": "박찬종",
+  "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "KIA도 KBO도 놀랐던 이 선수… 삼성 초비상 美日 모두 붙었다, 그런데 믿을 구석 있다?",
-  "news_link": "https://www.spotvnews.co.kr/news/articleView.html?idxno=1020667"
+  "news_title": "박찬종 전 의원 별세…34년 전 약속대로 주검 기증",
+  "news_link": "https://www.hani.co.kr/arti/politics/assembly/1288101.html"
  },
  {
   "geo": "KR",
-  "term": "하남시",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "\"수능 아들 도시락 주려다 교통사고\"…엄마의 다급한 사연에 경찰이 나섰다",
-  "news_link": "https://www.ikbc.co.kr/article/view/kbc202611190036"
+  "term": "수능 수학",
+  "traffic": 1000,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "1년전 AI도 수능 수학 만점 …교육·시험평가체계 낙제",
+  "news_link": "https://www.etnews.com/20261118000364"
+ },
+ {
+  "geo": "KR",
+  "term": "체포",
+  "traffic": 1000,
+  "topics": "부동산",
+  "econ": true,
+  "news_title": "하남 아파트 헌옷수거함에 숨진 아기 버린 30대 친모 체포",
+  "news_link": "https://www.kyeonggi.com/article/20261119580003"
  },
  {
   "geo": "KR",
@@ -55,30 +64,12 @@
  },
  {
   "geo": "KR",
-  "term": "김민석",
+  "term": "내란죄",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "한덕수·김건희 '운명의 날'‥선고 실시간 중계",
-  "news_link": "https://imnews.imbc.com/replay/2026/nwtoday/article/6866771_37012.html"
- },
- {
-  "geo": "KR",
-  "term": "박찬종",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "박찬종 전 의원 별세…향년 88, 세브란스병원에 주검 기증",
-  "news_link": "https://www.hani.co.kr/arti/politics/assembly/1288101.html"
- },
- {
-  "geo": "KR",
-  "term": "신용회복위원회",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "불법사채 피해구제 문턱 낮춘다…16일부터 온라인 신청",
-  "news_link": "https://www.sentv.co.kr/article/view/sentv202611150011?d=pc"
+  "news_title": "김건희·한덕수 대법 선고 'D-DAY'...YTN 생중계",
+  "news_link": "https://www.ytn.co.kr/_ln/0103_202611191204203334"
  },
  {
   "geo": "KR",
@@ -90,93 +81,102 @@
   "news_link": "https://www.yna.co.kr/view/AKR20261118119200003"
  },
  {
+  "geo": "KR",
+  "term": "김민석",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "당원주권시대 \"김민석, 불공정 윤리심판 중단하라\"…최민희 징계 반발",
+  "news_link": "https://www.chosun.com/politics/assembly/2026/11/19/N5YMT5FXKNGMDBOVUJQH2LRXYA/"
+ },
+ {
   "geo": "US",
-  "term": "technology news",
+  "term": "neemias queta",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "What on Earth Is Going On?",
-  "news_link": "https://www.theatlantic.com/ideas/2026/11/major-server-outage-response/689486/"
+  "news_title": "Magic 115-105 Celtics (Nov 16, 2026) Game Recap",
+  "news_link": "https://www.espn.com/nba/recap/_/gameId/401909994"
  },
  {
   "geo": "US",
-  "term": "keyonte george",
+  "term": "nuggets",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Celtics at Nuggets preview: Boston kicks off four-game road trip",
+  "news_link": "https://www.bostonglobe.com/2026/11/18/sports/celtics-nuggets-preview-november-18-2026/"
+ },
+ {
+  "geo": "US",
+  "term": "chris pratt",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "New details on Keyonte George’s injury",
-  "news_link": "https://www.slcdunk.com/utah-jazz-game-coverage/70789/new-details-on-keyonte-georges-injury"
+  "news_title": "Chris Pratt to Star in Sci-Fi Family Drama ‘The Traveler,’ Inks First-Look Producing Deal at Paramount (EXCLUSIVE)",
+  "news_link": "https://variety.com/2026/film/news/chris-pratt-the-traveler-paramount-deal-1236952517/"
  },
  {
   "geo": "US",
-  "term": "matt rife",
+  "term": "darius acuff jr.",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Lisa Ann and Kendra Lust Escalate Dispute Over Matt Rife",
-  "news_link": "https://suaragarut.id/en/lisa-ann-kendra-lust-rife-dispute"
+  "news_title": "Damian Lillard respects Darius Acuff Jr.’s mentality. He also knows the test ahead",
+  "news_link": "https://www.nytimes.com/athletic/7790682/2026/11/18/darius-acuff-damian-lillard-winning-kings/"
  },
  {
   "geo": "US",
-  "term": "kylie jenner",
+  "term": "julia garner",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "EXCLUSIVE: Kylie Jenner’s $38 Million Concrete Mansion Is Back on the Market With a Glamorous New Look",
-  "news_link": "https://www.realtor.com/news/celebrity-real-estate/kylie-jenner-relists-los-angeles-concrete-mansion/"
+  "news_title": "What Happened When Anna Delvey Crashed Julia Garner’s The Altruists Q&A",
+  "news_link": "https://www.vulture.com/article/anna-delvey-crashed-julia-garner-the-altruists-screening.html"
  },
  {
   "geo": "US",
-  "term": "national book award 2026",
+  "term": "nikola jokić",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "National Book Award for Nonfiction Goes to Writer Denied Visa to Attend",
-  "news_link": "https://www.nytimes.com/2026/11/18/books/national-book-award-for-nonfiction-goes-to-writer-denied-visa-to-attend.html"
+  "news_title": "Rockets Floated to Land Nikola Jokic in Massive Trade Pitch",
+  "news_link": "https://sports.yahoo.com/articles/rockets-floated-land-nikola-jokic-180648779.html"
  },
  {
   "geo": "US",
-  "term": "supernova explosion",
+  "term": "rumble",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Astronomers Find Hints of Star Population That Failed to Explode",
-  "news_link": "https://www.caltech.edu/about/news/astronomers-find-hints-of-star-population-that-failed-to-explode"
+  "news_title": "Reson8 releases Rumble-2-Flash speech model as a free open-weights download",
+  "news_link": "https://siliconangle.com/2026/11/18/reson8-releases-rumble-2-flash-speech-model-as-a-free-open-weights-download/"
  },
  {
   "geo": "US",
-  "term": "timothee chalamet",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Timothée Chalamet, a Star on Planet Earth",
-  "news_link": "https://www.vanityfair.com/story/timothee-chalamet-cover-story"
- },
- {
-  "geo": "US",
-  "term": "male vocalist of the year",
+  "term": "derrick white",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Germany 5-0 Netherlands (Nov 16, 2026) Game Analysis",
-  "news_link": "https://www.espn.com/soccer/report/_/gameId/401861185"
+  "news_title": "Bill Simmons Names 2 Players Celtics Could Get in Derrick White Trade",
+  "news_link": "https://sports.yahoo.com/articles/bill-simmons-names-2-players-021156920.html"
  },
  {
   "geo": "US",
-  "term": "microsoft satya nadella employee buyouts",
-  "traffic": 200,
-  "topics": "빅테크",
-  "econ": true,
-  "news_title": "Microsoft CEO Satya Nadella explains why he asked 60K employees to quit",
-  "news_link": "https://finance.yahoo.com/technology/ai/articles/microsoft-ceo-satya-nadella-explains-004256847.html"
- },
- {
-  "geo": "US",
-  "term": "portland vs colorado",
+  "term": "jaxson hayes",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Miscues adding up as CU Buffs men’s basketball hosts Portland",
-  "news_link": "https://www.dailycamera.com/2026/11/17/colorado-buffaloes-basketball-vs-portland-pilots/"
+  "news_title": "Jaxson Hayes will be available against Lakers",
+  "news_link": "https://www.nbcsports.com/fantasy/basketball/player-news/2026-11-18/jaxson-hayes-will-be-available-against-lakers"
+ },
+ {
+  "geo": "US",
+  "term": "jordan walsh",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Jordan Walsh continues to play himself into Boston’s lineup",
+  "news_link": "https://www.celticsblog.com/celtics-analysis/150397/jordan-walsh-continues-to-play-himself-into-bostons-lineup"
  }
 ]
