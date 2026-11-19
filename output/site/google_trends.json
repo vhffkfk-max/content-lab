@@ -1,6 +1,24 @@
 [
  {
   "geo": "KR",
+  "term": "아파트",
+  "traffic": 5000,
+  "topics": "부동산",
+  "econ": true,
+  "news_title": "‘한강벨트’ 용산·동작도 집값 하락",
+  "news_link": "https://www.khan.co.kr/article/202611192049035"
+ },
+ {
+  "geo": "KR",
+  "term": "김연경",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "[포토]'다시 시작한 배구, 살맛납니다!' 표승주 - 머니투데이",
+  "news_link": "https://www.mt.co.kr/sports/2026/11/19/2026111918234413089"
+ },
+ {
+  "geo": "KR",
   "term": "택시",
   "traffic": 2000,
   "topics": "",
@@ -10,62 +28,26 @@
  },
  {
   "geo": "KR",
-  "term": "김연경",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "김연경 사단 '필승 원더독스', 실업팀 전통강호 포항시체육회 상대로 셧아웃 승리 도전('신인감독2')",
-  "news_link": "https://www.chosun.com/entertainments/broadcast/2026/11/19/GNRTCMDCGA4TCMZYG42WENDBGY/"
- },
- {
-  "geo": "KR",
   "term": "알렉산더 즈베레프",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "즈베레프, 쉘튼 상대 7전 전승...ATP 파이널스 4강 확정",
-  "news_link": "https://www.tennis.co.kr/news/articleView.html?idxno=54321"
+  "news_title": "즈베레프, 셸턴 꺾고 ATP 파이널스 준결승 진출",
+  "news_link": "https://mobile.newsis.com/photo/NISI20261118_0002294924"
  },
  {
   "geo": "KR",
-  "term": "웹툰",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "[기획] “이혼을 받아들입니다. 그리고 재혼 승인을 요구합니다” - 의상·VFX·미술·음악으로 보는 제작기",
-  "news_link": "https://cine21.com/news/view/?mag_id=111294"
- },
- {
-  "geo": "KR",
-  "term": "천위페이",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "'안세영만 없으면 우승하겠다더니?' 2번 시드 천위페이, 세계랭킹 47위에게 충격적인 역전패…홍콩오픈 16강 어이없는 탈락",
-  "news_link": "https://www.chosun.com/sports/sports_general/2026/11/19/MVQTCNTDGYYDOYZSME2DONDDGA/"
- },
- {
-  "geo": "KR",
-  "term": "amd",
+  "term": "경제",
   "traffic": 500,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "AMD dives on short-seller report of alleged China exposure",
-  "news_link": "https://www.cnbc.com/2026/11/19/amd-falls-on-short-seller-report-of-alleged-china-exposure.html"
- },
- {
-  "geo": "KR",
-  "term": "한강 벨트",
-  "traffic": 200,
-  "topics": "부동산",
-  "econ": true,
-  "news_title": "‘한강벨트’ 용산·동작도 집값 하락",
-  "news_link": "https://www.khan.co.kr/article/202611192049035"
+  "topics": "",
+  "econ": false,
+  "news_title": "北, 라오스와 경제·무역·과학 협력 논의…당·정 교류 이어",
+  "news_link": "https://www.yna.co.kr/view/AKR20261120015000504"
  },
  {
   "geo": "KR",
   "term": "이정현",
-  "traffic": 100,
+  "traffic": 200,
   "topics": "",
   "econ": false,
   "news_title": "이정현, 가수로 13년 만에 돌아온다…'테크노 여전사' 내년 초 컴백 예고",
@@ -74,11 +56,29 @@
  {
   "geo": "KR",
   "term": "축구 감독",
-  "traffic": 100,
+  "traffic": 200,
   "topics": "",
   "econ": false,
   "news_title": "손흥민의 무뎌진 발끝… 찬스에도 골이 안 터진다",
   "news_link": "https://www.chosun.com/sports/football/2026/11/19/IMTHHH2XRBGUDDXWFULQ65XX6I/"
+ },
+ {
+  "geo": "KR",
+  "term": "마우리시오 포체티노",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "포체티노, 맨체스터 도착해 맨유 감독 업무 시작…\"영광·특권\"",
+  "news_link": "https://www.yna.co.kr/view/AKR20261119020100007"
+ },
+ {
+  "geo": "KR",
+  "term": "지방세",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "고액-상습체납자 1년새 29% 늘어 1만3697명",
+  "news_link": "https://www.donga.com/news/Society/article/all/20261118/135050552/2"
  },
  {
   "geo": "KR",
@@ -91,71 +91,26 @@
  },
  {
   "geo": "US",
-  "term": "florida basketball",
-  "traffic": 10000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Cougars Take It to Gators Inside",
-  "news_link": "https://floridagators.com/news/2026/11/18/mens-basketball-cougars-take-it-to-the-gators-inside-nov-18-2026"
- },
- {
-  "geo": "US",
-  "term": "kenneth walker injury",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Cardinals-Chiefs injury report: Offensive line help on the way?",
-  "news_link": "https://arizonasports.com/arizona-cardinals-injury-report/cardinals-chiefs-injury-report"
- },
- {
-  "geo": "US",
   "term": "pete rose",
-  "traffic": 2000,
+  "traffic": 5000,
   "topics": "정치·관세",
   "econ": true,
-  "news_title": "Pete Rose Posthumously Pardoned by Trump After Baseball's Career Hits Leader Was Reinstated by MLB",
-  "news_link": "https://bleacherreport.com/articles/25535443-pete-rose-posthumously-pardoned-trump-after-baseballs-career-hits-leader-was-reinstated-mlb"
+  "news_title": "Pete Rose posthumously pardoned by President Donald Trump",
+  "news_link": "https://www.espn.com/mlb/story/_/id/50534187/pete-rose-posthumously-pardoned-president-donald-trump"
  },
  {
   "geo": "US",
-  "term": "troy aikman",
+  "term": "ps5 gta6",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "GTA 6: PS5 vs PS5 Pro, Xbox Series X and Series S: Which Console Plays Best?",
+  "news_link": "https://www.digitalfoundry.net/features/gta-6-ps5-vs-ps5-pro-xbox-series-x-and-series-s-which-console-plays-best"
+ },
+ {
+  "geo": "US",
+  "term": "notre dame basketball",
   "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Troy Aikman takes dig at Joe Buck, extending tensions: ‘Joe’s always wanted a 1-man booth’ - The Athletic",
-  "news_link": "https://www.nytimes.com/athletic/7795096/2026/11/19/troy-aikman-joe-buck-espn-nfl-super-bowl-61/"
- },
- {
-  "geo": "US",
-  "term": "intu stock",
-  "traffic": 1000,
-  "topics": "실적발표",
-  "econ": true,
-  "news_title": "Intuit Earnings Beat Wasn’t Enough to Boost the Stock",
-  "news_link": "https://www.barrons.com/articles/intuit-earnings-stock-price-50cb5c01"
- },
- {
-  "geo": "US",
-  "term": "jim cramer",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Jim Cramer says to buy stock in this sleeping tech giant 'aggressively, aggressively'",
-  "news_link": "https://www.cnbc.com/investingclub/2026/11/19/jim-cramer-says-to-buy-stock-in-this-sleeping-tech-giant-aggressively.html"
- },
- {
-  "geo": "US",
-  "term": "justin reid",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Justin Reid Reportedly Released by Saints, Latest NFL Rumors on Potential Landing Spots",
-  "news_link": "https://bleacherreport.com/articles/25535439-justin-reid-reportedly-released-saints-latest-nfl-rumors-potential-landing-spots"
- },
- {
-  "geo": "US",
-  "term": "auburn vs notre dame prediction",
-  "traffic": 500,
   "topics": "",
   "econ": false,
   "news_title": "Auburn vs. Notre Dame live updates: Score, highlights, analysis",
@@ -163,20 +118,65 @@
  },
  {
   "geo": "US",
-  "term": "julia stiles",
-  "traffic": 500,
+  "term": "toyota",
+  "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "Julia Stiles Shares Who She Wants to Win Dancing with the Stars Ahead of the Season 35 Finale (Exclusive)",
-  "news_link": "https://people.com/julia-styles-shares-who-she-wants-to-win-dancing-with-the-stars-ahead-of-the-season-35-finale-exclusive-12264395"
+  "news_title": "Toyota is recalling over 300,000 vehicles. See affected models",
+  "news_link": "https://www.usatoday.com/story/cars/recalls/2026/11/19/toyota-recalls-vehicles-lexus-models/92860583007/"
  },
  {
   "geo": "US",
-  "term": "denver weather",
+  "term": "vasco da gama x internacional",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Vasco x Internacional: onde assistir ao vivo, horário e escalações",
+  "news_link": "https://ge.globo.com/rj/futebol/brasileirao-serie-a/noticia/2026/11/19/vasco-x-internacional-onde-assistir-ao-vivo-horario-e-escalacoes.ghtml"
+ },
+ {
+  "geo": "US",
+  "term": "cameron fens",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "UNC's Cameron Fens files lawsuit vs. NCAA, seeks to recover year of eligibility",
+  "news_link": "https://www.espn.com/mens-college-basketball/story/_/id/50526108/unc-cameron-fens-files-lawsuit-ncaa"
+ },
+ {
+  "geo": "US",
+  "term": "kylie kelce",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Kylie Kelce Slams Fan Over Question About Her Sex Life with Husband Jason: ‘What the Actual F---?’",
+  "news_link": "https://people.com/kylie-kelce-slams-fan-question-sex-life-husband-jason-kelce-12265196"
+ },
+ {
+  "geo": "US",
+  "term": "liv hewson",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "‘Yellowjackets’ Season 4 review: Once-buzzy thriller still has some life in it",
+  "news_link": "https://www.seattletimes.com/entertainment/tv/yellowjackets-season-4-review-once-buzzy-thriller-still-has-some-life-in-it/"
+ },
+ {
+  "geo": "US",
+  "term": "vasco vs internacional",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Vasco da Gama - Internacional en directo - Serie A Brasil: Resultados y resúmenes de Fútbol - 19/11/2026",
+  "news_link": "https://www.eurosport.es/futbol/serie-a-brasil/2026/vasco-da-gama-internacional_mtc1656910/live.shtml"
+ },
+ {
+  "geo": "US",
+  "term": "uefa women's champions league",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Snow to pick up in Colorado mountains, colder fall temps this weekend",
-  "news_link": "https://www.9news.com/article/weather/weather-colorado/snow-colorado-mountains-forecast/73-6d5427a0-5fab-444e-a038-7020f83a5266"
+  "news_title": "Arsenal 0-2 OL Lyon: French giants outclass Gunners",
+  "news_link": "https://www.bbc.com/sport/football/live/cmvg250r0jpkt"
  }
 ]
