@@ -1,21 +1,12 @@
 [
  {
   "geo": "KR",
-  "term": "anthropic stock",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Anthropic IPO live: Anthropic stock begins trading in record $81B raise with $1.5 valuation",
-  "news_link": "https://finance.yahoo.com/technology/live/anthropic-ipo-live-company-said-to-price-stock-at-83-begin-trading-thursday-212656452.html"
- },
- {
-  "geo": "KR",
   "term": "앤트로픽 주가",
   "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "\"앤트로픽 기관투자자 절반이상 물량 못받아…美위주 배정\"",
-  "news_link": "https://www.yna.co.kr/view/AKR20261120001400072"
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "창업 5년새 기업가치 2000조원... 앤스로픽 상장, AI 불씨 살릴까",
+  "news_link": "https://www.chosun.com/economy/int_economy/2026/11/19/727FDBQ3VRCT7DRNM5EJFH4MWM/"
  },
  {
   "geo": "KR",
@@ -25,6 +16,15 @@
   "econ": true,
   "news_title": "연천군, 스마트경로당 112개소서 어르신 건강 강좌…수분 섭취 강조",
   "news_link": "https://www.gukjenews.com/news/articleView.html?idxno=3757520"
+ },
+ {
+  "geo": "KR",
+  "term": "천위페이",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "[오늘의 영상] 언제나 어디서나 월드 클래스!",
+  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8714321"
  },
  {
   "geo": "KR",
@@ -41,8 +41,8 @@
   "traffic": 200,
   "topics": "AI·반도체",
   "econ": true,
-  "news_title": "AMD falls on short-seller report of alleged China exposure",
-  "news_link": "https://www.cnbc.com/2026/11/19/amd-falls-on-short-seller-report-of-alleged-china-exposure.html"
+  "news_title": "Problems at AMD (AMD)",
+  "news_link": "https://hntrbrk.com/investigations/bank-of-amd"
  },
  {
   "geo": "KR",
@@ -52,6 +52,15 @@
   "econ": true,
   "news_title": "[도쿄환시] 달러-엔 상승…美 연준 인사들 금리인상 지지",
   "news_link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4445573"
+ },
+ {
+  "geo": "KR",
+  "term": "웹툰",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "[기획] “이혼을 받아들입니다. 그리고 재혼 승인을 요구합니다” - 의상·VFX·미술·음악으로 보는 제작기",
+  "news_link": "https://cine21.com/news/view/?mag_id=111294"
  },
  {
   "geo": "KR",
@@ -81,24 +90,6 @@
   "news_link": "https://www.yna.co.kr/view/AKR20261119154100005"
  },
  {
-  "geo": "KR",
-  "term": "웹툰",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "[기획] “이혼을 받아들입니다. 그리고 재혼 승인을 요구합니다” - 의상·VFX·미술·음악으로 보는 제작기",
-  "news_link": "https://cine21.com/news/view/?mag_id=111294"
- },
- {
-  "geo": "US",
-  "term": "al gore",
-  "traffic": 10000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Congress may soon pass the biggest environmental bill in decades. Here’s why.",
-  "news_link": "https://www.washingtonpost.com/climate-environment/2026/11/19/bipartisan-permitting-reform-bill-explained/"
- },
- {
   "geo": "US",
   "term": "jazz fest 2027 lineup",
   "traffic": 5000,
@@ -109,17 +100,8 @@
  },
  {
   "geo": "US",
-  "term": "riley moss",
+  "term": "invincible",
   "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Sources -- Broncos sign CB Riley Moss to four-year extension",
-  "news_link": "https://www.espn.com/nfl/story/_/id/50532392/sources-broncos-sign-cb-riley-moss-four-year-extension"
- },
- {
-  "geo": "US",
-  "term": "invincible season 5",
-  "traffic": 1000,
   "topics": "",
   "econ": false,
   "news_title": "‘Invincible’ Season 5 Sets Release Date, Drops Burger Mart Teaser Trailer",
@@ -127,21 +109,57 @@
  },
  {
   "geo": "US",
-  "term": "conroe high school",
-  "traffic": 500,
+  "term": "jpmorgan chase & co",
+  "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "Conroe High School placed on lockdown due to 'concerning phone call'",
-  "news_link": "https://www.khou.com/article/news/local/conroe-high-school-lockdown/285-aa02087e-532f-4f34-9160-d3ef37c37390"
+  "news_title": "Visa, Mastercard and JPMorgan Customer Data Leaked by Hackers",
+  "news_link": "https://www.wsj.com/finance/banking/visa-mastercard-and-jpmorgan-customer-data-leaked-by-hackers-3b5a0f87"
+ },
+ {
+  "geo": "US",
+  "term": "south carolina",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Susan Smith, who killed her young boys 3 decades ago in a South Carolina lake, is denied parole",
+  "news_link": "https://www.cnn.com/2026/11/19/us/susan-smith-parole-decision"
  },
  {
   "geo": "US",
   "term": "dwts finale songs",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "‘Dancing With The Stars’ Finale Will Go Live Across The Country For The First Time",
+  "news_link": "https://deadline.com/2026/11/dancing-with-the-stars-finale-live-across-the-country-1237226920/"
+ },
+ {
+  "geo": "US",
+  "term": "rsm classic",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "With PGA Tour privileges on the line, this former winner had to WD from RSM Classic",
+  "news_link": "https://sports.yahoo.com/articles/pga-tour-privileges-line-former-181121257.html"
+ },
+ {
+  "geo": "US",
+  "term": "conroe high school",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Dancing With the Stars Reveals Major Change for Season 35 Finale",
-  "news_link": "https://www.eonline.com/news/1438204/dancing-with-the-stars-season-35-finale-airing-live-coast-to-coast-nov-24"
+  "news_title": "Conroe High School on lockdown following 'concerning phone call'",
+  "news_link": "https://www.fox26houston.com/news/conroe-high-school-lockdown-texas-2026"
+ },
+ {
+  "geo": "US",
+  "term": "marlon jackson",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "#TSRPrayersUp: #MarlonJackson is opening up about his health journey. During an appearance on @thefarahshammaspodcast, the singer revealed that he’s been living with prostate cancer for four years and shared that his cancer is stage 4. ____________",
+  "news_link": "https://www.instagram.com/p/Df7lsKWSqP6/"
  },
  {
   "geo": "US",
@@ -154,29 +172,11 @@
  },
  {
   "geo": "US",
-  "term": "rsm classic",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "With PGA Tour privileges on the line, this former winner had to WD from RSM Classic",
-  "news_link": "https://sports.yahoo.com/articles/pga-tour-privileges-line-former-181121257.html"
- },
- {
-  "geo": "US",
   "term": "ashton kutcher anthropic",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Ashton Kutcher to become billionaire when Anthropic goes public",
-  "news_link": "https://www.thetimes.com/us/american-politics/article/ashton-kutcher-billionaire-anthropic-ipo-5mg275l59"
- },
- {
-  "geo": "US",
-  "term": "roaring kitty",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Roaring Kitty Is Back. Can He Spark Another GameStop Stock Frenzy?",
-  "news_link": "https://www.barrons.com/articles/gamestop-stock-roaring-kitty-6277bb9f"
+  "news_title": "VC Firm Founded by Ashton Kutcher Scores on Anthropic",
+  "news_link": "https://www.wsj.com/livecoverage/anthropic-ipo-stock-market-today-11-19-2026/card/vc-firm-founded-by-ashton-kutcher-set-to-make-billions-on-anthropic-ipo-gAr0Gx7ge3sIXEIs7ukH"
  }
 ]
