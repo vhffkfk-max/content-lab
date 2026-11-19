@@ -11,6 +11,7 @@ import json
 import os
 import sys
 from datetime import datetime, timezone
+from pathlib import Path
 from typing import List
 
 from common import OUTPUT_DIR, load_env
@@ -45,7 +46,7 @@ S9 결론 회피 양비론 / S10 번역투 접속사('또한/따라서/결론적
 주제 비율: 핵심(주식·거시) 60 / 인접(코인·재테크) 30 / 실험 10.
 형식 믹스: 정보·해설 30 / 의견·해석 25 / 경험·고백 15 / 질문·참여 15 / 짧은 한 줄 15.
 반복 피로: 같은 형식 3연속, 첫 문장 패턴 반복, 같은 종목 12개 중 4회 이상. 시리즈 코너 1~2개(12개 중 2~4개)가 적당.
-빈도: 하루 1~3개, 글 사이 3시간 이상, 48시간 이상 공백은 경고. 고정글이 '팔로우하면 얻는 것'을 보여주는지(데이터 없으면 확인 요청).
+빈도: 통합 지침 기준(평일 4~5편+돌발, 최대 7편, 간격 1시간 30분 이상). 48시간 이상 공백은 경고. 고정글이 '팔로우하면 얻는 것'을 보여주는지(데이터 없으면 확인 요청).
 
 [절차]
 1) 글마다 형식(정보/의견/경험/질문/한줄)을 판단해 피드 형식 믹스를 계산한다.
@@ -64,6 +65,15 @@ S9 결론 회피 양비론 / S10 번역투 접속사('또한/따라서/결론적
   '또한/따라서/결론적으로/여러분은 어떻게 생각하시나요?' 같은 상투구 금지.
 - 비판은 글 번호(no)와 인용으로 근거를 댄다. 지난 watch_items 가 있으면 먼저 변화를 보고한다."""
 
+
+
+def load_rules():
+    """대표 확정 통합 지침(threads_rules.md). 이 지침이 위 일반 기준보다 우선."""
+    p = Path(__file__).resolve().parent / "threads_rules.md"
+    try:
+        return "\n\n[대표 확정 통합 지침 — 아래가 위 기준과 다르면 아래가 우선한다]\n" + p.read_text(encoding="utf-8")
+    except OSError:
+        return ""
 
 def main():
     ap = argparse.ArgumentParser()
@@ -189,7 +199,7 @@ def main():
 
     def ask(content, schema, task):
         try:
-            with client.messages.stream(model=MODEL, max_tokens=16000, system=SYSTEM, output_config={"effort": "medium"},
+            with client.messages.stream(model=MODEL, max_tokens=16000, system=SYSTEM + load_rules(), output_config={"effort": "medium"},
                                         messages=[{"role": "user", "content": content + f"\n\n이번 답변에서 할 일: {task}"}],
                                         output_format=schema) as stream:
                 r = stream.get_final_message()

@@ -82,6 +82,15 @@ class Plan(BaseModel):
     skills_used: List[str]
 
 
+
+def load_rules():
+    """대표 확정 통합 지침(threads_rules.md). 이 지침이 위 일반 기준보다 우선."""
+    p = Path(__file__).resolve().parent / "threads_rules.md"
+    try:
+        return "\n\n[대표 확정 통합 지침 — 아래가 위 기준과 다르면 아래가 우선한다]\n" + p.read_text(encoding="utf-8")
+    except OSError:
+        return ""
+
 def rows(name):
     try:
         return json.loads((SITE / f"{name}.json").read_text(encoding="utf-8"))
@@ -160,7 +169,7 @@ def main():
         return print(f"스킬 {len(sk):,}자 · 데이터 {len(prompt):,}자\n{prompt[:2500]}")
     if not anthropic.ready():
         return print("⚠️ Claude Code 가 없어요 — 건너뜀")
-    r = anthropic.Anthropic().messages.parse(model=MODEL, max_tokens=16000, system=SYSTEM.format(skills=sk), output_config={"effort": "medium"},
+    r = anthropic.Anthropic().messages.parse(model=MODEL, max_tokens=16000, system=SYSTEM.format(skills=sk) + load_rules(), output_config={"effort": "medium"},
                                              messages=[{"role": "user", "content": prompt}], output_format=Plan)
     if r.parsed_output is None:
         return print(f"⚠️ 결과를 못 받았어요(stop_reason={r.stop_reason})")
