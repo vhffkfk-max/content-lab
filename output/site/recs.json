@@ -23,9 +23,9 @@
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
   "kr_avg": 1.85,
-  "kr_n": 656,
+  "kr_n": 658,
   "foreign_avg": 2.54,
-  "foreign_n": 383
+  "foreign_n": 384
  },
  {
   "rank": 3,
@@ -37,9 +37,9 @@
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
   "kr_avg": 1.95,
-  "kr_n": 79,
-  "foreign_avg": 1.93,
-  "foreign_n": 107
+  "kr_n": 80,
+  "foreign_avg": 1.94,
+  "foreign_n": 110
  },
  {
   "rank": 4,
@@ -52,25 +52,11 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 2.67,
   "kr_n": 41,
-  "foreign_avg": 2.48,
+  "foreign_avg": 2.5,
   "foreign_n": 31
  },
  {
   "rank": 5,
-  "topic": "ETF·지수투자",
-  "kind": "해외 선행 주제 (선점 기회)",
-  "confidence": "높음",
-  "title_idea": "[오늘] ETF·지수투자에 무슨 일이? 1분 요약",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "속보·뉴스형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 1.12,
-  "kr_n": 50,
-  "foreign_avg": 1.63,
-  "foreign_n": 75
- },
- {
-  "rank": 6,
   "topic": "빅테크",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
@@ -84,6 +70,20 @@
   "foreign_n": 40
  },
  {
+  "rank": 6,
+  "topic": "ETF·지수투자",
+  "kind": "해외 선행 주제 (선점 기회)",
+  "confidence": "높음",
+  "title_idea": "[오늘] ETF·지수투자에 무슨 일이? 1분 요약",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "속보·뉴스형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 1.12,
+  "kr_n": 50,
+  "foreign_avg": 1.63,
+  "foreign_n": 75
+ },
+ {
   "rank": 7,
   "topic": "환율·달러",
   "kind": "국내 검증 주제",
@@ -92,7 +92,7 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "짧은 한 줄",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.98,
+  "kr_avg": 2.0,
   "kr_n": 89,
   "foreign_avg": 1.17,
   "foreign_n": 9
