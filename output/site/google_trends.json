@@ -14,8 +14,8 @@
   "traffic": 5000,
   "topics": "부동산",
   "econ": true,
-  "news_title": "내년 아파트 공시가격 현실화율 69%로 5년째 동결…보유세 영향은?",
-  "news_link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8718593"
+  "news_title": "내년 공시가격 현실화율 동결…\"국민 수용성 고려\"",
+  "news_link": "https://www.yna.co.kr/view/MYH20261120021200038"
  },
  {
   "geo": "KR",
@@ -28,17 +28,8 @@
  },
  {
   "geo": "KR",
-  "term": "두산",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "두산에너빌리티 해상풍력터빈, 글로벌 보험 문턱 넘었다",
-  "news_link": "https://www.electimes.com/news/articleView.html?idxno=375052"
- },
- {
-  "geo": "KR",
   "term": "펍지",
-  "traffic": 500,
+  "traffic": 1000,
   "topics": "",
   "econ": false,
   "news_title": "PUBG x IVE 콜라보레이션 아이템 모델링 개선 안내 - 뉴스 - PUBG: 배틀그라운드",
@@ -46,12 +37,21 @@
  },
  {
   "geo": "KR",
-  "term": "india a cricket team vs nepal national cricket team match scorecard",
+  "term": "u17 việt nam",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Live Cricket Score, Schedule, Latest News, Stats & Videos",
-  "news_link": "https://www.cricbuzz.com/player-match-performance/match/177152/player/11290/bowling?inningsId=1"
+  "news_title": "Trực tiếp bóng đá U17 Bỉ - U17 Việt Nam: Bàn thắng đẹp cuối trận (U17 World Cup) (Hết giờ)",
+  "news_link": "https://www.24h.com.vn/bong-da/truc-tiep-bong-da-u17-bi-u17-viet-nam-ban-thang-dep-cuoi-tran-u17-world-cup-het-gio-c48a1812591.html"
+ },
+ {
+  "geo": "KR",
+  "term": "공포지수",
+  "traffic": 200,
+  "topics": "AI·반도체, 금리·연준, 실적발표, 급락·변동성",
+  "econ": true,
+  "news_title": "엔비디아 호실적도 못 넘은 금리 인상 우려, 뉴욕증시 혼조",
+  "news_link": "https://story.pay.naver.com/content/3999_2_C1"
  },
  {
   "geo": "KR",
@@ -82,21 +82,12 @@
  },
  {
   "geo": "KR",
-  "term": "u17 việt nam",
+  "term": "세계사 2 번",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "Lịch thi đấu U.17 Việt Nam mới nhất: Đấu U.17 New Zealand, cơ hội thắng là đây",
-  "news_link": "https://www.vietnam.vn/lich-thi-dau-u-17-viet-nam-moi-nhat-dau-u-17-new-zealand-co-hoi-thang-la-day"
- },
- {
-  "geo": "US",
-  "term": "jp morgan chase",
-  "traffic": 10000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Visa, Mastercard and JPMorgan Customer Data Leaked by Hackers",
-  "news_link": "https://www.wsj.com/finance/banking/visa-mastercard-and-jpmorgan-customer-data-leaked-by-hackers-3b5a0f87"
+  "news_title": "수험생 90% 틀린 세계사 2번…“진시황이 아니라고?”",
+  "news_link": "https://www.donga.com/news/Society/article/all/20261120/135061386/1"
  },
  {
   "geo": "US",
@@ -119,11 +110,38 @@
  {
   "geo": "US",
   "term": "btc price",
+  "traffic": 2000,
+  "topics": "비트코인, ETF·지수투자",
+  "econ": true,
+  "news_title": "Crypto Market Today, Nov. 19: Bitcoin Approaches $60,000 as ETF Outflows Surpass $2.5 Billion in 2026",
+  "news_link": "https://www.fool.com/coverage/stock-market-today/2026/11/19/crypto-market-today-nov-19-bitcoin-approaches-usd60-000-as-etf-outflows-surpass-usd2-5-billion-in-2026/"
+ },
+ {
+  "geo": "US",
+  "term": "spy",
+  "traffic": 2000,
+  "topics": "ETF·지수투자",
+  "econ": true,
+  "news_title": "Man hired by Russia spied on Silicon Valley tech and defense company, feds say",
+  "news_link": "https://arstechnica.com/security/2026/11/man-charged-with-spying-on-silicon-valley-tech-and-defense-company-for-russia/"
+ },
+ {
+  "geo": "US",
+  "term": "lance bass",
   "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Lance Bass Talks Children’s Christmas Book, 30 Years of NSYNC",
+  "news_link": "https://www.today.com/video/lance-bass-talks-children-s-christmas-book-30-years-of-nsync-273733189634"
+ },
+ {
+  "geo": "US",
+  "term": "bitcoin price usd",
+  "traffic": 500,
   "topics": "비트코인",
   "econ": true,
-  "news_title": "BTC price at 11 AM CST on Nov 20, 2026",
-  "news_link": "https://robinhood.com/us/en/prediction-markets/crypto/events/btc-price-at-11-am-cst-on-nov-20-2026-nov-20-2026/"
+  "news_title": "How Breet Business API is unlocking new payment opportunities for African businesses through cryptocurrency and stablecoins",
+  "news_link": "https://africa.businessinsider.com/local/how-breet-business-api-is-unlocking-new-payment-opportunities-for-african-businesses/vbnlxk7"
  },
  {
   "geo": "US",
@@ -136,47 +154,29 @@
  },
  {
   "geo": "US",
-  "term": "micron stock",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Micron Keeps Falling as Memory Stocks Get Agonizingly Cheap. The Next Catalyst.",
-  "news_link": "https://www.barrons.com/articles/micron-stock-memory-price-catalyst-58e84734"
- },
- {
-  "geo": "US",
   "term": "mstr stock",
   "traffic": 500,
-  "topics": "비트코인",
+  "topics": "",
+  "econ": false,
+  "news_title": "Wall Street analysts say buy Strategy Inc, yet a November 30 shock is coming",
+  "news_link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-analysts-buy-strategy-202222723.html"
+ },
+ {
+  "geo": "US",
+  "term": "soxx",
+  "traffic": 200,
+  "topics": "AI·반도체, ETF·지수투자",
   "econ": true,
-  "news_title": "Strategy (MSTR) On Bitcoin Buying And MSCI Exit Still Looks Undervalued",
-  "news_link": "https://finance.yahoo.com/markets/stocks/articles/strategy-mstr-bitcoin-buying-msci-211424742.html"
+  "news_title": "$1000 Invested In iShares PHLX SOX Semiconductor Sector Index Fund 15 Years Ago Would Be Worth This Much",
+  "news_link": "https://www.benzinga.com/news/26/11/63430495/1000-invested-ishares-phlx-sox-semiconductor-sector-index-fund-15-years-ago-would-be-worth-much-toda"
  },
  {
   "geo": "US",
-  "term": "pj simon",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Former PBA star Peter June Simon, 46, passes away",
-  "news_link": "https://fastbreak.com.ph/former-pba-star-peter-june-simon-46-passes-away/sports-galore/"
- },
- {
-  "geo": "US",
-  "term": "walmart stock",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Walmart’s Digital Sales Are Now Driving Its Growth, Not Stores",
-  "news_link": "https://www.wsj.com/business/earnings/walmart-wmt-3q-earnings-report-2026-6e658c54"
- },
- {
-  "geo": "US",
-  "term": "interland",
+  "term": "when we were young festival 2027",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Twijfels over EK-perspectief van Jong Oranje na wisselvallige kwalificatie: ’Ik heb er een hard hoofd in’",
-  "news_link": "https://www.telegraaf.nl/sport/voetbal/twijfels-over-ek-perspectief-van-jong-oranje-na-wisselvallige-kwalificatie-ik-heb-er-een-hard-hoofd-in/164735874.html"
+  "news_title": "Blink-182, Pierce the Veil to headline When We Were Young in 2027",
+  "news_link": "https://lasvegassun.com/news/2026/nov/17/blink-182-pierce-the-veil-to-headline-when-we-were/"
  }
 ]
