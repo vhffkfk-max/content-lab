@@ -5,7 +5,7 @@
   "kr_n": 2,
   "foreign_avg": 1.98,
   "foreign_n": 50,
-  "hashtag_hits": 14
+  "hashtag_hits": 16
  },
  {
   "topic": "테슬라",
@@ -13,15 +13,15 @@
   "kr_n": 42,
   "foreign_avg": 2.39,
   "foreign_n": 32,
-  "hashtag_hits": 10
+  "hashtag_hits": 11
  },
  {
   "topic": "AI·반도체",
-  "kr_avg": 1.86,
-  "kr_n": 662,
-  "foreign_avg": 2.53,
+  "kr_avg": 1.85,
+  "kr_n": 670,
+  "foreign_avg": 2.52,
   "foreign_n": 401,
-  "hashtag_hits": 89
+  "hashtag_hits": 100
  },
  {
   "topic": "빅테크",
@@ -37,7 +37,15 @@
   "kr_n": 47,
   "foreign_avg": 2.12,
   "foreign_n": 20,
-  "hashtag_hits": 6
+  "hashtag_hits": 7
+ },
+ {
+  "topic": "정치·관세",
+  "kr_avg": 2.04,
+  "kr_n": 80,
+  "foreign_avg": 1.94,
+  "foreign_n": 119,
+  "hashtag_hits": 16
  },
  {
   "topic": "비트코인",
@@ -45,23 +53,7 @@
   "kr_n": 14,
   "foreign_avg": 1.81,
   "foreign_n": 184,
-  "hashtag_hits": 114
- },
- {
-  "topic": "정치·관세",
-  "kr_avg": 2.03,
-  "kr_n": 80,
-  "foreign_avg": 1.95,
-  "foreign_n": 119,
-  "hashtag_hits": 16
- },
- {
-  "topic": "환율·달러",
-  "kr_avg": 2.02,
-  "kr_n": 90,
-  "foreign_avg": 1.24,
-  "foreign_n": 8,
-  "hashtag_hits": 10
+  "hashtag_hits": 118
  },
  {
   "topic": "급락·변동성",
@@ -72,28 +64,28 @@
   "hashtag_hits": 27
  },
  {
+  "topic": "환율·달러",
+  "kr_avg": 1.99,
+  "kr_n": 92,
+  "foreign_avg": 1.23,
+  "foreign_n": 8,
+  "hashtag_hits": 10
+ },
+ {
   "topic": "국내 대형주",
-  "kr_avg": 1.9,
-  "kr_n": 209,
+  "kr_avg": 1.91,
+  "kr_n": 207,
   "foreign_avg": 0.65,
   "foreign_n": 8,
-  "hashtag_hits": 7
+  "hashtag_hits": 8
  },
  {
   "topic": "실적발표",
   "kr_avg": 1.37,
   "kr_n": 88,
-  "foreign_avg": 1.76,
+  "foreign_avg": 1.75,
   "foreign_n": 26,
   "hashtag_hits": 14
- },
- {
-  "topic": "ETF·지수투자",
-  "kr_avg": 1.11,
-  "kr_n": 51,
-  "foreign_avg": 1.72,
-  "foreign_n": 76,
-  "hashtag_hits": 16
  },
  {
   "topic": "연금·절세",
@@ -102,6 +94,14 @@
   "foreign_avg": 1.72,
   "foreign_n": 9,
   "hashtag_hits": 8
+ },
+ {
+  "topic": "ETF·지수투자",
+  "kr_avg": 1.11,
+  "kr_n": 51,
+  "foreign_avg": 1.71,
+  "foreign_n": 76,
+  "hashtag_hits": 17
  },
  {
   "topic": "2차전지",
@@ -113,17 +113,17 @@
  },
  {
   "topic": "물가·경기",
-  "kr_avg": 1.28,
+  "kr_avg": 1.29,
   "kr_n": 32,
-  "foreign_avg": 1.36,
+  "foreign_avg": 1.35,
   "foreign_n": 24,
   "hashtag_hits": 0
  },
  {
   "topic": "부동산",
   "kr_avg": 1.3,
-  "kr_n": 171,
-  "foreign_avg": 0.62,
+  "kr_n": 172,
+  "foreign_avg": 0.61,
   "foreign_n": 9,
   "hashtag_hits": 11
  },
@@ -141,6 +141,6 @@
   "kr_n": 70,
   "foreign_avg": 0.9,
   "foreign_n": 12,
-  "hashtag_hits": 18
+  "hashtag_hits": 19
  }
 ]
