@@ -10,21 +10,21 @@
  },
  {
   "geo": "KR",
+  "term": "부동산",
+  "traffic": 5000,
+  "topics": "부동산",
+  "econ": true,
+  "news_title": "내년 아파트 공시가격 현실화율 69%로 5년째 동결…보유세 영향은?",
+  "news_link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8718593"
+ },
+ {
+  "geo": "KR",
   "term": "엔비디아",
   "traffic": 5000,
   "topics": "AI·반도체",
   "econ": true,
   "news_title": "젠슨 황 딸 폭언까지 터졌다…\"직원에 '금붕어' 호칭\" 논란",
   "news_link": "https://www.hankyung.com/article/2026111982051"
- },
- {
-  "geo": "KR",
-  "term": "컴포즈",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "“부모님이라 생각하니 속상”…키오스크 앞 노인에게 무슨 일? [잇슈#태그]",
-  "news_link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8718228"
  },
  {
   "geo": "KR",
@@ -37,24 +37,6 @@
  },
  {
   "geo": "KR",
-  "term": "부동산",
-  "traffic": 1000,
-  "topics": "부동산",
-  "econ": true,
-  "news_title": "부동산 시장이 뒤집혔다…다시 쓰는 서울 집값 공식 [스페셜 리포트]",
-  "news_link": "https://www.mk.co.kr/news/economy/12214587"
- },
- {
-  "geo": "KR",
-  "term": "india a cricket team vs nepal national cricket team match scorecard",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Live Cricket Score, Schedule, Latest News, Stats & Videos",
-  "news_link": "https://www.cricbuzz.com/player-match-performance/match/177152/player/11290/bowling?inningsId=1"
- },
- {
-  "geo": "KR",
   "term": "펍지",
   "traffic": 500,
   "topics": "",
@@ -64,12 +46,30 @@
  },
  {
   "geo": "KR",
+  "term": "india a cricket team vs nepal national cricket team match scorecard",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Live Cricket Score, Schedule, Latest News, Stats & Videos",
+  "news_link": "https://www.cricbuzz.com/player-match-performance/match/177152/player/11290/bowling?inningsId=1"
+ },
+ {
+  "geo": "KR",
   "term": "류효영",
   "traffic": 200,
   "topics": "",
   "econ": false,
   "news_title": "“오빠한테 관심 있어” 고백한 류효영, 이태성과 첫 키스 장소 방문 (신랑수업2)",
   "news_link": "https://www.mk.co.kr/news/broadcasting-service/12213967"
+ },
+ {
+  "geo": "KR",
+  "term": "연준",
+  "traffic": 200,
+  "topics": "금리·연준",
+  "econ": true,
+  "news_title": "'나혼산' TXT 연준, 절친 서범준과 '소분메이트'...반반 공동 구매 - 머니투데이",
+  "news_link": "https://www.mt.co.kr/entertainment/2026/11/20/2026112014387240316"
  },
  {
   "geo": "KR",
@@ -86,17 +86,8 @@
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "Kết quả bóng đá U17 Việt Nam vs U17 Bỉ - U17 World Cup 2026",
-  "news_link": "https://vietnamnet.vn/ket-qua-bong-da-u17-viet-nam-vs-u17-bi-u17-world-cup-2026-2577062.html"
- },
- {
-  "geo": "US",
-  "term": "s&p500",
-  "traffic": 20000,
-  "topics": "AI·반도체, ETF·지수투자, 급락·변동성",
-  "econ": true,
-  "news_title": "Anthropic stock falls 9% to open first full day of trading amid AI sell-off",
-  "news_link": "https://www.cnbc.com/2026/11/20/anthropic-stock-ai-amd-nvidia.html"
+  "news_title": "Lịch thi đấu U.17 Việt Nam mới nhất: Đấu U.17 New Zealand, cơ hội thắng là đây",
+  "news_link": "https://www.vietnam.vn/lich-thi-dau-u-17-viet-nam-moi-nhat-dau-u-17-new-zealand-co-hoi-thang-la-day"
  },
  {
   "geo": "US",
@@ -109,48 +100,57 @@
  },
  {
   "geo": "US",
-  "term": "tqqq",
+  "term": "bitcoin price",
+  "traffic": 5000,
+  "topics": "비트코인, 급락·변동성",
+  "econ": true,
+  "news_title": "Bitcoin suffered identical sell-off pattern ahead of Anthropic, SpaceX IPOs — what happens next?",
+  "news_link": "https://www.cnbc.com/2026/11/20/bitcoin-pre-ipo-selloff-pattern-anthropic-spacex.html"
+ },
+ {
+  "geo": "US",
+  "term": "btc",
+  "traffic": 2000,
+  "topics": "비트코인, 급락·변동성",
+  "econ": true,
+  "news_title": "Bitcoin selloff: Crypto is failing the 'digital gold' test again as it sinks with stocks",
+  "news_link": "https://www.cnbc.com/2026/11/20/bitcoin-price-gold-market-hedge.html"
+ },
+ {
+  "geo": "US",
+  "term": "btc price",
   "traffic": 1000,
+  "topics": "비트코인",
+  "econ": true,
+  "news_title": "BTC price at 11 AM CST on Nov 20, 2026",
+  "news_link": "https://robinhood.com/us/en/prediction-markets/crypto/events/btc-price-at-11-am-cst-on-nov-20-2026-nov-20-2026/"
+ },
+ {
+  "geo": "US",
+  "term": "ethereum price",
+  "traffic": 500,
+  "topics": "알트코인",
+  "econ": true,
+  "news_title": "Current price of Ethereum for Nov. 20, 2026",
+  "news_link": "https://fortune.com/article/price-of-ethereum-11-20-2026/"
+ },
+ {
+  "geo": "US",
+  "term": "micron stock",
+  "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Pain in TQQQ, SOXL may offer silver lining for tech stocks - SocGen",
-  "news_link": "https://www.tradingview.com/news/seekingalpha:ebcb021a5094b:0-pain-in-tqqq-soxl-may-offer-silver-lining-for-tech-stocks-socgen/"
+  "news_title": "Micron Keeps Falling as Memory Stocks Get Agonizingly Cheap. The Next Catalyst.",
+  "news_link": "https://www.barrons.com/articles/micron-stock-memory-price-catalyst-58e84734"
  },
  {
   "geo": "US",
-  "term": "vix",
-  "traffic": 1000,
-  "topics": "급락·변동성",
-  "econ": true,
-  "news_title": "Stocks jump more than 10% six months after the VIX reaches 28-33",
-  "news_link": "https://seekingalpha.com/news/4675180-stocks-jump-more-than-10-percent-six-months-after-the-vix-reaches-28minus-33?utm_source=tradingview&utm_medium=referral&feed_item_type=news"
- },
- {
-  "geo": "US",
-  "term": "coin",
+  "term": "mstr stock",
   "traffic": 500,
-  "topics": "정치·관세",
+  "topics": "비트코인",
   "econ": true,
-  "news_title": "U.S. Mint released a 24-karat Trump gold coin: Here’s what it costs",
-  "news_link": "https://www.al.com/news/huntsville/2026/11/us-mint-released-a-24-karat-trump-gold-coin-heres-what-it-costs.html"
- },
- {
-  "geo": "US",
-  "term": "jimmy kimmel trump putin commentary",
-  "traffic": 500,
-  "topics": "정치·관세",
-  "econ": true,
-  "news_title": "Jimmy Kimmel Recaps Trump’s ‘Big Dim Summit’",
-  "news_link": "https://www.nytimes.com/2026/11/20/arts/television/jimmy-kimmel-trump-xi-putin-summit.html"
- },
- {
-  "geo": "US",
-  "term": "mamdani achilles",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "NYC Mayor Zohran Mamdani Reveals He Tore His Achilles After Suffering Pickup Soccer Injury",
-  "news_link": "https://bleacherreport.com/articles/25535666-nyc-mayor-zohran-mamdani-reveals-he-tore-his-achilles-after-suffering-pickup-soccer-injury"
+  "news_title": "Strategy (MSTR) On Bitcoin Buying And MSCI Exit Still Looks Undervalued",
+  "news_link": "https://finance.yahoo.com/markets/stocks/articles/strategy-mstr-bitcoin-buying-msci-211424742.html"
  },
  {
   "geo": "US",
@@ -158,17 +158,17 @@
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "PBA great PJ Simon rushed to hospital after collapsing in game",
-  "news_link": "https://www.spin.ph/basketball/pba/pba-great-pj-simon-rushed-to-hospital-after-collapsing-in-game-a2437-20261120?ref=home_feed_1"
+  "news_title": "Former PBA star Peter June Simon, 46, passes away",
+  "news_link": "https://fastbreak.com.ph/former-pba-star-peter-june-simon-46-passes-away/sports-galore/"
  },
  {
   "geo": "US",
-  "term": "presumed innocent",
+  "term": "walmart stock",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "'Presumed Innocent' Sets Season 2 Release Date, Unveils First Photos",
-  "news_link": "https://deadline.com/2026/11/presumed-innocent-season-2-release-date-photos-teaser-1237229678/"
+  "news_title": "Walmart’s Digital Sales Are Now Driving Its Growth, Not Stores",
+  "news_link": "https://www.wsj.com/business/earnings/walmart-wmt-3q-earnings-report-2026-6e658c54"
  },
  {
   "geo": "US",
