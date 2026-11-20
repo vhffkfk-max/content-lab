@@ -1,17 +1,8 @@
 [
  {
   "geo": "KR",
-  "term": "수출규제",
-  "traffic": 5000,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "중국행 반도체 막는다더니…미국, 엔비디아·AMD 칩 88만개 수출 허가 - 머니투데이",
-  "news_link": "https://www.mt.co.kr/world/2026/11/20/2026112009474380780"
- },
- {
-  "geo": "KR",
   "term": "이부진",
-  "traffic": 5000,
+  "traffic": 10000,
   "topics": "",
   "econ": false,
   "news_title": "교실서 폰 금지한 학교 성적 향상 뚜렷…“年 2주 수업 더 들은 효과”",
@@ -19,21 +10,39 @@
  },
  {
   "geo": "KR",
+  "term": "하정우",
+  "traffic": 10000,
+  "topics": "",
+  "econ": false,
+  "news_title": "하정우, 결혼 앞두고 안타까운 비보 무슨 일… 반려견과 작별 \"또 만나자\"",
+  "news_link": "https://www.chosun.com/entertainments/broadcast/2026/11/19/GQ3TAOJXGNQTAMLDHFSTMY3BGU/"
+ },
+ {
+  "geo": "KR",
   "term": "장승수",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "국가자격시험 관리감독 강화…부정행위 응시제한 10년으로 확대",
-  "news_link": "https://www.korea.kr/news/policyNewsView.do?newsId=148976081"
+  "news_title": "“막노동하다 서울대 법대 수석 입학? 지금이면 의심부터”…장승수 신화 재조명",
+  "news_link": "https://www.mk.co.kr/news/society/12214516"
  },
  {
   "geo": "KR",
-  "term": "레미콘",
+  "term": "레버리지",
   "traffic": 1000,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "1000만원 투자했으면 ‘200만원’…하이닉스 레버리지, 개미들의 무덤",
+  "news_link": "https://www.mk.co.kr/news/economy/12214520"
+ },
+ {
+  "geo": "KR",
+  "term": "민주유공자법",
+  "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "한국토지주택공사, 3기 신도시 레미콘 품질 전 과정 추적…2028년 전국 확대",
-  "news_link": "https://www.newstown.co.kr/news/articleView.html?idxno=722299"
+  "news_title": "민주유공자법, 여당 주도로 국회 본회의 통과",
+  "news_link": "https://www.hani.co.kr/arti/politics/politics_general/1288349.html"
  },
  {
   "geo": "KR",
@@ -64,17 +73,8 @@
  },
  {
   "geo": "KR",
-  "term": "민주유공자법",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "[속보] 민주유공자법, 여당 주도로 국회 본회의 통과",
-  "news_link": "https://www.hani.co.kr/arti/politics/politics_general/1288349.html"
- },
- {
-  "geo": "KR",
   "term": "광주역",
-  "traffic": 100,
+  "traffic": 200,
   "topics": "",
   "econ": false,
   "news_title": "금천구청, 광주역, 구포~가야… 48조 들여 전국 9곳 지상 철도 지하화",
@@ -83,7 +83,7 @@
  {
   "geo": "KR",
   "term": "설경구",
-  "traffic": 100,
+  "traffic": 200,
   "topics": "",
   "econ": false,
   "news_title": "설경구, 장항준에 개XX 욕설 \"나 매장시킨다고 했다\"",
@@ -91,92 +91,92 @@
  },
  {
   "geo": "US",
-  "term": "earthquake",
-  "traffic": 20000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Preliminary 5.1 magnitude earthquake strikes near Monterey County",
-  "news_link": "https://www.nbcbayarea.com/news/local/quake-monterey-county-5-4/4179238/"
- },
- {
-  "geo": "US",
-  "term": "apple store black friday deals",
-  "traffic": 2000,
-  "topics": "빅테크",
-  "econ": true,
-  "news_title": "Black Friday prices are officially live on Apple Watches, AirTags, MacBooks and more",
-  "news_link": "https://www.cnn.com/cnn-underscored/deals/apple-black-friday-deals-2026-11-19"
- },
- {
-  "geo": "US",
-  "term": "earthquake san jose",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "San Jose Earthquakes vs. Houston Dynamo: 5 biggest storylines for Western Conference Round One",
-  "news_link": "https://www.mlssoccer.com/playoffs/2026/news/san-jose-earthquakes-vs-houston-dynamo-5-biggest-storylines-for-western-conference-round-one"
- },
- {
-  "geo": "US",
-  "term": "earthquake today",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "A strong earthquake struck southwestern Japan | NHK WORLD-JAPAN News",
-  "news_link": "https://www3.nhk.or.jp/nhkworld/news/20261119de78099/"
- },
- {
-  "geo": "US",
-  "term": "usgs earthquake",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "2.4 magnitude earthquake shakes Rowan County late Tuesday night",
-  "news_link": "https://www.wcnc.com/article/weather/earthquake-rowan-county-north-carolina-brad-panovich-explanation/275-7b21db90-8a99-4598-b844-11d0ea45ae19"
- },
- {
-  "geo": "US",
-  "term": "earthquake alert",
+  "term": "daycare",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Android Earthquake Alerts in Italy, How They Work",
-  "news_link": "https://meteoraweb.com/en/news/android-earthquake-alerts-italy-three-warning-levels"
+  "news_title": "Indonesian daycare principal jailed for five years over child abuse case",
+  "news_link": "https://www.bbc.com/news/articles/cvkg58d7z10ro"
  },
  {
   "geo": "US",
-  "term": "navajo stirling",
+  "term": "one piece 1199",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "One Piece Chapter 1199 Spoilers & Manga Plot Leaks",
+  "news_link": "https://www.yahoo.com/entertainment/tv/articles/one-piece-chapter-1199-spoilers-085854936.html"
+ },
+ {
+  "geo": "US",
+  "term": "5.4 magnitude earthquake",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Navajo Stirling | Four Up, Four Down",
-  "news_link": "https://www.ufc.com/news/navajo-stirling-four-up-four-down-light-heavyweight-ufc-qatar"
+  "news_title": "USGS Reports 2.3 Magnitude Earthquake Near Toms Place",
+  "news_link": "https://cwibc.co.id/en/usgs-toms-place-earthquake-november-19"
  },
  {
   "geo": "US",
-  "term": "how to sell cars in gta 6",
-  "traffic": 100,
+  "term": "car accident attorney",
+  "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "'GTA 6': How to use a talking parrot to find a stash of money",
-  "news_link": "https://mashable.com/entertainment/gta-6-hidden-cash-talking-parrot"
+  "news_title": "Sponsored: Shariff Injury Lawyers share what to do immediately after a car accident",
+  "news_link": "https://www.khou.com/video/entertainment/television/programs/great-day-houston/sponsored-shariff-injury-lawyers-share-what-to-do-immediately-after-a-car-accident/285-1dac553c-2ebc-470f-a35a-a584b6dcac97"
  },
  {
   "geo": "US",
-  "term": "mama awards 2026",
-  "traffic": 100,
+  "term": "ksbw",
+  "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Samsung TV Plus Brings 2026 MAMA AWARDS to K-pop Fans Around the World",
-  "news_link": "https://news.samsung.com/global/samsung-tv-plus-brings-2026-mama-awards-to-k-pop-fans-around-the-world"
+  "news_title": "Alisal school district won't rename César E. Chávez Elementary",
+  "news_link": "https://www.ksbw.com/article/alisal-school-district-wont-rename-cesar-e-chavez-elementary/74482801"
  },
  {
   "geo": "US",
-  "term": "san diego",
+  "term": "truck accident lawyer",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Okanogan Police Seek Tips, Video Connected To Investigation Of Fatal Hit-&-Run",
+  "news_link": "https://kpq.com/fatal-hitandrun-okanogan-tips-investigation/"
+ },
+ {
+  "geo": "US",
+  "term": "will gta 6 have online",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "GTA 6 Is Finally Here...So When Can You Play Online With Friends?",
+  "news_link": "https://www.pcmag.com/explainers/gta-6-is-finally-here-so-when-can-you-play-online-with-friends-multiplayer"
+ },
+ {
+  "geo": "US",
+  "term": "aleksandre topuria",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "San Diego lifeguard captain sues over gender discrimination",
-  "news_link": "https://www.cbs8.com/article/news/local/san-diego-lifeguard-captain-sues-over-gender-discrimination/509-75c94133-0bd0-404b-9376-db4675292fc7"
+  "news_title": "Ilia Topuria Says He Was Half A Millimeter From Career-Ending Surgery After Gaethje Broke Both Orbitals — And Joe Rogan Now Wants Him Back At 145",
+  "news_link": "https://sports.yahoo.com/articles/ilia-topuria-says-half-millimeter-064229631.html"
+ },
+ {
+  "geo": "US",
+  "term": "pg&e",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "CPUC approves PG&E ‘interim' rate hike for 2027",
+  "news_link": "https://www.nbcbayarea.com/news/local/cpuc-approves-pg-rate-hike-2027/4179166/"
+ },
+ {
+  "geo": "US",
+  "term": "sndk",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "Sandisk Stock Is Worth a Third of What It Was in June. I'd Buy It Now.",
+  "news_link": "https://finance.yahoo.com/markets/stocks/articles/sandisk-stock-worth-third-june-181602656.html"
  }
 ]
