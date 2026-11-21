@@ -1,35 +1,44 @@
 [
  {
   "geo": "KR",
-  "term": "편의점",
+  "term": "구자욱",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "'충격 200억' 야구 재벌 눈앞인데, 찬밥 대우 미국으로? 이대호 사례로, 구자욱 미래도 보인다",
+  "news_link": "https://www.chosun.com/sports/baseball/2026/11/20/ME3TSMBQGU3TMMJVGRSGIODFGY/"
+ },
+ {
+  "geo": "KR",
+  "term": "퇴직금",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "직원 임금·퇴직금 21억원 체불 시리우스항공 대표 징역 2년",
+  "news_link": "https://www.yna.co.kr/view/AKR20261120043600051"
+ },
+ {
+  "geo": "KR",
+  "term": "김혜성",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "CU, 딘토와 '위니 더 푸' 색조 화장품 출시…책갈피 굿즈 동봉",
-  "news_link": "https://www.yna.co.kr/view/AKR20261119024400030"
+  "news_title": "\"내가 다저스 가지 말랬잖아\" 강정호 만류에도 LA행 택한 김혜성, 에이전트 추천까지 뿌리친 이유",
+  "news_link": "https://www.chosun.com/sports/world-baseball/2026/11/21/GM3GCYRUHEYDENBZMQ2WEYZQGI/"
  },
  {
   "geo": "KR",
-  "term": "경부선",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "[속보] 코레일 \"천안∼조치원∼대전·서대전 구간 버스 연계 수송",
-  "news_link": "https://www.ytn.co.kr/_cs/_ln_0115_202611211112093328_005.html"
- },
- {
-  "geo": "KR",
-  "term": "두산베어스",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "돈 못지않은 ‘진정성’… 프로야구 FA전쟁[소소한 복도통신]",
-  "news_link": "https://www.munhwa.com/article/11632753"
+  "term": "대통령",
+  "traffic": 1000,
+  "topics": "정치·관세",
+  "econ": true,
+  "news_title": "트럼프 \"미·중·러 정상회담서 한반도 위험 대응 논의\"",
+  "news_link": "https://www.chosun.com/international/us/2026/11/21/7A26LG7VLZB7BNKORNAP4TCRNE/"
  },
  {
   "geo": "KR",
   "term": "마이크론 테크놀로지",
-  "traffic": 200,
+  "traffic": 500,
   "topics": "AI·반도체",
   "econ": true,
   "news_title": "마이크론테크놀로지, AI 투자 우려에 7거래일 연속 하락…주가 14%↓",
@@ -37,12 +46,21 @@
  },
  {
   "geo": "KR",
-  "term": "박윤영",
+  "term": "catl",
+  "traffic": 200,
+  "topics": "2차전지",
+  "econ": true,
+  "news_title": "POSCO Group Signs Long-Term Lithium Supply Deal with CATL",
+  "news_link": "https://dbr.donga.com/kfocus/view/en/article_no/3965"
+ },
+ {
+  "geo": "KR",
+  "term": "kt",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "KT스카이라이프, 케이블TV 자회사 KT HCN 흡수합병…인수 5년 만",
-  "news_link": "https://v.daum.net/v/tHi0T671fe"
+  "news_title": "",
+  "news_link": ""
  },
  {
   "geo": "KR",
@@ -55,6 +73,15 @@
  },
  {
   "geo": "KR",
+  "term": "이현중",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "‘4쿼터에만 3점 5방’ 이현중, 25득점 G리그 개인 최다득점",
+  "news_link": "https://news.kbs.co.kr/news/mobile/view/view.do?ncd=8713824"
+ },
+ {
+  "geo": "KR",
   "term": "전소미",
   "traffic": 200,
   "topics": "",
@@ -63,120 +90,93 @@
   "news_link": "https://www.newsis.com/view/NISX20261120_0003877021"
  },
  {
-  "geo": "KR",
-  "term": "jisoo sun showers (from \"the angry birds movie 3”)",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "Blackpink’s Jisoo Debuts Buoyant Single ‘Sun Showers’",
-  "news_link": "https://www.rollingstone.com/music/music-news/blackpink-jisoo-sun-showers-single-angry-birds-movie-1235661547/"
- },
- {
-  "geo": "KR",
-  "term": "nh농협카드",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "“뛰어난 활약으로 브랜드 가치 높였다” NH농협카드 당구단, 농협금융스포츠단 납회식서 높은 평가",
-  "news_link": "https://mkbn.mk.co.kr/news/sports/12215015"
- },
- {
-  "geo": "KR",
-  "term": "매일경제",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "국방홍보원, 매일경제와 국방·안보 콘텐츠 발굴 위한 MOU 체결",
-  "news_link": "https://www.news1.kr/diplomacy/defense-diplomacy/6360931"
- },
- {
   "geo": "US",
-  "term": "boston blue",
+  "term": "appletv",
   "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Why ‘Sheriff Country,’ ‘Fire Country’ & ‘Boston Blue’ Aren’t New Tonight",
-  "news_link": "https://www.tvinsider.com/1304937/sheriff-country-fire-country-boston-blue-not-airing-november-december-2026/"
+  "topics": "빅테크",
+  "econ": true,
+  "news_title": "Black Friday Prime Video add-on deals are here, from Apple TV to HBO Max",
+  "news_link": "https://www.usatoday.com/story/shopping/deals/black-friday/2026/11/19/amazon-prime-video-black-friday-add-on-deals-apple-tv-hbo-max/92861090007/"
  },
  {
   "geo": "US",
-  "term": "aday mara",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Thunder start Shai, Ajay, McCain, Mara, I-Hart",
-  "news_link": "https://www.nbcsports.com/fantasy/basketball/player-news/2026-11-20/thunder-start-shai-ajay-mccain-peavy-i-hart"
- },
- {
-  "geo": "US",
-  "term": "nba cup standings",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "NBA Cup scores, standings, and scenarios: Who can clinch and who's nearly toast?",
-  "news_link": "https://sports.yahoo.com/articles/nba-cup-scores-standings-scenarios-175145886.html"
- },
- {
-  "geo": "US",
-  "term": "whitney peak",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "‘Outer Banks’ Alum Madelyn Cline in Final Talks to Join New ‘Serendipity’ Movie (EXCLUSIVE)",
-  "news_link": "https://variety.com/2026/film/news/serendipity-reboot-cast-madelyn-cline-1236952550/"
- },
- {
-  "geo": "US",
-  "term": "cher",
+  "term": "amen thompson",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Actress reveals Cher still ‘holds a grudge’ against her nearly 30 years later",
-  "news_link": "https://www.syracuse.com/entertainment/2026/11/actress-reveals-cher-still-holds-a-grudge-against-her-nearly-30-years-later.html"
+  "news_title": "Real or fake: Which early trends this season are legit for the Rockets?",
+  "news_link": "https://www.houstonchronicle.com/sports/rockets/article/houston-early-season-trends-22536012.php"
  },
  {
   "geo": "US",
-  "term": "courtney clenney",
+  "term": "demar derozan",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "They shared their glamorous life online. Then one was killed — and the other was charged.",
-  "news_link": "https://www.nbcnews.com/news/us-news/onlyfans-courtney-clenney-christian-obumseli-death-rcna610149"
+  "news_title": "In 2021, DeMar DeRozan paid $4.5 million for a Chicago mansion once owned by Michael Jordan's ex-wife; he has now listed it for $6.25 million",
+  "news_link": "https://sports.yahoo.com/articles/2021-demar-derozan-paid-4-223915426.html"
  },
  {
   "geo": "US",
-  "term": "isaiah hartenstein",
+  "term": "keegan murray",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Fantasy adds, NBA bets to make for Friday: Jazz keep red-hot Bamba in lineup",
-  "news_link": "https://www.espn.com/fantasy/basketball/story/_/id/50541974/fantasy-basketball-tips-nba-betting-picks-today"
+  "news_title": "Keegan Murray throws down big flush vs. Phoenix Suns",
+  "news_link": "https://www.espn.com/video/clip/_/id/50527422/keegan-murray-throws-big-flush-vs-phoenix-suns"
  },
  {
   "geo": "US",
-  "term": "sienna miller",
+  "term": "steven adams",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "All’s Fair in Love and ‘War’: Creator George Kay Explains His Ruling on Morgan and Carla’s Divorce",
-  "news_link": "https://www.hollywoodreporter.com/tv/tv-features/war-finale-explained-morgan-carla-divorce-1236759966/"
+  "news_title": "Puka Nacua (MCL) could miss remainder of season",
+  "news_link": "https://www.fantasypros.com/nfl/news/621377/puka-nacua-mcl-could-miss-remainder-season.php"
  },
  {
   "geo": "US",
-  "term": "jaylin williams",
+  "term": "zach lavine",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Kings' Zach LaVine: Scores 18 points in loss Wednesday",
+  "news_link": "https://www.cbssports.com/fantasy/basketball/news/kings-zach-lavine-scores-18-points-in-loss-wednesday/"
+ },
+ {
+  "geo": "US",
+  "term": "anya taylor-joy",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Detroit Pistons vs Washington Wizards Nov 12, 2026 Box Scores",
-  "news_link": "https://www.nba.com/game/det-vs-was-0022600228/box-score"
+  "news_title": "Anya Taylor-Joy’s 148-Minute Sci-Fi Blockbuster Officially Wins Over Fans on Streaming",
+  "news_link": "https://www.imdb.com/news/ni66105492/"
  },
  {
   "geo": "US",
-  "term": "josh giddey",
+  "term": "jokic",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Randle sounds off after Bulls rout Nets - 'That was embarrassing'",
-  "news_link": "https://www.espn.com/nba/story/_/id/50527820/randle-sounds-bulls-rout-nets-was-embarrassing"
+  "news_title": "Should fantasy hoops managers expect a return to dominance from Nikola Jokic?",
+  "news_link": "https://www.espn.com/fantasy/basketball/story/_/id/50541753/fantasy-basketball-nba-analytics-top-players"
+ },
+ {
+  "geo": "US",
+  "term": "sacramento kings vs lakers match player stats",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "",
+  "news_link": ""
+ },
+ {
+  "geo": "US",
+  "term": "truck driver",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Truck driver arrested in KC area for safety violations. Then he was stopped again",
+  "news_link": "https://www.yahoo.com/news/us/articles/truck-driver-arrested-kc-area-214626640.html"
  }
 ]
