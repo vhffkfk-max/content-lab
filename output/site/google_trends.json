@@ -2,7 +2,7 @@
  {
   "geo": "KR",
   "term": "배추",
-  "traffic": 1000,
+  "traffic": 2000,
   "topics": "",
   "econ": false,
   "news_title": "새마을운동 남원시지회, 사랑의 김장나누기 봉사활동",
@@ -10,12 +10,12 @@
  },
  {
   "geo": "KR",
-  "term": "왕즈이",
+  "term": "강사",
   "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "안세영 꺾고 우승한 게 유일했다... 결승만 7번째 오른 中 왕즈이, 홍콩서 8개월 만에 두 번째 우승 도전 - 머니투데이",
-  "news_link": "https://www.mt.co.kr/sports/2026/11/22/2026112205191066525"
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "AI 의혹 리트 만점자 5줄 유서서 “죽어도 가서 죽으려 했는데…”",
+  "news_link": "https://www.munhwa.com/article/11633008"
  },
  {
   "geo": "KR",
@@ -23,8 +23,17 @@
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Real Madrid - Celta en directo | Bellingham empata el partido",
+  "news_title": "Real Madrid - Celta en directo | El Real Madrid remonta al Celta con goles de Bellingham y Carlos Espí",
   "news_link": "https://elpais.com/deportes/futbol/2026-11-21/real-madrid-celta-en-directo-el-partido-de-la-liga-en-vivo.html"
+ },
+ {
+  "geo": "KR",
+  "term": "경제",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "中 경제에 ‘장기불황의 그림자’ 짙어졌다",
+  "news_link": "https://www.dailian.co.kr/news/view/1717961/%E4%B8%AD-%EA%B2%BD%EC%A0%9C-%E2%80%98%EC%9E%A5%EA%B8%B0%EB%B6%88%ED%99%A9-%EA%B7%B8%EB%A6%BC%EC%9E%90%E2%80%99-%EC%A7%99%EC%96%B4%EC%A1%8C%EB%8B%A4-2026"
  },
  {
   "geo": "KR",
@@ -37,26 +46,8 @@
  },
  {
   "geo": "KR",
-  "term": "경제",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "한은 올해 성장 눈높이 3%대 후반 전망…\"내년 더 올릴 수도\"",
-  "news_link": "https://www.yna.co.kr/view/AKR20261121026100002"
- },
- {
-  "geo": "KR",
-  "term": "베냐민 네타냐후",
-  "traffic": 200,
-  "topics": "정치·관세",
-  "econ": true,
-  "news_title": "트럼프는 서두르지 않겠다는데‥이란 추가공격 압박 커져",
-  "news_link": "https://imnews.imbc.com/news/2026/world/article/6867488_36925.html"
- },
- {
-  "geo": "KR",
   "term": "지수",
-  "traffic": 200,
+  "traffic": 500,
   "topics": "",
   "econ": false,
   "news_title": "中 톱스타 들러리 만든 '디올 지수'…영하 3도 베이징 녹였다 [K컬처 인사이드]",
@@ -64,119 +55,128 @@
  },
  {
   "geo": "KR",
-  "term": "1박 2일",
+  "term": "레알마드리드",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "김종민, 나태주 시인 가문과 깜짝 인연? “많이 배우고 있어요” (1박 2일)",
-  "news_link": "https://sports.donga.com/ent/article/all/20261121/135064733/1"
+  "news_title": "‘비니시우스, 제대로 된 강적 만났다!’ 브라질에서 5골 폭발하고 돌아왔는데…무리뉴 감독은 단호 “선발이든 벤치든 관중석이든 상관없다”",
+  "news_link": "https://www.interfootball.co.kr/news/articleView.html?idxno=698962"
  },
  {
   "geo": "KR",
-  "term": "g80 하이브리드",
+  "term": "송미령",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "제네시스, ‘G80 하이브리드’ LA서 첫 공개…연비 34% 개선",
-  "news_link": "https://www.khan.co.kr/article/202611200923001"
+  "news_title": "농식품부 장관, 현장·전문가와 함께 농촌 사회연대경제 활성화를 위한 방안 논의",
+  "news_link": "https://go.seoul.co.kr/news/prnewsView.php?id=458131"
  },
  {
   "geo": "KR",
-  "term": "강사",
+  "term": "쇼트트랙",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "충남교육청, 다문화교육 강사 전문성 높인다…이주배경학생 지원 강화",
-  "news_link": "https://www.gukjenews.com/news/articleView.html?idxno=3759098"
+  "news_title": "최민정, 안방서 쇼트트랙 월드투어 여자 1,000ｍ 3연속 우승",
+  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8719143"
  },
  {
-  "geo": "US",
-  "term": "i play rocky cast",
-  "traffic": 10000,
+  "geo": "KR",
+  "term": "최미나수",
+  "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "How did 'I Play Rocky' star Anthony Ippolito transform into Sylvester Stallone? Raw eggs, a 40-pound weight gain and some X-rated homework.",
-  "news_link": "https://www.yahoo.com/entertainment/movies/article/how-did-i-play-rocky-star-anthony-ippolito-transform-into-sylvester-stallone-raw-eggs-a-40-pound-weight-gain-and-some-x-rated-homework-171914757.html"
+  "news_title": "드레스 입고 덜덜 떤 최미나수…김연경 \"괜찮으세요?\"",
+  "news_link": "https://www.newsis.com/view/NISX20261121_0003877589"
  },
  {
   "geo": "US",
-  "term": "indiana fever",
+  "term": "kylian mbappé",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "'Goodness gracious me!' Mbappe skies penalty for Real Madrid",
+  "news_link": "https://www.espn.com/video/clip/_/id/50553735/goodness-gracious-mbappe-skies-penalty-real-madrid"
+ },
+ {
+  "geo": "US",
+  "term": "columbus vs inter miami",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "‘You want some of this Nike money?’: Analyst believes Caitlin Clark should be ‘wooing’ Kelsey Mitchell",
-  "news_link": "https://sports.yahoo.com/articles/want-nike-money-analyst-believes-212459145.html"
+  "news_title": "It’s Miami Time: Get Ready for Inter Miami CF’s Playoffs Opener This Saturday Presented by Nu",
+  "news_link": "https://www.intermiamicf.com/news/it-s-miami-time-get-ready-for-inter-miami-cf-s-playoffs-opener-this-saturday-presented-by-nu"
  },
  {
   "geo": "US",
-  "term": "byrum brown",
+  "term": "jude bellingham",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Jude Bellingham delivers another assist in England’s win over Spain",
+  "news_link": "https://www.managingmadrid.com/real-madrid-cf-players/115482/jude-bellingham-delivers-another-assist-in-englands-win-over-spain"
+ },
+ {
+  "geo": "US",
+  "term": "pachuca - toluca",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "⚽ ¡Ya casi! Checa a qué HORA y en DÓNDE VER el Pachuca vs Toluca de la Liga MX 🦫🆚👹",
+  "news_link": "https://www.facebook.com/MilenioDiario/photos/-ya-casicheca-a-qu%C3%A9-hora-y-en-d%C3%B3nde-ver-el-pachuca-vs-toluca-de-la-liga-mx-/1690243503133114/"
+ },
+ {
+  "geo": "US",
+  "term": "penguins vs predators",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Game Preview: 11.21.26 at Nashville Predators | Pittsburgh Penguins",
+  "news_link": "https://www.nhl.com/penguins/news/game-preview-11-21-26-at-nashville-predators"
+ },
+ {
+  "geo": "US",
+  "term": "sabres vs panthers",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Sabres at Panthers projected lineups",
+  "news_link": "https://www.nhl.com/news/buffalo-sabres-florida-panthers-game-preview-november-21-2026"
+ },
+ {
+  "geo": "US",
+  "term": "santos - león",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Santos vs León: alineaciones y probabilidades",
+  "news_link": "https://espndeportes.espn.com/futbol/mexico/nota/_/id/17536059/santos-leon-apertura-2026-alineaciones-probabilidades"
+ },
+ {
+  "geo": "US",
+  "term": "desean bishop",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Alex Golesh Has an Opportunity to Evaluate Auburn's Future Against Samford",
-  "news_link": "https://sports.yahoo.com/articles/alex-golesh-opportunity-evaluate-auburns-075707414.html"
+  "news_title": "Why Tennessee's DeSean Bishop is deserving of Doak Walker Award | Adams",
+  "news_link": "https://www.knoxnews.com/story/sports/columnists/university-of-tennessee/john-adams/2026/11/19/tennessee-football-desean-bishop-lsu-doak-walker-award/92805087007/"
  },
  {
   "geo": "US",
-  "term": "dj lagway",
+  "term": "idaho vs idaho state",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Exclusive: DJ Lagway Reveals Key to Breakout 2026 Campaign With Baylor",
-  "news_link": "https://sports.yahoo.com/articles/exclusive-dj-lagway-reveals-key-183010920.html"
+  "news_title": "Idaho eyes Potato State Trophy against Idaho State in season finale",
+  "news_link": "https://www.dnews.com/sports/idaho-eyes-potato-state-trophy-against-idaho-state-in-season-finale-545e0258"
  },
  {
   "geo": "US",
-  "term": "marshall football",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Chicago Blackhawks at Calgary Flames - NHL Game Summary - Nov 21, 2026",
-  "news_link": "https://www.usatoday.com/sports/nhl/event/2026/2998296/boxscore/?itm_source=oembed&itm_medium=sports&itm_campaign=scoreboard&site=USAT&itm_content=NHL&tile=1"
- },
- {
-  "geo": "US",
-  "term": "miss universe 2026",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Everything to Know About Miss Universe 2026, Including How to Watch the Pageant",
-  "news_link": "https://people.com/miss-universe-2026-everything-to-know-12265530"
- },
- {
-  "geo": "US",
-  "term": "bret bielema",
+  "term": "john mateer",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Notebook: Scott 'grateful' for Illini opportunity; preparing for '60-minute fist fight' against Iowa",
-  "news_link": "https://247sports.com/college/illinois/article/fighting-illini-football-senior-defensive-back-xavier-scott-illinois-iowa-jake-renfro-juice-clarke-interception-292946628/"
- },
- {
-  "geo": "US",
-  "term": "colin simmons",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Only one change on the Friday Texas injury report",
-  "news_link": "https://www.burntorangenation.com/texas-longhorns-football/107581/texas-longhorns-injury-report-arkansas-razorbacks"
- },
- {
-  "geo": "US",
-  "term": "drake basketball",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Second Half Surge Guides Bulldogs to Win Over Cougars, 86-70",
-  "news_link": "https://godrakebulldogs.com/news/2026/11/19/mens-basketball-second-half-surge-guides-bulldogs-to-win-over-cougars-86-70.aspx"
- },
- {
-  "geo": "US",
-  "term": "east st louis vs brother rice",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Ronnie Gomiller, Reece Shanklin lead East St. Louis into Class 7A state semifinals",
-  "news_link": "https://www.stlamerican.com/sports/ronnie-gomiller-reece-shanklin-lead-east-st-louis-into-class-7a-state-semifinals/"
+  "news_title": "John Mateer jumps Arch Manning in ESPN's Power Four QB Rankings",
+  "news_link": "https://sports.yahoo.com/articles/john-mateer-jumps-arch-manning-020041865.html"
  }
 ]
