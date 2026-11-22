@@ -20,7 +20,7 @@
  {
   "geo": "KR",
   "term": "수능 부정행위",
-  "traffic": 500,
+  "traffic": 1000,
   "topics": "",
   "econ": false,
   "news_title": "이 대통령 \"수능 부정행위 철저 추적…국가시험 A부터 Z까지 개편\"",
@@ -28,12 +28,30 @@
  },
  {
   "geo": "KR",
-  "term": "금융위기",
-  "traffic": 200,
-  "topics": "AI·반도체, 급락·변동성",
+  "term": "한전on",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "한전도 해킹당했다…65만명 주민번호·계좌·카드번호 유출",
+  "news_link": "https://www.khan.co.kr/article/202611221907001"
+ },
+ {
+  "geo": "KR",
+  "term": "정상회담",
+  "traffic": 500,
+  "topics": "정치·관세",
   "econ": true,
-  "news_title": "반도체 전망 좋은데, 삼전닉스는 급락…'45조 증발' 한국 주식 버리는 외국인, 왜?",
-  "news_link": "https://www.etnews.com/20261122000065"
+  "news_title": "트럼프 “미·중·러, 한반도 위험 논의”…핵 감축엔 “동의 어려워”",
+  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8719193"
+ },
+ {
+  "geo": "KR",
+  "term": "기예르모 에레디아",
+  "traffic": 200,
+  "topics": "실적발표",
+  "econ": true,
+  "news_title": "'굿바이' 에레디아가 국내 타팀으로 간다고? 현실적으로 불가능이다. 이유는",
+  "news_link": "https://www.chosun.com/sports/baseball/2026/11/22/MFSGKMZTMUZWKYTGMQ3TSMDEMM/"
  },
  {
   "geo": "KR",
@@ -50,62 +68,44 @@
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "[단독] 中, 韓 핵추진잠수함 IAEA 검증에 문제 제기…“국제 안보에 중대 도전”",
-  "news_link": "https://www.mk.co.kr/news/politics/12215581"
+  "news_title": "與 “핵추진잠수함 도입, 특별법으로 뒷받침”",
+  "news_link": "https://www.donga.com/news/Politics/article/all/20261122/135065893/1"
  },
  {
   "geo": "KR",
-  "term": "정상회담",
-  "traffic": 200,
-  "topics": "정치·관세",
-  "econ": true,
-  "news_title": "트럼프 “미·중·러, 한반도 위험 논의”…핵 감축엔 “동의 어려워”",
-  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8719193"
- },
- {
-  "geo": "KR",
-  "term": "회계사",
-  "traffic": 200,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "내년 회계사시험 'AI 부정' 대책 골몰…인원축소 전망",
-  "news_link": "https://www.yna.co.kr/view/AKR20261121044700002"
- },
- {
-  "geo": "KR",
-  "term": "김혜윤",
+  "term": "쇼메이커",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "장나라X김혜윤, 손잡자마자 터졌다…‘굿파트너2’ 2회 만에 최고 10% 돌파",
-  "news_link": "https://www.chosun.com/entertainments/broadcast/2026/11/22/GFRGCZDEGMYDOMZQMYZWGMDDMY/"
+  "news_title": "'쇼메이커' 허수의 낭만, LCK 스토브리그 판을 흔들다 [이주현의 로그인 e스포츠]",
+  "news_link": "https://www.hankyung.com/article/202611222346i"
  },
  {
   "geo": "KR",
-  "term": "방시혁",
+  "term": "주현영",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "과즙세연 \"너흰 돈 때문에 방시혁이랑 자고 싶냐?…이 거지XX들아\"",
-  "news_link": "https://www.news1.kr/society/general-society/6361937"
+  "news_title": "주현영 과거 폭로 나왔다, 지예은 “‘SNL’ 텃세 있었다” (런닝맨)",
+  "news_link": "https://sports.donga.com/ent/article/all/20261120/135060769/1"
  },
  {
   "geo": "US",
-  "term": "philly marathon 2026",
+  "term": "ny mets",
   "traffic": 5000,
   "topics": "",
   "econ": false,
-  "news_title": "Philadelphia gears up for busy weekend with marathon, Eagles game and possible stormy weather",
-  "news_link": "https://6abc.com/post/philadelphia-gears-busy-weekend-marathon-eagles-game-possible-stormy-weather/20061482/"
+  "news_title": "Mets, A.J. Ewing reach 8-year, $95M extension, sources say",
+  "news_link": "https://www.espn.com/mlb/story/_/id/50552088/mets-aj-ewing-reach-8-year-95m-extension-sources-say"
  },
  {
   "geo": "US",
-  "term": "espncricinfo",
-  "traffic": 500,
+  "term": "juventus vs venezia",
+  "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Stats - Pant's six-feast in India's highest away Test total",
-  "news_link": "https://www.cricinfo.com/story/nz-vs-ind-1st-test-stats-rishabh-pant-s-six-hitting-record-in-india-s-highest-total-in-an-away-test-1563573"
+  "news_title": "Spalletti: Only one way to stop speculation over Conte’s Juventus return",
+  "news_link": "https://sports.yahoo.com/articles/spalletti-only-one-way-stop-112400195.html"
  },
  {
   "geo": "US",
@@ -118,12 +118,12 @@
  },
  {
   "geo": "US",
-  "term": "juventus vs venezia",
+  "term": "pakistan a vs india a",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Serie A Liveblog: Juventus-Venezia, Milan-Frosinone, Atalanta-Inter and more",
-  "news_link": "https://sports.yahoo.com/articles/serie-liveblog-juventus-venezia-milan-102500267.html"
+  "news_title": "IND vs PAK Asia Cup Rising Stars toss 'cheating' controversy: Abdul Samad questions match referee's call as Tilak Varma watches",
+  "news_link": "https://sports.yahoo.com/articles/ind-vs-pak-asia-cup-103413698.html"
  },
  {
   "geo": "US",
@@ -131,17 +131,8 @@
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Bahrain says Iranian attack caused fire at industrial facility",
-  "news_link": "https://www.aljazeera.com/news/2026/11/21/bahrain-says-iranian-attack-causes-fire-at-industrial-facility"
- },
- {
-  "geo": "US",
-  "term": "tkach family",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Indiana State Police address questions and concerns surrounding West Lafayette shooting investigation",
-  "news_link": "https://www.wlfi.com/2026/11/20/indiana-state-police-address-questions-concerns-surrounding-west-lafayette-shooting-investigation/"
+  "news_title": "Bahrain says Iran strikes industrial facility as air defences intercept attacks",
+  "news_link": "https://www.reuters.com/world/middle-east/bahrain-warns-residents-potential-threat-iran-conflict-persists-2026-11-21/"
  },
  {
   "geo": "US",
@@ -149,34 +140,43 @@
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Granada - Real Madrid, hoy en directo: última hora de la Primera División femenina en vivo",
-  "news_link": "https://as.com/futbol/femenino/granada-real-madrid-hoy-en-directo-ultima-hora-de-la-primera-division-femenina-en-vivo-f202611-d/"
- },
- {
-  "geo": "US",
-  "term": "pakistan a vs india a",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Pakistan A opt to bat against India A; both teams unchanged",
-  "news_link": "https://www.cricinfo.com/story/ind-vs-pak-asia-cup-rising-stars-pakistan-a-opt-to-bat-against-india-a-both-sides-unchanged-1563603"
- },
- {
-  "geo": "US",
-  "term": "anne heche",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "Anne Heche Creditors Object to Her Son's Petition For Settlement",
-  "news_link": "https://www.tmz.com/2026/11/22/anne-heche-creditors-object-to-her-son-settlement-petition/"
+  "news_title": "Minuto de silencio antes del Granada-Real Madrid",
+  "news_link": "https://www.realmadrid.com/es-ES/noticias/futbol/primer-equipo-femenino/actualidad/minuto-de-silencio-antes-del-granada-real-madrid-22-11-2026"
  },
  {
   "geo": "US",
   "term": "linda evans",
-  "traffic": 100,
+  "traffic": 200,
   "topics": "",
   "econ": false,
   "news_title": "‘Dynasty’ Star Linda Evans Turns 84: Why She Chose to Stay Single",
   "news_link": "https://www.yahoo.com/entertainment/celebrity/articles/dynasty-star-linda-evans-turns-140523310.html"
+ },
+ {
+  "geo": "US",
+  "term": "météo",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Après les pluies, le Pas-de-Calais a encore des crues à gérer",
+  "news_link": "https://www.france24.com/fr/info-en-continu/20261121-apr%C3%A8s-les-pluies-le-pas-de-calais-a-encore-des-crues-%C3%A0-g%C3%A9rer"
+ },
+ {
+  "geo": "US",
+  "term": "погода",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Зима близко: когда в Волгограде выпадет первый снег",
+  "news_link": "https://novostivolgograda.ru/news/2026-11-22/zima-blizko-kogda-v-volgograde-vypadet-pervyy-sneg-5738588"
+ },
+ {
+  "geo": "US",
+  "term": "granada vs real madrid",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "Granada-Real Madrid: aiming for victory before the break",
+  "news_link": "https://www.realmadrid.com/en-US/news/football/womens-team/fixtures/granada-real-madrid-a-cerrar-noviembre-con-una-victoria-en-la-liga-f-21-11-2026"
  }
 ]
