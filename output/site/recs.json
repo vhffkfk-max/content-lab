@@ -50,7 +50,7 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "인용형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.99,
+  "kr_avg": 3.0,
   "kr_n": 38,
   "foreign_avg": 2.42,
   "foreign_n": 33
@@ -66,8 +66,8 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 0.98,
   "kr_n": 52,
-  "foreign_avg": 1.89,
-  "foreign_n": 80
+  "foreign_avg": 1.9,
+  "foreign_n": 79
  },
  {
   "rank": 6,
@@ -99,16 +99,16 @@
  },
  {
   "rank": 8,
-  "topic": "국내 대형주",
-  "kind": "국내 검증 주제",
+  "topic": "비트코인",
+  "kind": "해외 선행 주제 (선점 기회)",
   "confidence": "높음",
-  "title_idea": "숫자 하나로 보는 국내 대형주",
+  "title_idea": "[오늘] 비트코인에 무슨 일이? 1분 요약",
   "format": "캐러셀(카드뉴스)",
-  "hook": "숫자 강조형",
+  "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.9,
-  "kr_n": 206,
-  "foreign_avg": 0.56,
-  "foreign_n": 8
+  "kr_avg": 1.15,
+  "kr_n": 13,
+  "foreign_avg": 1.86,
+  "foreign_n": 198
  }
 ]
