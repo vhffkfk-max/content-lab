@@ -1,34 +1,16 @@
 [
  {
   "geo": "KR",
-  "term": "남진",
-  "traffic": 2000,
+  "term": "weather tomorrow",
+  "traffic": 5000,
   "topics": "",
   "econ": false,
-  "news_title": "남진, 46세·42세 미혼 미모의 두 딸 공개…\"첫 딸은 김주하 닮아\" [핫피플]",
-  "news_link": "https://www.chosun.com/entertainments/broadcast/2026/11/22/MI4TQNRVME4TSZLBGAYTAMRWMQ/"
+  "news_title": "Precipitation observed in a number of regions of Azerbaijan, snow fell at times on Shahdag",
+  "news_link": "https://1news.az/en/news/20261122115007430-Precipitation-observed-in-a-number-of-regions-of-Azerbaijan-snow-fell-at-times-on-Shahdag"
  },
  {
   "geo": "KR",
-  "term": "무신사",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "SKT, 무신사 블랙프라이데이서 '에어' 요금제 할인",
-  "news_link": "https://www.yna.co.kr/view/AKR20261122012200017"
- },
- {
-  "geo": "KR",
-  "term": "수능 부정행위",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "이 대통령 \"수능 부정행위 철저 추적…국가시험 A부터 Z까지 개편\"",
-  "news_link": "https://www.korea.kr/news/policyNewsView.do?newsId=148976210"
- },
- {
-  "geo": "KR",
-  "term": "한전on",
+  "term": "한전",
   "traffic": 1000,
   "topics": "",
   "econ": false,
@@ -37,12 +19,30 @@
  },
  {
   "geo": "KR",
-  "term": "정상회담",
+  "term": "요리학교",
   "traffic": 500,
-  "topics": "정치·관세",
-  "econ": true,
-  "news_title": "트럼프 “미·중·러, 한반도 위험 논의”…핵 감축엔 “동의 어려워”",
-  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8719193"
+  "topics": "",
+  "econ": false,
+  "news_title": "CIA 첫 한식과정 만든 양종집 교수 “한식 세계화 전초기지로”",
+  "news_link": "https://stock.mk.co.kr/news/view/1203755"
+ },
+ {
+  "geo": "KR",
+  "term": "유벤투스 대 베네치아",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "유벤투스 vs 베네치아 예측: 홈팀이 우세할 것으로 예상됩니다.",
+  "news_link": "https://www.vietnam.vn/ko/nhan-dinh-juventus-vs-venezia-chu-nha-duoc-danh-gia-cao-hon"
+ },
+ {
+  "geo": "KR",
+  "term": "조정식",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "문제 유출, 수능 직전 예능行… 일타강사인가, ‘일탈’강사인가",
+  "news_link": "https://www.chosun.com/national/weekend/2026/11/21/PHM6NQOYUBHKJCLZ4YT3S5R234/"
  },
  {
   "geo": "KR",
@@ -55,21 +55,12 @@
  },
  {
   "geo": "KR",
-  "term": "서울 경전철 서부선",
+  "term": "무디스",
   "traffic": 200,
-  "topics": "부동산",
+  "topics": "AI·반도체, 국내 대형주",
   "econ": true,
-  "news_title": "서울 경전철 서부선 26년째 표류…공사비 급증에 발목 : 부동산",
-  "news_link": "https://news.jkn.co.kr/post/1114541"
- },
- {
-  "geo": "KR",
-  "term": "원자력 잠수함",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "與 “핵추진잠수함 도입, 특별법으로 뒷받침”",
-  "news_link": "https://www.donga.com/news/Politics/article/all/20261122/135065893/1"
+  "news_title": "\"삼성전자 SK하이닉스 내년에도 웃는다\"…무디스가 전망한 이유",
+  "news_link": "https://www.fnnews.com/news/202611220802359845"
  },
  {
   "geo": "KR",
@@ -90,93 +81,102 @@
   "news_link": "https://sports.donga.com/ent/article/all/20261120/135060769/1"
  },
  {
-  "geo": "US",
-  "term": "ny mets",
-  "traffic": 5000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Mets, A.J. Ewing reach 8-year, $95M extension, sources say",
-  "news_link": "https://www.espn.com/mlb/story/_/id/50552088/mets-aj-ewing-reach-8-year-95m-extension-sources-say"
- },
- {
-  "geo": "US",
-  "term": "juventus vs venezia",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Spalletti: Only one way to stop speculation over Conte’s Juventus return",
-  "news_link": "https://sports.yahoo.com/articles/spalletti-only-one-way-stop-112400195.html"
- },
- {
-  "geo": "US",
-  "term": "juventus - venezia",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Juventus-Venezia, le formazioni ufficiali: Spalletti punta su Alajbegovic, Nicola si affida a Lauberbach",
-  "news_link": "https://www.gazzetta.it/calcio/fantanews/22-11-2026/juventus-venezia-le-formazioni-ufficiali-tutti-i-titolari.shtml"
- },
- {
-  "geo": "US",
-  "term": "pakistan a vs india a",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "IND vs PAK Asia Cup Rising Stars toss 'cheating' controversy: Abdul Samad questions match referee's call as Tilak Varma watches",
-  "news_link": "https://sports.yahoo.com/articles/ind-vs-pak-asia-cup-103413698.html"
- },
- {
-  "geo": "US",
-  "term": "radar",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Bahrain says Iran strikes industrial facility as air defences intercept attacks",
-  "news_link": "https://www.reuters.com/world/middle-east/bahrain-warns-residents-potential-threat-iran-conflict-persists-2026-11-21/"
- },
- {
-  "geo": "US",
-  "term": "granada cf - real madrid",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Minuto de silencio antes del Granada-Real Madrid",
-  "news_link": "https://www.realmadrid.com/es-ES/noticias/futbol/primer-equipo-femenino/actualidad/minuto-de-silencio-antes-del-granada-real-madrid-22-11-2026"
- },
- {
-  "geo": "US",
-  "term": "linda evans",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "‘Dynasty’ Star Linda Evans Turns 84: Why She Chose to Stay Single",
-  "news_link": "https://www.yahoo.com/entertainment/celebrity/articles/dynasty-star-linda-evans-turns-140523310.html"
- },
- {
-  "geo": "US",
-  "term": "météo",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Après les pluies, le Pas-de-Calais a encore des crues à gérer",
-  "news_link": "https://www.france24.com/fr/info-en-continu/20261121-apr%C3%A8s-les-pluies-le-pas-de-calais-a-encore-des-crues-%C3%A0-g%C3%A9rer"
- },
- {
-  "geo": "US",
-  "term": "погода",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Зима близко: когда в Волгограде выпадет первый снег",
-  "news_link": "https://novostivolgograda.ru/news/2026-11-22/zima-blizko-kogda-v-volgograde-vypadet-pervyy-sneg-5738588"
- },
- {
-  "geo": "US",
-  "term": "granada vs real madrid",
+  "geo": "KR",
+  "term": "최교진 교육부장관",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "Granada-Real Madrid: aiming for victory before the break",
-  "news_link": "https://www.realmadrid.com/en-US/news/football/womens-team/fixtures/granada-real-madrid-a-cerrar-noviembre-con-una-victoria-en-la-liga-f-21-11-2026"
+  "news_title": "[속보] 이 대통령, 최교진 교육장관 면직안 재가",
+  "news_link": "https://www.hani.co.kr/arti/politics/bluehouse/1288547.html"
+ },
+ {
+  "geo": "US",
+  "term": "barcelona - villarreal",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Barcelona: posible alineación y probabilidades vs Villarreal",
+  "news_link": "https://espndeportes.espn.com/futbol/espana/nota/_/id/17540059/barcelona-vs-villarreal-alineacion-probabilidades-laliga"
+ },
+ {
+  "geo": "US",
+  "term": "lpga leaderboard",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Kim clings to 1-shot lead in LPGA finale; Korda back in mix",
+  "news_link": "https://www.espn.com/golf/story/_/id/50554344/kim-clings-1-shot-lead-lpga-finale-korda-back-mix"
+ },
+ {
+  "geo": "US",
+  "term": "weather nyc",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "East Coast storm could soak millions this weekend",
+  "news_link": "https://weather.com/2026/11/22/forecast/regional/east-coast-storm-coastal-flooding-winds-rain"
+ },
+ {
+  "geo": "US",
+  "term": "weather chicago",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Chicago reaches third warmest fall in 150 years, says National Weather Service",
+  "news_link": "https://chicago.suntimes.com/weather/2026/11/21/chicago-reaches-third-warmest-fall-on-record"
+ },
+ {
+  "geo": "US",
+  "term": "burnley vs blackburn rovers",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "EFL Championship LIVE: Burnley vs Blackburn Rovers - build-up, team news, match stats & live text commentary",
+  "news_link": "https://www.bbc.com/sport/football/live/cj04wnnr2py9t"
+ },
+ {
+  "geo": "US",
+  "term": "nick cannon",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Nick Cannon Hospitalized Amid Lupus Battle: ‘Pray for Me, Y’all!’",
+  "news_link": "https://www.billboard.com/music/rb-hip-hop/nick-cannon-hospital-lupus-prayers-1236387115/"
+ },
+ {
+  "geo": "US",
+  "term": "elija lofton",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "Miami Hurricanes lose a key playmaker to injury against Virginia Tech",
+  "news_link": "https://www.miamiherald.com/sports/college/acc/university-of-miami/article318177581.html"
+ },
+ {
+  "geo": "US",
+  "term": "gta 6 pc port",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "The wait begins for GTA VI on PC",
+  "news_link": "https://www.theverge.com/games/1036550/grand-theft-auto-6-gta-vi-pc-version-fomo"
+ },
+ {
+  "geo": "US",
+  "term": "ncaa division i football bowl subdivision",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "Waiver approved allowing Army, Navy to play 13th game in 2027",
+  "news_link": "https://www.espn.com/college-football/story/_/id/50535192/waiver-approved-army-navy-13th-game-2027"
+ },
+ {
+  "geo": "US",
+  "term": "tessa majors",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "Exclusive | Teen killer who held down Tessa Majors while pal plunged knife into her heart freed early — despite violence behind bars",
+  "news_link": "https://nypost.com/2026/11/21/us-news/one-of-tessa-majors-killers-sprung-from-upstate-prison-just-6-years-after-sentencing/"
  }
 ]
