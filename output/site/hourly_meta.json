@@ -1,12 +1,12 @@
 {
- "at": "2026-11-23T03:11+09:00",
- "took_sec": 611,
+ "at": "2026-11-23T04:10+09:00",
+ "took_sec": 594,
  "steps": [
   {
    "step": "free_import.py",
    "ok": true,
-   "sec": 20,
-   "note": "무료 크롤러 → 인스타 글 1871개 · 쓰레드 글 5437개 · X 글 5315개 · 인스타 계정 팔로워 141곳 (PC가 0.1시간 전에 올림)"
+   "sec": 21,
+   "note": "무료 크롤러 → 인스타 글 1874개 · 쓰레드 글 5441개 · X 글 5333개 · 인스타 계정 팔로워 141곳 (PC가 0.5시간 전에 올림)"
   },
   {
    "step": "threads_viral.py --export",
@@ -35,8 +35,8 @@
   {
    "step": "threads_analyze.py",
    "ok": true,
-   "sec": 63,
-   "note": "✅ 쓰레드 글 32개 분석 · 공식 5개 (입력 14,614 / 출력 8,122 토큰)"
+   "sec": 69,
+   "note": "✅ 쓰레드 글 32개 분석 · 공식 5개 (입력 14,614 / 출력 9,385 토큰)"
   },
   {
    "step": "threads_types.py",
@@ -47,14 +47,14 @@
   {
    "step": "x_analyze.py",
    "ok": true,
-   "sec": 54,
-   "note": "✅ X·트루스 글 22개 분석 (입력 6,436 / 출력 11,705 토큰)"
+   "sec": 50,
+   "note": "✅ X·트루스 글 22개 분석 (입력 6,473 / 출력 10,676 토큰)"
   },
   {
    "step": "threads_mine_analyze.py",
    "ok": true,
-   "sec": 391,
-   "note": "✅ 황소개미 진단 (등급 C, AI 티 2.8) · 입력 48,823 / 출력 54,353 토큰"
+   "sec": 370,
+   "note": "✅ 황소개미 진단 (등급 C, AI 티 2.5) · 입력 96,261 / 출력 53,465 토큰"
   },
   {
    "step": "generate_drafts.py",
@@ -65,8 +65,8 @@
   {
    "step": "import_ideas.py",
    "ok": true,
-   "sec": 30,
-   "note": "✅ 한국 미출시 해외 아이디어 2개 (입력 32,964 / 출력 5,080 토큰)"
+   "sec": 31,
+   "note": "✅ 한국 미출시 해외 아이디어 2개 (입력 32,965 / 출력 5,928 토큰)"
   }
  ],
  "updated": [
@@ -77,17 +77,14 @@
   "acc_tops",
   "accounts",
   "calendar",
-  "fo_hot",
   "fo_topics",
   "ig_slides",
   "imports",
   "insights",
   "patterns",
-  "rec_examples",
   "rec_reasons",
   "recs",
   "summary",
-  "this_week",
   "this_week_accounts",
   "thl_reco",
   "thl_types",
@@ -115,63 +112,63 @@
   {
    "name": "매시간 분석",
    "file": "hourly_meta.json",
-   "age_min": 51,
+   "age_min": 49,
    "limit": 90,
    "stale": false
   },
   {
    "name": "뉴스 수집(30분)",
    "file": "live_meta.json",
-   "age_min": 0,
+   "age_min": 26,
    "limit": 90,
    "stale": false
   },
   {
    "name": "쓰레드 실시간 추적(30분)",
    "file": "thx_live_meta.json",
-   "age_min": 0,
+   "age_min": 26,
    "limit": 90,
    "stale": false
   },
   {
    "name": "인스타 실시간 추적(30분)",
    "file": "igx_live_meta.json",
-   "age_min": 0,
+   "age_min": 26,
    "limit": 90,
    "stale": false
   },
   {
    "name": "무료 크롤러 원자료(30분)",
    "file": "free_crawl.json",
-   "age_min": 0,
+   "age_min": 26,
    "limit": 90,
    "stale": false
   },
   {
    "name": "텔레그램 수집(30분)",
    "file": "tg_meta.json",
-   "age_min": 13,
+   "age_min": 12,
    "limit": 90,
    "stale": false
   },
   {
    "name": "뜬 글 공식(릴스·카드뉴스, 매시간)",
    "file": "viral.json",
-   "age_min": 34,
+   "age_min": 23,
    "limit": 120,
    "stale": false
   },
   {
    "name": "지금 쓸 거리(2시간)",
    "file": "hot_now.json",
-   "age_min": 202,
+   "age_min": 262,
    "limit": 150,
    "stale": true
   },
   {
    "name": "X 크롤러 새 글",
    "file": "free_crawl.json#x",
-   "age_min": 59,
+   "age_min": 69,
    "limit": 360,
    "stale": false
   }
