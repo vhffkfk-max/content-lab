@@ -297,7 +297,7 @@
   "username": "lssec_official",
   "group": "형식",
   "key": "단일 이미지",
-  "avg": 1.49,
+  "avg": 1.5,
   "n": 28
  },
  {
@@ -332,7 +332,7 @@
   "username": "lssec_official",
   "group": "첫 문장",
   "key": "인용형",
-  "avg": 0.83,
+  "avg": 0.84,
   "n": 7
  },
  {
@@ -360,7 +360,7 @@
   "username": "lssec_official",
   "group": "시간대",
   "key": "아침(6~9시)",
-  "avg": 1.08,
+  "avg": 1.09,
   "n": 9
  },
  {
@@ -388,7 +388,7 @@
   "username": "lssec_official",
   "group": "요일",
   "key": "월",
-  "avg": 1.05,
+  "avg": 1.06,
   "n": 8
  },
  {
@@ -1148,6 +1148,76 @@
   "n": 4
  },
  {
+  "username": "scourtkorea",
+  "group": "형식",
+  "key": "캐러셀(카드뉴스)",
+  "avg": 1.11,
+  "n": 10
+ },
+ {
+  "username": "scourtkorea",
+  "group": "형식",
+  "key": "릴스",
+  "avg": 0.57,
+  "n": 4
+ },
+ {
+  "username": "scourtkorea",
+  "group": "첫 문장",
+  "key": "짧은 한 줄",
+  "avg": 1.28,
+  "n": 7
+ },
+ {
+  "username": "scourtkorea",
+  "group": "첫 문장",
+  "key": "일반 서술형",
+  "avg": 0.93,
+  "n": 6
+ },
+ {
+  "username": "scourtkorea",
+  "group": "첫 문장",
+  "key": "질문형",
+  "avg": 0.99,
+  "n": 2
+ },
+ {
+  "username": "scourtkorea",
+  "group": "시간대",
+  "key": "오후(14~18시)",
+  "avg": 0.96,
+  "n": 14
+ },
+ {
+  "username": "scourtkorea",
+  "group": "요일",
+  "key": "금",
+  "avg": 0.77,
+  "n": 4
+ },
+ {
+  "username": "scourtkorea",
+  "group": "요일",
+  "key": "수",
+  "avg": 1.57,
+  "n": 4
+ },
+ {
+  "username": "scourtkorea",
+  "group": "요일",
+  "key": "월",
+  "avg": 1.06,
+  "n": 4
+ },
+ {
+  "username": "scourtkorea",
+  "group": "요일",
+  "key": "목",
+  "avg": 0.86,
+  "n": 2
+ },
+ {
   "username": "bitcoinmagazine",
   "group": "형식",
   "key": "단일 이미지",
@@ -1397,76 +1467,6 @@
   "group": "주제",
   "key": "AI·반도체",
   "avg": 0.98,
-  "n": 2
- },
- {
-  "username": "scourtkorea",
-  "group": "형식",
-  "key": "캐러셀(카드뉴스)",
-  "avg": 1.15,
-  "n": 10
- },
- {
-  "username": "scourtkorea",
-  "group": "형식",
-  "key": "릴스",
-  "avg": 0.66,
-  "n": 4
- },
- {
-  "username": "scourtkorea",
-  "group": "첫 문장",
-  "key": "짧은 한 줄",
-  "avg": 1.29,
-  "n": 7
- },
- {
-  "username": "scourtkorea",
-  "group": "첫 문장",
-  "key": "일반 서술형",
-  "avg": 1.08,
-  "n": 6
- },
- {
-  "username": "scourtkorea",
-  "group": "첫 문장",
-  "key": "질문형",
-  "avg": 1.15,
-  "n": 2
- },
- {
-  "username": "scourtkorea",
-  "group": "시간대",
-  "key": "오후(14~18시)",
-  "avg": 1.01,
-  "n": 14
- },
- {
-  "username": "scourtkorea",
-  "group": "요일",
-  "key": "금",
-  "avg": 0.89,
-  "n": 4
- },
- {
-  "username": "scourtkorea",
-  "group": "요일",
-  "key": "수",
-  "avg": 1.81,
-  "n": 4
- },
- {
-  "username": "scourtkorea",
-  "group": "요일",
-  "key": "월",
-  "avg": 0.9,
-  "n": 4
- },
- {
-  "username": "scourtkorea",
-  "group": "요일",
-  "key": "목",
-  "avg": 1.0,
   "n": 2
  },
  {
@@ -2705,7 +2705,7 @@
   "username": "moneyletter",
   "group": "시간대",
   "key": "밤(21~24시)",
-  "avg": 2.92,
+  "avg": 2.93,
   "n": 6
  },
  {
@@ -2824,78 +2824,85 @@
   "username": "kpf__official",
   "group": "형식",
   "key": "캐러셀(카드뉴스)",
-  "avg": 1.39,
+  "avg": 1.47,
   "n": 10
  },
  {
   "username": "kpf__official",
   "group": "형식",
   "key": "단일 이미지",
-  "avg": 0.43,
-  "n": 2
+  "avg": 0.33,
+  "n": 3
  },
  {
   "username": "kpf__official",
   "group": "첫 문장",
   "key": "짧은 한 줄",
-  "avg": 1.36,
+  "avg": 1.45,
   "n": 4
  },
  {
   "username": "kpf__official",
   "group": "첫 문장",
+  "key": "숫자 강조형",
+  "avg": 0.28,
+  "n": 2
+ },
+ {
+  "username": "kpf__official",
+  "group": "첫 문장",
   "key": "일반 서술형",
-  "avg": 1.26,
+  "avg": 1.34,
   "n": 7
  },
  {
   "username": "kpf__official",
   "group": "시간대",
   "key": "오후(14~18시)",
-  "avg": 0.66,
-  "n": 6
+  "avg": 0.61,
+  "n": 7
  },
  {
   "username": "kpf__official",
   "group": "시간대",
   "key": "오전(9~12시)",
-  "avg": 2.4,
+  "avg": 2.54,
   "n": 3
  },
  {
   "username": "kpf__official",
   "group": "요일",
   "key": "목",
-  "avg": 2.87,
+  "avg": 3.04,
   "n": 2
  },
  {
   "username": "kpf__official",
   "group": "요일",
   "key": "수",
-  "avg": 0.61,
+  "avg": 0.65,
   "n": 5
  },
  {
   "username": "kpf__official",
   "group": "요일",
   "key": "화",
-  "avg": 1.51,
+  "avg": 1.59,
   "n": 2
  },
  {
   "username": "kpf__official",
   "group": "요일",
   "key": "월",
-  "avg": 0.7,
-  "n": 2
+  "avg": 0.52,
+  "n": 3
  },
  {
   "username": "kpf__official",
   "group": "주제",
   "key": "AI·반도체",
-  "avg": 1.13,
-  "n": 3
+  "avg": 0.92,
+  "n": 4
  },
  {
   "username": "hibi_heebee",
@@ -3815,102 +3822,88 @@
   "n": 6
  },
  {
-  "username": "nts.korea",
-  "group": "형식",
-  "key": "단일 이미지",
-  "avg": 2.13,
-  "n": 6
- },
- {
-  "username": "nts.korea",
-  "group": "형식",
-  "key": "캐러셀(카드뉴스)",
-  "avg": 1.25,
-  "n": 11
- },
- {
-  "username": "nts.korea",
+  "username": "upbit_official",
   "group": "형식",
   "key": "릴스",
-  "avg": 1.22,
-  "n": 6
- },
- {
-  "username": "nts.korea",
-  "group": "첫 문장",
-  "key": "일반 서술형",
   "avg": 0.99,
-  "n": 19
- },
- {
-  "username": "nts.korea",
-  "group": "첫 문장",
-  "key": "질문형",
-  "avg": 0.74,
-  "n": 2
- },
- {
-  "username": "nts.korea",
-  "group": "시간대",
-  "key": "오후(14~18시)",
-  "avg": 2.17,
   "n": 9
  },
  {
-  "username": "nts.korea",
-  "group": "시간대",
-  "key": "밤(21~24시)",
-  "avg": 1.79,
-  "n": 2
- },
- {
-  "username": "nts.korea",
-  "group": "시간대",
-  "key": "저녁(18~21시)",
-  "avg": 0.87,
-  "n": 9
- },
- {
-  "username": "nts.korea",
-  "group": "시간대",
-  "key": "오전(9~12시)",
+  "username": "upbit_official",
+  "group": "형식",
+  "key": "캐러셀(카드뉴스)",
   "avg": 0.97,
   "n": 3
  },
  {
-  "username": "nts.korea",
-  "group": "요일",
-  "key": "금",
-  "avg": 3.3,
-  "n": 5
- },
- {
-  "username": "nts.korea",
-  "group": "요일",
-  "key": "목",
-  "avg": 1.22,
-  "n": 5
- },
- {
-  "username": "nts.korea",
-  "group": "요일",
-  "key": "수",
-  "avg": 0.89,
+  "username": "upbit_official",
+  "group": "첫 문장",
+  "key": "일반 서술형",
+  "avg": 0.6,
   "n": 8
  },
  {
-  "username": "nts.korea",
-  "group": "요일",
-  "key": "화",
-  "avg": 0.78,
-  "n": 4
+  "username": "upbit_official",
+  "group": "첫 문장",
+  "key": "질문형",
+  "avg": 1.21,
+  "n": 2
  },
  {
-  "username": "nts.korea",
+  "username": "upbit_official",
+  "group": "첫 문장",
+  "key": "짧은 한 줄",
+  "avg": 2.3,
+  "n": 2
+ },
+ {
+  "username": "upbit_official",
+  "group": "시간대",
+  "key": "저녁(18~21시)",
+  "avg": 1.04,
+  "n": 8
+ },
+ {
+  "username": "upbit_official",
+  "group": "시간대",
+  "key": "오후(14~18시)",
+  "avg": 0.99,
+  "n": 3
+ },
+ {
+  "username": "upbit_official",
+  "group": "요일",
+  "key": "월",
+  "avg": 1.28,
+  "n": 5
+ },
+ {
+  "username": "upbit_official",
+  "group": "요일",
+  "key": "수",
+  "avg": 0.84,
+  "n": 2
+ },
+ {
+  "username": "upbit_official",
+  "group": "요일",
+  "key": "화",
+  "avg": 0.64,
+  "n": 2
+ },
+ {
+  "username": "upbit_official",
+  "group": "요일",
+  "key": "목",
+  "avg": 0.98,
+  "n": 2
+ },
+ {
+  "username": "upbit_official",
   "group": "주제",
-  "key": "연금·절세",
-  "avg": 1.91,
-  "n": 12
+  "key": "비트코인",
+  "avg": 0.97,
+  "n": 8
  },
  {
   "username": "hanwhawm.official",
@@ -4224,15 +4217,15 @@
   "username": "moneytodaynews",
   "group": "형식",
   "key": "단일 이미지",
-  "avg": 1.35,
+  "avg": 1.36,
   "n": 129
  },
  {
   "username": "moneytodaynews",
   "group": "형식",
   "key": "캐러셀(카드뉴스)",
-  "avg": 1.74,
-  "n": 94
+  "avg": 1.72,
+  "n": 96
  },
  {
   "username": "moneytodaynews",
@@ -4245,14 +4238,14 @@
   "username": "moneytodaynews",
   "group": "첫 문장",
   "key": "일반 서술형",
-  "avg": 1.63,
-  "n": 140
+  "avg": 1.62,
+  "n": 141
  },
  {
   "username": "moneytodaynews",
   "group": "첫 문장",
   "key": "속보·뉴스형",
-  "avg": 1.04,
+  "avg": 1.05,
   "n": 34
  },
  {
@@ -4273,8 +4266,8 @@
   "username": "moneytodaynews",
   "group": "첫 문장",
   "key": "질문형",
-  "avg": 1.06,
-  "n": 14
+  "avg": 1.03,
+  "n": 15
  },
  {
   "username": "moneytodaynews",
@@ -4315,8 +4308,8 @@
   "username": "moneytodaynews",
   "group": "시간대",
   "key": "오후(14~18시)",
-  "avg": 1.64,
-  "n": 101
+  "avg": 1.63,
+  "n": 103
  },
  {
   "username": "moneytodaynews",
@@ -4364,8 +4357,8 @@
   "username": "moneytodaynews",
   "group": "요일",
   "key": "월",
-  "avg": 1.45,
-  "n": 42
+  "avg": 1.43,
+  "n": 44
  },
  {
   "username": "moneytodaynews",
@@ -4422,6 +4415,111 @@
   "key": "AI·반도체",
   "avg": 1.05,
   "n": 9
+ },
+ {
+  "username": "nts.korea",
+  "group": "형식",
+  "key": "단일 이미지",
+  "avg": 2.2,
+  "n": 6
+ },
+ {
+  "username": "nts.korea",
+  "group": "형식",
+  "key": "캐러셀(카드뉴스)",
+  "avg": 1.26,
+  "n": 12
+ },
+ {
+  "username": "nts.korea",
+  "group": "형식",
+  "key": "릴스",
+  "avg": 1.32,
+  "n": 6
+ },
+ {
+  "username": "nts.korea",
+  "group": "첫 문장",
+  "key": "일반 서술형",
+  "avg": 1.02,
+  "n": 20
+ },
+ {
+  "username": "nts.korea",
+  "group": "첫 문장",
+  "key": "질문형",
+  "avg": 0.8,
+  "n": 2
+ },
+ {
+  "username": "nts.korea",
+  "group": "시간대",
+  "key": "오후(14~18시)",
+  "avg": 2.07,
+  "n": 10
+ },
+ {
+  "username": "nts.korea",
+  "group": "시간대",
+  "key": "밤(21~24시)",
+  "avg": 1.94,
+  "n": 2
+ },
+ {
+  "username": "nts.korea",
+  "group": "시간대",
+  "key": "저녁(18~21시)",
+  "avg": 0.94,
+  "n": 9
+ },
+ {
+  "username": "nts.korea",
+  "group": "시간대",
+  "key": "오전(9~12시)",
+  "avg": 1.05,
+  "n": 3
+ },
+ {
+  "username": "nts.korea",
+  "group": "요일",
+  "key": "금",
+  "avg": 3.44,
+  "n": 5
+ },
+ {
+  "username": "nts.korea",
+  "group": "요일",
+  "key": "목",
+  "avg": 1.33,
+  "n": 5
+ },
+ {
+  "username": "nts.korea",
+  "group": "요일",
+  "key": "수",
+  "avg": 0.97,
+  "n": 8
+ },
+ {
+  "username": "nts.korea",
+  "group": "요일",
+  "key": "화",
+  "avg": 0.84,
+  "n": 4
+ },
+ {
+  "username": "nts.korea",
+  "group": "요일",
+  "key": "월",
+  "avg": 0.66,
+  "n": 2
+ },
+ {
+  "username": "nts.korea",
+  "group": "주제",
+  "key": "연금·절세",
+  "avg": 2.01,
+  "n": 12
  },
  {
   "username": "heoyoopapa",
@@ -4770,7 +4868,7 @@
   "username": "etf.investments",
   "group": "첫 문장",
   "key": "숫자·리스트형",
-  "avg": 1.07,
+  "avg": 1.08,
   "n": 5
  },
  {
@@ -4826,7 +4924,7 @@
   "username": "etf.investments",
   "group": "요일",
   "key": "월",
-  "avg": 0.66,
+  "avg": 0.68,
   "n": 5
  },
  {
@@ -5589,7 +5687,7 @@
   "username": "oh_neworld",
   "group": "형식",
   "key": "캐러셀(카드뉴스)",
-  "avg": 1.3,
+  "avg": 1.32,
   "n": 26
  },
  {
@@ -5603,7 +5701,7 @@
   "username": "oh_neworld",
   "group": "첫 문장",
   "key": "질문형",
-  "avg": 1.24,
+  "avg": 1.25,
   "n": 3
  },
  {
@@ -5617,7 +5715,7 @@
   "username": "oh_neworld",
   "group": "첫 문장",
   "key": "숫자 강조형",
-  "avg": 0.79,
+  "avg": 0.85,
   "n": 7
  },
  {
@@ -5645,7 +5743,7 @@
   "username": "oh_neworld",
   "group": "시간대",
   "key": "오후(14~18시)",
-  "avg": 0.86,
+  "avg": 0.92,
   "n": 7
  },
  {
@@ -5659,7 +5757,7 @@
   "username": "oh_neworld",
   "group": "요일",
   "key": "월",
-  "avg": 0.55,
+  "avg": 0.66,
   "n": 4
  },
  {
@@ -5701,14 +5799,14 @@
   "username": "oh_neworld",
   "group": "요일",
   "key": "일",
-  "avg": 1.99,
+  "avg": 2.0,
   "n": 2
  },
  {
   "username": "oh_neworld",
   "group": "주제",
   "key": "AI·반도체",
-  "avg": 1.36,
+  "avg": 1.39,
   "n": 14
  },
  {
@@ -5722,14 +5820,14 @@
   "username": "oh_neworld",
   "group": "주제",
   "key": "국내 대형주",
-  "avg": 2.54,
+  "avg": 2.55,
   "n": 4
  },
  {
   "username": "oh_neworld",
   "group": "주제",
   "key": "실적발표",
-  "avg": 0.71,
+  "avg": 0.93,
   "n": 2
  },
  {
@@ -5743,7 +5841,7 @@
   "username": "oh_neworld",
   "group": "주제",
   "key": "급락·변동성",
-  "avg": 1.7,
+  "avg": 1.71,
   "n": 3
  },
  {
@@ -6954,7 +7052,7 @@
   "username": "ppspr_korea",
   "group": "형식",
   "key": "단일 이미지",
-  "avg": 1.85,
+  "avg": 1.86,
   "n": 9
  },
  {
@@ -6975,7 +7073,7 @@
   "username": "ppspr_korea",
   "group": "첫 문장",
   "key": "속보·뉴스형",
-  "avg": 1.98,
+  "avg": 1.99,
   "n": 8
  },
  {
@@ -7010,7 +7108,7 @@
   "username": "ppspr_korea",
   "group": "시간대",
   "key": "점심(12~14시)",
-  "avg": 1.81,
+  "avg": 1.82,
   "n": 9
  },
  {
@@ -7038,7 +7136,7 @@
   "username": "ppspr_korea",
   "group": "요일",
   "key": "월",
-  "avg": 1.04,
+  "avg": 1.06,
   "n": 9
  },
  {
@@ -7269,14 +7367,14 @@
   "username": "faststocknews",
   "group": "형식",
   "key": "캐러셀(카드뉴스)",
-  "avg": 0.89,
+  "avg": 0.9,
   "n": 45
  },
  {
   "username": "faststocknews",
   "group": "형식",
   "key": "단일 이미지",
-  "avg": 1.0,
+  "avg": 1.01,
   "n": 87
  },
  {
@@ -7297,7 +7395,7 @@
   "username": "faststocknews",
   "group": "시간대",
   "key": "점심(12~14시)",
-  "avg": 0.74,
+  "avg": 0.75,
   "n": 5
  },
  {
@@ -7311,7 +7409,7 @@
   "username": "faststocknews",
   "group": "시간대",
   "key": "오후(14~18시)",
-  "avg": 1.06,
+  "avg": 1.08,
   "n": 38
  },
  {
@@ -7346,7 +7444,7 @@
   "username": "faststocknews",
   "group": "요일",
   "key": "월",
-  "avg": 0.96,
+  "avg": 1.0,
   "n": 25
  },
  {
@@ -7381,99 +7479,15 @@
   "username": "faststocknews",
   "group": "주제",
   "key": "초보·투자마인드",
-  "avg": 1.08,
+  "avg": 1.09,
   "n": 76
  },
  {
   "username": "faststocknews",
   "group": "주제",
   "key": "AI·반도체",
-  "avg": 0.77,
+  "avg": 0.78,
   "n": 14
- },
- {
-  "username": "upbit_official",
-  "group": "형식",
-  "key": "릴스",
-  "avg": 0.99,
-  "n": 9
- },
- {
-  "username": "upbit_official",
-  "group": "형식",
-  "key": "캐러셀(카드뉴스)",
-  "avg": 0.97,
-  "n": 3
- },
- {
-  "username": "upbit_official",
-  "group": "첫 문장",
-  "key": "일반 서술형",
-  "avg": 0.6,
-  "n": 8
- },
- {
-  "username": "upbit_official",
-  "group": "첫 문장",
-  "key": "질문형",
-  "avg": 1.21,
-  "n": 2
- },
- {
-  "username": "upbit_official",
-  "group": "첫 문장",
-  "key": "짧은 한 줄",
-  "avg": 2.3,
-  "n": 2
- },
- {
-  "username": "upbit_official",
-  "group": "시간대",
-  "key": "저녁(18~21시)",
-  "avg": 1.04,
-  "n": 8
- },
- {
-  "username": "upbit_official",
-  "group": "시간대",
-  "key": "오후(14~18시)",
-  "avg": 0.99,
-  "n": 3
- },
- {
-  "username": "upbit_official",
-  "group": "요일",
-  "key": "월",
-  "avg": 1.28,
-  "n": 5
- },
- {
-  "username": "upbit_official",
-  "group": "요일",
-  "key": "수",
-  "avg": 0.84,
-  "n": 2
- },
- {
-  "username": "upbit_official",
-  "group": "요일",
-  "key": "화",
-  "avg": 0.64,
-  "n": 2
- },
- {
-  "username": "upbit_official",
-  "group": "요일",
-  "key": "목",
-  "avg": 0.98,
-  "n": 2
- },
- {
-  "username": "upbit_official",
-  "group": "주제",
-  "key": "비트코인",
-  "avg": 0.97,
-  "n": 8
  },
  {
   "username": "mods_korea",
@@ -7780,21 +7794,21 @@
   "username": "mk.co.kr",
   "group": "형식",
   "key": "단일 이미지",
-  "avg": 3.06,
-  "n": 57
+  "avg": 2.99,
+  "n": 59
  },
  {
   "username": "mk.co.kr",
   "group": "첫 문장",
   "key": "일반 서술형",
-  "avg": 3.35,
-  "n": 125
+  "avg": 3.33,
+  "n": 126
  },
  {
   "username": "mk.co.kr",
   "group": "첫 문장",
   "key": "질문형",
-  "avg": 2.13,
+  "avg": 2.14,
   "n": 20
  },
  {
@@ -7808,8 +7822,8 @@
   "username": "mk.co.kr",
   "group": "첫 문장",
   "key": "숫자 강조형",
-  "avg": 2.56,
-  "n": 37
+  "avg": 2.53,
+  "n": 38
  },
  {
   "username": "mk.co.kr",
@@ -7857,8 +7871,8 @@
   "username": "mk.co.kr",
   "group": "시간대",
   "key": "오후(14~18시)",
-  "avg": 3.28,
-  "n": 85
+  "avg": 3.23,
+  "n": 87
  },
  {
   "username": "mk.co.kr",
@@ -7899,8 +7913,8 @@
   "username": "mk.co.kr",
   "group": "요일",
   "key": "월",
-  "avg": 2.3,
-  "n": 50
+  "avg": 2.26,
+  "n": 52
  },
  {
   "username": "mk.co.kr",
@@ -7941,7 +7955,7 @@
   "username": "mk.co.kr",
   "group": "주제",
   "key": "국내 대형주",
-  "avg": 2.11,
+  "avg": 2.12,
   "n": 32
  },
  {
@@ -7962,7 +7976,7 @@
   "username": "mk.co.kr",
   "group": "주제",
   "key": "금리·연준",
-  "avg": 2.04,
+  "avg": 2.05,
   "n": 7
  },
  {
@@ -10783,15 +10797,15 @@
   "username": "pipc.go.kr",
   "group": "형식",
   "key": "캐러셀(카드뉴스)",
-  "avg": 1.41,
-  "n": 8
+  "avg": 1.38,
+  "n": 9
  },
  {
   "username": "pipc.go.kr",
   "group": "형식",
   "key": "단일 이미지",
-  "avg": 0.94,
-  "n": 12
+  "avg": 0.92,
+  "n": 13
  },
  {
   "username": "pipc.go.kr",
@@ -10812,20 +10826,20 @@
   "group": "첫 문장",
   "key": "일반 서술형",
   "avg": 1.17,
-  "n": 16
+  "n": 17
  },
  {
   "username": "pipc.go.kr",
   "group": "첫 문장",
   "key": "질문형",
-  "avg": 1.41,
-  "n": 6
+  "avg": 1.31,
+  "n": 7
  },
  {
   "username": "pipc.go.kr",
   "group": "시간대",
   "key": "점심(12~14시)",
-  "avg": 0.57,
+  "avg": 0.68,
   "n": 4
  },
  {
@@ -10839,8 +10853,15 @@
   "username": "pipc.go.kr",
   "group": "시간대",
   "key": "오전(9~12시)",
-  "avg": 1.04,
+  "avg": 1.07,
   "n": 11
+ },
+ {
+  "username": "pipc.go.kr",
+  "group": "시간대",
+  "key": "저녁(18~21시)",
+  "avg": 0.57,
+  "n": 2
  },
  {
   "username": "pipc.go.kr",
@@ -10867,8 +10888,8 @@
   "username": "pipc.go.kr",
   "group": "요일",
   "key": "월",
-  "avg": 0.88,
-  "n": 6
+  "avg": 0.89,
+  "n": 8
  },
  {
   "username": "pipc.go.kr",
@@ -10881,7 +10902,7 @@
   "username": "pipc.go.kr",
   "group": "주제",
   "key": "AI·반도체",
-  "avg": 1.12,
+  "avg": 1.16,
   "n": 7
  },
  {
@@ -11014,7 +11035,7 @@
   "username": "marketwatch",
   "group": "요일",
   "key": "월",
-  "avg": 1.18,
+  "avg": 1.19,
   "n": 14
  },
  {
@@ -11630,15 +11651,15 @@
   "username": "aceetf_official",
   "group": "형식",
   "key": "캐러셀(카드뉴스)",
-  "avg": 0.76,
-  "n": 14
+  "avg": 0.72,
+  "n": 15
  },
  {
   "username": "aceetf_official",
   "group": "첫 문장",
   "key": "일반 서술형",
-  "avg": 0.83,
-  "n": 13
+  "avg": 0.79,
+  "n": 14
  },
  {
   "username": "aceetf_official",
@@ -11658,8 +11679,8 @@
   "username": "aceetf_official",
   "group": "시간대",
   "key": "오후(14~18시)",
-  "avg": 0.99,
-  "n": 15
+  "avg": 0.95,
+  "n": 16
  },
  {
   "username": "aceetf_official",
@@ -11707,8 +11728,8 @@
   "username": "aceetf_official",
   "group": "요일",
   "key": "월",
-  "avg": 0.67,
-  "n": 6
+  "avg": 0.6,
+  "n": 7
  },
  {
   "username": "aceetf_official",
@@ -11721,8 +11742,8 @@
   "username": "aceetf_official",
   "group": "주제",
   "key": "AI·반도체",
-  "avg": 0.87,
-  "n": 17
+  "avg": 0.83,
+  "n": 18
  },
  {
   "username": "aceetf_official",
@@ -11742,8 +11763,8 @@
   "username": "aceetf_official",
   "group": "주제",
   "key": "금리·연준",
-  "avg": 0.95,
-  "n": 3
+  "avg": 0.77,
+  "n": 4
  },
  {
   "username": "aceetf_official",
@@ -11826,29 +11847,29 @@
   "username": "ekke.now",
   "group": "형식",
   "key": "캐러셀(카드뉴스)",
-  "avg": 2.21,
-  "n": 184
+  "avg": 2.18,
+  "n": 187
  },
  {
   "username": "ekke.now",
   "group": "형식",
   "key": "릴스",
-  "avg": 3.0,
-  "n": 35
+  "avg": 2.92,
+  "n": 36
  },
  {
   "username": "ekke.now",
   "group": "형식",
   "key": "단일 이미지",
-  "avg": 1.86,
-  "n": 108
+  "avg": 1.89,
+  "n": 109
  },
  {
   "username": "ekke.now",
   "group": "첫 문장",
   "key": "짧은 한 줄",
-  "avg": 2.16,
-  "n": 173
+  "avg": 2.14,
+  "n": 177
  },
  {
   "username": "ekke.now",
@@ -11875,15 +11896,15 @@
   "username": "ekke.now",
   "group": "첫 문장",
   "key": "숫자 강조형",
-  "avg": 1.95,
+  "avg": 1.99,
   "n": 25
  },
  {
   "username": "ekke.now",
   "group": "첫 문장",
   "key": "질문형",
-  "avg": 2.9,
-  "n": 34
+  "avg": 2.83,
+  "n": 35
  },
  {
   "username": "ekke.now",
@@ -11896,7 +11917,7 @@
   "username": "ekke.now",
   "group": "시간대",
   "key": "오전(9~12시)",
-  "avg": 2.22,
+  "avg": 2.25,
   "n": 88
  },
  {
@@ -11910,15 +11931,15 @@
   "username": "ekke.now",
   "group": "시간대",
   "key": "저녁(18~21시)",
-  "avg": 2.21,
-  "n": 54
+  "avg": 2.12,
+  "n": 57
  },
  {
   "username": "ekke.now",
   "group": "시간대",
   "key": "오후(14~18시)",
-  "avg": 2.38,
-  "n": 123
+  "avg": 2.36,
+  "n": 125
  },
  {
   "username": "ekke.now",
@@ -11952,8 +11973,8 @@
   "username": "ekke.now",
   "group": "요일",
   "key": "월",
-  "avg": 1.92,
-  "n": 67
+  "avg": 1.87,
+  "n": 72
  },
  {
   "username": "ekke.now",
@@ -11973,22 +11994,22 @@
   "username": "ekke.now",
   "group": "주제",
   "key": "연금·절세",
-  "avg": 2.82,
-  "n": 3
+  "avg": 2.13,
+  "n": 4
  },
  {
   "username": "ekke.now",
   "group": "주제",
   "key": "국내 대형주",
-  "avg": 2.64,
+  "avg": 2.71,
   "n": 17
  },
  {
   "username": "ekke.now",
   "group": "주제",
   "key": "급락·변동성",
-  "avg": 2.07,
-  "n": 5
+  "avg": 1.89,
+  "n": 6
  },
  {
   "username": "ekke.now",
@@ -12043,7 +12064,7 @@
   "username": "ekke.now",
   "group": "주제",
   "key": "초보·투자마인드",
-  "avg": 2.82,
+  "avg": 3.61,
   "n": 3
  },
  {
@@ -12064,8 +12085,8 @@
   "username": "ekke.now",
   "group": "주제",
   "key": "정치·관세",
-  "avg": 3.0,
-  "n": 10
+  "avg": 2.73,
+  "n": 11
  },
  {
   "username": "syukaworld",
