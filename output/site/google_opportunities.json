@@ -3,8 +3,8 @@
   "topic": "2차전지",
   "trend_terms": "",
   "kr_rank": 8,
-  "kr_per_day": 101,
-  "kr_mom": 0.95,
+  "kr_per_day": 99,
+  "kr_mom": 0.93,
   "us_rank": 7,
   "us_per_day": 106,
   "us_mom": 0.84,
@@ -14,11 +14,25 @@
   "press_kr_24h": 1
  },
  {
+  "topic": "비트코인",
+  "trend_terms": "",
+  "kr_rank": 7,
+  "kr_per_day": 99,
+  "kr_mom": 0.88,
+  "us_rank": 6,
+  "us_per_day": 106,
+  "us_mom": 0.93,
+  "ig_kr_posts": 6,
+  "history_days": 15,
+  "ig_rank": 14,
+  "press_kr_24h": 5
+ },
+ {
   "topic": "금리·연준",
   "trend_terms": "",
   "kr_rank": 5,
-  "kr_per_day": 139,
-  "kr_mom": 1.22,
+  "kr_per_day": 134,
+  "kr_mom": 1.18,
   "us_rank": 9,
   "us_per_day": 102,
   "us_mom": 0.97,
@@ -26,19 +40,5 @@
   "history_days": 15,
   "ig_rank": 11,
   "press_kr_24h": 19
- },
- {
-  "topic": "테슬라",
-  "trend_terms": "일론 머스크",
-  "kr_rank": 7,
-  "kr_per_day": 105,
-  "kr_mom": 1.25,
-  "us_rank": 5,
-  "us_per_day": 118,
-  "us_mom": 1.04,
-  "ig_kr_posts": 9,
-  "history_days": 15,
-  "ig_rank": 12,
-  "press_kr_24h": 3
  }
 ]
