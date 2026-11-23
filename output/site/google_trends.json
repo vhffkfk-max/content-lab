@@ -1,15 +1,6 @@
 [
  {
   "geo": "KR",
-  "term": "기상",
-  "traffic": 200000,
-  "topics": "",
-  "econ": false,
-  "news_title": "[날씨] 전국 대체로 맑은 가운데 일부 지역 약한 눈·비소식",
-  "news_link": "https://imnews.imbc.com/news/2026/society/article/6867958_36918.html"
- },
- {
-  "geo": "KR",
   "term": "연금",
   "traffic": 5000,
   "topics": "",
@@ -19,12 +10,12 @@
  },
  {
   "geo": "KR",
-  "term": "에코프로",
+  "term": "골프",
   "traffic": 2000,
-  "topics": "2차전지",
-  "econ": true,
-  "news_title": "[IB토마토]에코프로, 투자에 마르는 현금…차환해도 이자 부담",
-  "news_link": "https://www.newstomato.com/readnews.aspx?no=1321006"
+  "topics": "",
+  "econ": false,
+  "news_title": "소렌스탐 넘다… ‘상금 여왕’, 이젠 티띠꾼",
+  "news_link": "https://www.donga.com/news/Sports/article/all/20261124/135077431/2"
  },
  {
   "geo": "KR",
@@ -37,6 +28,15 @@
  },
  {
   "geo": "KR",
+  "term": "전원주",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "\"괜찮으신 거 맞나\"…핼쑥한 전원주, 레드카펫서 휘청 - 머니투데이",
+  "news_link": "https://www.mt.co.kr/entertainment/2026/11/22/2026112219483031404"
+ },
+ {
+  "geo": "KR",
   "term": "박지윤",
   "traffic": 500,
   "topics": "",
@@ -46,57 +46,57 @@
  },
  {
   "geo": "KR",
-  "term": "lg전자",
-  "traffic": 200,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "LG, 인재 중용 '피지컬 AI' 전진 배치…연구서 사업화로",
-  "news_link": "https://v.daum.net/v/8mkpnd2u2J?f=m"
- },
- {
-  "geo": "KR",
-  "term": "데블스 플랜 시즌 3",
+  "term": "대한민국 축구 국가대표팀",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "“성급하고 이기적”…존박, ‘데블스 플랜3’ 플레이 논란에 장문 해명",
-  "news_link": "https://www.mk.co.kr/news/hot-issues/12216031"
- },
- {
-  "geo": "KR",
-  "term": "지스타",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "[조현래의 콘텐츠 脈] 〈23〉지스타, 게임산업 비즈니스 플랫폼",
-  "news_link": "https://www.etnews.com/20261123000158"
- },
- {
-  "geo": "KR",
-  "term": "주한 미군 사령관",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "전작권 가져오면 주한미군 떠난다?…안보 전문가들이 경고한 이유",
-  "news_link": "https://www.chosun.com/politics/2026/11/22/2HRBRCQYPBFWFHEPNE4PGZ7JS4/"
+  "news_title": "나란히 K리그 1부 복귀하는 ‘수원 형제’…큰물에서 다시 생존경쟁",
+  "news_link": "https://www.khan.co.kr/article/202611232009015"
  },
  {
   "geo": "KR",
   "term": "한국항공우주산업",
-  "traffic": 100,
+  "traffic": 200,
   "topics": "",
   "econ": false,
   "news_title": "경남 우주항공·방산에 1조 5000억 원 투자…산업거점 육성",
   "news_link": "https://www.korea.kr/news/policyNewsView.do?newsId=148976313"
  },
  {
-  "geo": "US",
-  "term": "flood watch",
-  "traffic": 20000,
+  "geo": "KR",
+  "term": "엘니뇨",
+  "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "Flooding continues to impact Central Florida roads; see what's closed",
-  "news_link": "https://www.wesh.com/article/flooding-central-florida-roads-closed/74505623"
+  "news_title": "이번 겨울 “슈퍼 엘니뇨에 북극 영향까지”…변동폭 큰 날씨",
+  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8720251"
+ },
+ {
+  "geo": "KR",
+  "term": "이민진",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "\"부정행위 막으려 재난문자\"…'파친코' 이민진이 본 韓수능",
+  "news_link": "https://www.edaily.co.kr/News/Read?newsId=01915526645648344&mediaCodeNo=257"
+ },
+ {
+  "geo": "KR",
+  "term": "춘천시",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "",
+  "news_link": ""
+ },
+ {
+  "geo": "US",
+  "term": "flood watch",
+  "traffic": 50000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Coastal flood watch affecting Eastern North Carolina Wednesday and Thursday",
+  "news_link": "https://www.charlotteobserver.com/news/weather-news/article318220198.html"
  },
  {
   "geo": "US",
@@ -104,53 +104,44 @@
   "traffic": 20000,
   "topics": "",
   "econ": false,
-  "news_title": "Thanksgiving travel forecast 2026: storms on both coasts",
-  "news_link": "https://weather.com/2026/11/23/holiday/thanksgiving/thanksgiving-travel-weather-forecast-us-storms"
+  "news_title": "Storms to hit both coasts, threatening Thanksgiving travel for millions and Macy’s 100th parade",
+  "news_link": "https://www.cnn.com/2026/11/22/weather/east-west-coast-storms-thanksgiving-travel-climate-hnk"
  },
  {
   "geo": "US",
-  "term": "jimmy gomez",
+  "term": "what time does the stock market close",
   "traffic": 5000,
   "topics": "",
   "econ": false,
-  "news_title": "House Ethics panel finds Democratic Rep. Jimmy Gomez made unwanted sexual advances toward former staffer",
-  "news_link": "https://www.cnn.com/2026/11/23/politics/house-ethics-committee-reports-jimmy-gomez"
+  "news_title": "Is the stock market open on Thanksgiving and Black Friday?",
+  "news_link": "https://finance.yahoo.com/personal-finance/investing/article/is-the-stock-market-open-on-thanksgiving-and-black-friday-135419542.html"
  },
  {
   "geo": "US",
-  "term": "nick rallis",
+  "term": "dwts finale",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "NFL Network: Cardinals fire DC Nick Rallis midway through fourth season in Arizona",
-  "news_link": "https://www.nfl.com/news/cardinals-fire-dc-nick-rallis"
- },
- {
-  "geo": "US",
-  "term": "stephen miller",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Video: What Hakeem Jeffries Thinks of Stephen Miller",
-  "news_link": "https://www.nytimes.com/video/podcasts/100000011302725/hakeem-jeffries-stephen-miller-interview.html"
- },
- {
-  "geo": "US",
-  "term": "accountant",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Los Angeles accountant sentenced for stealing more than $1.7M from indie films",
-  "news_link": "https://ktla.com/news/local-news/film-accountant-sentenced-embezzlement/"
+  "news_title": "How To Watch ‘Dancing With The Stars’ Season 35 Finale",
+  "news_link": "https://www.forbes.com/sites/tonifitzgerald/2026/11/22/how-to-watch-dancing-with-the-stars-season-35-finale/"
  },
  {
   "geo": "US",
   "term": "404 media",
-  "traffic": 500,
+  "traffic": 1000,
   "topics": "AI·반도체",
   "econ": true,
   "news_title": "GTIG AI Threat Tracker: Agentic Threat Activity Crosses a Significant Threshold",
   "news_link": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold"
+ },
+ {
+  "geo": "US",
+  "term": "jason statham",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Jason Statham & Scott Eastwood's (Very) Intense 119-Minute Action Thriller Is a Global Streaming Hit",
+  "news_link": "https://www.imdb.com/news/ni66124440/?ref_=tt_nwr_1"
  },
  {
   "geo": "US",
@@ -163,20 +154,29 @@
  },
  {
   "geo": "US",
-  "term": "jason statham",
+  "term": "jacory croskey-merritt",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Jason Statham & Scott Eastwood's (Very) Intense 119-Minute Action Thriller Is a Global Streaming Hit",
-  "news_link": "https://www.imdb.com/news/ni66124440/?ref_=tt_nwr_1"
+  "news_title": "Commanders RB Jacory Croskey-Merritt activated from IR ahead of MNF",
+  "news_link": "https://www.espn.com/nfl/story/_/id/50576561/commanders-rb-jacory-croskey-merritt-activated-ir"
  },
  {
   "geo": "US",
-  "term": "jacory croskey-merritt",
+  "term": "michigan vs miami fl",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Michigan to Head to Bahamas for Baha Mar Pink Flamingo Championship",
+  "news_link": "https://mgoblue.com/news/2026/11/20/womens-basketball-michigan-to-head-to-bahamas-for-baha-mar-pink-flamingo-championship"
+ },
+ {
+  "geo": "US",
+  "term": "maria middleton",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Commanders' Jacory Croskey-Merritt: Still trending positive for Monday night",
-  "news_link": "https://www.cbssports.com/fantasy/football/news/commanders-jacory-croskey-merritt-still-trending-positive-for-monday-night/"
+  "news_title": "Pennsylvania teen who died in 2020 could become first Gen Z saint",
+  "news_link": "https://abcnews.com/US/pennsylvania-teen-died-2020-become-gen-saint/story?id=138378815"
  }
 ]
