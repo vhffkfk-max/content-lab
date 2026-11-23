@@ -38,6 +38,11 @@ DAYS = 30
 HOT_HOURS = 36
 N_CHANNEL, N_TRADERS = 4, 3
 LOG_DAYS = 14
+CLOSED = ("기초가이드", "트레이더 관점", "중요 뉴스", "수익 인증")   # 트레이더스에서 없앤 방 — 추천하지 않는다 (2026-11-23 대표)
+
+
+def closed(name):
+    return any(k in (name or "") for k in CLOSED)
 
 
 def history_db():
@@ -144,8 +149,8 @@ def traders():
         p = SITE / f"{n}.json"
         return json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
     rooms = [{k: r.get(k) for k in ("title", "per_day", "last7", "trend", "peak_hours", "questions", "unanswered", "react_avg")}
-             for r in load("trd_rooms").get("rooms", [])]
-    folders = [{"폴더": f["room"], "역할": f["role"], "넣을 것": [i["what"] for i in f.get("items", [])][:3]} for f in load("trd_folders").get("folders", [])]
+             for r in load("trd_rooms").get("rooms", []) if not closed(r.get("title"))]
+    folders = [{"폴더": f["room"], "역할": f["role"], "넣을 것": [i["what"] for i in f.get("items", [])][:3]} for f in load("trd_folders").get("folders", []) if not closed(f["room"])]
     done = [p.get("title") for p in load("trd_posts").get("posts", [])]
     return {"방 통계(최근)": rooms, "폴더 역할": folders, "오늘 이미 만든 자동 글 제목(겹치지 않게)": done}
 
@@ -157,7 +162,7 @@ SYSTEM = """당신은 경제 텔레그램 두 곳의 편집자입니다. 대표�
    폰에서 한눈에: 첫 줄이 훅(숫자나 비교), 줄마다 짧게, 이모지는 줄머리 표시용으로만 조금. 300~600자.
    마지막 줄은 '투자 판단은 본인 몫입니다.' 같은 짧은 고지.
 2) 트레이더스 — 포럼형 그룹(주제 폴더 여러 개, 회원 약 260명). 회원이 답하게 만드는 글이 목적.
-   어느 폴더에 올릴지 정하고, 질문 하나로 끝내세요. 200~450자.
+   어느 폴더에 올릴지 정하고(지금 있는 방만: 공지사항·주식토큰방·코인 관점 공유방·소통방), 질문 하나로 끝내세요. 200~450자.
    매매 콜(진입가·익절가·손절가·레버리지 지시)과 '사라/팔아라'는 절대 쓰지 않습니다.
 
 비교 자료로 판단하세요.
@@ -280,7 +285,8 @@ def main():
         return print(f"⚠️ 결과를 받지 못했어요(stop_reason={r.stop_reason}) — 지난 자료를 유지해요.")
     o = r.parsed_output
     items = []
-    for i, it in enumerate(sorted(o.items, key=lambda x: x.room), 1):
+    keep_items = [it for it in o.items if not ("트레이더" in it.room and closed(it.folder))]
+    for i, it in enumerate(sorted(keep_items, key=lambda x: x.room), 1):
         d = it.model_dump(exclude={"based_on"})
         d["room"] = "트레이더스" if "트레이더" in d["room"] else "말희아빠 채널"
         if d["room"] != "트레이더스":
