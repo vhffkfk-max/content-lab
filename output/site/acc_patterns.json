@@ -423,7 +423,7 @@
   "username": "cryptodaily",
   "group": "형식",
   "key": "캐러셀(카드뉴스)",
-  "avg": 1.96,
+  "avg": 1.97,
   "n": 37
  },
  {
@@ -458,14 +458,14 @@
   "username": "cryptodaily",
   "group": "첫 문장",
   "key": "짧은 한 줄",
-  "avg": 2.33,
+  "avg": 2.43,
   "n": 3
  },
  {
   "username": "cryptodaily",
   "group": "시간대",
   "key": "아침(6~9시)",
-  "avg": 1.55,
+  "avg": 1.58,
   "n": 12
  },
  {
@@ -521,7 +521,7 @@
   "username": "cryptodaily",
   "group": "요일",
   "key": "화",
-  "avg": 1.29,
+  "avg": 1.34,
   "n": 7
  },
  {
@@ -542,7 +542,7 @@
   "username": "cryptodaily",
   "group": "주제",
   "key": "비트코인",
-  "avg": 2.23,
+  "avg": 2.24,
   "n": 23
  },
  {
@@ -556,7 +556,7 @@
   "username": "cryptodaily",
   "group": "주제",
   "key": "AI·반도체",
-  "avg": 2.0,
+  "avg": 2.04,
   "n": 7
  },
  {
@@ -850,7 +850,7 @@
   "username": "ktv_kr",
   "group": "형식",
   "key": "릴스",
-  "avg": 1.7,
+  "avg": 1.71,
   "n": 86
  },
  {
@@ -871,7 +871,7 @@
   "username": "ktv_kr",
   "group": "첫 문장",
   "key": "일반 서술형",
-  "avg": 1.79,
+  "avg": 1.8,
   "n": 48
  },
  {
@@ -920,7 +920,7 @@
   "username": "ktv_kr",
   "group": "첫 문장",
   "key": "숫자·리스트형",
-  "avg": 1.18,
+  "avg": 1.22,
   "n": 3
  },
  {
@@ -934,7 +934,7 @@
   "username": "ktv_kr",
   "group": "시간대",
   "key": "점심(12~14시)",
-  "avg": 1.68,
+  "avg": 1.69,
   "n": 13
  },
  {
@@ -948,7 +948,7 @@
   "username": "ktv_kr",
   "group": "시간대",
   "key": "저녁(18~21시)",
-  "avg": 1.31,
+  "avg": 1.32,
   "n": 18
  },
  {
@@ -1004,7 +1004,7 @@
   "username": "ktv_kr",
   "group": "요일",
   "key": "화",
-  "avg": 1.76,
+  "avg": 1.77,
   "n": 21
  },
  {
@@ -1053,7 +1053,7 @@
   "username": "scourtkorea",
   "group": "첫 문장",
   "key": "짧은 한 줄",
-  "avg": 1.55,
+  "avg": 1.56,
   "n": 7
  },
  {
@@ -1225,6 +1225,125 @@
   "n": 4
  },
  {
+  "username": "bitcoinmagazine",
+  "group": "형식",
+  "key": "단일 이미지",
+  "avg": 1.31,
+  "n": 5
+ },
+ {
+  "username": "bitcoinmagazine",
+  "group": "형식",
+  "key": "캐러셀(카드뉴스)",
+  "avg": 1.03,
+  "n": 51
+ },
+ {
+  "username": "bitcoinmagazine",
+  "group": "첫 문장",
+  "key": "일반 서술형",
+  "avg": 1.3,
+  "n": 15
+ },
+ {
+  "username": "bitcoinmagazine",
+  "group": "첫 문장",
+  "key": "속보·뉴스형",
+  "avg": 0.89,
+  "n": 26
+ },
+ {
+  "username": "bitcoinmagazine",
+  "group": "첫 문장",
+  "key": "숫자 강조형",
+  "avg": 1.09,
+  "n": 14
+ },
+ {
+  "username": "bitcoinmagazine",
+  "group": "시간대",
+  "key": "밤(21~24시)",
+  "avg": 1.11,
+  "n": 31
+ },
+ {
+  "username": "bitcoinmagazine",
+  "group": "시간대",
+  "key": "새벽(0~6시)",
+  "avg": 0.8,
+  "n": 22
+ },
+ {
+  "username": "bitcoinmagazine",
+  "group": "시간대",
+  "key": "저녁(18~21시)",
+  "avg": 1.87,
+  "n": 4
+ },
+ {
+  "username": "bitcoinmagazine",
+  "group": "요일",
+  "key": "화",
+  "avg": 1.2,
+  "n": 13
+ },
+ {
+  "username": "bitcoinmagazine",
+  "group": "요일",
+  "key": "월",
+  "avg": 0.98,
+  "n": 7
+ },
+ {
+  "username": "bitcoinmagazine",
+  "group": "요일",
+  "key": "금",
+  "avg": 0.91,
+  "n": 6
+ },
+ {
+  "username": "bitcoinmagazine",
+  "group": "요일",
+  "key": "수",
+  "avg": 0.82,
+  "n": 12
+ },
+ {
+  "username": "bitcoinmagazine",
+  "group": "요일",
+  "key": "목",
+  "avg": 0.98,
+  "n": 14
+ },
+ {
+  "username": "bitcoinmagazine",
+  "group": "요일",
+  "key": "토",
+  "avg": 1.59,
+  "n": 5
+ },
+ {
+  "username": "bitcoinmagazine",
+  "group": "주제",
+  "key": "비트코인",
+  "avg": 1.1,
+  "n": 45
+ },
+ {
+  "username": "bitcoinmagazine",
+  "group": "주제",
+  "key": "테슬라",
+  "avg": 1.14,
+  "n": 2
+ },
+ {
+  "username": "bitcoinmagazine",
+  "group": "주제",
+  "key": "ETF·지수투자",
+  "avg": 1.15,
+  "n": 2
+ },
+ {
   "username": "knda_academy",
   "group": "형식",
   "key": "단일 이미지",
@@ -1369,125 +1488,6 @@
   "group": "주제",
   "key": "AI·반도체",
   "avg": 0.99,
-  "n": 2
- },
- {
-  "username": "bitcoinmagazine",
-  "group": "형식",
-  "key": "단일 이미지",
-  "avg": 1.22,
-  "n": 5
- },
- {
-  "username": "bitcoinmagazine",
-  "group": "형식",
-  "key": "캐러셀(카드뉴스)",
-  "avg": 1.04,
-  "n": 51
- },
- {
-  "username": "bitcoinmagazine",
-  "group": "첫 문장",
-  "key": "일반 서술형",
-  "avg": 1.31,
-  "n": 15
- },
- {
-  "username": "bitcoinmagazine",
-  "group": "첫 문장",
-  "key": "속보·뉴스형",
-  "avg": 0.9,
-  "n": 26
- },
- {
-  "username": "bitcoinmagazine",
-  "group": "첫 문장",
-  "key": "숫자 강조형",
-  "avg": 1.09,
-  "n": 14
- },
- {
-  "username": "bitcoinmagazine",
-  "group": "시간대",
-  "key": "밤(21~24시)",
-  "avg": 1.1,
-  "n": 31
- },
- {
-  "username": "bitcoinmagazine",
-  "group": "시간대",
-  "key": "새벽(0~6시)",
-  "avg": 0.8,
-  "n": 22
- },
- {
-  "username": "bitcoinmagazine",
-  "group": "시간대",
-  "key": "저녁(18~21시)",
-  "avg": 1.89,
-  "n": 4
- },
- {
-  "username": "bitcoinmagazine",
-  "group": "요일",
-  "key": "화",
-  "avg": 1.17,
-  "n": 13
- },
- {
-  "username": "bitcoinmagazine",
-  "group": "요일",
-  "key": "월",
-  "avg": 0.99,
-  "n": 7
- },
- {
-  "username": "bitcoinmagazine",
-  "group": "요일",
-  "key": "금",
-  "avg": 0.91,
-  "n": 6
- },
- {
-  "username": "bitcoinmagazine",
-  "group": "요일",
-  "key": "수",
-  "avg": 0.82,
-  "n": 12
- },
- {
-  "username": "bitcoinmagazine",
-  "group": "요일",
-  "key": "목",
-  "avg": 0.99,
-  "n": 14
- },
- {
-  "username": "bitcoinmagazine",
-  "group": "요일",
-  "key": "토",
-  "avg": 1.6,
-  "n": 5
- },
- {
-  "username": "bitcoinmagazine",
-  "group": "주제",
-  "key": "비트코인",
-  "avg": 1.11,
-  "n": 45
- },
- {
-  "username": "bitcoinmagazine",
-  "group": "주제",
-  "key": "테슬라",
-  "avg": 1.15,
-  "n": 2
- },
- {
-  "username": "bitcoinmagazine",
-  "group": "주제",
-  "key": "ETF·지수투자",
-  "avg": 1.16,
   "n": 2
  },
  {
@@ -2278,7 +2278,7 @@
   "username": "ministry_of_justice_korea",
   "group": "형식",
   "key": "릴스",
-  "avg": 1.35,
+  "avg": 1.36,
   "n": 11
  },
  {
@@ -2292,7 +2292,7 @@
   "username": "ministry_of_justice_korea",
   "group": "첫 문장",
   "key": "일반 서술형",
-  "avg": 1.23,
+  "avg": 1.24,
   "n": 10
  },
  {
@@ -2334,7 +2334,7 @@
   "username": "ministry_of_justice_korea",
   "group": "시간대",
   "key": "점심(12~14시)",
-  "avg": 1.69,
+  "avg": 1.72,
   "n": 4
  },
  {
@@ -2544,7 +2544,7 @@
   "username": "nasdaq",
   "group": "첫 문장",
   "key": "인용형",
-  "avg": 1.83,
+  "avg": 1.85,
   "n": 5
  },
  {
@@ -2607,7 +2607,7 @@
   "username": "nasdaq",
   "group": "요일",
   "key": "수",
-  "avg": 3.04,
+  "avg": 3.05,
   "n": 7
  },
  {
@@ -3741,7 +3741,7 @@
   "username": "moe_korea_",
   "group": "형식",
   "key": "단일 이미지",
-  "avg": 4.21,
+  "avg": 4.22,
   "n": 10
  },
  {
@@ -3811,14 +3811,14 @@
   "username": "moe_korea_",
   "group": "요일",
   "key": "월",
-  "avg": 6.67,
+  "avg": 6.68,
   "n": 4
  },
  {
   "username": "moe_korea_",
   "group": "요일",
   "key": "화",
-  "avg": 2.32,
+  "avg": 2.33,
   "n": 7
  },
  {
@@ -4287,28 +4287,28 @@
   "username": "nyse",
   "group": "형식",
   "key": "릴스",
-  "avg": 2.43,
-  "n": 26
+  "avg": 2.36,
+  "n": 27
  },
  {
   "username": "nyse",
   "group": "형식",
   "key": "캐러셀(카드뉴스)",
-  "avg": 2.0,
-  "n": 31
+  "avg": 1.98,
+  "n": 32
  },
  {
   "username": "nyse",
   "group": "첫 문장",
   "key": "일반 서술형",
-  "avg": 1.92,
-  "n": 49
+  "avg": 1.88,
+  "n": 51
  },
  {
   "username": "nyse",
   "group": "첫 문장",
   "key": "인용형",
-  "avg": 4.65,
+  "avg": 4.73,
   "n": 2
  },
  {
@@ -4322,70 +4322,70 @@
   "username": "nyse",
   "group": "첫 문장",
   "key": "질문형",
-  "avg": 2.68,
+  "avg": 2.73,
   "n": 2
  },
  {
   "username": "nyse",
   "group": "첫 문장",
   "key": "숫자 강조형",
-  "avg": 0.47,
+  "avg": 0.48,
   "n": 2
  },
  {
   "username": "nyse",
   "group": "시간대",
   "key": "아침(6~9시)",
-  "avg": 3.15,
+  "avg": 3.17,
   "n": 10
  },
  {
   "username": "nyse",
   "group": "시간대",
   "key": "새벽(0~6시)",
-  "avg": 1.74,
-  "n": 35
+  "avg": 1.69,
+  "n": 37
  },
  {
   "username": "nyse",
   "group": "시간대",
   "key": "밤(21~24시)",
-  "avg": 2.91,
+  "avg": 2.93,
   "n": 13
  },
  {
   "username": "nyse",
   "group": "요일",
   "key": "토",
-  "avg": 2.88,
+  "avg": 2.9,
   "n": 10
  },
  {
   "username": "nyse",
   "group": "요일",
   "key": "목",
-  "avg": 2.74,
+  "avg": 2.76,
   "n": 13
  },
  {
   "username": "nyse",
   "group": "요일",
   "key": "수",
-  "avg": 1.06,
-  "n": 7
+  "avg": 0.91,
+  "n": 9
  },
  {
   "username": "nyse",
   "group": "요일",
   "key": "화",
-  "avg": 1.13,
+  "avg": 1.16,
   "n": 11
  },
  {
   "username": "nyse",
   "group": "요일",
   "key": "금",
-  "avg": 2.82,
+  "avg": 2.86,
   "n": 16
  },
  {
@@ -4686,7 +4686,7 @@
   "username": "ministry_of_unification",
   "group": "형식",
   "key": "캐러셀(카드뉴스)",
-  "avg": 1.21,
+  "avg": 1.22,
   "n": 10
  },
  {
@@ -4770,7 +4770,7 @@
   "username": "ministry_of_unification",
   "group": "요일",
   "key": "화",
-  "avg": 0.94,
+  "avg": 0.97,
   "n": 3
  },
  {
@@ -4819,7 +4819,7 @@
   "username": "mpm_kr",
   "group": "첫 문장",
   "key": "짧은 한 줄",
-  "avg": 1.42,
+  "avg": 1.43,
   "n": 11
  },
  {
@@ -4882,7 +4882,7 @@
   "username": "mpm_kr",
   "group": "요일",
   "key": "화",
-  "avg": 2.31,
+  "avg": 2.33,
   "n": 6
  },
  {
@@ -4897,13 +4897,13 @@
   "group": "형식",
   "key": "단일 이미지",
   "avg": 1.77,
-  "n": 124
+  "n": 125
  },
  {
   "username": "bloombergbusiness",
   "group": "형식",
   "key": "릴스",
-  "avg": 1.87,
+  "avg": 1.88,
   "n": 50
  },
  {
@@ -4918,13 +4918,13 @@
   "group": "첫 문장",
   "key": "일반 서술형",
   "avg": 1.69,
-  "n": 145
+  "n": 146
  },
  {
   "username": "bloombergbusiness",
   "group": "첫 문장",
   "key": "숫자 강조형",
-  "avg": 2.04,
+  "avg": 2.05,
   "n": 18
  },
  {
@@ -4938,7 +4938,7 @@
   "username": "bloombergbusiness",
   "group": "첫 문장",
   "key": "질문형",
-  "avg": 2.61,
+  "avg": 2.62,
   "n": 5
  },
  {
@@ -4959,7 +4959,7 @@
   "username": "bloombergbusiness",
   "group": "시간대",
   "key": "저녁(18~21시)",
-  "avg": 2.44,
+  "avg": 2.45,
   "n": 21
  },
  {
@@ -4973,7 +4973,7 @@
   "username": "bloombergbusiness",
   "group": "시간대",
   "key": "오전(9~12시)",
-  "avg": 2.67,
+  "avg": 2.68,
   "n": 19
  },
  {
@@ -4987,14 +4987,14 @@
   "username": "bloombergbusiness",
   "group": "시간대",
   "key": "새벽(0~6시)",
-  "avg": 1.35,
-  "n": 57
+  "avg": 1.34,
+  "n": 58
  },
  {
   "username": "bloombergbusiness",
   "group": "시간대",
   "key": "점심(12~14시)",
-  "avg": 1.03,
+  "avg": 1.06,
   "n": 9
  },
  {
@@ -5008,15 +5008,15 @@
   "username": "bloombergbusiness",
   "group": "요일",
   "key": "화",
-  "avg": 1.59,
+  "avg": 1.61,
   "n": 39
  },
  {
   "username": "bloombergbusiness",
   "group": "요일",
   "key": "수",
-  "avg": 1.39,
-  "n": 33
+  "avg": 1.38,
+  "n": 34
  },
  {
   "username": "bloombergbusiness",
@@ -5050,8 +5050,8 @@
   "username": "bloombergbusiness",
   "group": "주제",
   "key": "AI·반도체",
-  "avg": 2.26,
-  "n": 58
+  "avg": 2.23,
+  "n": 59
  },
  {
   "username": "bloombergbusiness",
@@ -6429,7 +6429,7 @@
   "username": "mfdskorea",
   "group": "시간대",
   "key": "오후(14~18시)",
-  "avg": 1.05,
+  "avg": 1.06,
   "n": 22
  },
  {
@@ -7038,7 +7038,7 @@
   "username": "newneek.official",
   "group": "주제",
   "key": "급락·변동성",
-  "avg": 2.87,
+  "avg": 2.88,
   "n": 4
  },
  {
@@ -8680,6 +8680,111 @@
   "n": 3
  },
  {
+  "username": "mofa_kr",
+  "group": "형식",
+  "key": "단일 이미지",
+  "avg": 0.84,
+  "n": 8
+ },
+ {
+  "username": "mofa_kr",
+  "group": "형식",
+  "key": "캐러셀(카드뉴스)",
+  "avg": 1.2,
+  "n": 17
+ },
+ {
+  "username": "mofa_kr",
+  "group": "형식",
+  "key": "릴스",
+  "avg": 0.82,
+  "n": 4
+ },
+ {
+  "username": "mofa_kr",
+  "group": "첫 문장",
+  "key": "짧은 한 줄",
+  "avg": 0.84,
+  "n": 10
+ },
+ {
+  "username": "mofa_kr",
+  "group": "첫 문장",
+  "key": "질문형",
+  "avg": 1.69,
+  "n": 2
+ },
+ {
+  "username": "mofa_kr",
+  "group": "첫 문장",
+  "key": "일반 서술형",
+  "avg": 1.1,
+  "n": 17
+ },
+ {
+  "username": "mofa_kr",
+  "group": "시간대",
+  "key": "오전(9~12시)",
+  "avg": 0.92,
+  "n": 6
+ },
+ {
+  "username": "mofa_kr",
+  "group": "시간대",
+  "key": "오후(14~18시)",
+  "avg": 1.14,
+  "n": 14
+ },
+ {
+  "username": "mofa_kr",
+  "group": "시간대",
+  "key": "저녁(18~21시)",
+  "avg": 0.71,
+  "n": 3
+ },
+ {
+  "username": "mofa_kr",
+  "group": "시간대",
+  "key": "점심(12~14시)",
+  "avg": 1.14,
+  "n": 6
+ },
+ {
+  "username": "mofa_kr",
+  "group": "요일",
+  "key": "금",
+  "avg": 1.04,
+  "n": 10
+ },
+ {
+  "username": "mofa_kr",
+  "group": "요일",
+  "key": "목",
+  "avg": 0.9,
+  "n": 2
+ },
+ {
+  "username": "mofa_kr",
+  "group": "요일",
+  "key": "수",
+  "avg": 1.32,
+  "n": 8
+ },
+ {
+  "username": "mofa_kr",
+  "group": "요일",
+  "key": "월",
+  "avg": 0.6,
+  "n": 5
+ },
+ {
+  "username": "mofa_kr",
+  "group": "요일",
+  "key": "화",
+  "avg": 1.12,
+  "n": 3
+ },
+ {
   "username": "with_kca",
   "group": "형식",
   "key": "단일 이미지",
@@ -9005,7 +9110,7 @@
   "username": "cnbc",
   "group": "형식",
   "key": "캐러셀(카드뉴스)",
-  "avg": 2.5,
+  "avg": 2.51,
   "n": 25
  },
  {
@@ -9033,14 +9138,14 @@
   "username": "cnbc",
   "group": "첫 문장",
   "key": "숫자 강조형",
-  "avg": 2.15,
+  "avg": 2.16,
   "n": 19
  },
  {
   "username": "cnbc",
   "group": "첫 문장",
   "key": "경고·실수형",
-  "avg": 1.53,
+  "avg": 1.55,
   "n": 6
  },
  {
@@ -9061,7 +9166,7 @@
   "username": "cnbc",
   "group": "시간대",
   "key": "오후(14~18시)",
-  "avg": 2.11,
+  "avg": 2.13,
   "n": 20
  },
  {
@@ -9089,7 +9194,7 @@
   "username": "cnbc",
   "group": "시간대",
   "key": "밤(21~24시)",
-  "avg": 2.19,
+  "avg": 2.2,
   "n": 25
  },
  {
@@ -9117,14 +9222,14 @@
   "username": "cnbc",
   "group": "요일",
   "key": "화",
-  "avg": 2.7,
+  "avg": 2.72,
   "n": 31
  },
  {
   "username": "cnbc",
   "group": "요일",
   "key": "수",
-  "avg": 2.4,
+  "avg": 2.41,
   "n": 22
  },
  {
@@ -9152,7 +9257,7 @@
   "username": "cnbc",
   "group": "주제",
   "key": "AI·반도체",
-  "avg": 3.47,
+  "avg": 3.48,
   "n": 51
  },
  {
@@ -9180,14 +9285,14 @@
   "username": "cnbc",
   "group": "주제",
   "key": "정치·관세",
-  "avg": 2.3,
+  "avg": 2.31,
   "n": 26
  },
  {
   "username": "cnbc",
   "group": "주제",
   "key": "물가·경기",
-  "avg": 1.18,
+  "avg": 1.2,
   "n": 4
  },
  {
@@ -9621,14 +9726,14 @@
   "username": "cointelegraph",
   "group": "형식",
   "key": "릴스",
-  "avg": 0.63,
+  "avg": 0.64,
   "n": 10
  },
  {
   "username": "cointelegraph",
   "group": "형식",
   "key": "단일 이미지",
-  "avg": 1.38,
+  "avg": 1.37,
   "n": 5
  },
  {
@@ -9656,14 +9761,14 @@
   "username": "cointelegraph",
   "group": "시간대",
   "key": "새벽(0~6시)",
-  "avg": 0.95,
+  "avg": 0.94,
   "n": 17
  },
  {
   "username": "cointelegraph",
   "group": "시간대",
   "key": "밤(21~24시)",
-  "avg": 1.64,
+  "avg": 1.63,
   "n": 15
  },
  {
@@ -9684,14 +9789,14 @@
   "username": "cointelegraph",
   "group": "요일",
   "key": "목",
-  "avg": 1.75,
+  "avg": 1.74,
   "n": 10
  },
  {
   "username": "cointelegraph",
   "group": "요일",
   "key": "화",
-  "avg": 1.09,
+  "avg": 1.1,
   "n": 15
  },
  {
@@ -9705,7 +9810,7 @@
   "username": "cointelegraph",
   "group": "요일",
   "key": "토",
-  "avg": 1.07,
+  "avg": 1.06,
   "n": 3
  },
  {
@@ -9740,14 +9845,14 @@
   "username": "cointelegraph",
   "group": "주제",
   "key": "AI·반도체",
-  "avg": 0.92,
+  "avg": 0.93,
   "n": 13
  },
  {
   "username": "cointelegraph",
   "group": "주제",
   "key": "테슬라",
-  "avg": 1.25,
+  "avg": 1.24,
   "n": 3
  },
  {
@@ -10337,111 +10442,6 @@
   "key": "화",
   "avg": 0.85,
   "n": 4
- },
- {
-  "username": "mofa_kr",
-  "group": "형식",
-  "key": "단일 이미지",
-  "avg": 0.84,
-  "n": 8
- },
- {
-  "username": "mofa_kr",
-  "group": "형식",
-  "key": "캐러셀(카드뉴스)",
-  "avg": 1.19,
-  "n": 17
- },
- {
-  "username": "mofa_kr",
-  "group": "형식",
-  "key": "릴스",
-  "avg": 0.81,
-  "n": 4
- },
- {
-  "username": "mofa_kr",
-  "group": "첫 문장",
-  "key": "짧은 한 줄",
-  "avg": 0.83,
-  "n": 10
- },
- {
-  "username": "mofa_kr",
-  "group": "첫 문장",
-  "key": "질문형",
-  "avg": 1.69,
-  "n": 2
- },
- {
-  "username": "mofa_kr",
-  "group": "첫 문장",
-  "key": "일반 서술형",
-  "avg": 1.09,
-  "n": 17
- },
- {
-  "username": "mofa_kr",
-  "group": "시간대",
-  "key": "오전(9~12시)",
-  "avg": 0.92,
-  "n": 6
- },
- {
-  "username": "mofa_kr",
-  "group": "시간대",
-  "key": "오후(14~18시)",
-  "avg": 1.14,
-  "n": 14
- },
- {
-  "username": "mofa_kr",
-  "group": "시간대",
-  "key": "저녁(18~21시)",
-  "avg": 0.7,
-  "n": 3
- },
- {
-  "username": "mofa_kr",
-  "group": "시간대",
-  "key": "점심(12~14시)",
-  "avg": 1.14,
-  "n": 6
- },
- {
-  "username": "mofa_kr",
-  "group": "요일",
-  "key": "금",
-  "avg": 1.04,
-  "n": 10
- },
- {
-  "username": "mofa_kr",
-  "group": "요일",
-  "key": "목",
-  "avg": 0.9,
-  "n": 2
- },
- {
-  "username": "mofa_kr",
-  "group": "요일",
-  "key": "수",
-  "avg": 1.32,
-  "n": 8
- },
- {
-  "username": "mofa_kr",
-  "group": "요일",
-  "key": "월",
-  "avg": 0.59,
-  "n": 5
- },
- {
-  "username": "mofa_kr",
-  "group": "요일",
-  "key": "화",
-  "avg": 1.1,
-  "n": 3
  },
  {
   "username": "miraeasset.securities_official",
@@ -11378,7 +11378,7 @@
   "username": "bullstory1",
   "group": "형식",
   "key": "캐러셀(카드뉴스)",
-  "avg": 2.5,
+  "avg": 2.51,
   "n": 135
  },
  {
@@ -11420,14 +11420,14 @@
   "username": "bullstory1",
   "group": "첫 문장",
   "key": "일반 서술형",
-  "avg": 2.52,
+  "avg": 2.53,
   "n": 43
  },
  {
   "username": "bullstory1",
   "group": "첫 문장",
   "key": "질문형",
-  "avg": 2.28,
+  "avg": 2.29,
   "n": 52
  },
  {
@@ -11455,7 +11455,7 @@
   "username": "bullstory1",
   "group": "시간대",
   "key": "오후(14~18시)",
-  "avg": 3.08,
+  "avg": 3.09,
   "n": 50
  },
  {
@@ -11469,7 +11469,7 @@
   "username": "bullstory1",
   "group": "시간대",
   "key": "저녁(18~21시)",
-  "avg": 2.47,
+  "avg": 2.48,
   "n": 32
  },
  {
@@ -11504,7 +11504,7 @@
   "username": "bullstory1",
   "group": "요일",
   "key": "화",
-  "avg": 1.71,
+  "avg": 1.73,
   "n": 36
  },
  {
@@ -11539,7 +11539,7 @@
   "username": "bullstory1",
   "group": "주제",
   "key": "AI·반도체",
-  "avg": 3.07,
+  "avg": 3.08,
   "n": 61
  },
  {
@@ -11616,7 +11616,7 @@
   "username": "bullstory1",
   "group": "주제",
   "key": "정치·관세",
-  "avg": 2.33,
+  "avg": 2.34,
   "n": 14
  },
  {
