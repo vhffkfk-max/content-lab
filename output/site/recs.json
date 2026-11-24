@@ -10,7 +10,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 6.23,
   "kr_n": 2,
-  "foreign_avg": 2.32,
+  "foreign_avg": 2.38,
   "foreign_n": 55
  },
  {
@@ -22,10 +22,10 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.8,
-  "kr_n": 742,
-  "foreign_avg": 2.63,
-  "foreign_n": 492
+  "kr_avg": 1.81,
+  "kr_n": 747,
+  "foreign_avg": 2.64,
+  "foreign_n": 494
  },
  {
   "rank": 3,
@@ -37,8 +37,8 @@
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
   "kr_avg": 1.8,
-  "kr_n": 92,
-  "foreign_avg": 2.37,
+  "kr_n": 93,
+  "foreign_avg": 2.38,
   "foreign_n": 153
  },
  {
@@ -50,9 +50,9 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "인용형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.98,
+  "kr_avg": 2.99,
   "kr_n": 39,
-  "foreign_avg": 2.79,
+  "foreign_avg": 2.82,
   "foreign_n": 35
  },
  {
@@ -61,12 +61,12 @@
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
   "title_idea": "[오늘] 빅테크에 무슨 일이? 1분 요약",
-  "format": "단일 이미지",
+  "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
   "kr_avg": 1.38,
   "kr_n": 47,
-  "foreign_avg": 1.88,
+  "foreign_avg": 1.9,
   "foreign_n": 54
  },
  {
@@ -80,7 +80,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 1.11,
   "kr_n": 13,
-  "foreign_avg": 1.93,
+  "foreign_avg": 1.96,
   "foreign_n": 201
  },
  {
@@ -88,13 +88,13 @@
   "topic": "환율·달러",
   "kind": "국내 검증 주제",
   "confidence": "높음",
-  "title_idea": "숫자 하나로 보는 환율·달러",
+  "title_idea": "환율·달러, 한 줄 정리",
   "format": "단일 이미지",
-  "hook": "숫자 강조형",
+  "hook": "짧은 한 줄",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.52,
-  "kr_n": 99,
-  "foreign_avg": 1.08,
+  "kr_avg": 1.54,
+  "kr_n": 101,
+  "foreign_avg": 1.1,
   "foreign_n": 9
  },
  {
@@ -108,7 +108,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 0.94,
   "kr_n": 59,
-  "foreign_avg": 1.82,
+  "foreign_avg": 1.85,
   "foreign_n": 85
  }
 ]
