@@ -1,5 +1,63 @@
 [
  {
+  "slot": "2026-11-24 21:12",
+  "at": "2026-11-24T21:12:14+09:00",
+  "time": "11/24 21:12",
+  "checked_at": "2026-11-24T21:12:14+09:00",
+  "checked": "11/24 21:12",
+  "summary": "새로 뜬 건 두 가지다. WSJ의 엔비디아 SEC 조사 보도와 블룸버그의 트럼프 관세 추가분 예고다. 나머지는 이미 보냈거나 화면에 있는 글감이다.",
+  "picks": [
+   {
+    "topic": "WSJ: SEC, 젠슨 황 퇴진 국면 엔비디아 조사",
+    "channel": "텔레그램 짧은 속보",
+    "title": "[속보] WSJ \"SEC, 엔비디아 들여다본다\"",
+    "why_now": "21:09 WSJ 단독. 젠슨 황 복귀 랠리 직후라 엔비디아 프리장 하락과 겹친다. 이전 발송분에는 없던 새 소식이다.",
+    "draft": "[속보] WSJ 단독: 미 증권거래위원회(SEC)가 엔비디아를 조사 중이라고 보도했습니다. 젠슨 황 CEO가 물러났던 국면과 관련된 조사로 전해졌습니다.\n\n조사 범위와 대상은 아직 알려지지 않았습니다 [확인].\n복귀 랠리 직후 나온 소식이라 오늘 밤 미국장 엔비디아 흐름에 변수가 될 수 있습니다.",
+    "sources": [
+     "https://news.google.com/rss/articles/CBMimgFBVV95cUxQbjl2b0tzT1ROT2plV1p5RHhQd3hXOEJKRFhOZ1ItZExOQV9oVGkzTU9tcEEyTXhjNHR"
+    ],
+    "follow_up": false,
+    "time": "11/24 21:12"
+   },
+   {
+    "topic": "트럼프 관세 추가분 G-20 앞두고 예고",
+    "channel": "쓰레드 글",
+    "title": "트럼프 관세, 다음 묶음이 곧 온다",
+    "why_now": "21:01 블룸버그가 'G-20 앞두고 다음 트럼프 관세 곧 나온다'와 '산업 과잉설비 관세'를 보도했다. 오늘 장은 엔비디아 이야기만 나오는데, 관세는 수출국인 한국에 직접 영향을 준다.",
+    "draft": "오늘 다들 엔비디아만 보는데, 관세 얘기가 또 나왔습니다.\n\n블룸버그: 트럼프 관세 다음 묶음이 G-20을 앞두고 곧 나온다고 합니다.\n함께 나온 분석은 '산업 과잉설비'를 겨냥한 관세입니다.\n\n대상 품목과 세율은 아직 모릅니다 [확인].\n수출 비중이 큰 한국은 발표 품목에 철강·자동차·화학이 들어가는지부터 봐야 합니다.",
+    "sources": [
+     "https://news.google.com/rss/articles/CBMimgFBVV95cUxOWlpweFhXRFFWZ0lEaUtJZWRzU0hUM3FpN2ZCLVl1NnRzVDQ0ellQY1h2Nlc2TW1lNGp",
+     "https://www.bloomberg.com/news/newsletters/2026-11-24/trump-tariffs-on-industrial-overcapacity"
+    ],
+    "follow_up": false,
+    "time": "11/24 21:12"
+   },
+   {
+    "time": "11/24 20:37",
+    "topic": "머스크 젠슨 황 복귀 환영 + 엔비디아 프리장 하락",
+    "channel": "쓰레드 글",
+    "title": "머스크는 '실수 바로잡혔다'는데, 엔비디아는 벌써 5% 빠진다",
+    "why_now": "머스크 발언 기사 3곳이 다뤘고 많이 본 기사에 올랐다. 20:30 이데일리는 엔비디아 개장전 5% 하락을 전했다. 이사회 독립성 논란과 'Sell the Jensen squeeze' 매도 의견도 같이 나왔다. 쓰레드에서도 젠슨 황 글이 시간당 조회 4천~6천을 기록 중이다.",
+    "draft": "머스크는 젠슨 황 복귀를 두고 \"실수가 바로잡혔다\"고 했습니다.\n그런데 엔비디아는 개장 전부터 5% 하락 중입니다.\n\n이유는 두 가지입니다.\n1. 이사회 독립성 논란: 복귀 과정에서 정치권 입김이 있었다는 시선이 나옵니다.\n2. 하루 급등 뒤 차익 실현 매물: BTIG는 'Sell the Jensen squeeze'라는 의견을 냈습니다.\n\n한국 투자자에게 중요한 건 오늘 코스피 5000선 회복이 이 랠리에 기댄 면이 크다는 점입니다. 엔비디아가 밀리면 내일 반도체주 흐름이 흔들릴 수 있습니다.\n\n※ 투자 권유 아님",
+    "sources": [
+     "https://kr.investing.com/news/stock-market-news/article-2188515",
+     "http://www.edaily.co.kr/news/newspath.asp?newsid=04359126645649000",
+     "https://x.com/zerohedge/status/2125190303699075413"
+    ],
+    "follow_up": false
+   }
+  ],
+  "notified_at": "2026-11-12T18:35:45+09:00",
+  "inputs": {
+   "news": 90,
+   "new_news": 66,
+   "threads": 10,
+   "insta": 6,
+   "x_vip": 15,
+   "x": 8
+  }
+ },
+ {
   "slot": "2026-11-24 20:37",
   "at": "2026-11-24T20:37:13+09:00",
   "time": "11/24 20:37",
@@ -6968,65 +7026,6 @@
   "inputs": {
    "news": 90,
    "new_news": 80,
-   "threads": 7,
-   "insta": 6,
-   "x_vip": 15,
-   "x": 8
-  }
- },
- {
-  "slot": "2026-11-20 21:33",
-  "at": "2026-11-20T21:33:35+09:00",
-  "time": "11/20 21:33",
-  "checked_at": "2026-11-20T21:33:35+09:00",
-  "checked": "11/20 21:33",
-  "summary": "새 글감 3개: 엔비디아 SEC 조사·CEO 이탈(WSJ 단독), VIX 30 돌파·닷컴 경고, 보유세 급증. 앤트로픽·금·비트코인·수출은 이미 보내서 뺐다.",
-  "picks": [
-   {
-    "topic": "엔비디아 SEC 조사, 젠슨 황 CEO 이탈",
-    "channel": "텔레그램 짧은 속보",
-    "title": "[속보] WSJ \"SEC, 엔비디아 조사 중…젠슨 황 CEO 이탈 와중\"",
-    "why_now": "21:25 WSJ 단독. 21:00 블룸버그가 엔비디아 임시 CEO를 다뤘다. 앞서 신저가와 미 의회 상무부 조사 개입은 보냈지만, SEC 조사와 CEO 공백은 새 소식이다.",
-    "draft": "[속보] 엔비디아, 이번엔 SEC 조사\n\n월스트리트저널 단독: 미 증권거래위원회(SEC)가 엔비디아를 들여다보고 있고, 젠슨 황 CEO가 자리에서 물러나는 시점과 겹쳤다고 합니다. 블룸버그는 '임시 CEO'가 맡게 됐다고 전했습니다.\n\n조사 내용과 황 CEO 이탈 경위는 [확인] 필요.\n\n이미 신저가에 미 하원의 상무부 조사 개입 확인까지 나온 상황입니다. 삼성전자·SK하이닉스 같은 한국 AI 반도체주도 엔비디아 뉴스에 크게 흔들려 왔습니다.",
-    "sources": [
-     "https://news.google.com/rss/articles/CBMimgFBVV95cUxQbjl2b0tzT1ROT2plV1p5RHhQd3hXOEJKRFhOZ1ItZExOQV9oVGkzTU9tcEEyTXhjNHR",
-     "https://news.google.com/rss/articles/CBMiugFBVV95cUxNbl91S0k5RjhKNFgyRGpMSEJqNEF3eVVfclZfbm95clo4N3pyb0xkLTlCRlM1cVdTdDd"
-    ],
-    "follow_up": false,
-    "time": "11/20 21:33"
-   },
-   {
-    "topic": "VIX 30 돌파, 닷컴 붕괴 닮은꼴 경고",
-    "channel": "쓰레드 글",
-    "title": "VIX 30 넘었다, 2000년 닷컴 때랑 닮았다는 경고",
-    "why_now": "21:03 VIX 30 돌파 속보 조회 5.8만. 21:16 닷컴 경고 속보 조회 약 4만. 블룸버그 기사도 같은 내용. 쓰레드에서는 '이번 하락장이 코로나보다 힘들다'는 글이 시간당 조회 3130으로 빠르게 크는 중.",
-    "draft": "VIX가 30을 넘었습니다.\n\n공포지수가 30 위면 시장이 꽤 겁먹었다는 뜻이에요.\n\n영국 TS 롬바드는 지금 AI발 하락이 2000년 닷컴 붕괴 직전과 비슷한 모습이라고 경고했습니다. 매도가 나스닥에서 시장 전체로 번지고 있다는 점을 짚었어요.\n\n오늘 코스피도 5% 넘게 빠졌죠.\n\n물론 '닮았다'가 '똑같이 간다'는 뜻은 아닙니다. 다만 변동성이 클 때는 내 투자 비중과 현금 여력부터 점검해 볼 때입니다.",
-    "sources": [
-     "https://www.bloomberg.com/news/articles/2026-11-20/stock-rout-s-spread-beyond-tech-carries-warning-from-dotcom-era",
-     "https://x.com/DeItaone/status/2123748975148957995",
-     "https://x.com/DeItaone/status/2123752238841536536"
-    ],
-    "follow_up": false,
-    "time": "11/20 21:33"
-   },
-   {
-    "topic": "보유세 급증, 강남3구 매물 3만건",
-    "channel": "인스타 카드뉴스",
-    "title": "반포자이 84㎡ 보유세 831만원↑…강남3구 매물 3만건",
-    "why_now": "21:12 서울경제가 보유세와 재초환 기사를 연달아 냈다. 낮에 보낸 공시가격 현실화율 동결 소식과 이어지는 실제 세금 부담 이야기. 증시 급락 속에서 부동산 쪽 새 소재.",
-    "draft": "1장: 보유세, 이만큼 오릅니다\n2장: 반포자이 84㎡ 보유세 831만원 증가\n3장: 잠실주공5 국평(국민평형)도 354만원 더 낸다\n4장: 재건축초과이익환수(재초환)에 보유세까지 겹악재\n5장: 강남3구 매물 3만건 돌파\n6장: 현실화율은 동결됐지만, 세 부담은 다른 데서 커졌습니다 [확인: 증가 원인과 기준]\n7장: 내 집 보유세는 어디서 확인? (정부24·위택스)",
-    "sources": [
-     "https://v.daum.net/v/20261120211214363",
-     "https://v.daum.net/v/20261120211208352"
-    ],
-    "follow_up": false,
-    "time": "11/20 21:33"
-   }
-  ],
-  "notified_at": "2026-11-12T18:35:45+09:00",
-  "inputs": {
-   "news": 90,
-   "new_news": 86,
    "threads": 7,
    "insta": 6,
    "x_vip": 15,
