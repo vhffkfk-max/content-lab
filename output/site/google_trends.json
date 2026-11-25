@@ -19,15 +19,6 @@
  },
  {
   "geo": "KR",
-  "term": "매일경제",
-  "traffic": 1000,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "하루 만에 314조 원 증발…엔비디아 시총 이틀간 ‘롤러코스터’",
-  "news_link": "https://news.jtbc.co.kr/article/NB12329686"
- },
- {
-  "geo": "KR",
   "term": "시그널",
   "traffic": 1000,
   "topics": "",
@@ -37,12 +28,21 @@
  },
  {
   "geo": "KR",
+  "term": "sabah vs barcelona",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "El Barça viaja a los confines de la UEFA para enfrentarse al Sabah en Champions",
+  "news_link": "https://www.rfi.fr/es/m%C3%A1s-noticias/20261125-el-bar%C3%A7a-viaja-a-los-confines-de-la-uefa-para-enfrentarse-al-sabah-en-champions"
+ },
+ {
+  "geo": "KR",
   "term": "정부",
   "traffic": 500,
   "topics": "정치·관세",
   "econ": true,
-  "news_title": "美, ‘과잉 생산’ 관세 추가... “한국엔 15% 상한 유지”",
-  "news_link": "https://www.chosun.com/international/us/2026/11/25/LK4WTNOAWRAUFAPB4AK4XN7GLU/"
+  "news_title": "미, 14개국에 과잉생산 관세…“한국 15% 상한 유지”",
+  "news_link": "https://www.hani.co.kr/arti/international/international_general/1289144.html"
  },
  {
   "geo": "KR",
@@ -52,15 +52,6 @@
   "econ": true,
   "news_title": "QQQ traded across nearly $5. Why was Balance of Power near zero? for NASDAQ:QQQ by Investrade",
   "news_link": "https://www.tradingview.com/chart/QQQ/5vID1i4D-QQQ-traded-across-nearly-5-Why-was-Balance-of-Power-near-zero/"
- },
- {
-  "geo": "KR",
-  "term": "공포탐욕지수",
-  "traffic": 200,
-  "topics": "급락·변동성",
-  "econ": true,
-  "news_title": "업비트 종합지수 전주 대비 6.04% 하락…\"새 상장종목 대응전략 공유 활발\"",
-  "news_link": "https://www.thebigdata.co.kr/view.php?ud=202611231439246548d0a8833aad_23"
  },
  {
   "geo": "KR",
@@ -82,89 +73,53 @@
  },
  {
   "geo": "KR",
-  "term": "양준혁",
+  "term": "데이비스컵",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "이벤트 원조 ‘자선야구대회’ 왜 멈춰섰나",
-  "news_link": "https://www.koreadaily.com/article/20261125070147086"
+  "news_title": "랭킹은 숫자일 뿐… ‘이변의 주인공’ 꿈꾸는 韓 테니스",
+  "news_link": "https://www.chosun.com/sports/sports_general/2026/11/25/LQJT3FYE55CGFJLZ4UWTZA2C5U/"
+ },
+ {
+  "geo": "KR",
+  "term": "매일경제",
+  "traffic": 100,
+  "topics": "환율·달러, 비트코인",
+  "econ": true,
+  "news_title": "비트코인 파동으로 보기, 5만5천 달러 바닥선과 6만4천6백 달러 첫 관문",
+  "news_link": "https://contents.premium.naver.com/kkk0221/kkkk0321/contents/261125012829486am"
  },
  {
   "geo": "US",
-  "term": "sabah vs barcelona",
-  "traffic": 50000,
+  "term": "barcelona",
+  "traffic": 20000,
   "topics": "",
   "econ": false,
-  "news_title": "Sabah FK vs Barcelona: UEFA Champions League stats & head-to-head",
-  "news_link": "https://www.bbc.com/sport/football/live/c674232v2gv3t"
+  "news_title": "Barcelona: posible alineación y probabilidades vs Sabah para la Champions",
+  "news_link": "https://espndeportes.espn.com/futbol/champions-league/nota/_/id/17556744/barcelona-alineacion-vs-sabah-champions-league"
  },
  {
   "geo": "US",
-  "term": "kenneth walker",
-  "traffic": 10000,
-  "topics": "",
-  "econ": false,
-  "news_title": "NFL news roundup: Chiefs' Kenneth Walker III (groin) returns to practice; Broncos suspend J.K. Dobbins",
-  "news_link": "https://www.nfl.com/news/nfl-news-roundup-latest-league-updates-from-tuesday-nov-24"
- },
- {
-  "geo": "US",
-  "term": "slavia praha vs villarreal",
-  "traffic": 10000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Slavia Prague vs Villarreal: UEFA Champions League stats & head-to-head",
-  "news_link": "https://www.bbc.com/sport/football/live/cmdx121dxr1zt"
- },
- {
-  "geo": "US",
-  "term": "marquette vs virginia",
+  "term": "lebron james",
   "traffic": 5000,
   "topics": "",
   "econ": false,
-  "news_title": "No. 2 Cavaliers Battle Marquette in the Battle 4 Atlantis",
-  "news_link": "https://virginiasports.com/news/2026/11/24/no-2-cavaliers-battle-marquette-in-the-battle-4-atlantis"
+  "news_title": "L.A. court approves restraining orders for LeBron James’ family after trespassing incidents",
+  "news_link": "https://www.nytimes.com/athletic/7809718/2026/11/24/lebron-james-trespassing-restraining-orders/"
  },
  {
   "geo": "US",
-  "term": "sophie cunningham maxim photos",
-  "traffic": 1000,
+  "term": "barca vs",
+  "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "Sophie Cunningham draws pushback from Christian scholars for posing topless in Maxim",
-  "news_link": "https://www.christianpost.com/news/sophie-cunningham-draws-pushback-for-going-topless-in-maxim.html"
- },
- {
-  "geo": "US",
-  "term": "barca game",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Barca have quality to win without Yamal: De Jong",
-  "news_link": "https://sports.yahoo.com/articles/barca-quality-win-without-yamal-160544567.html"
- },
- {
-  "geo": "US",
-  "term": "fenerbahçe",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Arda Turan için ayrılık ateşini yaktılar! Fenerbahçe maçı öncesi Ukrayna'dan şoke edici haber geldi",
-  "news_link": "https://www.ntvspor.net/futbol/galeri-arda-turan-icin-ayrilik-atesini-yaktilar-fenerbahce-maci-oncesi-ukraynadan-soke-edici-haber-geldi-433597"
- },
- {
-  "geo": "US",
-  "term": "lioness",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "A Lion on the Loose Near Istanbul? Not So Fast.",
-  "news_link": "https://www.nytimes.com/2026/11/24/world/middleeast/turkey-istanbul-lion.html"
+  "news_title": "Barcelona: alineación y probabilidades vs Sabah para la Champions",
+  "news_link": "https://espndeportes.espn.com/futbol/champions-league/nota/_/id/17556744/barcelona-alineacion-vs-sabah-champions-league"
  },
  {
   "geo": "US",
   "term": "azerbaijan",
-  "traffic": 200,
+  "traffic": 1000,
   "topics": "",
   "econ": false,
   "news_title": "‘Unfit to chair’: Over 40 NGOs oppose Azerbaijan’s bid to lead OSCE",
@@ -172,11 +127,56 @@
  },
  {
   "geo": "US",
-  "term": "chipotle bogo today",
+  "term": "yale basketball",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Yale Beats Appalachian State 57-50 Behind Strong Defense",
+  "news_link": "https://demokratis.co.id/en/yale-beats-appalachian-state-defense"
+ },
+ {
+  "geo": "US",
+  "term": "barca game",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Barcelona to appeal Fermín López's two-match ban - sources",
+  "news_link": "https://www.espn.com/soccer/story/_/id/50591588/fermin-lopez-barcelona-ban-appeal-sources"
+ },
+ {
+  "geo": "US",
+  "term": "villarreal",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Cardona: “¿Calendario asequible? Ya aprendimos la lección el año pasado”",
+  "news_link": "https://as.com/futbol/champions/cardona-calendario-asequible-ya-aprendimos-la-leccion-el-ano-pasado-f202611-n/"
+ },
+ {
+  "geo": "US",
+  "term": "wright state basketball",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "St. Bonaventure 72-70 Wright State (Nov 24, 2026) Game Recap",
+  "news_link": "https://www.espn.com/mens-college-basketball/recap/_/gameId/401927398"
+ },
+ {
+  "geo": "US",
+  "term": "chris paul",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "CHIPOTLE BRINGS BACK \"BACK HOME BOGO\" FOR THE BIGGEST REUNION NIGHT OF THE YEAR",
-  "news_link": "https://newsroom.chipotle.com/2026-11-20-CHIPOTLE-BRINGS-BACK-BACK-HOME-BOGO-FOR-THE-BIGGEST-REUNION-NIGHT-OF-THE-YEAR"
+  "news_title": "College GameDay is coming to Wake Forest this Saturday",
+  "news_link": "https://www.wxii12.com/article/college-gameday-wake-forest-winston-salem/74533208"
+ },
+ {
+  "geo": "US",
+  "term": "gabriel jesus",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Gabriel Jesus opens up on adaptation at Barcelona: ‘Being part of this group makes everything easier’",
+  "news_link": "https://sports.yahoo.com/articles/gabriel-jesus-opens-adaptation-barcelona-193000086.html"
  }
 ]
