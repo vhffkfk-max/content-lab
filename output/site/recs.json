@@ -10,8 +10,8 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 6.23,
   "kr_n": 2,
-  "foreign_avg": 2.43,
-  "foreign_n": 55
+  "foreign_avg": 2.46,
+  "foreign_n": 54
  },
  {
   "rank": 2,
@@ -25,7 +25,7 @@
   "kr_avg": 1.83,
   "kr_n": 788,
   "foreign_avg": 2.66,
-  "foreign_n": 524
+  "foreign_n": 526
  },
  {
   "rank": 3,
@@ -38,7 +38,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 1.79,
   "kr_n": 101,
-  "foreign_avg": 2.4,
+  "foreign_avg": 2.41,
   "foreign_n": 167
  },
  {
@@ -46,14 +46,14 @@
   "topic": "테슬라",
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
-  "title_idea": "테슬라, 한 줄 정리",
-  "format": "단일 이미지",
-  "hook": "짧은 한 줄",
+  "title_idea": "숫자 하나로 보는 테슬라",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
   "kr_avg": 2.76,
   "kr_n": 40,
-  "foreign_avg": 3.05,
-  "foreign_n": 35
+  "foreign_avg": 2.97,
+  "foreign_n": 36
  },
  {
   "rank": 5,
@@ -66,7 +66,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 1.37,
   "kr_n": 46,
-  "foreign_avg": 1.89,
+  "foreign_avg": 1.88,
   "foreign_n": 56
  },
  {
@@ -81,7 +81,7 @@
   "kr_avg": 0.91,
   "kr_n": 11,
   "foreign_avg": 1.97,
-  "foreign_n": 209
+  "foreign_n": 211
  },
  {
   "rank": 7,
@@ -94,21 +94,21 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 0.96,
   "kr_n": 63,
-  "foreign_avg": 1.92,
+  "foreign_avg": 1.93,
   "foreign_n": 88
  },
  {
   "rank": 8,
-  "topic": "국내 대형주",
-  "kind": "국내 검증 주제",
+  "topic": "금리·연준",
+  "kind": "해외 벤치마킹 주제 (방식 바꾸면 기회)",
   "confidence": "높음",
-  "title_idea": "숫자 하나로 보는 국내 대형주",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "숫자 강조형",
+  "title_idea": "[오늘] 금리·연준에 무슨 일이? 1분 요약",
+  "format": "단일 이미지",
+  "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.9,
-  "kr_n": 220,
-  "foreign_avg": 0.53,
-  "foreign_n": 10
+  "kr_avg": 0.98,
+  "kr_n": 48,
+  "foreign_avg": 2.55,
+  "foreign_n": 20
  }
 ]
