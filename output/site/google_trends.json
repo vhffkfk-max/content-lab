@@ -1,6 +1,15 @@
 [
  {
   "geo": "KR",
+  "term": "연금 개혁",
+  "traffic": 5000,
+  "topics": "연금·절세",
+  "econ": true,
+  "news_title": "‘73년생 66세, 77년생 67세, 81년생 68세’…국민연금 68세 수급개시설 어디서 나왔나",
+  "news_link": "https://weekly.khan.co.kr/article/202611250802011"
+ },
+ {
+  "geo": "KR",
   "term": "디에고 시메오네",
   "traffic": 2000,
   "topics": "",
@@ -10,12 +19,21 @@
  },
  {
   "geo": "KR",
-  "term": "연금 개혁",
-  "traffic": 2000,
-  "topics": "연금·절세",
-  "econ": true,
-  "news_title": "‘73년생 66세, 77년생 67세, 81년생 68세’…국민연금 68세 수급개시설 어디서 나왔나",
-  "news_link": "https://weekly.khan.co.kr/article/202611250802011"
+  "term": "서훈",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "5·18 진압 경찰 포상 취소…이 대통령 \"당연한 조치, 마지막 한 명까지 역사 교정\"",
+  "news_link": "https://news.jtbc.co.kr/article/NB12329695"
+ },
+ {
+  "geo": "KR",
+  "term": "폭설",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "[그 영화 어때] 미스터리라더니 미스터리는 어디에, 영화 ‘폭설’",
+  "news_link": "https://www.chosun.com/culture-life/culture_general/2026/11/25/CFQWTKDOLFDTBC23ZRS3D5SMXE/"
  },
  {
   "geo": "KR",
@@ -23,17 +41,17 @@
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Jodar breaks Agassi’s 28-year record with year-end Top 10 jump",
-  "news_link": "https://www.atptour.com/en/news/jodar-year-end-top-10-record-2026"
+  "news_title": "Consistent Zverev earns final No. 1 ATP ranking despite loss to Alcaraz",
+  "news_link": "https://www.espn.com/tennis/story/_/id/50572011/zverev-earns-final-no-1-atp-ranking-loss-alcaraz"
  },
  {
   "geo": "KR",
-  "term": "국민은행",
+  "term": "급여 지원",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "KB국민은행 \"서울시 11개 구금고 유치…점유율 1위\"",
-  "news_link": "https://www.yna.co.kr/view/AKR20261125034800002"
+  "news_title": "",
+  "news_link": ""
  },
  {
   "geo": "KR",
@@ -46,15 +64,6 @@
  },
  {
   "geo": "KR",
-  "term": "폭설",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "[그 영화 어때] 미스터리라더니 미스터리는 어디에, 영화 ‘폭설’",
-  "news_link": "https://www.chosun.com/culture-life/culture_general/2026/11/25/CFQWTKDOLFDTBC23ZRS3D5SMXE/"
- },
- {
-  "geo": "KR",
   "term": "3기 신도시",
   "traffic": 200,
   "topics": "부동산",
@@ -64,119 +73,110 @@
  },
  {
   "geo": "KR",
-  "term": "국민카드",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "[게시판] 신한카드, 아디다스 첫 글로벌 제휴카드 출시",
-  "news_link": "https://www.yna.co.kr/view/AKR20261124132800002"
- },
- {
-  "geo": "KR",
-  "term": "급여 지원",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "",
-  "news_link": ""
- },
- {
-  "geo": "KR",
   "term": "южная корея",
-  "traffic": 100,
+  "traffic": 200,
   "topics": "",
   "econ": false,
   "news_title": "Южная Корея подняла истребители из-за российских военных самолетов. На одном из островов объявили эвакуацию",
   "news_link": "https://meduza.io/news/2026/11/24/yuzhnaya-koreya-podnyala-istrebiteli-iz-za-rossiyskih-voennyh-samoletov-na-odnom-iz-ostrovov-ob-yavili-evakuatsiyu"
  },
  {
+  "geo": "KR",
+  "term": "한국대학신문",
+  "traffic": 100,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "최교진 사퇴에 교원단체들 “수능 AI 부정 대비 부족…리더십 한계”",
+  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8719643"
+ },
+ {
   "geo": "US",
-  "term": "houston dynamo vs san jose",
+  "term": "what did jan say on dwts",
+  "traffic": 10000,
+  "topics": "",
+  "econ": false,
+  "news_title": "‘Fresh Prince’ star Tatyana Ali of North Bellmore heads to ‘Dancing with the Stars’ finale",
+  "news_link": "https://greaterlongisland.com/tatyana-ali-north-bellmore-dancing-with-the-stars-finale/"
+ },
+ {
+  "geo": "US",
+  "term": "tom holland",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Tom Holland’s Spider-Man Gets a Bold New Look in Latest ‘Brand New Day’ Poster",
+  "news_link": "https://www.imdb.com/news/ni66125090/?ref_=tt_nwr_1"
+ },
+ {
+  "geo": "US",
+  "term": "alabama basketball",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "San Jose Earthquakes enter uncharted MLS Cup Playoffs territory",
-  "news_link": "https://www.mlssoccer.com/playoffs/2026/news/san-jose-earthquakes-enter-uncharted-mls-cup-playoffs-territory"
+  "news_title": "3 Things I Know, 3 Things I Think: Alabama basketball kicking off tough non-conference slate at Players Era",
+  "news_link": "https://247sports.com/college/alabama/article/3-things-i-know-3-things-i-think-alabama-basketball-kicking-off-tough-non-conference-slate-at-players-era-293236189/"
  },
  {
   "geo": "US",
-  "term": "high potential",
+  "term": "andrew tate",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "‘High Potential’ Fans Have So Many Questions About Kaitlin Olson’s New Look Ahead of Season 3",
-  "news_link": "https://www.goodhousekeeping.com/entertainment/tv-shows/a74443331/high-potential-cast-season-3-kaitlin-olson-hair-instagram/"
+  "news_title": "Andrew Tate Challenges UK Extradition as Lawyers Question Evidence in US Court",
+  "news_link": "https://speaks.co.in/business/andrew-tate-challenges-uk-extradition-as-lawyers-question-evidence-in-us-court/"
  },
  {
   "geo": "US",
-  "term": "lakesha womack",
+  "term": "john o'hurley",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "'Seinfeld' Star John O'Hurley Reveals The Celebrity Whose Life He'd Love To Live",
+  "news_link": "https://www.yahoo.com/entertainment/celebrity/interviews/articles/seinfeld-star-john-ohurley-reveals-153522475.html"
+ },
+ {
+  "geo": "US",
+  "term": "matt rife",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Is Ryan Salame still in prison? Yes: the FTX exec Matt Rife plays in The Altruists is due out in 2030",
+  "news_link": "https://www.nacionale.com/en/articles/is-ryan-salame-still-in-prison-the-altruists-matt-rife-ftx-release-date"
+ },
+ {
+  "geo": "US",
+  "term": "zendaya",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "‘Dune: Part Three’: An Exclusive First Look at the Sets",
+  "news_link": "https://www.architecturaldigest.com/story/an-exclusive-first-look-at-the-sets-of-dune-part-three"
+ },
+ {
+  "geo": "US",
+  "term": "caleb martin",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Officials Dismiss Rental Car Felony Charge for Incoming House Democrat",
-  "news_link": "https://www.nytimes.com/2026/11/24/us/lakesha-womack-rental-car-felony-charge-dismissed.html"
+  "news_title": "Mavericks Find Rare Chance To Sell High On Caleb Martin",
+  "news_link": "https://sports.yahoo.com/articles/mavericks-rare-chance-sell-high-213338622.html"
  },
  {
   "geo": "US",
-  "term": "only murders in the building",
+  "term": "chock and bates",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Only Murders in London release date & where to watch",
-  "news_link": "https://www.disneyplus.com/en-gb/explore/articles/only-murders-in-london"
+  "news_title": "Inside Olympic Figure Skaters Madison Chock and Evan Bates’ Romance",
+  "news_link": "https://people.com/madison-chock-evan-bates-relationship-everything-to-know-12274413"
  },
  {
   "geo": "US",
-  "term": "plane crash today",
-  "traffic": 500,
-  "topics": "급락·변동성",
-  "econ": true,
-  "news_title": "Authorities searching for 4 adults and 2 kids on plane that crashed near Mississippi’s Horn Island",
-  "news_link": "https://www.cnn.com/2026/11/24/us/plane-crash-mississippi-horn-island"
- },
- {
-  "geo": "US",
-  "term": "thea hail",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Thea Hail Speaks Candidly About Alopecia Condition, Shaves Head On 11/24 WWE NXT",
-  "news_link": "https://www.fightful.com/wrestling/thea-hail-speaks-candidly-about-alopecia-condition-shaves-head-on-11-24-wwe-nxt/"
- },
- {
-  "geo": "US",
-  "term": "bea millan-windorski",
+  "term": "shaq",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Whitefish Bay grad represents the Philippines in Miss Universe pageant",
-  "news_link": "https://www.jsonline.com/story/communities/north/2026/11/20/whitefish-bay-grad-bea-millan-windorski-represents-the-philippines-in-miss-universe-pageant/92845051007/"
- },
- {
-  "geo": "US",
-  "term": "connor mcdavid",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Golden Knights’ Mitch Marner on verge of joining Connor McDavid, Sidney Crosby in elite company",
-  "news_link": "https://sports.yahoo.com/articles/golden-knights-mitch-marner-verge-201737202.html"
- },
- {
-  "geo": "US",
-  "term": "khris middleton",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Wizards’ convincing win Sunday cools Brian Keefe’s hot seat for now",
-  "news_link": "https://www.nytimes.com/athletic/7805558/2026/11/23/wizards-magic-brian-keefe-hot-seat/"
- },
- {
-  "geo": "US",
-  "term": "porsha williams",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "RHOA Star Porsha Williams Is Engaged to Girlfriend Patrice “Sway” McKinney a Year After Going Public",
-  "news_link": "https://balleralert.com/porsha-williams-engaged-sway-mckinney/"
+  "news_title": "‘I hit him’ – Charles Barkley proudly claims he beat up Shaquille O’Neal in controversial 1999 brawl",
+  "news_link": "https://sports.yahoo.com/articles/hit-him-charles-barkley-proudly-133029616.html"
  }
 ]
