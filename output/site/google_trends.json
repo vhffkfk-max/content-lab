@@ -1,8 +1,17 @@
 [
  {
   "geo": "KR",
+  "term": "반도체",
+  "traffic": 20000,
+  "topics": "AI·반도체, 국내 대형주, 급락·변동성",
+  "econ": true,
+  "news_title": "코스피 5% 급락에 ‘매도 사이드카’...하루만에 5000선 반납",
+  "news_link": "https://www.chosun.com/economy/money/2026/11/25/QHFODM73WVFFXAHXLRNKGUIPFA/"
+ },
+ {
+  "geo": "KR",
   "term": "연금 개혁",
-  "traffic": 5000,
+  "traffic": 10000,
   "topics": "연금·절세",
   "econ": true,
   "news_title": "‘73년생 66세, 77년생 67세, 81년생 68세’…국민연금 68세 수급개시설 어디서 나왔나",
@@ -37,21 +46,12 @@
  },
  {
   "geo": "KR",
-  "term": "atp 월드 투어",
+  "term": "3기 신도시",
   "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Consistent Zverev earns final No. 1 ATP ranking despite loss to Alcaraz",
-  "news_link": "https://www.espn.com/tennis/story/_/id/50572011/zverev-earns-final-no-1-atp-ranking-loss-alcaraz"
- },
- {
-  "geo": "KR",
-  "term": "급여 지원",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "",
-  "news_link": ""
+  "topics": "부동산",
+  "econ": true,
+  "news_title": "부천대장 A2 548세대 청약 청구서 — 59㎡ 6.13억, 계약부터 입주까지 내 돈과 「미정」인 중도금 집단대출",
+  "news_link": "https://contents.premium.naver.com/plaform/bg/contents/261124235935226yz"
  },
  {
   "geo": "KR",
@@ -64,15 +64,6 @@
  },
  {
   "geo": "KR",
-  "term": "3기 신도시",
-  "traffic": 200,
-  "topics": "부동산",
-  "econ": true,
-  "news_title": "부천대장 A2 548세대 청약 청구서 — 59㎡ 6.13억, 계약부터 입주까지 내 돈과 「미정」인 중도금 집단대출",
-  "news_link": "https://contents.premium.naver.com/plaform/bg/contents/261124235935226yz"
- },
- {
-  "geo": "KR",
   "term": "южная корея",
   "traffic": 200,
   "topics": "",
@@ -82,101 +73,110 @@
  },
  {
   "geo": "KR",
+  "term": "김천(구미)",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "'한반도KTX' 대전 패싱 논란에 '세종역' 반발까지…대전·세종 철도 소외 우려",
+  "news_link": "https://www.daejonilbo.com/news/articleView.html?idxno=2315819"
+ },
+ {
+  "geo": "KR",
   "term": "한국대학신문",
   "traffic": 100,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "최교진 사퇴에 교원단체들 “수능 AI 부정 대비 부족…리더십 한계”",
-  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8719643"
- },
- {
-  "geo": "US",
-  "term": "what did jan say on dwts",
-  "traffic": 10000,
   "topics": "",
   "econ": false,
-  "news_title": "‘Fresh Prince’ star Tatyana Ali of North Bellmore heads to ‘Dancing with the Stars’ finale",
-  "news_link": "https://greaterlongisland.com/tatyana-ali-north-bellmore-dancing-with-the-stars-finale/"
+  "news_title": "전북대, QS 세계대학 평가 국내 12위 ‘쾌거’",
+  "news_link": "https://sjbnews.com/news/news.php?number=893393&year=2026"
  },
  {
   "geo": "US",
-  "term": "tom holland",
-  "traffic": 5000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Tom Holland’s Spider-Man Gets a Bold New Look in Latest ‘Brand New Day’ Poster",
-  "news_link": "https://www.imdb.com/news/ni66125090/?ref_=tt_nwr_1"
- },
- {
-  "geo": "US",
-  "term": "alabama basketball",
+  "term": "hailey bills",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "3 Things I Know, 3 Things I Think: Alabama basketball kicking off tough non-conference slate at Players Era",
-  "news_link": "https://247sports.com/college/alabama/article/3-things-i-know-3-things-i-think-alabama-basketball-kicking-off-tough-non-conference-slate-at-players-era-293236189/"
+  "news_title": "DWTS ’ Ezra Frech Shares Update on Dating Life Amid Hailey Bills Romance Rumors",
+  "news_link": "https://www.eonline.com/news/1438390/dwts-ezra-frech-gives-dating-update-is-single-amid-hailey-bills-rumors"
  },
  {
   "geo": "US",
-  "term": "andrew tate",
+  "term": "jayson tatum",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Data Shows Jayson Tatum Makes More Clutch Shots Than Any NBA Player",
+  "news_link": "https://sports.yahoo.com/nba/articles/data-shows-jayson-tatum-makes-223603914.html"
+ },
+ {
+  "geo": "US",
+  "term": "st john's basketball",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Andrew Tate Challenges UK Extradition as Lawyers Question Evidence in US Court",
-  "news_link": "https://speaks.co.in/business/andrew-tate-challenges-uk-extradition-as-lawyers-question-evidence-in-us-court/"
+  "news_title": "It may be early, but this week is significant for St. John's now and next March",
+  "news_link": "https://www.newsday.com/sports/columnists/roger-rubin/st-johns-players-era-tournament-kncwnf0z"
  },
  {
   "geo": "US",
-  "term": "john o'hurley",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "'Seinfeld' Star John O'Hurley Reveals The Celebrity Whose Life He'd Love To Live",
-  "news_link": "https://www.yahoo.com/entertainment/celebrity/interviews/articles/seinfeld-star-john-ohurley-reveals-153522475.html"
- },
- {
-  "geo": "US",
-  "term": "matt rife",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Is Ryan Salame still in prison? Yes: the FTX exec Matt Rife plays in The Altruists is due out in 2030",
-  "news_link": "https://www.nacionale.com/en/articles/is-ryan-salame-still-in-prison-the-altruists-matt-rife-ftx-release-date"
- },
- {
-  "geo": "US",
-  "term": "zendaya",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "‘Dune: Part Three’: An Exclusive First Look at the Sets",
-  "news_link": "https://www.architecturaldigest.com/story/an-exclusive-first-look-at-the-sets-of-dune-part-three"
- },
- {
-  "geo": "US",
-  "term": "caleb martin",
+  "term": "dan koh",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Mavericks Find Rare Chance To Sell High On Caleb Martin",
-  "news_link": "https://sports.yahoo.com/articles/mavericks-rare-chance-sell-high-213338622.html"
+  "news_title": "A mayor, a 19-year-old and a 'Bachelorette' alum: Beacon Hill’s incoming class",
+  "news_link": "https://www.statehousenews.com/news/legislature/a-mayor-a-19-year-old-and-a-bachelorette-alum-beacon-hill-s-incoming-class/article_8a678f66-cfdb-49fb-abf6-0de406f830de.html"
  },
  {
   "geo": "US",
-  "term": "chock and bates",
+  "term": "derrick white",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Inside Olympic Figure Skaters Madison Chock and Evan Bates’ Romance",
-  "news_link": "https://people.com/madison-chock-evan-bates-relationship-everything-to-know-12274413"
+  "news_title": "P.J. Washington (illness) upgraded to available",
+  "news_link": "https://www.nbcsports.com/fantasy/basketball/player-news/2026-11-24/p-j-washington-illness-upgraded-to-available"
  },
  {
   "geo": "US",
-  "term": "shaq",
+  "term": "gen z years",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Pennsylvania teen who died in 2020 could become first Gen Z saint",
+  "news_link": "https://abcnews.com/US/pennsylvania-teen-died-2020-become-gen-saint/story?id=138378815"
+ },
+ {
+  "geo": "US",
+  "term": "helena foulkes",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Gov.-elect Foulkes announces in-person listening sessions",
+  "news_link": "https://rhodeislandcurrent.com/2026/11/22/gov-elect-foulkes-announces-in-person-listening-sessions/"
+ },
+ {
+  "geo": "US",
+  "term": "jumanji open world",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Jumanji: Open World",
+  "news_link": "https://drafthouse.com/show/jumanji-open-world"
+ },
+ {
+  "geo": "US",
+  "term": "carlos santana mlb",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "‘I hit him’ – Charles Barkley proudly claims he beat up Shaquille O’Neal in controversial 1999 brawl",
-  "news_link": "https://sports.yahoo.com/articles/hit-him-charles-barkley-proudly-133029616.html"
+  "news_title": "Mariners Sign Carlos Santana",
+  "news_link": "https://www.mlbtraderumors.com/2026/11/mariners-carlos-santana-agree-to-minor-league-deal.html"
+ },
+ {
+  "geo": "US",
+  "term": "vgk",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Trevor Connelly nets goal for Golden Knights",
+  "news_link": "https://www.espn.com/video/clip/_/id/50588204/trevor-connelly-nets-goal-golden-knights"
  }
 ]
