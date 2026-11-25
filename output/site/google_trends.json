@@ -10,15 +10,6 @@
  },
  {
   "geo": "KR",
-  "term": "가시마 앤틀러스 대 전북",
-  "traffic": 5000,
-  "topics": "",
-  "econ": false,
-  "news_title": "",
-  "news_link": ""
- },
- {
-  "geo": "KR",
   "term": "숲",
   "traffic": 5000,
   "topics": "",
@@ -37,26 +28,8 @@
  },
  {
   "geo": "KR",
-  "term": "검사",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "[사설] 대북송금 수사 검사 징계 못푸는 이유, 조작기소 근거 사라질까봐",
-  "news_link": "https://www.chosun.com/opinion/editorial/2026/11/25/ST6EEKK3R5HRBFEGXT7JEZ5JJM/"
- },
- {
-  "geo": "KR",
-  "term": "슈퍼문",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "밤사이 '슈퍼문'...크리스마스 이브에 가장 크다",
-  "news_link": "https://m.science.ytn.co.kr/program/view_today.php?s_mcd=0082&key=202611251603008783"
- },
- {
-  "geo": "KR",
   "term": "청룡영화상",
-  "traffic": 500,
+  "traffic": 1000,
   "topics": "",
   "econ": false,
   "news_title": "[ET포토] 박지훈, '당연한 연기상 후보'",
@@ -64,12 +37,12 @@
  },
  {
   "geo": "KR",
-  "term": "하사",
+  "term": "검사",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "진주 저수지서 여성 공군 하사 숨진 채 발견···군, 가혹행위 여부 수사",
-  "news_link": "https://www.khan.co.kr/article/202611251607001"
+  "news_title": "[사설] 대북송금 수사 검사 징계 못푸는 이유, 조작기소 근거 사라질까봐",
+  "news_link": "https://www.chosun.com/opinion/editorial/2026/11/25/ST6EEKK3R5HRBFEGXT7JEZ5JJM/"
  },
  {
   "geo": "KR",
@@ -82,101 +55,128 @@
  },
  {
   "geo": "KR",
+  "term": "마운자로",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "’마운자로 성지’ 대마도?…줄 잇는 민폐 후기",
+  "news_link": "https://www.yonhapnewstv.co.kr/news/AKR20261125102834EyY"
+ },
+ {
+  "geo": "KR",
   "term": "페이즈",
-  "traffic": 100,
+  "traffic": 200,
   "topics": "",
   "econ": false,
   "news_title": "‘판독 논란’ OK저축은행, KOVO에 ‘사후 판독’ 요청…KOVO “정독”",
   "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8722248"
  },
  {
+  "geo": "KR",
+  "term": "하사",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "진주 저수지서 여성 공군 하사 숨진 채 발견···군, 가혹행위 여부 수사",
+  "news_link": "https://www.khan.co.kr/article/202611251607001"
+ },
+ {
+  "geo": "KR",
+  "term": "lg에너지솔루션",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "[CEO 리더십] 김동명의 LG엔솔 ’체질 개선’…폴란드 공장, ESS 전진기지로 By FinancialPost",
+  "news_link": "https://kr.investing.com/news/stock-market-news/article-2189741"
+ },
+ {
   "geo": "US",
-  "term": "clima",
+  "term": "stock market futures",
   "traffic": 20000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Clima en Los Ángeles hoy: Revisa el tiempo en aeropuertos y qué áreas del país tienen retrasos",
-  "news_link": "https://www.univision.com/noticias/clima-en-los-angeles-hoy-revisa-el-tiempo-en-aeropuertos-y-que-areas-del-pais-tienen-retrasos-video"
+  "topics": "물가·경기, ETF·지수투자",
+  "econ": true,
+  "news_title": "Stock market today: Dow, S&P 500, Nasdaq futures fall ahead of inflation data",
+  "news_link": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-25-dow-sp-500-nasdaq-pce-inflation-data-091428237.html"
  },
  {
   "geo": "US",
-  "term": "flu season",
+  "term": "jensen huang nvidia stock",
   "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "The CDC stays quiet on flu as an early season catches many Americans off-guard",
-  "news_link": "https://www.cnn.com/2026/11/24/health/flu-season-vaccines-cdc"
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "The Frantic White House Push to Get Jensen Huang Back",
+  "news_link": "https://www.wsj.com/business/nvidia-jensen-huang-white-house-9ad03961"
  },
  {
   "geo": "US",
-  "term": "kroger",
-  "traffic": 1000,
+  "term": "regina george",
+  "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Kroger Starts Corporate Layoffs as It Builds India Operations",
-  "news_link": "https://progressivegrocer.com/kroger-starts-corporate-layoffs-it-builds-india-operations"
+  "news_title": "Is Vanity Fair’s Hit Piece on Taylor Swift Really Journalism?",
+  "news_link": "https://variety.com/2026/music/columns/taylor-swift-vanity-fair-hit-piece-journalism-1236956512/"
  },
  {
   "geo": "US",
-  "term": "christopher payne japan",
+  "term": "star wars ahsoka season 2",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Ahsoka Season 2 Resurrects George Lucas' Most Powerful Star Wars Character 15 Years Later",
+  "news_link": "https://thedirect.com/article/ahsoka-season-2-george-lucas-star-wars-powerful-character"
+ },
+ {
+  "geo": "US",
+  "term": "citi",
+  "traffic": 200,
+  "topics": "정치·관세",
+  "econ": true,
+  "news_title": "Citi Eyes Venezuela Return as Trump Looks to Reopen Its Economy",
+  "news_link": "https://www.bloomberg.com/news/articles/2026-11-24/citi-eyes-venezuela-return-as-trump-looks-to-reopen-its-economy"
+ },
+ {
+  "geo": "US",
+  "term": "hailey bieber",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Hailey Bieber Celebrates Her 30th Birthday with Husband Justin During Firework-Filled Trip to the Bahamas",
+  "news_link": "https://people.com/hailey-bieber-30th-birthday-celebrations-with-husband-justin-bieber-bahamas-12279208"
+ },
+ {
+  "geo": "US",
+  "term": "hasna cabral",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Former ‘PBB’ housemate Hasna Cabral passes away at 37",
+  "news_link": "https://www.abs-cbn.com/entertainment/showbiz/celebrities/2026/11/25/former-pbb-housemate-hasna-cabral-passes-away-at-37-1900"
+ },
+ {
+  "geo": "US",
+  "term": "inés gómez mont",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Inés Gómez Mont acepta salida voluntaria de Estados Unidos tras su liberación de prisión",
+  "news_link": "https://www.univision.com/famosos/ines-gomez-mont-acepta-salida-voluntaria-estados-unidos"
+ },
+ {
+  "geo": "US",
+  "term": "flood cleanup",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "He’s remained jailed in Japan despite an overturned conviction. His family in the US fears for his life",
-  "news_link": "https://www.cnn.com/2026/11/25/asia/chris-payne-jailed-japan-overturned-conviction-hnk-dst"
+  "news_title": "McCaysville faces millions in flood damage as city scrambles to recover",
+  "news_link": "https://www.11alive.com/article/news/local/mccaysville-faces-millions-in-flood-damage-city-scrambles-to-recover/85-e1bcd507-0777-4461-8001-425c6d2044d8"
  },
  {
   "geo": "US",
-  "term": "nashville weather",
+  "term": "minnesota wild calvin pickard waivers",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "Wintry weather expected for some heading into Thanksgiving Day",
-  "news_link": "https://wreg.com/news/wintry-weather-expected-for-some-heading-into-thanksgiving-day/"
- },
- {
-  "geo": "US",
-  "term": "nifty 50",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "Stock Market Rally: Sensex Skyrockets As Foreign Investors Pour Billions Into Tech Stocks",
-  "news_link": "https://www.ndtv.com/business-news/stock-market-today-sensex-skyrockets-as-foreign-investors-pour-billions-into-indian-tech-stocks-12373777"
- },
- {
-  "geo": "US",
-  "term": "star wars: ahsoka season 2",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "‘Ahsoka’ Season 2 Teases a Mysterious Journey in Haunting New Image",
-  "news_link": "https://www.imdb.com/news/ni66120287/?ref_=int_nwr_1"
- },
- {
-  "geo": "US",
-  "term": "tampa weather",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "Thanksgiving Day forecast: Temperatures to drop across Bay area following mid-week rain",
-  "news_link": "https://www.fox13news.com/news/thanksgiving-day-forecast-temperatures-drop-across-bay-area-following-mid-week-rain"
- },
- {
-  "geo": "US",
-  "term": "va",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "VA secretary: EHR was not fully compliant with accessibility law ‘at the time of acquisition’",
-  "news_link": "https://fedscoop.com/va-secretary-ehr-section-508-compliance-oracle-cerner/"
- },
- {
-  "geo": "US",
-  "term": "weather miami",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "South Florida flooding live updates: Heavy rain and severe weather leads to flooding fears",
-  "news_link": "https://www.cbsnews.com/miami/live-updates/south-florida-flooding-live-updates-broward-miami-dade-heavy-rain-thanksgiving-travel/"
+  "news_title": "Calvin Pickard’s uncertain future looms as Filip Gustavsson returns to Wild - The Athletic",
+  "news_link": "https://www.nytimes.com/athletic/7801031/2026/11/22/wild-filip-gustavsson-calvin-pickard-return/"
  }
 ]
