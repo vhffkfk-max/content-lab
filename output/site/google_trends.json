@@ -1,12 +1,30 @@
 [
  {
   "geo": "KR",
+  "term": "sabah 대 바르셀로나",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "발다스 담브라우스카스, 바르셀로나전 앞두고 바쿠서 기자회견",
+  "news_link": "https://www.gukjenews.com/news/articleView.html?idxno=3763239"
+ },
+ {
+  "geo": "KR",
   "term": "성유리",
-  "traffic": 1000,
+  "traffic": 2000,
   "topics": "",
   "econ": false,
   "news_title": "성유리, 중학생 때 모든 과목 '수' 성적표 공개…교수父· 의사 오빠 잇던 수재",
   "news_link": "https://www.news1.kr/entertain/celebrity-topic/6365969"
+ },
+ {
+  "geo": "KR",
+  "term": "매일경제",
+  "traffic": 1000,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "하루 만에 314조 원 증발…엔비디아 시총 이틀간 ‘롤러코스터’",
+  "news_link": "https://news.jtbc.co.kr/article/NB12329686"
  },
  {
   "geo": "KR",
@@ -23,8 +41,8 @@
   "traffic": 500,
   "topics": "정치·관세",
   "econ": true,
-  "news_title": "[속보] 미 USTR, 14개 경제주체에 과잉생산 관세···“한국·일본·EU 등은 관세 15% 상한 유지”",
-  "news_link": "https://www.khan.co.kr/article/202611252226001"
+  "news_title": "美, ‘과잉 생산’ 관세 추가... “한국엔 15% 상한 유지”",
+  "news_link": "https://www.chosun.com/international/us/2026/11/25/LK4WTNOAWRAUFAPB4AK4XN7GLU/"
  },
  {
   "geo": "KR",
@@ -64,24 +82,6 @@
  },
  {
   "geo": "KR",
-  "term": "공포지수",
-  "traffic": 100,
-  "topics": "급락·변동성",
-  "econ": true,
-  "news_title": "",
-  "news_link": ""
- },
- {
-  "geo": "KR",
-  "term": "박보검",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "사라진 고경표, 나타난 조진웅...연예인 직업의식은 어디에 [자막뉴스]",
-  "news_link": "https://www.ytn.co.kr/_ln/0134_202611251034284891"
- },
- {
-  "geo": "KR",
   "term": "양준혁",
   "traffic": 100,
   "topics": "",
@@ -92,11 +92,11 @@
  {
   "geo": "US",
   "term": "sabah vs barcelona",
-  "traffic": 20000,
+  "traffic": 50000,
   "topics": "",
   "econ": false,
-  "news_title": "Flick elige cualidad de De Jong y explica estado de Lamine y Cubarsí",
-  "news_link": "https://espndeportes.espn.com/futbol/champions-league/nota/_/id/17556936/barcelona-flick-de-jong-lamine-cubarsi-champions-league"
+  "news_title": "Sabah FK vs Barcelona: UEFA Champions League stats & head-to-head",
+  "news_link": "https://www.bbc.com/sport/football/live/c674232v2gv3t"
  },
  {
   "geo": "US",
@@ -110,7 +110,7 @@
  {
   "geo": "US",
   "term": "slavia praha vs villarreal",
-  "traffic": 5000,
+  "traffic": 10000,
   "topics": "",
   "econ": false,
   "news_title": "Slavia Prague vs Villarreal: UEFA Champions League stats & head-to-head",
@@ -119,7 +119,7 @@
  {
   "geo": "US",
   "term": "marquette vs virginia",
-  "traffic": 2000,
+  "traffic": 5000,
   "topics": "",
   "econ": false,
   "news_title": "No. 2 Cavaliers Battle Marquette in the Battle 4 Atlantis",
@@ -127,39 +127,30 @@
  },
  {
   "geo": "US",
-  "term": "barcelona vs sabah",
+  "term": "sophie cunningham maxim photos",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Three talking points ahead of Sabah vs Barcelona | UEFA Champions League",
-  "news_link": "https://sports.yahoo.com/articles/three-talking-points-ahead-sabah-200000308.html"
+  "news_title": "Sophie Cunningham draws pushback from Christian scholars for posing topless in Maxim",
+  "news_link": "https://www.christianpost.com/news/sophie-cunningham-draws-pushback-for-going-topless-in-maxim.html"
  },
  {
   "geo": "US",
-  "term": "brandon hyde",
+  "term": "barca game",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Yankees hire ex-Orioles manager Brandon Hyde as bench coach: Source",
-  "news_link": "https://www.nytimes.com/athletic/7811897/2026/11/25/yankees-hire-brandon-hyde-bench-coach/"
+  "news_title": "Barca have quality to win without Yamal: De Jong",
+  "news_link": "https://sports.yahoo.com/articles/barca-quality-win-without-yamal-160544567.html"
  },
  {
   "geo": "US",
-  "term": "iowa women's basketball",
+  "term": "fenerbahçe",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "How to watch Iowa women's basketball vs Navy on Wednesday",
-  "news_link": "https://www.hawkcentral.com/story/sports/college/iowa/basketball-women/2026/11/25/iowa-womens-basketball-navy-today-time-tv-stream/92943246007/"
- },
- {
-  "geo": "US",
-  "term": "josh jacobs",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Packers list eight questionable vs. Rams | Week 12 Injury Report",
-  "news_link": "https://www.packers.com/news/packers-list-eight-questionable-vs-rams-week-12-injury-report"
+  "news_title": "Arda Turan için ayrılık ateşini yaktılar! Fenerbahçe maçı öncesi Ukrayna'dan şoke edici haber geldi",
+  "news_link": "https://www.ntvspor.net/futbol/galeri-arda-turan-icin-ayrilik-atesini-yaktilar-fenerbahce-maci-oncesi-ukraynadan-soke-edici-haber-geldi-433597"
  },
  {
   "geo": "US",
@@ -172,11 +163,20 @@
  },
  {
   "geo": "US",
-  "term": "the view",
-  "traffic": 500,
+  "term": "azerbaijan",
+  "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "What a hippo’s death reveals about the volatility of grieving online",
-  "news_link": "https://www.washingtonpost.com/style/2026/11/25/what-hippos-death-reveals-about-volatility-grieving-online/"
+  "news_title": "‘Unfit to chair’: Over 40 NGOs oppose Azerbaijan’s bid to lead OSCE",
+  "news_link": "https://oc-media.org/unfit-to-chair-over-40-ngos-oppose-azerbaijans-bid-to-lead-osce/"
+ },
+ {
+  "geo": "US",
+  "term": "chipotle bogo today",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "CHIPOTLE BRINGS BACK \"BACK HOME BOGO\" FOR THE BIGGEST REUNION NIGHT OF THE YEAR",
+  "news_link": "https://newsroom.chipotle.com/2026-11-20-CHIPOTLE-BRINGS-BACK-BACK-HOME-BOGO-FOR-THE-BIGGEST-REUNION-NIGHT-OF-THE-YEAR"
  }
 ]
