@@ -2,7 +2,7 @@
  {
   "geo": "KR",
   "term": "당구",
-  "traffic": 2000,
+  "traffic": 5000,
   "topics": "",
   "econ": false,
   "news_title": "산체스, 2009년생 한민준 완파…PBA 6차 투어 64강 진출",
@@ -10,8 +10,17 @@
  },
  {
   "geo": "KR",
+  "term": "이강인",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "'27위 추락' 아틀레티코 구할 이강인 출격! 시메오네 선택받았다...비킹전 선발, UCL 시즌 첫 골 정조준 - 머니투데이",
+  "news_link": "https://www.mt.co.kr/sports/2026/11/26/202611260446778645O"
+ },
+ {
+  "geo": "KR",
   "term": "법학적성시험",
-  "traffic": 1000,
+  "traffic": 2000,
   "topics": "",
   "econ": false,
   "news_title": "[속보]‘리트 만점자’ 생명과학 과외선생 “죽음이 범죄 도주처 되면 안돼···그래서 경찰 출석”",
@@ -19,53 +28,8 @@
  },
  {
   "geo": "KR",
-  "term": "안세영",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "‘포니정 영리더상’에 안세영 선수·김도형 교수",
-  "news_link": "https://www.khan.co.kr/article/202611252011015"
- },
- {
-  "geo": "KR",
-  "term": "kf-21 보라매",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "KF-21로 K방산 선도… 가성비 아닌 기술로 제2의 성장 모색",
-  "news_link": "https://www.chosun.com/special/press-release/2026/11/25/SIC3BH6MRNG7XHXR5VBF746HH4/"
- },
- {
-  "geo": "KR",
-  "term": "psg vs roma",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Licensable picture: Paris Saint-Germain FC v AS Roma - UEFA Champions League 2026/27 League Phase MD5",
-  "news_link": "https://www.reutersconnect.com/item/paris-saint-germain-fc-v-as-roma-uefa-champions-league-202627-league-phase-md5/dGFnOnJldXRlcnMuY29tLDIwMjY6bmV3c21sX01UMU5VUlBITzAwMElCVTRPSA"
- },
- {
-  "geo": "KR",
-  "term": "южная корея",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Южная Корея подняла истребители из-за приближения российских самолётов",
-  "news_link": "https://www.svoboda.org/a/yuzhnaya-koreya-podnyala-istrebiteli-iz-za-priblizheniya-rossiyskih-samolyotov/33904703.html"
- },
- {
-  "geo": "KR",
-  "term": "보안",
-  "traffic": 200,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "아레스·더존비즈온·스틸리언, AI 사이버위협 대응 기술 협력",
-  "news_link": "https://www.etnews.com/20261125000572"
- },
- {
-  "geo": "KR",
   "term": "손아섭",
-  "traffic": 200,
+  "traffic": 500,
   "topics": "",
   "econ": false,
   "news_title": "손아섭의 끝나지 않은 짝사랑…“저도 우승 동화 꿈꿔요”",
@@ -73,25 +37,61 @@
  },
  {
   "geo": "KR",
-  "term": "허찬미",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "[ET포토] 설운도, '담백한 하트'",
-  "news_link": "https://www.etnews.com/20261125000050"
- },
- {
-  "geo": "KR",
   "term": "조원태",
-  "traffic": 100,
+  "traffic": 200,
   "topics": "",
   "econ": false,
   "news_title": "델타항공 부사장 \"대한항공 조원태 회장과 임원진 깊이 신뢰\"",
   "news_link": "https://www.yna.co.kr/view/AKR20261125149600805"
  },
  {
+  "geo": "KR",
+  "term": "한국대학신문",
+  "traffic": 200,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "최교진 사퇴에 교원단체들 “수능 AI 부정 대비 부족…리더십 한계”",
+  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8719643"
+ },
+ {
+  "geo": "KR",
+  "term": "허찬미",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "[ET포토] 성리, '아이돌이 따로없는 외모'",
+  "news_link": "https://www.etnews.com/20261125000501"
+ },
+ {
+  "geo": "KR",
+  "term": "삼성그룹",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "무게감 커진 리서치, 격하한 중공업…삼성 '교체설' CEO는 대부분 유임",
+  "news_link": "https://www.investchosun.com/site/data/html_dir/2026/11/24/2026112480079.html"
+ },
+ {
+  "geo": "KR",
+  "term": "삼성중공업",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "삼성중공업 정기 임원인사…부사장 3명·상무 6명 승진",
+  "news_link": "https://www.yna.co.kr/view/AKR20261125064600003"
+ },
+ {
+  "geo": "KR",
+  "term": "알테오젠",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "알테오젠 기술 엔허투SC 임상 환자 축소는 악재?…사례 찾아보니",
+  "news_link": "https://pharm.edaily.co.kr/News/Read?newsId=01685926645649656"
+ },
+ {
   "geo": "US",
-  "term": "stock markets",
+  "term": "dow jones industrial average",
   "traffic": 10000,
   "topics": "",
   "econ": false,
@@ -100,8 +100,26 @@
  },
  {
   "geo": "US",
+  "term": "atlético-mg vs corinthians",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Atlético-MG x Corinthians: onde assistir ao vivo, horário e escalações",
+  "news_link": "https://ge.globo.com/mg/futebol/brasileirao-serie-a/noticia/2026/11/25/atletico-mg-x-corinthians-onde-assistir-ao-vivo-horario-e-escalacoes.ghtml"
+ },
+ {
+  "geo": "US",
+  "term": "cboe volatility index",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Buy the stock dip? Options market signals say wait",
+  "news_link": "https://www.reuters.com/business/buy-stock-dip-options-market-signals-say-wait-2026-11-25/"
+ },
+ {
+  "geo": "US",
   "term": "memphis basketball",
-  "traffic": 1000,
+  "traffic": 2000,
   "topics": "",
   "econ": false,
   "news_title": "GAME DAY: Penn State MBB vs. Memphis",
@@ -109,74 +127,56 @@
  },
  {
   "geo": "US",
-  "term": "mike mccarthy ice cream sandwiches",
+  "term": "jabari walker",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Ex-Steelers player reveals text from current player claiming Mike McCarthy has personal assistant bring him ice cream sandwiches on demand",
-  "news_link": "https://sports.yahoo.com/nfl/articles/ex-steelers-player-reveals-text-211600100.html"
+  "news_title": "Jabari Walker scores 10 points in spot start",
+  "news_link": "https://www.nbcsports.com/fantasy/basketball/player-news/2026-11-23/jabari-walker-scores-10-points-in-spot-start"
  },
  {
   "geo": "US",
-  "term": "diet",
+  "term": "davante adams",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Column | How much life could a 10-minute walk buy you? Try our calculator.",
-  "news_link": "https://www.washingtonpost.com/health/interactive/2026/11/17/see-how-minutes-daily-exercise-could-extend-your-lifespan/"
+  "news_title": "Davante Adams Injury Update, Latest Rumors on Rams WR's Return Timeline After Puka Nacua's Surgery",
+  "news_link": "https://bleacherreport.com/articles/25536381-davante-adams-injury-update-latest-rumors-rams-wrs-return-timeline-after-puka-nacuas-surgery"
  },
  {
   "geo": "US",
-  "term": "byu vs providence prediction",
+  "term": "unmanned combat aerial vehicle",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Turkey Just Inducted the World's First Unmanned Fighter Jet",
+  "news_link": "https://www.yahoo.com/news/videos/turkey-just-inducted-worlds-first-131439884.html"
+ },
+ {
+  "geo": "US",
+  "term": "america vs monterrey",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "How to watch No. 19 BYU play Providence in the Maui Invitational",
-  "news_link": "https://www.deseret.com/sports/2026/11/25/byu-basketball-providence-maui-invitational-how-to-watch/"
+  "news_title": "Monterrey vs América: posibles alineaciones y probabilidades",
+  "news_link": "https://espndeportes.espn.com/futbol/mexico/nota/_/id/17553948/rayados-vs-america-alineaciones-ida-cuartos-final"
  },
  {
   "geo": "US",
-  "term": "champions league table",
+  "term": "is there a football game on tonight",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Man City 2-2 Napoli: Ayyoub Bouaddi and Rayan Cherki score for hosts",
-  "news_link": "https://www.bbc.com/sport/football/live/c3j4rne5ny5et"
+  "news_title": "How Netflix and the NFL Hope to Establish New Thanksgiving Eve Tradition With Game and U2 Halftime Show: ‘We Want to Create Those Global Water Cooler Moments’",
+  "news_link": "https://variety.com/2026/tv/news/netflix-nfl-thanksgiving-eve-u2-1236956485/"
  },
  {
   "geo": "US",
-  "term": "donyell malen",
+  "term": "who plays football tonight",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Champions League | PSG verliest perfecte status na penalty Malen",
-  "news_link": "https://www.nu.nl/voetbal/6417770/champions-league-psg-verliest-perfecte-status-na-penalty-malen.html"
- },
- {
-  "geo": "US",
-  "term": "elly de la cruz",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Trades we want to see before MLB lockout",
-  "news_link": "https://www.espn.com/mlb/story/_/id/50541491/offseason-trades-lockout-red-sox-yankees"
- },
- {
-  "geo": "US",
-  "term": "north dakota basketball",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "North Dakota vs Detroit Prediction, Picks & Odds | 24 Nov 2026",
-  "news_link": "https://www.sportsgambler.com/betting-tips/basketball/north-dakota-fighting-hawks-vs-detroit-mercy-titans-prediction-odds-2026-11-24/"
- },
- {
-  "geo": "US",
-  "term": "teslarati",
-  "traffic": 200,
-  "topics": "테슬라",
-  "econ": true,
-  "news_title": "Tesla’s Latest Edition of Its Driver-Assistance Software Now Looks Like a Video Game",
-  "news_link": "https://www.caranddriver.com/news/a74510768/tesla-driver-assistance-software-video-game/"
+  "news_title": "Bengals-Commanders Monday Night Football betting odds, picks and predictions: Best bets, player props",
+  "news_link": "https://sports.yahoo.com/nfl/betting/article/bengals-commanders-monday-night-football-betting-odds-picks-and-predictions-best-bets-player-props-143321176.html"
  }
 ]
