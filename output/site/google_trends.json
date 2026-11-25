@@ -1,6 +1,15 @@
 [
  {
   "geo": "KR",
+  "term": "가시마 앤틀러스 대 전북",
+  "traffic": 5000,
+  "topics": "",
+  "econ": false,
+  "news_title": "",
+  "news_link": ""
+ },
+ {
+  "geo": "KR",
   "term": "국민연금공단",
   "traffic": 2000,
   "topics": "연금·절세",
@@ -10,17 +19,8 @@
  },
  {
   "geo": "KR",
-  "term": "임차인",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "전주시, 전세사기 피해 임차인 주거비 지원…최대 300만원",
-  "news_link": "https://www.newspim.com/news/view/20261125000413"
- },
- {
-  "geo": "KR",
   "term": "루카 윌리엄스 바넷",
-  "traffic": 1000,
+  "traffic": 2000,
   "topics": "",
   "econ": false,
   "news_title": "[오피셜]제2의 손흥민 지켰다! 토트넘, 선발 데뷔전서 1골-1도움 '18세 원더키드' 윌리엄스-바넷과 재계약 \"위대한 선수 되겠다\"...데 제르비도 \"내가 정말 높이 평가하는 선수\"",
@@ -28,21 +28,39 @@
  },
  {
   "geo": "KR",
-  "term": "thanksgiving 2026",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "What stores are open on Thanksgiving and Black Friday 2026? Grocery, drugstores and more | List",
-  "news_link": "https://abc7ny.com/post/what-stores-are-open-thanksgiving-black-friday-2026-grocery-drugstores-more-list/20071063/"
- },
- {
-  "geo": "KR",
   "term": "검찰청",
-  "traffic": 500,
+  "traffic": 1000,
   "topics": "",
   "econ": false,
   "news_title": "단독 검찰청 폐지에 '허리급' 평검사 잇단 사직인사...\"자괴감 느껴\"",
   "news_link": "https://www.ytn.co.kr/_ln/0103_202611251504258738"
+ },
+ {
+  "geo": "KR",
+  "term": "고경표 음주 운전",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "“팁만 5만원” 고경표, 과거엔 대리 불렀다 ‘목격담 등장’",
+  "news_link": "https://sports.khan.co.kr/article/202611251039003"
+ },
+ {
+  "geo": "KR",
+  "term": "코레일 파업",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "철도노조, 내일(26일)부터 ‘안전운행 투쟁’… 일부 열차 운행 차질 예상",
+  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8722349"
+ },
+ {
+  "geo": "KR",
+  "term": "삼성전자 주가",
+  "traffic": 500,
+  "topics": "국내 대형주, 급락·변동성",
+  "econ": true,
+  "news_title": "삼성전자 주가, 오늘 약 9% 급락한 이유는?",
+  "news_link": "https://kr.investing.com/news/stock-market-news/article-93CH-2189781"
  },
  {
   "geo": "KR",
@@ -55,53 +73,26 @@
  },
  {
   "geo": "KR",
-  "term": "lta",
+  "term": "슈퍼문",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "LTA announces that Autopass will allow ASEAN-registered vehicles to track vehicle permit status from 29 Nov",
-  "news_link": "https://mustsharenews.com/autopass-vehicle-entry-permit/"
+  "news_title": "밤사이 '슈퍼문'...크리스마스 이브에 가장 크다",
+  "news_link": "https://m.science.ytn.co.kr/program/view_today.php?s_mcd=0082&key=202611251603008783"
  },
  {
   "geo": "KR",
-  "term": "증안 펀드",
+  "term": "하사",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "증안펀드 규모 늘린다... 25개 금융사에 출자 여력 타진",
-  "news_link": "https://www.chosun.com/economy/economy_general/2026/11/25/AFLCJVAB55CNFK55UDP5WA3B6I/"
- },
- {
-  "geo": "KR",
-  "term": "최명길",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "배우 최명길, 한국브리지협회 명예 홍보대사 위촉",
-  "news_link": "https://bravo.etoday.co.kr/view/atc_view/20590"
- },
- {
-  "geo": "KR",
-  "term": "행동",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "\"엄마의 나이가 자녀의 행동을 바꾼다?\"…세대 간 행동 변화의 비밀 밝혔다",
-  "news_link": "https://www.ibric.org/bric/trend/bio-news.do?mode=view&articleNo=10066176&title=%22%EC%97%84%EB%A7%88%EC%9D%98+%EB%82%98%EC%9D%B4%EA%B0%80+%EC%9E%90%EB%85%80%EC%9D%98+%ED%96%89%EB%8F%99%EC%9D%84+%EB%B0%94%EA%BE%BC%EB%8B%A4%3F%22%E2%80%A6%EC%84%B8%EB%8C%80+%EA%B0%84+%ED%96%89%EB%8F%99+%EB%B3%80%ED%99%94%EC%9D%98+%EB%B9%84%EB%B0%80+%EB%B0%9D%ED%98%94%EB%8B%A4"
- },
- {
-  "geo": "US",
-  "term": "best",
-  "traffic": 5000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Cyber Week is here and so are the 108 best Black Friday deals worth shopping now",
-  "news_link": "https://www.cnn.com/cnn-underscored/deals/best-black-friday-deals-2026-11-24"
+  "news_title": "진주 저수지서 여성 공군 하사 숨진 채 발견···군, 가혹행위 여부 수사",
+  "news_link": "https://www.khan.co.kr/article/202611251607001"
  },
  {
   "geo": "US",
   "term": "bob seger & the silver bullet band",
-  "traffic": 200,
+  "traffic": 500,
   "topics": "",
   "econ": false,
   "news_title": "Silver Bullet Band bassist has died, bandmate posts",
@@ -109,35 +100,8 @@
  },
  {
   "geo": "US",
-  "term": "criminal profile gta 6",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "GTA VI Does What Most Video Games With Choice And Morality Systems Don't",
-  "news_link": "https://aftermath.site/gta-6-criminal-profile-mechanic-vi-grand-theft-auto-jason-lucia-rockstar/"
- },
- {
-  "geo": "US",
-  "term": "eastern florida floods",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Flooding in Oak Hill, Florida submerges homes and farms",
-  "news_link": "https://weather.com/2026/11/20/news/weather/video/oak-hill-florida-flooding-drone-volusia-county"
- },
- {
-  "geo": "US",
-  "term": "google play",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Nearly half of smartphone app users struggle to cancel paid subscriptions, survey finds",
-  "news_link": "https://mbiz.heraldcorp.com/article/10949073"
- },
- {
-  "geo": "US",
   "term": "gta6 endings",
-  "traffic": 200,
+  "traffic": 500,
   "topics": "",
   "econ": false,
   "news_title": "How To Get The Best Ending In ‘GTA 6’",
@@ -145,21 +109,57 @@
  },
  {
   "geo": "US",
+  "term": "movie times",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Movie Theaters in 2026: Filmmakers and Exhibitors on What’s Good, What’s Bad, and What’s Changing",
+  "news_link": "https://www.indiewire.com/features/interviews/movie-theaters-2026-good-bad-changing-1235230816/"
+ },
+ {
+  "geo": "US",
+  "term": "alibaba",
+  "traffic": 200,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "EXCLUSIVE: Alice Huang-linked firms listed $270 million in AI servers in China, records show",
+  "news_link": "https://www.reuters.com/business/finance/alice-huang-linked-firms-listed-270-million-ai-servers-china-records-show-2026-11-25/"
+ },
+ {
+  "geo": "US",
+  "term": "weather radar",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Trail Blazers 128-111 76ers (Nov 23, 2026) Game Recap",
+  "news_link": "https://www.espn.com/nba/recap/_/gameId/401910037"
+ },
+ {
+  "geo": "US",
+  "term": "winter weather advisory",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Cold Tuesday night ahead of seasonable temperatures across Metro Detroit",
+  "news_link": "https://www.clickondetroit.com/weather/2026/11/24/cold-tonight-ahead-of-seasonable-temperatures-across-metro-detroit/"
+ },
+ {
+  "geo": "US",
+  "term": "wow forever patch notes",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Hotfixes: November 24, 2026",
+  "news_link": "http://worldofwarcraft.blizzard.com/news/24307310/hotfixes-november-24-2026"
+ },
+ {
+  "geo": "US",
   "term": "dale earnhardt jr.",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "“I Always Hope It Will Pop Up On The Market” — Dale Earnhardt Jr. Wants To Buy His Childhood Home From His Estranged Stepmom, Teresa",
-  "news_link": "https://www.whiskeyriff.com/2026/11/23/i-always-hope-it-will-pop-up-on-the-market-dale-earnhardt-jr-wants-to-buy-his-childhood-home-from-his-estranged-stepmom-teresa/"
- },
- {
-  "geo": "US",
-  "term": "defense rankings week 12",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "Fantasy football rankings for Week 12: D/ST",
-  "news_link": "https://www.espn.com/fantasy/football/story/_/page/FFWeeklyPlayerRank26-50573297/nfl-fantasy-football-rankings-2026-dst-defense"
+  "news_title": "Gordon, Fugle and Wall offer insight into Hendrick Motorsports’ 2027 crew chief changes",
+  "news_link": "https://www.hendrickmotorsports.com/news/2026/november/20/gordon-fugle-and-wall-offer-insight-into-hendrick-motorsports-2027-crew-chief-changes"
  },
  {
   "geo": "US",
@@ -172,11 +172,11 @@
  },
  {
   "geo": "US",
-  "term": "wow forever patch notes",
+  "term": "عيد الشكر",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "Hotfixes: November 24, 2026",
-  "news_link": "http://worldofwarcraft.blizzard.com/news/24307310/hotfixes-november-24-2026"
+  "news_title": "أحدهما هرب.. ترامب يعفو عن ديوك رومية بمناسبة عيد الشكر.. فيديو",
+  "news_link": "https://www.youm7.com/story/2026/11/25/%D8%A3%D8%AD%D8%AF%D9%87%D9%85%D8%A7-%D9%87%D8%B1%D8%A8-%D8%AA%D8%B1%D8%A7%D9%85%D8%A8-%D9%8A%D8%B9%D9%81%D9%88-%D8%B9%D9%86-%D8%AF%D9%8A%D9%88%D9%83-%D8%B1%D9%88%D9%85%D9%8A%D8%A9-%D8%A8%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9-%D8%B9%D9%8A%D8%AF-%D8%A7%D9%84%D8%B4%D9%83%D8%B1/7631815"
  }
 ]
