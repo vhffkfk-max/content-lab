@@ -22,10 +22,10 @@
   "format": "단일 이미지",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.84,
+  "kr_avg": 1.83,
   "kr_n": 788,
-  "foreign_avg": 2.66,
-  "foreign_n": 524
+  "foreign_avg": 2.64,
+  "foreign_n": 527
  },
  {
   "rank": 3,
@@ -36,10 +36,10 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.8,
+  "kr_avg": 1.79,
   "kr_n": 101,
-  "foreign_avg": 2.37,
-  "foreign_n": 167
+  "foreign_avg": 2.38,
+  "foreign_n": 168
  },
  {
   "rank": 4,
@@ -50,7 +50,7 @@
   "format": "단일 이미지",
   "hook": "짧은 한 줄",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.8,
+  "kr_avg": 2.76,
   "kr_n": 40,
   "foreign_avg": 3.04,
   "foreign_n": 35
@@ -78,10 +78,10 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 0.9,
+  "kr_avg": 0.91,
   "kr_n": 11,
-  "foreign_avg": 1.97,
-  "foreign_n": 208
+  "foreign_avg": 1.96,
+  "foreign_n": 209
  },
  {
   "rank": 7,
@@ -92,23 +92,23 @@
   "format": "캐러셀(카드뉴스)",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 0.97,
+  "kr_avg": 0.96,
   "kr_n": 63,
   "foreign_avg": 1.9,
   "foreign_n": 89
  },
  {
   "rank": 8,
-  "topic": "금리·연준",
-  "kind": "해외 벤치마킹 주제 (방식 바꾸면 기회)",
+  "topic": "국내 대형주",
+  "kind": "국내 검증 주제",
   "confidence": "높음",
-  "title_idea": "[오늘] 금리·연준에 무슨 일이? 1분 요약",
-  "format": "단일 이미지",
-  "hook": "속보·뉴스형",
+  "title_idea": "숫자 하나로 보는 국내 대형주",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 0.99,
-  "kr_n": 48,
-  "foreign_avg": 2.67,
-  "foreign_n": 19
+  "kr_avg": 1.9,
+  "kr_n": 220,
+  "foreign_avg": 0.53,
+  "foreign_n": 10
  }
 ]
