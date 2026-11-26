@@ -25,7 +25,7 @@
   "kr_avg": 1.87,
   "kr_n": 811,
   "foreign_avg": 2.66,
-  "foreign_n": 540
+  "foreign_n": 541
  },
  {
   "rank": 3,
@@ -38,7 +38,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 1.82,
   "kr_n": 106,
-  "foreign_avg": 2.4,
+  "foreign_avg": 2.41,
   "foreign_n": 173
  },
  {
@@ -66,7 +66,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 1.32,
   "kr_n": 49,
-  "foreign_avg": 1.9,
+  "foreign_avg": 1.91,
   "foreign_n": 56
  },
  {
@@ -85,6 +85,20 @@
  },
  {
   "rank": 7,
+  "topic": "금리·연준",
+  "kind": "국내·해외 모두 강세",
+  "confidence": "높음",
+  "title_idea": "[오늘] 금리·연준에 무슨 일이? 1분 요약",
+  "format": "단일 이미지",
+  "hook": "속보·뉴스형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 1.2,
+  "kr_n": 62,
+  "foreign_avg": 2.47,
+  "foreign_n": 21
+ },
+ {
+  "rank": 8,
   "topic": "ETF·지수투자",
   "kind": "해외 선행 주제 (선점 기회)",
   "confidence": "높음",
@@ -94,21 +108,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 1.0,
   "kr_n": 66,
-  "foreign_avg": 1.9,
+  "foreign_avg": 1.91,
   "foreign_n": 91
- },
- {
-  "rank": 8,
-  "topic": "환율·달러",
-  "kind": "국내·해외 모두 강세",
-  "confidence": "높음",
-  "title_idea": "환율·달러, 한 줄 정리",
-  "format": "단일 이미지",
-  "hook": "짧은 한 줄",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 1.67,
-  "kr_n": 102,
-  "foreign_avg": 1.25,
-  "foreign_n": 8
  }
 ]
