@@ -1,15 +1,6 @@
 [
  {
   "geo": "KR",
-  "term": "송파구",
-  "traffic": 5000,
-  "topics": "부동산",
-  "econ": true,
-  "news_title": "李대통령이 옳았나…송파 집값, 4년만에 역대급 추락했다",
-  "news_link": "https://www.mk.co.kr/news/realestate/12219258"
- },
- {
-  "geo": "KR",
   "term": "반도체 메모리",
   "traffic": 2000,
   "topics": "AI·반도체",
@@ -28,8 +19,17 @@
  },
  {
   "geo": "KR",
+  "term": "김민",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "[ET포토] 김민, '인상파'",
+  "news_link": "https://www.etnews.com/20261126000018"
+ },
+ {
+  "geo": "KR",
   "term": "회계사",
-  "traffic": 500,
+  "traffic": 1000,
   "topics": "AI·반도체",
   "econ": true,
   "news_title": "전국 60개 대학 AI·SW 성과 한자리에",
@@ -43,6 +43,15 @@
   "econ": false,
   "news_title": "Kết quả bóng đá U17 Việt Nam vs U17 Mali: Cái kết nghiệt ngã",
   "news_link": "https://thethao247.vn/190556-ket-qua-bong-da-u17-viet-nam-vs-u17-mali-20h00-hom-nay-26-11-c1-d447313.html"
+ },
+ {
+  "geo": "KR",
+  "term": "송파구",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "송파청년센터 28일 개관…청년 맞춤형 프로그램 운영",
+  "news_link": "https://www.yna.co.kr/view/AKR20261126013000004"
  },
  {
   "geo": "KR",
@@ -73,15 +82,6 @@
  },
  {
   "geo": "KR",
-  "term": "삼성반도체",
-  "traffic": 100,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "[단독] 삼성 “반도체 공장 무인화”… 로봇팀 꾸렸다",
-  "news_link": "https://www.etnews.com/20261126000296"
- },
- {
-  "geo": "KR",
   "term": "정은경",
   "traffic": 100,
   "topics": "",
@@ -91,17 +91,44 @@
  },
  {
   "geo": "US",
-  "term": "conference league",
+  "term": "iran",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "Spectacular Felix strike earns Al-Nassr Asian Champions League win",
-  "news_link": "https://www.reuters.com/sports/soccer/spectacular-felix-strike-earns-al-nassr-asian-champions-league-win-2026-11-24/"
+  "news_title": "Iranian attack on Kuwait kills two Italians, Italy’s foreign minister says",
+  "news_link": "https://www.cnn.com/2026/11/26/middleeast/italians-killed-iranian-attack-kuwait-intl"
  },
  {
   "geo": "US",
-  "term": "nba games today",
+  "term": "martha stewart",
   "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Martha Stewart kicks off Thanksgiving dinner prep and more star snaps",
+  "news_link": "https://pagesix.com/2026/11/25/photos/martha-stewart-kicks-off-thanksgiving-dinner-prep-and-more-star-snaps/"
+ },
+ {
+  "geo": "US",
+  "term": "basketball games today",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Men's Feast Week guide: Analyzing Wednesday results and previewing Thursday",
+  "news_link": "https://www.espn.com/mens-college-basketball/story/_/id/50575102/feast-week-matchups-analysis"
+ },
+ {
+  "geo": "US",
+  "term": "canary islands",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Migrant arrivals in Spain's Canary Islands break single-day record",
+  "news_link": "https://www.reuters.com/world/migrant-arrivals-spains-canary-islands-break-single-day-record-2026-11-25/"
+ },
+ {
+  "geo": "US",
+  "term": "nba today",
+  "traffic": 500,
   "topics": "",
   "econ": false,
   "news_title": "NBA Cup 2026: Standings, schedule, stakes entering the final day of group play",
@@ -109,74 +136,47 @@
  },
  {
   "geo": "US",
-  "term": "gta vi endings",
+  "term": "reservist",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "‘GTA 6’ Has At Least 9 Distinct Endings",
-  "news_link": "https://variety.com/2026/gaming/news/gta-6-endings-possible-jason-lucia-1236958026/"
+  "news_title": "MoD prepares veterans for war",
+  "news_link": "https://www.telegraph.co.uk/news/2026/11/26/mod-prepares-veterans-to-be-called-up-for-war/"
  },
  {
   "geo": "US",
-  "term": "mariska hargitay",
+  "term": "west virginia vs notre dame",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Mariska Hargitay and Peter Hermann Were Cast in Daughter’s Production of ‘The Nutcracker’",
-  "news_link": "https://people.com/mariska-hargitay-reveals-she-and-husband-peter-hermann-were-cast-in-her-daughters-production-of-the-nutcracker-12276971"
+  "news_title": "No. 13 Notre Dame, No. 22 West Virginia Set For Thanksgiving Hoops",
+  "news_link": "https://fightingirish.com/news/2026/11/25/no-13-notre-dame-no-22-west-virginia-set-for-thanksgiving-hoops"
  },
  {
   "geo": "US",
-  "term": "paw patrol",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "PAW Patrol Live! is on a roll up north as popular kids TV show hits UK venues",
-  "news_link": "https://uk.news.yahoo.com/paw-patrol-live-roll-north-204609033.html"
- },
- {
-  "geo": "US",
-  "term": "carving a turkey",
+  "term": "uga basketball",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "To Avoid the E.R. This Thanksgiving, Follow These Expert Tips",
-  "news_link": "https://www.nytimes.com/2026/11/20/well/thanksgiving-emergency-room-er.html"
+  "news_title": "Georgia Tech Football: Things I Think I Know – uga",
+  "news_link": "https://sports.yahoo.com/college-football/articles/georgia-tech-football-things-think-160000509.html"
  },
  {
   "geo": "US",
-  "term": "d'andre swift",
+  "term": "vibe coding",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Bears' Johnson has no plan to stop using Swift in run game despite costly fumbles",
-  "news_link": "https://www.espn.com/nfl/story/_/id/50587324/bears-johnson-stick-swift-role-bears-run-game"
+  "news_title": "Treasury's FinCEN says 'cybersecurity incident' includes 'unauthorized access' of some systems",
+  "news_link": "https://abcnews.com/US/treasurys-fincen-cybersecurity-incident-includes-unauthorized-access-systems/story?id=138432822"
  },
  {
   "geo": "US",
-  "term": "full house",
+  "term": "when will ios 27.3 be released",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Candace Cameron Bure Says She Still Gets ‘Substantial’ ‘Full House’ Residuals and Wasn’t Surprised the Olsen Twins Skipped ‘Fuller House’: No One ‘Stayed Close’ With Them",
-  "news_link": "https://variety.com/2026/tv/news/candace-cameron-bure-full-house-residuals-olsen-twins-1236958774/"
- },
- {
-  "geo": "US",
-  "term": "november 26",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Political cartoons for November 23",
-  "news_link": "https://theweek.com/cartoons/political-cartoons-for-november-23-2026"
- },
- {
-  "geo": "US",
-  "term": "whos playing football tonight",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Caesars Sportsbook promo code CBSSPORTSBR250: Get up to $250 bonus for Chiefs-Bills, NFL Thanksgiving Day",
-  "news_link": "https://www.cbssports.com/betting/news/caesars-sportsbook-promo-code-cbssportsbr250-get-up-to-250-bonus-chiefs-bills-nfl-thanksgiving-day/"
+  "news_title": "iOS 27.3 release date: Here’s when new iPhone features are coming",
+  "news_link": "https://9to5mac.com/2026/11/25/ios-27-3-release-date-heres-when-to-expect-new-iphone-features/"
  }
 ]
