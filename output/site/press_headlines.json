@@ -1,33 +1,813 @@
 [
  {
+  "source": "다음 뉴스",
+  "section": "경북도민일보",
+  "region": "KR",
+  "title": "“AI가 연기 먼저 찾고, 강철이 불길 막는다”…포스코 쉴드, 산불 취약마을 든든한 방패",
+  "link": "https://v.daum.net/v/20261126111656275",
+  "topics": "AI·반도체",
+  "popular": false,
+  "published": "11/26 11:16"
+ },
+ {
+  "source": "다음 뉴스",
+  "section": "뉴스1",
+  "region": "KR",
+  "title": "서울시, 최대 7천만원 무이자 보증금 지원 '장기안심주택' 모집",
+  "link": "https://v.daum.net/v/20261126111651267",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:16"
+ },
+ {
+  "source": "다음 뉴스",
+  "section": "세계일보",
+  "region": "KR",
+  "title": "로앤컴퍼니 ‘슈퍼로이어’, 국내 20대 그룹 90% 도입",
+  "link": "https://v.daum.net/v/20261126111651269",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:16"
+ },
+ {
+  "source": "다음 뉴스",
+  "section": "아주경제",
+  "region": "KR",
+  "title": "SK에코플랜트, AI 데이터센터 냉각 등 혁신기술 7건 선정",
+  "link": "https://v.daum.net/v/20261126111645260",
+  "topics": "AI·반도체",
+  "popular": false,
+  "published": "11/26 11:16"
+ },
+ {
+  "source": "다음 뉴스",
+  "section": "지데일리",
+  "region": "KR",
+  "title": "'9440억 지급' 최태원.. 노소영 화해권고 거부에 재판 또 격랑",
+  "link": "https://v.daum.net/v/20261126111644259",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:16"
+ },
+ {
+  "source": "다음 뉴스",
+  "section": "머니투데이",
+  "region": "KR",
+  "title": "의약품 28만개 해외서 밀반입…27억원 규모 불법 유통 일당 적발",
+  "link": "https://v.daum.net/v/20261126111641256",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:16"
+ },
+ {
+  "source": "다음 뉴스",
+  "section": "머니투데이",
+  "region": "KR",
+  "title": "낸드 이어 D램까지 …메모리값 정점 왔나",
+  "link": "https://v.daum.net/v/20261126111638251",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:16"
+ },
+ {
+  "source": "다음 뉴스",
+  "section": "한국경제",
+  "region": "KR",
+  "title": "SNT다이내믹스 박재석 대표, 금탑산업훈장 수훈…K방산 핵심부품 국산화 공로",
+  "link": "https://v.daum.net/v/20261126111637244",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:16"
+ },
+ {
+  "source": "매일경제",
+  "section": "증권",
+  "region": "KR",
+  "title": "파루 최대주주 지본, 파루 주식 5억원 추가 매수",
+  "link": "https://www.mk.co.kr/news/business/12219173",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:15"
+ },
+ {
   "source": "머니투데이",
   "section": "전체",
   "region": "KR",
-  "title": "한은 \"내년 韓경제, 4.1% 성장 전망\"…기준금리 연 3.25%로 올렸다",
-  "link": "https://www.mt.co.kr/economy/2026/11/26/2026112609240771689",
+  "title": "김용민 \"조희대 탄핵, 12월 3일 발의 9일 처리로 논의 중\"",
+  "link": "https://www.mt.co.kr/politics/2026/11/26/2026112610490564031",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:15"
+ },
+ {
+  "source": "매일경제",
+  "section": "경제",
+  "region": "KR",
+  "title": "스테이블코인 시대 대비…BC카드, 자체 지갑 기술 확인",
+  "link": "https://www.mk.co.kr/news/economy/12219172",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:14"
+ },
+ {
+  "source": "머니투데이",
+  "section": "전체",
+  "region": "KR",
+  "title": "첫 디자인 전문 공공도서관…의정부디자인도서관 29일 개관",
+  "link": "https://www.mt.co.kr/policy/2026/11/26/2026112610313738323",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:14"
+ },
+ {
+  "source": "머니투데이",
+  "section": "전체",
+  "region": "KR",
+  "title": "대웅제약, 자가면역 신약 '플로디시티닙' 약물 반응 예측 모델 구축",
+  "link": "https://www.mt.co.kr/thebio/2026/11/26/2026112610282825710",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:14"
+ },
+ {
+  "source": "파이낸셜뉴스",
+  "section": "경제",
+  "region": "KR",
+  "title": "한은 금통위 \"고물가·가계부채 리스크 지속\"..추가 긴축 기조 유지 [통화정책방향]",
+  "link": "https://www.fnnews.com/news/202611261105330549",
+  "topics": "물가·경기",
+  "popular": false,
+  "published": "11/26 11:14"
+ },
+ {
+  "source": "동아일보",
+  "section": "경제",
+  "region": "KR",
+  "title": "낱병까지 비닐 떼는 국산 생수, 내년초 전면시행…수입 생수 논의는 이제 시작",
+  "link": "https://www.donga.com/news/Economy/article/all/20261126/135094616/1",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:13"
+ },
+ {
+  "source": "SBS Biz",
+  "section": "경제",
+  "region": "KR",
+  "title": "한은, 내년 성장률 전망 4.1%로 깜짝 상향…올해 3.9%",
+  "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008864310&plink=RSSLINK&cooper=RSSREADER",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:13"
+ },
+ {
+  "source": "연합뉴스",
+  "section": "경제",
+  "region": "KR",
+  "title": "롯데리아, 청년농부 재배 국산 감자 활용 'K-준 포테이토' 출시",
+  "link": "https://www.yna.co.kr/view/AKR20261126061700030",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:12"
+ },
+ {
+  "source": "매일경제",
+  "section": "경제",
+  "region": "KR",
+  "title": "삼성화재, 조번형·황상민 부사장 승진…임원 8명 인사",
+  "link": "https://www.mk.co.kr/news/economy/12219166",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:12"
+ },
+ {
+  "source": "머니투데이",
+  "section": "전체",
+  "region": "KR",
+  "title": "지상파 광고매출 3년새 42%↓…UHD 정책·4K 의무 완화 논의한다",
+  "link": "https://www.mt.co.kr/tech/2026/11/26/2026112610495595921",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:12"
+ },
+ {
+  "source": "머니투데이",
+  "section": "전체",
+  "region": "KR",
+  "title": "민물장어 등 만찬 어떠세요?…수협, 첫 내수면 양식수산물 미식행사 개최",
+  "link": "https://www.mt.co.kr/economy/2026/11/26/2026112611042248235",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:12"
+ },
+ {
+  "source": "연합뉴스",
+  "section": "경제",
+  "region": "KR",
+  "title": "광진구 중곡1동 A구역 정비구역 지정…2천200세대로 재개발",
+  "link": "https://www.yna.co.kr/view/AKR20261126083300004",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:11"
+ },
+ {
+  "source": "연합뉴스",
+  "section": "마켓",
+  "region": "KR",
+  "title": "美 은행들 AI 보안 패치 속도내다 과부하로 먹통",
+  "link": "https://www.yna.co.kr/view/AKR20261126082200009",
+  "topics": "AI·반도체",
+  "popular": false,
+  "published": "11/26 11:11"
+ },
+ {
+  "source": "연합뉴스",
+  "section": "경제",
+  "region": "KR",
+  "title": "코스피, 1% 안팎 상승세…한은 기준금리 인상 속 탄력 둔화",
+  "link": "https://www.yna.co.kr/view/AKR20261126082600008",
+  "topics": "금리·연준, 국내 대형주",
+  "popular": false,
+  "published": "11/26 11:11"
+ },
+ {
+  "source": "연합인포맥스",
+  "section": "전체",
+  "region": "KR",
+  "title": "[외환] 증시 반등에 무거운 상단…금통위 경계",
+  "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4446670",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:11"
+ },
+ {
+  "source": "이투데이",
+  "section": "증권",
+  "region": "KR",
+  "title": "스마트레이더시스템, 360도 드론 탐지 레이더 상용화 임박…美 방산시장 공략 확대",
+  "link": "https://www.etoday.co.kr/news/view/2653336",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:11"
+ },
+ {
+  "source": "연합뉴스",
+  "section": "경제",
+  "region": "KR",
+  "title": "농관원 창작 K-술 경진대회서 '부여 과하주'·'선해주' 최우수상",
+  "link": "https://www.yna.co.kr/view/AKR20261126071000030",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:10"
+ },
+ {
+  "source": "파이낸셜뉴스",
+  "section": "증권",
+  "region": "KR",
+  "title": "'이 와중에 신고가' 코스맥스 \"내년에도 고성장\"… 삼성전기, AI 부품 호황 최대 수혜주 [株토피아]",
+  "link": "https://www.fnnews.com/news/202611261031020809",
+  "topics": "AI·반도체",
+  "popular": false,
+  "published": "11/26 11:10"
+ },
+ {
+  "source": "뉴시스",
+  "section": "경제",
+  "region": "KR",
+  "title": "[올댓차이나] 중국 증시 상승 출발…상하이지수 0.39%↑",
+  "link": "https://www.newsis.com/view/NISX20261126_0003884289",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:10"
+ },
+ {
+  "source": "뉴시스",
+  "section": "금융",
+  "region": "KR",
+  "title": "韓銀 기준금리 인상 속…코인원, 예치금 이용료율 1.90%로 상향",
+  "link": "https://www.newsis.com/view/NISX20261126_0003884290",
   "topics": "금리·연준",
   "popular": false,
-  "published": "11/26 10:42"
+  "published": "11/26 11:10"
  },
  {
-  "source": "머니투데이",
+  "source": "연합인포맥스",
   "section": "전체",
   "region": "KR",
-  "title": "[속보] '해직교사 특채' 김석준 부산교육감 무죄 확정",
-  "link": "https://www.mt.co.kr/society/2026/11/26/2026112610414482269",
+  "title": "삼성SDI, 1조4천억원 규모 자사주 전량 소각 결정",
+  "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4446669",
   "topics": "",
   "popular": false,
-  "published": "11/26 10:42"
+  "published": "11/26 11:10"
  },
  {
-  "source": "머니투데이",
-  "section": "전체",
+  "source": "동아일보",
+  "section": "경제",
   "region": "KR",
-  "title": "[속보] '한덕수 재판 위증' 윤석열 전 대통령, 대법서 무죄 확정",
-  "link": "https://www.mt.co.kr/society/2026/11/26/2026112610163219934",
+  "title": "현대차그룹, 대표이사·사장단 임원인사 실시… 계열사 수익성·SDV 전환 강화",
+  "link": "https://www.donga.com/news/list/article/all/20261126/135094579/2",
+  "topics": "국내 대형주",
+  "popular": false,
+  "published": "11/26 11:10"
+ },
+ {
+  "source": "이데일리",
+  "section": "증권",
+  "region": "KR",
+  "title": "비투엔, 3분기 누적 소프트웨어 매출 전년 대비 221%↑",
+  "link": "http://www.edaily.co.kr/news/newspath.asp?newsid=02558406645649656",
   "topics": "",
   "popular": false,
-  "published": "11/26 10:42"
+  "published": "11/26 11:08"
+ },
+ {
+  "source": "조선비즈",
+  "section": "전체",
+  "region": "KR",
+  "title": "韓国、マンジャロなど医薬品密輸・販売の25人送致",
+  "link": "https://biz.chosun.com/jp/jp-science/2026/11/26/VAXLQEOBFJDZ3MP3GAGX5TTQ74/",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:08"
+ },
+ {
+  "source": "조선비즈",
+  "section": "전체",
+  "region": "KR",
+  "title": "“스스로 못끊게 설계”… 세계인 10%가 ‘디지털 늪’에 갇혔다",
+  "link": "https://biz.chosun.com/science-chosun/science/2026/11/26/MJTGIYLCHE2TIMDGGYZTIODDGE/",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:07"
+ },
+ {
+  "source": "아시아경제",
+  "section": "증권",
+  "region": "KR",
+  "title": "\"삼성전자 망할 것 같아요?\"…주가 반토막에도 \"찬스\"라는 존리",
+  "link": "https://view.asiae.co.kr/article/2026112611044669389",
+  "topics": "국내 대형주",
+  "popular": false,
+  "published": "11/26 11:07"
+ },
+ {
+  "source": "파이낸셜뉴스",
+  "section": "증권",
+  "region": "KR",
+  "title": "KB증권, 시각장애인 고객 대상 '깨비 소비자 포럼' 개최",
+  "link": "https://www.fnnews.com/news/202611261100323201",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:07"
+ },
+ {
+  "source": "뉴시스",
+  "section": "금융",
+  "region": "KR",
+  "title": "호재엔 반짝, 악재엔 와르르…악재에 더 예민한 코스피",
+  "link": "https://www.newsis.com/view/NISX20261126_0003884268",
+  "topics": "국내 대형주",
+  "popular": false,
+  "published": "11/26 11:07"
+ },
+ {
+  "source": "파이낸셜뉴스",
+  "section": "증권",
+  "region": "KR",
+  "title": "카카오페이증권, 외국인·기관 장중 수급 30분 단위 제공",
+  "link": "https://www.fnnews.com/news/202611261059070487",
+  "topics": "국내 대형주",
+  "popular": false,
+  "published": "11/26 11:06"
+ },
+ {
+  "source": "뉴시스",
+  "section": "경제",
+  "region": "KR",
+  "title": "산업장관 \"전기차 생산세액공제, 제조 경쟁력 강화로 접근…협력사에 초점\"",
+  "link": "https://www.newsis.com/view/NISX20261126_0003884280",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:06"
+ },
+ {
+  "source": "인베스팅닷컴",
+  "section": "주식 시장",
+  "region": "KR",
+  "title": "’먹는 치매약’ 아리바이오, 코스피 직상장 추진…AR1001 글로벌 상업화 승부수",
+  "link": "https://kr.investing.com/news/stock-market-news/article-2191046",
+  "topics": "국내 대형주",
+  "popular": false,
+  "published": "11/26 11:05"
+ },
+ {
+  "source": "인베스팅닷컴",
+  "section": "주식 시장",
+  "region": "KR",
+  "title": "공모가 대비 반토막 난 플라즈맵, 관리종목 ’카운트다운’",
+  "link": "https://kr.investing.com/news/stock-market-news/article-2191047",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:05"
+ },
+ {
+  "source": "인베스팅닷컴",
+  "section": "주식 시장",
+  "region": "KR",
+  "title": "블랙프라이데이: 편입 이후 최대 93% 오른 AI 추천 종목 확인",
+  "link": "https://kr.investing.com/news/stock-market-news/article-2191048",
+  "topics": "AI·반도체",
+  "popular": false,
+  "published": "11/26 11:05"
+ },
+ {
+  "source": "조선비즈",
+  "section": "전체",
+  "region": "KR",
+  "title": "韓国、AIセキュリティー投資へ 決済代行の導入策も",
+  "link": "https://biz.chosun.com/jp/jp-finance/2026/11/26/UJSE3TCHX5EFNOKF5JNEEET6JQ/",
+  "topics": "AI·반도체",
+  "popular": false,
+  "published": "11/26 11:05"
+ },
+ {
+  "source": "조선비즈",
+  "section": "전체",
+  "region": "KR",
+  "title": "커지는 해킹 위험에… 국민성장펀드, AI 보안 기업에 투자",
+  "link": "https://biz.chosun.com/stock/finance/2026/11/26/BFVFH744YZDENDUN62CXHRJZAU/",
+  "topics": "AI·반도체",
+  "popular": false,
+  "published": "11/26 11:05"
+ },
+ {
+  "source": "헤럴드경제",
+  "section": "금융",
+  "region": "KR",
+  "title": "기저효과 비웃는 ‘반도체 특수’…‘K자형 성장’ 우려는 여전",
+  "link": "https://biz.heraldcorp.com/article/10950083",
+  "topics": "AI·반도체",
+  "popular": false,
+  "published": "11/26 11:05"
+ },
+ {
+  "source": "연합인포맥스",
+  "section": "전체",
+  "region": "KR",
+  "title": "국채선물 하락 출발…금통위 경계감",
+  "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4446668",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:05"
+ },
+ {
+  "source": "연합인포맥스",
+  "section": "전체",
+  "region": "KR",
+  "title": "AI가 바꿔놓은 크레디트 지형도…채권시장 시사점은",
+  "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4446667",
+  "topics": "AI·반도체",
+  "popular": false,
+  "published": "11/26 11:04"
+ },
+ {
+  "source": "연합뉴스",
+  "section": "경제",
+  "region": "KR",
+  "title": "[게시판] 현대차증권 배형근 사장, '사람 살리는 금융' 캠페인 동참",
+  "link": "https://www.yna.co.kr/view/AKR20261126079600008",
+  "topics": "국내 대형주",
+  "popular": false,
+  "published": "11/26 11:03"
+ },
+ {
+  "source": "연합뉴스",
+  "section": "경제",
+  "region": "KR",
+  "title": "AI반도체부터 에이전트까지…국내 AI 산업 성과 한자리에",
+  "link": "https://www.yna.co.kr/view/AKR20261126079300017",
+  "topics": "AI·반도체",
+  "popular": false,
+  "published": "11/26 11:03"
+ },
+ {
+  "source": "뉴시스",
+  "section": "금융",
+  "region": "KR",
+  "title": "[전문]한국은행 금융통화위원회 11월 통화정책방향",
+  "link": "https://www.newsis.com/view/NISX20261126_0003884255",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:03"
+ },
+ {
+  "source": "SBS Biz",
+  "section": "경제",
+  "region": "KR",
+  "title": "반도체 호황·물가 부담에…한은, 기준금리 3.25%로 인상",
+  "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008864300&plink=RSSLINK&cooper=RSSREADER",
+  "topics": "AI·반도체, 금리·연준, 물가·경기",
+  "popular": false,
+  "published": "11/26 11:03"
+ },
+ {
+  "source": "Bloomberg",
+  "section": "Markets",
+  "region": "US",
+  "title": "KK Mart Starts $112 Million IPO Delayed by Malaysia Socks Row",
+  "link": "https://www.bloomberg.com/news/articles/2026-11-26/kk-mart-starts-112-million-ipo-delayed-by-malaysia-socks-row",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:03"
+ },
+ {
+  "source": "뉴시스",
+  "section": "경제",
+  "region": "KR",
+  "title": "주병기 \"가맹본부, 내달부터 점주단체와 협의 의무…기술탈취 무관용\"",
+  "link": "https://www.newsis.com/view/NISX20261126_0003884250",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:02"
+ },
+ {
+  "source": "연합인포맥스",
+  "section": "전체",
+  "region": "KR",
+  "title": "[외환] 9시 이전 마(MAR) '파' 거래…픽싱 스퀘어",
+  "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4446666",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:02"
+ },
+ {
+  "source": "뉴시스",
+  "section": "경제",
+  "region": "KR",
+  "title": "산업장관, 맥스법 상임위 통과에 \"韓 제조업 경쟁력 제고할 것\"",
+  "link": "https://www.newsis.com/view/NISX20261126_0003884248",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:01"
+ },
+ {
+  "source": "Bloomberg",
+  "section": "Markets",
+  "region": "US",
+  "title": "Copper Rebounds From Lowest This Year as Volatility Hits Metals",
+  "link": "https://www.bloomberg.com/news/articles/2026-11-26/copper-rebounds-from-lowest-this-year-as-volatility-hits-metals",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:01"
+ },
+ {
+  "source": "아시아경제",
+  "section": "증권",
+  "region": "KR",
+  "title": "윈하이텍, 쌍용건설과 적도기니 건설현장 데크플레이트 공급…해외 수출 확대",
+  "link": "https://view.asiae.co.kr/article/2026112611002843847",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:00"
+ },
+ {
+  "source": "아시아경제",
+  "section": "경제",
+  "region": "KR",
+  "title": "[빚에서 빛으로]\"사채는 하루도 버티기 어려운데\"…불법추심 막아달랬더니 열흘 대기",
+  "link": "https://view.asiae.co.kr/article/2026112607544016242",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:00"
+ },
+ {
+  "source": "아시아경제",
+  "section": "경제",
+  "region": "KR",
+  "title": "\"돈 못 갚으면 나체 사진 뿌린다\"…SNS 타고 번지는 불법사금융의 덫[빚에서 빛으로]",
+  "link": "https://view.asiae.co.kr/article/2026112516361691331",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:00"
+ },
+ {
+  "source": "헤럴드경제",
+  "section": "금융",
+  "region": "KR",
+  "title": "한은 점도표 중간값 3.50%로 상향…내년 1분기 추가 인상 가능성",
+  "link": "https://biz.heraldcorp.com/article/10950077",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:00"
+ },
+ {
+  "source": "파이낸셜뉴스",
+  "section": "경제",
+  "region": "KR",
+  "title": "해외직구 어린이용 모자·장갑서 유해물질…31개 제품 유통 차단",
+  "link": "https://www.fnnews.com/news/202611252329411041",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:00"
+ },
+ {
+  "source": "파이낸셜뉴스",
+  "section": "경제",
+  "region": "KR",
+  "title": "한·일, 홋카이도서 반도체·AI 산업협력 확대…포럼 정례화",
+  "link": "https://www.fnnews.com/news/202611252332024026",
+  "topics": "AI·반도체",
+  "popular": false,
+  "published": "11/26 11:00"
+ },
+ {
+  "source": "연합인포맥스",
+  "section": "전체",
+  "region": "KR",
+  "title": "주병기 공정거래위원장, 중소기업 만나 애로사항 청취",
+  "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4446664",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 11:00"
+ },
+ {
+  "source": "아시아경제",
+  "section": "경제",
+  "region": "KR",
+  "title": "한은 금통위 \"韓 성장세 한층 강화…물가 상당기간 목표 상회\"",
+  "link": "https://view.asiae.co.kr/article/2026112610564805865",
+  "topics": "물가·경기",
+  "popular": false,
+  "published": "11/26 10:56"
+ },
+ {
+  "source": "매일경제",
+  "section": "경제",
+  "region": "KR",
+  "title": "기준금리 또 올라 3.25%…부동산 매수세 위축에도 전월세 불안은 ‘여전’",
+  "link": "https://www.mk.co.kr/news/realestate/12219140",
+  "topics": "금리·연준, 부동산",
+  "popular": false,
+  "published": "11/26 10:55"
+ },
+ {
+  "source": "이데일리",
+  "section": "증권",
+  "region": "KR",
+  "title": "험지주행 플랫폼용 배터리팩 발주 확보…관련주 투자 자금이 고민이라면?",
+  "link": "http://www.edaily.co.kr/news/newspath.asp?newsid=33892246645649656",
+  "topics": "2차전지",
+  "popular": false,
+  "published": "11/26 10:55"
+ },
+ {
+  "source": "연합인포맥스",
+  "section": "전체",
+  "region": "KR",
+  "title": "中, 美보다 거의 10배 많은 전력생산 능력…'도광양회'",
+  "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4446663",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 10:55"
+ },
+ {
+  "source": "인베스팅닷컴",
+  "section": "주식 시장",
+  "region": "KR",
+  "title": "美 반도체 수출 규제에 아시아 데이터센터, 미국·유럽서 대체 수요 확보 나서",
+  "link": "https://kr.investing.com/news/stock-market-news/article-2191031",
+  "topics": "AI·반도체",
+  "popular": false,
+  "published": "11/26 10:54"
+ },
+ {
+  "source": "인베스팅닷컴",
+  "section": "주식 시장",
+  "region": "KR",
+  "title": "[단독] 테슬라, 독일 기계 제조업체 본사에 회사 설립...옵티머스 부품 양산 가능성",
+  "link": "https://kr.investing.com/news/stock-market-news/article-2191029",
+  "topics": "테슬라",
+  "popular": false,
+  "published": "11/26 10:54"
+ },
+ {
+  "source": "연합인포맥스",
+  "section": "전체",
+  "region": "KR",
+  "title": "[현장에서] 원전 空론화 오명 피할 수 있을까",
+  "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4446662",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 10:53"
+ },
+ {
+  "source": "CNBC",
+  "section": "Top News",
+  "region": "US",
+  "title": "Norse Atlantic flights suspended after warning finances 'critical'",
+  "link": "https://www.cnbc.com/2026/11/26/norse-airline-finance-business.html",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 10:52"
+ },
+ {
+  "source": "서울경제",
+  "section": "경제",
+  "region": "KR",
+  "title": "“월급 200만원 중 190만원 저축” 자산 200억에 서초구 자가 있는 ‘김부장’ 작가의 전략",
+  "link": "https://www.sedaily.com/article/20119223",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 10:51"
+ },
+ {
+  "source": "CNBC",
+  "section": "Top News",
+  "region": "US",
+  "title": "South Korea upgrades growth forecast, raises benchmark rates to highest in two years",
+  "link": "https://www.cnbc.com/2026/11/26/bok-rate-decision-korea-gdp-inflation.html",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 10:50"
+ },
+ {
+  "source": "매일경제",
+  "section": "증권",
+  "region": "KR",
+  "title": "한은 금리 인상은 선반영…금융지주 주가 일제히 하락",
+  "link": "https://www.mk.co.kr/news/stock/12219126",
+  "topics": "금리·연준",
+  "popular": false,
+  "published": "11/26 10:46"
+ },
+ {
+  "source": "서울경제",
+  "section": "경제",
+  "region": "KR",
+  "title": "금리 동결 소수 의견 늘었는데…한은, 내년 상반기 3.75% 가능성 열어둬",
+  "link": "https://www.sedaily.com/article/20119218",
+  "topics": "금리·연준",
+  "popular": false,
+  "published": "11/26 10:46"
+ },
+ {
+  "source": "이데일리",
+  "section": "증권",
+  "region": "KR",
+  "title": "“주가 빠질 땐 왜 대통령 탓 못 하나”…‘李 사심’ 이광수도 폭발",
+  "link": "http://www.edaily.co.kr/news/newspath.asp?newsid=02440326645649656",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 10:45"
+ },
+ {
+  "source": "이데일리",
+  "section": "증권",
+  "region": "KR",
+  "title": "예탁원, KOFR 공시 5주년…1228일간 오류 ‘0건’",
+  "link": "http://www.edaily.co.kr/news/newspath.asp?newsid=02433766645649656",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 10:45"
+ },
+ {
+  "source": "파이낸셜뉴스",
+  "section": "증권",
+  "region": "KR",
+  "title": "\"이젠 바닥일까\"…비트코인, 저가매수세 유입에 6만달러선 회복 [크립토브리핑]",
+  "link": "https://www.fnnews.com/news/202611261027059306",
+  "topics": "환율·달러, 비트코인",
+  "popular": false,
+  "published": "11/26 10:45"
+ },
+ {
+  "source": "동아일보",
+  "section": "경제",
+  "region": "KR",
+  "title": "우리은행, 배달 라이더 정산금 지킨다…쿠팡이츠서비스와 ‘맞손’",
+  "link": "https://www.donga.com/news/Economy/article/all/20261126/135094376/1",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 10:45"
+ },
+ {
+  "source": "파이낸셜뉴스",
+  "section": "경제",
+  "region": "KR",
+  "title": "이형일 \"국가 안보 인프라에 국산 반도체 우선구매 제도화\"",
+  "link": "https://www.fnnews.com/news/202611261043374588",
+  "topics": "AI·반도체",
+  "popular": false,
+  "published": "11/26 10:44"
+ },
+ {
+  "source": "아시아경제",
+  "section": "경제",
+  "region": "KR",
+  "title": "경제·재정학회 전현직회장 공동성명 “미래대응기금 전면 재검토하라”",
+  "link": "https://view.asiae.co.kr/article/2026112610430053282",
+  "topics": "",
+  "popular": false,
+  "published": "11/26 10:43"
  },
  {
   "source": "아시아경제",
@@ -40,92 +820,12 @@
   "published": "11/26 10:42"
  },
  {
-  "source": "뉴시스",
-  "section": "경제",
+  "source": "헤럴드경제",
+  "section": "금융",
   "region": "KR",
-  "title": "안덕수 \"공정한 과세로 조세정의 확고히 세울 것\"",
-  "link": "https://www.newsis.com/view/NISX20261126_0003883718",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:42"
- },
- {
-  "source": "다음 뉴스",
-  "section": "뉴스1",
-  "region": "KR",
-  "title": "與 중진들 오늘 만찬 회동…계파 갈등 돌파구 마련할까(종합)",
-  "link": "https://v.daum.net/v/20261126104250282",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:42"
- },
- {
-  "source": "다음 뉴스",
-  "section": "아이뉴스24",
-  "region": "KR",
-  "title": "'기준금리 0.25%p 인상'⋯황건일·이수형 위원 동결 의견 [전문]",
-  "link": "https://v.daum.net/v/20261126104231263",
+  "title": "한국은행, 기준금리 3.25%로 인상…내년 성장률 전망 4.1%로 높여",
+  "link": "https://biz.heraldcorp.com/article/10950031",
   "topics": "금리·연준",
-  "popular": false,
-  "published": "11/26 10:42"
- },
- {
-  "source": "다음 뉴스",
-  "section": "헤럴드경제",
-  "region": "KR",
-  "title": "“국민들 꿈 날아갔다”…‘증시 붕괴’에 눈물 터진 이광수",
-  "link": "https://v.daum.net/v/20261126104231261",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:42"
- },
- {
-  "source": "다음 뉴스",
-  "section": "조선비즈",
-  "region": "KR",
-  "title": "서울시, 황학동 중앙시장 일대 지구단위계획구역 지정… 통합개발 유도",
-  "link": "https://v.daum.net/v/20261126104230256",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:42"
- },
- {
-  "source": "다음 뉴스",
-  "section": "SBS Biz",
-  "region": "KR",
-  "title": "트럼프 새 관세에 유럽·브라질 '부글부글'",
-  "link": "https://v.daum.net/v/20261126104209238",
-  "topics": "정치·관세",
-  "popular": false,
-  "published": "11/26 10:42"
- },
- {
-  "source": "다음 뉴스",
-  "section": "디지털타임스",
-  "region": "KR",
-  "title": "현대차그룹, 장재훈·무뇨스·송호성 유임…부품·건설 CEO 교체",
-  "link": "https://v.daum.net/v/20261126104205230",
-  "topics": "국내 대형주",
-  "popular": false,
-  "published": "11/26 10:42"
- },
- {
-  "source": "다음 뉴스",
-  "section": "아시아경제",
-  "region": "KR",
-  "title": "공영홈쇼핑, '2027 패션 트렌드' 한혜연 특강 진행",
-  "link": "https://v.daum.net/v/20261126104205228",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:42"
- },
- {
-  "source": "다음 뉴스",
-  "section": "매일경제",
-  "region": "KR",
-  "title": "AI발 시장 혼란에 위험회피 심리 확산...中 국채 금리 사상 최저치",
-  "link": "https://v.daum.net/v/20261126104202215",
-  "topics": "AI·반도체, 금리·연준",
   "popular": false,
   "published": "11/26 10:42"
  },
@@ -140,64 +840,24 @@
   "published": "11/26 10:41"
  },
  {
-  "source": "조선비즈",
-  "section": "전체",
+  "source": "인베스팅닷컴",
+  "section": "주식 시장",
   "region": "KR",
-  "title": "Neowiz、ゲーム2作品をAGF2026に出展",
-  "link": "https://biz.chosun.com/jp/jp-it/2026/11/26/7S7KTP76D5FDLLMWR5TF7IZKYI/",
+  "title": "Flight Centre Ltd 주가, 오늘 왜 하락했나?",
+  "link": "https://kr.investing.com/news/stock-market-news/article-93CH-2191037",
   "topics": "",
+  "popular": false,
+  "published": "11/26 10:40"
+ },
+ {
+  "source": "매일경제",
+  "section": "경제",
+  "region": "KR",
+  "title": "금통위원 2명은 금리 인상 반대…긴축 ‘속도’ 문구 삭제",
+  "link": "https://www.mk.co.kr/news/economy/12219117",
+  "topics": "금리·연준",
   "popular": false,
   "published": "11/26 10:39"
- },
- {
-  "source": "조선비즈",
-  "section": "전체",
-  "region": "KR",
-  "title": "네오위즈 ‘브라운더스트2’·‘고양이와 스프’, AGF 2026 참가",
-  "link": "https://biz.chosun.com/it-science/ict/2026/11/26/YBSNGXVUWFBY7DRX7QUN5XPRF4/",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:39"
- },
- {
-  "source": "뉴시스",
-  "section": "금융",
-  "region": "KR",
-  "title": "현대차증권, '사람 살리는 금융' 캠페인 동참",
-  "link": "https://www.newsis.com/view/NISX20261126_0003884178",
-  "topics": "국내 대형주",
-  "popular": false,
-  "published": "11/26 10:39"
- },
- {
-  "source": "연합인포맥스",
-  "section": "전체",
-  "region": "KR",
-  "title": "부산대학교 연구팀, 미니 장기 대량생산의 새 가능성 열었다",
-  "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4446648",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:39"
- },
- {
-  "source": "연합뉴스",
-  "section": "마켓",
-  "region": "KR",
-  "title": "'SNS홍보·디지털마케팅'…광주은행 대학생 홍보대사 활동 마감",
-  "link": "https://www.yna.co.kr/view/AKR20261126072200054",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:38"
- },
- {
-  "source": "뉴시스",
-  "section": "금융",
-  "region": "KR",
-  "title": "윈하이텍, 적도기니 건설 프로젝트에 데크플레이트 수출",
-  "link": "https://www.newsis.com/view/NISX20261126_0003884168",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:38"
  },
  {
   "source": "이투데이",
@@ -210,26 +870,6 @@
   "published": "11/26 10:38"
  },
  {
-  "source": "뉴시스",
-  "section": "금융",
-  "region": "KR",
-  "title": "하나금융지주 함영주 회장, '채용비리 의혹' 파기환송심서 무죄",
-  "link": "https://www.newsis.com/view/NISX20261126_0003884138",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:37"
- },
- {
-  "source": "연합인포맥스",
-  "section": "전체",
-  "region": "KR",
-  "title": "\"AI 무너지면 창업 인재들 가상자산 업계로 복귀\"",
-  "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4446657",
-  "topics": "AI·반도체",
-  "popular": false,
-  "published": "11/26 10:37"
- },
- {
   "source": "동아일보",
   "section": "경제",
   "region": "KR",
@@ -240,62 +880,12 @@
   "published": "11/26 10:37"
  },
  {
-  "source": "조선비즈",
-  "section": "전체",
-  "region": "KR",
-  "title": "ソウルのワンルーム、10月は家賃・保証金ともに下落",
-  "link": "https://biz.chosun.com/jp/jp-realestate/2026/11/26/6G3WSGLGZVEI5DU3JSBU5MGQAI/",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:36"
- },
- {
   "source": "아시아경제",
   "section": "증권",
   "region": "KR",
   "title": "국제전기, 리더십 워크숍 개최…전력시장 슈퍼사이클 대응 역량 강화",
   "link": "https://view.asiae.co.kr/article/2026112610365686659",
   "topics": "",
-  "popular": false,
-  "published": "11/26 10:36"
- },
- {
-  "source": "파이낸셜뉴스",
-  "section": "증권",
-  "region": "KR",
-  "title": "아리바이오 코스피 직상장 추진에 아리바이오홀딩스 28% 급등[종목NOW]",
-  "link": "https://www.fnnews.com/news/202611261031321265",
-  "topics": "국내 대형주",
-  "popular": false,
-  "published": "11/26 10:36"
- },
- {
-  "source": "연합인포맥스",
-  "section": "전체",
-  "region": "KR",
-  "title": "ING \"연준 12월 25bp 인상 사실상 확정…공격적 긴축 필요성은 작아\"",
-  "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4446654",
-  "topics": "금리·연준",
-  "popular": false,
-  "published": "11/26 10:36"
- },
- {
-  "source": "연합인포맥스",
-  "section": "전체",
-  "region": "KR",
-  "title": "한은 \"주택관련·기타대출 모두 늘어…가계대출 증가세 확대\"",
-  "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4446656",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:36"
- },
- {
-  "source": "연합인포맥스",
-  "section": "전체",
-  "region": "KR",
-  "title": "한은 \"수도권 집값 오름세 둔화…상승 기대 여전히 높아\"",
-  "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4446655",
-  "topics": "부동산",
   "popular": false,
   "published": "11/26 10:36"
  },
@@ -320,6 +910,16 @@
   "published": "11/26 10:35"
  },
  {
+  "source": "한국경제",
+  "section": "경제",
+  "region": "KR",
+  "title": "[속보] 황건일·이수형 금통위원, 기준금리 동결 소수의견",
+  "link": "https://www.hankyung.com/article/2026112616697",
+  "topics": "금리·연준",
+  "popular": false,
+  "published": "11/26 10:34"
+ },
+ {
   "source": "CNBC",
   "section": "Top News",
   "region": "US",
@@ -330,154 +930,34 @@
   "published": "11/26 10:34"
  },
  {
-  "source": "뉴시스",
-  "section": "금융",
+  "source": "한국경제",
+  "section": "경제",
   "region": "KR",
-  "title": "안랩 4%·파수AI 6%대↑…美 정보기관 해킹에 보안주 이틀째 강세",
-  "link": "https://www.newsis.com/view/NISX20261126_0003884167",
-  "topics": "AI·반도체",
-  "popular": false,
-  "published": "11/26 10:34"
- },
- {
-  "source": "머니투데이",
-  "section": "전체",
-  "region": "KR",
-  "title": "삼성자산운용, 정기 임원인사 실시… 부사장 1명·상무 2명 승진",
-  "link": "https://www.mt.co.kr/stock/2026/11/26/2026112610224878912",
+  "title": "美 아이들 계좌에 주식 꽂힌다는데…머스크의 '통 큰 선물'",
+  "link": "https://www.hankyung.com/article/2026112615617",
   "topics": "",
   "popular": false,
   "published": "11/26 10:33"
  },
  {
-  "source": "파이낸셜뉴스",
-  "section": "경제",
-  "region": "KR",
-  "title": "황종우 해수부 장관, 양식 어업인 만나 'CPTPP' 가입 관련 논의",
-  "link": "https://www.fnnews.com/news/202611261011143007",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:33"
- },
- {
-  "source": "연합뉴스",
-  "section": "경제",
-  "region": "KR",
-  "title": "KODEX200커버드콜액티브, '삼전 특별배당 반영' 분배금 지급",
-  "link": "https://www.yna.co.kr/view/AKR20261126068400008",
-  "topics": "배당",
-  "popular": false,
-  "published": "11/26 10:32"
- },
- {
-  "source": "뉴시스",
-  "section": "금융",
-  "region": "KR",
-  "title": "씨피시스템, 로봇 전력케이블 보호 솔루션 2차 양산 물량 납품",
-  "link": "https://www.newsis.com/view/NISX20261126_0003884128",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:32"
- },
- {
-  "source": "머니투데이",
-  "section": "전체",
-  "region": "KR",
-  "title": "동양·ABL생명, 합병전부터 AI로 먼저 뭉쳤다…통합 시너지 시동",
-  "link": "https://www.mt.co.kr/finance/2026/11/26/2026112608542914781",
-  "topics": "AI·반도체",
-  "popular": false,
-  "published": "11/26 10:31"
- },
- {
-  "source": "머니투데이",
-  "section": "전체",
-  "region": "KR",
-  "title": "현대엔지니어링 새 대표에 나태준…건축사업본부장서 부사장 승진",
-  "link": "https://www.mt.co.kr/estate/2026/11/26/2026112610201225050",
+  "source": "Bloomberg",
+  "section": "Markets",
+  "region": "US",
+  "title": "Shein’s Slow India Start Lays Bare Limits of Billionaire Ambani’s Retail Might",
+  "link": "https://www.bloomberg.com/news/articles/2026-11-26/shein-s-slow-india-start-lays-bare-limits-of-billionaire-ambani-s-retail-might",
   "topics": "",
   "popular": false,
   "published": "11/26 10:31"
  },
  {
-  "source": "아시아경제",
-  "section": "증권",
-  "region": "KR",
-  "title": "디캠프, 지역실증 OI 스타트업 7개사 사례 발표회 개최",
-  "link": "https://view.asiae.co.kr/article/2026112610310791857",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:31"
- },
- {
-  "source": "연합뉴스",
-  "section": "경제",
-  "region": "KR",
-  "title": "내달 스타트업 축제 '컴업' 개최…역대 최대 규모 55개국 참석",
-  "link": "https://www.yna.co.kr/view/AKR20261125143200030",
+  "source": "Bloomberg",
+  "section": "Markets",
+  "region": "US",
+  "title": "Rupee Has Room to Rally Before RBI Steps In, Strategists Say",
+  "link": "https://www.bloomberg.com/news/articles/2026-11-26/rupee-rally-has-91-in-sight-as-rbi-seen-holding-back-dollar-buys",
   "topics": "",
   "popular": false,
   "published": "11/26 10:30"
- },
- {
-  "source": "연합뉴스",
-  "section": "경제",
-  "region": "KR",
-  "title": "'서울 최대 재개발' 한남3구역 23년만에 첫삽…6천여세대 조성",
-  "link": "https://www.yna.co.kr/view/AKR20261125152800004",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:30"
- },
- {
-  "source": "연합뉴스",
-  "section": "경제",
-  "region": "KR",
-  "title": "[연합뉴스 이 시각 헤드라인] - 10:30",
-  "link": "https://www.yna.co.kr/view/AKR20261126062100011",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:30"
- },
- {
-  "source": "뉴시스",
-  "section": "금융",
-  "region": "KR",
-  "title": "아이컴포넌트 \"우주용 페로브스카이트 배리어필름 상용화 속도\"",
-  "link": "https://www.newsis.com/view/NISX20261126_0003884139",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:30"
- },
- {
-  "source": "연합인포맥스",
-  "section": "전체",
-  "region": "KR",
-  "title": "\"AI 자금조달 금리 상승 해법은 연준 피벗…관건은 물가\"",
-  "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4446653",
-  "topics": "AI·반도체, 금리·연준, 물가·경기",
-  "popular": false,
-  "published": "11/26 10:30"
- },
- {
-  "source": "SBS Biz",
-  "section": "경제",
-  "region": "KR",
-  "title": "반도체 호황·물가 부담에…한은, 기준금리 3.25%로 인상",
-  "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008864300&plink=RSSLINK&cooper=RSSREADER",
-  "topics": "AI·반도체, 금리·연준, 물가·경기",
-  "popular": false,
-  "published": "11/26 10:30"
- },
- {
-  "source": "연합뉴스",
-  "section": "경제",
-  "region": "KR",
-  "title": "성남시, LH 서현지구 주택공급 확대 반대…\"883가구대로 추진\"",
-  "link": "https://www.yna.co.kr/view/AKR20261126066700061",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:29"
  },
  {
   "source": "매일경제",
@@ -490,36 +970,6 @@
   "published": "11/26 10:29"
  },
  {
-  "source": "아시아경제",
-  "section": "증권",
-  "region": "KR",
-  "title": "KB증권 \"시각장애인 위해 금융서비스 개선 추진\"",
-  "link": "https://view.asiae.co.kr/article/2026112610290958549",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:29"
- },
- {
-  "source": "연합인포맥스",
-  "section": "전체",
-  "region": "KR",
-  "title": "삼성생명·화재·카드, 부사장 5명 등 임원 19명 승진(종합)",
-  "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4446652",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:29"
- },
- {
-  "source": "연합인포맥스",
-  "section": "전체",
-  "region": "KR",
-  "title": "함영주 하나금융 회장 \"재판부에 감사…공정·투명하게 경영하겠다\"",
-  "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4446651",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:28"
- },
- {
   "source": "SBS Biz",
   "section": "경제",
   "region": "KR",
@@ -528,16 +978,6 @@
   "topics": "",
   "popular": false,
   "published": "11/26 10:27"
- },
- {
-  "source": "아시아경제",
-  "section": "경제",
-  "region": "KR",
-  "title": "젠슨 황 복귀 막전막후…美 법무부 정식 수사 없없다(종합)",
-  "link": "https://view.asiae.co.kr/article/2026112610264030093",
-  "topics": "AI·반도체",
-  "popular": false,
-  "published": "11/26 10:26"
  },
  {
   "source": "이투데이",
@@ -560,36 +1000,6 @@
   "published": "11/26 10:25"
  },
  {
-  "source": "이데일리",
-  "section": "증권",
-  "region": "KR",
-  "title": "케이아이엔엑스 “공개매수 결과 따라 최대주주 변경 가능”",
-  "link": "http://www.edaily.co.kr/news/newspath.asp?newsid=02305846645649656",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:23"
- },
- {
-  "source": "CNBC",
-  "section": "Top News",
-  "region": "US",
-  "title": "South Korea raises rates to highest in two years, as inflation remains above target",
-  "link": "https://www.cnbc.com/2026/11/26/bok-rate-decision-korea-gdp-inflation.html",
-  "topics": "물가·경기",
-  "popular": false,
-  "published": "11/26 10:23"
- },
- {
-  "source": "연합뉴스",
-  "section": "경제",
-  "region": "KR",
-  "title": "증시 불안에도…한은, 성장·물가 눈높이 상향에 긴축 고삐",
-  "link": "https://www.yna.co.kr/view/AKR20261126067600002",
-  "topics": "물가·경기",
-  "popular": false,
-  "published": "11/26 10:22"
- },
- {
   "source": "매일경제",
   "section": "경제",
   "region": "KR",
@@ -600,36 +1010,6 @@
   "published": "11/26 10:20"
  },
  {
-  "source": "이데일리",
-  "section": "증권",
-  "region": "KR",
-  "title": "수출 증가 확인한 식품 업종…투자 기회를 앞두고 자금이 고민이라면?",
-  "link": "http://www.edaily.co.kr/news/newspath.asp?newsid=33885686645649656",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:20"
- },
- {
-  "source": "아시아경제",
-  "section": "경제",
-  "region": "KR",
-  "title": "\"이번엔 또 뭐야?\" 오픈런 시작됐다…SNS서 난리난 '천국의 맛' 디저트",
-  "link": "https://view.asiae.co.kr/article/2026112610155605952",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:19"
- },
- {
-  "source": "아시아경제",
-  "section": "경제",
-  "region": "KR",
-  "title": "통모짜렐라 치즈 듬뿍…롯데웰푸드 '쉐푸드 치즈통돈까스'",
-  "link": "https://view.asiae.co.kr/article/2026112609170718515",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:19"
- },
- {
   "source": "헤럴드경제",
   "section": "금융",
   "region": "KR",
@@ -638,46 +1018,6 @@
   "topics": "",
   "popular": false,
   "published": "11/26 10:19"
- },
- {
-  "source": "매일경제",
-  "section": "증권",
-  "region": "KR",
-  "title": "에브리봇, ‘머큐어 서울 마곡’에 AI 청소로봇 도입 추진…호텔 B2B 공략",
-  "link": "https://www.mk.co.kr/news/stock/12219088",
-  "topics": "AI·반도체",
-  "popular": false,
-  "published": "11/26 10:18"
- },
- {
-  "source": "파이낸셜뉴스",
-  "section": "증권",
-  "region": "KR",
-  "title": "두나무, AI 경영시스템 국제표준 인증 획득…\"AI 결과물 정확성 확인 정비\"",
-  "link": "https://www.fnnews.com/news/202611260927401149",
-  "topics": "AI·반도체",
-  "popular": false,
-  "published": "11/26 10:18"
- },
- {
-  "source": "이데일리",
-  "section": "증권",
-  "region": "KR",
-  "title": "CIS케미칼 오치정 부사장, 나노융합산업 발전 공로로 대통령 표창",
-  "link": "http://www.edaily.co.kr/news/newspath.asp?newsid=02266486645649656",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:17"
- },
- {
-  "source": "매일경제",
-  "section": "증권",
-  "region": "KR",
-  "title": "M83·모터헤드, 넷플릭스 글로벌 1위 ‘꿀알바’ VFX 총괄…1700개 샷 구현",
-  "link": "https://www.mk.co.kr/news/stock/12219078",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:15"
  },
  {
   "source": "MarketWatch",
@@ -740,16 +1080,6 @@
   "published": "11/26 10:10"
  },
  {
-  "source": "동아일보",
-  "section": "경제",
-  "region": "KR",
-  "title": "이형일 “국가안보 인프라에 국산 반도체 우선구매 제도화”",
-  "link": "https://www.donga.com/news/Economy/article/all/20261126/135094059/1",
-  "topics": "AI·반도체",
-  "popular": false,
-  "published": "11/26 10:09"
- },
- {
   "source": "Bloomberg",
   "section": "Markets",
   "region": "US",
@@ -758,86 +1088,6 @@
   "topics": "",
   "popular": false,
   "published": "11/26 10:07"
- },
- {
-  "source": "매일경제",
-  "section": "증권",
-  "region": "KR",
-  "title": "“롤러코스피에 돈 마련 어려워”…서울 주택 매수자금 절반 ‘증여·상속’",
-  "link": "https://www.mk.co.kr/news/stock/12219056",
-  "topics": "국내 대형주",
-  "popular": false,
-  "published": "11/26 10:06"
- },
- {
-  "source": "인베스팅닷컴",
-  "section": "주식 시장",
-  "region": "KR",
-  "title": "코나아이, 플랫폼 고마진 및 정책 수혜에 저평가 부각-NH",
-  "link": "https://kr.investing.com/news/stock-market-news/article-2191009",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:05"
- },
- {
-  "source": "인베스팅닷컴",
-  "section": "주식 시장",
-  "region": "KR",
-  "title": "한화솔루션, 내년 실적 개선에도 현금흐름 악화…목표가↓-유안타",
-  "link": "https://kr.investing.com/news/stock-market-news/article-2191007",
-  "topics": "실적발표",
-  "popular": false,
-  "published": "11/26 10:05"
- },
- {
-  "source": "인베스팅닷컴",
-  "section": "주식 시장",
-  "region": "KR",
-  "title": "LIG D&A, 방산주 조정에도 수주 모멘텀 유효…목표가는↓-DB",
-  "link": "https://kr.investing.com/news/stock-market-news/article-2191006",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:05"
- },
- {
-  "source": "인베스팅닷컴",
-  "section": "주식 시장",
-  "region": "KR",
-  "title": "9월 은행 부실채권비율 0.62%로 하락…개인사업자·신용대출은 12년 최고",
-  "link": "https://kr.investing.com/news/stock-market-news/article-2190992",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:05"
- },
- {
-  "source": "인베스팅닷컴",
-  "section": "주식 시장",
-  "region": "KR",
-  "title": "디알호튼(DHI.N) 3분기 부진한 실적 지속..적극적 자사주 매입은 지속",
-  "link": "https://kr.investing.com/news/stock-market-news/article-2190991",
-  "topics": "실적발표",
-  "popular": false,
-  "published": "11/26 10:05"
- },
- {
-  "source": "인베스팅닷컴",
-  "section": "주식 시장",
-  "region": "KR",
-  "title": "샤오미(1810.HK) 3분기 이익 급감..비우호적 업황에도 단기 수급 유리",
-  "link": "https://kr.investing.com/news/stock-market-news/article-2190989",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:05"
- },
- {
-  "source": "이데일리",
-  "section": "증권",
-  "region": "KR",
-  "title": "씨씨에스, 상장폐지 효력정지 가처분 신청",
-  "link": "http://www.edaily.co.kr/news/newspath.asp?newsid=02240246645649656",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:05"
  },
  {
   "source": "동아일보",
@@ -850,36 +1100,6 @@
   "published": "11/26 10:05"
  },
  {
-  "source": "SBS Biz",
-  "section": "경제",
-  "region": "KR",
-  "title": "[속보] 한은, 내년 성장률 전망 4.1%로 깜짝 상향…올해 3.9%",
-  "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008864310&plink=RSSLINK&cooper=RSSREADER",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:05"
- },
- {
-  "source": "매일경제",
-  "section": "경제",
-  "region": "KR",
-  "title": "반도체 호황의 역설…성장률 뛰자 기준금리 또 올렸다",
-  "link": "https://www.mk.co.kr/news/economy/12219053",
-  "topics": "AI·반도체, 금리·연준",
-  "popular": false,
-  "published": "11/26 10:04"
- },
- {
-  "source": "CNBC",
-  "section": "Top News",
-  "region": "US",
-  "title": "Norse Atlantic flights suspended after warning finances 'critical'",
-  "link": "https://www.cnbc.com/2026/11/26/norse-airline-finance-business.html",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:04"
- },
- {
   "source": "헤럴드경제",
   "section": "금융",
   "region": "KR",
@@ -888,16 +1108,6 @@
   "topics": "",
   "popular": false,
   "published": "11/26 10:04"
- },
- {
-  "source": "동아일보",
-  "section": "경제",
-  "region": "KR",
-  "title": "센터 못 가도 집에서 운동…어댑핏, 장애인 맞춤형 운동 서비스 확대",
-  "link": "https://www.donga.com/news/Economy/article/all/20261126/135093993/1",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:03"
  },
  {
   "source": "SBS Biz",
@@ -926,36 +1136,6 @@
   "title": "올 상반기 탕감해준 빚만 1.6조…반기마다 금융사 실적 공개",
   "link": "https://biz.heraldcorp.com/article/10949895",
   "topics": "실적발표",
-  "popular": false,
-  "published": "11/26 10:00"
- },
- {
-  "source": "헤럴드경제",
-  "section": "금융",
-  "region": "KR",
-  "title": "우리은행, 쿠팡이츠서비스와 ‘맞손’…배달기사 정산금 보호",
-  "link": "https://biz.heraldcorp.com/article/10949863",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:00"
- },
- {
-  "source": "헤럴드경제",
-  "section": "금융",
-  "region": "KR",
-  "title": "대안신용평가 활용하면 자본 규제 완화…6개월만 상환해도 ‘정상 여신’ 인정",
-  "link": "https://biz.heraldcorp.com/article/10949764",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 10:00"
- },
- {
-  "source": "동아일보",
-  "section": "경제",
-  "region": "KR",
-  "title": "LG전자 임직원 30여 명, 독거노인 300가구에 김장김치 전달",
-  "link": "https://www.donga.com/news/Economy/article/all/20261126/135093735/1",
-  "topics": "",
   "popular": false,
   "published": "11/26 10:00"
  },
@@ -1010,34 +1190,14 @@
   "published": "11/26 09:51"
  },
  {
-  "source": "Bloomberg",
-  "section": "Economics",
-  "region": "US",
-  "title": "Bank of Korea Hikes Rate as AI Boom Powers Growth, Inflation",
-  "link": "https://www.bloomberg.com/news/articles/2026-11-26/bok-hikes-rate-on-stubborn-inflation-as-ai-boom-drives-growth",
-  "topics": "AI·반도체, 물가·경기",
-  "popular": false,
-  "published": "11/26 09:50"
- },
- {
-  "source": "한국경제",
+  "source": "이투데이",
   "section": "증권",
   "region": "KR",
-  "title": "\"블랙프라이데이 휩쓴 K뷰티\"…화장품주 연일 강세",
-  "link": "https://www.hankyung.com/article/2026112612776",
+  "title": "김종민 메리츠증권 대표, ‘사람 살리는 금융’ 릴레이캠페인 참여",
+  "link": "https://www.etoday.co.kr/news/view/2653239",
   "topics": "",
   "popular": false,
-  "published": "11/26 09:46"
- },
- {
-  "source": "한국경제",
-  "section": "증권",
-  "region": "KR",
-  "title": "후티 사우디 정유시설 공격에 뛴 국제 유가…정유주, 동반 상승 [종목+]",
-  "link": "https://www.hankyung.com/article/2026112613946",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 09:46"
+  "published": "11/26 09:47"
  },
  {
   "source": "이투데이",
@@ -1060,36 +1220,6 @@
   "published": "11/26 09:42"
  },
  {
-  "source": "한국경제",
-  "section": "경제",
-  "region": "KR",
-  "title": "\"기내 화재 상황 그대로\"…이스타항공, 승무원 훈련시설 구축",
-  "link": "https://www.hankyung.com/article/202611261271g",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 09:41"
- },
- {
-  "source": "이투데이",
-  "section": "증권",
-  "region": "KR",
-  "title": "[SP] 아이에이, 현대차 전폭지원에 기사회생",
-  "link": "https://www.etoday.co.kr/news/view/889147",
-  "topics": "국내 대형주",
-  "popular": false,
-  "published": "11/26 09:41"
- },
- {
-  "source": "이투데이",
-  "section": "증권",
-  "region": "KR",
-  "title": "한국투자증권, 충남 홍성에 'WE: green' 6호점 개관…아동센터 에너지 효율 높여",
-  "link": "https://www.etoday.co.kr/news/view/2653228",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 09:40"
- },
- {
   "source": "MarketWatch",
   "section": "Top Stories",
   "region": "US",
@@ -1100,46 +1230,6 @@
   "published": "11/26 09:33"
  },
  {
-  "source": "한국경제",
-  "section": "경제",
-  "region": "KR",
-  "title": "이케아, 460개 제품을 80%까지 할인해준다",
-  "link": "https://www.hankyung.com/article/202611261348i",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 09:32"
- },
- {
-  "source": "한국경제",
-  "section": "증권",
-  "region": "KR",
-  "title": "스페이스X '우주 데이터센터' 위성 승인…미래에셋벤처 14% 급등",
-  "link": "https://www.hankyung.com/article/2026112613526",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 09:29"
- },
- {
-  "source": "한국경제",
-  "section": "경제",
-  "region": "KR",
-  "title": "\"단일 모델 성과 아니다\"…브랜드 가치 입증한 제네시스",
-  "link": "https://www.hankyung.com/article/202611261321g",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 09:28"
- },
- {
-  "source": "Bloomberg",
-  "section": "Markets",
-  "region": "US",
-  "title": "Gold Edges Lower as US Inflation Data Fuels Bets for Rate Hikes",
-  "link": "https://www.bloomberg.com/news/articles/2026-11-26/gold-edges-lower-as-us-inflation-data-fuels-bets-for-rate-hikes",
-  "topics": "물가·경기",
-  "popular": false,
-  "published": "11/26 09:18"
- },
- {
   "source": "CNBC",
   "section": "Top News",
   "region": "US",
@@ -1148,26 +1238,6 @@
   "topics": "",
   "popular": false,
   "published": "11/26 09:12"
- },
- {
-  "source": "Bloomberg",
-  "section": "Markets",
-  "region": "US",
-  "title": "Emerging Asia’s Best Bond Rally Seen Extending in Philippines",
-  "link": "https://www.bloomberg.com/news/articles/2026-11-26/emerging-asia-s-best-bond-rally-seen-extending-in-philippines",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 09:05"
- },
- {
-  "source": "Bloomberg",
-  "section": "Markets",
-  "region": "US",
-  "title": "China 2027 Growth to Top 4.5%, Ex-Official Says",
-  "link": "https://www.bloomberg.com/news/videos/2026-11-25/china-2027-growth-to-top-4-5-ex-official-says-video",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 08:54"
  },
  {
   "source": "CNBC",
@@ -1400,16 +1470,6 @@
   "published": "11/26 05:30"
  },
  {
-  "source": "서울경제",
-  "section": "경제",
-  "region": "KR",
-  "title": "결혼하면 정부가 100만원 준다더니...“내년 10월이면 끊길 수도” [Pick코노미]",
-  "link": "https://www.sedaily.com/article/20119081",
-  "topics": "",
-  "popular": false,
-  "published": "11/26 05:30"
- },
- {
   "source": "연준",
   "section": "보도자료",
   "region": "US",
@@ -1548,16 +1608,6 @@
   "topics": "비트코인, 급락·변동성",
   "popular": false,
   "published": "11/25 20:57"
- },
- {
-  "source": "서울경제",
-  "section": "경제",
-  "region": "KR",
-  "title": "[열린송현]자원무기화 시대, 한국의 핵심광물 전략이 나아갈 길",
-  "link": "https://www.sedaily.com/article/20118977",
-  "topics": "",
-  "popular": false,
-  "published": "11/25 18:06"
  },
  {
   "source": "연준",
