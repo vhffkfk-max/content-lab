@@ -1,12 +1,21 @@
 [
  {
   "geo": "KR",
-  "term": "의심",
+  "term": "연금",
+  "traffic": 20000,
+  "topics": "연금·절세",
+  "econ": true,
+  "news_title": "“국민연금 68세부터?” 정은경 장관, SNS서 ‘괴담’ 진화",
+  "news_link": "https://bravo.etoday.co.kr/view/atc_view/20605"
+ },
+ {
+  "geo": "KR",
+  "term": "경찰",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "전현무, 촬영 중 분노 폭발…“기본이 안 돼 있어” (티처스3)",
-  "news_link": "https://sports.donga.com/ent/article/all/20261125/135088179/1"
+  "news_title": "[속보]경찰, ‘리트 만점자’ 자택과 ‘수능 시험지 보관’ 고교 압수수색",
+  "news_link": "https://www.khan.co.kr/article/202611261111001"
  },
  {
   "geo": "KR",
@@ -28,30 +37,30 @@
  },
  {
   "geo": "KR",
-  "term": "준법투쟁",
+  "term": "은평구",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "출근길 지하철에 KTX까지 ‘주의보’…오늘부터 철도노조 준법투쟁 돌입",
-  "news_link": "https://news.jtbc.co.kr/article/NB12329874"
+  "news_title": "용산구, ‘적극행정’ 우수 공무원 6인 선정 [지금 구청은]",
+  "news_link": "https://biz.heraldcorp.com/article/10950171"
  },
  {
   "geo": "KR",
   "term": "광고",
   "traffic": 200,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "공정위, 애플 ‘AI 기능 허위 광고’ 혐의 심의 착수…수백억 과징금 나올까?",
-  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8723278"
+  "topics": "",
+  "econ": false,
+  "news_title": "애플 부당 광고 사건 심의 절차 개시",
+  "news_link": "https://go.seoul.co.kr/news/prnewsView.php?id=459090"
  },
  {
   "geo": "KR",
-  "term": "문가영",
+  "term": "김용빈",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "[ET포토] 문가영, '새하얀 아름다움'",
-  "news_link": "https://www.etnews.com/20261126000038"
+  "news_title": "황신혜·붐, 첫 녹화부터 오열…역대급 시즌 (미스터트롯4)",
+  "news_link": "https://sports.donga.com/ent/article/all/20261126/135095296/1"
  },
  {
   "geo": "KR",
@@ -64,21 +73,12 @@
  },
  {
   "geo": "KR",
-  "term": "불꽃야구",
+  "term": "조국",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "박용택 vs 이대호, 고척돔서 펼치는 ‘불꽃 파이터즈 시빌 워’ ('불꽃야구2')",
-  "news_link": "https://www.chosun.com/entertainments/broadcast/2026/11/25/MZRTGYRXMNRTSZDBGYYTEYZTGU/"
- },
- {
-  "geo": "KR",
-  "term": "은평구",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "용산구, ‘적극행정’ 우수 공무원 6인 선정 [지금 구청은]",
-  "news_link": "https://biz.heraldcorp.com/article/10950171"
+  "news_title": "[속보] 조국 “공공기관 떠난 서울·수도권 알짜 땅에 공공주택 짓자”",
+  "news_link": "https://www.kyeonggi.com/article/20261126580059"
  },
  {
   "geo": "KR",
@@ -91,92 +91,92 @@
  },
  {
   "geo": "US",
-  "term": "john madden",
+  "term": "nfl standings",
+  "traffic": 10000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Predicting full 14-team NFL playoff bracket for NFL Week 12: How Aaron Rodgers' benching impacts AFC race",
+  "news_link": "https://www.cbssports.com/nfl/news/predicting-full-14-team-nfl-playoff-bracket-nfl-week-12/"
+ },
+ {
+  "geo": "US",
+  "term": "portland trail blazers",
   "traffic": 5000,
   "topics": "",
   "econ": false,
-  "news_title": "‘Madden’ Makes One Of The NFL’s Biggest Characters Feel Silly And Small",
-  "news_link": "https://defector.com/madden-makes-one-of-the-nfls-biggest-characters-feel-silly-and-small"
+  "news_title": "Discuss the Portland Trail Blazers Taking on the Mighty Spurs Here!",
+  "news_link": "https://www.blazersedge.com/gameday-threads-2/118891/discussion-portland-trail-blazers-san-antonio-spurs-time-tv-injury-report"
  },
  {
   "geo": "US",
-  "term": "sacramento kings vs golden state warriors match player stats",
-  "traffic": 5000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Miami Heat vs Philadelphia 76ers Nov 25, 2026 Box Scores",
-  "news_link": "https://www.nba.com/game/mia-vs-phi-0022600055/box-score"
- },
- {
-  "geo": "US",
-  "term": "damian lillard",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Damian Lillard and Portland thankful to be reunited",
-  "news_link": "https://www.nba.com/news/trail-blazers-damian-lillard-perfect-pairing"
- },
- {
-  "geo": "US",
-  "term": "de'anthony melton",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "De’Anthony Melton is playing his way dangerously close to trade déjà vu",
-  "news_link": "https://bluemanhoop.com/de-anthony-melton-playing-way-dangerously-close-trade-deja-vu"
- },
- {
-  "geo": "US",
-  "term": "deni avdija",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Game Recap: Trail Blazers 128, 76ers 111 (Nov. 23)",
-  "news_link": "https://www.nba.com/watch/video/game-recap-trail-blazers-128-76ers-111-nov-23"
- },
- {
-  "geo": "US",
-  "term": "jennifer garner",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Jennifer Garner transforms home for daughter Violet's return in photo of holiday traditions",
-  "news_link": "https://www.yahoo.com/entertainment/celebrity/articles/jennifer-garner-transforms-home-daughter-181653641.html"
- },
- {
-  "geo": "US",
-  "term": "mike lafleur",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "DL Zach Allen on Denver's Black Friday game: 'It's a great opportunity'",
-  "news_link": "https://www.denverbroncos.com/video/dl-zach-allen-on-denver-s-black-friday-game-it-s-a-great-opportunity"
- },
- {
-  "geo": "US",
-  "term": "bo melton",
+  "term": "dillon brooks",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Cowboys | WR Jonathan Mingo ruled out for Week 12",
-  "news_link": "https://www.fantasyguru.com/cowboys-wr-jonathan-mingo-ruled-out-for-week-12"
+  "news_title": "Dillon Brooks gets ejected with 23 seconds left vs. Rockets after getting into it with Kevin Durant",
+  "news_link": "https://sports.yahoo.com/nba/breaking-news/article/dillon-brooks-gets-ejected-with-23-seconds-left-vs-rockets-after-getting-into-it-with-kevin-durant-044033904.html"
  },
  {
   "geo": "US",
-  "term": "keegan murray",
+  "term": "domantas sabonis",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Kings start Acuff, Sharp, Hunter, Murray, Sabonis",
-  "news_link": "https://www.nbcsports.com/fantasy/basketball/player-news/2026-11-25/kings-start-acuff-sharp-hunter-murray-sabonis"
+  "news_title": "Domantas Sabonis Scores 20 in Kings' Loss vs Spurs on Nov 23",
+  "news_link": "https://knup.com/sports/nba/player-news/performance/domantas-sabonis-performance-11-23-2026-715946/"
  },
  {
   "geo": "US",
-  "term": "quentin lake",
+  "term": "waymo",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "A Man in Denver Has Been Throwing Eggs at Waymo Vehicles",
+  "news_link": "https://www.nytimes.com/2026/11/25/us/waymo-denver-egg-throwing.html"
+ },
+ {
+  "geo": "US",
+  "term": "zelda ocarina of time update",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Zelda: Ocarina of Time updated to Ver. 1.1.2",
+  "news_link": "https://gonintendo.com/contents/67568-zelda-ocarina-of-time-updated-to-ver-1-1-2"
+ },
+ {
+  "geo": "US",
+  "term": "amazing race",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Rams captain Quentin Lake reveals dream job",
-  "news_link": "https://sports.yahoo.com/nfl/articles/rams-captain-quentin-lake-reveals-221643103.html"
+  "news_title": "CBS Entertainment | The Amazing Race | We’re Not Their Friends",
+  "news_link": "https://www.paramountpressexpress.com/cbs-entertainment/shows/the-amazing-race/video?watch=efnaip5xjs"
+ },
+ {
+  "geo": "US",
+  "term": "luis cárdenas",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Rayados sufriría una baja sensible para la ida contra el América en los cuartos de final por el Apertura 2026",
+  "news_link": "https://www.si.com/es-us/rayados-sufriria-una-dura-baja-para-el-monterrey-vs-america"
+ },
+ {
+  "geo": "US",
+  "term": "minnesota",
+  "traffic": 200,
+  "topics": "정치·관세",
+  "econ": true,
+  "news_title": "Minnesota House District 1 Midterm Election 2026: Live Results",
+  "news_link": "https://www.nbcnews.com/politics/2026-elections/minnesota-us-house-district-1-results"
+ },
+ {
+  "geo": "US",
+  "term": "the hunting wives season 2",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "'It appeals across demographics': How steamy soap The Hunting Wives took on sex, scandal and the US's blue-red divide",
+  "news_link": "https://www.bbc.com/culture/article/20261124-how-steamy-soap-the-hunting-wives-took-on-sex-scandal-and-the-uss-blue-red-divide"
  }
 ]
