@@ -22,8 +22,8 @@
   "format": "단일 이미지",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.88,
-  "kr_n": 800,
+  "kr_avg": 1.87,
+  "kr_n": 804,
   "foreign_avg": 2.66,
   "foreign_n": 537
  },
@@ -38,7 +38,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 1.82,
   "kr_n": 106,
-  "foreign_avg": 2.4,
+  "foreign_avg": 2.41,
   "foreign_n": 172
  },
  {
@@ -99,16 +99,16 @@
  },
  {
   "rank": 8,
-  "topic": "국내 대형주",
-  "kind": "국내 검증 주제",
+  "topic": "환율·달러",
+  "kind": "국내·해외 모두 강세",
   "confidence": "높음",
-  "title_idea": "숫자 하나로 보는 국내 대형주",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "숫자 강조형",
+  "title_idea": "환율·달러, 한 줄 정리",
+  "format": "단일 이미지",
+  "hook": "짧은 한 줄",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.0,
-  "kr_n": 218,
-  "foreign_avg": 0.53,
-  "foreign_n": 10
+  "kr_avg": 1.65,
+  "kr_n": 103,
+  "foreign_avg": 1.26,
+  "foreign_n": 8
  }
 ]
