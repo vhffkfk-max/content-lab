@@ -1,6 +1,15 @@
 [
  {
   "geo": "KR",
+  "term": "부동산",
+  "traffic": 2000,
+  "topics": "부동산",
+  "econ": true,
+  "news_title": "홈플러스 \"인수희망자, 유통사업 운영이 목적\" - 머니투데이",
+  "news_link": "https://www.mt.co.kr/living/2026/11/26/2026112614030735788"
+ },
+ {
+  "geo": "KR",
   "term": "이세영",
   "traffic": 2000,
   "topics": "",
@@ -12,19 +21,10 @@
   "geo": "KR",
   "term": "2027 학년도 대학 수학 능력 시험",
   "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "수능 만점 최소 3명이라는데…모두 \"공개 싫다\" 이유가",
-  "news_link": "https://www.hankyung.com/article/202611261522H"
- },
- {
-  "geo": "KR",
-  "term": "도산소옥",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "[위클리오늘] 산업일반 소식_넥슨, 엔씨(11.20)",
-  "news_link": "http://www.weeklytoday.com/news/articleView.html?idxno=802775"
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "수능 만점 받고도 숨는다…AI 부정행위 논란에 ‘쉬쉬’",
+  "news_link": "https://news.jtbc.co.kr/article/NB12329904"
  },
  {
   "geo": "KR",
@@ -32,8 +32,8 @@
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "철도노조 준법 투쟁 여파로 일반 열차 3대 운행 중지",
-  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8723502"
+  "news_title": "[속보] 코레일 “광역전철 235대 20분 이상 지연…일반열차 4대 운행정지”",
+  "news_link": "https://www.hani.co.kr/arti/economy/economy_general/1289313.html"
  },
  {
   "geo": "KR",
@@ -64,17 +64,8 @@
  },
  {
   "geo": "KR",
-  "term": "이집트",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "“탈출할 시간조차 없었다”…이집트 유조차 충돌 화재 최소 30명 사망 [현장영상]",
-  "news_link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8723106"
- },
- {
-  "geo": "KR",
   "term": "김희애",
-  "traffic": 100,
+  "traffic": 200,
   "topics": "",
   "econ": false,
   "news_title": "김희애, 생애 첫 하프 마라톤 완주 \"한 번도 걷지 않아\"",
@@ -83,15 +74,24 @@
  {
   "geo": "KR",
   "term": "영업 비밀",
-  "traffic": 100,
+  "traffic": 200,
   "topics": "AI·반도체",
   "econ": true,
   "news_title": "“35년 근무한 기술부장이 반도체 핵심기술 중국에 넘겼다”... 日 아사히카세이 영업비밀 유출, 전 직원 기소",
   "news_link": "http://www.e-patentnews.com/15988"
  },
  {
+  "geo": "KR",
+  "term": "이집트",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "“탈출할 시간조차 없었다”…이집트 유조차 충돌 화재 최소 30명 사망 [현장영상]",
+  "news_link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8723106"
+ },
+ {
   "geo": "US",
-  "term": "ksdk",
+  "term": "modot",
   "traffic": 10000,
   "topics": "",
   "econ": false,
@@ -100,35 +100,8 @@
  },
  {
   "geo": "US",
-  "term": "in n out",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "LAPD looking for hate crime suspect after apparent racist tirade at Sherman Oaks In-N-Out",
-  "news_link": "https://www.nbclosangeles.com/news/local/sherman-oaks-in-n-out-racist-attack/3974349/"
- },
- {
-  "geo": "US",
-  "term": "3",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Guardians bringing back lefty Griffin on 3-year, $48 million deal (source)",
-  "news_link": "https://www.mlb.com/news/foster-griffin-guardians-contract"
- },
- {
-  "geo": "US",
-  "term": "egypt",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "At least 31 killed in fuel tanker fire near Cairo, Egyptian authorities say",
-  "news_link": "https://www.cnn.com/2026/11/25/middleeast/cairo-egypt-tanker-fire-latam-intl"
- },
- {
-  "geo": "US",
   "term": "dennys",
-  "traffic": 500,
+  "traffic": 1000,
   "topics": "AI·반도체",
   "econ": true,
   "news_title": "‘Your booth is waiting’: Denny’s welcomes Jensen Huang back as Nvidia CEO",
@@ -140,8 +113,26 @@
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Virginia Beach braces for Thanksgiving storm as officials warn of flooding, strong winds and rough surf",
-  "news_link": "https://www.13newsnow.com/article/weather/severe-weather/virginia-beach-braces-for-thanksgiving-storm-as-officials-warn-of-flooding-strong-winds-and-rough-surf/291-1351fd8f-3765-49b7-9146-cf3eda651538"
+  "news_title": "Coastal storm warning expected to have significant impacts on region",
+  "news_link": "https://www.wavy.com/weather/severe-weather/coastal-storm-warning-expected-to-have-significant-impacts-on-region/"
+ },
+ {
+  "geo": "US",
+  "term": "india a vs sri lanka a",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "SLA vs INDA, 1st Semi-Final (A1 v B2), ACC Men's Asia Cup Rising Stars 2026 - Commentary",
+  "news_link": "https://m.cricbuzz.com/live-cricket-scores/177210/inda-vs-sla-1st-semi-final-a1-v-b2-acc-mens-asia-cup-rising-stars-2026"
+ },
+ {
+  "geo": "US",
+  "term": "alabama power",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Alabama landowner uses semi-truck trailers to block power company access",
+  "news_link": "https://www.wvtm13.com/article/alabama-landowner-uses-18-wheelers-to-block-power-company-access/74514204"
  },
  {
   "geo": "US",
@@ -154,21 +145,21 @@
  },
  {
   "geo": "US",
-  "term": "sl-a vs ind-a",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "SLA vs INDA, 1st Semi-Final (A1 v B2), ACC Men's Asia Cup Rising Stars 2026 - Commentary",
-  "news_link": "https://www.cricbuzz.com/live-cricket-scores/177210/sla-vs-inda-1st-semi-final-a1-v-b2-acc-mens-asia-cup-rising-stars-2026"
- },
- {
-  "geo": "US",
   "term": "the legend of zelda wind waker",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Wind Waker Recomp Brings Zelda Game to Native PC",
-  "news_link": "https://demokratis.co.id/en/wind-waker-recomp-native-pc"
+  "news_title": "One of the best Zelda games you probably forgot about just got an unofficial PC port",
+  "news_link": "https://www.xda-developers.com/one-of-best-zelda-games-you-probably-forgot-about-just-got-unofficial-pc-port/"
+ },
+ {
+  "geo": "US",
+  "term": "trump-xi summit",
+  "traffic": 200,
+  "topics": "정치·관세",
+  "econ": true,
+  "news_title": "Cartoon: The meeting of Donald Trump, Xi Jinping and Vladimir Putin",
+  "news_link": "https://www.economist.com/the-world-this-week/2026/11/19/cartoon-the-meeting-of-donald-trump-xi-jinping-and-vladimir-putin"
  },
  {
   "geo": "US",
@@ -178,5 +169,14 @@
   "econ": false,
   "news_title": "Georgia basketball takes on Cincinnati to open ESPN Events Invitational",
   "news_link": "https://247sports.com/college/georgia/article/georgia-basketball-takes-on-cincinnati-to-open-espn-events-invitational-293294548/"
+ },
+ {
+  "geo": "US",
+  "term": "gma",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "'GMA' Deals & Steals Free Shipping Bonanza",
+  "news_link": "https://www.goodmorningamerica.com/shop/story/gma-deals-steals-free-shipping-bonanza-138326554"
  }
 ]
