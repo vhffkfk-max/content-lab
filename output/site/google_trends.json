@@ -28,15 +28,6 @@
  },
  {
   "geo": "KR",
-  "term": "погода завтра",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "",
-  "news_link": ""
- },
- {
-  "geo": "KR",
   "term": "김아현 주식 눈물",
   "traffic": 1000,
   "topics": "국내 대형주, 급락·변동성",
@@ -46,12 +37,12 @@
  },
  {
   "geo": "KR",
-  "term": "삼성반도체",
+  "term": "반도체 메모리",
   "traffic": 1000,
-  "topics": "AI·반도체, 국내 대형주",
+  "topics": "AI·반도체",
   "econ": true,
-  "news_title": "삼성전자, 메모리 개발체제 일원화…시스템LSI 영업 강화",
-  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8723664"
+  "news_title": "\"이재용, '반도체 장기구매할게' 머스크에 '그럼 뭘 해줄건데'\"",
+  "news_link": "https://www.yna.co.kr/view/AKR20261126188000009"
  },
  {
   "geo": "KR",
@@ -61,6 +52,24 @@
   "econ": false,
   "news_title": "설인아→연우 '무쇠소녀단3', 김동현도 기겁한 첫 훈련…\"이런 악마 같은 걸\" - 머니투데이",
   "news_link": "https://www.mt.co.kr/entertainment/2026/11/26/2026112617007254733"
+ },
+ {
+  "geo": "KR",
+  "term": "u17 việt nam",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "TRỰC TIẾP bóng đá U17 Việt Nam vs U17 Mali - U17 World Cup 2026",
+  "news_link": "https://vietnamnet.vn/truc-tiep-bong-da-u17-viet-nam-vs-u17-mali-u17-world-cup-2026-2578759.html"
+ },
+ {
+  "geo": "KR",
+  "term": "송파구",
+  "traffic": 200,
+  "topics": "부동산",
+  "econ": true,
+  "news_title": "李대통령이 옳았나…송파 집값, 4년만에 역대급 추락했다",
+  "news_link": "https://www.mk.co.kr/news/realestate/12219258"
  },
  {
   "geo": "KR",
@@ -81,22 +90,22 @@
   "news_link": "https://m.ekn.kr/view.php?key=20261126024275133"
  },
  {
-  "geo": "KR",
-  "term": "박장범",
-  "traffic": 100,
+  "geo": "US",
+  "term": "tornado warning",
+  "traffic": 5000,
   "topics": "",
   "econ": false,
-  "news_title": "KBS ‘BBQ 정·관계 티켓 로비’ 보도 막혔다…“초청 명단에 박장범 사장도”",
-  "news_link": "https://www.mediatoday.co.kr/news/articleView.html?idxno=338727"
+  "news_title": "‘That’s so cool’: Waterspouts spotted over San Francisco Bay",
+  "news_link": "https://weather.com/2026/11/17/news/trending/video/san-francisco-bay-twin-waterspouts-caught-on-camera"
  },
  {
   "geo": "US",
-  "term": "mortgage rates today",
-  "traffic": 2000,
-  "topics": "부동산",
-  "econ": true,
-  "news_title": "The average US 30-year mortgage rate eases to 7.21%, not far from 2026 high",
-  "news_link": "https://abcnews.com/Business/wireStory/average-us-30-year-mortgage-rate-eases-721-138446333"
+  "term": "charlotte arnould",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Gérard Depardieu renvoyé en procès pour une partie des viols dont il est accusé par Charlotte Arnould",
+  "news_link": "https://www.france24.com/fr/france/20261126-gerard-depardieu-renvoy%C3%A9-en-appel-pour-une-partie-des-viols-dont-il-est-accuse-par-charlotte-arnould"
  },
  {
   "geo": "US",
@@ -109,74 +118,65 @@
  },
  {
   "geo": "US",
-  "term": "when did savannah guthrie's mom disappear",
+  "term": "sarah hyland",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Savannah Guthrie’s Thanksgiving Plans Confirmed as Mom Nancy Remains Missing",
-  "news_link": "https://www.imdb.com/de/news/ni66120795/"
+  "news_title": "Today’s famous birthdays list for November 24, 2026 includes celebrities Colin Hanks, Sarah Hyland",
+  "news_link": "https://www.cleveland.com/entertainment/2026/11/todays-famous-birthdays-list-for-november-24-2026-includes-celebrities-colin-hanks-sarah-hyland.html"
  },
  {
   "geo": "US",
-  "term": "good morning america",
+  "term": "walmart black friday",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "What time does Walmart open on Black Friday?",
+  "news_link": "https://www.al.com/news/huntsville/2026/11/what-time-does-walmart-open-on-black-friday.html"
+ },
+ {
+  "geo": "US",
+  "term": "ciara",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Deals & Steals for Thanksgiving",
-  "news_link": "https://www.goodmorningamerica.com/shop/story/deals-steals-thanksgiving-138395996"
+  "news_title": "Ciara and Russell Wilson Kick Off Christmas at Macy's",
+  "news_link": "https://www.yahoo.com/entertainment/celebrity/articles/ciara-russell-wilson-kick-off-200203691.html"
  },
  {
   "geo": "US",
-  "term": "lululemon black friday",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "I Won’t Risk Waiting for Black Friday to Shop These Deals on Coach Bags, Lululemon Jackets, and More — from $13",
-  "news_link": "https://people.com/what-to-buy-on-thanksgiving-black-friday-deals-2026-12187567"
- },
- {
-  "geo": "US",
-  "term": "the tonight show starring jimmy fallon justin timberlake",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Justin Timberlake and Jimmy Fallon Do the ‘Cha Cha Slide’ in ‘Tonight Show’ Sneak Peek",
-  "news_link": "https://people.com/justin-timberlake-jimmy-fallon-cha-cha-slide-tonight-show-sneak-peek-12280001"
- },
- {
-  "geo": "US",
-  "term": "wdiv",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Wet and Windy Thanksgiving Across Metro Detroit; Rain May Mix With Snow Tonight",
-  "news_link": "https://www.clickondetroit.com/weather/2026/11/26/wet-and-windy-thanksgiving-across-metro-detroit-rain-may-mix-with-snow-tonight/"
- },
- {
-  "geo": "US",
-  "term": "click on detroit.com",
-  "traffic": 200,
-  "topics": "급락·변동성",
-  "econ": true,
-  "news_title": "Woman waiting for tow truck on I-75 killed in Thanksgiving Day crash",
-  "news_link": "https://www.freep.com/story/news/local/michigan/detroit/2026/11/26/i-75-fatal-crash-detroit/92969570007/"
- },
- {
-  "geo": "US",
-  "term": "george washington thanksgiving proclamation",
+  "term": "delmarva power outage",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Opinion | Learning to be grateful, even when life gets hard",
-  "news_link": "https://www.bostonglobe.com/2026/11/26/opinion/thanksgiving-gratitude-lincoln-loss/"
+  "news_title": "Power outages steadily increasing across Delmarva",
+  "news_link": "https://www.wboc.com/news/power-outages-steadily-increasing-across-delmarva/article_cc5ebcfc-445c-4010-9021-b45fe3fcae4d.html"
  },
  {
   "geo": "US",
-  "term": "rockettes",
+  "term": "ken jeong",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Identical Twins Found Out They Made the Rockettes Seconds Apart (Exclusive)",
-  "news_link": "https://people.com/identical-twins-rockettes-found-out-made-team-seconds-apart-exclusive-12267264"
+  "news_title": "Checkout.com Campaign Assures Retailers The Holiday Season Will Be 'Alright' 11/25/2026",
+  "news_link": "https://www.mediapost.com/publications/article/419669/checkoutcom-campaign-assures-retailers-the-holida.html?edition=144571"
+ },
+ {
+  "geo": "US",
+  "term": "national day of mourning",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "Massachusetts judge rules Plymouth owes no stage for Thanksgiving protest in America's Hometown",
+  "news_link": "https://www.bostonherald.com/2026/11/25/massachusetts-judge-rules-plymouth-owes-no-stage-for-thanksgiving-protest-in-americas-hometown/"
+ },
+ {
+  "geo": "US",
+  "term": "one piece 1200",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "One Piece chapter 1200 spoilers: Lili's letter reveals Imu and Joyboy's fallout",
+  "news_link": "https://www.aol.com/articles/one-piece-chapter-1200-spoilers-113000000.html"
  }
 ]
