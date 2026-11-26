@@ -1,35 +1,53 @@
 [
  {
   "geo": "KR",
-  "term": "유튜버",
+  "term": "세무 냥이",
+  "traffic": 2000,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "[속보]경찰, ‘AI 부정행위 자수’ 세무사시험 수석에 구속영장 신청",
+  "news_link": "https://www.khan.co.kr/article/202611261903001"
+ },
+ {
+  "geo": "KR",
+  "term": "탄핵",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "정성호 \"조희대 탄핵 시 후과는 여당이 책임져야\" 우려",
+  "news_link": "https://imnews.imbc.com/news/2026/politics/article/6868732_36911.html"
+ },
+ {
+  "geo": "KR",
+  "term": "погода",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "’구독자 1,010만’ 진우와 해티, 이혼 발표…채널은 어떻게 나눴나",
-  "news_link": "https://www.yonhapnewstv.co.kr/news/AKR20261126161521wKw"
+  "news_title": "Без права на оттепель: какой будет погода в Москве в начале декабря",
+  "news_link": "https://www.rtvi.com/news/bez-prava-na-ottepel-kakoj-budet-pogoda-v-moskve-v-nachale-dekabrya/"
  },
  {
   "geo": "KR",
-  "term": "정년",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "일자리 없거나 나쁘거나‥연내 입법 가능할까?",
-  "news_link": "https://imnews.imbc.com/replay/2026/nwtoday/article/6868959_37012.html"
+  "term": "배당",
+  "traffic": 1000,
+  "topics": "환율·달러, 배당",
+  "econ": true,
+  "news_title": "국금센터 \"연말까지 외국인 배당 23.4조…환율 일시적 상승압력\"",
+  "news_link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4446436"
  },
  {
   "geo": "KR",
-  "term": "주식",
-  "traffic": 500,
+  "term": "부부",
+  "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "\"스페이스X 1주 13조원 간다\"…머스크 또 파격 전망 - 머니투데이",
-  "news_link": "https://www.mt.co.kr/world/2026/11/27/2026112706312036711"
+  "news_title": "아내 친구에 고백→뽀뽀한 남편...아내는 딴 남자와 동거 - 머니투데이",
+  "news_link": "https://www.mt.co.kr/entertainment/2026/11/26/2026112609443254780"
  },
  {
   "geo": "KR",
   "term": "광명시",
-  "traffic": 200,
+  "traffic": 500,
   "topics": "",
   "econ": false,
   "news_title": "[경기] '복합형 돔구장' 경기도 후보지에 광명·수원 선정",
@@ -37,146 +55,128 @@
  },
  {
   "geo": "KR",
-  "term": "알테오젠",
-  "traffic": 200,
+  "term": "배구",
+  "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "알테오젠, '키트루다SC' 기술료 538원 추가로 받는다",
-  "news_link": "https://www.yna.co.kr/view/AKR20261126184700017"
+  "news_title": "온힘을 다해",
+  "news_link": "https://www.newsis.com/view/NISI20261126_0021546927"
  },
  {
   "geo": "KR",
-  "term": "파운드리",
-  "traffic": 200,
-  "topics": "AI·반도체",
+  "term": "박현경",
+  "traffic": 100,
+  "topics": "",
+  "econ": false,
+  "news_title": "'11m 버디 퍼트 쏘옥'…박현경, 日 최종전 첫날 공동 4위 '쾌속 출발'",
+  "news_link": "https://www.edaily.co.kr/News/Read?newsId=04077046645649656&mediaCodeNo=257"
+ },
+ {
+  "geo": "KR",
+  "term": "삼성자산운용",
+  "traffic": 100,
+  "topics": "AI·반도체, 연금·절세",
   "econ": true,
-  "news_title": "AI 반도체 호황인데…TSMC와 더 멀어진 삼성의 승부수 - 머니투데이",
-  "news_link": "https://www.mt.co.kr/industry/2026/11/27/2026112614411974849"
+  "news_title": "[조세금융만평] AI 앞에 무력해진 시험 감독망",
+  "news_link": "https://www.tfmedia.co.kr/news/article.html?no=209117"
  },
  {
   "geo": "KR",
-  "term": "농협",
+  "term": "한국경제신문사",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "농협은행, 대안신용평가로 포용금융 확대…NH크레딧ON 컨퍼런스",
-  "news_link": "https://www.yna.co.kr/view/AKR20261126153500002"
- },
- {
-  "geo": "KR",
-  "term": "마이클세일러",
-  "traffic": 100,
-  "topics": "비트코인, 알트코인",
-  "econ": true,
-  "news_title": "美CFTC, 비트코인·이더리움·스테이블코인도 금융준비금 인정",
-  "news_link": "https://www.edaily.co.kr/News/Read?newsId=02728966645649000&mediaCodeNo=257"
- },
- {
-  "geo": "KR",
-  "term": "정부 예산",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "민주당 전남광주시당, 국책사업 국비 541억원 증액 건의",
-  "news_link": "https://www.yna.co.kr/view/AKR20261126185900054"
- },
- {
-  "geo": "KR",
-  "term": "포도",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "\"포도의 최대 13배\"… 항산화 성분 풍부한 식품 4가지",
-  "news_link": "https://news.hidoc.co.kr/news/articleView.html?idxno=70492"
+  "news_title": "\"삼전닉스 너무 올라서 고민\"…수백억 자산가들의 '속앓이'",
+  "news_link": "https://www.hankyung.com/article/2026112502771"
  },
  {
   "geo": "US",
-  "term": "the comeback king",
+  "term": "zach ertz",
+  "traffic": 20000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Finnie scores twice as Red Wings stuff Canucks 5-1",
+  "news_link": "https://www.detroitnews.com/story/sports/nhl/red-wings/2026/11/25/finnie-scores-twice-as-red-wings-stuff-canucks-5-1/92966878007/"
+ },
+ {
+  "geo": "US",
+  "term": "kavontae turpin",
   "traffic": 5000,
-  "topics": "금리·연준",
-  "econ": true,
-  "news_title": "‘The Comeback King’ Trailer: Glen Powell Is a Cancelled Country Star in Judd Apatow’s Latest Directing Project",
-  "news_link": "https://www.indiewire.com/news/trailers/the-comeback-king-trailer-glen-powell-judd-apatow-1235229108/"
+  "topics": "",
+  "econ": false,
+  "news_title": "KaVontae Turpin takes jet sweep 22 yards for TD to extend Cowboys' lead over Titans | NFL Highlights",
+  "news_link": "https://www.foxsports.com/watch-vertical/fmc-bi02ymw0zngoiwr5"
  },
  {
   "geo": "US",
-  "term": "ceedee lamb",
+  "term": "george pickens",
   "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "CeeDee Lamb approaching more records, but 'wants to win' as well",
-  "news_link": "https://www.dallascowboys.com/news/ceedee-lamb-approaching-more-records-but-wants-to-win-as-well"
+  "news_title": "George Pickens joins CeeDee Lamb in topping 100 yards",
+  "news_link": "https://www.dallascowboys.com/news/george-pickens-joins-ceedee-lamb-in-topping-100-yards"
  },
  {
   "geo": "US",
-  "term": "glen powell",
+  "term": "saquon barkley injury",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Saquon Barkley healthier after bye, hoping to salvage his season",
+  "news_link": "https://www.nbcsportsphiladelphia.com/nfl/philadelphia-eagles/saquon-barkley-healthier-after-bye-hoping-to-turn-his-season-around/768301/"
+ },
+ {
+  "geo": "US",
+  "term": "shipley eagles",
   "traffic": 1000,
-  "topics": "금리·연준",
-  "econ": true,
-  "news_title": "Glen Powell’s Ex Gigi Paris Drops Major Relationship News 3 Years After Their Split",
-  "news_link": "https://www.yahoo.com/entertainment/articles/glen-powell-ex-gigi-paris-191827121.html"
+  "topics": "",
+  "econ": false,
+  "news_title": "Eagles HC Nick Sirianni in Sideline Shouting Match vs. Cowboys",
+  "news_link": "https://heavy.com/sports/nfl/philadelphia-eagles/nick-sirianni-shouting-match-will-shipley/"
  },
  {
   "geo": "US",
-  "term": "joey porter jr",
+  "term": "will shipley",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Joey Porter Jr.'s Lockdown Coverage is Forcing Cowboys' Hand on Contract Extension",
-  "news_link": "https://www.si.com/nfl/cowboys/onsi/joey-porter-jr-lockdown-coverage-forcing-cowboys-hand-contract-extension"
+  "news_title": "Steelers vs. Eagles Inactives",
+  "news_link": "https://www.philadelphiaeagles.com/news/steelers-vs-eagles-inactives-nfl-2026-week-11-salute-to-service"
  },
  {
   "geo": "US",
-  "term": "caleb williams injury",
+  "term": "jada pinkett smith",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Caleb Williams comes back in 4th, gets X-rays",
-  "news_link": "https://www.nbcsports.com/fantasy/football/player-news/2026-11-26/caleb-williams-comes-back-in-4th-gets-x-rays"
+  "news_title": "Jada Pinkett Smith Shares Photos of Thanksgiving Set Up Days After Fire on Property",
+  "news_link": "https://people.com/jada-pinkett-smith-shares-photo-of-thanksgiving-set-up-at-family-abode-days-after-barn-fire-12282117"
  },
  {
   "geo": "US",
-  "term": "court",
+  "term": "marshawn lynch",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Inside Europe’s Push to Make Smart Glasses Safe for Bystanders",
-  "news_link": "https://spectrum.ieee.org/europe-smart-glasses"
+  "news_title": "Seahawk greats Richard Sherman, Earl Thomas, Marshawn Lynch advance in Hall of Fame voting",
+  "news_link": "https://komonews.com/sports/seahawks/seahawk-greats-richard-sherman-earl-thomas-marshawn-lynch-advance-in-hall-of-fame-voting"
  },
  {
   "geo": "US",
-  "term": "jennifer garner",
+  "term": "pamela anderson",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Jennifer Garner Just Made Us Want to Live in This Cozy Staple All Winter — Shop Similar Quince Picks from $25",
-  "news_link": "https://people.com/jennifer-garner-quince-gray-turtleneck-sweater-november-2026-12280654"
+  "news_title": "Pamela Anderson proves skinny jeans are winter's most elegant denim style for women over 50",
+  "news_link": "https://www.harpersbazaar.com/uk/fashion/shopping/a74539871/pamela-anderson-skinny-jeans/"
  },
  {
   "geo": "US",
-  "term": "meghan, duchess of sussex",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "How Meghan Markle Is Hosting Her First Thanksgiving Back in Britain",
-  "news_link": "https://www.vogue.com/article/how-meghan-markle-is-hosting-her-first-thanksgiving-back-in-britain"
- },
- {
-  "geo": "US",
-  "term": "quinyon mitchell",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Eagles-Cowboys Thanksgiving inactives: Grant Calcaterra is a healthy scratch",
-  "news_link": "https://www.bleedinggreennation.com/philadelphia-eagles-injuries/191526/eagles-cowboys-thanksgiving-inactives-grant-calcaterra-is-a-healthy-scratch"
- },
- {
-  "geo": "US",
-  "term": "makai lemon",
+  "term": "new movies to stream",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Eagles-Steelers questions: Reflecting on the Makai Lemon pick, previewing 2027 NFL Draft - The Athletic",
-  "news_link": "https://www.nytimes.com/athletic/7799229/2026/11/21/eagles-steelers-questions-makai-lemon-2027-nfl-draft-preview/"
+  "news_title": "New movies on streaming: ‘The Odyssey,’ ‘A Talent For Murder’ and more",
+  "news_link": "https://decider.com/2026/11/20/new-movies-on-streaming-where-to-watch-the-odyssey-a-talent-for-murder-and-more/"
  }
 ]
