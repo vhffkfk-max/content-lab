@@ -11,7 +11,7 @@
  {
   "geo": "KR",
   "term": "반도체 메모리",
-  "traffic": 1000,
+  "traffic": 2000,
   "topics": "AI·반도체",
   "econ": true,
   "news_title": "\"이재용, '반도체 장기구매할게' 머스크에 '그럼 뭘 해줄건데'\"",
@@ -19,17 +19,8 @@
  },
  {
   "geo": "KR",
-  "term": "이데일리",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "[단독]LG화학, 美 파트너사 항암제 협력 정리…8년 만에 방향 튼 배경은",
-  "news_link": "https://pharm.edaily.co.kr/news/read?newsId=01551446645649656"
- },
- {
-  "geo": "KR",
   "term": "강소휘",
-  "traffic": 500,
+  "traffic": 1000,
   "topics": "",
   "econ": false,
   "news_title": "[영상] 기업은행 노장의 분노, 그리고 이소영 딜레마?",
@@ -39,10 +30,10 @@
   "geo": "KR",
   "term": "회계사",
   "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "중고생 담배·음주 줄고 고강도 신체활동↑",
-  "news_link": "https://m.science.ytn.co.kr/program/view_today.php?s_mcd=0082&key=202611261603312920"
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "전국 60개 대학 AI·SW 성과 한자리에",
+  "news_link": "https://m.science.ytn.co.kr/program/view_today.php?s_mcd=0082&key=202611261108002181"
  },
  {
   "geo": "KR",
@@ -73,6 +64,15 @@
  },
  {
   "geo": "KR",
+  "term": "크리스 리벤",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "\"맞자마자 반칙이라고 생각\" 추성훈에게 맞고 안와골절…'사커킥 맞은 순간' 떠올린 크리스 리벤",
+  "news_link": "https://www.spotvnews.co.kr/news/articleView.html?idxno=1022153"
+ },
+ {
+  "geo": "KR",
   "term": "삼성반도체",
   "traffic": 100,
   "topics": "AI·반도체",
@@ -82,12 +82,21 @@
  },
  {
   "geo": "KR",
-  "term": "크리스 리벤",
+  "term": "정은경",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "“용돈 괜찮으니 아프지 마”…폭풍성장 사랑이 ‘은퇴’ 추성훈 응원",
-  "news_link": "https://www.joongang.co.kr/article/25481707"
+  "news_title": "[동정] 복지장관, 동대문구-우체국 협업 '찾아가는 그냥드림' 점검",
+  "news_link": "https://www.yna.co.kr/view/AKR20261126150500530"
+ },
+ {
+  "geo": "US",
+  "term": "conference league",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Spectacular Felix strike earns Al-Nassr Asian Champions League win",
+  "news_link": "https://www.reuters.com/sports/soccer/spectacular-felix-strike-earns-al-nassr-asian-champions-league-win-2026-11-24/"
  },
  {
   "geo": "US",
@@ -100,30 +109,39 @@
  },
  {
   "geo": "US",
-  "term": "charlie brown",
+  "term": "gta vi endings",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Where to stream 'A Charlie Brown Thanksgiving' today for free: How to watch all the Peanuts holiday specials in 2026",
-  "news_link": "https://www.yahoo.com/entertainment/tv/article/where-to-stream-a-charlie-brown-thanksgiving-today-for-free-how-to-watch-all-the-peanuts-holiday-specials-in-2026-131541123.html"
+  "news_title": "‘GTA 6’ Has At Least 9 Distinct Endings",
+  "news_link": "https://variety.com/2026/gaming/news/gta-6-endings-possible-jason-lucia-1236958026/"
  },
  {
   "geo": "US",
-  "term": "gordon ramsay",
+  "term": "mariska hargitay",
   "traffic": 500,
-  "topics": "급락·변동성",
-  "econ": true,
-  "news_title": "Gordon Ramsay to host Top Gear as show revived after Flintoff crash",
-  "news_link": "https://www.bbc.com/news/articles/cjr4gw100d52o"
+  "topics": "",
+  "econ": false,
+  "news_title": "Mariska Hargitay and Peter Hermann Were Cast in Daughter’s Production of ‘The Nutcracker’",
+  "news_link": "https://people.com/mariska-hargitay-reveals-she-and-husband-peter-hermann-were-cast-in-her-daughters-production-of-the-nutcracker-12276971"
  },
  {
   "geo": "US",
-  "term": "ciudadano",
+  "term": "paw patrol",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "PAW Patrol Live! is on a roll up north as popular kids TV show hits UK venues",
+  "news_link": "https://uk.news.yahoo.com/paw-patrol-live-roll-north-204609033.html"
+ },
+ {
+  "geo": "US",
+  "term": "carving a turkey",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Un ciudadano ucraniano de 22 años se prende fuego frente al Palacio Presidencial en Varsovia y está grave",
-  "news_link": "https://es-us.noticias.yahoo.com/ciudadano-ucraniano-22-a%C3%B1os-prende-115532141.html"
+  "news_title": "To Avoid the E.R. This Thanksgiving, Follow These Expert Tips",
+  "news_link": "https://www.nytimes.com/2026/11/20/well/thanksgiving-emergency-room-er.html"
  },
  {
   "geo": "US",
@@ -136,39 +154,21 @@
  },
  {
   "geo": "US",
-  "term": "gta vi endings",
+  "term": "full house",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "‘GTA 6’ Has At Least 9 Distinct Endings",
-  "news_link": "https://variety.com/2026/gaming/news/gta-6-endings-possible-jason-lucia-1236958026/"
+  "news_title": "Candace Cameron Bure Says She Still Gets ‘Substantial’ ‘Full House’ Residuals and Wasn’t Surprised the Olsen Twins Skipped ‘Fuller House’: No One ‘Stayed Close’ With Them",
+  "news_link": "https://variety.com/2026/tv/news/candace-cameron-bure-full-house-residuals-olsen-twins-1236958774/"
  },
  {
   "geo": "US",
-  "term": "paw patrol",
+  "term": "november 26",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "PAW Patrol Live! is on a roll up north as popular kids TV show hits UK venues",
-  "news_link": "https://uk.news.yahoo.com/paw-patrol-live-roll-north-204609033.html"
- },
- {
-  "geo": "US",
-  "term": "ras tanura refinery",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Yemen's Houthis claim attack on Saudi Arabia's largest refinery",
-  "news_link": "https://www.reuters.com/world/middle-east/yemens-houthis-say-they-attacked-saudi-oil-refinery-riyadh-financial-district-2026-11-25/"
- },
- {
-  "geo": "US",
-  "term": "rome odunze",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Fantasy Start or Sit Week 12: Monangai, Swift, Burden, Williams, Loveland, Odunze",
-  "news_link": "https://www.si.com/nfl/bears/onsi/fantasy-start-sit-week-12-monangai-swift-burden-williams-loveland-odunze"
+  "news_title": "Political cartoons for November 23",
+  "news_link": "https://theweek.com/cartoons/political-cartoons-for-november-23-2026"
  },
  {
   "geo": "US",
