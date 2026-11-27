@@ -1,6 +1,15 @@
 [
  {
   "geo": "KR",
+  "term": "포수",
+  "traffic": 10000,
+  "topics": "",
+  "econ": false,
+  "news_title": "한화 허인서, 최고 신인 영예…16년 만에 탄생한 포수 신인왕",
+  "news_link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8723404"
+ },
+ {
+  "geo": "KR",
   "term": "김아현의 금빛 스탁",
   "traffic": 5000,
   "topics": "급락·변동성",
@@ -10,26 +19,8 @@
  },
  {
   "geo": "KR",
-  "term": "포수",
-  "traffic": 5000,
-  "topics": "",
-  "econ": false,
-  "news_title": "한화 허인서, 최고 신인 영예…16년 만에 탄생한 포수 신인왕",
-  "news_link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8723404"
- },
- {
-  "geo": "KR",
-  "term": "과학기술인공제회",
-  "traffic": 2000,
-  "topics": "",
-  "econ": false,
-  "news_title": "",
-  "news_link": ""
- },
- {
-  "geo": "KR",
   "term": "연비",
-  "traffic": 2000,
+  "traffic": 5000,
   "topics": "",
   "econ": false,
   "news_title": "겨울비 내리는 날, 자동차 연비는 왜 떨어질까??",
@@ -38,11 +29,20 @@
  {
   "geo": "KR",
   "term": "lg에너지솔루션",
-  "traffic": 500,
+  "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "[단독] LG에너지솔루션 빠진 3차 ESS 중앙계약시장, 삼성SDI가 웃었다.",
-  "news_link": "https://www.electimes.com/news/articleView.html?idxno=375356"
+  "news_title": "[단독] 3차 ESS 중앙계약시장, 이지스·KGP·에퀴스·SK이터닉스 ‘설욕’ 성공",
+  "news_link": "https://www.electimes.com/news/articleView.html?idxno=375355"
+ },
+ {
+  "geo": "KR",
+  "term": "ai 에이전트",
+  "traffic": 500,
+  "topics": "AI·반도체",
+  "econ": true,
+  "news_title": "'피클'이 촉발한 AI 비서 규율 논의…정부, 법 개정 만지작",
+  "news_link": "https://zdnet.co.kr/view/?no=20261125140053"
  },
  {
   "geo": "KR",
@@ -50,17 +50,17 @@
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "경인지방병무청, 2027년 현역병입영일자 본인선택 접수",
-  "news_link": "https://sports.donga.com/region/article/all/20261124/135080630/1"
+  "news_title": "병무청, '병역면탈 의심' 질병 조기전역자 자료확보 근거 마련",
+  "news_link": "https://www.yna.co.kr/view/AKR20261127068900504"
  },
  {
   "geo": "KR",
-  "term": "국가보훈부",
+  "term": "유한양행",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "보훈증명서 10종, 30일부터 무인민원발급기서 '무료' 발급",
-  "news_link": "https://www.korea.kr/news/policyNewsView.do?newsId=148976609"
+  "news_title": "유한양행 '버들장터', 건기식·생활용품 할인…최대 10만원 쿠폰 지급",
+  "news_link": "https://www.etnews.com/20261127000053"
  },
  {
   "geo": "KR",
@@ -68,8 +68,8 @@
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "\"어디서나 참여할 수 있는 전자주주총회\" 법무부, 기업이 어떻게 준비해야 할지 기준 제시",
-  "news_link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156790750"
+  "news_title": "예탁원, 전자주총 의무화 앞두고 영상중계·현장운영 협력 논의",
+  "news_link": "https://www.yna.co.kr/view/AKR20261127045600008"
  },
  {
   "geo": "KR",
@@ -82,101 +82,101 @@
  },
  {
   "geo": "KR",
-  "term": "신창재",
+  "term": "sema",
   "traffic": 100,
   "topics": "",
   "econ": false,
-  "news_title": "호텔롯데, 지속가능성보고서 국제 평가서 '플래티넘'…세계 25위",
-  "news_link": "https://www.newsis.com/view/NISX20261127_0003885501"
+  "news_title": "SEMA’s wildest builds show where car customization is heading",
+  "news_link": "https://www.wsav.com/news/semas-wildest-builds-show-where-car-customization-is-heading/"
  },
  {
   "geo": "US",
-  "term": "nfl standings cowboys",
-  "traffic": 20000,
-  "topics": "",
-  "econ": false,
-  "news_title": "2026 NFL Thanksgiving preview: Picks, predictions, schedule, odds, fantasy tips",
-  "news_link": "https://www.espn.com/nfl/story/_/id/50582822/thanksgiving-games-picks-schedule-fantasy-odds-2026"
- },
- {
-  "geo": "US",
-  "term": "bills schedule",
+  "term": "emmett johnson",
   "traffic": 5000,
   "topics": "",
   "econ": false,
-  "news_title": "Buffalo Bills injury report vs. Chiefs | Week 12 Thanksgiving",
-  "news_link": "https://www.buffalobills.com/news/buffalo-bills-injury-report-vs-chiefs-week-12-thanksgiving"
+  "news_title": "Grading all 32 NFL first-round rookies after Week 11",
+  "news_link": "https://www.pff.com/news/grading-all-32-nfl-first-round-rookies-after-week-11"
  },
  {
   "geo": "US",
-  "term": "nfc east standings",
-  "traffic": 5000,
+  "term": "louisville basketball",
+  "traffic": 2000,
   "topics": "",
   "econ": false,
-  "news_title": "NFC East roundup | Commanders begin critical stretch",
-  "news_link": "https://www.commanders.com/news/nfc-east-roundup-week-12-commanders-giants-cowboys-eagles"
+  "news_title": "Will Louisville basketball beat St. John's today? Our expert prediction",
+  "news_link": "https://www.courier-journal.com/story/sports/college/louisville/2026/11/26/louisville-st-johns-prediction-pick-uofl-basketball-score-today-odds-players-era-16-rick-pitino/92645489007/"
  },
  {
   "geo": "US",
-  "term": "melissa stark",
+  "term": "pacheco",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Lions Target December Return for Injured Isiah Pacheco",
+  "news_link": "https://demokratis.co.id/en/lions-pacheco-december-injury-return"
+ },
+ {
+  "geo": "US",
+  "term": "tina fey",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Seth Meyers Welcomes Tina Fey and Amy Poehler, Changing 13-Year Thanksgiving Tradition",
+  "news_link": "https://www.yahoo.com/entertainment/tv/articles/seth-meyers-welcomes-tina-fey-120000497.html"
+ },
+ {
+  "geo": "US",
+  "term": "george karlaftis",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "NFL Fans Loved Melissa Stark's Special Outfit for Mexico City Game",
-  "news_link": "https://sports.yahoo.com/articles/nfl-fans-loved-melissa-starks-172032603.html"
+  "news_title": "Back-to-Back Sacks! George Karlaftis Brings Down Josh Johnson for Second Sack in Two Plays",
+  "news_link": "https://www.chiefs.com/video/back-to-back-sacks-george-karlaftis-brings-down-josh-johnson-for-second-sack-in-two-plays"
  },
  {
   "geo": "US",
-  "term": "big dom eagles",
+  "term": "kimi antonelli",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "'I was overconfident' - Antonelli battling post-title hangover",
+  "news_link": "https://www.the-race.com/formula-1/i-was-overconfident-antonelli-battling-post-title-hangover/"
+ },
+ {
+  "geo": "US",
+  "term": "tyreek hill",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Ex-Dolphins WR Tyreek Hill Rumors Take Surprising New Turn After Week 11",
+  "news_link": "https://sports.yahoo.com/articles/ex-dolphins-wr-tyreek-hill-143334357.html"
+ },
+ {
+  "geo": "US",
+  "term": "bills coach",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Eagles face a new defensive play-caller in their rematch with Dallas",
-  "news_link": "https://sports.yahoo.com/nfl/articles/eagles-face-defensive-play-caller-183922248.html"
+  "news_title": "Best and Worst Coaches in Buffalo Bills History, Ranked",
+  "news_link": "https://athlonsports.com/nfl/buffalo-bills/best-worst-bills-coaches"
  },
  {
   "geo": "US",
-  "term": "buffalo new york",
+  "term": "greg rousseau",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Volunteers distribute Thanksgiving meals across WNY",
-  "news_link": "https://www.wivb.com/news/local-news/volunteers-distribute-thanksgiving-meals-across-wny/"
+  "news_title": "Greg Rousseau On Confidence In His Playing, Preparing For The Chiefs, And More",
+  "news_link": "https://www.buffalobills.com/video/greg-rousseau-on-confidence-in-his-playing-preparing-for-the-chiefs-and-more"
  },
  {
   "geo": "US",
-  "term": "jason kelce",
+  "term": "linda cardellini",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Travis Kelce Makes Retirement Admission on Eve of Chiefs-Bills Thanksgiving Game",
-  "news_link": "https://sports.yahoo.com/nfl/articles/travis-kelce-makes-retirement-admission-183147193.html"
- },
- {
-  "geo": "US",
-  "term": "who did the bills lose to",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Bills 26-9 Dolphins (Nov 22, 2026) Game Recap",
-  "news_link": "https://www.espn.com/nfl/recap/_/gameId/401873070"
- },
- {
-  "geo": "US",
-  "term": "xavier worthy",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Xavier Worthy Fantasy Football Start or Sit Advice for Week 12",
-  "news_link": "https://dknetwork.draftkings.com/2026/11/26/xavier-worthy-fantasy-football-start-or-sit-advice-for-week-12/"
- },
- {
-  "geo": "US",
-  "term": "patrick mahomes kids",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "Brittany and Patrick Mahomes and Their 3 Kids Giggle Uncontrollably as They Try Viral Reflex Test",
-  "news_link": "https://people.com/brittany-and-patrick-mahomes-and-their-3-kids-giggle-uncontrollably-as-they-try-viral-reflex-test-12281559"
+  "news_title": "‘Way of the Warrior Kid’ Review: Dispensing Martial Wisdom",
+  "news_link": "https://www.nytimes.com/2026/11/25/movies/way-of-the-warrior-kid-review.html"
  }
 ]
