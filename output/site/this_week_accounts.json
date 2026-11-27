@@ -2,8 +2,8 @@
  {
   "username": "cryptosrus",
   "region": "해외",
-  "posts": 142,
-  "top_outlier": 75.77,
+  "posts": 143,
+  "top_outlier": 77.23,
   "topics": "AI·반도체, 비트코인, 정치·관세"
  },
  {
@@ -16,7 +16,7 @@
  {
   "username": "hankyungmedia_official",
   "region": "한국",
-  "posts": 101,
+  "posts": 98,
   "top_outlier": 89.21,
   "topics": "AI·반도체, 국내 대형주, 급락·변동성"
  },
@@ -25,7 +25,7 @@
   "region": "한국",
   "posts": 92,
   "top_outlier": 95.36,
-  "topics": "AI·반도체, 부동산, 빅테크"
+  "topics": "AI·반도체, 부동산, 국내 대형주"
  },
  {
   "username": "bloombergbusiness",
@@ -35,13 +35,6 @@
   "topics": "AI·반도체, 정치·관세, 빅테크"
  },
  {
-  "username": "theeconomist",
-  "region": "해외",
-  "posts": 66,
-  "top_outlier": 8.74,
-  "topics": "정치·관세, AI·반도체, 빅테크"
- },
- {
   "username": "cnbc",
   "region": "해외",
   "posts": 66,
@@ -49,16 +42,23 @@
   "topics": "AI·반도체, 정치·관세, 물가·경기"
  },
  {
+  "username": "theeconomist",
+  "region": "해외",
+  "posts": 65,
+  "top_outlier": 8.74,
+  "topics": "정치·관세, AI·반도체, 빅테크"
+ },
+ {
   "username": "ekke.now",
   "region": "한국",
-  "posts": 55,
+  "posts": 54,
   "top_outlier": 15.09,
   "topics": "AI·반도체, 실적발표, 국내 대형주"
  },
  {
   "username": "yahoofinance",
   "region": "해외",
-  "posts": 55,
+  "posts": 54,
   "top_outlier": 35.0,
   "topics": "AI·반도체, 테슬라, 빅테크"
  },
@@ -79,7 +79,7 @@
  {
   "username": "moneytodaynews",
   "region": "한국",
-  "posts": 39,
+  "posts": 38,
   "top_outlier": 5.87,
   "topics": "AI·반도체, 정치·관세, 부동산"
  },
@@ -88,7 +88,7 @@
   "region": "한국",
   "posts": 35,
   "top_outlier": 41.95,
-  "topics": "AI·반도체, 급락·변동성, 국내 대형주"
+  "topics": "AI·반도체, 급락·변동성, 금리·연준"
  },
  {
   "username": "ktv_kr",
@@ -100,7 +100,7 @@
  {
   "username": "morningbrew",
   "region": "해외",
-  "posts": 29,
+  "posts": 28,
   "top_outlier": 4.42,
   "topics": "AI·반도체, 정치·관세, 급락·변동성"
  },
@@ -133,25 +133,11 @@
   "topics": ""
  },
  {
-  "username": "chosunbiz",
-  "region": "한국",
-  "posts": 18,
-  "top_outlier": 210.62,
-  "topics": "AI·반도체, 국내 대형주, 부동산"
- },
- {
   "username": "marketwatch",
   "region": "해외",
   "posts": 18,
-  "top_outlier": 2.77,
+  "top_outlier": 2.8,
   "topics": "물가·경기, AI·반도체, 실적발표"
- },
- {
-  "username": "faststocknews",
-  "region": "한국",
-  "posts": 17,
-  "top_outlier": 1.74,
-  "topics": "초보·투자마인드, AI·반도체, 실적발표"
  },
  {
   "username": "gov_korea",
@@ -175,11 +161,18 @@
   "topics": ""
  },
  {
-  "username": "withyou3542",
+  "username": "chosunbiz",
   "region": "한국",
-  "posts": 15,
-  "top_outlier": 1.9,
-  "topics": "AI·반도체"
+  "posts": 16,
+  "top_outlier": 24.81,
+  "topics": "AI·반도체, 국내 대형주, 실적발표"
+ },
+ {
+  "username": "faststocknews",
+  "region": "한국",
+  "posts": 16,
+  "top_outlier": 1.74,
+  "topics": "초보·투자마인드, AI·반도체, 실적발표"
  },
  {
   "username": "moleg.go.kr",
@@ -210,6 +203,13 @@
   "topics": ""
  },
  {
+  "username": "withyou3542",
+  "region": "한국",
+  "posts": 12,
+  "top_outlier": 1.9,
+  "topics": "AI·반도체"
+ },
+ {
   "username": "oh_neworld",
   "region": "한국",
   "posts": 11,
@@ -238,13 +238,6 @@
   "topics": "ETF·지수투자, AI·반도체"
  },
  {
-  "username": "mogefkorea_official",
-  "region": "한국",
-  "posts": 10,
-  "top_outlier": 1.59,
-  "topics": ""
- },
- {
   "username": "nyse",
   "region": "해외",
   "posts": 10,
@@ -257,6 +250,13 @@
   "posts": 10,
   "top_outlier": 4.55,
   "topics": "초보·투자마인드, 급락·변동성, AI·반도체"
+ },
+ {
+  "username": "mogefkorea_official",
+  "region": "한국",
+  "posts": 9,
+  "top_outlier": 1.59,
+  "topics": ""
  },
  {
   "username": "fsc.go.kr",
@@ -301,17 +301,10 @@
   "topics": ""
  },
  {
-  "username": "ministry_of_unification",
-  "region": "한국",
-  "posts": 8,
-  "top_outlier": 4.79,
-  "topics": "AI·반도체"
- },
- {
   "username": "official_nrf",
   "region": "한국",
   "posts": 8,
-  "top_outlier": 1.44,
+  "top_outlier": 1.76,
   "topics": "AI·반도체"
  },
  {
@@ -325,8 +318,15 @@
   "username": "nhrck1331",
   "region": "한국",
   "posts": 7,
-  "top_outlier": 1.59,
+  "top_outlier": 1.68,
   "topics": ""
+ },
+ {
+  "username": "ministry_of_unification",
+  "region": "한국",
+  "posts": 7,
+  "top_outlier": 1.31,
+  "topics": "AI·반도체"
  },
  {
   "username": "molit.go.kr",
@@ -343,13 +343,6 @@
   "topics": "AI·반도체, 빅테크, 비트코인"
  },
  {
-  "username": "mss.go.kr",
-  "region": "한국",
-  "posts": 7,
-  "top_outlier": 2.27,
-  "topics": "AI·반도체, 환율·달러"
- },
- {
   "username": "mofa_kr",
   "region": "한국",
   "posts": 7,
@@ -360,7 +353,7 @@
   "username": "pipc.go.kr",
   "region": "한국",
   "posts": 7,
-  "top_outlier": 2.1,
+  "top_outlier": 2.09,
   "topics": "AI·반도체"
  },
  {
@@ -385,25 +378,18 @@
   "topics": "물가·경기, 연금·절세"
  },
  {
+  "username": "mss.go.kr",
+  "region": "한국",
+  "posts": 6,
+  "top_outlier": 2.27,
+  "topics": "AI·반도체, 환율·달러"
+ },
+ {
   "username": "with_kmcc",
   "region": "한국",
   "posts": 6,
   "top_outlier": 1.27,
   "topics": "초보·투자마인드"
- },
- {
-  "username": "saramin_official",
-  "region": "한국",
-  "posts": 5,
-  "top_outlier": 74.08,
-  "topics": "AI·반도체"
- },
- {
-  "username": "lssec_official",
-  "region": "한국",
-  "posts": 5,
-  "top_outlier": 7.46,
-  "topics": ""
  },
  {
   "username": "weolbu_official",
@@ -418,13 +404,6 @@
   "posts": 5,
   "top_outlier": 3.65,
   "topics": "AI·반도체, 국내 대형주"
- },
- {
-  "username": "thebankofkorea",
-  "region": "한국",
-  "posts": 4,
-  "top_outlier": 4.94,
-  "topics": "AI·반도체, 금리·연준"
  },
  {
   "username": "hana_securities_official",
@@ -462,6 +441,13 @@
   "topics": "국내 대형주, AI·반도체, 연금·절세"
  },
  {
+  "username": "lssec_official",
+  "region": "한국",
+  "posts": 4,
+  "top_outlier": 7.62,
+  "topics": ""
+ },
+ {
   "username": "dapa_korea_official",
   "region": "한국",
   "posts": 4,
@@ -476,18 +462,11 @@
   "topics": "AI·반도체"
  },
  {
-  "username": "with_kca",
+  "username": "saramin_official",
   "region": "한국",
-  "posts": 3,
-  "top_outlier": 1.43,
-  "topics": ""
- },
- {
-  "username": "nasdaq",
-  "region": "해외",
-  "posts": 3,
-  "top_outlier": 31.48,
-  "topics": ""
+  "posts": 4,
+  "top_outlier": 74.08,
+  "topics": "AI·반도체"
  },
  {
   "username": "scourtkorea",
@@ -500,7 +479,7 @@
   "username": "moneyletter",
   "region": "해외",
   "posts": 3,
-  "top_outlier": 10.36,
+  "top_outlier": 10.45,
   "topics": "AI·반도체"
  },
  {
@@ -509,6 +488,13 @@
   "posts": 3,
   "top_outlier": 1.85,
   "topics": "ETF·지수투자"
+ },
+ {
+  "username": "thebankofkorea",
+  "region": "한국",
+  "posts": 3,
+  "top_outlier": 4.94,
+  "topics": "금리·연준"
  },
  {
   "username": "worknet_keis",
@@ -546,18 +532,25 @@
   "topics": ""
  },
  {
+  "username": "nasdaq",
+  "region": "해외",
+  "posts": 2,
+  "top_outlier": 0.4,
+  "topics": ""
+ },
+ {
+  "username": "with_kca",
+  "region": "한국",
+  "posts": 2,
+  "top_outlier": 0.71,
+  "topics": ""
+ },
+ {
   "username": "snowball_economy",
   "region": "한국",
   "posts": 2,
   "top_outlier": 0.54,
   "topics": "부동산, 정치·관세"
- },
- {
-  "username": "nhinvest_official",
-  "region": "한국",
-  "posts": 1,
-  "top_outlier": 1.08,
-  "topics": ""
  },
  {
   "username": "miraeasset.securities_official",
