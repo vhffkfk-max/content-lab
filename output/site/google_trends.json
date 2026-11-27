@@ -1,6 +1,15 @@
 [
  {
   "geo": "KR",
+  "term": "김아현의 금빛 스탁",
+  "traffic": 5000,
+  "topics": "급락·변동성",
+  "econ": true,
+  "news_title": "폭락장에 생방송 중 줄줄이 눈물...\"잘 버텨내자\" [앵커리포트]",
+  "news_link": "https://www.ytn.co.kr/_cs/_ln_0102_202611270827061073_005.html"
+ },
+ {
+  "geo": "KR",
   "term": "포수",
   "traffic": 5000,
   "topics": "",
@@ -28,12 +37,21 @@
  },
  {
   "geo": "KR",
-  "term": "중국",
+  "term": "lg에너지솔루션",
   "traffic": 500,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "\"中에 1%라도 임대하면 칩 못팔아\"…엔비디아 판매상 강경방침",
-  "news_link": "https://www.yna.co.kr/view/AKR20261127002700091"
+  "topics": "",
+  "econ": false,
+  "news_title": "[단독] LG에너지솔루션 빠진 3차 ESS 중앙계약시장, 삼성SDI가 웃었다.",
+  "news_link": "https://www.electimes.com/news/articleView.html?idxno=375356"
+ },
+ {
+  "geo": "KR",
+  "term": "병무청",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "경인지방병무청, 2027년 현역병입영일자 본인선택 접수",
+  "news_link": "https://sports.donga.com/region/article/all/20261124/135080630/1"
  },
  {
   "geo": "KR",
@@ -41,26 +59,8 @@
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "[단독] 말 바꾼 보훈부… \"민주 유공자 635명, 명단 비공개가 원칙\"",
-  "news_link": "https://www.chosun.com/politics/diplomacy-defense/2026/11/27/MPN3TZJ6KJG7HAY5CL7JDXXAYU/"
- },
- {
-  "geo": "KR",
-  "term": "남경주",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "'제자 성폭행 혐의' 남경주, 국민참여재판 받는다…판사 \"뮤지컬 해도 허용\"",
-  "news_link": "https://weekly.chosun.com/news/articleView.html?idxno=60139"
- },
- {
-  "geo": "KR",
-  "term": "대한민국 기후에너지환경부",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "기후부, 물산업 유망 창업기업 발굴…사업화까지 지원",
-  "news_link": "https://www.electimes.com/news/articleView.html?idxno=375325"
+  "news_title": "보훈증명서 10종, 30일부터 무인민원발급기서 '무료' 발급",
+  "news_link": "https://www.korea.kr/news/policyNewsView.do?newsId=148976609"
  },
  {
   "geo": "KR",
@@ -73,12 +73,12 @@
  },
  {
   "geo": "KR",
-  "term": "모두의 ai",
+  "term": "h&m",
   "traffic": 100,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "靑 “AI 시험지 인식 거부방법 과기부와 검증 중…국제적 협조 요청도 준비”",
-  "news_link": "https://www.donga.com/news/Politics/article/all/20261127/135101549/1"
+  "topics": "",
+  "econ": false,
+  "news_title": "Optimistic ahead of its annual results, Jefferies raises TP for H&M",
+  "news_link": "https://www.marketscreener.com/news/optimistic-ahead-of-its-annual-results-jefferies-raises-tp-for-h-m-ce7851d9d988f020"
  },
  {
   "geo": "KR",
@@ -91,92 +91,92 @@
  },
  {
   "geo": "US",
-  "term": "morgan freeman",
+  "term": "nfl standings cowboys",
+  "traffic": 20000,
+  "topics": "",
+  "econ": false,
+  "news_title": "2026 NFL Thanksgiving preview: Picks, predictions, schedule, odds, fantasy tips",
+  "news_link": "https://www.espn.com/nfl/story/_/id/50582822/thanksgiving-games-picks-schedule-fantasy-odds-2026"
+ },
+ {
+  "geo": "US",
+  "term": "bills schedule",
   "traffic": 5000,
   "topics": "",
   "econ": false,
-  "news_title": "Morgan Freeman Accused of Ignoring Pleas To Help Grandchildren: ‘Trying To Get Help to Not Get Evicted’",
-  "news_link": "https://www.yahoo.com/entertainment/celebrity/articles/morgan-freeman-accused-ignoring-pleas-135542381.html"
+  "news_title": "Buffalo Bills injury report vs. Chiefs | Week 12 Thanksgiving",
+  "news_link": "https://www.buffalobills.com/news/buffalo-bills-injury-report-vs-chiefs-week-12-thanksgiving"
  },
  {
   "geo": "US",
-  "term": "skip bayless",
-  "traffic": 2000,
+  "term": "nfc east standings",
+  "traffic": 5000,
   "topics": "",
   "econ": false,
-  "news_title": "Packers' Parsons calls for accountability after Rams run wild",
-  "news_link": "https://www.espn.com/nfl/story/_/id/50602564/packers-micah-parsons-accountability-rams-return"
+  "news_title": "NFC East roundup | Commanders begin critical stretch",
+  "news_link": "https://www.commanders.com/news/nfc-east-roundup-week-12-commanders-giants-cowboys-eagles"
  },
  {
   "geo": "US",
-  "term": "cruz azul",
+  "term": "melissa stark",
   "traffic": 1000,
   "topics": "",
   "econ": false,
-  "news_title": "Leon vs Cruz Azul LIVE, Latest Score, Goals and Liga MX Updates",
-  "news_link": "https://www.vavel.com/en-us/soccer/2026/11/26/1280746-leon-vs-cruz-azul-live-score-liga-mx.html"
+  "news_title": "NFL Fans Loved Melissa Stark's Special Outfit for Mexico City Game",
+  "news_link": "https://sports.yahoo.com/articles/nfl-fans-loved-melissa-starks-172032603.html"
  },
  {
   "geo": "US",
-  "term": "ring",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Ring boy lawsuit put on hold pending private mediation with McMahons and WWE",
-  "news_link": "https://www.postwrestling.com/2026/11/26/ring-boy-lawsuit-put-on-hold-pending-private-mediation-with-mcmahons-and-wwe/"
- },
- {
-  "geo": "US",
-  "term": "wisniewski eagles",
-  "traffic": 1000,
-  "topics": "",
-  "econ": false,
-  "news_title": "Eagles roster news: 3 moves announced ahead of Cowboys game",
-  "news_link": "https://www.bleedinggreennation.com/news/191448/eagles-roster-news-3-moves-announced-ahead-of-cowboys-game"
- },
- {
-  "geo": "US",
-  "term": "damar hamlin",
+  "term": "big dom eagles",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Bills Damar Hamlin Announces Personal News Before Thanksgiving Game",
-  "news_link": "https://sports.yahoo.com/nfl/articles/bills-damar-hamlin-announces-personal-014149274.html"
+  "news_title": "Eagles face a new defensive play-caller in their rematch with Dallas",
+  "news_link": "https://sports.yahoo.com/nfl/articles/eagles-face-defensive-play-caller-183922248.html"
  },
  {
   "geo": "US",
-  "term": "jake ferguson",
+  "term": "buffalo new york",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Eagles at Cowboys Inactives",
-  "news_link": "https://www.philadelphiaeagles.com/news/eagles-at-cowboys-inactives-thanksgiving-2026-nfl-week-12"
+  "news_title": "Volunteers distribute Thanksgiving meals across WNY",
+  "news_link": "https://www.wivb.com/news/local-news/volunteers-distribute-thanksgiving-meals-across-wny/"
  },
  {
   "geo": "US",
-  "term": "rashee rice",
+  "term": "jason kelce",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Fantasy football rankings for Week 12: Wide receiver",
-  "news_link": "https://www.espn.com/fantasy/football/story/_/page/FFWeeklyPlayerRank26-50573508/nfl-fantasy-football-rankings-2026-wr-wide-receiver"
+  "news_title": "Travis Kelce Makes Retirement Admission on Eve of Chiefs-Bills Thanksgiving Game",
+  "news_link": "https://sports.yahoo.com/nfl/articles/travis-kelce-makes-retirement-admission-183147193.html"
  },
  {
   "geo": "US",
-  "term": "ttu football",
+  "term": "who did the bills lose to",
   "traffic": 500,
   "topics": "",
   "econ": false,
-  "news_title": "Finally! CFP committee gives Texas Tech football a long-awaited bump",
-  "news_link": "https://www.lubbockonline.com/story/sports/college/red-raiders/2026/11/24/texas-tech-football-cfp-ranking/92869669007/"
+  "news_title": "Bills 26-9 Dolphins (Nov 22, 2026) Game Recap",
+  "news_link": "https://www.espn.com/nfl/recap/_/gameId/401873070"
  },
  {
   "geo": "US",
-  "term": "michelle obama",
+  "term": "xavier worthy",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "Xavier Worthy Fantasy Football Start or Sit Advice for Week 12",
+  "news_link": "https://dknetwork.draftkings.com/2026/11/26/xavier-worthy-fantasy-football-start-or-sit-advice-for-week-12/"
+ },
+ {
+  "geo": "US",
+  "term": "patrick mahomes kids",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Former President Barack Obama, Michelle Obama surprise Englewood nonprofit workers before Thanksgiving",
-  "news_link": "https://abc7chicago.com/post/former-president-barack-obama-michelle-surprise-englewood-nonprofit-workers-before-thanksgiving/20082069/"
+  "news_title": "Brittany and Patrick Mahomes and Their 3 Kids Giggle Uncontrollably as They Try Viral Reflex Test",
+  "news_link": "https://people.com/brittany-and-patrick-mahomes-and-their-3-kids-giggle-uncontrollably-as-they-try-viral-reflex-test-12281559"
  }
 ]
