@@ -1,6 +1,15 @@
 [
  {
   "geo": "KR",
+  "term": "jyp엔터테인먼트",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "'1월 11일 데뷔' 오브더블루, 멤버 4人 비주얼 공개…자유로운 청춘의 아우라",
+  "news_link": "https://biz.chosun.com/entertainment/enter_general/2026/11/27/GI3TOYZYGQ3GCMRQMVRDIYJRMM/"
+ },
+ {
+  "geo": "KR",
   "term": "농협은행",
   "traffic": 2000,
   "topics": "AI·반도체",
@@ -28,21 +37,30 @@
  },
  {
   "geo": "KR",
+  "term": "박정수",
+  "traffic": 500,
+  "topics": "",
+  "econ": false,
+  "news_title": "박정수, '25년 사실혼' 정을영과 웨딩화보 비화…\"흔쾌히 찍게 생겼나\"",
+  "news_link": "https://www.news1.kr/entertain/broadcast-tv/6367824"
+ },
+ {
+  "geo": "KR",
+  "term": "강지영",
+  "traffic": 200,
+  "topics": "",
+  "econ": false,
+  "news_title": "[방송소식] MBC라디오, 다음 달 1일 'FM4U 패밀리데이'",
+  "news_link": "https://www.yna.co.kr/view/AKR20261127082100005"
+ },
+ {
+  "geo": "KR",
   "term": "멸망전",
   "traffic": 200,
   "topics": "",
   "econ": false,
   "news_title": "SOOP, '2026 LoL 멸망전 시즌2' 27일 본선 개막",
   "news_link": "https://www.yna.co.kr/view/AKR20261127131700017"
- },
- {
-  "geo": "KR",
-  "term": "박정수",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "박정수, '25년 사실혼' 정을영과 웨딩화보 비화…\"흔쾌히 찍게 생겼나\"",
-  "news_link": "https://www.news1.kr/entertain/broadcast-tv/6367824"
  },
  {
   "geo": "KR",
@@ -59,26 +77,8 @@
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "‘이석기 판례’로 황교안 징역 10년 구형…황, 13년 전 체포요청 당사자",
-  "news_link": "https://www.hani.co.kr/arti/society/society_general/1289471.html"
- },
- {
-  "geo": "KR",
-  "term": "강지영",
-  "traffic": 100,
-  "topics": "",
-  "econ": false,
-  "news_title": "[방송소식] MBC라디오, 다음 달 1일 'FM4U 패밀리데이'",
-  "news_link": "https://www.yna.co.kr/view/AKR20261127082100005"
- },
- {
-  "geo": "KR",
-  "term": "두바이",
-  "traffic": 100,
-  "topics": "AI·반도체",
-  "econ": true,
-  "news_title": "\"두바이보다 아부다비\"…한국 AI 기업 중동 진출 전략 다시 짜야",
-  "news_link": "https://zdnet.co.kr/view/?no=20261127173207"
+  "news_title": "[속보] 특검, ‘SNS 내란선동 혐의’ 황교안 징역 10년 구형",
+  "news_link": "https://news.kbs.co.kr/news/view.do?ncd=8724597"
  },
  {
   "geo": "KR",
@@ -101,7 +101,7 @@
  {
   "geo": "US",
   "term": "pga tour",
-  "traffic": 5000,
+  "traffic": 10000,
   "topics": "",
   "econ": false,
   "news_title": "Expect big personalities, bigger stakes at 'The Farmers Insurance Skins Game'",
@@ -118,6 +118,33 @@
  },
  {
   "geo": "US",
+  "term": "hackers breach air force",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Hackers break into US Air Force cloud computing platform: Report",
+  "news_link": "https://thehill.com/policy/defense/6245197-air-force-cloud-one-hack/"
+ },
+ {
+  "geo": "US",
+  "term": "ron harper",
+  "traffic": 2000,
+  "topics": "",
+  "econ": false,
+  "news_title": "Prayers Pour in From Robert Griffin III & More as NBA & Chicago Bulls Legend Mourns Tragic Loss",
+  "news_link": "https://sports.yahoo.com/nba/articles/prayers-pour-robert-griffin-iii-014308100.html"
+ },
+ {
+  "geo": "US",
+  "term": "gta 6 black friday",
+  "traffic": 1000,
+  "topics": "",
+  "econ": false,
+  "news_title": "This Black Friday shopping hack could help you save $15 on 'GTA 6' for PS5",
+  "news_link": "https://mashable.com/entertainment/black-friday-deal-2026-costco-sony-playstation-gift-card-deal"
+ },
+ {
+  "geo": "US",
   "term": "iowa vs nebraska",
   "traffic": 500,
   "topics": "",
@@ -127,56 +154,29 @@
  },
  {
   "geo": "US",
-  "term": "ncaa football today",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Why the heck is there a Friday afternoon, not primetime, NFL game this week? Media Views",
-  "news_link": "https://www.stltoday.com/sports/column/media-views/article_4c6b20fd-d1e4-44c5-b578-08afb0d61a2e.html"
- },
- {
-  "geo": "US",
-  "term": "ron harper",
-  "traffic": 500,
-  "topics": "",
-  "econ": false,
-  "news_title": "Prayers Pour in From Robert Griffin III & More as NBA & Chicago Bulls Legend Mourns Tragic Loss",
-  "news_link": "https://sports.yahoo.com/nba/articles/prayers-pour-robert-griffin-iii-014308100.html"
- },
- {
-  "geo": "US",
-  "term": "black friday ipad deals 2026",
-  "traffic": 200,
-  "topics": "",
-  "econ": false,
-  "news_title": "The Best Black Friday iPad Deals On the Latest Models",
-  "news_link": "https://www.wired.com/story/best-black-friday-ipad-deals-11-27-2026/"
- },
- {
-  "geo": "US",
   "term": "cardi b",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Billboard Canada Women in Music 2026: Cardi B Is 'Globally That B—' & More Best Moments",
-  "news_link": "https://ca.billboard.com/music/billboard-canada-women-in-music-2026-highlights-cardi-b"
+  "news_title": "Cardi B and Offset See Beverly Hills Mansion Lawsuit Dismissed After Settlement",
+  "news_link": "https://www.rollingstone.com/music/music-news/cardi-b-offset-beverly-hills-mansion-lawsuit-settlement-1235664297/"
  },
  {
   "geo": "US",
-  "term": "dolar hoje",
+  "term": "delcy rodríguez",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "Com presença incerta no Lula 4, Moretti classifica como 'excelente' indicação de Trabuco para Fazenda",
-  "news_link": "https://g1.globo.com/politica/noticia/2026/11/27/com-presenca-incerta-no-lula-4-moretti-classifica-como-excelente-indicacao-de-trabuco-para-a-fazenda.ghtml"
+  "news_title": "Gobierno insta a “uso equilibrado de equipos” por pico en demanda eléctrica",
+  "news_link": "https://runrun.es/noticias/626407/gobierno-insta-a-uso-equilibrado-de-equipos-por-pico-en-demanda-electrica/"
  },
  {
   "geo": "US",
-  "term": "the pitt season 3",
+  "term": "kelly ripa",
   "traffic": 200,
   "topics": "",
   "econ": false,
-  "news_title": "‘The Pitt’ to Return for Season 3 Sooner Than You Might Think",
-  "news_link": "https://www.today.com/video/hbo-max-sets-release-date-for-the-pitt-season-3-274261573580"
+  "news_title": "Kelly Ripa's lookalike daughter twins with boyfriend in unexpected look",
+  "news_link": "https://www.yahoo.com/entertainment/celebrity/fashion/articles/kelly-ripas-lookalike-daughter-twins-101542342.html"
  }
 ]
