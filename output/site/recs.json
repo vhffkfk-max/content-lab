@@ -10,8 +10,8 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 6.36,
   "kr_n": 2,
-  "foreign_avg": 2.47,
-  "foreign_n": 55
+  "foreign_avg": 2.44,
+  "foreign_n": 56
  },
  {
   "rank": 2,
@@ -36,8 +36,8 @@
   "format": "단일 이미지",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.86,
-  "kr_n": 816,
+  "kr_avg": 1.85,
+  "kr_n": 820,
   "foreign_avg": 2.65,
   "foreign_n": 545
  },
@@ -47,13 +47,13 @@
   "kind": "국내·해외 모두 강세",
   "confidence": "높음",
   "title_idea": "숫자 하나로 보는 테슬라",
-  "format": "캐러셀(카드뉴스)",
+  "format": "단일 이미지",
   "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 2.67,
+  "kr_avg": 2.68,
   "kr_n": 43,
-  "foreign_avg": 2.86,
-  "foreign_n": 40
+  "foreign_avg": 2.81,
+  "foreign_n": 41
  },
  {
   "rank": 5,
@@ -92,23 +92,23 @@
   "format": "단일 이미지",
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.02,
-  "kr_n": 64,
-  "foreign_avg": 1.92,
+  "kr_avg": 1.03,
+  "kr_n": 63,
+  "foreign_avg": 1.93,
   "foreign_n": 91
  },
  {
   "rank": 8,
-  "topic": "환율·달러",
-  "kind": "국내 검증 주제",
+  "topic": "실적발표",
+  "kind": "국내·해외 모두 강세",
   "confidence": "높음",
-  "title_idea": "환율·달러, 한 줄 정리",
-  "format": "단일 이미지",
-  "hook": "짧은 한 줄",
+  "title_idea": "숫자 하나로 보는 실적발표",
+  "format": "릴스",
+  "hook": "숫자 강조형",
   "slot": "새벽(0~6시)",
-  "kr_avg": 1.67,
-  "kr_n": 102,
-  "foreign_avg": 1.14,
-  "foreign_n": 9
+  "kr_avg": 1.37,
+  "kr_n": 93,
+  "foreign_avg": 1.8,
+  "foreign_n": 26
  }
 ]
