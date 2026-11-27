@@ -767,6 +767,21 @@
  {
   "username": "toss.im",
   "region": "한국",
+  "outlier": 3.44,
+  "likes": 736,
+  "comments": 18,
+  "views": null,
+  "permalink": "https://www.instagram.com/p/DgPTvSWH5Az/",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "질문형",
+  "topics": "기타",
+  "date": "11/27 18:00",
+  "caption": "🤔”화면만 넓히면 되는 거 아니에요?”",
+  "rank": 2
+ },
+ {
+  "username": "toss.im",
+  "region": "한국",
   "outlier": 3.2,
   "likes": 231,
   "comments": 168,
@@ -777,7 +792,7 @@
   "topics": "기타",
   "date": "10/23 15:00",
   "caption": "#EVENT 단 5일 동안 참여 가능!",
-  "rank": 2
+  "rank": 3
  },
  {
   "username": "toss.im",
@@ -792,21 +807,6 @@
   "topics": "기타",
   "date": "10/21 18:00",
   "caption": "퇴사했는데, 토스로 다시 돌아온 사람들이 있다?!",
-  "rank": 3
- },
- {
-  "username": "toss.im",
-  "region": "한국",
-  "outlier": 2.51,
-  "likes": 541,
-  "comments": 12,
-  "views": null,
-  "permalink": "https://www.instagram.com/p/DgPTvSWH5Az/",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "질문형",
-  "topics": "기타",
-  "date": "11/27 18:00",
-  "caption": "🤔”화면만 넓히면 되는 거 아니에요?”",
   "rank": 4
  },
  {
@@ -977,7 +977,7 @@
  {
   "username": "morningbrew",
   "region": "해외",
-  "outlier": 4.67,
+  "outlier": 4.65,
   "likes": 19584,
   "comments": 205,
   "views": 826290,
@@ -992,7 +992,7 @@
  {
   "username": "morningbrew",
   "region": "해외",
-  "outlier": 4.4,
+  "outlier": 4.39,
   "likes": 18698,
   "comments": 114,
   "views": 297336,
@@ -1022,7 +1022,7 @@
  {
   "username": "morningbrew",
   "region": "해외",
-  "outlier": 3.72,
+  "outlier": 3.71,
   "likes": 15808,
   "comments": 103,
   "views": null,
@@ -1037,7 +1037,7 @@
  {
   "username": "morningbrew",
   "region": "해외",
-  "outlier": 3.25,
+  "outlier": 3.24,
   "likes": 13864,
   "comments": 62,
   "views": null,
@@ -1335,51 +1335,6 @@
   "rank": 5
  },
  {
-  "username": "crypto.news.io",
-  "region": "해외",
-  "outlier": 1.83,
-  "likes": 406,
-  "comments": 13,
-  "views": null,
-  "permalink": "https://www.instagram.com/p/Dfvr6Idtfyw/",
-  "format": "단일 이미지",
-  "hook": "숫자 강조형",
-  "topics": "비트코인, 알트코인, 정치·관세",
-  "date": "11/15 11:16",
-  "caption": "Bitcoin hits $62,000 📉📉",
-  "rank": 1
- },
- {
-  "username": "crypto.news.io",
-  "region": "해외",
-  "outlier": 0.88,
-  "likes": 199,
-  "comments": 5,
-  "views": 21955,
-  "permalink": "https://www.instagram.com/p/DeCh_y-y_4P/",
-  "format": "릴스",
-  "hook": "일반 서술형",
-  "topics": "비트코인, 알트코인",
-  "date": "10/04 01:52",
-  "caption": "Q4 is very bullish 🚀",
-  "rank": 2
- },
- {
-  "username": "crypto.news.io",
-  "region": "해외",
-  "outlier": 0.51,
-  "likes": 108,
-  "comments": 5,
-  "views": null,
-  "permalink": "https://www.instagram.com/p/Dd9hK5tNtPz/",
-  "format": "단일 이미지",
-  "hook": "짧은 한 줄",
-  "topics": "비트코인, 알트코인, 정치·관세",
-  "date": "10/02 03:09",
-  "caption": "It’s Uptober 🚀 ",
-  "rank": 3
- },
- {
   "username": "nasdaq",
   "region": "해외",
   "outlier": 76.42,
@@ -1453,6 +1408,51 @@
   "date": "10/14 22:00",
   "caption": "During his visit to Nasdaq MarketSite, @secgov Chairman Paul S. Atkins shared how his glob…",
   "rank": 5
+ },
+ {
+  "username": "crypto.news.io",
+  "region": "해외",
+  "outlier": 1.83,
+  "likes": 406,
+  "comments": 13,
+  "views": null,
+  "permalink": "https://www.instagram.com/p/Dfvr6Idtfyw/",
+  "format": "단일 이미지",
+  "hook": "숫자 강조형",
+  "topics": "비트코인, 알트코인, 정치·관세",
+  "date": "11/15 11:16",
+  "caption": "Bitcoin hits $62,000 📉📉",
+  "rank": 1
+ },
+ {
+  "username": "crypto.news.io",
+  "region": "해외",
+  "outlier": 0.88,
+  "likes": 199,
+  "comments": 5,
+  "views": 21955,
+  "permalink": "https://www.instagram.com/p/DeCh_y-y_4P/",
+  "format": "릴스",
+  "hook": "일반 서술형",
+  "topics": "비트코인, 알트코인",
+  "date": "10/04 01:52",
+  "caption": "Q4 is very bullish 🚀",
+  "rank": 2
+ },
+ {
+  "username": "crypto.news.io",
+  "region": "해외",
+  "outlier": 0.51,
+  "likes": 108,
+  "comments": 5,
+  "views": null,
+  "permalink": "https://www.instagram.com/p/Dd9hK5tNtPz/",
+  "format": "단일 이미지",
+  "hook": "짧은 한 줄",
+  "topics": "비트코인, 알트코인, 정치·관세",
+  "date": "10/02 03:09",
+  "caption": "It’s Uptober 🚀 ",
+  "rank": 3
  },
  {
   "username": "moneyletter",
@@ -1607,7 +1607,7 @@
  {
   "username": "personalfinanceclub",
   "region": "해외",
-  "outlier": 29.84,
+  "outlier": 30.06,
   "likes": 49770,
   "comments": 1088,
   "views": 797111,
@@ -1622,7 +1622,7 @@
  {
   "username": "personalfinanceclub",
   "region": "해외",
-  "outlier": 12.76,
+  "outlier": 12.85,
   "likes": 20031,
   "comments": 879,
   "views": null,
@@ -1637,7 +1637,7 @@
  {
   "username": "personalfinanceclub",
   "region": "해외",
-  "outlier": 11.55,
+  "outlier": 11.64,
   "likes": 18337,
   "comments": 731,
   "views": null,
@@ -1652,7 +1652,7 @@
  {
   "username": "personalfinanceclub",
   "region": "해외",
-  "outlier": 4.55,
+  "outlier": 4.58,
   "likes": 6668,
   "comments": 472,
   "views": 368969,
@@ -1667,7 +1667,7 @@
  {
   "username": "personalfinanceclub",
   "region": "해외",
-  "outlier": 1.49,
+  "outlier": 1.5,
   "likes": 2266,
   "comments": 126,
   "views": 82159,
@@ -1677,81 +1677,6 @@
   "topics": "초보·투자마인드",
   "date": "11/21 14:03",
   "caption": "I’m posting twice in a row because everyone is really losing their hats over this. Stay th…",
-  "rank": 5
- },
- {
-  "username": "yahoofinance",
-  "region": "해외",
-  "outlier": 35.0,
-  "likes": 72869,
-  "comments": 910,
-  "views": 3537805,
-  "permalink": "https://www.instagram.com/reel/DgGc2w3EqzZ/",
-  "format": "릴스",
-  "hook": "일반 서술형",
-  "topics": "AI·반도체, 테슬라",
-  "date": "11/24 07:27",
-  "caption": "Elon Musk’s support of Jensen Huang continues.",
-  "rank": 1
- },
- {
-  "username": "yahoofinance",
-  "region": "해외",
-  "outlier": 27.84,
-  "likes": 55530,
-  "comments": 1538,
-  "views": null,
-  "permalink": "https://www.instagram.com/p/DfstS01F7O6/",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "일반 서술형",
-  "topics": "AI·반도체, 테슬라",
-  "date": "11/14 07:30",
-  "caption": "Elon Musk is backing Jensen Huang by signing a petition to reinstate Huang as Nvidia’s CEO…",
-  "rank": 2
- },
- {
-  "username": "yahoofinance",
-  "region": "해외",
-  "outlier": 19.03,
-  "likes": 38647,
-  "comments": 818,
-  "views": 1254515,
-  "permalink": "https://www.instagram.com/reel/DgFugcCE-FX/",
-  "format": "릴스",
-  "hook": "일반 서술형",
-  "topics": "AI·반도체, 테슬라",
-  "date": "11/24 00:42",
-  "caption": "Elon Musk is pleased with Jensen Huang being brought back as Nvidia CEO.",
-  "rank": 3
- },
- {
-  "username": "yahoofinance",
-  "region": "해외",
-  "outlier": 13.97,
-  "likes": 28458,
-  "comments": 569,
-  "views": 643824,
-  "permalink": "https://www.instagram.com/reel/DgGMAdYDho8/",
-  "format": "릴스",
-  "hook": "일반 서술형",
-  "topics": "AI·반도체",
-  "date": "11/24 05:00",
-  "caption": "Jensen Huang is back at Nvidia HQ as CEO.",
-  "rank": 4
- },
- {
-  "username": "yahoofinance",
-  "region": "해외",
-  "outlier": 13.44,
-  "likes": 26854,
-  "comments": 722,
-  "views": null,
-  "permalink": "https://www.instagram.com/p/DfxuvFAFy2t/",
-  "format": "캐러셀(카드뉴스)",
-  "hook": "일반 서술형",
-  "topics": "AI·반도체",
-  "date": "11/16 06:19",
-  "caption": "Jensen Huang is discussing a possible comeback as Nvidia CEO with confidants, according to…",
   "rank": 5
  },
  {
@@ -2038,6 +1963,81 @@
   "date": "10/28 18:01",
   "caption": "📢[HF토픽] 전세 준비로 막막하신 분들, 주목! ",
   "rank": 2
+ },
+ {
+  "username": "yahoofinance",
+  "region": "해외",
+  "outlier": 36.09,
+  "likes": 72869,
+  "comments": 910,
+  "views": 3537805,
+  "permalink": "https://www.instagram.com/reel/DgGc2w3EqzZ/",
+  "format": "릴스",
+  "hook": "일반 서술형",
+  "topics": "AI·반도체, 테슬라",
+  "date": "11/24 07:27",
+  "caption": "Elon Musk’s support of Jensen Huang continues.",
+  "rank": 1
+ },
+ {
+  "username": "yahoofinance",
+  "region": "해외",
+  "outlier": 28.72,
+  "likes": 55530,
+  "comments": 1538,
+  "views": null,
+  "permalink": "https://www.instagram.com/p/DfstS01F7O6/",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "일반 서술형",
+  "topics": "AI·반도체, 테슬라",
+  "date": "11/14 07:30",
+  "caption": "Elon Musk is backing Jensen Huang by signing a petition to reinstate Huang as Nvidia’s CEO…",
+  "rank": 2
+ },
+ {
+  "username": "yahoofinance",
+  "region": "해외",
+  "outlier": 19.62,
+  "likes": 38647,
+  "comments": 818,
+  "views": 1254515,
+  "permalink": "https://www.instagram.com/reel/DgFugcCE-FX/",
+  "format": "릴스",
+  "hook": "일반 서술형",
+  "topics": "AI·반도체, 테슬라",
+  "date": "11/24 00:42",
+  "caption": "Elon Musk is pleased with Jensen Huang being brought back as Nvidia CEO.",
+  "rank": 3
+ },
+ {
+  "username": "yahoofinance",
+  "region": "해외",
+  "outlier": 14.4,
+  "likes": 28458,
+  "comments": 569,
+  "views": 643824,
+  "permalink": "https://www.instagram.com/reel/DgGMAdYDho8/",
+  "format": "릴스",
+  "hook": "일반 서술형",
+  "topics": "AI·반도체",
+  "date": "11/24 05:00",
+  "caption": "Jensen Huang is back at Nvidia HQ as CEO.",
+  "rank": 4
+ },
+ {
+  "username": "yahoofinance",
+  "region": "해외",
+  "outlier": 13.86,
+  "likes": 26854,
+  "comments": 722,
+  "views": null,
+  "permalink": "https://www.instagram.com/p/DfxuvFAFy2t/",
+  "format": "캐러셀(카드뉴스)",
+  "hook": "일반 서술형",
+  "topics": "AI·반도체",
+  "date": "11/16 06:19",
+  "caption": "Jensen Huang is discussing a possible comeback as Nvidia CEO with confidants, according to…",
+  "rank": 5
  },
  {
   "username": "nhrck1331",
@@ -2432,7 +2432,7 @@
  {
   "username": "wsj",
   "region": "해외",
-  "outlier": 7.95,
+  "outlier": 7.91,
   "likes": 33396,
   "comments": 994,
   "views": 1142375,
@@ -2447,7 +2447,7 @@
  {
   "username": "wsj",
   "region": "해외",
-  "outlier": 4.7,
+  "outlier": 4.68,
   "likes": 20431,
   "comments": 358,
   "views": 724467,
@@ -2462,7 +2462,7 @@
  {
   "username": "wsj",
   "region": "해외",
-  "outlier": 4.57,
+  "outlier": 4.55,
   "likes": 19139,
   "comments": 594,
   "views": null,
@@ -2477,7 +2477,7 @@
  {
   "username": "wsj",
   "region": "해외",
-  "outlier": 4.3,
+  "outlier": 4.28,
   "likes": 18532,
   "comments": 383,
   "views": 901334,
@@ -2492,7 +2492,7 @@
  {
   "username": "wsj",
   "region": "해외",
-  "outlier": 4.27,
+  "outlier": 4.25,
   "likes": 18067,
   "comments": 496,
   "views": null,
@@ -2882,7 +2882,7 @@
  {
   "username": "nyse",
   "region": "해외",
-  "outlier": 27.1,
+  "outlier": 26.97,
   "likes": 13644,
   "comments": 751,
   "views": 299546,
@@ -2897,7 +2897,7 @@
  {
   "username": "nyse",
   "region": "해외",
-  "outlier": 26.36,
+  "outlier": 26.23,
   "likes": 15335,
   "comments": 42,
   "views": null,
@@ -2912,7 +2912,7 @@
  {
   "username": "nyse",
   "region": "해외",
-  "outlier": 21.23,
+  "outlier": 21.12,
   "likes": 12013,
   "comments": 146,
   "views": 331665,
@@ -2927,7 +2927,7 @@
  {
   "username": "nyse",
   "region": "해외",
-  "outlier": 14.04,
+  "outlier": 13.97,
   "likes": 7439,
   "comments": 265,
   "views": 157432,
@@ -2942,7 +2942,7 @@
  {
   "username": "nyse",
   "region": "해외",
-  "outlier": 7.68,
+  "outlier": 7.64,
   "likes": 3858,
   "comments": 215,
   "views": null,
@@ -3257,7 +3257,7 @@
  {
   "username": "bloombergbusiness",
   "region": "해외",
-  "outlier": 19.81,
+  "outlier": 19.76,
   "likes": 61068,
   "comments": 6194,
   "views": 2733380,
@@ -3272,7 +3272,7 @@
  {
   "username": "bloombergbusiness",
   "region": "해외",
-  "outlier": 18.1,
+  "outlier": 18.06,
   "likes": 69021,
   "comments": 1259,
   "views": null,
@@ -3287,7 +3287,7 @@
  {
   "username": "bloombergbusiness",
   "region": "해외",
-  "outlier": 16.53,
+  "outlier": 16.5,
   "likes": 61355,
   "comments": 1707,
   "views": 2535494,
@@ -3302,7 +3302,7 @@
  {
   "username": "bloombergbusiness",
   "region": "해외",
-  "outlier": 13.74,
+  "outlier": 13.71,
   "likes": 53620,
   "comments": 543,
   "views": 3340822,
@@ -3317,7 +3317,7 @@
  {
   "username": "bloombergbusiness",
   "region": "해외",
-  "outlier": 11.33,
+  "outlier": 11.3,
   "likes": 41374,
   "comments": 1393,
   "views": null,
@@ -3377,10 +3377,10 @@
  {
   "username": "moleg.go.kr",
   "region": "한국",
-  "outlier": 2.28,
-  "likes": 73,
+  "outlier": 2.31,
+  "likes": 74,
   "comments": 3,
-  "views": 26387,
+  "views": 31782,
   "permalink": "https://www.instagram.com/reel/DgJ1l3fiN2f/",
   "format": "릴스",
   "hook": "일반 서술형",
@@ -4112,7 +4112,7 @@
  {
   "username": "molit.go.kr",
   "region": "한국",
-  "outlier": 96.03,
+  "outlier": 90.77,
   "likes": 6167,
   "comments": 153,
   "views": 257458,
@@ -4127,7 +4127,7 @@
  {
   "username": "molit.go.kr",
   "region": "한국",
-  "outlier": 74.38,
+  "outlier": 70.3,
   "likes": 4727,
   "comments": 135,
   "views": 259026,
@@ -4142,7 +4142,7 @@
  {
   "username": "molit.go.kr",
   "region": "한국",
-  "outlier": 50.68,
+  "outlier": 47.9,
   "likes": 3191,
   "comments": 102,
   "views": 397115,
@@ -4157,7 +4157,7 @@
  {
   "username": "molit.go.kr",
   "region": "한국",
-  "outlier": 30.14,
+  "outlier": 28.49,
   "likes": 1897,
   "comments": 61,
   "views": 396215,
@@ -4172,9 +4172,9 @@
  {
   "username": "molit.go.kr",
   "region": "한국",
-  "outlier": 23.54,
-  "likes": 1564,
-  "comments": 20,
+  "outlier": 23.23,
+  "likes": 1630,
+  "comments": 22,
   "views": null,
   "permalink": "https://www.instagram.com/p/DgMq4ukmF0l/",
   "format": "캐러셀(카드뉴스)",
@@ -4187,7 +4187,7 @@
  {
   "username": "hankyungmedia_official",
   "region": "한국",
-  "outlier": 376.44,
+  "outlier": 373.38,
   "likes": 17248,
   "comments": 1905,
   "views": 777470,
@@ -4202,7 +4202,7 @@
  {
   "username": "hankyungmedia_official",
   "region": "한국",
-  "outlier": 306.02,
+  "outlier": 303.53,
   "likes": 17083,
   "comments": 528,
   "views": 1117385,
@@ -4217,7 +4217,7 @@
  {
   "username": "hankyungmedia_official",
   "region": "한국",
-  "outlier": 245.48,
+  "outlier": 243.48,
   "likes": 7174,
   "comments": 2600,
   "views": 1902077,
@@ -4232,7 +4232,7 @@
  {
   "username": "hankyungmedia_official",
   "region": "한국",
-  "outlier": 209.34,
+  "outlier": 207.64,
   "likes": 10736,
   "comments": 678,
   "views": 716237,
@@ -4247,7 +4247,7 @@
  {
   "username": "hankyungmedia_official",
   "region": "한국",
-  "outlier": 147.31,
+  "outlier": 146.11,
   "likes": 2827,
   "comments": 2053,
   "views": 764943,
@@ -5552,7 +5552,7 @@
  {
   "username": "theeconomist",
   "region": "해외",
-  "outlier": 67.49,
+  "outlier": 67.36,
   "likes": 124430,
   "comments": 9334,
   "views": 5289689,
@@ -5567,7 +5567,7 @@
  {
   "username": "theeconomist",
   "region": "해외",
-  "outlier": 55.02,
+  "outlier": 54.91,
   "likes": 103629,
   "comments": 6879,
   "views": null,
@@ -5582,7 +5582,7 @@
  {
   "username": "theeconomist",
   "region": "해외",
-  "outlier": 13.42,
+  "outlier": 13.4,
   "likes": 23509,
   "comments": 2268,
   "views": null,
@@ -5597,7 +5597,7 @@
  {
   "username": "theeconomist",
   "region": "해외",
-  "outlier": 11.81,
+  "outlier": 11.79,
   "likes": 25356,
   "comments": 441,
   "views": 939481,
@@ -5612,7 +5612,7 @@
  {
   "username": "theeconomist",
   "region": "해외",
-  "outlier": 10.24,
+  "outlier": 10.22,
   "likes": 19671,
   "comments": 1155,
   "views": null,
@@ -6197,7 +6197,7 @@
  {
   "username": "saramin_official",
   "region": "한국",
-  "outlier": 70.64,
+  "outlier": 68.21,
   "likes": 818,
   "comments": 57,
   "views": 306888,
@@ -6212,7 +6212,7 @@
  {
   "username": "saramin_official",
   "region": "한국",
-  "outlier": 2.0,
+  "outlier": 1.93,
   "likes": 28,
   "comments": 0,
   "views": 7562,
@@ -6227,7 +6227,7 @@
  {
   "username": "saramin_official",
   "region": "한국",
-  "outlier": 2.0,
+  "outlier": 1.93,
   "likes": 25,
   "comments": 1,
   "views": 4995,
@@ -6242,7 +6242,7 @@
  {
   "username": "saramin_official",
   "region": "한국",
-  "outlier": 1.29,
+  "outlier": 1.24,
   "likes": 18,
   "comments": 0,
   "views": 2588,
@@ -6257,7 +6257,7 @@
  {
   "username": "saramin_official",
   "region": "한국",
-  "outlier": 1.14,
+  "outlier": 1.1,
   "likes": 16,
   "comments": 0,
   "views": null,
@@ -6752,7 +6752,7 @@
  {
   "username": "cnbc",
   "region": "해외",
-  "outlier": 318.34,
+  "outlier": 318.12,
   "likes": 206891,
   "comments": 7598,
   "views": 5250423,
@@ -6767,7 +6767,7 @@
  {
   "username": "cnbc",
   "region": "해외",
-  "outlier": 68.53,
+  "outlier": 68.49,
   "likes": 46118,
   "comments": 1110,
   "views": null,
@@ -6782,7 +6782,7 @@
  {
   "username": "cnbc",
   "region": "해외",
-  "outlier": 25.38,
+  "outlier": 25.36,
   "likes": 16894,
   "comments": 473,
   "views": null,
@@ -6797,7 +6797,7 @@
  {
   "username": "cnbc",
   "region": "해외",
-  "outlier": 21.59,
+  "outlier": 21.58,
   "likes": 13032,
   "comments": 849,
   "views": 711683,
@@ -6812,7 +6812,7 @@
  {
   "username": "cnbc",
   "region": "해외",
-  "outlier": 19.66,
+  "outlier": 19.65,
   "likes": 13801,
   "comments": 128,
   "views": null,
