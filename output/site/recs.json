@@ -10,7 +10,7 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 6.1,
   "kr_n": 2,
-  "foreign_avg": 2.41,
+  "foreign_avg": 2.42,
   "foreign_n": 57
  },
  {
@@ -37,7 +37,7 @@
   "hook": "속보·뉴스형",
   "slot": "새벽(0~6시)",
   "kr_avg": 1.85,
-  "kr_n": 830,
+  "kr_n": 825,
   "foreign_avg": 2.65,
   "foreign_n": 556
  },
@@ -67,7 +67,7 @@
   "kr_avg": 0.99,
   "kr_n": 12,
   "foreign_avg": 2.01,
-  "foreign_n": 212
+  "foreign_n": 213
  },
  {
   "rank": 6,
@@ -85,20 +85,6 @@
  },
  {
   "rank": 7,
-  "topic": "실적발표",
-  "kind": "국내·해외 모두 강세",
-  "confidence": "높음",
-  "title_idea": "숫자 하나로 보는 실적발표",
-  "format": "릴스",
-  "hook": "숫자 강조형",
-  "slot": "새벽(0~6시)",
-  "kr_avg": 1.35,
-  "kr_n": 93,
-  "foreign_avg": 1.88,
-  "foreign_n": 25
- },
- {
-  "rank": 8,
   "topic": "ETF·지수투자",
   "kind": "해외 선행 주제 (선점 기회)",
   "confidence": "높음",
@@ -108,7 +94,21 @@
   "slot": "새벽(0~6시)",
   "kr_avg": 1.07,
   "kr_n": 59,
-  "foreign_avg": 1.94,
+  "foreign_avg": 1.95,
   "foreign_n": 91
+ },
+ {
+  "rank": 8,
+  "topic": "실적발표",
+  "kind": "국내·해외 모두 강세",
+  "confidence": "높음",
+  "title_idea": "숫자 하나로 보는 실적발표",
+  "format": "릴스",
+  "hook": "숫자 강조형",
+  "slot": "새벽(0~6시)",
+  "kr_avg": 1.35,
+  "kr_n": 91,
+  "foreign_avg": 1.88,
+  "foreign_n": 25
  }
 ]
